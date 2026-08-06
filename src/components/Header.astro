@@ -124,9 +124,6 @@ const isActive = (href: string) =>
     </ul>
   </nav>
 
-  <div class="drawer-cta">
-    <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>Call Us</a>
-  </div>
 </aside>
 
 <div id="menu-scrim" class="menu-scrim" aria-hidden="true"></div>
@@ -461,13 +458,6 @@ const isActive = (href: string) =>
     text-decoration: none;
   }
   .drawer-col a:hover { color: var(--brand); }
-
-  .drawer-cta {
-    padding: 1rem 1.25rem;
-    border-top: 1px solid var(--border);
-    background: var(--surface-alt);
-  }
-  .drawer-cta .btn { width: 100%; }
 
   /* ==================================================== DESKTOP */
   @media (min-width: 1024px) {
