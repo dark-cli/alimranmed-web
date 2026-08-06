@@ -2,8 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const locale = (Astro.currentLocale ?? "en") as "en" | "ar";
-const treatments = (await getCollection("treatments", ({ data }) => data.locale === locale))
+const treatments = (await getCollection("treatments"))
   .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
 
 // Group by category
@@ -31,7 +30,7 @@ for (const t of treatments) {
         <ul class="condition-list">
           {items.map((t) => (
             <li>
-              <a href={`/treatments/${t.id.replace(/^en\//, "").replace(/^ar\//, "")}/`}>{t.data.title}</a>
+              <a href={`/treatments/${t.id}/`}>{t.data.title}</a>
             </li>
           ))}
         </ul>
@@ -39,7 +38,7 @@ for (const t of treatments) {
     ))}
 
     {grouped.size === 0 && (
-      <p class="empty">Treatments will appear here once the content migration runs. See <code>docs/MIGRATION.md</code>.</p>
+      <p class="empty">Treatments will appear here once the content migration runs.</p>
     )}
   </div>
 </BaseLayout>

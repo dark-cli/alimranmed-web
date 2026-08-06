@@ -3,9 +3,9 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts", ({ data }) => data.locale === "en");
+  const posts = await getCollection("posts");
   return posts.map((entry) => ({
-    params: { slug: entry.id.replace(/^en\//, "") },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
@@ -22,7 +22,7 @@ const d = entry.data;
       <h1>{d.title}</h1>
       <p class="meta">
         {d.author && <span>{d.author}</span>}
-        {d.publishedAt && <span>· {d.publishedAt.toLocaleDateString(Astro.currentLocale === "ar" ? "ar-IQ" : "en-US", { year: "numeric", month: "long", day: "numeric" })}</span>}
+        {d.publishedAt && <span>· {d.publishedAt.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>}
       </p>
     </header>
     <div class="prose">

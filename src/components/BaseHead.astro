@@ -1,21 +1,16 @@
 ---
 import "../styles/global.css";
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_TITLE_AR, SITE_DESCRIPTION_AR } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 interface Props {
   title?: string;
   description?: string;
   image?: string;
-  locale?: "en" | "ar";
 }
 
-const locale = (Astro.props.locale ?? Astro.currentLocale ?? "en") as "en" | "ar";
-const defaultTitle = locale === "ar" ? SITE_TITLE_AR : SITE_TITLE;
-const defaultDescription = locale === "ar" ? SITE_DESCRIPTION_AR : SITE_DESCRIPTION;
-
 const {
-  title = defaultTitle,
-  description = defaultDescription,
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
   image = "/images/og-cover.png",
 } = Astro.props;
 
@@ -25,7 +20,6 @@ const businessSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
   name: "Alimran Medical Center",
-  alternateName: ["مركز العمران الطبي", "Alimran Neurology Clinic"],
   description:
     "Alimran Medical Center specializes in neurology and musculoskeletal disorders in Basra, Iraq — chiropractic, rehabilitation, brain stimulation (TMS/tDCS), pain management, physiotherapy, radiofrequency, and neurosurgery.",
   url: Astro.site,
@@ -87,20 +81,14 @@ const businessSchema = {
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href={canonicalURL} />
 
-<!-- i18n -->
-<link rel="alternate" hreflang="en" href={new URL(Astro.url.pathname.replace(/^\/ar/, ""), Astro.site).href} />
-<link rel="alternate" hreflang="ar" href={new URL(`/ar${Astro.url.pathname.replace(/^\/ar/, "")}`, Astro.site).href} />
-<link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname.replace(/^\/ar/, ""), Astro.site).href} />
-
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.site)} />
-<meta property="og:site_name" content={defaultTitle} />
-<meta property="og:locale" content={locale === "ar" ? "ar_IQ" : "en_US"} />
-<meta property="og:locale:alternate" content={locale === "ar" ? "en_US" : "ar_IQ"} />
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:locale" content="en_US" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />

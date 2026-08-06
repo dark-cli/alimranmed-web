@@ -4,9 +4,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { CONTACT } from "../../consts";
 
 export async function getStaticPaths() {
-  const items = await getCollection("doctors", ({ data }) => data.locale === "en");
+  const items = await getCollection("doctors");
   return items.map((entry) => ({
-    params: { slug: entry.id.replace(/^en\//, "") },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }

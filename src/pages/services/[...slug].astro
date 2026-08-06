@@ -3,9 +3,9 @@ import { getCollection, render } from "astro:content";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 
 export async function getStaticPaths() {
-  const items = await getCollection("services", ({ data }) => data.locale === "en");
+  const items = await getCollection("services");
   return items.map((entry) => ({
-    params: { slug: entry.id.replace(/^en\//, "") },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }

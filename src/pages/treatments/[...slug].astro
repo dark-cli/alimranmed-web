@@ -3,11 +3,9 @@ import { getCollection, render } from "astro:content";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 
 export async function getStaticPaths() {
-  const items = await getCollection("treatments", ({ data }) => data.locale === "en");
+  const items = await getCollection("treatments");
   return items.map((entry) => ({
-    // entry.id is like "en/back-pain" or "en/pain/headaches" (from glob loader);
-    // strip the leading "en/" to get the URL slug.
-    params: { slug: entry.id.replace(/^en\//, "") },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }

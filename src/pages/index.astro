@@ -3,23 +3,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { CONTACT } from "../consts";
 import en from "../i18n/en.json";
-import ar from "../i18n/ar.json";
 
-const locale = (Astro.currentLocale ?? "en") as "en" | "ar";
-const dict = (locale === "ar" ? ar : en) as Record<string, string>;
+const dict = en as Record<string, string>;
 
-// Pull priority sections: doctors listing + a small selection of services
-const doctors = (await getCollection("doctors", ({ data }) => data.locale === locale))
+const doctors = (await getCollection("doctors"))
   .sort((a, b) => a.data.order - b.data.order);
 
-// Featured service categories (top-level landing pages)
+// Featured service categories (top-level landing pages). Hrefs match the
+// nav in src/data/navigation.ts.
 const featured: Array<{ href: string; title: string; desc: string }> = [
   { href: "/treatments/", title: "What We Treat", desc: "Comprehensive taxonomy of neurology, pain, and musculoskeletal conditions." },
-  { href: "/chiropractic/", title: "Chiropractic", desc: "SPINMED and Sigma systems for precise spinal alignment." },
-  { href: "/brain-stimulation/", title: "Brain Stimulation", desc: "TMS and tDCS for stroke, migraine, depression, tinnitus, and more." },
-  { href: "/physiotherapy/", title: "Physiotherapy", desc: "LUNA EMG robot, magnetic field, laser, ultrasound, and more." },
-  { href: "/surgery/", title: "Surgery", desc: "Vertebroplasty, endoscopic spine surgery, DBS, and beyond." },
-  { href: "/rehabilitation/", title: "Rehabilitation", desc: "Stroke recovery, speech therapy, occupational therapy, and nursing care." },
+  { href: "/services/chiropractic/", title: "Chiropractic", desc: "SPINMED and Sigma systems for precise spinal alignment." },
+  { href: "/services/brain-stimulation/", title: "Brain Stimulation", desc: "TMS and tDCS for stroke, migraine, depression, tinnitus, and more." },
+  { href: "/services/physiotherapy/", title: "Physiotherapy", desc: "LUNA EMG robot, magnetic field, laser, ultrasound, and more." },
+  { href: "/services/surgery/", title: "Surgery", desc: "Vertebroplasty, endoscopic spine surgery, DBS, and beyond." },
+  { href: "/services/rehabilitation/", title: "Rehabilitation", desc: "Stroke recovery, speech therapy, occupational therapy, and nursing care." },
 ];
 ---
 
@@ -82,7 +80,7 @@ const featured: Array<{ href: string; title: string; desc: string }> = [
         </header>
         <div class="doctor-grid">
           {doctors.map((d) => (
-            <a class="doctor-card card" href={`/doctors/${d.id.split("/").pop()}/`}>
+            <a class="doctor-card card" href={`/doctors/${d.id}/`}>
               <h3>{d.data.fullName || d.data.title}</h3>
               {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}
               {d.data.titles.length > 0 && (

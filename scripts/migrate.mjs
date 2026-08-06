@@ -43,11 +43,11 @@ const ONLY_LOCALE = args.locale;      // "en" | "ar" | undefined
 const LIMIT = args.limit ? parseInt(args.limit, 10) : Infinity;
 
 // -----------------------------------------------------------------------------
-// Locale + source config
+// Source config — English only. If Arabic is added back later, uncomment the
+// ar.alimranmed.com entry AND restore locale-scoped folders under src/content.
 // -----------------------------------------------------------------------------
 const SOURCES = [
   { locale: "en", host: "https://alimranmed.com" },
-  { locale: "ar", host: "https://ar.alimranmed.com" },
 ].filter((s) => !ONLY_LOCALE || s.locale === ONLY_LOCALE);
 
 // -----------------------------------------------------------------------------
@@ -93,10 +93,17 @@ const td = new TurndownService({
   emDelimiter: "*",
   strongDelimiter: "**",
 });
-// Preserve <figure><img></figure> as plain images. Strip WP's Lyte YouTube wrappers.
-td.addRule("lyte-strip", {
+// Preserve WP-YouTube-Lyte embeds as YouTube links. The video ID lives in the
+// child element's id attribute prefixed WYL_ (e.g. id="WYL_m53F8E6VKFA").
+td.addRule("lyte-youtube", {
   filter: (node) => node.classList && node.classList.contains("lyte-wrapper"),
-  replacement: () => "",
+  replacement: (_content, node) => {
+    const html = node.outerHTML || "";
+    const m = html.match(/WYL_([A-Za-z0-9_-]+)/);
+    if (!m) return "";
+    const id = m[1];
+    return `\n\n[▶ Watch on YouTube](https://www.youtube.com/watch?v=${id})\n\n`;
+  },
 });
 td.addRule("figure-image", {
   filter: "figure",
@@ -117,11 +124,10 @@ function htmlToMarkdown(html) {
 // -----------------------------------------------------------------------------
 // Frontmatter
 // -----------------------------------------------------------------------------
-function buildFrontmatter({ title, description, locale, category, legacyUrl, publishedAt, order = 999 }) {
+function buildFrontmatter({ title, description, category, legacyUrl, publishedAt, order = 999 }) {
   const lines = ["---"];
   lines.push(`title: ${JSON.stringify(title)}`);
   if (description) lines.push(`description: ${JSON.stringify(description)}`);
-  lines.push(`locale: "${locale}"`);
   if (category) lines.push(`category: "${category}"`);
   lines.push(`order: ${order}`);
   if (legacyUrl) lines.push(`legacyUrl: ${JSON.stringify(legacyUrl)}`);
@@ -177,10 +183,10 @@ async function fetchAll(host, type) {
 // -----------------------------------------------------------------------------
 // Output path resolution
 // -----------------------------------------------------------------------------
-function outPath({ collection, category, slug, locale }) {
+function outPath({ collection, category, slug }) {
   // services are grouped by category subfolder (chiropractic/spinmed.md, etc.)
   // for readability. Other collections are flat.
-  const parts = [CONTENT_ROOT, collection, locale];
+  const parts = [CONTENT_ROOT, collection];
   if (collection === "services" && category) parts.push(category);
   parts.push(`${slug}.md`);
   return path.join(...parts);
@@ -218,27 +224,27 @@ async function run() {
         }
         cleanSlug = cleanSlug.replace(/(?:﻿|%ef%bb%bf)$/i, "");
 
-        // Filter obvious noise: 1-char slugs, "test", "hello-world", numeric-only stubs
+        // Filter obvious WP noise. Log what we're dropping so we can eyeball
+        // the list and confirm we're not losing real content.
         if (/^(test|hello-world|\d+(?:-\d+)?)$/i.test(cleanSlug) || cleanSlug.length < 2) {
+          console.log(`  ~ skip (noise slug): ${cleanSlug}`);
           skipped++;
           continue;
         }
 
-        // EN slugs correlate with navigation.ts; AR slugs don't (separate WP
-        // install, no cross-lang mapping). For AR, everything drops into
-        // the pages collection to be re-slotted later.
-        const nav = locale === "en" ? slugIndex.get(cleanSlug) : undefined;
+        const nav = slugIndex.get(cleanSlug);
         const mapping = nav ?? {
           collection: type === "posts" ? "posts" : "pages",
           category: undefined,
           newHref: `/${cleanSlug}/`,
         };
-        if (!nav && locale === "en") unknownSlugs++;
+        if (!nav) unknownSlugs++;
 
         const html = entry.content?.rendered || "";
         const title = decodeEntities(entry.title?.rendered || cleanSlug);
         const md = htmlToMarkdown(html);
         if (!md.trim()) {
+          console.log(`  ~ skip (empty content): ${cleanSlug}`);
           skipped++;
           continue;
         }
@@ -250,7 +256,6 @@ async function run() {
         const front = buildFrontmatter({
           title,
           description,
-          locale,
           category: mapping.category,
           legacyUrl: entry.link,
           publishedAt: type === "posts" ? entry.date : undefined,
@@ -260,7 +265,6 @@ async function run() {
           collection: mapping.collection,
           category: mapping.category,
           slug: cleanSlug,
-          locale,
         });
 
         if (DRY) {

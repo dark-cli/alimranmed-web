@@ -2,24 +2,25 @@ import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
 // Shared frontmatter used by page-like content collections. Every entry is
-// keyed by its slug (URL path segment); `locale` picks which language folder
-// the file lives in (en/ or ar/).
+// keyed by its slug (URL path segment).
 const pageBase = z.object({
   title: z.string(),
   description: z.string().optional(),
-  locale: z.enum(["en", "ar"]),
   category: z.string().optional(),   // grouping within a collection (e.g., "spine" under treatments)
   order: z.number().default(999),    // display order within a category/menu
   image: z.string().optional(),      // hero image path
   imageAlt: z.string().optional(),
   updated: z.coerce.date().optional(),
   legacyUrl: z.string().optional(),  // original URL on alimranmed.com, for migration bookkeeping
+  // `locale` retained as optional so freshly migrated files with locale: "en"
+  // don't fail parsing; new code ignores it.
+  locale: z.string().optional(),
 });
 
 const treatments = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/treatments" }),
   schema: pageBase.extend({
-    bodyRegion: z.string().optional(), // spine, brain, motor, pediatric, pain, etc.
+    bodyRegion: z.string().optional(),
   }),
 });
 
@@ -32,7 +33,7 @@ const doctors = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/doctors" }),
   schema: pageBase.extend({
     fullName: z.string(),
-    titles: z.array(z.string()).default([]),        // MBChB, FIBMS, etc.
+    titles: z.array(z.string()).default([]),
     specialty: z.string().optional(),
     photo: z.string().optional(),
     memberships: z.array(z.string()).default([]),

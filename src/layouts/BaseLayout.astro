@@ -10,13 +10,11 @@ interface Props {
 }
 
 const { title, description, image } = Astro.props;
-const locale = (Astro.currentLocale ?? "en") as "en" | "ar";
-const dir = locale === "ar" ? "rtl" : "ltr";
 ---
 
-<html lang={locale} dir={dir}>
+<html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={image} locale={locale} />
+    <BaseHead title={title} description={description} image={image} />
   </head>
   <body>
     <Header />
