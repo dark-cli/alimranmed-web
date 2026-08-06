@@ -159,39 +159,39 @@ const isActive = (href: string) =>
     });
 
     // ── Swipe gestures ──────────────────────────────────────────
-    // Open:  swipe left starting within 24px of the right edge.
-    // Close: swipe right anywhere on the open drawer.
-    var startX = 0, startY = 0, mode = null;
-    var EDGE = 24;      // px from right edge to arm open-swipe
-    var THRESHOLD = 40; // px horizontal travel to trigger
+    // Open:  swipe LEFT anywhere on the page (from the right half).
+    // Close: swipe RIGHT anywhere (usually from the drawer).
+    // Any horizontal swipe of ≥50px that's mostly horizontal counts.
+    // The right-half start requirement stops accidental opens while
+    // reading text on the left side of a page.
+    var startX = 0, startY = 0, tracking = false;
+    var THRESHOLD = 50;
 
     document.addEventListener("touchstart", function (e) {
-      if (e.touches.length !== 1) { mode = null; return; }
+      if (e.touches.length !== 1) { tracking = false; return; }
       var t = e.touches[0];
       startX = t.clientX;
       startY = t.clientY;
-
-      if (isOpen() && nav.contains(e.target)) {
-        mode = "close";
-      } else if (!isOpen() && startX > window.innerWidth - EDGE) {
-        mode = "open";
-      } else {
-        mode = null;
-      }
+      tracking = true;
     }, { passive: true });
 
     document.addEventListener("touchend", function (e) {
-      if (!mode) return;
+      if (!tracking) return;
+      tracking = false;
       var t = (e.changedTouches && e.changedTouches[0]);
-      if (!t) { mode = null; return; }
+      if (!t) return;
       var dx = t.clientX - startX;
       var dy = t.clientY - startY;
-      var wasMode = mode;
-      mode = null;
-      // Ignore mostly-vertical or too-short swipes
-      if (Math.abs(dx) < THRESHOLD || Math.abs(dy) > Math.abs(dx)) return;
-      if (wasMode === "open"  && dx < -THRESHOLD) setOpen(true);
-      if (wasMode === "close" && dx >  THRESHOLD) setOpen(false);
+      // Reject too-short or too-vertical swipes
+      if (Math.abs(dx) < THRESHOLD || Math.abs(dy) > Math.abs(dx) * 0.7) return;
+
+      if (dx < 0 && !isOpen() && startX > window.innerWidth * 0.5) {
+        // Swipe LEFT from the right half of the screen → open
+        setOpen(true);
+      } else if (dx > 0 && isOpen()) {
+        // Swipe RIGHT while open → close (from anywhere)
+        setOpen(false);
+      }
     }, { passive: true });
   })();
 </script>
