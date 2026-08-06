@@ -3,6 +3,10 @@
    self-hosting when the portal integration is added). */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
 
+/* Font Awesome (self-hosted via node_modules — Astro's Vite pipeline bundles
+   the webfonts alongside the CSS, so nothing hits an external CDN). */
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 :root {
   /* Medical palette — trust, calm, clinical */
   --brand:       #0f6d8f;   /* deep teal-blue, primary */

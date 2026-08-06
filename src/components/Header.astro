@@ -44,10 +44,7 @@ const isActive = (href: string) =>
         <div class="drawer-head">
           <span class="drawer-title">Menu</span>
           <button id="nav-close" class="drawer-close" aria-label="Close menu" type="button">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <line x1="6"  y1="6"  x2="18" y2="18" />
-              <line x1="18" y1="6"  x2="6"  y2="18" />
-            </svg>
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
         </div>
         <ul class="nav-list" role="menubar">
@@ -103,17 +100,10 @@ const isActive = (href: string) =>
         <ThemeToggle />
         <MenuIcon class="burger">
           <OpenIcon>
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <line x1="4" y1="7"  x2="20" y2="7"  />
-              <line x1="4" y1="12" x2="20" y2="12" />
-              <line x1="4" y1="17" x2="20" y2="17" />
-            </svg>
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
           </OpenIcon>
           <CloseIcon>
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <line x1="6"  y1="6"  x2="18" y2="18" />
-              <line x1="18" y1="6"  x2="6"  y2="18" />
-            </svg>
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           </CloseIcon>
         </MenuIcon>
       </div>
@@ -256,7 +246,8 @@ const isActive = (href: string) =>
     flex-shrink: 0;
   }
   :global(.burger:hover) { color: var(--brand); border-color: var(--brand); }
-  :global(.burger svg) { display: block; }
+  :global(.burger i) { font-size: 1.1rem; line-height: 1; }
+  .drawer-close i { font-size: 1.1rem; line-height: 1; }
 
   /* astro-navbar toggles `.hidden` on .astronav-open-icon and
      .astronav-close-icon to swap between the hamburger and X.
