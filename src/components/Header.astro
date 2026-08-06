@@ -132,7 +132,6 @@ const isActive = (href: string) =>
 <div id="menu-scrim" class="menu-scrim" aria-hidden="true"></div>
 
 <script is:inline>
-  // ~15 lines of vanilla drawer wiring. Same shape as kaleem-web.
   (function () {
     var toggle = document.getElementById("menu-toggle");
     var close  = document.getElementById("menu-close");
@@ -140,6 +139,7 @@ const isActive = (href: string) =>
     var scrim  = document.getElementById("menu-scrim");
     if (!toggle || !nav || !scrim) return;
 
+    function isOpen() { return nav.classList.contains("open"); }
     function setOpen(open) {
       nav.classList.toggle("open", open);
       scrim.classList.toggle("visible", open);
@@ -157,6 +157,42 @@ const isActive = (href: string) =>
     nav.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () { setOpen(false); });
     });
+
+    // ── Swipe gestures ──────────────────────────────────────────
+    // Open:  swipe left starting within 24px of the right edge.
+    // Close: swipe right anywhere on the open drawer.
+    var startX = 0, startY = 0, mode = null;
+    var EDGE = 24;      // px from right edge to arm open-swipe
+    var THRESHOLD = 40; // px horizontal travel to trigger
+
+    document.addEventListener("touchstart", function (e) {
+      if (e.touches.length !== 1) { mode = null; return; }
+      var t = e.touches[0];
+      startX = t.clientX;
+      startY = t.clientY;
+
+      if (isOpen() && nav.contains(e.target)) {
+        mode = "close";
+      } else if (!isOpen() && startX > window.innerWidth - EDGE) {
+        mode = "open";
+      } else {
+        mode = null;
+      }
+    }, { passive: true });
+
+    document.addEventListener("touchend", function (e) {
+      if (!mode) return;
+      var t = (e.changedTouches && e.changedTouches[0]);
+      if (!t) { mode = null; return; }
+      var dx = t.clientX - startX;
+      var dy = t.clientY - startY;
+      var wasMode = mode;
+      mode = null;
+      // Ignore mostly-vertical or too-short swipes
+      if (Math.abs(dx) < THRESHOLD || Math.abs(dy) > Math.abs(dx)) return;
+      if (wasMode === "open"  && dx < -THRESHOLD) setOpen(true);
+      if (wasMode === "close" && dx >  THRESHOLD) setOpen(false);
+    }, { passive: true });
   })();
 </script>
 
@@ -305,10 +341,12 @@ const isActive = (href: string) =>
   .mega-col a:hover { color: var(--brand); }
 
   /* ==================================================== MOBILE DRAWER */
+  /* Same footprint as kaleem-web: 65% viewport width, capped at 400px. */
   .mobile-nav {
     position: fixed;
     top: 0; right: 0; bottom: 0;
-    width: min(88vw, 360px);
+    width: 65%;
+    max-width: 400px;
     background: var(--surface);
     border-left: 1px solid var(--border);
     box-shadow: -8px 0 20px rgba(0, 0, 0, 0.08);
