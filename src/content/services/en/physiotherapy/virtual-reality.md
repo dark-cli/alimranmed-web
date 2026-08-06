@@ -1,0 +1,14 @@
+---
+title: "Virtual Reality"
+description: "The use of virtual reality (VR) has dated back to the 1990s where the effects were studied in athlete’s performance."
+locale: "en"
+category: "physiotherapy"
+order: 999
+legacyUrl: "https://alimranmed.com/2020/06/08/virtual-reality/"
+publishedAt: "2020-06-08T15:53:33"
+---
+The use of virtual reality (VR) has dated back to the 1990s where the effects were studied in athlete’s performance. VR is a computer-based intervention providing patients with a virtual interactive and applicable treatment setting for skills practice with real-time feedback. This intervention incorporates many therapeutic motor learning rehabilitation principles that have shown to be most effective for skill retention in patients affected by stroke. In addition, the technology provides diverse applications that can be tailored to the patient. The concept of VR is based on the neuroscience evidence of brain neuroplasticity following injury. VR systems are shown to provide widespread cortical activation, which is important in promoting neuroplastic changes and thus functional improvement following stroke. There are millions of people affected by stroke worldwide and therefore encouraging research into the most effective treatment methods is important. The use of VR in rehabilitation is still being studied as it is a new concept recently introduced to the rehabilitation setting. There are several systematic reviews that demonstrate the potential benefits VR systems may provide for patients, however more research is required to provide a higher quality of evidence and direction with specific interventions.
+
+## **Application in Physiotherapy**
+
+As this technology is relatively new within the field of physiotherapy, the techniques and application of VR vary greatly. To create a VR environment, a computer with a unique graphics system is required. The software and hardware components of the device can be programmed to create the virtual environment and provide simulation/ feedback to subjects. Before implementing or incorporating VR within rehabilitation, a therapist must choose which type of VR they want to use with their patients. The two types most commonly used in rehabilitation are immersive and non-immersive. The immersive style of VR, typically delivered through a head-mounted device, creates a realistic environment for the user. However, one of the major side effects of this style of VR is the associated motion-like sickness, cyber-sickness, which can be very uncomfortable for the user and may alter their level of participation. The other type of VR is non-immersive. This branch of VR typically comes in the form of a video game device. These systems are more cost-effective, but do not create the same high level of engagement within the environment as the immersive systems. Many clinicians have begun testing the non-immersive tools within rehabilitation settings.

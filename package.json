@@ -11,6 +11,7 @@
     "typescript": "5.8.3"
   },
   "devDependencies": {
+    "turndown": "^7.2.4",
     "wrangler": "4.21.x"
   },
   "scripts": {
@@ -20,7 +21,11 @@
     "check": "astro build && tsc && wrangler deploy --dry-run",
     "deploy": "wrangler deploy",
     "dev": "astro dev",
-    "preview": "astro build && wrangler dev"
+    "preview": "astro build && wrangler dev",
+    "migrate": "node --experimental-strip-types --no-warnings scripts/migrate.mjs",
+    "migrate:dry": "node --experimental-strip-types --no-warnings scripts/migrate.mjs --dry-run --limit=5",
+    "media": "node --experimental-strip-types --no-warnings scripts/download-media.mjs",
+    "redirects": "node --experimental-strip-types --no-warnings scripts/generate-redirects.mjs"
   },
   "type": "module"
 }

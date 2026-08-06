@@ -1,0 +1,8 @@
+---
+title: "OUR VISION"
+description: "We will provide high quality, compassionate, and affordable health care to communities we serve; we will help to further the"
+locale: "en"
+order: 999
+legacyUrl: "https://alimranmed.com/our-vision/"
+---
+We will provide high quality, compassionate, and affordable health care to communities we serve; we will help to further the knowledge in the practice of neurosurgery, spine and pain management.

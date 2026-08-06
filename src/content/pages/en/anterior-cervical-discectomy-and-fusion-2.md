@@ -1,0 +1,14 @@
+---
+title: "Anterior Cervical Discectomy and Fusion"
+description: "What is an anterior cervical discectomy and fusion? Anterior Cervical Discectomy and Fusion is a procedure that uses an operating"
+locale: "en"
+order: 999
+legacyUrl: "https://alimranmed.com/anterior-cervical-discectomy-and-fusion-2/"
+---
+**What is an anterior cervical discectomy and fusion?**
+
+Anterior Cervical Discectomy and Fusion is a procedure that uses an operating microscope to remove a herniated disc that is causing pressure on a cervical nerve root or the spinal cord. The magnification provided by the microscope enables the neurosurgeon to make a small incision in the skin of the neck to perform the discectomy.
+
+**Description of the surgery:**
+
+Before surgery, intravenous antibiotics are administered to decrease the risk of infection. You will be anesthetized (put to sleep) while lying on your back following which your head will be placed in special head-holder for the surgery. The surgery is performed through a small incision on either the right or left side of the neck over the diseased disc or discs. The surgical dissection continues down to the cervical spine by gently retracting the large artery in the neck (carotid artery) to one side, while retracting the swallowing tube (esophagus) and breathing tube (trachea) to the other side. The diseased disc level(s) is/are confirmed with an x-ray. The microscope is then used for the rest of the operation. Careful micro-dissection allows the disc to be removed. After the disc is removed, the neurosurgeon can see and remove the bone spurs pressing on the nerve or spinal cord. The area is then inspected to confirm that there are no other disc fragments pressing on the nerve or spinal cord. The wound is irrigated with antibiotic solution to decrease the likelihood of infection. A bone graft (usually from the bone bank) or a PEEK spacer and autograft bone is then placed in the discectomy site. Often, a titanium cervical plate will be positioned in front of the spine using screws into the vertebral bodies above and below the discectomy to maintain spinal alignment. Absorbable stitches are used under the skin to close the incision. Stitches or a special “skin glue,” are used on the skin layer. A sterile dressing is placed over the incision. A hard cervical collar or a soft cervical collar may need to be worn after surgery. If needed, it will be placed on your neck at the end of the operation. The breathing tube is removed (extubated) and then you will be taken to the recovery room.

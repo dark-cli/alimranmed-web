@@ -1,26 +1,27 @@
 ---
 title: "Sigma"
+description: "We help people feel better, by resetting the spine and nerves of the body using a computerized medical device that"
 locale: "en"
 category: "chiropractic"
-order: 2
+order: 999
 legacyUrl: "https://alimranmed.com/sigma/"
-description: "Computer-guided shockwave therapy for spinal and skeletal realignment."
 ---
+![](/images/legacy/2019/07/Sigma-7R-768x511-300x200.jpg)
 
-## Overview
+We help people feel better, by resetting the spine and nerves of the body using a computerized medical device that eliminates the traditional guesswork of chiropractic.
 
-Sigma is a computerized medical device used at Alimran Medical Center for spinal and skeletal realignment. The technology employs regular shock waves to the muscular receptors to restore the function of the joint normally.
+Sigma resets the joints and skeletons with absolute precision.
 
-## How It Works
+Is a sophisticated and modern device of physical therapy based on the transmission of regular shock waves to the muscular receptors to restore the function of the joint normally.
 
-The device operates through computer-guided precision treatment. A qualified therapist applies the technology based on the specific area requiring care, with diagnostic and treatment visualizations displayed on the device's computer system during each session.
+It also reorganizes muscle fiber and stimulates the pathway through which it passes
 
-## Key Benefits
+It is managed safely by the competent therapist according to the place to be treated and the results are shown through the drawings of his drawings on the computer on which the patient is diagnosed and treated at the same time.
 
-Sigma addresses several conditions:
+What are its practical benefits?
 
-- Pain reduction in muscles and joints
-- Treatment of muscle spasms and fibrosis
-- Enhanced nerve receptor function
-- Increased muscular strength
-- Expanded joint mobility range
+1\. Reduces muscle and joint pain  
+2\. Treatment of muscle spasms and muscle fibrosis  
+3\. Improves nerve receptors  
+4\. Increases muscle strength  
+5\. Increases the area of ​​the joint movement

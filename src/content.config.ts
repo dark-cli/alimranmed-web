@@ -12,7 +12,7 @@ const pageBase = z.object({
   order: z.number().default(999),    // display order within a category/menu
   image: z.string().optional(),      // hero image path
   imageAlt: z.string().optional(),
-  updated: z.date().optional(),
+  updated: z.coerce.date().optional(),
   legacyUrl: z.string().optional(),  // original URL on alimranmed.com, for migration bookkeeping
 });
 
@@ -44,7 +44,7 @@ const posts = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/posts" }),
   schema: pageBase.extend({
     author: z.string().optional(),
-    publishedAt: z.date().optional(),
+    publishedAt: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
   }),
 });

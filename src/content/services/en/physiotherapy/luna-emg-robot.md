@@ -1,31 +1,38 @@
 ---
-title: "LUNA EMG Robot"
+title: "LUNA EMG ROBOT"
+description: "LUNA EMG روبوت Luna EMG هو ثورة في إعادة التأهيل العصبي وعلاج العظام. يستخدم Luna EMG تخطيط كهربية العضل التفاعلي"
 locale: "en"
 category: "physiotherapy"
-order: 1
+order: 999
 legacyUrl: "https://alimranmed.com/luna-emg-robot/"
-description: "Interactive electromyography-guided robotic neurorehabilitation."
 ---
+##### LUNA EMG روبوت
 
-## Overview
+##### Luna EMG هو ثورة في إعادة التأهيل العصبي وعلاج العظام. يستخدم Luna EMG تخطيط كهربية العضل التفاعلي لتدريب القشرة الحسية الحركية. حركة المريض نشطة – بناءً على الإشارات الكهربائية الحيوية (EMG) المكتسبة من عضلات المريض. إنه فعال بشكل خاص مع مرضى الضعف الإكلينيكي ، مما يسمح بتوظيف المزيد من الوحدات الحركية أثناء تنشيط العضلات. بفضل برامج التدريب الشخصية والتلقائية من Luna ، ينخرط مرضاك ، وتقوم بعمل بدني أقل. يقدم Luna EMG حلاً شاملاً للعلاج الحركي مع مجموعة كبيرة من الامتدادات القابلة للتبديل. حيث يسهل تحريكه يمكنك استخدامه في غرفة المريض. مع المخطط الكهربائي للعضلات المكون من 6 قنوات ، ومستشعر عزم الدوران المتكامل وقياسات الموضع ، ستتيح لك Luna تقديم متخصص ،
 
-LUNA EMG is an advancement in neurorehabilitation. The device uses interactive electromyography to train sensorimotor cortex function. Patient movements are active and based on bioelectrical signals captured from their muscles. The system features a 6-channel EMG setup, integrated torque sensor, and position measurements.
+**المؤشرات الرئيسية هي:**
 
-## Primary Treatment Goals
+زيادة قوة العضلات
 
-- Increased muscle strength
-- Expanded range of motion
-- Enhanced coordination
+زيادة نطاق الحركة
 
-## Recommended Patient Populations
+زيادة التنسيق
 
-LUNA EMG therapy is particularly suited for patients with:
+**هذا يعني أنها مفيدة بشكل خاص مع المرضى التاليين:**  
+السكتات الدماغية
 
-- Stroke recovery
-- Incomplete spinal cord injuries
-- Multiple sclerosis
-- ALS and muscular dystrophy
-- Cerebral palsy
-- Post-surgical rehabilitation
-- Pelvic floor dysfunction
-- Various partial neurological disorders
+إصابات الحبل الشوكي غير المكتملة
+
+السنسنة المشقوقة
+
+تصلب متعدد
+
+ضمور العضلات الشوكي ALS Duchenne
+
+أي اضطرابات عصبية تعصبية جزئية
+
+قاع الحوض (سلس البول)
+
+تكوينات العظام
+
+التعافي بعد الجراحة والمزيد …
