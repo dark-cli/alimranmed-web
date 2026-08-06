@@ -5,26 +5,26 @@ order: 999
 legacyUrl: "https://alimranmed.com/interventional-pain-management/"
 category: "pain-management"
 ---
-[Adhesiolysis](http://alimranmed.com/adhesiolysis/)
+[Adhesiolysis](/services/steroid-injection/adhesiolysis/)
 
-[Botox injection](http://alimranmed.com/botox-injection/)
+[Botox injection](/services/botox/botox-injection/)
 
-[Epidural steroid injection](http://alimranmed.com/epidural-steroid-injection/)
+[Epidural steroid injection](/services/steroid-injection/epidural-steroid-injection/)
 
-[Facet Joint pain syndrome](http://alimranmed.com/facet-joint-pain-syndrome/)
+[Facet Joint pain syndrome](/treatments/facet-joint-pain-syndrome/)
 
-[Gasserian ganglion block](http://alimranmed.com/gasserian-ganglion-block/)
+[Gasserian ganglion block](/services/steroid-injection/gasserian-ganglion-block/)
 
-[INTERVENTIONAL PAIN MANAGEMENT](http://alimranmed.com/interventional-pain-management-2/)
+[INTERVENTIONAL PAIN MANAGEMENT](/services/pain-management/interventional-pain-management/)
 
-[ozone](http://alimranmed.com/ozone/)
+[ozone](/services/ozone-therapy/)
 
-[prolotherapy](http://alimranmed.com/prolotherapy/)
+[prolotherapy](/services/regenerative-medicine/prolotherapy/)
 
-[prolotherapy](http://alimranmed.com/prolotherapy/)
+[prolotherapy](/services/regenerative-medicine/prolotherapy/)
 
-[Radiofrequency neuroblation](http://alimranmed.com/radiofrequency-neuroblation/)
+[Radiofrequency neuroblation](/services/radiofrequency/radiofrequency-neuroblation/)
 
-[Radiofrequency](http://alimranmed.com/radiofrequency/)
+[Radiofrequency](/services/radiofrequency/radiofrequency/)
 
-[Sympathetic nerve block](http://alimranmed.com/sympathetic-nerve-block/)
+[Sympathetic nerve block](/services/steroid-injection/sympathetic-nerve-block/)

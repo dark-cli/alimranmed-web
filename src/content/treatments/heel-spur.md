@@ -32,18 +32,18 @@ The above measures provide only temporary relief. Heel spurs can also be treated
 
 In Alimran Center we recommend the following treatments:
 
-For [physical therapy (physical therapy)](http://alimranmed.com/physiotherapy-3/)
+For [physical therapy (physical therapy)](/services/physiotherapy/)
 
-1.  [Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)  
-    [Long and short wave therapy](http://alimranmed.com/shortwave-therapy/)  
-    [Cold lasers](http://alimranmed.com/laser-therapy-3/)  
-    [Ultrasound treatment (sonar)](http://alimranmed.com/ultrasound-therapy-2/)  
+1.  [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)  
+    [Long and short wave therapy](/services/physiotherapy/shortwave-therapy/)  
+    [Cold lasers](/services/physiotherapy/laser-therapy/)  
+    [Ultrasound treatment (sonar)](/services/physiotherapy/ultrasound-therapy/)  
     Gymnastics  
-    [Sigma](http://alimranmed.com/sigma/)
+    [Sigma](/services/chiropractic/sigma/)
 2.  Steroid injection
-3.  [Ozone treatment](http://alimranmed.com/2020/05/10/review-of-ozone-therapy/)
-4.  [Pulsed radiofrequency treatment](http://alimranmed.com/2020/04/28/radiofrequency-ablation-review/)
-5.  [Botox injection therapy](http://alimranmed.com/botox/)
-6.  [Acupuncture](http://alimranmed.com/acupuncture/)
-7.  [Prolotherapy injection](http://alimranmed.com/2020/05/07/regenerative-medicine/)
+3.  [Ozone treatment](/services/ozone-therapy/review/)
+4.  [Pulsed radiofrequency treatment](/services/radiofrequency/review/)
+5.  [Botox injection therapy](/services/botox/)
+6.  [Acupuncture](/services/acupuncture/)
+7.  [Prolotherapy injection](/services/regenerative-medicine/)
 8.  Orthopedic surgery is very effective as this device corrects the foot to its natural position

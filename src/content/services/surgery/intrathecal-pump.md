@@ -15,13 +15,13 @@ The reservoir (or chamber) is implanted under the skin of the abdomen or back, a
 WHICH CONDITIONS CAN BE TREATED USING AN INTRATHECAL PUMP?
 
 1.  Chronic pain conditions
-    -   [Complex regional pain syndrome (neuropathic pain)](http://alimranmed.com/complex-regional-pain/)
-    -   [Multiple sclerosis pain](http://alimranmed.com/multiple-sclerosis/)
+    -   [Complex regional pain syndrome (neuropathic pain)](/treatments/complex-regional-pain/)
+    -   [Multiple sclerosis pain](/treatments/multiple-sclerosis/)
     -   Failed back surgery pain
 2.  Cancer-related pain
 3.  Spasticity
-    -   [Cerebral palsy](http://alimranmed.com/craniosynostosis/)
-    -   [Brain injury](http://alimranmed.com/brain/)
+    -   [Cerebral palsy](/treatments/craniosynostosis/)
+    -   [Brain injury](/treatments/brain/)
 
 WHAT ARE THE REASONS FOR SURGERY?
 

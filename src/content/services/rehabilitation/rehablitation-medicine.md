@@ -5,24 +5,24 @@ category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/rehablitation-medicine/"
 ---
-[Bladder Rehabilitation](http://alimranmed.com/bladder-rehabilitation/)
+[Bladder Rehabilitation](/services/rehabilitation/bladder-rehabilitation/)
 
-[Neuroplasticity and CNS Reorganization](http://alimranmed.com/2020/06/08/neuroplasticity-and-cns-reorganization/)
+[Neuroplasticity and CNS Reorganization](/services/rehabilitation/neuroplasticity/)
 
-[Bed sore](http://alimranmed.com/bed-sore/)
+[Bed sore](/services/rehabilitation/bed-sore/)
 
-[Nursing care](http://alimranmed.com/nursing-care/)
+[Nursing care](/services/rehabilitation/nursing-care/)
 
-[Spinal cord Rehabilitation](http://alimranmed.com/spinal-cord-rehabilitation/)
+[Spinal cord Rehabilitation](/services/rehabilitation/spinal-cord-rehabilitation/)
 
-[Speech therapy](http://alimranmed.com/speech-therapy/)
+[Speech therapy](/services/rehabilitation/speech-therapy/)
 
-[Stroke recovery](http://alimranmed.com/stroke-recovery/)
+[Stroke recovery](/services/rehabilitation/stroke-recovery/)
 
-[Psychological Intervention](http://alimranmed.com/psychological-intervention/)
+[Psychological Intervention](/services/rehabilitation/psychological-intervention/)
 
-[nutritional therapy](http://alimranmed.com/nutritional-therapy/)
+[nutritional therapy](/services/rehabilitation/nutritional-therapy/)
 
-[Rehabilitation Consists](http://alimranmed.com/rehabilitation-consists/)
+[Rehabilitation Consists](/services/rehabilitation/rehabilitation-consists/)
 
-[Occupational Therapy](http://alimranmed.com/occupational-therapy/)
+[Occupational Therapy](/services/rehabilitation/occupational-therapy/)

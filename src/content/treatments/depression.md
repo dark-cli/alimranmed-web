@@ -64,6 +64,6 @@ Medications and psychotherapy are effective for most people with depression. At 
 
 **Neurons stimulation**
 
-[Repetitive Transcranial Magnetic Stimulation, rTMS](http://alimranmed.com/rtms/)
+[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
 
-[Transcranial direct current stimulation (tDCS)](http://alimranmed.com/tdcs)
+[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)

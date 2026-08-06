@@ -46,6 +46,6 @@ At Alimran Medical Center, we may recommend any of the following treatments
 
 **Neurons stimulation**
 
-[Repetitive Transcranial Magnetic Stimulation, rTMS](http://alimranmed.com/rtms/)
+[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
 
-[Transcranial direct current stimulation (tDCS)](http://alimranmed.com/tdcs)
+[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)

@@ -15,18 +15,18 @@ How is Complex Regional Pain Syndrome Treated**?**
 
 There is no cure for complex regional pain syndrome, but there are many treatments available that can help patients manage their pain and return to the activities that they love. At Alimran Medical Center, we may recommend any of the following treatments for CRPS:
 
-[Physiotherapy](http://alimranmed.com/physiotherapy-3/)
+[Physiotherapy](/services/physiotherapy/)
 
--   [Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)
--   [Short and long wave](http://alimranmed.com/shortwave-therapy/)
--   [Laser therapy](http://alimranmed.com/laser-therapy-3/)
--   [Ultrasonic therapy](http://alimranmed.com/ultrasound-therapy-2/)
--   [Exercises](http://alimranmed.com/exercises-2/)
+-   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
+-   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
+-   [Laser therapy](/services/physiotherapy/laser-therapy/)
+-   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
+-   [Exercises](/services/exercises/)
 
 Chiropractic
 
--   [SpineMED® system](http://alimranmed.com/spinmed/)
--   [Sigma](http://alimranmed.com/sigma/)
+-   [SpineMED® system](/services/chiropractic/spinmed/)
+-   [Sigma](/services/chiropractic/sigma/)
 
 Steroid injection
 
@@ -34,16 +34,16 @@ Steroid injection
 -   Stellate ganglion block
 -   Lumbar sympathetic block
 
-[Ozone injection](http://alimranmed.com/2020/05/17/ozone-therapy-for-osteoarthritis/)
+[Ozone injection](/services/ozone-therapy/osteoarthritis/)
 
-[Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
+[Pulsed radiofrequency](/services/radiofrequency/)
 
-[Botox® injections](http://alimranmed.com/botox/)
+[Botox® injections](/services/botox/)
 
-[Acupuncture](http://alimranmed.com/acupuncture/)
+[Acupuncture](/services/acupuncture/)
 
-[Prolotherapy](http://alimranmed.com/2020/05/07/regenerative-medicine/)
+[Prolotherapy](/services/regenerative-medicine/)
 
-[Spinal cord stimulation](http://alimranmed.com/spinal-cord-rehabilitation/)
+[Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 
 Intrathecal baclofen pump

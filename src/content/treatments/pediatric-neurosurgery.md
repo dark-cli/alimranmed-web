@@ -5,7 +5,7 @@ category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/pediatric-neurosurgery/"
 ---
--   [Pediatric Hydrocephalus](http://alimranmed.com/pediatric-hydrocephalus/)
--   [Tethered Spinal Cord](http://alimranmed.com/tethered-spinal-cord/)
--   [Craniosynostosis](http://alimranmed.com/craniosynostosis/)
--   [Cerebral Palsy](http://alimranmed.com/cerebral-palsy/)
+-   [Pediatric Hydrocephalus](/treatments/pediatric-hydrocephalus/)
+-   [Tethered Spinal Cord](/treatments/tethered-spinal-cord/)
+-   [Craniosynostosis](/treatments/craniosynostosis/)
+-   [Cerebral Palsy](/treatments/cerebral-palsy/)

@@ -13,7 +13,7 @@ With increasing age, most people face physical and emotional challenges that aff
 
 Personalized Physiotherapy to recover musculosketal function, from addressing Balance and Frailty to post injury or surgery management
 
-Cognitive Behavioural Therapy to address a range of common issues from delirium, dementia, depression to Alzheimer’s and [Parkinsons](http://alimranmed.com/parkinsons-disease/)
+Cognitive Behavioural Therapy to address a range of common issues from delirium, dementia, depression to Alzheimer’s and [Parkinsons](/treatments/parkinsons-disease/)
 
 Addressing Malnutrition through Diet and Nutrition Counselling
 

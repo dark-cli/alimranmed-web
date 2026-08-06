@@ -38,13 +38,13 @@ Protect the joint from further damage
 What does our clinic offer you in this field:
 
 Treating heat and cold according to the degree of joint damage and the severity of the impact  
-[Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/) to reduce joint inflammation  
+[Electrical stimulation](/services/physiotherapy/electrical-stimulation/) to reduce joint inflammation  
 Reducing muscle spasm  
 Strengthening bone and cartilage  
 By TENS or IFT  
-[Laser](http://alimranmed.com/laser-therapy-3/) and [ultrasound therapy](http://alimranmed.com/ultrasound-therapy-2/) to correct joint deformities in the early stages  
+[Laser](/services/physiotherapy/laser-therapy/) and [ultrasound therapy](/services/physiotherapy/ultrasound-therapy/) to correct joint deformities in the early stages  
 Other treatments (acupuncture as an alternative treatment for myofascial pain and nerve pressure at specific points)  
-Relaxation treatments with a special [tDCS](http://alimranmed.com/tdcs/) device that includes the passage of a very weak electrical current (micro) to reduce the nervous tension that occurs to a person with pain and improves rates and sleep  
+Relaxation treatments with a special [tDCS](/services/brain-stimulation/tdcs/) device that includes the passage of a very weak electrical current (micro) to reduce the nervous tension that occurs to a person with pain and improves rates and sleep  
 Cushions and prostheses use compression ligaments for the upper or lower limbs and devices to help the joint move normally. They have an effective and important role in reducing symptoms and deformities of the joint.
 
 Exercises and divided into two parts

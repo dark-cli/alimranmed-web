@@ -11,12 +11,12 @@ Botox ®, also known as Botulinum Toxin Type A, is a protein produced by the bac
 
 Botox injections are generally used for people who are experiencing:
 
-[Headaches](http://alimranmed.com/headaches/)
+[Headaches](/treatments/headaches/)
 
-[Myofascial Pain](http://alimranmed.com/myofascial-pain/)
+[Myofascial Pain](/treatments/myofascial-pain/)
 
-[Fibromyalgia](http://alimranmed.com/fibromyalgia/)
+[Fibromyalgia](/treatments/fibromyalgia/)
 
-chronic low [back pain.](http://alimranmed.com/back-pain-2/)
+chronic low [back pain.](/treatments/back-pain/)
 
 Treated spasticity in stroke

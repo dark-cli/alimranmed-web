@@ -78,25 +78,25 @@ In some cases, your doctor may suggest injecting medications or other substances
 -   **Hyaluronic acid.**A thick fluid, similar to the fluid that naturally lubricates joints, hyaluronic acid can be injected into your knee to improve mobility and ease pain. Although study results have been mixed about the effectiveness of this treatment, relief from one or a series of shots may last as long as six months.
 -   **Platelet-rich plasma (PRP).**PRP contains a concentration of many different growth factors that appear to reduce inflammation and promote healing. These types of injections tend to work better in people whose knee pain is caused by tendon tears, sprains or injury.
 
-[Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
+[Pulsed radiofrequency](/services/radiofrequency/)
 
-[Botox® injections](http://alimranmed.com/botox/)
+[Botox® injections](/services/botox/)
 
-[Acupuncture](http://alimranmed.com/acupuncture/)
+[Acupuncture](/services/acupuncture/)
 
-[Regenerative medicine treatment](http://alimranmed.com/2020/05/07/regenerative-medicine/) **(**[Prolotherapy](http://alimranmed.com/2020/05/07/regenerative-medicine/))
+[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
 
-[Ozone injection](http://alimranmed.com/review-of-ozone-therapy/)
+[Ozone injection](/services/ozone-therapy/review/)
 
-[Sigma](http://alimranmed.com/sigma/)
+[Sigma](/services/chiropractic/sigma/)
 
-[Physiotherapy](http://alimranmed.com/physiotherapy-3/)
+[Physiotherapy](/services/physiotherapy/)
 
--   [Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)
--   [Short and long wave](http://alimranmed.com/shortwave-therapy/)
--   [Laser therapy](http://alimranmed.com/laser-therapy-3/)
--   [Ultrasonic therapy](http://alimranmed.com/ultrasound-therapy-2/)
--   [Magnatic therapy](http://alimranmed.com/magnetic-field-therapy/)
--   [Exercises](http://alimranmed.com/exercises-2/)
+-   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
+-   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
+-   [Laser therapy](/services/physiotherapy/laser-therapy/)
+-   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
+-   [Magnatic therapy](/services/physiotherapy/magnetic-field-therapy/)
+-   [Exercises](/services/exercises/)
 
 Chiropractic

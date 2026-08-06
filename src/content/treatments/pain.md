@@ -5,34 +5,34 @@ category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/pain/"
 ---
-[Headaches](http://alimranmed.com/headaches/)
+[Headaches](/treatments/headaches/)
 
-[Migrain](http://alimranmed.com/migrain/) 
+[Migrain](/treatments/migraine/) 
 
-[Neck Pain](http://alimranmed.com/neck-pain) 
+[Neck Pain](/treatments/neck-pain/) 
 
-[Carpal Tunnel Syndrome](http://alimranmed.com/carpal-tunnel-syndrome/) 
+[Carpal Tunnel Syndrome](/treatments/carpal-tunnel-syndrome/) 
 
-[Frozen Shoulder](http://alimranmed.com/frozen-shoulder/) 
+[Frozen Shoulder](/treatments/frozen-shoulder/) 
 
-[Complex Regional Pain](http://alimranmed.com/complex-regional-pain/) 
+[Complex Regional Pain](/treatments/complex-regional-pain/) 
 
-[Back Pain](http://alimranmed.com/back-pain-2/) 
+[Back Pain](/treatments/back-pain/) 
 
-[Osteoporosis Pain](http://alimranmed.com/osteoporosis-pain/) 
+[Osteoporosis Pain](/treatments/osteoporosis-pain/) 
 
-[Arthritis of the Hip](http://alimranmed.com/arthritis-of-the-hip/) 
+[Arthritis of the Hip](/treatments/arthritis-of-the-hip/) 
 
-[Trigeminal Neuralgia](http://alimranmed.com/trigeminal-neuralgia/) 
+[Trigeminal Neuralgia](/treatments/trigeminal-neuralgia/) 
 
-[Sports Injuries](http://alimranmed.com/sports-injuries/) 
+[Sports Injuries](/treatments/sports-injuries/) 
 
-[Tennis Elbow](http://alimranmed.com/tennis-elbow/) 
+[Tennis Elbow](/treatments/tennis-elbow/) 
 
-[Fibromyalgia](http://alimranmed.com/fibromyalgia/) 
+[Fibromyalgia](/treatments/fibromyalgia/) 
 
-[Myofascial Pain](http://alimranmed.com/myofascial-pain/)
+[Myofascial Pain](/treatments/myofascial-pain/)
 
-[heel spur](http://alimranmed.com/heel-spur/)
+[heel spur](/treatments/heel-spur/)
 
-[Intercostal Neuralgia](http://alimranmed.com/intercostal-neuralgia/)
+[Intercostal Neuralgia](/treatments/intercostal-neuralgia/)

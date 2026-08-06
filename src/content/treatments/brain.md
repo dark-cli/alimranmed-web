@@ -5,20 +5,20 @@ category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/brain/"
 ---
-[Subdural Hematoma](http://alimranmed.com/subdural-hematoma/)
+[Subdural Hematoma](/treatments/subdural-hematoma/)
 
-[Normal Pressure Hydrocephalus](http://alimranmed.com/normal-pressure-hydrocephalus/)
+[Normal Pressure Hydrocephalus](/treatments/normal-pressure-hydrocephalus/)
 
-[Hemorrhagic Stroke](http://alimranmed.com/hemorrhagic-stroke/)
+[Hemorrhagic Stroke](/treatments/hemorrhagic-stroke/)
 
-[head injury](http://alimranmed.com/head-injury/)
+[head injury](/treatments/head-injury/)
 
-[Epilepsy & Seizures](http://alimranmed.com/epilepsy-seizures/)
+[Epilepsy & Seizures](/treatments/epilepsy-seizures/)
 
-[Cranial Gunshot Wounds](http://alimranmed.com/cranial-gunshot-wounds/)
+[Cranial Gunshot Wounds](/treatments/cranial-gunshot-wounds/)
 
-[Cerebrospinal Fluid Leaks](http://alimranmed.com/cerebrospinal-fluid-leaks/)
+[Cerebrospinal Fluid Leaks](/treatments/brain/)
 
-[Brain Tumor](http://alimranmed.com/brain-tumor/)
+[Brain Tumor](/treatments/brain-tumor/)
 
-[Brain Abscess](http://alimranmed.com/brain-abscess/)
+[Brain Abscess](/treatments/brain-abscess/)

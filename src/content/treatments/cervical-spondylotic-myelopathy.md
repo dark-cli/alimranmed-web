@@ -45,18 +45,18 @@ Cervical spondylotic myelopathy is caused by *spondylosis*, or age-related dege
 
 Non surgical treatment, At Alimran Medical Center, we may recommend any of the following treatments:
 
-[Physiotherapy](http://alimranmed.com/physiotherapy-3/)
+[Physiotherapy](/services/physiotherapy/)
 
--   [Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)
--   [Short and long wave](http://alimranmed.com/shortwave-therapy/)
--   [Laser therapy](http://alimranmed.com/laser-therapy-3/)
--   [Ultrasonic therapy](http://alimranmed.com/ultrasound-therapy-2/)
--   [Exercises](http://alimranmed.com/exercises-2/)
+-   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
+-   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
+-   [Laser therapy](/services/physiotherapy/laser-therapy/)
+-   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
+-   [Exercises](/services/exercises/)
 
 Chiropractic
 
--   [SpineMED® system](http://alimranmed.com/spinmed/)
--   [Sigma](http://alimranmed.com/sigma/)
+-   [SpineMED® system](/services/chiropractic/spinmed/)
+-   [Sigma](/services/chiropractic/sigma/)
 
 Steroid injection
 
@@ -66,11 +66,11 @@ Steroid injection
 
 Ozone injection
 
-[Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
+[Pulsed radiofrequency](/services/radiofrequency/)
 
-[Botox® injections](http://alimranmed.com/botox/)
+[Botox® injections](/services/botox/)
 
-[Acupuncture](http://alimranmed.com/acupuncture/)
+[Acupuncture](/services/acupuncture/)
 
 Prolotherapy
 

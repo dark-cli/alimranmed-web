@@ -5,6 +5,6 @@ category: "chiropractic"
 order: 999
 legacyUrl: "https://alimranmed.com/chiropractic/"
 ---
-[SPIN MED](http://alimranmed.com/spinmed/)
+[SPIN MED](/services/chiropractic/spinmed/)
 
-[SIGMA](http://alimranmed.com/sigma/)
+[SIGMA](/services/chiropractic/sigma/)

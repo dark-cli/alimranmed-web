@@ -30,28 +30,28 @@ In Alimran Center we recommend the following treatments:
 
 Physical therapy (physical therapy)
 
-[Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)  
-[Long and short wave therapy](http://alimranmed.com/shortwave-therapy/)  
-[Cold lasers](http://alimranmed.com/laser-therapy-3/)  
-[Ultrasound treatment (sonar)](http://alimranmed.com/ultrasound-therapy-2/)  
+[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)  
+[Long and short wave therapy](/services/physiotherapy/shortwave-therapy/)  
+[Cold lasers](/services/physiotherapy/laser-therapy/)  
+[Ultrasound treatment (sonar)](/services/physiotherapy/ultrasound-therapy/)  
 Gymnastics
 
 Chiropractic
 
-[SpineMED® system](http://alimranmed.com/spinmed/)  
-[Sigma](http://alimranmed.com/sigma/)
+[SpineMED® system](/services/chiropractic/spinmed/)  
+[Sigma](/services/chiropractic/sigma/)
 
-[Ozone](http://alimranmed.com/2020/05/10/review-of-ozone-therapy/)
+[Ozone](/services/ozone-therapy/review/)
 
- [radiofrequency treatment](http://alimranmed.com/2020/04/28/radiofrequency-ablation-review/)
+ [radiofrequency treatment](/services/radiofrequency/review/)
 
-[Botox injection](http://alimranmed.com/botox/)
+[Botox injection](/services/botox/)
 
-[Acupuncture](http://alimranmed.com/acupuncture/)
+[Acupuncture](/services/acupuncture/)
 
-[Prolotherapy](http://alimranmed.com/2020/05/07/regenerative-medicine/)
+[Prolotherapy](/services/regenerative-medicine/)
 
-[Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
 Spinal cord stimulation
 

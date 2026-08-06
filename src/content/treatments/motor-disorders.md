@@ -5,6 +5,6 @@ category: "motor"
 order: 999
 legacyUrl: "https://alimranmed.com/motor-disorders/"
 ---
-[Parkinson’s Disease](http://alimranmed.com/parkinsons-disease/)
+[Parkinson’s Disease](/treatments/parkinsons-disease/)
 
-[Hemifacial Spasm](http://alimranmed.com/hemifacial-spasm/)
+[Hemifacial Spasm](/treatments/hemifacial-spasm/)

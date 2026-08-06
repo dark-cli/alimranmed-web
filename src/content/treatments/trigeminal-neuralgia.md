@@ -29,28 +29,28 @@ Trigeminal neuralgia pain is classically described as “stabbing,” or electri
 
 At Alimran Medical Center, we may recommend any of the following treatments:
 
-[Physiotherapy](http://alimranmed.com/physiotherapy-3/)
+[Physiotherapy](/services/physiotherapy/)
 
--   [Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)
--   [Short and long wave](http://alimranmed.com/shortwave-therapy/)
--   [Laser therapy](http://alimranmed.com/laser-therapy-3/)
--   [Ultrasonic therapy](http://alimranmed.com/ultrasound-therapy-2/)
+-   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
+-   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
+-   [Laser therapy](/services/physiotherapy/laser-therapy/)
+-   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
 
 Chiropractic
 
--   [Sigma](http://alimranmed.com/sigma/)
+-   [Sigma](/services/chiropractic/sigma/)
 
 Steroid injection
 
-[Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
+[Pulsed radiofrequency](/services/radiofrequency/)
 
-[Botox® injections](http://alimranmed.com/botox/)
+[Botox® injections](/services/botox/)
 
-[Acupuncture](http://alimranmed.com/acupuncture/)
+[Acupuncture](/services/acupuncture/)
 
 Prolotherapy
 
-[Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
 **Surgical**  
 Percutaneous trigeminal radiofrequency rhizotomy, glycerol rhizotomy, balloon compression, or Gamma Knife radiosurgery are all good options. Neurostimulation techniques, such as trigeminal branch stimulation, high cervical spinal cord stimulation, and motor cortex stimulation, may be used when other treatment methods are ineffective.

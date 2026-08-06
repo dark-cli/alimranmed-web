@@ -80,31 +80,31 @@ Symptoms may linger even after the migraine has gone away. Patients with migrain
 
 There is no specific cure for migraine headaches. The goal is to treat your migraine symptoms right away, and to prevent symptoms by avoiding or changing your triggers. At Alimran Medical Center, we may recommend any of the following treatments
 
-[Physiotherapy](http://alimranmed.com/physiotherapy-3/)
+[Physiotherapy](/services/physiotherapy/)
 
--   [Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)
--   [Short and long wave](http://alimranmed.com/shortwave-therapy/)
--   [Laser therapy](http://alimranmed.com/laser-therapy-3/)
--   [Ultrasonic therapy](http://alimranmed.com/ultrasound-therapy-2/)
--   [Exercises](http://alimranmed.com/exercises-2/)
+-   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
+-   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
+-   [Laser therapy](/services/physiotherapy/laser-therapy/)
+-   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
+-   [Exercises](/services/exercises/)
 
 Chiropractic
 
--   [SpineMED® system](http://alimranmed.com/spinmed/)
--   [Sigma](http://alimranmed.com/sigma/)
+-   [SpineMED® system](/services/chiropractic/spinmed/)
+-   [Sigma](/services/chiropractic/sigma/)
 
 Steroid injection
 
 -   Trigger point injections
 
-[Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
+[Pulsed radiofrequency](/services/radiofrequency/)
 
-[Botox® injections](http://alimranmed.com/botox/)
+[Botox® injections](/services/botox/)
 
-[Acupuncture](http://alimranmed.com/acupuncture/)
+[Acupuncture](/services/acupuncture/)
 
-[Prolotherapy](http://alimranmed.com/2020/05/07/regenerative-medicine/)
+[Prolotherapy](/services/regenerative-medicine/)
 
-[Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=2HI355rV-YI)

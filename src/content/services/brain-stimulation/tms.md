@@ -24,14 +24,14 @@ Most importantly, TMS is well-tolerated by most patients with few side effects.
 
 TMS it is one of the latest therapeutic methods for the treatment of various diseases and neuropsychiatric disorders, among which are:
 
-1.  [Parkinson’s Disease](http://alimranmed.com/parkinsons-disease/)
+1.  [Parkinson’s Disease](/treatments/parkinsons-disease/)
 2.  Depression, fatigue, negative symptoms of schizophrenia, mental disorders, obsessive–compulsive and bipolar disorder
-3.  Beneficial for treating neuropathic pain of various origins, such as central pain, pain from peripheral nerve disorders, [fibromyalgia](http://alimranmed.com/fibromyalgia/), and [migraine](http://alimranmed.com/migrain/).  
+3.  Beneficial for treating neuropathic pain of various origins, such as central pain, pain from peripheral nerve disorders, [fibromyalgia](/treatments/fibromyalgia/), and [migraine](/treatments/migraine/).  
     4\. Addiction to smoking, alcohol or drugs.
 4.  Memory loss (Alzheimer’s disease) or frequent forgetfulness  
     6\. Generalized anxiety or panic disorder.
 5.  For tinnitus or auditory hallucinations.
-6.  Removement of paralyzed people and treatment of [stroke](http://alimranmed.com/hemorrhagic-stroke/) effects
+6.  Removement of paralyzed people and treatment of [stroke](/treatments/hemorrhagic-stroke/) effects
 7.  epilepsy
 
 ## **How long is an TMS procedure?**

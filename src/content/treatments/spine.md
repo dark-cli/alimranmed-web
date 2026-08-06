@@ -5,12 +5,12 @@ category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/spine/"
 ---
--   [Back pain](http://alimranmed.com/back-pain/)
--   [Cauda equina syndrome](http://alimranmed.com/cauda-equina-syndrome/)
--   [Cervical Spondylotic Myelopathy](http://alimranmed.com/cervical-spondylotic-myelopathy/)
--   [Compression Fracture](http://alimranmed.com/compression-fracture/)
--   [Herniated Disc (Cervical, Thoracic, Lumbar)](http://alimranmed.com/herniated-disc-cervical-thoracic-lumbar/)
--   [Spina Bifida](http://alimranmed.com/spina-bifida/)
--   [Spinal Cord Injury](http://alimranmed.com/spinal-cord-injury/)
--   [Spinal Trauma](http://alimranmed.com/spinal-trauma/)
--   [Syringomyelia (“Syrinx”)](http://alimranmed.com/syringomyelia-syrinx/)
+-   [Back pain](/treatments/back-pain/)
+-   [Cauda equina syndrome](/treatments/cauda-equina-syndrome/)
+-   [Cervical Spondylotic Myelopathy](/treatments/cervical-spondylotic-myelopathy/)
+-   [Compression Fracture](/treatments/compression-fracture/)
+-   [Herniated Disc (Cervical, Thoracic, Lumbar)](/treatments/herniated-disc/)
+-   [Spina Bifida](/treatments/spina-bifida/)
+-   [Spinal Cord Injury](/treatments/spinal-cord-injury/)
+-   [Spinal Trauma](/treatments/spinal-trauma/)
+-   [Syringomyelia (“Syrinx”)](/treatments/syringomyelia/)

@@ -24,7 +24,7 @@ Brain changes associated with Alzheimer’s disease lead to growing trouble with
     The main side effects of these drugs include diarrhea, nausea, loss of appetite and sleep disturbances. In people with certain heart disorders, serious side effects may include cardiac arrhythmia.  
     • Memantine (Namenda). This drug works in another brain cell communication network and slows the progression of symptoms with moderate to severe Alzheimer’s disease. It’s sometimes used in combination with a cholinesterase inhibitor. Relatively rare side effects include dizziness and confusion.
 
--   [Repetitive Transcranial Magnetic Stimulation (rTMS)](http://alimranmed.com/rtms/)  
+-   [Repetitive Transcranial Magnetic Stimulation (rTMS)](/services/brain-stimulation/tms/)  
     In preclinical studies in murine model of vascular dementia, rTMS was able to improve cognitive deficits by modified hippocampal synaptic plasticity and increased BDNF. Also low frequency rTMS may promote hippocampal synaptic plasticity through increased expression of the Bcl-2  
     and reduced expression of Bax in VaD model rats.  
     Moreover repetitive TMS might become useful in the rehabilitation of patients with dementia in the attempt to restore impaired brain plasticity.

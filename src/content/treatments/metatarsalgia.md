@@ -44,31 +44,31 @@ Almost anyone can develop metatarsalgia, but you’re at higher risk if you:
 
 At Alimran Medical Center, we may recommend any of the following treatments
 
-[Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
+[Pulsed radiofrequency](/services/radiofrequency/)
 
-[Botox® injections](http://alimranmed.com/botox/)
+[Botox® injections](/services/botox/)
 
-[Acupuncture](http://alimranmed.com/acupuncture/)
+[Acupuncture](/services/acupuncture/)
 
-[Regenerative medicine treatment](http://alimranmed.com/2020/05/07/regenerative-medicine/) **(**[Prolotherapy](http://alimranmed.com/2020/05/07/regenerative-medicine/))
+[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
 
-[Ozone injection](http://alimranmed.com/review-of-ozone-therapy/)
+[Ozone injection](/services/ozone-therapy/review/)
 
-[SpineMED® system](http://alimranmed.com/spinmed/)
+[SpineMED® system](/services/chiropractic/spinmed/)
 
-[Sigma](http://alimranmed.com/sigma/)
+[Sigma](/services/chiropractic/sigma/)
 
-[Steroid injection](http://alimranmed.com/steroid-injection/)
+[Steroid injection](/services/steroid-injection/)
 
--   [Trigger point injections](http://alimranmed.com/trigger-point-injections/)
+-   [Trigger point injections](/services/steroid-injection/trigger-point/)
 
-[Physiotherapy](http://alimranmed.com/physiotherapy-3/)
+[Physiotherapy](/services/physiotherapy/)
 
--   [Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)
--   [Short and long wave](http://alimranmed.com/shortwave-therapy/)
--   [Laser therapy](http://alimranmed.com/laser-therapy-3/)
--   [Ultrasonic therapy](http://alimranmed.com/ultrasound-therapy-2/)
--   [Magnatic therapy](http://alimranmed.com/magnetic-field-therapy/)
--   [Exercises](http://alimranmed.com/exercises-2/)
+-   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
+-   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
+-   [Laser therapy](/services/physiotherapy/laser-therapy/)
+-   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
+-   [Magnatic therapy](/services/physiotherapy/magnetic-field-therapy/)
+-   [Exercises](/services/exercises/)
 
 Chiropractic

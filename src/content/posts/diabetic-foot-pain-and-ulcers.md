@@ -26,12 +26,12 @@ The treatment of diabetic foot ulcers depends on the following therapeutic trian
 
 Regulating the cumulative blood sugar level  
 Treating infections with antibiotics and topical cleaning  
-[Physical therapy](http://alimranmed.com/physiotherapy-3/): It is a mas that we will talk about:
+[Physical therapy](/services/physiotherapy/): It is a mas that we will talk about:
 
 1.  Physical therapy is an indispensable supplement in the treatment of diabetic foot and its ulcers, including:
-2.  [Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/) (using specific waves of a certain intensity)  
-    [Ultrasound](http://alimranmed.com/ultrasound-therapy-2/) (as its ability to conduct heat deep into the tissue helps blood flow and contributes to wound healing.  
+2.  [Electrical stimulation](/services/physiotherapy/electrical-stimulation/) (using specific waves of a certain intensity)  
+    [Ultrasound](/services/physiotherapy/ultrasound-therapy/) (as its ability to conduct heat deep into the tissue helps blood flow and contributes to wound healing.  
     Infrared heat
-3.  [Magnetic wave therapy](http://alimranmed.com/rtms/)
-4.  [Radiofrequency](http://alimranmed.com/2020/04/28/radiofrequency-ablation-review/) (this type of injection reduces nerve inflammation and restores vitality to the foot)
-5.  [Ozone injection](http://alimranmed.com/2020/05/10/review-of-ozone-therapy/) (ozone gas injection is one of the methods that contribute to an abundance of oxygen flow (the most important element in raising inflammation and nourishing tissues)
+3.  [Magnetic wave therapy](/services/brain-stimulation/tms/)
+4.  [Radiofrequency](/services/radiofrequency/review/) (this type of injection reduces nerve inflammation and restores vitality to the foot)
+5.  [Ozone injection](/services/ozone-therapy/review/) (ozone gas injection is one of the methods that contribute to an abundance of oxygen flow (the most important element in raising inflammation and nourishing tissues)

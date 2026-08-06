@@ -9,24 +9,24 @@ publishedAt: "2020-12-03T16:26:30"
 
 In Alimran Center we recommend the following treatments:
 
--   [Physical therapy (physical therapy](http://alimranmed.com/physiotherapy-3/))
+-   [Physical therapy (physical therapy](/services/physiotherapy/))
 
-[Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)  
-[Long and short wave therapy](http://alimranmed.com/shortwave-therapy/)  
-[Cold lasers](http://alimranmed.com/laser-therapy-3/)  
-[Ultrasound treatment (sonar)](http://alimranmed.com/ultrasound-therapy-2/)  
+[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)  
+[Long and short wave therapy](/services/physiotherapy/shortwave-therapy/)  
+[Cold lasers](/services/physiotherapy/laser-therapy/)  
+[Ultrasound treatment (sonar)](/services/physiotherapy/ultrasound-therapy/)  
 Gymnastics
 
 -   Chiropractic
 
-[SpineMED® system](http://alimranmed.com/spinmed/)  
-[Sigma](http://alimranmed.com/sigma/)
+[SpineMED® system](/services/chiropractic/spinmed/)  
+[Sigma](/services/chiropractic/sigma/)
 
 -   Steroid injection
 -   Trigger point injection  
     Epidural injection
--   [Ozone treatment](http://alimranmed.com/2020/05/10/review-of-ozone-therapy/)
--   [Pulsed radiofrequency treatment](http://alimranmed.com/radiofrequency-2/)
--   [Botox injection therapy](http://alimranmed.com/botox/)
--   [Acupuncture](http://alimranmed.com/acupuncture/)
--   [Prolotherapy](http://alimranmed.com/2020/05/07/regenerative-medicine/)
+-   [Ozone treatment](/services/ozone-therapy/review/)
+-   [Pulsed radiofrequency treatment](/services/radiofrequency/)
+-   [Botox injection therapy](/services/botox/)
+-   [Acupuncture](/services/acupuncture/)
+-   [Prolotherapy](/services/regenerative-medicine/)

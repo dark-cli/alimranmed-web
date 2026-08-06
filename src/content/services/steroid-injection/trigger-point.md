@@ -31,11 +31,11 @@ People who have especially tense muscles may feel a crunching sensation when the
 
 Trigger point injections can be a safe treatment for pain caused by conditions that affect the musculoskeletal and nervous systems, such as those below.
 
-### ·        [Myofascial pain syndrome](http://alimranmed.com/myofascial-pain/)
+### ·        [Myofascial pain syndrome](/treatments/myofascial-pain/)
 
-### ·        [Fibromyalgia](http://alimranmed.com/fibromyalgia/)
+### ·        [Fibromyalgia](/treatments/fibromyalgia/)
 
-### ·        [Headaches](http://alimranmed.com/headaches/)
+### ·        [Headaches](/treatments/headaches/)
 
 **Do they work?**
 

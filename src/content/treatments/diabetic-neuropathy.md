@@ -97,36 +97,36 @@ Diabetic neuropathy has no known cure. The goals of treatment are to:
 
 At Alimran Medical Center, we may recommend any of the following treatments
 
-[Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
+[Pulsed radiofrequency](/services/radiofrequency/)
 
-[Botox® injections](http://alimranmed.com/botox/)
+[Botox® injections](/services/botox/)
 
-[Acupuncture](http://alimranmed.com/acupuncture/)
+[Acupuncture](/services/acupuncture/)
 
-[Regenerative medicine treatment](http://alimranmed.com/2020/05/07/regenerative-medicine/) **(**[Prolotherapy](http://alimranmed.com/2020/05/07/regenerative-medicine/))
+[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
 
-[Ozone injection](http://alimranmed.com/review-of-ozone-therapy/)
+[Ozone injection](/services/ozone-therapy/review/)
 
-[Sigma](http://alimranmed.com/sigma/)
+[Sigma](/services/chiropractic/sigma/)
 
 **Neurons stimulation**
 
-[Repetitive Transcranial Magnetic Stimulation, rTMS](http://alimranmed.com/rtms/)
+[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
 
-[Transcranial direct current stimulation (tDCS)](http://alimranmed.com/tdcs)
+[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)
 
 Steroid injection
 
 -   Trigger point injections
 -   Epidural steroid injections
 
-[Physiotherapy](http://alimranmed.com/physiotherapy-3/)
+[Physiotherapy](/services/physiotherapy/)
 
--   [Electrical stimulation](http://alimranmed.com/electrical-stimulation-3/)
--   [Short and long wave](http://alimranmed.com/shortwave-therapy/)
--   [Laser therapy](http://alimranmed.com/laser-therapy-3/)
--   [Ultrasonic therapy](http://alimranmed.com/ultrasound-therapy-2/)
+-   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
+-   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
+-   [Laser therapy](/services/physiotherapy/laser-therapy/)
+-   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
 -   Magnatic therapy
--   [Exercises](http://alimranmed.com/exercises-2/)
+-   [Exercises](/services/exercises/)
 
 Chiropractic

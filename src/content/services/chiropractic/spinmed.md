@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/spinmed/"
 ---
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=Yd57CXPpf_o)
 
-[Back Pain](http://alimranmed.com/back-pain-2/)  [Neck Pain](http://alimranmed.com/neck-pain/) can be managed through traditional treatment options
+[Back Pain](/treatments/back-pain/)  [Neck Pain](/treatments/neck-pain/) can be managed through traditional treatment options
 
 Such as physical therapy, chiropractic care, or pain management, but often disc pain
 
