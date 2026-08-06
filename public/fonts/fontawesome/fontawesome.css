@@ -1,0 +1,82 @@
+/**
+ * Minimal Font Awesome 6 CSS pointing at the self-hosted webfonts we ship in
+ * this same directory. We use absolute URLs (/fonts/fontawesome/...) so the
+ * paths resolve identically in dev and in the built dist/.
+ *
+ * If you need brand icons (fa-brands), keep .fa-brands + the fa-brands-400
+ * @font-face rule enabled. Otherwise it's dead weight.
+ */
+
+/* Fonts */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("/fonts/fontawesome/fa-solid-900.woff2") format("woff2"),
+       url("/fonts/fontawesome/fa-solid-900.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/fonts/fontawesome/fa-regular-400.woff2") format("woff2"),
+       url("/fonts/fontawesome/fa-regular-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/fonts/fontawesome/fa-brands-400.woff2") format("woff2"),
+       url("/fonts/fontawesome/fa-brands-400.ttf") format("truetype");
+}
+
+/* Base class */
+.fa,
+.fas, .fa-solid,
+.far, .fa-regular,
+.fab, .fa-brands {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+.far, .fa-regular { font-weight: 400; }
+.fab, .fa-brands { font-family: "Font Awesome 6 Brands"; font-weight: 400; }
+
+.fa-solid::before,
+.fa-regular::before,
+.fa-brands::before,
+.fas::before, .far::before, .fab::before,
+.fa::before {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+/* Icon glyphs — only the ones we actually use.
+   Add more from https://fontawesome.com/v6/search here as needed. */
+.fa-bars::before,      .fa-navicon::before      { content: "\f0c9"; }
+.fa-xmark::before,     .fa-close::before        { content: "\f00d"; }
+.fa-phone::before                               { content: "\f095"; }
+.fa-envelope::before                            { content: "\f0e0"; }
+.fa-location-dot::before,
+.fa-map-marker-alt::before                      { content: "\f3c5"; }
+.fa-share-nodes::before                         { content: "\f1e0"; }
+.fa-bullseye::before                            { content: "\f140"; }
+.fa-eye::before                                 { content: "\f06e"; }
+.fa-heart::before                               { content: "\f004"; }
+.fa-circle-check::before                        { content: "\f058"; }
+
+/* Brand glyphs */
+.fa-facebook-f::before                          { content: "\f39e"; }
+.fa-instagram::before                           { content: "\f16d"; }
+.fa-youtube::before                             { content: "\f167"; }
+.fa-telegram::before                            { content: "\f2c6"; }
+.fa-tiktok::before                              { content: "\e07b"; }

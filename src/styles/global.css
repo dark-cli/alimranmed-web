@@ -3,9 +3,9 @@
    self-hosting when the portal integration is added). */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
 
-/* Font Awesome (self-hosted via node_modules — Astro's Vite pipeline bundles
-   the webfonts alongside the CSS, so nothing hits an external CDN). */
-@import "@fortawesome/fontawesome-free/css/all.min.css";
+/* Font Awesome — served as a static file from /fonts/fontawesome/fontawesome.css
+   loaded via BaseHead. That path resolves identically in dev and prod (no Vite
+   URL-rewriting quirks), and only ships the glyphs we actually use. */
 
 :root {
   /* Medical palette — trust, calm, clinical */
