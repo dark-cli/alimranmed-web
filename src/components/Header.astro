@@ -262,6 +262,12 @@ const isActive = (href: string) =>
   }
   :global(.dropdown[open]) .chev { transform: rotate(180deg); }
 
+  /* astro-navbar toggles .hidden on DropdownItems to control open state.
+     Hide dropdowns by default; visible when [open] is set on the parent. */
+  :global(.astronav-dropdown .dropdown-toggle.hidden) {
+    display: none !important;
+  }
+
   /* Mobile mega expands inline within the drawer as a plain list */
   .mega {
     background: var(--surface-alt);
@@ -368,6 +374,12 @@ const isActive = (href: string) =>
       padding: 1.5rem;
       margin-top: 4px;
       z-index: 60;
+    }
+
+    /* Reveal mega-menu on hover (desktop only) — no click needed */
+    .dropdown:hover :global(.dropdown-toggle.hidden),
+    .dropdown:focus-within :global(.dropdown-toggle.hidden) {
+      display: block !important;
     }
     .mega-inner {
       display: grid;
