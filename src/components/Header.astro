@@ -101,7 +101,7 @@ const isActive = (href: string) =>
           Call Us
         </a>
         <ThemeToggle />
-        <MenuIcon class="burger">
+        <MenuIcon>
           <OpenIcon>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
               <line x1="4" y1="7"  x2="20" y2="7"  />
@@ -241,7 +241,7 @@ const isActive = (href: string) =>
   .logo-sub { font-size: 0.75rem; color: var(--ink-muted); font-weight: 500; }
 
   /* -------------------------------------------------------- burger */
-  :global(.burger) {
+  :global(#astronav-menu) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -255,8 +255,8 @@ const isActive = (href: string) =>
     cursor: pointer;
     flex-shrink: 0;
   }
-  :global(.burger:hover) { color: var(--brand); border-color: var(--brand); }
-  :global(.burger svg) { display: block; }
+  :global(#astronav-menu:hover) { color: var(--brand); border-color: var(--brand); }
+  :global(#astronav-menu svg) { display: block; }
   .drawer-close svg { display: block; }
 
   /* astro-navbar toggles `.hidden` on .astronav-open-icon and
@@ -450,7 +450,7 @@ const isActive = (href: string) =>
   /* DESKTOP (≥1024px): horizontal navbar with mega-menu dropdowns      */
   /* ================================================================= */
   @media (min-width: 1024px) {
-    :global(.burger) { display: none; }
+    :global(#astronav-menu) { display: none; }
     .desktop-only { display: inline-flex; }
     .drawer-cta,
     .drawer-head { display: none; }
