@@ -390,8 +390,15 @@ export const NAV: NavItem[] = [
     ],
   },
 
+  { label: "About", href: "/about/", collection: "pages",
+    children: [
+      { label: "Mission", href: "/about/#mission", collection: "pages" },
+      { label: "Vision",  href: "/about/#vision",  collection: "pages" },
+      { label: "Values",  href: "/about/#values",  collection: "pages" },
+      { label: "Our Doctors", href: "/doctors/", collection: "pages" },
+    ],
+  },
   { labelKey: "nav.doctors", label: "Doctors", href: "/doctors/", legacyUrl: "https://alimranmed.com/doctors/", collection: "pages" },
-  { labelKey: "nav.testimonies", label: "Testimonies", href: "/testimonies/", legacyUrl: "https://alimranmed.com/testimonies/", collection: "pages" },
   { labelKey: "nav.contact", label: "Contact", href: "/contact/", legacyUrl: "https://alimranmed.com/contact-us/", collection: "pages" },
 ];
 

@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+import { CONTACT } from "../consts";
+
+const aboutPages = (await getCollection("pages", ({ data }) => data.category === "about"))
+  // Order: mission → vision → values (drives the on-page anchor sequence)
+  .sort((a, b) => {
+    const order = ["about/mission", "about/vision", "about/values"];
+    return order.indexOf(a.id) - order.indexOf(b.id);
+  });
+
+// Render each entry's body so we can drop the HTML into the same page.
+const rendered = await Promise.all(
+  aboutPages.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  }),
+);
+---
+
+<BaseLayout title="About — Alimran Medical Center" description="Our mission, vision, and values.">
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">About Us</span>
+      <h1>Care that listens, medicine that thinks.</h1>
+      <p class="lede">
+        Alimran Medical Center is a specialised neurology and musculoskeletal clinic in Basra, Iraq.
+        Our multidisciplinary team combines consultant-led surgical expertise with modern
+        rehabilitation, brain-stimulation, and pain-management techniques.
+      </p>
+    </div>
+  </section>
+
+  <section class="values-grid container">
+    {rendered.map(({ entry, Content }) => (
+      <article class="value-card card" id={entry.id.split("/").pop()}>
+        <h2>{entry.data.title.replace(/^OUR\s+/i, "")}</h2>
+        <div class="prose">
+          <Content />
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Meet our doctors</h2>
+      <p>Board-certified consultants with decades of combined experience.</p>
+      <a class="btn btn-primary" href="/doctors/">See the team</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 4rem 0 2rem;
+    background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    color: var(--brand);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .hero h1 { margin: 0 auto 1rem; max-width: 22ch; }
+  .lede {
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    padding-block: 3rem;
+  }
+  .value-card h2 {
+    color: var(--brand);
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .value-card .prose { max-width: none; }
+
+  .cta-strip {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 3rem 0;
+    text-align: center;
+  }
+  .cta-strip p { color: var(--ink-soft); margin-bottom: 1.5rem; }
+</style>
