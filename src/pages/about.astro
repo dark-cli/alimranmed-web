@@ -1,22 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
-import { CONTACT } from "../consts";
 
 const aboutPages = (await getCollection("pages", ({ data }) => data.category === "about"))
-  // Order: mission → vision → values (drives the on-page anchor sequence)
   .sort((a, b) => {
     const order = ["about/mission", "about/vision", "about/values"];
     return order.indexOf(a.id) - order.indexOf(b.id);
   });
 
-// Render each entry's body so we can drop the HTML into the same page.
 const rendered = await Promise.all(
   aboutPages.map(async (entry) => {
     const { Content } = await render(entry);
     return { entry, Content };
   }),
 );
+
+// Icon per section (Font Awesome)
+const ICON: Record<string, string> = {
+  mission: "fa-solid fa-bullseye",
+  vision:  "fa-solid fa-eye",
+  values:  "fa-solid fa-heart",
+};
 ---
 
 <BaseLayout title="About — Alimran Medical Center" description="Our mission, vision, and values.">
@@ -32,15 +36,24 @@ const rendered = await Promise.all(
     </div>
   </section>
 
-  <section class="values-grid container">
-    {rendered.map(({ entry, Content }) => (
-      <article class="value-card card" id={entry.id.split("/").pop()}>
-        <h2>{entry.data.title.replace(/^OUR\s+/i, "")}</h2>
-        <div class="prose">
-          <Content />
-        </div>
-      </article>
-    ))}
+  <section class="values container">
+    {rendered.map(({ entry, Content }) => {
+      const slug = entry.id.split("/").pop() ?? "";
+      const iconClass = ICON[slug] ?? "fa-solid fa-circle-check";
+      return (
+        <article class="value-row" id={slug}>
+          <div class="value-icon" aria-hidden="true">
+            <i class={iconClass}></i>
+          </div>
+          <div class="value-body">
+            <h2>{entry.data.title.replace(/^OUR\s+/i, "")}</h2>
+            <div class="prose">
+              <Content />
+            </div>
+          </div>
+        </article>
+      );
+    })}
   </section>
 
   <section class="cta-strip">
@@ -65,35 +78,77 @@ const rendered = await Promise.all(
     display: inline-block;
     color: var(--brand);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
   }
-  .hero h1 { margin: 0 auto 1rem; max-width: 22ch; }
+  @media (min-width: 640px) {
+    .eyebrow { font-size: 0.85rem; margin-bottom: 1rem; }
+  }
+  .hero h1 { margin: 0 auto 0.75rem; max-width: 22ch; }
   .lede {
     color: var(--ink-soft);
     max-width: 60ch;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2.6vw, 1.1rem);
   }
 
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
-    padding-block: 1.5rem;
+  /* Values: compact vertical list, not big cards. Icon on the left, content
+     on the right. Left brand-tinted border for accent instead of full card. */
+  .values {
+    padding-block: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
   @media (min-width: 640px) {
-    .values-grid { gap: 1.25rem; padding-block: 3rem; }
+    .values { padding-block: 3rem; gap: 1.75rem; }
   }
-  .value-card h2 {
+
+  .value-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding: 0 0 0 0.75rem;
+    border-left: 3px solid var(--brand);
+  }
+  @media (min-width: 640px) {
+    .value-row { gap: 1.25rem; padding-left: 1.25rem; }
+  }
+
+  .value-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand-soft);
+    color: var(--brand);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .value-icon i { font-size: 1rem; line-height: 1; }
+  @media (min-width: 640px) {
+    .value-icon { width: 48px; height: 48px; }
+    .value-icon i { font-size: 1.15rem; }
+  }
+
+  .value-body h2 {
     color: var(--brand);
     text-transform: capitalize;
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    margin: 0 0 0.5em;
   }
-  .value-card .prose { max-width: none; }
+  @media (min-width: 640px) {
+    .value-body h2 { font-size: 1.25rem; }
+  }
+  .value-body .prose {
+    max-width: none;
+  }
+  .value-body .prose p:last-child,
+  .value-body .prose ul:last-child { margin-bottom: 0; }
 
   .cta-strip {
     background: var(--surface);

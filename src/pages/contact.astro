@@ -1,6 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { CONTACT } from "../consts";
+
+const socials = [
+  { label: "Facebook",  href: CONTACT.social.facebook,  icon: "fa-brands fa-facebook-f" },
+  { label: "Instagram", href: CONTACT.social.instagram, icon: "fa-brands fa-instagram"  },
+  { label: "YouTube",   href: CONTACT.social.youtube,   icon: "fa-brands fa-youtube"    },
+  { label: "Telegram",  href: CONTACT.social.telegram,  icon: "fa-brands fa-telegram"   },
+  { label: "TikTok",    href: CONTACT.social.tiktok,    icon: "fa-brands fa-tiktok"     },
+];
 ---
 
 <BaseLayout title="Contact Us — Alimran Medical Center" description="Get in touch with Alimran Medical Center in Basra, Iraq. Phone, email, addresses, and social channels.">
@@ -10,37 +18,50 @@ import { CONTACT } from "../consts";
       <p>We answer during clinic hours. For urgent matters, please call ahead.</p>
     </header>
 
-    <div class="contact-grid">
-      <section class="contact-block card">
-        <h2>Phone</h2>
-        {CONTACT.phones.map((p) => (
-          <a class="link-primary" href={`tel:${p.replace(/\s/g, "")}`}>{p}</a>
-        ))}
-      </section>
+    <!-- Primary actions: call / whatsapp / email — big tap targets -->
+    <section class="actions" aria-label="Primary contact methods">
+      {CONTACT.phones.map((p) => (
+        <a class="action" href={`tel:${p.replace(/\s/g, "")}`}>
+          <span class="action-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+          <span class="action-body">
+            <span class="action-label">Call</span>
+            <span class="action-value">{p}</span>
+          </span>
+        </a>
+      ))}
+      <a class="action" href={`mailto:${CONTACT.email}`}>
+        <span class="action-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+        <span class="action-body">
+          <span class="action-label">Email</span>
+          <span class="action-value">{CONTACT.email}</span>
+        </span>
+      </a>
+    </section>
 
-      <section class="contact-block card">
-        <h2>Email</h2>
-        <a class="link-primary" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
-      </section>
-
-      <section class="contact-block card">
-        <h2>Locations</h2>
-        {CONTACT.addresses.map((addr) => (
-          <p>{addr}</p>
-        ))}
-      </section>
-
-      <section class="contact-block card">
-        <h2>Follow Us</h2>
-        <ul class="social">
-          <li><a href={CONTACT.social.facebook} target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href={CONTACT.social.instagram} target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href={CONTACT.social.youtube} target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href={CONTACT.social.telegram} target="_blank" rel="noopener">Telegram</a></li>
-          <li><a href={CONTACT.social.tiktok} target="_blank" rel="noopener">TikTok</a></li>
+    <!-- Secondary info: addresses + socials as compact icon rows -->
+    <section class="info" aria-label="Locations and social channels">
+      <div class="info-block">
+        <h2><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Locations</h2>
+        <ul class="addresses">
+          {CONTACT.addresses.map((addr) => (
+            <li>{addr}</li>
+          ))}
         </ul>
-      </section>
-    </div>
+      </div>
+
+      <div class="info-block">
+        <h2><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Follow us</h2>
+        <ul class="social">
+          {socials.map((s) => (
+            <li>
+              <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}>
+                <i class={s.icon} aria-hidden="true"></i>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   </div>
 </BaseLayout>
 
@@ -48,22 +69,133 @@ import { CONTACT } from "../consts";
   .page { padding-block: 1.5rem 2.5rem; }
   @media (min-width: 640px) { .page { padding-block: 3rem 4rem; } }
   .page-head { text-align: center; max-width: 60ch; margin: 0 auto 1.5rem; }
-  @media (min-width: 640px) { .page-head { margin-bottom: 3rem; } }
+  @media (min-width: 640px) { .page-head { margin-bottom: 2.5rem; } }
   .page-head p { color: var(--ink-soft); }
-  .contact-grid {
+
+  /* Primary actions — one column on mobile, two on tablet, three on desktop */
+  .actions {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
   }
-  .contact-block h2 {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+  @media (min-width: 500px) { .actions { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px) { .actions { grid-template-columns: repeat(3, 1fr); } }
+
+  .action {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.85rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+  }
+  .action:hover,
+  .action:focus-visible {
+    border-color: var(--brand);
+    background: var(--brand-soft);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+  .action-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .action-icon i { font-size: 1.05rem; line-height: 1; }
+  .action-body { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+  .action-label {
     color: var(--ink-muted);
-    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 0.15em;
   }
-  .link-primary { display: block; color: var(--brand); font-size: 1.1rem; font-weight: 600; padding: 0.25em 0; }
-  .social { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
-  .social a { color: var(--ink-soft); }
-  .social a:hover { color: var(--brand); }
+  .action-value {
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Secondary info */
+  .info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  @media (min-width: 700px) { .info { grid-template-columns: 1.5fr 1fr; gap: 2rem; } }
+
+  .info-block h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--ink-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+  .info-block h2 i {
+    color: var(--brand);
+    font-size: 0.9rem;
+  }
+
+  .addresses {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .addresses li {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface-alt);
+    border-radius: var(--radius);
+  }
+
+  .social {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .social a {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--ink-soft);
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .social a:hover {
+    color: var(--brand);
+    border-color: var(--brand);
+    background: var(--brand-soft);
+    text-decoration: none;
+  }
+  .social a i { font-size: 1rem; line-height: 1; }
 </style>
