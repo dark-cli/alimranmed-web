@@ -1,20 +1,11 @@
 ---
 /**
- * Header. 6 top-level items. Mega-menu on desktop (hover / focus).
- * On mobile, tapping the burger opens a slide-in drawer overlay.
- *
- * We use `astro-navbar` for the state machine (menu toggle + dropdown
- * open state + ARIA attributes). All markup and styling is ours.
+ * Header — plain HTML/CSS/JS, no third-party nav library.
+ * Same pattern that shipped and worked in kaleem-web:
+ *   - Desktop: horizontal nav, CSS :hover reveals mega-menu panels
+ *   - Mobile:  burger opens a fixed slide-in drawer + dim scrim.
+ *              Close by tapping the X, the scrim, or a nav link.
  */
-import {
-  Astronav,
-  MenuItems,
-  MenuIcon,
-  Dropdown,
-  DropdownItems,
-  OpenIcon,
-  CloseIcon,
-} from "astro-navbar";
 import { HEADER_NAV } from "../data/header-nav.ts";
 import ThemeToggle from "./ThemeToggle.astro";
 import { CONTACT } from "../consts";
@@ -25,190 +16,152 @@ const isActive = (href: string) =>
 ---
 
 <header class="site-header">
-  <Astronav closeOnClick>
-    <div class="container header-row">
-      <a class="logo" href="/" aria-label="Alimran Medical Center">
-        <span class="logo-mark" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <circle cx="16" cy="16" r="15" fill="var(--brand)" />
-            <path d="M16 8v16M8 16h16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
-          </svg>
-        </span>
-        <span class="logo-text">
-          <span class="logo-name">Alimran</span>
-          <span class="logo-sub">Medical Center</span>
-        </span>
-      </a>
+  <div class="container header-row">
+    <a class="logo" href="/" aria-label="Alimran Medical Center">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="15" fill="var(--brand)" />
+          <path d="M16 8v16M8 16h16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </span>
+      <span class="logo-text">
+        <span class="logo-name">Alimran</span>
+        <span class="logo-sub">Medical Center</span>
+      </span>
+    </a>
 
-      <MenuItems class="hidden menu-panel">
-        <div class="drawer-head">
-          <span class="drawer-title">Menu</span>
-          <button id="nav-close" class="drawer-close" aria-label="Close menu" type="button">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-              <line x1="6"  y1="6"  x2="18" y2="18" />
-              <line x1="18" y1="6"  x2="6"  y2="18" />
-            </svg>
-          </button>
-        </div>
-        <ul class="nav-list" role="menubar">
-          {HEADER_NAV.map((item) => (
-            <li class:list={["nav-item", { active: isActive(item.href) }]} role="none">
-              {item.columns ? (
-                <Dropdown class="dropdown">
-                  <button class="nav-trigger" role="menuitem" aria-haspopup="true">
-                    <span>{item.label}</span>
-                    <svg class="chev" viewBox="0 0 20 20" width="12" height="12" fill="currentColor" aria-hidden="true">
-                      <path d="M5 8l5 5 5-5H5z" />
-                    </svg>
-                  </button>
-                  <DropdownItems>
-                    <div class="mega">
-                      <div class="mega-inner">
-                        {item.columns.map((col) => (
-                          <div class="mega-col">
-                            {col.href
-                              ? <h4><a href={col.href}>{col.label}</a></h4>
-                              : <h4>{col.label}</h4>}
-                            <ul>
-                              {col.items.map((sub) => (
-                                <li><a href={sub.href}>{sub.label}</a></li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </DropdownItems>
-                </Dropdown>
-              ) : (
-                <a class="nav-link" role="menuitem" href={item.href}>
-                  {item.label}
-                </a>
+    <!-- Desktop primary nav (hidden on mobile via CSS) -->
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        {HEADER_NAV.map((item) => (
+          <li class:list={["nav-item", { active: isActive(item.href), "has-mega": !!item.columns }]}>
+            <a class="nav-link" href={item.href}>
+              {item.label}
+              {item.columns && (
+                <svg class="chev" viewBox="0 0 20 20" width="10" height="10" fill="currentColor" aria-hidden="true">
+                  <path d="M5 8l5 5 5-5H5z" />
+                </svg>
               )}
-            </li>
-          ))}
-        </ul>
+            </a>
+            {item.columns && (
+              <div class="mega" role="menu">
+                <div class="mega-inner">
+                  {item.columns.map((col) => (
+                    <div class="mega-col">
+                      {col.href
+                        ? <h4><a href={col.href}>{col.label}</a></h4>
+                        : <h4>{col.label}</h4>}
+                      <ul>
+                        {col.items.map((sub) => (
+                          <li><a href={sub.href}>{sub.label}</a></li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
 
-        <div class="drawer-cta">
-          <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>
-            Call Us
-          </a>
-        </div>
-      </MenuItems>
-
-      <div class="header-actions">
-        <a class="btn btn-primary desktop-only" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>
-          Call Us
-        </a>
-        <ThemeToggle />
-        <MenuIcon>
-          <OpenIcon>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-              <line x1="4" y1="7"  x2="20" y2="7"  />
-              <line x1="4" y1="12" x2="20" y2="12" />
-              <line x1="4" y1="17" x2="20" y2="17" />
-            </svg>
-          </OpenIcon>
-          <CloseIcon>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-              <line x1="6"  y1="6"  x2="18" y2="18" />
-              <line x1="18" y1="6"  x2="6"  y2="18" />
-            </svg>
-          </CloseIcon>
-        </MenuIcon>
-      </div>
+    <div class="header-actions">
+      <a class="btn btn-primary desktop-only" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>
+        Call Us
+      </a>
+      <ThemeToggle />
+      <button id="menu-toggle" class="icon-btn burger" aria-label="Open menu" type="button">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="7"  x2="20" y2="7"  />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="17" x2="20" y2="17" />
+        </svg>
+      </button>
     </div>
-
-    <!-- Scrim (dim overlay behind the drawer). Click closes the drawer. -->
-    <div id="nav-scrim" class="scrim" aria-hidden="true"></div>
-  </Astronav>
+  </div>
 </header>
 
-<script is:inline>
-  /**
-   * Mobile drawer wiring. astro-navbar handles the initial toggle via the
-   * burger button, but doesn't ship a close button, scrim click handler,
-   * or swipe gestures — we add those here.
-   *
-   * State is expressed as body.nav-open (driven by MutationObserver
-   * watching .hidden on the menu panel) so CSS can hook into it cleanly.
-   */
-  (function () {
-    var panel = document.querySelector(".menu-panel");
-    var scrim = document.getElementById("nav-scrim");
-    var closeBtn = document.getElementById("nav-close");
-    var burger = document.getElementById("astronav-menu");
-    if (!panel || !scrim || !burger) return;
+<!-- Mobile drawer + scrim (sit outside .site-header so their fixed positioning
+     isn't relative to the sticky header stacking context) -->
+<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile" aria-hidden="true">
+  <div class="drawer-head">
+    <span class="drawer-title">Menu</span>
+    <button id="menu-close" class="icon-btn" aria-label="Close menu" type="button">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+        <line x1="6"  y1="6"  x2="18" y2="18" />
+        <line x1="18" y1="6"  x2="6"  y2="18" />
+      </svg>
+    </button>
+  </div>
 
-    // Canonical toggle: simulate a burger click. astro-navbar's own logic
-    // then flips .hidden on every .astronav-toggle element with the correct
-    // semantics — including the fact that .hidden means opposite things for
-    // the menu panel vs. the open/close icons.
+  <nav>
+    <ul class="drawer-list">
+      {HEADER_NAV.map((item) => (
+        <li>
+          {item.columns ? (
+            <details>
+              <summary>{item.label}</summary>
+              <div class="drawer-sub">
+                <a class="drawer-sub-all" href={item.href}>All {item.label} →</a>
+                {item.columns.map((col) => (
+                  <div class="drawer-col">
+                    <h5>{col.label}</h5>
+                    <ul>
+                      {col.items.map((sub) => (
+                        <li><a href={sub.href}>{sub.label}</a></li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </details>
+          ) : (
+            <a href={item.href}>{item.label}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <div class="drawer-cta">
+    <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>Call Us</a>
+  </div>
+</aside>
+
+<div id="menu-scrim" class="menu-scrim" aria-hidden="true"></div>
+
+<script is:inline>
+  // ~15 lines of vanilla drawer wiring. Same shape as kaleem-web.
+  (function () {
+    var toggle = document.getElementById("menu-toggle");
+    var close  = document.getElementById("menu-close");
+    var nav    = document.getElementById("mobile-nav");
+    var scrim  = document.getElementById("menu-scrim");
+    if (!toggle || !nav || !scrim) return;
+
     function setOpen(open) {
-      var isOpen = document.body.classList.contains("nav-open");
-      if (open === isOpen) return;
-      burger.click();
+      nav.classList.toggle("open", open);
+      scrim.classList.toggle("visible", open);
+      document.body.classList.toggle("nav-open", open);
+      nav.setAttribute("aria-hidden", String(!open));
     }
 
-    // Watch the panel's class to keep body.nav-open in sync when
-    // astro-navbar's own script toggles it (e.g. burger click).
-    new MutationObserver(function () {
-      var isOpen = !panel.classList.contains("hidden");
-      document.body.classList.toggle("nav-open", isOpen);
-    }).observe(panel, { attributes: true, attributeFilter: ["class"] });
-
-    // Explicit close bindings.
+    toggle.addEventListener("click", function () { setOpen(true); });
+    close  && close.addEventListener("click", function () { setOpen(false); });
     scrim.addEventListener("click", function () { setOpen(false); });
-    if (closeBtn) closeBtn.addEventListener("click", function () { setOpen(false); });
-
-    // Close on Escape.
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && document.body.classList.contains("nav-open")) {
-        setOpen(false);
-      }
+      if (e.key === "Escape") setOpen(false);
     });
-
-    // ── Swipe gestures ─────────────────────────────────────────────────
-    // Open: swipe left starting within 24px of the right edge of viewport.
-    // Close: swipe right starting anywhere on the open drawer.
-    var startX = 0, startY = 0, tracking = false, mode = null;
-
-    document.addEventListener("touchstart", function (e) {
-      if (e.touches.length !== 1) return;
-      var t = e.touches[0];
-      startX = t.clientX;
-      startY = t.clientY;
-      var open = document.body.classList.contains("nav-open");
-      if (open && panel.contains(e.target)) {
-        // swipe-right-to-close from inside the drawer
-        mode = "close";
-        tracking = true;
-      } else if (!open && startX > window.innerWidth - 24) {
-        // swipe-left-to-open from the right edge
-        mode = "open";
-        tracking = true;
-      } else {
-        tracking = false;
-      }
-    }, { passive: true });
-
-    document.addEventListener("touchend", function (e) {
-      if (!tracking) return;
-      var t = (e.changedTouches && e.changedTouches[0]) || null;
-      if (!t) return;
-      var dx = t.clientX - startX;
-      var dy = t.clientY - startY;
-      tracking = false;
-      // Require a mostly-horizontal swipe of at least 40px.
-      if (Math.abs(dx) < 40 || Math.abs(dy) > Math.abs(dx)) return;
-      if (mode === "open" && dx < -40) setOpen(true);
-      if (mode === "close" && dx > 40) setOpen(false);
-    }, { passive: true });
+    // Close after tapping any link inside the drawer
+    nav.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { setOpen(false); });
+    });
   })();
 </script>
 
 <style>
-  /* ------------------------------------------------------------ header */
+  /* ============================================================= HEADER */
   .site-header {
     position: sticky;
     top: 0;
@@ -224,6 +177,7 @@ const isActive = (href: string) =>
     padding-block: 0.5rem;
   }
 
+  /* Logo */
   .logo {
     display: inline-flex;
     align-items: center;
@@ -240,8 +194,14 @@ const isActive = (href: string) =>
   .logo-name { font-size: 1.05rem; color: var(--brand); }
   .logo-sub { font-size: 0.75rem; color: var(--ink-muted); font-weight: 500; }
 
-  /* -------------------------------------------------------- burger */
-  :global(#astronav-menu) {
+  /* Actions row (theme toggle, burger, desktop call button) */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  .icon-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -253,69 +213,101 @@ const isActive = (href: string) =>
     border-radius: 999px;
     color: var(--ink);
     cursor: pointer;
-    flex-shrink: 0;
   }
-  :global(#astronav-menu:hover) { color: var(--brand); border-color: var(--brand); }
-  :global(#astronav-menu svg) { display: block; }
-  .drawer-close svg { display: block; }
-
-  /* astro-navbar toggles `.hidden` on .astronav-open-icon and
-     .astronav-close-icon to swap between the hamburger and X.
-     Give it a global rule (scoped tightly to just these two classes so
-     the drawer's own .hidden state stays under our own animation). */
-  :global(.astronav-open-icon.hidden),
-  :global(.astronav-close-icon.hidden) {
-    display: none !important;
-  }
-
-  /* Close button inside the drawer */
-  .drawer-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.85rem 1.25rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-  }
-  .drawer-title {
-    color: var(--ink-muted);
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-  .drawer-close {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--ink);
-    cursor: pointer;
-  }
-  .drawer-close:hover { color: var(--brand); border-color: var(--brand); }
-
-  /* ---------------------------------------------- header actions */
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-shrink: 0;
-  }
+  .icon-btn:hover { color: var(--brand); border-color: var(--brand); }
+  .icon-btn svg { display: block; }
   .desktop-only { display: none; }
 
-  /* ================================================================= */
-  /* MOBILE: slide-in drawer + scrim overlay                            */
-  /* ================================================================= */
-  .menu-panel {
+  /* ==================================================== PRIMARY NAV */
+  .primary-nav { display: none; }
+  .primary-nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+  }
+  .nav-item { position: relative; }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.55em 0.9em;
+    border-radius: 8px;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .nav-item:hover > .nav-link,
+  .nav-item.active > .nav-link {
+    background: var(--brand-soft);
+    color: var(--brand);
+    text-decoration: none;
+  }
+  .chev { opacity: 0.5; }
+
+  /* Mega-menu panel (desktop, CSS-only hover reveal) */
+  .mega {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 640px;
+    max-width: 90vw;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    margin-top: 4px;
+    z-index: 60;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+  }
+  .nav-item.has-mega:hover > .mega,
+  .nav-item.has-mega:focus-within > .mega {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  .mega-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
+  .mega-col h4 {
+    color: var(--brand);
+    font-size: 0.8rem;
+    margin: 0 0 0.5em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid var(--border);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .mega-col h4 a { color: inherit; }
+  .mega-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .mega-col a {
+    display: block;
+    padding: 0.35em 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .mega-col a:hover { color: var(--brand); }
+
+  /* ==================================================== MOBILE DRAWER */
+  .mobile-nav {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; right: 0; bottom: 0;
     width: min(88vw, 360px);
     background: var(--surface);
     border-left: 1px solid var(--border);
@@ -327,16 +319,9 @@ const isActive = (href: string) =>
     transform: translateX(100%);
     transition: transform 0.25s ease-out;
   }
-  .menu-panel:not(.hidden) {
-    transform: translateX(0);
-  }
-  .menu-panel.hidden {
-    /* astro-navbar adds .hidden — override our global .hidden { display: none }
-       so we can animate. Keep the panel in the DOM but off-screen. */
-    display: flex;
-  }
+  .mobile-nav.open { transform: translateX(0); }
 
-  .scrim {
+  .menu-scrim {
     position: fixed;
     inset: 0;
     background: rgba(15, 26, 34, 0.5);
@@ -344,100 +329,100 @@ const isActive = (href: string) =>
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
-    pointer-events: none;
   }
-  :global(body.nav-open) .scrim {
+  .menu-scrim.visible {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
   }
-  :global(body.nav-open) {
-    overflow: hidden;
-  }
+  :global(body.nav-open) { overflow: hidden; }
 
-  .nav-list {
-    list-style: none;
-    padding: 0.5rem 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    flex: 1;
-  }
-  .nav-item { position: relative; }
-  .nav-link,
-  .nav-trigger {
+  .drawer-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.35em;
-    width: 100%;
-    padding: 1em 1.25em;
-    background: transparent;
-    border: 0;
-    color: var(--ink);
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    text-align: left;
-    cursor: pointer;
-    font-family: inherit;
+    padding: 0.85rem 1.25rem;
     border-bottom: 1px solid var(--border);
+    background: var(--surface);
   }
-  .nav-link:hover,
-  .nav-trigger:hover,
-  .nav-item.active > .nav-link,
-  .nav-item.active > .dropdown > .nav-trigger {
-    color: var(--brand);
-    background: var(--brand-soft);
-    text-decoration: none;
-  }
-  .chev {
-    transition: transform 0.2s ease;
-    opacity: 0.5;
-  }
-  :global(.dropdown[open]) .chev { transform: rotate(180deg); }
-
-  /* astro-navbar toggles .hidden on DropdownItems to control open state.
-     Hide dropdowns by default; visible when [open] is set on the parent. */
-  :global(.astronav-dropdown .dropdown-toggle.hidden) {
-    display: none !important;
-  }
-
-  /* Mobile mega expands inline within the drawer as a plain list */
-  .mega {
-    background: var(--surface-alt);
-    padding: 0.5rem 1.25rem 0.75rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .mega-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .mega-col h4 {
+  .drawer-title {
     color: var(--ink-muted);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin: 0.75em 0 0.4em;
+  }
+
+  .drawer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    flex: 1;
+  }
+  .drawer-list > li { border-bottom: 1px solid var(--border); }
+  .drawer-list > li > a,
+  .drawer-list summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 1.25em;
+    color: var(--ink);
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .drawer-list summary { list-style: none; }
+  .drawer-list summary::-webkit-details-marker { display: none; }
+  .drawer-list summary::after {
+    content: "+";
+    color: var(--ink-muted);
+    font-weight: 400;
+    font-size: 1.2em;
+    line-height: 1;
+  }
+  .drawer-list details[open] summary::after { content: "−"; }
+  .drawer-list details[open] summary {
+    background: var(--brand-soft);
+    color: var(--brand);
+  }
+  .drawer-list > li > a:hover,
+  .drawer-list summary:hover {
+    background: var(--brand-soft);
+    color: var(--brand);
+  }
+
+  .drawer-sub {
+    background: var(--surface-alt);
+    padding: 0.5rem 1.25rem 0.75rem;
+  }
+  .drawer-sub-all {
+    display: inline-block;
+    color: var(--brand);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5em 0;
+    text-decoration: none;
+  }
+  .drawer-col h5 {
+    color: var(--ink-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0.75em 0 0.3em;
     font-weight: 600;
   }
-  .mega-col h4 a { color: inherit; }
-  .mega-col h4 a:hover { color: var(--brand); text-decoration: none; }
-  .mega-col ul {
+  .drawer-col ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
-  .mega-col a {
+  .drawer-col a {
     display: block;
-    padding: 0.5em 0;
+    padding: 0.45em 0;
     color: var(--ink-soft);
     font-size: 0.95rem;
     text-decoration: none;
   }
-  .mega-col a:hover { color: var(--brand); }
+  .drawer-col a:hover { color: var(--brand); }
 
   .drawer-cta {
     padding: 1rem 1.25rem;
@@ -446,95 +431,14 @@ const isActive = (href: string) =>
   }
   .drawer-cta .btn { width: 100%; }
 
-  /* ================================================================= */
-  /* DESKTOP (≥1024px): horizontal navbar with mega-menu dropdowns      */
-  /* ================================================================= */
+  /* ==================================================== DESKTOP */
   @media (min-width: 1024px) {
-    :global(#astronav-menu) { display: none; }
+    .primary-nav { display: flex; flex: 1 1 auto; justify-content: center; }
+    #menu-toggle { display: none; }
     .desktop-only { display: inline-flex; }
-    .drawer-cta,
-    .drawer-head { display: none; }
 
-    /* Reset the drawer positioning back to inline */
-    .menu-panel,
-    .menu-panel.hidden {
-      position: static;
-      display: flex !important;
-      flex-direction: row;
-      width: auto;
-      margin-inline: auto;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      overflow: visible;
-      transform: none;
-      z-index: auto;
-    }
-
-    .nav-list {
-      flex-direction: row;
-      align-items: center;
-      gap: 0.15rem;
-      padding: 0;
-      flex: 0;
-    }
-
-    .nav-link,
-    .nav-trigger {
-      width: auto;
-      padding: 0.55em 0.9em;
-      border: 0;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      color: var(--ink-soft);
-    }
-    .nav-link:hover,
-    .nav-trigger:hover,
-    .nav-item.active > .nav-link,
-    .nav-item.active > .dropdown > .nav-trigger {
-      background: var(--brand-soft);
-      color: var(--brand);
-    }
-
-    /* Desktop mega-menu: absolute, multi-column */
-    .mega {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      min-width: 640px;
-      max-width: 90vw;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      padding: 1.5rem;
-      margin-top: 4px;
-      z-index: 60;
-    }
-
-    /* Reveal mega-menu on hover (desktop only) — no click needed */
-    .dropdown:hover :global(.dropdown-toggle.hidden),
-    .dropdown:focus-within :global(.dropdown-toggle.hidden) {
-      display: block !important;
-    }
-    .mega-inner {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.5rem;
-    }
-    .mega-col h4 {
-      color: var(--brand);
-      font-size: 0.8rem;
-      margin: 0 0 0.5em;
-      padding-bottom: 0.4em;
-      border-bottom: 1px solid var(--border);
-    }
-    .mega-col a {
-      padding: 0.35em 0;
-      font-size: 0.9rem;
-    }
-
-    .scrim { display: none; }
+    /* On desktop the drawer, scrim, and drawer content never show. */
+    .mobile-nav,
+    .menu-scrim { display: none; }
   }
 </style>
