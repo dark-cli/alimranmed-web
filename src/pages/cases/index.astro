@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const cases = (await getCollection("cases"))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout title="Cases — Alimran Medical Center">
+  <div class="container page">
+    <header class="page-head">
+      <h1>Cases</h1>
+      <p class="lede">Selected clinical cases across our specialties.</p>
+    </header>
+
+    <div class="grid">
+      {cases.map((c) => (
+        <a class="card case" href={`/cases/${c.id}/`}>
+          <h3>{c.data.title}</h3>
+          {c.data.description && <p>{c.data.description}</p>}
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 3rem 4rem; }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 3rem; }
+  .page-head .lede { color: var(--ink-soft); font-size: 1.1rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .case {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .case:hover { text-decoration: none; }
+  .case h3 { color: var(--brand); margin: 0 0 0.4em; }
+  .case p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
+</style>

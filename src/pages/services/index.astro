@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const all = await getCollection("services");
+
+// Group by category (folder name); top-level files become their own bucket.
+type Entry = (typeof all)[number];
+const byCategory = new Map<string, Entry[]>();
+const topLevel: Entry[] = [];
+for (const entry of all) {
+  if (entry.id.includes("/")) {
+    const [cat] = entry.id.split("/");
+    if (!byCategory.has(cat)) byCategory.set(cat, []);
+    byCategory.get(cat)!.push(entry);
+  } else {
+    topLevel.push(entry);
+  }
+}
+
+const categories = [...byCategory.entries()]
+  .sort((a, b) => a[0].localeCompare(b[0]))
+  .map(([slug, entries]) => ({
+    slug,
+    pretty: slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" "),
+    count: entries.length,
+  }));
+---
+
+<BaseLayout title="Services — Alimran Medical Center">
+  <div class="container page">
+    <header class="page-head">
+      <h1>Services</h1>
+      <p class="lede">Every therapy and intervention we offer, grouped by discipline.</p>
+    </header>
+
+    <div class="grid">
+      {categories.map((c) => (
+        <a class="card cat" href={`/services/${c.slug}/`}>
+          <h3>{c.pretty}</h3>
+          <span class="count">{c.count} {c.count === 1 ? "item" : "items"}</span>
+        </a>
+      ))}
+      {topLevel.map((e) => (
+        <a class="card cat" href={`/services/${e.id}/`}>
+          <h3>{e.data.title}</h3>
+          {e.data.description && <span class="count">{e.data.description}</span>}
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 3rem 4rem; }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 3rem; }
+  .page-head .lede { color: var(--ink-soft); font-size: 1.1rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .cat {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: left;
+  }
+  .cat:hover { text-decoration: none; }
+  .cat h3 { color: var(--brand); margin: 0; }
+  .count { color: var(--ink-muted); font-size: 0.85rem; }
+</style>

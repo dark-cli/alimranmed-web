@@ -1,4 +1,18 @@
 ---
+/**
+ * Header + primary navigation. Uses astro-navbar for the headless
+ * responsive behaviour (mobile drawer toggle, dropdown open/close, ARIA).
+ * We provide the markup and styling ourselves so the visual design
+ * matches the rest of the site — astro-navbar is *only* the state
+ * machine and accessibility wiring.
+ */
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+} from "astro-navbar";
 import { NAV, resolveLabel } from "../data/navigation.ts";
 import en from "../i18n/en.json";
 import ThemeToggle from "./ThemeToggle.astro";
@@ -7,165 +21,105 @@ import { CONTACT } from "../consts";
 const dict = en as Record<string, string>;
 const currentPath = Astro.url.pathname;
 
-// Only surface the top-level in the primary bar; sub-items appear in dropdowns.
-// To keep the bar breathing at desktop widths, drop the very-long labels into an
-// overflow "More" menu when there are too many.
-const PRIMARY_LIMIT = 8;
-const primary = NAV.slice(0, PRIMARY_LIMIT);
-const overflow = NAV.slice(PRIMARY_LIMIT);
+const isActive = (item: typeof NAV[number]) =>
+  currentPath === item.href ||
+  (item.children ?? []).some((c) => currentPath === c.href) ||
+  (item.href !== "/" && currentPath.startsWith(item.href));
 ---
 
 <header class="site-header">
-  <div class="container header-row">
-    <a class="logo" href="/" aria-label="Alimran Medical Center">
-      <span class="logo-mark" aria-hidden="true">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="15" fill="var(--brand)" />
-          <path d="M16 8v16M8 16h16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
-        </svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-name">Alimran</span>
-        <span class="logo-sub">Medical Center</span>
-      </span>
-    </a>
-
-    <nav class="primary-nav" aria-label="Primary">
-      <ul>
-        {primary.map((item) => {
-          const label = resolveLabel(item, dict);
-          const hasChildren = !!(item.children && item.children.length);
-          const isActive =
-            currentPath === item.href ||
-            (item.children ?? []).some((c) => currentPath === c.href);
-          return (
-            <li class={`nav-item${hasChildren ? " has-children" : ""}${isActive ? " active" : ""}`}>
-              <a href={item.href}>{label}</a>
-              {hasChildren && (
-                <div class="dropdown" role="menu">
-                  <ul>
-                    {item.children!.slice(0, 24).map((c) => (
-                      <li><a href={c.href}>{resolveLabel(c, dict)}</a></li>
-                    ))}
-                    {item.children!.length > 24 && (
-                      <li class="more">
-                        <a href={item.href}>+ {item.children!.length - 24} more →</a>
-                      </li>
-                    )}
-                  </ul>
-                </div>
-              )}
-            </li>
-          );
-        })}
-        {overflow.length > 0 && (
-          <li class="nav-item has-children">
-            <a href="#">More</a>
-            <div class="dropdown" role="menu">
-              <ul>
-                {overflow.map((item) => (
-                  <li><a href={item.href}>{resolveLabel(item, dict)}</a></li>
-                ))}
-              </ul>
-            </div>
-          </li>
-        )}
-      </ul>
-    </nav>
-
-    <div class="header-actions">
-      <a class="btn btn-primary desktop-only" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>
-        {dict["cta.callUs"]}
+  <Astronav>
+    <div class="container header-row">
+      <a class="logo" href="/" aria-label="Alimran Medical Center">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="15" fill="var(--brand)" />
+            <path d="M16 8v16M8 16h16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="logo-name">Alimran</span>
+          <span class="logo-sub">Medical Center</span>
+        </span>
       </a>
-      <ThemeToggle />
-      <button class="burger" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="4" y1="7" x2="20" y2="7" />
-          <line x1="4" y1="12" x2="20" y2="12" />
-          <line x1="4" y1="17" x2="20" y2="17" />
-        </svg>
-      </button>
-    </div>
-  </div>
 
-  <!-- Mobile drawer -->
-  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
-    <div class="drawer-panel">
-      <nav aria-label="Mobile">
-        <ul class="drawer-list">
+      <MenuIcon class="burger" />
+
+      <MenuItems class="hidden menu-panel">
+        <ul class="nav-list" role="menubar">
           {NAV.map((item) => {
             const label = resolveLabel(item, dict);
             const hasChildren = !!(item.children && item.children.length);
             return (
-              <li class={hasChildren ? "has-children" : ""}>
+              <li class:list={["nav-item", { active: isActive(item) }]} role="none">
                 {hasChildren ? (
-                  <details>
-                    <summary>{label}</summary>
-                    <ul>
-                      <li><a href={item.href}>All {label}</a></li>
-                      {item.children!.map((c) => (
-                        <li><a href={c.href}>{resolveLabel(c, dict)}</a></li>
-                      ))}
-                    </ul>
-                  </details>
+                  <Dropdown class="dropdown">
+                    <button class="nav-trigger" role="menuitem" aria-haspopup="true">
+                      <span>{label}</span>
+                      <svg class="chev" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
+                        <path d="M5 8l5 5 5-5H5z" />
+                      </svg>
+                    </button>
+                    <DropdownItems>
+                      <div class="dropdown-panel">
+                        <ul>
+                          <li class="dropdown-head">
+                            <a href={item.href}>All {label} →</a>
+                          </li>
+                          {item.children!.map((c) => (
+                            <li>
+                              <a href={c.href}>{resolveLabel(c, dict)}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </DropdownItems>
+                  </Dropdown>
                 ) : (
-                  <a href={item.href}>{label}</a>
+                  <a class="nav-link" role="menuitem" href={item.href}>
+                    {label}
+                  </a>
                 )}
               </li>
             );
           })}
         </ul>
-      </nav>
-      <div class="drawer-footer">
-        <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>{dict["cta.callUs"]}</a>
-        <a class="btn btn-accent" href={CONTACT.social.telegram} target="_blank" rel="noopener">Telegram</a>
+
+        <div class="mobile-cta">
+          <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>
+            {dict["cta.callUs"]}
+          </a>
+        </div>
+      </MenuItems>
+
+      <div class="header-actions">
+        <a class="btn btn-primary desktop-only" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>
+          {dict["cta.callUs"]}
+        </a>
+        <ThemeToggle />
       </div>
     </div>
-  </div>
-  <div class="mobile-scrim" id="mobile-scrim"></div>
+  </Astronav>
 </header>
 
-<script is:inline>
-  (function () {
-    var btn = document.getElementById("mobile-menu-toggle");
-    var drawer = document.getElementById("mobile-drawer");
-    var scrim = document.getElementById("mobile-scrim");
-    if (!btn || !drawer || !scrim) return;
-    var open = false;
-    function setOpen(v) {
-      open = v;
-      btn.setAttribute("aria-expanded", String(v));
-      drawer.setAttribute("aria-hidden", String(!v));
-      drawer.classList.toggle("open", v);
-      scrim.classList.toggle("visible", v);
-      document.body.style.overflow = v ? "hidden" : "";
-    }
-    btn.addEventListener("click", function () { setOpen(!open); });
-    scrim.addEventListener("click", function () { setOpen(false); });
-    drawer.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { setOpen(false); });
-    });
-  })();
-</script>
-
 <style>
+  /* Basic layout */
   .site-header {
     position: sticky;
     top: 0;
     z-index: 50;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-    backdrop-filter: saturate(180%) blur(6px);
   }
   .header-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 1rem;
     min-height: var(--header-h);
     padding-block: 0.5rem;
   }
 
+  /* Logo */
   .logo {
     display: inline-flex;
     align-items: center;
@@ -174,173 +128,180 @@ const overflow = NAV.slice(PRIMARY_LIMIT);
     font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
+    margin-right: auto;
   }
   .logo:hover { text-decoration: none; color: var(--brand); }
-  .logo-mark { display: inline-flex; }
   .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
   .logo-name { font-size: 1.05rem; color: var(--brand); }
   .logo-sub { font-size: 0.75rem; color: var(--ink-muted); font-weight: 500; }
 
-  .primary-nav {
-    flex: 1 1 auto;
-    display: none;
-    justify-content: center;
-  }
-  .primary-nav > ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 0.25rem;
-  }
-  .nav-item { position: relative; }
-  .nav-item > a {
-    display: inline-block;
-    padding: 0.55em 0.9em;
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-    font-weight: 500;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.15s ease, color 0.15s ease;
-  }
-  .nav-item:hover > a,
-  .nav-item.active > a {
-    background: var(--brand-soft);
-    color: var(--brand);
-    text-decoration: none;
-  }
-
-  .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 260px;
-    max-width: 480px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    padding: 0.5rem;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(4px);
-    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
-    z-index: 60;
-  }
-  .nav-item.has-children:hover > .dropdown,
-  .nav-item.has-children:focus-within > .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-  .dropdown ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-height: 60vh;
-    overflow-y: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-  .dropdown a {
-    display: block;
-    padding: 0.55em 0.75em;
-    color: var(--ink-soft);
-    font-size: 0.9rem;
-    border-radius: 6px;
-    text-decoration: none;
-  }
-  .dropdown a:hover { background: var(--brand-soft); color: var(--brand); text-decoration: none; }
-  .dropdown .more a { color: var(--brand); font-weight: 600; }
-
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-shrink: 0;
-  }
-  .desktop-only { display: none; }
-  .burger {
+  /* Burger — astro-navbar toggles .hidden on MenuItems, and rotates via [open] attribute */
+  :global(.burger) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
     background: transparent;
     border: 1px solid var(--border);
     border-radius: 999px;
     color: var(--ink);
     cursor: pointer;
+    order: 3;
   }
+  :global(.burger:hover) { color: var(--brand); border-color: var(--brand); }
 
-  @media (min-width: 1024px) {
-    .primary-nav { display: flex; }
-    .burger { display: none; }
-    .desktop-only { display: inline-flex; }
+  /* Menu panel */
+  .menu-panel {
+    order: 4;
+    width: 100%;
   }
+  :global(.menu-panel.hidden) { display: none; }
 
-  /* Mobile drawer */
-  .mobile-drawer {
-    position: fixed;
-    top: 0; right: 0; bottom: 0;
-    width: min(88%, 380px);
-    background: var(--surface);
-    border-left: 1px solid var(--border);
-    transform: translateX(100%);
-    transition: transform 0.25s ease;
-    z-index: 90;
-    overflow-y: auto;
-    display: flex; flex-direction: column;
-  }
-  .mobile-drawer.open { transform: none; }
-  .drawer-panel { padding: 1.5rem 1rem; display: flex; flex-direction: column; gap: 1rem; }
-
-  .drawer-list { list-style: none; margin: 0; padding: 0; }
-  .drawer-list > li { border-bottom: 1px solid var(--border); }
-  .drawer-list > li > a,
-  .drawer-list summary {
-    display: block;
-    padding: 0.85em 0.5em;
-    color: var(--ink);
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .drawer-list summary::-webkit-details-marker { display: none; }
-  .drawer-list summary::after {
-    content: "+";
-    float: right;
-    color: var(--ink-muted);
-    font-weight: 400;
-    transition: transform 0.15s ease;
-  }
-  .drawer-list details[open] summary::after { content: "−"; }
-  .drawer-list details ul {
+  .nav-list {
     list-style: none;
-    padding: 0 0 0.5em 1em;
+    padding: 0;
     margin: 0;
-  }
-  .drawer-list details ul a {
-    display: block;
-    padding: 0.5em 0;
-    color: var(--ink-soft);
-    font-size: 0.9rem;
-    text-decoration: none;
-  }
-  .drawer-footer {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 0 0.5rem 1rem;
+    gap: 0;
   }
+  .nav-item { position: relative; }
+  .nav-link,
+  .nav-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35em;
+    width: 100%;
+    padding: 0.85em 0.5em;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .nav-link:hover,
+  .nav-trigger:hover,
+  .nav-item.active > .nav-link,
+  .nav-item.active > .dropdown > .nav-trigger {
+    color: var(--brand);
+    text-decoration: none;
+  }
+  .chev {
+    transition: transform 0.2s ease;
+    opacity: 0.6;
+  }
+  /* astro-navbar sets `open` attribute on the Dropdown when expanded */
+  :global(.dropdown[open]) .chev { transform: rotate(180deg); }
 
-  .mobile-scrim {
-    position: fixed; inset: 0;
-    background: rgba(15, 26, 34, 0.5);
-    opacity: 0; visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    z-index: 80;
+  /* Dropdown panel (mobile: inline; desktop: absolute) */
+  .dropdown-panel {
+    background: var(--surface-alt);
+    padding: 0.25rem 0.5rem 0.5rem 1rem;
   }
-  .mobile-scrim.visible { opacity: 1; visibility: visible; }
+  .dropdown-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .dropdown-panel a {
+    display: block;
+    padding: 0.6em 0.5em;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .dropdown-panel a:hover { color: var(--brand); }
+  .dropdown-panel li:last-child a { border-bottom: 0; }
+  .dropdown-head a { color: var(--brand); font-weight: 600; }
+
+  /* Actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    order: 2;
+    margin-left: auto;
+  }
+  .desktop-only { display: none; }
+  .mobile-cta {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+  }
+  .mobile-cta .btn { width: 100%; }
+
+  /* ------------------------------------------------------------------ */
+  /* Desktop layout (≥1024px): horizontal menu with hover dropdowns */
+  /* ------------------------------------------------------------------ */
+  @media (min-width: 1024px) {
+    :global(.burger) { display: none; }
+    .desktop-only { display: inline-flex; }
+    .mobile-cta { display: none; }
+
+    .menu-panel {
+      display: block !important;   /* override astro-navbar's .hidden */
+      order: 2;
+      width: auto;
+      margin-inline: auto;
+    }
+
+    .nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.15rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-link,
+    .nav-trigger {
+      width: auto;
+      padding: 0.5em 0.8em;
+      border-bottom: 0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+    .nav-link:hover,
+    .nav-trigger:hover,
+    .nav-item.active > .nav-link,
+    .nav-item.active > .dropdown > .nav-trigger {
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+
+    .dropdown-panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 280px;
+      max-width: 380px;
+      max-height: 70vh;
+      overflow-y: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      padding: 0.4rem;
+      margin-top: 4px;
+      z-index: 60;
+    }
+    .dropdown-panel a {
+      border-bottom: 0;
+      border-radius: 6px;
+      padding: 0.5em 0.7em;
+      font-size: 0.9rem;
+    }
+    .dropdown-panel a:hover { background: var(--brand-soft); }
+    .dropdown-head { margin-bottom: 0.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+  }
 </style>

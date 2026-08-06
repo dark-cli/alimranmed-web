@@ -8,6 +8,7 @@
     "@astrojs/rss": "4.0.11",
     "@astrojs/sitemap": "3.4.1",
     "astro": "5.10.1",
+    "astro-navbar": "^2.4.0",
     "typescript": "5.8.3"
   },
   "devDependencies": {

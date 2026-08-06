@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const all = await getCollection("services");
+
+  // Collect unique categories from entry ids that live in a subfolder.
+  const byCategory = new Map<string, typeof all>();
+  for (const entry of all) {
+    // entry.id is either "category/slug" (subfolder) or "slug" (top-level file)
+    if (!entry.id.includes("/")) continue;
+    const [category] = entry.id.split("/");
+    if (!byCategory.has(category)) byCategory.set(category, []);
+    byCategory.get(category)!.push(entry);
+  }
+
+  return [...byCategory.entries()].map(([category, entries]) => ({
+    params: { category },
+    props: { category, entries },
+  }));
+}
+
+const { category, entries } = Astro.props;
+const sorted = entries.sort(
+  (a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title),
+);
+const prettyCategory = category
+  .split("-")
+  .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+  .join(" ");
+
+// Blurbs per category — one sentence to introduce each landing.
+const BLURB: Record<string, string> = {
+  "brain-stimulation": "Non-invasive brain modulation using magnetic (TMS) and low-current (tDCS) techniques.",
+  "chiropractic": "Spinal alignment and decompression using SPINMED and Sigma systems.",
+  "exercises": "Therapeutic exercise programmes organised by body region.",
+  "fitness": "Body-contouring and non-surgical aesthetic procedures.",
+  "ozone-therapy": "Oxygen–ozone applications for inflammation, discogenic pain, and osteoarthritis.",
+  "pain-management": "Interventional and multidisciplinary approaches to chronic pain.",
+  "physiotherapy": "Robot-assisted rehabilitation, laser, ultrasound, and electrotherapy.",
+  "radiofrequency": "Minimally-invasive neurotomy for chronic joint and spinal pain.",
+  "regenerative-medicine": "PRP, prolotherapy, and stem-cell techniques for ligament and joint healing.",
+  "rehabilitation": "Multidisciplinary recovery care led by consultants in stroke, spinal cord injury, and more.",
+  "steroid-injection": "Image-guided steroid and anaesthetic blocks for joint and spinal pain.",
+  "surgery": "Neurosurgery and spine surgery — from minimally invasive to complex craniotomy.",
+  "botox": "Botulinum toxin applications for spasticity, headache, and chronic pain.",
+  "acupuncture": "Traditional Chinese needle therapy for chronic pain and inflammatory conditions.",
+};
+---
+
+<BaseLayout
+  title={`${prettyCategory} — Alimran Medical Center`}
+  description={BLURB[category] ?? `${prettyCategory} services at Alimran Medical Center.`}
+>
+  <div class="container page">
+    <header class="page-head">
+      <a class="back" href="/services/">← All services</a>
+      <h1>{prettyCategory}</h1>
+      {BLURB[category] && <p class="lede">{BLURB[category]}</p>}
+    </header>
+
+    <div class="grid">
+      {sorted.map((entry) => (
+        <a class="card entry" href={`/services/${entry.id}/`}>
+          <h3>{entry.data.title}</h3>
+          {entry.data.description && <p>{entry.data.description}</p>}
+          <span class="learn-more">Read more →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 3rem 4rem; }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 3rem; }
+  .page-head h1 { text-transform: capitalize; }
+  .page-head .lede { color: var(--ink-soft); font-size: 1.1rem; }
+  .back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; color: var(--ink-soft); }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .entry {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .entry:hover { text-decoration: none; }
+  .entry h3 { color: var(--brand); margin: 0; }
+  .entry p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; flex: 1; }
+  .learn-more { color: var(--brand); font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+</style>
