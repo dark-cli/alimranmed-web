@@ -12,6 +12,8 @@ import {
   MenuIcon,
   Dropdown,
   DropdownItems,
+  OpenIcon,
+  CloseIcon,
 } from "astro-navbar";
 import { HEADER_NAV } from "../data/header-nav.ts";
 import ThemeToggle from "./ThemeToggle.astro";
@@ -39,6 +41,15 @@ const isActive = (href: string) =>
       </a>
 
       <MenuItems class="hidden menu-panel">
+        <div class="drawer-head">
+          <span class="drawer-title">Menu</span>
+          <button id="nav-close" class="drawer-close" aria-label="Close menu" type="button">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="6"  y1="6"  x2="18" y2="18" />
+              <line x1="18" y1="6"  x2="6"  y2="18" />
+            </svg>
+          </button>
+        </div>
         <ul class="nav-list" role="menubar">
           {HEADER_NAV.map((item) => (
             <li class:list={["nav-item", { active: isActive(item.href) }]} role="none">
@@ -90,26 +101,109 @@ const isActive = (href: string) =>
           Call Us
         </a>
         <ThemeToggle />
-        <MenuIcon class="burger" />
+        <MenuIcon class="burger">
+          <OpenIcon>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="4" y1="7"  x2="20" y2="7"  />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </OpenIcon>
+          <CloseIcon>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="6"  y1="6"  x2="18" y2="18" />
+              <line x1="18" y1="6"  x2="6"  y2="18" />
+            </svg>
+          </CloseIcon>
+        </MenuIcon>
       </div>
     </div>
 
-    <!-- Scrim (dim overlay behind the drawer). Clicking closes via astro-navbar's closeOnClick. -->
-    <div class="scrim" aria-hidden="true"></div>
+    <!-- Scrim (dim overlay behind the drawer). Click closes the drawer. -->
+    <div id="nav-scrim" class="scrim" aria-hidden="true"></div>
   </Astronav>
 </header>
 
 <script is:inline>
-  // astro-navbar drives .hidden on the MenuItems element. When the mobile
-  // drawer opens, lock body scroll so the underlying page doesn't move.
+  /**
+   * Mobile drawer wiring. astro-navbar handles the initial toggle via the
+   * burger button, but doesn't ship a close button, scrim click handler,
+   * or swipe gestures — we add those here.
+   *
+   * State is expressed as body.nav-open (driven by MutationObserver
+   * watching .hidden on the menu panel) so CSS can hook into it cleanly.
+   */
   (function () {
-    const panel = document.querySelector(".menu-panel");
-    if (!panel) return;
-    const observer = new MutationObserver(() => {
-      const open = !panel.classList.contains("hidden");
+    var panel = document.querySelector(".menu-panel");
+    var scrim = document.getElementById("nav-scrim");
+    var closeBtn = document.getElementById("nav-close");
+    var burger = document.getElementById("astronav-menu");
+    if (!panel || !scrim || !burger) return;
+
+    // The canonical setter — mirrors what astro-navbar's toggleMobileNav does.
+    function setOpen(open) {
+      document
+        .querySelectorAll(".astronav-toggle")
+        .forEach(function (el) {
+          el.classList.toggle("hidden", !open);
+        });
       document.body.classList.toggle("nav-open", open);
+    }
+
+    // Watch the panel's class to keep body.nav-open in sync when
+    // astro-navbar's own script toggles it (e.g. burger click).
+    new MutationObserver(function () {
+      var isOpen = !panel.classList.contains("hidden");
+      document.body.classList.toggle("nav-open", isOpen);
+    }).observe(panel, { attributes: true, attributeFilter: ["class"] });
+
+    // Explicit close bindings.
+    scrim.addEventListener("click", function () { setOpen(false); });
+    if (closeBtn) closeBtn.addEventListener("click", function () { setOpen(false); });
+
+    // Close on Escape.
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && document.body.classList.contains("nav-open")) {
+        setOpen(false);
+      }
     });
-    observer.observe(panel, { attributes: true, attributeFilter: ["class"] });
+
+    // ── Swipe gestures ─────────────────────────────────────────────────
+    // Open: swipe left starting within 24px of the right edge of viewport.
+    // Close: swipe right starting anywhere on the open drawer.
+    var startX = 0, startY = 0, tracking = false, mode = null;
+
+    document.addEventListener("touchstart", function (e) {
+      if (e.touches.length !== 1) return;
+      var t = e.touches[0];
+      startX = t.clientX;
+      startY = t.clientY;
+      var open = document.body.classList.contains("nav-open");
+      if (open && panel.contains(e.target)) {
+        // swipe-right-to-close from inside the drawer
+        mode = "close";
+        tracking = true;
+      } else if (!open && startX > window.innerWidth - 24) {
+        // swipe-left-to-open from the right edge
+        mode = "open";
+        tracking = true;
+      } else {
+        tracking = false;
+      }
+    }, { passive: true });
+
+    document.addEventListener("touchend", function (e) {
+      if (!tracking) return;
+      var t = (e.changedTouches && e.changedTouches[0]) || null;
+      if (!t) return;
+      var dx = t.clientX - startX;
+      var dy = t.clientY - startY;
+      tracking = false;
+      // Require a mostly-horizontal swipe of at least 40px.
+      if (Math.abs(dx) < 40 || Math.abs(dy) > Math.abs(dx)) return;
+      if (mode === "open" && dx < -40) setOpen(true);
+      if (mode === "close" && dx > 40) setOpen(false);
+    }, { passive: true });
   })();
 </script>
 
@@ -162,6 +256,47 @@ const isActive = (href: string) =>
     flex-shrink: 0;
   }
   :global(.burger:hover) { color: var(--brand); border-color: var(--brand); }
+  :global(.burger svg) { display: block; }
+
+  /* astro-navbar toggles `.hidden` on .astronav-open-icon and
+     .astronav-close-icon to swap between the hamburger and X.
+     Give it a global rule (scoped tightly to just these two classes so
+     the drawer's own .hidden state stays under our own animation). */
+  :global(.astronav-open-icon.hidden),
+  :global(.astronav-close-icon.hidden) {
+    display: none !important;
+  }
+
+  /* Close button inside the drawer */
+  .drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .drawer-title {
+    color: var(--ink-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .drawer-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .drawer-close:hover { color: var(--brand); border-color: var(--brand); }
 
   /* ---------------------------------------------- header actions */
   .header-actions {
@@ -316,7 +451,8 @@ const isActive = (href: string) =>
   @media (min-width: 1024px) {
     :global(.burger) { display: none; }
     .desktop-only { display: inline-flex; }
-    .drawer-cta { display: none; }
+    .drawer-cta,
+    .drawer-head { display: none; }
 
     /* Reset the drawer positioning back to inline */
     .menu-panel,
