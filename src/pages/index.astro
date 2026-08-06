@@ -184,35 +184,57 @@ const FEATURED_SERVICES = [
 <style>
   /* --------------------------------------------------- HERO */
   .hero {
-    padding: 3.5rem 0 3rem;
+    padding: 2rem 0 1.5rem;
     background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
   }
   .hero-inner {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
     align-items: center;
   }
   @media (min-width: 900px) {
+    .hero { padding: 3.5rem 0 3rem; }
     .hero-inner { grid-template-columns: 1fr 1fr; gap: 3rem; }
   }
   .eyebrow {
     display: inline-block;
     color: var(--brand);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
   }
-  .hero-copy h1 { max-width: 20ch; }
+  @media (min-width: 900px) {
+    .eyebrow { font-size: 0.85rem; margin-bottom: 1rem; }
+  }
+  .hero-copy h1 {
+    max-width: 20ch;
+    font-size: clamp(1.4rem, 5.5vw, 2.75rem);
+    line-height: 1.15;
+    margin-bottom: 0.75em;
+  }
   .hero-copy .lede {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--ink-soft);
     max-width: 60ch;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
   }
-  .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  @media (min-width: 900px) {
+    .hero-copy .lede { font-size: 1.1rem; margin-bottom: 1.5rem; }
+  }
+  .hero-cta { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .hero-cta .btn {
+    padding: 0.65em 1.1em;
+    font-size: 0.95rem;
+    flex: 1 1 auto;
+    min-width: 140px;
+  }
+  @media (min-width: 480px) {
+    .hero-cta .btn { flex: 0 0 auto; padding: 0.7em 1.4em; }
+  }
 
   /* Video facade */
   .hero-video {
@@ -261,20 +283,35 @@ const FEATURED_SERVICES = [
   }
 
   /* ------------------------------------- SHARED SECTION HELPERS */
-  .conditions, .services, .doctors-section, .contact-strip { padding: 4rem 0; }
+  .conditions, .services, .doctors-section, .contact-strip { padding: 2.25rem 0; }
+  @media (min-width: 900px) {
+    .conditions, .services, .doctors-section, .contact-strip { padding: 4rem 0; }
+  }
   .section-head {
     text-align: center;
     max-width: 60ch;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.5rem;
   }
-  .section-head p { color: var(--ink-soft); }
-  .section-cta { text-align: center; margin-top: 2rem; }
+  .section-head h2 { font-size: clamp(1.3rem, 4vw, 2rem); margin-bottom: 0.3em; }
+  .section-head p { color: var(--ink-soft); font-size: 0.95rem; }
+  .section-cta { text-align: center; margin-top: 1.5rem; }
+  @media (min-width: 900px) {
+    .section-head { margin-bottom: 2rem; }
+    .section-head p { font-size: 1rem; }
+    .section-cta { margin-top: 2rem; }
+  }
 
   /* --------------------------------------------- CONDITIONS grid */
   .condition-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .condition-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
   }
   .condition-card {
     display: flex;
@@ -296,9 +333,13 @@ const FEATURED_SERVICES = [
   }
   .condition-card h3 {
     color: var(--ink);
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0;
-    padding: 0 0.85rem 1rem;
+    padding: 0 0.75rem 0.85rem;
+    line-height: 1.25;
+  }
+  @media (min-width: 640px) {
+    .condition-card h3 { font-size: 1rem; padding: 0 0.85rem 1rem; }
   }
   .condition-card:hover h3 { color: var(--brand); }
   .thumb {
