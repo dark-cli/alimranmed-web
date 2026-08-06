@@ -32,8 +32,10 @@ const d = entry.data;
 </BaseLayout>
 
 <style>
-  .post { padding-block: 2rem 4rem; }
-  .back { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--ink-soft); }
-  .post-header { text-align: center; margin-bottom: 2.5rem; }
-  .meta { color: var(--ink-muted); font-size: 0.9rem; }
+  .post { padding-block: 1.25rem 2.5rem; }
+  @media (min-width: 640px) { .post { padding-block: 2rem 4rem; } }
+  .back { display: inline-block; margin-bottom: 1rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .post-header { text-align: center; margin-bottom: 1.5rem; }
+  @media (min-width: 640px) { .post-header { margin-bottom: 2.5rem; } }
+  .meta { color: var(--ink-muted); font-size: 0.85rem; }
 </style>

@@ -61,29 +61,46 @@ const d = entry.data;
 </BaseLayout>
 
 <style>
-  .doctor-profile { padding-block: 2rem 4rem; }
-  .back { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--ink-soft); }
+  .doctor-profile { padding-block: 1.25rem 2.5rem; }
+  @media (min-width: 640px) {
+    .doctor-profile { padding-block: 2rem 4rem; }
+  }
+  .back { display: inline-block; margin-bottom: 1rem; font-size: 0.85rem; color: var(--ink-soft); }
 
   .doctor-header {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     align-items: center;
-    padding: 1.5rem;
+    text-align: center;
+    padding: 1.25rem;
     background: var(--brand-soft);
     border-radius: var(--radius-lg);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .doctor-header {
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
   }
   .doctor-photo {
-    width: 120px;
-    height: 120px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     object-fit: cover;
     background: var(--surface);
+    margin: 0 auto;
+  }
+  @media (min-width: 640px) {
+    .doctor-photo { width: 120px; height: 120px; margin: 0; }
   }
   .doctor-header h1 { margin: 0 0 0.3em; }
   .specialty { font-weight: 600; color: var(--brand); margin-bottom: 0.4em; }
-  .credentials { color: var(--ink-soft); font-size: 0.9rem; }
+  .credentials { color: var(--ink-soft); font-size: 0.85rem; }
 
   .doctor-body {
     display: grid;

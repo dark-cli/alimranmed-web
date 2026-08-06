@@ -40,15 +40,26 @@ const { title, description, image, category, backHref, backLabel } = Astro.props
 </BaseLayout>
 
 <style>
-  .content-page { padding-block: 2rem 4rem; }
+  .content-page { padding-block: 1.25rem 2.5rem; }
+  @media (min-width: 640px) {
+    .content-page { padding-block: 2rem 4rem; }
+  }
   .breadcrumb {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--ink-muted);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
   .breadcrumb a { color: var(--ink-soft); }
   .crumb-category { text-transform: uppercase; letter-spacing: 0.06em; }
-  .page-header { margin-bottom: 2rem; text-align: center; }
-  .page-header h1 { margin-bottom: 0.4em; }
-  .lede { color: var(--ink-soft); font-size: 1.1rem; max-width: 60ch; margin: 0 auto; }
+  .page-header { margin-bottom: 1.25rem; text-align: center; }
+  .page-header h1 { margin-bottom: 0.35em; }
+  .lede {
+    color: var(--ink-soft);
+    font-size: clamp(0.95rem, 2.6vw, 1.1rem);
+    max-width: 60ch;
+    margin: 0 auto;
+  }
+  @media (min-width: 640px) {
+    .page-header { margin-bottom: 2rem; }
+  }
 </style>

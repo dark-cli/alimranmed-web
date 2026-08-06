@@ -54,9 +54,12 @@ const rendered = await Promise.all(
 
 <style>
   .hero {
-    padding: 4rem 0 2rem;
+    padding: 2rem 0 1.25rem;
     background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
     text-align: center;
+  }
+  @media (min-width: 640px) {
+    .hero { padding: 4rem 0 2rem; }
   }
   .eyebrow {
     display: inline-block;
@@ -78,8 +81,11 @@ const rendered = await Promise.all(
   .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.25rem;
-    padding-block: 3rem;
+    gap: 1rem;
+    padding-block: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .values-grid { gap: 1.25rem; padding-block: 3rem; }
   }
   .value-card h2 {
     color: var(--brand);
@@ -92,8 +98,11 @@ const rendered = await Promise.all(
   .cta-strip {
     background: var(--surface);
     border-top: 1px solid var(--border);
-    padding: 3rem 0;
+    padding: 2rem 0;
     text-align: center;
+  }
+  @media (min-width: 640px) {
+    .cta-strip { padding: 3rem 0; }
   }
   .cta-strip p { color: var(--ink-soft); margin-bottom: 1.5rem; }
 </style>
