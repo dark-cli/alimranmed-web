@@ -1,10 +1,10 @@
 ---
 /**
- * Header + primary navigation. Uses astro-navbar for the headless
- * responsive behaviour (mobile drawer toggle, dropdown open/close, ARIA).
- * We provide the markup and styling ourselves so the visual design
- * matches the rest of the site — astro-navbar is *only* the state
- * machine and accessibility wiring.
+ * Header. 6 top-level items. Mega-menu on desktop (hover / focus).
+ * On mobile, tapping the burger opens a slide-in drawer overlay.
+ *
+ * We use `astro-navbar` for the state machine (menu toggle + dropdown
+ * open state + ARIA attributes). All markup and styling is ours.
  */
 import {
   Astronav,
@@ -13,22 +13,17 @@ import {
   Dropdown,
   DropdownItems,
 } from "astro-navbar";
-import { NAV, resolveLabel } from "../data/navigation.ts";
-import en from "../i18n/en.json";
+import { HEADER_NAV } from "../data/header-nav.ts";
 import ThemeToggle from "./ThemeToggle.astro";
 import { CONTACT } from "../consts";
 
-const dict = en as Record<string, string>;
 const currentPath = Astro.url.pathname;
-
-const isActive = (item: typeof NAV[number]) =>
-  currentPath === item.href ||
-  (item.children ?? []).some((c) => currentPath === c.href) ||
-  (item.href !== "/" && currentPath.startsWith(item.href));
+const isActive = (href: string) =>
+  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
 ---
 
 <header class="site-header">
-  <Astronav>
+  <Astronav closeOnClick>
     <div class="container header-row">
       <a class="logo" href="/" aria-label="Alimran Medical Center">
         <span class="logo-mark" aria-hidden="true">
@@ -43,67 +38,83 @@ const isActive = (item: typeof NAV[number]) =>
         </span>
       </a>
 
-      <MenuIcon class="burger" />
-
       <MenuItems class="hidden menu-panel">
         <ul class="nav-list" role="menubar">
-          {NAV.map((item) => {
-            const label = resolveLabel(item, dict);
-            const hasChildren = !!(item.children && item.children.length);
-            return (
-              <li class:list={["nav-item", { active: isActive(item) }]} role="none">
-                {hasChildren ? (
-                  <Dropdown class="dropdown">
-                    <button class="nav-trigger" role="menuitem" aria-haspopup="true">
-                      <span>{label}</span>
-                      <svg class="chev" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-                        <path d="M5 8l5 5 5-5H5z" />
-                      </svg>
-                    </button>
-                    <DropdownItems>
-                      <div class="dropdown-panel">
-                        <ul>
-                          <li class="dropdown-head">
-                            <a href={item.href}>All {label} →</a>
-                          </li>
-                          {item.children!.map((c) => (
-                            <li>
-                              <a href={c.href}>{resolveLabel(c, dict)}</a>
-                            </li>
-                          ))}
-                        </ul>
+          {HEADER_NAV.map((item) => (
+            <li class:list={["nav-item", { active: isActive(item.href) }]} role="none">
+              {item.columns ? (
+                <Dropdown class="dropdown">
+                  <button class="nav-trigger" role="menuitem" aria-haspopup="true">
+                    <span>{item.label}</span>
+                    <svg class="chev" viewBox="0 0 20 20" width="12" height="12" fill="currentColor" aria-hidden="true">
+                      <path d="M5 8l5 5 5-5H5z" />
+                    </svg>
+                  </button>
+                  <DropdownItems>
+                    <div class="mega">
+                      <div class="mega-inner">
+                        {item.columns.map((col) => (
+                          <div class="mega-col">
+                            {col.href
+                              ? <h4><a href={col.href}>{col.label}</a></h4>
+                              : <h4>{col.label}</h4>}
+                            <ul>
+                              {col.items.map((sub) => (
+                                <li><a href={sub.href}>{sub.label}</a></li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </div>
-                    </DropdownItems>
-                  </Dropdown>
-                ) : (
-                  <a class="nav-link" role="menuitem" href={item.href}>
-                    {label}
-                  </a>
-                )}
-              </li>
-            );
-          })}
+                    </div>
+                  </DropdownItems>
+                </Dropdown>
+              ) : (
+                <a class="nav-link" role="menuitem" href={item.href}>
+                  {item.label}
+                </a>
+              )}
+            </li>
+          ))}
         </ul>
 
-        <div class="mobile-cta">
+        <div class="drawer-cta">
           <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>
-            {dict["cta.callUs"]}
+            Call Us
           </a>
         </div>
       </MenuItems>
 
       <div class="header-actions">
         <a class="btn btn-primary desktop-only" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>
-          {dict["cta.callUs"]}
+          Call Us
         </a>
         <ThemeToggle />
+        <MenuIcon class="burger" />
       </div>
     </div>
+
+    <!-- Scrim (dim overlay behind the drawer). Clicking closes via astro-navbar's closeOnClick. -->
+    <div class="scrim" aria-hidden="true"></div>
   </Astronav>
 </header>
 
+<script is:inline>
+  // astro-navbar drives .hidden on the MenuItems element. When the mobile
+  // drawer opens, lock body scroll so the underlying page doesn't move.
+  (function () {
+    const panel = document.querySelector(".menu-panel");
+    if (!panel) return;
+    const observer = new MutationObserver(() => {
+      const open = !panel.classList.contains("hidden");
+      document.body.classList.toggle("nav-open", open);
+    });
+    observer.observe(panel, { attributes: true, attributeFilter: ["class"] });
+  })();
+</script>
+
 <style>
-  /* Basic layout */
+  /* ------------------------------------------------------------ header */
   .site-header {
     position: sticky;
     top: 0;
@@ -119,7 +130,6 @@ const isActive = (item: typeof NAV[number]) =>
     padding-block: 0.5rem;
   }
 
-  /* Logo */
   .logo {
     display: inline-flex;
     align-items: center;
@@ -129,13 +139,14 @@ const isActive = (item: typeof NAV[number]) =>
     text-decoration: none;
     white-space: nowrap;
     margin-right: auto;
+    flex-shrink: 0;
   }
   .logo:hover { text-decoration: none; color: var(--brand); }
   .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
   .logo-name { font-size: 1.05rem; color: var(--brand); }
   .logo-sub { font-size: 0.75rem; color: var(--ink-muted); font-weight: 500; }
 
-  /* Burger — astro-navbar toggles .hidden on MenuItems, and rotates via [open] attribute */
+  /* -------------------------------------------------------- burger */
   :global(.burger) {
     display: inline-flex;
     align-items: center;
@@ -148,24 +159,74 @@ const isActive = (item: typeof NAV[number]) =>
     border-radius: 999px;
     color: var(--ink);
     cursor: pointer;
-    order: 3;
+    flex-shrink: 0;
   }
   :global(.burger:hover) { color: var(--brand); border-color: var(--brand); }
 
-  /* Menu panel */
-  .menu-panel {
-    order: 4;
-    width: 100%;
+  /* ---------------------------------------------- header actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
   }
-  :global(.menu-panel.hidden) { display: none; }
+  .desktop-only { display: none; }
+
+  /* ================================================================= */
+  /* MOBILE: slide-in drawer + scrim overlay                            */
+  /* ================================================================= */
+  .menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(88vw, 360px);
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.08);
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.25s ease-out;
+  }
+  .menu-panel:not(.hidden) {
+    transform: translateX(0);
+  }
+  .menu-panel.hidden {
+    /* astro-navbar adds .hidden — override our global .hidden { display: none }
+       so we can animate. Keep the panel in the DOM but off-screen. */
+    display: flex;
+  }
+
+  .scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 26, 34, 0.5);
+    z-index: 80;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+  }
+  :global(body.nav-open) .scrim {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  :global(body.nav-open) {
+    overflow: hidden;
+  }
 
   .nav-list {
     list-style: none;
-    padding: 0;
+    padding: 0.5rem 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 0;
+    flex: 1;
   }
   .nav-item { position: relative; }
   .nav-link,
@@ -175,10 +236,9 @@ const isActive = (item: typeof NAV[number]) =>
     justify-content: space-between;
     gap: 0.35em;
     width: 100%;
-    padding: 0.85em 0.5em;
+    padding: 1em 1.25em;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid var(--border);
     color: var(--ink);
     font-size: 1rem;
     font-weight: 500;
@@ -186,87 +246,101 @@ const isActive = (item: typeof NAV[number]) =>
     text-align: left;
     cursor: pointer;
     font-family: inherit;
+    border-bottom: 1px solid var(--border);
   }
   .nav-link:hover,
   .nav-trigger:hover,
   .nav-item.active > .nav-link,
   .nav-item.active > .dropdown > .nav-trigger {
     color: var(--brand);
+    background: var(--brand-soft);
     text-decoration: none;
   }
   .chev {
     transition: transform 0.2s ease;
-    opacity: 0.6;
+    opacity: 0.5;
   }
-  /* astro-navbar sets `open` attribute on the Dropdown when expanded */
   :global(.dropdown[open]) .chev { transform: rotate(180deg); }
 
-  /* Dropdown panel (mobile: inline; desktop: absolute) */
-  .dropdown-panel {
+  /* Mobile mega expands inline within the drawer as a plain list */
+  .mega {
     background: var(--surface-alt);
-    padding: 0.25rem 0.5rem 0.5rem 1rem;
+    padding: 0.5rem 1.25rem 0.75rem;
+    border-bottom: 1px solid var(--border);
   }
-  .dropdown-panel ul {
+  .mega-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .mega-col h4 {
+    color: var(--ink-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0.75em 0 0.4em;
+    font-weight: 600;
+  }
+  .mega-col h4 a { color: inherit; }
+  .mega-col h4 a:hover { color: var(--brand); text-decoration: none; }
+  .mega-col ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  .dropdown-panel a {
+  .mega-col a {
     display: block;
-    padding: 0.6em 0.5em;
+    padding: 0.5em 0;
     color: var(--ink-soft);
     font-size: 0.95rem;
     text-decoration: none;
-    border-bottom: 1px solid var(--border);
   }
-  .dropdown-panel a:hover { color: var(--brand); }
-  .dropdown-panel li:last-child a { border-bottom: 0; }
-  .dropdown-head a { color: var(--brand); font-weight: 600; }
+  .mega-col a:hover { color: var(--brand); }
 
-  /* Actions */
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    order: 2;
-    margin-left: auto;
+  .drawer-cta {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--border);
+    background: var(--surface-alt);
   }
-  .desktop-only { display: none; }
-  .mobile-cta {
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-  }
-  .mobile-cta .btn { width: 100%; }
+  .drawer-cta .btn { width: 100%; }
 
-  /* ------------------------------------------------------------------ */
-  /* Desktop layout (≥1024px): horizontal menu with hover dropdowns */
-  /* ------------------------------------------------------------------ */
+  /* ================================================================= */
+  /* DESKTOP (≥1024px): horizontal navbar with mega-menu dropdowns      */
+  /* ================================================================= */
   @media (min-width: 1024px) {
     :global(.burger) { display: none; }
     .desktop-only { display: inline-flex; }
-    .mobile-cta { display: none; }
+    .drawer-cta { display: none; }
 
-    .menu-panel {
-      display: block !important;   /* override astro-navbar's .hidden */
-      order: 2;
+    /* Reset the drawer positioning back to inline */
+    .menu-panel,
+    .menu-panel.hidden {
+      position: static;
+      display: flex !important;
+      flex-direction: row;
       width: auto;
       margin-inline: auto;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      overflow: visible;
+      transform: none;
+      z-index: auto;
     }
 
     .nav-list {
       flex-direction: row;
       align-items: center;
       gap: 0.15rem;
-      flex-wrap: wrap;
-      justify-content: center;
+      padding: 0;
+      flex: 0;
     }
 
     .nav-link,
     .nav-trigger {
       width: auto;
-      padding: 0.5em 0.8em;
-      border-bottom: 0;
+      padding: 0.55em 0.9em;
+      border: 0;
       border-radius: 8px;
       font-size: 0.95rem;
       color: var(--ink-soft);
@@ -279,29 +353,39 @@ const isActive = (item: typeof NAV[number]) =>
       color: var(--brand);
     }
 
-    .dropdown-panel {
+    /* Desktop mega-menu: absolute, multi-column */
+    .mega {
       position: absolute;
       top: 100%;
-      left: 0;
-      min-width: 280px;
-      max-width: 380px;
-      max-height: 70vh;
-      overflow-y: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 640px;
+      max-width: 90vw;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
-      padding: 0.4rem;
+      padding: 1.5rem;
       margin-top: 4px;
       z-index: 60;
     }
-    .dropdown-panel a {
-      border-bottom: 0;
-      border-radius: 6px;
-      padding: 0.5em 0.7em;
+    .mega-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+    }
+    .mega-col h4 {
+      color: var(--brand);
+      font-size: 0.8rem;
+      margin: 0 0 0.5em;
+      padding-bottom: 0.4em;
+      border-bottom: 1px solid var(--border);
+    }
+    .mega-col a {
+      padding: 0.35em 0;
       font-size: 0.9rem;
     }
-    .dropdown-panel a:hover { background: var(--brand-soft); }
-    .dropdown-head { margin-bottom: 0.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+
+    .scrim { display: none; }
   }
 </style>
