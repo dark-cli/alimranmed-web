@@ -24,7 +24,7 @@
     "cf-typegen": "wrangler types",
     "check": "astro build && tsc && wrangler deploy --dry-run",
     "deploy": "wrangler deploy",
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "preview": "astro build && wrangler dev",
     "migrate": "node --experimental-strip-types --no-warnings scripts/migrate.mjs",
     "migrate:dry": "node --experimental-strip-types --no-warnings scripts/migrate.mjs --dry-run --limit=5",
