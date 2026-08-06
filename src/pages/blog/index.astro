@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const locale = (Astro.currentLocale ?? "en") as "en" | "ar";
+const posts = (await getCollection("posts", ({ data }) => data.locale === locale))
+  .sort((a, b) => {
+    const ad = a.data.publishedAt?.getTime() ?? 0;
+    const bd = b.data.publishedAt?.getTime() ?? 0;
+    return bd - ad;
+  });
+---
+
+<BaseLayout title="Blog — Alimran Medical Center">
+  <div class="container page">
+    <header class="page-head">
+      <h1>Blog</h1>
+      <p>Medical articles and clinic updates.</p>
+    </header>
+
+    <div class="post-list">
+      {posts.map((p) => (
+        <a class="post-card card" href={`/blog/${p.id.replace(/^en\//, "").replace(/^ar\//, "")}/`}>
+          <h3>{p.data.title}</h3>
+          {p.data.description && <p>{p.data.description}</p>}
+          {p.data.publishedAt && (
+            <span class="date">
+              {p.data.publishedAt.toLocaleDateString(locale === "ar" ? "ar-IQ" : "en-US", { year: "numeric", month: "short", day: "numeric" })}
+            </span>
+          )}
+        </a>
+      ))}
+    </div>
+
+    {posts.length === 0 && (
+      <p class="empty">Posts will appear here after the blog migration runs.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 3rem 4rem; }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 3rem; }
+  .page-head p { color: var(--ink-soft); }
+  .post-list { display: flex; flex-direction: column; gap: 1rem; }
+  .post-card { display: block; text-decoration: none; color: inherit; }
+  .post-card:hover { text-decoration: none; }
+  .post-card h3 { color: var(--brand); margin-bottom: 0.4em; }
+  .post-card p { color: var(--ink-soft); margin-bottom: 0.5em; }
+  .date { color: var(--ink-muted); font-size: 0.85rem; }
+  .empty { text-align: center; color: var(--ink-muted); font-style: italic; }
+</style>

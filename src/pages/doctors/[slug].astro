@@ -1,0 +1,111 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { CONTACT } from "../../consts";
+
+export async function getStaticPaths() {
+  const items = await getCollection("doctors", ({ data }) => data.locale === "en");
+  return items.map((entry) => ({
+    params: { slug: entry.id.replace(/^en\//, "") },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+---
+
+<BaseLayout title={`${d.fullName} — Alimran Medical Center`} description={d.description}>
+  <article class="container doctor-profile">
+    <a class="back" href="/doctors/">← All doctors</a>
+
+    <header class="doctor-header">
+      {d.photo && <img class="doctor-photo" src={d.photo} alt={d.fullName} />}
+      <div>
+        <h1>{d.fullName}</h1>
+        {d.specialty && <p class="specialty">{d.specialty}</p>}
+        {d.titles.length > 0 && <p class="credentials">{d.titles.join(" · ")}</p>}
+      </div>
+    </header>
+
+    <div class="doctor-body">
+      <div class="prose">
+        <Content />
+      </div>
+
+      <aside class="doctor-aside">
+        {d.memberships.length > 0 && (
+          <div class="aside-block">
+            <h3>Memberships</h3>
+            <ul>
+              {d.memberships.map((m) => <li>{m}</li>)}
+            </ul>
+          </div>
+        )}
+        {d.languages.length > 0 && (
+          <div class="aside-block">
+            <h3>Languages</h3>
+            <p>{d.languages.join(", ")}</p>
+          </div>
+        )}
+        <div class="aside-block">
+          <h3>Book a consultation</h3>
+          {CONTACT.phones.map((p) => (
+            <a class="phone-link" href={`tel:${p.replace(/\s/g, "")}`}>{p}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .doctor-profile { padding-block: 2rem 4rem; }
+  .back { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--ink-soft); }
+
+  .doctor-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--brand-soft);
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+  }
+  .doctor-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--surface);
+  }
+  .doctor-header h1 { margin: 0 0 0.3em; }
+  .specialty { font-weight: 600; color: var(--brand); margin-bottom: 0.4em; }
+  .credentials { color: var(--ink-soft); font-size: 0.9rem; }
+
+  .doctor-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 900px) {
+    .doctor-body { grid-template-columns: 2fr 1fr; }
+  }
+  .doctor-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .aside-block {
+    padding: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .aside-block h3 { color: var(--ink); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  .aside-block ul { padding: 0 0 0 1rem; margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+  .aside-block ul li { margin-bottom: 0.35em; }
+  .phone-link { display: block; padding: 0.5em 0; color: var(--brand); font-weight: 600; }
+</style>

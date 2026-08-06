@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const locale = (Astro.currentLocale ?? "en") as "en" | "ar";
+const doctors = (await getCollection("doctors", ({ data }) => data.locale === locale))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Our Doctors — Alimran Medical Center">
+  <div class="container page">
+    <header class="page-head">
+      <h1>Our Doctors</h1>
+      <p>Consultant-led care from our specialist team.</p>
+    </header>
+
+    <div class="doctor-grid">
+      {doctors.map((d) => (
+        <a class="doctor-card card" href={`/doctors/${d.id.replace(/^en\//, "").replace(/^ar\//, "")}/`}>
+          {d.data.photo && <img class="photo" src={d.data.photo} alt={d.data.fullName} />}
+          <h3>{d.data.fullName || d.data.title}</h3>
+          {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}
+          {d.data.titles.length > 0 && <p class="creds">{d.data.titles.join(" · ")}</p>}
+        </a>
+      ))}
+    </div>
+
+    {doctors.length === 0 && (
+      <p class="empty">Doctors will appear here once populated.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 3rem 4rem; }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 3rem; }
+  .page-head p { color: var(--ink-soft); }
+  .doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .doctor-card {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .doctor-card:hover { text-decoration: none; }
+  .photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--brand-soft);
+  }
+  .doctor-card h3 { color: var(--brand); margin-bottom: 0.3em; }
+  .specialty { font-weight: 600; color: var(--ink); margin-bottom: 0.3em; }
+  .creds { font-size: 0.85rem; color: var(--ink-muted); }
+  .empty { text-align: center; color: var(--ink-muted); font-style: italic; }
+</style>

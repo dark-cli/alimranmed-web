@@ -1,0 +1,93 @@
+---
+import en from "../i18n/en.json";
+import ar from "../i18n/ar.json";
+import { CONTACT } from "../consts";
+
+const locale = (Astro.currentLocale ?? "en") as "en" | "ar";
+const dict = (locale === "ar" ? ar : en) as Record<string, string>;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <h3>Alimran Medical Center</h3>
+      <p>Neurology & Musculoskeletal Disorders — Basra, Iraq.</p>
+    </div>
+
+    <div>
+      <h4>{dict["footer.contactUs"]}</h4>
+      <ul class="footer-list">
+        {CONTACT.phones.map((p) => (
+          <li><a href={`tel:${p.replace(/\s/g, "")}`}>{p}</a></li>
+        ))}
+        <li><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>{dict["footer.locations"]}</h4>
+      <ul class="footer-list">
+        {CONTACT.addresses.map((addr) => (
+          <li>{addr}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h4>{dict["footer.followUs"]}</h4>
+      <ul class="footer-list social">
+        <li><a href={CONTACT.social.facebook} target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href={CONTACT.social.instagram} target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href={CONTACT.social.youtube} target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href={CONTACT.social.telegram} target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href={CONTACT.social.tiktok} target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    <span>&copy; {year} {dict["footer.copyright"]}</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 1rem;
+    color: var(--ink-soft);
+    margin-top: 4rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+  .footer-brand h3 { color: var(--brand); margin-bottom: 0.3em; font-size: 1.15rem; }
+  .footer-grid h4 {
+    color: var(--ink);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .footer-list a { color: var(--ink-soft); }
+  .footer-list a:hover { color: var(--brand); }
+  .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+  }
+</style>

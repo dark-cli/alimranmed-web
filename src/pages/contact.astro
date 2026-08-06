@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { CONTACT } from "../consts";
+---
+
+<BaseLayout title="Contact Us — Alimran Medical Center" description="Get in touch with Alimran Medical Center in Basra, Iraq. Phone, email, addresses, and social channels.">
+  <div class="container page">
+    <header class="page-head">
+      <h1>Contact Us</h1>
+      <p>We answer during clinic hours. For urgent matters, please call ahead.</p>
+    </header>
+
+    <div class="contact-grid">
+      <section class="contact-block card">
+        <h2>Phone</h2>
+        {CONTACT.phones.map((p) => (
+          <a class="link-primary" href={`tel:${p.replace(/\s/g, "")}`}>{p}</a>
+        ))}
+      </section>
+
+      <section class="contact-block card">
+        <h2>Email</h2>
+        <a class="link-primary" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+      </section>
+
+      <section class="contact-block card">
+        <h2>Locations</h2>
+        {CONTACT.addresses.map((addr) => (
+          <p>{addr}</p>
+        ))}
+      </section>
+
+      <section class="contact-block card">
+        <h2>Follow Us</h2>
+        <ul class="social">
+          <li><a href={CONTACT.social.facebook} target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href={CONTACT.social.instagram} target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href={CONTACT.social.youtube} target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href={CONTACT.social.telegram} target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href={CONTACT.social.tiktok} target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 3rem 4rem; }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 3rem; }
+  .page-head p { color: var(--ink-soft); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+  .contact-block h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    margin-bottom: 1rem;
+  }
+  .link-primary { display: block; color: var(--brand); font-size: 1.1rem; font-weight: 600; padding: 0.25em 0; }
+  .social { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .social a { color: var(--ink-soft); }
+  .social a:hover { color: var(--brand); }
+</style>

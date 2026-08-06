@@ -1,0 +1,36 @@
+---
+const locale = Astro.currentLocale ?? "en";
+const path = Astro.url.pathname;
+const isAr = locale === "ar" || path.startsWith("/ar");
+
+// Toggle between /path and /ar/path
+const otherPath = isAr
+  ? path.replace(/^\/ar/, "") || "/"
+  : `/ar${path === "/" ? "/" : path}`;
+---
+
+<a class="lang-switch" href={otherPath} aria-label={isAr ? "English" : "العربية"}>
+  {isAr ? "EN" : "ع"}
+</a>
+
+<style>
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 40px;
+    padding: 0 0.8em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .lang-switch:hover {
+    color: var(--brand);
+    border-color: var(--brand);
+    text-decoration: none;
+  }
+</style>

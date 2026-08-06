@@ -1,0 +1,39 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => data.locale === "en");
+  return posts.map((entry) => ({
+    params: { slug: entry.id.replace(/^en\//, "") },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+---
+
+<BaseLayout title={`${d.title} — Alimran Medical Center`} description={d.description}>
+  <article class="container post">
+    <a class="back" href="/blog/">← All posts</a>
+    <header class="post-header">
+      <h1>{d.title}</h1>
+      <p class="meta">
+        {d.author && <span>{d.author}</span>}
+        {d.publishedAt && <span>· {d.publishedAt.toLocaleDateString(Astro.currentLocale === "ar" ? "ar-IQ" : "en-US", { year: "numeric", month: "long", day: "numeric" })}</span>}
+      </p>
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post { padding-block: 2rem 4rem; }
+  .back { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--ink-soft); }
+  .post-header { text-align: center; margin-bottom: 2.5rem; }
+  .meta { color: var(--ink-muted); font-size: 0.9rem; }
+</style>

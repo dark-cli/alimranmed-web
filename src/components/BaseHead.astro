@@ -1,0 +1,113 @@
+---
+import "../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_TITLE_AR, SITE_DESCRIPTION_AR } from "../consts";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  locale?: "en" | "ar";
+}
+
+const locale = (Astro.props.locale ?? Astro.currentLocale ?? "en") as "en" | "ar";
+const defaultTitle = locale === "ar" ? SITE_TITLE_AR : SITE_TITLE;
+const defaultDescription = locale === "ar" ? SITE_DESCRIPTION_AR : SITE_DESCRIPTION;
+
+const {
+  title = defaultTitle,
+  description = defaultDescription,
+  image = "/images/og-cover.png",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  name: "Alimran Medical Center",
+  alternateName: ["مركز العمران الطبي", "Alimran Neurology Clinic"],
+  description:
+    "Alimran Medical Center specializes in neurology and musculoskeletal disorders in Basra, Iraq — chiropractic, rehabilitation, brain stimulation (TMS/tDCS), pain management, physiotherapy, radiofrequency, and neurosurgery.",
+  url: Astro.site,
+  telephone: ["+964 780 1926801", "+964 770 6774773"],
+  email: "info@alimranmed.com",
+  address: [
+    {
+      "@type": "PostalAddress",
+      addressLocality: "Basra",
+      addressCountry: "IQ",
+      streetAddress: "Tamoos Street, near Al-Kawaz Mosque",
+    },
+    {
+      "@type": "PostalAddress",
+      addressLocality: "Basra",
+      addressCountry: "IQ",
+      streetAddress: "Breaha, Alnkba Medical Collection",
+    },
+  ],
+  medicalSpecialty: [
+    "Neurology",
+    "Neurosurgery",
+    "Chiropractic",
+    "PhysicalTherapy",
+    "PainMedicine",
+  ],
+};
+---
+
+<script is:inline>
+  // Restore stored theme before body paints to avoid a flash.
+  (function () {
+    var t = null;
+    try {
+      t = localStorage.getItem("theme");
+    } catch (e) {}
+    if (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      t = "dark";
+    }
+    if (t) document.documentElement.setAttribute("data-theme", t);
+  })();
+
+  // Mark embedded contexts so overscroll containment CSS can opt out.
+  // (Portal-mode integration will build on this — see docs/PORTAL.md.)
+  if (window.self !== window.top) {
+    document.documentElement.classList.add("is-embedded");
+  }
+</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="author" content="Alimran Medical Center" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- i18n -->
+<link rel="alternate" hreflang="en" href={new URL(Astro.url.pathname.replace(/^\/ar/, ""), Astro.site).href} />
+<link rel="alternate" hreflang="ar" href={new URL(`/ar${Astro.url.pathname.replace(/^\/ar/, "")}`, Astro.site).href} />
+<link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname.replace(/^\/ar/, ""), Astro.site).href} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:site_name" content={defaultTitle} />
+<meta property="og:locale" content={locale === "ar" ? "ar_IQ" : "en_US"} />
+<meta property="og:locale:alternate" content={locale === "ar" ? "en_US" : "ar_IQ"} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.site)} />
+
+<!-- Structured data -->
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />

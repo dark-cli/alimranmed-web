@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const locale = (Astro.currentLocale ?? "en") as "en" | "ar";
+const treatments = (await getCollection("treatments", ({ data }) => data.locale === locale))
+  .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
+
+// Group by category
+const grouped = new Map<string, typeof treatments>();
+for (const t of treatments) {
+  const cat = t.data.category ?? "Other";
+  if (!grouped.has(cat)) grouped.set(cat, []);
+  grouped.get(cat)!.push(t);
+}
+---
+
+<BaseLayout title="What We Treat — Alimran Medical Center">
+  <div class="container page">
+    <header class="page-head">
+      <h1>What We Treat</h1>
+      <p>
+        A comprehensive catalogue of neurological, pain, and musculoskeletal conditions
+        managed by our consultant-led team.
+      </p>
+    </header>
+
+    {[...grouped.entries()].map(([category, items]) => (
+      <section class="category">
+        <h2>{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
+        <ul class="condition-list">
+          {items.map((t) => (
+            <li>
+              <a href={`/treatments/${t.id.replace(/^en\//, "").replace(/^ar\//, "")}/`}>{t.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    {grouped.size === 0 && (
+      <p class="empty">Treatments will appear here once the content migration runs. See <code>docs/MIGRATION.md</code>.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 3rem 4rem; }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 3rem; }
+  .page-head p { color: var(--ink-soft); }
+  .category { margin-bottom: 2.5rem; }
+  .category h2 { color: var(--brand); border-bottom: 1px solid var(--border); padding-bottom: 0.4em; }
+  .condition-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.5rem;
+  }
+  .condition-list a { display: block; padding: 0.5em 0; }
+  .empty { text-align: center; color: var(--ink-muted); font-style: italic; }
+</style>

@@ -1,0 +1,363 @@
+---
+import { NAV, resolveLabel } from "../data/navigation.ts";
+import en from "../i18n/en.json";
+import ar from "../i18n/ar.json";
+import ThemeToggle from "./ThemeToggle.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { CONTACT } from "../consts";
+
+const locale = (Astro.currentLocale ?? "en") as "en" | "ar";
+const dict = (locale === "ar" ? ar : en) as Record<string, string>;
+const currentPath = Astro.url.pathname;
+
+// Prefix hrefs with /ar when in Arabic locale.
+const localize = (href: string) => (locale === "ar" && href.startsWith("/") ? `/ar${href === "/" ? "/" : href}` : href);
+
+// Only surface the top-level in the primary bar; sub-items appear in dropdowns.
+// To keep the bar breathing at desktop widths, drop the very-long labels into an
+// overflow "More" menu when there are too many.
+const PRIMARY_LIMIT = 8;
+const primary = NAV.slice(0, PRIMARY_LIMIT);
+const overflow = NAV.slice(PRIMARY_LIMIT);
+---
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="logo" href={localize("/")} aria-label="Alimran Medical Center">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="15" fill="var(--brand)" />
+          <path d="M16 8v16M8 16h16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </span>
+      <span class="logo-text">
+        <span class="logo-name">Alimran</span>
+        <span class="logo-sub">Medical Center</span>
+      </span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        {primary.map((item) => {
+          const label = resolveLabel(item, dict);
+          const href = localize(item.href);
+          const hasChildren = !!(item.children && item.children.length);
+          const isActive =
+            currentPath === href ||
+            (item.children ?? []).some((c) => currentPath === localize(c.href));
+          return (
+            <li class={`nav-item${hasChildren ? " has-children" : ""}${isActive ? " active" : ""}`}>
+              <a href={href}>{label}</a>
+              {hasChildren && (
+                <div class="dropdown" role="menu">
+                  <ul>
+                    {item.children!.slice(0, 24).map((c) => (
+                      <li><a href={localize(c.href)}>{resolveLabel(c, dict)}</a></li>
+                    ))}
+                    {item.children!.length > 24 && (
+                      <li class="more">
+                        <a href={href}>+ {item.children!.length - 24} more →</a>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              )}
+            </li>
+          );
+        })}
+        {overflow.length > 0 && (
+          <li class="nav-item has-children">
+            <a href="#">More</a>
+            <div class="dropdown" role="menu">
+              <ul>
+                {overflow.map((item) => (
+                  <li><a href={localize(item.href)}>{resolveLabel(item, dict)}</a></li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        )}
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary desktop-only" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>
+        {dict["cta.callUs"]}
+      </a>
+      <ThemeToggle />
+      <LanguageSwitcher />
+      <button class="burger" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="17" x2="20" y2="17" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-panel">
+      <nav aria-label="Mobile">
+        <ul class="drawer-list">
+          {NAV.map((item) => {
+            const label = resolveLabel(item, dict);
+            const href = localize(item.href);
+            const hasChildren = !!(item.children && item.children.length);
+            return (
+              <li class={hasChildren ? "has-children" : ""}>
+                {hasChildren ? (
+                  <details>
+                    <summary>{label}</summary>
+                    <ul>
+                      <li><a href={href}>All {label}</a></li>
+                      {item.children!.map((c) => (
+                        <li><a href={localize(c.href)}>{resolveLabel(c, dict)}</a></li>
+                      ))}
+                    </ul>
+                  </details>
+                ) : (
+                  <a href={href}>{label}</a>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      <div class="drawer-footer">
+        <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>{dict["cta.callUs"]}</a>
+        <a class="btn btn-accent" href={CONTACT.social.telegram} target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-scrim" id="mobile-scrim"></div>
+</header>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById("mobile-menu-toggle");
+    var drawer = document.getElementById("mobile-drawer");
+    var scrim = document.getElementById("mobile-scrim");
+    if (!btn || !drawer || !scrim) return;
+    var open = false;
+    function setOpen(v) {
+      open = v;
+      btn.setAttribute("aria-expanded", String(v));
+      drawer.setAttribute("aria-hidden", String(!v));
+      drawer.classList.toggle("open", v);
+      scrim.classList.toggle("visible", v);
+      document.body.style.overflow = v ? "hidden" : "";
+    }
+    btn.addEventListener("click", function () { setOpen(!open); });
+    scrim.addEventListener("click", function () { setOpen(false); });
+    drawer.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { setOpen(false); });
+    });
+  })();
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: saturate(180%) blur(6px);
+  }
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: var(--header-h);
+    padding-block: 0.5rem;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .logo:hover { text-decoration: none; color: var(--brand); }
+  .logo-mark { display: inline-flex; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-name { font-size: 1.05rem; color: var(--brand); }
+  .logo-sub { font-size: 0.75rem; color: var(--ink-muted); font-weight: 500; }
+
+  .primary-nav {
+    flex: 1 1 auto;
+    display: none;
+    justify-content: center;
+  }
+  .primary-nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.25rem;
+  }
+  .nav-item { position: relative; }
+  .nav-item > a {
+    display: inline-block;
+    padding: 0.55em 0.9em;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .nav-item:hover > a,
+  .nav-item.active > a {
+    background: var(--brand-soft);
+    color: var(--brand);
+    text-decoration: none;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 260px;
+    max-width: 480px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+    z-index: 60;
+  }
+  .nav-item.has-children:hover > .dropdown,
+  .nav-item.has-children:focus-within > .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 60vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .dropdown a {
+    display: block;
+    padding: 0.55em 0.75em;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  .dropdown a:hover { background: var(--brand-soft); color: var(--brand); text-decoration: none; }
+  .dropdown .more a { color: var(--brand); font-weight: 600; }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  .desktop-only { display: none; }
+  .burger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  @media (min-width: 1024px) {
+    .primary-nav { display: flex; }
+    .burger { display: none; }
+    .desktop-only { display: inline-flex; }
+  }
+
+  /* Mobile drawer */
+  .mobile-drawer {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(88%, 380px);
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    z-index: 90;
+    overflow-y: auto;
+    display: flex; flex-direction: column;
+  }
+  html[dir="rtl"] .mobile-drawer {
+    right: auto; left: 0;
+    border-left: none;
+    border-right: 1px solid var(--border);
+    transform: translateX(-100%);
+  }
+  .mobile-drawer.open { transform: none; }
+  .drawer-panel { padding: 1.5rem 1rem; display: flex; flex-direction: column; gap: 1rem; }
+
+  .drawer-list { list-style: none; margin: 0; padding: 0; }
+  .drawer-list > li { border-bottom: 1px solid var(--border); }
+  .drawer-list > li > a,
+  .drawer-list summary {
+    display: block;
+    padding: 0.85em 0.5em;
+    color: var(--ink);
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .drawer-list summary::-webkit-details-marker { display: none; }
+  .drawer-list summary::after {
+    content: "+";
+    float: right;
+    color: var(--ink-muted);
+    font-weight: 400;
+    transition: transform 0.15s ease;
+  }
+  html[dir="rtl"] .drawer-list summary::after { float: left; }
+  .drawer-list details[open] summary::after { content: "−"; }
+  .drawer-list details ul {
+    list-style: none;
+    padding: 0 0 0.5em 1em;
+    margin: 0;
+  }
+  html[dir="rtl"] .drawer-list details ul { padding: 0 1em 0.5em 0; }
+  .drawer-list details ul a {
+    display: block;
+    padding: 0.5em 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .drawer-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 0.5rem 1rem;
+  }
+
+  .mobile-scrim {
+    position: fixed; inset: 0;
+    background: rgba(15, 26, 34, 0.5);
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 80;
+  }
+  .mobile-scrim.visible { opacity: 1; visibility: visible; }
+</style>
