@@ -140,14 +140,14 @@ const isActive = (href: string) =>
     var burger = document.getElementById("astronav-menu");
     if (!panel || !scrim || !burger) return;
 
-    // The canonical setter — mirrors what astro-navbar's toggleMobileNav does.
+    // Canonical toggle: simulate a burger click. astro-navbar's own logic
+    // then flips .hidden on every .astronav-toggle element with the correct
+    // semantics — including the fact that .hidden means opposite things for
+    // the menu panel vs. the open/close icons.
     function setOpen(open) {
-      document
-        .querySelectorAll(".astronav-toggle")
-        .forEach(function (el) {
-          el.classList.toggle("hidden", !open);
-        });
-      document.body.classList.toggle("nav-open", open);
+      var isOpen = document.body.classList.contains("nav-open");
+      if (open === isOpen) return;
+      burger.click();
     }
 
     // Watch the panel's class to keep body.nav-open in sync when
