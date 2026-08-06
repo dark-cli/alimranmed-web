@@ -2,26 +2,39 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { CONTACT } from "../consts";
-import en from "../i18n/en.json";
-
-const dict = en as Record<string, string>;
 
 const doctors = (await getCollection("doctors"))
   .sort((a, b) => a.data.order - b.data.order);
 
-// Featured service categories (top-level landing pages). Hrefs match the
-// nav in src/data/navigation.ts.
-const featured: Array<{ href: string; title: string; desc: string }> = [
-  { href: "/treatments/", title: "What We Treat", desc: "Comprehensive taxonomy of neurology, pain, and musculoskeletal conditions." },
-  { href: "/services/chiropractic/", title: "Chiropractic", desc: "SPINMED and Sigma systems for precise spinal alignment." },
-  { href: "/services/brain-stimulation/", title: "Brain Stimulation", desc: "TMS and tDCS for stroke, migraine, depression, tinnitus, and more." },
-  { href: "/services/physiotherapy/", title: "Physiotherapy", desc: "LUNA EMG robot, magnetic field, laser, ultrasound, and more." },
-  { href: "/services/surgery/", title: "Surgery", desc: "Vertebroplasty, endoscopic spine surgery, DBS, and beyond." },
-  { href: "/services/rehabilitation/", title: "Rehabilitation", desc: "Stroke recovery, speech therapy, occupational therapy, and nursing care." },
+// Intro video (from the old homepage — first YouTube embed on alimranmed.com/).
+// The <lite-youtube>-style facade below only loads YouTube JS when clicked, so
+// the page stays fast for visitors who don't press play.
+const INTRO_VIDEO_ID = "m53F8E6VKFA";
+
+// Featured conditions — 8 tiles matching the old carousel, but as a static
+// responsive grid (no autoplay slider, no jarring motion).
+const FEATURED_CONDITIONS = [
+  { title: "Back pain",         href: "/treatments/back-pain/",     image: "/images/home/Back-Pain.jpg" },
+  { title: "Neck pain",         href: "/treatments/neck-pain/",     image: "/images/home/SNHS-neck-pain-1.jpg" },
+  { title: "Frozen shoulder",   href: "/treatments/frozen-shoulder/", image: "/images/home/1-1.jpg" },
+  { title: "Sports injuries",   href: "/treatments/sports-injuries/", image: "/images/home/Can-Osteopathy-help-you-with-your-sport-injury-1.jpg" },
+  { title: "Fibromyalgia",      href: "/treatments/fibromyalgia/",  image: "/images/home/Fibromyalgia.png" },
+  { title: "Head injury",       href: "/treatments/head-injury/",   image: "/images/home/Global-brain-injury-recovery-e1577492333798.jpg" },
+  { title: "Arthritis of the hip", href: "/treatments/arthritis-of-the-hip/", image: "/images/home/1-4.jpg" },
+  { title: "Heel spur",         href: "/treatments/heel-spur/",     image: "/images/home/frozen-shoulder51.jpg" },
+];
+
+// Featured services (top-level landing pages). Hrefs match navigation.ts.
+const FEATURED_SERVICES = [
+  { href: "/services/chiropractic/",         title: "Chiropractic",     image: "/images/home/DSC_0054-1-1024x684.jpg",              desc: "SPINMED and Sigma systems for precise spinal alignment." },
+  { href: "/services/brain-stimulation/",    title: "Brain Stimulation", image: "/images/home/tms-treatment-768.jpg",               desc: "TMS and tDCS for stroke, migraine, depression, and more." },
+  { href: "/services/radiofrequency/",       title: "Radiofrequency",   image: "/images/home/g4-radiofrequency-generator-161964_1b.jpg", desc: "Minimally invasive nerve neurotomy for chronic pain." },
+  { href: "/services/steroid-injection/",    title: "Steroid Injection", image: "/images/home/injection-knee-cropped-1024x689-1.jpeg", desc: "Image-guided joint and spinal injections." },
 ];
 ---
 
 <BaseLayout>
+  <!-- ============================================================ HERO -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
@@ -33,60 +46,96 @@ const featured: Array<{ href: string; title: string; desc: string }> = [
           the latest evidence-based techniques.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>{dict["cta.callUs"]}</a>
-          <a class="btn btn-ghost" href="/doctors/">{dict["nav.doctors"]}</a>
+          <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>Call Us</a>
+          <a class="btn btn-ghost" href="/doctors/">Meet the doctors</a>
         </div>
       </div>
-      <div class="hero-panel" aria-hidden="true">
-        <div class="pulse"></div>
-        <svg viewBox="0 0 200 200" width="220" height="220">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="var(--brand)" />
-              <stop offset="1" stop-color="var(--accent)" />
-            </linearGradient>
-          </defs>
-          <circle cx="100" cy="100" r="90" fill="none" stroke="url(#g)" stroke-width="6" opacity="0.35" />
-          <circle cx="100" cy="100" r="60" fill="none" stroke="url(#g)" stroke-width="6" opacity="0.6" />
-          <circle cx="100" cy="100" r="30" fill="url(#g)" />
-        </svg>
+
+      <!-- Video facade: clicking the poster loads the real YouTube iframe.
+           Until then, we ship just an image + play button (no third-party JS). -->
+      <div class="hero-video">
+        <button class="video-facade" data-video-id={INTRO_VIDEO_ID} aria-label="Play introduction video">
+          <img
+            src={`https://i.ytimg.com/vi/${INTRO_VIDEO_ID}/hqdefault.jpg`}
+            alt="Alimran Medical Center introduction video"
+            loading="eager"
+            width="480" height="270"
+          />
+          <span class="play-btn" aria-hidden="true">
+            <svg viewBox="0 0 68 48" width="68" height="48">
+              <path d="M67 8.5c-.8-3-3.1-5.3-6.1-6.1C55.5.9 34 .9 34 .9s-21.5 0-26.9 1.5c-3 .8-5.3 3.1-6.1 6.1C-.5 13.9-.5 24-.5 24s0 10.1 1.5 15.5c.8 3 3.1 5.3 6.1 6.1 5.4 1.5 26.9 1.5 26.9 1.5s21.5 0 26.9-1.5c3-.8 5.3-3.1 6.1-6.1C68.5 34.1 68.5 24 68.5 24s0-10.1-1.5-15.5z" fill="#e63b34"/>
+              <path d="M27 34l17.5-10L27 14z" fill="#fff"/>
+            </svg>
+          </span>
+        </button>
+        <p class="video-caption">See how we work</p>
       </div>
     </div>
   </section>
 
-  <section class="specialties">
+  <!-- ============================================== FEATURED CONDITIONS -->
+  <section class="conditions">
     <div class="container">
       <header class="section-head">
-        <h2>Our services</h2>
+        <h2>Common conditions we treat</h2>
+        <p>A snapshot — see the full A–Z index in <a href="/treatments/">What We Treat</a>.</p>
+      </header>
+      <div class="condition-grid">
+        {FEATURED_CONDITIONS.map((c) => (
+          <a class="condition-card" href={c.href}>
+            <div class="thumb">
+              <img src={c.image} alt={c.title} loading="lazy" />
+            </div>
+            <h3>{c.title}</h3>
+          </a>
+        ))}
+      </div>
+      <div class="section-cta">
+        <a class="btn btn-ghost" href="/treatments/">View all conditions →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== SERVICES -->
+  <section class="services">
+    <div class="container">
+      <header class="section-head">
+        <h2>Featured services</h2>
         <p>Every treatment offered under one roof, delivered by consultant-led teams.</p>
       </header>
-      <div class="specialty-grid">
-        {featured.map((f) => (
-          <a class="specialty-card card" href={f.href}>
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-            <span class="learn-more">Explore →</span>
+      <div class="service-grid">
+        {FEATURED_SERVICES.map((s) => (
+          <a class="service-card" href={s.href}>
+            <div class="thumb wide">
+              <img src={s.image} alt={s.title} loading="lazy" />
+            </div>
+            <div class="service-body">
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+              <span class="learn-more">Explore →</span>
+            </div>
           </a>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- ==================================================== DOCTORS -->
   {doctors.length > 0 && (
     <section class="doctors-section">
       <div class="container">
         <header class="section-head">
-          <h2>{dict["nav.doctors"]}</h2>
+          <h2>Our doctors</h2>
         </header>
         <div class="doctor-grid">
           {doctors.map((d) => (
             <a class="doctor-card card" href={`/doctors/${d.id}/`}>
+              {d.data.photo && <img class="doctor-photo" src={d.data.photo} alt={d.data.fullName} loading="lazy" />}
               <h3>{d.data.fullName || d.data.title}</h3>
               {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}
               {d.data.titles.length > 0 && (
                 <p class="creds">{d.data.titles.join(" · ")}</p>
               )}
-              <span class="learn-more">View profile →</span>
             </a>
           ))}
         </div>
@@ -94,6 +143,7 @@ const featured: Array<{ href: string; title: string; desc: string }> = [
     </section>
   )}
 
+  <!-- ==================================================== CONTACT STRIP -->
   <section class="contact-strip">
     <div class="container contact-inner">
       <div>
@@ -114,19 +164,37 @@ const featured: Array<{ href: string; title: string; desc: string }> = [
   </section>
 </BaseLayout>
 
+<script is:inline>
+  // YouTube facade — swap the poster button for a real iframe on click.
+  // No third-party JS runs until the visitor actually presses play.
+  document.querySelectorAll(".video-facade").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.videoId;
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+      iframe.title = "Alimran Medical Center — introduction";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;";
+      btn.replaceWith(iframe);
+    });
+  });
+</script>
+
 <style>
+  /* --------------------------------------------------- HERO */
   .hero {
-    padding: 4rem 0 3rem;
+    padding: 3.5rem 0 3rem;
     background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
   }
   .hero-inner {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
   }
   @media (min-width: 900px) {
-    .hero-inner { grid-template-columns: 1.4fr 1fr; }
+    .hero-inner { grid-template-columns: 1fr 1fr; gap: 3rem; }
   }
   .eyebrow {
     display: inline-block;
@@ -145,44 +213,165 @@ const featured: Array<{ href: string; title: string; desc: string }> = [
     margin-bottom: 1.5rem;
   }
   .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-  .hero-panel {
+
+  /* Video facade */
+  .hero-video {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
     align-items: center;
-    position: relative;
   }
-  .pulse {
+  .video-facade {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    background: #000;
+    border: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    display: block;
+  }
+  .video-facade img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+  }
+  .video-facade:hover img { transform: scale(1.03); opacity: 0.85; }
+  .play-btn {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(47, 167, 122, 0.15), transparent 70%);
-    animation: pulse 3s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
   }
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.8; }
+  .play-btn svg {
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+    transition: transform 0.2s ease;
+  }
+  .video-facade:hover .play-btn svg { transform: scale(1.1); }
+  .video-caption {
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    margin: 0;
   }
 
-  .specialties, .doctors-section, .contact-strip { padding: 4rem 0; }
+  /* ------------------------------------- SHARED SECTION HELPERS */
+  .conditions, .services, .doctors-section, .contact-strip { padding: 4rem 0; }
   .section-head {
     text-align: center;
     max-width: 60ch;
     margin: 0 auto 2rem;
   }
   .section-head p { color: var(--ink-soft); }
+  .section-cta { text-align: center; margin-top: 2rem; }
 
-  .specialty-grid, .doctor-grid {
+  /* --------------------------------------------- CONDITIONS grid */
+  .condition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .condition-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .condition-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand);
+    text-decoration: none;
+  }
+  .condition-card h3 {
+    color: var(--ink);
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 0.85rem 1rem;
+  }
+  .condition-card:hover h3 { color: var(--brand); }
+  .thumb {
+    aspect-ratio: 4 / 3;
+    background: var(--surface-alt);
+    overflow: hidden;
+  }
+  .thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .condition-card:hover .thumb img { transform: scale(1.05); }
+
+  /* --------------------------------------------- SERVICES */
+  .services { background: var(--surface); }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+  }
+  .thumb.wide { aspect-ratio: 16 / 9; }
+  .service-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .service-body h3 { color: var(--brand); margin: 0; }
+  .service-body p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
+  .learn-more { color: var(--brand); font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+
+  /* --------------------------------------------- DOCTORS */
+  .doctor-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.25rem;
+    justify-content: center;
   }
-  .specialty-card, .doctor-card { text-decoration: none; color: inherit; display: block; }
-  .specialty-card:hover, .doctor-card:hover { text-decoration: none; }
-  .specialty-card h3, .doctor-card h3 { color: var(--brand); }
-  .specialty-card p, .doctor-card p { color: var(--ink-soft); }
-  .learn-more { color: var(--brand); font-weight: 600; font-size: 0.9rem; }
-  .doctor-card .specialty { font-weight: 600; color: var(--ink); margin-bottom: 0.3em; }
-  .doctor-card .creds { font-size: 0.85rem; color: var(--ink-muted); }
+  .doctor-card {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  .doctor-card:hover { text-decoration: none; }
+  .doctor-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+    border: 3px solid var(--brand-soft);
+  }
+  .doctor-card h3 { color: var(--brand); margin-bottom: 0.3em; font-size: 1.05rem; }
+  .specialty { font-weight: 600; color: var(--ink); margin-bottom: 0.3em; font-size: 0.95rem; }
+  .creds { font-size: 0.8rem; color: var(--ink-muted); }
 
+  /* --------------------------------------------- CONTACT STRIP */
   .contact-strip {
     background: var(--surface);
     border-top: 1px solid var(--border);
