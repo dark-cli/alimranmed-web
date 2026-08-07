@@ -56,16 +56,22 @@ const businessSchema = {
 
 <script is:inline>
   // Restore stored theme before body paints to avoid a flash.
-  (function () {
+  // Runs on initial page load AND after every View Transitions swap so
+  // navigating between pages doesn't drop the theme back to light.
+  function applyStoredTheme() {
     var t = null;
-    try {
-      t = localStorage.getItem("theme");
-    } catch (e) {}
+    try { t = localStorage.getItem("theme"); } catch (e) {}
     if (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       t = "dark";
     }
-    if (t) document.documentElement.setAttribute("data-theme", t);
-  })();
+    if (t) {
+      document.documentElement.setAttribute("data-theme", t);
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+  }
+  applyStoredTheme();
+  document.addEventListener("astro:after-swap", applyStoredTheme);
 
   // Mark embedded contexts so overscroll containment CSS can opt out.
   // (Portal-mode integration will build on this — see docs/PORTAL.md.)
