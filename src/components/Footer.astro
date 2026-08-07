@@ -31,7 +31,7 @@ const socialLinks = [
       <h4>{dict["footer.contactUs"]}</h4>
       <ul class="footer-list">
         {CONTACT.phones.map((p) => (
-          <li><a href={`tel:${p.replace(/\s/g, "")}`}>{p}</a></li>
+          <li><a href={`tel:${p.replace(/\s/g, "")}`}><bdi>{p}</bdi></a></li>
         ))}
         <li><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
       </ul>

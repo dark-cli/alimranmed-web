@@ -69,7 +69,7 @@ const l = {
       <div class="aside-block">
         <h3>{l.book}</h3>
         {CONTACT.phones.map((p) => (
-          <a class="phone-link" href={`tel:${p.replace(/\s/g, "")}`}>{p}</a>
+          <a class="phone-link" href={`tel:${p.replace(/\s/g, "")}`}><bdi>{p}</bdi></a>
         ))}
       </div>
     </aside>

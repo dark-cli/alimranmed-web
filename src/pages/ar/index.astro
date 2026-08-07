@@ -152,7 +152,7 @@ const FEATURED_SERVICES = [
       <div class="contact-details">
         {CONTACT.phones.map((p) => (
           <a class="contact-item" href={`tel:${p.replace(/\s/g, "")}`}>
-            <strong>{p}</strong>
+            <strong><bdi>{p}</bdi></strong>
           </a>
         ))}
         <a class="contact-item" href={`mailto:${CONTACT.email}`}>
