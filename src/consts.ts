@@ -5,10 +5,10 @@ export const SITE_DESCRIPTION =
 export const CONTACT = {
   phones: ["+964 780 1926801", "+964 770 6774773"],
   email: "info@alimranmed.com",
-  addresses: [
-    "Iraq – Basrah – Tamoos Street – near Al-Kawaz Mosque",
-    "Basra, Breaha, Alnkba Medical Collection",
-  ],
+  addresses: {
+    en: "Basra, Breaha, Alnkba Medical Collection",
+    ar: "العراق, بصرة, بريه, مجمع النخبة",
+  },
   social: {
     youtube: "https://youtube.com/channel/UCjlmKURD6OO5_rRyKMm6lxA",
     facebook: "https://facebook.com/alimranmed",

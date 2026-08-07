@@ -40,9 +40,7 @@ const socialLinks = [
     <div>
       <h4>{dict["footer.locations"]}</h4>
       <ul class="footer-list">
-        {CONTACT.addresses.map((addr) => (
-          <li>{addr}</li>
-        ))}
+        <li>{CONTACT.addresses[locale]}</li>
       </ul>
     </div>
 
