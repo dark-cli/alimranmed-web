@@ -20,16 +20,24 @@
 </button>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".theme-toggle").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var current = document.documentElement.getAttribute("data-theme");
-        var next = current === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", next);
-        try { localStorage.setItem("theme", next); } catch (e) {}
+  // Bind on initial load AND after each View Transitions navigation, so a
+  // freshly-swapped .theme-toggle button in the header gets its click handler.
+  (function () {
+    function bindThemeToggles() {
+      document.querySelectorAll(".theme-toggle").forEach(function (btn) {
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = "1";
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.getAttribute("data-theme");
+          var next = current === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", next);
+          try { localStorage.setItem("theme", next); } catch (e) {}
+        });
       });
-    });
-  });
+    }
+    bindThemeToggles();
+    document.addEventListener("astro:page-load", bindThemeToggles);
+  })();
 </script>
 
 <style>

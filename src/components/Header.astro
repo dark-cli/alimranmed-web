@@ -141,70 +141,96 @@ const isActive = (href: string) => {
 <div id="menu-scrim" class="menu-scrim" aria-hidden="true"></div>
 
 <script is:inline>
+  /**
+   * Drawer + swipe wiring, View-Transitions-aware.
+   *
+   * - Element-level listeners (burger click, close click, scrim click, drawer
+   *   link clicks) attach on every page load AND on every astro:page-load
+   *   event so they re-bind after client-side navigation swaps the header DOM.
+   * - Document-level listeners (touch swipe, Escape key) attach exactly once
+   *   per session, guarded by a flag on window, so they don't accumulate.
+   */
   (function () {
-    var toggle = document.getElementById("menu-toggle");
-    var close  = document.getElementById("menu-close");
-    var nav    = document.getElementById("mobile-nav");
-    var scrim  = document.getElementById("menu-scrim");
-    if (!toggle || !nav || !scrim) return;
+    function bindElementListeners() {
+      var toggle = document.getElementById("menu-toggle");
+      var close  = document.getElementById("menu-close");
+      var nav    = document.getElementById("mobile-nav");
+      var scrim  = document.getElementById("menu-scrim");
+      if (!toggle || !nav || !scrim) return;
 
-    function isOpen() { return nav.classList.contains("open"); }
+      toggle.addEventListener("click", function () { setOpen(true); });
+      close  && close.addEventListener("click", function () { setOpen(false); });
+      scrim.addEventListener("click", function () { setOpen(false); });
+      // Close after tapping any link inside the drawer
+      nav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () { setOpen(false); });
+      });
+    }
+
+    function isOpen() {
+      var nav = document.getElementById("mobile-nav");
+      return !!nav && nav.classList.contains("open");
+    }
     function setOpen(open) {
+      var nav   = document.getElementById("mobile-nav");
+      var scrim = document.getElementById("menu-scrim");
+      if (!nav || !scrim) return;
       nav.classList.toggle("open", open);
       scrim.classList.toggle("visible", open);
       document.body.classList.toggle("nav-open", open);
       nav.setAttribute("aria-hidden", String(!open));
     }
 
-    toggle.addEventListener("click", function () { setOpen(true); });
-    close  && close.addEventListener("click", function () { setOpen(false); });
-    scrim.addEventListener("click", function () { setOpen(false); });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") setOpen(false);
-    });
-    // Close after tapping any link inside the drawer
-    nav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { setOpen(false); });
-    });
+    // Document-level listeners: attach once per session
+    if (!window.__navGlobalsBound) {
+      window.__navGlobalsBound = true;
 
-    // ── Swipe gestures ──────────────────────────────────────────
-    // LTR: drawer opens from right, so swipe LEFT (dx < 0) from right
-    //   half opens; swipe RIGHT (dx > 0) closes.
-    // RTL: drawer opens from left, so directions are mirrored — swipe
-    //   RIGHT from left half opens; swipe LEFT closes.
-    var startX = 0, startY = 0, tracking = false;
-    var THRESHOLD = 50;
-    var isRTL = document.documentElement.dir === "rtl";
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
 
-    document.addEventListener("touchstart", function (e) {
-      if (e.touches.length !== 1) { tracking = false; return; }
-      var t = e.touches[0];
-      startX = t.clientX;
-      startY = t.clientY;
-      tracking = true;
-    }, { passive: true });
+      // ── Swipe gestures ──────────────────────────────────────────
+      var startX = 0, startY = 0, tracking = false;
+      var THRESHOLD = 50;
 
-    document.addEventListener("touchend", function (e) {
-      if (!tracking) return;
-      tracking = false;
-      var t = (e.changedTouches && e.changedTouches[0]);
-      if (!t) return;
-      var dx = t.clientX - startX;
-      var dy = t.clientY - startY;
-      if (Math.abs(dx) < THRESHOLD || Math.abs(dy) > Math.abs(dx) * 0.7) return;
+      document.addEventListener("touchstart", function (e) {
+        if (e.touches.length !== 1) { tracking = false; return; }
+        var t = e.touches[0];
+        startX = t.clientX;
+        startY = t.clientY;
+        tracking = true;
+      }, { passive: true });
 
-      var openDir  = isRTL ?  1 : -1;  // sign of dx that opens the drawer
-      var closeDir = isRTL ? -1 :  1;  // sign of dx that closes the drawer
-      var startZone = isRTL
-        ? startX < window.innerWidth * 0.5   // RTL: right half is "close",
-        : startX > window.innerWidth * 0.5;  // LTR: right half is "open"
+      document.addEventListener("touchend", function (e) {
+        if (!tracking) return;
+        tracking = false;
+        var t = (e.changedTouches && e.changedTouches[0]);
+        if (!t) return;
+        var dx = t.clientX - startX;
+        var dy = t.clientY - startY;
+        if (Math.abs(dx) < THRESHOLD || Math.abs(dy) > Math.abs(dx) * 0.7) return;
 
-      if (dx * openDir > 0 && !isOpen() && startZone) {
-        setOpen(true);
-      } else if (dx * closeDir > 0 && isOpen()) {
-        setOpen(false);
-      }
-    }, { passive: true });
+        var isRTL = document.documentElement.dir === "rtl";
+        var openDir  = isRTL ?  1 : -1;
+        var closeDir = isRTL ? -1 :  1;
+        var startZone = isRTL
+          ? startX < window.innerWidth * 0.5
+          : startX > window.innerWidth * 0.5;
+
+        if (dx * openDir > 0 && !isOpen() && startZone) {
+          setOpen(true);
+        } else if (dx * closeDir > 0 && isOpen()) {
+          setOpen(false);
+        }
+      }, { passive: true });
+
+      // Close drawer whenever a page transition starts
+      document.addEventListener("astro:before-swap", function () { setOpen(false); });
+    }
+
+    // Bind element listeners on initial load + after every client-side nav
+    bindElementListeners();
+    document.addEventListener("astro:page-load", bindElementListeners);
   })();
 </script>
 

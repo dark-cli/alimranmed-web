@@ -169,18 +169,28 @@ const FEATURED_SERVICES = [
 <script is:inline>
   // YouTube facade — swap the poster button for a real iframe on click.
   // No third-party JS runs until the visitor actually presses play.
-  document.querySelectorAll(".video-facade").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const id = btn.dataset.videoId;
-      const iframe = document.createElement("iframe");
-      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-      iframe.title = "Alimran Medical Center — introduction";
-      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      iframe.setAttribute("allowfullscreen", "");
-      iframe.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;";
-      btn.replaceWith(iframe);
-    });
-  });
+  // Re-binds on each View Transitions nav so the facade works if visitors
+  // navigate away and back to the homepage.
+  (function () {
+    function bindVideoFacades() {
+      document.querySelectorAll(".video-facade").forEach((btn) => {
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = "1";
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.videoId;
+          const iframe = document.createElement("iframe");
+          iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+          iframe.title = "Alimran Medical Center — introduction";
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+          iframe.setAttribute("allowfullscreen", "");
+          iframe.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;";
+          btn.replaceWith(iframe);
+        });
+      });
+    }
+    bindVideoFacades();
+    document.addEventListener("astro:page-load", bindVideoFacades);
+  })();
 </script>
 
 <style>
