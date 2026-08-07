@@ -27,7 +27,9 @@ const isActive = (href: string) => {
 ---
 
 <header class="site-header">
-  <div class="container header-row">
+  <!-- Header chrome is always LTR (logo left, actions right) regardless of
+       document direction. Only the nav LINKS inside get RTL order in AR. -->
+  <div class="container header-row" dir="ltr">
     <a class="logo" href={L("/")} aria-label="Alimran Medical Center">
       <span class="logo-mark" aria-hidden="true">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -303,6 +305,13 @@ const isActive = (href: string) => {
     display: flex;
     align-items: center;
     gap: 0.15rem;
+  }
+  /* In AR mode, force the nav LIST to read right-to-left so Home is on the
+     right and Contact on the left — matches Arabic reading direction.
+     The outer header-row stays LTR (see dir="ltr" on the container) so the
+     logo remains on the left and Call/Theme/Language remain on the right. */
+  :global(html[dir="rtl"]) .primary-nav > ul {
+    direction: rtl;
   }
   .nav-item { position: relative; }
   .nav-link {
