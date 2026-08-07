@@ -101,8 +101,9 @@ const isActive = (href: string) => {
 </header>
 
 <!-- Mobile drawer + scrim (sit outside .site-header so their fixed positioning
-     isn't relative to the sticky header stacking context) -->
-<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile" aria-hidden="true">
+     isn't relative to the sticky header stacking context).
+     Explicit dir so Arabic content flows right-to-left inside the drawer. -->
+<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile" aria-hidden="true" dir={locale === "ar" ? "rtl" : "ltr"}>
   <div class="drawer-head">
     <span class="drawer-title">{t["common.menu"]}</span>
     <button id="menu-close" class="icon-btn" aria-label="Close menu" type="button">
@@ -458,6 +459,7 @@ const isActive = (href: string) => {
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
+    text-align: start;   /* logical — auto-flips for RTL */
   }
   .drawer-list summary { list-style: none; }
   .drawer-list summary::-webkit-details-marker { display: none; }
@@ -499,6 +501,7 @@ const isActive = (href: string) => {
     letter-spacing: 0.08em;
     margin: 0.75em 0 0.3em;
     font-weight: 600;
+    text-align: start;
   }
   .drawer-col ul {
     list-style: none;
@@ -511,6 +514,7 @@ const isActive = (href: string) => {
     color: var(--ink-soft);
     font-size: 0.95rem;
     text-decoration: none;
+    text-align: start;   /* logical — RTL-safe */
   }
   .drawer-col a:hover { color: var(--brand); }
 
