@@ -1,6 +1,6 @@
-/* IBM Plex Sans + IBM Plex Sans Arabic — same family, harmonised
-   metrics for smooth switching between English and Arabic. */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+/* Latin: IBM Plex Sans. Arabic: Tajawal (by Boutros Fonts, used by Saudi MoH
+   and Gulf hospitals — trusted institutional Arabic sans). */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap');
 
 /* Font Awesome — served as a static file from /fonts/fontawesome/fontawesome.css
    loaded via BaseHead. That path resolves identically in dev and prod (no Vite
@@ -85,11 +85,11 @@ body {
 
 /* Arabic — pair Latin-first stack with Arabic fallback.
    Browsers do per-character font selection: Latin chars pick
-   "IBM Plex Sans", Arabic glyphs fall through to "IBM Plex Sans Arabic".
+   "IBM Plex Sans", Arabic glyphs fall through to "Tajawal".
    Putting the Latin font FIRST prevents proper-name / brand text
-   from rendering in the Arabic font's (chunkier) Latin fallback. */
+   from rendering in Tajawal's Latin fallback. */
 html[dir="rtl"] body {
-  font-family: "IBM Plex Sans", "IBM Plex Sans Arabic", var(--font-sans);
+  font-family: "IBM Plex Sans", "Tajawal", var(--font-sans);
 }
 
 main {
