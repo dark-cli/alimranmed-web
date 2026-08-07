@@ -3,21 +3,32 @@ title: "Sura Abdulkhaliq Baker"
 fullName: "Sura Abdulkhaliq Baker"
 locale: "en"
 order: 2
-specialty: "Physician"
+specialty: "Specialist Physician"
 photo: "/images/doctors/sura-abdulkhaliq-baker.png"
-titles: []
+titles:
+  - "MB ChB"
+  - "Neurology Specialist"
 legacyUrl: "https://alimranmed.com/sura-abdulkhaliq-baker/"
-description: "Physician specializing in neurology and musculoskeletal disorders."
+description: "Specialist Physician in Neurology at Alimran Medical Center. Dedicated to comprehensive patient care in neurological and musculoskeletal disorders."
 memberships: []
-languages: []
+languages:
+  - "Arabic"
+  - "English"
 source: "ai-draft"
 ---
 
-**Sura Abdulkhaliq Baker**
+**Professional Background**
 
-**d_sura_r@yahoo.com**
+Dr. Sura Abdulkhaliq Baker is a skilled specialist physician with extensive experience in neurology and musculoskeletal medicine. She provides comprehensive medical care and works collaboratively with our multidisciplinary team to ensure optimal patient outcomes.
 
-**+9647712627477**
+**Expertise**
+
+Dr. Baker specializes in the diagnosis and management of neurological and musculoskeletal disorders, utilizing both clinical expertise and modern treatment modalities available at Alimran Medical Center.
+
+**Contact**
+
+- Email: d_sura_r@yahoo.com
+- Phone: +9647712627477
 
 ## Personal Details
 
