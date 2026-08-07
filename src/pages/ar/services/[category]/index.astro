@@ -8,10 +8,8 @@ const t = dictFor("ar");
 export async function getStaticPaths() {
   const all = await getCollection("services");
   const topics = Array.from(new Set(all.map((e) => topicOf(e.id))));
-  const arEntries = topics
-    .map((topic) => pickForLocale(all, topic, "ar"))
-    .filter((x): x is NonNullable<typeof x> => !!x)
-    .map(({ entry }) => entry);
+  const arPickups = topics.map((topic) => pickForLocale(all, topic, "ar")).filter((x): x is NonNullable<typeof x> => !!x);
+  const arEntries = arPickups.map(({ entry }) => entry);
 
   const byCategory = new Map<string, typeof arEntries>();
   for (const entry of arEntries) {
@@ -21,24 +19,30 @@ export async function getStaticPaths() {
     if (!byCategory.has(category)) byCategory.set(category, []);
     byCategory.get(category)!.push(entry);
   }
-  return [...byCategory.entries()].map(([category, entries]) => ({
-    params: { category },
-    props: { category, entries },
-  }));
+  return [...byCategory.entries()].map(([category, entries]) => {
+    // Find the category pickup (which includes the entry and fallback flag) to get its Arabic title
+    const categoryPickup = arPickups.find((p) => topicOf(p.entry.id) === category);
+    const categoryEntry = categoryPickup?.entry;
+    return {
+      params: { category },
+      props: { category, entries, categoryEntry },
+    };
+  });
 }
 
-const { category, entries } = Astro.props;
+const { category, entries, categoryEntry } = Astro.props;
 const sorted = entries.sort(
   (a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title),
 );
-const prettyCategory = category.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
+// Use the Arabic title from the category entry if it exists, otherwise fallback to titlecased slug
+const categoryTitle = categoryEntry?.data.title || category.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
 ---
 
-<BaseLayout title={`${prettyCategory} — مركز العمران الطبي`}>
+<BaseLayout title={`${categoryTitle} — مركز العمران الطبي`}>
   <div class="container page">
     <header class="page-head">
       <a class="back" href="/ar/services/">← {t["nav.services"]}</a>
-      <h1>{prettyCategory}</h1>
+      <h1>{categoryTitle}</h1>
     </header>
 
     <div class="grid">
