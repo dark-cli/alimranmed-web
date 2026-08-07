@@ -55,10 +55,10 @@ const businessSchema = {
   function applyStoredTheme() {
     var t = null;
     try { t = localStorage.getItem("theme"); } catch (e) {}
-    if (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      t = "dark";
+    if (!t) {
+      t = "light";
     }
-    if (t) {
+    if (t === "dark") {
       document.documentElement.setAttribute("data-theme", t);
     } else {
       document.documentElement.removeAttribute("data-theme");
