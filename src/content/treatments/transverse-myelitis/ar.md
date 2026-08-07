@@ -2,7 +2,7 @@
 title: "التهاب النخاع المستعرض"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d9%87%d8%a7%d8%a8-%d8%a7%d9%84%d9%86%d8%ae%d8%a7%d8%b9-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%b9%d8%b1%d8%b6"
-category: "pain"
+category: "الألم"
 order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/Modifications-of-longitudinally-extensive-transverse-myelitis-LETM-Spinal-cord-MRI_Q640-300x300.jpg)إن الْتِهاب كلا جانبَيْ قطاع واحد من الحبل النخاعي ما هو إلا الْتِهاب النخاع المستعرض. أحيانًا يُدمِّر هذا الاضطراب العصبي المادة العازلة التي تُغطِّي ألياف الخلايا العصبية (المَيَالين).

@@ -1,6 +1,6 @@
 ---
 title: "المضخة الدوائية"
-category: "surgery"
+category: "الجراحة"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/2424"
 order: 999

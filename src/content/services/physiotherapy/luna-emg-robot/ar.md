@@ -1,6 +1,6 @@
 ---
 title: "لونا روبوت EMG"
-category: "physiotherapy"
+category: "العلاج الطبيعي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%84%d9%88%d9%86%d8%a7-%d8%b1%d9%88%d8%a8%d9%88%d8%aa-emg"
 order: 999

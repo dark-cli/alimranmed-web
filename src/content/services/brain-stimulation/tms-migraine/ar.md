@@ -1,6 +1,6 @@
 ---
 title: "التحفيز المغناطيسي للشقيقة"
-category: "brain-stimulation"
+category: "تحفيز الدماغ"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1942"
 order: 999

@@ -1,6 +1,7 @@
 ---
 title: "قيمنا"
 description: "التعاطف، الابتكار، الجودة، النزاهة، الاحترافية، والاحترام — ركائز عملنا اليومي مع المرضى وذويهم."
+locale: "ar"
 order: 999
 category: "about"
 source: "original"

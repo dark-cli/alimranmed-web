@@ -25,11 +25,18 @@ for (const entry of entries) {
   }
 }
 
+const categoryTitles = new Map<string, string>();
+// Add all entries to categoryTitles (both top-level and nested)
+for (const entry of entries) {
+  const topic = topicOf(entry.id);
+  categoryTitles.set(topic, entry.data.title);
+}
+
 const categories = [...byCategory.entries()]
   .sort((a, b) => a[0].localeCompare(b[0]))
   .map(([slug, list]) => ({
     slug,
-    pretty: slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" "),
+    pretty: categoryTitles.get(slug) || slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" "),
     count: list.length,
   }));
 ---

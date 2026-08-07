@@ -2,7 +2,7 @@
 title: "الروماتويد"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b1%d9%88%d9%85%d8%a7%d8%aa%d9%88%d9%8a%d8%af"
-category: "pain"
+category: "الألم"
 order: 999
 ---
 **ماهو مرض الروماتويد**

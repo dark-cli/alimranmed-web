@@ -1,6 +1,6 @@
 ---
 title: "حقن الستيرويد"
-category: "steroid-injection"
+category: "حقن الستيرويد"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af"
 order: 999

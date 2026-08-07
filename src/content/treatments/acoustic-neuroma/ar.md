@@ -2,7 +2,7 @@
 title: "ورم العصب السمعي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%88%d8%b1%d9%85-%d8%a7%d9%84%d8%b9%d8%b5%d8%a8-%d8%a7%d9%84%d8%b3%d9%85%d8%b9%d9%8a"
-category: "pain"
+category: "الألم"
 order: 999
 publishedAt: "2021-01-12T13:42:59"
 ---

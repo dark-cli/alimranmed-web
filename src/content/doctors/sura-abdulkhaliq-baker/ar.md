@@ -1,227 +1,91 @@
 ---
-title: "د. سرى عبدالخالق باقر"
-fullName: "د. سرى عبدالخالق باقر"
+title: "سرة عبدالخالق باقر"
+fullName: "سرة عبدالخالق باقر"
+locale: "ar"
+order: 2
 specialty: "طبيبة"
 titles: []
-source: "legacy-wp"
-order: 2
+legacyUrl: "https://ar.alimranmed.com/sura-abdulkhaliq-baker/"
+description: "الملف الشخصي قيد التحضير."
 memberships: []
 languages: []
+source: "ai-draft"
 ---
-**Sura Abdulkhaliq Baker**
 
-**d\_sura\_r@ yahoo.com**
+**سرة عبدالخالق باقر**
+
+**d_sura_r@yahoo.com**
 
 **+9647712627477**
 
-**Content:**
+## المعلومات الشخصية
 
-**Personal**
+- الاسم: سرة عبدالخالق باقر الميزاني
+- الحالة الاجتماعية: متزوجة
+- التسجيل: جمعية الأطباء العراقيين
+- البريد الإلكتروني: d_sura_r@yahoo.com
+- فيسبوك: Sura Bekr
+- الهاتف: +9647712627477
 
-3
+### البيان الشخصي
 
-Personal details
+كانت الطب جزءاً من حياتي دائماً. إن قدرتي على التواصل بوضوح وإيجاز هي المفتاح لنجاح علاقتي مع المريض، وأعمل على تحسين هذه المهارة من خلال كوني مدرسة مساعدة ومدرسة خاصة.
 
-4
+أستمتع بالعمل في فريق وأيضاً كفرد، وتحمل المسؤولية عن عملي في بيئة صعبة. أنا في انتظار الفرصة لتعلم الباقي.
 
-Personal statement
+أنوي الاستفادة القصوى من برنامج الإقامة في الطب الباطني، واستخدام المعرفة التي اكتسبتها هناك لشفاء المرضى وتدريب الآخرين المهتمين بهذا المجال، وأرغب دائماً في أن أكون مورداً لمرضاي ومصدراً للرعاية الطبية المستمرة.
 
-4
+## التعليم والمؤهلات
 
-**Education & qualification**
+- **جامعة البصرة - كلية الطب** — 29 حزيران 2010 — بكالوريوس الطب والجراحة
+- **جامعة عين شمس** — 5 تشرين الأول 2016 — شهادة البورد في الدبلوم العالي في الطب الفيزيائي وأمراض الروماتيزم وإعادة التأهيل
+- **جامعة تورنتو الدولية** — مايو 2015 — شهادة البورد في دبلوم التغذية السريرية
 
-5
+## الجوائز والتكريمات
 
-**Prizes**
+- 2012 — رسالة تقدير على الجهود الخاصة في مستشفى أبو الخصيب العام
+- 2014 — تم تقييمها بـ "ممتاز" في علم وظائف الأعضاء و"جيد جداً" في المناعة والفيزياء والجراحة والصيدلة
 
-**Employment history**
+## سجل العمل
 
-5
+- طبيب مقيم دوري من 2010 إلى 2012 في مستشفيات المواني العام ومستشفى أبو الخصيب العام، بما في ذلك الطب والجراحة وطب النساء وطب الأطفال بالإضافة إلى وحدات العناية المكثفة والعناية التاجية تحت إشراف الاستشاريين والأساتذة.
+- أخذت سنة إجازة لرعاية الأطفال.
+- طبيبة مصنفة في عام 2013 لمدة 6 أشهر في مستشفى أبو الخصيب العام ومركز الكرمة للرعاية الصحية - جامعة البصرة.
+- متدربة منذ أغسطس 2016 في الطب الفيزيائي وأمراض الروماتيزم وإعادة التأهيل في العيادات الخارجية في مستشفى الدمرداش التعليمي.
 
-Previous employment
+## الخبرة السريرية
 
-5
+أستخدم خبرتي العملية لجمع التاريخ الطبي الكامل وإجراء فحص بدني شامل، بحثاً عن علامات الالتهاب في جميع أنحاء الجسم والجهاز العضلي الهيكلي، جنباً إلى جنب مع التاريخ العائلي الذي يعتبر مهماً جداً لتشخيص أمراض الروماتيزم.
 
-Current employment
+بالإضافة إلى ذلك، أراجع نتائج أي اختبارات سابقة وقد أطلب اختبارات معملية إضافية لتقييم الحالات مثل التهاب المفاصل الروماتويدي، والتهاب المفاصل العظمي، والذئبة الحمراء، والنقرس، والتهاب الفقار اللاقفاري، والتصلب الجلدي، وهشاشة العظام، وتنخر العظام، والألم العضلي الليفي، وآلام الظهر المزمنة، والأمراض العضلية والتهاب الأوعية.
 
-**Clinical experience**
+فيما يتعلق بإعادة التأهيل، أستخدم معرفتي في تحديد برامج وجلسات إعادة التأهيل للمناطق المصابة والما بعد الجراحة والمناطق العضلية الهيكلية الرضية مع إجراء فحص عصبي كامل وتقييم إشعاعي.
 
-6
+يمكنني وضع خطط العلاج بما في ذلك العلاج الطبي والعلاج الطبيعي لإصابات المفاصل والأوتار وكذلك الإحالة إلى متخصصين إذا لزم الأمر.
 
-Cone skill
+أيضاً أقدم نصائح حول الأدوية وآليات التكيف والتقنيات الوقائية من الإعاقة أو استعادة الوظيفة كطريقة لتحسين جودة الحياة.
 
-6
+## التدريس
 
-**Teaching**
+محاضرة عن الوعي بالرعاية الصحية لـ 15 موظفاً، ساعتان في الأسبوع لمدة 6 أشهر في مركز الكرمة للرعاية الصحية - جامعة البصرة.
 
-6
+## البحث العلمي
 
-**Research**
+حصلت بنجاح على شهادة على أساس البحث العلمي في قسم المجتمع بجامعة عين شمس.
 
-7
+## الدورات والاجتماعات (جميعها في القاهرة، مصر)
 
-**Courses & meetings**
+- **ورشة الحقن داخل وخارج المفاصل** — 23 ديسمبر 2014 — المؤتمر السنوي التاسع لطب الطب الفيزيائي والروماتيزم وإعادة التأهيل بجامعة عين شمس
+- **نشاط تعليمي MKSAP 16 Rheumatology** — 23 ديسمبر 2014 — الكلية الأمريكية للأطباء
+- **التطبيقات العلمية والعملية للطرائق الجديدة في تقويم العظام والأطراف الصناعية** — 17–21 مايو 2015 — دورة الطب الفيزيائي وإعادة التأهيل بوزارة الصحة
+- **ورشة دراسة التوصيل العصبي والرسم الكهربائي للعضلات** — 15 أبريل 2015 — دورة العلاج بالكهرباء
+- **أساسيات التصوير العضلي الهيكلي** — 30 مايو–1 أبريل 2015 — المعهد العربي للتطوير المهني المستمر (AICPD)
+- **العلاج بالميزوثيرابي العضلي الهيكلي وذوبان الدهون والميزوثيرابي للشعر والوجه** — 18 أغسطس 2015 — مستشفى ماتاريا التعليمي
+- **مقدمة في النظرية الأساسية للطب الصيني التقليدي وتقنية الإبر — التطبيق على ممارسة الوخز بالإبر، المستوى 1** — 17 أغسطس 2015 — مستشفى ماتاريا التعليمي
+- **ورشة الميزوثيرابي وأنشطة المؤتمر** — 9–10 مارس 2016 — المؤتمر السنوي العاشر لطب الطب الفيزيائي والروماتيزم وإعادة التأهيل بجامعة عين شمس
+- **24–25 ديسمبر 2014** — المؤتمر السنوي التاسع لطب الطب الفيزيائي والروماتيزم وإعادة التأهيل بجامعة عين شمس
+- **26 مايو 2015** — المؤتمر السنوي الأول لطب الطب الفيزيائي والروماتيزم وإعادة التأهيل بجامعة القاهرة بالتعاون مع منتدى أطباء الروماتيزم وإعادة التأهيل للمنظمة العامة للمستشفيات والمعاهد التعليمية
 
-8
+## الاهتمامات
 
-**Interest**
-
- **Personal details:**
-
-Name: Sura Abdulkhaliq Baker Almezael
-
-Marital state: married
-
- Registration: Iraqi medical association
-
-                                                                                       E-mail: d\_sura\_r@yahoo.com
-
-Face book: Sura Bekr
-
-Mob. : +9647712627477
-
-Personal statement:
-
-  Medicine has always been a part of my life, my ability to communicate clearly & concisely is the key to the success of my relationship with the patient & I am working on improving this communication skill through being a supplementary instructor & tutor.
-
-I enjoy working in a team but also as an individual & taking responsibility for my own is challenging environment to me, I am eagerly waiting the chance to learn the rest.
-
-I intended to take full advantage of a residency program in internal medicine &to use knowledge I acquired there to heal patient & train others interested in the field, always want to be resource for my patient & source of continual medical care.
-
-**Education & qualification:**
-
-Basra university \_college of medicine
-
-29th of June 2010
-
-M.B.ch.B
-
-Ain shams university
-
-5th of OCT.2016
-
-Board certified in
-
-High diploma of physical medicine Rheumatology &rehabilitation
-
- 
-
-Toronto international university
-
- 
-
-May -2015
-
- 
-
-Board certified in
-
-Clinical nutritional diploma
-
-**Prizes:**
-
-2012         Appreciating a special effort letter          in Abu Al\_Khaseeb general hospital
-
-2014        Evaluated as (excellent) in physiology as well as (very good) in immunology, physics, surgery & pharmacology.
-
-**Employment history:**
-
--   Periodic resident from 2010      to 2012          in Al\_Mawanee general & Abu\_Alkhaseeb general hospitals including medicine, surgery, gynecology, pediatric  as well as ICU &CCU units under supervision of consultants & professors.
-
--   I took a gab year caring child vocation.
-
--   Graded physician   in 2013 for 6 months       in Abu\_Alkhaseeb general hospital & Al\_Karma health care centre \_ Basra University.
-
--   Trainee since Aug.2016                  in physical medicine, rheumatology & rehabilitation outpatient at Al\_demerdash teaching hospital.
-
-**Clinical experience:**
-
- I used my practical experience into gather a full medical history &perform a thorough physical examination to look for sign  of inflammation throughout the whole body & musculoskeletal system plus family history which is very important to the  diagnosis of  Rheumatoid diseases.
-
-In addition, review results of any prior testing &may order additional lab test to assess conditions such as Rheumatoid arthritis, osteoarthritis, SLE, gout, Ankylosing spondylitis, scleroderma, osteoporosis, osteonecrosis, fibromyalgia, chronic back pain, myopathies & vasculitides.
-
-Regarding rehabilitation, I use my knowledge in determining rehabilitation programs   & sessions for injured, post operative & traumatic MSK regions with full neurological examination & radiological assessment.
-
-I can set Treatment plan including medical, physical therapy for joints/tendons injuries beside referral to specialist if needed.
-
-Also giving advice about medication, coping mechanism & technique for preventing disability or regaining function as a way to improve quality of life.
-
-**Teaching:**
-
-Lecturer about health care awareness for 15 employees
-
- By 2 hours/week for 6 months
-
-  At Al-karma health care centre \_Basra University.
-
-  **Research:**
-
-I successfully obtained certification about basis of scientific research at community department of Ain shams University.
-
-**Courses & meetings:( all were in Cairo/ Egypt)**
-
-Intra & extra articular injection workshop
-
-23rd of Dec. 2014
-
-The 9th  annual Ain shams physical medicine, Rheumatology & rehabilitation congress
-
-Educational activity of MKSAP 16 Rheumatology
-
-23rd of Dec. 2014
-
-American college of physicians
-
-Scientific & practical applications about new modalities in orthosis &prosthesis
-
-17th \_21 of May 2015
-
-Physical medicine & rehabilitation course of health ministry
-
-Nerve conduction study & electromyography workshop
-
-        15th April 2015
-
-Electrotherapy course
-
-Basic of musculoskeletal imaging
-
-30th May\_1st April 2015
-
-Arab institute for continuing professional development (AICPD)
-
-MSK mesotherapy, lipodissolve mesotherapy, mesotherapy of hair & face
-
-      18 Aug. 2015
-
-Mataria teaching hospital
-
-Introduction of basic theory of TOM &needling technique
-
-Application on acupuncture practice -level 1
-
-      17 Aug. 2015
-
-Mataria teaching hospital
-
-Mesotherapy workshop & congress activities
-
-    9th\-10th of march 2016      
-
-The 10th annual Ain shams  physical medicine, Rheumatology &Rehabilitation congress
-
-Attended & participate the congress activities
-
-24th\-25th Dec. 2014
-
-The 9th annual Ain shams physical medicine, Rheumatology &Rehabilitation congress
-
-Attended &participate the congress activities
-
-26th of May 2015
-
-The 1st annual congress of great Cairo University physical medicine, Rheumatology &Rehabilitation in corporation with Rheum. &Rehab. doctors forum of the general organization for teaching hospitals & institutes
-
-**Interest:**
-
-I enjoy solving puzzle, travelling, watching TV competing groups programs (losing weight, cocking).
+حل الألغاز والسفر ومشاهدة برامج المسابقات التلفزيونية (فقدان الوزن والطهي).

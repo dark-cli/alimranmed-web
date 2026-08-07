@@ -1,6 +1,6 @@
 ---
 title: "التحفيز التيار المباشر للدماغ"
-category: "brain-stimulation"
+category: "تحفيز الدماغ"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%aa%d9%8a%d8%a7%d8%b1-%d8%a7%d9%84%d9%85%d8%a8%d8%a7%d8%b4%d8%b1-%d9%84%d9%84%d8%af%d9%85%d8%a7%d8%ba"
 order: 999

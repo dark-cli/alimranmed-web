@@ -2,7 +2,7 @@
 title: "خراج الدماغ"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%ae%d8%b1%d8%a7%d8%ac-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba"
-category: "brain"
+category: "الدماغ"
 order: 999
 ---
 **ما هو خراج الدماغ؟**

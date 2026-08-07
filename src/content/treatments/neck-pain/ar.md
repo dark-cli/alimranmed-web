@@ -2,7 +2,7 @@
 title: "الم الرقبة"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b1%d9%82%d8%a8%d8%a9"
-category: "pain"
+category: "الألم"
 order: 999
 ---
 **الرقبة لها عمل شاق وهو إسناد الرأس. إن الميل إلى الحاسوب أو التحدّب على طاولة عملك فقط يجعلان عملها أكثر صعوبة.**

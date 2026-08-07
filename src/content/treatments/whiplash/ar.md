@@ -2,7 +2,7 @@
 title: "التواء الرقبة"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d9%88%d8%a7%d8%a1-%d8%a7%d9%84%d8%b1%d9%82%d8%a8%d8%a9"
-category: "spine"
+category: "العمود الفقري"
 order: 999
 ---
 إن الْتواء الرقبة هو إصابة بالعنق تحدث بسبب حركة قوية للرقبة تجعلها تتحرك ذهابًا وإيابًا، مثل ما يحدث للسَّوْط من تشقُّق.![](https://ar.alimranmed.com/wp-content/uploads/2021/01/300px-Whiplash_Injury.jpg)

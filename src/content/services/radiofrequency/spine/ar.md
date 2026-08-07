@@ -1,6 +1,6 @@
 ---
 title: "الترددات الراديوية لمعالجة الام (الرقبة والظهر) والحوض"
-category: "radiofrequency"
+category: "الترددات الراديوية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/2136"
 order: 999

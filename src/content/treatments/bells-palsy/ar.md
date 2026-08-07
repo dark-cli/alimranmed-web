@@ -2,7 +2,7 @@
 title: "شلل الوجه النصفي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d9%88%d8%ac%d9%87-%d8%a7%d9%84%d9%86%d8%b5%d9%81%d9%8a"
-category: "brain"
+category: "الدماغ"
 order: 999
 publishedAt: "2021-01-16T15:50:53"
 ---

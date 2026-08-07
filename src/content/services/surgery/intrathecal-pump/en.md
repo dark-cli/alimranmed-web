@@ -58,3 +58,5 @@ POTENTIAL OUTCOMES OF NOT TREATING YOUR CONDITION INCLUDE:
 HOW IS THE PROCEDURE PERFORMED?
 
 An intrathecal pump is inserted via a simple and safe surgical procedure. A small incision is made in the back, and a flexible catheter introduced into the spinal canal. This is then connected to a battery-operated pump which is placed under the skin of the abdomen. Complications are uncommon, and may include bleeding and infection. The patient is discharged on either the same day or on the day after surgery.
+
+[▶ Watch on YouTube](https://www.youtube.com/watch?v=reCNcZ-t6II)

@@ -1,6 +1,6 @@
 ---
 title: "التدخل النفسي"
-category: "rehabilitation"
+category: "إعادة التأهيل"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%af%d8%ae%d9%84-%d8%a7%d9%84%d9%86%d9%81%d8%b3%d9%8a"
 order: 999

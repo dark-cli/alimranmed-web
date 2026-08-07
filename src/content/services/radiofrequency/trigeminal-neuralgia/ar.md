@@ -1,6 +1,6 @@
 ---
 title: "الترددات الراديوية لعلاج التهاب العصب القحفي"
-category: "radiofrequency"
+category: "الترددات الراديوية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1782"
 order: 999

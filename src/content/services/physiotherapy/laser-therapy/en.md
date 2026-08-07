@@ -4,7 +4,7 @@ description: "What is laser therapy and how does it work? A laser is essentially
 order: 999
 legacyUrl: "https://alimranmed.com/laser-therapy/"
 category: "physiotherapy"
-source: "legacy-wp"
+source: "ai-draft"
 ---
 ## What is laser therapy and how does it work?
 
@@ -24,3 +24,18 @@ Laser therapy is used to augment traditional physiotherapeutic techniques like m
 -   Tissue repair: ligaments strains, sprain and muscle tears
 -   Joint Pain: rheumatoid arthritis, finger joint pain
 -   Trigger point pain: trigger point knots in muscles
+
+[▶ Watch on YouTube](https://www.youtube.com/watch?v=Jcd7HVQh9yw)
+
+### **Functions of laser therapy:**
+
+1.  Relieves pain
+2.  Reduces inflammation
+3.  Deactivates trigger points responsible for myofascial pain
+4.  Increases specific speed strength and tensile capacity to repair damaged tissue
+5.  Increases blood circulation activity
+6.  Stimulates the immune system
+7.  Stimulates nerve function
+8.  Develops collagen and muscle tissue
+9.  Helps generate new healthy cellular tissue
+10.  Accelerates wound healing and blood clot formation

@@ -1,6 +1,6 @@
 ---
 title: "البوتكس"
-category: "botox"
+category: "البوتوكس"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a8%d9%88%d8%aa%d9%83%d8%b3"
 order: 999

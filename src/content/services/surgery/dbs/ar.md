@@ -1,6 +1,6 @@
 ---
 title: "التحفيز العميق للدماغ"
-category: "surgery"
+category: "الجراحة"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%b9%d9%85%d9%8a%d9%82-%d9%84%d9%84%d8%af%d9%85%d8%a7%d8%ba"
 order: 999

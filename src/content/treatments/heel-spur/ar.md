@@ -2,7 +2,7 @@
 title: "نتوء الكعب"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%86%d8%aa%d9%88%d8%a1-%d8%a7%d9%84%d9%83%d8%b9%d8%a8"
-category: "pain"
+category: "الألم"
 order: 999
 publishedAt: "2020-12-03T15:36:05"
 ---

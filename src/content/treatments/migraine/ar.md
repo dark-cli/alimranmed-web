@@ -2,7 +2,7 @@
 title: "امراض الشقيقه"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%85%d8%b1%d8%a7%d8%b6-%d8%a7%d9%84%d8%b4%d9%82%d9%8a%d9%82%d9%87"
-category: "pain"
+category: "الألم"
 order: 999
 ---
 **الأسباب**
@@ -43,7 +43,7 @@ order: 999
 
 **الأعراض**
 
-اضطرابات الرؤية، أو هالة، وتعتبر “علامة تحذير” أن الصداع النصفي قادم. وتحدث هذه الهالة في كلتا العينين ويمكن أن تنطوي أي أو كل مما يلي:
+اضطرابات الرؤية، أو هالة، وتعتبر "علامة تحذير" أن الصداع النصفي قادم. وتحدث هذه الهالة في كلتا العينين ويمكن أن تنطوي أي أو كل مما يلي:
 
 ![](https://ar.alimranmed.com/wp-content/uploads/2019/04/images-14-300x150.jpg)
 
@@ -92,25 +92,19 @@ order: 999
 
 إذا كان لديك الصداع النصفي المتكرر، قد يصف الطبيب دواء لتقليل عدد الهجمات. فعليك أن تأخذ الدواء كل يوم من أجل أن يكون فعال.
 
-في مركز العمران ننصح بالعلاجات التالية:
+في مركز العمران ننصح بالعلاجات التالية
 
-يمكن أن تشمل الأدوية:
+[العلاج الفيزيائي (العلاج الطبيعي)](/services/physiotherapy/)
 
--   مضادات الاكتئاب مثل amitriptyline أو الفينلافاكسين
--   أدوية ضغط الدم مثل حاصرات بيتا (بروبرانولول، metroprolol) أو حاصرات قنوات الكالسيوم (فيراباميل)
--   أدوية الصرع مثل حمض فالبوريك، جابابنتين، وتوبيراميت
+-   [التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)
+-   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
+-   [الليزر البارد](/services/physiotherapy/laser-therapy/)
+-   [المعالجة بالموجات فوق الصوتية (السونار)](/services/physiotherapy/ultrasound-therapy/)
+-   [تمارين رياضية](/services/exercises/)
 
-توكسين البوتولينوم نوع أ (البوتوكس) الحقن قد تساعد في الحد من نوبات الصداع النصفي في حالة حدوثها أكثر من 15 يوما في الشهر.
+تقويم العمود الفقري
 
-[العلاج الفيزيائي (العلاج الطبيعي)](https://ar.alimranmed.com/physiotherapy/)
-
--   [التحفيز الكهربائي](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d9%83%d9%87%d8%b1%d8%a8%d8%a7%d8%a6%d9%8a/)
--   [المعالجة بالموجات الطويلة والقصيرة](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d9%88%d8%ac%d8%a7%d8%aa-%d8%a7%d9%84%d9%82%d8%b5%d9%8a%d8%b1%d8%a9/)
--   [الليزر البارد](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%84%d9%8a%d8%b2%d8%b1/)
--   [المعالجة بالمجات فوق الصوتية (السونار)](https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/)
--   [تمارين رياضية](https://ar.alimranmed.com/exercises/)
-
--   [سيكما](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b3%d9%8a%d9%83%d9%85%d8%a7/) [Sigma](http://alimranmed.com/sigma/)
+-   [سيكما](/services/chiropractic/sigma/)
 
 حقن الستيرود
 
@@ -118,12 +112,14 @@ order: 999
 
 المعالجة بالاوزون
 
-[المعالجة بالترددات الراديوية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%b1%d8%af%d8%af%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d8%a7%d8%af%d9%8a%d9%88%d9%8a%d8%a9/) [Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
+[المعالجة بالترددات الراديوية](/services/radiofrequency/)
 
-[المعالجة بحقن البوتوكس](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a8%d9%88%d8%aa%d9%83%d8%b3/)
+[المعالجة بحقن البوتوكس](/services/botox/)
 
-[المعالجة بالابر الصينية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a5%d8%a8%d8%b1-%d8%a7%d9%84%d8%b5%d9%8a%d9%86%d9%8a%d9%87/)
+[المعالجة بالابر الصينية](/services/acupuncture/)
 
-حقن البرولوثربي Prolotherapy
+[حقن البرولوثربي](/services/regenerative-medicine/)
 
-[تحفيز مغناطيسي عبر الجمجمة](https://ar.alimranmed.com/%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/)
+
+[▶ اشاهد على YouTube](https://www.youtube.com/watch?v=2HI355rV-YI)

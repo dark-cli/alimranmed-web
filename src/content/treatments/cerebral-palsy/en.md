@@ -1,39 +1,100 @@
 ---
-title: "Craniosynostosis"
-description: "What is craniosynostosis? The normal skull consists of several plates of bone that are separated by sutures. The sutures (fibrous"
+title: "Cerebral Palsy"
+description: "Cerebral palsy is a broad term describing a group of neurological disorders that affects the communication between the brain and muscles"
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/cerebral-palsy/"
 source: "legacy-wp"
 ---
-### What is craniosynostosis?
 
-The normal skull consists of several plates of bone that are separated by sutures. The sutures (fibrous joints) are found between the bony plates in the head. As the infant grows and develops, the sutures close and the bones fuse together, forming a solid piece of bone, called the skull.
+Cerebral palsy (CP) is a broad term that describes a group of neurological disorders. It is a lifelong condition that affects the connections between the brain and muscles, causing a permanent state of uncoordinated movement and posture. It may result from seizures that caused oxygen deprivation to the brain.
 
-Craniosynostosis is a condition in which the sutures close too early, causing problems with normal brain and skull growth. Premature closure of the sutures may also cause the pressure inside of the head to increase and the skull or facial bones to change from a normal, symmetrical appearance.
+## What causes cerebral palsy?
 
-### What causes craniosynostosis?
+Many cases of CP have unknown causes. This disorder occurs when there is abnormal growth or damage to the areas in the brain that control motor functions. It occurs in approximately 2-58 per 1,000 live births.
 
-Craniosynostosis occurs in one out of 2,000 live births and affects males slightly more often than females.
+Risk factors for CP include:
 
-Craniosynostosis is most often sporadic (occurs by chance). In some families, craniosynostosis is inherited in one of two ways:
+- Prematurity
+- Very low birth weight (especially in infants weighing less than 1,000 grams or 2.2 pounds)
+- Viral infections
+- Chemical or substance exposure during pregnancy
+- Infections
+- Brain hemorrhage
+- Trauma
+- Complications during labor and delivery
 
--   Autosomal recessive. Autosomal recessive means that two copies of the gene are necessary to express the condition, one inherited from each parent, who are obligate carriers. Carrier parents have a one in four, or 25 percent, chance with each pregnancy, to have a child with craniosynostosis. Males and females are equally affected.
--   Autosomal dominant. Autosomal dominant means that one gene is necessary to express the condition, and the gene is passed from parent to child with a 50/50 risk for each pregnancy. Males and females are equally affected.
+## What are the symptoms of cerebral palsy?
 
-Craniosynostosis is a feature of many different genetic syndromes that have a variety of inheritance patterns and chances for reoccurrence, depending on the specific syndrome present. It is important for the child as well as family members to be examined carefully for signs of a syndromic cause (inherited genetic disorder) of craniosynostosis such as limb defects, ear abnormalities, or cardiovascular malformations.
+The following are common symptoms of cerebral palsy. However, each child may experience different symptoms. A child may have weak muscles, weak motor control, or tightness called spasticity in the arms or legs. Muscle stiffness can also be seen as rigid legs or clenched fists. Cerebral palsy is usually classified according to the type of motor function the child may have, including:
 
-### Management of craniosynostosis
+**Spastic Diplegia** ("di" means two) – Spastic movements of the arms or legs. Also called hemiplegia.
 
-##### Specific treatment for craniosynostosis will be determined by your child’s doctor based on:
+**Spastic Quadriplegia** ("quadri" means four) – Spastic movements in all four limbs (arms and legs).
 
--   Your child’s age, overall health, and medical history
--   Extent of the craniosynostosis
--   Type of craniosynostosis (which sutures are involved)
--   Your child’s tolerance for specific medications, procedures, or therapies
--   Expectations for the course of the craniosynostosis
--   Your opinion or preference
+**Spastic Hemiplegia** ("hemi" means half) – Spasticity affects one half or side of the body (such as the right arm and right leg).
 
-Surgery is typically the recommended treatment. The goal of treatment is to reduce the pressure in the head and correct the deformities of the face and skull bones. Less commonly, surgery is needed to decrease pressure within the skull.
+**Athetoid/Dyskinetic** – Involuntary (inability to control), purposeless, and jerky movements.
 
-The optimal time to perform surgery is before the child is 1 year of age since the bones are still very soft, have not fused at other sutures, and are easy to work with. Surgery may be necessary at a much earlier age depending on the severity of the condition. Because blood loss can be an issue in this type of surgery, surgery is often delayed in the very young child to allow some growth and development and a greater blood volume. Most procedures are done between 3 and 8 months of age.
+Children with cerebral palsy may experience additional problems, including:
+
+- Seizures
+- Vision, hearing, or speech problems
+- Learning difficulties and behavioral problems
+- Intellectual disability
+- Respiratory problems
+- Bowel and bladder problems
+- Bone deformities, including scoliosis (lateral or sideways curvature and rotation of bones in the back, giving the appearance that the person is leaning to one side)
+
+Children with cerebral palsy are often slow to reach developmental milestones, such as learning to roll, sit, crawl, or walk. They may also retain some reflexes that normally disappear in early childhood. CP symptoms may resemble other conditions. Always consult your child's doctor for diagnosis.
+
+## Treatment of cerebral palsy
+
+Treatment focuses on preventing or reducing deformities and maximizing the child's ability in the home and in the community. Children are best treated with a multidisciplinary team that may include the following healthcare providers:
+
+- Nurse coordinator
+- Neurosurgeon – specialist in operating on the brain and spinal cord
+- Neurologist – physician specializing in conditions of the brain, spinal cord, and nerves
+- Physical and occupational therapists
+- Orthopedic surgeon – surgeon specializing in conditions of muscles, ligaments, tendons, and bones
+- Orthotist – individual specialized in making braces and splints
+
+At Alimran Medical Center, we recommend the following treatments:
+
+**[Physiotherapy](/services/physiotherapy/)**
+
+- [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
+- [Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)
+- [Cold laser therapy](/services/physiotherapy/laser-therapy/)
+- [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
+- [Exercises](/services/exercises/)
+
+**Chiropractic**
+
+- [SpineMED® system](/services/chiropractic/spinmed/)
+- [Sigma](/services/chiropractic/sigma/)
+
+**[Pulsed radiofrequency](/services/radiofrequency/)**
+
+**[Botox® injections](/services/botox/)**
+
+**[Acupuncture](/services/acupuncture/)**
+
+**[Prolotherapy](/services/regenerative-medicine/)**
+
+**Repetitive transcranial magnetic stimulation (rTMS)**
+
+**Spinal cord stimulation**
+
+**Intrathecal baclofen pump**
+
+Surgical interventions may include:
+
+- Orthopedic surgery for hip dislocation, ankle and foot deformities, and muscle contractures
+- Neurosurgery to reduce spasticity including Botox injections, selective dorsal rhizotomy, and intrathecal baclofen pumps
+
+## Long-term outlook for a child with cerebral palsy
+
+Since CP is a lifelong condition that cannot be corrected, management focuses on preventing or reducing deformities and maximizing the child's abilities in the home and in the community. Positive reinforcement encourages the child to promote his or her self-esteem and develop as much independence as possible.
+
+The full extent of the condition is usually not completely understood immediately after birth, but it may be detected as the child grows and develops.

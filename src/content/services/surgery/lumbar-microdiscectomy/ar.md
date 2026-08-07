@@ -1,6 +1,6 @@
 ---
 title: "مايكرودسك"
-category: "surgery"
+category: "الجراحة"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%85%d8%a7%d9%8a%d9%83%d8%b1%d9%88%d8%af%d8%b3%d9%83-2"
 order: 999

@@ -1,8 +1,11 @@
 ---
 title: "حالات اصابة"
-source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%ad%d8%a7%d9%84%d8%a7%d8%aa-%d8%a7%d8%b5%d8%a7%d8%a8%d8%a9"
+description: "أصبح العراق مشهورا بسبب العنف اليومي من انفجارات واغتيالات ومشاجرات"
+locale: "ar"
 order: 999
+legacyUrl: "https://ar.alimranmed.com/%d8%ad%d8%a7%d9%84%d8%a7%d8%aa-%d8%a7%d8%b5%d8%a7%d8%a8%d8%a9"
+publishedAt: "2019-06-30T00:00:00"
+source: "legacy-wp"
 ---
 **الإصابات**
 

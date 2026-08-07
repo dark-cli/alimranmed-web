@@ -1,6 +1,6 @@
 ---
 title: "الترددات الراديوية لمعالجة الانزلاق الغضروفي"
-category: "radiofrequency"
+category: "الترددات الراديوية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1754"
 order: 999

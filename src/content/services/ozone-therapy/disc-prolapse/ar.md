@@ -1,6 +1,6 @@
 ---
 title: "الأوزون للانزلاق الغضروفي"
-category: "ozone-therapy"
+category: "العلاج بالأوزون"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1802"
 order: 999

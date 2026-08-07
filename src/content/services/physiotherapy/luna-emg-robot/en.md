@@ -1,40 +1,45 @@
 ---
 title: "LUNA EMG ROBOT"
-description: "LUNA EMG روبوت Luna EMG هو ثورة في إعادة التأهيل العصبي وعلاج العظام. يستخدم Luna EMG تخطيط كهربية العضل التفاعلي"
+description: "Luna EMG is a revolution in neurological rehabilitation and orthopedic therapy. It uses interactive electromyography to train the sensorimotor cortex."
 category: "physiotherapy"
 order: 999
 legacyUrl: "https://alimranmed.com/luna-emg-robot/"
-source: "legacy-wp"
+source: "ai-draft"
 ---
-##### LUNA EMG روبوت
+##### LUNA EMG Robot
 
-##### Luna EMG هو ثورة في إعادة التأهيل العصبي وعلاج العظام. يستخدم Luna EMG تخطيط كهربية العضل التفاعلي لتدريب القشرة الحسية الحركية. حركة المريض نشطة – بناءً على الإشارات الكهربائية الحيوية (EMG) المكتسبة من عضلات المريض. إنه فعال بشكل خاص مع مرضى الضعف الإكلينيكي ، مما يسمح بتوظيف المزيد من الوحدات الحركية أثناء تنشيط العضلات. بفضل برامج التدريب الشخصية والتلقائية من Luna ، ينخرط مرضاك ، وتقوم بعمل بدني أقل. يقدم Luna EMG حلاً شاملاً للعلاج الحركي مع مجموعة كبيرة من الامتدادات القابلة للتبديل. حيث يسهل تحريكه يمكنك استخدامه في غرفة المريض. مع المخطط الكهربائي للعضلات المكون من 6 قنوات ، ومستشعر عزم الدوران المتكامل وقياسات الموضع ، ستتيح لك Luna تقديم متخصص ،
+Luna EMG is a revolution in neurological rehabilitation and orthopedic therapy. Luna EMG uses interactive electromyography (EMG) to train the sensorimotor cortex. The patient's movement is active — based on the bioelectric signals (EMG) acquired from the patient's muscles. It is particularly effective with patients suffering from clinical weakness, allowing more motor units to be recruited during muscle activation. Thanks to Luna's personalized and automatic training programs, your patients are engaged and you do less physical work. Luna EMG offers a comprehensive kinesiotherapy solution with a wide range of interchangeable attachments. Being easy to move, you can use it in the patient's room. With the 6-channel electromyograph, integrated torque sensor, and position measurements, Luna will allow you to provide specialized clinical assessments that you can export in either PDF or CSV format.
 
-**المؤشرات الرئيسية هي:**
+**The main indications are:**
 
-زيادة قوة العضلات
+Increased muscle strength
 
-زيادة نطاق الحركة
+Increased range of motion
 
-زيادة التنسيق
+Increased coordination
 
-**هذا يعني أنها مفيدة بشكل خاص مع المرضى التاليين:**  
-السكتات الدماغية
+**This means it is particularly useful with the following patients:**
 
-إصابات الحبل الشوكي غير المكتملة
+Stroke
 
-السنسنة المشقوقة
+Incomplete spinal cord injuries
 
-تصلب متعدد
+Spina bifida
 
-ضمور العضلات الشوكي ALS Duchenne
+Multiple sclerosis
 
-أي اضطرابات عصبية تعصبية جزئية
+ALS
 
-قاع الحوض (سلس البول)
+Duchenne spinal muscular atrophy
 
-تكوينات العظام
+Any partial peripheral neurological disorders
 
-التعافي بعد الجراحة والمزيد …
+Pelvic floor (urinary incontinence)
+
+Bone formations
+
+Post-surgery recovery and more...
 
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=3Cb77prCbRQ)
+
+[▶ Watch on YouTube](https://www.youtube.com/watch?v=88DKmvTuLJA)

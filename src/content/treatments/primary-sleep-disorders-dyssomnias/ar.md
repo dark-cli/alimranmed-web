@@ -2,7 +2,7 @@
 title: "اضطرابات النوم الأولية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d8%b6%d8%b7%d8%b1%d8%a7%d8%a8%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%88%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84%d9%8a%d8%a9"
-category: "pain"
+category: "الألم"
 order: 999
 ---
 يغطي مصطلح اضطراب النوم مجموعة واسعة من الحالات والأعراض ، ولكن يمكن تقسيم اضطرابات النوم إلى أنواع مختلفة.

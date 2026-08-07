@@ -1,6 +1,6 @@
 ---
 title: "العلاج المهني"
-category: "rehabilitation"
+category: "إعادة التأهيل"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a7%d9%84%d9%85%d9%87%d9%86%d9%8a"
 order: 999

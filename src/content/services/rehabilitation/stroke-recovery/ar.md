@@ -1,6 +1,6 @@
 ---
 title: "اعداد تأهيل السكتة الدماغية"
-category: "rehabilitation"
+category: "إعادة التأهيل"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d8%b9%d8%af%d8%a7%d8%af-%d8%aa%d8%a3%d9%87%d9%8a%d9%84-%d8%a7%d9%84%d8%b3%d9%83%d8%aa%d8%a9-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba%d9%8a%d8%a9"
 order: 999

@@ -1,6 +1,6 @@
 ---
 title: "الترددات الراديوية لمعالجة الصداع"
-category: "radiofrequency"
+category: "الترددات الراديوية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1747"
 order: 999

@@ -1,6 +1,6 @@
 ---
 title: "الكاحل"
-category: "exercises"
+category: "تمارين"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d9%83%d8%a7%d8%ad%d9%84"
 order: 999

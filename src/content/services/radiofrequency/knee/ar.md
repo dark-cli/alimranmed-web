@@ -1,6 +1,6 @@
 ---
 title: "الترددات الراديوية للركبة"
-category: "radiofrequency"
+category: "الترددات الراديوية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1733"
 order: 999

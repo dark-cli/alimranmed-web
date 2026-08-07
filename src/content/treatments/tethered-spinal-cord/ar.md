@@ -2,7 +2,7 @@
 title: "الحبل الشوكي المربوط"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/tied-spinal-cord"
-category: "pediatric"
+category: "الأطفال"
 order: 999
 ---
 **هذه المقالة هي عن حبل مربوط في البالغين.**

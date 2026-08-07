@@ -2,7 +2,7 @@
 title: "تضخم الاطراف"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%aa%d8%b6%d8%ae%d9%85-%d8%a7%d9%84%d8%a7%d8%b7%d8%b1%d8%a7%d9%81"
-category: "pain"
+category: "الألم"
 order: 999
 publishedAt: "2021-01-16T06:18:39"
 ---

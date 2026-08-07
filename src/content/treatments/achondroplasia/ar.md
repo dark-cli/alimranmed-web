@@ -2,7 +2,7 @@
 title: "الودانة"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d8%af%d8%a7%d9%86%d8%a9"
-category: "pain"
+category: "الألم"
 order: 999
 publishedAt: "2021-01-11T13:17:17"
 ---

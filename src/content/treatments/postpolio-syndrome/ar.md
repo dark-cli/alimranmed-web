@@ -2,7 +2,7 @@
 title: "شلل الأطفال"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9-%d9%85%d8%a7%d8%a8%d8%b9%d8%af-%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84"
-category: "pediatric"
+category: "الأطفال"
 order: 999
 publishedAt: "2020-04-09T11:20:15"
 ---

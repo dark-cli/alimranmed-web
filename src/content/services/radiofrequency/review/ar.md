@@ -1,6 +1,6 @@
 ---
 title: "اهمية الترددات الراديوية"
-category: "radiofrequency"
+category: "الترددات الراديوية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1742"
 order: 999

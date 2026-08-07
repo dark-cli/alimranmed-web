@@ -2,7 +2,7 @@
 title: "متلازمة آلام اللفافة العضلية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9-%d8%a2%d9%84%d8%a7%d9%85-%d8%a7%d9%84%d9%84%d9%81%d8%a7%d9%81%d8%a9-%d8%a7%d9%84%d8%b9%d8%b6%d9%84%d9%8a%d8%a9"
-category: "pain"
+category: "الألم"
 order: 999
 ---
 ما هي متلازمة آلام اللفافة العضلية؟

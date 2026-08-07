@@ -2,7 +2,7 @@
 title: "السكتة الدماغية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b3%d9%83%d8%aa%d8%a9-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba%d9%8a%d8%a9"
-category: "brain"
+category: "الدماغ"
 order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2020/06/ICTUS-300x212.jpg)تحدُث السكتة الدماغية عندما تنقطع إمدادات الدم إلى جزء من الدماغ أو تنخفض؛ مما يمنع أنسجة الدماغ من الحصول على الأكسجين والعناصر المغذية. تبدأ خلايا الدماغ بالموت خلال دقائق.

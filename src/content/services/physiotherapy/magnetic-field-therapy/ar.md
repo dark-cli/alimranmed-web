@@ -1,6 +1,6 @@
 ---
 title: "العلاج بالمجال الكهرومغناطيسي"
-category: "physiotherapy"
+category: "العلاج الطبيعي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d8%ac%d8%a7%d9%84-%d8%a7%d9%84%d9%85%d8%ba%d9%86%d8%a7%d8%b7%d9%8a%d8%b3%d9%8a"
 order: 999

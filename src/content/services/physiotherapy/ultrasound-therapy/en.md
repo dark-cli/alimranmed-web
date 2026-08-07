@@ -4,8 +4,12 @@ description: "How does therapeutic ultrasound work? Ultrasound work by utilizing
 order: 999
 legacyUrl: "https://alimranmed.com/ultrasound-therapy/"
 category: "physiotherapy"
-source: "legacy-wp"
+source: "ai-draft"
 ---
+### **What is ultrasound therapy?**
+
+Therapeutic ultrasound is used in physiotherapy. Ultrasound is applied to the skin through high-frequency sound waves to produce heat that can reduce pain. It penetrates the depth of tissues more than two inches, producing heat between 104 and 114 degrees Fahrenheit (40 to 45.5 degrees Celsius). Ultrasound pulses one million times per second in the affected area. Ultrasound works to increase blood flow in damaged tissues such as muscles and ligaments.
+
 ## How does therapeutic ultrasound work?
 
 Ultrasound work by utilizing mechanical energy, but despite this is still considered an electrotherapy. The medium for delivering this energy is sound, which is composed of mechanical vibrations of a certain frequency. More specifically ultrasound uses very high frequencies of sound that are inaudible to human beings and actually have a number of uses, including therapeutic ones.

@@ -1,6 +1,6 @@
 ---
 title: "التمريض السريري"
-category: "rehabilitation"
+category: "إعادة التأهيل"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d9%85%d8%b1%d9%8a%d8%b6-%d8%a7%d9%84%d8%b3%d8%b1%d9%8a%d8%b1%d9%8a"
 order: 999

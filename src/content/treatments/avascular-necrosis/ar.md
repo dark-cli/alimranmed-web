@@ -2,7 +2,7 @@
 title: "النخر اللاوعائي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d9%86%d8%ae%d8%b1-%d8%a7%d9%84%d9%84%d8%a7%d9%88%d8%b9%d8%a7%d8%a6%d9%8a"
-category: "pain"
+category: "الألم"
 order: 999
 publishedAt: "2021-01-16T07:34:45"
 ---

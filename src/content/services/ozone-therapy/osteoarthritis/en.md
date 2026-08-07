@@ -22,3 +22,5 @@ Benefits of Ozone Therapy
 In addition to these benefits for the **treatment** of **osteoarthritis**, **ozone therapy**, in many cases, is making it possible to reduce medication. Not to mention that recovery is becoming faster. And, as they start feeling better, the state of mind of patients also improves. This enables them to return to their day-to-day activities earlier, which increases their quality of life. Also, because it does not involve the use of drugs, **ozone therapy** has no side effects and does not interact with other drugs.
 
 All of this explains why **ozone therapy** is increasingly being used for the **treatment** of autoimmune diseases and conditions with chronic inflammation such as **arthritis**. In fact, it is also being used to treat other disorders such as herniated discs, lower back pain and cervicalgia. It is a quick, effective and painless technique. And it can be applied on an outpatient basis, has very few contraindications and produces no complications if it is carried out by qualified personnel.
+
+[▶ Watch on YouTube](https://www.youtube.com/watch?v=7Nk2FQEOtvU)

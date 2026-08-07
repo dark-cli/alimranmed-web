@@ -6,6 +6,8 @@ legacyUrl: "https://alimranmed.com/2020/01/03/transcranial-magnetic-stimulation/
 publishedAt: "2020-01-03T07:25:09"
 source: "legacy-wp"
 ---
+[▶ Watch on YouTube](https://www.youtube.com/watch?v=bmBV1r4_HrE)
+
 Did the operating system happen in your brain?  
 Now a brain-mimicking technology to help it boost cells
 

@@ -1,6 +1,6 @@
 ---
 title: "جهاز التنحيف وشد الجلد cryosens new"
-category: "fitness"
+category: "اللياقة البدنية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%ac%d9%87%d8%a7%d8%b2-%d8%a7%d9%84%d8%aa%d9%86%d8%ad%d9%8a%d9%81-%d9%88%d8%b4%d8%af-%d8%a7%d9%84%d8%ac%d9%84%d8%af-cryosens-new"
 order: 999

@@ -1,6 +1,6 @@
 ---
 title: "حقن الميزوثيرابي"
-category: "fitness"
+category: "اللياقة البدنية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d9%85%d9%8a%d8%b2%d9%88%d8%ab%d9%8a%d8%b1%d8%a7%d8%a8%d9%8a"
 order: 999

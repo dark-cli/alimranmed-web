@@ -55,6 +55,7 @@ Oxygen-ozone therapy is an extremely effective medical treatment method based on
 **Medical ozone**
 
 -   Activates the immune system
+-   Activates cartilage building
 -   Activates the red blood cell metabolism and improves the oxygen release
 -   Activates the body’s own radical scavengers and counters the negative properties of free radicals.
 

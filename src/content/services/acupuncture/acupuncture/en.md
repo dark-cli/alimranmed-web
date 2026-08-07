@@ -12,6 +12,8 @@ It is a powerful therapeutic alternative to analgesics and is also a complementa
 
 When you’re treated with Chinese needles, you’ll probably feel relaxed and comfortable after using it.
 
+[▶ Watch on YouTube](https://www.youtube.com/watch?v=kue6cY_UCsM)
+
 Chinese needles for patients with fibromyalgia
 
 Chinese needles have proven effective by treating persistent back pain, with which traditional treatments have not worked, as well as being effective in treating arthritis, in addition to the use of traditional treatments, especially in the case of knee pain.

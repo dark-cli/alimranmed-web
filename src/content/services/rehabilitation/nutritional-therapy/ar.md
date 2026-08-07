@@ -1,6 +1,6 @@
 ---
 title: "الحمية والتغذية"
-category: "rehabilitation"
+category: "إعادة التأهيل"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%ad%d9%85%d9%8a%d8%a9-%d9%88%d8%a7%d9%84%d8%aa%d8%ba%d8%b0%d9%8a%d8%a9"
 order: 999

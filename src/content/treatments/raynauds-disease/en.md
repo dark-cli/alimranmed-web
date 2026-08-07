@@ -4,7 +4,7 @@ description: "Raynaud's (ray-NOSE) disease causes some areas of your body — su
 category: "motor"
 order: 999
 legacyUrl: "https://alimranmed.com/raynauds-disease/"
-source: "legacy-wp"
+source: "ai-draft"
 ---
 ![](/images/legacy/2021/02/1520059351001-300x172.jpg)Raynaud’s (ray-NOSE) disease causes some areas of your body — such as your fingers and toes — to feel numb and cold in response to cold temperatures or stress. In Raynaud’s disease, smaller arteries that supply blood to your skin become narrow, limiting blood flow to affected areas (vasospasm).
 
@@ -52,6 +52,37 @@ Causes of secondary Raynaud’s include:
 -   Smoking constricts blood vessels.
 -   **Injuries to the hands or feet.**Examples include a wrist fracture, surgery or frostbite.
 -   **Certain medications.**These include beta blockers for high blood pressure, migraine medications that contain ergotamine and sumatriptan, attention-deficit/hyperactivity disorder medications, certain chemotherapy agents, and drugs that cause blood vessels to narrow, such as some over-the-counter cold medications.
+
+## Risk factors
+
+Risk factors for primary Raynaud's include:
+
+-   **Sex.**It affects women more than men.
+-   **Age.**Although anyone can develop the condition, primary Raynaud's often begins in people between the ages of 15 and 30.
+-   **Climate.**The disorder is also more common in people who live in colder climates.
+-   **Family history.**A first-degree relative — a parent, sibling or child — having the disorder appears to increase your risk of primary Raynaud's.
+
+Risk factors for secondary Raynaud's include:
+
+-   **Associated diseases.**These include conditions such as scleroderma and lupus.
+-   **Certain occupations.**These include jobs that cause repeated trauma or injuries, such as those involving vibrating tools.
+-   **Exposure to certain substances.**These include smoking, taking medications that affect the blood vessels and being exposed to certain chemicals, such as vinyl chloride.
+
+## Complications
+
+If Raynaud's is severe — which is rare — reduced blood flow to your fingers or toes could cause tissue damage.
+
+A completely blocked artery can lead to sores (skin ulcers) or dead tissue (gangrene), both of which can be difficult to treat. Rarely, extreme untreated cases might require amputation of the affected body part.
+
+## Prevention
+
+To help prevent Raynaud's attacks:
+
+-   **Bundle up outdoors.**When it's cold, don a hat, scarf, socks and boots, and two layers of mittens or gloves before you go outside. Wear a coat with snug cuffs to go around your mittens or gloves, to prevent cold air from reaching your hands. Use chemical hand warmers. Wear earmuffs and a face mask if the tip of your nose and your earlobes are sensitive to cold.
+-   **Warm your car.**Run your car heater for a few minutes before driving in cold weather.
+-   **Take precautions indoors.**Wear socks. When taking food out of the refrigerator or freezer, put on mittens, gloves or oven mitts. Some people find it helpful to wear mittens and socks to bed during winter.
+
+Because air conditioning can trigger attacks, set your air conditioner to a warmer temperature. Use insulated drinking glasses.
 
 ## Treatment
 

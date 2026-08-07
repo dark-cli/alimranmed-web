@@ -1,6 +1,6 @@
 ---
 title: "التحفيز المغناطيسي لمعالجة طنين الأذن"
-category: "brain-stimulation"
+category: "تحفيز الدماغ"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/2078"
 order: 999
@@ -11,8 +11,8 @@ order: 999
 
 **على الرغم من العوامل المقيدة لعلاج طنين الأذن ، فإن التقدم في علم الأعصاب السمعي يوفر نظرة إيجابية لعلاج طنين الأذن.**
 
-**[التحفيز المغناطيسي عبر الجمجمة (TMS](https://ar.alimranmed.com/%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba/)) هو طريقة تعتمد على تحفيز الأنسجة العصبية دون الاعتماد على نقل التيار الكهربائي عن طريق الأقطاب الكهربائية أو الجلد. يستخدم [TMS](https://ar.alimranmed.com/%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba/) في علاج الأمراض المختلفة مع تطور علم الأعصاب.**
+**[التحفيز المغناطيسي عبر الجمجمة (TMS](/services/brain-stimulation/tms/)) هو طريقة تعتمد على تحفيز الأنسجة العصبية دون الاعتماد على نقل التيار الكهربائي عن طريق الأقطاب الكهربائية أو الجلد. يستخدم [TMS](/services/brain-stimulation/tms/) في علاج الأمراض المختلفة مع تطور علم الأعصاب.**
 
 ![](https://ar.alimranmed.com/wp-content/uploads/2020/06/aural-rehabilitation-scaled-e1593501600445-300x201.jpg) ![](https://ar.alimranmed.com/wp-content/uploads/2020/06/z-tinnitus-300x171.png)
 
-**في السنوات الأخيرة ، زاد عدد الدراسات حول تطبيق [TMS](https://ar.alimranmed.com/%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba/) مع تكرار منخفض متكرر لعلاج طنين الأذن، وقد أعطت معظم هذه الدراسات نتائج ناجحة. الاستخدام المتكرر للـ [TMS](https://ar.alimranmed.com/%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba/) في الطنين أمر جديد للغاية.**
+**في السنوات الأخيرة ، زاد عدد الدراسات حول تطبيق [TMS](/services/brain-stimulation/tms/) مع تكرار منخفض متكرر لعلاج طنين الأذن، وقد أعطت معظم هذه الدراسات نتائج ناجحة. الاستخدام المتكرر للـ [TMS](/services/brain-stimulation/tms/) في الطنين أمر جديد للغاية.**

@@ -24,8 +24,9 @@ const pageBase = z.object({
   //   ai-draft         — machine-translated / AI-generated, needs review
   //   human-reviewed   — a clinician has read and approved the content
   //   original         — written from scratch for this site
+  //   translated-by-llm — bilingual content translation by LLM for completeness
   source: z
-    .enum(["legacy-wp", "ai-draft", "human-reviewed", "original"])
+    .enum(["legacy-wp", "ai-draft", "human-reviewed", "original", "translated-by-llm"])
     .default("legacy-wp"),
   reviewedBy: z.string().optional(),      // clinician name / initials
   reviewedAt: z.coerce.date().optional(), // when the human review happened

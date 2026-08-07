@@ -1,6 +1,6 @@
 ---
 title: "حقن نقطة الزناد"
-category: "steroid-injection"
+category: "حقن الستيرويد"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d9%86%d9%82%d8%b7%d8%a9-%d8%a7%d9%84%d8%b2%d9%86%d8%a7%d8%af"
 order: 999

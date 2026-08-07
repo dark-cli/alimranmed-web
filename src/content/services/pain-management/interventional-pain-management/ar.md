@@ -1,6 +1,6 @@
 ---
 title: "التدخل الموضعي لمعالجة الآلام"
-category: "pain-management"
+category: "إدارة الألم"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%af%d8%ae%d9%84-%d8%a7%d9%84%d9%85%d9%88%d8%b6%d8%b9%d9%8a-%d9%84%d9%85%d8%b9%d8%a7%d9%84%d8%ac%d8%a9-%d8%a7%d9%84%d8%a2%d9%84%d8%a7%d9%85-3"
 order: 999

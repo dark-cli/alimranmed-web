@@ -1,6 +1,6 @@
 ---
 title: "السيكما"
-category: "chiropractic"
+category: "العلاج بتقويم العمود الفقري"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b3%d9%8a%d9%83%d9%85%d8%a7"
 order: 999

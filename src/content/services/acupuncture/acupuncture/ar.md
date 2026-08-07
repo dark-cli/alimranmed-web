@@ -1,6 +1,6 @@
 ---
 title: "الإبر الصينيه"
-category: "acupuncture"
+category: "الوخز بالإبر"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a5%d8%a8%d8%b1-%d8%a7%d9%84%d8%b5%d9%8a%d9%86%d9%8a%d9%87"
 order: 999

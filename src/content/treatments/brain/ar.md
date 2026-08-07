@@ -2,14 +2,34 @@
 title: "الدماغ"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba"
-category: "brain"
+category: "الدماغ"
 order: 999
 ---
--    [استسقاء الرأس الضغط العادي (NPH)](https://ar.alimranmed.com/%d8%a7%d8%b3%d8%aa%d8%b3%d9%82%d8%a7%d8%a1-%d8%a7%d9%84%d8%b1%d8%a3%d8%b3-%d8%a7%d9%84%d8%b6%d8%ba%d8%b7-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%8a-nph/)
--   [إصابة الرأس](https://ar.alimranmed.com/%d8%a5%d8%b5%d8%a7%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%a3%d8%b3/)
--   [السكتة النزفية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b3%d9%83%d8%aa%d8%a9-%d8%a7%d9%84%d9%86%d8%b2%d9%81%d9%8a%d8%a9/)
--   [خراج الدماغ](https://ar.alimranmed.com/%d8%ae%d8%b1%d8%a7%d8%ac-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba/)
--   [عيارات نارية في الجمجمة](https://ar.alimranmed.com/%d8%b9%d9%8a%d8%a7%d8%b1%d8%a7%d8%aa-%d9%86%d8%a7%d8%b1%d9%8a%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%ac%d9%85%d8%ac%d9%85%d8%a9/)
--   [ورم الدماغ حالات](https://ar.alimranmed.com/%d9%88%d8%b1%d9%85-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba-%d8%ad%d8%a7%d9%84%d8%a7%d8%aa/)
--   [ورم دموي تحت الجافية](https://ar.alimranmed.com/%d9%88%d8%b1%d9%85-%d8%af%d9%85%d9%88%d9%8a-%d8%aa%d8%ad%d8%aa-%d8%a7%d9%84%d8%ac%d8%a7%d9%81%d9%8a%d8%a9/)
--   [ورم في المخ](https://ar.alimranmed.com/%d9%88%d8%b1%d9%85-%d9%81%d9%8a-%d8%a7%d9%84%d9%85%d8%ae/)
+
+## **حالات وأمراض الدماغ والجهاز العصبي**
+
+يتناول هذا القسم مجموعة شاملة من الحالات الطبية المتعلقة بالدماغ والجهاز العصبي المركزي، والتي تتطلب تقييماً دقيقاً وعلاجاً متخصصاً.
+
+### **الأمراض والحالات المعالجة:**
+
+-   [ورم دموي تحت الجافية (Subdural Hematoma)](/treatments/subdural-hematoma/) - تجمع الدم بين الدماغ وأغشيته
+-   [استسقاء الرأس الضغط العادي (NPH - Normal Pressure Hydrocephalus)](/treatments/normal-pressure-hydrocephalus/) - تراكم السائل الدماغي الشوكي
+-   [السكتة النزفية (Hemorrhagic Stroke)](/treatments/hemorrhagic-stroke/) - نزيف دماغي حاد
+-   [إصابة الرأس (Head Injury)](/treatments/head-injury/) - الإصابات الرضية للدماغ
+-   [الصرع والنوبات المرضية (Epilepsy & Seizures)](/treatments/epilepsy-seizures/) - اضطرابات عصبية
+-   [عيارات نارية في الجمجمة (Cranial Gunshot Wounds)](/treatments/cranial-gunshot-wounds/) - إصابات نارية
+-   [تسريب السائل الدماغي الشوكي (Cerebrospinal Fluid Leaks)](/treatments/brain/) - تسرب السائل المحيط بالدماغ
+-   [ورم الدماغ (Brain Tumor)](/treatments/brain-tumor/) - الأورام الحميدة والخبيثة
+-   [خراج الدماغ (Brain Abscess)](/treatments/brain-abscess/) - عدوى بكتيرية بالدماغ
+
+## **الخدمات المقدمة**
+
+يقدم مركز العمران الطبي خدمات تشخيصية وعلاجية متقدمة تشمل:
+
+-   التقييم الطبي الشامل
+-   التصوير الطبي المتقدم (التصوير المقطعي، الرنين المغناطيسي)
+-   الإجراءات الجراحية المتخصصة
+-   العلاج الدوائي الحديث
+-   المتابعة والرعاية المستمرة
+
+الفريق الطبي المتخصص يضم جراحي الأعصاب والأطباء المتمرسين لضمان الحصول على أفضل الخيارات العلاجية.
