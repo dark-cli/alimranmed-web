@@ -1,0 +1,139 @@
+---
+/**
+ * Full doctor profile — used identically by both /doctors/[slug]
+ * and /ar/doctors/[slug]. When the AR translation is missing and we
+ * fall back to EN content, this ensures the AR page is visually a
+ * carbon copy of the EN page + a banner on top.
+ */
+import { render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { CONTACT } from "../consts";
+
+interface Props {
+  entry: CollectionEntry<"doctors">;
+  /** Label overrides. Passed by the AR route only if content is truly translated. */
+  labels?: {
+    back?: string;
+    memberships?: string;
+    languages?: string;
+    book?: string;
+  };
+  /** URL of the "all doctors" listing to link back to. */
+  backHref?: string;
+}
+
+const { entry, labels = {}, backHref = "/doctors/" } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const l = {
+  back: labels.back ?? "← All doctors",
+  memberships: labels.memberships ?? "Memberships",
+  languages: labels.languages ?? "Languages",
+  book: labels.book ?? "Book a consultation",
+};
+---
+
+<article class="container doctor-profile">
+  <a class="back" href={backHref}>{l.back}</a>
+
+  <header class="doctor-header">
+    {d.photo && <img class="doctor-photo" src={d.photo} alt={d.fullName} />}
+    <div>
+      <h1>{d.fullName}</h1>
+      {d.specialty && <p class="specialty">{d.specialty}</p>}
+      {d.titles.length > 0 && <p class="credentials">{d.titles.join(" · ")}</p>}
+    </div>
+  </header>
+
+  <div class="doctor-body">
+    <div class="prose">
+      <Content />
+    </div>
+
+    <aside class="doctor-aside">
+      {d.memberships.length > 0 && (
+        <div class="aside-block">
+          <h3>{l.memberships}</h3>
+          <ul>
+            {d.memberships.map((m) => <li>{m}</li>)}
+          </ul>
+        </div>
+      )}
+      {d.languages.length > 0 && (
+        <div class="aside-block">
+          <h3>{l.languages}</h3>
+          <p>{d.languages.join(", ")}</p>
+        </div>
+      )}
+      <div class="aside-block">
+        <h3>{l.book}</h3>
+        {CONTACT.phones.map((p) => (
+          <a class="phone-link" href={`tel:${p.replace(/\s/g, "")}`}>{p}</a>
+        ))}
+      </div>
+    </aside>
+  </div>
+</article>
+
+<style>
+  .doctor-profile { padding-block: 1.25rem 2.5rem; }
+  @media (min-width: 640px) { .doctor-profile { padding-block: 2rem 4rem; } }
+  .back { display: inline-block; margin-bottom: 1rem; font-size: 0.85rem; color: var(--ink-soft); }
+
+  .doctor-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem;
+    background: var(--brand-soft);
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .doctor-header {
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      text-align: start;
+      margin-bottom: 2rem;
+    }
+  }
+  .doctor-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--surface);
+    margin: 0 auto;
+  }
+  @media (min-width: 640px) {
+    .doctor-photo { width: 120px; height: 120px; margin: 0; }
+  }
+  .doctor-header h1 { margin: 0 0 0.3em; }
+  .specialty { font-weight: 600; color: var(--brand); margin-bottom: 0.4em; }
+  .credentials { color: var(--ink-soft); font-size: 0.85rem; }
+
+  .doctor-body { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 900px) { .doctor-body { grid-template-columns: 2fr 1fr; } }
+  .doctor-aside { display: flex; flex-direction: column; gap: 1.5rem; }
+  .aside-block {
+    padding: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .aside-block h3 {
+    color: var(--ink);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+  .aside-block ul { padding: 0 0 0 1rem; margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+  .aside-block ul li { margin-bottom: 0.35em; }
+  html[dir="rtl"] .aside-block ul { padding: 0 1rem 0 0; }
+  .phone-link { display: block; padding: 0.5em 0; color: var(--brand); font-weight: 600; }
+</style>

@@ -1,44 +1,19 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
 import { topicOf, isLocale } from "../../lib/i18n";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
   return posts
     .filter((e) => isLocale(e.id, "en"))
-    .map((entry) => ({
-      params: { slug: topicOf(entry.id) },
-      props: { entry },
-    }));
+    .map((entry) => ({ params: { slug: topicOf(entry.id) }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
-const d = entry.data;
 ---
 
-<BaseLayout title={`${d.title} — Alimran Medical Center`} description={d.description}>
-  <article class="container post">
-    <a class="back" href="/blog/">← All posts</a>
-    <header class="post-header">
-      <h1>{d.title}</h1>
-      <p class="meta">
-        {d.author && <span>{d.author}</span>}
-        {d.publishedAt && <span>· {d.publishedAt.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>}
-      </p>
-    </header>
-    <div class="prose">
-      <Content />
-    </div>
-  </article>
+<BaseLayout title={`${entry.data.title} — Alimran Medical Center`} description={entry.data.description}>
+  <BlogPost entry={entry} />
 </BaseLayout>
-
-<style>
-  .post { padding-block: 1.25rem 2.5rem; }
-  @media (min-width: 640px) { .post { padding-block: 2rem 4rem; } }
-  .back { display: inline-block; margin-bottom: 1rem; font-size: 0.85rem; color: var(--ink-soft); }
-  .post-header { text-align: center; margin-bottom: 1.5rem; }
-  @media (min-width: 640px) { .post-header { margin-bottom: 2.5rem; } }
-  .meta { color: var(--ink-muted); font-size: 0.85rem; }
-</style>

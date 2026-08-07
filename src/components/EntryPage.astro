@@ -1,0 +1,29 @@
+---
+/**
+ * Generic content-entry page body. Wraps ContentLayout + rendered body.
+ * Used identically by treatments, services, cases (EN + AR routes) so
+ * fallback pages look exactly like their EN counterparts.
+ */
+import { render } from "astro:content";
+import ContentLayout from "../layouts/ContentLayout.astro";
+
+interface Props {
+  entry: any;
+  backHref?: string;
+  backLabel?: string;
+}
+
+const { entry, backHref, backLabel } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ContentLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  image={entry.data.image}
+  category={entry.data.category}
+  backHref={backHref}
+  backLabel={backLabel}
+>
+  <Content />
+</ContentLayout>

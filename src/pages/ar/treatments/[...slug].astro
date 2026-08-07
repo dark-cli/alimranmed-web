@@ -1,16 +1,12 @@
 ---
-import { getCollection, render } from "astro:content";
-import ContentLayout from "../../../layouts/ContentLayout.astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import EntryPage from "../../../components/EntryPage.astro";
 import TranslationBanner from "../../../components/TranslationBanner.astro";
-import { topicOf, isLocale, pickForLocale, dictFor } from "../../../lib/i18n";
+import { topicOf, pickForLocale, dictFor } from "../../../lib/i18n";
 
 const t = dictFor("ar");
 
-/**
- * Emit a path for EVERY topic that has EITHER an ar.md or an en.md.
- * When ar.md is missing we still render the page (with en content and a
- * "translation coming soon" banner) so links from the AR nav never 404.
- */
 export async function getStaticPaths() {
   const items = await getCollection("treatments");
   const topics = Array.from(new Set(items.map((e) => topicOf(e.id))));
@@ -21,17 +17,22 @@ export async function getStaticPaths() {
 }
 
 const { entry, fallback } = Astro.props;
-const { Content } = await render(entry);
 ---
 
-<ContentLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  image={entry.data.image}
-  category={entry.data.category}
-  backHref="/ar/treatments/"
-  backLabel={t["nav.treatments"]}
->
-  {fallback && <TranslationBanner fromLocale="en" toLocale="ar" />}
-  <Content />
-</ContentLayout>
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  {fallback ? (
+    <div dir="ltr" lang="en">
+      <div class="container banner-wrap">
+        <TranslationBanner fromLocale="en" toLocale="ar" />
+      </div>
+      <EntryPage entry={entry} backHref="/ar/treatments/" backLabel="What We Treat" />
+    </div>
+  ) : (
+    <EntryPage entry={entry} backHref="/ar/treatments/" backLabel={t["nav.treatments"]} />
+  )}
+</BaseLayout>
+
+<style>
+  .banner-wrap { padding-top: 1.25rem; }
+  @media (min-width: 640px) { .banner-wrap { padding-top: 2rem; } }
+</style>

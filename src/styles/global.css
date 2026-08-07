@@ -83,9 +83,13 @@ body {
   font-size: 1rem;
 }
 
-/* Arabic — swap the primary font when the document is RTL. */
+/* Arabic — pair Latin-first stack with Arabic fallback.
+   Browsers do per-character font selection: Latin chars pick
+   "IBM Plex Sans", Arabic glyphs fall through to "IBM Plex Sans Arabic".
+   Putting the Latin font FIRST prevents proper-name / brand text
+   from rendering in the Arabic font's (chunkier) Latin fallback. */
 html[dir="rtl"] body {
-  font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", var(--font-sans);
+  font-family: "IBM Plex Sans", "IBM Plex Sans Arabic", var(--font-sans);
 }
 
 main {
