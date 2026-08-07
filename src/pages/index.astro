@@ -190,6 +190,15 @@ const FEATURED_SERVICES = [
     }
     bindVideoFacades();
     document.addEventListener("astro:page-load", bindVideoFacades);
+
+    // Auto-detect language: redirect to /ar/ if user prefers Arabic
+    if (window.location.pathname === "/" && !localStorage.getItem("language-set")) {
+      var lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+      if (lang.startsWith("ar")) {
+        localStorage.setItem("language-set", "true");
+        window.location.href = "/ar/";
+      }
+    }
   })();
 </script>
 
