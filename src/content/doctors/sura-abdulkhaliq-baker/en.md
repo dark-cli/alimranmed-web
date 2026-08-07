@@ -4,9 +4,10 @@ fullName: "Sura Abdulkhaliq Baker"
 locale: "en"
 order: 2
 specialty: "Physician"
+photo: "/images/doctors/sura-abdulkhaliq-baker.png"
 titles: []
 legacyUrl: "https://alimranmed.com/sura-abdulkhaliq-baker/"
-description: "Profile forthcoming."
+description: "Physician specializing in neurology and musculoskeletal disorders."
 memberships: []
 languages: []
 source: "ai-draft"

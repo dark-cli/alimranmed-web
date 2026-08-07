@@ -4,9 +4,10 @@ fullName: "سرة عبدالخالق باقر"
 locale: "ar"
 order: 2
 specialty: "طبيبة"
+photo: "/images/doctors/sura-abdulkhaliq-baker.png"
 titles: []
 legacyUrl: "https://ar.alimranmed.com/sura-abdulkhaliq-baker/"
-description: "الملف الشخصي قيد التحضير."
+description: "متخصصة في طب الأعصاب والاضطرابات العضلية الهيكلية."
 memberships: []
 languages: []
 source: "ai-draft"
