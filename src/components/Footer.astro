@@ -2,15 +2,29 @@
 import { CONTACT } from "../consts";
 import { currentLocale, dictFor } from "../lib/i18n";
 
-const dict = dictFor(currentLocale(Astro));
+const locale = currentLocale(Astro);
+const dict = dictFor(locale);
 const year = new Date().getFullYear();
+
+const brandTitle = locale === "ar" ? "مركز العمران الطبي" : "Alimran Medical Center";
+const brandDesc = locale === "ar"
+  ? "أمراض الأعصاب والاضطرابات العضلية الهيكلية — البصرة، العراق."
+  : "Neurology & Musculoskeletal Disorders — Basra, Iraq.";
+
+const socialLinks = [
+  { icon: "fa-facebook-f", label: "Facebook", url: CONTACT.social.facebook },
+  { icon: "fa-instagram", label: "Instagram", url: CONTACT.social.instagram },
+  { icon: "fa-youtube", label: "YouTube", url: CONTACT.social.youtube },
+  { icon: "fa-telegram", label: "Telegram", url: CONTACT.social.telegram },
+  { icon: "fa-tiktok", label: "TikTok", url: CONTACT.social.tiktok },
+];
 ---
 
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <h3>Alimran Medical Center</h3>
-      <p>Neurology & Musculoskeletal Disorders — Basra, Iraq.</p>
+      <h3>{brandTitle}</h3>
+      <p>{brandDesc}</p>
     </div>
 
     <div>
@@ -35,11 +49,14 @@ const year = new Date().getFullYear();
     <div>
       <h4>{dict["footer.followUs"]}</h4>
       <ul class="footer-list social">
-        <li><a href={CONTACT.social.facebook} target="_blank" rel="noopener">Facebook</a></li>
-        <li><a href={CONTACT.social.instagram} target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href={CONTACT.social.youtube} target="_blank" rel="noopener">YouTube</a></li>
-        <li><a href={CONTACT.social.telegram} target="_blank" rel="noopener">Telegram</a></li>
-        <li><a href={CONTACT.social.tiktok} target="_blank" rel="noopener">TikTok</a></li>
+        {socialLinks.map((link) => (
+          <li>
+            <a href={link.url} target="_blank" rel="noopener" title={link.label} aria-label={link.label}>
+              <i class={`fa-brands ${link.icon}`}></i>
+              <span class="sr-only">{link.label}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </div>
@@ -81,6 +98,37 @@ const year = new Date().getFullYear();
   }
   .footer-list a { color: var(--ink-soft); }
   .footer-list a:hover { color: var(--brand); }
+  .footer-list.social {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .footer-list.social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--brand-soft);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+  .footer-list.social a:hover {
+    background: var(--brand);
+    color: white;
+    transform: translateY(-2px);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
   .footer-bottom {
     margin-top: 2rem;
     padding-top: 1.25rem;
