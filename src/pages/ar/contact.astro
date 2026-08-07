@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { CONTACT } from "../../consts";
+
+const socials = [
+  { label: "Facebook",  href: CONTACT.social.facebook,  icon: "fa-brands fa-facebook-f" },
+  { label: "Instagram", href: CONTACT.social.instagram, icon: "fa-brands fa-instagram"  },
+  { label: "YouTube",   href: CONTACT.social.youtube,   icon: "fa-brands fa-youtube"    },
+  { label: "Telegram",  href: CONTACT.social.telegram,  icon: "fa-brands fa-telegram"   },
+  { label: "TikTok",    href: CONTACT.social.tiktok,    icon: "fa-brands fa-tiktok"     },
+];
+---
+
+<BaseLayout title="اتصل بنا — مركز العمران الطبي" description="تواصل مع مركز العمران الطبي في البصرة، العراق.">
+  <div class="container page">
+    <header class="page-head">
+      <h1>اتصل بنا</h1>
+      <p>نجيب خلال ساعات العمل. للحالات العاجلة يرجى الاتصال المسبق.</p>
+    </header>
+
+    <section class="actions" aria-label="طرق الاتصال الرئيسية">
+      {CONTACT.phones.map((p) => (
+        <a class="action" href={`tel:${p.replace(/\s/g, "")}`}>
+          <span class="action-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+          <span class="action-body">
+            <span class="action-label">اتصل</span>
+            <span class="action-value">{p}</span>
+          </span>
+        </a>
+      ))}
+      <a class="action" href={`mailto:${CONTACT.email}`}>
+        <span class="action-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+        <span class="action-body">
+          <span class="action-label">البريد</span>
+          <span class="action-value">{CONTACT.email}</span>
+        </span>
+      </a>
+    </section>
+
+    <section class="info">
+      <div class="info-block">
+        <h2><i class="fa-solid fa-location-dot" aria-hidden="true"></i> مواقعنا</h2>
+        <ul class="addresses">
+          {CONTACT.addresses.map((addr) => <li>{addr}</li>)}
+        </ul>
+      </div>
+      <div class="info-block">
+        <h2><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> تابعنا</h2>
+        <ul class="social">
+          {socials.map((s) => (
+            <li>
+              <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}>
+                <i class={s.icon} aria-hidden="true"></i>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 1.5rem 2.5rem; }
+  @media (min-width: 640px) { .page { padding-block: 3rem 4rem; } }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 1.5rem; }
+  @media (min-width: 640px) { .page-head { margin-bottom: 2.5rem; } }
+  .page-head p { color: var(--ink-soft); }
+  .actions { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 2rem; }
+  @media (min-width: 500px) { .actions { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px) { .actions { grid-template-columns: repeat(3, 1fr); } }
+  .action { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit; }
+  .action:hover { border-color: var(--brand); background: var(--brand-soft); text-decoration: none; }
+  .action-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--brand); color: #fff; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .action-body { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+  .action-label { color: var(--ink-muted); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 0.15em; }
+  .action-value { color: var(--ink); font-weight: 600; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .info { display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  @media (min-width: 700px) { .info { grid-template-columns: 1.5fr 1fr; gap: 2rem; } }
+  .info-block h2 { display: flex; align-items: center; gap: 0.5em; color: var(--ink-muted); font-size: 0.8rem; margin-bottom: 0.75rem; }
+  .info-block h2 i { color: var(--brand); font-size: 0.9rem; }
+  .addresses { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .addresses li { color: var(--ink-soft); font-size: 0.95rem; padding: 0.5rem 0.75rem; background: var(--surface-alt); border-radius: var(--radius); }
+  .social { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .social a { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 50%; color: var(--ink-soft); }
+  .social a:hover { color: var(--brand); border-color: var(--brand); background: var(--brand-soft); text-decoration: none; }
+</style>

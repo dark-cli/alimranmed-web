@@ -73,6 +73,7 @@
 .fa-eye::before                                 { content: "\f06e"; }
 .fa-heart::before                               { content: "\f004"; }
 .fa-circle-check::before                        { content: "\f058"; }
+.fa-language::before                            { content: "\f1ab"; }
 
 /* Brand glyphs */
 .fa-facebook-f::before                          { content: "\f39e"; }

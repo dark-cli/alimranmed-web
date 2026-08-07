@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { topicOf, dictFor, pickForLocale } from "../../../lib/i18n";
+
+const t = dictFor("ar");
+const all = await getCollection("services");
+const topics = Array.from(new Set(all.map((e) => topicOf(e.id))));
+const entries = topics
+  .map((topic) => pickForLocale(all, topic, "ar"))
+  .filter((x): x is NonNullable<typeof x> => !!x)
+  .map(({ entry }) => entry);
+
+type Entry = (typeof entries)[number];
+const byCategory = new Map<string, Entry[]>();
+const topLevel: Entry[] = [];
+for (const entry of entries) {
+  const topic = topicOf(entry.id);
+  if (topic.includes("/")) {
+    const [cat] = topic.split("/");
+    if (!byCategory.has(cat)) byCategory.set(cat, []);
+    byCategory.get(cat)!.push(entry);
+  } else {
+    topLevel.push(entry);
+  }
+}
+
+const categories = [...byCategory.entries()]
+  .sort((a, b) => a[0].localeCompare(b[0]))
+  .map(([slug, list]) => ({
+    slug,
+    pretty: slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" "),
+    count: list.length,
+  }));
+---
+
+<BaseLayout title={`${t["nav.services"]} — مركز العمران الطبي`}>
+  <div class="container page">
+    <header class="page-head">
+      <h1>{t["nav.services"]}</h1>
+    </header>
+    <div class="grid">
+      {categories.map((c) => (
+        <a class="card cat" href={`/ar/services/${c.slug}/`}>
+          <h3>{c.pretty}</h3>
+          <span class="count">{c.count}</span>
+        </a>
+      ))}
+      {topLevel.map((e) => (
+        <a class="card cat" href={`/ar/services/${topicOf(e.id)}/`}>
+          <h3>{e.data.title}</h3>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 1.5rem 2.5rem; }
+  @media (min-width: 640px) { .page { padding-block: 3rem 4rem; } }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 1.5rem; }
+  @media (min-width: 640px) { .page-head { margin-bottom: 3rem; } }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+  .cat { text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.4rem; }
+  .cat h3 { color: var(--brand); margin: 0; }
+  .count { color: var(--ink-muted); font-size: 0.85rem; }
+</style>

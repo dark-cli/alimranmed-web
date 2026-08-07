@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { topicOf, pickForLocale, dictFor } from "../../../lib/i18n";
+
+const t = dictFor("ar");
+const all = await getCollection("doctors");
+const topics = Array.from(new Set(all.map((e) => topicOf(e.id))));
+const doctors = topics
+  .map((topic) => pickForLocale(all, topic, "ar"))
+  .filter((x): x is NonNullable<typeof x> => !!x)
+  .map(({ entry }) => entry)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title={`${t["nav.doctors"]} — مركز العمران الطبي`}>
+  <div class="container page">
+    <header class="page-head">
+      <h1>{t["nav.doctors"]}</h1>
+    </header>
+
+    <div class="doctor-grid">
+      {doctors.map((d) => (
+        <a class="doctor-card card" href={`/ar/doctors/${topicOf(d.id)}/`}>
+          {d.data.photo && <img class="photo" src={d.data.photo} alt={d.data.fullName} />}
+          <h3>{d.data.fullName || d.data.title}</h3>
+          {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 1.5rem 2.5rem; }
+  @media (min-width: 640px) { .page { padding-block: 3rem 4rem; } }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 1.5rem; }
+  @media (min-width: 640px) { .page-head { margin-bottom: 3rem; } }
+  .doctor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .doctor-card { text-decoration: none; color: inherit; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--brand-soft); }
+  .doctor-card h3 { color: var(--brand); margin-bottom: 0.3em; }
+  .specialty { font-weight: 600; color: var(--ink); margin-bottom: 0.3em; }
+</style>

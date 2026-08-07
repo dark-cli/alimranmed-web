@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+import TranslationBanner from "../../components/TranslationBanner.astro";
+import { topicOf, pickForLocale, dictFor } from "../../lib/i18n";
+
+const t = dictFor("ar");
+
+const all = await getCollection("pages");
+const aboutTopics = ["about/mission", "about/vision", "about/values"];
+
+const items = aboutTopics
+  .map((topic) => pickForLocale(all, topic, "ar"))
+  .filter((x): x is NonNullable<typeof x> => !!x);
+
+const anyFallback = items.some((x) => x.fallback);
+
+const rendered = await Promise.all(items.map(async ({ entry }) => {
+  const { Content } = await render(entry);
+  return { entry, Content };
+}));
+
+const ICON: Record<string, string> = {
+  mission: "fa-solid fa-bullseye",
+  vision:  "fa-solid fa-eye",
+  values:  "fa-solid fa-heart",
+};
+---
+
+<BaseLayout title="من نحن — مركز العمران الطبي">
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">{t["nav.about"]}</span>
+      <h1>رعاية تُصغي إلى المريض، وطبٌ يفكر.</h1>
+      <p class="lede">
+        مركز العمران الطبي عيادة متخصصة في الأعصاب والجهاز العضلي الهيكلي في البصرة، العراق.
+        فريقنا متعدد التخصصات يجمع خبرة الاستشاريين الجراحية مع أحدث أساليب التأهيل
+        والتحفيز الدماغي وإدارة الألم.
+      </p>
+    </div>
+  </section>
+
+  <section class="container">
+    {anyFallback && <TranslationBanner fromLocale="en" toLocale="ar" />}
+  </section>
+
+  <section class="values container">
+    {rendered.map(({ entry, Content }) => {
+      const slug = topicOf(entry.id).split("/").pop() ?? "";
+      const iconClass = ICON[slug] ?? "fa-solid fa-circle-check";
+      return (
+        <article class="value-row" id={slug}>
+          <div class="value-icon" aria-hidden="true"><i class={iconClass}></i></div>
+          <div class="value-body">
+            <h2>{entry.data.title.replace(/^OUR\s+/i, "")}</h2>
+            <div class="prose"><Content /></div>
+          </div>
+        </article>
+      );
+    })}
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 2rem 0 1.25rem;
+    background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
+    text-align: center;
+  }
+  @media (min-width: 640px) { .hero { padding: 4rem 0 2rem; } }
+  .eyebrow { display: inline-block; color: var(--brand); font-weight: 600; font-size: 0.75rem; margin-bottom: 0.6rem; }
+  .hero h1 { max-width: 22ch; margin: 0 auto 0.75rem; }
+  .lede { color: var(--ink-soft); max-width: 60ch; margin: 0 auto; }
+  .values { padding-block: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  @media (min-width: 640px) { .values { padding-block: 3rem; gap: 1.75rem; } }
+  .value-row { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; padding-inline-start: 0.75rem; border-inline-start: 3px solid var(--brand); }
+  @media (min-width: 640px) { .value-row { gap: 1.25rem; padding-inline-start: 1.25rem; } }
+  .value-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--brand-soft); color: var(--brand); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  @media (min-width: 640px) { .value-icon { width: 48px; height: 48px; } }
+  .value-body h2 { color: var(--brand); font-size: 1.1rem; margin: 0 0 0.5em; }
+  @media (min-width: 640px) { .value-body h2 { font-size: 1.25rem; } }
+  .value-body .prose { max-width: none; }
+</style>

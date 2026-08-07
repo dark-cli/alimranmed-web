@@ -1,15 +1,20 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, dictFor } from "../../../lib/i18n";
+import { topicOf, dictFor, pickForLocale } from "../../../lib/i18n";
 
 const t = dictFor("ar");
-const treatments = (await getCollection("treatments"))
-  .filter((e) => isLocale(e.id, "ar"))
+const all = await getCollection("treatments");
+const topics = Array.from(new Set(all.map((e) => topicOf(e.id))));
+
+const entries = topics
+  .map((topic) => pickForLocale(all, topic, "ar"))
+  .filter((x): x is NonNullable<typeof x> => !!x)
+  .map(({ entry }) => entry)
   .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
 
-const grouped = new Map<string, typeof treatments>();
-for (const item of treatments) {
+const grouped = new Map<string, typeof entries>();
+for (const item of entries) {
   const cat = item.data.category ?? "أخرى";
   if (!grouped.has(cat)) grouped.set(cat, []);
   grouped.get(cat)!.push(item);
@@ -34,10 +39,6 @@ for (const item of treatments) {
         </ul>
       </section>
     ))}
-
-    {grouped.size === 0 && (
-      <p class="empty">المحتوى العربي قيد الترجمة.</p>
-    )}
   </div>
 </BaseLayout>
 
@@ -56,5 +57,4 @@ for (const item of treatments) {
     gap: 0.5rem;
   }
   .condition-list a { display: block; padding: 0.5em 0; }
-  .empty { text-align: center; color: var(--ink-muted); font-style: italic; padding: 3rem 0; }
 </style>

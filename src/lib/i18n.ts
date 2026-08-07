@@ -62,3 +62,23 @@ export function currentLocale(astro: { currentLocale?: string; url: URL }): Loca
   return "en";
 }
 
+/**
+ * Given a topic (e.g. "headaches") and a locale, find the corresponding
+ * entry in a collection. If the requested locale's file doesn't exist,
+ * fall back to the other locale so the page still renders. Returns
+ * `{ entry, fallback }` where `fallback` = true when the requested
+ * locale had no file and we returned the other one.
+ */
+export function pickForLocale<T extends { id: string }>(
+  entries: T[],
+  topic: string,
+  locale: Locale,
+): { entry: T; fallback: boolean } | null {
+  const want = entries.find((e) => e.id === `${topic}/${locale}`);
+  if (want) return { entry: want, fallback: false };
+  const other = locale === "en" ? "ar" : "en";
+  const alt = entries.find((e) => e.id === `${topic}/${other}`);
+  if (alt) return { entry: alt, fallback: true };
+  return null;
+}
+

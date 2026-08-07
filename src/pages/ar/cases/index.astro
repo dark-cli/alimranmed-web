@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { topicOf, pickForLocale } from "../../../lib/i18n";
+
+const all = await getCollection("cases");
+const topics = Array.from(new Set(all.map((e) => topicOf(e.id))));
+const cases = topics
+  .map((topic) => pickForLocale(all, topic, "ar"))
+  .filter((x): x is NonNullable<typeof x> => !!x)
+  .map(({ entry }) => entry)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout title="الحالات — مركز العمران الطبي">
+  <div class="container page">
+    <header class="page-head"><h1>الحالات</h1></header>
+    <div class="grid">
+      {cases.map((c) => (
+        <a class="card case" href={`/ar/cases/${topicOf(c.id)}/`}>
+          <h3>{c.data.title}</h3>
+          {c.data.description && <p>{c.data.description}</p>}
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 1.5rem 2.5rem; }
+  @media (min-width: 640px) { .page { padding-block: 3rem 4rem; } }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 1.5rem; }
+  @media (min-width: 640px) { .page-head { margin-bottom: 3rem; } }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .case { text-decoration: none; color: inherit; display: block; }
+  .case h3 { color: var(--brand); margin: 0 0 0.4em; }
+  .case p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
+</style>

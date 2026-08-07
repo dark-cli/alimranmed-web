@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import TranslationBanner from "../../../components/TranslationBanner.astro";
+import { topicOf, pickForLocale } from "../../../lib/i18n";
+
+export async function getStaticPaths() {
+  const items = await getCollection("posts");
+  const topics = Array.from(new Set(items.map((e) => topicOf(e.id))));
+  return topics.map((topic) => {
+    const pick = pickForLocale(items, topic, "ar");
+    return pick ? { params: { slug: topic }, props: pick } : null;
+  }).filter(Boolean) as Array<{ params: { slug: string }; props: { entry: (typeof items)[number]; fallback: boolean } }>;
+}
+
+const { entry, fallback } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+---
+
+<BaseLayout title={`${d.title} — مركز العمران الطبي`} description={d.description}>
+  <article class="container post">
+    <a class="back" href="/ar/blog/">← المدونة</a>
+    <header class="post-header">
+      <h1>{d.title}</h1>
+      <p class="meta">
+        {d.publishedAt && <span>{d.publishedAt.toLocaleDateString("ar-IQ", { year: "numeric", month: "long", day: "numeric" })}</span>}
+      </p>
+    </header>
+    {fallback && <TranslationBanner fromLocale="en" toLocale="ar" />}
+    <div class="prose"><Content /></div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post { padding-block: 1.25rem 2.5rem; }
+  @media (min-width: 640px) { .post { padding-block: 2rem 4rem; } }
+  .back { display: inline-block; margin-bottom: 1rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .post-header { text-align: center; margin-bottom: 1.5rem; }
+  @media (min-width: 640px) { .post-header { margin-bottom: 2.5rem; } }
+  .meta { color: var(--ink-muted); font-size: 0.85rem; }
+</style>

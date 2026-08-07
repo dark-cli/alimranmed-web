@@ -1,0 +1,68 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import TranslationBanner from "../../../components/TranslationBanner.astro";
+import { CONTACT } from "../../../consts";
+import { topicOf, pickForLocale, dictFor } from "../../../lib/i18n";
+
+const t = dictFor("ar");
+
+export async function getStaticPaths() {
+  const items = await getCollection("doctors");
+  const topics = Array.from(new Set(items.map((e) => topicOf(e.id))));
+  return topics.map((topic) => {
+    const pick = pickForLocale(items, topic, "ar");
+    return pick ? { params: { slug: topic }, props: pick } : null;
+  }).filter(Boolean) as Array<{ params: { slug: string }; props: { entry: (typeof items)[number]; fallback: boolean } }>;
+}
+
+const { entry, fallback } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+---
+
+<BaseLayout title={`${d.fullName} — مركز العمران الطبي`} description={d.description}>
+  <article class="container doctor-profile">
+    <a class="back" href="/ar/doctors/">← {t["nav.doctors"]}</a>
+
+    <header class="doctor-header">
+      {d.photo && <img class="doctor-photo" src={d.photo} alt={d.fullName} />}
+      <div>
+        <h1>{d.fullName}</h1>
+        {d.specialty && <p class="specialty">{d.specialty}</p>}
+        {d.titles.length > 0 && <p class="credentials">{d.titles.join(" · ")}</p>}
+      </div>
+    </header>
+
+    {fallback && <TranslationBanner fromLocale="en" toLocale="ar" />}
+
+    <div class="doctor-body">
+      <div class="prose"><Content /></div>
+      <aside class="doctor-aside">
+        <div class="aside-block">
+          <h3>{t["cta.callUs"]}</h3>
+          {CONTACT.phones.map((p) => (
+            <a class="phone-link" href={`tel:${p.replace(/\s/g, "")}`}>{p}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .doctor-profile { padding-block: 1.25rem 2.5rem; }
+  @media (min-width: 640px) { .doctor-profile { padding-block: 2rem 4rem; } }
+  .back { display: inline-block; margin-bottom: 1rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .doctor-header { display: grid; grid-template-columns: 1fr; gap: 1rem; align-items: center; text-align: center; padding: 1.25rem; background: var(--brand-soft); border-radius: var(--radius-lg); margin-bottom: 1.5rem; }
+  @media (min-width: 640px) { .doctor-header { grid-template-columns: auto 1fr; gap: 1.5rem; padding: 1.5rem; text-align: start; margin-bottom: 2rem; } }
+  .doctor-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto; }
+  @media (min-width: 640px) { .doctor-photo { width: 120px; height: 120px; margin: 0; } }
+  .specialty { font-weight: 600; color: var(--brand); margin-bottom: 0.4em; }
+  .credentials { color: var(--ink-soft); font-size: 0.85rem; }
+  .doctor-body { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 900px) { .doctor-body { grid-template-columns: 2fr 1fr; } }
+  .aside-block { padding: 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+  .aside-block h3 { color: var(--ink); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  .phone-link { display: block; padding: 0.5em 0; color: var(--brand); font-weight: 600; }
+</style>
