@@ -19,10 +19,14 @@ const currentPath = Astro.url.pathname;
 // href helper: turn a canonical (EN) href into the locale-scoped one
 const L = (href: string) => localizedHref(href, locale);
 
+// Active if the current URL is (a) an exact match for a leaf nav item
+// (like Home = "/"), or (b) nested under a section (like "/services/foo/"
+// under Services). Check against the ORIGINAL href — not the localized one —
+// so the Home check works identically in EN and AR.
 const isActive = (href: string) => {
   const target = L(href);
-  return target === "/" ? currentPath === "/" || currentPath === "/ar/"
-    : currentPath === target || currentPath.startsWith(target);
+  if (href === "/") return currentPath === target;  // Home = exact match only
+  return currentPath === target || currentPath.startsWith(target);
 };
 ---
 
