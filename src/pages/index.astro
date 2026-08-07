@@ -2,8 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { CONTACT } from "../consts";
+import { topicOf, isLocale } from "../lib/i18n";
 
 const doctors = (await getCollection("doctors"))
+  .filter((e) => isLocale(e.id, "en"))
   .sort((a, b) => a.data.order - b.data.order);
 
 // Intro video (from the old homepage — first YouTube embed on alimranmed.com/).
@@ -129,7 +131,7 @@ const FEATURED_SERVICES = [
         </header>
         <div class="doctor-grid">
           {doctors.map((d) => (
-            <a class="doctor-card card" href={`/doctors/${d.id}/`}>
+            <a class="doctor-card card" href={`/doctors/${topicOf(d.id)}/`}>
               {d.data.photo && <img class="doctor-photo" src={d.data.photo} alt={d.data.fullName} loading="lazy" />}
               <h3>{d.data.fullName || d.data.title}</h3>
               {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}

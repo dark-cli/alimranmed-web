@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { topicOf, isLocale } from "../../lib/i18n";
 
 const treatments = (await getCollection("treatments"))
+  .filter((e) => isLocale(e.id, "en"))
   .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
 
 // Group by category
@@ -30,7 +32,7 @@ for (const t of treatments) {
         <ul class="condition-list">
           {items.map((t) => (
             <li>
-              <a href={`/treatments/${t.id}/`}>{t.data.title}</a>
+              <a href={`/treatments/${topicOf(t.id)}/`}>{t.data.title}</a>
             </li>
           ))}
         </ul>

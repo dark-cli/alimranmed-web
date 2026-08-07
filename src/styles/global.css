@@ -1,7 +1,6 @@
-/* IBM Plex Sans — warm, modern sans with subtle character. Pairs with
-   IBM Plex Sans Arabic if Arabic support is re-added later. Loaded via
-   Google Fonts; will move to self-hosted for the captive-portal build. */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+/* IBM Plex Sans + IBM Plex Sans Arabic — same family, harmonised
+   metrics for smooth switching between English and Arabic. */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
 
 /* Font Awesome — served as a static file from /fonts/fontawesome/fontawesome.css
    loaded via BaseHead. That path resolves identically in dev and prod (no Vite
@@ -82,6 +81,11 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   font-size: 1rem;
+}
+
+/* Arabic — swap the primary font when the document is RTL. */
+html[dir="rtl"] body {
+  font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", var(--font-sans);
 }
 
 main {
@@ -232,6 +236,11 @@ html[dir="rtl"] .prose ol {
   padding-left: 0;
   padding-right: 1.5em;
 }
+html[dir="rtl"] .prose ul,
+html[dir="rtl"] .prose ol {
+  padding-left: 0;
+  padding-right: 1.5em;
+}
 .prose li {
   margin-bottom: 0.4em;
 }
@@ -242,6 +251,11 @@ html[dir="rtl"] .prose ol {
   color: var(--ink-soft);
   background: var(--brand-soft);
   border-radius: 0 var(--radius) var(--radius) 0;
+}
+html[dir="rtl"] .prose blockquote {
+  border-left: 0;
+  border-right: 4px solid var(--brand);
+  border-radius: var(--radius) 0 0 var(--radius);
 }
 html[dir="rtl"] .prose blockquote {
   border-left: 0;

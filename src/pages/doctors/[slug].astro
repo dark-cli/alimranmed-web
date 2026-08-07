@@ -2,13 +2,16 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { CONTACT } from "../../consts";
+import { topicOf, isLocale } from "../../lib/i18n";
 
 export async function getStaticPaths() {
   const items = await getCollection("doctors");
-  return items.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+  return items
+    .filter((e) => isLocale(e.id, "en"))
+    .map((entry) => ({
+      params: { slug: topicOf(entry.id) },
+      props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;
@@ -62,9 +65,7 @@ const d = entry.data;
 
 <style>
   .doctor-profile { padding-block: 1.25rem 2.5rem; }
-  @media (min-width: 640px) {
-    .doctor-profile { padding-block: 2rem 4rem; }
-  }
+  @media (min-width: 640px) { .doctor-profile { padding-block: 2rem 4rem; } }
   .back { display: inline-block; margin-bottom: 1rem; font-size: 0.85rem; color: var(--ink-soft); }
 
   .doctor-header {
@@ -102,19 +103,9 @@ const d = entry.data;
   .specialty { font-weight: 600; color: var(--brand); margin-bottom: 0.4em; }
   .credentials { color: var(--ink-soft); font-size: 0.85rem; }
 
-  .doctor-body {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  @media (min-width: 900px) {
-    .doctor-body { grid-template-columns: 2fr 1fr; }
-  }
-  .doctor-aside {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+  .doctor-body { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 900px) { .doctor-body { grid-template-columns: 2fr 1fr; } }
+  .doctor-aside { display: flex; flex-direction: column; gap: 1.5rem; }
   .aside-block {
     padding: 1.25rem;
     background: var(--surface);

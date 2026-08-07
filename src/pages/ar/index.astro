@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { dictFor } from "../../lib/i18n";
+import { CONTACT } from "../../consts";
+
+const t = dictFor("ar");
+---
+
+<BaseLayout title="مركز العمران الطبي — الأعصاب والجهاز العضلي الهيكلي">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">مركز العمران الطبي · البصرة، العراق</span>
+        <h1>رعاية متخصصة لأمراض الأعصاب والجهاز العضلي الهيكلي.</h1>
+        <p class="lede">
+          تشخيص وعلاج بإشراف الاستشاريين — كيروبراكتيك، تأهيل طبي، إدارة الألم،
+          تحفيز دماغي، علاج طبيعي، وجراحة أعصاب — بأحدث التقنيات المبنية على الأدلة.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`}>{t["cta.callUs"]}</a>
+          <a class="btn btn-ghost" href="/ar/doctors/">{t["nav.doctors"]}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 2rem 0 1.5rem;
+    background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
+  }
+  @media (min-width: 900px) {
+    .hero { padding: 3.5rem 0 3rem; }
+  }
+  .eyebrow {
+    display: inline-block;
+    color: var(--brand);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+  .hero-copy h1 { max-width: 22ch; font-size: clamp(1.4rem, 5.5vw, 2.75rem); }
+  .hero-copy .lede { color: var(--ink-soft); max-width: 60ch; margin-bottom: 1.25rem; }
+  .hero-cta { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+</style>

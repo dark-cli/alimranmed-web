@@ -1,8 +1,8 @@
 ---
-import en from "../i18n/en.json";
 import { CONTACT } from "../consts";
+import { currentLocale, dictFor } from "../lib/i18n";
 
-const dict = en as Record<string, string>;
+const dict = dictFor(currentLocale(Astro));
 const year = new Date().getFullYear();
 ---
 

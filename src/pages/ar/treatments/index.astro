@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { topicOf, isLocale, dictFor } from "../../../lib/i18n";
+
+const t = dictFor("ar");
+const treatments = (await getCollection("treatments"))
+  .filter((e) => isLocale(e.id, "ar"))
+  .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
+
+const grouped = new Map<string, typeof treatments>();
+for (const item of treatments) {
+  const cat = item.data.category ?? "أخرى";
+  if (!grouped.has(cat)) grouped.set(cat, []);
+  grouped.get(cat)!.push(item);
+}
+---
+
+<BaseLayout title={`${t["nav.treatments"]} — مركز العمران الطبي`}>
+  <div class="container page">
+    <header class="page-head">
+      <h1>{t["nav.treatments"]}</h1>
+    </header>
+
+    {[...grouped.entries()].map(([category, items]) => (
+      <section class="category">
+        <h2>{category}</h2>
+        <ul class="condition-list">
+          {items.map((item) => (
+            <li>
+              <a href={`/ar/treatments/${topicOf(item.id)}/`}>{item.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    {grouped.size === 0 && (
+      <p class="empty">المحتوى العربي قيد الترجمة.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 1.5rem 2.5rem; }
+  @media (min-width: 640px) { .page { padding-block: 3rem 4rem; } }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 1.5rem; }
+  @media (min-width: 640px) { .page-head { margin-bottom: 3rem; } }
+  .category { margin-bottom: 2.5rem; }
+  .category h2 { color: var(--brand); border-bottom: 1px solid var(--border); padding-bottom: 0.4em; }
+  .condition-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.5rem;
+  }
+  .condition-list a { display: block; padding: 0.5em 0; }
+  .empty { text-align: center; color: var(--ink-muted); font-style: italic; padding: 3rem 0; }
+</style>

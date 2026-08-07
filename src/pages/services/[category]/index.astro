@@ -1,16 +1,18 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { topicOf, isLocale } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
-  const all = await getCollection("services");
+  const all = (await getCollection("services")).filter((e) => isLocale(e.id, "en"));
 
-  // Collect unique categories from entry ids that live in a subfolder.
+  // Entry topic path is e.g. "chiropractic/spinmed" (subfolder) or "acupuncture".
+  // Only nested entries have a category landing page.
   const byCategory = new Map<string, typeof all>();
   for (const entry of all) {
-    // entry.id is either "category/slug" (subfolder) or "slug" (top-level file)
-    if (!entry.id.includes("/")) continue;
-    const [category] = entry.id.split("/");
+    const topic = topicOf(entry.id);
+    if (!topic.includes("/")) continue;
+    const [category] = topic.split("/");
     if (!byCategory.has(category)) byCategory.set(category, []);
     byCategory.get(category)!.push(entry);
   }
@@ -62,7 +64,7 @@ const BLURB: Record<string, string> = {
 
     <div class="grid">
       {sorted.map((entry) => (
-        <a class="card entry" href={`/services/${entry.id}/`}>
+        <a class="card entry" href={`/services/${topicOf(entry.id)}/`}>
           <h3>{entry.data.title}</h3>
           {entry.data.description && <p>{entry.data.description}</p>}
           <span class="learn-more">Read more →</span>

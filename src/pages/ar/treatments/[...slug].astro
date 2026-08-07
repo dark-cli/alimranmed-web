@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from "astro:content";
+import ContentLayout from "../../../layouts/ContentLayout.astro";
+import { topicOf, isLocale } from "../../../lib/i18n";
+import { dictFor } from "../../../lib/i18n";
+
+const t = dictFor("ar");
+
+export async function getStaticPaths() {
+  const items = await getCollection("treatments");
+  return items
+    .filter((e) => isLocale(e.id, "ar"))
+    .map((entry) => ({ params: { slug: topicOf(entry.id) }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ContentLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  image={entry.data.image}
+  category={entry.data.category}
+  backHref="/ar/treatments/"
+  backLabel={t["nav.treatments"]}
+>
+  <Content />
+</ContentLayout>

@@ -1,11 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
+import { isLocale, topicOf } from "../lib/i18n";
 
-const aboutPages = (await getCollection("pages", ({ data }) => data.category === "about"))
+const aboutPages = (await getCollection("pages"))
+  .filter((e) => isLocale(e.id, "en") && e.data.category === "about")
   .sort((a, b) => {
+    // Entry IDs are like "about/mission/en" — sort by mission → vision → values
     const order = ["about/mission", "about/vision", "about/values"];
-    return order.indexOf(a.id) - order.indexOf(b.id);
+    return order.indexOf(topicOf(a.id)) - order.indexOf(topicOf(b.id));
   });
 
 const rendered = await Promise.all(
@@ -38,7 +41,8 @@ const ICON: Record<string, string> = {
 
   <section class="values container">
     {rendered.map(({ entry, Content }) => {
-      const slug = entry.id.split("/").pop() ?? "";
+      // Topic is "about/mission" → slug is "mission"
+      const slug = topicOf(entry.id).split("/").pop() ?? "";
       const iconClass = ICON[slug] ?? "fa-solid fa-circle-check";
       return (
         <article class="value-row" id={slug}>

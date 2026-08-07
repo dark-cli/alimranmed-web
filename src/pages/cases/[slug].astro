@@ -1,13 +1,16 @@
 ---
 import { getCollection, render } from "astro:content";
 import ContentLayout from "../../layouts/ContentLayout.astro";
+import { topicOf, isLocale } from "../../lib/i18n";
 
 export async function getStaticPaths() {
   const items = await getCollection("cases");
-  return items.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+  return items
+    .filter((e) => isLocale(e.id, "en"))
+    .map((entry) => ({
+      params: { slug: topicOf(entry.id) },
+      props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;

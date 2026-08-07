@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { topicOf, isLocale } from "../../lib/i18n";
 
 const posts = (await getCollection("posts"))
+  .filter((e) => isLocale(e.id, "en"))
   .sort((a, b) => {
     const ad = a.data.publishedAt?.getTime() ?? 0;
     const bd = b.data.publishedAt?.getTime() ?? 0;
@@ -19,7 +21,7 @@ const posts = (await getCollection("posts"))
 
     <div class="post-list">
       {posts.map((p) => (
-        <a class="post-card card" href={`/blog/${p.id}/`}>
+        <a class="post-card card" href={`/blog/${topicOf(p.id)}/`}>
           <h3>{p.data.title}</h3>
           {p.data.description && <p>{p.data.description}</p>}
           {p.data.publishedAt && (
