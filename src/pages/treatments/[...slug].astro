@@ -1,9 +1,9 @@
 ---
-import { getCollection, render } from "astro:content";
-import ContentLayout from "../../layouts/ContentLayout.astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EntryPage from "../../components/EntryPage.astro";
 import { topicOf, isLocale } from "../../lib/i18n";
 
-// Only emits EN pages here; AR mirror at /pages/ar/treatments/[...slug].astro
 export async function getStaticPaths() {
   const items = await getCollection("treatments");
   return items
@@ -12,16 +12,12 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
 ---
 
-<ContentLayout
+<BaseLayout
   title={entry.data.title}
   description={entry.data.description}
   image={entry.data.image}
-  category={entry.data.category}
-  backHref="/treatments/"
-  backLabel="What We Treat"
 >
-  <Content />
-</ContentLayout>
+  <EntryPage entry={entry} backHref="/treatments/" backLabel="What We Treat" />
+</BaseLayout>

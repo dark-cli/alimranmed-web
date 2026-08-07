@@ -1,11 +1,13 @@
 ---
 /**
- * Generic content-entry page body. Wraps ContentLayout + rendered body.
- * Used identically by treatments, services, cases (EN + AR routes) so
- * fallback pages look exactly like their EN counterparts.
+ * Content-entry page body (breadcrumb + heading + article prose).
+ * Renders the inner shell only — callers wrap in <BaseLayout> themselves.
+ *
+ * Previously wrapped via ContentLayout (which pulled in BaseLayout), which
+ * meant AR fallback routes that already wrapped in BaseLayout ended up with
+ * BaseLayout nested inside BaseLayout → duplicate <header>, <body>, etc.
  */
 import { render } from "astro:content";
-import ContentLayout from "../layouts/ContentLayout.astro";
 
 interface Props {
   entry: any;
@@ -15,15 +17,37 @@ interface Props {
 
 const { entry, backHref, backLabel } = Astro.props;
 const { Content } = await render(entry);
+const category = entry.data.category;
 ---
 
-<ContentLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  image={entry.data.image}
-  category={entry.data.category}
-  backHref={backHref}
-  backLabel={backLabel}
->
-  <Content />
-</ContentLayout>
+<div class="content-page">
+  {(backHref || category) && (
+    <div class="breadcrumb container">
+      {backHref && backLabel && <a href={backHref}>← {backLabel}</a>}
+      {category && !backHref && <span class="crumb-category">{category}</span>}
+    </div>
+  )}
+
+  <header class="page-header container">
+    <h1>{entry.data.title}</h1>
+    {entry.data.description && <p class="lede">{entry.data.description}</p>}
+  </header>
+
+  <article class="container">
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</div>
+
+<style>
+  .content-page { padding-block: 1.25rem 2.5rem; }
+  @media (min-width: 640px) { .content-page { padding-block: 2rem 4rem; } }
+  .breadcrumb { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 0.75rem; }
+  .breadcrumb a { color: var(--ink-soft); }
+  .crumb-category { text-transform: uppercase; letter-spacing: 0.06em; }
+  .page-header { margin-bottom: 1.25rem; text-align: center; }
+  .page-header h1 { margin-bottom: 0.35em; }
+  .lede { color: var(--ink-soft); font-size: clamp(0.95rem, 2.6vw, 1.1rem); max-width: 60ch; margin: 0 auto; }
+  @media (min-width: 640px) { .page-header { margin-bottom: 2rem; } }
+</style>

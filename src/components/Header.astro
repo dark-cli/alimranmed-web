@@ -6,7 +6,7 @@
  *   - Mobile:  burger opens a fixed slide-in drawer + dim scrim.
  *              Close by tapping the X, the scrim, or a nav link.
  */
-import { HEADER_NAV } from "../data/header-nav.ts";
+import { HEADER_NAV, navLabel } from "../data/header-nav.ts";
 import ThemeToggle from "./ThemeToggle.astro";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import { CONTACT } from "../consts";
@@ -47,7 +47,7 @@ const isActive = (href: string) => {
         {HEADER_NAV.map((item) => (
           <li class:list={["nav-item", { active: isActive(item.href), "has-mega": !!item.columns }]}>
             <a class="nav-link" href={L(item.href)}>
-              {item.label}
+              {navLabel(item, locale)}
               {item.columns && (
                 <svg class="chev" viewBox="0 0 20 20" width="10" height="10" fill="currentColor" aria-hidden="true">
                   <path d="M5 8l5 5 5-5H5z" />
@@ -60,11 +60,11 @@ const isActive = (href: string) => {
                   {item.columns.map((col) => (
                     <div class="mega-col">
                       {col.href
-                        ? <h4><a href={L(col.href)}>{col.label}</a></h4>
-                        : <h4>{col.label}</h4>}
+                        ? <h4><a href={L(col.href)}>{navLabel(col, locale)}</a></h4>
+                        : <h4>{navLabel(col, locale)}</h4>}
                       <ul>
                         {col.items.map((sub) => (
-                          <li><a href={L(sub.href)}>{sub.label}</a></li>
+                          <li><a href={L(sub.href)}>{navLabel(sub, locale)}</a></li>
                         ))}
                       </ul>
                     </div>
@@ -113,15 +113,17 @@ const isActive = (href: string) => {
         <li>
           {item.columns ? (
             <details>
-              <summary>{item.label}</summary>
+              <summary>{navLabel(item, locale)}</summary>
               <div class="drawer-sub">
-                <a class="drawer-sub-all" href={L(item.href)}>All {item.label} →</a>
+                <a class="drawer-sub-all" href={L(item.href)}>
+                  {locale === "ar" ? `جميع ${navLabel(item, locale)} ←` : `All ${navLabel(item, locale)} →`}
+                </a>
                 {item.columns.map((col) => (
                   <div class="drawer-col">
-                    <h5>{col.label}</h5>
+                    <h5>{navLabel(col, locale)}</h5>
                     <ul>
                       {col.items.map((sub) => (
-                        <li><a href={L(sub.href)}>{sub.label}</a></li>
+                        <li><a href={L(sub.href)}>{navLabel(sub, locale)}</a></li>
                       ))}
                     </ul>
                   </div>
@@ -129,7 +131,7 @@ const isActive = (href: string) => {
               </div>
             </details>
           ) : (
-            <a href={L(item.href)}>{item.label}</a>
+            <a href={L(item.href)}>{navLabel(item, locale)}</a>
           )}
         </li>
       ))}
