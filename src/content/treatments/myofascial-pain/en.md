@@ -4,6 +4,7 @@ description: "What is Myofascial Pain Syndrome? Myofascial pain syndrome is a ch
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/myofascial-pain/"
+source: "legacy-wp"
 ---
 **What is Myofascial Pain Syndrome?**
 

@@ -4,6 +4,7 @@ description: "Transcranial Magnetic Stimulation (TMS) is a non-invasive brain st
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/transcranial-magnetic-stimulation-tms-for-migraine/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/07/TMS-264x300.jpg)Transcranial Magnetic Stimulation (TMS) is a non-invasive brain stimulation method used worldwide to make causality-based inferences about brain-behavior interactions, assess cortical reactivity, and map functionally relevant brain regions inducing a controlled current pulse in a specific cortical area. TMS is an effective technology with potential diagnostic and therapeutic uses in various diseases.
 

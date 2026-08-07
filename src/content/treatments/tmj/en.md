@@ -4,6 +4,7 @@ description: "The temporomandibular joint (TMJ) acts like a sliding hinge, conne
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/the-temporomandibular-joint-tmj/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/02/تنزيل-2.jpg)The temporomandibular joint (TMJ) acts like a sliding hinge, connecting your jawbone to your skull. You have one joint on each side of your jaw. TMJ disorders — a type of temporomandibular disorder or TMD — can cause pain in your jaw joint and in the muscles that control jaw movement.
 

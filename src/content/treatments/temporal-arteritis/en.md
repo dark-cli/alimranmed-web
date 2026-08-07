@@ -4,6 +4,7 @@ description: "Giant cell arteritis is an inflammation of the lining of your arte
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/temporal-arteritis/"
+source: "legacy-wp"
 ---
 Giant cell arteritis is an inflammation of the lining of your arteries. Most often, it affects the arteries in your head, especially those in your temples. For this reason, giant cell arteritis is sometimes called temporal arteritis.
 

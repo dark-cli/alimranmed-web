@@ -4,6 +4,7 @@ description: "Abdominal cutaneous nerve entrapment syndrome (ACNES) is one of th
 order: 999
 legacyUrl: "https://alimranmed.com/anterior-cutaneous-nerve-entrapment-syndrome-acnes/"
 category: "pain"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/01/stomach-pain_400x267-300x200.jpg)Abdominal cutaneous nerve entrapment syndrome (ACNES) is one of the now recognised causes of chronic abdominal pain. It remains an overwhelmingly underdiagnosed condition and consequently not readily managed or recognised. It is generally characterised by patients presenting with a severe, often refractory, chronic abdominal pain just lateral (next to) the midline. Often the pain can be pinpointed to a specific location on the abdomen. It is theorised that the cutaneous branches of the lower thoracoabdominal intercostal nerves are ‘trapped’ at the lateral border of the rectus abdominis muscle. The pain experienced will be in the distribution of one or more dermatomes as shown in the figure below.
 

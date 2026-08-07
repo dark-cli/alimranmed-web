@@ -4,6 +4,7 @@ description: "Summary Cauda= a tail Equina= a horse Syndrome= a collection of sy
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/cauda-equina-syndrome/"
+source: "legacy-wp"
 ---
 ### **Summary**
 

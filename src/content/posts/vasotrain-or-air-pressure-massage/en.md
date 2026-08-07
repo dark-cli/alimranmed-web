@@ -4,6 +4,7 @@ description: "It is an alternative method and assistance in medical rehabilitati
 order: 999
 legacyUrl: "https://alimranmed.com/2020/01/04/vasotrain-or-air-pressure-massage/"
 publishedAt: "2020-01-04T06:33:23"
+source: "legacy-wp"
 ---
 It is an alternative method and assistance in medical rehabilitation and physical therapy programs  
 Its work is based on the principle of massage for the affected part through varying air pressure and the choice of the appropriate program according to the diagnosis of the case.

@@ -4,6 +4,7 @@ description: "Ankylosing spondylitis is an inflammatory disease that, over time,
 order: 999
 legacyUrl: "https://alimranmed.com/ankylosing-spondylitis/"
 category: "spine"
+source: "legacy-wp"
 ---
 Ankylosing spondylitis is an inflammatory disease that, over time, can cause some of the small bones in your spine (vertebrae) to fuse. This fusing makes the spine less flexible and can result in a hunched-forward posture. If ribs are affected, it can be difficult to breathe deeply.
 

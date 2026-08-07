@@ -5,6 +5,7 @@ category: "physiotherapy"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/06/08/virtual-reality/"
 publishedAt: "2020-06-08T15:53:33"
+source: "legacy-wp"
 ---
 The use of virtual reality (VR) has dated back to the 1990s where the effects were studied in athlete’s performance. VR is a computer-based intervention providing patients with a virtual interactive and applicable treatment setting for skills practice with real-time feedback. This intervention incorporates many therapeutic motor learning rehabilitation principles that have shown to be most effective for skill retention in patients affected by stroke. In addition, the technology provides diverse applications that can be tailored to the patient. The concept of VR is based on the neuroscience evidence of brain neuroplasticity following injury. VR systems are shown to provide widespread cortical activation, which is important in promoting neuroplastic changes and thus functional improvement following stroke. There are millions of people affected by stroke worldwide and therefore encouraging research into the most effective treatment methods is important. The use of VR in rehabilitation is still being studied as it is a new concept recently introduced to the rehabilitation setting. There are several systematic reviews that demonstrate the potential benefits VR systems may provide for patients, however more research is required to provide a higher quality of evidence and direction with specific interventions.
 

@@ -4,6 +4,7 @@ description: "Lower back and neck pain can be managed through traditional treatm
 order: 999
 legacyUrl: "https://alimranmed.com/2020/01/03/spin-med/"
 publishedAt: "2020-01-03T08:56:16"
+source: "legacy-wp"
 ---
 Lower back and neck pain can be managed through traditional treatment options
 

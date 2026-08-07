@@ -4,6 +4,7 @@ description: "Adhesiolysis Botox injection Epidural steroid injection Facet Join
 order: 999
 legacyUrl: "https://alimranmed.com/interventional-pain-management/"
 category: "pain-management"
+source: "legacy-wp"
 ---
 [Adhesiolysis](/services/steroid-injection/adhesiolysis/)
 

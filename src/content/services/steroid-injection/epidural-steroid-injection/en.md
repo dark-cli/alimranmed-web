@@ -4,6 +4,7 @@ description: "Epidural glucocorticoid injections are commonly given to patients 
 order: 999
 legacyUrl: "https://alimranmed.com/epidural-steroid-injection/"
 category: "steroid-injection"
+source: "legacy-wp"
 ---
 Epidural glucocorticoid injections are commonly given to patients with leg and/or back pain to relieve such pain and improve mobility without surgery. These steroid injections buy time to allow healing to occur and/or as an attempt to avoid surgery after other conservative (non-surgical) treatment approaches have failed.
 

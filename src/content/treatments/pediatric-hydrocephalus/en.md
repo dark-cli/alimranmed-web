@@ -4,6 +4,7 @@ description: "Also known as “water on the brain,” hydrocephalus is one of th
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/pediatric-hydrocephalus/"
+source: "legacy-wp"
 ---
 Also known as “water on the brain,” hydrocephalus is one of the most frequently seen problems in a busy pediatric neurosurgical practice. The term “water on the brain” is actually more of a misnomer. In reality most cases of hydrocephalus represent a build up of spinal fluid inside the brain. Everyone produces spinal fluid inside their brains every minute of their lives. This fluid is very similar to the liquid portion of blood and contains various salts and products such as sodium and glucose. The fluid is primarily produced in connected chambers within the brain known as ventricles. The fluid volume produced in an adult is about equal to one pint per day. This fluid then circulates through the ventricles and around the brain and spinal cord. Eventually it is reabsorbed over the surface of the brain into large veins which carry the fluid back to the heart. This orderly cycle of spinal fluid production, flow and absorption maintains a protective environment to the nervous system. In addition, there is no loss of fluids or the salts contained in the spinal fluid.
 

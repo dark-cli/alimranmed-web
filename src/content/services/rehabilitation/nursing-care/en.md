@@ -4,6 +4,7 @@ description: "Pressure ulcers or bed sore:  are ulcers occurring as a result  
 category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/nursing-care/"
+source: "legacy-wp"
 ---
 **![](/images/legacy/2020/07/طرق-لعلاج-تقرحات-الفراش-في-المنزل-933x445-1-300x143.jpg)Pressure ulcers** **or bed sore:**  are ulcers occurring as a result  of  skin  and  subcutaneous  tissue  injury  due  to  poor circulation in the pressure area that come into contact with the bed. 
 

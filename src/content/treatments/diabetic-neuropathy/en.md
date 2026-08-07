@@ -4,6 +4,7 @@ description: "Neuropathy is a complication of diabetes that can lead to proble
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/diabetic-neuropathy/"
+source: "legacy-wp"
 ---
 Neuropathy is a complication of diabetes that can lead to problems throughout the body. Diabetes can affect nerves that control movement, sensation and other functions.
 

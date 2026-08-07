@@ -4,6 +4,7 @@ description: "Trigeminal neuralgia (or tic douloureux) is the most common cranio
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/trigeminal-neuralgia/"
+source: "legacy-wp"
 ---
 Trigeminal neuralgia (or tic douloureux) is the most common craniofacial pain syndrome. This facial pain syndrome usually develops in individuals over 50 years old. Its incidence is 4/100,000, and it is the most common facial pain syndrome in this age group.
 

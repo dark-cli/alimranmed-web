@@ -1,0 +1,16 @@
+---
+title: "التحفيز المغناطيسي لعلاج  الآلام"
+category: "brain-stimulation"
+source: "legacy-wp"
+legacyUrl: "https://ar.alimranmed.com/rtms-%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%ad%d8%a7%d9%84%d8%a7%d8%aa-%d8%a7%d9%84%d8%a3%d9%84%d9%85-%d8%a7%d9%84%d9%85%d8%ae%d8%aa%d9%84%d9%81%d8%a9"
+---
+**![](https://ar.alimranmed.com/wp-content/uploads/2020/06/1-s2.0-S1388245718311052-gr1-221x300.jpg)**
+
+**في الآونة الأخيرة ، استخدم الأطباء [التحفيز المغناطيسي المتكرر عبر الجمجمة](https://ar.alimranmed.com/%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D8%BA)** **(rTMS) لعلاج حالات الألم المختلفة.**
+
+**بشكل عام ، تشير النتائج التي توصلنا إليها** **إلى أن [rTMS](https://ar.alimranmed.com/%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D8%BA) مفيد في علاج آلام الأعصاب من أصول مختلفة ، مثل الألم** **المركزي ، والألم الناجم عن [اضطرابات الأعصاب الطرفية](https://ar.alimranmed.com/%d8%a7%d8%b6%d8%b7%d8%b1%d8%a7%d8%a8%d8%a7%d8%aa-%d8%a7%d9%84%d8%a3%d8%b9%d8%b5%d8%a7%d8%a8-%d8%a7%d9%84%d8%b7%d8%b1%d9%81%d9%8a%d8%a9-2/) ، و[الألم العضلي الليفي](https://ar.alimranmed.com/%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%B9%D8%B6%D9%84-%D8%A7%D9%84%D9%84%D9%8A%D9%81%D9%8A)** **، و[الصداع النصفي](https://ar.alimranmed.com/2020/05/06/%D8%A7%D9%84%D8%B5%D8%AF%D8%A7%D8%B9).**
+
+**على الرغم من أن البيانات المتعلقة باستخدام [rTMS](https://ar.alimranmed.com/%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D8%BA) لألم** **الوجه والفم ، بما في ذلك [الألم العصبي الثلاثي التوائم](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d9%87%d8%a7%d8%a8-%d8%a7%d9%84%d8%b9%d8%b5%d8%a8-%d8%a7%d9%84%d9%82%d8%ad%d9%81%d9%8a-%d8%a7%d9%84%d8%ae%d8%a7%d9%85%d8%b3/) ، وآلام الشبح ، و[آلام أسفل](https://ar.alimranmed.com/%d8%a7%d9%84%d9%85-%d8%a7%d8%b3%d9%81%d9%84-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/)****الظهر ، و[متلازمة آلام اللفافة العضلية](https://ar.alimranmed.com/%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b9%d8%b6%d9%84-%d8%a7%d9%84%d9%84%d9%8a%d9%81%d9%8a/) ، و[آلام الحوض](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d9%87%d8%a7%d8%a8-%d9%85%d9%81%d8%a7%d8%b5%d9%84-%d8%a7%d9%84%d9%88%d8%b1%d9%83-3/) ، ومتلازمة الألم الإقليمية** **المعقدة ، كانت واعدة ،** **لم تكن هناك أدلة كافية لتحديد فعالية [rTMS](https://ar.alimranmed.com/%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D8%BA) لعلاج هذه**  
+**الشروط.**
+
+**![](https://ar.alimranmed.com/wp-content/uploads/2020/06/1-s2.0-S1388245715000711-gr9-300x224.jpg)**

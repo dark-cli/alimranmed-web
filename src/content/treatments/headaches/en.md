@@ -4,6 +4,7 @@ description: "Background Headaches The International Headache Society (IHS) crea
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/headaches/"
+source: "legacy-wp"
 ---
 Background Headaches
 

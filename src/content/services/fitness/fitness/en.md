@@ -4,6 +4,7 @@ description: "Starting a fitness program may be one of the best things you can d
 category: "fitness"
 order: 999
 legacyUrl: "https://alimranmed.com/fitness/"
+source: "legacy-wp"
 ---
 Starting a fitness program may be one of the best things you can do for your health. After all, physical activity can reduce your risk of chronic disease, improve your balance and coordination, help you lose weight, and even boost your self-esteem. You can reap these benefits regardless of your age, gender, or physical ability.
 

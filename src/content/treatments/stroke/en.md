@@ -4,6 +4,7 @@ description: "A stroke occurs when the blood supply to part of your brain is int
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/stroke/"
+source: "legacy-wp"
 ---
 A stroke occurs when the blood supply to part of your brain is interrupted or reduced, preventing brain tissue from getting oxygen and nutrients. Brain cells begin to die in minutes.
 

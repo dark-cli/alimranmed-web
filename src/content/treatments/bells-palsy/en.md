@@ -5,6 +5,7 @@ category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/16/bells-palsy/"
 publishedAt: "2021-01-16T15:50:53"
+source: "legacy-wp"
 ---
 The symptoms of Bell’s palsy include sudden weakness in your facial muscles. In most cases, the weakness is temporary and significantly improves over weeks. The weakness makes half of your face appear to droop. Your smile is one-sided, and your eye on that side resists closing.
 

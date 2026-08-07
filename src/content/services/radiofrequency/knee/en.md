@@ -5,6 +5,7 @@ category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/29/radiofrequency-of-knee-joint/"
 publishedAt: "2020-04-29T08:00:43"
+source: "legacy-wp"
 ---
 Radiofrequency Ablation of Knee Joint
 

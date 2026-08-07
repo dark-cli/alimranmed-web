@@ -4,6 +4,7 @@ description: "&nbsp; Botox ®, also known as Botulinum Toxin Type A, is a protei
 category: "botox"
 order: 999
 legacyUrl: "https://alimranmed.com/botox/"
+source: "legacy-wp"
 ---
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=WQTpfQ5wvvU)
 

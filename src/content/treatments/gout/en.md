@@ -4,6 +4,7 @@ description: "Gout is a common and complex form of arthritis that can affect any
 category: "motor"
 order: 999
 legacyUrl: "https://alimranmed.com/gout/"
+source: "legacy-wp"
 ---
 Gout is a common and complex form of arthritis that can affect anyone. It’s characterized by sudden, severe attacks of pain, swelling, redness and tenderness in the joints, often the joint at the base of the big toe.
 

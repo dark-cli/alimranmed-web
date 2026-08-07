@@ -15,6 +15,20 @@ const pageBase = z.object({
   // `locale` retained as optional so freshly migrated files with locale: "en"
   // don't fail parsing; new code ignores it.
   locale: z.string().optional(),
+
+  // ── Provenance ───────────────────────────────────────────────────────
+  // Where this content came from, so we know its trust level and can plan
+  // review passes. Also drives display badges in a future dashboard.
+  //   legacy-wp        — scraped verbatim from alimranmed.com WordPress
+  //                       (may need medical review; language matches source)
+  //   ai-draft         — machine-translated / AI-generated, needs review
+  //   human-reviewed   — a clinician has read and approved the content
+  //   original         — written from scratch for this site
+  source: z
+    .enum(["legacy-wp", "ai-draft", "human-reviewed", "original"])
+    .default("legacy-wp"),
+  reviewedBy: z.string().optional(),      // clinician name / initials
+  reviewedAt: z.coerce.date().optional(), // when the human review happened
 });
 
 const treatments = defineCollection({

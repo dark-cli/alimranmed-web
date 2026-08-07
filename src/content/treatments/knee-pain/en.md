@@ -4,6 +4,7 @@ description: "Knee pain is a common complaint that affects people of all ages. K
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/knee-pain/"
+source: "legacy-wp"
 ---
 Knee pain is a common complaint that affects people of all ages. Knee pain may be the result of an injury, such as a ruptured ligament or torn cartilage. Medical conditions — including arthritis, gout and infections — also can cause knee pain.
 

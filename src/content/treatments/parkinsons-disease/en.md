@@ -4,6 +4,7 @@ description: "Parkinson’s disease is a progressive neurological disease of the
 category: "motor"
 order: 999
 legacyUrl: "https://alimranmed.com/parkinsons-disease/"
+source: "legacy-wp"
 ---
 Parkinson’s disease is a progressive neurological disease of the brain. There is no known cure for it as of yet. Parkinson’s is caused due to the shortage of dopamine in the brain. Dopamine is a neurotransmitter, which is needed to allow continuous flow of impulses from one synapse to another in the brain.
 

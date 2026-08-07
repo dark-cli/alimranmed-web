@@ -5,6 +5,7 @@ category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/16/acromegaly/"
 publishedAt: "2021-01-16T06:18:39"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/01/تنزيل-1.jpg)Acromegaly is the Greek word for “extremities” and “enlargement.” When the pituitary gland produces excess growth hormone, this results in excessive growth – called acromegaly. The excessive growth occurs first in the hands and feet, as soft tissue begins to swell. This rare disease affects mostly middle-aged adults. Untreated, the disease can lead to severe illness and death.
 

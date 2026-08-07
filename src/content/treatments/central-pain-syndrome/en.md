@@ -4,6 +4,7 @@ description: "Central Pain Syndrome is a neurological condition caused by damage
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/central-pain-syndrome/"
+source: "legacy-wp"
 ---
 Central Pain Syndrome is a neurological condition caused by damage to or dysfunction of the central nervous system (CNS), which includes the brain, brainstem, and spinal cord.
 

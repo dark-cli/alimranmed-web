@@ -4,6 +4,7 @@ description: "Spinal trauma is caused by damage to the spinal cord that results 
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/spinal-trauma/"
+source: "legacy-wp"
 ---
 Spinal trauma is caused by damage to the spinal cord that results in a bruise (also called a contusion), a partial tear, or a complete tear. Because the spinal cord is the central carrier of signals throughout the body, damage to the spinal cord can have serious consequences.
 

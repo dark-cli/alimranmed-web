@@ -4,6 +4,7 @@ description: "The Gasserian Ganglion can be partially ablated as it sits in Meck
 order: 999
 legacyUrl: "https://alimranmed.com/gasserian-ganglion-block/"
 category: "steroid-injection"
+source: "legacy-wp"
 ---
 The Gasserian Ganglion can be partially ablated as it sits in Meckles Cave either by using Glycerol or by making a radiofrequency lesion.
 

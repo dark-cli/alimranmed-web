@@ -4,6 +4,7 @@ description: "Depression is a mood disorder that causes a persistent feeling of 
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/depression-major-depressive-disorder%ef%bb%bf/"
+source: "legacy-wp"
 ---
 Depression is a mood disorder that causes a persistent feeling of sadness and loss of interest. Also called major depressive disorder or clinical depression, it affects how you feel, think and behave and can lead to a variety of emotional and physical problems. You may have trouble doing normal day-to-day activities, and sometimes you may feel as if life isn’t worth living.
 

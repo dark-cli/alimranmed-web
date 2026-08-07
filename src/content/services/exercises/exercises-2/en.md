@@ -4,6 +4,7 @@ description: "Ankle Thigh Neek Leg Knee Hip Foot Back"
 category: "exercises"
 order: 999
 legacyUrl: "https://alimranmed.com/exercises-2/"
+source: "legacy-wp"
 ---
 -   [Ankle](/services/exercises/ankle/)
 -   [Thigh](/services/exercises/hip/)

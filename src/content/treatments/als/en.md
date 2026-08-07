@@ -5,6 +5,7 @@ category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/07/amyotrophic-lateral-sclerosis-als/"
 publishedAt: "2020-04-07T15:40:58"
+source: "legacy-wp"
 ---
 Amyotrophic Lateral Sclerosis (ALS) has traditionally been described as a disease that manifests as atrophy and progressive weakness of the skeletal, spinal, and bulb muscles due to the degeneration of motor neurons in the anterior medulla horn. and of the corticoespinal system. Sensitive function is generally maintained. It is accompanied by impaired speech (dysarthria) and difficulty swallowing. Emotional lability is also common. As with other progressive neurological diseases, its etiology is still unknown, although it is attributed to a possible viral, toxic, genetic or endocrine cause.
 

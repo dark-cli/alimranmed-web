@@ -4,6 +4,7 @@ description: "Restless legs syndrome is a common condition characterized by unpl
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/restless-legs-syndrome/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/02/slider1-300x254.jpg)Restless legs syndrome is a common condition characterized by unpleasant limb sensations that are precipitated by rest and relieved by activity. Symptoms are worse during the evening and may result in insomnia. Most cases are idiopathic, although the condition is sometimes familial and may be associated with a range of medical illnesses, including chronic renal failure and iron deficiency anemia. Restless legs syndrome is responsive to several medications, including levodopa, dopamine agonists, benzodiazepines, opioids, and some anticonvulsants. A practical approach to management involves a stepwise plan, commencing with intermittent therapy with less potent agents for mild cases and progressing to medications with greater potency but a higher potential for side effects.
 

@@ -5,6 +5,7 @@ category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/11/achondroplasia/"
 publishedAt: "2021-01-11T13:17:17"
+source: "legacy-wp"
 ---
 Achondroplasia is a bone disorder affecting about one in every 10,000 infants. It is caused by a mutation in the FGFR3 gene that impairs the growth of bone in the limbs and causes abnormal growth in the spine and skull.
 

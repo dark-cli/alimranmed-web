@@ -4,6 +4,7 @@ description: "Compassion: We demonstrate our commitment to world-class care by p
 order: 999
 legacyUrl: "https://alimranmed.com/our-values/"
 category: "about"
+source: "legacy-wp"
 ---
 -   *Compassion:* We demonstrate our commitment to world-class care by providing a caring and supportive environment for our patients, patients’ families and fellow caregivers
 -   *Innovation:* We welcome change, encourage invention and continually seek better, more efficient ways to achieve our goals

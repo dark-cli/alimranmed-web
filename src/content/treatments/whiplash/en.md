@@ -4,6 +4,7 @@ description: "Whiplash is a neck injury due to forceful, rapid back-and-forth mo
 order: 999
 legacyUrl: "https://alimranmed.com/whiplash/"
 category: "spine"
+source: "legacy-wp"
 ---
 Whiplash is a neck injury due to forceful, rapid back-and-forth movement of the neck, like the cracking of a whip.![](/images/legacy/2021/01/300px-Whiplash_Injury.jpg)
 

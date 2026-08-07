@@ -4,6 +4,7 @@ description: "Kyphosis is an exaggerated, forward rounding of the back. It can o
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/kyphosis%ef%bb%bf/"
+source: "legacy-wp"
 ---
 Kyphosis is an exaggerated, forward rounding of the back. It can occur at any age but is most common in older women.
 

@@ -4,6 +4,7 @@ description: "CureTape ® and the Medical Taping Concept are closely connected. 
 order: 999
 legacyUrl: "https://alimranmed.com/kinesiology/"
 category: "physiotherapy"
+source: "legacy-wp"
 ---
 CureTape ® and the Medical Taping Concept are closely connected. The background of medical taping was established in Japan and Korea in the 1970s. At the time methods of taping were developed with the idea that movement and muscle activity are essential in maintaining and recovering health. The idea was that muscles are not only attributed to the movements of the body but also control blood and lymph circulation and body temperature. Currently many people in Asia, Western Europe and the U.S. working in the healthcare industry (doctors and physiotherapists) are using this method to treat their patients. Medical Taping’s revolutionary techniques have become the standard in elastic therapeutic taping, having been identified as a highly effective way to treat muscular disorders and lymphoedema.
 

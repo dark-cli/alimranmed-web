@@ -4,6 +4,7 @@ description: "Transverse Myelitis (TM) is a disorder caused by inflammation of t
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/transverse-myelitis/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/01/Modifications-of-longitudinally-extensive-transverse-myelitis-LETM-Spinal-cord-MRI_Q640-300x300.jpg)Transverse Myelitis (TM) is a disorder caused by inflammation of the spinal cord. It is characterized by symptoms and signs of neurologic dysfunction in motor and sensory tracts on both sides of the spinal cord.  The involvement of motor and sensory control pathways frequently produce altered sensation, weakness and sometimes urinary or bowel dysfunction.
 

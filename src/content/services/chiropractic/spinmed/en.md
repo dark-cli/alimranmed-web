@@ -4,6 +4,7 @@ description: "Back Pain  Neck Pain can be managed through traditional treatment
 category: "chiropractic"
 order: 999
 legacyUrl: "https://alimranmed.com/spinmed/"
+source: "legacy-wp"
 ---
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=Yd57CXPpf_o)
 

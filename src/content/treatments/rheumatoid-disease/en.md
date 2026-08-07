@@ -4,6 +4,7 @@ description: "What is rheumatoid disease? It is an immune disease and chronic in
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/rheumatoid-disease/"
+source: "legacy-wp"
 ---
 What is rheumatoid disease?
 

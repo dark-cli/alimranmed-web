@@ -4,6 +4,7 @@ description: "A herniated disc occurs when the fibrous outer portion of the disc
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/herniated-disc/"
+source: "legacy-wp"
 ---
 A herniated disc occurs when the fibrous outer portion of the disc ruptures or tears, and the jelly-like core squeezes out. When the herniated disc compresses a nearby nerve, as in the image below, the result can be a pinched nerve. A pinched nerve may cause pain, numbness, tingling or weakness in the arms or legs. The substance that makes up the disc’s jelly-like core can also inflame and irritate the nerve, causing additional pain.
 

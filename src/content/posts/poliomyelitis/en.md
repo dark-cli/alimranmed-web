@@ -4,6 +4,7 @@ description: "Poliomyelitis syndrome is a neurological disease caused by the pol
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/05/poliomyelitis/"
 publishedAt: "2020-12-05T17:32:35"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/12/54fcfbefb0b21d8c1acc74980729584a-258x300-1.jpg)Poliomyelitis syndrome is a neurological disease caused by the poliovirus.
 

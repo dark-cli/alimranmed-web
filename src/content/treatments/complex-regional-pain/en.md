@@ -4,6 +4,7 @@ description: "What is Complex Regional Pain Syndrome? Complex regional pain synd
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/complex-regional-pain/"
+source: "legacy-wp"
 ---
 What is Complex Regional Pain Syndrome?
 

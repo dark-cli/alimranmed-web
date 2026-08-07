@@ -4,6 +4,7 @@ description: "Deep brain stimulation involves implanting electrodes within certa
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/deep-brain-stimulation/"
+source: "legacy-wp"
 ---
 Deep brain stimulation involves implanting electrodes within certain areas of your brain. These electrodes produce electrical impulses that regulate abnormal impulses. Or the electrical impulses can affect certain cells and chemicals within the brain.
 

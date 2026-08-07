@@ -4,6 +4,7 @@ description: "&nbsp; Radiofrequency ablation or lesioning is a term used when
 order: 999
 legacyUrl: "https://alimranmed.com/radiofrequency-neuroblation/"
 category: "radiofrequency"
+source: "legacy-wp"
 ---
 *Radiofrequency ablation* or *lesioning* is a term used when radio waves are used to produce heat to destroy tissue, usually a nerve. It is a non-surgical option to treat your spine pain. In the case of spinal pain, radiofrequency waves are transmitted through a needle placed near the nerve under x-ray guidance. This procedure is also known as *RF rhizotomy*.
 

@@ -5,6 +5,7 @@ category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/28/radiofrequency-ablation-review/"
 publishedAt: "2020-04-28T08:05:53"
+source: "legacy-wp"
 ---
 Radiofrequency neurotomy (also called radiofrequency ablation or lesioning) is a minimally invasive procedure that can provide lasting relief to those suffering from joint pain. In fact, multiple clinical studies show that radiofrequency neurotomy significantly reduces pain severity and frequency for 1 to 2 years in the majority of patients. Radiofrequency neurotomy involves applying heat to certain nerve pathways to “shut off” the transmission of pain signals to the brain. It is performed on an outpatient basis and requires only local anesthetic and mild sedation, alleviating the possible complications of open surgery and general anesthesia. It has a high success rate low complication rate.
 

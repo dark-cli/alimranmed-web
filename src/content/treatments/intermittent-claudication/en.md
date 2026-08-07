@@ -4,6 +4,7 @@ description: "refers to arm or leg pain or cramping in the arms or legs that occ
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/intermittent-claudication/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/01/claudication-image-300x260.jpg) refers to arm or leg pain or cramping in the arms or legs that occurs with exercise and goes away with rest. The severity and location of the pain of intermittent claudication vary depending upon the location and extent of blockage of the involved artery. The most common location of intermittent claudication is the calf muscle of the leg, leading to calf or leg pain while walking. The pain in the calf muscle occurs only during exercise such as walking, and the pain steadily increases with continued walking until the patient has to stop due to intolerable pain. Then the pain quickly subsides during rest. Intermittent claudication can affect one or both legs.
 

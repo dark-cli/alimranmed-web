@@ -4,6 +4,7 @@ description: "&nbsp; What is physiotherapy? Physiotherapy is a healthcare profes
 order: 999
 legacyUrl: "https://alimranmed.com/2020/02/22/physiotherapy/"
 publishedAt: "2020-02-22T15:05:28"
+source: "legacy-wp"
 ---
 **What is physiotherapy?**
 

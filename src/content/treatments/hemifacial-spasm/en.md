@@ -4,6 +4,7 @@ description: "Hemifacial Spasm is a neurological condition in which the muscles 
 category: "motor"
 order: 999
 legacyUrl: "https://alimranmed.com/hemifacial-spasm/"
+source: "legacy-wp"
 ---
 Hemifacial Spasm is a neurological condition in which the muscles on one side of the face begin to involuntarily twitch or contract. The intensity of this condition can vary widely and while it occurs in both men and women, it more commonly affects middle-aged to elderly women.
 

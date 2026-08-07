@@ -4,6 +4,7 @@ description: "A transient ischemic attack (TIA) is a temporary period of symptom
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/transient-ischemic-attack-tia/"
+source: "legacy-wp"
 ---
 A transient ischemic attack (TIA) is a temporary period of symptoms similar to those of a stroke. A TIA usually lasts only a few minutes and doesn’t cause permanent damage.
 

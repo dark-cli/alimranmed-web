@@ -5,6 +5,7 @@ category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/07/16/speech-therapy/"
 publishedAt: "2020-07-16T15:18:16"
+source: "legacy-wp"
 ---
 Speech therapy is a service that focuses on improving a patient’s speech and abilities to understand and express language, including non-verbal language.
 

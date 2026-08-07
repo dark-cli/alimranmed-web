@@ -4,6 +4,7 @@ description: "Summary Tethered = fastened or tied down Cord = the spinal cord,
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/tethered-spinal-cord/"
+source: "legacy-wp"
 ---
 ### **Summary**
 

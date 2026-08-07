@@ -4,6 +4,7 @@ description: "What is Prolotherapy? A. Prolotherapy (Proliferative Therapy), als
 order: 999
 legacyUrl: "https://alimranmed.com/prolotherapy/"
 category: "regenerative-medicine"
+source: "legacy-wp"
 ---
 #### What is Prolotherapy?
 

@@ -4,6 +4,7 @@ description: "Vertebroplasty is an outpatient procedure for stabilizing compress
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/vertebroplasty/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/12/تنزيل.jpg)
 

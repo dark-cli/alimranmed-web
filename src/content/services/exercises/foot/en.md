@@ -4,6 +4,7 @@ description: "How To Deal With Foot Cramp First Aid &nbsp;"
 category: "exercises"
 order: 999
 legacyUrl: "https://alimranmed.com/foot/"
+source: "legacy-wp"
 ---
 How To Deal With Foot Cramp First Aid
 

@@ -1,0 +1,6 @@
+---
+title: "الترددات الراديوية"
+source: "legacy-wp"
+legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%b1%d8%af%d8%af%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d8%a7%d8%af%d9%8a%d9%88%d9%8a%d8%a9-2"
+---
+الترددات الراديوية

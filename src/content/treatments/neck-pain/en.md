@@ -4,6 +4,7 @@ description: "Neck pain is a common complaint. Neck muscles can be strained from
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/neck-pain/"
+source: "legacy-wp"
 ---
 Neck pain is a common complaint. Neck muscles can be strained from poor posture — whether it’s leaning over your computer or hunching over your workbench. Osteoarthritis also is a common cause of neck pain.
 

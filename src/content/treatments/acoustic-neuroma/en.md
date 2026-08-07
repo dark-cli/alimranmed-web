@@ -5,6 +5,7 @@ category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/12/acoustic-neuroma/"
 publishedAt: "2021-01-12T13:42:59"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/01/5b319cbcb8fad25af7316150927fbdd7-8-300x210.jpg)Acoustic neuroma is a rare noncancerous tumor. It grows slowly from an overproduction of Schwann cells and is also called a vestibular schwannoma. The tumor then presses on the hearing and balance nerves in the inner ear. Schwann cells normally wrap around and support nerve fibers. A large tumor can press on the facial nerve or brain structures.  
 **There are 2 types of acoustic neuromas:**  

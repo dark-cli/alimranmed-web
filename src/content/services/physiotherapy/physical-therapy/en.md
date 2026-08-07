@@ -4,6 +4,7 @@ description: "Prevention of back pain Short-wave therapy Laser Therapy natural t
 order: 999
 legacyUrl: "https://alimranmed.com/physical-therapy/"
 category: "physiotherapy"
+source: "legacy-wp"
 ---
 -   [Prevention of back pain](/treatments/back-pain/)
 -   [Short-wave therapy](/services/physiotherapy/shortwave/)

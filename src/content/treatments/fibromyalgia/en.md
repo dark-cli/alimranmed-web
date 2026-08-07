@@ -4,6 +4,7 @@ description: "Fibromyalgia is a complex condition characterized by widespread mu
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/fibromyalgia/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/12/fibromyalgia-symptoms-5aec9feceb97de003668abb7-300x300.png)Fibromyalgia is a complex condition characterized by widespread muscle pain. This chronic pain affects a patient’s bones and muscles, and results in an array of other symptoms. Some researchers believe that fibromyalgia increases the body’s pain sensations by affecting the brain’s way of processing pain signals. For those suffering from fibromyalgia, the brain’s pain receptors tend to remember the pain signals, which eventually causes an overreaction to pain signals down the road. Firbromyalgia can affect many different areas of the body, and often affects multiple areas at once.
 

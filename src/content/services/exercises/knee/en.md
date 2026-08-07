@@ -4,6 +4,7 @@ description: "&nbsp;"
 category: "exercises"
 order: 999
 legacyUrl: "https://alimranmed.com/knee/"
+source: "legacy-wp"
 ---
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=ne5VhVNn1Iw)
 

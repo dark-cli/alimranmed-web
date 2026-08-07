@@ -4,6 +4,7 @@ description: "(dih-kwer-VAINS ten-oh-sine-oh-VIE-tis) is a painful condition aff
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/de-quervains-tenosynovitis/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/01/images-3.jpg) (dih-kwer-VAINS ten-oh-sine-oh-VIE-tis) is a painful condition affecting the tendons on the thumb side of your wrist. If you have de Quervain’s tenosynovitis, it will probably hurt when you turn your wrist, grasp anything or make a fist.
 

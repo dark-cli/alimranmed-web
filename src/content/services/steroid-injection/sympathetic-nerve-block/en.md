@@ -4,6 +4,7 @@ description: "Lumbar sympathetic block A lumbar sympathetic block is an injectio
 order: 999
 legacyUrl: "https://alimranmed.com/sympathetic-nerve-block/"
 category: "steroid-injection"
+source: "legacy-wp"
 ---
 **Lumbar sympathetic block**
 

@@ -4,6 +4,7 @@ description: "What are Burr Holes and Craniotomy? A Craniotomy is an operation t
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/burr-holes-and-craniotomy-2/"
+source: "legacy-wp"
 ---
 **What are Burr Holes and Craniotomy?**
 

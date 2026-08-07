@@ -4,6 +4,7 @@ description: "Gunshot wounds to the head have become a leading cause of head inj
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/cranial-gunshot-wounds/"
+source: "legacy-wp"
 ---
 Gunshot wounds to the head have become a leading cause of head injury in many United States cities. They are also the most lethal of all firearm injuries. It is estimated that gunshot wounds to the head have a greater than 90% fatality rate for United States civilians, and at least two-thirds of the victims die before ever reaching a hospital. Because of the high mortality rate associated with gunshot wounds to the head, they account for only approximately 10% of all traumatic brain injury patients who survive.
 

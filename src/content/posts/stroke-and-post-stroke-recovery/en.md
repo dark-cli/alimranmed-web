@@ -4,6 +4,7 @@ description: "Overview A stroke is a medical emergency. Immediate treatment is a
 order: 999
 legacyUrl: "https://alimranmed.com/2020/01/03/stroke-and-post-stroke-recovery/"
 publishedAt: "2020-01-03T08:51:37"
+source: "legacy-wp"
 ---
 Overview
 

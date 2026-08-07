@@ -4,6 +4,7 @@ description: "Headaches Migrain  Neck Pain  Carpal Tunnel Syndrome  Frozen Sh
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/pain/"
+source: "legacy-wp"
 ---
 [Headaches](/treatments/headaches/)
 

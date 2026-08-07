@@ -4,6 +4,7 @@ description: "Also known as syringomyelia and hydromyelia are commonly known as 
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/syringomyelia-syrinx/"
+source: "legacy-wp"
 ---
 Also known as syringomyelia and hydromyelia are commonly known as syrinx. Essentially, a syrinx is a fluid collection in the spinal cord. There are many causes of this such as hydrocephalus, Chiari Malformation, trauma, tethered spinal cord, tumor and a very large number without any clear cause, the so-called idiopathic. These collections are usually similar to spinal fluid . They can cause symptoms in two main ways. One is due to the direct pressure of the fluid collection on the spinal cord. The symptoms will then be related to the level of the spinal cord at which the collection is. It may cause weakness, numbness, stiffness, pain, scoliosis, and incontinence to name a few. These symptoms usually come on quite gradually.
 

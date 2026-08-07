@@ -4,6 +4,7 @@ description: "Tinnitus is a disturbing noise that is heard without any hearing s
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/tinnitus/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0-300x191.jpeg)Tinnitus is a disturbing noise that is heard without any hearing stimulus, affects the quality of life of the individual, and leads to psychosocial problems. Its prevalence characteristically increases with aging. It is seen in 33% of the general population. Pathophysiology of tinnitus known to accompany nearly all disorders in auditory system has not been fully understood; therefore, there are some difficulties in evaluation and treatment thereof.
 

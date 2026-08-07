@@ -4,6 +4,7 @@ description: "How does Pulsed Shortwave Therapy work? PSWT involves a device tha
 order: 999
 legacyUrl: "https://alimranmed.com/shortwave/"
 category: "physiotherapy"
+source: "legacy-wp"
 ---
 ## How does Pulsed Shortwave Therapy work?
 

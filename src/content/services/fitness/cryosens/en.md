@@ -4,6 +4,7 @@ description: "It is considered an integrated device for body and skin care and i
 category: "fitness"
 order: 999
 legacyUrl: "https://alimranmed.com/cryosens-new-skin-slimming-and-tightening-device/"
+source: "legacy-wp"
 ---
 It is considered an integrated device for body and skin care and it relies on different technologies that can work in a great performance to get the best result
 

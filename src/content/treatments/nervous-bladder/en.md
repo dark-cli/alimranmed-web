@@ -3,6 +3,7 @@ title: "Nervous bladder"
 description: "Neurogenic bladder dysfunction, or neurogenic bladder, refers to urinary bladder problems due to disease or injury to the central nervous"
 order: 999
 legacyUrl: "https://alimranmed.com/nervous-bladder/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/12/image-300x232-1.jpg)Neurogenic bladder dysfunction, or neurogenic bladder, refers to urinary bladder problems due to disease or injury to the central nervous system or peripheral nerves involved in controlling urination. There are multiple types of neurogenic bladder depending on the underlying cause and symptoms. Symptoms include an overactive bladder, urgency or frequency of urine, enuresis, or difficulty urinating. A host of diseases or conditions can cause neurogenic bladder including [spinal cord injury](/treatments/spinal-cord-injury/), [multiple sclerosis](/treatments/multiple-sclerosis/), [stroke](/treatments/hemorrhagic-stroke/), [brain injury](/treatments/brain/), [spina bifida](/treatments/spine/), peripheral nerve damage, [Parkinson’s disease](/treatments/parkinsons-disease/), or other neurodegenerative diseases. Neurogenic bladder can be diagnosed through symptoms, a physical exam, as well as more specialized imaging.Treatment depends on the underlying disease as well as symptoms and can be managed with behavioral changes, medications, surgeries, or other procedures. Irritable bladder symptoms, especially urinary incontinence, can have a significant impact on quality of life.
 

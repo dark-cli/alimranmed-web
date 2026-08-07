@@ -4,6 +4,7 @@ description: "Chronic pelvic pain is pain in the area below your bellybutton and
 order: 999
 legacyUrl: "https://alimranmed.com/chronic-pelvic-pain-in-women/"
 category: "pain"
+source: "legacy-wp"
 ---
 Chronic pelvic pain is pain in the area below your bellybutton and between your hips that lasts six months or longer.
 

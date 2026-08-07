@@ -5,6 +5,7 @@ category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/28/radiofrequency-ablation-for-spine/"
 publishedAt: "2020-04-28T07:54:03"
+source: "legacy-wp"
 ---
 Radiofrequency ablation (RFA), or radiofrequency neurotomy, is a type of injection procedure that is used to treat several conditions including chronic neck and/or back pain. In the neck and back, pain stemming from the vertebral [facet joints](https://www.spine-health.com/conditions/arthritis/facet-joint-disorders-and-back-pain) or the hip’s [sacroiliac joints](https://www.spine-health.com/conditions/spine-anatomy/sacroiliac-joint-anatomy) or the posterior pelvis may be treated using RFA.
 

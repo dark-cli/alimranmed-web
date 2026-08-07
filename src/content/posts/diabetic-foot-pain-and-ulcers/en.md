@@ -4,6 +4,7 @@ description: "Foot ulcers are a common complication of poorly controlled diabete
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/05/diabetic-foot-pain-and-ulcers/"
 publishedAt: "2020-12-05T16:46:20"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/12/FootCare_29766673_M-300x200.jpg)Foot ulcers are a common complication of poorly controlled diabetes, as they form as the skin tissue breaks down and exposes the layers underneath. It is most common under your big toes and the ball of your feet, and it can affect your feet all the way to the bones. All people with diabetes can develop foot ulcers and foot pain, but good foot care can help prevent them. The treatment for diabetic foot ulcers and foot pain varies according to their causes. Discuss any foot pain or discomfort with your doctor to make sure it is not a serious problem, as an infected sore can lead to amputation if neglected.
 

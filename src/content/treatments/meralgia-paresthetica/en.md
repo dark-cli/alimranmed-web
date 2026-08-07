@@ -4,6 +4,7 @@ description: "Meralgia paresthetica is caused by the compression of one of the l
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/meralgia-paresthetica/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/01/349099be60c5a2cd153700a1dfecf4ec-247x300.jpg)Meralgia paresthetica is caused by the compression of one of the large sensory nerves in the leg — the lateral femoral cutaneous nerve. This nerve provides sensation to the skin along the outer thigh starting from the inguinal ligament and extending down toward the knee. Compression of this nerve can result in numbness, tingling, pain or a burning sensation felt in the outer thigh.
 

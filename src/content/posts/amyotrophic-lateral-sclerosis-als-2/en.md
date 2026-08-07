@@ -4,6 +4,7 @@ description: "Amyotrophic Lateral Sclerosis (ALS) &nbsp; Amyotrophic Lateral Scl
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/09/amyotrophic-lateral-sclerosis-als-2/"
 publishedAt: "2020-04-09T10:57:25"
+source: "legacy-wp"
 ---
 # Amyotrophic Lateral Sclerosis (ALS)
 

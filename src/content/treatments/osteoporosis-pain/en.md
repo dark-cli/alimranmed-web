@@ -4,6 +4,7 @@ description: "What is Osteoporosis Pain? Osteoporosis is a degenerative bone dis
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/osteoporosis-pain/"
+source: "legacy-wp"
 ---
 **What is Osteoporosis Pain?**
 

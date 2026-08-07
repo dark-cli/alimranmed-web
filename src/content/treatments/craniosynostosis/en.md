@@ -4,6 +4,7 @@ description: "What is cerebral palsy? Cerebral palsy (CP) is a broad term that d
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/craniosynostosis/"
+source: "legacy-wp"
 ---
 ### What is cerebral palsy?
 

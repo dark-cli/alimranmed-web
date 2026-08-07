@@ -4,6 +4,7 @@ description: "Peripheral artery disease (also called peripheral arterial disease
 order: 999
 legacyUrl: "https://alimranmed.com/peripheral-vascular-disease/"
 category: "pain"
+source: "legacy-wp"
 ---
 **![](/images/legacy/2021/01/PAD-300x260.jpg)**Peripheral artery disease (also called peripheral arterial disease) is a common circulatory problem in which narrowed arteries reduce blood flow to your limbs.
 

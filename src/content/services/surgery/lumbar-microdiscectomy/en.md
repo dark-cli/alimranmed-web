@@ -4,6 +4,7 @@ description: "What is a lumbar microdiscectomy? Lumbar microdiscectomy is a proc
 order: 999
 legacyUrl: "https://alimranmed.com/lumbar-microdiscectomy/"
 category: "surgery"
+source: "legacy-wp"
 ---
 **What is a lumbar microdiscectomy?**
 

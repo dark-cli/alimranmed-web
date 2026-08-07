@@ -4,6 +4,7 @@ description: "Causes Migraine headaches tend to first appear between the ages of
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/migrain/"
+source: "legacy-wp"
 ---
 **Causes**
 

@@ -4,6 +4,7 @@ description: "LUNA EMG روبوت Luna EMG هو ثورة في إعادة الت�
 category: "physiotherapy"
 order: 999
 legacyUrl: "https://alimranmed.com/luna-emg-robot/"
+source: "legacy-wp"
 ---
 ##### LUNA EMG روبوت
 

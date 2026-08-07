@@ -4,6 +4,7 @@ description: "Frozen shoulder also known as adhesive capsulitis is a very painf
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/frozen-shoulder/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/02/Frozen-shoulder-300x169-1.png)Frozen shoulder also known as adhesive capsulitis is a very painful and debilitating condition of the shoulder which can take nearly 18 months to heal. During this time, physiotherapy is needed to help improve and maintain It is characterised by stiffness and pain. Movements such as reaching above shoulder height, throwing a ball, reaching your hand behind your back or put on a seat belt become increasingly difficult. Approximately 20% of those who develop frozen shoulder will develop frozen shoulder in the other shoulder at some point in the future.
 

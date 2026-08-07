@@ -4,6 +4,7 @@ description: "Corticosteroid medications are powerful drugs that can be useful i
 category: "steroid-injection"
 order: 999
 legacyUrl: "https://alimranmed.com/steroid-injection/"
+source: "legacy-wp"
 ---
 Corticosteroid medications are powerful drugs that can be useful in decreasing pain and inflammation in various musculoskeletal conditions. Depending on your health and the severity of your symptoms, the effects of a corticosteroid injection can vary quite a bit. If the injection decreases or eliminates your pain, you may be able to get another injection if your symptoms return. Because of the possibility of serious side effects, though, the number of injections — and how often you can receive them — is limited.
 

@@ -4,6 +4,7 @@ description: "A muscle strain is an injury to a muscle or a tendon — the fibro
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/muscle-strains/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/02/205150-263x300-1.jpg)A muscle strain is an injury to a muscle or a tendon — the fibrous tissue that connects muscles to bones. Minor injuries may only overstretch a muscle or tendon, while more severe injuries may involve partial or complete tears in these tissues.
 

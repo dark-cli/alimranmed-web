@@ -4,6 +4,7 @@ description: "Cluster headaches are rare when compared to other types of headach
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/cluster-headache/"
+source: "legacy-wp"
 ---
 Cluster headaches are rare when compared to other types of headaches. The pain they produce is severe and tends to recur in the same way each time. They occur in groups, or clusters, and each attack lasts about 1 to 3 hours on average. The frequency of occurrence may range from every other day to multiple times a day. Cluster periods are followed by remissions that may last months or years.  
 Males are affected by cluster headaches more than females and they typically start around age 30.  

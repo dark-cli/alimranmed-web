@@ -5,6 +5,7 @@ category: "physiotherapy"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/06/08/virtual-reality-for-stroke/"
 publishedAt: "2020-06-08T15:57:09"
+source: "legacy-wp"
 ---
 It is estimated that stroke affects approximately 15 million people worldwide every year and among those, between 55% and 75% of these survivors continue with motor deficits and reduced quality of life following the event. These motor deficits include motor control, strength, fine motor skills and dual-task coordination abilities, which all have THE potential for significant effects on an individuals’ independence and quality of life. In an effort to assist these individuals with motor recovery, virtual reality (VR) systems were developed. VR is defined as a “computer-based technology that allows users to interact with a multisensory simulated environment and receive ‘real-time’ feedback on performance”. The interactive games are designed to provide the patient with real-life scenarios and activities relevant to daily living. The software is able to provide key concepts required for motor learning including frequency, intensity, repetition and task-oriented training while enabling the user to feel involved in their rehabilitation. These systems have many settings that allow accommodation for patient needs, abilities and goals through the manipulation of the degree of difficulty, focus on the extremity of choice as well as options for game tasks.
 

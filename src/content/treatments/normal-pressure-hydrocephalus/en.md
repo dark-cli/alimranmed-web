@@ -4,6 +4,7 @@ description: "Hydrocephalus is derived from the Greek: “hydro”-water and “
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/normal-pressure-hydrocephalus/"
+source: "legacy-wp"
 ---
 Hydrocephalus is derived from the Greek: “hydro”-water and “cephalus” – head. Hydrocephalus usually results either from: 1) an imbalance between CSF production and absorption (communicating hydrocephalus); or 2) when there is a blockage within the ventricular system such as a tumor that prevents CSF circulation (obstructive hydrocephalus).
 

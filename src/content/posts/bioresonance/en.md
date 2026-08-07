@@ -4,6 +4,7 @@ description: "What Is Bioresonance and Does It Work? Bioresonance is a type of 
 order: 999
 legacyUrl: "https://alimranmed.com/2021/05/31/bioresonance/"
 publishedAt: "2021-05-31T17:07:49"
+source: "legacy-wp"
 ---
 What Is Bioresonance and Does It  
 Work?

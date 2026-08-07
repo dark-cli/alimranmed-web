@@ -4,6 +4,7 @@ description: "Neuropathic Pain is a complex, chronic pain state that usually is 
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/neuropathic-pain/"
+source: "legacy-wp"
 ---
 Neuropathic Pain is a complex, chronic pain state that usually is accompanied by tissue injury. With neuropathic pain, the nerve fibers themselves might be damaged, dysfunctional, or injured. These damaged nerve fibers send incorrect signals to other pain centers. The impact of a nerve fiber injury includes a change in nerve function both at the site of injury and areas around the injury. (ClevelandClinic.org)
 

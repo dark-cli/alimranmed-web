@@ -4,6 +4,7 @@ description: "Arthritis is one of the most common causes of pain in the hip. Art
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/arthritis-of-the-hip/"
+source: "legacy-wp"
 ---
 Arthritis is one of the most common causes of pain in the hip. Arthritis is a progressive disorder, which means that it typically starts gradually and gets worse with time. The term arthritis literally means “inflammation of the joint.”
 

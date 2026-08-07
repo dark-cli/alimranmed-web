@@ -4,6 +4,7 @@ description: "Metatarsalgia is a condition in which the ball of your foot become
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/metatarsalgia/"
+source: "legacy-wp"
 ---
 Metatarsalgia is a condition in which the ball of your foot becomes painful and inflamed. You might develop it if you participate in activities that involve running and jumping. There are other causes as well, including foot deformities and shoes that are too tight or too loose.
 

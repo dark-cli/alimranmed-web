@@ -4,6 +4,7 @@ description: "What Is Carpal Tunnel Syndrome? Carpal tunnel syndrome is the comp
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/carpal-tunnel-syndrome/"
+source: "legacy-wp"
 ---
 What Is Carpal Tunnel Syndrome?
 

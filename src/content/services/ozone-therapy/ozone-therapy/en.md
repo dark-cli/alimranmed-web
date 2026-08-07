@@ -4,6 +4,7 @@ description: "Ozone Therapy Ozone was discovered as gas with a peculiar odour by
 category: "ozone-therapy"
 order: 999
 legacyUrl: "https://alimranmed.com/ozone-therapy/"
+source: "legacy-wp"
 ---
 Ozone Therapy
 

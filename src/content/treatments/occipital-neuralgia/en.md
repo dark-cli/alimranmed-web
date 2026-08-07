@@ -4,6 +4,7 @@ description: "Most feeling in the back and top of the head is transmitted to the
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/occipital-neuralgia/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/02/CEYU7_1546590895_6083-1-300x176.jpg)Most feeling in the back and top of the head is transmitted to the brain by the two greater occipital nerves. There is one nerve on each side of the head. Emerging from between bones of the spine in the upper neck, the two greater occipital nerves make their way through muscles at the back of the head and into the scalp. They sometimes reach nearly as far forward as the forehead, but do not cover the face or the area near the ears; other nerves supply these regions.
 

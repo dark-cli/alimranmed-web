@@ -4,6 +4,7 @@ description: "What is laser therapy and how does it work? A laser is essentially
 order: 999
 legacyUrl: "https://alimranmed.com/laser-therapy/"
 category: "physiotherapy"
+source: "legacy-wp"
 ---
 ## What is laser therapy and how does it work?
 

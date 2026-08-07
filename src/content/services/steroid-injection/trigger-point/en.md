@@ -4,6 +4,7 @@ description: "Trigger point injections to treat chronic muscle pain and other is
 category: "steroid-injection"
 order: 999
 legacyUrl: "https://alimranmed.com/trigger-point-injections/"
+source: "legacy-wp"
 ---
 Trigger point injections to treat chronic muscle pain and other issues that affect the musculoskeletal system.
 

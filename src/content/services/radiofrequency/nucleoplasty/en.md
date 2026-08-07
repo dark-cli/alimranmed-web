@@ -5,6 +5,7 @@ category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/04/nucleoplasty/"
 publishedAt: "2020-05-04T19:21:36"
+source: "legacy-wp"
 ---
 **![](/images/legacy/2020/01/g4-radiofrequency-generator-161964_1b-232x300.jpg)Radiofrequency Disc  Decompression (Nucleoplasty)**
 

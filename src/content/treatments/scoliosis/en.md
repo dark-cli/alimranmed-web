@@ -4,6 +4,7 @@ description: "Scoliosis is a sideways curvature of the spine that occurs most of
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/scoliosis/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/02/normal_and_curved_spine-300x272-1.jpg)Scoliosis is a sideways curvature of the spine that occurs most often during the growth spurt just before puberty. While scoliosis can be caused by conditions such as cerebral palsy and muscular dystrophy, the cause of most scoliosis is unknown. About 3% of adolescents have scoliosis.
 

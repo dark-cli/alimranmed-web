@@ -4,6 +4,7 @@ description: "What is an anterior cervical discectomy and fusion? Anterior Cervi
 order: 999
 legacyUrl: "https://alimranmed.com/anterior-cervical-discectomy-and-fusion/"
 category: "surgery"
+source: "legacy-wp"
 ---
 **What is an anterior cervical discectomy and fusion?**
 

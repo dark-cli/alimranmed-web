@@ -4,6 +4,7 @@ description: "What is electrical stimulation? Electrical stimulation or E-stimul
 order: 999
 legacyUrl: "https://alimranmed.com/electrical-stimulation/"
 category: "physiotherapy"
+source: "legacy-wp"
 ---
 **What is electrical stimulation?**
 

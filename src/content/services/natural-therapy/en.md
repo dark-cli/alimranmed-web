@@ -3,6 +3,7 @@ title: "natural therapy"
 description: "&nbsp; What is physiotherapy? Physiotherapy is a healthcare profession that assesses, diagnoses, treats, and works to prevent disease and disability"
 order: 999
 legacyUrl: "https://alimranmed.com/natural-therapy/"
+source: "legacy-wp"
 ---
 **What is physiotherapy?**
 

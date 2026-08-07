@@ -5,6 +5,7 @@ category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/06/08/neuroplasticity-and-cns-reorganization/"
 publishedAt: "2020-06-08T15:13:40"
+source: "legacy-wp"
 ---
 Later recovery of function in post-stroke patients is associated with neuroplasticity and central nervous system reorganization, which can be influenced in part by relearning through rehabilitation training. Neurological reorganization and its impact on functional recovery can continue for a much longer period than the acute neurological post-stroke recovery process (reduction of oedema, reperfusion of the penumbra, etc.). Following a stroke, this neurological reorganization of the undamaged cortex occurs to allow for motor and somatosensory recovery. In the end, this reorganization is not an acquisition of new neurons, but an adjustment of the undamaged connections to create new functional connections.
 

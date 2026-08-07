@@ -4,6 +4,7 @@ description: "Symptoms The signs and symptoms of benign paroxysmal positional ve
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/benign-paroxysmal-positional-vertigo-bppv/"
+source: "legacy-wp"
 ---
 ## **![](/images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV-300x241.png)Symptoms**
 

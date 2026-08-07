@@ -4,6 +4,7 @@ description: "Interesting cases with rTMS &nbsp; &nbsp;"
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/tms-result/"
+source: "legacy-wp"
 ---
 Interesting cases with rTMS
 

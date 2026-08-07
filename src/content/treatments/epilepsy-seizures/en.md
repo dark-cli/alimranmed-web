@@ -4,6 +4,7 @@ description: "About 10 percent of all people, approximately eight million Americ
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/epilepsy-seizures/"
+source: "legacy-wp"
 ---
 About 10 percent of all people, approximately eight million Americans, may experience a seizure during their lifetimes. It is estimated that one to three percent of the population has recurrent seizures, or epilepsy, or seizure disorder.
 

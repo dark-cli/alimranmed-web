@@ -5,6 +5,7 @@ category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/07/14/nutritional-therapy/"
 publishedAt: "2020-07-14T14:43:46"
+source: "legacy-wp"
 ---
 Once the nutritional risk is identified and a plan is customized during the treatment in hospitals, quite often, family members encounter significant challenge improving or even maintaining the nutritional status of their kin. Lack of expert assistance, follow-up monitoring, individual lack of knowledge and sometimes customary beliefs are responsible for such poor nutritional status of persons in post acute phase. Transitional Care Center, our goal is to eliminate these barriers of nutritional therapy for our residents and their families during the transition between hospital and home.![](/images/legacy/2020/07/6285261-1683792747-300x200-1.jpg)
 

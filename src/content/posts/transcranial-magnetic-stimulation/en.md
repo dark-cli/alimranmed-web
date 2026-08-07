@@ -4,6 +4,7 @@ description: "Did the operating system happen in your brain? Now a brain-mimicki
 order: 999
 legacyUrl: "https://alimranmed.com/2020/01/03/transcranial-magnetic-stimulation/"
 publishedAt: "2020-01-03T07:25:09"
+source: "legacy-wp"
 ---
 Did the operating system happen in your brain?  
 Now a brain-mimicking technology to help it boost cells

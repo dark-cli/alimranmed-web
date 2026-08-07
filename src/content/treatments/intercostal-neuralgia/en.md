@@ -4,6 +4,7 @@ description: "Figure show Pattern of pain seen in a patient with intercostal neu
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/intercostal-neuralgia/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/02/2.jpg) ![](/images/legacy/2020/02/frozen-shoulder51-1.jpg)
 

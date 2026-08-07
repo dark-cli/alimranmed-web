@@ -4,6 +4,7 @@ description: "Tension headaches are the most common type of headache. Stress and
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/27/tension-headaches/"
 publishedAt: "2021-01-27T16:57:37"
+source: "legacy-wp"
 ---
 Tension headaches are the most common type of headache. Stress and muscle tension are often factors in these headaches. Tension headaches typically don’t cause nausea, vomiting, or sensitivity to light. They do cause a steady ache, rather than a throbbing one, and tend to affect both sides of the head. Tension headaches may be chronic, occurring often, or every day.
 

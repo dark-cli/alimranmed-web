@@ -4,6 +4,7 @@ description: "Facet joints are joints between two vertebral bones. They are arra
 order: 999
 legacyUrl: "https://alimranmed.com/facet-joint-pain-syndrome/"
 category: "pain"
+source: "legacy-wp"
 ---
 Facet joints are joints between two vertebral bones. They are arranged in the back part of your spine from the neck all the way down to your low back. They can be painful due to “whiplash” injuries of the neck, arthritis or degeneration in the low back. These joints may cause pain in and around the spine and can markedly limit how you use your neck or back.
 

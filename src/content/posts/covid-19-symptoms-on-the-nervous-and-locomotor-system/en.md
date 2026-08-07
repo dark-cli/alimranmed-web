@@ -4,6 +4,7 @@ description: "Symptoms of the locomotor system and after infection with Covid-19
 order: 999
 legacyUrl: "https://alimranmed.com/2020/11/23/covid-19-symptoms-on-the-nervous-and-locomotor-system/"
 publishedAt: "2020-11-23T14:53:06"
+source: "legacy-wp"
 ---
 Symptoms of the locomotor system and after infection with Covid-19 ??
 

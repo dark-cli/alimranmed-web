@@ -4,6 +4,7 @@ description: "The role of the seniors in our society is a special and revered on
 category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/rehabilitation-consists/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/02/unnamed-300x173.jpg)The role of the seniors in our society is a special and revered one. As a culture, we have a long-standing tradition of caring for our elderly family members and providing them a supportive and joyful experience in their golden age. At Alimran Medical Center, we acknowledge the role of our Elders and have a deep understanding and experience of their needs that allows us to cater for them in a comprehensive manner with established protocols.
 

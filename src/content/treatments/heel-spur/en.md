@@ -5,6 +5,7 @@ category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/03/heel-spur/"
 publishedAt: "2020-12-03T15:36:05"
+source: "legacy-wp"
 ---
 What is the heel spur?
 

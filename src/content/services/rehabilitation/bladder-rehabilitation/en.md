@@ -4,6 +4,7 @@ description: "Physical therapy for bladder stimulation in spinal cord injury The
 category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/bladder-rehabilitation/"
+source: "legacy-wp"
 ---
 Physical therapy for bladder stimulation in spinal cord injury
 

@@ -4,6 +4,7 @@ description: "Radiofrequency Ablation Radiofrequency neurotomy (also called radi
 category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/radiofrequency-2/"
+source: "legacy-wp"
 ---
 ## **Radiofrequency Ablation**
 

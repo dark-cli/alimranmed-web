@@ -5,6 +5,7 @@ category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/08/radiofrequency-for-trigeminal-neuralgia/"
 publishedAt: "2020-05-08T19:24:33"
+source: "legacy-wp"
 ---
 **Gasserian ganglion block**
 

@@ -4,6 +4,7 @@ description: "Sports injuries, along with back and neck pain form the largest cl
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/sports-injuries/"
+source: "legacy-wp"
 ---
 Sports injuries, along with back and neck pain form the largest client base in our clinics. In recent years, we have noticed a dramatic increase in people taking up sports, running and boot-camp style exercises classes. Unfortunately, this has lead to an associated increase in sporting injuries. It is important to make sure you are ready to get fit! If you have not been overly active and have been spending a lot of time sitting at desks, driving or leading a more sedentary lifestyle, it is important to visit a physiotherapist before you enter into an exercise regime. We try to educate out patients on the importance of proper body conditioning and maintenance to prevent injury enabling them to enjoy their exercise activities to the full!
 

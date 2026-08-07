@@ -4,6 +4,7 @@ description: "Lateral epicondylitis, commonly known as tennis elbow, is a painfu
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/tennis-elbow/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/02/StockPhoto2SportsInjuries-1-300x186.jpg)
 

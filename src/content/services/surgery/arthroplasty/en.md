@@ -4,6 +4,7 @@ description: "What is an Artificial Disc Replacement? Artificial disc replacemen
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/arthroplasty-artificial-disc-replacement/"
+source: "legacy-wp"
 ---
 ### **What is an Artificial Disc Replacement?**
 

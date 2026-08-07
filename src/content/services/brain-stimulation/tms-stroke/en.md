@@ -5,6 +5,7 @@ category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/07/01/tms-in-stroke-patients/"
 publishedAt: "2020-07-01T07:38:52"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/07/Blausen_0836_Stroke-206x300.png)Stroke is one of the most frequent neurological disabilities worldwide. An important proportion of the survivors are left with residual disability such as motor limbs impairments, speech impairment, swallowing difficulties, and cognitive impairment. Beside the destruction of the motor structures, imbalance in informational systems and reaction mechanisms responding to damage plays important role in causing neurological dysfunction. Stroke may affect the balance of transcallosal inhibitory pathways between both hemispheres. The damage hemisphere may be affected by the cerebral ischemia and by the asymmetric inhibition from the unaffected hemisphere.
 

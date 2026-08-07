@@ -4,6 +4,7 @@ description: "RIWOspine 360° full-endoscopic Spine Surgery  Endoscopic imaging
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/endoscopic-spine-surgery/"
+source: "legacy-wp"
 ---
 RIWOspine 360° full-endoscopic Spine Surgery
 

@@ -4,6 +4,7 @@ description: "Back pain Cauda equina syndrome Cervical Spondylotic Myelopathy Co
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/spine/"
+source: "legacy-wp"
 ---
 -   [Back pain](/treatments/back-pain/)
 -   [Cauda equina syndrome](/treatments/cauda-equina-syndrome/)

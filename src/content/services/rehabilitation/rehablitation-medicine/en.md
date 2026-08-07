@@ -4,6 +4,7 @@ description: "Bladder Rehabilitation Neuroplasticity and CNS Reorganization Bed 
 category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/rehablitation-medicine/"
+source: "legacy-wp"
 ---
 [Bladder Rehabilitation](/services/rehabilitation/bladder-rehabilitation/)
 

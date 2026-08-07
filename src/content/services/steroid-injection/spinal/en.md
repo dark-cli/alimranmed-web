@@ -4,6 +4,7 @@ description: "Spinal injections, also referred to as spinal blocks, is the admin
 category: "steroid-injection"
 order: 999
 legacyUrl: "https://alimranmed.com/spinal-injections/"
+source: "legacy-wp"
 ---
 Spinal injections, also referred to as spinal blocks, is the administration of a medicine directly into a specific area of the spine. They can be used to treat a variety of conditions that affect the spine anywhere from the upper cervical spine to the sacrum.
 

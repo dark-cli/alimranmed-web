@@ -4,6 +4,7 @@ description: "The brachial plexus is a bundle of nerves that stems from nerve ro
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/brachial-plexus-injuries/"
+source: "legacy-wp"
 ---
 The brachial plexus is a bundle of nerves that stems from nerve roots in the cervical (neck) and upper trunk (torso) sections of the spinal cord (C5-T1), creating a network that connects to the nerves in the arm. These nerves control the motions of your wrists, hands and arms, allowing you to raise your arm, type on your keyboard or throw a baseball.
 

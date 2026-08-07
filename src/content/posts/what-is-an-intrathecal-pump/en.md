@@ -4,6 +4,7 @@ description: "WHAT IS AN INTRATHECAL PUMP? An intrathecal pump is a battery-oper
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/21/what-is-an-intrathecal-pump/"
 publishedAt: "2020-12-21T16:48:46"
+source: "legacy-wp"
 ---
 WHAT IS AN INTRATHECAL PUMP?
 

@@ -4,6 +4,7 @@ description: "A steroid injection is a minimally invasive procedure that can tem
 category: "steroid-injection"
 order: 999
 legacyUrl: "https://alimranmed.com/steroid-injection-for-joint-pain/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/01/cortisone-injection.jpg)A steroid injection is a minimally invasive procedure that can temporarily relieve pain caused by an inflamed joint. The cause of joint pain (arthritis, injury, degeneration) is not well understood. The procedure has two purposes. First, it can be used as a diagnostic test to see if the pain is actually coming from the joint. Second, it can be used as a treatment to relieve inflammation and pain caused by various conditions.
 

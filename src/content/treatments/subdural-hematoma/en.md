@@ -4,6 +4,7 @@ description: "A subdural hematoma is a type of intracranial hematoma (blood clot
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/subdural-hematoma/"
+source: "legacy-wp"
 ---
 A subdural hematoma is a type of intracranial hematoma (blood clot or clots) that often results from a head injury.
 

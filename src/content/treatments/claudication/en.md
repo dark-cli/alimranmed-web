@@ -4,6 +4,7 @@ description: "Claudication is pain caused by too little blood flow to muscles du
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/claudication/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/02/atherosclerosis-289x300-1.gif)Claudication is pain caused by too little blood flow to muscles during exercise. Most often this pain occurs in the legs after walking at a certain pace and for a certain amount of time — depending on the severity of the condition.
 

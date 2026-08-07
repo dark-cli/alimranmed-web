@@ -4,6 +4,7 @@ description: "Brain-Derived Neurotrophic Factor (BDNF) has an important role in 
 order: 999
 legacyUrl: "https://alimranmed.com/2020/07/11/tms-for-alzheimer-disease/"
 publishedAt: "2020-07-11T07:16:30"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500-300x140.jpg)Brain-Derived Neurotrophic Factor (BDNF) has an important role in [neuronal plasticity](/services/rehabilitation/neuroplasticity/). 
 

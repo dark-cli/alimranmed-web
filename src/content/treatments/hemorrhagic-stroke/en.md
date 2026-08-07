@@ -4,6 +4,7 @@ description: "&nbsp; A hemorrhagic stroke is caused by a hemorrhage or sudden bl
 order: 999
 legacyUrl: "https://alimranmed.com/hemorrhagic-stroke/"
 category: "brain"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2019/06/6.jpg)
 

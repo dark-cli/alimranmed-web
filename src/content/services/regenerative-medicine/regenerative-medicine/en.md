@@ -5,6 +5,7 @@ category: "regenerative-medicine"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/07/regenerative-medicine/"
 publishedAt: "2020-05-07T01:45:04"
+source: "legacy-wp"
 ---
 What is regenerative medicine?
 

@@ -4,6 +4,7 @@ description: "We help people feel better, by resetting the spine and nerves of t
 category: "chiropractic"
 order: 999
 legacyUrl: "https://alimranmed.com/sigma/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2019/07/Sigma-7R-768x511-300x200.jpg)
 

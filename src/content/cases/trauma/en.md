@@ -3,6 +3,7 @@ title: "Trauma cases"
 description: "&nbsp; Iraq has become well known these days because of the daily violence explosions, assassinations and fighting have became usual"
 order: 999
 legacyUrl: "https://alimranmed.com/trauma-cases/"
+source: "legacy-wp"
 ---
 **Iraq has become well known these days because of the daily violence explosions, assassinations and fighting have became usual events in Iraqi’s life.**
 

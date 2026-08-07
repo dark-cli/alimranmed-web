@@ -5,6 +5,7 @@ category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/09/multiple-sclerosis/"
 publishedAt: "2020-04-09T10:55:27"
+source: "legacy-wp"
 ---
 # Multiple sclerosis
 

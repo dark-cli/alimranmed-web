@@ -4,6 +4,7 @@ description: "Sacroiliitis is an inflammation of one or both of your sacroiliac 
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/sacroiliitis/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/02/Sacroiliac_wiki_1200x1200-300x300.jpg)Sacroiliitis is an inflammation of one or both of your sacroiliac joints — situated where your lower spine and pelvis connect. Sacroiliitis can cause pain in your buttocks or lower back, and can extend down one or both legs. Prolonged standing or stair climbing can worsen the pain.
 

@@ -4,6 +4,7 @@ description: "Many of us have experienced severe burning, numbness, and tingling
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/peripral-nerve-disordershe/"
+source: "legacy-wp"
 ---
 Many of us have experienced severe burning, numbness, and tingling after hitting our “funny bone.” This is caused by trauma to the ulnar nerve at the elbow. Similar discomfort may be brought on by sleeping on an arm or leg in a funny position.
 

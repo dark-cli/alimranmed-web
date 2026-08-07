@@ -4,6 +4,7 @@ description: "Did the operating system happen in your brain? Now a brain-mimicki
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/rtms/"
+source: "legacy-wp"
 ---
 Did the operating system happen in your brain?  
 Now a brain-mimicking technology to help it boost cells

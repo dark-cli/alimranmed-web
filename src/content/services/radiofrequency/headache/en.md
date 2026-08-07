@@ -5,6 +5,7 @@ category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/03/radiofrequency-for-headache/"
 publishedAt: "2020-05-03T21:09:51"
+source: "legacy-wp"
 ---
 chronic headaches includes:
 

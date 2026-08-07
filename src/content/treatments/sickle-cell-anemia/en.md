@@ -4,6 +4,7 @@ description: "Sickle cell anemia is one of a group of disorders known as sickle 
 category: "motor"
 order: 999
 legacyUrl: "https://alimranmed.com/sickle-cell-anemia/"
+source: "legacy-wp"
 ---
 ![](/images/legacy/2021/02/sickl_cell-257x300.jpg)Sickle cell anemia is one of a group of disorders known as sickle cell disease. Sickle cell anemia is an inherited red blood cell disorder in which there aren’t enough healthy red blood cells to carry oxygen throughout your body.
 

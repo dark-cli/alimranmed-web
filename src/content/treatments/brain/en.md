@@ -4,6 +4,7 @@ description: "Subdural Hematoma Normal Pressure Hydrocephalus Hemorrhagic Stroke
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/brain/"
+source: "legacy-wp"
 ---
 [Subdural Hematoma](/treatments/subdural-hematoma/)
 

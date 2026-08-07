@@ -4,6 +4,7 @@ description: "Head injuries are one of the most common causes of disability and 
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/head-injury/"
+source: "legacy-wp"
 ---
 Head injuries are one of the most common causes of disability and death in adults. The injury can be as mild as a bump, bruise (contusion), or cut on the head, or can be moderate to severe in nature due to a concussion, deep cut or open wound, fractured skull bone(s), or from internal bleeding and damage to the brain.
 

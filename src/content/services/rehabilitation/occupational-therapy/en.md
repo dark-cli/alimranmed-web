@@ -5,6 +5,7 @@ category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/11/25/occupational-therapy/"
 publishedAt: "2020-11-25T17:07:44"
+source: "legacy-wp"
 ---
 **What is Occupational Therapy?**
 

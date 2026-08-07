@@ -4,6 +4,7 @@ description: "Exercises at Home for sciatica"
 category: "exercises"
 order: 999
 legacyUrl: "https://alimranmed.com/back/"
+source: "legacy-wp"
 ---
 Exercises at Home for sciatica
 

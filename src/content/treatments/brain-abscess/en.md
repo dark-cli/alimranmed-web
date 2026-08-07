@@ -4,6 +4,7 @@ description: "What is a brain abscess? A brain abscess is an infection in the br
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/brain-abscess/"
+source: "legacy-wp"
 ---
 ### What is a brain abscess?
 

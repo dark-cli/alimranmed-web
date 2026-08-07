@@ -4,6 +4,7 @@ description: "Failed Back Surgery Syndrome (FBSS) refers to a subset of patients
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/failed-back-surgery-syndrome/"
+source: "legacy-wp"
 ---
 Failed Back Surgery Syndrome (FBSS) refers to a subset of patients who have new or persistent pain after spinal surgery for back or leg pain.  The pain can be reduced but still present, or may get worse within a few months after surgery due to a buildup of scar tissue around spinal nerve roots, along with persistent tissue pain and muscle spasm. The term refers to a condition of continuing pain and is not meant to imply there was necessarily a problem during surgery. While published reports estimate the incidence of failed back surgery syndrome to be between 20 – 40%, the likelihood is considered greater with repeated surgery, and the condition will be more prevalent in regions where spinal surgery is more common.
 

@@ -5,6 +5,7 @@ category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/09/postpolio-syndrome/"
 publishedAt: "2020-04-09T11:20:15"
+source: "legacy-wp"
 ---
 The polio is a neurological disease caused by the polio virus.
 

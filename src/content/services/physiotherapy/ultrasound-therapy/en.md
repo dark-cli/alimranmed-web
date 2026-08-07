@@ -4,6 +4,7 @@ description: "How does therapeutic ultrasound work? Ultrasound work by utilizing
 order: 999
 legacyUrl: "https://alimranmed.com/ultrasound-therapy/"
 category: "physiotherapy"
+source: "legacy-wp"
 ---
 ## How does therapeutic ultrasound work?
 

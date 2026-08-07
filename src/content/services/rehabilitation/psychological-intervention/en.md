@@ -4,6 +4,7 @@ description: "What is Psychological Intervention? Psychological Intervention is 
 category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/psychological-intervention/"
+source: "legacy-wp"
 ---
 What is Psychological Intervention?
 

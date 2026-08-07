@@ -4,6 +4,7 @@ description: "Discectomy It can mean removal of a disc protrusion or extrusion w
 order: 999
 legacyUrl: "https://alimranmed.com/spinal-decompression/"
 category: "surgery"
+source: "legacy-wp"
 ---
 ## **Discectomy**
 

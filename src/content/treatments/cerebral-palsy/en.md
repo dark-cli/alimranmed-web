@@ -4,6 +4,7 @@ description: "What is craniosynostosis? The normal skull consists of several pla
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/cerebral-palsy/"
+source: "legacy-wp"
 ---
 ### What is craniosynostosis?
 

@@ -4,6 +4,7 @@ description: "What Is Adhesiolysis? Adhesiolysis is sometimes called epidural ad
 order: 999
 legacyUrl: "https://alimranmed.com/adhesiolysis/"
 category: "steroid-injection"
+source: "legacy-wp"
 ---
 ### What Is Adhesiolysis?
 

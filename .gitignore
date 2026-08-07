@@ -29,3 +29,6 @@ pnpm-debug.log*
 
 # Obsidian files
 src/pages/.obsidian/
+
+# Discovery output from `npm run fetch-ar` — regenerable, not source
+scripts/ar-staging/

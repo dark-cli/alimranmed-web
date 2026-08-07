@@ -4,6 +4,7 @@ description: "التصنيف السريري وأحدث خيارات العلاج
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/headaches/"
+source: "original"
 ---
 
 ## معلومات أساسية عن الصداع

@@ -5,6 +5,7 @@ category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/05/epidural-adhesiolysis-with-pulsed-radiofrequency/"
 publishedAt: "2020-05-05T07:30:55"
+source: "legacy-wp"
 ---
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=E-Iu5EziDE4)
 
