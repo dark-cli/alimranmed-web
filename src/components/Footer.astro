@@ -40,7 +40,7 @@ const socialLinks = [
     <div>
       <h4>{dict["footer.locations"]}</h4>
       <ul class="footer-list">
-        <li>{CONTACT.addresses[locale]}</li>
+        <li><a href={CONTACT.mapsUrl} target="_blank" rel="noopener">{CONTACT.addresses[locale]}</a></li>
       </ul>
     </div>
 

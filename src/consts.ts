@@ -5,6 +5,7 @@ export const SITE_DESCRIPTION =
 export const CONTACT = {
   phones: ["+964-780-1926-801", "+964-770-6774-773"],
   email: "info@alimranmed.com",
+  mapsUrl: "https://maps.app.goo.gl/7Ws1iZbCCLrYyai69",
   addresses: {
     en: "Basra, Breaha, Alnkba Medical Collection",
     ar: "العراق, بصرة, بريه, مجمع النخبة",
