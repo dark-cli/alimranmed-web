@@ -2,6 +2,8 @@
 title: "دوار الوضعة الانتيابي الحميد (BPPV)"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%af%d9%88%d8%a7%d8%b1-%d8%a7%d9%84%d9%88%d8%b6%d8%b9%d8%a9-%d8%a7%d9%84%d8%a7%d9%86%d8%aa%d9%8a%d8%a7%d8%a8%d9%8a-%d8%a7%d9%84%d8%ad%d9%85%d9%8a%d8%af-bppv"
+category: "pain"
+order: 999
 ---
 # ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV-300x241.png)
 

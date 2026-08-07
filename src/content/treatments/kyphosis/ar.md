@@ -2,6 +2,8 @@
 title: "الحداب"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%ad%d8%af%d8%a7%d8%a8"
+category: "spine"
+order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/02/kyphosis-infographic-1-300x238.jpg)إن مرض الحدب هو فرط استدارة الظهر إلى الأمام. تؤثر على الأشخاص من كل الأعمار، لكنها أكثر شيوعًا في النساء الأكبر سنًّا.
 

@@ -2,6 +2,8 @@
 title: "حالات اطفال"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%ad%d8%a7%d9%84%d8%a7%d8%aa-%d8%a7%d8%b7%d9%81%d8%a7%d9%84"
+order: 999
+publishedAt: "2019-03-26T14:42:32"
 ---
 **الجراحة العصبية للأطفال**
 

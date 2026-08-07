@@ -29,7 +29,8 @@
     "media": "node --experimental-strip-types --no-warnings scripts/download-media.mjs",
     "redirects": "node --experimental-strip-types --no-warnings scripts/generate-redirects.mjs",
     "rewrite-links": "node --experimental-strip-types --no-warnings scripts/rewrite-legacy-links.mjs",
-    "fetch-ar": "node --experimental-strip-types --no-warnings scripts/fetch-ar-content.mjs"
+    "fetch-ar": "node --experimental-strip-types --no-warnings scripts/fetch-ar-content.mjs",
+    "sync-ar-fm": "node --experimental-strip-types --no-warnings scripts/sync-ar-frontmatter.mjs"
   },
   "type": "module"
 }

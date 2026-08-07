@@ -2,6 +2,8 @@
 title: "التهاب وتر أخيل"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d9%87%d8%a7%d8%a8-%d9%88%d8%aa%d8%b1-%d8%a3%d8%ae%d9%8a%d9%84"
+order: 999
+publishedAt: "2021-02-09T14:53:12"
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/02/تنزيل-3.jpg)التهاب وتر أخيل هو إصابة ناجمة عن الاستخدام المفرط لوتر اخيل (وتر العرقوب)، وهو الطية النسيجية التي تربط عضلات الربلة في الجزء الخلفي من أسفل الساق بعظمة الكعب.
 

@@ -9,8 +9,20 @@ titles:
   - "FIISSP"
   - "FINASS"
 photo: "/images/doctors/hussein-imran-mousa.jpg"
+memberships:
+  - "الجمعية الأوروبية للجراحة العصبية المجسّمة والوظيفية (2022)"
+  - "منظمة السكتة الدماغية الأوروبية (2020)"
+  - "منظمة السكتة الدماغية العالمية (2020)"
+  - "الجمعية الدولية للحبل الشوكي (2020)"
+  - "جمعية أمريكا الشمالية للعمود الفقري (2016)"
+  - "الرابطة الدولية لدراسة الألم (2015)"
+  - "AOSpine (2011)"
+  - "الجمعية الأمريكية لجراحي الأعصاب (2010)"
+  - "عضو ATLS و ACLS (2011)"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%af%d9%83%d8%aa%d9%88%d8%b1-%d8%ad%d8%b3%d9%8a%d9%86-%d8%b9%d9%85%d8%b1%d8%a7%d9%86-%d9%85%d9%88%d8%b3%d9%89"
+order: 1
+languages: []
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2023/01/Untitled-2-copy-288x300.jpg)
 

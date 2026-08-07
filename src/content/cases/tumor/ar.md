@@ -2,6 +2,7 @@
 title: "حالات ورم الدماغ"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%88%d8%b1%d9%85-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba-%d8%ad%d8%a7%d9%84%d8%a7%d8%aa"
+order: 999
 ---
 **الأورام أصبحت مشكلة عالمية وخصوصا في العراق كنتيجة للتلوث البيئي والعوامل الأخرى.**
 

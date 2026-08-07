@@ -2,6 +2,8 @@
 title: "التهاب الجراب"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d9%87%d8%a7%d8%a8-%d8%a7%d9%84%d8%ac%d8%b1%d8%a7%d8%a8"
+category: "pain"
+order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/image.axd_-20-300x272.jpg)يُعد التهاب الجراب حالة مؤلمة تؤثر على الأكياس الصغيرة المملوءة بالسوائل — والتي تسمى بالأجربة — التي تحمي العظام والأوتار والعضلات بالقرب من مفاصلك. يحدث التهاب الجراب عند التهاب الأجربة.
 

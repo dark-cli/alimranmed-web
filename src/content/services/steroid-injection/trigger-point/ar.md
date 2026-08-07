@@ -3,6 +3,7 @@ title: "حقن نقطة الزناد"
 category: "steroid-injection"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d9%86%d9%82%d8%b7%d8%a9-%d8%a7%d9%84%d8%b2%d9%86%d8%a7%d8%af"
+order: 999
 ---
 حقن نقطة الزناد لعلاج آلام العضلات المزمنة وغيرها من المشاكل التي تؤثر على الجهاز العضلي الهيكلي.
 

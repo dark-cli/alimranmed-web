@@ -2,6 +2,8 @@
 title: "تقنية تحاكي الدماغ لمساعدته على تعزيز خلاياه العصبية "
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/910"
+order: 999
+publishedAt: "2020-01-03T07:25:09"
 ---
 [▶ شاهد على يوتيوب](https://www.youtube.com/watch?v=bmBV1r4_HrE)
 

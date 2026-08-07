@@ -2,6 +2,8 @@
 title: "الدماغ"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba"
+category: "brain"
+order: 999
 ---
 -    [استسقاء الرأس الضغط العادي (NPH)](https://ar.alimranmed.com/%d8%a7%d8%b3%d8%aa%d8%b3%d9%82%d8%a7%d8%a1-%d8%a7%d9%84%d8%b1%d8%a3%d8%b3-%d8%a7%d9%84%d8%b6%d8%ba%d8%b7-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%8a-nph/)
 -   [إصابة الرأس](https://ar.alimranmed.com/%d8%a5%d8%b5%d8%a7%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%a3%d8%b3/)

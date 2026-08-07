@@ -3,6 +3,7 @@ title: "تأهيل المثانة و الامعاء"
 category: "rehabilitation"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%aa%d8%a3%d9%87%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%ab%d8%a7%d9%86%d8%a9"
+order: 999
 ---
 هناك **عدة طرق في [العلاج الطبيعي](https://ar.alimranmed.com/physiotherapy/) للمرضى الذين يعانون من مشاكل في المثانة والأمعاء ، بما في ذلك:**
 

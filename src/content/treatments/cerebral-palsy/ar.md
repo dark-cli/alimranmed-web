@@ -2,6 +2,8 @@
 title: "الشلل الدماغي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba%d9%8a"
+category: "pediatric"
+order: 999
 ---
 **![](https://ar.alimranmed.com/wp-content/uploads/2020/04/CP-websites-300x161.png)**
 

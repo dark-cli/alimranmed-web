@@ -3,6 +3,8 @@ title: "قرحة الفراش"
 category: "rehabilitation"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%82%d8%b1%d8%ad%d8%a9-%d8%a7%d9%84%d9%81%d8%b1%d8%a7%d8%b4"
+order: 999
+publishedAt: "2020-07-01T07:04:50"
 ---
 **![](https://ar.alimranmed.com/wp-content/uploads/2020/06/247674_10151945256634968_1158683050_n-300x223.jpg)قرحة الفراش هي حالة طبية قد تصيب الأشخاص الذين يمضون وقتاً طويلاً في ذات الوضعية نتيجة مرض ما، مثل الشلل.**
 

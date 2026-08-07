@@ -3,6 +3,7 @@ title: "سباينمد"
 category: "chiropractic"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%b3%d8%a8%d8%a7%d9%8a%d9%86%d9%85%d8%af"
+order: 999
 ---
 أن آلام أسفل الظهر والرقبة يمكن إدارتها من خلال خيارات العلاج التقليدية
 

@@ -2,6 +2,7 @@
 title: "حالات اصابة"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%ad%d8%a7%d9%84%d8%a7%d8%aa-%d8%a7%d8%b5%d8%a7%d8%a8%d8%a9"
+order: 999
 ---
 **الإصابات**
 

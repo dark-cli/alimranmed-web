@@ -2,6 +2,8 @@
 title: "الجلطة الدماغية وطريقة التعافي مابعد الجلطة الدماغية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1067"
+order: 999
+publishedAt: "2020-01-03T08:51:37"
 ---
 **نظره عامه**
 

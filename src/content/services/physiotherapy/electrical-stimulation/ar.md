@@ -3,6 +3,7 @@ title: "التحفيز الكهربائي"
 category: "physiotherapy"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d9%83%d9%87%d8%b1%d8%a8%d8%a7%d8%a6%d9%8a"
+order: 999
 ---
 **ما هو التحفيز الكهربائي؟**
 

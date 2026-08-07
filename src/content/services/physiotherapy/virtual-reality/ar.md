@@ -3,6 +3,8 @@ title: "الواقع الافتراضي VR"
 category: "physiotherapy"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d8%a7%d9%82%d8%b9-%d8%a7%d9%84%d8%a7%d9%81%d8%aa%d8%b1%d8%a7%d8%b6%d9%8a-vr"
+order: 999
+publishedAt: "2020-06-08T15:53:33"
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2020/07/educational-vr-at-home-for-interactive-science-class-1536x864-1-800x445-1-300x167.jpg)
 

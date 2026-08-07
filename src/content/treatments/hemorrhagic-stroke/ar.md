@@ -2,6 +2,8 @@
 title: "السكتة النزفية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b3%d9%83%d8%aa%d8%a9-%d8%a7%d9%84%d9%86%d8%b2%d9%81%d9%8a%d8%a9"
+category: "brain"
+order: 999
 ---
 **![](https://ar.alimranmed.com/wp-content/uploads/2019/12/s.jpg)**
 

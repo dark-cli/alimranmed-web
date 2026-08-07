@@ -2,6 +2,8 @@
 title: "الكسر الانضغاطي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%b6%d8%ba%d8%b7-%d8%a7%d9%84%d9%83%d8%b3%d8%b1"
+category: "spine"
+order: 999
 ---
 يحدث الكسر الانضغاطي عند جزء من فقرة، أو العظام في العمود الفقري، وينهار.
 

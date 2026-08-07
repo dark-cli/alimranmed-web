@@ -2,6 +2,8 @@
 title: "الم العضل الليفي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b9%d8%b6%d9%84-%d8%a7%d9%84%d9%84%d9%8a%d9%81%d9%8a"
+category: "pain"
+order: 999
 ---
 **ما ألم العضل الليفي؟**
 

@@ -3,6 +3,8 @@ title: "الترددات الراديوية لمعالجة الانزلاق ال
 category: "radiofrequency"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1754"
+order: 999
+publishedAt: "2020-05-04T19:21:36"
 ---
 الترددات الراديوية لمعالجة الانزلاق الغضروفي(انفتاق القرص)
 

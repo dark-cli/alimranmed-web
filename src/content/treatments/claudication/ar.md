@@ -2,6 +2,8 @@
 title: "العرج"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d8%b1%d8%ac"
+category: "pain"
+order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/atherosclerosis-289x300.gif)العرج هو شعور بالألم ناجم عن قلة تدفق الدم إلى العضلات أثناء التمرين. وغالبًا ما تشعر بهذا الألم في الساقين بعد المشي بوتيرة معينة ولمدة معينة من الوقت، حسب شدة الحالة المَرَضية.
 

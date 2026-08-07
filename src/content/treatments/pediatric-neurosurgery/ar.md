@@ -2,6 +2,8 @@
 title: "الامراض العصبية للأطفال"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a7%d9%85%d8%b1%d8%a7%d8%b6-%d8%a7%d9%84%d8%b9%d8%b5%d8%a8%d9%8a%d8%a9-%d9%84%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84"
+category: "pediatric"
+order: 999
 ---
 [الشلل الدماغي](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba%d9%8a/)
 

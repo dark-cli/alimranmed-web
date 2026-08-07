@@ -3,6 +3,7 @@ title: "التحفيز المغناطيسي لمعالجة طنين الأذن"
 category: "brain-stimulation"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/2078"
+order: 999
 ---
 **ط****نين الأذن هو ضجيج مزعج يتم سماعه بدون أي محفز سمعي ، ويؤثر على نوعية حياة الفرد ويؤدي إلى مشاكل نفسية اجتماعية.**
 

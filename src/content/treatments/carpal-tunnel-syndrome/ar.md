@@ -2,6 +2,8 @@
 title: "متلازمة النفق الرسغي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9-%d8%a7%d9%84%d9%86%d9%81%d9%82-%d8%a7%d9%84%d8%b1%d8%b3%d8%ba%d9%8a"
+category: "pain"
+order: 999
 ---
 ### ما هي متلازمة النفق الرسغي؟
 

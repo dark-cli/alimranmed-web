@@ -3,6 +3,8 @@ title: "العلاج المهني"
 category: "rehabilitation"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a7%d9%84%d9%85%d9%87%d9%86%d9%8a"
+order: 999
+publishedAt: "2020-11-25T17:07:44"
 ---
 **ما هو العلاج المهني؟**
 

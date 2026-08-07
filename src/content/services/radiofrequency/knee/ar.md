@@ -3,6 +3,8 @@ title: "الترددات الراديوية للركبة"
 category: "radiofrequency"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1733"
+order: 999
+publishedAt: "2020-04-29T08:00:43"
 ---
 معالجة مفصل الركبة بالترددات الراديوية
 

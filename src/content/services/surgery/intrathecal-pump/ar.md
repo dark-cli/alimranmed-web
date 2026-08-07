@@ -3,6 +3,7 @@ title: "المضخة الدوائية"
 category: "surgery"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/2424"
+order: 999
 ---
 **ما هي المضخة الدوائية التي توضع داخل القراب (التجويف المحيط بالحبل الشوكي) ؟**
 

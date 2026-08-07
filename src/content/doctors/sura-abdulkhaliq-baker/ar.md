@@ -4,6 +4,9 @@ fullName: "د. سرى عبدالخالق باقر"
 specialty: "طبيبة"
 titles: []
 source: "legacy-wp"
+order: 2
+memberships: []
+languages: []
 ---
 **Sura Abdulkhaliq Baker**
 

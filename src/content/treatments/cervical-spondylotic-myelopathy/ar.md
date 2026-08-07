@@ -2,6 +2,8 @@
 title: "الاعتلال النخاعي الفقاري العنقي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/cervical-myeloid-injury"
+category: "spine"
+order: 999
 ---
 اعتلال النخاع الفقاري العنقي هو الأضرار التي تلحق بالحبل الشوكي في الرقبة.
 

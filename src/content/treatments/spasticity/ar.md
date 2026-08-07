@@ -2,6 +2,8 @@
 title: "التشنج"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%b4%d9%86%d8%ac"
+category: "pain"
+order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/Spasticity-300x210.jpg)التشنج هو شد عضلي غير طبيعي بسبب تقلص العضلات لفترات طويلة. وهو أحد الأعراض المصاحبة لتلف الدماغ أو النخاع الشوكي أو الأعصاب الحركية ، ويظهر عند الأفراد المصابين بحالات عصبية ، مثل:
 

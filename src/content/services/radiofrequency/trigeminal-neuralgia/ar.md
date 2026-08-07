@@ -3,6 +3,8 @@ title: "الترددات الراديوية لعلاج التهاب العصب �
 category: "radiofrequency"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1782"
+order: 999
+publishedAt: "2020-05-08T19:24:33"
 ---
 **عاقة عقدة غاسر**  **Gasserian Ganglion RF ablation**
 

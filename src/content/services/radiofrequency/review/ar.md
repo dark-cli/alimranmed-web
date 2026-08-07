@@ -3,6 +3,8 @@ title: "اهمية الترددات الراديوية"
 category: "radiofrequency"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1742"
+order: 999
+publishedAt: "2020-04-28T08:05:53"
 ---
 **![](https://ar.alimranmed.com/wp-content/uploads/2019/07/xc.jpg)**
 

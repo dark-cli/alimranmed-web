@@ -3,6 +3,8 @@ title: "التحفيز المغناطيسي لمرضى السكتة الدماغ
 category: "brain-stimulation"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1950"
+order: 999
+publishedAt: "2020-07-01T07:38:52"
 ---
 **[السكتة الدماغية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b3%d9%83%d8%aa%d8%a9-%d8%a7%d9%84%d9%86%d8%b2%d9%81%d9%8a%d8%a9/) هي واحدة من أكثر الإعاقات العصبية شيوعًا في جميع أنحاء العالم.![](https://ar.alimranmed.com/wp-content/uploads/2020/06/1f877c5901c727a361d07b09e633feaf-300x183.jpg)**
 

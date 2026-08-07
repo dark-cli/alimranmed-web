@@ -2,6 +2,8 @@
 title: "المعالجه  بجهاز Vasotrain  او air pressure Massage"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1241"
+order: 999
+publishedAt: "2020-01-04T06:33:23"
 ---
 ##### **وهي من طرق البديلة والمساعده في برامج التأهيل الطبي والعلاج الفيزيائي** 
 

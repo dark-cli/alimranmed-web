@@ -3,6 +3,7 @@ title: "تثقيب الجمجمة"
 category: "surgery"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%aa%d8%ab%d9%82%d9%8a%d8%a8-%d8%a7%d9%84%d8%ac%d9%85%d8%ac%d9%85%d8%a9-2"
+order: 999
 ---
 #### ما هي الثقوب لدغ وحج القحف؟
 

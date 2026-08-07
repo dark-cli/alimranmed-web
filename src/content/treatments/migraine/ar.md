@@ -2,6 +2,8 @@
 title: "امراض الشقيقه"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%85%d8%b1%d8%a7%d8%b6-%d8%a7%d9%84%d8%b4%d9%82%d9%8a%d9%82%d9%87"
+category: "pain"
+order: 999
 ---
 **الأسباب**
 

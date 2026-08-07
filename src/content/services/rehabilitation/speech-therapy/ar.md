@@ -3,6 +3,8 @@ title: "النطق"
 category: "rehabilitation"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d9%86%d8%b7%d9%82"
+order: 999
+publishedAt: "2020-07-16T15:18:16"
 ---
 **علاج النطق هو خدمة تركز على تحسين كلام المريض وقدراته على فهم اللغة والتعبير عنها ، بما في ذلك اللغة غير اللفظية.**
 

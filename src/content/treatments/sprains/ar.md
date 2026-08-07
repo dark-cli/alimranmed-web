@@ -2,6 +2,8 @@
 title: "الالتواءات"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/2704"
+category: "pain"
+order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/f164a2d49d71b3344b2c74185d9764ff-300x280.png)التواء المفصل هو شَدٌّ أو تَمَزُّق في الأربطة — أشرطة النسيج الليفي القوية التي تربط عظمتين مع بعضهما داخل مفصلك. يُعَدُّ الكاحل أكثر موضع عرضة للالتواء.
 

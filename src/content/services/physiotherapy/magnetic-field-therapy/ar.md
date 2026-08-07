@@ -3,6 +3,8 @@ title: "العلاج بالمجال الكهرومغناطيسي"
 category: "physiotherapy"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d8%ac%d8%a7%d9%84-%d8%a7%d9%84%d9%85%d8%ba%d9%86%d8%a7%d8%b7%d9%8a%d8%b3%d9%8a"
+order: 999
+publishedAt: "2021-01-21T15:18:26"
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/salus_talent_a_list2-300x200.jpg)العلاج بالمجال المغناطيسي هو وسيلة آمنة وغير جراحية لتقليل الألم والالتهابات باستخدام المغناطيس للحفاظ على الصحة وعلاج المرض.
 

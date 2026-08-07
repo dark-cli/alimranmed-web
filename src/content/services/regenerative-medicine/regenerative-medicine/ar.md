@@ -3,6 +3,8 @@ title: "طب التجديد"
 category: "regenerative-medicine"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%b7%d8%a8-%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af"
+order: 999
+publishedAt: "2020-05-07T01:45:04"
 ---
 ما هو طب التجديد؟
 

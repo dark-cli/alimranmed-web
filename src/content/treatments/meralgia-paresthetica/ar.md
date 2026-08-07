@@ -2,6 +2,8 @@
 title: "ألم الفخذ المذلي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a3%d9%84%d9%85-%d8%a7%d9%84%d9%81%d8%ae%d8%b0-%d8%a7%d9%84%d9%85%d8%b0%d9%84%d9%8a"
+category: "pain"
+order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/02/adobestock_136348916-300x200.jpeg) ![](https://ar.alimranmed.com/wp-content/uploads/2021/02/rsw_1280-247x300.jpg)
 

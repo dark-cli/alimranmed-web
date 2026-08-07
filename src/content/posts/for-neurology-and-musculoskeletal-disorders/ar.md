@@ -2,6 +2,8 @@
 title: "اضطراب الوسواس القهري (OCD)"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/3094"
+order: 999
+publishedAt: "2019-04-23T08:21:32"
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2023/01/Obsessive-compulsive-disorder-OCD-1-300x252.jpg)
 

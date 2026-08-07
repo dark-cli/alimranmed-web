@@ -2,6 +2,8 @@
 title: "الانزلاق الغضروفي (فتق القرص)"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/2270"
+category: "spine"
+order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2020/09/196260_19221-300x240.jpg)
 

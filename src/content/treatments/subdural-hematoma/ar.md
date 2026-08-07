@@ -2,6 +2,8 @@
 title: "نزف دموي تحت الجافية"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%88%d8%b1%d9%85-%d8%af%d9%85%d9%88%d9%8a-%d8%aa%d8%ad%d8%aa-%d8%a7%d9%84%d8%ac%d8%a7%d9%81%d9%8a%d8%a9"
+category: "brain"
+order: 999
 ---
 تجمع نزف دموي تحت الجافية هو نوع من التجمع الدموي داخل الجمجمة (جلطات أو تجلط الدم) التي غالبا ما ينتج من اصابة في الرأس.
 

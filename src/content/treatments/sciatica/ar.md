@@ -2,6 +2,8 @@
 title: "عرق النسا"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%b9%d8%b1%d9%82-%d8%a7%d9%84%d9%86%d8%b3%d8%a7"
+category: "spine"
+order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/04-10-20-549956961-1-240x300.jpg)يشير عرق النسا إلى الألم الذي يمتد على طول العصب الوركي، والذي يتفرع من أسفل ظهرك ممتدًا إلى الوركين والأرداف وأسفل كل ساق. وعادة ما يؤثر عرق النسا في جانب واحد فقط من جسمك.
 

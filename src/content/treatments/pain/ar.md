@@ -2,6 +2,8 @@
 title: "الآلام"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a2%d9%84%d8%a7%d9%85"
+category: "pain"
+order: 999
 ---
 -   [اضطرابات الأعصاب الطرفية](https://ar.alimranmed.com/%d8%a7%d8%b6%d8%b7%d8%b1%d8%a7%d8%a8%d8%a7%d8%aa-%d8%a7%d9%84%d8%a3%d8%b9%d8%b5%d8%a7%d8%a8-%d8%a7%d9%84%d8%b7%d8%b1%d9%81%d9%8a%d8%a9/)
 -   [الاصابات الرياضية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a7%d8%b5%d8%a7%d8%a8%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d9%8a%d8%a7%d8%b6%d9%8a%d8%a9-2/)

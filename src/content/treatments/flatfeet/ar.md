@@ -2,6 +2,8 @@
 title: "أقدام مسطحة"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a3%d9%82%d8%af%d8%a7%d9%85-%d9%85%d8%b3%d8%b7%d8%ad%d8%a9"
+category: "pain"
+order: 999
 ---
 ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/Flat-Feet-300x249.jpg)
 

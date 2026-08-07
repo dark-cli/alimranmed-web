@@ -2,6 +2,9 @@
 title: "تصلب الانسجة المتعدد"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%aa%d8%b5%d9%84%d8%a8-%d8%a7%d9%84%d8%a7%d9%86%d8%b3%d8%ac%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%b9%d8%af%d8%af"
+category: "pain"
+order: 999
+publishedAt: "2020-04-09T10:55:27"
 ---
 **التصلب المتعدد هو مرض مزمن في الجهاز العصبي المركزي الذي يشارك فيه الجهاز المناعي.**
 
