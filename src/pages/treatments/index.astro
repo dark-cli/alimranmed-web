@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale } from "../../lib/i18n";
+import { topicOf, isLocale, localizedHref, currentLocale } from "../../lib/i18n";
+
+const locale = currentLocale(Astro);
 
 const treatments = (await getCollection("treatments"))
   .filter((e) => isLocale(e.id, "en"))
@@ -32,7 +34,7 @@ for (const t of treatments) {
         <ul class="condition-list">
           {items.map((t) => (
             <li>
-              <a href={`/treatments/${topicOf(t.id)}/`}>{t.data.title}</a>
+              <a href={localizedHref(`/treatments/${topicOf(t.id)}/`, locale)}>{t.data.title}</a>
             </li>
           ))}
         </ul>

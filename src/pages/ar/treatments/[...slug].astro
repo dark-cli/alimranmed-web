@@ -3,8 +3,9 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EntryPage from "../../../components/EntryPage.astro";
 import TranslationBanner from "../../../components/TranslationBanner.astro";
-import { topicOf, pickForLocale, dictFor } from "../../../lib/i18n";
+import { topicOf, pickForLocale, dictFor, localizedHref, currentLocale } from "../../../lib/i18n";
 
+const locale = currentLocale(Astro);
 const t = dictFor("ar");
 
 export async function getStaticPaths() {
@@ -25,10 +26,10 @@ const { entry, fallback } = Astro.props;
       <div class="container banner-wrap">
         <TranslationBanner fromLocale="en" toLocale="ar" />
       </div>
-      <EntryPage entry={entry} backHref="/ar/treatments/" backLabel="What We Treat" />
+      <EntryPage entry={entry} backHref={localizedHref("/treatments/", locale)} backLabel="What We Treat" />
     </div>
   ) : (
-    <EntryPage entry={entry} backHref="/ar/treatments/" backLabel={t["nav.treatments"]} />
+    <EntryPage entry={entry} backHref={localizedHref("/treatments/", locale)} backLabel={t["nav.treatments"]} />
   )}
 </BaseLayout>
 

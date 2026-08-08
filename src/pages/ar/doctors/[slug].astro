@@ -3,8 +3,9 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import DoctorProfile from "../../../components/DoctorProfile.astro";
 import TranslationBanner from "../../../components/TranslationBanner.astro";
-import { topicOf, pickForLocale, dictFor } from "../../../lib/i18n";
+import { topicOf, pickForLocale, dictFor, localizedHref, currentLocale } from "../../../lib/i18n";
 
+const locale = currentLocale(Astro);
 const t = dictFor("ar");
 
 export async function getStaticPaths() {
@@ -26,7 +27,7 @@ const labels = fallback ? undefined : {
   languages: "اللغات",
   book: t["cta.callUs"],
 };
-const backHref = "/ar/doctors/";
+const backHref = localizedHref("/doctors/", locale);
 ---
 
 <BaseLayout title={`${entry.data.fullName} — مركز العمران الطبي`} description={entry.data.description}>

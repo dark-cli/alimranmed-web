@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
 import rehypeYouTube from "./src/lib/rehype-youtube.mjs";
+import { remarkLocalizeLinks } from "./src/lib/remark-localize-links.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,7 +12,7 @@ export default defineConfig({
     defaultLocale: "en",
     locales: ["en", "ar"],
     routing: {
-      prefixDefaultLocale: false,  // EN stays at /, AR at /ar/
+      prefixDefaultLocale: false,  // EN at /, AR at /ar/
     },
   },
   integrations: [sitemap()],
@@ -21,6 +22,7 @@ export default defineConfig({
     },
   }),
   markdown: {
+    remarkPlugins: [remarkLocalizeLinks],
     rehypePlugins: [rehypeYouTube],
   },
 });

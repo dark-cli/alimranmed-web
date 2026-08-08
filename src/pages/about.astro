@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
-import { isLocale, topicOf } from "../lib/i18n";
+import { isLocale, topicOf, localizedHref, currentLocale } from "../lib/i18n";
+
+const locale = currentLocale(Astro);
 
 const aboutPages = (await getCollection("pages"))
   .filter((e) => isLocale(e.id, "en") && e.data.category === "about")
@@ -64,7 +66,7 @@ const ICON: Record<string, string> = {
     <div class="container">
       <h2>Meet our doctors</h2>
       <p>Board-certified consultants with decades of combined experience.</p>
-      <a class="btn btn-primary" href="/doctors/">See the team</a>
+      <a class="btn btn-primary" href={localizedHref("/doctors/", locale)}>See the team</a>
     </div>
   </section>
 </BaseLayout>

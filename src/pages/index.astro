@@ -2,7 +2,28 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { CONTACT } from "../consts";
-import { topicOf, isLocale } from "../lib/i18n";
+import { topicOf, isLocale, localizedHref, currentLocale } from "../lib/i18n";
+
+// Auto-detect language for root path (/)
+// Check device language > country > default to English
+const detectLocale = () => {
+  const acceptLanguage = Astro.request.headers.get('accept-language') || '';
+  if (acceptLanguage.toLowerCase().includes('ar')) return 'ar';
+
+  // Check country header (Cloudflare)
+  const country = Astro.request.headers.get('cf-ipcountry') || '';
+  const arabCountries = ['AE', 'BH', 'DZ', 'EG', 'IQ', 'JO', 'KW', 'LB', 'LY', 'MA', 'OM', 'QA', 'SA', 'SD', 'SY', 'TN', 'TR', 'YE', 'PS', 'MR'];
+  if (arabCountries.includes(country.toUpperCase())) return 'ar';
+
+  return 'en';
+};
+
+const detectedLocale = detectLocale();
+if (detectedLocale === 'ar' && Astro.url.pathname === '/') {
+  return Astro.redirect('/ar/', 308);
+}
+
+const locale = currentLocale(Astro);
 
 const doctors = (await getCollection("doctors"))
   .filter((e) => isLocale(e.id, "en"))
@@ -16,22 +37,22 @@ const INTRO_VIDEO_ID = "m53F8E6VKFA";
 // Featured conditions — 8 tiles matching the old carousel, but as a static
 // responsive grid (no autoplay slider, no jarring motion).
 const FEATURED_CONDITIONS = [
-  { title: "Back pain",         href: "/treatments/back-pain/",     image: "/images/home/Back-Pain.jpg" },
-  { title: "Neck pain",         href: "/treatments/neck-pain/",     image: "/images/home/SNHS-neck-pain-1.jpg" },
-  { title: "Frozen shoulder",   href: "/treatments/frozen-shoulder/", image: "/images/home/1-1.jpg" },
-  { title: "Sports injuries",   href: "/treatments/sports-injuries/", image: "/images/home/Can-Osteopathy-help-you-with-your-sport-injury-1.jpg" },
-  { title: "Fibromyalgia",      href: "/treatments/fibromyalgia/",  image: "/images/home/Fibromyalgia.png" },
-  { title: "Head injury",       href: "/treatments/head-injury/",   image: "/images/home/Global-brain-injury-recovery-e1577492333798.jpg" },
-  { title: "Arthritis of the hip", href: "/treatments/arthritis-of-the-hip/", image: "/images/home/1-4.jpg" },
-  { title: "Heel spur",         href: "/treatments/heel-spur/",     image: "/images/home/frozen-shoulder51.jpg" },
+  { title: "Back pain",         path: "/treatments/back-pain/",     image: "/images/home/Back-Pain.jpg" },
+  { title: "Neck pain",         path: "/treatments/neck-pain/",     image: "/images/home/SNHS-neck-pain-1.jpg" },
+  { title: "Frozen shoulder",   path: "/treatments/frozen-shoulder/", image: "/images/home/1-1.jpg" },
+  { title: "Sports injuries",   path: "/treatments/sports-injuries/", image: "/images/home/Can-Osteopathy-help-you-with-your-sport-injury-1.jpg" },
+  { title: "Fibromyalgia",      path: "/treatments/fibromyalgia/",  image: "/images/home/Fibromyalgia.png" },
+  { title: "Head injury",       path: "/treatments/head-injury/",   image: "/images/home/Global-brain-injury-recovery-e1577492333798.jpg" },
+  { title: "Arthritis of the hip", path: "/treatments/arthritis-of-the-hip/", image: "/images/home/1-4.jpg" },
+  { title: "Heel spur",         path: "/treatments/heel-spur/",     image: "/images/home/frozen-shoulder51.jpg" },
 ];
 
-// Featured services (top-level landing pages). Hrefs match navigation.ts.
+// Featured services (top-level landing pages). Paths will be localized when rendering.
 const FEATURED_SERVICES = [
-  { href: "/services/chiropractic/",         title: "Chiropractic",     image: "/images/home/DSC_0054-1-1024x684.jpg",              desc: "SPINMED and Sigma systems for precise spinal alignment." },
-  { href: "/services/brain-stimulation/",    title: "Brain Stimulation", image: "/images/home/tms-treatment-768.jpg",               desc: "TMS and tDCS for stroke, migraine, depression, and more." },
-  { href: "/services/radiofrequency/",       title: "Radiofrequency",   image: "/images/home/g4-radiofrequency-generator-161964_1b.jpg", desc: "Minimally invasive nerve neurotomy for chronic pain." },
-  { href: "/services/steroid-injection/",    title: "Steroid Injection", image: "/images/home/injection-knee-cropped-1024x689-1.jpeg", desc: "Image-guided joint and spinal injections." },
+  { path: "/services/chiropractic/",         title: "Chiropractic",     image: "/images/home/DSC_0054-1-1024x684.jpg",              desc: "SPINMED and Sigma systems for precise spinal alignment." },
+  { path: "/services/brain-stimulation/",    title: "Brain Stimulation", image: "/images/home/tms-treatment-768.jpg",               desc: "TMS and tDCS for stroke, migraine, depression, and more." },
+  { path: "/services/radiofrequency/",       title: "Radiofrequency",   image: "/images/home/g4-radiofrequency-generator-161964_1b.jpg", desc: "Minimally invasive nerve neurotomy for chronic pain." },
+  { path: "/services/steroid-injection/",    title: "Steroid Injection", image: "/images/home/injection-knee-cropped-1024x689-1.jpeg", desc: "Image-guided joint and spinal injections." },
 ];
 ---
 
@@ -48,8 +69,8 @@ const FEATURED_SERVICES = [
           the latest evidence-based techniques.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="/contact/">Call Us</a>
-          <a class="btn btn-ghost" href="/doctors/">Meet the doctors</a>
+          <a class="btn btn-primary" href={localizedHref("/contact/", locale)}>Call Us</a>
+          <a class="btn btn-ghost" href={localizedHref("/doctors/", locale)}>Meet the doctors</a>
         </div>
       </div>
 
@@ -80,11 +101,11 @@ const FEATURED_SERVICES = [
     <div class="container">
       <header class="section-head">
         <h2>Common conditions we treat</h2>
-        <p>A snapshot — see the full A–Z index in <a href="/treatments/">What We Treat</a>.</p>
+        <p>A snapshot — see the full A–Z index in <a href={localizedHref("/treatments/", locale)}>What We Treat</a>.</p>
       </header>
       <div class="condition-grid">
         {FEATURED_CONDITIONS.map((c) => (
-          <a class="condition-card" href={c.href}>
+          <a class="condition-card" href={localizedHref(c.path, locale)}>
             <div class="thumb">
               <img src={c.image} alt={c.title} loading="lazy" />
             </div>
@@ -93,7 +114,7 @@ const FEATURED_SERVICES = [
         ))}
       </div>
       <div class="section-cta">
-        <a class="btn btn-ghost" href="/treatments/">View all conditions →</a>
+        <a class="btn btn-ghost" href={localizedHref("/treatments/", locale)}>View all conditions →</a>
       </div>
     </div>
   </section>
@@ -107,7 +128,7 @@ const FEATURED_SERVICES = [
       </header>
       <div class="service-grid">
         {FEATURED_SERVICES.map((s) => (
-          <a class="service-card" href={s.href}>
+          <a class="service-card" href={localizedHref(s.path, locale)}>
             <div class="thumb wide">
               <img src={s.image} alt={s.title} loading="lazy" />
             </div>
@@ -131,7 +152,7 @@ const FEATURED_SERVICES = [
         </header>
         <div class="doctor-grid">
           {doctors.map((d) => (
-            <a class="doctor-card card" href={`/doctors/${topicOf(d.id)}/`}>
+            <a class="doctor-card card" href={localizedHref(`/doctors/${topicOf(d.id)}/`, locale)}>
               {d.data.photo && <img class="doctor-photo" src={d.data.photo} alt={d.data.fullName} loading="lazy" />}
               <h3>{d.data.fullName || d.data.title}</h3>
               {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}

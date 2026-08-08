@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, pickForLocale, dictFor } from "../../../../lib/i18n";
+import { topicOf, pickForLocale, dictFor, localizedHref, currentLocale } from "../../../../lib/i18n";
 
 const t = dictFor("ar");
 
@@ -31,6 +31,7 @@ export async function getStaticPaths() {
 }
 
 const { category, entries, categoryEntry } = Astro.props;
+const locale = currentLocale(Astro);
 const sorted = entries.sort(
   (a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title),
 );
@@ -41,13 +42,13 @@ const categoryTitle = categoryEntry?.data.title || category.split("-").map((w) =
 <BaseLayout title={`${categoryTitle} — مركز العمران الطبي`}>
   <div class="container page">
     <header class="page-head">
-      <a class="back" href="/ar/services/">← {t["nav.services"]}</a>
+      <a class="back" href={localizedHref("/services/", locale)}>← {t["nav.services"]}</a>
       <h1>{categoryTitle}</h1>
     </header>
 
     <div class="grid">
       {sorted.map((entry) => (
-        <a class="card entry" href={`/ar/services/${topicOf(entry.id)}/`}>
+        <a class="card entry" href={localizedHref(`/services/${topicOf(entry.id)}/`, locale)}>
           <h3>{entry.data.title}</h3>
           {entry.data.description && <p>{entry.data.description}</p>}
         </a>

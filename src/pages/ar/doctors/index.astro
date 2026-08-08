@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, pickForLocale, dictFor } from "../../../lib/i18n";
+import { topicOf, pickForLocale, dictFor, localizedHref, currentLocale } from "../../../lib/i18n";
+
+const locale = currentLocale(Astro);
 
 const t = dictFor("ar");
 const all = await getCollection("doctors");
@@ -21,7 +23,7 @@ const doctors = topics
 
     <div class="doctor-grid">
       {doctors.map((d) => (
-        <a class="doctor-card card" href={`/ar/doctors/${topicOf(d.id)}/`}>
+        <a class="doctor-card card" href={localizedHref(`/doctors/${topicOf(d.id)}/`, locale)}>
           {d.data.photo && <img class="photo" src={d.data.photo} alt={d.data.fullName} />}
           <h3>{d.data.fullName || d.data.title}</h3>
           {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}

@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, dictFor, pickForLocale } from "../../../lib/i18n";
+import { topicOf, dictFor, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+
+const locale = currentLocale(Astro);
 
 const t = dictFor("ar");
 const all = await getCollection("services");
@@ -48,13 +50,13 @@ const categories = [...byCategory.entries()]
     </header>
     <div class="grid">
       {categories.map((c) => (
-        <a class="card cat" href={`/ar/services/${c.slug}/`}>
+        <a class="card cat" href={localizedHref(`/services/${c.slug}/`, locale)}>
           <h3>{c.pretty}</h3>
           <span class="count">{c.count}</span>
         </a>
       ))}
       {topLevel.map((e) => (
-        <a class="card cat" href={`/ar/services/${topicOf(e.id)}/`}>
+        <a class="card cat" href={localizedHref(`/services/${topicOf(e.id)}/`, locale)}>
           <h3>{e.data.title}</h3>
         </a>
       ))}

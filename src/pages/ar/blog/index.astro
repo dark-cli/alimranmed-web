@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, pickForLocale } from "../../../lib/i18n";
+import { topicOf, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+
+const locale = currentLocale(Astro);
 
 const all = await getCollection("posts");
 const topics = Array.from(new Set(all.map((e) => topicOf(e.id))));
@@ -17,7 +19,7 @@ const posts = topics
     <header class="page-head"><h1>المدونة</h1></header>
     <div class="post-list">
       {posts.map((p) => (
-        <a class="post-card card" href={`/ar/blog/${topicOf(p.id)}/`}>
+        <a class="post-card card" href={localizedHref(`/blog/${topicOf(p.id)}/`, locale)}>
           <h3>{p.data.title}</h3>
           {p.data.description && <p>{p.data.description}</p>}
           {p.data.publishedAt && (

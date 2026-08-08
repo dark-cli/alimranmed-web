@@ -2,7 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 import TranslationBanner from "../../components/TranslationBanner.astro";
-import { topicOf, pickForLocale } from "../../lib/i18n";
+import { topicOf, pickForLocale, localizedHref, currentLocale } from "../../lib/i18n";
+
+const locale = currentLocale(Astro);
 
 const all = await getCollection("pages");
 const aboutTopics = ["about/mission", "about/vision", "about/values"];
@@ -31,7 +33,7 @@ const heroCopy = anyFallback
       eyebrow: "About Us",
       h1: "Care that listens, medicine that thinks.",
       lede: "Alimran Medical Center is a specialised neurology and musculoskeletal clinic in Basra, Iraq. Our multidisciplinary team combines consultant-led surgical expertise with modern rehabilitation, brain-stimulation, and pain-management techniques.",
-      cta: { label: "See the team", href: "/ar/doctors/" },
+      cta: { label: "See the team", href: localizedHref("/doctors/", locale) },
       ctaTitle: "Meet our doctors",
       ctaSub: "Board-certified consultants with decades of combined experience.",
     }
@@ -40,7 +42,7 @@ const heroCopy = anyFallback
       eyebrow: "من نحن",
       h1: "رعاية تُصغي إلى المريض، وطبٌ يفكر.",
       lede: "مركز العمران الطبي عيادة متخصصة في الأعصاب والجهاز العضلي الهيكلي في البصرة، العراق. فريقنا متعدد التخصصات يجمع خبرة الاستشاريين الجراحية مع أحدث أساليب التأهيل والتحفيز الدماغي وإدارة الألم.",
-      cta: { label: "تعرّف على الفريق", href: "/ar/doctors/" },
+      cta: { label: "تعرّف على الفريق", href: localizedHref("/doctors/", locale) },
       ctaTitle: "أطباؤنا",
       ctaSub: "استشاريون معتمدون بخبرة عقود متراكمة.",
     };

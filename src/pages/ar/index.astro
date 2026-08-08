@@ -2,7 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { CONTACT } from "../../consts";
-import { topicOf, pickForLocale } from "../../lib/i18n";
+import { topicOf, pickForLocale, localizedHref, currentLocale } from "../../lib/i18n";
+
+const locale = currentLocale(Astro);
 
 // Doctors — prefer AR entry, fallback to EN (with name printed as-is)
 const allDoctors = await getCollection("doctors");
@@ -16,21 +18,21 @@ const doctors = doctorTopics
 const INTRO_VIDEO_ID = "m53F8E6VKFA";
 
 const FEATURED_CONDITIONS = [
-  { title: "ألم الظهر",         href: "/ar/treatments/back-pain/",      image: "/images/home/Back-Pain.jpg" },
-  { title: "ألم الرقبة",        href: "/ar/treatments/neck-pain/",      image: "/images/home/SNHS-neck-pain-1.jpg" },
-  { title: "الكتف المتجمدة",     href: "/ar/treatments/frozen-shoulder/", image: "/images/home/1-1.jpg" },
-  { title: "الإصابات الرياضية",  href: "/ar/treatments/sports-injuries/", image: "/images/home/Can-Osteopathy-help-you-with-your-sport-injury-1.jpg" },
-  { title: "الألم العضلي الليفي", href: "/ar/treatments/fibromyalgia/",   image: "/images/home/Fibromyalgia.png" },
-  { title: "إصابة الرأس",        href: "/ar/treatments/head-injury/",    image: "/images/home/Global-brain-injury-recovery-e1577492333798.jpg" },
-  { title: "التهاب مفصل الورك", href: "/ar/treatments/arthritis-of-the-hip/", image: "/images/home/1-4.jpg" },
-  { title: "شوكة الكعب",         href: "/ar/treatments/heel-spur/",      image: "/images/home/frozen-shoulder51.jpg" },
+  { title: "ألم الظهر",         path: "/treatments/back-pain/",      image: "/images/home/Back-Pain.jpg" },
+  { title: "ألم الرقبة",        path: "/treatments/neck-pain/",      image: "/images/home/SNHS-neck-pain-1.jpg" },
+  { title: "الكتف المتجمدة",     path: "/treatments/frozen-shoulder/", image: "/images/home/1-1.jpg" },
+  { title: "الإصابات الرياضية",  path: "/treatments/sports-injuries/", image: "/images/home/Can-Osteopathy-help-you-with-your-sport-injury-1.jpg" },
+  { title: "الألم العضلي الليفي", path: "/treatments/fibromyalgia/",   image: "/images/home/Fibromyalgia.png" },
+  { title: "إصابة الرأس",        path: "/treatments/head-injury/",    image: "/images/home/Global-brain-injury-recovery-e1577492333798.jpg" },
+  { title: "التهاب مفصل الورك", path: "/treatments/arthritis-of-the-hip/", image: "/images/home/1-4.jpg" },
+  { title: "شوكة الكعب",         path: "/treatments/heel-spur/",      image: "/images/home/frozen-shoulder51.jpg" },
 ];
 
 const FEATURED_SERVICES = [
-  { href: "/ar/services/chiropractic/",      title: "الكيروبراكتيك",     image: "/images/home/DSC_0054-1-1024x684.jpg",              desc: "أنظمة SPINMED وسيغما للمعالجة الدقيقة للعمود الفقري." },
-  { href: "/ar/services/brain-stimulation/", title: "التحفيز الدماغي",   image: "/images/home/tms-treatment-768.jpg",               desc: "TMS وtDCS للسكتة الدماغية والصداع النصفي والاكتئاب وأكثر." },
-  { href: "/ar/services/radiofrequency/",    title: "الترددات الراديوية", image: "/images/home/g4-radiofrequency-generator-161964_1b.jpg", desc: "تدخل جراحي بالحد الأدنى لعلاج الألم المزمن." },
-  { href: "/ar/services/steroid-injection/", title: "حقن الكورتيزون",    image: "/images/home/injection-knee-cropped-1024x689-1.jpeg", desc: "حقن موجّهة بالتصوير للمفاصل والعمود الفقري." },
+  { path: "/services/chiropractic/",      title: "الكيروبراكتيك",     image: "/images/home/DSC_0054-1-1024x684.jpg",              desc: "أنظمة SPINMED وسيغما للمعالجة الدقيقة للعمود الفقري." },
+  { path: "/services/brain-stimulation/", title: "التحفيز الدماغي",   image: "/images/home/tms-treatment-768.jpg",               desc: "TMS وtDCS للسكتة الدماغية والصداع النصفي والاكتئاب وأكثر." },
+  { path: "/services/radiofrequency/",    title: "الترددات الراديوية", image: "/images/home/g4-radiofrequency-generator-161964_1b.jpg", desc: "تدخل جراحي بالحد الأدنى لعلاج الألم المزمن." },
+  { path: "/services/steroid-injection/", title: "حقن الكورتيزون",    image: "/images/home/injection-knee-cropped-1024x689-1.jpeg", desc: "حقن موجّهة بالتصوير للمفاصل والعمود الفقري." },
 ];
 ---
 
@@ -47,8 +49,8 @@ const FEATURED_SERVICES = [
           التقنيات المبنية على الأدلة.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="/ar/contact/">اتصل بنا</a>
-          <a class="btn btn-ghost" href="/ar/doctors/">تعرّف على الأطباء</a>
+          <a class="btn btn-primary" href={localizedHref("/contact/", locale)}>اتصل بنا</a>
+          <a class="btn btn-ghost" href={localizedHref("/doctors/", locale)}>تعرّف على الأطباء</a>
         </div>
       </div>
 
@@ -77,11 +79,11 @@ const FEATURED_SERVICES = [
     <div class="container">
       <header class="section-head">
         <h2>الحالات الأكثر شيوعاً</h2>
-        <p>لمحة عن أهم الحالات — الفهرس الكامل في <a href="/ar/treatments/">ما نعالج</a>.</p>
+        <p>لمحة عن أهم الحالات — الفهرس الكامل في <a href={localizedHref("/treatments/", locale)}>ما نعالج</a>.</p>
       </header>
       <div class="condition-grid">
         {FEATURED_CONDITIONS.map((c) => (
-          <a class="condition-card" href={c.href}>
+          <a class="condition-card" href={localizedHref(c.path, locale)}>
             <div class="thumb">
               <img src={c.image} alt={c.title} loading="lazy" />
             </div>
@@ -90,7 +92,7 @@ const FEATURED_SERVICES = [
         ))}
       </div>
       <div class="section-cta">
-        <a class="btn btn-ghost" href="/ar/treatments/">عرض جميع الحالات ←</a>
+        <a class="btn btn-ghost" href={localizedHref("/treatments/", locale)}>عرض جميع الحالات ←</a>
       </div>
     </div>
   </section>
@@ -104,7 +106,7 @@ const FEATURED_SERVICES = [
       </header>
       <div class="service-grid">
         {FEATURED_SERVICES.map((s) => (
-          <a class="service-card" href={s.href}>
+          <a class="service-card" href={localizedHref(s.path, locale)}>
             <div class="thumb wide">
               <img src={s.image} alt={s.title} loading="lazy" />
             </div>
@@ -128,7 +130,7 @@ const FEATURED_SERVICES = [
         </header>
         <div class="doctor-grid">
           {doctors.map((d) => (
-            <a class="doctor-card card" href={`/ar/doctors/${topicOf(d.id)}/`}>
+            <a class="doctor-card card" href={localizedHref(`/doctors/${topicOf(d.id)}/`, locale)}>
               {d.data.photo && <img class="doctor-photo" src={d.data.photo} alt={d.data.fullName} loading="lazy" />}
               <h3>{d.data.fullName || d.data.title}</h3>
               {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}
