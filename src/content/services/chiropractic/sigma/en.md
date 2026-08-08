@@ -3,7 +3,7 @@ title: "Sigma"
 description: "We help people feel better, by resetting the spine and nerves of the body using a computerized medical device that"
 category: "chiropractic"
 order: 999
-legacyUrl: "https://alimranmed.com/sigma/"
+legacyUrl: "/services/chiropractic/sigma/"
 source: "legacy-wp"
 ---
 ![](/images/legacy/2019/07/Sigma-7R-768x511-300x200.jpg)

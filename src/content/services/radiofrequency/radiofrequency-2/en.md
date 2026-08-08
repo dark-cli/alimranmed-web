@@ -3,7 +3,7 @@ title: "Radiofrequency"
 description: "Radiofrequency Ablation Radiofrequency neurotomy (also called radiofrequency ablation or lesioning) is a minimally invasive procedure that can provide lasting relief"
 category: "radiofrequency"
 order: 999
-legacyUrl: "https://alimranmed.com/radiofrequency-2/"
+legacyUrl: "/services/radiofrequency/"
 source: "legacy-wp"
 ---
 ## **Radiofrequency Ablation**

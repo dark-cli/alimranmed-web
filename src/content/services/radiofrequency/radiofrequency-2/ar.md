@@ -4,7 +4,7 @@ title: "استئصال الترددات الراديوية"
 description: "استئصال الترددات الراديوية - استئصال الترددات الراديوية العصبي هو إجراء طفيف التوغل يمكن أن يوفر تخفيفاً دائماً"
 category: "الترددات الراديوية"
 order: 999
-legacyUrl: "https://alimranmed.com/radiofrequency-2/"
+legacyUrl: "/services/radiofrequency/"
 source: "translated-by-llm"
 ---
 

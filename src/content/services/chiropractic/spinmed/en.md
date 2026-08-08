@@ -3,7 +3,7 @@ title: "SPIN MED"
 description: "Back Pain  Neck Pain can be managed through traditional treatment options Such as physical therapy, chiropractic care, or pain management,"
 category: "chiropractic"
 order: 999
-legacyUrl: "https://alimranmed.com/spinmed/"
+legacyUrl: "/services/chiropractic/spinmed/"
 source: "legacy-wp"
 ---
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=Yd57CXPpf_o)

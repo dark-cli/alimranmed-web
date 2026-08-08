@@ -69,20 +69,20 @@ order: 999
 
 يتحسن الالتهاب الكيسي بشكل عام بدون علاج. يمكن للإجراءات التحفظية، مثل الراحة والثلج وتناول مسكنات الألم، أن تخفف من الشعور بعدم الراحة. إذا لم تنجح الإجراءات التحفظية، في مركز العمران ننصح بالعلاجات التالية:
 
-1.  [المعالجة بالترددات الراديوية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%b1%d8%af%d8%af%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d8%a7%d8%af%d9%8a%d9%88%d9%8a%d8%a9/) [Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
-2.  [المعالجة بحقن البوتوكس](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a8%d9%88%d8%aa%d9%83%d8%b3/)
-3.  [المعالجة بالابر الصينية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a5%d8%a8%d8%b1-%d8%a7%d9%84%d8%b5%d9%8a%d9%86%d9%8a%d9%87/)
-4.  [المعالجة بالاوزون](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a3%d9%88%d8%b2%d9%88%d9%86/)
-5.  [حقن البرولوثربي Prolotherapy](https://ar.alimranmed.com/%d8%b7%d8%a8-%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af/)
-6.  [سيكما](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b3%d9%8a%d9%83%d9%85%d8%a7/) [Sigma](http://alimranmed.com/sigma/)
+1.  [المعالجة بالترددات الراديوية](/services/radiofrequency/) [Pulsed radiofrequency](/services/radiofrequency/)
+2.  [المعالجة بحقن البوتوكس](/services/botox/)
+3.  [المعالجة بالابر الصينية](/services/acupuncture/)
+4.  [المعالجة بالاوزون](/services/ozone-therapy/)
+5.  [حقن البرولوثربي Prolotherapy](/services/regenerative-medicine/prolotherapy/)
+6.  [سيكما](/services/chiropractic/sigma//)
 7.  حقن الستيرود
-8.  [العلاج الفيزيائي (العلاج الطبيعي)](https://ar.alimranmed.com/physiotherapy/)
+8.  [العلاج الفيزيائي (العلاج الطبيعي)](/services/physiotherapy/)
 
--   [التحفيز الكهربائي](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d9%83%d9%87%d8%b1%d8%a8%d8%a7%d8%a6%d9%8a/)
--   [المعالجة بالموجات الطويلة والقصيرة](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d9%88%d8%ac%d8%a7%d8%aa-%d8%a7%d9%84%d9%82%d8%b5%d9%8a%d8%b1%d8%a9/)
--   [الليزر البارد](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%84%d9%8a%d8%b2%d8%b1/)
--   [المعالجة بالموجات فوق الصوتية (السونار)](https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/)
+-   [التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)
+-   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
+-   [الليزر البارد](/services/physiotherapy/laser-therapy/)
+-   [المعالجة بالموجات فوق الصوتية (السونار)](/services/physiotherapy/ultrasound-therapy/)
 -   المعالجة بالموجات المغناطيسية
--   [تمارين رياضية](https://ar.alimranmed.com/exercises/)
+-   [تمارين رياضية](/services/exercises/)
 
 **الجراحة :**في بعض الأحيان يجب تصريف الجراب الملتهب عن طريق الجراحة ولكن الاستئصال الجراحي للجراب المُصاب لا يكون لازمًا إلا في حالات نادرة.

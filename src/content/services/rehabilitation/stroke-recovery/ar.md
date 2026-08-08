@@ -57,7 +57,7 @@ order: 999
 
 -   **(non-invasive brain stimulation ([**rtms**](https://ar.alimranmed.com/%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba/)[جهاز تحفيز خلايا الدماغ](https://ar.alimranmed.com/%d8%aa%d8%b7%d8%a8%d9%8a%d9%82-%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d9%85%d8%ba%d9%86%d8%a7%d8%b7%d9%8a%d8%b3%d9%8a-%d8%b9%d8%a8%d8%b1-%d8%a7%d9%84%d8%ac%d9%85%d8%ac%d9%85%d8%a9/)**
 -   **تدخلات غير جراحيه لتحفيز النخاع الشوكي epidural stimulation**
--   **جهاز [سحب ميكانيكي للعمود الفقري](https://ar.alimranmed.com/2019/05/04/%d8%aa%d9%82%d9%86%d9%8a%d8%a9-spin-med-%d8%aa%d8%b3%d8%a7%d8%b9%d8%af%d9%83-%d8%a7%d9%84%d8%a7%d9%86-%d8%b9%d9%84%d9%89-%d8%aa%d9%82%d9%88%d9%8a%d9%85-%d8%b9%d9%85%d9%88%d8%af%d9%83-%d8%a7%d9%84/) المتعرض لل[انزلاقات الغضروفية](https://ar.alimranmed.com/%d9%81%d8%aa%d9%82-%d8%a7%d9%84%d9%82%d8%b1%d8%b5-%d8%b9%d9%86%d9%82-%d8%a7%d9%84%d8%b1%d8%ad%d9%85%d8%8c-%d8%a7%d9%84%d8%b5%d8%af%d8%b1%d8%8c-%d8%a3%d8%b3%d9%81%d9%84-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/) وضغط العصب والم الأطراف السفلية  SPIN MED**  
+-   **جهاز [سحب ميكانيكي للعمود الفقري](/services/chiropractic/spinmed/) المتعرض لل[انزلاقات الغضروفية](/treatments/herniated-disc/) وضغط العصب والم الأطراف السفلية  SPIN MED**  
 -   **[VR](https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d8%a7%d9%82%d8%b9-%d8%a7%d9%84%d8%a7%d9%81%d8%aa%d8%b1%d8%a7%d8%b6%d9%8a-%d9%84%d9%84%d8%b3%d9%83%d8%aa%d8%a9-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba%d9%8a%d8%a9/) برامج حاسوبيه (العاب الإلكترونية) لعالم الافتراضي يساعد على تحريك الجزء المصاب.**
 -   ![](https://ar.alimranmed.com/wp-content/uploads/2019/11/Virtual-Reality-Gives-People-60-the-Ability-to-Travel_114205175-750x485-300x194.jpg)![](https://ar.alimranmed.com/wp-content/uploads/2019/11/images-3.jpg)
 

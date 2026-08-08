@@ -15,11 +15,11 @@ order: 999
 
 1.  العلاج الطبيعي 
 
-[التحفيز الكهربائي](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d9%83%d9%87%d8%b1%d8%a8%d8%a7%d8%a6%d9%8a/)  
+[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)  
 [الموجة القصيرة والطويلة](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d9%88%d8%ac%d8%a7%d8%aa-%d8%a7%d9%84%d9%82%d8%b5%d9%8a%d8%b1%d8%a9/)  
 [العلاج بالليزر](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%84%d9%8a%d8%b2%d8%b1/)  
 [العلاج بالموجات فوق الصوتية](https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/)  
-[تمارين](https://ar.alimranmed.com/exercises/)   
+[تمارين](/services/exercises/)   
 
  العلاج بتقويم العمود الفقري
 
@@ -31,9 +31,9 @@ order: 999
     كتلة العقدة النجمية  
     الإحصار القطني الودي
 3.  [حقن الأوزون](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a3%d9%88%d8%b2%d9%88%d9%86-%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a7%d9%84%d9%85%d9%81%d8%a7%d8%b5%d9%84/)
-4.  [التردد الراديوي النبضي](https://ar.alimranmed.com/2020/04/28/%d8%a7%d9%87%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d8%aa%d8%b1%d8%af%d8%af%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d8%a7%d8%af%d9%8a%d9%88%d9%8a%d8%a9/)
+4.  [التردد الراديوي النبضي](/services/radiofrequency/)
 5.  [حقن البوتوكس®](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a8%d9%88%d8%aa%d9%83%d8%b3/)
 6.  [العلاج بالإبر](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a5%d8%a8%d8%b1-%d8%a7%d9%84%d8%b5%d9%8a%d9%86%d9%8a%d9%87/)
-7.  [علاج برولوثيرابي](https://ar.alimranmed.com/2020/05/06/%d8%b7%d8%a8-%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af/)
+7.  [علاج برولوثيرابي](/services/regenerative-medicine/prolotherapy/)
 8.  [تحفيز الحبل الشوكي](https://ar.alimranmed.com/%d8%a5%d8%b9%d8%a7%d8%af%d8%a9-%d8%aa%d8%a3%d9%87%d9%8a%d9%84-%d8%a7%d9%84%d8%ad%d8%a8%d9%84-%d8%a7%d9%84%d8%b4%d9%88%d9%83%d9%8a/)
 9.  مضخة باكلوفين داخل القراب

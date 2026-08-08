@@ -38,15 +38,15 @@ order: 999
 
 يمكن عادةً علاج تشنجات العضلات بإجراءات الرعاية الذاتية. يمكن أن يعلم الطبيب المريض ممارسة تمارين الإطالة والتي يمكن أن تساعد في تقليل فرص الإصابة بتشنجات العضلات. كما أن ضمان الحصول على التروية اللازمة يمكن أن يفيد في العلاج. بالنسبة للتشنجات المتكررة التي تؤرِّق النوم، في مركز العمران ننصح بالعلاجات التالية:
 
-[المعالجة بالترددات الراديوية Pulsed radiofrequency](https://ar.alimranmed.com/2020/04/28/%d8%a7%d9%87%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d8%aa%d8%b1%d8%af%d8%af%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d8%a7%d8%af%d9%8a%d9%88%d9%8a%d8%a9/)
+[المعالجة بالترددات الراديوية Pulsed radiofrequency](/services/radiofrequency/)
 
-[المعالجة بحقن البوتوكس](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a8%d9%88%d8%aa%d9%83%d8%b3/)
+[المعالجة بحقن البوتوكس](/services/botox/)
 
-[المعالجة بالابر الصينية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a5%d8%a8%d8%b1-%d8%a7%d9%84%d8%b5%d9%8a%d9%86%d9%8a%d9%87/)
+[المعالجة بالابر الصينية](/services/acupuncture/)
 
-المعا[لجة بالاوزون](https://ar.alimranmed.com/2020/05/10/%d8%a7%d9%84%d8%a3%d9%88%d8%b2%d9%88%d9%86/)
+المعا[لجة بالاوزون](/services/ozone-therapy/)
 
-[حقن البرولوثربيProlotherapy](https://ar.alimranmed.com/%d8%b7%d8%a8-%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af/)
+[حقن البرولوثربيProlotherapy](/services/regenerative-medicine/prolotherapy/)
 
 [سباينمد SpineMED® system](https://ar.alimranmed.com/%d8%b3%d8%a8%d8%a7%d9%8a%d9%86%d9%85%d8%af/)
 
@@ -56,20 +56,20 @@ order: 999
 
 [تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%aa%d9%8a%d8%a7%d8%b1-%d8%a7%d9%84%d9%85%d8%a8%d8%a7%d8%b4%d8%b1-%d9%84%d9%84%d8%af%d9%85%d8%a7%d8%ba/)
 
-[تحفيز النخاع الشوكي Spinal cord stimulation](https://ar.alimranmed.com/2020/05/05/%d9%81%d8%aa%d8%ad-%d8%a7%d9%84%d8%a7%d9%84%d8%aa%d8%b5%d8%a7%d9%82-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%ac%d8%a7%d9%81%d9%8a%d8%a9-%d9%85%d8%b9-%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%ad%d8%a8/)
+[تحفيز النخاع الشوكي Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 
-[زرع مضخة دوائية](https://ar.alimranmed.com/2020/12/21/%d8%a7%d9%84%d9%85%d8%b6%d8%ae%d8%a9-%d8%a7%d9%84%d8%af%d9%88%d8%a7%d8%a6%d9%8a%d8%a9/)
+[زرع مضخة دوائية](/services/surgery/intrathecal-pump/)
 
 [حقن الستيرود](https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af/)
 
 -   [حقن نقاط الزناد](https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d9%86%d9%82%d8%b7%d8%a9-%d8%a7%d9%84%d8%b2%d9%86%d8%a7%d8%af/)
 -   حقن فوق الجافية
 
-[العلاج الفيزيائي (العلاج الطبيعي)](https://ar.alimranmed.com/physiotherapy/)
+[العلاج الفيزيائي (العلاج الطبيعي)](/services/physiotherapy/)
 
--   [التحفيز الكهربائي](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d9%83%d9%87%d8%b1%d8%a8%d8%a7%d8%a6%d9%8a/)
--   [المعالجة بالموجات الطويلة والقصيرة](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d9%88%d8%ac%d8%a7%d8%aa-%d8%a7%d9%84%d9%82%d8%b5%d9%8a%d8%b1%d8%a9/)
--   [الليزر البارد](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%84%d9%8a%d8%b2%d8%b1/)
--   [المعالجة بالموجات فوق الصوتية (السونار)](https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/)
+-   [التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)
+-   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
+-   [الليزر البارد](/services/physiotherapy/laser-therapy/)
+-   [المعالجة بالموجات فوق الصوتية (السونار)](/services/physiotherapy/ultrasound-therapy/)
 -   [المعالجة بالموجات المغناطيسية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d8%ac%d8%a7%d9%84-%d8%a7%d9%84%d9%85%d8%ba%d9%86%d8%a7%d8%b7%d9%8a%d8%b3%d9%8a/)
--   [تمارين رياضية](https://ar.alimranmed.com/exercises/)
+-   [تمارين رياضية](/services/exercises/)

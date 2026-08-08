@@ -47,15 +47,15 @@ order: 999
 
 العلاج غير العملية في مركز العمران ننصح بالعلاجات التالية:
 
-[العلاج الفيزيائي (العلاج الطبيعي)](https://ar.alimranmed.com/physiotherapy/)
+[العلاج الفيزيائي (العلاج الطبيعي)](/services/physiotherapy/)
 
--   [التحفيز الكهربائي](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d9%83%d9%87%d8%b1%d8%a8%d8%a7%d8%a6%d9%8a/)
--   [المعالجة بالموجات الطويلة والقصيرة](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d9%88%d8%ac%d8%a7%d8%aa-%d8%a7%d9%84%d9%82%d8%b5%d9%8a%d8%b1%d8%a9/)
--   [الليزر البارد](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%84%d9%8a%d8%b2%d8%b1/)
+-   [التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)
+-   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
+-   [الليزر البارد](/services/physiotherapy/laser-therapy/)
 -   [المعالجة بالمجات فوق الصوتية (السونار)](https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/)
--   [تمارين رياضية](https://ar.alimranmed.com/exercises/)
+-   [تمارين رياضية](/services/exercises/)
 
--   [سيكما](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b3%d9%8a%d9%83%d9%85%d8%a7/) [Sigma](http://alimranmed.com/sigma/)
+-   [سيكما](/services/chiropractic/sigma//)
 
 حقن الستيرود
 
@@ -64,12 +64,12 @@ order: 999
 
 المعالجة بالاوزون
 
-[المعالجة بالترددات الراديوية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%b1%d8%af%d8%af%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d8%a7%d8%af%d9%8a%d9%88%d9%8a%d8%a9/) [Pulsed radiofrequency](http://alimranmed.com/radiofrequency-2/)
+[المعالجة بالترددات الراديوية](/services/radiofrequency/) [Pulsed radiofrequency](/services/radiofrequency/)
 
-[المعالجة بحقن البوتوكس](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a8%d9%88%d8%aa%d9%83%d8%b3/)
+[المعالجة بحقن البوتوكس](/services/botox/)
 
-[المعالجة بالابر الصينية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%a5%d8%a8%d8%b1-%d8%a7%d9%84%d8%b5%d9%8a%d9%86%d9%8a%d9%87/)
+[المعالجة بالابر الصينية](/services/acupuncture/)
 
 حقن البرولوثربي Prolotherapy
 
-[تحفيز مغناطيسي عبر الجمجمة](https://ar.alimranmed.com/%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
