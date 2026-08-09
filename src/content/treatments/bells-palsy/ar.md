@@ -1,7 +1,7 @@
 ---
 title: "شلل الوجه النصفي"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d9%88%d8%ac%d9%87-%d8%a7%d9%84%d9%86%d8%b5%d9%81%d9%8a"
+legacyUrl: "%%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d9%88%d8%ac%d9%87-%d8%a7%d9%84%d9%86%d8%b5%d9%81%d9%8a"
 category: "الدماغ"
 order: 999
 publishedAt: "2021-01-16T15:50:53"
@@ -70,8 +70,8 @@ publishedAt: "2021-01-16T15:50:53"
 4.  [المعالجة بالاوزون](/services/ozone-therapy/)
 5.  [حقن البرولوثربي Prolotherapy](/services/regenerative-medicine/prolotherapy/)
 6.  [سيكما](/services/chiropractic/sigma//)
-7.  [تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
-8.  [تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+7.  [تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
+8.  [تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 9.  [العلاج الفيزيائي (العلاج الطبيعي)](/services/physiotherapy/)
 
 -   [التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)

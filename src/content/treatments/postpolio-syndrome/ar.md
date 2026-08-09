@@ -1,12 +1,12 @@
 ---
 title: "شلل الأطفال"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9-%d9%85%d8%a7%d8%a8%d8%b9%d8%af-%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84"
+legacyUrl: "%%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9-%d9%85%d8%a7%d8%a8%d8%b9%d8%af-%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84"
 category: "الأطفال"
 order: 999
 publishedAt: "2020-04-09T11:20:15"
 ---
-![](https://ar.alimranmed.com/wp-content/uploads/2020/04/imatge-2-240x300.png)![](https://ar.alimranmed.com/wp-content/uploads/2020/04/54fcfbefb0b21d8c1acc74980729584a-258x300.jpg)
+
 
 **متلازمة شلل الأطفال هو مرض عصبي يسببه فيروس شلل الأطفال.**
 
@@ -36,7 +36,7 @@ publishedAt: "2020-04-09T11:20:15"
 -   [التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)
 -   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
 -   [الليزر البارد](/services/physiotherapy/laser-therapy/)
--   [المعالجة بالمجات فوق الصوتية (السونار)](https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/)
+-   [المعالجة بالمجات فوق الصوتية (السونار)](%%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1)
 -   [تمارين رياضية](/services/exercises/)
 
 تقويم العمود الفقري
@@ -54,7 +54,7 @@ publishedAt: "2020-04-09T11:20:15"
 
 حقن البرولوثربي Prolotherapy
 
-[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
 تحفيز النخاع الشوكي Spinal cord stimulation
 

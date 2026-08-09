@@ -1,7 +1,7 @@
 ---
 title: "أورام الدماغ"
 source: "ai-draft"
-legacyUrl: "https://ar.alimranmed.com/%d9%88%d8%b1%d9%85-%d9%81%d9%8a-%d8%a7%d9%84%d9%85%d8%ae"
+legacyUrl: "%%d9%88%d8%b1%d9%85-%d9%81%d9%8a-%d8%a7%d9%84%d9%85%d8%ae"
 category: "الدماغ"
 order: 999
 ---

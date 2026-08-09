@@ -1,7 +1,7 @@
 ---
 title: "عيارات نارية في الجمجمة"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%b9%d9%8a%d8%a7%d8%b1%d8%a7%d8%aa-%d9%86%d8%a7%d8%b1%d9%8a%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%ac%d9%85%d8%ac%d9%85%d8%a9"
+legacyUrl: "%%d8%b9%d9%8a%d8%a7%d8%b1%d8%a7%d8%aa-%d9%86%d8%a7%d8%b1%d9%8a%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%ac%d9%85%d8%ac%d9%85%d8%a9"
 category: "الدماغ"
 order: 999
 ---
@@ -36,7 +36,7 @@ order: 999
 -   [التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)
 -   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
 -   [الليزر البارد](/services/physiotherapy/laser-therapy/)
--   [المعالجة بالمجات فوق الصوتية (السونار)](https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/)
+-   [المعالجة بالمجات فوق الصوتية (السونار)](%%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1)
 -   [تمارين رياضية](/services/exercises/)
 
 [سيكما](/services/chiropractic/sigma//)
@@ -55,4 +55,4 @@ order: 999
 
 حقن البرولوثربي Prolotherapy
 
-[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)

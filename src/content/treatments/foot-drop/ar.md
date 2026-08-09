@@ -1,7 +1,7 @@
 ---
 title: "تدلي القدم"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%aa%d8%af%d9%84%d9%8a-%d8%a7%d9%84%d9%82%d8%af%d9%85"
+legacyUrl: "%%d8%aa%d8%af%d9%84%d9%8a-%d8%a7%d9%84%d9%82%d8%af%d9%85"
 category: "الألم"
 order: 999
 ---

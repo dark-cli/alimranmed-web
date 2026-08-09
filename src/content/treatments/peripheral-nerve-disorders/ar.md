@@ -1,7 +1,7 @@
 ---
 title: "الاعتلال العصبي المحيطي"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a7%d8%b9%d8%aa%d9%84%d8%a7%d9%84-%d8%a7%d9%84%d8%b9%d8%b5%d8%a8%d9%8a-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7%d9%8a"
+legacyUrl: "%%d8%a7%d9%84%d8%a7%d8%b9%d8%aa%d9%84%d8%a7%d9%84-%d8%a7%d9%84%d8%b9%d8%b5%d8%a8%d9%8a-%d8%a7%d9%84%d9%85%d8%ad%d9%8a%d8%b7%d9%8a"
 category: "الألم"
 order: 999
 ---
@@ -83,9 +83,9 @@ order: 999
 
 [تحفيز النخاع الشوكي Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 
-[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
-[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 
 حقن الستيرود
 

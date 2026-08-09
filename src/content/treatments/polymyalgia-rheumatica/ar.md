@@ -1,11 +1,11 @@
 ---
 title: "ألم العضلات الروماتزمي"
 source: "ai-draft"
-legacyUrl: "https://ar.alimranmed.com/%d8%a3%d9%84%d9%85-%d8%a7%d9%84%d8%b9%d8%b6%d9%84%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d9%88%d9%85%d8%a7%d8%aa%d8%b2%d9%85%d9%8a"
+legacyUrl: "%%d8%a3%d9%84%d9%85-%d8%a7%d9%84%d8%b9%d8%b6%d9%84%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d9%88%d9%85%d8%a7%d8%aa%d8%b2%d9%85%d9%8a"
 category: "الألم"
 order: 999
 ---
-![](https://ar.alimranmed.com/wp-content/uploads/2021/02/de4a7fcc46fa1a3734124c84db8ea358-300x300.jpg)ألم العضلات الروماتزمي هو اضطراب التهابي يسبب آلام العضلات وتيبّسها، خاصةً في الكتفين والوركين. وتبدأ مؤشرات مرض وأعراض ألم العضلات الروماتزمي عادةً في الظهور بسرعة وتكون أسوأ أثناء النهار.
+ألم العضلات الروماتزمي هو اضطراب التهابي يسبب آلام العضلات وتيبّسها، خاصةً في الكتفين والوركين. وتبدأ مؤشرات مرض وأعراض ألم العضلات الروماتزمي عادةً في الظهور بسرعة وتكون أسوأ أثناء النهار.
 
 يُصاب معظم الأشخاص بألم العضلات الروماتزمي بعد بلوغ سن 65 عامًا. ونادرًا ما يصيب الأشخاص الذين تقل أعمارهم عن 50 عامًا.
 
@@ -69,7 +69,7 @@ order: 999
 
 [تحفيز النخاع الشوكي Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 
-[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 
 حقن الستيرود
 

@@ -1,7 +1,7 @@
 ---
 title: "متلازمة جراحة الظهر الفاشلة"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9-%d8%ac%d8%b1%d8%a7%d8%ad%d8%a9-%d8%a7%d9%84%d8%b8%d9%87%d8%b1-%d8%a7%d9%84%d9%81%d8%a7%d8%b4%d9%84%d8%a9"
+legacyUrl: "%%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9-%d8%ac%d8%b1%d8%a7%d8%ad%d8%a9-%d8%a7%d9%84%d8%b8%d9%87%d8%b1-%d8%a7%d9%84%d9%81%d8%a7%d8%b4%d9%84%d8%a9"
 category: "العمود الفقري"
 order: 999
 ---
@@ -35,9 +35,9 @@ order: 999
 
 [سيكما](/services/chiropractic/sigma//)
 
-[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
-[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 
 [تحفيز النخاع الشوكي Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 

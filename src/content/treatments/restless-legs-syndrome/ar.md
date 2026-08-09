@@ -1,7 +1,7 @@
 ---
 title: "متلازمة تململ الساقين"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9-%d8%aa%d9%85%d9%84%d9%85%d9%84-%d8%a7%d9%84%d8%b3%d8%a7%d9%82%d9%8a%d9%86"
+legacyUrl: "%%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9-%d8%aa%d9%85%d9%84%d9%85%d9%84-%d8%a7%d9%84%d8%b3%d8%a7%d9%82%d9%8a%d9%86"
 category: "الألم"
 order: 999
 ---
@@ -87,7 +87,7 @@ order: 999
 
 [سيكما](/services/chiropractic/sigma//)
 
-[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 
 حقن الستيرود
 

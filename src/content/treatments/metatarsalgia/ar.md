@@ -1,7 +1,7 @@
 ---
 title: "ألم المشط"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a3%d9%84%d9%85-%d8%a7%d9%84%d9%85%d8%b4%d8%b7"
+legacyUrl: "%%d8%a3%d9%84%d9%85-%d8%a7%d9%84%d9%85%d8%b4%d8%b7"
 category: "الألم"
 order: 999
 ---
@@ -58,9 +58,9 @@ order: 999
 
 [سيكما](/services/chiropractic/sigma//)
 
-[حقن الستيرود](https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af/)
+[حقن الستيرود](%%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af)
 
--   [حقن نقاط الزناد](https://ar.alimranmed.com/%D8%AD%D9%82%D9%86-%D9%86%D9%82%D8%B7%D8%A9-%D8%A7%D9%84%D8%B2%D9%86%D8%A7%D8%AF)
+-   [حقن نقاط الزناد](%%D8%AD%D9%82%D9%86-%D9%86%D9%82%D8%B7%D8%A9-%D8%A7%D9%84%D8%B2%D9%86%D8%A7%D8%AF)
 
 [العلاج الفيزيائي (العلاج الطبيعي)](/services/physiotherapy/)
 
@@ -68,6 +68,6 @@ order: 999
 -   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
 -   [الليزر البارد](/services/physiotherapy/laser-therapy/)
 -   [المعالجة بالموجات فوق الصوتية (السونار)](/services/physiotherapy/ultrasound-therapy/)
--   [المعالجة بالموجات المغناطيسية](https://ar.alimranmed.com/%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A8%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%84-%D8%A7%D9%84%D9%85%D8%BA%D9%86%D8%A7%D8%B7%D9%8A%D8%B3%D9%8A)
+-   [المعالجة بالموجات المغناطيسية](%%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A8%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%84-%D8%A7%D9%84%D9%85%D8%BA%D9%86%D8%A7%D8%B7%D9%8A%D8%B3%D9%8A)
 
 [تمارين رياضية](/services/exercises/)

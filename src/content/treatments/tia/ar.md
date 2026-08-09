@@ -1,7 +1,7 @@
 ---
 title: "النوبة الإقفارية العابرة (TIA)"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d9%86%d9%88%d8%a8%d8%a9-%d8%a7%d9%84%d8%a5%d9%82%d9%81%d8%a7%d8%b1%d9%8a%d8%a9-%d8%a7%d9%84%d8%b9%d8%a7%d8%a8%d8%b1%d8%a9-tia"
+legacyUrl: "%%d8%a7%d9%84%d9%86%d9%88%d8%a8%d8%a9-%d8%a7%d9%84%d8%a5%d9%82%d9%81%d8%a7%d8%b1%d9%8a%d8%a9-%d8%a7%d9%84%d8%b9%d8%a7%d8%a8%d8%b1%d8%a9-tia"
 category: "الدماغ"
 order: 999
 ---

@@ -1,11 +1,11 @@
 ---
 title: "دوار الوضعة الانتيابي الحميد (BPPV)"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%af%d9%88%d8%a7%d8%b1-%d8%a7%d9%84%d9%88%d8%b6%d8%b9%d8%a9-%d8%a7%d9%84%d8%a7%d9%86%d8%aa%d9%8a%d8%a7%d8%a8%d9%8a-%d8%a7%d9%84%d8%ad%d9%85%d9%8a%d8%af-bppv"
+legacyUrl: "%%d8%af%d9%88%d8%a7%d8%b1-%d8%a7%d9%84%d9%88%d8%b6%d8%b9%d8%a9-%d8%a7%d9%84%d8%a7%d9%86%d8%aa%d9%8a%d8%a7%d8%a8%d9%8a-%d8%a7%d9%84%d8%ad%d9%85%d9%8a%d8%af-bppv"
 category: "الألم"
 order: 999
 ---
-# ![](https://ar.alimranmed.com/wp-content/uploads/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV-300x241.png)
+# 
 
 يعد دوار الوضعة الانتيابي الحميد (BPPV) أحد أكثر أسباب الدوار شيوعًا—الشعور المفاجئ بأنك تدور أو الجزء الداخلي من رأسك يدور.
 
@@ -59,9 +59,9 @@ order: 999
 
 [سيكما](/services/chiropractic/sigma//)
 
-[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
-[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 
 [تحفيز النخاع الشوكي Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 

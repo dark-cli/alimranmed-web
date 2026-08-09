@@ -2,7 +2,7 @@
 title: "الأوزون"
 category: "العلاج بالأوزون"
 source: "ai-draft"
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a3%d9%88%d8%b2%d9%88%d9%86"
+legacyUrl: "%%d8%a7%d9%84%d8%a3%d9%88%d8%b2%d9%88%d9%86"
 order: 999
 ---
 العلاج بالأوزون

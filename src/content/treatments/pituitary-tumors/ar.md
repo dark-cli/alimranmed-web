@@ -1,7 +1,7 @@
 ---
 title: "أورام الغدة النخامية"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a3%d9%88%d8%b1%d8%a7%d9%85-%d8%a7%d9%84%d8%ba%d8%af%d8%a9-%d8%a7%d9%84%d9%86%d8%ae%d8%a7%d9%85%d9%8a%d8%a9"
+legacyUrl: "%%d8%a3%d9%88%d8%b1%d8%a7%d9%85-%d8%a7%d9%84%d8%ba%d8%af%d8%a9-%d8%a7%d9%84%d9%86%d8%ae%d8%a7%d9%85%d9%8a%d8%a9"
 category: "الألم"
 order: 999
 ---

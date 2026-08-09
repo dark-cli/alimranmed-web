@@ -1,7 +1,7 @@
 ---
 title: "فقر الدم المنجلي"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d9%81%d9%82%d8%b1-%d8%a7%d9%84%d8%af%d9%85-%d8%a7%d9%84%d9%85%d9%86%d8%ac%d9%84%d9%8a"
+legacyUrl: "%%d9%81%d9%82%d8%b1-%d8%a7%d9%84%d8%af%d9%85-%d8%a7%d9%84%d9%85%d9%86%d8%ac%d9%84%d9%8a"
 category: "الحركة"
 order: 999
 ---
@@ -82,7 +82,7 @@ order: 999
 
 [تحفيز النخاع الشوكي Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 
-[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 
 حقن الستيرود
 

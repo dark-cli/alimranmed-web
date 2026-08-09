@@ -5,7 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d9%88%d8%a7%d8%a1-%d8%a
 category: "العمود الفقري"
 order: 999
 ---
-إن الْتواء الرقبة هو إصابة بالعنق تحدث بسبب حركة قوية للرقبة تجعلها تتحرك ذهابًا وإيابًا، مثل ما يحدث للسَّوْط من تشقُّق.![](https://ar.alimranmed.com/wp-content/uploads/2021/01/300px-Whiplash_Injury.jpg)
+إن الْتواء الرقبة هو إصابة بالعنق تحدث بسبب حركة قوية للرقبة تجعلها تتحرك ذهابًا وإيابًا، مثل ما يحدث للسَّوْط من تشقُّق.
 
 ويحدث الْتواء الرقبة بشكل شائع حينما تُصدم السيارة من الخلف. لكن قد ينتج الْتواء الرقبة أيضًا بسبب الحوادث الرياضية، أو بسبب الانتهاك الجسدي أو بسبب أنواع أخرى من الصدمات، مثل السقوط. قد يُطلق على الْتواء الرقبة مَلْخ الرقبة أو إجهاد الرقبة، ولكن هذه المصطلحات تتضمَّن أيضًا أنواعًا أخرى من إصابات الرقبة.
 
@@ -81,17 +81,17 @@ order: 999
 
 [سيكما](/services/chiropractic/sigma//)
 
-[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
-[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 
 [تحفيز النخاع الشوكي Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 
 [زرع مضخة دوائية](/services/surgery/intrathecal-pump/)
 
-[حقن الستيرود](https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af/)
+[حقن الستيرود](%%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af)
 
--   [حقن نقاط الزناد](https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d9%86%d9%82%d8%b7%d8%a9-%d8%a7%d9%84%d8%b2%d9%86%d8%a7%d8%af/)
+-   [حقن نقاط الزناد](%%d8%ad%d9%82%d9%86-%d9%86%d9%82%d8%b7%d8%a9-%d8%a7%d9%84%d8%b2%d9%86%d8%a7%d8%af)
 -   حقن فوق الجافية
 
 [العلاج الفيزيائي (العلاج الطبيعي)](/services/physiotherapy/)
@@ -100,5 +100,5 @@ order: 999
 -   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
 -   [الليزر البارد](/services/physiotherapy/laser-therapy/)
 -   [المعالجة بالموجات فوق الصوتية (السونار)](/services/physiotherapy/ultrasound-therapy/)
--   [المعالجة بالموجات المغناطيسية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d8%ac%d8%a7%d9%84-%d8%a7%d9%84%d9%85%d8%ba%d9%86%d8%a7%d8%b7%d9%8a%d8%b3%d9%8a/)
+-   [المعالجة بالموجات المغناطيسية](%%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d8%ac%d8%a7%d9%84-%d8%a7%d9%84%d9%85%d8%ba%d9%86%d8%a7%d8%b7%d9%8a%d8%b3%d9%8a)
 -   [تمارين رياضية](/services/exercises/)

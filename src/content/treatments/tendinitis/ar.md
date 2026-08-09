@@ -1,7 +1,7 @@
 ---
 title: "التهاب الأوتار"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d9%87%d8%a7%d8%a8-%d8%a7%d9%84%d8%a3%d9%88%d8%aa%d8%a7%d8%b1"
+legacyUrl: "%%d8%a7%d9%84%d8%aa%d9%87%d8%a7%d8%a8-%d8%a7%d9%84%d8%a3%d9%88%d8%aa%d8%a7%d8%b1"
 category: "الألم"
 order: 999
 ---
@@ -87,9 +87,9 @@ order: 999
 
 [سيكما](/services/chiropractic/sigma//)
 
-[حقن الستيرود](https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af/)
+[حقن الستيرود](%%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af)
 
--   [حقن نقاط الزناد](https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d9%86%d9%82%d8%b7%d8%a9-%d8%a7%d9%84%d8%b2%d9%86%d8%a7%d8%af/)
+-   [حقن نقاط الزناد](%%d8%ad%d9%82%d9%86-%d9%86%d9%82%d8%b7%d8%a9-%d8%a7%d9%84%d8%b2%d9%86%d8%a7%d8%af)
 -   حقن فوق الجافية
 
 [العلاج الفيزيائي (العلاج الطبيعي)](/services/physiotherapy/)
@@ -98,5 +98,5 @@ order: 999
 -   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
 -   [الليزر البارد](/services/physiotherapy/laser-therapy/)
 -   [المعالجة بالموجات فوق الصوتية (السونار)](/services/physiotherapy/ultrasound-therapy/)
--   [المعالجة بالموجات المغناطيسية](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d8%ac%d8%a7%d9%84-%d8%a7%d9%84%d9%85%d8%ba%d9%86%d8%a7%d8%b7%d9%8a%d8%b3%d9%8a/)
+-   [المعالجة بالموجات المغناطيسية](%%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d8%ac%d8%a7%d9%84-%d8%a7%d9%84%d9%85%d8%ba%d9%86%d8%a7%d8%b7%d9%8a%d8%b3%d9%8a)
 -   [تمارين رياضية](/services/exercises/)

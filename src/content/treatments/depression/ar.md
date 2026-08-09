@@ -1,7 +1,7 @@
 ---
 title: "الاكتئاب"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a7%d9%83%d8%aa%d8%a6%d8%a7%d8%a8"
+legacyUrl: "%%d8%a7%d9%84%d8%a7%d9%83%d8%aa%d8%a6%d8%a7%d8%a8"
 category: "الألم"
 order: 999
 ---

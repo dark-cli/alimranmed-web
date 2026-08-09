@@ -1,7 +1,7 @@
 ---
 title: "استسقاء الرأس"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%b7%d8%a8-%d8%a7%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84-%d8%a7%d8%b3%d8%aa%d8%b3%d9%82%d8%a7%d8%a1-%d8%a7%d9%84%d8%b1%d8%a3%d8%b3"
+legacyUrl: "%%d8%b7%d8%a8-%d8%a7%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84-%d8%a7%d8%b3%d8%aa%d8%b3%d9%82%d8%a7%d8%a1-%d8%a7%d9%84%d8%b1%d8%a3%d8%b3"
 category: "الأطفال"
 order: 999
 ---

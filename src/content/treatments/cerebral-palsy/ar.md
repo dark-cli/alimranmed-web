@@ -1,11 +1,11 @@
 ---
 title: "الشلل الدماغي"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba%d9%8a"
+legacyUrl: "%%d8%a7%d9%84%d8%b4%d9%84%d9%84-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba%d9%8a"
 category: "الأطفال"
 order: 999
 ---
-**![](https://ar.alimranmed.com/wp-content/uploads/2020/04/CP-websites-300x161.png)**
+****
 
 **الشلل الدماغي (CP) (الدماغ)  هو مصطلح واسع يصف مجموعة من الاضطرابات العصبية. بل هو شرط مدى الحياة التي تؤثر على الاتصالات بين الدماغ والعضلات، مما تسبب في حالة دائمة من الحركة والمواقف غير المنسقة. قد تكون نتيجة للنوبات  التي تسببت في نقص الأكسجين إلى الدماغ CP.**
 
@@ -65,7 +65,7 @@ order: 999
         -   [التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)
         -   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
         -   [الليزر البارد](/services/physiotherapy/laser-therapy/)
-        -   [المعالجة بالمجات فوق الصوتية (السونار)](https://ar.alimranmed.com/%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1/)
+        -   [المعالجة بالمجات فوق الصوتية (السونار)](%%d8%a7%d9%84%d9%88%d9%82%d8%a7%d9%8a%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b8%d9%87%d8%b1)
         -   [تمارين رياضية](/services/exercises/)
         
         تقويم العمود الفقري
@@ -79,7 +79,7 @@ order: 999
     
     حقن البرولوثربي Prolotherapy
     
-    [تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+    [تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
     
     تحفيز النخاع الشوكي Spinal cord stimulation
     

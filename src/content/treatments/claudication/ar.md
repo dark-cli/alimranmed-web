@@ -1,11 +1,11 @@
 ---
 title: "العرج"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d8%b1%d8%ac"
+legacyUrl: "%%d8%a7%d9%84%d8%b9%d8%b1%d8%ac"
 category: "الألم"
 order: 999
 ---
-![](https://ar.alimranmed.com/wp-content/uploads/2021/01/atherosclerosis-289x300.gif)العرج هو شعور بالألم ناجم عن قلة تدفق الدم إلى العضلات أثناء التمرين. وغالبًا ما تشعر بهذا الألم في الساقين بعد المشي بوتيرة معينة ولمدة معينة من الوقت، حسب شدة الحالة المَرَضية.
+العرج هو شعور بالألم ناجم عن قلة تدفق الدم إلى العضلات أثناء التمرين. وغالبًا ما تشعر بهذا الألم في الساقين بعد المشي بوتيرة معينة ولمدة معينة من الوقت، حسب شدة الحالة المَرَضية.
 
 وتسمى الحالة أيضًا العَرَج المتقطع لأن الألم عادةً ليس متواصلًا. ويبدأ الألم أثناء التمرين وينتهي عند الراحة. ولكن مع تفاقم حالة العَرَج، فقد يحدث الألم أثناء الراحة.
 
@@ -97,18 +97,18 @@ order: 999
 
 [سيكما](/services/chiropractic/sigma//)
 
-[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
-[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 
 [تحفيز النخاع الشوكي Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 
 [زرع مضخة دوائية](/services/surgery/intrathecal-pump/)
 
-[حقن الستيرود](https://ar.alimranmed.com/%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af/)
+[حقن الستيرود](%%d8%ad%d9%82%d9%86-%d8%a7%d9%84%d8%b3%d8%aa%d9%8a%d8%b1%d9%88%d9%8a%d8%af)
 
--   [حقن نقاط الزناد](https://ar.alimranmed.com/%D8%AD%D9%82%D9%86-%D9%86%D9%82%D8%B7%D8%A9-%D8%A7%D9%84%D8%B2%D9%86%D8%A7%D8%AF)
--   [حقن فوق الجافية](https://ar.alimranmed.com/%D8%AD%D9%82%D9%86-%D8%A7%D9%84%D8%B9%D9%85%D9%88%D8%AF-%D8%A7%D9%84%D9%81%D9%82%D8%B1%D9%8A)
+-   [حقن نقاط الزناد](%%D8%AD%D9%82%D9%86-%D9%86%D9%82%D8%B7%D8%A9-%D8%A7%D9%84%D8%B2%D9%86%D8%A7%D8%AF)
+-   [حقن فوق الجافية](%%D8%AD%D9%82%D9%86-%D8%A7%D9%84%D8%B9%D9%85%D9%88%D8%AF-%D8%A7%D9%84%D9%81%D9%82%D8%B1%D9%8A)
 
 [العلاج الفيزيائي (العلاج الطبيعي)](/services/physiotherapy/)
 
@@ -116,5 +116,5 @@ order: 999
 -   [المعالجة بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)
 -   [الليزر البارد](/services/physiotherapy/laser-therapy/)
 -   [المعالجة بالموجات فوق الصوتية (السونار)](/services/physiotherapy/ultrasound-therapy/)
--   [المعالجة بالموجات المغناطيسية](https://ar.alimranmed.com/%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A8%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%84-%D8%A7%D9%84%D9%85%D8%BA%D9%86%D8%A7%D8%B7%D9%8A%D8%B3%D9%8A)
+-   [المعالجة بالموجات المغناطيسية](%%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A8%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%84-%D8%A7%D9%84%D9%85%D8%BA%D9%86%D8%A7%D8%B7%D9%8A%D8%B3%D9%8A)
 -   [تمارين رياضية](/services/exercises/)

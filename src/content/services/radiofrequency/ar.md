@@ -2,7 +2,7 @@
 title: "الترددات الراديوية"
 description: "كوي العصب عن طريق موجات راديوية (يسمى أيضاً استئصال موجات راديوية أو كسر الآفة) هو إجراء طفيف التوغل"
 order: 999
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%b1%d8%af%d8%af%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d8%a7%d8%af%d9%8a%d9%88%d9%8a%d8%a9-2"
+legacyUrl: "%%d8%a7%d9%84%d8%aa%d8%b1%d8%af%d8%af%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d8%a7%d8%af%d9%8a%d9%88%d9%8a%d8%a9-2"
 category: "الترددات الراديوية"
 source: "legacy-wp"
 ---

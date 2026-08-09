@@ -1,7 +1,7 @@
 ---
 title: "الصرع"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b5%d8%b1%d8%b9-%d9%88%d8%a7%d9%84%d9%86%d9%88%d8%a8%d8%a7%d8%aa"
+legacyUrl: "%%d8%a7%d9%84%d8%b5%d8%b1%d8%b9-%d9%88%d8%a7%d9%84%d9%86%d9%88%d8%a8%d8%a7%d8%aa"
 category: "الدماغ"
 order: 999
 ---

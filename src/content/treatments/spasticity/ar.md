@@ -1,11 +1,11 @@
 ---
 title: "التشنج"
 source: "legacy-wp"
-legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%aa%d8%b4%d9%86%d8%ac"
+legacyUrl: "%%d8%a7%d9%84%d8%aa%d8%b4%d9%86%d8%ac"
 category: "الألم"
 order: 999
 ---
-![](https://ar.alimranmed.com/wp-content/uploads/2021/01/Spasticity-300x210.jpg)التشنج هو شد عضلي غير طبيعي بسبب تقلص العضلات لفترات طويلة. وهو أحد الأعراض المصاحبة لتلف الدماغ أو النخاع الشوكي أو الأعصاب الحركية ، ويظهر عند الأفراد المصابين بحالات عصبية ، مثل:
+التشنج هو شد عضلي غير طبيعي بسبب تقلص العضلات لفترات طويلة. وهو أحد الأعراض المصاحبة لتلف الدماغ أو النخاع الشوكي أو الأعصاب الحركية ، ويظهر عند الأفراد المصابين بحالات عصبية ، مثل:
 
 -   الشلل الدماغي (CP)
 -   التصلب اللويحي (MS)
@@ -56,9 +56,9 @@ order: 999
 
 [سيكما](/services/chiropractic/sigma//)
 
-[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](http://alimranmed.com/rtms/)
+[تحفيز مغناطيسي عبر الجمجمة](/services/brain-stimulation/tms/) [Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
 
-[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](https://ar.alimranmed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
+[تحفيز كهربائي عبر الجمجمة Transcranial direct current stimulation (tDCS)](%%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%B4%D8%B1-%D9%84%D9%84%D8%AF%D9%85%D8%A7%D8%BA)
 
 [تحفيز النخاع الشوكي Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
 
