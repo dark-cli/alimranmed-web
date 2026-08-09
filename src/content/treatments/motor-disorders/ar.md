@@ -5,8 +5,8 @@ legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a7%d9%85%d8%b1%d8%a7%d8%b6
 category: "الحركة"
 order: 999
 ---
-[الصرع والنوبات](https://ar.alimranmed.com/%d8%a7%d9%84%d8%b5%d8%b1%d8%b9-%d9%88%d8%a7%d9%84%d9%86%d9%88%d8%a8%d8%a7%d8%aa/)
+[الصرع والنوبات](/treatments/epilepsy-seizures/)
 
-[تشنج شق الوجه](https://ar.alimranmed.com/%d8%aa%d8%b4%d9%86%d8%ac-%d8%b4%d9%82-%d8%a7%d9%84%d9%88%d8%ac%d9%87/)
+[تشنج شق الوجه](/treatments/hemifacial-spasm/)
 
-[باركنسون](https://ar.alimranmed.com/%d8%a8%d8%a7%d9%83%d9%86%d8%b3%d9%86/)
+[باركنسون](/treatments/parkinsons-disease/)

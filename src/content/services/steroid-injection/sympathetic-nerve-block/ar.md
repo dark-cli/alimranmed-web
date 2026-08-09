@@ -15,7 +15,7 @@ order: 999
 
 3- الألم الناتج من أعتلال الأوعية الدموية
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/07/1.jpg)![](https://ar.alimranmed.com/wp-content/uploads/2019/07/2.jpg)
+![](/assets/images/1.jpg)![](/assets/images/2.jpg)
 
 مركّبِ الإقليميةِ، المعروفة سابقاً بالنموّ الشاذِ الودي المنعكسِ complex regional pain symdrome (CRPS)
 
@@ -27,7 +27,7 @@ order: 999
 
 تحقن الضفيرةِ البطنية بمادة التخدير اولا لشل الأحساس بشكل مؤقت حيث يرى مدى استفادة المريض بعدها يحقن بمادة الكحول او الفينول لشل الأحساس بشكل دائم.
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/07/3.jpg)
+![](/assets/images/3.jpg)
 
 **أعاقة العقدةِ النجمية**  Stellate
 
@@ -41,7 +41,7 @@ order: 999
 
 من المرجح أن يحتاج الإجراء إلى التكرار لتحقيق فائدة طويلة الأمد. يعتمد التباعد بين الحقن على مدة استمرار تسكين الألم بين الحقن. عادة، ستشعر بفائدة أطول بعد كل حقنة لاحقة.
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/07/4-Copy.jpg) ![](https://ar.alimranmed.com/wp-content/uploads/2019/07/5.jpg)
+![](/assets/images/4-Copy.jpg) ![](/assets/images/5.jpg)
 
 **أعاقة العقدة الخثلية العليا**  **Superior hypogastric block**
 

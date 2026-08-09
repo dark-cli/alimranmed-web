@@ -5,7 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/physiotherapy"
 ---
 Physiotherapy, or physical therapy, is a healthcare profession responsible for assessment, diagnosis, treatment, and prevention of diseases and disabilities through physical means. Physiotherapists are experts in movement and function who work in partnership with their patients, helping them overcome movement disorders that may have been present from birth, acquired through an accident or injury, or the result of ageing or changing life events.
 
-**![](https://ar.alimranmed.com/wp-content/uploads/2019/05/تنزيل-25.jpg)**
+**![](/assets/images/تنزيل-25.jpg)**
 
 The main role of physiotherapy is to focus on restoring functional movement after injury, illness, or even disability that has negatively affected your mobility. The physiotherapist works as part of a multidisciplinary team, working alongside doctors and nurses to complement treatments. There are several physiotherapy methods, and it is preferable to use more than one method at the same time, or they may be used together with other therapeutic methods or after surgery to increase effectiveness.
 
@@ -26,7 +26,7 @@ Physiotherapy is considered safer and has fewer side effects than other therapeu
 
 **General Benefits of Physiotherapy:**
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/05/images-37.jpg)
+![](/assets/images/images-37.jpg)
 
 1.  Relieves pain
 2.  Helps increase blood flow, which reduces inflammation
@@ -50,7 +50,7 @@ Specifically, physiotherapy improves the client's quality of life by:
 -   Rehabilitating injuries and the effects of disease or disability with therapeutic exercise programs and other interventions.
 -   Educating and planning maintenance and support programs to prevent re-occurrence, re-injury, or functional decline.
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/05/images-36-300x168.jpg)
+![](/assets/images/images-36-300x168.jpg)
 
 Many people think physiotherapy is used only for the musculoskeletal system. But in fact, physiotherapy is both preventive and rehabilitative for a range of mobility issues, injuries, and/or diseases.
 

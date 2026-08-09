@@ -9,7 +9,7 @@ publishedAt: "2020-01-04T06:33:23"
 
 #####  **تعتمد في عملها على مبدأ المساج للجزء المتضرر من خلال ضغط الهواء بدرجات متفاوتة واختيار البرنامج المناسب حسب تشخيص الحاله.**
 
-##### ![](https://ar.alimranmed.com/wp-content/uploads/2019/12/5d3bd323-dd02-49f0-9ac3-a31aa39170a6-300x300.jpg)![](https://ar.alimranmed.com/wp-content/uploads/2019/12/thSSC7CZ2W.jpg)
+##### ![](/assets/images/5d3bd323-dd02-49f0-9ac3-a31aa39170a6-300x300.jpg)![](/assets/images/thSSC7CZ2W.jpg)
 
 ##### **من أهم الحالات التي يدخل في علاجها :**
 

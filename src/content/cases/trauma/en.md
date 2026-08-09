@@ -179,11 +179,11 @@ source: "ai-draft"
 
 **A 30-year-old man was brought in on 9 December 2006 following a road traffic accident, presenting to the emergency department comatose with bleeding from the right ear. Brain CT scanning showed an extradural haematoma compressing the right temporal lobe. Craniotomy was performed as an emergency with evacuation of the haematoma. He improved gradually and by 8 days after surgery had regained full consciousness and was discharged home, later returning to his usual work.**
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/3-2.jpg)
+![](/assets/images/3-2.jpg)
 
 **CT images showing the haematoma**
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/4-2.jpg)
+![](/assets/images/4-2.jpg)
 
 **Extradural haematoma**
 
@@ -191,11 +191,11 @@ source: "ai-draft"
 
 **A craniotomy was performed in the lower left temporal region with extraction of the bullet and evacuation of the haematoma. On the first postoperative day he became conscious but still had an inability to speak and weakness on the right side of the body. On the second postoperative day he started to speak and the strength of the right side began to increase gradually. On 3 December 2006 he had completely returned to normal activity, speaking fluently and walking normally.**
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/1-1.jpg)
+![](/assets/images/1-1.jpg)
 
 CT images showing the entry site of the fragment
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/2-2.jpg)
+![](/assets/images/2-2.jpg)
 
 CT images showing the fragment lodged inside the brain
 
@@ -203,17 +203,17 @@ CT images showing the fragment lodged inside the brain
 
 **Two days after the accident he began suffering from headache, repeated vomiting and seizures unresponsive to treatment. On examination his condition was very serious: he was unconscious with a dilated right pupil (a very dangerous sign of brain injury). Repeat brain CT scanning showed a very large intracerebral haematoma with intraventricular haemorrhage. Immediate surgical intervention was performed with right frontal craniotomy, evacuation of the haematoma and placement of an external ventricular drain to remove the blood from within the ventricle. On the second postoperative day the pupil returned to normal size but he still had an inability to move the eyeball (oculomotor nerve palsy). The external ventricular drain later became clear and could be removed on the third postoperative day. The patient underwent intensive physiotherapy sessions and improved gradually. One month after surgery he had regained the ability to speak and walk.**
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/2-1.jpg)
+![](/assets/images/2-1.jpg)
 
 CT images on day one and on day two showing disappearance of the haemorrhage
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/1.jpg)
+![](/assets/images/1.jpg)
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/4-1.jpg)
+![](/assets/images/4-1.jpg)
 
 CT images showing disappearance of the intracerebral haemorrhage
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/3-1.jpg)
+![](/assets/images/3-1.jpg)
 
 **A 17-year-old was wounded by a penetrating fragment injury to the head, causing an opening in the right side of the occipital bone with a haematoma extending to the site of the fragment in the left thalamic region, together with intraventricular haemorrhage. He was brought to the emergency room unconscious with constricted pupils and left-sided weakness.**
 
@@ -225,38 +225,38 @@ CT images showing disappearance of the intracerebral haemorrhage
 
 **One full year later he began suffering from difficulty speaking with limb spasticity. Brain CT scanning showed hydrocephalus, so a frontal ventriculoperitoneal shunt was placed. The day after surgery he was very well and began to speak fluently, with gradual disappearance of the limb spasticity and the ability to walk.**
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/0-1.jpg)
+![](/assets/images/0-1.jpg)
 
 Fragment entry site with intraventricular haemorrhage
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/0.jpg)
+![](/assets/images/0.jpg)
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/00.jpg)
+![](/assets/images/00.jpg)
 
 The fragment lodged inside the brain
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/000-1.jpg)
+![](/assets/images/000-1.jpg)
 
 Disappearance of blood from the ventricles with removal of the external ventricular drain
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/0000.jpg)
+![](/assets/images/0000.jpg)
 
 After 3 months, showing ventricular dilatation
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/00-1.jpg)
+![](/assets/images/00-1.jpg)
 
 After surgery: elevation of the depressed fracture with shunt placement
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/0000-1.jpg)
+![](/assets/images/0000-1.jpg)
 
 Frontal ventriculoperitoneal shunt in place
 
 **A 42-year-old man sustained a depressed fracture of the occipital bone following external trauma, together with a partial laceration of the posterior third of the superior sagittal venous sinus. He was brought to the emergency room bleeding from his wound with loss of vision. During surgery multiple bone fragments were found causing partial laceration of the posterior third of the superior sagittal sinus, and 5 pints of blood were transfused within 30 minutes as the depressed bone fragments were elevated and the dura was grafted. On the fourth postoperative day his vision began to improve and he was discharged home.**
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/70.jpg)
+![](/assets/images/70.jpg)
 
 Brain CT images showing the site of the depressed fracture
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/12/69.jpg)
+![](/assets/images/69.jpg)
 
 CT bone window images

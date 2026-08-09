@@ -29,7 +29,7 @@ order: 999
 
 #### كيف يعمل جهاز تقويم العمود الفقري SPINMED
 
-![](https://ar.alimranmed.com/wp-content/uploads/2019/05/SpineMEd-Bandscheiben-768x565-300x221.png)
+![](/assets/images/SpineMEd-Bandscheiben-768x565-300x221.png)
 
 SpineMED® يعمل على تخفيف الضغط من خلال القدرة على تثبيت العمود الفقري دون التسبب  في انقباضات العضلات المنعكسة او التشنجات  كما هو الحال من الاجهزه السحب الاعتيادية
 
