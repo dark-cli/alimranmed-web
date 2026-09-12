@@ -34,6 +34,13 @@ const isActive = (href: string) => {
   <!-- Header chrome is always LTR (logo left, actions right) regardless of
        document direction. Only the nav LINKS inside get RTL order in AR. -->
   <div class="container header-row" dir="ltr">
+    <!-- Back button: iOS-style, top-left, mobile-visible only -->
+    <button id="header-back-btn" class="header-back-btn" aria-label="Go back" type="button" style="display: none;">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </button>
+
     <a class="logo" href={L("/")} aria-label="Alimran Medical Center">
       <span class="logo-mark" aria-hidden="true">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -232,6 +239,45 @@ const isActive = (href: string) => {
     // Bind element listeners on initial load + after every client-side nav
     bindElementListeners();
     document.addEventListener("astro:page-load", bindElementListeners);
+
+    // ── Back button handling ────────────────────────────────────────
+    // Show back button on non-homepage, with smart navigation
+    (function () {
+      function updateBackButton() {
+        var btn = document.getElementById("header-back-btn");
+        if (!btn) return;
+
+        var isHome = location.pathname === "/" || location.pathname === "/ar/";
+        if (isHome) {
+          btn.style.display = "none";
+        } else {
+          btn.style.display = "inline-flex";
+        }
+      }
+
+      function handleBackClick() {
+        // Use browser history if available, otherwise navigate to parent
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          // Fallback: navigate to treatments or home
+          var path = location.pathname;
+          if (path.startsWith("/ar/")) {
+            location.href = "/ar/";
+          } else {
+            location.href = "/";
+          }
+        }
+      }
+
+      var btn = document.getElementById("header-back-btn");
+      if (btn) {
+        btn.addEventListener("click", handleBackClick);
+        updateBackButton();
+        // Update on each page load
+        document.addEventListener("astro:page-load", updateBackButton);
+      }
+    })();
   })();
 </script>
 
@@ -250,6 +296,38 @@ const isActive = (href: string) => {
     gap: 1rem;
     min-height: var(--header-h);
     padding-block: 0.5rem;
+  }
+
+  /* Back button — iOS style, top-left, mobile-first */
+  .header-back-btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: var(--brand);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .header-back-btn:hover {
+    opacity: 0.7;
+  }
+
+  .header-back-btn:active {
+    opacity: 0.5;
+  }
+
+  @media (max-width: 1023px) {
+    /* Show on mobile/tablet */
+    .header-back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   /* Logo */

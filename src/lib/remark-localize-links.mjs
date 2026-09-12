@@ -2,8 +2,13 @@ import { visit } from 'unist-util-visit';
 
 /**
  * Remark plugin that localizes internal links based on the file's locale.
- * Converts relative paths like /services/ to /en/services/ or /ar/services/
- * based on whether the file is en.md or ar.md.
+ *
+ * Routing structure:
+ * - English (default locale): root path / (no /en/ prefix)
+ * - Arabic: /ar/ prefix
+ *
+ * For .../en.md files: keep links at root (e.g., /services/)
+ * For .../ar.md files: prefix links with /ar (e.g., /ar/services/)
  *
  * Smart handling: strips any existing language prefix (/en/, /ar/) and
  * reprocesses to match the current file's locale. This fixes hardcoded
@@ -22,29 +27,23 @@ export function remarkLocalizeLinks() {
         // Skip anchor-only links
         if (url.includes('#')) return;
 
-        // Strip existing language prefix if present
-        // This handles hardcoded /en/... or /ar/... links
+        // Strip any existing language prefix (/en/ or /ar/)
+        // This normalizes hardcoded language links
         const strippedUrl = url.replace(/^\/(?:en|ar)(?=\/|$)/, '') || '/';
 
-        // If the URL was already localized to a different locale, normalize it
-        if (strippedUrl !== url) {
-          // Reprocess the stripped URL with the current locale
-          url = strippedUrl;
-        }
-
-        // Now apply the current locale prefix if needed
-        if (!url.includes('/en/') && !url.includes('/ar/')) {
-          if (locale === 'ar' && url !== '/ar') {
-            node.url = `/ar${url}`;
-          } else if (locale === 'en') {
-            // English URLs don't get a /en prefix (default locale)
-            node.url = url;
+        // Apply the correct locale prefix based on current file's locale
+        if (locale === 'ar') {
+          // Arabic files: add /ar prefix to root paths
+          if (strippedUrl === '/') {
+            node.url = '/ar/';
+          } else if (!strippedUrl.startsWith('/ar/')) {
+            node.url = `/ar${strippedUrl}`;
           } else {
-            node.url = `/${locale}${url}`;
+            node.url = strippedUrl;
           }
         } else {
-          // URL already has language prefix, just use the normalized version
-          node.url = url;
+          // English files: use root path (no /en prefix)
+          node.url = strippedUrl;
         }
       }
     });

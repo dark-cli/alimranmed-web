@@ -29,16 +29,20 @@ export function isLocale(id: string, locale: Locale): boolean {
 /**
  * Normalize a URL by stripping language prefixes and applying the correct one.
  * Fixes hardcoded /en/ or /ar/ prefixes to match the target locale.
+ *
+ * Routing: English at /, Arabic at /ar/
  */
 export function normalizeHref(path: string, locale: Locale): string {
   // Strip existing language prefix (handles hardcoded /en/... or /ar/... URLs)
   const stripped = path.replace(/^\/(?:en|ar)(?=\/|$)/, '') || '/';
 
-  // Then apply the correct locale prefix
+  // Apply the correct locale prefix
   if (locale === "en") {
+    // English: use root path (no /en prefix)
     return stripped;
   }
   if (locale === "ar") {
+    // Arabic: add /ar prefix
     if (stripped === "/") return "/ar/";
     if (stripped.startsWith("/ar/")) return stripped;
     return `/ar${stripped}`;

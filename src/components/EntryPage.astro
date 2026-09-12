@@ -66,17 +66,7 @@ Object.keys(medicalSchema).forEach(
 <div class="content-page">
   {(backHref || category) && (
     <div class="breadcrumb container">
-      {backHref && backLabel && (
-        <>
-          <a href={backHref} class="breadcrumb-link">← {backLabel}</a>
-          <button class="mobile-back-btn" aria-label="Go back" onclick="window.history.back()" title="Go back">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="19" y1="12" x2="5" y2="12" />
-              <polyline points="12 19 5 12 12 5" />
-            </svg>
-          </button>
-        </>
-      )}
+      {backHref && backLabel && <a href={backHref} class="breadcrumb-link">← {backLabel}</a>}
       {category && !backHref && <span class="crumb-category">{category}</span>}
     </div>
   )}
@@ -99,36 +89,9 @@ Object.keys(medicalSchema).forEach(
 <style>
   .content-page { padding-block: 1.25rem 2.5rem; }
   @media (min-width: 640px) { .content-page { padding-block: 2rem 4rem; } }
-  .breadcrumb { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .breadcrumb { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 0.75rem; }
   .breadcrumb-link { color: var(--ink-soft); }
   .crumb-category { text-transform: uppercase; letter-spacing: 0.06em; }
-
-  /* Mobile back button — hidden on desktop */
-  .mobile-back-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    color: var(--ink-soft);
-    cursor: pointer;
-    transition: all 0.15s ease;
-  }
-  .mobile-back-btn:hover {
-    color: var(--brand);
-    border-color: var(--brand);
-  }
-
-  @media (min-width: 640px) {
-    .mobile-back-btn {
-      display: none;
-    }
-  }
   .page-header { margin-bottom: 1.25rem; text-align: center; }
   .page-header h1 { margin-bottom: 0.35em; }
   .lede { color: var(--ink-soft); font-size: clamp(0.95rem, 2.6vw, 1.1rem); max-width: 60ch; margin: 0 auto; }

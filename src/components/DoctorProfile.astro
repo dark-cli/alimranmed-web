@@ -64,15 +64,7 @@ const l = {
 ---
 
 <article class="container doctor-profile">
-  <div class="back-row">
-    <a class="back" href={backHref}>{l.back}</a>
-    <button class="mobile-back-btn" aria-label="Go back" onclick="window.history.back()" title="Go back">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="19" y1="12" x2="5" y2="12" />
-        <polyline points="12 19 5 12 12 5" />
-      </svg>
-    </button>
-  </div>
+  <a class="back" href={backHref}>{l.back}</a>
 
   <header class="doctor-header">
     {d.photo && <img class="doctor-photo" src={d.photo} alt={d.fullName} />}
@@ -118,44 +110,7 @@ const l = {
 <style>
   .doctor-profile { padding-block: 1.25rem 2.5rem; }
   @media (min-width: 640px) { .doctor-profile { padding-block: 2rem 4rem; } }
-
-  .back-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .back { display: block; font-size: 0.85rem; color: var(--ink-soft); flex: 1; }
-
-  /* Mobile back button — hidden on desktop */
-  .mobile-back-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    color: var(--ink-soft);
-    cursor: pointer;
-    transition: all 0.15s ease;
-    flex-shrink: 0;
-  }
-
-  .mobile-back-btn:hover {
-    color: var(--brand);
-    border-color: var(--brand);
-  }
-
-  @media (min-width: 640px) {
-    .mobile-back-btn {
-      display: none;
-    }
-  }
+  .back { display: inline-block; margin-bottom: 1rem; font-size: 0.85rem; color: var(--ink-soft); }
 
   .doctor-header {
     display: grid;
