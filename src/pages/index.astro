@@ -6,6 +6,7 @@ import { topicOf, isLocale, localizedHref, currentLocale } from "../lib/i18n";
 
 // Auto-detect language for root path (/)
 // Check device language > country > default to English
+// Root / redirects to /en/ or /ar/ based on detection
 const detectLocale = () => {
   const acceptLanguage = Astro.request.headers.get('accept-language') || '';
   if (acceptLanguage.toLowerCase().includes('ar')) return 'ar';
@@ -19,8 +20,13 @@ const detectLocale = () => {
 };
 
 const detectedLocale = detectLocale();
-if (detectedLocale === 'ar' && Astro.url.pathname === '/') {
-  return Astro.redirect('/ar/', 308);
+// Redirect root to language-specific version
+if (Astro.url.pathname === '/') {
+  if (detectedLocale === 'ar') {
+    return Astro.redirect('/ar/', 308);
+  } else {
+    return Astro.redirect('/en/', 308);
+  }
 }
 
 const locale = currentLocale(Astro);
@@ -214,14 +220,8 @@ const FEATURED_SERVICES = [
     bindVideoFacades();
     document.addEventListener("astro:page-load", bindVideoFacades);
 
-    // Default to Arabic: redirect to /ar/ unless user prefers English
-    if (window.location.pathname === "/" && !localStorage.getItem("language-set")) {
-      var lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-      localStorage.setItem("language-set", "true");
-      if (!lang.startsWith("en")) {
-        window.location.href = "/ar/";
-      }
-    }
+    // Note: Root / is handled by server-side redirect in index.astro
+    // No client-side redirect needed
   })();
 </script>
 

@@ -4,11 +4,12 @@ import { visit } from 'unist-util-visit';
  * Remark plugin that localizes internal links based on the file's locale.
  *
  * Routing structure:
- * - English (default locale): root path / (no /en/ prefix)
- * - Arabic: /ar/ prefix
+ * - English: /en/ prefix (e.g., /en/services/)
+ * - Arabic: /ar/ prefix (e.g., /ar/services/)
+ * - Root /: auto-redirects to device language or /en/ fallback
  *
- * For .../en.md files: keep links at root (e.g., /services/)
- * For .../ar.md files: prefix links with /ar (e.g., /ar/services/)
+ * For .../en.md files: add /en prefix
+ * For .../ar.md files: add /ar prefix
  *
  * Smart handling: strips any existing language prefix (/en/, /ar/) and
  * reprocesses to match the current file's locale. This fixes hardcoded
@@ -33,7 +34,7 @@ export function remarkLocalizeLinks() {
 
         // Apply the correct locale prefix based on current file's locale
         if (locale === 'ar') {
-          // Arabic files: add /ar prefix to root paths
+          // Arabic files: add /ar prefix
           if (strippedUrl === '/') {
             node.url = '/ar/';
           } else if (!strippedUrl.startsWith('/ar/')) {
@@ -42,8 +43,14 @@ export function remarkLocalizeLinks() {
             node.url = strippedUrl;
           }
         } else {
-          // English files: use root path (no /en prefix)
-          node.url = strippedUrl;
+          // English files: add /en prefix
+          if (strippedUrl === '/') {
+            node.url = '/en/';
+          } else if (!strippedUrl.startsWith('/en/')) {
+            node.url = `/en${strippedUrl}`;
+          } else {
+            node.url = strippedUrl;
+          }
         }
       }
     });

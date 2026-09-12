@@ -247,7 +247,9 @@ const isActive = (href: string) => {
         var btn = document.getElementById("header-back-btn");
         if (!btn) return;
 
-        var isHome = location.pathname === "/" || location.pathname === "/ar/";
+        var path = location.pathname;
+        // Hide back button on home pages (/en/, /ar/) but not on /
+        var isHome = path === "/en/" || path === "/ar/";
         if (isHome) {
           btn.style.display = "none";
         } else {
@@ -256,16 +258,16 @@ const isActive = (href: string) => {
       }
 
       function handleBackClick() {
-        // Use browser history if available, otherwise navigate to parent
+        // Use browser history if available, otherwise navigate to language home
         if (window.history.length > 1) {
           window.history.back();
         } else {
-          // Fallback: navigate to treatments or home
+          // Fallback: navigate to language-specific home
           var path = location.pathname;
           if (path.startsWith("/ar/")) {
             location.href = "/ar/";
           } else {
-            location.href = "/";
+            location.href = "/en/";
           }
         }
       }

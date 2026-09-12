@@ -30,7 +30,7 @@ export function isLocale(id: string, locale: Locale): boolean {
  * Normalize a URL by stripping language prefixes and applying the correct one.
  * Fixes hardcoded /en/ or /ar/ prefixes to match the target locale.
  *
- * Routing: English at /, Arabic at /ar/
+ * Routing: English at /en/, Arabic at /ar/
  */
 export function normalizeHref(path: string, locale: Locale): string {
   // Strip existing language prefix (handles hardcoded /en/... or /ar/... URLs)
@@ -38,8 +38,10 @@ export function normalizeHref(path: string, locale: Locale): string {
 
   // Apply the correct locale prefix
   if (locale === "en") {
-    // English: use root path (no /en prefix)
-    return stripped;
+    // English: add /en prefix
+    if (stripped === "/") return "/en/";
+    if (stripped.startsWith("/en/")) return stripped;
+    return `/en${stripped}`;
   }
   if (locale === "ar") {
     // Arabic: add /ar prefix
@@ -50,20 +52,35 @@ export function normalizeHref(path: string, locale: Locale): string {
   return path;
 }
 
-/** Prefix a path with /ar for AR locale; leave EN paths untouched. */
+/** Prefix a path with /en or /ar based on locale. */
 export function localizedHref(path: string, locale: Locale): string {
-  if (locale === "en" || path.startsWith("/ar/") || path === "/ar") return path;
-  if (path === "/") return "/ar/";
-  return `/ar${path}`;
+  // Strip existing language prefix for normalization
+  const stripped = path.replace(/^\/(?:en|ar)(?=\/|$)/, '') || '/';
+
+  if (locale === "en") {
+    // English: add /en prefix
+    if (stripped === "/") return "/en/";
+    if (stripped.startsWith("/en/")) return path; // Already prefixed
+    return `/en${stripped}`;
+  }
+
+  if (locale === "ar") {
+    // Arabic: add /ar prefix
+    if (stripped === "/") return "/ar/";
+    if (stripped.startsWith("/ar/")) return path; // Already prefixed
+    return `/ar${stripped}`;
+  }
+
+  return path;
 }
 
 /** Given a current URL pathname, produce the alternate-locale equivalent. */
 export function alternateHref(currentPath: string, otherLocale: Locale): string {
-  const isAr = currentPath.startsWith("/ar/") || currentPath === "/ar";
-  const bare = isAr
-    ? (currentPath.replace(/^\/ar/, "") || "/")
-    : currentPath;
-  return otherLocale === "en" ? bare : localizedHref(bare, "ar");
+  // Strip the current language prefix to get the bare path
+  const bare = currentPath.replace(/^\/(?:en|ar)(?=\/|$)/, '') || '/';
+
+  // Apply the alternate locale
+  return localizedHref(bare, otherLocale);
 }
 
 import en from "../i18n/en.json";
@@ -83,7 +100,7 @@ export function dictFor(locale: Locale): Record<string, string> {
 /** Pull the current locale out of an Astro request; fall back to EN. */
 export function currentLocale(astro: { currentLocale?: string; url: URL }): Locale {
   if (astro.currentLocale === "ar" || astro.url.pathname.startsWith("/ar")) return "ar";
-  return "en";
+  return "en"; // Default to English (even if path is /en)
 }
 
 /**
