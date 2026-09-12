@@ -4,6 +4,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ImageLayout from "../components/ImageLayout.astro";
+import ImagePreview from "../components/ImagePreview.astro";
 import { currentLocale } from "../lib/i18n";
 
 interface Props {
@@ -29,5 +30,6 @@ const dir = locale === "ar" ? "rtl" : "ltr";
     </main>
     <Footer />
     <ImageLayout />
+    <ImagePreview />
   </body>
 </html>
