@@ -383,6 +383,13 @@ const isActive = (href: string) => {
     }
   }
 
+  /* Icon-only logo on home page for extra small screens (< 480px) */
+  @media (max-width: 479px) {
+    .logo.is-home .logo-text {
+      display: none;
+    }
+  }
+
   /* Actions row (theme toggle, burger, desktop call button) */
   .header-actions {
     display: flex;
