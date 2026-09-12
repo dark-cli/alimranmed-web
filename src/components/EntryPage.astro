@@ -43,6 +43,20 @@ const medicalSchema = {
   } : undefined,
 };
 
+// FAQ schema if faqItems exist
+const faqSchema = entry.data.faqItems?.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: entry.data.faqItems.map((item: any) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+} : null;
+
 // Remove undefined values
 Object.keys(medicalSchema).forEach(
   (key) => medicalSchema[key] === undefined && delete medicalSchema[key]
@@ -70,6 +84,7 @@ Object.keys(medicalSchema).forEach(
 </div>
 
 <SchemaScript schema={medicalSchema} />
+{faqSchema && <SchemaScript schema={faqSchema} />}
 
 <style>
   .content-page { padding-block: 1.25rem 2.5rem; }

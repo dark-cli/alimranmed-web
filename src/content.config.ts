@@ -36,6 +36,10 @@ const treatments = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/treatments" }),
   schema: pageBase.extend({
     bodyRegion: z.string().optional(),
+    faqItems: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
   }),
 });
 
