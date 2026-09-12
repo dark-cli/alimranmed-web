@@ -1,9 +1,4 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
-import { CONTACT } from "../consts";
-import { topicOf, isLocale, localizedHref, currentLocale } from "../lib/i18n";
-
 // Auto-detect language for root path (/)
 // Check device language > country > default to English
 // Root / redirects to /en/ or /ar/ based on detection
@@ -23,9 +18,9 @@ const detectedLocale = detectLocale();
 // Redirect root to language-specific version
 if (Astro.url.pathname === '/') {
   if (detectedLocale === 'ar') {
-    return Astro.redirect('/ar/', 308);
+    return Astro.redirect('/ar/', 301);
   } else {
-    return Astro.redirect('/en/', 308);
+    return Astro.redirect('/en/', 301);
   }
 }
 
