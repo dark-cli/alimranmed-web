@@ -5,6 +5,12 @@ source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/rtms-%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%ad%d8%a7%d9%84%d8%a7%d8%aa-%d8%a7%d9%84%d8%a3%d9%84%d9%85-%d8%a7%d9%84%d9%85%d8%ae%d8%aa%d9%84%d9%81%d8%a9"
 order: 999
 ---
+
+![](/images/legacy/2020/07/1-s2.0-S1388245718311052-gr1-221x300.jpg)
+
+![](/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-300x224.jpg)
+
+
 **![](/assets/images/1-s2.0-S1388245718311052-gr1-221x300.jpg)**
 
 **في الآونة الأخيرة ، استخدم الأطباء [التحفيز المغناطيسي المتكرر عبر الجمجمة](/services/brain-stimulation/tms/)** **(rTMS) لعلاج حالات الألم المختلفة.**

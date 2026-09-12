@@ -6,7 +6,10 @@ order: 999
 legacyUrl: "https://alimranmed.com/occipital-neuralgia/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/CEYU7_1546590895_6083-1-300x176.jpg)Most feeling in the back and top of the head is transmitted to the brain by the two greater occipital nerves. There is one nerve on each side of the head. Emerging from between bones of the spine in the upper neck, the two greater occipital nerves make their way through muscles at the back of the head and into the scalp. They sometimes reach nearly as far forward as the forehead, but do not cover the face or the area near the ears; other nerves supply these regions.
+![](/images/legacy/2021/02/CEYU7_1546590895_6083-1-300x176.jpg)
+
+
+Most feeling in the back and top of the head is transmitted to the brain by the two greater occipital nerves. There is one nerve on each side of the head. Emerging from between bones of the spine in the upper neck, the two greater occipital nerves make their way through muscles at the back of the head and into the scalp. They sometimes reach nearly as far forward as the forehead, but do not cover the face or the area near the ears; other nerves supply these regions.
 
 Irritation of one of these nerves anywhere along its course can cause a shooting, zapping, electric, or tingling pain very similar to that of trigeminal neuralgia, only with symptoms on one side of the scalp rather than in the face. Sometimes the pain can also seem to shoot forward (radiate) toward one eye. In some patients the scalp becomes extremely sensitive to even the lightest touch, making washing the hair or lying on a pillow nearly impossible. In other patients there may be numbness in the affected area. The region where the nerves enter the scalp may be extremely tender.
 

@@ -27,6 +27,7 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/24.jpg)
 
+
 **Brain CT scan show a bullet arrested at posterior cranial fossa**
 
 **![](/images/legacy/2019/06/25.jpg)Brain CT scan (bone window) show a bullet arrested at posterior cranial fossa**
@@ -37,13 +38,16 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/22.jpg)
 
+
 **Brain CT scan show large collection right parieto-occipital extradural hematoma**
 
 ![](/images/legacy/2019/06/21.jpg)
 
+
 **Brain CT scan show linear fracture extended to the base of skull**
 
 ![](/images/legacy/2019/06/23.jpg)
+
 
 **Brain CT scan show right parieto-occipital  linear fracture**
 
@@ -53,11 +57,13 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/19.jpg)
 
+
 **Brain CT scan show**
 
  **depress fracture with a bullet arrested at left temporal lobe**
 
 ![](/images/legacy/2019/06/20.jpg)
+
 
 **Brain CT scan (bone window) show a bullet arrested at left temporal lobe**
 
@@ -67,11 +73,13 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/17.jpg)
 
+
 **Brain CT scan**
 
  **a tract of hematoma extend from entrance to exit sit**
 
 ![](/images/legacy/2019/06/18.jpg)
+
 
 **Brain CT scan**
 
@@ -83,11 +91,13 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/15-1.jpg)
 
+
 **Brain CT scan**
 
   **fracture involving left orbit**
 
 ![](/images/legacy/2019/06/16.jpg)
+
 
 **Brain CT scan**       
 
@@ -99,6 +109,7 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/13-1.jpg)
 
+
 **Brain CT scan**
 
  **a depress segments with  intracerebral hemorrhage**
@@ -107,11 +118,13 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/12-1.jpg)
 
+
 **Brain CT scan at 7 postoperative day show disappears of**
 
   **depress segments, intracerebral, intraventricular hemorrhage**
 
 ![](/images/legacy/2019/06/14-1.jpg)
+
 
 **Brain CT scan**
 
@@ -125,13 +138,16 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/10-1.jpg)
 
+
 **Brain MRI show**
 
  **a big left sided subdural hematoma**
 
 ![](/images/legacy/2019/06/8-1.jpg) ![](/images/legacy/2019/06/9-1.jpg)
 
+
 ![](/images/legacy/2019/06/11-1.jpg)
+
 
 **Brain MRI show** 
 
@@ -141,9 +157,11 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/6-2.jpg)
 
+
 **skull x-ray**
 
 ![](/images/legacy/2019/06/7-2.jpg)
+
 
 **Brain CT scan  screw driverpenetrated   brain**
 
@@ -151,9 +169,11 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/3-3.jpg)
 
+
 **dorsal x-ray  showed  fracture at D8-D9**
 
 ![](/images/legacy/2019/06/5-2.jpg)
+
 
 **MRI showed  fracture at D8-D9**
 
@@ -171,9 +191,11 @@ source: "ai-draft"
 
 ![](/images/legacy/2019/06/1-3.jpg)
 
+
 **Brain CT scan  1st entrance site**
 
 ![](/images/legacy/2019/06/1-3.jpg)
+
 
 **Brain CT scan 2nd entrance site**
 
@@ -181,9 +203,11 @@ source: "ai-draft"
 
 ![](/assets/images/3-2.jpg)
 
+
 **CT images showing the haematoma**
 
 ![](/assets/images/4-2.jpg)
+
 
 **Extradural haematoma**
 
@@ -193,9 +217,11 @@ source: "ai-draft"
 
 ![](/assets/images/1-1.jpg)
 
+
 CT images showing the entry site of the fragment
 
 ![](/assets/images/2-2.jpg)
+
 
 CT images showing the fragment lodged inside the brain
 
@@ -205,15 +231,19 @@ CT images showing the fragment lodged inside the brain
 
 ![](/assets/images/2-1.jpg)
 
+
 CT images on day one and on day two showing disappearance of the haemorrhage
 
 ![](/assets/images/1.jpg)
 
+
 ![](/assets/images/4-1.jpg)
+
 
 CT images showing disappearance of the intracerebral haemorrhage
 
 ![](/assets/images/3-1.jpg)
+
 
 **A 17-year-old was wounded by a penetrating fragment injury to the head, causing an opening in the right side of the occipital bone with a haematoma extending to the site of the fragment in the left thalamic region, together with intraventricular haemorrhage. He was brought to the emergency room unconscious with constricted pupils and left-sided weakness.**
 
@@ -227,27 +257,34 @@ CT images showing disappearance of the intracerebral haemorrhage
 
 ![](/assets/images/0-1.jpg)
 
+
 Fragment entry site with intraventricular haemorrhage
 
 ![](/assets/images/0.jpg)
 
+
 ![](/assets/images/00.jpg)
+
 
 The fragment lodged inside the brain
 
 ![](/assets/images/000-1.jpg)
 
+
 Disappearance of blood from the ventricles with removal of the external ventricular drain
 
 ![](/assets/images/0000.jpg)
+
 
 After 3 months, showing ventricular dilatation
 
 ![](/assets/images/00-1.jpg)
 
+
 After surgery: elevation of the depressed fracture with shunt placement
 
 ![](/assets/images/0000-1.jpg)
+
 
 Frontal ventriculoperitoneal shunt in place
 
@@ -255,8 +292,10 @@ Frontal ventriculoperitoneal shunt in place
 
 ![](/assets/images/70.jpg)
 
+
 Brain CT images showing the site of the depressed fracture
 
 ![](/assets/images/69.jpg)
+
 
 CT bone window images

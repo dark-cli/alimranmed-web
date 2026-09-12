@@ -18,17 +18,21 @@ source: "ai-draft"
 
 ![](/assets/images/13-6-09spine-fixation.jpg)
 
+
 MRI showing lumbosacral spondylolysis
 
 ![](/assets/images/13-6-09spine-fixation1.jpg)
+
 
 Anterior X-ray showing spinal fixation with titanium hardware
 
 ![](/assets/images/13-6-09spine-fixation-.jpg)
 
+
 Axial MRI showing compression of the spinal cord by a central bony spur between the third and fourth lumbar vertebrae
 
 ![](/assets/images/13-6-09spine-fixation2.jpg)
+
 
 Lateral X-ray showing spinal fixation with titanium hardware
 
@@ -36,9 +40,11 @@ Lateral X-ray showing spinal fixation with titanium hardware
 
 ![](/assets/images/6-1-08sshwanoma1.jpg)
 
+
 MRI showing extension of the tumour behind the last thoracic vertebra
 
 ![](/assets/images/6-1-08sshwanoma2.jpg)
+
 
 MRI showing that the tumour did not take up contrast
 
@@ -46,9 +52,11 @@ MRI showing that the tumour did not take up contrast
 
 ![](/assets/images/cluwed1.jpg)
 
+
 MRI showing a herniated disc between the fourth and fifth cervical vertebrae
 
 ![](/assets/images/cluwed.jpg)
+
 
 Lateral cervical X-ray showing the artificial disc
 
@@ -56,19 +64,23 @@ Lateral cervical X-ray showing the artificial disc
 
 ![](/assets/images/31-3-09spine-fixation.bmp.jpg)
 
+
 Lateral cervical X-ray showing the artificial disc together with vertebral fixation
 
 **A 32-year-old man was exposed on 20 October 2007 to multiple gunshot wounds to the right arm, chest and back. On examination he had lost movement in the left leg with loss of pain sensation in the right leg. CT scanning of the thoracic vertebrae showed multiple fragments, one to the left of the spinal cord in the tenth thoracic vertebra and another anterior to the cord in the ninth thoracic vertebra. During the operation the fragment together with a mass of macerated muscle causing compression of the spinal cord and pushing it to the right was removed. After the operation the patient was placed on continuous physiotherapy. On 25 November 2007 the patient regained his ability to walk without impairment.**
 
 ![](/assets/images/24-10-07brown-squerd1.jpg)
 
+
 Lateral image of the thoracic vertebrae showing multiple fragments around the thoracic spine
 
 ![](/assets/images/24-10-07brown-squerd-.jpg)
 
+
 CT scan of the thoracic vertebrae showing a fragment anterior to the spinal cord at the ninth thoracic vertebra
 
 ![](/assets/images/24-10-07brown-squerd.jpg)
+
 
 CT scan of the thoracic vertebrae showing a fragment to the left of the spinal cord at the tenth thoracic vertebra
 
@@ -76,9 +88,11 @@ CT scan of the thoracic vertebrae showing a fragment to the left of the spinal c
 
 ![](/assets/images/20-7-07saed.jpg)
 
+
 Lateral image of the lumbar vertebrae showing the bullet lodged between the third and fourth lumbar vertebrae
 
 ![](/assets/images/20-7-07saed-.jpg)
+
 
 CT scan showing the shattered neural arch of the third lumbar vertebra
 
@@ -86,15 +100,18 @@ CT scan showing the shattered neural arch of the third lumbar vertebra
 
 ![](/assets/images/maslem.jpg)
 
+
 MRI showing a fracture between the eighth and ninth thoracic vertebrae
 
 **A 70-year-old woman had suffered from headaches for a year, with complete paralysis of the left side and weakness of the right side. Brain MRI showed a tumour severely compressing the junction of the brainstem and spinal cord. The tumour was completely removed and sent for histopathology. The result was a benign tumour (meningioma).**
 
 ![](/assets/images/hasmia.jpg)
 
+
 Brain MRI showing the tumour before contrast
 
 ![](/assets/images/hasmia1.jpg)
+
 
 Brain MRI showing the tumour after contrast
 
@@ -104,15 +121,18 @@ Brain MRI showing the tumour after contrast
 
 ![](/assets/images/ashwaq.jpg)
 
+
 MRI showing extension of the tumour along the 11th and 12th thoracic vertebrae
 
 ![](/assets/images/ashwaq1.jpg)
+
 
 Post-operative MRI showing disappearance of the tumour
 
 A 37-year-old man suffered from back pain and inability to walk. MRI of the lumbosacral region showed disc herniation at the L4-L5 and L5-S1 levels. He underwent laminectomy of L4 and L5 with removal of the herniated discs at the above levels. On the first postoperative day he began walking normally and after two weeks rejoined his colleagues at work.
 
 ![](/assets/images/c.jpg)
+
 
 MRI showing the disc herniation
 
@@ -173,6 +193,7 @@ Oxygen-ozone therapy is an extremely effective medical treatment method based on
 -   Activates the body’s own radical scavengers and counters the negative properties of free radicals.
 
 ![](/images/legacy/2019/03/images-8-300x166.jpg)
+
 
 **Ozone therapy can ideally be combined with other methods of biological medicine, in particular for: impaired arterial perfusion,**
 

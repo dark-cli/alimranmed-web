@@ -19,3 +19,4 @@ Fibromyalgia
 chronic low back pain.
 
 ![](/images/legacy/2019/06/images-2-300x141.jpg)
+

@@ -6,7 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/the-temporomandibular-joint-tmj/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/تنزيل-2.jpg)The temporomandibular joint (TMJ) acts like a sliding hinge, connecting your jawbone to your skull. You have one joint on each side of your jaw. TMJ disorders — a type of temporomandibular disorder or TMD — can cause pain in your jaw joint and in the muscles that control jaw movement.
+![](/images/legacy/2021/02/تنزيل-2.jpg)
+
+The temporomandibular joint (TMJ) acts like a sliding hinge, connecting your jawbone to your skull. You have one joint on each side of your jaw. TMJ disorders — a type of temporomandibular disorder or TMD — can cause pain in your jaw joint and in the muscles that control jaw movement.
 
 The exact cause of a person’s TMJ disorder is often difficult to determine. Your pain may be due to a combination of factors, such as genetics, arthritis or jaw injury. Some people who have jaw pain also tend to clench or grind their teeth (bruxism), although many people habitually clench or grind their teeth and never develop TMJ disorders.
 

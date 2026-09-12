@@ -27,6 +27,8 @@ Neck pain accompanied by headache and fever can be a sign of meningitis, an infe
 
 ![](/assets/images/images-23.jpg)
 
+
+
 Your neck contains bones and joints, muscle tendons and ligaments, muscles and nerves, any of which can be the source of pain. Neck pain can also come from areas near your neck, such as your jaw, head, and shoulders. Conversely, problems in your neck can involve other parts of your body, such as your upper back, shoulders, or arms.
 
 If your nerves are involved in your neck pain, you may also feel numbness, tingling, or weakness in your arms or legs.

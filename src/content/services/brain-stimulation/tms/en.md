@@ -13,7 +13,9 @@ Now a brain-mimicking technology to help it boost cells
 
 **A Transcranial magnetic stimulation (TMS)**
 
-![](/images/legacy/2021/01/TMS-procedure-300x274.png)TMS device is made of one or two copper coils, positioned on an external, targeted area of a patient’s scalp, which produces brief, magnetic pulses to an estimated depth of approximately 2 to 2.5 centimeters. The magnetic field triggers changes in neuronal activity and communication, which can alter unwanted activity within the brain.
+![](/images/legacy/2021/01/TMS-procedure-300x274.png)
+
+TMS device is made of one or two copper coils, positioned on an external, targeted area of a patient’s scalp, which produces brief, magnetic pulses to an estimated depth of approximately 2 to 2.5 centimeters. The magnetic field triggers changes in neuronal activity and communication, which can alter unwanted activity within the brain.
 
 TMS can work as a stimulant or an inhibitor of cerebral activity, or both. In addition, different sized coils and varying magnetic impulses can impact outcomes, depending on a patient’s neuroplasticity—the capacity for neurons and the nerve cells to change and compensate for injury and disease.
 

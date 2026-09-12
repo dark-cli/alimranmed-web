@@ -16,6 +16,7 @@ What is the Benefits of Radiofrequency ablation?
 
 ![](/images/legacy/2019/04/Device-g4-300x202.png)
 
+
 -   Pain relief for up to 2 years.
 -   Significant, longer lasting pain relief and less side effect compared to steroid injections.
 -   Low complication and morbidity rates.
@@ -54,6 +55,7 @@ To prepare for radiofrequency ablation treatment, you should take a few precauti
 -   You will need to bring someone with you to drive you home after the procedure. You should not drive or operate machinery for at least 24 hours after the procedure.
 
 ![](/images/legacy/2019/04/images-2.jpg)
+
 
 What Happens During Radiofrequency Ablation?
 

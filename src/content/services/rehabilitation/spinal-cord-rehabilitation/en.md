@@ -7,7 +7,9 @@ legacyUrl: "https://alimranmed.com/2020/07/12/spinal-cord-rehabilitation/"
 publishedAt: "2020-07-12T13:53:08"
 source: "legacy-wp"
 ---
-![](/images/legacy/2020/07/Q5hes8vhPrRX3yvJ4bp0kg-191x300.png)Spinal cord injuries typically require rehabilitation team members from various specialties who should work together to get you the best possible result. This team will include a physiotherapist, an occupational therapist, a nurse to manage medications and any wounds, a clinical psychologist to assist with the trauma, a dietitian and a doctor who will oversee all the medical care.
+![](/images/legacy/2020/07/Q5hes8vhPrRX3yvJ4bp0kg-191x300.png)
+
+Spinal cord injuries typically require rehabilitation team members from various specialties who should work together to get you the best possible result. This team will include a physiotherapist, an occupational therapist, a nurse to manage medications and any wounds, a clinical psychologist to assist with the trauma, a dietitian and a doctor who will oversee all the medical care.
 
 During the various stages of rehabilitation, therapists will focus on maintenance and strengthening of muscle function, redeveloping fine motor skills, and learning adaptive techniques to accomplish your ADLs (Activities of daily life).  Along the recovery journey, you and your family members should be educated on the effects of a spinal cord injury and how to prevent complications, and you should be given advice on rebuilding your life and increasing your quality of life and independence.
 

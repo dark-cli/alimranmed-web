@@ -6,7 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/sickle-cell-anemia/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/sickl_cell-257x300.jpg)Sickle cell anemia is one of a group of disorders known as sickle cell disease. Sickle cell anemia is an inherited red blood cell disorder in which there aren’t enough healthy red blood cells to carry oxygen throughout your body.
+![](/images/legacy/2021/02/sickl_cell-257x300.jpg)
+
+Sickle cell anemia is one of a group of disorders known as sickle cell disease. Sickle cell anemia is an inherited red blood cell disorder in which there aren’t enough healthy red blood cells to carry oxygen throughout your body.
 
 Normally, the flexible, round red blood cells move easily through blood vessels. In sickle cell anemia, the red blood are shaped like sickles or crescent moons. These rigid, sticky cells can get stuck in small blood vessels, which can slow or block blood flow and oxygen to parts of the body.
 

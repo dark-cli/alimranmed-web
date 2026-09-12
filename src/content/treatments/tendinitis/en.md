@@ -6,7 +6,10 @@ order: 999
 legacyUrl: "https://alimranmed.com/tendinitis/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1.jpg)Tendinitis is inflammation or irritation of a tendon — the thick fibrous cords that attach muscle to bone. The condition causes pain and tenderness just outside a joint.
+![](/images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1.jpg)
+
+
+Tendinitis is inflammation or irritation of a tendon — the thick fibrous cords that attach muscle to bone. The condition causes pain and tenderness just outside a joint.
 
 While tendinitis can occur in any of your tendons, it’s most common around your shoulders, elbows, wrists, knees and heels.
 

@@ -13,6 +13,7 @@ Genicular or Saphenous Nerve Block & Radiofrequency Ablation of Knee Joint Chron
 
 ![](/images/legacy/2020/04/rf-for-knee-300x200.jpg)
 
+
 Indications for genicular nerve blocks
 
 -   Patients with chronic knee pain secondary to osteoarthritis

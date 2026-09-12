@@ -28,9 +28,11 @@ Damaged vertebral discs rarely heal because they remain under constant pressure 
 
 ![](/images/legacy/2020/01/DSC_0054-1-1024x684-1-300x200.jpg)
 
+
 How spinmed chiropractic works؟
 
 ![](/images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png)
+
 
 SpineMED® relieves pressure by being able to stabilize the spine without causing reflected muscle contractions or convulsions as is the case with normal drag devices.
 

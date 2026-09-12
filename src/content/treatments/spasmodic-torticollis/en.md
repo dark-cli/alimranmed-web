@@ -6,7 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/spasmodic-torticollis/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/20160223115358_upload_file_th-300x224.jpg)Cervical dystonia, also called spasmodic torticollis, is a painful condition in which your neck muscles contract involuntarily, causing your head to twist or turn to one side. Cervical dystonia can also cause your head to uncontrollably tilt forward or backward.
+![](/images/legacy/2021/02/20160223115358_upload_file_th-300x224.jpg)
+
+Cervical dystonia, also called spasmodic torticollis, is a painful condition in which your neck muscles contract involuntarily, causing your head to twist or turn to one side. Cervical dystonia can also cause your head to uncontrollably tilt forward or backward.
 
 A rare disorder that can occur at any age, cervical dystonia most often occurs in middle-aged people, women more than men. Symptoms generally begin gradually and then reach a point where they don’t get substantially worse.
 

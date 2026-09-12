@@ -6,7 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/scoliosis/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/normal_and_curved_spine-300x272-1.jpg)Scoliosis is a sideways curvature of the spine that occurs most often during the growth spurt just before puberty. While scoliosis can be caused by conditions such as cerebral palsy and muscular dystrophy, the cause of most scoliosis is unknown. About 3% of adolescents have scoliosis.
+![](/images/legacy/2021/02/normal_and_curved_spine-300x272-1.jpg)
+
+Scoliosis is a sideways curvature of the spine that occurs most often during the growth spurt just before puberty. While scoliosis can be caused by conditions such as cerebral palsy and muscular dystrophy, the cause of most scoliosis is unknown. About 3% of adolescents have scoliosis.
 
 Most cases of scoliosis are mild, but some spine deformities continue to get more severe as children grow. Severe scoliosis can be disabling. An especially severe spinal curve can reduce the amount of space within the chest, making it difficult for the lungs to function properly.
 

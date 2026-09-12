@@ -10,6 +10,7 @@ Arthritis is a condition that causes bone pain and worsens with age, and in this
 
 ![](/images/legacy/2020/01/images-4-1.jpg)
 
+
 Overview
 
 Arthritis is an inflammation that can affect the knees, palm joints, or part of the spine, or any other major joint such as the shoulders. It can be infected at any age, but it's common in the elderly.

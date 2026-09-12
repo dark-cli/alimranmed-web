@@ -6,6 +6,10 @@ legacyUrl: "https://ar.alimranmed.com/archives/1742"
 order: 999
 publishedAt: "2020-04-28T08:05:53"
 ---
+
+![](/images/legacy/2020/02/images-2.jpg)
+
+
 **![](/assets/images/xc.jpg)**
 
 **الترددات الراديوية العلاجية** 
@@ -95,5 +99,3 @@ publishedAt: "2020-04-28T08:05:53"
 تحذير مهم
 
 إذا كنت تشعر بألم شديد في مكان الحقن، ولاحظ تورم واحمرار، أو زيادة ضعف الساق، راجع طبيبك بأقرب وقت.
-
-![](/assets/images/Eurosafe-2_0-300x214.jpg)

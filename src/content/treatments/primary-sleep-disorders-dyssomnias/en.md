@@ -6,7 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/primary-sleep-disorders-dyssomnias/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/135-171948-sleep-disorders-blood-pressure-intestines_700x400-300x171.jpg)the term sleep disorder covers a wide range of conditions and symptoms, but sleep disorders can be broken down into various types.
+![](/images/legacy/2021/02/135-171948-sleep-disorders-blood-pressure-intestines_700x400-300x171.jpg)
+
+the term sleep disorder covers a wide range of conditions and symptoms, but sleep disorders can be broken down into various types.
 
 -   Primary sleep disorders aren’t caused by another medical or psychological condition.
 -   Secondary sleep disorders are the result of another medical problem, such as depression, thyroid problems, stroke, arthritis, or asthma.

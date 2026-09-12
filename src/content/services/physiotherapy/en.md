@@ -28,6 +28,7 @@ Physiotherapy is considered safer and has fewer side effects than other therapeu
 
 ![](/assets/images/images-37.jpg)
 
+
 1.  Relieves pain
 2.  Helps increase blood flow, which reduces inflammation
 3.  Deactivates trigger points responsible for myofascial pain
@@ -51,6 +52,7 @@ Specifically, physiotherapy improves the client's quality of life by:
 -   Educating and planning maintenance and support programs to prevent re-occurrence, re-injury, or functional decline.
 
 ![](/assets/images/images-36-300x168.jpg)
+
 
 Many people think physiotherapy is used only for the musculoskeletal system. But in fact, physiotherapy is both preventive and rehabilitative for a range of mobility issues, injuries, and/or diseases.
 

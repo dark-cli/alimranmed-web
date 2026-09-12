@@ -5,6 +5,11 @@ legacyUrl: "https://ar.alimranmed.com/archives/910"
 order: 999
 publishedAt: "2020-01-03T07:25:09"
 ---
+
+![](/images/legacy/2020/01/STUBB-rTMS-207x300.png)
+
+![](/images/legacy/2020/01/tms-treatment-768-300x180.jpg)  
+
 [▶ شاهد على يوتيوب](https://www.youtube.com/watch?v=bmBV1r4_HrE)
 
 **الان تقنية تحاكي الدماغ لمساعدته على تعزيز خلاياه العصبية** 
@@ -34,7 +39,6 @@ publishedAt: "2020-01-03T07:25:09"
 
 تستهدف منطقة معينة من الدماغ , من ناحيه أخرى الاثار الجانية تكون طفيفة جدا على عكس اثار الصدمات الكهربائية
 
-rTMs
 
 **كيف تكون الجلسة ؟؟**
 

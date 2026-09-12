@@ -29,6 +29,8 @@ All described diagnostic tests have false positives and negatives. No test is pe
 
 ![](/images/legacy/2019/06/7-269x300.jpg)
 
+
+
 Figure 1: Typical axial T2 weighted MRI scan from an NPH patient, showing ventricular enlargement, out of proportion to that anticipated due to normal aging.
 
 **Patient evaluation**1) Patients are evaluated by our multidisciplinary, experienced team composed of Movement Disorder Neurology, Cognitive/Aging Neurology, Neuroradiology, and Neurosurgery.

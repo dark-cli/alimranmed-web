@@ -8,6 +8,7 @@ source: "legacy-wp"
 ---
 ![](/images/legacy/2021/01/04-10-20-549956961-1-240x300.jpg)
 
+
 -   Sciatica refers to pain that radiates along the path of the sciatic nerve, which branches from your lower back through your hips and buttocks and down each leg. Typically, sciatica affects only one side of your body.
 -   Sciatica most commonly occurs when a herniated disk, bone spur on the spine or narrowing of the spine (spinal stenosis) compresses part of the nerve. This causes inflammation, pain and often some numbness in the affected leg.
 -   Although the pain associated with sciatica can be severe, most cases resolve with non-operative treatments in a few weeks. People who have severe sciatica that’s associated with significant leg weakness or bowel or bladder changes might be candidates for surgery.

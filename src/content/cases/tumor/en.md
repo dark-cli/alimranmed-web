@@ -13,7 +13,10 @@ source: "legacy-wp"
 
 **35 years old female had lethargies with enlargement  of nose, lips, hands and feet. she has history of 4 years absent of menses with headache. Brain MRI show diffuse enlargement of pituitary glands with suprasellar extension. Growth hormone is so high (19.7 ng/ml). surgical intervention was done with subfrontal approach to excision of tumor. After surgery she return back to normal activity.**
 
-![](/images/legacy/2020/04/111-1.jpg)![](/images/legacy/2020/04/unnamed-1.jpg)
+![](/images/legacy/2020/04/111-1.jpg)
+
+![](/images/legacy/2020/04/unnamed-1.jpg)
+
 
  ![](/images/legacy/2020/04/111.jpg)
 
@@ -22,6 +25,7 @@ source: "legacy-wp"
 **pituitary adenoma**
 
 ![](/images/legacy/2020/04/unnamed.jpg)
+
 
 **Brain MRI  (sagital section) show**
 
@@ -33,11 +37,13 @@ source: "legacy-wp"
 
 ![](/images/legacy/2020/04/111-2.jpg)
 
+
 **Brain CT scan**
 
  **a mass occupying left temporal lobe**
 
 ![](/images/legacy/2020/04/unnamed-2.jpg)
+
 
 **Brain MRI (coronal view)**
 
@@ -77,9 +83,11 @@ source: "legacy-wp"
 
 ![](/images/legacy/2020/04/5.jpg)
 
+
 **showed recurrent PFT**
 
 ![](/images/legacy/2020/04/4.jpg)
+
 
 **Brain MRI postop. PFT disappear**
 
@@ -93,21 +101,25 @@ source: "legacy-wp"
 
 ![](/images/legacy/2020/04/2-2.jpg)
 
+
 **Brain CT scan with contrast**
 
 **70 years old female had a Headache for one year, complete paralysis of left side of the body and weakness of the right side. Brain MRI showed anterior foramen magnum mass severely compressing the junction of brain stem and spinal cord. Total excision was done on 11-2-07, and sent for histopathology.**
 
 ![](/images/legacy/2020/04/unnamed-4.jpg)
 
+
 **Brain MRI without contrast**
 
 ![](/images/legacy/2020/04/4-1.jpg)
+
 
 **Brain MRI with contrast**
 
 **65 years old male had Right sided weakness for one month with headache. Brain CT scan revealed a big right frontal mass.  Operated on 4-2-07,  total left frontal lobectomy was done and sent for histopathology. The result showed diffuse astrocytoma grade 2.**
 
 ![](/images/legacy/2020/04/5-1.jpg)
+
 
 **Brain CT scan**
 
@@ -119,17 +131,24 @@ source: "legacy-wp"
 
 ![](/images/legacy/2020/04/2-3.jpg)
 
+
 **Brain CT scan before surgery**
 
-![](/images/legacy/2020/04/unnamed-5.jpg)**Brain C****T** **scan after surgery**
+![](/images/legacy/2020/04/unnamed-5.jpg)
+
+**Brain C****T** **scan after surgery**
 
  
 
 **25 years old male had complaining  from generalized tonic clonic attack of fit. He had history of meningitis in the first year of  his life.  In last 6 months, he received medication for  submandibular tuberculosis.  Brain MRI showed left frontal suprasylvien mass. Subtotal excision was done, postoperatively the patient  became very well. Histopathology revealed diffuse astrocytoma grade 2 ,so he was sent  for radiotherapy to complete his management.**
 
-![](/images/legacy/2020/04/4-2.jpg)**Brain CT scan**
+![](/images/legacy/2020/04/4-2.jpg)
 
-![](/images/legacy/2020/04/5-2.jpg)**Brain MRI T1**
+**Brain CT scan**
+
+![](/images/legacy/2020/04/5-2.jpg)
+
+**Brain MRI T1**
 
  
 
@@ -141,7 +160,9 @@ source: "legacy-wp"
 
 **45 years old female had a headache for 2 years. In the last 6 months she developed right sided parasthesia and numbness with visual deterioration on the right eye. Brain MRI showed  parasellar mass engulfing the right optic nerve and optic chiasm with pressure on the left optic nerve. Surgical intervention under  microscopical field was done on 18-12-06. Complete freeing of the right optic nerve, right carotid artery and left optic nerve. She was very well in the post** **operative period and her vision  improved gradually. Histopathological result showed meningioma.**
 
-![](/images/legacy/2020/04/2-4.jpg)**Brain MRI tumourengulf right optic nerve and carotid artery**
+![](/images/legacy/2020/04/2-4.jpg)
+
+**Brain MRI tumourengulf right optic nerve and carotid artery**
 
 **![](/images/legacy/2020/04/unnamed-6.jpg)****Brain CT scan after surgery disappear tumour**
 
@@ -149,13 +170,17 @@ source: "legacy-wp"
 
 **70 years old female had one year right sided weakness. Treated as cerebrovascular accident. In last one month she  became Unable to speek.  Brain CT scan showed left convexity meningioma. Surgery was done at 29-10-06 with complete excision with dural base, dural graft use to close the dural defect. In the 1st postoperative day she started to have normal speech. In the 7th postoperative day, she was discharged home with normal gait.**
 
-![](/images/legacy/2020/04/4-3.jpg)**Brain CT scan**
+![](/images/legacy/2020/04/4-3.jpg)
+
+**Brain CT scan**
 
 **left convexity meningioma**
 
 **33 years old male had 4 months headache with vision deterioration, and  hearing loss in the left ear. On examination, bilateral papilledema with left sided facial palsy and absent left corneal reflex . Brain CT and MRI scan showed cerebellopontine angle tumor. Surgery was done with left sub occipital approach and debulking was done. On the 1st postoperative day ,the patient  was very well with no more headache and gradual improvement of his vision. Histopathology result revealed schwannoma (a benign tumor with a very response to gamma knife) ,so he was sent  for gamma knife for removal of ruminant part of the tumor.**
 
-![](/images/legacy/2020/04/5-3.jpg)**Brain CT scan**
+![](/images/legacy/2020/04/5-3.jpg)
+
+**Brain CT scan**
 
   **![](/images/legacy/2020/04/111-7.jpg)Brain MRI**
 
@@ -165,8 +190,10 @@ source: "legacy-wp"
 
 ![](/images/legacy/2020/04/2-5.jpg)
 
+
 **MRI extradural hyperintese lesion extend from D11-D12**
 
 ![](/images/legacy/2020/04/unnamed-7.jpg)
+
 
 **11-1-07  MRI complete resolution**

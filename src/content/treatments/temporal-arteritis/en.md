@@ -10,6 +10,7 @@ Giant cell arteritis is an inflammation of the lining of your arteries. Most oft
 
 ![](/images/legacy/2021/02/occipital-nerve-label-e1584509060138-300x300.png)
 
+
 Giant cell arteritis frequently causes headaches, scalp tenderness, jaw pain and vision problems. Untreated, it can lead to blindness.
 
 Prompt treatment with corticosteroid medications usually relieves symptoms of giant cell arteritis and might prevent loss of vision. You’ll likely begin to feel better within days of starting treatment. But even with treatment, relapses are common.

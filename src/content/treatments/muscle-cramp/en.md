@@ -6,7 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/muscle-cramp/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/209457-189x300.jpg)A muscle cramp is a sudden and involuntary contraction of one or more of your muscles. If you’ve ever been awakened in the night or stopped in your tracks by a sudden charley horse, you know that muscle cramps can cause severe pain. Though generally harmless, muscle cramps can make it temporarily impossible to use the affected muscle.
+![](/images/legacy/2021/02/209457-189x300.jpg)
+
+A muscle cramp is a sudden and involuntary contraction of one or more of your muscles. If you’ve ever been awakened in the night or stopped in your tracks by a sudden charley horse, you know that muscle cramps can cause severe pain. Though generally harmless, muscle cramps can make it temporarily impossible to use the affected muscle.
 
 Long periods of exercise or physical labor, particularly in hot weather, can lead to muscle cramps. Some medications and certain medical conditions also may cause muscle cramps. You usually can treat muscle cramps at home with self-care measures.
 

@@ -18,6 +18,7 @@ Ultrasound has been used for some time to accelerate and enhance tissue repair, 
 
 ![](/images/legacy/2019/06/تنزيل-28-1.jpg)
 
+
 The non-thermal mechanisms by which ultrasound works are called cavitation and acoustic streaming, and the two often occur simultaneously and synergistically. At recommended therapeutic doses of ultrasound, stable gaseous cavities form (cavitation) that act to basically enhance the second mechanism, acoustic streaming, which seems to be the main therapeutic action of ultrasound. What happens in acoustic streaming is effectively the movement and vibration of cellular fluids near the surface of cell membranes and the aforementioned cavities, causing changes in membrane permeability and hence the movement of essential ions and nutrients across into and out of the cell. The acoustic streaming and cavitation achieve is an up-regulation of cellular activity triggered by ultrasound energy.
 
 **What are the benefits of ultrasound therapy?**

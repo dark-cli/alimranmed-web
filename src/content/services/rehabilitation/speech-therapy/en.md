@@ -27,4 +27,6 @@ Speech therapy usually begins with an assessment that identifies the type of com
 
 **FOR CHILDREN**
 
-![](/images/legacy/2020/07/190311111420481_اسباب-نفسية-لتأخر-الطفل-عن-النطق-300x187-1.jpg)For children, our Expert Therapists engage them through talking and playing, and using toys, books or other objects as part of language intervention to help stimulate language development, or correct sounds and syllables for a child depending on what is age-appropriate. They will also provide techniques and exercises for the caregiver and child to follow at home.
+![](/images/legacy/2020/07/190311111420481_اسباب-نفسية-لتأخر-الطفل-عن-النطق-300x187-1.jpg)
+
+For children, our Expert Therapists engage them through talking and playing, and using toys, books or other objects as part of language intervention to help stimulate language development, or correct sounds and syllables for a child depending on what is age-appropriate. They will also provide techniques and exercises for the caregiver and child to follow at home.

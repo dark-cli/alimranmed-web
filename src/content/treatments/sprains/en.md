@@ -6,7 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/sprains/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/f164a2d49d71b3344b2c74185d9764ff-300x280.png)A sprain is a stretching or tearing of ligaments — the tough bands of fibrous tissue that connect two bones together in your joints. The most common location for a sprain is in your ankle.
+![](/images/legacy/2021/02/f164a2d49d71b3344b2c74185d9764ff-300x280.png)
+
+A sprain is a stretching or tearing of ligaments — the tough bands of fibrous tissue that connect two bones together in your joints. The most common location for a sprain is in your ankle.
 
 Initial treatment includes rest, ice, compression and elevation. Mild sprains can be successfully treated at home. Severe sprains sometimes require surgery to repair torn ligaments.
 

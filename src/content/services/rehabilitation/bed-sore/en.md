@@ -7,7 +7,9 @@ legacyUrl: "https://alimranmed.com/2020/07/01/bed-sore/"
 publishedAt: "2020-07-01T07:04:50"
 source: "legacy-wp"
 ---
-![](/images/legacy/2020/07/247674_10151945256634968_1158683050_n-300x223.jpg)Bed sore (or what is known scientifically as pressure sore ) occurs as a result of constant friction or permanent pressure on a specific area of ​​the body without rest, as in cases of prolonged lying down for patients with paralysis, for example
+![](/images/legacy/2020/07/247674_10151945256634968_1158683050_n-300x223.jpg)
+
+Bed sore (or what is known scientifically as pressure sore ) occurs as a result of constant friction or permanent pressure on a specific area of ​​the body without rest, as in cases of prolonged lying down for patients with paralysis, for example
 
 Causes of bed sore
 
@@ -18,7 +20,9 @@ the reasons for what happens:
 1.  Constant pressure on a specific area of ​​the body.
 2.  Constant friction resulting from constantly fluctuating in the bed and staying in it, for example, in people who suffer from delicacy in the skin or poor blood circulation.
 
-![](/images/legacy/2020/07/قرحة-الضغطpressure-ulcer.jpg)Stages of bed sore
+![](/images/legacy/2020/07/قرحة-الضغطpressure-ulcer.jpg)
+
+Stages of bed sore
 
 Bed sore usually develops in 4 stages, separated by the following:
 

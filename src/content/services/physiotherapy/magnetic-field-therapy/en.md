@@ -7,7 +7,9 @@ legacyUrl: "https://alimranmed.com/2021/01/21/magnetic-field-therapy/"
 publishedAt: "2021-01-21T15:18:26"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/01/salus_talent_a_list2-300x200.jpg)Magnetic field therapy is a safe, and non-invasive way to reduce pain and inflammation uses magnets to maintain health and treat illness.
+![](/images/legacy/2021/01/salus_talent_a_list2-300x200.jpg)
+
+Magnetic field therapy is a safe, and non-invasive way to reduce pain and inflammation uses magnets to maintain health and treat illness.
 
 The use of electromagnetic fields (EMFs) and in particular of the magneto-therapy has had a notable increase in the last decade in rehabilitation treatment and provides a non-invasive, safe, and easy method to directly treat the site of injury, the source of pain and inflammation, and other types of disease. Magnetic field therapy was applied to promote bone healing, treat osteoarthritis and inflammatory diseases of the musculoskeletal system, alleviate pain, enhance healing of ulcers and reduce spasticity and, also, extremely low frequency (ELF) magnetic fields in the pico tesla and milli tesla ranges are aimed at improving neurotransmission and correcting local immune pathology, respectively. An analgesic and anti-nociceptive efficacy, similar to the opioid analgesic effect respect of pulsed electromagnetic field (PEMF) is reported by scientist literature but the clear biological and biochemical mechanism of the effect of magnetic therapy on pain remains unknown. Also, some studies have shown that short-term exposure to electromagnetic fields influences several inflammatory cellular and neurological processes, such as patterns of cortical activation and inhibition and the activity of various neurotransmitters.
 

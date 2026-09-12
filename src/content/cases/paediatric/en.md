@@ -16,13 +16,16 @@ source: "ai-draft"
 
 ![](/assets/images/111-2.jpg)
 
+
 **Lateral skull X-ray showing the Y-shunt in both the cerebral ventricle and the cyst.**
 
 ![](/assets/images/1-1.jpg)
 
+
 CT brain scan showing a cyst occupying the left occipital lobe of the brain
 
 ![](/assets/images/11-2.jpg)
+
 
 CT brain scan showing dilated cerebral ventricles
 
@@ -30,7 +33,9 @@ CT brain scan showing dilated cerebral ventricles
 
 ![](/assets/images/1-3.jpg)
 
+
 ![](/assets/images/11-3.jpg)
+
 
 Dural grafting during the operation
 
@@ -38,9 +43,11 @@ Dural grafting during the operation
 
 ![](/assets/images/11-4.jpg)
 
+
 CT images showing hydrocephalus with a fluid-filled cyst in the posterior fossa
 
 ![](/assets/images/1-4.jpg)
+
 
 Post-operative CT images showing the shunt in both the cerebral ventricle and the posterior fossa cyst, with clear regression of the cyst
 
@@ -48,13 +55,16 @@ Post-operative CT images showing the shunt in both the cerebral ventricle and th
 
 ![](/assets/images/1-5.jpg)
 
+
 **A 10-year-old boy with hydrocephalus and a congenital encephalocele who had undergone a ventriculoperitoneal shunt during his first year of life. He presented to Al-Imran Clinic complaining of headaches with repeated vomiting for 4 months. On examination he had a small swelling at the back of his head with papilloedema. CT brain scanning showed hydrocephalus due to shunt malfunction. He was operated on with placement of a new shunt, removal of the old one, and complete excision of the encephalocele. On the day after surgery the patient was in good health, with headaches and vomiting resolved.**
 
 ![](/assets/images/111-3.jpg)
 
+
 CT images showing hydrocephalus
 
 ![](/assets/images/11-5.jpg)
+
 
 CT images showing the encephalocele
 
@@ -62,9 +72,11 @@ CT images showing the encephalocele
 
 ![](/assets/images/1-6.jpg)
 
+
 **An 8-year-old boy suffering from congenital hydrocephalus who had a ventriculoperitoneal shunt placed at 3 months of age. A swelling appeared along the shunt tract one week before consultation. Surgery was performed and the shunt was removed; infection was found with the swelling filled with pus. The day after the operation he began suffering repeated vomiting, and a CT brain scan showed intraventricular haemorrhage. An urgent external ventricular drain was placed and the patient was started on potent antibiotics to prevent meningitis. After 8 days a frontal ventriculoperitoneal shunt was performed. The patient gradually improved and was discharged home in very good condition.**
 
 ![](/assets/images/111-4.jpg)
+
 
 CT images showing dilated cerebral ventricles
 
@@ -72,11 +84,13 @@ CT images showing dilated cerebral ventricles
 
 ![](/assets/images/11-6.jpg)
 
+
 CT images showing shunt placement for hydrocephalus
 
 **A 7-month-old girl suffering from repeated vomiting. She had been treated for gastroenteritis but had not recovered. CT brain scanning showed hydrocephalus. A ventriculoperitoneal shunt was performed. The outcome was very good after the operation.**
 
 ![](/assets/images/1-7.jpg)
+
 
 CT images showing hydrocephalus
 
@@ -85,5 +99,6 @@ CT images showing hydrocephalus
 **A CT brain scan showed a large intracerebral haematoma. An urgent craniotomy was performed to evacuate the haematoma. Within the first week after surgery she gradually regained her feeding ability, and her pupil returned to normal size, although she still had an inability to move the eyeball (oculomotor nerve palsy). By the end of the first month the child had become very active, with movement in both eyeballs.**
 
 ![](/assets/images/11-7.jpg)
+
 
 CT brain images showing intracerebral haemorrhage

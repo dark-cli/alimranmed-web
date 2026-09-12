@@ -39,9 +39,13 @@ However, osteoarthritis may develop in people without these risk factors.
 
 ![](/images/legacy/2020/02/1-3-300x300.jpg)
 
+
+
 Figure a
 
 ![](/images/legacy/2020/02/footPain-1045328130-770x553-650x428-2-300x298.jpg)
+
+
 
 Figure b
 

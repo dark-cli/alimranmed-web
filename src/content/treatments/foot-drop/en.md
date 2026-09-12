@@ -6,7 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/foot-drop/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/unnamed-300x233.png)Foot drop, sometimes called drop foot, is a general term for difficulty lifting the front part of the foot. If you have foot drop, the front of your foot might drag on the ground when you walk.
+![](/images/legacy/2021/02/unnamed-300x233.png)
+
+Foot drop, sometimes called drop foot, is a general term for difficulty lifting the front part of the foot. If you have foot drop, the front of your foot might drag on the ground when you walk.
 
 Foot drop isn’t a disease. Rather, foot drop is a sign of an underlying neurological, muscular or anatomical problem.
 

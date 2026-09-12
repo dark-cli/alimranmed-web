@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogPost from "../../../components/BlogPost.astro";
+import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+
+const locale = currentLocale(Astro);
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts
+    .filter((e) => isLocale(e.id, "en"))
+    .map((entry) => ({ params: { slug: topicOf(entry.id) }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+
+<BaseLayout title={`${entry.data.title} — Alimran Medical Center`} description={entry.data.description}>
+  <BlogPost entry={entry} backHref={localizedHref("/blog/", locale)} />
+</BaseLayout>

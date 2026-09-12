@@ -18,3 +18,4 @@ It is important to treat the correct branch of the trigeminal nerve involved in 
 For patients where surgery and anaesthesia is too risky, Injection Techniques may offer pain relief
 
 ![](/images/legacy/2019/06/0هخ.jpg)
+

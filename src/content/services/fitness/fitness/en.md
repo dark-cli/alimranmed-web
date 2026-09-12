@@ -14,6 +14,7 @@ Starting a fitness program may be one of the best things you can do for your hea
 
 ![](/images/legacy/2020/12/pageTopDesktop-300x149.jpg)
 
+
 Stretching is an important component of any exercise program. Most aerobic training and strength training programs naturally cause your muscles to contract and stretch.
 
 As you stretch, keep calm. Breathe freely as you stop each stretch for about 30 seconds. Try not to hold your breath. Don’t bounce or endure a painful stretch. Expect to feel the tension as you stretch. If you feel pain, you are over the limit.

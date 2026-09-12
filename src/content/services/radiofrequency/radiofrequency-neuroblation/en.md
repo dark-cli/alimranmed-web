@@ -13,3 +13,4 @@ It is used in pain coming from facet joint, Trigeminal neuralgia, Sacro-iliac jo
 Radiofrequency ablation therapy is one of the best procedure available till today to provide long lasting pain relief. It is very safe, done under local anesthesia, & usually requires few hours at the pain clinic.
 
 ![](/images/legacy/2019/06/xc.jpg)
+

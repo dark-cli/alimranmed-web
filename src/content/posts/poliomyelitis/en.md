@@ -6,7 +6,9 @@ legacyUrl: "https://alimranmed.com/2020/12/05/poliomyelitis/"
 publishedAt: "2020-12-05T17:32:35"
 source: "legacy-wp"
 ---
-![](/images/legacy/2020/12/54fcfbefb0b21d8c1acc74980729584a-258x300-1.jpg)Poliomyelitis syndrome is a neurological disease caused by the poliovirus.
+![](/images/legacy/2020/12/54fcfbefb0b21d8c1acc74980729584a-258x300-1.jpg)
+
+Poliomyelitis syndrome is a neurological disease caused by the poliovirus.
 
 Fortunately, thanks to the systematic vaccination campaigns that began in 1963 in our country, they have been virtually eliminated since the late 1960s. In 1988, the last case was described. In recent years we have been able to find new cases among immigrant populations or after traveling to countries where they are still endemic.
 

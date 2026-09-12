@@ -1,6 +1,8 @@
 /* Latin: IBM Plex Sans. Arabic: Tajawal (by Boutros Fonts, used by Saudi MoH
-   and Gulf hospitals — trusted institutional Arabic sans). */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap');
+   and Gulf hospitals — trusted institutional Arabic sans).
+   Using display=fallback for better font loading — shows system fonts instantly,
+   swaps to Tajawal when loaded. Fallback to Arabic system fonts if Tajawal fails. */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=fallback');
 
 /* Font Awesome — served as a static file from /fonts/fontawesome/fontawesome.css
    loaded via BaseHead. That path resolves identically in dev and prod (no Vite
@@ -86,10 +88,11 @@ body {
 /* Arabic — pair Latin-first stack with Arabic fallback.
    Browsers do per-character font selection: Latin chars pick
    "IBM Plex Sans", Arabic glyphs fall through to "Tajawal".
+   Fallback chain: Tajawal → local system Arabic fonts → generic sans.
    Putting the Latin font FIRST prevents proper-name / brand text
    from rendering in Tajawal's Latin fallback. */
 html[dir="rtl"] body {
-  font-family: "IBM Plex Sans", "Tajawal", var(--font-sans);
+  font-family: "IBM Plex Sans", "Tajawal", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Naskh Arabic", "Arabic Typesetting", var(--font-sans);
 }
 
 main {
@@ -274,7 +277,8 @@ html[dir="rtl"] .prose blockquote {
 }
 .prose img {
   border-radius: var(--radius);
-  margin: 1em 0;
+  margin: 1em auto;
+  display: block;
 }
 
 /* YouTube embeds injected by rehype-youtube — responsive 16:9 container */

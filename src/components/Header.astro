@@ -243,13 +243,15 @@ const isActive = (href: string) => {
     // ── Back button handling ────────────────────────────────────────
     // Show back button on non-homepage, with smart navigation
     (function () {
+      var lastPath = location.pathname;
+
       function updateBackButton() {
         var btn = document.getElementById("header-back-btn");
         if (!btn) return;
 
         var path = location.pathname;
-        // Hide back button on home pages (/en/, /ar/) but not on /
-        var isHome = path === "/en/" || path === "/ar/";
+        // Hide back button on home pages (/en/, /ar/)
+        var isHome = path === "/en/" || path === "/ar/" || path === "/";
         if (isHome) {
           btn.style.display = "none";
         } else {
@@ -257,8 +259,9 @@ const isActive = (href: string) => {
         }
       }
 
-      function handleBackClick() {
-        // Use browser history if available, otherwise navigate to language home
+      function handleBackClick(e) {
+        e.preventDefault();
+        // Try history.back() first — most reliable
         if (window.history.length > 1) {
           window.history.back();
         } else {
@@ -272,13 +275,34 @@ const isActive = (href: string) => {
         }
       }
 
-      var btn = document.getElementById("header-back-btn");
-      if (btn) {
-        btn.addEventListener("click", handleBackClick);
-        updateBackButton();
-        // Update on each page load
-        document.addEventListener("astro:page-load", updateBackButton);
+      function bindButton() {
+        var btn = document.getElementById("header-back-btn");
+        if (btn) {
+          // Remove old listeners and re-bind
+          var newBtn = btn.cloneNode(true);
+          btn.parentNode.replaceChild(newBtn, btn);
+          btn = newBtn;
+
+          btn.addEventListener("click", handleBackClick);
+          btn.addEventListener("touchend", handleBackClick);
+          updateBackButton();
+        }
       }
+
+      // Initial bind
+      bindButton();
+
+      // Re-bind on page transitions (View Transitions API)
+      document.addEventListener("astro:page-load", function () {
+        lastPath = location.pathname;
+        bindButton();
+      });
+
+      // Also update on history changes
+      window.addEventListener("popstate", function () {
+        lastPath = location.pathname;
+        bindButton();
+      });
     })();
   })();
 </script>

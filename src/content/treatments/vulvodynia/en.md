@@ -6,7 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/vulvodynia/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/01/Endometrial-Cancer-1-300x202.jpg)Vulvodynia is chronic pain or discomfort around the opening of your vagina (vulva) for which there’s no identifiable cause and which lasts at least three months. The pain, burning or irritation associated with vulvodynia can make you so uncomfortable that sitting for long periods or having sex becomes unthinkable. The condition can last for months to years.
+![](/images/legacy/2021/01/Endometrial-Cancer-1-300x202.jpg)
+
+Vulvodynia is chronic pain or discomfort around the opening of your vagina (vulva) for which there’s no identifiable cause and which lasts at least three months. The pain, burning or irritation associated with vulvodynia can make you so uncomfortable that sitting for long periods or having sex becomes unthinkable. The condition can last for months to years.
 
 If you have vulvodynia, don’t let the absence of visible signs or embarrassment about discussing the symptoms keep you from seeking help. Treatment options are available to lessen your discomfort. And your doctor might be able to determine a cause for your vulvar pain, so it’s important to have an examination.
 

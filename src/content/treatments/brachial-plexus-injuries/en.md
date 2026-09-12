@@ -10,6 +10,8 @@ The brachial plexus is a bundle of nerves that stems from nerve roots in the cer
 
 ![](/images/legacy/2021/01/13-300x206.jpg)
 
+
+
 The brachial plexus nerves extend to the skin and are sensory, too. For instance, they let you know that the pan you just grabbed with your hand is too hot to hold.
 
 -   **Ulnar nerve:** Rooted in C8-T1, it allows for fine motor control of the fingers.

@@ -10,6 +10,7 @@ source: "legacy-wp"
 
 ![](/images/legacy/2019/06/images-34.jpg)
 
+
 Electrical stimulation or E-stimulation is commonly used in Physiotherapy to help increase the strength of weak muscles and relieve pain. The main advantage of E-stimulation is that it makes use of natural pain relieving mechanisms, and hence has minimal side effects. Drug therapies effectively introduce foreign chemicals to achieve the same end, but in doing so alter your metabolism and bodily function, hence causing more potential side effects. The main use in physiotherapy for E-stimulation is as a means of relieving chronic pain relief without the risk of drug interactions and/or side effects.
 
 E-stimulation devices can provide a range of frequencies, which allow them to tailor to a broad range of physiologies, each of which may respond differently under a range of stimulation. New machines are becoming more compact and easy to use, allowing patients to use the therapy in the comfort and privacy of home after instruction and guidance from a physic. E-stimulation will often be used in conjunction with other forms of physical therapy for the best clinical outcomes. Using the technique in conjunction with hot and cold therapies, hydrotherapy, stretching, and therapeutic exercise is common practice.

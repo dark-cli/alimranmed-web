@@ -11,6 +11,7 @@ Radiofrequency neurotomy (also called radiofrequency ablation or lesioning) is a
 
 ![](/images/legacy/2020/02/images-2.jpg)
 
+
 **Which Conditions Are Treated With Radiofrequency Ablation?**
 
 RFA can be used to help patients with chronic (long-lasting). its effectiveness for

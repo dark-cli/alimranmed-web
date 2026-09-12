@@ -10,6 +10,7 @@ Kyphosis is an exaggerated, forward rounding of the back. It can occur at any ag
 
 ![](/images/legacy/2021/01/congenital-kyphosis-1-300x185.png)
 
+
 Age-related kyphosis is often due to weakness in the spinal bones that causes them to compress or crack. Other types of kyphosis can appear in infants or teens due to malformation of the spine or wedging of the spinal bones over time.
 
 Mild kyphosis causes few problems. Severe kyphosis can cause pain and be disfiguring. Treatment for kyphosis depends on your age, and the cause and effects of the curvature.

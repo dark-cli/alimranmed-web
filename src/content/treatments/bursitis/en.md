@@ -6,7 +6,10 @@ order: 999
 legacyUrl: "https://alimranmed.com/bursitis/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/01/image.axd_-20-300x272.jpg)Bursitis is a painful condition that affects the small fluid-filled pads — called bursae — that act as cushions among your bones and the tendons and muscles near your joints. Bursitis occurs when a bursa becomes inflamed.
+![](/images/legacy/2021/01/image.axd_-20-300x272.jpg)
+
+
+Bursitis is a painful condition that affects the small fluid-filled pads — called bursae — that act as cushions among your bones and the tendons and muscles near your joints. Bursitis occurs when a bursa becomes inflamed.
 
 The most common locations for bursitis are in the shoulders, elbows or hips. But you can also have bursitis by your knee, heel and the base of your big toe. Bursitis often occurs in joints that perform frequent repetitive motion.
 

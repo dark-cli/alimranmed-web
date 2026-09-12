@@ -8,6 +8,8 @@ source: "legacy-wp"
 ---
 ![](/images/legacy/2020/02/StockPhoto2SportsInjuries-1-300x186.jpg)
 
+
+
 Lateral epicondylitis, commonly known as tennis elbow, is a painful condition involving the tendons that attach to the bone on the outside (lateral) part of the elbow. Tendons anchor the muscle to bone. The muscle involved in this condition, the extensor carpi radialis brevis, helps to extend and stabilize the wrist. With lateral epicondylitis, there is degeneration of the tendon’s attachment, weakening the anchor site and placing greater stress on the area. This can then lead to pain associated with activities in which this muscle is active, such as lifting, gripping, and/or grasping. Sports such as tennis are commonly associated with this, but the problem can occur with many different types of activities, athletic and otherwise.
 
 CAUSES

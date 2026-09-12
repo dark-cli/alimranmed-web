@@ -13,3 +13,4 @@ When facet joints are painful, it can be difficult to bend the spine backward / 
 Each facet joint is served by medial branch nerves, and if these nerves are blocked with local anesthetic, the pain from the joints will stop. This is the only test to tell the doctor the pain is coming from facet joint. Once test is positive (i.e. you get more than 50%pain relief), radiofrequency ablation of medial branches will provide your lasting pain relief.
 
 ![](/images/legacy/2019/06/3.jpg)
+

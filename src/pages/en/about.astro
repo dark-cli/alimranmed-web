@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+import { isLocale, topicOf, localizedHref, currentLocale } from "../../lib/i18n";
+
+const locale = currentLocale(Astro);
+
+const aboutPages = (await getCollection("pages"))
+  .filter((e) => isLocale(e.id, "en") && e.data.category === "about")
+  .sort((a, b) => {
+    // Entry IDs are like "about/mission/en" — sort by mission → vision → values
+    const order = ["about/mission", "about/vision", "about/values"];
+    return order.indexOf(topicOf(a.id)) - order.indexOf(topicOf(b.id));
+  });
+
+const rendered = await Promise.all(
+  aboutPages.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  }),
+);
+
+// Icon per section (Font Awesome)
+const ICON: Record<string, string> = {
+  mission: "fa-solid fa-bullseye",
+  vision:  "fa-solid fa-eye",
+  values:  "fa-solid fa-heart",
+};
+---
+
+<BaseLayout title="About — Alimran Medical Center" description="Our mission, vision, and values.">
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">About Us</span>
+      <h1>Care that listens, medicine that thinks.</h1>
+      <p class="lede">
+        Alimran Medical Center is a specialised neurology and musculoskeletal clinic in Basra, Iraq.
+        Our multidisciplinary team combines consultant-led surgical expertise with modern
+        rehabilitation, brain-stimulation, and pain-management techniques.
+      </p>
+    </div>
+  </section>
+
+  <section class="values container">
+    {rendered.map(({ entry, Content }) => {
+      // Topic is "about/mission" → slug is "mission"
+      const slug = topicOf(entry.id).split("/").pop() ?? "";
+      const iconClass = ICON[slug] ?? "fa-solid fa-circle-check";
+      return (
+        <article class="value-row" id={slug}>
+          <div class="value-icon" aria-hidden="true">
+            <i class={iconClass}></i>
+          </div>
+          <div class="value-body">
+            <h2>{entry.data.title.replace(/^OUR\s+/i, "")}</h2>
+            <div class="prose">
+              <Content />
+            </div>
+          </div>
+        </article>
+      );
+    })}
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Meet our doctors</h2>
+      <p>Board-certified consultants with decades of combined experience.</p>
+      <a class="btn btn-primary" href={localizedHref("/doctors/", locale)}>See the team</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 2rem 0 1.25rem;
+    background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
+    text-align: center;
+  }
+  @media (min-width: 640px) {
+    .hero { padding: 4rem 0 2rem; }
+  }
+  .eyebrow {
+    display: inline-block;
+    color: var(--brand);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  @media (min-width: 640px) {
+    .eyebrow { font-size: 0.85rem; margin-bottom: 1rem; }
+  }
+  .hero h1 { margin: 0 auto 0.75rem; max-width: 22ch; }
+  .lede {
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin: 0 auto;
+    font-size: clamp(0.95rem, 2.6vw, 1.1rem);
+  }
+
+  /* Values: compact vertical list, not big cards. Icon on the left, content
+     on the right. Left brand-tinted border for accent instead of full card. */
+  .values {
+    padding-block: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .values { padding-block: 3rem; gap: 1.75rem; }
+  }
+
+  .value-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding: 0 0 0 0.75rem;
+    border-left: 3px solid var(--brand);
+  }
+  @media (min-width: 640px) {
+    .value-row { gap: 1.25rem; padding-left: 1.25rem; }
+  }
+
+  .value-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand-soft);
+    color: var(--brand);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .value-icon i { font-size: 1rem; line-height: 1; }
+  @media (min-width: 640px) {
+    .value-icon { width: 48px; height: 48px; }
+    .value-icon i { font-size: 1.15rem; }
+  }
+
+  .value-body h2 {
+    color: var(--brand);
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    margin: 0 0 0.5em;
+  }
+  @media (min-width: 640px) {
+    .value-body h2 { font-size: 1.25rem; }
+  }
+  .value-body .prose {
+    max-width: none;
+  }
+  .value-body .prose p:last-child,
+  .value-body .prose ul:last-child { margin-bottom: 0; }
+
+  .cta-strip {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    text-align: center;
+  }
+  @media (min-width: 640px) {
+    .cta-strip { padding: 3rem 0; }
+  }
+  .cta-strip p { color: var(--ink-soft); margin-bottom: 1.5rem; }
+</style>

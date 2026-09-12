@@ -7,7 +7,10 @@ legacyUrl: "https://alimranmed.com/2021/01/16/alzheimers-disease/"
 publishedAt: "2021-01-16T06:56:50"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/01/ALZHEIMERS_DISEASE-300x210.jpg)Alzheimer’s disease is a progressive neurologic disorder that causes the brain to shrink (atrophy) and brain cells to die. Alzheimer’s disease is the most common cause of dementia — a continuous decline in thinking, behavioral and social skills that affects a person’s ability to function independently.  
+![](/images/legacy/2021/01/ALZHEIMERS_DISEASE-300x210.jpg)
+
+
+Alzheimer’s disease is a progressive neurologic disorder that causes the brain to shrink (atrophy) and brain cells to die. Alzheimer’s disease is the most common cause of dementia — a continuous decline in thinking, behavioral and social skills that affects a person’s ability to function independently.  
 Approximately 5.8 million people in the United States age 65 and older live with Alzheimer’s disease. Of those, 80% are 75 years old and older. Out of the approximately 50 million people worldwide with dementia, between 60% and 70% are estimated to have Alzheimer’s disease.  
 The early signs of the disease include forgetting recent events or conversations. As the disease progresses, a person with Alzheimer’s disease will develop severe memory impairment and lose the ability to carry out everyday tasks.  
 Medications may temporarily improve or slow progression of symptoms. These treatments can sometimes help people with Alzheimer’s disease maximize function and maintain independence for a time. Different programs and services can help support people with Alzheimer’s disease and their caregivers.  

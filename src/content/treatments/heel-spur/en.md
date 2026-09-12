@@ -11,6 +11,7 @@ What is the heel spur?
 
 ![](/images/legacy/2020/12/fig-3_epi-compressor-300x184.jpg) ![](/images/legacy/2020/12/a00149f02_epi-compressor-300x284.jpg)
 
+
 Heel spur is a bony growth on the underside of the heel bone. The underlying cause is a common condition called “plantar fasciitis”. This tendon forms the arch of the foot, from the heel to the sole of the foot. Plantar fasciitis is a constant pain. Interestingly, in some people the heel bump is prolonged, but no pain is felt for years until one day the pain suddenly appears “out of nothing.”
 
 Symptoms

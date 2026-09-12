@@ -6,7 +6,10 @@ order: 999
 legacyUrl: "https://alimranmed.com/flatfeet/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/Flat-Feet-300x249-1.jpg)You have flatfeet when the arches on the inside of your feet are flattened, allowing the entire soles of your feet to touch the floor when you stand up.
+![](/images/legacy/2021/02/Flat-Feet-300x249-1.jpg)
+
+
+You have flatfeet when the arches on the inside of your feet are flattened, allowing the entire soles of your feet to touch the floor when you stand up.
 
 A common and usually painless condition, flatfeet can occur when the arches don’t develop during childhood. In other cases, flatfeet develop after an injury or from the simple wear-and-tear stresses of age.
 

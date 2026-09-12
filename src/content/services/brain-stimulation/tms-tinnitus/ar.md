@@ -15,4 +15,5 @@ order: 999
 
 ![](/assets/images/aural-rehabilitation-scaled-e1593501600445-300x201.jpg) ![](/assets/images/z-tinnitus-300x171.png)
 
+
 **في السنوات الأخيرة ، زاد عدد الدراسات حول تطبيق [TMS](/services/brain-stimulation/tms/) مع تكرار منخفض متكرر لعلاج طنين الأذن، وقد أعطت معظم هذه الدراسات نتائج ناجحة. الاستخدام المتكرر للـ [TMS](/services/brain-stimulation/tms/) في الطنين أمر جديد للغاية.**

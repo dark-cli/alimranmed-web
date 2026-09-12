@@ -12,7 +12,10 @@ A lumbar sympathetic block is an injection of local anesthetic into the back usi
 
 This procedure is typically ordered by your doctor for pain located in the buttocks and/or legs that is caused by sympathetically maintained pain, or complex regional pain syndrome, formerly known as reflex sympathetic dystrophy (RSD). It may also be ordered for nerve injury or post-herpetic neuralgia ([herpes zoster](http://www.painclinicofindia.com/procedures2.htm), shingles). Lumbar sympathetic blocks are also used with circulation problems (e.g., vascular insufficiency) to see if blood flow can be improved.
 
-![](/images/legacy/2019/06/2-300x158.jpg)![](/images/legacy/2019/06/1-1.jpg)
+![](/images/legacy/2019/06/2-300x158.jpg)
+
+![](/images/legacy/2019/06/1-1.jpg)
+
 
 complex regional pain syndrome
 
@@ -25,6 +28,7 @@ The plexus is located along the side of your spine. Alcohol is injected to destr
 A diagnostic block is often done prior to a neurolytic block to ensure that pain relief can be achieved by this type of injection. Your doctor will tell you if you are an appropriate candidate for a neurolytic block.
 
 ![](/images/legacy/2019/06/3-1.jpg)
+
 
 **Stellate ganglion block**
 
@@ -41,6 +45,7 @@ The pain goes away after the injection and stays away longer than the life of th
 The procedure will most likely have to be repeated to achieve a long-lasting benefit. The spacing of injections will be based on how long the pain relief lasts between injections. Usually, you will experience a longer benefit following each subsequent injection
 
 ![](/images/legacy/2019/06/4.jpg) ![](/images/legacy/2019/06/5.jpg)
+
 
 CRPS                                                        Left hand
 

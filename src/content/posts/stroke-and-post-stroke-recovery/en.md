@@ -16,6 +16,7 @@ Symptoms
 
 ![](/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية-300x143.jpg)
 
+
 Look for these signs and symptoms if you think you or someone else has a stroke. Be careful when the symptom smiles start. The duration of symptoms can affect treatment options that are available to you:
 
 You may be confused. You may speak out or have difficulty understanding speech.  

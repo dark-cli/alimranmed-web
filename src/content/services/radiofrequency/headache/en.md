@@ -18,4 +18,5 @@ chronic headaches includes:
 
 ![](/images/legacy/2020/01/images-14-300x150.jpg)
 
+
 Several procedures or treatments have been proposed for the treatment of chronic headaches when conventional treatments such as oral and injectable pharmacological treatments, physical therapy, chiropractic care, or transcutaneous nerve stimulation (TENS) have failed. The best safest and effective method is pulsed radiofrequency and radiofrequency ablation . The proposed effect of these procedures is to inhibit the transmission of pain signals that are sent to the brain from the sensory nerves such as the occipital nerve (greater or lesser), upper cervical nerves, supraorbital and supratrochlear nerves (branches of the frontal and trigeminal nerves), or sphenopalatine ganglion nerve.

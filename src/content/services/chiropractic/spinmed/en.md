@@ -32,6 +32,7 @@ How spinmed chiropractic works؟
 
 ![](/images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png)
 
+
 SpineMED® relieves pressure by being able to stabilize the spine without causing reflected muscle contractions or convulsions as is the case with normal drag devices.
 
 By monitoring the stress applied to the patient every 2.5 seconds, he or she can make adjustments every 20 seconds for better results.
