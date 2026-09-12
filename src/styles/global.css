@@ -283,33 +283,55 @@ html[dir="rtl"] .prose blockquote {
   height: auto;
 }
 
-/* Mobile: 2-column layout for images */
-@media (max-width: 768px) {
+/* Center all images by default */
+.prose img {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+  max-width: 85%;
+}
+
+/* Image paragraphs: flex container for centering */
+.prose p:has(img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.prose p:has(img) img {
+  margin: 0;
+}
+
+/* Desktop: 2-column for consecutive images */
+@media (min-width: 768px) {
   .prose {
-    column-count: 2;
-    column-gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  .prose > h1,
-  .prose > h2,
-  .prose > h3,
-  .prose > h4,
-  .prose > h5,
-  .prose > h6,
-  .prose > p:not(:has(img)),
-  .prose > ul,
-  .prose > ol,
-  .prose > blockquote,
-  .prose > hr {
-    column-span: all;
-    break-inside: avoid;
+  .prose > * {
+    flex: 1 1 100%;
   }
 
-  .prose img {
-    width: 100%;
-    height: auto;
-    margin: 0 0 1rem 0;
-    break-inside: avoid;
+  /* Image pairs: 48% width each */
+  .prose p:has(img) {
+    flex: 0 1 calc(50% - 0.5rem);
+    width: auto;
+  }
+
+  .prose p:has(img) + p:has(img) {
+    flex: 0 1 calc(50% - 0.5rem);
+  }
+
+  /* Odd image: center full width */
+  .prose p:has(img) + p:has(img) + p:has(img) {
+    flex: 0 1 100%;
+  }
+
+  .prose p:has(img) + p:has(img) + p:has(img) img {
+    max-width: 85%;
   }
 }
 
