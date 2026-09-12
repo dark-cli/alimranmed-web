@@ -82,7 +82,9 @@ const FEATURED_SERVICES = [
             src={`https://i.ytimg.com/vi/${INTRO_VIDEO_ID}/hqdefault.jpg`}
             alt="Alimran Medical Center introduction video"
             loading="eager"
-            width="480" height="270"
+            fetchpriority="high"
+            width="480"
+            height="270"
           />
           <span class="play-btn" aria-hidden="true">
             <svg viewBox="0 0 68 48" width="68" height="48">
@@ -107,7 +109,7 @@ const FEATURED_SERVICES = [
         {FEATURED_CONDITIONS.map((c) => (
           <a class="condition-card" href={localizedHref(c.path, locale)}>
             <div class="thumb">
-              <img src={c.image} alt={c.title} loading="lazy" />
+              <img src={c.image} alt={c.title} loading="lazy" width="200" height="150" />
             </div>
             <h3>{c.title}</h3>
           </a>
@@ -130,7 +132,7 @@ const FEATURED_SERVICES = [
         {FEATURED_SERVICES.map((s) => (
           <a class="service-card" href={localizedHref(s.path, locale)}>
             <div class="thumb wide">
-              <img src={s.image} alt={s.title} loading="lazy" />
+              <img src={s.image} alt={s.title} loading="lazy" width="500" height="280" />
             </div>
             <div class="service-body">
               <h3>{s.title}</h3>
@@ -153,7 +155,7 @@ const FEATURED_SERVICES = [
         <div class="doctor-grid">
           {doctors.map((d) => (
             <a class="doctor-card card" href={localizedHref(`/doctors/${topicOf(d.id)}/`, locale)}>
-              {d.data.photo && <img class="doctor-photo" src={d.data.photo} alt={d.data.fullName} loading="lazy" />}
+              {d.data.photo && <img class="doctor-photo" src={d.data.photo} alt={d.data.fullName} loading="lazy" width="100" height="100" />}
               <h3>{d.data.fullName || d.data.title}</h3>
               {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}
               {d.data.titles.length > 0 && (

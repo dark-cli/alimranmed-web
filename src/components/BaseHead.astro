@@ -109,5 +109,13 @@ const businessSchema = {
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.site)} />
 
+<!-- Preload LCP image (hero video poster) -->
+<link
+  rel="preload"
+  as="image"
+  href="https://i.ytimg.com/vi/m53F8E6VKFA/hqdefault.jpg"
+  fetchpriority="high"
+/>
+
 <!-- Structured data -->
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
