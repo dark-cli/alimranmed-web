@@ -283,57 +283,7 @@ html[dir="rtl"] .prose blockquote {
   height: auto;
 }
 
-/* Center all images by default */
-.prose img {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block;
-  max-width: 85%;
-}
-
-/* Image paragraphs: flex container for centering */
-.prose p:has(img) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
-}
-
-.prose p:has(img) img {
-  margin: 0;
-}
-
-/* Desktop: 2-column for consecutive images */
-@media (min-width: 768px) {
-  .prose {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .prose > * {
-    flex: 1 1 100%;
-  }
-
-  /* Image pairs: 48% width each */
-  .prose p:has(img) {
-    flex: 0 1 calc(50% - 0.5rem);
-    width: auto;
-  }
-
-  .prose p:has(img) + p:has(img) {
-    flex: 0 1 calc(50% - 0.5rem);
-  }
-
-  /* Odd image: center full width */
-  .prose p:has(img) + p:has(img) + p:has(img) {
-    flex: 0 1 100%;
-  }
-
-  .prose p:has(img) + p:has(img) + p:has(img) img {
-    max-width: 85%;
-  }
-}
+/* Image layout is handled by JavaScript in ImageLayout component */
 
 /* YouTube embeds injected by rehype-youtube — responsive 16:9 container */
 .yt-embed {
