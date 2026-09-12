@@ -7,6 +7,7 @@
  */
 import { render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import SchemaScript from "./SchemaScript.astro";
 import { CONTACT } from "../consts";
 
 interface Props {
@@ -25,6 +26,34 @@ interface Props {
 const { entry, labels = {}, backHref = "/doctors/" } = Astro.props;
 const { Content } = await render(entry);
 const d = entry.data;
+
+// Physician schema for SEO / rich results
+const physicianSchema = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  name: d.fullName,
+  description: d.description || `${d.fullName} at Alimran Medical Center`,
+  image: d.photo || undefined,
+  jobTitle: d.specialty || d.titles[0] || "Doctor",
+  medicalSpecialty: d.specialty || undefined,
+  qualifications: d.titles.length > 0 ? d.titles : undefined,
+  worksFor: {
+    "@type": "MedicalOrganization",
+    name: "Alimran Medical Center",
+    url: "https://alimran.clinic",
+  },
+  knowsAbout: d.specialty ? [d.specialty] : undefined,
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: CONTACT.phones[0],
+    contactType: "Medical Consultation",
+  },
+};
+
+// Remove undefined values
+Object.keys(physicianSchema).forEach(
+  (key) => physicianSchema[key] === undefined && delete physicianSchema[key]
+);
 
 const l = {
   back: labels.back ?? "← All doctors",
@@ -75,6 +104,8 @@ const l = {
     </aside>
   </div>
 </article>
+
+<SchemaScript schema={physicianSchema} />
 
 <style>
   .doctor-profile { padding-block: 1.25rem 2.5rem; }

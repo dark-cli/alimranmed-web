@@ -1,0 +1,23 @@
+---
+/**
+ * SchemaScript — Reusable JSON-LD injection component
+ *
+ * Accepts schema object and injects it as <script type="application/ld+json">
+ * Supports multiple schema types: MedicalOrganization, Physician, MedicalWebPage, FAQPage, BreadcrumbList
+ *
+ * Usage:
+ * <SchemaScript schema={schema} />
+ */
+
+interface Props {
+  schema: Record<string, any>;
+}
+
+const { schema } = Astro.props;
+
+if (!schema || !schema['@context']) {
+  throw new Error('SchemaScript: schema must include @context');
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

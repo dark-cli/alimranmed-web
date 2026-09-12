@@ -8,6 +8,7 @@
  * BaseLayout nested inside BaseLayout → duplicate <header>, <body>, etc.
  */
 import { render } from "astro:content";
+import SchemaScript from "./SchemaScript.astro";
 
 interface Props {
   entry: any;
@@ -18,6 +19,34 @@ interface Props {
 const { entry, backHref, backLabel } = Astro.props;
 const { Content } = await render(entry);
 const category = entry.data.category;
+
+// MedicalWebPage schema for treatment/service pages
+const medicalSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: entry.data.title,
+  description: entry.data.description || entry.data.title,
+  datePublished: entry.data.published || new Date().toISOString(),
+  dateModified: entry.data.updated?.toISOString() || new Date().toISOString(),
+  mainContentOfPage: {
+    "@type": "WebPageElement",
+    name: entry.data.title,
+  },
+  author: {
+    "@type": "MedicalOrganization",
+    name: "Alimran Medical Center",
+    url: "https://alimran.clinic",
+  },
+  reviewedBy: entry.data.reviewedBy ? {
+    "@type": "Physician",
+    name: entry.data.reviewedBy,
+  } : undefined,
+};
+
+// Remove undefined values
+Object.keys(medicalSchema).forEach(
+  (key) => medicalSchema[key] === undefined && delete medicalSchema[key]
+);
 ---
 
 <div class="content-page">
@@ -39,6 +68,8 @@ const category = entry.data.category;
     </div>
   </article>
 </div>
+
+<SchemaScript schema={medicalSchema} />
 
 <style>
   .content-page { padding-block: 1.25rem 2.5rem; }

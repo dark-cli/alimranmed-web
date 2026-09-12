@@ -1,0 +1,87 @@
+---
+/**
+ * Breadcrumb — Navigation breadcrumbs with BreadcrumbList schema
+ *
+ * Usage:
+ * <Breadcrumb items={[
+ *   { label: "Home", href: "/" },
+ *   { label: "Treatments", href: "/treatments/" },
+ *   { label: "Back Pain", href: "/treatments/back-pain/" }
+ * ]} />
+ */
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+
+// Generate BreadcrumbList schema
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: new URL(item.href, Astro.site).href,
+  })),
+};
+---
+
+<nav aria-label="Breadcrumb" class={`breadcrumb ${className || ''}`}>
+  <ol>
+    {items.map((item, index) => (
+      <li>
+        <a href={item.href}>{item.label}</a>
+        {index < items.length - 1 && <span class="separator" aria-hidden="true">/</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<style>
+  .breadcrumb ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb a {
+    color: var(--brand);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .separator {
+    color: var(--ink-muted);
+  }
+
+  @media (max-width: 640px) {
+    .breadcrumb ol {
+      font-size: 0.85rem;
+    }
+  }
+</style>

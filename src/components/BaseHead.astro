@@ -23,7 +23,7 @@ const alternateURL = new URL(alternatePath, Astro.site);
 
 const businessSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalClinic",
+  "@type": ["MedicalClinic", "LocalBusiness"],
   name: "Alimran Medical Center",
   description:
     "Alimran Medical Center specializes in neurology and musculoskeletal disorders in Basra, Iraq — chiropractic, rehabilitation, brain stimulation (TMS/tDCS), pain management, physiotherapy, radiofrequency, and neurosurgery.",
@@ -38,12 +38,31 @@ const businessSchema = {
       streetAddress: "Breaha, Alnkba Medical Collection",
     },
   ],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 30.5156,
+    longitude: 47.7804,
+  },
   medicalSpecialty: [
     "Neurology",
     "Neurosurgery",
     "Chiropractic",
     "PhysicalTherapy",
     "PainMedicine",
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Friday",
+      opens: "14:00",
+      closes: "18:00",
+    },
   ],
 };
 ---

@@ -1,0 +1,118 @@
+---
+/**
+ * AuthorByline — Display reviewed-by metadata for E-E-A-T (Expertise, Experience, Authoritativeness, Trustworthiness)
+ *
+ * Usage:
+ * <AuthorByline
+ *   reviewedBy="Dr. Hussein Imran Mousa"
+ *   specialty="Neurosurgeon"
+ *   reviewedAt="2026-08-15"
+ * />
+ */
+
+interface Props {
+  reviewedBy?: string;
+  specialty?: string;
+  reviewedAt?: Date | string;
+  author?: string;
+  class?: string;
+}
+
+const {
+  reviewedBy,
+  specialty,
+  reviewedAt,
+  author,
+  class: className,
+} = Astro.props;
+
+if (!reviewedBy && !author) return null;
+
+const byline = reviewedBy || author || '';
+const formatDate = (date: Date | string) => {
+  if (!date) return '';
+  const d = typeof date === 'string' ? new Date(date) : date;
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+
+const lastReviewedDate = reviewedAt ? formatDate(reviewedAt) : '';
+---
+
+<div class={`author-byline ${className || ''}`}>
+  <div class="author-info">
+    {reviewedBy && (
+      <>
+        <span class="label">Reviewed by</span>
+        <span class="name">{byline}</span>
+        {specialty && <span class="specialty">{specialty}</span>}
+      </>
+    )}
+    {author && !reviewedBy && (
+      <>
+        <span class="label">Written by</span>
+        <span class="name">{author}</span>
+      </>
+    )}
+  </div>
+  {lastReviewedDate && (
+    <div class="review-date">
+      <span class="label">Last reviewed</span>
+      <time datetime={reviewedAt?.toString()}>{lastReviewedDate}</time>
+    </div>
+  )}
+</div>
+
+<style>
+  .author-byline {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    background: var(--surface-alt);
+    border-left: 4px solid var(--brand);
+    border-radius: var(--radius);
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  .author-info,
+  .review-date {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .label {
+    color: var(--ink-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .name {
+    color: var(--brand);
+    font-weight: 600;
+  }
+
+  .specialty {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .review-date {
+    margin-left: auto;
+  }
+
+  @media (max-width: 640px) {
+    .author-byline {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .review-date {
+      margin-left: 0;
+    }
+  }
+</style>
