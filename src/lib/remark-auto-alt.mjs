@@ -6,7 +6,10 @@ export function remarkAutoAlt() {
       // If alt text is empty, generate from filename
       if (!node.alt || node.alt.trim() === '') {
         const url = node.url;
+        if (!url) return;
+
         const filename = url.split('/').pop();
+        if (!filename) return;
 
         // Extract meaningful part from filename (remove extensions, numbers, hyphens)
         const cleaned = filename
@@ -18,8 +21,8 @@ export function remarkAutoAlt() {
           .replace(/  +/g, ' ') // Collapse multiple spaces
           .trim();
 
-        // Capitalize first letter
-        const altText = cleaned.charAt(0).toUpperCase() + cleaned.slice(1) || 'Image';
+        // Capitalize first letter and set alt
+        const altText = (cleaned.charAt(0).toUpperCase() + cleaned.slice(1)) || 'Image';
         node.alt = altText;
       }
     });
