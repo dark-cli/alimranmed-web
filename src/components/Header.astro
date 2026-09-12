@@ -110,7 +110,7 @@ const isActive = (href: string) => {
 <!-- Mobile drawer + scrim (sit outside .site-header so their fixed positioning
      isn't relative to the sticky header stacking context).
      Explicit dir so Arabic content flows right-to-left inside the drawer. -->
-<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile" aria-hidden="true" dir={locale === "ar" ? "rtl" : "ltr"}>
+<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile" dir={locale === "ar" ? "rtl" : "ltr"}>
   <div class="drawer-head">
     <span class="drawer-title">{t["common.menu"]}</span>
     <button id="menu-close" class="icon-btn" aria-label="Close menu" type="button">

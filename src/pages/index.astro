@@ -15,7 +15,7 @@ const detectLocale = () => {
 };
 
 const detectedLocale = detectLocale();
-// Redirect root to language-specific version
+// Redirect root to language-specific version with 301 permanent redirect
 if (Astro.url.pathname === '/') {
   if (detectedLocale === 'ar') {
     return Astro.redirect('/ar/', 301);
