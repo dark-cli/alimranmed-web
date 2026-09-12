@@ -279,6 +279,50 @@ html[dir="rtl"] .prose blockquote {
   border-radius: var(--radius);
   margin: 1em auto;
   display: block;
+  max-width: 100%;
+}
+
+/* Mobile: 2-column grid for consecutive images */
+@media (max-width: 768px) {
+  .prose {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  .prose > * {
+    grid-column: 1 / -1;
+  }
+
+  /* Images take half width when consecutive */
+  .prose img {
+    grid-column: 1;
+    margin: 0;
+    width: 100%;
+  }
+
+  .prose img + img {
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  /* Odd image: center it, span both columns */
+  .prose img:last-of-type:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 80%;
+    margin: 1em auto;
+  }
+
+  /* Images separated by other content: full width */
+  .prose img ~ p ~ img,
+  .prose img ~ h3 ~ img,
+  .prose img ~ h4 ~ img,
+  .prose img ~ ul ~ img,
+  .prose img ~ ol ~ img {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    margin: 1em auto;
+  }
 }
 
 /* YouTube embeds injected by rehype-youtube — responsive 16:9 container */
