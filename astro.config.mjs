@@ -4,10 +4,11 @@ import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
 import rehypeYouTube from "./src/lib/rehype-youtube.mjs";
 import { remarkLocalizeLinks } from "./src/lib/remark-localize-links.mjs";
+import { remarkAutoAlt } from "./src/lib/remark-auto-alt.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://alimranmed.com/",
+  site: "https://alimran.clinic/",
   i18n: {
     defaultLocale: "en",
     locales: ["en", "ar"],
@@ -22,7 +23,7 @@ export default defineConfig({
     },
   }),
   markdown: {
-    remarkPlugins: [remarkLocalizeLinks],
+    remarkPlugins: [remarkAutoAlt, remarkLocalizeLinks],
     rehypePlugins: [rehypeYouTube],
   },
 });

@@ -1,10 +1,12 @@
 # Robots.txt for Alimran Medical Center — alimran.clinic
-# Last updated: 2026-09-12
+# Last updated: 2026-09-13
 
-# Default: allow all crawlers
+# Default rules for all crawlers
 User-agent: *
 Allow: /
 Disallow: /_astro/
+Crawl-delay: 1
+Request-rate: 10/1s
 
 # Sitemap location
 Sitemap: https://alimran.clinic/sitemap-index.xml
@@ -13,26 +15,21 @@ Sitemap: https://alimran.clinic/sitemap-index.xml
 # LLM/AI Crawlers — explicitly allow for content discovery
 # ─────────────────────────────────────────────────────────────────
 
-# OpenAI GPT crawlers
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
-# Google's extended crawling (for AI Overviews, SGE)
 User-agent: Google-Extended
 Allow: /
 
-# Anthropic Claude
 User-agent: Claude-Web
 Allow: /
 
-# Other AI/ML indexers
 User-agent: CCBot
 Allow: /
 
@@ -42,25 +39,8 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# ─────────────────────────────────────────────────────────────────
-# Search engine optimization
-# ─────────────────────────────────────────────────────────────────
-
 User-agent: Googlebot
 Allow: /
 
 User-agent: bingbot
 Allow: /
-
-# ─────────────────────────────────────────────────────────────────
-# Rate limiting & politeness
-# ─────────────────────────────────────────────────────────────────
-
-# Crawl delay (in seconds) — 2 second delay between requests
-# (Conservative for medical content; adjust if serving from CDN)
-User-agent: *
-Crawl-delay: 1
-
-# Request rate (requests per second) — allow up to 10 req/s
-User-agent: *
-Request-rate: 10/1s
