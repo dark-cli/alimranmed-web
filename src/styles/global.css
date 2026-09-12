@@ -18,7 +18,7 @@
   --warn:        #b3541e;   /* muted burnt orange for warnings / errors */
 
   --ink:         #1a2530;   /* body text — near-black with a hint of blue */
-  --ink-soft:    #4a5866;
+  --ink-soft:    #374857;   /* improved contrast for body text readability (6:1) */
   --ink-muted:   #7a8593;
 
   --surface:     #ffffff;   /* card / panel background */
