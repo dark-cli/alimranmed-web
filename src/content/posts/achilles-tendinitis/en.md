@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/2021/02/09/achilles-tendinitis/"
 publishedAt: "2021-02-09T14:53:12"
 source: "legacy-wp"
 ---
+
 ![](/images/legacy/2021/02/تنزيل-3.jpg)
 
 Achilles tendinitis is an overuse injury of the Achilles tendon, the band of tissue that connects calf muscles at the back of the lower leg to your heel bone.

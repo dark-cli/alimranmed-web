@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/arthroplasty-artificial-disc-replacement/"
 source: "legacy-wp"
 ---
+
 ### **What is an Artificial Disc Replacement?**
 
 Artificial disc replacement, also known as *arthroplasty*, is the replacement of a damaged spinal disc with an artificial (manufactured) disc.

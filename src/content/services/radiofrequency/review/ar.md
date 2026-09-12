@@ -9,7 +9,6 @@ publishedAt: "2020-04-28T08:05:53"
 
 ![](/images/legacy/2020/02/images-2.jpg)
 
-
 **![](/assets/images/xc.jpg)**
 
 **الترددات الراديوية العلاجية** 

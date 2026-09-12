@@ -7,6 +7,7 @@ legacyUrl: "https://alimranmed.com/2020/05/07/regenerative-medicine/"
 publishedAt: "2020-05-07T01:45:04"
 source: "legacy-wp"
 ---
+
 What is regenerative medicine?
 
 regenerative medicine (Prolotherapy Therapy), also know as Non-Surgical Ligament and Tendon Reconstruction and Regenerative Joint Injection, is a recognized orthopedic procedure that stimulates the body’s healing processes to strengthen and repair injured and painful joints and connective tissue. It is based on the fact that when ligaments or tendons (connective tissue) are stretched or torn, the joint they are holding destabilizes and can become painful. Regenerative medicine, with its unique ability to directly address the cause of the instability, can repair the weakened sites and produce new collagen tissue, resulting in permanent stabilization of the joint. Once the joint is stabilized, pain usually resolves. Traditional approaches with surgery have more risk and may fail to stabilize the joint and relieve pain, and anti-inflammatory or other pain relievers only act temporarily.

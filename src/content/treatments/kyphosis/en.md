@@ -6,10 +6,10 @@ order: 999
 legacyUrl: "https://alimranmed.com/kyphosis%ef%bb%bf/"
 source: "legacy-wp"
 ---
-Kyphosis is an exaggerated, forward rounding of the back. It can occur at any age but is most common in older women.
 
 ![](/images/legacy/2021/01/congenital-kyphosis-1-300x185.png)
 
+Kyphosis is an exaggerated, forward rounding of the back. It can occur at any age but is most common in older women.
 
 Age-related kyphosis is often due to weakness in the spinal bones that causes them to compress or crack. Other types of kyphosis can appear in infants or teens due to malformation of the spine or wedging of the spinal bones over time.
 

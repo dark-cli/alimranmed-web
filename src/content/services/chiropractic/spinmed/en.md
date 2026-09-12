@@ -6,6 +6,10 @@ order: 999
 legacyUrl: "/services/chiropractic/spinmed/"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png)
+![](/images/legacy/2020/01/DSC_0054-1-1024x684-1-300x200.jpg)  
+
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=Yd57CXPpf_o)
 
 [Back Pain](/treatments/back-pain/)  [Neck Pain](/treatments/neck-pain/) can be managed through traditional treatment options
@@ -30,9 +34,6 @@ Damaged vertebral discs rarely heal because they remain under constant pressure 
 
 How spinmed chiropractic works؟
 
-![](/images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png)
-
-
 SpineMED® relieves pressure by being able to stabilize the spine without causing reflected muscle contractions or convulsions as is the case with normal drag devices.
 
 By monitoring the stress applied to the patient every 2.5 seconds, he or she can make adjustments every 20 seconds for better results.
@@ -42,7 +43,6 @@ This ability to sense and control tensions almost immediately is a major differe
 
 What’s the point of decompression?
 
-![](/images/legacy/2020/01/DSC_0054-1-1024x684-1-300x200.jpg)  
 The goal of decompression is to allow fluids, nutrients and oxygen to flow back into the disc. This food exchange process helps the body’s natural reconstruction and can speed up the repair process and eventually heal damaged spinal discs.
 
 In addition, reducing pressure inside objects may help restore the nucleus of the open disk or hernia back to the center, relieving pressure on the nerve root – relieving the problem, pain or numbness.

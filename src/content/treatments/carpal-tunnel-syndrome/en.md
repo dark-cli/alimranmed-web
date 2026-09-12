@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/carpal-tunnel-syndrome/"
 source: "legacy-wp"
 ---
+
 What Is Carpal Tunnel Syndrome?
 
 Carpal tunnel syndrome is the compression of the median nerve as it passes into the hand. The median nerve is located on the palm side of your hand (also called the carpal tunnel). The median nerve provides sensation (ability to feel) to your thumb, index finger, long finger, and part of the ring finger. It supplies the impulse to the muscle going to the thumb. Carpal tunnel syndrome can occur in one or both of your hands.

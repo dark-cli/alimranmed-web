@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/metatarsalgia/"
 source: "legacy-wp"
 ---
+
 Metatarsalgia is a condition in which the ball of your foot becomes painful and inflamed. You might develop it if you participate in activities that involve running and jumping. There are other causes as well, including foot deformities and shoes that are too tight or too loose.
 
 Although generally not serious, metatarsalgia can sideline you. Fortunately, at-home treatments, such as ice and rest, often relieve symptoms. Wearing proper footwear with shock-absorbing insoles or arch supports might prevent or minimize future problems with metatarsalgia.

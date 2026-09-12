@@ -6,9 +6,10 @@ order: 999
 legacyUrl: "https://alimranmed.com/complex-regional-pain/"
 source: "legacy-wp"
 ---
-What is Complex Regional Pain Syndrome?
 
 ![](/images/legacy/2020/12/shutterstock_98725853-300x216.jpg)
+
+What is Complex Regional Pain Syndrome?
 
 Complex regional pain syndrome (CRPS) is a condition that occurs when the nervous system misfires and sends signals to the brain. These signals get interpreted as pain signals, causing you to feel pain in various areas of the body. The exact cause of this condition is unclear, but it is believed that CRPS develops due to a dysfunction in the nervous system that is triggered by injury or surgery.
 

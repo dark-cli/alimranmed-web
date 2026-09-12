@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/psychological-intervention/"
 source: "legacy-wp"
 ---
+
 What is Psychological Intervention?
 
 Psychological Intervention is an umbrella term for services provided such as testing and assessment, behaviour therapy, counselling. These interventions help bring about a change in people’s attitudes, behaviors and beliefs. Psychological interventions help modify behaviour, emotional state and feelings while also promoting healthy coping strategies.

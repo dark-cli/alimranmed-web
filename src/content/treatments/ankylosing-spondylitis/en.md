@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/ankylosing-spondylitis/"
 category: "spine"
 source: "legacy-wp"
 ---
+
 Ankylosing spondylitis is an inflammatory disease that, over time, can cause some of the small bones in your spine (vertebrae) to fuse. This fusing makes the spine less flexible and can result in a hunched-forward posture. If ribs are affected, it can be difficult to breathe deeply.
 
 Ankylosing spondylitis affects men more often than women. Signs and symptoms typically begin in early adulthood. Inflammation also can occur in other parts of your body — most commonly, your eyes.

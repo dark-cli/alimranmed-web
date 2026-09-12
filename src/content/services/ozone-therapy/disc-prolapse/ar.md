@@ -6,6 +6,7 @@ legacyUrl: "https://ar.alimranmed.com/archives/1802"
 order: 999
 publishedAt: "2020-05-15T11:17:41"
 ---
+
 [▶ شاهد على يوتيوب](https://www.youtube.com/watch?v=u1dlCQvROjA)
 
 العلاج بالأوزون: هل هو بديل للحقن وجراحة العمود الفقري؟

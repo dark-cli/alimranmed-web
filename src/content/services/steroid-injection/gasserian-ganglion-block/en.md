@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/gasserian-ganglion-block/"
 category: "steroid-injection"
 source: "legacy-wp"
 ---
+
 The Gasserian Ganglion can be partially ablated as it sits in Meckles Cave either by using Glycerol or by making a radiofrequency lesion.
 
 A small thin needle is inserted into the middle of the cheek under local anaesthesia, and gently guided with X-ray assistance through the foramen ovale into Meckles Cave where the Gasserian Ganglion sits.

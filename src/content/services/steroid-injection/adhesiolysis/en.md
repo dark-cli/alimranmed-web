@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/adhesiolysis/"
 category: "steroid-injection"
 source: "legacy-wp"
 ---
+
 ### What Is Adhesiolysis?
 
 Adhesiolysis is sometimes called epidural adhesiolysis or percutaneous epidural adhesiolysis. It is a treatment that is used to treat pain and scar tissue buildup along the spine. Scar tissue buildup can result in nerve root compression and cause severe pain. Additionally, [chronic pain](https://paindoctor.com/conditions/common/chronic-pain/) can result from irritated or inflamed nerve roots.

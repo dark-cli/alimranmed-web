@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/spinal-injections/"
 source: "legacy-wp"
 ---
+
 Spinal injections, also referred to as spinal blocks, is the administration of a medicine directly into a specific area of the spine. They can be used to treat a variety of conditions that affect the spine anywhere from the upper cervical spine to the sacrum.
 
 Injection treatments can help diagnose and relieve neck or back pain that may radiate into the patient’s arms and legs (eg, cervical radiculopathy, lumbar radiculopathy). A spinal injection for diagnostic or treatment purposes may be included as part of your multidisciplinary treatment plan that could include medication and physical therapy.

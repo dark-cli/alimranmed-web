@@ -6,10 +6,10 @@ legacyUrl: "https://alimranmed.com/electrical-stimulation/"
 category: "physiotherapy"
 source: "legacy-wp"
 ---
-**What is electrical stimulation?**
 
 ![](/images/legacy/2019/06/images-34.jpg)
 
+**What is electrical stimulation?**
 
 Electrical stimulation or E-stimulation is commonly used in Physiotherapy to help increase the strength of weak muscles and relieve pain. The main advantage of E-stimulation is that it makes use of natural pain relieving mechanisms, and hence has minimal side effects. Drug therapies effectively introduce foreign chemicals to achieve the same end, but in doing so alter your metabolism and bodily function, hence causing more potential side effects. The main use in physiotherapy for E-stimulation is as a means of relieving chronic pain relief without the risk of drug interactions and/or side effects.
 

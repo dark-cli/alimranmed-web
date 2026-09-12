@@ -4,6 +4,7 @@ locale: "en"
 source: "legacy-wp"
 legacyUrl: "https://alimranmed.com/exercises"
 ---
+
 -   [Neck](/services/exercises/neck/)
 -   [Back and Sciatica Exercises](/services/exercises/back/)
 -   [Thigh (Hip) Exercises](/services/exercises/hip/)

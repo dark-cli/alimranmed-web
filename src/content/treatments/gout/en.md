@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/gout/"
 source: "legacy-wp"
 ---
+
 Gout is a common and complex form of arthritis that can affect anyone. It’s characterized by sudden, severe attacks of pain, swelling, redness and tenderness in the joints, often the joint at the base of the big toe.
 
 An attack of gout can occur suddenly, often waking you up in the middle of the night with the sensation that your big toe is on fire. The affected joint is hot, swollen and so tender that even the weight of the sheet on it may seem intolerable.

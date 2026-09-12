@@ -6,8 +6,8 @@ order: 999
 legacyUrl: "/services/chiropractic/sigma/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2019/07/Sigma-7R-768x511-300x200.jpg)
 
+![](/images/legacy/2019/07/Sigma-7R-768x511-300x200.jpg)
 
 We help people feel better, by resetting the spine and nerves of the body using a computerized medical device that eliminates the traditional guesswork of chiropractic.
 

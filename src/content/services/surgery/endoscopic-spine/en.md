@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/endoscopic-spine-surgery/"
 source: "legacy-wp"
 ---
+
 RIWOspine 360° full-endoscopic Spine Surgery
 
  Endoscopic imaging has also been playing an important role in spine surgery for many years, because high-resolution intraoperative imaging facilitates minimalized access ports to the operating site. This therefore provides a tool designed to implement concepts for minimally invasive surgery.

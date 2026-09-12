@@ -7,6 +7,7 @@ legacyUrl: "https://alimranmed.com/2020/05/05/epidural-adhesiolysis-with-pulsed-
 publishedAt: "2020-05-05T07:30:55"
 source: "legacy-wp"
 ---
+
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=E-Iu5EziDE4)
 
 **Epidural adhesiolysis with pulsed radiofrequency (RF) dorsal root ganglion (DRG)**

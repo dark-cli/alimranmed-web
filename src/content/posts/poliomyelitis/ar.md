@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/12/05/poliomyelitis/"
 publishedAt: "2020-12-05T17:32:35"
 source: "translated-by-llm"
 ---
+
 ![](/images/legacy/2020/12/54fcfbefb0b21d8c1acc74980729584a-258x300-1.jpg)
 
 متلازمة شلل الأطفال هي مرض عصبي يسببه فيروس شلل الأطفال.

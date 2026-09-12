@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/migrain/"
 source: "legacy-wp"
 ---
+
 **Causes**
 
 Migraine headaches tend to first appear between the ages of 10 and 45. Sometimes they may begin later in life.

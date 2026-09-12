@@ -7,6 +7,8 @@ legacyUrl: "https://alimranmed.com/neck-pain/"
 source: "legacy-wp"
 ---
 
+![](/assets/images/images-23.jpg)
+
 The neck works hard to support the head. Leaning over a computer or hunching over your work desk only makes its job more difficult.
 
 Poor posture certainly contributes to neck pain. But your neck's structure makes it possible as well. All the interconnected structures that give your neck its remarkable range of motion are subject to injury and tearing following arthritis damage or "whiplash" injuries.
@@ -24,10 +26,6 @@ Neck pain accompanied by headache and fever can be a sign of meningitis, an infe
 **4. Injuries.** Violent collisions often result in whiplash injuries, which occur when the head is jerked forward and backward, pulling the soft tissues of the neck beyond their capacity.
 
 ## Symptoms
-
-![](/assets/images/images-23.jpg)
-
-
 
 Your neck contains bones and joints, muscle tendons and ligaments, muscles and nerves, any of which can be the source of pain. Neck pain can also come from areas near your neck, such as your jaw, head, and shoulders. Conversely, problems in your neck can involve other parts of your body, such as your upper back, shoulders, or arms.
 

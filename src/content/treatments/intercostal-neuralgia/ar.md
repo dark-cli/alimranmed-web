@@ -7,9 +7,8 @@ order: 999
 legacyUrl: "https://alimranmed.com/intercostal-neuralgia/"
 source: "translated-by-llm"
 ---
+
 ![](/images/legacy/2020/02/2.jpg) ![](/images/legacy/2020/02/frozen-shoulder51-1.jpg)
-
-
 
 يوضح الشكل نمط الألم الذي يحدث لدى المريض المصاب بألم الأعصاب الوربية. بشكل مميز، ينتشر الألم حول الجذع في توزيع يشبه الحزام.
 

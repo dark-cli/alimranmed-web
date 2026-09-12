@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/knee-pain/"
 source: "legacy-wp"
 ---
+
 Knee pain is a common complaint that affects people of all ages. Knee pain may be the result of an injury, such as a ruptured ligament or torn cartilage. Medical conditions — including arthritis, gout and infections — also can cause knee pain.
 
 Many types of minor knee pain respond well to self-care measures. Physical therapy and knee braces also can help relieve knee pain. In some cases, however, your knee may require surgical repair.

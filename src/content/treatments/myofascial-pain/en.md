@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/myofascial-pain/"
 source: "legacy-wp"
 ---
+
 **What is Myofascial Pain Syndrome?**
 
 Myofascial pain syndrome is a chronic pain condition that affects the soft tissue, or fascia, which connects the muscles. Instead of causing direct pain, myofascial pain syndrome causes something called referred pain. Referred pain is when unrelated parts of the body become painful due to pressure on the sensitive points on the muscles. These sensitive points are also known as trigger points. In addition to pain in the muscle tissue, myofascial pain syndrome can cause the following symptoms:

@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/rotator-cuff-injury/"
 source: "legacy-wp"
 ---
+
 The rotator cuff is a group of muscles and tendons that surround the shoulder joint, keeping the head of your upper arm bone firmly within the shallow socket of the shoulder. A rotator cuff injury can cause a dull ache in the shoulder, which often worsens with use of the arm away from the body.
 
 Rotator cuff injuries are common and increase with age. These may occur earlier in people who have jobs that require repeatedly performing overhead motions. Examples include painters and carpenters.

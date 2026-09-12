@@ -6,8 +6,8 @@ order: 999
 legacyUrl: "https://alimranmed.com/polymyalgia-rheumatica/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/de4a7fcc46fa1a3734124c84db8ea358-300x300.jpg)
 
+![](/images/legacy/2021/02/de4a7fcc46fa1a3734124c84db8ea358-300x300.jpg)
 
 Polymyalgia rheumatica is an inflammatory disorder that causes muscle pain and stiffness, primarily in your neck, shoulders, upper arms, hips and thighs. Symptoms of polymyalgia rheumatica usually begin quickly over a few days.
 

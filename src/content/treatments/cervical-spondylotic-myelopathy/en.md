@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/cervical-spondylotic-myelopathy/"
 source: "legacy-wp"
 ---
+
 ### **Summary**
 
 **Cervical**\= having to do with the spine in the neck  

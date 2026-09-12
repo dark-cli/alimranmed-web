@@ -6,14 +6,15 @@ order: 999
 legacyUrl: "https://alimranmed.com/rtms/"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2021/01/TMS-procedure-300x274.png)
+
 Did the operating system happen in your brain?  
 Now a brain-mimicking technology to help it boost cells
 
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=NmciYGTXOBo)
 
 **A Transcranial magnetic stimulation (TMS)**
-
-![](/images/legacy/2021/01/TMS-procedure-300x274.png)
 
 TMS device is made of one or two copper coils, positioned on an external, targeted area of a patient’s scalp, which produces brief, magnetic pulses to an estimated depth of approximately 2 to 2.5 centimeters. The magnetic field triggers changes in neuronal activity and communication, which can alter unwanted activity within the brain.
 

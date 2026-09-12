@@ -5,6 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/cervical-myeloid-injury"
 category: "العمود الفقري"
 order: 999
 ---
+
 ### **ملخص**
 
 **Cervical** = يتعلق بالعمود الفقري في الرقبة

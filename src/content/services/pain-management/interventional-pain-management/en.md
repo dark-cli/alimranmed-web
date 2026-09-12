@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/interventional-pain-management/"
 category: "pain-management"
 source: "ai-draft"
 ---
+
 The goal of interventional pain management is to precisely identify the source of the patient's pain in order to direct therapeutic injections specifically to that source. In cases where the underlying cause of the pain cannot be treated, an intervention is directed at the nerve that transmits the pain.
 
 This process includes nerve blocks, nerve lesioning, nerve ablation, and injection of joint-activating substances.

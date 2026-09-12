@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/spinal-decompression/"
 category: "surgery"
 source: "legacy-wp"
 ---
+
 ## **Discectomy**
 
 It can mean removal of a disc protrusion or extrusion which is pressing on a nerve root. Hence it will be used to remove the pressure on the nerve and so decompress the nerve. The procedure in this instance will be the removal of the offending part of the disc by means of *Discectomy* or *Microdiscectomy*. The latter describes discectomy performed using a microscope through a 4 – 5 centimetre wound.

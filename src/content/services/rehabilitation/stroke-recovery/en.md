@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/stroke-recovery/"
 source: "ai-draft"
 ---
+
 ![](/images/legacy/2020/07/ICTUS-300x212.jpg)
 
 Stroke is one of leading causes of disability in Iraq. Given the epidemic burden and complexity of requirements, there is significant need for comprehensive multidisciplinary rehabilitation centers.

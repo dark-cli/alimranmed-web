@@ -7,6 +7,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/the-temporomandibular-joint-tmj/"
 source: "translated-by-llm"
 ---
+
 ![](/images/legacy/2021/02/تنزيل-2.jpg)
 
 يعمل المفصل الصدغي الفكي (TMJ) كمفصل منزلق، ويربط عظم الفك بجمجمتك. لديك مفصل واحد على كل جانب من الفك. قد تسبب اضطرابات TMJ - وهي نوع من الاضطرابات الصدغية الفكية أو TMD - ألماً في مفصل الفك وفي العضلات التي تتحكم في حركة الفك.

@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/spinal-cord-injury/"
 source: "legacy-wp"
 ---
+
 ### **Summary**
 
 **Spinal cord** = the bundle of nerves that connect the brain to the rest of the body  

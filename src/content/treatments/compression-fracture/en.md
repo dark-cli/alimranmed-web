@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/compression-fracture/"
 source: "legacy-wp"
 ---
+
 **Compression** = the application of strong pressure  
 **Fracture** = a break in a bone
 

@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/prolotherapy/"
 category: "regenerative-medicine"
 source: "legacy-wp"
 ---
+
 #### What is Prolotherapy?
 
 A.  

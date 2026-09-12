@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/tms-result/"
 source: "legacy-wp"
 ---
+
 Interesting cases with rTMS
 
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=AJKSBf_mn28)

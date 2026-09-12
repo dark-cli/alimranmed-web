@@ -6,6 +6,9 @@ legacyUrl: "https://alimranmed.com/2020/01/03/stroke-and-post-stroke-recovery/"
 publishedAt: "2020-01-03T08:51:37"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية-300x143.jpg)
+
 Overview
 
 A stroke is a medical emergency. Immediate treatment is absolutely necessary. Early intervention can reduce brain damage and complications.
@@ -13,9 +16,6 @@ A stroke is a medical emergency. Immediate treatment is absolutely necessary. Ea
 Fortunately, strokes can be treated and prevented.
 
 Symptoms
-
-![](/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية-300x143.jpg)
-
 
 Look for these signs and symptoms if you think you or someone else has a stroke. Be careful when the symptom smiles start. The duration of symptoms can affect treatment options that are available to you:
 

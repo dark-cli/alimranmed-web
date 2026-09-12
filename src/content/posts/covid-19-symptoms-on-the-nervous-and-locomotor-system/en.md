@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/11/23/covid-19-symptoms-on-the-nervous-a
 publishedAt: "2020-11-23T14:53:06"
 source: "legacy-wp"
 ---
+
 Symptoms of the locomotor system and after infection with Covid-19 ??
 
 Symptoms last for weeks or even months and include: chronic pain and tenderness, problems with concentration and memory, muscle pain (myasthenia), headache and more …

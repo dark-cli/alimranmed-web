@@ -6,6 +6,10 @@ legacyUrl: "https://alimranmed.com/2019/04/23/for-neurology-and-musculoskeletal-
 publishedAt: "2019-04-23T08:21:32"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2019/04/Device-g4-300x202.png)
+![](/images/legacy/2019/04/images-2.jpg)
+
 Radiofrequency neurotomy (also called radiofrequency ablation or lesioning) is a minimally invasive procedure that can provide lasting relief to those suffering from facet joint pain. In fact, multiple clinical studies show that radiofrequency neurotomy significantly reduces pain severity and frequency for 1 to 2 years in the majority of patients. Radiofrequency neurotomy involves applying heat to certain nerve pathways to “shut off” the transmission of pain signals to the brain. It is performed on an outpatient basis and requires only local anesthetic and mild sedation, alleviating the possible complications of open surgery and general anesthesia. It has a high success rate low complication rate.
 
 Which Conditions Are Treated With Radiofrequency Ablation?
@@ -13,9 +17,6 @@ Which Conditions Are Treated With Radiofrequency Ablation?
 RFA can be used to help patients with chronic (long-lasting) low-back and neck pain and pain related to the degeneration of joints from arthritis.
 
 What is the Benefits of Radiofrequency ablation?
-
-![](/images/legacy/2019/04/Device-g4-300x202.png)
-
 
 -   Pain relief for up to 2 years.
 -   Significant, longer lasting pain relief and less side effect compared to steroid injections.
@@ -53,9 +54,6 @@ To prepare for radiofrequency ablation treatment, you should take a few precauti
 -   If you have diabetes and use insulin, you must adjust the dosage of insulin the day of the procedure. Your primary care doctor will help you with this adjustment. Bring your diabetes medication with you so you can take it after the procedure.
 -   Continue to take all other medications with a small sip of water. Bring all medication with you so you can take it after the procedure.Please note: Do not discontinue any medication without first consulting with your primary or referring doctor.
 -   You will need to bring someone with you to drive you home after the procedure. You should not drive or operate machinery for at least 24 hours after the procedure.
-
-![](/images/legacy/2019/04/images-2.jpg)
-
 
 What Happens During Radiofrequency Ablation?
 

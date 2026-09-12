@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/bladder-rehabilitation/"
 source: "legacy-wp"
 ---
+
 Physical therapy for bladder stimulation in spinal cord injury
 
 There are several ways in physiotherapy for patients with bladder and bowel problems, including:

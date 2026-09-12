@@ -3,6 +3,10 @@ title: "Physiotherapy"
 source: "ai-draft"
 legacyUrl: "https://ar.alimranmed.com/physiotherapy"
 ---
+
+![](/assets/images/images-37.jpg)
+![](/assets/images/images-36-300x168.jpg)
+
 Physiotherapy, or physical therapy, is a healthcare profession responsible for assessment, diagnosis, treatment, and prevention of diseases and disabilities through physical means. Physiotherapists are experts in movement and function who work in partnership with their patients, helping them overcome movement disorders that may have been present from birth, acquired through an accident or injury, or the result of ageing or changing life events.
 
 **![](/assets/images/تنزيل-25.jpg)**
@@ -26,9 +30,6 @@ Physiotherapy is considered safer and has fewer side effects than other therapeu
 
 **General Benefits of Physiotherapy:**
 
-![](/assets/images/images-37.jpg)
-
-
 1.  Relieves pain
 2.  Helps increase blood flow, which reduces inflammation
 3.  Deactivates trigger points responsible for myofascial pain
@@ -50,9 +51,6 @@ Specifically, physiotherapy improves the client's quality of life by:
 -   Improving and maintaining optimal functional independence and physical performance.
 -   Rehabilitating injuries and the effects of disease or disability with therapeutic exercise programs and other interventions.
 -   Educating and planning maintenance and support programs to prevent re-occurrence, re-injury, or functional decline.
-
-![](/assets/images/images-36-300x168.jpg)
-
 
 Many people think physiotherapy is used only for the musculoskeletal system. But in fact, physiotherapy is both preventive and rehabilitative for a range of mobility issues, injuries, and/or diseases.
 

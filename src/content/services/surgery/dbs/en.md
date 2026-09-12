@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/deep-brain-stimulation/"
 source: "legacy-wp"
 ---
+
 Deep brain stimulation involves implanting electrodes within certain areas of your brain. These electrodes produce electrical impulses that regulate abnormal impulses. Or the electrical impulses can affect certain cells and chemicals within the brain.
 
 The amount of stimulation in deep brain stimulation is controlled by a pacemaker-like device placed under the skin in your upper chest. A wire that travels under your skin connects this device to the electrodes in your brain.

@@ -4,10 +4,10 @@ locale: "en"
 source: "legacy-wp"
 legacyUrl: "https://alimranmed.com/fitness"
 ---
-Starting a fitness program may be one of the best things you can do for your health. After all, physical activity can reduce your risk of chronic disease, improve your balance and coordination, help you lose weight, and even boost your self-esteem. You can reap these benefits regardless of your age, gender, or physical ability.
 
 ![](/images/legacy/2020/07/image_750x422_5eab388777161-300x169.jpg)
 
+Starting a fitness program may be one of the best things you can do for your health. After all, physical activity can reduce your risk of chronic disease, improve your balance and coordination, help you lose weight, and even boost your self-esteem. You can reap these benefits regardless of your age, gender, or physical ability.
 
 -   At least 150 minutes of moderate aerobic activity or 75 minutes of vigorous aerobic activity per week, or an equivalent combination of moderate and vigorous aerobic activity
 -   Strength training exercises for all major muscle groups at least twice a week

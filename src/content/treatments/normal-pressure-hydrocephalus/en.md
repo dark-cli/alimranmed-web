@@ -6,6 +6,9 @@ order: 999
 legacyUrl: "https://alimranmed.com/normal-pressure-hydrocephalus/"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2019/06/7-269x300.jpg)
+
 Hydrocephalus is derived from the Greek: “hydro”-water and “cephalus” – head. Hydrocephalus usually results either from: 1) an imbalance between CSF production and absorption (communicating hydrocephalus); or 2) when there is a blockage within the ventricular system such as a tumor that prevents CSF circulation (obstructive hydrocephalus).
 
 Adult communicating hydrocephalus is most commonly referred to as normal pressure hydrocephalus (NPH). However this is a misnomer, as the pressure may or may not be normal in a given patient. NPH usually occurs in older adults, with the majority of affected patients over 60 years of age. Most cases of adult communicating hydrocephalus/NPH are primary/idiopathic and of unknown cause. Some patients develop secondary NPH in association with or following subarachnoid hemorrhage, head injury, brain tumor, or meningitis.
@@ -26,10 +29,6 @@ Depending on the cause and type of hydrocephalus, a variety of neurosurgical int
 The symptoms often develop slowly over a long period of time, and are mistaken for “normal aging”.  
 The ventricles enlarge with normal aging and with degenerative diseases such as Alzheimer’s disease.  
 All described diagnostic tests have false positives and negatives. No test is perfect in its ability to diagnose this condition.
-
-![](/images/legacy/2019/06/7-269x300.jpg)
-
-
 
 Figure 1: Typical axial T2 weighted MRI scan from an NPH patient, showing ventricular enlargement, out of proportion to that anticipated due to normal aging.
 

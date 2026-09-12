@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/headaches/"
 source: "legacy-wp"
 ---
+
 Background Headaches
 
 The International Headache Society (IHS) created a headache classification system (the International Classification of Headache Disorders, 3rd edition) which is considered the standard for diagnosis of all types of headaches. The third edition was published in January of 2018, thirty years after its first publication in 1988. The three classifications are: primary headaches, secondary headaches and painful cranial neuropathies, and other facial pains and other headaches. See the description for these chronic headache types along with diagnostic criteria below in Practice Guidelines and Position Statements.

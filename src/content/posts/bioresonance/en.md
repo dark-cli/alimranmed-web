@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/2021/05/31/bioresonance/"
 publishedAt: "2021-05-31T17:07:49"
 source: "legacy-wp"
 ---
+
 What Is Bioresonance and Does It Work?
 
 ## ![Bioresonance](/images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160-300x200.jpg)

@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/shortwave/"
 category: "physiotherapy"
 source: "legacy-wp"
 ---
+
 ## How does Pulsed Shortwave Therapy work?
 
 PSWT involves a device that delivers an electric and magnetic field in short pulses with a time gap in between. Most of the published literature supports the therapeutic effects of the magnetic field. The evidence supports an effect similar to that achieved by Ultrasound therapy, namely an increase in activity at the cell membrane, which results in an excitatory or up regulated state in which materials are transported at a high rate across the membrane in and out of the cell.

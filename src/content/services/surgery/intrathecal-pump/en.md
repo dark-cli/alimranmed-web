@@ -6,9 +6,10 @@ order: 999
 legacyUrl: "https://alimranmed.com/an-intrathecal-pump/"
 source: "legacy-wp"
 ---
-WHAT IS AN INTRATHECAL PUMP?
 
 ![](/images/legacy/2020/12/pain-pump-34-300x229.jpg)
+
+WHAT IS AN INTRATHECAL PUMP?
 
 An intrathecal pump is a battery-operated device which delivers medication directly into the spinal canal. Intrathecal pumps may be used to treat chronic pain or spasticity, and is sometimes used to treat cancer-related pain.  
 The spinal canal contains a large amount of fluid (cerebrospinal fluid or CSF), in which the nerves bathe. By inserting a small tube which is connected to a programmable reservoir, medications such as pain-killers can be directly delivered to these nerves.

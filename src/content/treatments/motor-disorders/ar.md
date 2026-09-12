@@ -5,6 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a7%d9%85%d8%b1%d8%a7%d8%b6
 category: "الحركة"
 order: 999
 ---
+
 [الصرع والنوبات](/treatments/epilepsy-seizures/)
 
 [تشنج شق الوجه](/treatments/hemifacial-spasm/)

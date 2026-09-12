@@ -6,10 +6,10 @@ legacyUrl: "https://alimranmed.com/2020/01/03/arthritis/"
 publishedAt: "2020-01-03T07:54:04"
 source: "legacy-wp"
 ---
-Arthritis is a condition that causes bone pain and worsens with age, and in this article we provide you with all the information you care about arthritis and its causes and symptoms, how to treat, as well as its difference from rheumatism reading intervals.
 
 ![](/images/legacy/2020/01/images-4-1.jpg)
 
+Arthritis is a condition that causes bone pain and worsens with age, and in this article we provide you with all the information you care about arthritis and its causes and symptoms, how to treat, as well as its difference from rheumatism reading intervals.
 
 Overview
 

@@ -6,9 +6,8 @@ order: 999
 legacyUrl: "https://alimranmed.com/intercostal-neuralgia/"
 source: "legacy-wp"
 ---
+
 ![](/images/legacy/2020/02/2.jpg) ![](/images/legacy/2020/02/frozen-shoulder51-1.jpg)
-
-
 
 Figure show Pattern of pain seen in a patient with intercostal neuralgia. Characteristically, the pain wraps around the trunk in a band-like distribution.
 

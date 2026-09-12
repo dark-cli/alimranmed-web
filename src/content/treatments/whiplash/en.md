@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/whiplash/"
 category: "spine"
 source: "legacy-wp"
 ---
+
 Whiplash is a neck injury due to forceful, rapid back-and-forth movement of the neck, like the cracking of a whip.![](/images/legacy/2021/01/300px-Whiplash_Injury.jpg)
 
 Whiplash is commonly caused by rear-end car accidents. But whiplash can also result from sports accidents, physical abuse and other types of traumas, such as a fall. Whiplash may be called a neck sprain or strain, but these terms also include other types of neck injuries.

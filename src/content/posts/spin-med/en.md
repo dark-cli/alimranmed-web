@@ -6,6 +6,10 @@ legacyUrl: "https://alimranmed.com/2020/01/03/spin-med/"
 publishedAt: "2020-01-03T08:56:16"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2020/01/DSC_0054-1-1024x684-1-300x200.jpg)
+![](/images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png)
+
 Lower back and neck pain can be managed through traditional treatment options
 
 Such as physical therapy, chiropractic care, or pain management, but often disc pain
@@ -26,13 +30,7 @@ Often you press on the spinal nerves, causing severe pain and radical morbidity
 
 Damaged vertebral discs rarely heal because they remain under constant pressure (even if the person feels comfortable), the ideal treatment for disc improvement is to relieve pressure, or reduce the pressure inside the damaged disk.
 
-![](/images/legacy/2020/01/DSC_0054-1-1024x684-1-300x200.jpg)
-
-
 How spinmed chiropractic works؟
-
-![](/images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png)
-
 
 SpineMED® relieves pressure by being able to stabilize the spine without causing reflected muscle contractions or convulsions as is the case with normal drag devices.
 

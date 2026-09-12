@@ -6,8 +6,8 @@ order: 999
 legacyUrl: "https://alimranmed.com/osteomalacia%ef%bb%bf/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05-300x201.jpg)
 
+![](/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05-300x201.jpg)
 
 Osteomalacia refers to a marked softening of your bones, most often caused by severe vitamin D deficiency. The softened bones of children and young adults with osteomalacia can lead to bowing during growth, especially in weight-bearing bones of the legs. Osteomalacia in older adults can lead to fractures.
 

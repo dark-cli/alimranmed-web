@@ -7,6 +7,7 @@ legacyUrl: "https://alimranmed.com/2020/04/09/postpolio-syndrome/"
 publishedAt: "2020-04-09T11:20:15"
 source: "legacy-wp"
 ---
+
 The polio is a neurological disease caused by the polio virus.
 
 Fortunately, thanks to the systematic vaccination campaigns launched in 1963 in our country, it has been virtually eradicated since the late 1960’s. In 1988 the last case was described. In recent years we have been able to find new cases among the immigrant population or after traveling to countries where it is still endemic. It is estimated that in Spain about 35,000 people suffered the consequences of the disease.

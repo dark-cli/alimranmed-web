@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/anterior-cervical-discectomy-and-fusion/"
 category: "surgery"
 source: "ai-draft"
 ---
+
 **What is an anterior cervical discectomy and fusion?**
 
 Anterior Cervical Discectomy and Fusion (ACDF) is a type of neck surgery that involves removing a damaged disc to relieve spinal cord or nerve root pressure and alleviate corresponding pain, weakness, numbness, and tingling. A discectomy is a form of surgical decompression, so the procedure may also be called an anterior cervical decompression. It is a procedure that uses an operating microscope to remove a herniated disc that is causing pressure on a cervical nerve root or the spinal cord. The magnification provided by the microscope enables the neurosurgeon to make a small incision in the skin of the neck to perform the discectomy.

@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/lumbar-microdiscectomy/"
 category: "surgery"
 source: "legacy-wp"
 ---
+
 **What is a lumbar microdiscectomy?**
 
 Lumbar microdiscectomy is a procedure that uses an operating microscope to remove a herniated disc that is causing pressure on a nerve in the lower spine. The magnification provided by the microscope enables the neurosurgeon to make a small incision in the skin to perform the discectomy.

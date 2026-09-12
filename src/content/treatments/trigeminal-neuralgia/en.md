@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/trigeminal-neuralgia/"
 source: "legacy-wp"
 ---
+
 Trigeminal neuralgia (or tic douloureux) is the most common craniofacial pain syndrome. This facial pain syndrome usually develops in individuals over 50 years old. Its incidence is 4/100,000, and it is the most common facial pain syndrome in this age group.
 
 Other neuropathic syndromes affect the trigeminal nerve and warrant different treatments with varied rates of success. Rarely, neuralgias of other cranial nerves mimic trigeminal neuralgia. Finally, it is essential to distinguish atypical facial pains from these neuropathic syndromes to avoid unsuccessful therapies.

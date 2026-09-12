@@ -5,6 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%b9%d9%85%d9%88%d8%af-%d8%a
 category: "العمود الفقري"
 order: 999
 ---
+
 [اصابة الحبل الشوكي](/treatments/spinal-cord-injury/)
 
 [الاعتلال النخاعي الفقاري العنقي](/treatments/cervical-spondylotic-myelopathy/)

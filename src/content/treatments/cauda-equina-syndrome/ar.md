@@ -5,6 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/%d9%85%d8%aa%d9%84%d8%a7%d8%b2%d9%85%d8%a9
 category: "العمود الفقري"
 order: 999
 ---
+
 ### **ملخص**
 
 **Cauda** = ذيل

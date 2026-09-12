@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/pain/"
 source: "legacy-wp"
 ---
+
 [Headaches](/treatments/headaches/)
 
 [Migrain](/treatments/migraine/) 

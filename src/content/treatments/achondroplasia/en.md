@@ -7,6 +7,7 @@ legacyUrl: "https://alimranmed.com/2021/01/11/achondroplasia/"
 publishedAt: "2021-01-11T13:17:17"
 source: "legacy-wp"
 ---
+
 Achondroplasia is a bone disorder affecting about one in every 10,000 infants. It is caused by a mutation in the FGFR3 gene that impairs the growth of bone in the limbs and causes abnormal growth in the spine and skull.
 
 Approximately 20-50% of all children with achondroplasia will experience a neurological impairment. This is caused by compression created as they literally grow faster than their bones. The stunted bone growth at the base of the skull and the spine can cause the spinal cord and brain stem to become compressed. This can lead to key nervous system structures — like the brain stem, spinal cord, spinal nerve roots and cerebrospinal fluid (CSF) spaces — to also compress. Eventually, this may lead to neurological deficits

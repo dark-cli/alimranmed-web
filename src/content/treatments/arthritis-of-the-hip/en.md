@@ -6,6 +6,10 @@ order: 999
 legacyUrl: "https://alimranmed.com/arthritis-of-the-hip/"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2020/02/1-3-300x300.jpg)
+![](/images/legacy/2020/02/footPain-1045328130-770x553-650x428-2-300x298.jpg)
+
 Arthritis is one of the most common causes of pain in the hip. Arthritis is a progressive disorder, which means that it typically starts gradually and gets worse with time. The term arthritis literally means “inflammation of the joint.”
 
 There are different types of arthritis that can affect the hip. The type of arthritis you have may affect your treatment options.
@@ -37,15 +41,7 @@ Osteoarthritis of the hip (and other parts of the body) has been associated with
 
 However, osteoarthritis may develop in people without these risk factors.
 
-![](/images/legacy/2020/02/1-3-300x300.jpg)
-
-
-
 Figure a
-
-![](/images/legacy/2020/02/footPain-1045328130-770x553-650x428-2-300x298.jpg)
-
-
 
 Figure b
 

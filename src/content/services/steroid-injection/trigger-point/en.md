@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/trigger-point-injections/"
 source: "legacy-wp"
 ---
+
 Trigger point injections to treat chronic muscle pain and other issues that affect the musculoskeletal system.
 
 Muscle pain can develop for a variety of reasons, from sleeping in the wrong position to tearing large muscle groups during an intense weightlifting session.

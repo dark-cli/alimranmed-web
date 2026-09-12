@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/cauda-equina-syndrome/"
 source: "legacy-wp"
 ---
+
 ### **Summary**
 
 **Cauda**\= a tail  

@@ -5,6 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d8%a7%d9%85%d8%b1%d8%a7%d8%b6
 category: "الأطفال"
 order: 999
 ---
+
 [الشلل الدماغي](/treatments/cerebral-palsy/)
 
 [متلازمة مابعد الشلل الدماغي](/treatments/cerebral-palsy/)

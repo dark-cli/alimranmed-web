@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/physical-therapy/"
 category: "physiotherapy"
 source: "legacy-wp"
 ---
+
 -   [Prevention of back pain](/treatments/back-pain/)
 -   [Short-wave therapy](/services/physiotherapy/shortwave/)
 -   [Laser Therapy](/services/physiotherapy/laser-therapy/)

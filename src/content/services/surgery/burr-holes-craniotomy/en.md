@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/burr-holes-and-craniotomy-2/"
 source: "legacy-wp"
 ---
+
 **What are Burr Holes and Craniotomy?**
 
 A Craniotomy is an operation that involves opening the skull to correct a problem in the brain or the layer around the brain. Craniotomies are performed for a variety of reasons, such as blood clots causing pressure on the brain, brain tumors, skull defects, etc. Sometimes, blood can be drained from the space between the brain and the skull through small holes, Burr Holes.

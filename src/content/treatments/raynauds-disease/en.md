@@ -6,8 +6,8 @@ order: 999
 legacyUrl: "https://alimranmed.com/raynauds-disease/"
 source: "ai-draft"
 ---
-![](/images/legacy/2021/02/1520059351001-300x172.jpg)
 
+![](/images/legacy/2021/02/1520059351001-300x172.jpg)
 
 Raynaud’s (ray-NOSE) disease causes some areas of your body — such as your fingers and toes — to feel numb and cold in response to cold temperatures or stress. In Raynaud’s disease, smaller arteries that supply blood to your skin become narrow, limiting blood flow to affected areas (vasospasm).
 

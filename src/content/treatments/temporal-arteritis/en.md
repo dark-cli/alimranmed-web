@@ -6,10 +6,10 @@ order: 999
 legacyUrl: "https://alimranmed.com/temporal-arteritis/"
 source: "legacy-wp"
 ---
-Giant cell arteritis is an inflammation of the lining of your arteries. Most often, it affects the arteries in your head, especially those in your temples. For this reason, giant cell arteritis is sometimes called temporal arteritis.
 
 ![](/images/legacy/2021/02/occipital-nerve-label-e1584509060138-300x300.png)
 
+Giant cell arteritis is an inflammation of the lining of your arteries. Most often, it affects the arteries in your head, especially those in your temples. For this reason, giant cell arteritis is sometimes called temporal arteritis.
 
 Giant cell arteritis frequently causes headaches, scalp tenderness, jaw pain and vision problems. Untreated, it can lead to blindness.
 

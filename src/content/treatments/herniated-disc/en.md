@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/herniated-disc/"
 source: "legacy-wp"
 ---
+
 A herniated disc occurs when the fibrous outer portion of the disc ruptures or tears, and the jelly-like core squeezes out. When the herniated disc compresses a nearby nerve, as in the image below, the result can be a pinched nerve. A pinched nerve may cause pain, numbness, tingling or weakness in the arms or legs. The substance that makes up the disc’s jelly-like core can also inflame and irritate the nerve, causing additional pain.
 
 A bulging disc occurs when the outer wall of the disc weakens but doesn’t rupture, and “bulges” outward. A herniated disc may actually begin as a bulging disc whose outer wall is then ruptured by a great amount of pressure.

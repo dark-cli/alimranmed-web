@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/spinal-trauma/"
 source: "legacy-wp"
 ---
+
 Spinal trauma is caused by damage to the spinal cord that results in a bruise (also called a contusion), a partial tear, or a complete tear. Because the spinal cord is the central carrier of signals throughout the body, damage to the spinal cord can have serious consequences.
 
 A spinal cord injury, depending on its location and severity, may result in a partial or total loss of movement, sensation, and organ function. There is a range of severity in spinal cord injuries. A mild contusion of the spinal cord may cause the loss of only some function below the site of the injury. A complete transection, or severing of the spinal cord, is a total and permanent loss of sensation and movement below the site of the transection. Patients with spinal trauma also are likely to develop infections of the bladder, lungs, and skin.

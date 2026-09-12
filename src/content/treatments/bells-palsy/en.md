@@ -7,6 +7,7 @@ legacyUrl: "https://alimranmed.com/2021/01/16/bells-palsy/"
 publishedAt: "2021-01-16T15:50:53"
 source: "legacy-wp"
 ---
+
 The symptoms of Bell’s palsy include sudden weakness in your facial muscles. In most cases, the weakness is temporary and significantly improves over weeks. The weakness makes half of your face appear to droop. Your smile is one-sided, and your eye on that side resists closing.
 
 Bell’s palsy, also known as acute peripheral facial palsy of unknown cause, can occur at any age. The exact cause is unknown. It’s believed to be the result of swelling and inflammation of the nerve that controls the muscles on one side of your face. Or it might be a reaction that occurs after a viral infection.

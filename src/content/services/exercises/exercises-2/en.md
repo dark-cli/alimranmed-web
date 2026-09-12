@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/exercises-2/"
 source: "legacy-wp"
 ---
+
 -   [Ankle](/services/exercises/ankle/)
 -   [Thigh](/services/exercises/hip/)
 -   [Neek](/services/exercises/neck/)

@@ -7,6 +7,7 @@ legacyUrl: "https://alimranmed.com/2020/05/15/ozone-therapy-for-disc-prolapse/"
 publishedAt: "2020-05-15T11:17:41"
 source: "legacy-wp"
 ---
+
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=u1dlCQvROjA)
 
 **Oxygen-Ozone Therapy: An Alternative to Injections and Spine Surgery?**

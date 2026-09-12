@@ -6,14 +6,14 @@ order: 999
 legacyUrl: "https://alimranmed.com/fitness/"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2020/12/pageTopDesktop-300x149.jpg)
+
 Starting a fitness program may be one of the best things you can do for your health. After all, physical activity can reduce your risk of chronic disease, improve your balance and coordination, help you lose weight, and even boost your self-esteem. You can reap these benefits regardless of your age, gender, or physical ability.
 
 -   At least 150 minutes of moderate aerobic activity or 75 minutes of vigorous aerobic activity per week, or an equivalent combination of moderate and active aerobic activity
 -   Strength training exercises for all major muscle groups at least twice a week  
     Stretch and flexibility
-
-![](/images/legacy/2020/12/pageTopDesktop-300x149.jpg)
-
 
 Stretching is an important component of any exercise program. Most aerobic training and strength training programs naturally cause your muscles to contract and stretch.
 

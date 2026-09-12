@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/brain-tumor/"
 source: "legacy-wp"
 ---
+
 ### What is a brain tumor?
 
 A brain tumor is an abnormal growth of tissue in the brain. The tumor can either originate in the brain itself, or come from another part of the body and travel to the brain (metastasize). Brain tumors may be classified as either benign (non-cancerous) or malignant (cancerous), depending on their behavior.

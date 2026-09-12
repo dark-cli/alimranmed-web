@@ -7,16 +7,15 @@ legacyUrl: "https://alimranmed.com/2020/07/01/tms-in-stroke-patients/"
 publishedAt: "2020-07-01T07:38:52"
 source: "legacy-wp"
 ---
+
 ![](/images/legacy/2020/07/Blausen_0836_Stroke-206x300.png)
+![](/images/legacy/2020/07/Paired-pulse-threshold-tracking-transcranial-magnetic-stimulation-TMS-A-TMS-coil-300x176.png)
 
 Stroke is one of the most frequent neurological disabilities worldwide. An important proportion of the survivors are left with residual disability such as motor limbs impairments, speech impairment, swallowing difficulties, and cognitive impairment. Beside the destruction of the motor structures, imbalance in informational systems and reaction mechanisms responding to damage plays important role in causing neurological dysfunction. Stroke may affect the balance of transcallosal inhibitory pathways between both hemispheres. The damage hemisphere may be affected by the cerebral ischemia and by the asymmetric inhibition from the unaffected hemisphere.
 
 In first week of stroke, if after the Repetitive [transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/) stimulation of the affected brain hemisphere, excitatory potential in paresis limb is obtained it correlates with good predictor rehabilitation, their absence is associated with poor rehabilitation.
 
 The underlying concept of rTMS treatment in stroke is based on “upregulating” the lesioned hemisphere or “downregulating” the intact hemisphere. After stroke rTMS applied in high- frequency (5Hz) over the affected hemisphere which is inhibited by the process or by the unaffected hemisphere can improve cortical excitability and reorganization. rTMS at low-frequency (< 1 Hz) can be applied over intact hemisphere in order to reduce its excitability leading to functional recovery. It was also used bilateral rTMS, 1 Hz rTMS applied over intact hemisphere and 10 Hz over affected hemisphere which revealed improved motor training effect on the paretic hand.
-
-![](/images/legacy/2020/07/Paired-pulse-threshold-tracking-transcranial-magnetic-stimulation-TMS-A-TMS-coil-300x176.png)
-
 
 The principle of rehabilitation in stroke is that repetitive programs may promote mechanisms of neural plasticity. The main deficiency of rTMS is that it has no long-lasting effect (6 months after onset) on motor function in patients with stroke. That’s why creating a home device to deliver rTMS can be an important step in rehabilitating the patients with stroke.
 

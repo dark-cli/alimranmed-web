@@ -6,6 +6,7 @@ legacyUrl: "https://ar.alimranmed.com/archives/1747"
 order: 999
 publishedAt: "2020-05-03T21:09:51"
 ---
+
 ![](/assets/images/كيفية_علاج_الشقيقة-300x143.jpg)
 
 الصداع المزمن مصطلح يطلق على:

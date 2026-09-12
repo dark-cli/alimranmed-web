@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/07/11/tms-for-alzheimer-disease/"
 publishedAt: "2020-07-11T07:16:30"
 source: "translated-by-llm"
 ---
+
 ![](/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500-300x140.jpg)
 
 عامل التغذية العصبية المشتق من الدماغ (BDNF) له دور مهم في [اللدونة العصبية](/services/rehabilitation/neuroplasticity/).

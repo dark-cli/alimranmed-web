@@ -6,14 +6,13 @@ order: 999
 legacyUrl: "https://alimranmed.com/repetitive-transcranial-magnetic-stimulation-rtms-for-neuropsychiatric-disorders/"
 source: "legacy-wp"
 ---
+
 ![](/images/legacy/2020/07/brain_magnet-300x292.jpg)
+![](/images/legacy/2020/07/capt-300x255.jpg)
 
 Repetitive transcranial magnetic stimulation (rTMS) it is one of the latest therapeutic methods for the treatment of various diseases and neuropsychiatric disorders, among which: depression, anxiety, attention deficit, schizophrenia, post-traumatic stress disorder, obsessive–compulsive and bipolar disorder, tinnitus, neuropathic pain, migraine, stroke , epilepsy, Parkinson’s disease. rTMS  is a non-invasive treatment that delivers repetitive pulses of an MRI-strength magnetic field from a coil placed over the scalp. Powered by a rapidly pulsed current, the magnetic field passes unimpeded through the skull and stimulates brain tissue beneath, inducing currents that may help normalize activity in the area stimulated without producing seizure activity.
 
 The FDA approved rTMS in 2008 as a treatment to alleviate symptoms of mildly treatment-resistant depression, in which patients have not found relief from antidepressant medication. It has also been studied as a possible treatment for a number of other disorders, such as schizophrenia, pain, stroke, and amyotrophic lateral sclerosis (ALS).
-
-![](/images/legacy/2020/07/capt-300x255.jpg)
-
 
 Antidepressant medications and psychotherapy are the first line treatments for major depression. These treatments, however, do not work for all patients. In these instances, rTMS might be used as an alternative treatment, or to augment antidepressant medications or psychotherapy. Patients who have failed to achieve an adequate response from antidepressants, or who are unable to tolerate medications, might consider rTMS therapy.
 

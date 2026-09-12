@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/craniosynostosis/"
 source: "legacy-wp"
 ---
+
 ### What is cerebral palsy?
 
 Cerebral palsy (CP) is a broad term that describes a group of neurological (brain) disorders. It is a life-long condition that affects the communication between the brain and the muscles, causing a permanent state of uncoordinated movement and posturing. CP may be the result of an episode that caused a lack of oxygen to the brain.

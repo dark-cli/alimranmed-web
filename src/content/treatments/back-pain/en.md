@@ -6,8 +6,8 @@ order: 999
 legacyUrl: "https://alimranmed.com/back-pain-2/"
 source: "legacy-wp"
 ---
-![](/images/legacy/2020/02/27-Chiro-300x234.jpg)
 
+![](/images/legacy/2020/02/27-Chiro-300x234.jpg)
 
 Low back pain refers to pain that you feel in your lower back. You may also have back stiffness, decreased movement of the lower back, and difficulty standing straight.
 

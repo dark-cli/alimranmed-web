@@ -7,6 +7,9 @@ legacyUrl: "https://alimranmed.com/2020/07/16/speech-therapy/"
 publishedAt: "2020-07-16T15:18:16"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2020/07/190311111420481_اسباب-نفسية-لتأخر-الطفل-عن-النطق-300x187-1.jpg)
+
 Speech therapy is a service that focuses on improving a patient’s speech and abilities to understand and express language, including non-verbal language.
 
 Speech therapists or speech and language pathologists (SLPs) are professionals who provide these services. Speech therapy includes two components – first, exercising and coordinating with voice producing organs like mouth, tongue and vocal cords etc, to produce sounds culminating in to words and sentences and second, comprehending, understanding, recollecting and expressing language related decibles.
@@ -26,7 +29,5 @@ Speech therapy exercises for adults can help you with speech, language, and cogn
 Speech therapy usually begins with an assessment that identifies the type of communication disorder and the best way to treat it.
 
 **FOR CHILDREN**
-
-![](/images/legacy/2020/07/190311111420481_اسباب-نفسية-لتأخر-الطفل-عن-النطق-300x187-1.jpg)
 
 For children, our Expert Therapists engage them through talking and playing, and using toys, books or other objects as part of language intervention to help stimulate language development, or correct sounds and syllables for a child depending on what is age-appropriate. They will also provide techniques and exercises for the caregiver and child to follow at home.

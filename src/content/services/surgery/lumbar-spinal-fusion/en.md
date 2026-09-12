@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/lumbar-spinal-fusion-surgery/"
 source: "legacy-wp"
 ---
+
 A spinal fusion surgery is designed to stop the motion at a painful vertebral segment, which in turn should decrease pain generated from the joint.
 
 There are many approaches to lumbar spinal fusion surgery, and all involve the following process:

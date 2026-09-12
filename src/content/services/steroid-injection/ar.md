@@ -7,4 +7,5 @@ order: 999
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/steroid-injection"
 ---
+
 حقن الستيرويد هي إجراء طبي فعال يستخدم الأدوية المضادة للالتهاب لتخفيف الألم والالتهابات في المفاصل والعمود الفقري والأعصاب.

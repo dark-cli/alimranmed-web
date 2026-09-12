@@ -6,6 +6,7 @@ legacyUrl: "https://alimranmed.com/laser-therapy/"
 category: "physiotherapy"
 source: "ai-draft"
 ---
+
 ## What is laser therapy and how does it work?
 
 A laser is essentially a focused beam of light used to transmit high energy light into a medium. There is some variation in how laser light is delivered therapeutically, it can for example be applied as a single focused beam, or a as a set of beams pulsing at a high rate. Different methods have different efficacies depending on what they are being used to treat and how, and your physiotherapist will make a recommendation based on their knowledge and experience.

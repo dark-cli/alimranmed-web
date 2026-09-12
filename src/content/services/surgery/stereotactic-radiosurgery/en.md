@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/stereotactic-radiosurgery/"
 source: "legacy-wp"
 ---
+
 Stereotactic radiosurgery (SRS) uses many precisely focused radiation beams to treat tumors and other problems in the brain, neck, lungs, liver, spine and other parts of the body.
 
 It is not surgery in the traditional sense because there’s no incision. Instead, stereotactic radiosurgery uses 3D imaging to target high doses of radiation to the affected area with minimal impact on the surrounding healthy tissue.

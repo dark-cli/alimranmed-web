@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/diabetic-neuropathy/"
 source: "legacy-wp"
 ---
+
 Neuropathy is a complication of diabetes that can lead to problems throughout the body. Diabetes can affect nerves that control movement, sensation and other functions.
 
 If you have diabetes, you can develop nerve problems at any time. Sometimes, neuropathy can be the first sign of diabetes. Significant nerve problems (clinical neuropathy) can develop within the first 10 years after a diabetes diagnosis. The risk of developing neuropathy increases the longer you have diabetes. About half of people with diabetes have some form of neuropathy.

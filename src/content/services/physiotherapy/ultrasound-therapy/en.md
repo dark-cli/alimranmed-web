@@ -6,6 +6,9 @@ legacyUrl: "https://alimranmed.com/ultrasound-therapy/"
 category: "physiotherapy"
 source: "ai-draft"
 ---
+
+![](/images/legacy/2019/06/تنزيل-28-1.jpg)
+
 ### **What is ultrasound therapy?**
 
 Therapeutic ultrasound is used in physiotherapy. Ultrasound is applied to the skin through high-frequency sound waves to produce heat that can reduce pain. It penetrates the depth of tissues more than two inches, producing heat between 104 and 114 degrees Fahrenheit (40 to 45.5 degrees Celsius). Ultrasound pulses one million times per second in the affected area. Ultrasound works to increase blood flow in damaged tissues such as muscles and ligaments.
@@ -15,9 +18,6 @@ Therapeutic ultrasound is used in physiotherapy. Ultrasound is applied to the sk
 Ultrasound work by utilizing mechanical energy, but despite this is still considered an electrotherapy. The medium for delivering this energy is sound, which is composed of mechanical vibrations of a certain frequency. More specifically ultrasound uses very high frequencies of sound that are inaudible to human beings and actually have a number of uses, including therapeutic ones.
 
 Ultrasound has been used for some time to accelerate and enhance tissue repair, and its effects are broadly described as either thermal or non-thermal. The former is effectively an increase in temperatures caused by passing the energy from the ultrasound waves into the targeted tissues. Heat has therapeutic effects in terms of increasing circulation by causing blood vessels to dilate etc. although that being said, the full mechanisms of this phenomenon are not fully understood.
-
-![](/images/legacy/2019/06/تنزيل-28-1.jpg)
-
 
 The non-thermal mechanisms by which ultrasound works are called cavitation and acoustic streaming, and the two often occur simultaneously and synergistically. At recommended therapeutic doses of ultrasound, stable gaseous cavities form (cavitation) that act to basically enhance the second mechanism, acoustic streaming, which seems to be the main therapeutic action of ultrasound. What happens in acoustic streaming is effectively the movement and vibration of cellular fluids near the surface of cell membranes and the aforementioned cavities, causing changes in membrane permeability and hence the movement of essential ions and nutrients across into and out of the cell. The acoustic streaming and cavitation achieve is an up-regulation of cellular activity triggered by ultrasound energy.
 

@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/head-injury/"
 source: "legacy-wp"
 ---
+
 Head injuries are one of the most common causes of disability and death in adults. The injury can be as mild as a bump, bruise (contusion), or cut on the head, or can be moderate to severe in nature due to a concussion, deep cut or open wound, fractured skull bone(s), or from internal bleeding and damage to the brain.
 
 A head injury is a broad term that describes a vast array of injuries that occur to the scalp, skull, brain, and underlying tissue and blood vessels in the head. Head injuries are also commonly referred to as brain injury, or traumatic brain injury (TBI), depending on the extent of the head trauma.

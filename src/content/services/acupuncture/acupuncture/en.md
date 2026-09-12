@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/acupuncture/"
 source: "legacy-wp"
 ---
+
 Acupuncture are a very old therapeutic technique of traditional Chinese medicine using thin needles placed at certain points of the body used mainly to relieve pain and treat certain conditions because Chinese needles are very safe and rarely cause any side effects or complications
 
 It is a powerful therapeutic alternative to analgesics and is also a complementary treatment along with other treatments.

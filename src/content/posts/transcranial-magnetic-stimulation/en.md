@@ -6,14 +6,15 @@ legacyUrl: "https://alimranmed.com/2020/01/03/transcranial-magnetic-stimulation/
 publishedAt: "2020-01-03T07:25:09"
 source: "legacy-wp"
 ---
+
+![](/images/legacy/2020/01/STUBB-rTMS-207x300.png)
+![](/images/legacy/2020/01/tms-treatment-768-300x180.jpg)  
+
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=bmBV1r4_HrE)
 
 Did the operating system happen in your brain?  
 Now a brain-mimicking technology to help it boost cells
 
-![](/images/legacy/2020/01/STUBB-rTMS-207x300.png)
-
-![](/images/legacy/2020/01/tms-treatment-768-300x180.jpg)  
 When we talk about controversial treatments, this technique is the most exciting for each of them, where magnetic waves and pulses can help treat many of the many conditions.  
 1\. Parkinson’s Disease  
 2\. Depression, fatigue, negative symptoms of schizophrenia, mental disorders, obsessive compulsive disorder  

@@ -5,10 +5,10 @@ source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/2091"
 order: 999
 ---
-عامل التغذية العصبية المشتقة من الدماغ (BDNF) له دور مهم في [اللدونة العصبية](/services/rehabilitation/neuroplasticity/). 
 
 ![](/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500-300x140.jpg)
 
+عامل التغذية العصبية المشتقة من الدماغ (BDNF) له دور مهم في [اللدونة العصبية](/services/rehabilitation/neuroplasticity/). 
 
 أظهرت الدراسات أن الجمع بين إعادة التأهيل و [rTMS](/services/brain-stimulation/tms/) منخفض التردد قد يحسن الوظيفة الحركية في الطرف المصاب ، عن طريق تنشيط BDNF. يلعب تكوين الخلايا العصبية لدى البالغين أدوارًا مهمة في اللدونة المشبكية والذاكرة.
 

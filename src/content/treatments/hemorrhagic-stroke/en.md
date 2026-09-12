@@ -6,9 +6,8 @@ legacyUrl: "https://alimranmed.com/hemorrhagic-stroke/"
 category: "brain"
 source: "legacy-wp"
 ---
+
 ![](/images/legacy/2019/06/6.jpg)
-
-
 
 A hemorrhagic stroke is caused by a hemorrhage or sudden bleeding into or next to the brain. This problem accounts for 13 percent of strokes. The rest of stroke cases are ischemic strokes. Typically hemorrhagic strokes occur in the brain itself and are called intracerebral hemorrhages. Some patients suffer from bleeding in the fluid filled areas located deeper in the brain which is known as intraventricular hemorrhage or into the small area between the brain and the covering membranes which is known as subarachnoid hemorrhage.
 

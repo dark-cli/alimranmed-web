@@ -7,6 +7,7 @@ legacyUrl: "https://alimranmed.com/2020/04/09/multiple-sclerosis/"
 publishedAt: "2020-04-09T10:55:27"
 source: "legacy-wp"
 ---
+
 # Multiple sclerosis
 
 The **Multiple Sclerosis** is a chronic disease of the central nervous system in which the immune system is involved.

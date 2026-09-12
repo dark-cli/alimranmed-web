@@ -5,6 +5,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/natural-therapy/"
 source: "legacy-wp"
 ---
+
 **What is physiotherapy?**
 
 Physiotherapy is a healthcare profession that assesses, diagnoses, treats, and works to prevent disease and disability through physical means. Physiotherapists are experts in movement and function who work in partnership with their patients, assisting them to overcome movement disorders, which may have been present from birth, acquired through accident or injury, or are the result of ageing or life-changing events.

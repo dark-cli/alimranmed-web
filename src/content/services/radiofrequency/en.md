@@ -7,6 +7,7 @@ legacyUrl: "https://alimranmed.com/radiofrequency"
 category: "radiofrequency"
 source: "legacy-wp"
 ---
+
 Nerve ablation by radiofrequency waves (also called radiofrequency ablation or lesioning) is a minimally invasive procedure that can provide lasting relief for those suffering from facet joint pain. In fact, several clinical studies show that nerve ablation by radiofrequency waves significantly reduces pain intensity and frequency for 1 to 2 years in the majority of patients. Nerve ablation by radiofrequency waves involves applying heat to certain nerve pathways to "stop" the transmission of pain signals to the brain. It is performed on an outpatient basis and requires only local anesthesia and light sedation, which reduces the potential complications of open surgery and general anesthesia. It has a high success rate and low complication rate.
 
 ## **Which Conditions are Treated with Radiofrequency Nerve Ablation?**

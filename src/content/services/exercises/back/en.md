@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/back/"
 source: "legacy-wp"
 ---
+
 Exercises at Home for sciatica
 
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=4Y-KTBqagCM)

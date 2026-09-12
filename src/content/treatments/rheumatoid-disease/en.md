@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/rheumatoid-disease/"
 source: "legacy-wp"
 ---
+
 What is rheumatoid disease?
 
 It is an immune disease and chronic inflammation that leads to impeding changes in the joints of the body. It is more in women than in men, in a ratio of 1: 2 that occurs after a series of changes in the bone, cartilage, ligament and tendons in addition to the capillaries that feed them

@@ -6,6 +6,7 @@ order: 999
 legacyUrl: "https://alimranmed.com/brain-abscess/"
 source: "legacy-wp"
 ---
+
 ### What is a brain abscess?
 
 A brain abscess is an infection in the brain that is encapsulated (confined within its own area) and localized to one or more areas inside of the brain. This condition may cause problems with the brain and spinal cord function. Brain abscesses are rare, but are more common in young school-aged children than other ages.
