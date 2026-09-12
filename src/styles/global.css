@@ -280,48 +280,36 @@ html[dir="rtl"] .prose blockquote {
   margin: 1em auto;
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
-/* Mobile: 2-column grid for consecutive images */
+/* Mobile: 2-column layout for images */
 @media (max-width: 768px) {
   .prose {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
+    column-count: 2;
+    column-gap: 1rem;
   }
 
-  .prose > * {
-    grid-column: 1 / -1;
+  .prose > h1,
+  .prose > h2,
+  .prose > h3,
+  .prose > h4,
+  .prose > h5,
+  .prose > h6,
+  .prose > p:not(:has(img)),
+  .prose > ul,
+  .prose > ol,
+  .prose > blockquote,
+  .prose > hr {
+    column-span: all;
+    break-inside: avoid;
   }
 
-  /* Images take half width when consecutive */
   .prose img {
-    grid-column: 1;
-    margin: 0;
     width: 100%;
-  }
-
-  .prose img + img {
-    grid-column: 2;
-    margin-top: 0;
-  }
-
-  /* Odd image: center it, span both columns */
-  .prose img:last-of-type:nth-child(odd) {
-    grid-column: 1 / -1;
-    max-width: 80%;
-    margin: 1em auto;
-  }
-
-  /* Images separated by other content: full width */
-  .prose img ~ p ~ img,
-  .prose img ~ h3 ~ img,
-  .prose img ~ h4 ~ img,
-  .prose img ~ ul ~ img,
-  .prose img ~ ol ~ img {
-    grid-column: 1 / -1;
-    max-width: 100%;
-    margin: 1em auto;
+    height: auto;
+    margin: 0 0 1rem 0;
+    break-inside: avoid;
   }
 }
 
