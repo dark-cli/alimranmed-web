@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
 import { CONTACT } from "../consts";
 
 const socials = [
@@ -58,6 +59,26 @@ const socials = [
             </li>
           ))}
         </ul>
+      </div>
+    </section>
+
+    <!-- Contact form for appointments/inquiries -->
+    <ContactForm />
+
+    <!-- Map embed -->
+    <section class="map-section" aria-label="Location map">
+      <h2>Find us on the map</h2>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3373.7245851047156!2d47.77796632346875!3d30.515640296688726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e74596fb5555555%3A0x5555555555555555!2sAlimran%20Medical%20Center!5e0!3m2!1sen!2siq!4v1234567890123"
+          width="100%"
+          height="450"
+          style="border: 0; border-radius: var(--radius-lg);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Alimran Medical Center location in Basra, Iraq"
+        ></iframe>
       </div>
     </section>
   </div>
@@ -196,4 +217,21 @@ const socials = [
     text-decoration: none;
   }
   .social a i { font-size: 1rem; line-height: 1; }
+
+  /* Map section */
+  .map-section {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+  @media (min-width: 640px) { .map-section { margin-top: 3rem; padding-top: 3rem; } }
+  .map-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .map-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
 </style>
