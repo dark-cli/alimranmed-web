@@ -15,6 +15,11 @@ interface Props {
 const { title, description, image } = Astro.props;
 const locale = currentLocale(Astro);
 const dir = locale === "ar" ? "rtl" : "ltr";
+
+// Show a "BETA" ribbon on any non-production build (matches the noindex
+// signal in BaseHead). Helps testers see at-a-glance they're not on prod.
+const cfBranch = process.env.CF_PAGES_BRANCH;
+const isProduction = cfBranch === "main";
 ---
 
 <html lang={locale} dir={dir}>
@@ -23,11 +28,40 @@ const dir = locale === "ar" ? "rtl" : "ltr";
     <ClientRouter />
   </head>
   <body>
+    {!isProduction && (
+      <div class="beta-ribbon" aria-label="Beta environment">
+        {locale === "ar" ? "بيتا — بيئة اختبار" : "BETA — testing environment"}
+      </div>
+    )}
     <Header />
     <main>
       <slot />
     </main>
     <Footer />
     <ImageLayout />
+    {!isProduction && (
+      <style is:global>
+        .beta-ribbon {
+          position: fixed;
+          top: 12px;
+          inset-inline-end: 12px;
+          z-index: 1000;
+          padding: 0.4em 0.85em;
+          background: #dc2626;
+          color: #fff;
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          border-radius: 999px;
+          box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+          pointer-events: none;
+          user-select: none;
+        }
+        @media (max-width: 480px) {
+          .beta-ribbon { top: 8px; inset-inline-end: 8px; font-size: 0.65rem; padding: 0.3em 0.65em; }
+        }
+      </style>
+    )}
   </body>
 </html>
