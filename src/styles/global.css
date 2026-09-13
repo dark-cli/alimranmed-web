@@ -68,6 +68,10 @@ html, body {
   background: var(--surface-alt);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Chrome/Safari on mobile flashes a translucent blue rectangle on tap
+     by default. Kill it — our own :hover / :focus-visible styles already
+     give visual feedback. Doesn't affect keyboard focus rings. */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Prevent pull-to-refresh in standalone visits. Portal-mode integration will
