@@ -163,30 +163,30 @@ const FEATURED_SERVICES = [
       </div>
     </div>
   </section>
-</BaseLayout>
 
-<script is:inline>
-  (function () {
-    function bindVideoFacades() {
-      document.querySelectorAll(".video-facade").forEach((btn) => {
-        if (btn.dataset.bound) return;
-        btn.dataset.bound = "1";
-        btn.addEventListener("click", () => {
-          const id = btn.dataset.videoId;
-          const iframe = document.createElement("iframe");
-          iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-          iframe.title = "مركز العمران الطبي — فيديو تعريفي";
-          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-          iframe.setAttribute("allowfullscreen", "");
-          iframe.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;";
-          btn.replaceWith(iframe);
+  <script is:inline>
+    (function () {
+      function bindVideoFacades() {
+        document.querySelectorAll(".video-facade").forEach((btn) => {
+          if (btn.dataset.bound) return;
+          btn.dataset.bound = "1";
+          btn.addEventListener("click", () => {
+            const id = btn.dataset.videoId;
+            const iframe = document.createElement("iframe");
+            iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+            iframe.title = "مركز العمران الطبي — فيديو تعريفي";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.setAttribute("allowfullscreen", "");
+            iframe.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;";
+            btn.replaceWith(iframe);
+          });
         });
-      });
-    }
-    bindVideoFacades();
-    document.addEventListener("astro:page-load", bindVideoFacades);
-  })();
-</script>
+      }
+      bindVideoFacades();
+      document.addEventListener("astro:page-load", bindVideoFacades);
+    })();
+  </script>
+</BaseLayout>
 
 <style>
   /* --------------------------------------------------- HERO */
