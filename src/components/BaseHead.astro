@@ -21,6 +21,14 @@ const otherLocale = locale === "en" ? "ar" : "en";
 const alternatePath = alternateHref(Astro.url.pathname, otherLocale);
 const alternateURL = new URL(alternatePath, Astro.site);
 
+// Only the `main` branch (production) is indexable. Beta and any preview
+// branch built by Cloudflare Pages should be hidden from search engines.
+// CF_PAGES_BRANCH is set automatically during Pages builds.
+// Local `npm run dev` is also treated as non-production (safe default).
+const cfBranch = process.env.CF_PAGES_BRANCH;
+const isProduction = cfBranch === "main";
+const robotsContent = isProduction ? "index, follow" : "noindex, nofollow";
+
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": ["MedicalClinic", "LocalBusiness"],
@@ -103,7 +111,7 @@ const businessSchema = {
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="author" content="Alimran Medical Center" />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={robotsContent} />
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Language alternates for Google (each page tells search engines about its EN + AR variants) -->
