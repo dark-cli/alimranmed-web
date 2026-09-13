@@ -21,12 +21,13 @@ const otherLocale = locale === "en" ? "ar" : "en";
 const alternatePath = alternateHref(Astro.url.pathname, otherLocale);
 const alternateURL = new URL(alternatePath, Astro.site);
 
-// Only the `main` branch (production) is indexable. Beta and any preview
-// branch built by Cloudflare Pages should be hidden from search engines.
-// CF_PAGES_BRANCH is set automatically during Pages builds.
-// Local `npm run dev` is also treated as non-production (safe default).
-const cfBranch = process.env.CF_PAGES_BRANCH;
-const isProduction = cfBranch === "main";
+// Non-production builds (beta, staging, previews) should be hidden from
+// search engines. Default to PRODUCTION so that if the env var is missing
+// for any reason we never accidentally noindex the live site.
+// Only explicitly-known non-production branches flip the flag.
+const cfBranch = process.env.CF_PAGES_BRANCH || "";
+const NON_PROD_BRANCHES = new Set(["beta", "staging", "preview", "dev"]);
+const isProduction = !NON_PROD_BRANCHES.has(cfBranch);
 const robotsContent = isProduction ? "index, follow" : "noindex, nofollow";
 
 const businessSchema = {

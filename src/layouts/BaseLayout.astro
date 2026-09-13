@@ -17,9 +17,11 @@ const locale = currentLocale(Astro);
 const dir = locale === "ar" ? "rtl" : "ltr";
 
 // Show a "BETA" ribbon on any non-production build (matches the noindex
-// signal in BaseHead). Helps testers see at-a-glance they're not on prod.
-const cfBranch = process.env.CF_PAGES_BRANCH;
-const isProduction = cfBranch === "main";
+// signal in BaseHead). Default to PRODUCTION so a missing env var never
+// shows a stray ribbon on the live site. Only known non-prod branches flip.
+const cfBranch = process.env.CF_PAGES_BRANCH || "";
+const NON_PROD_BRANCHES = new Set(["beta", "staging", "preview", "dev"]);
+const isProduction = !NON_PROD_BRANCHES.has(cfBranch);
 ---
 
 <html lang={locale} dir={dir}>
