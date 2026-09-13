@@ -350,7 +350,9 @@ const isActive = (href: string) => {
   .header-back-btn:active { opacity: 0.5; }
   .header-back-btn .chev-back { flex-shrink: 0; }
   .header-back-btn .back-label {
-    line-height: 1;
+    /* Line-height must clear descenders (Arabic ج/ح/خ) — line-height: 1
+       clipped them against `overflow: hidden`. */
+    line-height: 1.4;
     max-width: 8em;
     overflow: hidden;
     text-overflow: ellipsis;
