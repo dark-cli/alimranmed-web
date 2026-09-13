@@ -74,6 +74,20 @@
 .fa-heart::before                               { content: "\f004"; }
 .fa-circle-check::before                        { content: "\f058"; }
 .fa-language::before                            { content: "\f1ab"; }
+.fa-globe::before                               { content: "\f0ac"; }
+.fa-earth-africa::before,
+.fa-globe-africa::before                        { content: "\f57c"; }
+.fa-earth-asia::before,
+.fa-globe-asia::before                          { content: "\f57e"; }
+.fa-earth-americas::before,
+.fa-earth::before,
+.fa-globe-americas::before                      { content: "\f57d"; }
+.fa-earth-europe::before,
+.fa-globe-europe::before                        { content: "\f7a2"; }
+.fa-sun::before                                 { content: "\f185"; }
+.fa-moon::before                                { content: "\f186"; }
+.fa-circle-half-stroke::before,
+.fa-adjust::before                              { content: "\f042"; }
 
 /* Brand glyphs */
 .fa-facebook-f::before                          { content: "\f39e"; }

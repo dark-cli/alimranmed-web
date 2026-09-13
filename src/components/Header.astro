@@ -38,7 +38,7 @@ const isActive = (href: string) => {
        document direction. Only the nav LINKS inside get RTL order in AR. -->
   <div class="container header-row" dir="ltr">
     <!-- Back button: iOS-style, top-left, mobile-visible only -->
-    <button id="header-back-btn" class="header-back-btn" aria-label="Go back" type="button" style="display: none;">
+    <button id="header-back-btn" class="header-back-btn is-hidden" aria-label="Go back" type="button">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
         <polyline points="15 18 9 12 15 6" />
       </svg>
@@ -253,13 +253,10 @@ const isActive = (href: string) => {
         if (!btn) return;
 
         var path = location.pathname;
-        // Hide back button on home pages (/en/, /ar/)
+        // Hide back button on home pages (/en/, /ar/). Mobile-only display
+        // is enforced via the .header-back-btn CSS media query.
         var isHome = path === "/en/" || path === "/ar/" || path === "/";
-        if (isHome) {
-          btn.style.display = "none";
-        } else {
-          btn.style.display = "inline-flex";
-        }
+        btn.classList.toggle("is-hidden", isHome);
       }
 
       function handleBackClick(e) {
@@ -353,12 +350,14 @@ const isActive = (href: string) => {
     opacity: 0.5;
   }
 
-  @media (max-width: 1023px) {
-    /* Show on mobile/tablet */
+  @media (max-width: 767px) {
+    /* Show on mobile only */
     .header-back-btn {
       display: inline-flex;
     }
   }
+  /* JS toggles this class on home pages to hide the button */
+  .header-back-btn.is-hidden { display: none !important; }
 
   /* Logo */
   .logo {
@@ -459,6 +458,13 @@ const isActive = (href: string) => {
     text-decoration: none;
   }
   .chev { opacity: 0.5; }
+
+  /* Tajawal has a smaller x-height than IBM Plex Sans, so Arabic text renders
+     visually smaller at the same font-size. Bump Arabic nav ~10% so both
+     languages read at the same optical weight. */
+  :global(html[dir="rtl"]) .nav-link {
+    font-size: 1.05rem;
+  }
 
   /* Mega-menu panel (desktop, CSS-only hover reveal) */
   .mega {

@@ -3,20 +3,8 @@
 ---
 
 <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-  <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="4" />
-    <line x1="12" y1="2" x2="12" y2="4" />
-    <line x1="12" y1="20" x2="12" y2="22" />
-    <line x1="4.93" y1="4.93" x2="6.34" y2="6.34" />
-    <line x1="17.66" y1="17.66" x2="19.07" y2="19.07" />
-    <line x1="2" y1="12" x2="4" y2="12" />
-    <line x1="20" y1="12" x2="22" y2="12" />
-    <line x1="4.93" y1="19.07" x2="6.34" y2="17.66" />
-    <line x1="17.66" y1="6.34" x2="19.07" y2="4.93" />
-  </svg>
-  <svg class="icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z" />
-  </svg>
+  <i class="icon sun fa-solid fa-sun" aria-hidden="true"></i>
+  <i class="icon moon fa-solid fa-moon" aria-hidden="true"></i>
 </button>
 
 <script is:inline>
@@ -54,12 +42,13 @@
     justify-content: center;
     color: var(--ink-soft);
     transition: color 0.15s ease, border-color 0.15s ease;
-    font-size: 0;
   }
-  .theme-toggle:hover { color: var(--brand); border-color: var(--brand); }
-  .icon { width: 18px; height: 18px; }
-  .icon.sun { display: none; }
-  .icon.moon { display: inline; }
-  :global(html[data-theme="dark"]) .icon.sun { display: inline; }
+  .theme-toggle:hover { border-color: var(--brand); }
+  .icon { font-size: 1.1rem; line-height: 1; }
+  .icon.sun { display: none; color: #f59e0b; }        /* amber-500 — warm sun */
+  .icon.moon { display: inline-block; color: var(--brand); } /* teal-blue — matches logo */
+  :global(html[data-theme="dark"]) .icon.sun { display: inline-block; }
   :global(html[data-theme="dark"]) .icon.moon { display: none; }
+  /* Slight brightness lift on hover instead of tinting brand color */
+  .theme-toggle:hover .icon { filter: brightness(1.15); }
 </style>

@@ -4,11 +4,14 @@ import { currentLocale, alternateHref } from "../lib/i18n";
 const locale = currentLocale(Astro);
 const otherLocale = locale === "en" ? "ar" : "en";
 const href = alternateHref(Astro.url.pathname, otherLocale);
-const label = otherLocale === "ar" ? "العربية" : "EN";
-const shortLabel = otherLocale === "ar" ? "ع" : "EN";
+// Label shows the language the user will SWITCH TO — so on /en/ it says
+// "العربية" (click to go to Arabic), on /ar/ it says "EN" (click to go to English).
+const label = otherLocale === "ar" ? "العربية" : "English";
+const shortLabel = otherLocale === "ar" ? "العربية" : "EN";
 ---
 
 <a class="lang-switch" href={href} aria-label={label} title={label}>
+  <i class="fa-solid fa-earth-africa" aria-hidden="true"></i>
   <span class="short">{shortLabel}</span>
 </a>
 
@@ -17,14 +20,14 @@ const shortLabel = otherLocale === "ar" ? "ع" : "EN";
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.6em;
     height: 48px;
-    min-width: 48px;
-    padding: 0 0.75em;
+    padding: 0 1em;
     border: 1px solid var(--border);
     border-radius: 999px;
-    color: var(--ink-soft);
-    font-weight: 600;
-    font-size: 0.9rem;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 0.95rem;
     text-decoration: none;
     transition: color 0.15s ease, border-color 0.15s ease;
   }
@@ -34,4 +37,26 @@ const shortLabel = otherLocale === "ar" ? "ع" : "EN";
     border-color: var(--brand);
     text-decoration: none;
   }
+  .lang-switch .fa-earth-africa {
+    font-size: 1.05rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 1em;
+  }
+  .lang-switch .short {
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    height: 1em;
+    /* IBM Plex Sans has a taller ascender than descender, so text glyphs
+       sit visually low against a centered icon. Nudge up ~1px to align. */
+    transform: translateY(-1px);
+  }
+  /* Tajawal (Arabic) has different metrics — no nudge needed. */
+  :global(html[dir="rtl"]) .lang-switch .short { transform: none; }
+
+  /* Match the Arabic nav bump for optical consistency (see Header.astro) */
+  :global(html[dir="rtl"]) .lang-switch { font-size: 1.05rem; }
 </style>
