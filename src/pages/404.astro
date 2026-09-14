@@ -43,14 +43,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <script is:inline>
   /**
    * 404 language detection — mirrors the root-page standard in
-   * src/pages/index.astro (URL prefix → Accept-Language → default EN).
-   * Geo (cf-ipcountry) is server-only so it can't participate here.
+   * src/pages/index.astro (URL prefix → referrer → navigator.language
+   * → default EN). Geo (cf-ipcountry) is server-only so it can't
+   * participate here.
+   *
+   * Runs on initial load AND on every astro:page-load event, so that
+   * navigating between 404 variants via the language switcher (which
+   * swaps the DOM via View Transitions rather than triggering a full
+   * reload) re-applies the correct language.
    */
   (function () {
-    var path = location.pathname || "";
-    var ref = document.referrer || "";
-
     function detectLocale() {
+      var path = location.pathname || "";
+      var ref = document.referrer || "";
       // 1. Explicit URL prefix on the requested path
       if (path.indexOf("/ar/") === 0) return "ar";
       if (path.indexOf("/en/") === 0) return "en";
@@ -63,25 +68,39 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       for (var i = 0; i < langs.length; i++) {
         if (langs[i].indexOf("ar") === 0) return "ar";
       }
-      // 4. Default
       return "en";
     }
 
-    // Show the FULL requested URL (scheme + host + path + query) inside every
-    // .nf-path element — matches Astro's default 404 display.
-    var fullUrl = location.href;
-    document.querySelectorAll(".nf-path").forEach(function (el) {
-      el.textContent = fullUrl;
-    });
+    function applyLocale() {
+      // Only run on the 404 page — .nf-inner is our unique marker.
+      if (!document.querySelector(".nf-inner")) return;
 
-    if (detectLocale() !== "ar") return;
-    document.documentElement.setAttribute("lang", "ar");
-    document.documentElement.setAttribute("dir", "rtl");
-    var en = document.querySelector(".nf-en");
-    var ar = document.querySelector(".nf-ar");
-    if (en) en.hidden = true;
-    if (ar) ar.hidden = false;
-    document.title = "الصفحة غير موجودة — مركز العمران الطبي";
+      // Show the FULL requested URL inside every .nf-path element.
+      var fullUrl = location.href;
+      document.querySelectorAll(".nf-path").forEach(function (el) {
+        el.textContent = fullUrl;
+      });
+
+      var locale = detectLocale();
+      var en = document.querySelector(".nf-en");
+      var ar = document.querySelector(".nf-ar");
+      if (locale === "ar") {
+        document.documentElement.setAttribute("lang", "ar");
+        document.documentElement.setAttribute("dir", "rtl");
+        if (en) en.hidden = true;
+        if (ar) ar.hidden = false;
+        document.title = "الصفحة غير موجودة — مركز العمران الطبي";
+      } else {
+        document.documentElement.setAttribute("lang", "en");
+        document.documentElement.setAttribute("dir", "ltr");
+        if (en) en.hidden = false;
+        if (ar) ar.hidden = true;
+        document.title = "Page not found — Alimran Medical Center";
+      }
+    }
+
+    applyLocale();
+    document.addEventListener("astro:page-load", applyLocale);
   })();
 </script>
 
