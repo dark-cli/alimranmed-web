@@ -1,0 +1,156 @@
+---
+/**
+ * Custom 404 page. Astro convention: any request that doesn't match a
+ * page falls back to /404.html (Cloudflare Pages serves this file for
+ * missing paths automatically).
+ *
+ * Because it's a single static file used for BOTH /en/... and /ar/...
+ * misses, we render EN by default and let a small inline script swap
+ * to AR when it detects the visitor came from the Arabic side of the
+ * site (via URL pathname or referrer).
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page not found — Alimran Medical Center" description="The page you're looking for doesn't exist.">
+  <section class="not-found">
+    <div class="container nf-inner">
+      <!-- Friendly brand mark — the same "+" circle from the header logo. -->
+      <div class="nf-mark" aria-hidden="true">
+        <svg viewBox="0 0 96 96" width="96" height="96" fill="none">
+          <circle cx="48" cy="48" r="46" fill="var(--brand)" />
+          <path d="M48 24v48M24 48h48" stroke="#fff" stroke-width="7" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <p class="nf-code">404</p>
+
+      <!-- English (default) -->
+      <div class="nf-body nf-en">
+        <h1>Page not found</h1>
+        <p class="nf-lede">The page <code class="nf-path"></code> doesn't exist or has been moved.</p>
+      </div>
+
+      <!-- Arabic (revealed by JS when relevant) -->
+      <div class="nf-body nf-ar" hidden>
+        <h1>الصفحة غير موجودة</h1>
+        <p class="nf-lede">الصفحة <code class="nf-path"></code> غير موجودة أو تم نقلها.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  /**
+   * 404 language detection — mirrors the root-page standard in
+   * src/pages/index.astro (URL prefix → referrer → navigator.language
+   * → default EN). Geo (cf-ipcountry) is server-only so it can't
+   * participate here.
+   *
+   * Runs on initial load AND on every astro:page-load event, so that
+   * navigating between 404 variants via the language switcher (which
+   * swaps the DOM via View Transitions rather than triggering a full
+   * reload) re-applies the correct language.
+   */
+  (function () {
+    function detectLocale() {
+      var path = location.pathname || "";
+      var ref = document.referrer || "";
+      // 1. Explicit URL prefix on the requested path
+      if (path.indexOf("/ar/") === 0) return "ar";
+      if (path.indexOf("/en/") === 0) return "en";
+      // 2. Referrer prefix — user came from a language-scoped page
+      if (ref.indexOf("/ar/") !== -1) return "ar";
+      if (ref.indexOf("/en/") !== -1) return "en";
+      // 3. Device language (client-side equivalent of Accept-Language)
+      var langs = (navigator.languages || [navigator.language || ""])
+        .map(function (l) { return String(l).toLowerCase(); });
+      for (var i = 0; i < langs.length; i++) {
+        if (langs[i].indexOf("ar") === 0) return "ar";
+      }
+      return "en";
+    }
+
+    function applyLocale() {
+      // Only run on the 404 page — .nf-inner is our unique marker.
+      if (!document.querySelector(".nf-inner")) return;
+
+      // Show the FULL requested URL inside every .nf-path element.
+      var fullUrl = location.href;
+      document.querySelectorAll(".nf-path").forEach(function (el) {
+        el.textContent = fullUrl;
+      });
+
+      var locale = detectLocale();
+      var en = document.querySelector(".nf-en");
+      var ar = document.querySelector(".nf-ar");
+      if (locale === "ar") {
+        document.documentElement.setAttribute("lang", "ar");
+        document.documentElement.setAttribute("dir", "rtl");
+        if (en) en.hidden = true;
+        if (ar) ar.hidden = false;
+        document.title = "الصفحة غير موجودة — مركز العمران الطبي";
+      } else {
+        document.documentElement.setAttribute("lang", "en");
+        document.documentElement.setAttribute("dir", "ltr");
+        if (en) en.hidden = false;
+        if (ar) ar.hidden = true;
+        document.title = "Page not found — Alimran Medical Center";
+      }
+    }
+
+    applyLocale();
+    document.addEventListener("astro:page-load", applyLocale);
+  })();
+</script>
+
+<style>
+  .not-found {
+    padding-block: 3rem;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+  @media (min-width: 700px) { .not-found { padding-block: 5rem; min-height: 65vh; } }
+
+  .nf-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  .nf-mark svg { display: block; }
+  .nf-code {
+    font-size: clamp(3rem, 10vw, 5rem);
+    font-weight: 800;
+    color: var(--brand);
+    line-height: 1;
+    margin: 0.25rem 0 0;
+    letter-spacing: -0.02em;
+  }
+  .nf-body h1 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    margin: 0 0 0.5rem;
+  }
+  .nf-lede {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    max-width: 60ch;
+    margin: 0 auto;
+    word-break: break-all;
+  }
+  .nf-path {
+    display: inline-block;
+    padding: 0.15em 0.5em;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: ui-monospace, "SFMono-Regular", "Menlo", monospace;
+    font-size: 0.9em;
+    color: var(--brand);
+    /* Force paths to render LTR even inside an RTL parent (Arabic block) */
+    direction: ltr;
+    unicode-bidi: embed;
+  }
+</style>
