@@ -1,6 +1,7 @@
 ---
 /**
- * Consultant CV — Arabic. Same shape as en/doctors/[slug].astro.
+ * Consultant CV — Arabic. 1:1 port of the "profile" view in
+ * `Alimran Neurosurgery AR.dc.html` (lines 414–599).
  */
 import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
@@ -17,186 +18,215 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 
+const chips = ["بكالوريوس طب وجراحة", "زمالة البورد العراقي — جراحة الأعصاب", "FIAANS", "FINASS"];
+
 const appointments = [
-  { period: "٢٠٠٦ — الآن", body: "استشاري جراحة الأعصاب، مستشفى الصدر التعليمي — البصرة." },
-  { period: "٢٠٢٢ — الآن", body: "المدير الإقليمي للعراق، جمعية الشرق الأوسط لجراحة الأعصاب التوجيهية والوظيفية." },
-  { period: "٢٠١٦ — الآن", body: "مشرف الأطباء الشباب في المجلس العربي لجراحة الأعصاب." },
-  { period: "عضو مجلس",   body: "الجمعية الشرق-أوسطية لجراحة الأعصاب التوجيهية والوظيفية." },
-  { period: "٢٠٠٠ — ٢٠٠٥", body: "التدريب العالي، المجلس الطبي العراقي، بغداد." },
-  { period: "١٩٩٩ — ٢٠٠٠", body: "طبيب مقيم أقدم، الجراحة العامة، مستشفى البصرة العام." },
+  { period: "٢٠٠٦ — الآن",   body: "استشاري جراحة الجهاز العصبي، مستشفى الصدر التعليمي، البصرة. مُنح لقب الاستشاري في ١٧ كانون الثاني ٢٠١٦." },
+  { period: "٢٠٢٢ — الآن",   body: "مدير العراق في جمعية الشرق الأوسط للجراحة التجسيمية والوظيفية، وعضو مجلس إدارتها." },
+  { period: "٢٠١٦ — الآن",   body: "مشرف على أطباء البورد العربي في جراحة الأعصاب." },
+  { period: "١٩٩٩ — ٢٠٠٠",   body: "طبيب مقيم أول، الجراحة العامة، مستشفى البصرة العام." },
 ];
-
 const education = [
-  { period: "١٩٩٦", body: "بكالوريوس الطب والجراحة (MBChB) — كلية طب البصرة، العراق." },
-  { period: "٢٠٠٥", body: "زمالة المجلس العراقي للاختصاصات الطبية — جراحة الأعصاب." },
-  { period: "٢٠١٦", body: "درجة استشاري." },
-  { period: "٢٠١٧", body: "زمالة في التخدير وطب الألم — مستشفى جامعة سيول الوطنية." },
+  { period: "١٩٩٦",         body: "بكالوريوس طب وجراحة، كلية طب البصرة، العراق." },
+  { period: "٢٠٠٠ — ٢٠٠٥", body: "التدريب العالي في جراحة الأعصاب، مركز البورد الطبي العراقي، بغداد." },
+  { period: "٢٠٠٥",         body: "زمالة البورد العراقي للاختصاصات الطبية — جراحة الأعصاب." },
+  { period: "٢٠١٧",         body: "زمالة التخدير وطب الألم، مستشفى جامعة سيؤول الوطنية." },
+  { period: "٢٠١٣",         body: "زمالة إدارة الألم التداخلي، عيادة موبي للألم، مومباي." },
 ];
-
 const memberships = [
-  { year: "٢٠٢٢", name: "الجمعية الأوروبية لجراحة الأعصاب التوجيهية والوظيفية" },
-  { year: "٢٠٢٠", name: "منظمة السكتة الدماغية الأوروبية" },
-  { year: "٢٠٢٠", name: "منظمة السكتة الدماغية العالمية" },
-  { year: "٢٠٢٠", name: "الجمعية الدولية للنخاع الشوكي" },
-  { year: "٢٠١٦", name: "جمعية أمريكا الشمالية للعمود الفقري" },
-  { year: "٢٠١٥", name: "الجمعية الدولية لدراسة الألم" },
-  { year: "٢٠١١", name: "AOSpine" },
-  { year: "٢٠١١", name: "ATLS & ACLS" },
-  { year: "٢٠١٠", name: "الجمعية الأمريكية لجراحي الأعصاب" },
+  { name: "الجمعية الأوروبية للجراحة التجسيمية والوظيفية", year: "٢٠٢٢" },
+  { name: "منظمة السكتة الدماغية الأوروبية",                  year: "٢٠٢٠" },
+  { name: "منظمة السكتة الدماغية العالمية",                    year: "٢٠٢٠" },
+  { name: "الجمعية الدولية للحبل الشوكي",                      year: "٢٠٢٠" },
+  { name: "جمعية أمريكا الشمالية للعمود الفقري",                year: "٢٠١٦" },
+  { name: "الجمعية الدولية لدراسة الألم",                       year: "٢٠١٥" },
+  { name: "AOSpine",                                          year: "٢٠١١" },
+  { name: "الجمعية الأمريكية لجراحي الجهاز العصبي",             year: "٢٠١٠" },
 ];
-
 const publications = [
-  { period: "٢٠١٥", body: "نتائج إصابات الرأس بالطلق الناري لدى الأطفال. Int. J. Medicine & Pharmaceutical Sciences, المجلد ٣، العدد ٣." },
-  { period: "٢٠١٤", body: "إصابات الطلق الناري المدنية في البصرة. Int. J. Medicine & Pharmaceutical Sciences, المجلد ٤، العدد ٦." },
-  { period: "٢٠١٤", body: "دواعي وموانع استخدام مصرف فوق الجافية في جراحة العمود الفقري القطني. Int. J. Medicine & Pharmaceutical Sciences, المجلد ٤، العدد ٦." },
-  { period: "٢٠١٤", body: "فعالية حقن البوتوكس حول أعصاب فروة الرأس للوقاية من الصداع المزمن. Int. J. Medicine & Pharmaceutical Sciences, المجلد ٤، العدد ٥." },
-  { period: "٢٠١٣", body: "ارتفاع تعداد كريات الدم البيضاء كمنبئ للإصابة المتعددة الشديدة. مجلة ذي قار الطبية، المجلد ٧، العدد ٢." },
+  { year: "٢٠١٣", title: "ارتفاع عدد الكريات البيض كمؤشر لشدة الرضوح المتعددة", source: "مجلة ذي قار الطبية، المجلد ٧، العدد ٢، الصفحات ٥٠–٥٧. ISSN 1992-9218." },
+  { year: "٢٠١٤", title: "فعالية حقن البوتوكس حول أعصاب فروة الرأس للوقاية من الصداع اليومي المزمن", source: "Int. Journal of Medicine and Pharmaceutical Sciences، المجلد ٤، العدد ٥، الصفحات ٤٩–٥٨." },
+  { year: "٢٠١٤", title: "إصابات الأسلحة النارية بين المدنيين في البصرة", source: "Int. Journal of Medicine and Pharmaceutical Sciences، المجلد ٤، العدد ٦، الصفحات ١–١٠." },
+  { year: "٢٠١٤", title: "دواعي استخدام المبزل فوق الجافية في جراحة الفقرات القطنية وعدمها", source: "Int. Journal of Medicine and Pharmaceutical Sciences، المجلد ٤، العدد ٦، الصفحات ١٠–١٦." },
+  { year: "٢٠١٥", title: "حصيلة إصابات الرأس بالأسلحة النارية عند الأطفال", source: "Int. Journal of Medicine and Pharmaceutical Sciences، المجلد ٣، العدد ٣، الصفحات ٩٩–١٠٨." },
 ];
-
 const conferences = [
-  { period: "٢٠١٦", body: "المؤتمر العالمي السادس عشر للألم — IASP، يوكوهاما، اليابان. بحث حول الترددات الراديوية النبضية للصداع المزمن." },
-  { period: "٢٠١٦", body: "المؤتمر الدولي السنوي للعمود الفقري — دبي. بحث حول استخدام الكيس الرملي لمنع تسرب السائل الدماغي بعد جراحة العمود الفقري." },
-  { period: "٢٠١٥", body: "المؤتمر الدولي لإصابات الرأس والرقبة الطارئة — البصرة. بحث حول إصابات الرأس بالطلق الناري لدى الأطفال." },
-  { period: "٢٠١٣", body: "مؤتمر بصرة الدولي الثالث (بجامعة كامبريدج) — البصرة. بحث حول التحفيز النخاعي." },
-  { period: "٢٠١٣", body: "مؤتمر الناصرية الطبي الدولي الثاني. بحث حول تعداد الكريات البيضاء كمنبئ للإصابة المتعددة." },
-  { period: "٢٠١٣", body: "مؤتمر الطب الطارئ الدولي الثاني — البصرة. عرض حول إصابات الطلق الناري." },
-  { period: "٢٠١٢", body: "ورشة جراحة العمود الفقري بالحد الأدنى، DePuy — تسوغ، سويسرا." },
-  { period: "٢٠١٠", body: "ورش جمعية الشرق الأوسط للتطور والابتكار، بإشراف كلية طب جامعة بوسطن — بيروت، لبنان." },
-  { period: "٢٠٠٩", body: "الدورة الدولية الثانية المتقدمة لتقنية Destandau للجراحة التنظيرية للعمود الفقري — شانديغار، الهند." },
+  { year: "يوكوهاما ٢٠١٦", body: "المؤتمر العالمي السادس عشر للألم (IASP) — الترددات الراديوية النابضة للصداع المزمن." },
+  { year: "دبي ٢٠١٦",     body: "المؤتمر الدولي السنوي للعمود الفقري — استعمال الكيس الرملي والتسريب السحائي بعد جراحة العمود." },
+  { year: "تامبا ٢٠١٤",   body: "الجمعية الأمريكية لإدارة الألم — ورشة عمل التدخلات الموجَّهة بالأمواج فوق الصوتية." },
+  { year: "تسوگ ٢٠١٢",   body: "ورشة عمل جراحة العمود الفقري بأقل تدخل، شركة DePuy، سويسرا." },
+  { year: "بيروت ٢٠١٠",   body: "دورة عملية على المقاطع التشريحية في الأساليب الفقرية المتقدمة، بإشراف كلية طب جامعة بوسطن." },
 ];
 ---
 
-<BaseLayout
-  title={`${entry.data.fullName} — مركز العمران`}
-  description={entry.data.description}
->
-  <section class="cv-head">
-    <div class="container cv-head-inner">
+<BaseLayout title={`${entry.data.fullName} — مركز العمران الطبي`} description={entry.data.description}>
+  <section class="cv-head-band">
+    <div class="cv-head">
       <div class="cv-head-copy">
-        <span class="eyebrow">الاستشاري الرئيسي · السيرة العلمية</span>
-        <h1>{entry.data.fullName}</h1>
-        <p class="cv-role">{entry.data.specialty}</p>
-        <ul class="cv-chips" aria-label="المؤهلات">
-          {entry.data.titles.map((t: string) => <li><span dir="ltr">{t}</span></li>)}
-        </ul>
-        <p class="cv-desc">{entry.data.description}</p>
+        <p class="cv-eyebrow">الاستشاري المسؤول · السيرة العلمية</p>
+        <h1 class="cv-h1">الدكتور حسين عمران موسى</h1>
+        <p class="cv-lede">مؤسس مركز العمران الطبي والاستشاري المسؤول فيه. استشاري جراحة الجهاز العصبي في مستشفى البصرة التعليمي، ومدير العراق في جمعية الشرق الأوسط للجراحة التجسيمية والوظيفية.</p>
+        <div class="cv-chips">
+          {chips.map((c) => <span class="cv-chip">{c}</span>)}
+        </div>
       </div>
-      <div class="cv-portrait photo-slot photo-slot--4x5">
-        صورة شخصية<br>
-        في المركز أو المستشفى<br>
-        ٤:٥ · بعرض ١٢٠٠ بكسل على الأقل
+      <div class="cv-portrait photo-slot" aria-hidden="true">
+        <p>صورة شخصية<br>في المركز أو المستشفى<br>٤:٥ · بعرض ١٢٠٠ بكسل على الأقل</p>
       </div>
     </div>
   </section>
 
-  <div class="container cv-registers">
-    <div class="register">
-      <p class="register-label">المناصب</p>
-      <div class="register-rows">
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">المناصب</h2>
+      <div class="reg-body">
         {appointments.map((r) => (
-          <div class="register-row">
-            <span class="row-period">{r.period}</span>
-            <p class="row-body">{r.body}</p>
+          <div class="reg-row">
+            <span class="reg-period">{r.period}</span>
+            <span class="reg-text">{r.body}</span>
           </div>
         ))}
       </div>
     </div>
+  </section>
 
-    <div class="register">
-      <p class="register-label">التعليم</p>
-      <div class="register-rows">
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">التعليم</h2>
+      <div class="reg-body">
         {education.map((r) => (
-          <div class="register-row">
-            <span class="row-period">{r.period}</span>
-            <p class="row-body">{r.body}</p>
+          <div class="reg-row">
+            <span class="reg-period">{r.period}</span>
+            <span class="reg-text">{r.body}</span>
           </div>
         ))}
       </div>
     </div>
+  </section>
 
-    <div class="register">
-      <p class="register-label">العضويات</p>
-      <div class="register-rows register-members">
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">العضويات</h2>
+      <ul class="reg-body reg-members">
         {memberships.map((m) => (
-          <div class="member-row">
-            <span class="member-name">{m.name}</span>
+          <li>
+            {m.name}
             <span class="member-year">{m.year}</span>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
+  </section>
 
-    <div class="register">
-      <p class="register-label">المنشورات</p>
-      <div class="register-rows">
-        {publications.map((r) => (
-          <div class="register-row">
-            <span class="row-period">{r.period}</span>
-            <p class="row-body">{r.body}</p>
-          </div>
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">البحوث المنشورة</h2>
+      <ol class="reg-body reg-pubs">
+        {publications.map((p) => (
+          <li>
+            <span class="reg-period reg-period-wide">{p.year}</span>
+            <span>
+              <span class="pub-title">{p.title}</span>
+              <span class="pub-source">{p.source}</span>
+            </span>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
+  </section>
 
-    <div class="register">
-      <p class="register-label">المؤتمرات</p>
-      <div class="register-rows">
+  <section class="reg-section reg-section-last">
+    <div class="reg-wrap">
+      <h2 class="reg-label">المشاركات والمؤتمرات</h2>
+      <div class="reg-body">
         {conferences.map((r) => (
-          <div class="register-row">
-            <span class="row-period">{r.period}</span>
-            <p class="row-body">{r.body}</p>
+          <div class="reg-row">
+            <span class="reg-period">{r.year}</span>
+            <span class="reg-text">{r.body}</span>
           </div>
         ))}
       </div>
     </div>
-  </div>
+  </section>
 </BaseLayout>
 
 <style>
-  .cv-head { padding-block: var(--hero-y) 0; }
-  .cv-head-inner {
-    display: grid; grid-template-columns: 1fr; gap: var(--col-gap);
-    align-items: start; container-type: inline-size;
+  .cv-head-band { border-bottom: 1px solid var(--line); }
+  .cv-head {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(44px, 5.5vw, 72px) 24px clamp(40px, 5vw, 64px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(265px, 100%), 1fr));
+    gap: clamp(32px, 4vw, 64px); align-items: start;
   }
-  @media (min-width: 900px) { .cv-head-inner { grid-template-columns: 1fr 1fr; } }
-  .cv-head-copy .eyebrow { display: block; margin-bottom: 20px; }
-  .cv-head-copy h1 {
-    font-size: clamp(28px, 9cqw, 54px); line-height: 1.22;
-    margin: 0 0 12px;
+  .cv-head-copy { container-type: inline-size; }
+  .cv-eyebrow { font-size: 12px; letter-spacing: 0.04em; color: var(--accent); margin: 0 0 20px; }
+  .cv-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 8cqw, 54px);
+    line-height: 1.18;
+    font-weight: 700;
+    margin: 0 0 18px;
+    color: var(--ink);
   }
-  .cv-role { font-size: 17px; color: var(--accent); margin: 0 0 20px; font-weight: 500; }
-  .cv-chips { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 6px; }
-  .cv-chips li {
-    padding: 6px 12px; border: 1px solid var(--line);
-    font-family: var(--font-body); font-size: 13px; color: var(--body);
+  .cv-lede { font-size: 17px; line-height: 1.85; color: var(--body); margin: 0 0 24px; max-width: 56ch; }
+  .cv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cv-chip {
+    font-size: 12.5px; color: var(--ink);
+    border: 1px solid var(--line-strong); padding: 6px 11px;
   }
-  .cv-desc { color: var(--body); font-size: 16px; line-height: 1.9; max-width: 52ch; margin: 0; }
-  .cv-portrait { order: -1; min-height: 360px; }
-  @media (min-width: 900px) { .cv-portrait { order: 0; min-height: 460px; } }
+  .cv-portrait { aspect-ratio: 4 / 5; min-height: 0; }
+  .cv-portrait p { font-size: 12px; color: var(--muted); text-align: center; margin: 0; padding: 0 24px; line-height: 2; }
 
-  .cv-registers { padding-block: clamp(32px, 4vw, 56px) var(--section-y-last); }
-  .register-row {
-    display: grid; grid-template-columns: minmax(120px, 160px) 1fr;
-    gap: 24px; padding-block: 16px; border-top: 1px solid var(--line-soft);
-    align-items: baseline;
+  .reg-section {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(40px, 5vw, 64px) 24px 0;
   }
-  .register-row:first-child { border-top: 0; padding-top: 0; }
-  .row-period {
-    font-family: var(--font-body); font-size: 14px; color: var(--muted);
+  .reg-section-last { padding-bottom: clamp(56px, 7vw, 96px); }
+  .reg-wrap { display: flex; flex-wrap: wrap; gap: 18px clamp(32px, 4vw, 64px); align-items: flex-start; }
+  .reg-label {
+    font-size: 12px; letter-spacing: 0.04em; color: var(--accent);
+    margin: 0; position: sticky; top: 96px;
+    flex: 0 0 min(190px, 100%); font-weight: 700;
   }
-  .row-body { color: var(--body); font-size: 16px; line-height: 1.9; margin: 0; }
+  .reg-body {
+    border-top: 1px solid var(--ink);
+    flex: 1 1 380px; min-width: 0;
+    margin: 0; padding: 0; list-style: none;
+  }
+  .reg-row {
+    display: grid; grid-template-columns: minmax(92px, 150px) minmax(0, 1fr);
+    gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line);
+  }
+  .reg-period { font-size: 13px; color: var(--muted); }
+  .reg-text { font-size: 15.5px; line-height: 1.7; color: var(--ink); }
+
+  .reg-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(245px, 100%), 1fr));
+    gap: 0 48px;
+  }
+  .reg-members li {
+    font-size: 15px; color: var(--ink);
+    padding: 14px 0; border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  }
+  .member-year { font-size: 13px; color: var(--muted); }
+
+  .reg-pubs li {
+    padding: 20px 0; border-bottom: 1px solid var(--line);
+    display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 24px;
+  }
+  .reg-period-wide { padding-top: 3px; }
+  .pub-title {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 19px; line-height: 1.5; color: var(--ink); font-weight: 700;
+  }
+  .pub-source { display: block; font-size: 13.5px; color: var(--muted); margin-top: 5px; line-height: 1.7; }
 
   @media (max-width: 640px) {
-    .register-row { grid-template-columns: 1fr; gap: 4px; }
+    .reg-row, .reg-pubs li { grid-template-columns: 1fr; gap: 4px; }
+    .reg-label { position: static; }
   }
-
-  .register-members { display: flex; flex-direction: column; }
-  .member-row {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-    padding-block: 14px; border-top: 1px solid var(--line-soft);
-    font-size: 15px; color: var(--body);
-  }
-  .member-row:first-child { border-top: 0; padding-top: 0; }
-  .member-name { flex: 1 1 auto; }
-  .member-year { font-family: var(--font-body); font-size: 14px; color: var(--muted); flex-shrink: 0; }
 </style>

@@ -1,6 +1,7 @@
 ---
 /**
- * Conditions & Procedures — Arabic. Same shape as en/conditions/index.astro.
+ * Conditions & Procedures — Arabic. 1:1 port of the "care" view in
+ * `Alimran Neurosurgery AR.dc.html` (lines 296–411).
  */
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { CONTACT } from "../../../consts";
@@ -9,228 +10,228 @@ import { localizedHref, currentLocale } from "../../../lib/i18n";
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
 const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
 
 const pathways = [
-  {
-    title: "الدماغ",
-    tagline: "جراحية ووظيفية",
-    conditions: [
-      { name: "ورم الدماغ",           slug: "brain-tumor" },
-      { name: "السكتة الدماغية",       slug: "stroke" },
-      { name: "الصرع والنوبات",        slug: "epilepsy-seizures" },
-      { name: "إصابة الرأس",           slug: "head-injury" },
-      { name: "شلل بيل",              slug: "bells-palsy" },
-      { name: "ألم العصب الثلاثي",     slug: "trigeminal-neuralgia" },
-      { name: "استسقاء الدماغ",        slug: "hydrocephalus" },
-    ],
-  },
-  {
-    title: "العمود الفقري",
-    tagline: "جراحية ومحدودة التدخل",
-    conditions: [
-      { name: "الانزلاق الغضروفي",     slug: "herniated-disc" },
-      { name: "عرق النسا",             slug: "sciatica" },
-      { name: "الجنف",                slug: "scoliosis" },
-      { name: "تضيّق النخاع",          slug: "spinal-stenosis" },
-      { name: "إصابة العنق",           slug: "whiplash" },
-      { name: "إصابة النخاع الشوكي",   slug: "spinal-cord-injury" },
-      { name: "الحداب",               slug: "kyphosis" },
-    ],
-  },
-  {
-    title: "الألم",
-    tagline: "تداخلية وتأهيلية",
-    conditions: [
-      { name: "ألم الظهر",             slug: "back-pain" },
-      { name: "ألم الرقبة",            slug: "neck-pain" },
-      { name: "ألم الركبة",            slug: "knee-pain" },
-      { name: "الكتف المتجمدة",        slug: "frozen-shoulder" },
+  { num: "المسار ٠١", title: "الدماغ",
+    items: [
+      { name: "أورام الدماغ",       slug: "brain-tumor" },
+      { name: "الجلطة الدماغية",     slug: "stroke" },
+      { name: "الصرع والاختلاجات",   slug: "epilepsy-seizures" },
+      { name: "إصابات الرأس",        slug: "head-injury" },
+      { name: "داء باركنسون",        slug: "parkinsons-disease" },
+      { name: "اضطرابات الحركة",     slug: "motor-disorders" },
+      { name: "شلل الوجه النصفي",    slug: "bells-palsy" },
+    ] },
+  { num: "المسار ٠٢", title: "العمود الفقري",
+    items: [
+      { name: "القرص المنزلق",       slug: "herniated-disc" },
+      { name: "عرق النسا",           slug: "sciatica" },
+      { name: "إصابات الحبل الشوكي", slug: "spinal-cord-injury" },
+      { name: "الجَنَف",              slug: "scoliosis" },
+      { name: "الحَنَف الظهري",       slug: "kyphosis" },
+      { name: "إصابة السوط",         slug: "whiplash" },
+      { name: "المثانة العصبية",     slug: "neurogenic-bladder" },
+    ] },
+  { num: "المسار ٠٣", title: "الألم",
+    items: [
+      { name: "الصداع المزمن واليومي", slug: "headaches" },
+      { name: "آلام الرقبة",           slug: "neck-pain" },
+      { name: "آلام الظهر",            slug: "back-pain" },
+      { name: "الكتف المتجمد",         slug: "frozen-shoulder" },
+      { name: "آلام الركبة",           slug: "knee-pain" },
       { name: "الألم العضلي الليفي",   slug: "fibromyalgia" },
-      { name: "الصداع",               slug: "headaches" },
-      { name: "التهاب المفاصل",        slug: "arthritis" },
-    ],
-  },
+      { name: "آلام الأورام المستعصية", slug: "cancer-pain" },
+    ] },
 ];
 
 const surgical = [
-  { title: "جراحة العمود الفقري التنظيرية", desc: "إزالة الانضغاط بأقل قدر من التدخل للانزلاق الغضروفي والتضيّق." },
-  { title: "التحفيز العميق للدماغ",         desc: "زراعة توجيهية لعلاج اضطرابات الحركة والألم المقاوم." },
-  { title: "الجراحة الإشعاعية والاستئصال",   desc: "استئصال دقيق للأهداف الوظيفية والتحكم في الأورام." },
+  { label: "صورة من غرفة العمليات", sub: "جراحة منظارية للعمود الفقري", title: "جراحة العمود الفقري بالمنظار", desc: "استئصال القرص المنزلق بتقنية ديستاندو للفقرات الرقبية والقطنية، مع التثبيت والدمج ورفع الفقرة عند وجود كسر أو تشوّه." },
+  { label: "صورة للإجراء",         sub: "تحفيز الدماغ أو الحبل الشوكي", title: "التحفيز العصبي",                desc: "التحفيز العميق للدماغ وتحفيز الحبل الشوكي والإجراءات التجسيمية لاضطرابات الحركة والتشنّج والألم العصبي المستعصي." },
+  { label: "صورة للإجراء",         sub: "الكيّ بالترددات الراديوية",    title: "الكيّ بالترددات الراديوية",       desc: "ترددات حرارية ونابضة لألم المفاصل الفقرية والصداع المزمن ومتلازمات الألم الودّي، بتخدير موضعي وتهدئة خفيفة." },
 ];
 
 const interventional = [
-  "حصر الأعصاب الإقليمي",
-  "الاستئصال بالترددات الراديوية",
-  "حقن الكورتيزون فوق الجافية (بين الصفائح)",
-  "حقن الكورتيزون فوق الجافية (عبر الثقبة)",
-  "حقن المفاصل الوجيهية",
+  "تخدير الأعصاب الموضعي",
+  "الإجراءات المحلِّلة للأعصاب",
+  "الكيّ بالترددات الراديوية",
   "حقن المفصل العجزي الحرقفي",
-  "حصر العقد الودية",
-  "حصر الضفيرة البطنية",
-  "حصر العقدة النجمية",
-  "حقن العصب المتوسط",
-  "الحقن الموجّه بالموجات فوق الصوتية",
-  "علاج نقاط الانطلاق",
+  "الحقن فوق الجافية الذَنَبي",
+  "حقن العصب الأوسط",
+  "حقن المفاصل الفقرية",
+  "الحقن فوق الجافية بين الصفيحتين",
+  "الحقن عبر الثقبة حول العصب",
+  "تخدير العقدة النجمية والودّية الصدرية",
+  "تخدير الضفيرة البطنية والعقدة الفردية",
+  "تخدير الضفيرة فوق المعانة والودّية القطنية",
 ];
 ---
 
 <BaseLayout
-  title="الحالات والإجراءات — مركز العمران"
-  description="ما يقيّمه مركز العمران ويعالجه: مسارات الدماغ والعمود الفقري والألم، إلى جانب الإجراءات الجراحية والتداخلية."
+  title="الحالات والإجراءات — مركز العمران الطبي"
+  description="يصنّف المركز الحالات المحوَّلة في ثلاثة مسارات: الدماغ، العمود الفقري، والألم. جراحات وتدخلات وإعادة تأهيل بفريق واحد."
 >
-  <section class="intro section-tinted">
-    <div class="container intro-inner">
-      <span class="eyebrow">الحالات والإجراءات</span>
-      <h1>ما نُقيّمه، وكيف نعالجه.</h1>
-      <p class="intro-lede">
-        يقسم المركز الإحالات إلى ثلاثة مسارات علاجية. تتضمن كل زيارة أولى فحصاً عصبياً كاملاً
-        ومراجعة للصور الشعاعية المتوفرة، ثم يُصدر تقرير مكتوب للمريض وللطبيب المُحيل.
-      </p>
+  <section class="intro">
+    <div class="intro-inner">
+      <p class="intro-eyebrow">ما نعالج والإجراءات</p>
+      <h1 class="intro-h1">ما الذي نقيّمه، وكيف نعالجه.</h1>
+      <p class="intro-lede">يصنّف المركز الحالات المحوَّلة في ثلاثة مسارات. يشمل الموعد الأول فحصًا عصبيًا كاملًا ومراجعة للصور الشعاعية المتوفرة، وتُسلَّم خطة مكتوبة للمريض وللطبيب المحوِّل.</p>
     </div>
   </section>
 
-  <section class="pathways">
-    <div class="container">
-      <div class="pathways-grid">
-        {pathways.map((p) => (
-          <div class="pathway-col">
-            <header class="pathway-head">
-              <span class="eyebrow">المسار</span>
-              <h2 class="pathway-title">{p.title}</h2>
-              <p class="pathway-tag">{p.tagline}</p>
-            </header>
-            <ul class="pathway-list">
-              {p.conditions.map((c) => (
-                <li>
-                  <a class="pathway-link" href={L(`/treatments/${c.slug}/`)}>
-                    <span>{c.name}</span>
-                    <span class="pathway-arrow" aria-hidden="true">←</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+  <section class="pathways-section">
+    <div class="pathway-grid">
+      {pathways.map((p) => (
+        <div class="pathway-cell">
+          <p class="pathway-num">{p.num}</p>
+          <h2 class="pathway-name">{p.title}</h2>
+          <ul>
+            {p.items.map((c) => (
+              <li><a href={L(`/treatments/${c.slug}/`)}>{c.name}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="proc-section">
+    <header class="proc-head">
+      <span class="proc-num">٠١</span>
+      <h2 class="proc-h2">الإجراءات الجراحية والمتقدمة</h2>
+    </header>
+    <div class="surg-grid">
+      {surgical.map((s) => (
+        <article class="surg-card">
+          <div class="surg-photo photo-slot" aria-hidden="true">
+            <p>{s.label}<br>{s.sub}</p>
           </div>
-        ))}
-      </div>
+          <h3 class="surg-title">{s.title}</h3>
+          <p class="surg-desc">{s.desc}</p>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section class="section" id="surgical">
-    <div class="container">
-      <header class="section-head">
-        <span class="section-num">٠١</span>
-        <h2 class="section-title">الإجراءات الجراحية والمتقدمة</h2>
-      </header>
-      <div class="surgical-grid">
-        {surgical.map((s) => (
-          <article class="surgical-card">
-            <div class="photo-slot photo-slot--4x3">
-              صورة الإجراء<br>٤:٣ · بعرض ١٢٠٠ بكسل على الأقل
-            </div>
-            <div class="surgical-body">
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-            </div>
-          </article>
-        ))}
-      </div>
+  <section class="proc-section">
+    <header class="proc-head">
+      <span class="proc-num">٠٢</span>
+      <h2 class="proc-h2">سجل إجراءات الألم</h2>
+    </header>
+    <div class="int-grid">
+      {interventional.map((name, i) => (
+        <div class="int-row">
+          <span class="int-num">{String(i + 1).padStart(2, "٠")}</span>
+          <span class="int-name">{name}</span>
+        </div>
+      ))}
     </div>
   </section>
 
-  <section class="section section-tinted" id="interventional">
-    <div class="container">
-      <header class="section-head">
-        <span class="section-num">٠٢</span>
-        <h2 class="section-title">سجل تداخلات الألم</h2>
-      </header>
-      <ol class="interventional-list">
-        {interventional.map((name, i) => (
-          <li class="interventional-row">
-            <span class="interventional-num">{String(i + 1).padStart(2, "٠")}</span>
-            <span class="interventional-name">{name}</span>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
-
-  <section class="appointment">
-    <div class="container appointment-inner">
+  <section class="appt-section">
+    <div class="appt-card">
       <div>
-        <span class="eyebrow">حجز موعد</span>
-        <h2 class="appointment-title">تواصل مع السكرتير</h2>
-        <p>حجز مباشر، ويمكن إرسال التقارير والصور على البريد الإلكتروني للمركز.</p>
+        <h2 class="appt-h2">حجز موعد</h2>
+        <p class="appt-body">تُحجز المواعيد هاتفيًا عبر سكرتارية المركز. يُرجى تحضير الصور الشعاعية السابقة وتقارير العمليات وقائمة الأدوية الحالية قبل الاتصال.</p>
       </div>
-      <div class="appointment-cta">
-        <a class="btn btn-primary" href={callHref}>اتصل بالسكرتير</a>
-        <a class="btn btn-secondary" href={`mailto:${CONTACT.email}`}>
-          <span dir="ltr">{CONTACT.email}</span>
-        </a>
+      <div class="appt-buttons">
+        <a class="btn btn-primary appt-btn" href={callHref}><span dir="ltr">{CONTACT.phones[0]}</span></a>
+        <a class="btn btn-secondary appt-btn" href={secondCallHref}><span dir="ltr">{CONTACT.phones[1]}</span></a>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .intro { padding-block: var(--section-y); }
-  .intro-inner { max-width: 780px; }
-  .intro .eyebrow { display: block; margin-bottom: 20px; }
-  .intro h1 {
-    font-size: clamp(30px, 5vw, 52px); line-height: 1.22;
-    margin: 0 0 24px; max-width: 16ch;
+  .intro { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .intro-inner {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(44px, 5.5vw, 72px) 24px clamp(40px, 5vw, 64px);
   }
-  .intro-lede {
-    font-size: clamp(16.5px, 1.9vw, 19px); line-height: 1.9;
-    color: var(--body); max-width: 60ch; margin: 0;
+  .intro-eyebrow { font-size: 12px; letter-spacing: 0.04em; color: var(--accent); margin: 0 0 20px; }
+  .intro-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.18; font-weight: 700;
+    margin: 0 0 18px; color: var(--ink); max-width: 24ch;
+  }
+  .intro-lede { font-size: 17px; line-height: 1.85; color: var(--body); margin: 0; max-width: 64ch; }
+
+  .pathways-section {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(44px, 5.5vw, 72px) 24px 0;
+  }
+  .pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(255px, 100%), 1fr));
+    gap: 1px; background: var(--line); border: 1px solid var(--line);
+  }
+  .pathway-cell { background: var(--white); padding: 34px 30px; }
+  .pathway-num { font-size: 12px; letter-spacing: 0.04em; color: var(--accent); margin: 0 0 6px; }
+  .pathway-name {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.8vw, 28px);
+    font-weight: 700; margin: 0 0 22px; color: var(--ink);
+  }
+  .pathway-cell ul { list-style: none; margin: 0; padding: 0; }
+  .pathway-cell li {
+    padding: 11px 0; border-top: 1px solid var(--line-soft);
+    font-size: 15px;
+  }
+  .pathway-cell li a { color: var(--ink); text-decoration: none; }
+  .pathway-cell li a:hover { color: var(--accent); text-decoration: none; }
+
+  .proc-section {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(48px, 6vw, 80px) 24px 0;
+  }
+  .proc-head {
+    display: flex; align-items: baseline; gap: 20px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 14px; margin-bottom: 44px;
+  }
+  .proc-num { font-size: 12px; letter-spacing: 0.06em; color: var(--muted); }
+  .proc-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3.6vw, 36px);
+    font-weight: 700; margin: 0; color: var(--ink); line-height: 1.22;
   }
 
-  .pathways { padding-block: var(--section-y); }
-  .pathways-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(255px, 100%), 1fr)); }
-  .pathway-col { background: var(--white); border: 1px solid var(--line); padding: 28px; display: flex; flex-direction: column; }
-  .pathway-head { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
-  .pathway-head .eyebrow { display: block; margin-bottom: 6px; }
-  .pathway-title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); color: var(--ink); margin: 0 0 6px; line-height: 1.22; font-weight: 700; }
-  .pathway-tag { color: var(--muted); font-size: 13px; margin: 0; }
-  .pathway-list { list-style: none; padding: 0; margin: 0; }
-  .pathway-list li { border-top: 1px solid var(--line-soft); }
-  .pathway-list li:first-child { border-top: 0; }
-  .pathway-link {
-    display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    padding: 14px 0; color: var(--ink); text-decoration: none; font-size: 15px;
-    transition: color 0.15s ease;
+  .surg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: 32px;
   }
-  .pathway-link:hover { color: var(--accent); text-decoration: none; }
-  .pathway-arrow { color: var(--muted); font-family: var(--font-body); }
-  .pathway-link:hover .pathway-arrow { color: var(--accent); }
+  .surg-photo { aspect-ratio: 4 / 3; min-height: 0; margin-bottom: 18px; padding: 0 20px; }
+  .surg-photo p { font-size: 12px; color: var(--muted); text-align: center; margin: 0; line-height: 1.9; }
+  .surg-title { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin: 0 0 10px; color: var(--ink); }
+  .surg-desc { font-size: 15px; line-height: 1.8; color: var(--body); margin: 0; }
 
-  .surgical-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
-  .surgical-card { background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column; }
-  .surgical-card .photo-slot { min-height: 200px; border: 0; border-bottom: 1px solid var(--line); }
-  .surgical-body { padding: 24px; }
-  .surgical-body h3 { margin: 0 0 8px; font-size: clamp(20px, 2.4vw, 24px); }
-  .surgical-body p { color: var(--body); font-size: 15px; line-height: 1.9; margin: 0; }
+  .int-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+    gap: 0 clamp(32px, 4vw, 64px);
+  }
+  .int-row {
+    display: grid; grid-template-columns: 40px minmax(0, 1fr);
+    gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line);
+  }
+  .int-num { font-size: 13px; color: var(--accent); }
+  .int-name { font-size: 15px; color: var(--ink); }
 
-  .interventional-list {
-    list-style: none; padding: 0; margin: 0;
-    display: grid; grid-template-columns: 1fr; gap: 0;
-    background: var(--line); border: 1px solid var(--line);
+  .appt-section {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(48px, 6vw, 80px) 24px clamp(56px, 7vw, 96px);
   }
-  @media (min-width: 720px) {
-    .interventional-list { grid-template-columns: 1fr 1fr; gap: 1px; }
+  .appt-card {
+    border: 1px solid var(--line); background: var(--surface);
+    padding: clamp(28px, 4vw, 44px) clamp(24px, 3.5vw, 40px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(245px, 100%), 1fr));
+    gap: 36px; align-items: center;
   }
-  .interventional-row {
-    display: flex; align-items: baseline; gap: 16px;
-    padding: 18px 24px; background: var(--white); color: var(--ink);
-  }
-  .interventional-num { font-family: var(--font-body); font-size: 13px; color: var(--muted); min-width: 24px; }
-  .interventional-name { font-size: 15px; }
-
-  .appointment { background: var(--surface); padding-block: var(--section-y-last); }
-  .appointment-inner { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
-  @media (min-width: 800px) { .appointment-inner { grid-template-columns: 1.4fr 1fr; } }
-  .appointment .eyebrow { display: block; margin-bottom: 12px; }
-  .appointment-title { margin: 0 0 8px; font-size: clamp(24px, 3vw, 32px); }
-  .appointment p { color: var(--body); max-width: 42ch; }
-  .appointment-cta { display: flex; flex-direction: column; gap: 12px; }
-  @media (min-width: 400px) { .appointment-cta { flex-direction: row; flex-wrap: wrap; } }
+  .appt-h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); font-weight: 700; margin: 0 0 12px; color: var(--ink); }
+  .appt-body { font-size: 16px; line-height: 1.85; color: var(--body); margin: 0; max-width: 54ch; }
+  .appt-buttons { display: flex; flex-direction: column; gap: 10px; }
+  .appt-btn { min-height: 52px; font-size: 16px; justify-content: center; }
 </style>

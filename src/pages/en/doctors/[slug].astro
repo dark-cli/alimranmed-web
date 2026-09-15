@@ -1,16 +1,11 @@
 ---
 /**
- * Consultant CV — Alimran Clinic (redesign Sep 2026).
- * Structure per HANDOFF §4.2: eyebrow + name + role + qualification chips
- * + portrait slot, then five sticky-label registers.
- *
- * Only one doctor exists (Hussein Imran Mousa). The dynamic [slug] route
- * is preserved to keep the URL stable (/doctors/hussein-imran-mousa/) and
- * so future consultants can slot in with new md entries.
+ * Consultant CV — English. 1:1 port of the "profile" view in
+ * `Alimran Neurosurgery.dc.html` (lines 277–427).
  */
 import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { topicOf, isLocale } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
   const items = await getCollection("doctors");
@@ -20,252 +15,303 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const locale = currentLocale(Astro);
-const L = (href: string) => localizedHref(href, locale);
-const homeHref = L("/");
 
-// CV register data. The current md doesn't structure this so we spell it out
-// here — a later content pass can normalise the md and re-source these.
+const chips = ["MBChB", "FIBMS (Neurosurgery)", "FIAANS", "FIISSP", "FINASS"];
+
 const appointments = [
-  { period: "2006 — present", body: "Consultant Neurosurgeon, Alsadr Teaching Hospital, Basra — Neurosurgical Department." },
-  { period: "2022 — present", body: "Iraq Director, Middle East Stereotactic and Functional Neurosurgery Society." },
-  { period: "2016 — present", body: "Supervisor of Arabian Board Neurosurgeon junior doctors." },
-  { period: "Board Member",   body: "Middle-Eastern Society of Stereotactic and Functional Neurosurgery." },
-  { period: "2000 — 2005",    body: "Postgraduate training, Iraqi Medical Board Center, Baghdad." },
+  { period: "2006 — present", body: "Consultant Neurosurgeon, Alsadr Teaching Hospital, Basra. Consultant status conferred 17 January 2016." },
+  { period: "2022 — present", body: "Iraq Director, Middle East Stereotactic and Functional Neurosurgery; Board of Directors member, MESSFN." },
+  { period: "2016 — present", body: "Supervisor of Arabian Board neurosurgery junior doctors." },
   { period: "1999 — 2000",    body: "Senior House Officer, General Surgery, Basrah General Hospital." },
 ];
-
 const education = [
-  { period: "1996", body: "MBChB — Medical College of Basra, Iraq." },
-  { period: "2005", body: "Fellowship, Iraqi Board of Medical Specialization — Neurosurgery." },
-  { period: "2016", body: "Consultant status." },
-  { period: "2017", body: "Fellowship — Anesthesiology and Pain Medicine, Seoul National University Hospital." },
+  { period: "1996",        body: "MBChB, Medical College of Basra, Iraq." },
+  { period: "2000 — 2005", body: "Postgraduate neurosurgical training, Iraqi Medical Board Centre, Baghdad." },
+  { period: "2005",        body: "Fellowship, Iraqi Board of Medical Specialization — Neurosurgery." },
+  { period: "2017",        body: "Fellowship in Anaesthesiology and Pain Medicine, Seoul National University Hospital." },
+  { period: "2013",        body: "Fellowship in Interventional Pain Management, Mobi Pain Clinic, Mumbai." },
 ];
-
 const memberships = [
-  { year: "2022", name: "European Society for Stereotactic and Functional Neurosurgery" },
-  { year: "2020", name: "European Stroke Organization" },
-  { year: "2020", name: "World Stroke Organization" },
-  { year: "2020", name: "International Spinal Cord Society" },
-  { year: "2016", name: "North American Spine Society" },
-  { year: "2015", name: "International Association for the Study of Pain" },
-  { year: "2011", name: "AOSpine" },
-  { year: "2011", name: "ATLS and ACLS" },
-  { year: "2010", name: "American Association of Neurological Surgeons" },
+  { name: "European Society for Stereotactic and Functional Neurosurgery", year: "2022" },
+  { name: "European Stroke Organization",                                   year: "2020" },
+  { name: "World Stroke Organization",                                       year: "2020" },
+  { name: "International Spinal Cord Society",                               year: "2020" },
+  { name: "North American Spine Society",                                    year: "2016" },
+  { name: "International Association for the Study of Pain",                 year: "2015" },
+  { name: "AOSpine",                                                         year: "2011" },
+  { name: "American Association of Neurological Surgeons",                   year: "2010" },
 ];
-
 const publications = [
-  { period: "2015", body: "The outcome of paediatric gunshot head injuries. Int. J. Medicine & Pharmaceutical Sciences, Vol. 3, No. 3." },
-  { period: "2014", body: "Civilian gunshot injuries in Basra. Int. J. Medicine & Pharmaceutical Sciences, Vol. 4, No. 6." },
-  { period: "2014", body: "Indications and non-indications for epidural drain use in lumbar spine surgery up to three levels. Int. J. Medicine & Pharmaceutical Sciences, Vol. 4, No. 6." },
-  { period: "2014", body: "Efficacy of Botox injections around scalp nerves for prevention of chronic daily headache. Int. J. Medicine & Pharmaceutical Sciences, Vol. 4, No. 5." },
-  { period: "2013", body: "Elevated white blood cell count as a predictor for severe polytrauma. Thi-Qar Medical Journal, Vol. 7, No. 2." },
+  { year: "2013", title: "Elevated white blood cell count as a predictor for severe polytrauma",  source: "Thi-Qar Medical Journal, Vol. 7, No. 2, pp. 50–57. ISSN 1992-9218." },
+  { year: "2014", title: "Efficacy of Botox injections around scalp nerves for prevention of chronic daily headache", source: "Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 5, pp. 49–58." },
+  { year: "2014", title: "Civilian gunshot injuries in Basra",                                  source: "Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 6, pp. 1–10." },
+  { year: "2014", title: "Indications and non-indications for epidural drain use in lumbar spine surgery up to three levels", source: "Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 6, pp. 10–16." },
+  { year: "2015", title: "The outcome of paediatric gunshot head injuries",                     source: "Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 3, No. 3, pp. 99–108." },
 ];
-
 const conferences = [
-  { period: "2016", body: "16th World Congress on Pain, IASP — Yokohama, Japan. Paper on pulsed radiofrequency for chronic headache." },
-  { period: "2016", body: "Annual International Spine Conference — Dubai. Paper on sandbag use to prevent CSF leak after spine surgery." },
-  { period: "2015", body: "International Conference on Emergency Head & Neck Injuries — Basra. Paper on paediatric gunshot head injuries." },
-  { period: "2013", body: "3rd International Basra Fair Conference (Cambridge) — Basra. Paper on spinal cord stimulation." },
-  { period: "2013", body: "2nd International Nasiriyah Medical Conference. Paper on WBC count as a predictor of severe polytrauma." },
-  { period: "2013", body: "2nd International Emergency Medicine Conference — Basra. Presentation on civilian gunshot head injuries." },
-  { period: "2012", body: "Minimally Invasive Spine Workshop, DePuy — Zug, Switzerland." },
-  { period: "2010", body: "Middle East Society for Advancement and Innovation, Boston University Medical School workshops — Beirut, Lebanon." },
-  { period: "2009", body: "2nd International Advanced Training Course on Prof. Destandau's Endoscopic Spine Technique — Chandigarh, India." },
+  { year: "Yokohama 2016",   body: "16th World Congress on Pain (IASP) — pulsed radiofrequency for chronic headache." },
+  { year: "Dubai 2016",      body: "Annual International Spine Conference — sandbag use and CSF leak after spine surgery." },
+  { year: "Tampa 2014",      body: "American Society for Pain Management — ultrasound-guided pain interventions workshop." },
+  { year: "Zug 2012",        body: "Minimally Invasive Spine Workshop, DePuy, Switzerland." },
+  { year: "Beirut 2010",     body: "Cadaveric bioskills in advanced spinal approaches, under Boston University Medical School supervision." },
+  { year: "Chandigarh 2009", body: "Advanced training in Professor Destandau's endoscopic spine technique, Gian Sagar Medical College." },
 ];
 ---
 
-<BaseLayout
-  title={`${entry.data.fullName} — Alimran Clinic`}
-  description={entry.data.description}
->
-  <!-- ─── Header row ─────────────────────────────────────────── -->
-  <section class="cv-head">
-    <div class="container cv-head-inner">
+<BaseLayout title={`${entry.data.fullName} — Alimran Clinic`} description={entry.data.description}>
+  <!-- Head -->
+  <section class="cv-head-band">
+    <div class="cv-head">
       <div class="cv-head-copy">
-        <span class="eyebrow">Lead consultant · Clinical profile</span>
-        <h1>{entry.data.fullName}</h1>
-        <p class="cv-role">{entry.data.specialty}</p>
-        <ul class="cv-chips" aria-label="Qualifications">
-          {entry.data.titles.map((t: string) => <li><span dir="ltr">{t}</span></li>)}
-        </ul>
-        <p class="cv-desc">{entry.data.description}</p>
+        <p class="cv-eyebrow">Lead consultant · Clinical profile</p>
+        <h1 class="cv-h1">{entry.data.fullName}</h1>
+        <p class="cv-lede">Founder and lead consultant of Alimran Clinic. Consultant Neurosurgeon, Neurosurgical Department, Basra Teaching Hospital, and Iraq Director for Middle East Stereotactic and Functional Neurosurgery.</p>
+        <div class="cv-chips">
+          {chips.map((c) => <span class="cv-chip">{c}</span>)}
+        </div>
       </div>
-      <div class="cv-portrait photo-slot photo-slot--4x5">
-        PORTRAIT<br>
-        clinic or hospital setting<br>
-        4:5 · min 1200px wide
+      <div class="cv-portrait photo-slot" aria-hidden="true">
+        <p>PORTRAIT<br>clinic or hospital setting<br>4:5 · min 1200px wide</p>
       </div>
     </div>
   </section>
 
-  <!-- ─── Registers ──────────────────────────────────────────── -->
-  <div class="container cv-registers">
-    <div class="register">
-      <p class="register-label">Appointments</p>
-      <div class="register-rows">
+  <!-- Appointments -->
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">Appointments</h2>
+      <div class="reg-body">
         {appointments.map((r) => (
-          <div class="register-row">
-            <span class="row-period"><span dir="ltr">{r.period}</span></span>
-            <p class="row-body">{r.body}</p>
+          <div class="reg-row">
+            <span class="reg-period">{r.period}</span>
+            <span class="reg-text">{r.body}</span>
           </div>
         ))}
       </div>
     </div>
+  </section>
 
-    <div class="register">
-      <p class="register-label">Education</p>
-      <div class="register-rows">
+  <!-- Education -->
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">Education</h2>
+      <div class="reg-body">
         {education.map((r) => (
-          <div class="register-row">
-            <span class="row-period"><span dir="ltr">{r.period}</span></span>
-            <p class="row-body">{r.body}</p>
+          <div class="reg-row">
+            <span class="reg-period">{r.period}</span>
+            <span class="reg-text">{r.body}</span>
           </div>
         ))}
       </div>
     </div>
+  </section>
 
-    <div class="register">
-      <p class="register-label">Memberships</p>
-      <div class="register-rows register-members">
+  <!-- Memberships -->
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">Memberships</h2>
+      <ul class="reg-body reg-members">
         {memberships.map((m) => (
-          <div class="member-row">
-            <span class="member-name">{m.name}</span>
-            <span class="member-year"><span dir="ltr">{m.year}</span></span>
-          </div>
+          <li>
+            {m.name}
+            <span class="member-year">{m.year}</span>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
+  </section>
 
-    <div class="register">
-      <p class="register-label">Publications</p>
-      <div class="register-rows">
-        {publications.map((r) => (
-          <div class="register-row">
-            <span class="row-period"><span dir="ltr">{r.period}</span></span>
-            <p class="row-body">{r.body}</p>
-          </div>
+  <!-- Published research -->
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">Published research</h2>
+      <ol class="reg-body reg-pubs">
+        {publications.map((p) => (
+          <li>
+            <span class="reg-period reg-period-wide">{p.year}</span>
+            <span>
+              <span class="pub-title">{p.title}</span>
+              <span class="pub-source">{p.source}</span>
+            </span>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
+  </section>
 
-    <div class="register">
-      <p class="register-label">Conferences</p>
-      <div class="register-rows">
+  <!-- Conferences & training -->
+  <section class="reg-section reg-section-last">
+    <div class="reg-wrap">
+      <h2 class="reg-label">Conference papers &amp; training</h2>
+      <div class="reg-body">
         {conferences.map((r) => (
-          <div class="register-row">
-            <span class="row-period"><span dir="ltr">{r.period}</span></span>
-            <p class="row-body">{r.body}</p>
+          <div class="reg-row">
+            <span class="reg-period">{r.year}</span>
+            <span class="reg-text">{r.body}</span>
           </div>
         ))}
       </div>
     </div>
-  </div>
+  </section>
 </BaseLayout>
 
 <style>
-  .cv-head { padding-block: var(--hero-y) 0; }
-  .cv-head-inner {
+  /* ─── Head ───────────────────────────────────────────────── */
+  .cv-head-band { border-bottom: 1px solid var(--line); }
+  .cv-head {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: clamp(44px, 5.5vw, 72px) 24px clamp(40px, 5vw, 64px);
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--col-gap);
+    grid-template-columns: repeat(auto-fit, minmax(min(265px, 100%), 1fr));
+    gap: clamp(32px, 4vw, 64px);
     align-items: start;
-    container-type: inline-size;
   }
-  @media (min-width: 900px) { .cv-head-inner { grid-template-columns: 1fr 1fr; } }
-
-  .cv-head-copy .eyebrow { display: block; margin-bottom: 20px; }
-  .cv-head-copy h1 {
-    font-size: clamp(28px, 9cqw, 54px);
-    line-height: 1.07;
-    margin: 0 0 12px;
-  }
-  .cv-role {
-    font-size: 17px;
+  .cv-head-copy { container-type: inline-size; }
+  .cv-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--accent);
     margin: 0 0 20px;
-    font-weight: 500;
   }
-  .cv-chips {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 24px;
+  html[dir="rtl"] .cv-eyebrow { font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 13px; }
+
+  .cv-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 9cqw, 54px);
+    line-height: 1.07;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  html[dir="rtl"] .cv-h1 { font-weight: 700; letter-spacing: 0; line-height: 1.22; }
+
+  .cv-lede { font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 24px; max-width: 54ch; }
+  html[dir="rtl"] .cv-lede { line-height: 1.9; }
+
+  .cv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cv-chip {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    padding: 6px 11px;
+  }
+  html[dir="rtl"] .cv-chip { font-family: var(--font-body); font-size: 13px; letter-spacing: 0; }
+
+  .cv-portrait { aspect-ratio: 4 / 5; min-height: 0; }
+  .cv-portrait p {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-align: center;
+    margin: 0;
+    padding: 0 24px;
+    line-height: 1.7;
+  }
+  html[dir="rtl"] .cv-portrait p { font-family: var(--font-body); letter-spacing: 0; font-size: 12px; }
+
+  /* ─── Register sections ─────────────────────────────────── */
+  .reg-section {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: clamp(40px, 5vw, 64px) 24px 0;
+  }
+  .reg-section-last { padding-bottom: clamp(56px, 7vw, 96px); }
+
+  .reg-wrap {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 18px clamp(32px, 4vw, 64px);
+    align-items: flex-start;
   }
-  .cv-chips li {
-    padding: 6px 12px;
-    border: 1px solid var(--line);
+  .reg-label {
     font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--body);
-    letter-spacing: 0.02em;
-  }
-  html[dir="rtl"] .cv-chips li { font-family: var(--font-body); font-size: 13px; }
-  .cv-desc {
-    color: var(--body);
-    font-size: 16px;
-    line-height: 1.65;
-    max-width: 52ch;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
     margin: 0;
+    position: sticky;
+    top: 96px;
+    flex: 0 0 min(190px, 100%);
+    font-weight: 500;
   }
-  html[dir="rtl"] .cv-desc { line-height: 1.9; }
+  html[dir="rtl"] .reg-label { font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 13px; }
 
-  .cv-portrait { order: -1; min-height: 360px; }
-  @media (min-width: 900px) { .cv-portrait { order: 0; min-height: 460px; } }
+  .reg-body {
+    border-top: 1px solid var(--ink);
+    flex: 1 1 380px;
+    min-width: 0;
+    margin: 0; padding: 0; list-style: none;
+  }
 
-  /* ─── Registers ──────────────────────────────────────────── */
-  .cv-registers { padding-block: clamp(32px, 4vw, 56px) var(--section-y-last); }
-
-  .register-row {
+  .reg-row {
     display: grid;
-    grid-template-columns: minmax(120px, 160px) 1fr;
-    gap: 24px;
-    padding-block: 16px;
-    border-top: 1px solid var(--line-soft);
-    align-items: baseline;
+    grid-template-columns: minmax(92px, 140px) minmax(0, 1fr);
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
   }
-  .register-row:first-child { border-top: 0; padding-top: 0; }
-  .row-period {
+  .reg-period {
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 12.5px;
     color: var(--muted);
-    letter-spacing: 0.04em;
   }
-  html[dir="rtl"] .row-period { font-family: var(--font-body); letter-spacing: 0; font-size: 14px; }
-  .row-body {
-    color: var(--body);
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-  }
-  html[dir="rtl"] .row-body { line-height: 1.9; }
+  html[dir="rtl"] .reg-period { font-family: var(--font-body); font-size: 14px; }
+  .reg-text { font-size: 15.5px; line-height: 1.55; color: var(--ink); }
+  html[dir="rtl"] .reg-text { line-height: 1.9; }
 
-  @media (max-width: 640px) {
-    .register-row { grid-template-columns: 1fr; gap: 4px; }
+  /* Memberships list */
+  .reg-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(245px, 100%), 1fr));
+    gap: 0 48px;
   }
-
-  /* Memberships: two columns with year on the right (HANDOFF §4.2) */
-  .register-members { display: flex; flex-direction: column; }
-  .member-row {
+  .reg-members li {
+    font-size: 15px;
+    color: var(--ink);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 16px;
-    padding-block: 14px;
-    border-top: 1px solid var(--line-soft);
-    font-size: 15px;
-    color: var(--body);
+    gap: 12px;
   }
-  .member-row:first-child { border-top: 0; padding-top: 0; }
-  .member-name { flex: 1 1 auto; }
   .member-year {
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
-    letter-spacing: 0.04em;
-    flex-shrink: 0;
   }
-  html[dir="rtl"] .member-year { font-family: var(--font-body); }
+  html[dir="rtl"] .member-year { font-family: var(--font-body); font-size: 13px; }
+
+  /* Publications */
+  .reg-pubs { }
+  .reg-pubs li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 24px;
+  }
+  .reg-period-wide { padding-top: 3px; }
+  .pub-title {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 19px;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  html[dir="rtl"] .pub-title { font-weight: 700; line-height: 1.5; }
+  .pub-source { display: block; font-size: 13.5px; color: var(--muted); margin-top: 5px; }
+
+  @media (max-width: 640px) {
+    .reg-row, .reg-pubs li { grid-template-columns: 1fr; gap: 4px; }
+    .reg-label { position: static; }
+  }
 </style>
