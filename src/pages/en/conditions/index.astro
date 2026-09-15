@@ -56,9 +56,25 @@ const pathways = [
 ];
 
 const surgical = [
-  { label: "THEATRE PHOTO",    sub: "endoscopic spine procedure",   title: "Endoscopic spine surgery", desc: "Destandau-technique discectomy for cervical and lumbar herniation, with fixation, fusion, kyphoplasty and vertebroplasty where deformity or fracture is present." },
-  { label: "PROCEDURE PHOTO", sub: "DBS or spinal cord stimulation", title: "Neuromodulation",         desc: "Deep brain stimulation, spinal cord stimulation and stereotactic lesioning for movement disorders, spasticity and refractory neuropathic pain." },
-  { label: "PROCEDURE PHOTO", sub: "radiofrequency ablation, in clinic", title: "Radiofrequency ablation", desc: "Continuous and pulsed radiofrequency for facet-mediated pain, chronic headache and sympathetically maintained pain syndromes." },
+  {
+    label: "THEATRE PHOTO", sub: "endoscopic spine procedure",
+    title: "Endoscopic spine surgery",
+    desc: "Destandau-technique discectomy for cervical and lumbar herniation, with fixation, fusion, kyphoplasty and vertebroplasty where deformity or fracture is present.",
+    src: "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=1200&q=80&auto=format&fit=crop",
+    alt: "Consultant surgeon operating in theatre",
+  },
+  {
+    label: "PROCEDURE PHOTO", sub: "DBS or spinal cord stimulation",
+    title: "Neuromodulation",
+    desc: "Deep brain stimulation, spinal cord stimulation and stereotactic lesioning for movement disorders, spasticity and refractory neuropathic pain.",
+    src: "/images/home/tms-treatment-768.jpg",
+    alt: "Neuromodulation delivered by trained operator",
+  },
+  {
+    label: "PROCEDURE PHOTO", sub: "radiofrequency ablation, in clinic",
+    title: "Radiofrequency ablation",
+    desc: "Continuous and pulsed radiofrequency for facet-mediated pain, chronic headache and sympathetically maintained pain syndromes.",
+  },
 ];
 
 const interventional = [
@@ -121,9 +137,13 @@ const interventional = [
     <div class="surg-grid">
       {surgical.map((s) => (
         <article class="surg-card">
-          <div class="surg-photo photo-slot" aria-hidden="true">
-            <p>{s.label}<br>{s.sub}<br>4:3 · min 1200px wide</p>
-          </div>
+          {s.src
+            ? <img class="surg-photo surg-photo-img" src={s.src} alt={s.alt} width="1200" height="900" loading="lazy" />
+            : (
+              <div class="surg-photo photo-slot" aria-hidden="true">
+                <p>{s.label}<br>{s.sub}<br>4:3 · min 1200px wide</p>
+              </div>
+            )}
           <h3 class="surg-title">{s.title}</h3>
           <p class="surg-desc">{s.desc}</p>
         </article>
@@ -249,6 +269,7 @@ const interventional = [
     gap: 32px;
   }
   .surg-photo { aspect-ratio: 4 / 3; min-height: 0; margin-bottom: 18px; padding: 0 20px; }
+  .surg-photo-img { padding: 0; object-fit: cover; width: 100%; height: 100%; border: 1px solid var(--line); }
   .surg-photo p {
     font-family: var(--font-mono);
     font-size: 11px;

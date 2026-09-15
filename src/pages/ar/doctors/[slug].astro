@@ -70,9 +70,14 @@ const conferences = [
           {chips.map((c) => <span class="cv-chip">{c}</span>)}
         </div>
       </div>
-      <div class="cv-portrait photo-slot" aria-hidden="true">
-        <p>صورة شخصية<br>في المركز أو المستشفى<br>٤:٥ · بعرض ١٢٠٠ بكسل على الأقل</p>
-      </div>
+      <img
+        class="cv-portrait cv-portrait-img"
+        src="/images/doctors/hussein-imran-mousa-portrait.jpg"
+        alt={entry.data.fullName}
+        width="826" height="1032"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
   </section>
 
@@ -176,6 +181,7 @@ const conferences = [
     border: 1px solid var(--line-strong); padding: 6px 11px;
   }
   .cv-portrait { aspect-ratio: 4 / 5; min-height: 0; }
+  .cv-portrait-img { width: 100%; height: auto; object-fit: cover; border: 1px solid var(--line); display: block; }
   .cv-portrait p { font-size: 12px; color: var(--muted); text-align: center; margin: 0; padding: 0 24px; line-height: 2; }
 
   .reg-section {

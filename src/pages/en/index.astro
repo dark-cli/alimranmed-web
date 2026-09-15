@@ -39,11 +39,28 @@ const pathways = [
   { num: "PATHWAY 03", title: "Pain",  items: ["Chronic headache", "Neck pain", "Back pain", "Frozen shoulder", "Knee pain", "Cancer pain"] },
 ];
 
+// Facility grid — `src` is filled where a real photo (or a stand-in during
+// the demo) is available. Slots without `src` fall back to a labelled hatch
+// placeholder so the design's "photo needed here" honesty is preserved.
 const facilities = [
-  { label: "RECEPTION",       sub: "waiting area" },
-  { label: "CONSULTING ROOM", sub: "examination & imaging review" },
-  { label: "PROCEDURE ROOM",  sub: "fluoroscopy-guided intervention" },
-  { label: "THERAPY GYM",     sub: "physiotherapy & rehabilitation" },
+  {
+    label: "RECEPTION", sub: "waiting area",
+    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80&auto=format&fit=crop",
+    alt: "Clinic reception with tiled counter and directional signage",
+  },
+  {
+    label: "CONSULTING ROOM", sub: "examination & imaging review",
+    src: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&q=80&auto=format&fit=crop",
+    alt: "Consultant discussing a plan with a patient",
+  },
+  {
+    label: "PROCEDURE ROOM", sub: "spinal decompression & interventional pain",
+    src: "/images/home/DSC_0054-1-1024x684.jpg",   // real Alimran SpineMED table
+    alt: "SpineMED decompression table in a treatment room",
+  },
+  {
+    label: "THERAPY GYM", sub: "physiotherapy & rehabilitation",
+  },
 ];
 
 const insideFacts = [
@@ -92,9 +109,14 @@ const consultantFacts = [
         </div>
       </div>
     </div>
-    <div class="hero-photo photo-slot" aria-hidden="true">
-      <p>CLINIC PHOTOGRAPH<br>exterior, reception or treatment room<br>landscape · min 1600px wide</p>
-    </div>
+    <img
+      class="hero-photo hero-photo-img"
+      src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&q=80&auto=format&fit=crop"
+      alt="Modern operating theatre at Alimran Clinic"
+      width="1600" height="1067"
+      loading="eager"
+      fetchpriority="high"
+    />
   </section>
 
   <!-- ─── STAT BAND ──────────────────────────────────────────── -->
@@ -159,9 +181,13 @@ const consultantFacts = [
     </header>
     <div class="facility-grid">
       {facilities.map((f) => (
-        <div class="facility-slot photo-slot" aria-hidden="true">
-          <p>{f.label}<br>{f.sub}</p>
-        </div>
+        f.src
+          ? <img class="facility-slot facility-img" src={f.src} alt={f.alt} width="1200" height="900" loading="lazy" />
+          : (
+            <div class="facility-slot photo-slot" aria-hidden="true">
+              <p>{f.label}<br>{f.sub}</p>
+            </div>
+          )
       ))}
     </div>
     <div class="inside-split">
@@ -333,6 +359,14 @@ const consultantFacts = [
   @media (min-width: 980px) {
     .hero-photo { min-height: 560px; order: 0; }
   }
+  /* When the hero renders as a real <img>, cover the whole slot. */
+  .hero-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-height: none;
+  }
   .hero-photo p {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -501,6 +535,8 @@ const consultantFacts = [
     margin-bottom: 40px;
   }
   .facility-slot { aspect-ratio: 4 / 3; min-height: 0; padding: 0 18px; }
+  /* Image variant of the facility cell fills the same 4:3 box, no padding. */
+  .facility-img { padding: 0; object-fit: cover; width: 100%; height: 100%; border: 1px solid var(--line); }
   .facility-slot p {
     font-family: var(--font-mono);
     font-size: 11px;

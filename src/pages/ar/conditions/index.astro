@@ -55,9 +55,25 @@ const pathways = [
 ];
 
 const surgical = [
-  { label: "صورة من غرفة العمليات", sub: "جراحة منظارية للعمود الفقري", title: "جراحة العمود الفقري بالمنظار", desc: "استئصال القرص المنزلق بتقنية ديستاندو للفقرات الرقبية والقطنية، مع التثبيت والدمج ورفع الفقرة عند وجود كسر أو تشوّه." },
-  { label: "صورة للإجراء",         sub: "تحفيز الدماغ أو الحبل الشوكي", title: "التحفيز العصبي",                desc: "التحفيز العميق للدماغ وتحفيز الحبل الشوكي والإجراءات التجسيمية لاضطرابات الحركة والتشنّج والألم العصبي المستعصي." },
-  { label: "صورة للإجراء",         sub: "الكيّ بالترددات الراديوية",    title: "الكيّ بالترددات الراديوية",       desc: "ترددات حرارية ونابضة لألم المفاصل الفقرية والصداع المزمن ومتلازمات الألم الودّي، بتخدير موضعي وتهدئة خفيفة." },
+  {
+    label: "صورة من غرفة العمليات", sub: "جراحة منظارية للعمود الفقري",
+    title: "جراحة العمود الفقري بالمنظار",
+    desc: "استئصال القرص المنزلق بتقنية ديستاندو للفقرات الرقبية والقطنية، مع التثبيت والدمج ورفع الفقرة عند وجود كسر أو تشوّه.",
+    src: "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=1200&q=80&auto=format&fit=crop",
+    alt: "استشاري جراحة الأعصاب أثناء عملية",
+  },
+  {
+    label: "صورة للإجراء", sub: "تحفيز الدماغ أو الحبل الشوكي",
+    title: "التحفيز العصبي",
+    desc: "التحفيز العميق للدماغ وتحفيز الحبل الشوكي والإجراءات التجسيمية لاضطرابات الحركة والتشنّج والألم العصبي المستعصي.",
+    src: "/images/home/tms-treatment-768.jpg",
+    alt: "جلسة تحفيز مغناطيسي عبر الجمجمة",
+  },
+  {
+    label: "صورة للإجراء", sub: "الكيّ بالترددات الراديوية",
+    title: "الكيّ بالترددات الراديوية",
+    desc: "ترددات حرارية ونابضة لألم المفاصل الفقرية والصداع المزمن ومتلازمات الألم الودّي، بتخدير موضعي وتهدئة خفيفة.",
+  },
 ];
 
 const interventional = [
@@ -118,9 +134,13 @@ const interventional = [
     <div class="surg-grid">
       {surgical.map((s) => (
         <article class="surg-card">
-          <div class="surg-photo photo-slot" aria-hidden="true">
-            <p>{s.label}<br>{s.sub}</p>
-          </div>
+          {s.src
+            ? <img class="surg-photo surg-photo-img" src={s.src} alt={s.alt} width="1200" height="900" loading="lazy" />
+            : (
+              <div class="surg-photo photo-slot" aria-hidden="true">
+                <p>{s.label}<br>{s.sub}</p>
+              </div>
+            )}
           <h3 class="surg-title">{s.title}</h3>
           <p class="surg-desc">{s.desc}</p>
         </article>
@@ -218,6 +238,7 @@ const interventional = [
     gap: 32px;
   }
   .surg-photo { aspect-ratio: 4 / 3; min-height: 0; margin-bottom: 18px; padding: 0 20px; }
+  .surg-photo-img { padding: 0; object-fit: cover; width: 100%; height: 100%; border: 1px solid var(--line); }
   .surg-photo p { font-size: 12px; color: var(--muted); text-align: center; margin: 0; line-height: 1.9; }
   .surg-title { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin: 0 0 10px; color: var(--ink); }
   .surg-desc { font-size: 15px; line-height: 1.8; color: var(--body); margin: 0; }
