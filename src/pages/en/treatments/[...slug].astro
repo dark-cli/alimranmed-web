@@ -1,15 +1,8 @@
 ---
 /**
- * Treatment article — Alimran Clinic (redesign Sep 2026).
- * Layout per HANDOFF §4.4 + ARTICLE-TEMPLATE-HANDOFF.md.
- *
- * Works for ALL articles from existing frontmatter alone:
- *   Title       ← frontmatter title
- *   Standfirst  ← description (fallback: body paragraph 1 later)
- *   Pathway     ← category (mapped)
- *   Reviewed by ← constant
- *   Reading time ← computed from word count
- *   TOC         ← generated from h2 in rendered body (only if ≥ 2)
+ * Treatment article — English. 1:1 port of `Article Template.dc.html`.
+ * Every size, line-height and border pulled from the prototype's script
+ * (see grep for titleSize/h2Size/bodyLead/startSide/etc.).
  */
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
@@ -19,6 +12,7 @@ import { CONTACT } from "../../../consts";
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
 const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
 
 export async function getStaticPaths() {
   const items = await getCollection("treatments");
@@ -30,7 +24,6 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
 
-// Pathway map — ARTICLE-TEMPLATE-HANDOFF §2
 const PATHWAY: Record<string, { label: string; pathway: string }> = {
   brain: { label: "Brain", pathway: "Brain — neurosurgical" },
   spine: { label: "Spine", pathway: "Spine — surgical" },
@@ -39,19 +32,16 @@ const PATHWAY: Record<string, { label: string; pathway: string }> = {
 const cat = ((entry.data as { category?: string }).category || "pain").toLowerCase();
 const pathway = PATHWAY[cat] || PATHWAY.pain;
 
-// Reading time
 const bodyText = (entry.body || "").replace(/!\[[^\]]*]\([^)]+\)/g, "");
 const wordCount = bodyText.split(/\s+/).filter(Boolean).length;
 const readingMin = Math.max(1, Math.round(wordCount / 200));
 const readingLabel = `${readingMin} min read`;
 
-// Last reviewed
 const publishedAt: unknown = (entry.data as { publishedAt?: unknown }).publishedAt;
 const lastReviewed = publishedAt
   ? new Date(publishedAt as string).toLocaleDateString("en-US", { month: "long", year: "numeric" })
-  : null;
+  : "—";
 
-// TOC from h2 only
 const h2s = (headings || []).filter((h) => h.depth === 2);
 const showToc = h2s.length >= 2;
 
@@ -59,73 +49,66 @@ const standfirst = entry.data.description || "";
 ---
 
 <BaseLayout title={`${entry.data.title} — Alimran Clinic`} description={standfirst}>
-  <div class="container article-wrap">
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <a href={L("/")}>Home</a>
-      <span aria-hidden="true">›</span>
-      <a href={L("/conditions/")}>Conditions treated</a>
-      <span aria-hidden="true">›</span>
-      <span class="crumb-current">{pathway.label}</span>
-    </nav>
-
-    <header class="article-head">
-      <div class="head-copy">
-        <h1>{entry.data.title}</h1>
-        {standfirst && <p class="standfirst">{standfirst}</p>}
+  <!-- Head band -->
+  <section class="art-head-band">
+    <div class="art-head-wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href={L("/")}>Home</a>
+        <span class="crumb-sep" aria-hidden="true">›</span>
+        <a href={L("/conditions/")}>Conditions treated</a>
+        <span class="crumb-sep" aria-hidden="true">›</span>
+        <span class="crumb-current">{pathway.label}</span>
+      </nav>
+      <div class="art-head-grid">
+        <div class="art-head-copy">
+          <h1 class="art-h1">{entry.data.title}</h1>
+          {standfirst && <p class="art-standfirst">{standfirst}</p>}
+        </div>
+        <dl class="art-meta">
+          <div><dt>Pathway</dt><dd>{pathway.pathway}</dd></div>
+          <div><dt>Reviewed by</dt><dd>Hussein Imran Mousa, consultant neurosurgeon</dd></div>
+          <div><dt>Reading time</dt><dd>{readingLabel}</dd></div>
+          <div><dt>Last reviewed</dt><dd>{lastReviewed}</dd></div>
+        </dl>
       </div>
+    </div>
+  </section>
 
-      <aside class="meta-rail" aria-label="Article details">
-        <div class="meta-row">
-          <span class="eyebrow">Pathway</span>
-          <p>{pathway.pathway}</p>
-        </div>
-        <div class="meta-row">
-          <span class="eyebrow">Reviewed by</span>
-          <p>Hussein Imran Mousa, consultant neurosurgeon</p>
-        </div>
-        <div class="meta-row">
-          <span class="eyebrow">Reading time</span>
-          <p>{readingLabel}</p>
-        </div>
-        {lastReviewed && (
-          <div class="meta-row">
-            <span class="eyebrow">Last reviewed</span>
-            <p>{lastReviewed}</p>
-          </div>
+  <!-- Body -->
+  <div class="art-container">
+    <div class="art-grid">
+      <aside class="art-aside">
+        {showToc && (
+          <nav class="art-toc" aria-label="On this page">
+            <p class="art-toc-label">On this page</p>
+            <span class="art-toc-rule" aria-hidden="true"></span>
+            {h2s.map((h) => (<a href={`#${h.slug}`}>{h.text}</a>))}
+          </nav>
         )}
+        <div class="art-call-card">
+          <p class="art-call-label">Discuss this</p>
+          <p class="art-call-body">Speak to the secretary about a consultation for this condition.</p>
+          <a class="art-call-btn" href={callHref} dir="ltr">{CONTACT.phones[0]}</a>
+        </div>
       </aside>
-    </header>
 
-    <div class="article-grid">
-      {showToc && (
-        <aside class="article-aside" aria-label="On this page">
-          <div class="toc">
-            <span class="eyebrow">On this page</span>
-            <ol>
-              {h2s.map((h) => (
-                <li><a href={`#${h.slug}`}>{h.text}</a></li>
-              ))}
-            </ol>
+      <article class="art-body">
+        <div class="art-prose">
+          <Content />
+        </div>
+
+        <section class="art-cta">
+          <div>
+            <h2>Book a consultation</h2>
+            <p>The secretary schedules first appointments during clinic hours; please have prior imaging, operative notes and a current medication list available at the time of the call.</p>
           </div>
-          <div class="aside-call">
-            <span class="eyebrow">Discuss this</span>
-            <p>Speak to the secretary about a consultation for this condition.</p>
-            <a class="btn btn-primary btn-sm" href={callHref}>Call the secretary</a>
+          <div class="art-cta-buttons">
+            <a class="btn btn-primary art-cta-btn" href={callHref} dir="ltr">{CONTACT.phones[0]}</a>
+            <a class="btn btn-secondary art-cta-btn" href={secondCallHref} dir="ltr">{CONTACT.phones[1]}</a>
           </div>
-        </aside>
-      )}
-
-      <article class="article-body prose">
-        <Content />
-
-        <section class="article-cta" aria-label="Book a consultation">
-          <span class="eyebrow">Next step</span>
-          <h2>Book a consultation</h2>
-          <p>The secretary schedules first appointments during clinic hours.</p>
-          <a class="btn btn-primary" href={callHref}>Call the secretary</a>
         </section>
 
-        <p class="disclaimer">
+        <p class="art-disclaimer">
           This page provides general information about {entry.data.title.toLowerCase()} and is not a substitute
           for individual medical assessment. If your symptoms are severe or worsening, contact a
           clinician promptly.
@@ -136,93 +119,257 @@ const standfirst = entry.data.description || "";
 </BaseLayout>
 
 <style>
-  .article-wrap {
-    container-type: inline-size;
-    padding-block: clamp(28px, 4vw, 56px) var(--section-y-last);
+  /* Head band */
+  .art-head-band { border-bottom: 1px solid var(--line); }
+  .art-head-wrap {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(24px, 3.5vw, 40px) 24px clamp(32px, 4.5vw, 52px);
   }
   .crumbs {
     display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
-    font-family: var(--font-mono); font-size: 12px;
-    color: var(--muted); letter-spacing: 0.06em;
-    margin-bottom: clamp(20px, 3vw, 32px);
+    margin-bottom: clamp(24px, 3.5vw, 36px);
   }
-.crumbs a { color: var(--muted); text-decoration: none; }
+  .crumbs a {
+    font-family: var(--font-mono);
+    font-size: 12px; color: var(--muted);
+    text-decoration: none; letter-spacing: 0.02em;
+  }
   .crumbs a:hover { color: var(--accent); text-decoration: none; }
-  .crumb-current { color: var(--ink); }
+  .crumb-sep { color: var(--line-strong); font-size: 12px; }
+  .crumb-current { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
 
-  .article-head {
-    display: grid; grid-template-columns: 1fr; gap: var(--col-gap);
-    padding-bottom: clamp(28px, 3.5vw, 48px);
-    border-bottom: 1px solid var(--line);
-    margin-bottom: clamp(28px, 3.5vw, 48px);
+  .art-head-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+    gap: clamp(24px, 4vw, 64px);
+    align-items: end;
   }
-  @container (min-width: 820px) {
-    .article-head { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+  .art-head-copy { container-type: inline-size; min-width: 0; }
+  .art-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(29px, 7cqw, 54px);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .art-standfirst {
+    font-size: clamp(16.5px, 1.9vw, 19px);
+    line-height: 1.6;
+    color: var(--body);
+    max-width: 58ch;
+    text-wrap: pretty;
+    margin: 0;
   }
 
-  .head-copy h1 {
-    font-size: clamp(29px, 7cqw, 54px); line-height: 1.08;
-    margin: 0 0 20px; max-width: 18ch;
-  }
-.standfirst {
-    font-size: clamp(16.5px, 1.9vw, 19px); line-height: 1.6;
-    color: var(--body); max-width: 52ch; margin: 0;
-  }
-.meta-rail {
-    display: flex; flex-direction: column; gap: 20px;
-    padding-inline-start: clamp(0px, 3vw, 32px);
+  .art-meta {
+    margin: 0;
+    display: flex; flex-direction: column;
+    gap: 13px;
     border-inline-start: 1px solid var(--line);
+    padding-inline-start: clamp(18px, 2.5vw, 28px);
+    min-width: 0;
   }
-  @container (max-width: 819px) {
-    .meta-rail { padding: 24px 0 0; border-inline-start: 0; border-top: 1px solid var(--line); }
+  .art-meta dt {
+    font-family: var(--font-mono);
+    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 4px;
   }
-  .meta-row .eyebrow { display: block; margin-bottom: 6px; }
-  .meta-row p { margin: 0; font-size: 15px; color: var(--ink); line-height: 1.5; }
+  .art-meta dd { margin: 0; font-size: 15px; color: var(--ink); line-height: 1.5; }
 
-  .article-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--col-gap); }
+  /* Body grid */
+  .art-container {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: 0 24px;
+    container-type: inline-size;
+  }
+  .art-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 72px);
+    align-items: start;
+  }
+  .art-aside { padding-top: clamp(32px, 4.5vw, 56px); min-width: 0; position: static; }
+  .art-toc { display: none; flex-direction: column; }
   @container (min-width: 820px) {
-    .article-grid { grid-template-columns: minmax(0, 240px) minmax(0, 1fr); }
+    .art-grid { grid-template-columns: minmax(0, 240px) minmax(0, 1fr); }
+    .art-grid > .art-body { max-width: 740px; }
+    .art-aside { position: sticky; top: 96px; }
+    .art-toc { display: flex; }
   }
 
-  .article-aside { display: none; }
-  @container (min-width: 820px) {
-    .article-aside {
-      display: block; position: sticky;
-      top: calc(var(--header-h) + 24px); align-self: start;
-    }
+  .art-toc-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 14px;
   }
-
-  .toc { border-top: 1px solid var(--line); padding-top: 20px; margin-bottom: 32px; }
-  .toc .eyebrow { display: block; margin-bottom: 12px; }
-  .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
-  .toc li { counter-increment: toc; padding: 10px 0; border-top: 1px solid var(--line-soft); }
-  .toc li:first-child { border-top: 0; padding-top: 0; }
-  .toc li a { display: block; font-size: 14px; color: var(--body); text-decoration: none; line-height: 1.4; }
-  .toc li a::before {
-    content: counter(toc, decimal-leading-zero) " · ";
-    font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
+  .art-toc-rule { display: block; border-top: 1px solid var(--ink); }
+  .art-toc a {
+    display: block;
+    font-size: 14.5px; line-height: 1.45;
+    color: var(--body);
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line-soft);
+    text-decoration: none;
   }
-.toc li a:hover { color: var(--accent); text-decoration: none; }
+  .art-toc a:hover { color: var(--accent); text-decoration: none; }
 
-  .aside-call { padding: 20px; background: var(--surface); border: 1px solid var(--line); }
-  .aside-call .eyebrow { display: block; margin-bottom: 8px; }
-  .aside-call p { font-size: 14px; color: var(--body); margin: 0 0 12px; line-height: 1.5; }
-  .aside-call .btn { width: 100%; }
-
-  .article-body { max-width: 740px; color: var(--ink); }
-
-  .article-cta {
-    margin-top: clamp(40px, 5vw, 64px);
-    padding: clamp(24px, 3vw, 40px);
-    background: var(--surface); border: 1px solid var(--line);
+  .art-call-card {
+    margin-top: 24px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 20px;
   }
-  .article-cta .eyebrow { display: block; margin-bottom: 8px; }
-  .article-cta h2 { margin: 0 0 8px; font-size: clamp(22px, 2.6vw, 28px); }
-  .article-cta p { color: var(--body); margin: 0 0 16px; }
+  .art-call-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 10px;
+  }
+  .art-call-body {
+    font-size: 14px; line-height: 1.72;
+    color: var(--body); margin: 0 0 16px;
+  }
+  .art-call-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 100%; min-height: 44px; padding: 0 16px;
+    background: var(--accent); color: var(--white);
+    font-size: 14.5px; font-weight: 500; border-radius: 2px;
+    text-decoration: none;
+  }
+  .art-call-btn:hover { background: var(--accent-hover); color: var(--white); text-decoration: none; }
 
-  .disclaimer {
-    margin-top: 32px; padding-top: 20px;
+  /* Article body */
+  .art-body { padding: clamp(32px, 4.5vw, 56px) 0 0; min-width: 0; }
+  .art-prose { color: var(--ink); }
+
+  .art-prose :global(p) {
+    font-size: 17px;
+    line-height: 1.72;
+    color: var(--body);
+    margin: 0 0 20px;
+    text-wrap: pretty;
+  }
+  .art-prose :global(h2) {
+    scroll-margin-top: 96px;
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.9vw, 29px);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: clamp(36px, 4.5vw, 52px) 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--ink);
+    line-height: 1.1;
+  }
+  .art-prose :global(h3) {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: clamp(28px, 3.5vw, 38px) 0 14px;
+    line-height: 1.2;
+  }
+  .art-prose :global(strong) { font-weight: 600; color: var(--ink); }
+
+  .art-prose :global(ul), .art-prose :global(ol) {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
     border-top: 1px solid var(--line);
-    font-size: 13px; line-height: 1.6; color: var(--muted);
+  }
+  .art-prose :global(li) {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
+    line-height: 1.72;
+    color: var(--body);
+  }
+  .art-prose :global(li)::before {
+    content: "·";
+    font-family: var(--font-mono);
+    font-size: 22px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .art-prose :global(ol) { counter-reset: aol; }
+  .art-prose :global(ol) :global(li) { counter-increment: aol; }
+  .art-prose :global(ol) :global(li)::before {
+    content: counter(aol, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+    padding-top: 3px;
+    line-height: 1.72;
+  }
+
+  .art-prose :global(figure) { margin: 0 0 28px; max-width: 100%; }
+  .art-prose :global(figure img) {
+    display: block; width: 100%; height: auto;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .art-prose :global(figure figcaption) {
+    font-family: var(--font-mono);
+    font-size: 12px; line-height: 1.6;
+    color: var(--muted);
+    margin-top: 10px;
+    letter-spacing: 0.02em;
+  }
+  /* Standalone images (no <figure>) — legacy thumbnails render at natural size */
+  .art-prose :global(p) > :global(img) {
+    display: block;
+    max-width: 100%; height: auto;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    margin: 0 0 28px;
+  }
+
+  .art-prose :global(blockquote) {
+    margin: 32px 0;
+    border-inline-start: 2px solid var(--accent);
+    padding-inline-start: clamp(18px, 2.5vw, 26px);
+  }
+  .art-prose :global(blockquote) :global(p) {
+    font-family: var(--font-display);
+    font-size: clamp(19px, 2.3vw, 24px);
+    line-height: 1.45;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* CTA + disclaimer */
+  .art-cta {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: clamp(24px, 3.5vw, 36px);
+    margin: clamp(40px, 5vw, 56px) 0 clamp(36px, 4.5vw, 48px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+    gap: 26px;
+    align-items: center;
+  }
+  .art-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.7vw, 28px);
+    font-weight: 400; letter-spacing: -0.015em;
+    margin: 0 0 10px; color: var(--ink);
+  }
+  .art-cta p { font-size: 16px; line-height: 1.72; color: var(--body); margin: 0; max-width: 46ch; }
+  .art-cta-buttons { display: flex; flex-direction: column; gap: 10px; }
+  .art-cta-btn { min-height: 52px; font-size: 16px; justify-content: center; }
+
+  .art-disclaimer {
+    font-size: 13.5px; line-height: 1.75;
+    color: var(--muted);
+    margin: 0 0 clamp(48px, 6vw, 88px);
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
   }
 </style>
