@@ -1,13 +1,19 @@
 ---
 /**
- * Treatment article — Arabic. 1:1 port of `Article Template.dc.html`
- * in AR mode (see the script's `ar ? ... : ...` ternaries for the
- * exact size / lead / tracking overrides).
+ * Treatment article — Arabic. Mirror of en/treatments/[...slug].astro
+ * with Arabic-Indic numerals, plural reading time, RTL type sizes.
  */
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { topicOf, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
 import { CONTACT } from "../../../consts";
+import AtGlance from "../../../components/article/AtGlance.astro";
+import Prose from "../../../components/article/Prose.astro";
+import PullQuote from "../../../components/article/PullQuote.astro";
+import ComparisonPair from "../../../components/article/ComparisonPair.astro";
+import StatsFacts from "../../../components/article/StatsFacts.astro";
+import TreatmentGroups from "../../../components/article/TreatmentGroups.astro";
+import Related from "../../../components/article/Related.astro";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
@@ -24,6 +30,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const isRedesigned = entry.data.redesigned === true;
 const { Content, headings } = await render(entry);
 
 const PATHWAY: Record<string, { label: string; pathway: string }> = {
@@ -31,7 +38,8 @@ const PATHWAY: Record<string, { label: string; pathway: string }> = {
   spine: { label: "العمود الفقري",  pathway: "العمود الفقري — جراحي" },
   pain:  { label: "الألم",          pathway: "الألم — تداخلي" },
 };
-const cat = ((entry.data as { category?: string }).category || "pain").toLowerCase();
+const cat = ((entry.data as { pathwayOverride?: string; category?: string })
+  .pathwayOverride || entry.data.category || "pain").toLowerCase();
 const pathway = PATHWAY[cat] || PATHWAY.pain;
 
 function toArabicDigits(n: number): string {
@@ -46,18 +54,58 @@ function readingTimeAr(n: number): string {
 
 const bodyText = (entry.body || "").replace(/!\[[^\]]*]\([^)]+\)/g, "");
 const wordCount = bodyText.split(/\s+/).filter(Boolean).length;
-const readingMin = Math.max(1, Math.round(wordCount / 200));
-const readingLabel = readingTimeAr(readingMin);
+const readingLabel = readingTimeAr(Math.max(1, Math.round(wordCount / 200)));
 
 const publishedAt: unknown = (entry.data as { publishedAt?: unknown }).publishedAt;
 const lastReviewed = publishedAt
   ? new Date(publishedAt as string).toLocaleDateString("ar-IQ", { month: "long", year: "numeric" })
   : "—";
 
-const h2s = (headings || []).filter((h) => h.depth === 2);
-const showToc = h2s.length >= 2;
+type TocItem = { id: string; text: string; num: string };
+let toc: TocItem[] = [];
+if (isRedesigned && Array.isArray(entry.data.sections)) {
+  let n = 0;
+  entry.data.sections.forEach((s: { type: string; heading?: string }) => {
+    if (!("heading" in s) || !s.heading) return;
+    n += 1;
+    toc.push({ id: `s-${n}`, text: s.heading, num: toArabicDigits(n).padStart(2, "٠") });
+  });
+} else {
+  toc = (headings || [])
+    .filter((h) => h.depth === 2)
+    .map((h, i) => ({ id: h.slug, text: h.text, num: toArabicDigits(i + 1).padStart(2, "٠") }));
+}
+const showToc = toc.length >= 2;
+
+let sectionIndex = 0;
+function nextNumId(hasHeading: boolean): { num?: string; id?: string } {
+  if (!hasHeading) return {};
+  sectionIndex += 1;
+  return { num: toArabicDigits(sectionIndex).padStart(2, "٠"), id: `s-${sectionIndex}` };
+}
+
+const allTreatments = await getCollection("treatments");
+function resolveRelated(slugs: string[]) {
+  return slugs.map((slug) => {
+    const pick = pickForLocale(allTreatments, `treatments/${slug}`, "ar");
+    if (!pick) return null;
+    const found = pick.entry;
+    const rd = found.data.redesigned === true;
+    const rcat = (found.data.pathwayOverride || found.data.category || "pain").toLowerCase();
+    return {
+      slug,
+      title: found.data.title,
+      category: PATHWAY[rcat]?.label || "الألم",
+      href: rd ? L(`/treatments/${slug}/`) : "",
+      redesigned: rd,
+    };
+  }).filter(Boolean) as {
+    slug: string; title: string; category: string; href: string; redesigned: boolean;
+  }[];
+}
 
 const standfirst = entry.data.description || "";
+const soonMsg = "هذا المقال لم يُنجَز بعد في التصميم الجديد — قريبًا.";
 ---
 
 <BaseLayout title={`${entry.data.title} — مركز العمران الطبي`} description={standfirst}>
@@ -92,7 +140,7 @@ const standfirst = entry.data.description || "";
           <nav class="art-toc" aria-label="في هذه الصفحة">
             <p class="art-toc-label">في هذه الصفحة</p>
             <span class="art-toc-rule" aria-hidden="true"></span>
-            {h2s.map((h) => (<a href={`#${h.slug}`}>{h.text}</a>))}
+            {toc.map((t) => (<a href={`#${t.id}`}>{t.text}</a>))}
           </nav>
         )}
         <div class="art-call-card">
@@ -103,9 +151,23 @@ const standfirst = entry.data.description || "";
       </aside>
 
       <article class="art-body">
-        <div class="art-prose">
-          <Content />
-        </div>
+        {isRedesigned && Array.isArray(entry.data.sections) ? (
+          entry.data.sections.map((s: any) => {
+            const { num, id } = nextNumId(!!s.heading);
+            if (s.type === "at-a-glance")     return <AtGlance items={s.items} glanceLabel="لمحة سريعة" />;
+            if (s.type === "prose")           return <Prose num={num} heading={s.heading} body={s.body} id={id} />;
+            if (s.type === "pull-quote")      return <PullQuote text={s.text} attribution={s.attribution} />;
+            if (s.type === "comparison-pair") return <ComparisonPair num={num} heading={s.heading} id={id} intro={s.intro} a={s.a} b={s.b} />;
+            if (s.type === "stats-facts")     return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="حقائق أساسية" factNumbers={s.facts.map((_: string, i: number) => toArabicDigits(i + 1).padStart(2, "٠"))} />;
+            if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} />;
+            if (s.type === "related")         return <Related items={resolveRelated(s.slugs)} relatedLabel="قراءة ذات صلة" soonLabel={soonMsg} />;
+            return null;
+          })
+        ) : (
+          <div class="art-prose">
+            <Content />
+          </div>
+        )}
 
         <section class="art-cta">
           <div>
@@ -128,7 +190,9 @@ const standfirst = entry.data.description || "";
 </BaseLayout>
 
 <style>
-  /* Head band */
+  /* Same shell as EN; only the labels above differ. Type sizes for the head
+     h1 and body come from the RTL global overrides (rtl-overrides.css) plus
+     the AR line-heights baked into the block components themselves. */
   .art-head-band { border-bottom: 1px solid var(--line); }
   .art-head-wrap {
     max-width: var(--page-max); margin: 0 auto;
@@ -146,33 +210,21 @@ const standfirst = entry.data.description || "";
   .art-head-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
-    gap: clamp(24px, 4vw, 64px);
-    align-items: end;
+    gap: clamp(24px, 4vw, 64px); align-items: end;
   }
   .art-head-copy { container-type: inline-size; min-width: 0; }
   .art-h1 {
     font-family: var(--font-display);
     font-size: clamp(28px, 7.4cqw, 52px);
-    line-height: 1.22;
-    font-weight: 700;
-    letter-spacing: 0;
-    margin: 0 0 18px;
-    color: var(--ink);
-    text-wrap: pretty;
+    line-height: 1.22; font-weight: 700; letter-spacing: 0;
+    margin: 0 0 18px; color: var(--ink); text-wrap: pretty;
   }
   .art-standfirst {
-    font-size: clamp(16.5px, 1.9vw, 19px);
-    line-height: 1.9;
-    color: var(--body);
-    max-width: 58ch;
-    text-wrap: pretty;
-    margin: 0;
+    font-size: clamp(16.5px, 1.9vw, 19px); line-height: 1.9;
+    color: var(--body); max-width: 58ch; text-wrap: pretty; margin: 0;
   }
-
   .art-meta {
-    margin: 0;
-    display: flex; flex-direction: column;
-    gap: 13px;
+    margin: 0; display: flex; flex-direction: column; gap: 13px;
     border-inline-start: 1px solid var(--line);
     padding-inline-start: clamp(18px, 2.5vw, 28px);
     min-width: 0;
@@ -183,11 +235,9 @@ const standfirst = entry.data.description || "";
   }
   .art-meta dd { margin: 0; font-size: 15px; color: var(--ink); line-height: 1.7; }
 
-  /* Body grid */
   .art-container {
     max-width: var(--page-max); margin: 0 auto;
-    padding: 0 24px;
-    container-type: inline-size;
+    padding: 0 24px; container-type: inline-size;
   }
   .art-grid {
     display: grid; grid-template-columns: minmax(0, 1fr);
@@ -206,17 +256,14 @@ const standfirst = entry.data.description || "";
   .art-toc-rule { display: block; border-top: 1px solid var(--ink); }
   .art-toc a {
     display: block; font-size: 15px; line-height: 1.7;
-    color: var(--body);
-    padding: 11px 0; border-bottom: 1px solid var(--line-soft);
-    text-decoration: none;
+    color: var(--body); padding: 11px 0;
+    border-bottom: 1px solid var(--line-soft); text-decoration: none;
   }
   .art-toc a:hover { color: var(--accent); text-decoration: none; }
 
   .art-call-card {
-    margin-top: 24px;
-    border: 1px solid var(--line);
-    background: var(--surface);
-    padding: 20px;
+    margin-top: 24px; border: 1px solid var(--line);
+    background: var(--surface); padding: 20px;
   }
   .art-call-label { font-size: 13px; color: var(--accent); margin: 0 0 10px; }
   .art-call-body { font-size: 14px; line-height: 1.9; color: var(--body); margin: 0 0 16px; }
@@ -229,54 +276,35 @@ const standfirst = entry.data.description || "";
   }
   .art-call-btn:hover { background: var(--accent-hover); color: var(--white); text-decoration: none; }
 
-  /* Article body */
   .art-body { padding: clamp(32px, 4.5vw, 56px) 0 0; min-width: 0; }
-  .art-prose { color: var(--ink); }
 
+  .art-prose { color: var(--ink); }
   .art-prose :global(p) {
     font-size: 17px; line-height: 1.95; color: var(--body);
     margin: 0 0 20px; text-wrap: pretty;
   }
   .art-prose :global(h2) {
-    scroll-margin-top: 96px;
-    font-family: var(--font-display);
-    font-size: clamp(23px, 3.1vw, 30px);
-    font-weight: 700;
-    color: var(--ink);
+    scroll-margin-top: 96px; font-family: var(--font-display);
+    font-size: clamp(23px, 3.1vw, 30px); font-weight: 700; color: var(--ink);
     margin: clamp(36px, 4.5vw, 52px) 0 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--ink);
-    line-height: 1.22;
+    padding-bottom: 12px; border-bottom: 1px solid var(--ink); line-height: 1.22;
   }
   .art-prose :global(h3) {
     font-family: var(--font-display);
     font-size: 21px; font-weight: 700; color: var(--ink);
-    margin: clamp(28px, 3.5vw, 38px) 0 14px;
-    line-height: 1.3;
+    margin: clamp(28px, 3.5vw, 38px) 0 14px; line-height: 1.3;
   }
   .art-prose :global(strong) { font-weight: 600; color: var(--ink); }
-
   .art-prose :global(ul), .art-prose :global(ol) {
     list-style: none; margin: 0 0 24px; padding: 0;
     border-top: 1px solid var(--line);
   }
   .art-prose :global(li) {
-    display: grid;
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 16px;
-    padding: 14px 0; border-bottom: 1px solid var(--line);
+    display: grid; grid-template-columns: 28px minmax(0, 1fr);
+    gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line);
     font-size: 16px; line-height: 1.9; color: var(--body);
   }
-  .art-prose :global(li)::before {
-    content: "·"; font-size: 22px; color: var(--accent); line-height: 1;
-  }
-  .art-prose :global(ol) { counter-reset: aol; }
-  .art-prose :global(ol) :global(li) { counter-increment: aol; }
-  .art-prose :global(ol) :global(li)::before {
-    content: counter(aol, arabic-indic);
-    font-size: 13px; color: var(--accent);
-    padding-top: 3px; line-height: 1.9;
-  }
+  .art-prose :global(li)::before { content: "·"; font-size: 22px; color: var(--accent); line-height: 1; }
 
   .art-prose :global(figure) { margin: 0 0 28px; max-width: 100%; }
   .art-prose :global(figure img) {
@@ -284,31 +312,25 @@ const standfirst = entry.data.description || "";
     border: 1px solid var(--line); background: var(--surface);
   }
   .art-prose :global(figure figcaption) {
-    font-size: 13px; line-height: 1.7;
-    color: var(--muted); margin-top: 10px;
+    font-size: 13px; line-height: 1.7; color: var(--muted); margin-top: 10px;
   }
   .art-prose :global(p) > :global(img) {
     display: block; max-width: 100%; height: auto;
-    border: 1px solid var(--line); background: var(--surface);
-    margin: 0 0 28px;
+    border: 1px solid var(--line); background: var(--surface); margin: 0 0 28px;
   }
-
   .art-prose :global(blockquote) {
     margin: 32px 0;
     border-inline-start: 2px solid var(--accent);
     padding-inline-start: clamp(18px, 2.5vw, 26px);
   }
   .art-prose :global(blockquote) :global(p) {
-    font-family: var(--font-display);
-    font-size: clamp(19px, 2.3vw, 24px);
-    line-height: 1.5; font-weight: 700;
-    color: var(--ink); margin: 0; text-wrap: pretty;
+    font-family: var(--font-display); font-size: clamp(19px, 2.3vw, 24px);
+    line-height: 1.5; font-weight: 700; color: var(--ink); margin: 0;
+    text-wrap: pretty;
   }
 
-  /* CTA + disclaimer */
   .art-cta {
-    border: 1px solid var(--line);
-    background: var(--surface);
+    border: 1px solid var(--line); background: var(--surface);
     padding: clamp(24px, 3.5vw, 36px);
     margin: clamp(40px, 5vw, 56px) 0 clamp(36px, 4.5vw, 48px);
     display: grid;
@@ -316,8 +338,7 @@ const standfirst = entry.data.description || "";
     gap: 26px; align-items: center;
   }
   .art-cta h2 {
-    font-family: var(--font-display);
-    font-size: clamp(22px, 2.7vw, 28px);
+    font-family: var(--font-display); font-size: clamp(22px, 2.7vw, 28px);
     font-weight: 700; letter-spacing: 0;
     margin: 0 0 10px; color: var(--ink);
   }

@@ -4,8 +4,17 @@
  * `Alimran Neurosurgery AR.dc.html` (lines 296–411).
  */
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SoonLink from "../../../components/article/SoonLink.astro";
 import { CONTACT } from "../../../consts";
-import { localizedHref, currentLocale } from "../../../lib/i18n";
+import { localizedHref, currentLocale, topicOf, isLocale } from "../../../lib/i18n";
+import { getCollection } from "astro:content";
+
+// Redesigned-flag lookup (shared with EN via the treatments collection).
+const _allT = await getCollection("treatments");
+const _bySlug: Record<string, boolean> = {};
+_allT.filter((e) => isLocale(e.id, "en")).forEach((e) => {
+  _bySlug[topicOf(e.id)] = e.data.redesigned === true;
+});
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
@@ -87,7 +96,13 @@ const interventional = [
           <h2 class="pathway-name">{p.title}</h2>
           <ul>
             {p.items.map((c) => (
-              <li><a href={L(`/treatments/${c.slug}/`)}>{c.name}</a></li>
+              <li>
+                <SoonLink
+                  href={L(`/treatments/${c.slug}/`)}
+                  redesigned={_bySlug[c.slug] === true}
+                  soonLabel="هذا المقال لم يُنجَز بعد في التصميم الجديد — قريبًا."
+                >{c.name}</SoonLink>
+              </li>
             ))}
           </ul>
         </div>

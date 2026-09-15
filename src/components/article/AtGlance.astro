@@ -1,0 +1,72 @@
+---
+/**
+ * "At a glance" — surface-tinted panel at the top of a treatment article.
+ * Renders 2–4 labelled cells (What it is / Typical signs / How we treat it).
+ */
+interface Props {
+  items: { label: string; value: string }[];
+  glanceLabel: string;
+}
+const { items, glanceLabel } = Astro.props;
+---
+
+<section class="glance">
+  <p class="glance-label">{glanceLabel}</p>
+  <div class="glance-grid">
+    {items.map((it) => (
+      <div>
+        <p class="glance-item-label">{it.label}</p>
+        <p class="glance-item-value">{it.value}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .glance {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: clamp(24px, 3vw, 32px);
+    margin-bottom: clamp(40px, 5vw, 56px);
+  }
+  .glance-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  :global(html[dir="rtl"]) .glance-label {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .glance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 22px;
+  }
+  .glance-item-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 6px;
+  }
+  :global(html[dir="rtl"]) .glance-item-label {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .glance-item-value {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.72;
+    color: var(--ink);
+  }
+  :global(html[dir="rtl"]) .glance-item-value { line-height: 1.95; }
+</style>

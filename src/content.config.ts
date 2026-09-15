@@ -32,6 +32,74 @@ const pageBase = z.object({
   reviewedAt: z.coerce.date().optional(), // when the human review happened
 });
 
+// ── Redesign block system ─────────────────────────────────────────────
+// Treatment articles that opt into the new design (redesigned: true) declare
+// an ordered `sections` array. Each entry is a discriminated union — the
+// renderer dispatches on `type` and only draws the blocks the article
+// actually needs. Articles without `sections` fall through to the plain
+// prose template that renders their existing markdown body.
+const kv = z.object({ label: z.string(), value: z.string() });
+
+const blockAtGlance = z.object({
+  type: z.literal("at-a-glance"),
+  items: z.array(kv).min(2).max(4),
+});
+
+const blockProse = z.object({
+  type: z.literal("prose"),
+  heading: z.string().optional(),      // when present, appears in the TOC
+  body: z.string(),                    // markdown allowed
+});
+
+const blockPullQuote = z.object({
+  type: z.literal("pull-quote"),
+  text: z.string(),
+  attribution: z.string().optional(),
+});
+
+const blockComparisonPair = z.object({
+  type: z.literal("comparison-pair"),
+  heading: z.string().optional(),
+  intro: z.string().optional(),
+  a: z.object({ label: z.string(), title: z.string(), items: z.array(z.string()) }),
+  b: z.object({ label: z.string(), title: z.string(), items: z.array(z.string()) }),
+});
+
+const blockStatsFacts = z.object({
+  type: z.literal("stats-facts"),
+  heading: z.string().optional(),
+  intro: z.string().optional(),
+  stats: z.array(z.object({ value: z.string(), label: z.string() })).min(2).max(4),
+  facts: z.array(z.string()).default([]),
+});
+
+const blockTreatmentGroups = z.object({
+  type: z.literal("treatment-groups"),
+  heading: z.string().optional(),
+  intro: z.string().optional(),
+  note: z.string().optional(),
+  groups: z.array(z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    items: z.array(z.string()),
+  })).min(2).max(4),
+});
+
+const blockRelated = z.object({
+  type: z.literal("related"),
+  slugs: z.array(z.string()).min(1),   // links into other treatments/*
+});
+
+const articleSection = z.discriminatedUnion("type", [
+  blockAtGlance,
+  blockProse,
+  blockPullQuote,
+  blockComparisonPair,
+  blockStatsFacts,
+  blockTreatmentGroups,
+  blockRelated,
+]);
+
 const treatments = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/treatments" }),
   schema: pageBase.extend({
@@ -40,6 +108,13 @@ const treatments = defineCollection({
       question: z.string(),
       answer: z.string(),
     })).optional(),
+    // Redesign opt-in — when true the article renders via the block template
+    // and its links are enabled across the site. Legacy articles omit this
+    // flag and get the "not yet redesigned" grey-out treatment.
+    redesigned: z.boolean().optional(),
+    publishedAt: z.coerce.date().optional(),
+    pathwayOverride: z.string().optional(), // when frontmatter category is legacy-wrong
+    sections: z.array(articleSection).optional(),
   }),
 });
 

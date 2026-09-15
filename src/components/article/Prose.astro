@@ -1,0 +1,38 @@
+---
+/**
+ * Prose block — optional numbered heading + one or more paragraphs.
+ * `body` is a markdown string but for the demo we render it as split
+ * paragraphs (double newlines) — no inline markdown parsing to keep the
+ * template dependency-free. If we need bold/italic later we can pipe it
+ * through markdown-it here.
+ */
+import SectionHead from "./SectionHead.astro";
+
+interface Props {
+  num?: string;
+  heading?: string;
+  body: string;
+  id?: string;
+}
+const { num, heading, body, id } = Astro.props;
+const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+---
+
+<section class="prose-block">
+  {heading && num && id && <SectionHead num={num} heading={heading} id={id} />}
+  {paras.map((p) => <p class="p">{p}</p>)}
+</section>
+
+<style>
+  .prose-block { margin-bottom: clamp(44px, 5.5vw, 64px); }
+  .prose-block:last-child { margin-bottom: 0; }
+  .p {
+    font-size: 17px;
+    line-height: 1.72;
+    color: var(--body);
+    margin: 0 0 20px;
+    text-wrap: pretty;
+  }
+  .p:last-child { margin-bottom: 0; }
+  :global(html[dir="rtl"]) .p { line-height: 1.95; }
+</style>

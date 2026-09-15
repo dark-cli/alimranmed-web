@@ -4,21 +4,55 @@
  * `Alimran Neurosurgery.dc.html` (lines 431–545).
  */
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SoonLink from "../../../components/article/SoonLink.astro";
 import { CONTACT } from "../../../consts";
-import { localizedHref, currentLocale } from "../../../lib/i18n";
+import { localizedHref, currentLocale, topicOf, isLocale } from "../../../lib/i18n";
+import { getCollection } from "astro:content";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
 const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
 const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
 
+// Look up which of the treatments in each pathway are already redesigned,
+// so the pathway lists can grey out the ones that aren't ready yet.
+const allTreatments = await getCollection("treatments");
+const bySlug: Record<string, boolean> = {};
+allTreatments.filter((e) => isLocale(e.id, "en")).forEach((e) => {
+  bySlug[topicOf(e.id)] = e.data.redesigned === true;
+});
+
 const pathways = [
   { num: "Pathway 01", title: "Brain",
-    items: ["Brain tumour", "Stroke", "Epilepsy and seizures", "Head injury", "Parkinson's disease", "Motor disorders", "Bell's palsy"] },
+    items: [
+      { name: "Brain tumour",         slug: "brain-tumor" },
+      { name: "Stroke",               slug: "stroke" },
+      { name: "Epilepsy and seizures", slug: "epilepsy-seizures" },
+      { name: "Head injury",          slug: "head-injury" },
+      { name: "Parkinson's disease",  slug: "parkinsons-disease" },
+      { name: "Motor disorders",      slug: "motor-disorders" },
+      { name: "Bell's palsy",         slug: "bells-palsy" },
+    ] },
   { num: "Pathway 02", title: "Spine",
-    items: ["Herniated disc", "Sciatica", "Spinal cord injury", "Scoliosis", "Kyphosis", "Whiplash", "Neurogenic bladder"] },
+    items: [
+      { name: "Herniated disc",       slug: "herniated-disc" },
+      { name: "Sciatica",             slug: "sciatica" },
+      { name: "Spinal cord injury",   slug: "spinal-cord-injury" },
+      { name: "Scoliosis",            slug: "scoliosis" },
+      { name: "Kyphosis",             slug: "kyphosis" },
+      { name: "Whiplash",             slug: "whiplash" },
+      { name: "Neurogenic bladder",   slug: "neurogenic-bladder" },
+    ] },
   { num: "Pathway 03", title: "Pain",
-    items: ["Chronic and daily headache", "Neck pain", "Back pain", "Frozen shoulder", "Knee pain", "Fibromyalgia", "Cancer-related intractable pain"] },
+    items: [
+      { name: "Chronic and daily headache", slug: "headaches" },
+      { name: "Neck pain",            slug: "neck-pain" },
+      { name: "Back pain",            slug: "back-pain" },
+      { name: "Frozen shoulder",      slug: "frozen-shoulder" },
+      { name: "Knee pain",            slug: "knee-pain" },
+      { name: "Fibromyalgia",         slug: "fibromyalgia" },
+      { name: "Cancer-related intractable pain", slug: "cancer-pain" },
+    ] },
 ];
 
 const surgical = [
@@ -65,7 +99,12 @@ const interventional = [
           <h2 class="pathway-name">{p.title}</h2>
           <ul>
             {p.items.map((c) => (
-              <li><a href={L(`/treatments/${c.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}/`)}>{c}</a></li>
+              <li>
+                <SoonLink
+                  href={L(`/treatments/${c.slug}/`)}
+                  redesigned={bySlug[c.slug] === true}
+                >{c.name}</SoonLink>
+              </li>
             ))}
           </ul>
         </div>

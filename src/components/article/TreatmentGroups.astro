@@ -1,0 +1,79 @@
+---
+/**
+ * Treatment groups — 2–4 hairline cards, each with title + subtitle +
+ * hairline bullet list. Optional trailing note under the grid.
+ */
+import SectionHead from "./SectionHead.astro";
+
+interface Group { title: string; subtitle?: string; items: string[]; }
+interface Props {
+  num?: string;
+  heading?: string;
+  id?: string;
+  intro?: string;
+  note?: string;
+  groups: Group[];
+}
+const { num, heading, id, intro, note, groups } = Astro.props;
+---
+
+<section class="tg">
+  {heading && num && id && <SectionHead num={num} heading={heading} id={id} />}
+  {intro && <p class="tg-intro">{intro}</p>}
+  <div class="tg-grid">
+    {groups.map((g) => (
+      <div class="tg-cell">
+        <h3 class="tg-title">{g.title}</h3>
+        {g.subtitle && <p class="tg-sub">{g.subtitle}</p>}
+        <ul class="tg-list">
+          {g.items.map((it) => <li>{it}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+  {note && <p class="tg-note">{note}</p>}
+</section>
+
+<style>
+  .tg { margin-bottom: clamp(44px, 5.5vw, 64px); }
+  .tg-intro {
+    font-size: 17px; line-height: 1.72; color: var(--body);
+    margin: 0 0 32px; text-wrap: pretty;
+  }
+  :global(html[dir="rtl"]) .tg-intro { line-height: 1.95; }
+  .tg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .tg-cell { background: var(--white); padding: 26px 24px; }
+  .tg-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  :global(html[dir="rtl"]) .tg-title { font-weight: 700; }
+  .tg-sub { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 0 0 16px; }
+  :global(html[dir="rtl"]) .tg-sub { line-height: 1.85; }
+  .tg-list {
+    margin: 0; padding: 0; list-style: none;
+    display: flex; flex-direction: column; gap: 9px;
+  }
+  .tg-list li {
+    font-size: 15px;
+    color: var(--ink);
+    border-top: 1px solid var(--line-soft);
+    padding-top: 9px;
+  }
+  .tg-note {
+    font-size: 15px;
+    line-height: 1.72;
+    color: var(--muted);
+    margin: 20px 0 0;
+  }
+  :global(html[dir="rtl"]) .tg-note { line-height: 1.95; }
+</style>
