@@ -85,7 +85,8 @@ const consultantFacts = [
   description="Alimran Clinic treats disorders of the brain, the spine and chronic pain — four departments working from one assessment, so patients are not sent between unconnected services."
 >
   <!-- ─── HERO ───────────────────────────────────────────────── -->
-  <section class="hero">
+  <section class="hero-band">
+    <div class="container hero">
     <div class="hero-text">
       <div class="hero-text-inner">
         <p class="hero-eyebrow">Alimran Clinic — Basra, Iraq</p>
@@ -119,6 +120,7 @@ const consultantFacts = [
       loading="eager"
       fetchpriority="high"
     />
+    </div>
   </section>
 
   <!-- ─── STAT BAND ──────────────────────────────────────────── -->
@@ -257,32 +259,34 @@ const consultantFacts = [
 
 <style>
   /* ─── HERO ────────────────────────────────────────────────── */
+  /* Full-width band that carries the bottom hairline. */
+  .hero-band { border-bottom: 1px solid var(--line); }
+  /* Two-column grid CONSTRAINED to the centered container. Text on the
+     start side, photo on the end side; stacked below 980px. */
   .hero {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
-    border-bottom: 1px solid var(--line);
+    padding-block: 0;   /* .container gutter handles the inline spacing */
   }
   @media (min-width: 980px) {
     .hero { grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr); }
   }
 
   .hero-text {
-    padding: clamp(44px, 5.5vw, 88px) clamp(24px, 3.5vw, 48px);
+    padding-block: clamp(44px, 5.5vw, 88px);
+    padding-inline-end: clamp(24px, 3.5vw, 48px);
+    padding-inline-start: 0;
     display: flex;
     align-items: center;
     container-type: inline-size;
   }
-  @media (min-width: 980px) {
-    /* Symmetric with AR: pad the FAR side (inline-end) so the text hugs
-       the viewport-near edge (left in EN, right in AR) instead of being
-       inset all the way to the centered-container edge. */
-    .hero-text {
-      padding-inline-end: max(24px, calc((100vw - 1180px) / 2 + 24px));
-    }
-  }
   .hero-text-inner { width: 100%; max-width: 640px; }
   @media (max-width: 979px) {
+    .hero-text {
+      padding-block: clamp(44px, 5.5vw, 88px);
+      padding-inline: 0;
+    }
     .hero-text-inner { max-width: 100%; margin: 0 auto; }
   }
 
@@ -356,8 +360,7 @@ const consultantFacts = [
     align-self: stretch;
     justify-self: stretch;
     min-height: min(72vw, 420px);
-    border: 0;
-    border-inline-start: 1px solid var(--line);
+    border: 1px solid var(--line);
     order: -1;
   }
   @media (min-width: 980px) {

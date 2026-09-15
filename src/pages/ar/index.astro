@@ -81,7 +81,8 @@ const consultantFacts = [
   description="يعالج مركز العمران الطبي أمراض الدماغ والعمود الفقري والألم المزمن، بأربعة أقسام تعمل انطلاقًا من تقييم واحد."
 >
   <!-- ─── HERO ───────────────────────────────────────────────── -->
-  <section class="hero">
+  <section class="hero-band">
+    <div class="container hero">
     <div class="hero-text">
       <div class="hero-text-inner">
         <p class="hero-eyebrow">مركز العمران الطبي — البصرة، العراق</p>
@@ -115,6 +116,7 @@ const consultantFacts = [
       loading="eager"
       fetchpriority="high"
     />
+    </div>
   </section>
 
   <!-- ─── STAT BAND ──────────────────────────────────────────── -->
@@ -251,25 +253,26 @@ const consultantFacts = [
 </BaseLayout>
 
 <style>
-  /* HERO — same shell as EN but Arabic type sizes per HANDOFF §2.3 */
+  /* HERO — contained inside the centered 1180px column (same as EN). */
+  .hero-band { border-bottom: 1px solid var(--line); }
   .hero {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
-    border-bottom: 1px solid var(--line);
+    padding-block: 0;
   }
   @media (min-width: 980px) {
     .hero { grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr); }
   }
   .hero-text {
-    padding: clamp(44px, 5.5vw, 88px) clamp(24px, 3.5vw, 48px);
+    padding-block: clamp(44px, 5.5vw, 88px);
+    padding-inline-end: clamp(24px, 3.5vw, 48px);
+    padding-inline-start: 0;
     display: flex; align-items: center; container-type: inline-size;
-  }
-  @media (min-width: 980px) {
-    .hero-text { padding-inline-end: max(24px, calc((100vw - 1180px) / 2 + 24px)); }
   }
   .hero-text-inner { width: 100%; max-width: 680px; }
   @media (max-width: 979px) {
+    .hero-text { padding-block: clamp(44px, 5.5vw, 88px); padding-inline: 0; }
     .hero-text-inner { max-width: 100%; margin: 0 auto; }
   }
 
@@ -313,7 +316,7 @@ const consultantFacts = [
   .hero-photo {
     align-self: stretch; justify-self: stretch;
     min-height: min(72vw, 420px);
-    border: 0; border-inline-end: 1px solid var(--line);
+    border: 1px solid var(--line);
     order: -1;
   }
   @media (min-width: 980px) {
