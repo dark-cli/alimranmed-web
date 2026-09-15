@@ -274,9 +274,11 @@ const consultantFacts = [
     container-type: inline-size;
   }
   @media (min-width: 980px) {
-    /* Align text left edge with container: max(24, (100vw - 1180) / 2 + 24) */
+    /* Symmetric with AR: pad the FAR side (inline-end) so the text hugs
+       the viewport-near edge (left in EN, right in AR) instead of being
+       inset all the way to the centered-container edge. */
     .hero-text {
-      padding-inline-start: max(24px, calc((100vw - 1180px) / 2 + 24px));
+      padding-inline-end: max(24px, calc((100vw - 1180px) / 2 + 24px));
     }
   }
   .hero-text-inner { width: 100%; max-width: 640px; }
