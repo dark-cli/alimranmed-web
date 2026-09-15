@@ -274,14 +274,25 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
   }
 
   .lang-switch {
-    padding: 8px 14px;
-    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 13px;
     color: var(--body);
     text-decoration: none;
-    border: 1px solid transparent;
+    /* Always-visible hairline box — matches the prototype (Alimran
+       Neurosurgery.dc.html line 39). Older impl had it on :hover only. */
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    white-space: nowrap;
     transition: color 0.15s ease, border-color 0.15s ease;
   }
-  .lang-switch:hover { color: var(--accent); text-decoration: none; border-color: var(--line); }
+  .lang-switch:hover { color: var(--accent); text-decoration: none; border-color: var(--accent); }
+  /* Mobile: comfortable 48px tap target */
+  @media (max-width: 859px) {
+    .lang-switch { min-height: 48px; padding: 0 14px; }
+  }
 
   /* Hide the "Call the secretary" pill on tight screens; the drawer has one. */
   .call-btn { display: none; }

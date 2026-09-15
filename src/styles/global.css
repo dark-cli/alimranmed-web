@@ -261,6 +261,7 @@ html[dir="rtl"] .eyebrow {
   font-size: 15px;
   font-weight: 500;
   font-family: var(--font-body);
+  white-space: nowrap;
   text-decoration: none;
   border: 1px solid transparent;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
