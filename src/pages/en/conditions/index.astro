@@ -138,9 +138,7 @@ const interventional = [
     color: var(--accent);
     margin: 0 0 20px;
   }
-  html[dir="rtl"] .intro-eyebrow { font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 13px; }
-
-  .intro-h1 {
+.intro-h1 {
     font-family: var(--font-display);
     font-size: clamp(30px, 5vw, 52px);
     line-height: 1.08;
@@ -150,12 +148,8 @@ const interventional = [
     color: var(--ink);
     max-width: 20ch;
   }
-  html[dir="rtl"] .intro-h1 { font-weight: 700; letter-spacing: 0; line-height: 1.22; }
-
-  .intro-lede { font-size: 17px; line-height: 1.65; color: var(--body); margin: 0; max-width: 62ch; }
-  html[dir="rtl"] .intro-lede { line-height: 1.9; }
-
-  /* Pathways — hairline grid */
+.intro-lede { font-size: 17px; line-height: 1.65; color: var(--body); margin: 0; max-width: 62ch; }
+/* Pathways — hairline grid */
   .pathways-section {
     max-width: var(--page-max); margin: 0 auto;
     padding: clamp(44px, 5.5vw, 72px) 24px 0;
@@ -176,16 +170,14 @@ const interventional = [
     color: var(--accent);
     margin: 0 0 6px;
   }
-  html[dir="rtl"] .pathway-num { font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 13px; }
-  .pathway-name {
+.pathway-name {
     font-family: var(--font-display);
     font-size: clamp(21px, 2.6vw, 26px);
     font-weight: 400;
     margin: 0 0 22px;
     color: var(--ink);
   }
-  html[dir="rtl"] .pathway-name { font-weight: 700; font-size: clamp(24px, 2.8vw, 28px); }
-  .pathway-cell ul { list-style: none; margin: 0; padding: 0; }
+.pathway-cell ul { list-style: none; margin: 0; padding: 0; }
   .pathway-cell li {
     padding: 11px 0;
     border-top: 1px solid var(--line-soft);
@@ -205,16 +197,13 @@ const interventional = [
     padding-bottom: 14px; margin-bottom: 44px;
   }
   .proc-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); }
-  html[dir="rtl"] .proc-num { font-family: var(--font-body); letter-spacing: 0.02em; font-size: 13px; }
-  .proc-h2 {
+.proc-h2 {
     font-family: var(--font-display);
     font-size: clamp(24px, 3.4vw, 34px);
     font-weight: 400; letter-spacing: -0.02em;
     margin: 0; color: var(--ink); line-height: 1.1;
   }
-  html[dir="rtl"] .proc-h2 { font-weight: 700; letter-spacing: 0; font-size: clamp(26px, 3.6vw, 36px); line-height: 1.22; }
-
-  /* 01 Surgical cards */
+/* 01 Surgical cards */
   .surg-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
@@ -230,17 +219,13 @@ const interventional = [
     margin: 0;
     line-height: 1.7;
   }
-  html[dir="rtl"] .surg-photo p { font-family: var(--font-body); letter-spacing: 0; font-size: 12px; line-height: 1.9; }
-  .surg-title {
+.surg-title {
     font-family: var(--font-display);
     font-size: 22px; font-weight: 400;
     margin: 0 0 10px; color: var(--ink);
   }
-  html[dir="rtl"] .surg-title { font-weight: 700; font-size: 24px; }
-  .surg-desc { font-size: 15px; line-height: 1.6; color: var(--body); margin: 0; }
-  html[dir="rtl"] .surg-desc { line-height: 1.85; }
-
-  /* 02 Interventional register */
+.surg-desc { font-size: 15px; line-height: 1.6; color: var(--body); margin: 0; }
+/* 02 Interventional register */
   .int-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
@@ -254,8 +239,7 @@ const interventional = [
     border-bottom: 1px solid var(--line);
   }
   .int-num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
-  html[dir="rtl"] .int-num { font-family: var(--font-body); font-size: 13px; }
-  .int-name { font-size: 15px; color: var(--ink); }
+.int-name { font-size: 15px; color: var(--ink); }
 
   /* Appointment band */
   .appt-section {
@@ -277,9 +261,7 @@ const interventional = [
     font-weight: 400; letter-spacing: -0.02em;
     margin: 0 0 12px; color: var(--ink);
   }
-  html[dir="rtl"] .appt-h2 { font-weight: 700; letter-spacing: 0; font-size: clamp(24px, 3vw, 32px); }
-  .appt-body { font-size: 16px; line-height: 1.65; color: var(--body); margin: 0; max-width: 52ch; }
-  html[dir="rtl"] .appt-body { line-height: 1.85; max-width: 54ch; }
-  .appt-buttons { display: flex; flex-direction: column; gap: 10px; }
+.appt-body { font-size: 16px; line-height: 1.65; color: var(--body); margin: 0; max-width: 52ch; }
+.appt-buttons { display: flex; flex-direction: column; gap: 10px; }
   .appt-btn { min-height: 52px; font-size: 16px; justify-content: center; }
 </style>

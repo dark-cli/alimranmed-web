@@ -146,8 +146,7 @@ const standfirst = entry.data.description || "";
     color: var(--muted); letter-spacing: 0.06em;
     margin-bottom: clamp(20px, 3vw, 32px);
   }
-  html[dir="rtl"] .crumbs { font-family: var(--font-body); font-size: 14px; letter-spacing: 0; }
-  .crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a { color: var(--muted); text-decoration: none; }
   .crumbs a:hover { color: var(--accent); text-decoration: none; }
   .crumb-current { color: var(--ink); }
 
@@ -165,15 +164,11 @@ const standfirst = entry.data.description || "";
     font-size: clamp(29px, 7cqw, 54px); line-height: 1.08;
     margin: 0 0 20px; max-width: 18ch;
   }
-  html[dir="rtl"] .head-copy h1 { line-height: 1.22; }
-
-  .standfirst {
+.standfirst {
     font-size: clamp(16.5px, 1.9vw, 19px); line-height: 1.6;
     color: var(--body); max-width: 52ch; margin: 0;
   }
-  html[dir="rtl"] .standfirst { line-height: 1.9; }
-
-  .meta-rail {
+.meta-rail {
     display: flex; flex-direction: column; gap: 20px;
     padding-inline-start: clamp(0px, 3vw, 32px);
     border-inline-start: 1px solid var(--line);
@@ -207,8 +202,7 @@ const standfirst = entry.data.description || "";
     content: counter(toc, decimal-leading-zero) " · ";
     font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
   }
-  html[dir="rtl"] .toc li a::before { font-family: var(--font-body); letter-spacing: 0; }
-  .toc li a:hover { color: var(--accent); text-decoration: none; }
+.toc li a:hover { color: var(--accent); text-decoration: none; }
 
   .aside-call { padding: 20px; background: var(--surface); border: 1px solid var(--line); }
   .aside-call .eyebrow { display: block; margin-bottom: 8px; }

@@ -227,12 +227,7 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     color: var(--ink);
     letter-spacing: -0.01em;
   }
-  html[dir="rtl"] .masthead-name {
-    font-weight: 700;
-    font-size: 19px;
-    letter-spacing: 0;
-  }
-  .masthead-sub {
+.masthead-sub {
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.12em;
@@ -240,14 +235,7 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     color: var(--muted);
     line-height: 1.3;
   }
-  html[dir="rtl"] .masthead-sub {
-    font-family: var(--font-body);
-    letter-spacing: 0.02em;
-    text-transform: none;
-    font-size: 13px;
-  }
-
-  /* ─── Desktop nav (≥ 860px) ───────────────────────────────── */
+/* ─── Desktop nav (≥ 860px) ───────────────────────────────── */
   .primary-nav {
     display: none;
     align-items: center;
@@ -263,8 +251,7 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     border-radius: 2px;
     transition: color 0.15s ease, background-color 0.15s ease;
   }
-  html[dir="rtl"] .nav-link { font-size: 15px; }
-  .nav-link:hover { color: var(--accent); text-decoration: none; background: var(--surface); }
+.nav-link:hover { color: var(--accent); text-decoration: none; background: var(--surface); }
   .nav-link.active { color: var(--accent); }
 
   /* ─── Header actions (right side) ─────────────────────────── */
@@ -337,8 +324,7 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     transform: translateX(100%);
     transition: transform 0.25s ease-out;
   }
-  html[dir="rtl"] .mobile-nav { transform: translateX(-100%); }
-  .mobile-nav.open { transform: translateX(0); }
+.mobile-nav.open { transform: translateX(0); }
 
   .drawer-head {
     display: flex;

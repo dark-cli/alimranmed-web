@@ -176,9 +176,7 @@ const conferences = [
     color: var(--accent);
     margin: 0 0 20px;
   }
-  html[dir="rtl"] .cv-eyebrow { font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 13px; }
-
-  .cv-h1 {
+.cv-h1 {
     font-family: var(--font-display);
     font-size: clamp(28px, 9cqw, 54px);
     line-height: 1.07;
@@ -187,12 +185,8 @@ const conferences = [
     margin: 0 0 18px;
     color: var(--ink);
   }
-  html[dir="rtl"] .cv-h1 { font-weight: 700; letter-spacing: 0; line-height: 1.22; }
-
-  .cv-lede { font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 24px; max-width: 54ch; }
-  html[dir="rtl"] .cv-lede { line-height: 1.9; }
-
-  .cv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.cv-lede { font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 24px; max-width: 54ch; }
+.cv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
   .cv-chip {
     font-family: var(--font-mono);
     font-size: 11.5px;
@@ -201,9 +195,7 @@ const conferences = [
     border: 1px solid var(--line-strong);
     padding: 6px 11px;
   }
-  html[dir="rtl"] .cv-chip { font-family: var(--font-body); font-size: 13px; letter-spacing: 0; }
-
-  .cv-portrait { aspect-ratio: 4 / 5; min-height: 0; }
+.cv-portrait { aspect-ratio: 4 / 5; min-height: 0; }
   .cv-portrait p {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -214,9 +206,7 @@ const conferences = [
     padding: 0 24px;
     line-height: 1.7;
   }
-  html[dir="rtl"] .cv-portrait p { font-family: var(--font-body); letter-spacing: 0; font-size: 12px; }
-
-  /* ─── Register sections ─────────────────────────────────── */
+/* ─── Register sections ─────────────────────────────────── */
   .reg-section {
     max-width: var(--page-max);
     margin: 0 auto;
@@ -242,9 +232,7 @@ const conferences = [
     flex: 0 0 min(190px, 100%);
     font-weight: 500;
   }
-  html[dir="rtl"] .reg-label { font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 13px; }
-
-  .reg-body {
+.reg-body {
     border-top: 1px solid var(--ink);
     flex: 1 1 380px;
     min-width: 0;
@@ -263,11 +251,8 @@ const conferences = [
     font-size: 12.5px;
     color: var(--muted);
   }
-  html[dir="rtl"] .reg-period { font-family: var(--font-body); font-size: 14px; }
-  .reg-text { font-size: 15.5px; line-height: 1.55; color: var(--ink); }
-  html[dir="rtl"] .reg-text { line-height: 1.9; }
-
-  /* Memberships list */
+.reg-text { font-size: 15.5px; line-height: 1.55; color: var(--ink); }
+/* Memberships list */
   .reg-members {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(245px, 100%), 1fr));
@@ -288,9 +273,7 @@ const conferences = [
     font-size: 12px;
     color: var(--muted);
   }
-  html[dir="rtl"] .member-year { font-family: var(--font-body); font-size: 13px; }
-
-  /* Publications */
+/* Publications */
   .reg-pubs { }
   .reg-pubs li {
     padding: 20px 0;
@@ -307,8 +290,7 @@ const conferences = [
     line-height: 1.35;
     color: var(--ink);
   }
-  html[dir="rtl"] .pub-title { font-weight: 700; line-height: 1.5; }
-  .pub-source { display: block; font-size: 13.5px; color: var(--muted); margin-top: 5px; }
+.pub-source { display: block; font-size: 13.5px; color: var(--muted); margin-top: 5px; }
 
   @media (max-width: 640px) {
     .reg-row, .reg-pubs li { grid-template-columns: 1fr; gap: 4px; }
