@@ -204,7 +204,9 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     gap: 12px;
     color: var(--ink);
     text-decoration: none;
-    flex-shrink: 0;
+    /* Allow the masthead to shrink if the header row runs tight — the
+       actions on the right (عربي, call, burger) are the priority items. */
+    min-width: 0;
     padding-block: 4px;
   }
   .masthead:hover { text-decoration: none; color: var(--ink); }
@@ -234,6 +236,12 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     text-transform: uppercase;
     color: var(--muted);
     line-height: 1.3;
+  }
+  /* On very narrow phones the long EN subheading overflows the header row.
+     Drop it below 460px — the brand name alone still identifies the clinic
+     and matches what iOS-style headers do at phone widths. */
+  @media (max-width: 459px) {
+    .masthead-sub { display: none; }
   }
 /* ─── Desktop nav (≥ 860px) ───────────────────────────────── */
   .primary-nav {
