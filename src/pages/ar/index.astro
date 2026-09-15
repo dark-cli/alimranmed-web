@@ -1,296 +1,338 @@
 ---
+/**
+ * Home — Alimran Clinic — Arabic (redesign Sep 2026).
+ * Same structure as en/index.astro, mirrored for RTL per HANDOFF §6.
+ */
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
 import { CONTACT } from "../../consts";
-import { topicOf, pickForLocale, localizedHref, currentLocale } from "../../lib/i18n";
+import { localizedHref, currentLocale } from "../../lib/i18n";
 
 const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+const cvHref = L("/doctors/hussein-imran-mousa/");
+const conditionsHref = L("/conditions/");
 
-// Doctors — prefer AR entry, fallback to EN (with name printed as-is)
-const allDoctors = await getCollection("doctors");
-const doctorTopics = Array.from(new Set(allDoctors.map((e) => topicOf(e.id))));
-const doctors = doctorTopics
-  .map((topic) => pickForLocale(allDoctors, topic, "ar"))
-  .filter((x): x is NonNullable<typeof x> => !!x)
-  .map(({ entry }) => entry)
-  .sort((a, b) => a.data.order - b.data.order);
-
-const INTRO_VIDEO_ID = "m53F8E6VKFA";
-
-const FEATURED_CONDITIONS = [
-  { title: "ألم الظهر",         path: "/treatments/back-pain/",      image: "/images/home/Back-Pain.jpg" },
-  { title: "ألم الرقبة",        path: "/treatments/neck-pain/",      image: "/images/home/SNHS-neck-pain-1.jpg" },
-  { title: "الكتف المتجمدة",     path: "/treatments/frozen-shoulder/", image: "/images/home/1-1.jpg" },
-  { title: "الإصابات الرياضية",  path: "/treatments/sports-injuries/", image: "/images/home/Can-Osteopathy-help-you-with-your-sport-injury-1.jpg" },
-  { title: "الألم العضلي الليفي", path: "/treatments/fibromyalgia/",   image: "/images/home/Fibromyalgia.png" },
-  { title: "إصابة الرأس",        path: "/treatments/head-injury/",    image: "/images/home/Global-brain-injury-recovery-e1577492333798.jpg" },
-  { title: "التهاب مفصل الورك", path: "/treatments/arthritis-of-the-hip/", image: "/images/home/1-4.jpg" },
-  { title: "شوكة الكعب",         path: "/treatments/heel-spur/",      image: "/images/home/frozen-shoulder51.jpg" },
+// Arabic-Indic numerals per HANDOFF §2.3
+const stats = [
+  { fig: "+٥٬٠٠٠", label: "استشارة" },
+  { fig: "٢٥",     label: "سنة خبرة" },
+  { fig: "٤",      label: "مسارات علاجية" },
+  { fig: "٦",      label: "أيام في الأسبوع" },
 ];
 
-const FEATURED_SERVICES = [
-  { path: "/services/chiropractic/",      title: "الكيروبراكتيك",     image: "/images/home/DSC_0054-1-1024x684.jpg",              desc: "أنظمة SPINMED وسيغما للمعالجة الدقيقة للعمود الفقري." },
-  { path: "/services/brain-stimulation/", title: "التحفيز الدماغي",   image: "/images/home/tms-treatment-768.jpg",               desc: "TMS وtDCS للسكتة الدماغية والصداع النصفي والاكتئاب وأكثر." },
-  { path: "/services/radiofrequency/",    title: "الترددات الراديوية", image: "/images/home/g4-radiofrequency-generator-161964_1b.jpg", desc: "تدخل جراحي بالحد الأدنى لعلاج الألم المزمن." },
-  { path: "/services/steroid-injection/", title: "حقن الكورتيزون",    image: "/images/home/injection-knee-cropped-1024x689-1.jpeg", desc: "حقن موجّهة بالتصوير للمفاصل والعمود الفقري." },
+const services = [
+  { num: "٠١", title: "جراحة الأعصاب",  desc: "أورام الدماغ، جراحة العمود الفقري، وجراحة الأعصاب التوجيهية.", procedures: ["فتح الجمجمة", "استئصال القرص المجهري", "استئصال الصفيحة", "خزعة توجيهية", "تحويل السائل الدماغي"] },
+  { num: "٠٢", title: "طب الألم التداخلي", desc: "إجراءات موجّهة بالتصوير لعلاج الألم المزمن.", procedures: ["الترددات الراديوية", "حقن الكورتيزون فوق الجافية", "حصر الأعصاب", "حقن المفاصل الوجيهية", "علاج نقاط الانطلاق"] },
+  { num: "٠٣", title: "التحفيز العصبي", desc: "تحفيز دماغي غير جراحي للسكتة والصداع النصفي والاكتئاب.", procedures: ["TMS", "tDCS", "التحفيز الطرفي", "التحفيز المبهمي", "رسم القشرة الحركية"] },
+  { num: "٠٤", title: "التعافي والعلاج", desc: "برامج تأهيل وعلاج طبيعي وطب تجديدي بإشراف استشاري.", procedures: ["العلاج الطبيعي", "الكيروبراكتيك", "الطب التجديدي", "التدريب الرياضي", "علاج الأوزون"] },
+];
+
+const pathways = [
+  { title: "الدماغ", items: ["ورم الدماغ", "السكتة الدماغية", "الصرع", "إصابة الرأس", "شلل بيل", "ألم العصب الثلاثي", "استسقاء الدماغ"] },
+  { title: "العمود الفقري", items: ["الانزلاق الغضروفي", "عرق النسا", "الجنف", "تضيّق النخاع", "إصابة العنق", "إصابة النخاع الشوكي", "الحداب"] },
+  { title: "الألم",  items: ["ألم الظهر", "ألم الرقبة", "ألم الركبة", "الكتف المتجمدة", "الألم العضلي الليفي", "الصداع", "التهاب المفاصل"] },
 ];
 ---
 
-<BaseLayout>
-  <!-- ============================================================ HERO -->
+<BaseLayout
+  title="مركز العمران — جراحة الأعصاب وطب الألم في البصرة"
+  description="رعاية استشارية متخصصة في جراحة الأعصاب وطب الألم والتأهيل — البصرة، العراق. بإشراف الدكتور حسين عمران موسى، استشاري جراحة الأعصاب."
+>
+  <!-- ─── Hero ───────────────────────────────────────────────── -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
-        <span class="eyebrow">مركز العمران الطبي · البصرة، العراق</span>
-        <h1>رعاية متخصصة لأمراض الأعصاب والجهاز العضلي الهيكلي.</h1>
-        <p class="lede">
-          تشخيص وعلاج بإشراف الاستشاريين — كيروبراكتيك، تأهيل طبي،
-          إدارة الألم، تحفيز دماغي، علاج طبيعي، وجراحة أعصاب — بأحدث
-          التقنيات المبنية على الأدلة.
+        <span class="eyebrow">مركز العمران · البصرة، العراق</span>
+        <h1>جراحة أعصاب وطب ألم وتأهيل استشاري — تحت سقف واحد.</h1>
+        <p class="hero-lede">
+          مسار موحّد من التشخيص إلى إعادة التأهيل، بإشراف استشاري متخصص
+          يمتلك ٢٥ سنة من الخبرة في الدماغ والعمود الفقري وطب الألم.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href={localizedHref("/contact/", locale)}>اتصل بنا</a>
-          <a class="btn btn-ghost" href={localizedHref("/doctors/", locale)}>تعرّف على الأطباء</a>
+          <a class="btn btn-primary" href={callHref}>اتصل بالسكرتير</a>
+          <a class="btn btn-secondary" href={conditionsHref}>تعرّف على ما نعالج</a>
+        </div>
+
+        <div class="doctor-credit">
+          <div class="doctor-avatar photo-slot photo-slot--4x5" aria-hidden="true">
+            صورة<br>٥٢ × ٥٢
+          </div>
+          <p>
+            بإشراف <a class="link-quiet" href={cvHref}>الدكتور حسين عمران موسى</a>،
+            استشاري جراحة الأعصاب &nbsp;·&nbsp; MBChB · FIBMS
+          </p>
         </div>
       </div>
 
-      <div class="hero-video">
-        <button class="video-facade" data-video-id={INTRO_VIDEO_ID} aria-label="تشغيل فيديو التعريف">
-          <img
-            src={`https://i.ytimg.com/vi/${INTRO_VIDEO_ID}/hqdefault.jpg`}
-            alt="فيديو تعريفي عن مركز العمران الطبي"
-            loading="eager"
-            width="480" height="270"
-          />
-          <span class="play-btn" aria-hidden="true">
-            <svg viewBox="0 0 68 48" width="68" height="48">
-              <path d="M67 8.5c-.8-3-3.1-5.3-6.1-6.1C55.5.9 34 .9 34 .9s-21.5 0-26.9 1.5c-3 .8-5.3 3.1-6.1 6.1C-.5 13.9-.5 24-.5 24s0 10.1 1.5 15.5c.8 3 3.1 5.3 6.1 6.1 5.4 1.5 26.9 1.5 26.9 1.5s21.5 0 26.9-1.5c3-.8 5.3-3.1 6.1-6.1C68.5 34.1 68.5 24 68.5 24s0-10.1-1.5-15.5z" fill="#e63b34"/>
-              <path d="M27 34l17.5-10L27 14z" fill="#fff"/>
-            </svg>
-          </span>
-        </button>
-        <p class="video-caption">شاهد كيف نعمل</p>
+      <div class="hero-photo photo-slot photo-slot--landscape">
+        صورة للمركز<br>
+        الواجهة أو الاستقبال أو غرفة العلاج<br>
+        أفقية · بعرض ١٦٠٠ بكسل على الأقل
       </div>
     </div>
   </section>
 
-  <!-- ============================================== FEATURED CONDITIONS -->
-  <section class="conditions">
+  <!-- ─── Stat band ──────────────────────────────────────────── -->
+  <section class="stats" aria-label="لمحة سريعة">
+    <div class="container">
+      <div class="grid-hairline grid-hairline--surface stat-grid">
+        {stats.map((s) => (
+          <div class="stat-cell">
+            <div class="stat-fig">{s.fig}</div>
+            <div class="eyebrow">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 01 Care under one roof ─────────────────────────────── -->
+  <section class="section" id="care">
     <div class="container">
       <header class="section-head">
-        <h2>الحالات الأكثر شيوعاً</h2>
-        <p>لمحة عن أهم الحالات — الفهرس الكامل في <a href={localizedHref("/treatments/", locale)}>ما نعالج</a>.</p>
+        <span class="section-num">٠١</span>
+        <h2 class="section-title">رعاية شاملة تحت سقف واحد</h2>
       </header>
-      <div class="condition-grid">
-        {FEATURED_CONDITIONS.map((c) => (
-          <a class="condition-card" href={localizedHref(c.path, locale)}>
-            <div class="thumb">
-              <img src={c.image} alt={c.title} loading="lazy" />
-            </div>
-            <h3>{c.title}</h3>
-          </a>
+      <div class="grid-hairline services-grid">
+        {services.map((s) => (
+          <article class="service-cell">
+            <span class="service-num eyebrow">{s.num}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+            <ul class="service-list">
+              {s.procedures.map((p) => <li>{p}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 02 Conditions we treat ─────────────────────────────── -->
+  <section class="section section-tinted" id="conditions">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">٠٢</span>
+        <h2 class="section-title">حالات نعالجها</h2>
+      </header>
+      <div class="pathways-grid">
+        {pathways.map((p) => (
+          <div class="pathway-col">
+            <h3 class="pathway-head">
+              <span class="eyebrow">المسار</span>
+              <span class="pathway-title">{p.title}</span>
+            </h3>
+            <ul class="pathway-list">
+              {p.items.map((c) => <li>{c}</li>)}
+            </ul>
+          </div>
         ))}
       </div>
       <div class="section-cta">
-        <a class="btn btn-ghost" href={localizedHref("/treatments/", locale)}>عرض جميع الحالات ←</a>
+        <a class="btn btn-secondary" href={conditionsHref}>جميع الحالات والإجراءات ←</a>
       </div>
     </div>
   </section>
 
-  <!-- ==================================================== SERVICES -->
-  <section class="services">
+  <!-- ─── 03 Inside the clinic ───────────────────────────────── -->
+  <section class="section" id="inside">
     <div class="container">
       <header class="section-head">
-        <h2>خدماتنا المميّزة</h2>
-        <p>جميع العلاجات تحت سقف واحد، بإشراف فرق طبية متخصصة.</p>
+        <span class="section-num">٠٣</span>
+        <h2 class="section-title">داخل المركز</h2>
       </header>
-      <div class="service-grid">
-        {FEATURED_SERVICES.map((s) => (
-          <a class="service-card" href={localizedHref(s.path, locale)}>
-            <div class="thumb wide">
-              <img src={s.image} alt={s.title} loading="lazy" />
-            </div>
-            <div class="service-body">
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-              <span class="learn-more">اكتشف ←</span>
-            </div>
-          </a>
-        ))}
+      <div class="grid-hairline facilities-grid">
+        <div class="photo-slot photo-slot--4x3">الاستقبال<br>أفقية · بعرض ١٦٠٠ بكسل على الأقل</div>
+        <div class="photo-slot photo-slot--4x3">غرفة الاستشارة<br>أفقية · بعرض ١٦٠٠ بكسل على الأقل</div>
+        <div class="photo-slot photo-slot--4x3">غرفة الإجراءات<br>أفقية · بعرض ١٦٠٠ بكسل على الأقل</div>
+        <div class="photo-slot photo-slot--4x3">صالة العلاج<br>أفقية · بعرض ١٦٠٠ بكسل على الأقل</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ==================================================== DOCTORS -->
-  {doctors.length > 0 && (
-    <section class="doctors-section">
-      <div class="container">
-        <header class="section-head">
-          <h2>أطباؤنا</h2>
-        </header>
-        <div class="doctor-grid">
-          {doctors.map((d) => (
-            <a class="doctor-card card" href={localizedHref(`/doctors/${topicOf(d.id)}/`, locale)}>
-              {d.data.photo && <img class="doctor-photo" src={d.data.photo} alt={d.data.fullName} loading="lazy" />}
-              <h3>{d.data.fullName || d.data.title}</h3>
-              {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}
-              {d.data.titles.length > 0 && (
-                <p class="creds">{d.data.titles.join(" · ")}</p>
-              )}
-            </a>
-          ))}
+      <div class="location-facts">
+        <div class="register register-single">
+          <div class="register-rows">
+            <p><strong>الموقع</strong> — {CONTACT.addresses.ar}</p>
+            <p><strong>ساعات العمل</strong> — السبت-الخميس ٠٩:٠٠-١٨:٠٠، الجمعة ١٤:٠٠-١٨:٠٠</p>
+            <p><strong>الاتجاهات</strong> — <a href={CONTACT.mapsUrl} target="_blank" rel="noopener">افتح في خرائط جوجل ←</a></p>
+          </div>
         </div>
       </div>
-    </section>
-  )}
-
-  <!-- ==================================================== VISIT US MAP -->
-  <section class="contact-strip">
-    <div class="container home-map-head">
-      <h2>زورونا</h2>
-      <p>{CONTACT.addresses.ar}</p>
-    </div>
-    <div class="container home-map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.29801709611!2d47.834783515126176!3d30.512611081714454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf65ac49b64c2ccf!2zMzDCsDMwJzQ1LjQiTiA0N8KwNTAnMTMuMSJF!5e0!3m2!1sar!2siq!4v1637681705351!5m2!1sar!2siq"
-        width="100%"
-        height="280"
-        style="border: 0; border-radius: var(--radius-lg);"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="موقع مركز العمران الطبي على خرائط جوجل"
-      ></iframe>
     </div>
   </section>
 
-  <script is:inline>
-    (function () {
-      function bindVideoFacades() {
-        document.querySelectorAll(".video-facade").forEach((btn) => {
-          if (btn.dataset.bound) return;
-          btn.dataset.bound = "1";
-          btn.addEventListener("click", () => {
-            const id = btn.dataset.videoId;
-            const iframe = document.createElement("iframe");
-            iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-            iframe.title = "مركز العمران الطبي — فيديو تعريفي";
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.setAttribute("allowfullscreen", "");
-            iframe.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;";
-            btn.replaceWith(iframe);
-          });
-        });
-      }
-      bindVideoFacades();
-      document.addEventListener("astro:page-load", bindVideoFacades);
-    })();
-  </script>
+  <!-- ─── 04 The lead consultant ─────────────────────────────── -->
+  <section class="section section-tinted" id="consultant">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">٠٤</span>
+        <h2 class="section-title">الاستشاري الرئيسي</h2>
+      </header>
+      <div class="consultant-grid">
+        <div class="consultant-highlight">
+          <h3>الدكتور حسين عمران موسى</h3>
+          <p class="eyebrow">استشاري جراحة الأعصاب · مستشفى البصرة التعليمي · مركز العمران</p>
+          <p class="consultant-lede">
+            زميل المجلس العراقي للاختصاصات الطبية في جراحة الأعصاب، وعضو الجمعية الأمريكية لجراحي الأعصاب،
+            والجمعية الدولية للجراحة المتقدمة وغير الجراحية للعمود الفقري. المدير الإقليمي لجمعية الشرق الأوسط
+            لجراحة الأعصاب التوجيهية والوظيفية.
+          </p>
+          <p><a class="link-quiet" href={cvHref}>اقرأ السيرة الكاملة ←</a></p>
+        </div>
+        <div class="consultant-facts">
+          <div class="register">
+            <p class="register-label">منذ</p>
+            <div class="register-rows">
+              <p>٢٠٠٦ — استشاري جراحة الأعصاب</p>
+            </div>
+          </div>
+          <div class="register">
+            <p class="register-label">الزمالات</p>
+            <div class="register-rows">
+              <p><span dir="ltr">FIBMS (Neurosurgery)</span></p>
+              <p><span dir="ltr">FIAANS</span></p>
+              <p><span dir="ltr">FIISSP · FINASS</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Referral band ──────────────────────────────────────── -->
+  <section class="referral">
+    <div class="container referral-inner">
+      <div>
+        <span class="eyebrow">للأطباء المحيلين</span>
+        <h2 class="referral-title">تحويل مريض</h2>
+        <p>خط مباشر للسكرتير لجدولة المواعيد؛ يمكن إرسال الصور والتقارير على البريد الإلكتروني.</p>
+      </div>
+      <div class="referral-contact">
+        {CONTACT.phones.map((p) => (
+          <a class="referral-phone" href={`tel:${p.replace(/\s/g, "")}`}>
+            <span dir="ltr">{p}</span>
+          </a>
+        ))}
+        <a class="referral-email" href={`mailto:${CONTACT.email}`}>
+          <span dir="ltr">{CONTACT.email}</span>
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-  /* --------------------------------------------------- HERO */
-  .hero {
-    padding: 2rem 0 1.5rem;
-    background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
-  }
+  /* Same styles as en/index.astro — kept per-page so each locale can tweak
+     independently if type metrics ever diverge. */
+  .hero { padding-block: var(--hero-y); }
   .hero-inner {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-items: center;
+    gap: var(--col-gap);
+    align-items: start;
+    container-type: inline-size;
   }
-  @media (min-width: 900px) {
-    .hero { padding: 3.5rem 0 3rem; }
-    .hero-inner { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  @media (min-width: 980px) { .hero-inner { grid-template-columns: 1fr 1fr; align-items: center; } }
+  .hero-copy .eyebrow { display: block; margin-bottom: 20px; }
+  .hero-copy h1 {
+    font-size: clamp(30px, 7.6cqw, 58px);
+    line-height: 1.22;
+    margin: 0 0 24px;
+    max-width: 16ch;
   }
-  .eyebrow {
-    display: inline-block;
-    color: var(--brand);
-    font-weight: 600;
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.6rem;
+  .hero-lede {
+    font-size: clamp(16.5px, 1.9vw, 19px);
+    line-height: 1.9;
+    color: var(--body);
+    max-width: 52ch;
+    margin-bottom: 32px;
   }
-  @media (min-width: 900px) {
-    .eyebrow { font-size: 0.85rem; margin-bottom: 1rem; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+  .doctor-credit {
+    display: flex; align-items: center; gap: 16px;
+    padding-top: 24px; border-top: 1px solid var(--line);
   }
-  .hero-copy h1 { max-width: 22ch; font-size: clamp(1.4rem, 5.5vw, 2.75rem); line-height: 1.15; margin-bottom: 0.75em; }
-  .hero-copy .lede { color: var(--ink-soft); max-width: 60ch; margin-bottom: 1.25rem; line-height: 1.6; font-size: clamp(0.95rem, 2.6vw, 1.1rem); }
-  .hero-cta { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-  .hero-cta .btn { padding: 0.65em 1.1em; font-size: 0.95rem; flex: 1 1 auto; min-width: 140px; }
-  @media (min-width: 480px) { .hero-cta .btn { flex: 0 0 auto; padding: 0.7em 1.4em; } }
-
-  .hero-video { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
-  .video-facade {
-    position: relative; width: 100%; aspect-ratio: 16 / 9;
-    padding: 0; background: #000; border: 0;
-    border-radius: var(--radius-lg); overflow: hidden; cursor: pointer;
-    box-shadow: var(--shadow-md); display: block;
+  .doctor-avatar {
+    width: 52px; height: 52px; min-height: 0; padding: 0;
+    aspect-ratio: 1; font-size: 9px; flex-shrink: 0;
   }
-  .video-facade img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease, opacity 0.2s ease; }
-  .video-facade:hover img { transform: scale(1.03); opacity: 0.85; }
-  .play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
-  .play-btn svg { filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4)); transition: transform 0.2s ease; }
-  .video-facade:hover .play-btn svg { transform: scale(1.1); }
-  .video-caption { color: var(--ink-muted); font-size: 0.9rem; margin: 0; }
+  .doctor-credit p { font-size: 14px; color: var(--body); margin: 0; }
+  .hero-photo { order: -1; min-height: 320px; }
+  @media (min-width: 980px) { .hero-photo { order: 0; min-height: 460px; } }
 
-  /* ------------------------------------- SHARED SECTION HELPERS */
-  .conditions, .services, .doctors-section, .contact-strip { padding: 2.25rem 0; }
-  @media (min-width: 900px) { .conditions, .services, .doctors-section, .contact-strip { padding: 4rem 0; } }
-  .section-head { text-align: center; max-width: 60ch; margin: 0 auto 1.5rem; }
-  .section-head h2 { font-size: clamp(1.3rem, 4vw, 2rem); margin-bottom: 0.3em; }
-  .section-head p { color: var(--ink-soft); font-size: 0.95rem; }
-  .section-cta { text-align: center; margin-top: 1.5rem; }
-  @media (min-width: 900px) { .section-head { margin-bottom: 2rem; } .section-cta { margin-top: 2rem; } }
+  .stats { padding-block: 0; }
+  .stat-grid { grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr)); }
+  .stat-cell { text-align: start; }
+  .stat-fig {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.4vw, 40px);
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
 
-  /* --------------------------------------------- CONDITIONS grid */
-  .condition-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-  @media (min-width: 640px) { .condition-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; } }
-  .condition-card { display: flex; flex-direction: column; gap: 0.75rem; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-  .condition-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--brand); text-decoration: none; }
-  .condition-card h3 { color: var(--ink); font-size: 0.9rem; margin: 0; padding: 0 0.75rem 0.85rem; line-height: 1.25; }
-  @media (min-width: 640px) { .condition-card h3 { font-size: 1rem; padding: 0 0.85rem 1rem; } }
-  .condition-card:hover h3 { color: var(--brand); }
-  .thumb { aspect-ratio: 4 / 3; background: var(--surface-alt); overflow: hidden; }
-  .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-  .condition-card:hover .thumb img { transform: scale(1.05); }
+  .services-grid { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
+  .service-cell { display: flex; flex-direction: column; gap: 12px; }
+  .service-num { color: var(--muted); }
+  .service-cell h3 { margin: 0; font-size: clamp(20px, 2.6vw, 26px); }
+  .service-cell p { color: var(--body); font-size: 15px; line-height: 1.9; }
+  .service-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .service-list li {
+    padding: 10px 0; border-top: 1px solid var(--line-soft);
+    font-size: 14px; color: var(--body);
+  }
 
-  /* --------------------------------------------- SERVICES */
-  .services { background: var(--surface); }
-  .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-  .service-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-  .service-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); text-decoration: none; }
-  .thumb.wide { aspect-ratio: 16 / 9; }
-  .service-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
-  .service-body h3 { color: var(--brand); margin: 0; }
-  .service-body p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
-  .learn-more { color: var(--brand); font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+  .pathways-grid { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(min(255px, 100%), 1fr)); }
+  .pathway-col { background: var(--white); padding: 28px; border: 1px solid var(--line); }
+  .pathway-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .pathway-title {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.6vw, 28px);
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .pathway-list { list-style: none; padding: 0; margin: 0; }
+  .pathway-list li {
+    padding: 12px 0; border-top: 1px solid var(--line-soft);
+    font-size: 15px; color: var(--body);
+  }
+  .pathway-list li:first-child { border-top: 1px solid var(--line); }
+  .section-cta { margin-top: 40px; text-align: center; }
 
-  /* --------------------------------------------- DOCTORS */
-  .doctor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; justify-content: center; }
-  .doctor-card { text-decoration: none; color: inherit; text-align: center; display: flex; flex-direction: column; align-items: center; padding: 1.5rem; }
-  .doctor-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 0.75rem; border: 3px solid var(--brand-soft); }
-  .doctor-card h3 { color: var(--brand); margin-bottom: 0.3em; font-size: 1.05rem; }
-  .specialty { font-weight: 600; color: var(--ink); margin-bottom: 0.3em; font-size: 0.95rem; }
-  .creds { font-size: 0.8rem; color: var(--ink-muted); }
+  .facilities-grid { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
+  .facilities-grid > .photo-slot { padding: 24px; }
+  .location-facts { margin-top: 32px; }
+  .register-single { grid-template-columns: 1fr; padding-block: 24px; border-top: 1px solid var(--line); }
+  .register-single .register-rows > p { padding: 10px 0; font-size: 15px; }
+  .register-single strong {
+    color: var(--muted); font-weight: 500;
+    font-family: var(--font-body); font-size: 14px;
+    margin-inline-end: 8px;
+  }
 
-  /* --------------------------------------------- CONTACT STRIP */
-  .contact-strip { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .contact-inner { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center; }
-  @media (min-width: 700px) { .contact-inner { grid-template-columns: 1fr 1fr; } }
-  .contact-details { display: flex; flex-direction: column; gap: 0.5rem; }
-  .contact-item { display: inline-block; padding: 0.85em 1em; border: 1px solid var(--border); border-radius: var(--radius); color: var(--brand); text-decoration: none; }
-  .contact-item:hover { border-color: var(--brand); background: var(--brand-soft); }
+  .consultant-grid { display: grid; gap: var(--col-gap); grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .consultant-grid { grid-template-columns: 1.4fr 1fr; } }
+  .consultant-highlight h3 { font-size: clamp(24px, 3vw, 32px); margin: 0 0 8px; }
+  .consultant-highlight .eyebrow { display: block; margin-bottom: 16px; }
+  .consultant-lede { font-size: 16px; line-height: 1.9; color: var(--body); max-width: 55ch; }
+  .consultant-facts .register:first-child { border-top: 0; padding-top: 0; }
 
-  /* Home-page "Visit us" section: intro + map */
-  .home-map-head { text-align: center; max-width: 60ch; margin: 0 auto 1.25rem; }
-  .home-map-head h2 { font-size: clamp(1.3rem, 4vw, 2rem); margin-bottom: 0.3em; }
-  .home-map-head p { color: var(--ink-soft); font-size: 0.95rem; }
-  .home-map {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    line-height: 0;
+  .referral { background: var(--surface); padding-block: var(--section-y-last); }
+  .referral-inner {
+    display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center;
+  }
+  @media (min-width: 800px) { .referral-inner { grid-template-columns: 1.2fr 1fr; } }
+  .referral .eyebrow { display: block; margin-bottom: 12px; }
+  .referral-title { margin: 0 0 8px; font-size: clamp(24px, 3vw, 32px); }
+  .referral p { color: var(--body); max-width: 42ch; }
+  .referral-contact { display: flex; flex-direction: column; gap: 12px; }
+  .referral-phone, .referral-email {
+    display: block; padding: 18px 20px;
+    background: var(--white); border: 1px solid var(--line);
+    color: var(--accent); font-size: 16px; text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+  .referral-phone:hover, .referral-email:hover {
+    border-color: var(--accent); text-decoration: none;
   }
 </style>

@@ -1,0 +1,323 @@
+---
+/**
+ * Conditions & Procedures — Alimran Clinic (redesign Sep 2026).
+ * Structure per HANDOFF §4.3.
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { CONTACT } from "../../../consts";
+import { localizedHref, currentLocale } from "../../../lib/i18n";
+
+const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+
+// Three-pathway taxonomy — same 7 conditions per column as on the home page,
+// each linking to the treatment article (existing legacy pages for now).
+const pathways = [
+  {
+    title: "Brain",
+    tagline: "Neurosurgical & functional",
+    conditions: [
+      { name: "Brain tumour",         slug: "brain-tumor" },
+      { name: "Stroke",               slug: "stroke" },
+      { name: "Epilepsy & seizures",  slug: "epilepsy-seizures" },
+      { name: "Head injury",          slug: "head-injury" },
+      { name: "Bell's palsy",         slug: "bells-palsy" },
+      { name: "Trigeminal neuralgia", slug: "trigeminal-neuralgia" },
+      { name: "Hydrocephalus",        slug: "hydrocephalus" },
+    ],
+  },
+  {
+    title: "Spine",
+    tagline: "Surgical & minimally invasive",
+    conditions: [
+      { name: "Herniated disc",     slug: "herniated-disc" },
+      { name: "Sciatica",           slug: "sciatica" },
+      { name: "Scoliosis",          slug: "scoliosis" },
+      { name: "Spinal stenosis",    slug: "spinal-stenosis" },
+      { name: "Whiplash",           slug: "whiplash" },
+      { name: "Spinal cord injury", slug: "spinal-cord-injury" },
+      { name: "Kyphosis",           slug: "kyphosis" },
+    ],
+  },
+  {
+    title: "Pain",
+    tagline: "Interventional & rehabilitative",
+    conditions: [
+      { name: "Back pain",         slug: "back-pain" },
+      { name: "Neck pain",         slug: "neck-pain" },
+      { name: "Knee pain",         slug: "knee-pain" },
+      { name: "Frozen shoulder",   slug: "frozen-shoulder" },
+      { name: "Fibromyalgia",      slug: "fibromyalgia" },
+      { name: "Headaches",         slug: "headaches" },
+      { name: "Arthritis",         slug: "arthritis" },
+    ],
+  },
+];
+
+// Surgical & advanced procedures — 3 cards with photo slots
+const surgical = [
+  { title: "Endoscopic spine surgery",  desc: "Minimally invasive decompression for disc herniation, stenosis, and foraminal narrowing." },
+  { title: "Deep brain stimulation",    desc: "Stereotactic implantation for movement disorders and refractory pain." },
+  { title: "Radiosurgery & lesioning",  desc: "Precision lesioning for functional targets and tumour control." },
+];
+
+// Interventional pain — 12 procedures, two columns
+const interventional = [
+  "Regional nerve blocks",
+  "Radiofrequency ablation",
+  "Epidural steroid injection (interlaminar)",
+  "Epidural steroid injection (transforaminal)",
+  "Facet joint injection",
+  "Sacroiliac joint injection",
+  "Sympathetic ganglion blocks",
+  "Coeliac plexus block",
+  "Stellate ganglion block",
+  "Median nerve injection",
+  "Ultrasound-guided injections",
+  "Trigger point therapy",
+];
+---
+
+<BaseLayout
+  title="Conditions & Procedures — Alimran Clinic"
+  description="What Alimran Clinic assesses and treats: brain, spine, and pain pathways, plus surgical and interventional procedures."
+>
+  <!-- ─── Intro band ─────────────────────────────────────────── -->
+  <section class="intro section-tinted">
+    <div class="container intro-inner">
+      <span class="eyebrow">Conditions & Procedures</span>
+      <h1>What we assess, and how we treat it.</h1>
+      <p class="intro-lede">
+        The clinic groups referrals into three pathways. Each first appointment
+        includes a full neurological examination and a review of existing imaging;
+        a written plan is issued to the patient and the referring clinician.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Three pathway columns ──────────────────────────────── -->
+  <section class="pathways">
+    <div class="container">
+      <div class="pathways-grid">
+        {pathways.map((p) => (
+          <div class="pathway-col">
+            <header class="pathway-head">
+              <span class="eyebrow">Pathway</span>
+              <h2 class="pathway-title">{p.title}</h2>
+              <p class="pathway-tag">{p.tagline}</p>
+            </header>
+            <ul class="pathway-list">
+              {p.conditions.map((c) => (
+                <li>
+                  <a class="pathway-link" href={L(`/treatments/${c.slug}/`)}>
+                    <span>{c.name}</span>
+                    <span class="pathway-arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 01 Surgical & advanced procedures ──────────────────── -->
+  <section class="section" id="surgical">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Surgical & advanced procedures</h2>
+      </header>
+      <div class="surgical-grid">
+        {surgical.map((s) => (
+          <article class="surgical-card">
+            <div class="photo-slot photo-slot--4x3">
+              PROCEDURE PHOTO<br>4:3 · min 1200px wide
+            </div>
+            <div class="surgical-body">
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 02 Interventional pain register ────────────────────── -->
+  <section class="section section-tinted" id="interventional">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Interventional pain register</h2>
+      </header>
+      <ol class="interventional-list">
+        {interventional.map((name, i) => (
+          <li class="interventional-row">
+            <span class="interventional-num">{String(i + 1).padStart(2, "0")}</span>
+            <span class="interventional-name">{name}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─── Appointment band ───────────────────────────────────── -->
+  <section class="appointment">
+    <div class="container appointment-inner">
+      <div>
+        <span class="eyebrow">Book an appointment</span>
+        <h2 class="appointment-title">Speak to the secretary</h2>
+        <p>Direct scheduling; letters and imaging can be sent to the clinic email.</p>
+      </div>
+      <div class="appointment-cta">
+        <a class="btn btn-primary" href={callHref}>Call the secretary</a>
+        <a class="btn btn-secondary" href={`mailto:${CONTACT.email}`}>
+          <span dir="ltr">{CONTACT.email}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ─── Intro band ──────────────────────────────────────────── */
+  .intro { padding-block: var(--section-y); }
+  .intro-inner { max-width: 780px; }
+  .intro .eyebrow { display: block; margin-bottom: 20px; }
+  .intro h1 {
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.08;
+    margin: 0 0 24px;
+    max-width: 14ch;
+  }
+  .intro-lede {
+    font-size: clamp(16.5px, 1.9vw, 19px);
+    line-height: 1.6;
+    color: var(--body);
+    max-width: 60ch;
+    margin: 0;
+  }
+  html[dir="rtl"] .intro-lede { line-height: 1.9; }
+
+  /* ─── Pathways ────────────────────────────────────────────── */
+  .pathways { padding-block: var(--section-y); }
+  .pathways-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(min(255px, 100%), 1fr));
+  }
+  .pathway-col {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .pathway-head { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .pathway-head .eyebrow { display: block; margin-bottom: 6px; }
+  .pathway-title {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 32px);
+    color: var(--ink);
+    margin: 0 0 6px;
+    line-height: 1.1;
+  }
+  html[dir="rtl"] .pathway-title { font-weight: 700; }
+  .pathway-tag {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0;
+  }
+  .pathway-list { list-style: none; padding: 0; margin: 0; }
+  .pathway-list li { border-top: 1px solid var(--line-soft); }
+  .pathway-list li:first-child { border-top: 0; }
+  .pathway-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.15s ease;
+  }
+  .pathway-link:hover { color: var(--accent); text-decoration: none; }
+  .pathway-arrow { color: var(--muted); font-family: var(--font-mono); }
+  html[dir="rtl"] .pathway-arrow { transform: scaleX(-1); display: inline-block; }
+  .pathway-link:hover .pathway-arrow { color: var(--accent); }
+
+  /* ─── 01 Surgical cards ───────────────────────────────────── */
+  .surgical-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  }
+  .surgical-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+  }
+  .surgical-card .photo-slot { min-height: 200px; border: 0; border-bottom: 1px solid var(--line); }
+  .surgical-body { padding: 24px; }
+  .surgical-body h3 { margin: 0 0 8px; font-size: clamp(20px, 2.4vw, 24px); }
+  .surgical-body p { color: var(--body); font-size: 15px; line-height: 1.55; margin: 0; }
+  html[dir="rtl"] .surgical-body p { line-height: 1.9; }
+
+  /* ─── 02 Interventional register ─────────────────────────── */
+  .interventional-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  @media (min-width: 720px) {
+    .interventional-list { grid-template-columns: 1fr 1fr; gap: 1px; }
+  }
+  .interventional-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 18px 24px;
+    background: var(--white);
+    color: var(--ink);
+  }
+  .interventional-num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    min-width: 22px;
+  }
+  html[dir="rtl"] .interventional-num {
+    font-family: var(--font-body);
+    letter-spacing: 0;
+    font-size: 13px;
+  }
+  .interventional-name { font-size: 15px; }
+
+  /* ─── Appointment band ───────────────────────────────────── */
+  .appointment { background: var(--surface); padding-block: var(--section-y-last); }
+  .appointment-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  @media (min-width: 800px) {
+    .appointment-inner { grid-template-columns: 1.4fr 1fr; }
+  }
+  .appointment .eyebrow { display: block; margin-bottom: 12px; }
+  .appointment-title { margin: 0 0 8px; font-size: clamp(24px, 3vw, 32px); }
+  .appointment p { color: var(--body); max-width: 42ch; }
+  .appointment-cta { display: flex; flex-direction: column; gap: 12px; }
+  @media (min-width: 400px) { .appointment-cta { flex-direction: row; flex-wrap: wrap; } }
+</style>

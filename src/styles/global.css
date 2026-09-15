@@ -60,6 +60,27 @@ html[dir="rtl"] {
   --font-mono:      "IBM Plex Sans Arabic", system-ui, sans-serif;
 }
 
+/* ─── Legacy token aliases ───────────────────────────────────
+   Points old-code variable names at the new palette so pages we haven't
+   fully rebuilt (about, contact, blog, services, etc.) still render in
+   the correct colors. Every value maps to a real token above. When those
+   pages get rebuilt in the new language, delete their reference to the
+   legacy name; the alias here is safe to keep meanwhile. */
+:root {
+  --brand:       var(--accent);
+  --brand-dark:  var(--accent-hover);
+  --brand-soft:  var(--surface);
+  --surface-alt: var(--surface);
+  --ink-soft:    var(--body);
+  --ink-muted:   var(--muted);
+  --border:      var(--line);
+  --radius:      2px;
+  --radius-lg:   2px;
+  --shadow-sm:   none;
+  --shadow-md:   none;
+  --font-sans:   var(--font-body);
+}
+
 /* ─── Reset + base ────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 

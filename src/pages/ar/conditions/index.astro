@@ -1,0 +1,236 @@
+---
+/**
+ * Conditions & Procedures — Arabic. Same shape as en/conditions/index.astro.
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { CONTACT } from "../../../consts";
+import { localizedHref, currentLocale } from "../../../lib/i18n";
+
+const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+
+const pathways = [
+  {
+    title: "الدماغ",
+    tagline: "جراحية ووظيفية",
+    conditions: [
+      { name: "ورم الدماغ",           slug: "brain-tumor" },
+      { name: "السكتة الدماغية",       slug: "stroke" },
+      { name: "الصرع والنوبات",        slug: "epilepsy-seizures" },
+      { name: "إصابة الرأس",           slug: "head-injury" },
+      { name: "شلل بيل",              slug: "bells-palsy" },
+      { name: "ألم العصب الثلاثي",     slug: "trigeminal-neuralgia" },
+      { name: "استسقاء الدماغ",        slug: "hydrocephalus" },
+    ],
+  },
+  {
+    title: "العمود الفقري",
+    tagline: "جراحية ومحدودة التدخل",
+    conditions: [
+      { name: "الانزلاق الغضروفي",     slug: "herniated-disc" },
+      { name: "عرق النسا",             slug: "sciatica" },
+      { name: "الجنف",                slug: "scoliosis" },
+      { name: "تضيّق النخاع",          slug: "spinal-stenosis" },
+      { name: "إصابة العنق",           slug: "whiplash" },
+      { name: "إصابة النخاع الشوكي",   slug: "spinal-cord-injury" },
+      { name: "الحداب",               slug: "kyphosis" },
+    ],
+  },
+  {
+    title: "الألم",
+    tagline: "تداخلية وتأهيلية",
+    conditions: [
+      { name: "ألم الظهر",             slug: "back-pain" },
+      { name: "ألم الرقبة",            slug: "neck-pain" },
+      { name: "ألم الركبة",            slug: "knee-pain" },
+      { name: "الكتف المتجمدة",        slug: "frozen-shoulder" },
+      { name: "الألم العضلي الليفي",   slug: "fibromyalgia" },
+      { name: "الصداع",               slug: "headaches" },
+      { name: "التهاب المفاصل",        slug: "arthritis" },
+    ],
+  },
+];
+
+const surgical = [
+  { title: "جراحة العمود الفقري التنظيرية", desc: "إزالة الانضغاط بأقل قدر من التدخل للانزلاق الغضروفي والتضيّق." },
+  { title: "التحفيز العميق للدماغ",         desc: "زراعة توجيهية لعلاج اضطرابات الحركة والألم المقاوم." },
+  { title: "الجراحة الإشعاعية والاستئصال",   desc: "استئصال دقيق للأهداف الوظيفية والتحكم في الأورام." },
+];
+
+const interventional = [
+  "حصر الأعصاب الإقليمي",
+  "الاستئصال بالترددات الراديوية",
+  "حقن الكورتيزون فوق الجافية (بين الصفائح)",
+  "حقن الكورتيزون فوق الجافية (عبر الثقبة)",
+  "حقن المفاصل الوجيهية",
+  "حقن المفصل العجزي الحرقفي",
+  "حصر العقد الودية",
+  "حصر الضفيرة البطنية",
+  "حصر العقدة النجمية",
+  "حقن العصب المتوسط",
+  "الحقن الموجّه بالموجات فوق الصوتية",
+  "علاج نقاط الانطلاق",
+];
+---
+
+<BaseLayout
+  title="الحالات والإجراءات — مركز العمران"
+  description="ما يقيّمه مركز العمران ويعالجه: مسارات الدماغ والعمود الفقري والألم، إلى جانب الإجراءات الجراحية والتداخلية."
+>
+  <section class="intro section-tinted">
+    <div class="container intro-inner">
+      <span class="eyebrow">الحالات والإجراءات</span>
+      <h1>ما نُقيّمه، وكيف نعالجه.</h1>
+      <p class="intro-lede">
+        يقسم المركز الإحالات إلى ثلاثة مسارات علاجية. تتضمن كل زيارة أولى فحصاً عصبياً كاملاً
+        ومراجعة للصور الشعاعية المتوفرة، ثم يُصدر تقرير مكتوب للمريض وللطبيب المُحيل.
+      </p>
+    </div>
+  </section>
+
+  <section class="pathways">
+    <div class="container">
+      <div class="pathways-grid">
+        {pathways.map((p) => (
+          <div class="pathway-col">
+            <header class="pathway-head">
+              <span class="eyebrow">المسار</span>
+              <h2 class="pathway-title">{p.title}</h2>
+              <p class="pathway-tag">{p.tagline}</p>
+            </header>
+            <ul class="pathway-list">
+              {p.conditions.map((c) => (
+                <li>
+                  <a class="pathway-link" href={L(`/treatments/${c.slug}/`)}>
+                    <span>{c.name}</span>
+                    <span class="pathway-arrow" aria-hidden="true">←</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="surgical">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">٠١</span>
+        <h2 class="section-title">الإجراءات الجراحية والمتقدمة</h2>
+      </header>
+      <div class="surgical-grid">
+        {surgical.map((s) => (
+          <article class="surgical-card">
+            <div class="photo-slot photo-slot--4x3">
+              صورة الإجراء<br>٤:٣ · بعرض ١٢٠٠ بكسل على الأقل
+            </div>
+            <div class="surgical-body">
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tinted" id="interventional">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">٠٢</span>
+        <h2 class="section-title">سجل تداخلات الألم</h2>
+      </header>
+      <ol class="interventional-list">
+        {interventional.map((name, i) => (
+          <li class="interventional-row">
+            <span class="interventional-num">{String(i + 1).padStart(2, "٠")}</span>
+            <span class="interventional-name">{name}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="appointment">
+    <div class="container appointment-inner">
+      <div>
+        <span class="eyebrow">حجز موعد</span>
+        <h2 class="appointment-title">تواصل مع السكرتير</h2>
+        <p>حجز مباشر، ويمكن إرسال التقارير والصور على البريد الإلكتروني للمركز.</p>
+      </div>
+      <div class="appointment-cta">
+        <a class="btn btn-primary" href={callHref}>اتصل بالسكرتير</a>
+        <a class="btn btn-secondary" href={`mailto:${CONTACT.email}`}>
+          <span dir="ltr">{CONTACT.email}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro { padding-block: var(--section-y); }
+  .intro-inner { max-width: 780px; }
+  .intro .eyebrow { display: block; margin-bottom: 20px; }
+  .intro h1 {
+    font-size: clamp(30px, 5vw, 52px); line-height: 1.22;
+    margin: 0 0 24px; max-width: 16ch;
+  }
+  .intro-lede {
+    font-size: clamp(16.5px, 1.9vw, 19px); line-height: 1.9;
+    color: var(--body); max-width: 60ch; margin: 0;
+  }
+
+  .pathways { padding-block: var(--section-y); }
+  .pathways-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(255px, 100%), 1fr)); }
+  .pathway-col { background: var(--white); border: 1px solid var(--line); padding: 28px; display: flex; flex-direction: column; }
+  .pathway-head { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .pathway-head .eyebrow { display: block; margin-bottom: 6px; }
+  .pathway-title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); color: var(--ink); margin: 0 0 6px; line-height: 1.22; font-weight: 700; }
+  .pathway-tag { color: var(--muted); font-size: 13px; margin: 0; }
+  .pathway-list { list-style: none; padding: 0; margin: 0; }
+  .pathway-list li { border-top: 1px solid var(--line-soft); }
+  .pathway-list li:first-child { border-top: 0; }
+  .pathway-link {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 14px 0; color: var(--ink); text-decoration: none; font-size: 15px;
+    transition: color 0.15s ease;
+  }
+  .pathway-link:hover { color: var(--accent); text-decoration: none; }
+  .pathway-arrow { color: var(--muted); font-family: var(--font-body); }
+  .pathway-link:hover .pathway-arrow { color: var(--accent); }
+
+  .surgical-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+  .surgical-card { background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .surgical-card .photo-slot { min-height: 200px; border: 0; border-bottom: 1px solid var(--line); }
+  .surgical-body { padding: 24px; }
+  .surgical-body h3 { margin: 0 0 8px; font-size: clamp(20px, 2.4vw, 24px); }
+  .surgical-body p { color: var(--body); font-size: 15px; line-height: 1.9; margin: 0; }
+
+  .interventional-list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr; gap: 0;
+    background: var(--line); border: 1px solid var(--line);
+  }
+  @media (min-width: 720px) {
+    .interventional-list { grid-template-columns: 1fr 1fr; gap: 1px; }
+  }
+  .interventional-row {
+    display: flex; align-items: baseline; gap: 16px;
+    padding: 18px 24px; background: var(--white); color: var(--ink);
+  }
+  .interventional-num { font-family: var(--font-body); font-size: 13px; color: var(--muted); min-width: 24px; }
+  .interventional-name { font-size: 15px; }
+
+  .appointment { background: var(--surface); padding-block: var(--section-y-last); }
+  .appointment-inner { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
+  @media (min-width: 800px) { .appointment-inner { grid-template-columns: 1.4fr 1fr; } }
+  .appointment .eyebrow { display: block; margin-bottom: 12px; }
+  .appointment-title { margin: 0 0 8px; font-size: clamp(24px, 3vw, 32px); }
+  .appointment p { color: var(--body); max-width: 42ch; }
+  .appointment-cta { display: flex; flex-direction: column; gap: 12px; }
+  @media (min-width: 400px) { .appointment-cta { flex-direction: row; flex-wrap: wrap; } }
+</style>

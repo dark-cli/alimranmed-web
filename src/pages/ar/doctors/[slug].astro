@@ -1,12 +1,10 @@
 ---
+/**
+ * Consultant CV — Arabic. Same shape as en/doctors/[slug].astro.
+ */
 import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import DoctorProfile from "../../../components/DoctorProfile.astro";
-import TranslationBanner from "../../../components/TranslationBanner.astro";
-import { topicOf, pickForLocale, dictFor, localizedHref, currentLocale } from "../../../lib/i18n";
-
-const locale = currentLocale(Astro);
-const t = dictFor("ar");
+import { topicOf, pickForLocale } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
   const items = await getCollection("doctors");
@@ -17,33 +15,188 @@ export async function getStaticPaths() {
   }).filter(Boolean) as Array<{ params: { slug: string }; props: { entry: (typeof items)[number]; fallback: boolean } }>;
 }
 
-const { entry, fallback } = Astro.props;
+const { entry } = Astro.props;
 
-// If we're falling back to EN content, use EN labels — mixing AR chrome with
-// EN content is confusing. Only translate the labels when the content is truly AR.
-const labels = fallback ? undefined : {
-  back: `← ${t["nav.doctors"]}`,
-  memberships: "العضويات",
-  languages: "اللغات",
-  book: t["cta.callUs"],
-};
-const backHref = localizedHref("/doctors/", locale);
+const appointments = [
+  { period: "٢٠٠٦ — الآن", body: "استشاري جراحة الأعصاب، مستشفى الصدر التعليمي — البصرة." },
+  { period: "٢٠٢٢ — الآن", body: "المدير الإقليمي للعراق، جمعية الشرق الأوسط لجراحة الأعصاب التوجيهية والوظيفية." },
+  { period: "٢٠١٦ — الآن", body: "مشرف الأطباء الشباب في المجلس العربي لجراحة الأعصاب." },
+  { period: "عضو مجلس",   body: "الجمعية الشرق-أوسطية لجراحة الأعصاب التوجيهية والوظيفية." },
+  { period: "٢٠٠٠ — ٢٠٠٥", body: "التدريب العالي، المجلس الطبي العراقي، بغداد." },
+  { period: "١٩٩٩ — ٢٠٠٠", body: "طبيب مقيم أقدم، الجراحة العامة، مستشفى البصرة العام." },
+];
+
+const education = [
+  { period: "١٩٩٦", body: "بكالوريوس الطب والجراحة (MBChB) — كلية طب البصرة، العراق." },
+  { period: "٢٠٠٥", body: "زمالة المجلس العراقي للاختصاصات الطبية — جراحة الأعصاب." },
+  { period: "٢٠١٦", body: "درجة استشاري." },
+  { period: "٢٠١٧", body: "زمالة في التخدير وطب الألم — مستشفى جامعة سيول الوطنية." },
+];
+
+const memberships = [
+  { year: "٢٠٢٢", name: "الجمعية الأوروبية لجراحة الأعصاب التوجيهية والوظيفية" },
+  { year: "٢٠٢٠", name: "منظمة السكتة الدماغية الأوروبية" },
+  { year: "٢٠٢٠", name: "منظمة السكتة الدماغية العالمية" },
+  { year: "٢٠٢٠", name: "الجمعية الدولية للنخاع الشوكي" },
+  { year: "٢٠١٦", name: "جمعية أمريكا الشمالية للعمود الفقري" },
+  { year: "٢٠١٥", name: "الجمعية الدولية لدراسة الألم" },
+  { year: "٢٠١١", name: "AOSpine" },
+  { year: "٢٠١١", name: "ATLS & ACLS" },
+  { year: "٢٠١٠", name: "الجمعية الأمريكية لجراحي الأعصاب" },
+];
+
+const publications = [
+  { period: "٢٠١٥", body: "نتائج إصابات الرأس بالطلق الناري لدى الأطفال. Int. J. Medicine & Pharmaceutical Sciences, المجلد ٣، العدد ٣." },
+  { period: "٢٠١٤", body: "إصابات الطلق الناري المدنية في البصرة. Int. J. Medicine & Pharmaceutical Sciences, المجلد ٤، العدد ٦." },
+  { period: "٢٠١٤", body: "دواعي وموانع استخدام مصرف فوق الجافية في جراحة العمود الفقري القطني. Int. J. Medicine & Pharmaceutical Sciences, المجلد ٤، العدد ٦." },
+  { period: "٢٠١٤", body: "فعالية حقن البوتوكس حول أعصاب فروة الرأس للوقاية من الصداع المزمن. Int. J. Medicine & Pharmaceutical Sciences, المجلد ٤، العدد ٥." },
+  { period: "٢٠١٣", body: "ارتفاع تعداد كريات الدم البيضاء كمنبئ للإصابة المتعددة الشديدة. مجلة ذي قار الطبية، المجلد ٧، العدد ٢." },
+];
+
+const conferences = [
+  { period: "٢٠١٦", body: "المؤتمر العالمي السادس عشر للألم — IASP، يوكوهاما، اليابان. بحث حول الترددات الراديوية النبضية للصداع المزمن." },
+  { period: "٢٠١٦", body: "المؤتمر الدولي السنوي للعمود الفقري — دبي. بحث حول استخدام الكيس الرملي لمنع تسرب السائل الدماغي بعد جراحة العمود الفقري." },
+  { period: "٢٠١٥", body: "المؤتمر الدولي لإصابات الرأس والرقبة الطارئة — البصرة. بحث حول إصابات الرأس بالطلق الناري لدى الأطفال." },
+  { period: "٢٠١٣", body: "مؤتمر بصرة الدولي الثالث (بجامعة كامبريدج) — البصرة. بحث حول التحفيز النخاعي." },
+  { period: "٢٠١٣", body: "مؤتمر الناصرية الطبي الدولي الثاني. بحث حول تعداد الكريات البيضاء كمنبئ للإصابة المتعددة." },
+  { period: "٢٠١٣", body: "مؤتمر الطب الطارئ الدولي الثاني — البصرة. عرض حول إصابات الطلق الناري." },
+  { period: "٢٠١٢", body: "ورشة جراحة العمود الفقري بالحد الأدنى، DePuy — تسوغ، سويسرا." },
+  { period: "٢٠١٠", body: "ورش جمعية الشرق الأوسط للتطور والابتكار، بإشراف كلية طب جامعة بوسطن — بيروت، لبنان." },
+  { period: "٢٠٠٩", body: "الدورة الدولية الثانية المتقدمة لتقنية Destandau للجراحة التنظيرية للعمود الفقري — شانديغار، الهند." },
+];
 ---
 
-<BaseLayout title={`${entry.data.fullName} — مركز العمران الطبي`} description={entry.data.description}>
-  {fallback ? (
-    <div dir="ltr" lang="en" class="fallback-wrap">
-      <div class="container banner-wrap">
-        <TranslationBanner fromLocale="en" toLocale="ar" />
+<BaseLayout
+  title={`${entry.data.fullName} — مركز العمران`}
+  description={entry.data.description}
+>
+  <section class="cv-head">
+    <div class="container cv-head-inner">
+      <div class="cv-head-copy">
+        <span class="eyebrow">الاستشاري الرئيسي · السيرة العلمية</span>
+        <h1>{entry.data.fullName}</h1>
+        <p class="cv-role">{entry.data.specialty}</p>
+        <ul class="cv-chips" aria-label="المؤهلات">
+          {entry.data.titles.map((t: string) => <li><span dir="ltr">{t}</span></li>)}
+        </ul>
+        <p class="cv-desc">{entry.data.description}</p>
       </div>
-      <DoctorProfile entry={entry} labels={undefined} backHref={backHref} />
+      <div class="cv-portrait photo-slot photo-slot--4x5">
+        صورة شخصية<br>
+        في المركز أو المستشفى<br>
+        ٤:٥ · بعرض ١٢٠٠ بكسل على الأقل
+      </div>
     </div>
-  ) : (
-    <DoctorProfile entry={entry} labels={labels} backHref={backHref} />
-  )}
+  </section>
+
+  <div class="container cv-registers">
+    <div class="register">
+      <p class="register-label">المناصب</p>
+      <div class="register-rows">
+        {appointments.map((r) => (
+          <div class="register-row">
+            <span class="row-period">{r.period}</span>
+            <p class="row-body">{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="register">
+      <p class="register-label">التعليم</p>
+      <div class="register-rows">
+        {education.map((r) => (
+          <div class="register-row">
+            <span class="row-period">{r.period}</span>
+            <p class="row-body">{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="register">
+      <p class="register-label">العضويات</p>
+      <div class="register-rows register-members">
+        {memberships.map((m) => (
+          <div class="member-row">
+            <span class="member-name">{m.name}</span>
+            <span class="member-year">{m.year}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="register">
+      <p class="register-label">المنشورات</p>
+      <div class="register-rows">
+        {publications.map((r) => (
+          <div class="register-row">
+            <span class="row-period">{r.period}</span>
+            <p class="row-body">{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="register">
+      <p class="register-label">المؤتمرات</p>
+      <div class="register-rows">
+        {conferences.map((r) => (
+          <div class="register-row">
+            <span class="row-period">{r.period}</span>
+            <p class="row-body">{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
 </BaseLayout>
 
 <style>
-  .banner-wrap { padding-top: 1.25rem; }
-  @media (min-width: 640px) { .banner-wrap { padding-top: 2rem; } }
+  .cv-head { padding-block: var(--hero-y) 0; }
+  .cv-head-inner {
+    display: grid; grid-template-columns: 1fr; gap: var(--col-gap);
+    align-items: start; container-type: inline-size;
+  }
+  @media (min-width: 900px) { .cv-head-inner { grid-template-columns: 1fr 1fr; } }
+  .cv-head-copy .eyebrow { display: block; margin-bottom: 20px; }
+  .cv-head-copy h1 {
+    font-size: clamp(28px, 9cqw, 54px); line-height: 1.22;
+    margin: 0 0 12px;
+  }
+  .cv-role { font-size: 17px; color: var(--accent); margin: 0 0 20px; font-weight: 500; }
+  .cv-chips { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .cv-chips li {
+    padding: 6px 12px; border: 1px solid var(--line);
+    font-family: var(--font-body); font-size: 13px; color: var(--body);
+  }
+  .cv-desc { color: var(--body); font-size: 16px; line-height: 1.9; max-width: 52ch; margin: 0; }
+  .cv-portrait { order: -1; min-height: 360px; }
+  @media (min-width: 900px) { .cv-portrait { order: 0; min-height: 460px; } }
+
+  .cv-registers { padding-block: clamp(32px, 4vw, 56px) var(--section-y-last); }
+  .register-row {
+    display: grid; grid-template-columns: minmax(120px, 160px) 1fr;
+    gap: 24px; padding-block: 16px; border-top: 1px solid var(--line-soft);
+    align-items: baseline;
+  }
+  .register-row:first-child { border-top: 0; padding-top: 0; }
+  .row-period {
+    font-family: var(--font-body); font-size: 14px; color: var(--muted);
+  }
+  .row-body { color: var(--body); font-size: 16px; line-height: 1.9; margin: 0; }
+
+  @media (max-width: 640px) {
+    .register-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  .register-members { display: flex; flex-direction: column; }
+  .member-row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding-block: 14px; border-top: 1px solid var(--line-soft);
+    font-size: 15px; color: var(--body);
+  }
+  .member-row:first-child { border-top: 0; padding-top: 0; }
+  .member-name { flex: 1 1 auto; }
+  .member-year { font-family: var(--font-body); font-size: 14px; color: var(--muted); flex-shrink: 0; }
 </style>

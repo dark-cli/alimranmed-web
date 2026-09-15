@@ -1,10 +1,24 @@
 ---
-import { getCollection } from "astro:content";
+/**
+ * Treatment article — Alimran Clinic (redesign Sep 2026).
+ * Layout per HANDOFF §4.4 + ARTICLE-TEMPLATE-HANDOFF.md.
+ *
+ * Works for ALL articles from existing frontmatter alone:
+ *   Title       ← frontmatter title
+ *   Standfirst  ← description (fallback: body paragraph 1 later)
+ *   Pathway     ← category (mapped)
+ *   Reviewed by ← constant
+ *   Reading time ← computed from word count
+ *   TOC         ← generated from h2 in rendered body (only if ≥ 2)
+ */
+import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import EntryPage from "../../../components/EntryPage.astro";
 import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { CONTACT } from "../../../consts";
 
 const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
 
 export async function getStaticPaths() {
   const items = await getCollection("treatments");
@@ -14,12 +28,207 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+
+// Pathway map — ARTICLE-TEMPLATE-HANDOFF §2
+const PATHWAY: Record<string, { label: string; pathway: string }> = {
+  brain: { label: "Brain", pathway: "Brain — neurosurgical" },
+  spine: { label: "Spine", pathway: "Spine — surgical" },
+  pain:  { label: "Pain",  pathway: "Pain — interventional" },
+};
+const cat = ((entry.data as { category?: string }).category || "pain").toLowerCase();
+const pathway = PATHWAY[cat] || PATHWAY.pain;
+
+// Reading time
+const bodyText = (entry.body || "").replace(/!\[[^\]]*]\([^)]+\)/g, "");
+const wordCount = bodyText.split(/\s+/).filter(Boolean).length;
+const readingMin = Math.max(1, Math.round(wordCount / 200));
+const readingLabel = `${readingMin} min read`;
+
+// Last reviewed
+const publishedAt: unknown = (entry.data as { publishedAt?: unknown }).publishedAt;
+const lastReviewed = publishedAt
+  ? new Date(publishedAt as string).toLocaleDateString("en-US", { month: "long", year: "numeric" })
+  : null;
+
+// TOC from h2 only
+const h2s = (headings || []).filter((h) => h.depth === 2);
+const showToc = h2s.length >= 2;
+
+const standfirst = entry.data.description || "";
 ---
 
-<BaseLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  image={entry.data.image}
->
-  <EntryPage entry={entry} backHref={localizedHref("/treatments/", locale)} backLabel="What We Treat" />
+<BaseLayout title={`${entry.data.title} — Alimran Clinic`} description={standfirst}>
+  <div class="container article-wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href={L("/")}>Home</a>
+      <span aria-hidden="true">›</span>
+      <a href={L("/conditions/")}>Conditions treated</a>
+      <span aria-hidden="true">›</span>
+      <span class="crumb-current">{pathway.label}</span>
+    </nav>
+
+    <header class="article-head">
+      <div class="head-copy">
+        <h1>{entry.data.title}</h1>
+        {standfirst && <p class="standfirst">{standfirst}</p>}
+      </div>
+
+      <aside class="meta-rail" aria-label="Article details">
+        <div class="meta-row">
+          <span class="eyebrow">Pathway</span>
+          <p>{pathway.pathway}</p>
+        </div>
+        <div class="meta-row">
+          <span class="eyebrow">Reviewed by</span>
+          <p>Hussein Imran Mousa, consultant neurosurgeon</p>
+        </div>
+        <div class="meta-row">
+          <span class="eyebrow">Reading time</span>
+          <p>{readingLabel}</p>
+        </div>
+        {lastReviewed && (
+          <div class="meta-row">
+            <span class="eyebrow">Last reviewed</span>
+            <p>{lastReviewed}</p>
+          </div>
+        )}
+      </aside>
+    </header>
+
+    <div class="article-grid">
+      {showToc && (
+        <aside class="article-aside" aria-label="On this page">
+          <div class="toc">
+            <span class="eyebrow">On this page</span>
+            <ol>
+              {h2s.map((h) => (
+                <li><a href={`#${h.slug}`}>{h.text}</a></li>
+              ))}
+            </ol>
+          </div>
+          <div class="aside-call">
+            <span class="eyebrow">Discuss this</span>
+            <p>Speak to the secretary about a consultation for this condition.</p>
+            <a class="btn btn-primary btn-sm" href={callHref}>Call the secretary</a>
+          </div>
+        </aside>
+      )}
+
+      <article class="article-body prose">
+        <Content />
+
+        <section class="article-cta" aria-label="Book a consultation">
+          <span class="eyebrow">Next step</span>
+          <h2>Book a consultation</h2>
+          <p>The secretary schedules first appointments during clinic hours.</p>
+          <a class="btn btn-primary" href={callHref}>Call the secretary</a>
+        </section>
+
+        <p class="disclaimer">
+          This page provides general information about {entry.data.title.toLowerCase()} and is not a substitute
+          for individual medical assessment. If your symptoms are severe or worsening, contact a
+          clinician promptly.
+        </p>
+      </article>
+    </div>
+  </div>
 </BaseLayout>
+
+<style>
+  .article-wrap {
+    container-type: inline-size;
+    padding-block: clamp(28px, 4vw, 56px) var(--section-y-last);
+  }
+  .crumbs {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--muted); letter-spacing: 0.06em;
+    margin-bottom: clamp(20px, 3vw, 32px);
+  }
+  html[dir="rtl"] .crumbs { font-family: var(--font-body); font-size: 14px; letter-spacing: 0; }
+  .crumbs a { color: var(--muted); text-decoration: none; }
+  .crumbs a:hover { color: var(--accent); text-decoration: none; }
+  .crumb-current { color: var(--ink); }
+
+  .article-head {
+    display: grid; grid-template-columns: 1fr; gap: var(--col-gap);
+    padding-bottom: clamp(28px, 3.5vw, 48px);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: clamp(28px, 3.5vw, 48px);
+  }
+  @container (min-width: 820px) {
+    .article-head { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+  }
+
+  .head-copy h1 {
+    font-size: clamp(29px, 7cqw, 54px); line-height: 1.08;
+    margin: 0 0 20px; max-width: 18ch;
+  }
+  html[dir="rtl"] .head-copy h1 { line-height: 1.22; }
+
+  .standfirst {
+    font-size: clamp(16.5px, 1.9vw, 19px); line-height: 1.6;
+    color: var(--body); max-width: 52ch; margin: 0;
+  }
+  html[dir="rtl"] .standfirst { line-height: 1.9; }
+
+  .meta-rail {
+    display: flex; flex-direction: column; gap: 20px;
+    padding-inline-start: clamp(0px, 3vw, 32px);
+    border-inline-start: 1px solid var(--line);
+  }
+  @container (max-width: 819px) {
+    .meta-rail { padding: 24px 0 0; border-inline-start: 0; border-top: 1px solid var(--line); }
+  }
+  .meta-row .eyebrow { display: block; margin-bottom: 6px; }
+  .meta-row p { margin: 0; font-size: 15px; color: var(--ink); line-height: 1.5; }
+
+  .article-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--col-gap); }
+  @container (min-width: 820px) {
+    .article-grid { grid-template-columns: minmax(0, 240px) minmax(0, 1fr); }
+  }
+
+  .article-aside { display: none; }
+  @container (min-width: 820px) {
+    .article-aside {
+      display: block; position: sticky;
+      top: calc(var(--header-h) + 24px); align-self: start;
+    }
+  }
+
+  .toc { border-top: 1px solid var(--line); padding-top: 20px; margin-bottom: 32px; }
+  .toc .eyebrow { display: block; margin-bottom: 12px; }
+  .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 10px 0; border-top: 1px solid var(--line-soft); }
+  .toc li:first-child { border-top: 0; padding-top: 0; }
+  .toc li a { display: block; font-size: 14px; color: var(--body); text-decoration: none; line-height: 1.4; }
+  .toc li a::before {
+    content: counter(toc, decimal-leading-zero) " · ";
+    font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
+  }
+  html[dir="rtl"] .toc li a::before { font-family: var(--font-body); letter-spacing: 0; }
+  .toc li a:hover { color: var(--accent); text-decoration: none; }
+
+  .aside-call { padding: 20px; background: var(--surface); border: 1px solid var(--line); }
+  .aside-call .eyebrow { display: block; margin-bottom: 8px; }
+  .aside-call p { font-size: 14px; color: var(--body); margin: 0 0 12px; line-height: 1.5; }
+  .aside-call .btn { width: 100%; }
+
+  .article-body { max-width: 740px; color: var(--ink); }
+
+  .article-cta {
+    margin-top: clamp(40px, 5vw, 64px);
+    padding: clamp(24px, 3vw, 40px);
+    background: var(--surface); border: 1px solid var(--line);
+  }
+  .article-cta .eyebrow { display: block; margin-bottom: 8px; }
+  .article-cta h2 { margin: 0 0 8px; font-size: clamp(22px, 2.6vw, 28px); }
+  .article-cta p { color: var(--body); margin: 0 0 16px; }
+
+  .disclaimer {
+    margin-top: 32px; padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13px; line-height: 1.6; color: var(--muted);
+  }
+</style>
