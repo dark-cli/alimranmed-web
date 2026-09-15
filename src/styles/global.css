@@ -284,24 +284,24 @@ html[dir="rtl"] .eyebrow {
 }
 .btn-sm { min-height: 40px; padding: 0 18px; font-size: 14px; }
 
-/* Diagonal-hatch photo placeholder — HANDOFF §1.7 */
+/* Diagonal-hatch photo placeholder — HANDOFF §1.7 (values from prototype) */
 .photo-slot {
   position: relative;
-  background:
-    repeating-linear-gradient(45deg, transparent 0 6px, var(--line) 6px 7px),
-    var(--surface);
+  background-image: repeating-linear-gradient(135deg, #eef2f4 0 10px, #f7fafb 10px 20px);
   border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
   text-align: center;
-  padding: 24px;
+  padding: 24px 28px;
   min-height: 240px;
 }
+html[dir="rtl"] .photo-slot { font-family: var(--font-body); letter-spacing: 0; font-size: 12px; line-height: 1.7; }
 html[dir="rtl"] .photo-slot {
   font-family: var(--font-body);
   letter-spacing: 0.02em;
