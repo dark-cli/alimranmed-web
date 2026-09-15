@@ -1,137 +1,208 @@
 ---
+/**
+ * Footer — Alimran Clinic (redesigned Sep 2026).
+ *
+ * Ink background (#101c22), footer-text tokens. No shadows, no radii, no
+ * Font Awesome. Wide-grid column layout that collapses to a stack on
+ * narrow screens.
+ */
 import { CONTACT } from "../consts";
-import { currentLocale, dictFor } from "../lib/i18n";
+import { currentLocale, dictFor, localizedHref, alternateHref } from "../lib/i18n";
 
 const locale = currentLocale(Astro);
-const dict = dictFor(locale);
+const t = dictFor(locale);
+const currentPath = Astro.url.pathname;
 const year = new Date().getFullYear();
 
-const brandTitle = locale === "ar" ? "مركز العمران الطبي" : "Alimran Medical Center";
-const brandDesc = locale === "ar"
-  ? "أمراض الأعصاب والاضطرابات العضلية الهيكلية — البصرة، العراق."
-  : "Neurology & Musculoskeletal Disorders — Basra, Iraq.";
+const L = (href: string) => localizedHref(href, locale);
+const otherLocale = locale === "en" ? "ar" : "en";
+const altHref = alternateHref(currentPath, otherLocale);
+const altLabel = otherLocale === "ar" ? "عربي" : "English";
 
-const socialLinks = [
-  { icon: "fa-facebook-f", label: "Facebook", url: CONTACT.social.facebook },
-  { icon: "fa-instagram", label: "Instagram", url: CONTACT.social.instagram },
-  { icon: "fa-youtube", label: "YouTube", url: CONTACT.social.youtube },
-  { icon: "fa-telegram", label: "Telegram", url: CONTACT.social.telegram },
-  { icon: "fa-tiktok", label: "TikTok", url: CONTACT.social.tiktok },
+const brand = locale === "ar" ? "مركز العمران الطبي" : "Alimran Clinic";
+const brandSub = locale === "ar"
+  ? "جراحة الأعصاب وطب الألم — البصرة"
+  : "Neurosurgery & Pain Medicine · Basra";
+
+// Column headings
+const h = {
+  navigate: locale === "ar" ? "التصفح"       : "Navigate",
+  contact:  locale === "ar" ? "اتصل بنا"      : "Contact",
+  more:     locale === "ar" ? "المزيد"        : "More",
+};
+
+// Primary nav mirrored from Header + a few "more" links to keep every page
+// reachable somewhere (About, Contact, blog etc.) without cluttering the
+// top bar.
+const navLinks = [
+  { label: locale === "ar" ? "الرئيسية"         : "Home",                     href: "/" },
+  { label: locale === "ar" ? "السيرة العلمية"    : "Consultant CV",            href: "/doctors/hussein-imran-mousa/" },
+  { label: locale === "ar" ? "ما نعالج"          : "Conditions & Procedures",  href: "/conditions/" },
+];
+const moreLinks = [
+  { label: locale === "ar" ? "الحالات — الفهرس" : "Treatments A–Z",           href: "/treatments/" },
+  { label: locale === "ar" ? "الخدمات"          : "Services",                 href: "/services/" },
+  { label: locale === "ar" ? "من نحن"           : "About",                    href: "/about/" },
+  { label: locale === "ar" ? "المدونة"          : "Blog",                     href: "/blog/" },
+  { label: locale === "ar" ? "تواصل"            : "Contact",                  href: "/contact/" },
 ];
 ---
 
 <footer class="site-footer">
-  <div class="container footer-grid">
+  <div class="container footer-inner">
+    <!-- Brand + summary -->
     <div class="footer-brand">
-      <h3>{brandTitle}</h3>
-      <p>{brandDesc}</p>
+      <div class="footer-brand-mark">
+        <span class="footer-brand-rule" aria-hidden="true"></span>
+        <div>
+          <div class="footer-brand-name">{brand}</div>
+          <div class="footer-brand-sub">{brandSub}</div>
+        </div>
+      </div>
+      <p class="footer-brand-desc">
+        {locale === "ar"
+          ? "رعاية استشارية متخصصة في جراحة الأعصاب وطب الألم في البصرة."
+          : "Consultant-led neurosurgical, pain, and rehabilitation care in Basra."}
+      </p>
     </div>
 
-    <div>
-      <h4>{dict["footer.contactUs"]}</h4>
+    <div class="footer-col">
+      <h3 class="footer-col-head">{h.navigate}</h3>
+      <ul class="footer-list">
+        {navLinks.map((l) => (
+          <li><a href={L(l.href)}>{l.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-col-head">{h.more}</h3>
+      <ul class="footer-list">
+        {moreLinks.map((l) => (
+          <li><a href={L(l.href)}>{l.label}</a></li>
+        ))}
+        <li><a href={altHref}>{altLabel}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-col-head">{h.contact}</h3>
       <ul class="footer-list">
         {CONTACT.phones.map((p) => (
-          <li><a href={`tel:${p.replace(/\s/g, "")}`}><bdi>{p}</bdi></a></li>
-        ))}
-        <li><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>{dict["footer.locations"]}</h4>
-      <ul class="footer-list">
-        <li><a href={CONTACT.mapsUrl} target="_blank" rel="noopener">{CONTACT.addresses[locale]}</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>{dict["footer.followUs"]}</h4>
-      <ul class="footer-list social">
-        {socialLinks.map((link) => (
           <li>
-            <a href={link.url} target="_blank" rel="noopener" title={link.label} aria-label={link.label}>
-              <i class={`fa-brands ${link.icon}`}></i>
-              <span class="sr-only">{link.label}</span>
+            <a href={`tel:${p.replace(/\s/g, "")}`}>
+              <span dir="ltr">{p}</span>
             </a>
           </li>
         ))}
+        <li><a href={`mailto:${CONTACT.email}`}><span dir="ltr">{CONTACT.email}</span></a></li>
+        <li class="footer-address">{CONTACT.addresses[locale]}</li>
       </ul>
     </div>
   </div>
 
-  <div class="footer-bottom container">
-    <span>&copy; {year} {dict["footer.copyright"]}</span>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© {year} {brand}. {locale === "ar" ? "جميع الحقوق محفوظة." : "All rights reserved."}</span>
+    </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: 3rem 0 1rem;
-    color: var(--ink-soft);
-    margin-top: 4rem;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    margin-top: var(--section-y-last);
   }
-  .footer-grid {
+  .footer-inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 40px;
+    padding-block: clamp(48px, 6vw, 72px);
   }
-  .footer-brand h3 { color: var(--brand); margin-bottom: 0.3em; font-size: 1.15rem; }
-  .footer-grid h4 {
-    color: var(--ink);
-    font-size: 0.9rem;
+  .footer-brand { grid-column: 1 / -1; }
+  @media (min-width: 900px) {
+    .footer-inner { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; align-items: start; }
+    .footer-brand { grid-column: auto; }
+  }
+
+  .footer-brand-mark {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .footer-brand-rule { width: 3px; background: var(--accent); flex-shrink: 0; }
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  html[dir="rtl"] .footer-brand-name { font-weight: 700; font-size: 22px; letter-spacing: 0; }
+  .footer-brand-sub {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.75rem;
+    color: var(--footer-label);
+    margin-top: 4px;
+    line-height: 1.4;
   }
+  html[dir="rtl"] .footer-brand-sub {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .footer-brand-desc {
+    color: var(--footer-muted);
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 40ch;
+    margin: 0;
+  }
+
+  .footer-col-head {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--footer-label);
+    margin: 0 0 16px;
+  }
+  html[dir="rtl"] .footer-col-head {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 13px;
+  }
+
   .footer-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+    gap: 10px;
   }
-  .footer-list a { color: var(--ink-soft); }
-  .footer-list a:hover { color: var(--brand); }
-  .footer-list.social {
-    flex-direction: row;
-    gap: 1rem;
+  .footer-list a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.15s ease;
   }
-  .footer-list.social a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--brand-soft);
-    transition: all 0.3s ease;
-    font-size: 1rem;
-  }
-  .footer-list.social a:hover {
-    background: var(--brand);
-    color: white;
-    transform: translateY(-2px);
-  }
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-  }
+  .footer-list a:hover { color: var(--white); text-decoration: underline; }
+  .footer-address { color: var(--footer-muted); font-size: 14px; line-height: 1.55; }
+
   .footer-bottom {
-    margin-top: 2rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.85rem;
-    color: var(--ink-muted);
+    border-top: 1px solid var(--footer-rule);
+  }
+  .footer-bottom-inner {
+    padding-block: 20px;
+    font-size: 13px;
+    color: var(--footer-muted);
   }
 </style>

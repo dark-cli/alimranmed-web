@@ -1,474 +1,413 @@
 ---
-import { Image } from "astro:assets";
+/**
+ * Home — Alimran Clinic (redesigned Sep 2026).
+ * Structure per HANDOFF §4.1.
+ */
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
 import { CONTACT } from "../../consts";
-import { topicOf, isLocale, localizedHref, currentLocale } from "../../lib/i18n";
+import { localizedHref, currentLocale } from "../../lib/i18n";
 
 const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+const cvHref = L("/doctors/hussein-imran-mousa/");
+const conditionsHref = L("/conditions/");
 
-const doctors = (await getCollection("doctors"))
-  .filter((e) => isLocale(e.id, "en"))
-  .sort((a, b) => a.data.order - b.data.order);
-
-// Intro video (from the old homepage — first YouTube embed on alimranmed.com/).
-// The <lite-youtube>-style facade below only loads YouTube JS when clicked, so
-// the page stays fast for visitors who don't press play.
-const INTRO_VIDEO_ID = "m53F8E6VKFA";
-
-// Featured conditions — 8 tiles matching the old carousel, but as a static
-// responsive grid (no autoplay slider, no jarring motion).
-const FEATURED_CONDITIONS = [
-  { title: "Back pain",         path: "/treatments/back-pain/",     image: "/images/home/Back-Pain.jpg" },
-  { title: "Neck pain",         path: "/treatments/neck-pain/",     image: "/images/home/SNHS-neck-pain-1.jpg" },
-  { title: "Frozen shoulder",   path: "/treatments/frozen-shoulder/", image: "/images/home/1-1.jpg" },
-  { title: "Sports injuries",   path: "/treatments/sports-injuries/", image: "/images/home/Can-Osteopathy-help-you-with-your-sport-injury-1.jpg" },
-  { title: "Fibromyalgia",      path: "/treatments/fibromyalgia/",  image: "/images/home/Fibromyalgia.png" },
-  { title: "Head injury",       path: "/treatments/head-injury/",   image: "/images/home/Global-brain-injury-recovery-e1577492333798.jpg" },
-  { title: "Arthritis of the hip", path: "/treatments/arthritis-of-the-hip/", image: "/images/home/1-4.jpg" },
-  { title: "Heel spur",         path: "/treatments/heel-spur/",     image: "/images/home/frozen-shoulder51.jpg" },
+const stats = [
+  { fig: "5,000+", label: "Consultations" },
+  { fig: "25",     label: "Years experience" },
+  { fig: "4",      label: "Clinical pathways" },
+  { fig: "6",      label: "Days a week" },
 ];
 
-// Featured services (top-level landing pages). Paths will be localized when rendering.
-const FEATURED_SERVICES = [
-  { path: "/services/chiropractic/",         title: "Chiropractic",     image: "/images/home/DSC_0054-1-1024x684.jpg",              desc: "SPINMED and Sigma systems for precise spinal alignment." },
-  { path: "/services/brain-stimulation/",    title: "Brain Stimulation", image: "/images/home/tms-treatment-768.jpg",               desc: "TMS and tDCS for stroke, migraine, depression, and more." },
-  { path: "/services/radiofrequency/",       title: "Radiofrequency",   image: "/images/home/g4-radiofrequency-generator-161964_1b.jpg", desc: "Minimally invasive nerve neurotomy for chronic pain." },
-  { path: "/services/steroid-injection/",    title: "Steroid Injection", image: "/images/home/injection-knee-cropped-1024x689-1.jpeg", desc: "Image-guided joint and spinal injections." },
+const services = [
+  { num: "01", title: "Neurosurgery",   desc: "Brain tumours, spinal decompression, functional and stereotactic neurosurgery.", procedures: ["Craniotomy", "Microdiscectomy", "Laminectomy", "Stereotactic biopsy", "CSF diversion"] },
+  { num: "02", title: "Interventional pain", desc: "Image-guided procedures for chronic back, neck and joint pain.", procedures: ["Radiofrequency ablation", "Epidural steroid injection", "Nerve blocks", "Facet joint injection", "Trigger point therapy"] },
+  { num: "03", title: "Neuromodulation", desc: "Non-invasive brain stimulation for stroke, migraine and mood disorders.", procedures: ["TMS", "tDCS", "Peripheral stimulation", "Vagal stimulation", "Motor cortex mapping"] },
+  { num: "04", title: "Recovery & therapy", desc: "Consultant-supervised rehabilitation, physiotherapy and regenerative care.", procedures: ["Physiotherapy", "Chiropractic", "Regenerative medicine", "Fitness training", "Ozone therapy"] },
+];
+
+const pathways = [
+  { title: "Brain", items: ["Brain tumour", "Stroke", "Epilepsy", "Head injury", "Bell's palsy", "Trigeminal neuralgia", "Hydrocephalus"] },
+  { title: "Spine", items: ["Herniated disc", "Sciatica", "Scoliosis", "Spinal stenosis", "Whiplash", "Spinal cord injury", "Kyphosis"] },
+  { title: "Pain",  items: ["Back pain", "Neck pain", "Knee pain", "Frozen shoulder", "Fibromyalgia", "Headaches", "Arthritis"] },
 ];
 ---
 
-<BaseLayout>
-  <!-- ============================================================ HERO -->
+<BaseLayout
+  title="Alimran Clinic — Neurosurgery & Pain Medicine in Basra"
+  description="Consultant-led neurosurgical, pain, and rehabilitation care in Basra, Iraq. Led by Hussein Imran Mousa, consultant neurosurgeon."
+>
+  <!-- ─── Hero ───────────────────────────────────────────────── -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
-        <span class="eyebrow">Alimran Medical Center · Basra, Iraq</span>
-        <h1>Specialised care for neurology & musculoskeletal disorders.</h1>
-        <p class="lede">
-          Consultant-led diagnosis and treatment across chiropractic, rehabilitation,
-          pain management, brain stimulation, physiotherapy, and neurosurgery — with
-          the latest evidence-based techniques.
+        <span class="eyebrow">Alimran Clinic · Basra, Iraq</span>
+        <h1>Consultant neurosurgery, pain medicine and recovery — under one roof.</h1>
+        <p class="hero-lede">
+          A single referral pathway from diagnosis to rehabilitation, led by a
+          consultant with 25 years of experience across brain, spine and pain.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href={localizedHref("/contact/", locale)}>Call Us</a>
-          <a class="btn btn-ghost" href={localizedHref("/doctors/", locale)}>Meet the doctors</a>
+          <a class="btn btn-primary" href={callHref}>Call the secretary</a>
+          <a class="btn btn-secondary" href={conditionsHref}>See what we treat</a>
+        </div>
+
+        <!-- Doctor credit strip (small — the site belongs to the clinic) -->
+        <div class="doctor-credit">
+          <div class="doctor-avatar photo-slot photo-slot--4x5" aria-hidden="true">
+            AVATAR<br>52 × 52
+          </div>
+          <p>
+            Led by <a class="link-quiet" href={cvHref}>Hussein Imran Mousa</a>,
+            consultant neurosurgeon &nbsp;·&nbsp; MBChB · FIBMS
+          </p>
         </div>
       </div>
 
-      <!-- Video facade: clicking the poster loads the real YouTube iframe.
-           Until then, we ship just an image + play button (no third-party JS). -->
-      <div class="hero-video">
-        <button class="video-facade" data-video-id={INTRO_VIDEO_ID} aria-label="Play introduction video">
-          <img
-            src={`https://i.ytimg.com/vi/${INTRO_VIDEO_ID}/hqdefault.jpg`}
-            alt="Alimran Medical Center introduction video"
-            loading="eager"
-            fetchpriority="high"
-            decoding="sync"
-            width="480"
-            height="270"
-          />
-          <span class="play-btn" aria-hidden="true">
-            <svg viewBox="0 0 68 48" width="68" height="48">
-              <path d="M67 8.5c-.8-3-3.1-5.3-6.1-6.1C55.5.9 34 .9 34 .9s-21.5 0-26.9 1.5c-3 .8-5.3 3.1-6.1 6.1C-.5 13.9-.5 24-.5 24s0 10.1 1.5 15.5c.8 3 3.1 5.3 6.1 6.1 5.4 1.5 26.9 1.5 26.9 1.5s21.5 0 26.9-1.5c3-.8 5.3-3.1 6.1-6.1C68.5 34.1 68.5 24 68.5 24s0-10.1-1.5-15.5z" fill="#e63b34"/>
-              <path d="M27 34l17.5-10L27 14z" fill="#fff"/>
-            </svg>
-          </span>
-        </button>
-        <p class="video-caption">See how we work</p>
+      <div class="hero-photo photo-slot photo-slot--landscape">
+        CLINIC PHOTOGRAPH<br>
+        exterior, reception or treatment room<br>
+        landscape · min 1600px wide
       </div>
     </div>
   </section>
 
-  <!-- ============================================== FEATURED CONDITIONS -->
-  <section class="conditions">
+  <!-- ─── Stat band ──────────────────────────────────────────── -->
+  <section class="stats" aria-label="At a glance">
+    <div class="container">
+      <div class="grid-hairline grid-hairline--surface stat-grid">
+        {stats.map((s) => (
+          <div class="stat-cell">
+            <div class="stat-fig">{s.fig}</div>
+            <div class="eyebrow">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 01 Care under one roof ─────────────────────────────── -->
+  <section class="section" id="care">
     <div class="container">
       <header class="section-head">
-        <h2>Common conditions we treat</h2>
-        <p>A snapshot — see the full A–Z index in <a href={localizedHref("/treatments/", locale)}>What We Treat</a>.</p>
+        <span class="section-num">01</span>
+        <h2 class="section-title">Care under one roof</h2>
       </header>
-      <div class="condition-grid">
-        {FEATURED_CONDITIONS.map((c) => (
-          <a class="condition-card" href={localizedHref(c.path, locale)}>
-            <div class="thumb">
-              <img src={c.image} alt={c.title} loading="lazy" decoding="async" width="200" height="150" />
-            </div>
-            <h3>{c.title}</h3>
-          </a>
+      <div class="grid-hairline services-grid">
+        {services.map((s) => (
+          <article class="service-cell">
+            <span class="service-num eyebrow">{s.num}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+            <ul class="service-list">
+              {s.procedures.map((p) => <li>{p}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 02 Conditions we treat ─────────────────────────────── -->
+  <section class="section section-tinted" id="conditions">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Conditions we treat</h2>
+      </header>
+      <div class="pathways-grid">
+        {pathways.map((p) => (
+          <div class="pathway-col">
+            <h3 class="pathway-head">
+              <span class="eyebrow">Pathway</span>
+              <span class="pathway-title">{p.title}</span>
+            </h3>
+            <ul class="pathway-list">
+              {p.items.map((c) => <li>{c}</li>)}
+            </ul>
+          </div>
         ))}
       </div>
       <div class="section-cta">
-        <a class="btn btn-ghost" href={localizedHref("/treatments/", locale)}>View all conditions →</a>
+        <a class="btn btn-secondary" href={conditionsHref}>All conditions & procedures →</a>
       </div>
     </div>
   </section>
 
-  <!-- ==================================================== SERVICES -->
-  <section class="services">
+  <!-- ─── 03 Inside the clinic ───────────────────────────────── -->
+  <section class="section" id="inside">
     <div class="container">
       <header class="section-head">
-        <h2>Featured services</h2>
-        <p>Every treatment offered under one roof, delivered by consultant-led teams.</p>
+        <span class="section-num">03</span>
+        <h2 class="section-title">Inside the clinic</h2>
       </header>
-      <div class="service-grid">
-        {FEATURED_SERVICES.map((s) => (
-          <a class="service-card" href={localizedHref(s.path, locale)}>
-            <div class="thumb wide">
-              <img src={s.image} alt={s.title} loading="lazy" decoding="async" width="500" height="280" />
-            </div>
-            <div class="service-body">
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-              <span class="learn-more">Explore →</span>
-            </div>
-          </a>
-        ))}
+      <div class="grid-hairline facilities-grid">
+        <div class="photo-slot photo-slot--4x3">RECEPTION<br>landscape · min 1600px wide</div>
+        <div class="photo-slot photo-slot--4x3">CONSULTING ROOM<br>landscape · min 1600px wide</div>
+        <div class="photo-slot photo-slot--4x3">PROCEDURE ROOM<br>landscape · min 1600px wide</div>
+        <div class="photo-slot photo-slot--4x3">THERAPY GYM<br>landscape · min 1600px wide</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ==================================================== DOCTORS -->
-  {doctors.length > 0 && (
-    <section class="doctors-section">
-      <div class="container">
-        <header class="section-head">
-          <h2>Our doctors</h2>
-        </header>
-        <div class="doctor-grid">
-          {doctors.map((d) => (
-            <a class="doctor-card card" href={localizedHref(`/doctors/${topicOf(d.id)}/`, locale)}>
-              {d.data.photo && <img class="doctor-photo" src={d.data.photo} alt={d.data.fullName} loading="lazy" decoding="async" width="100" height="100" />}
-              <h3>{d.data.fullName || d.data.title}</h3>
-              {d.data.specialty && <p class="specialty">{d.data.specialty}</p>}
-              {d.data.titles.length > 0 && (
-                <p class="creds">{d.data.titles.join(" · ")}</p>
-              )}
-            </a>
-          ))}
+      <div class="location-facts">
+        <div class="register register-single">
+          <div class="register-rows">
+            <p><strong>Location</strong> — {CONTACT.addresses.en}</p>
+            <p><strong>Hours</strong> — Sat–Thu 09:00–18:00, Fri 14:00–18:00</p>
+            <p><strong>Directions</strong> — <a href={CONTACT.mapsUrl} target="_blank" rel="noopener">Open in Google Maps →</a></p>
+          </div>
         </div>
       </div>
-    </section>
-  )}
-
-  <!-- ==================================================== VISIT US MAP -->
-  <section class="contact-strip">
-    <div class="container home-map-head">
-      <h2>Visit us</h2>
-      <p>{CONTACT.addresses.en}</p>
-    </div>
-    <div class="container home-map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.29801709611!2d47.834783515126176!3d30.512611081714454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf65ac49b64c2ccf!2zMzDCsDMwJzQ1LjQiTiA0N8KwNTAnMTMuMSJF!5e0!3m2!1sen!2siq!4v1637681705351!5m2!1sen!2siq"
-        width="100%"
-        height="280"
-        style="border: 0; border-radius: var(--radius-lg);"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Alimran Medical Center location in Basra, Iraq"
-      ></iframe>
     </div>
   </section>
 
-  <script is:inline>
-    // YouTube facade — swap the poster button for a real iframe on click.
-    // No third-party JS runs until the visitor actually presses play.
-    // Re-binds on each View Transitions nav so the facade works if visitors
-    // navigate away and back to the homepage.
-    (function () {
-      function bindVideoFacades() {
-        document.querySelectorAll(".video-facade").forEach((btn) => {
-          if (btn.dataset.bound) return;
-          btn.dataset.bound = "1";
-          btn.addEventListener("click", () => {
-            const id = btn.dataset.videoId;
-            const iframe = document.createElement("iframe");
-            iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-            iframe.title = "Alimran Medical Center — introduction";
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.setAttribute("allowfullscreen", "");
-            iframe.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;";
-            btn.replaceWith(iframe);
-          });
-        });
-      }
-      bindVideoFacades();
-      document.addEventListener("astro:page-load", bindVideoFacades);
-    })();
-  </script>
+  <!-- ─── 04 The lead consultant ─────────────────────────────── -->
+  <section class="section section-tinted" id="consultant">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="section-title">The lead consultant</h2>
+      </header>
+      <div class="consultant-grid">
+        <div class="consultant-highlight">
+          <h3>Hussein Imran Mousa</h3>
+          <p class="eyebrow">Consultant neurosurgeon · Basra Teaching Hospital · Alimran Clinic</p>
+          <p class="consultant-lede">
+            Fellow of the Iraqi Board of Medical Specialisations (Neurosurgery), the American
+            Association of Neurological Surgeons, and the International Association of Non-invasive
+            and Advanced Spine Surgery. Iraq director for the Middle East Stereotactic and
+            Functional Neurosurgery Society.
+          </p>
+          <p><a class="link-quiet" href={cvHref}>Read the full CV →</a></p>
+        </div>
+        <div class="consultant-facts">
+          <div class="register">
+            <p class="register-label">Since</p>
+            <div class="register-rows">
+              <p>2006 — Consultant Neurosurgeon</p>
+            </div>
+          </div>
+          <div class="register">
+            <p class="register-label">Fellowships</p>
+            <div class="register-rows">
+              <p>FIBMS (Neurosurgery)</p>
+              <p>FIAANS</p>
+              <p>FIISSP · FINASS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Referral band ──────────────────────────────────────── -->
+  <section class="referral">
+    <div class="container referral-inner">
+      <div>
+        <span class="eyebrow">For referring clinicians</span>
+        <h2 class="referral-title">Refer a patient</h2>
+        <p>Direct line to the secretary for scheduling; imaging and letters can be sent to the clinic email.</p>
+      </div>
+      <div class="referral-contact">
+        {CONTACT.phones.map((p) => (
+          <a class="referral-phone" href={`tel:${p.replace(/\s/g, "")}`}>
+            <span dir="ltr">{p}</span>
+          </a>
+        ))}
+        <a class="referral-email" href={`mailto:${CONTACT.email}`}>
+          <span dir="ltr">{CONTACT.email}</span>
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
-</script>
 
 <style>
-  /* --------------------------------------------------- HERO */
-  .hero {
-    padding: 2rem 0 1.5rem;
-    background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
-  }
+  /* ─── Hero ────────────────────────────────────────────────── */
+  .hero { padding-block: var(--hero-y); }
   .hero-inner {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-items: center;
+    gap: var(--col-gap);
+    align-items: start;
+    container-type: inline-size;
   }
-  @media (min-width: 900px) {
-    .hero { padding: 3.5rem 0 3rem; }
-    .hero-inner { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  @media (min-width: 980px) {
+    .hero-inner { grid-template-columns: 1fr 1fr; align-items: center; }
   }
-  .eyebrow {
-    display: inline-block;
-    color: var(--brand);
-    font-weight: 600;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 0.6rem;
-  }
-  @media (min-width: 900px) {
-    .eyebrow { font-size: 0.85rem; margin-bottom: 1rem; }
-  }
+
+  .hero-copy .eyebrow { display: block; margin-bottom: 20px; }
   .hero-copy h1 {
-    max-width: 20ch;
-    font-size: clamp(1.4rem, 5.5vw, 2.75rem);
-    line-height: 1.15;
-    margin-bottom: 0.75em;
+    font-size: clamp(30px, 7.6cqw, 58px);
+    line-height: 1.06;
+    margin: 0 0 24px;
+    max-width: 14ch;
   }
-  .hero-copy .lede {
-    font-size: 0.95rem;
-    color: var(--ink-soft);
-    max-width: 60ch;
-    margin-bottom: 1.25rem;
-    line-height: 1.5;
+  .hero-lede {
+    font-size: clamp(16.5px, 1.9vw, 19px);
+    line-height: 1.6;
+    color: var(--body);
+    max-width: 52ch;
+    margin-bottom: 32px;
   }
-  @media (min-width: 900px) {
-    .hero-copy .lede { font-size: 1.1rem; margin-bottom: 1.5rem; }
-  }
-  .hero-cta { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-  .hero-cta .btn {
-    padding: 0.65em 1.1em;
-    font-size: 0.95rem;
-    flex: 1 1 auto;
-    min-width: 140px;
-  }
-  @media (min-width: 480px) {
-    .hero-cta .btn { flex: 0 0 auto; padding: 0.7em 1.4em; }
-  }
+  html[dir="rtl"] .hero-lede { line-height: 1.9; }
 
-  /* Video facade */
-  .hero-video {
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+
+  .doctor-credit {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
     align-items: center;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
   }
-  .video-facade {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
+  .doctor-avatar {
+    width: 52px;
+    height: 52px;
+    min-height: 0;
     padding: 0;
-    background: #000;
-    border: 0;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: var(--shadow-md);
-    display: block;
+    aspect-ratio: 1;
+    font-size: 9px;
+    flex-shrink: 0;
   }
-  .video-facade img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease, opacity 0.2s ease;
-  }
-  .video-facade:hover img { transform: scale(1.03); opacity: 0.85; }
-  .play-btn {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-  }
-  .play-btn svg {
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
-    transition: transform 0.2s ease;
-  }
-  .video-facade:hover .play-btn svg { transform: scale(1.1); }
-  .video-caption {
-    color: var(--ink-muted);
-    font-size: 0.9rem;
+  .doctor-credit p {
+    font-size: 14px;
+    color: var(--body);
     margin: 0;
   }
 
-  /* ------------------------------------- SHARED SECTION HELPERS */
-  .conditions, .services, .doctors-section, .contact-strip { padding: 2.25rem 0; }
-  @media (min-width: 900px) {
-    .conditions, .services, .doctors-section, .contact-strip { padding: 4rem 0; }
+  .hero-photo {
+    /* Photo comes first on mobile */
+    order: -1;
+    min-height: 320px;
   }
-  .section-head {
-    text-align: center;
-    max-width: 60ch;
-    margin: 0 auto 1.5rem;
-  }
-  .section-head h2 { font-size: clamp(1.3rem, 4vw, 2rem); margin-bottom: 0.3em; }
-  .section-head p { color: var(--ink-soft); font-size: 0.95rem; }
-  .section-cta { text-align: center; margin-top: 1.5rem; }
-  @media (min-width: 900px) {
-    .section-head { margin-bottom: 2rem; }
-    .section-head p { font-size: 1rem; }
-    .section-cta { margin-top: 2rem; }
+  @media (min-width: 980px) {
+    .hero-photo { order: 0; min-height: 460px; }
   }
 
-  /* --------------------------------------------- CONDITIONS grid */
-  .condition-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+  /* ─── Stat band ───────────────────────────────────────────── */
+  .stats { padding-block: 0; }
+  .stat-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr));
   }
-  @media (min-width: 640px) {
-    .condition-grid {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-    }
+  .stat-cell { text-align: start; }
+  .stat-fig {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.4vw, 40px);
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 10px;
   }
-  .condition-card {
+  html[dir="rtl"] .stat-fig { font-weight: 700; }
+
+  /* ─── Services (01) ───────────────────────────────────────── */
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  }
+  .service-cell { display: flex; flex-direction: column; gap: 12px; }
+  .service-num { color: var(--muted); }
+  .service-cell h3 { margin: 0; font-size: clamp(20px, 2.6vw, 26px); }
+  .service-cell p { color: var(--body); font-size: 15px; line-height: 1.55; }
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    text-decoration: none;
-    color: inherit;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    gap: 0;
   }
-  .condition-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--brand);
-    text-decoration: none;
+  .service-list li {
+    padding: 10px 0;
+    border-top: 1px solid var(--line-soft);
+    font-size: 14px;
+    color: var(--body);
   }
-  .condition-card h3 {
+
+  /* ─── Pathways (02) ───────────────────────────────────────── */
+  .pathways-grid {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(255px, 100%), 1fr));
+  }
+  .pathway-col { background: var(--white); padding: 28px; border: 1px solid var(--line); }
+  .pathway-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .pathway-title {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.6vw, 28px);
     color: var(--ink);
-    font-size: 0.9rem;
-    margin: 0;
-    padding: 0 0.75rem 0.85rem;
-    line-height: 1.25;
   }
-  @media (min-width: 640px) {
-    .condition-card h3 { font-size: 1rem; padding: 0 0.85rem 1rem; }
+  html[dir="rtl"] .pathway-title { font-weight: 700; }
+  .pathway-list { list-style: none; padding: 0; margin: 0; }
+  .pathway-list li {
+    padding: 12px 0;
+    border-top: 1px solid var(--line-soft);
+    font-size: 15px;
+    color: var(--body);
   }
-  .condition-card:hover h3 { color: var(--brand); }
-  .thumb {
-    aspect-ratio: 4 / 3;
-    background: var(--surface-alt);
-    overflow: hidden;
-  }
-  .thumb img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  .condition-card:hover .thumb img { transform: scale(1.05); }
+  .pathway-list li:first-child { border-top: 1px solid var(--line); }
+  .section-cta { margin-top: 40px; text-align: center; }
 
-  /* --------------------------------------------- SERVICES */
-  .services { background: var(--surface); }
-  .service-grid {
+  /* ─── Facilities (03) ─────────────────────────────────────── */
+  .facilities-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  }
+  .facilities-grid > .photo-slot { padding: 24px; }
+  .location-facts { margin-top: 32px; }
+  .register-single { grid-template-columns: 1fr; padding-block: 24px; border-top: 1px solid var(--line); }
+  .register-single .register-rows > p { padding: 10px 0; font-size: 15px; }
+  .register-single strong { color: var(--muted); font-weight: 500; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; margin-inline-end: 8px; }
+  html[dir="rtl"] .register-single strong { font-family: var(--font-body); letter-spacing: 0; text-transform: none; font-size: 14px; }
+
+  /* ─── Consultant highlight (04) ───────────────────────────── */
+  .consultant-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.25rem;
+    gap: var(--col-gap);
+    grid-template-columns: 1fr;
   }
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  @media (min-width: 900px) {
+    .consultant-grid { grid-template-columns: 1.4fr 1fr; }
   }
-  .service-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    text-decoration: none;
+  .consultant-highlight h3 {
+    font-size: clamp(24px, 3vw, 32px);
+    margin: 0 0 8px;
   }
-  .thumb.wide { aspect-ratio: 16 / 9; }
-  .service-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
-  .service-body h3 { color: var(--brand); margin: 0; }
-  .service-body p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
-  .learn-more { color: var(--brand); font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+  .consultant-highlight .eyebrow { display: block; margin-bottom: 16px; }
+  .consultant-lede { font-size: 16px; line-height: 1.6; color: var(--body); max-width: 55ch; }
+  .consultant-facts .register:first-child { border-top: 0; padding-top: 0; }
 
-  /* --------------------------------------------- DOCTORS */
-  .doctor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.25rem;
-    justify-content: center;
-  }
-  .doctor-card {
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem;
-  }
-  .doctor-card:hover { text-decoration: none; }
-  .doctor-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 0.75rem;
-    border: 3px solid var(--brand-soft);
-  }
-  .doctor-card h3 { color: var(--brand); margin-bottom: 0.3em; font-size: 1.05rem; }
-  .specialty { font-weight: 600; color: var(--ink); margin-bottom: 0.3em; font-size: 0.95rem; }
-  .creds { font-size: 0.8rem; color: var(--ink-muted); }
-
-  /* --------------------------------------------- CONTACT STRIP */
-  .contact-strip {
+  /* ─── Referral band ───────────────────────────────────────── */
+  .referral {
     background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    padding-block: var(--section-y-last);
   }
-  .contact-inner {
+  .referral-inner {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 32px;
     align-items: center;
   }
-  @media (min-width: 700px) {
-    .contact-inner { grid-template-columns: 1fr 1fr; }
+  @media (min-width: 800px) {
+    .referral-inner { grid-template-columns: 1.2fr 1fr; }
   }
-  .contact-details {
+  .referral .eyebrow { display: block; margin-bottom: 12px; }
+  .referral-title { margin: 0 0 8px; font-size: clamp(24px, 3vw, 32px); }
+  .referral p { color: var(--body); max-width: 42ch; }
+  .referral-contact {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 12px;
   }
-  .contact-item {
-    display: inline-block;
-    padding: 0.85em 1em;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    color: var(--brand);
+  .referral-phone, .referral-email {
+    display: block;
+    padding: 18px 20px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--accent);
+    font-size: 16px;
     text-decoration: none;
+    transition: border-color 0.15s ease;
   }
-  .contact-item:hover { border-color: var(--brand); background: var(--brand-soft); }
-
-  /* Home-page "Visit us" section: intro + map */
-  .home-map-head { text-align: center; max-width: 60ch; margin: 0 auto 1.25rem; }
-  .home-map-head h2 { font-size: clamp(1.3rem, 4vw, 2rem); margin-bottom: 0.3em; }
-  .home-map-head p { color: var(--ink-soft); font-size: 0.95rem; }
-  .home-map {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    line-height: 0;
+  .referral-phone:hover, .referral-email:hover {
+    border-color: var(--accent);
+    text-decoration: none;
   }
 </style>

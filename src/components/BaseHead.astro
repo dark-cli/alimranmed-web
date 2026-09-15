@@ -24,7 +24,6 @@ const alternateURL = new URL(alternatePath, Astro.site);
 // Non-production builds (beta, staging, previews) should be hidden from
 // search engines. Default to PRODUCTION so that if the env var is missing
 // for any reason we never accidentally noindex the live site.
-// Only explicitly-known non-production branches flip the flag.
 const cfBranch = process.env.CF_PAGES_BRANCH || "";
 const NON_PROD_BRANCHES = new Set(["beta", "staging", "preview", "dev"]);
 const isProduction = !NON_PROD_BRANCHES.has(cfBranch);
@@ -77,26 +76,7 @@ const businessSchema = {
 ---
 
 <script is:inline>
-  // Restore stored theme before body paints to avoid a flash.
-  // Runs on initial page load AND after every View Transitions swap so
-  // navigating between pages doesn't drop the theme back to light.
-  function applyStoredTheme() {
-    var t = null;
-    try { t = localStorage.getItem("theme"); } catch (e) {}
-    if (!t) {
-      t = "light";
-    }
-    if (t === "dark") {
-      document.documentElement.setAttribute("data-theme", t);
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-    }
-  }
-  applyStoredTheme();
-  document.addEventListener("astro:after-swap", applyStoredTheme);
-
   // Mark embedded contexts so overscroll containment CSS can opt out.
-  // (Portal-mode integration will build on this — see docs/PORTAL.md.)
   if (window.self !== window.top) {
     document.documentElement.classList.add("is-embedded");
   }
@@ -105,17 +85,16 @@ const businessSchema = {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="stylesheet" href="/fonts/fontawesome/fontawesome.css" />
 <meta name="generator" content={Astro.generator} />
 
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="author" content="Alimran Medical Center" />
+<meta name="author" content="Alimran Clinic" />
 <meta name="robots" content={robotsContent} />
 <link rel="canonical" href={canonicalURL} />
 
-<!-- Language alternates for Google (each page tells search engines about its EN + AR variants) -->
+<!-- Language alternates -->
 <link rel="alternate" hreflang={locale}          href={canonicalURL} />
 <link rel="alternate" hreflang={otherLocale}     href={alternateURL} />
 <link rel="alternate" hreflang="x-default"       href={locale === "en" ? canonicalURL : alternateURL} />
@@ -136,14 +115,6 @@ const businessSchema = {
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.site)} />
-
-<!-- Preload LCP image (hero video poster) -->
-<link
-  rel="preload"
-  as="image"
-  href="https://i.ytimg.com/vi/m53F8E6VKFA/hqdefault.jpg"
-  fetchpriority="high"
-/>
 
 <!-- Structured data -->
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />

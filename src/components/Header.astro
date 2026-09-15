@@ -1,171 +1,141 @@
 ---
 /**
- * Header — plain HTML/CSS/JS, no third-party nav library.
- * Same pattern that shipped and worked in kaleem-web:
- *   - Desktop: horizontal nav, CSS :hover reveals mega-menu panels
- *   - Mobile:  burger opens a fixed slide-in drawer + dim scrim.
- *              Close by tapping the X, the scrim, or a nav link.
+ * Header — Alimran Clinic (redesigned Sep 2026).
+ *
+ * Layout (HANDOFF §4):
+ *   Masthead (Alimran Clinic + subheading, vertical accent rule)
+ *   Nav (3 items only): Home · Consultant CV · Conditions & Procedures
+ *   Language toggle (عربي / English)
+ *   Call the secretary — primary button
+ *
+ * Mobile (< 860px): burger opens the same links as a drawer.
+ * No dark-mode toggle. No mega-menu. No dropdowns.
  */
-import { HEADER_NAV, navLabel } from "../data/header-nav.ts";
-import ThemeToggle from "./ThemeToggle.astro";
-import LanguageSwitcher from "./LanguageSwitcher.astro";
 import { CONTACT } from "../consts";
-import { currentLocale, dictFor, localizedHref } from "../lib/i18n";
+import { currentLocale, dictFor, localizedHref, alternateHref } from "../lib/i18n";
 
 const locale = currentLocale(Astro);
 const t = dictFor(locale);
 const currentPath = Astro.url.pathname;
 
-// href helper: turn a canonical (EN) href into the locale-scoped one
+// Localised href helper
 const L = (href: string) => localizedHref(href, locale);
 
-// Check if on home page (no back button shown)
-const isHome = currentPath === "/en/" || currentPath === "/ar/" || currentPath === "/";
+// Nav items — kept intentionally short. Other pages (About, Contact, blog,
+// full treatments A–Z) are reachable via the footer, not the header.
+type NavItem = { label: string; labelAr: string; href: string };
+const NAV: NavItem[] = [
+  { label: "Home",                    labelAr: "الرئيسية",     href: "/" },
+  { label: "Consultant CV",           labelAr: "السيرة العلمية", href: "/doctors/hussein-imran-mousa/" },
+  { label: "Conditions & Procedures", labelAr: "ما نعالج",      href: "/conditions/" },
+];
 
-// Active if the current URL is (a) an exact match for a leaf nav item
-// (like Home = "/"), or (b) nested under a section (like "/services/foo/"
-// under Services). Check against the ORIGINAL href — not the localized one —
-// so the Home check works identically in EN and AR.
 const isActive = (href: string) => {
   const target = L(href);
-  if (href === "/") return currentPath === target;  // Home = exact match only
+  if (href === "/") return currentPath === target;
   return currentPath === target || currentPath.startsWith(target);
 };
+
+// Language toggle target (path swap only — content mirroring)
+const otherLocale = locale === "en" ? "ar" : "en";
+const altHref = alternateHref(currentPath, otherLocale);
+const altLabel = otherLocale === "ar" ? "عربي" : "English";
+
+// Primary call number (dial the first configured number)
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+
+// Masthead copy — matches the design spec, not a page title.
+const brand = locale === "ar" ? "مركز العمران الطبي" : "Alimran Clinic";
+const brandSub = locale === "ar"
+  ? "جراحة الأعصاب وطب الألم — البصرة"
+  : "Neurosurgery & Pain Medicine · Basra";
+
+// Call button label
+const callLabel = locale === "ar" ? "اتصل بالسكرتير" : "Call the secretary";
+const menuLabel = locale === "ar" ? "القائمة" : "Menu";
+const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
 ---
 
 <header class="site-header">
-  <!-- Header chrome is always LTR (logo left, actions right) regardless of
-       document direction. Only the nav LINKS inside get RTL order in AR. -->
-  <div class="container header-row" dir="ltr">
-    <!-- Back button: iOS-style (chevron + "Back" text), mobile-visible only. -->
-    <button id="header-back-btn" class="header-back-btn is-hidden" aria-label={t["common.back"] || "Back"} type="button">
-      <svg class="chev-back" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="15 18 9 12 15 6" />
-      </svg>
-      <span class="back-label">{t["common.back"] || "Back"}</span>
-    </button>
-
-    <a class="logo" class:list={["logo", { "is-home": isHome }]} href={L("/")} aria-label="Alimran Medical Center">
-      <span class="logo-mark" aria-hidden="true">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="15" fill="var(--brand)" />
-          <path d="M16 8v16M8 16h16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
-        </svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-name">Alimran</span>
-        <span class="logo-sub">Medical Center</span>
+  <div class="container header-row">
+    <!-- Masthead: vertical accent rule + name + subheading -->
+    <a class="masthead" href={L("/")} aria-label={brand}>
+      <span class="masthead-rule" aria-hidden="true"></span>
+      <span class="masthead-text">
+        <span class="masthead-name">{brand}</span>
+        <span class="masthead-sub">{brandSub}</span>
       </span>
     </a>
 
-    <!-- Desktop primary nav (hidden on mobile via CSS) -->
+    <!-- Desktop nav (≥ 860px). Mobile uses the drawer below. -->
     <nav class="primary-nav" aria-label="Primary">
-      <ul>
-        {HEADER_NAV.map((item) => (
-          <li class:list={["nav-item", { active: isActive(item.href), "has-mega": !!item.columns }]}>
-            <a class="nav-link" href={L(item.href)}>
-              {navLabel(item, locale)}
-              {item.columns && (
-                <svg class="chev" viewBox="0 0 20 20" width="10" height="10" fill="currentColor" aria-hidden="true">
-                  <path d="M5 8l5 5 5-5H5z" />
-                </svg>
-              )}
-            </a>
-            {item.columns && (
-              <div class="mega" role="menu">
-                <div class="mega-inner">
-                  {item.columns.map((col) => (
-                    <div class="mega-col">
-                      {col.href
-                        ? <h4><a href={L(col.href)}>{navLabel(col, locale)}</a></h4>
-                        : <h4>{navLabel(col, locale)}</h4>}
-                      <ul>
-                        {col.items.map((sub) => (
-                          <li><a href={L(sub.href)}>{navLabel(sub, locale)}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
+      {NAV.map((item) => (
+        <a
+          class:list={["nav-link", { active: isActive(item.href) }]}
+          href={L(item.href)}
+        >
+          {locale === "ar" ? item.labelAr : item.label}
+        </a>
+      ))}
     </nav>
 
     <div class="header-actions">
-      <ThemeToggle />
-      <LanguageSwitcher />
-      <button id="menu-toggle" class="icon-btn burger" aria-label={t["common.menu"]} type="button">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-          <line x1="4" y1="7"  x2="20" y2="7"  />
-          <line x1="4" y1="12" x2="20" y2="12" />
-          <line x1="4" y1="17" x2="20" y2="17" />
-        </svg>
+      <a class="lang-switch" href={altHref} aria-label={altLabel} title={altLabel}>
+        {altLabel}
+      </a>
+      <a class="btn btn-primary btn-sm call-btn" href={callHref}>
+        {callLabel}
+      </a>
+      <button
+        id="menu-toggle"
+        class="menu-btn"
+        aria-label={menuLabel}
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        type="button"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </div>
 </header>
 
-<!-- Mobile drawer + scrim (sit outside .site-header so their fixed positioning
-     isn't relative to the sticky header stacking context).
-     Explicit dir so Arabic content flows right-to-left inside the drawer. -->
-<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile" dir={locale === "ar" ? "rtl" : "ltr"}>
+<!-- Mobile drawer (< 860px). Same 3 links; kept outside .site-header so its
+     fixed positioning is relative to the viewport, not the sticky header. -->
+<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
   <div class="drawer-head">
-    <span class="drawer-title">{t["common.menu"]}</span>
-    <button id="menu-close" class="icon-btn" aria-label="Close menu" type="button">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-        <line x1="6"  y1="6"  x2="18" y2="18" />
-        <line x1="18" y1="6"  x2="6"  y2="18" />
+    <span class="eyebrow">{menuLabel}</span>
+    <button id="menu-close" class="close-btn" aria-label={closeMenuLabel} type="button">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18" />
+        <line x1="18" y1="6" x2="6" y2="18" />
       </svg>
     </button>
   </div>
-
-  <nav>
-    <ul class="drawer-list">
-      {HEADER_NAV.map((item) => (
-        <li>
-          {item.columns ? (
-            <details>
-              <summary>{navLabel(item, locale)}</summary>
-              <div class="drawer-sub">
-                <a class="drawer-sub-all" href={L(item.href)}>
-                  {locale === "ar" ? `جميع ${navLabel(item, locale)} ←` : `All ${navLabel(item, locale)} →`}
-                </a>
-                {item.columns.map((col) => (
-                  <div class="drawer-col">
-                    <h5>{navLabel(col, locale)}</h5>
-                    <ul>
-                      {col.items.map((sub) => (
-                        <li><a href={L(sub.href)}>{navLabel(sub, locale)}</a></li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </details>
-          ) : (
-            <a href={L(item.href)}>{navLabel(item, locale)}</a>
-          )}
-        </li>
-      ))}
-    </ul>
-  </nav>
-
+  <ul class="drawer-list">
+    {NAV.map((item) => (
+      <li>
+        <a class="drawer-link" href={L(item.href)}>
+          {locale === "ar" ? item.labelAr : item.label}
+        </a>
+      </li>
+    ))}
+    <li class="drawer-sep" aria-hidden="true"></li>
+    <li>
+      <a class="drawer-link drawer-lang" href={altHref}>{altLabel}</a>
+    </li>
+  </ul>
+  <a class="btn btn-primary drawer-call" href={callHref}>{callLabel}</a>
 </aside>
-
 <div id="menu-scrim" class="menu-scrim" aria-hidden="true"></div>
 
 <script is:inline>
   /**
-   * Drawer + swipe wiring, View-Transitions-aware.
-   *
-   * - Element-level listeners (burger click, close click, scrim click, drawer
-   *   link clicks) attach on every page load AND on every astro:page-load
-   *   event so they re-bind after client-side navigation swaps the header DOM.
-   * - Document-level listeners (touch swipe, Escape key) attach exactly once
-   *   per session, guarded by a flag on window, so they don't accumulate.
+   * Mobile drawer wiring — View-Transitions aware.
+   * Element listeners rebind after every astro:page-load swap.
+   * Document listeners (Escape, page-load close) attach once per session.
    */
   (function () {
     function bindElementListeners() {
@@ -176,497 +146,256 @@ const isActive = (href: string) => {
       if (!toggle || !nav || !scrim) return;
 
       toggle.addEventListener("click", function () { setOpen(true); });
-      close  && close.addEventListener("click", function () { setOpen(false); });
+      close && close.addEventListener("click", function () { setOpen(false); });
       scrim.addEventListener("click", function () { setOpen(false); });
-      // Close after tapping any link inside the drawer
       nav.querySelectorAll("a").forEach(function (a) {
         a.addEventListener("click", function () { setOpen(false); });
       });
     }
 
-    function isOpen() {
-      var nav = document.getElementById("mobile-nav");
-      return !!nav && nav.classList.contains("open");
-    }
     function setOpen(open) {
-      var nav   = document.getElementById("mobile-nav");
+      var nav = document.getElementById("mobile-nav");
       var scrim = document.getElementById("menu-scrim");
+      var toggle = document.getElementById("menu-toggle");
       if (!nav || !scrim) return;
       nav.classList.toggle("open", open);
       scrim.classList.toggle("visible", open);
       document.body.classList.toggle("nav-open", open);
       nav.setAttribute("aria-hidden", String(!open));
+      if (toggle) toggle.setAttribute("aria-expanded", String(open));
     }
 
-    // Document-level listeners: attach once per session
     if (!window.__navGlobalsBound) {
       window.__navGlobalsBound = true;
-
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") setOpen(false);
       });
-
-      // ── Swipe gestures ──────────────────────────────────────────
-      var startX = 0, startY = 0, tracking = false;
-      var THRESHOLD = 50;
-
-      document.addEventListener("touchstart", function (e) {
-        if (e.touches.length !== 1) { tracking = false; return; }
-        var t = e.touches[0];
-        startX = t.clientX;
-        startY = t.clientY;
-        tracking = true;
-      }, { passive: true });
-
-      document.addEventListener("touchend", function (e) {
-        if (!tracking) return;
-        tracking = false;
-        var t = (e.changedTouches && e.changedTouches[0]);
-        if (!t) return;
-        var dx = t.clientX - startX;
-        var dy = t.clientY - startY;
-        if (Math.abs(dx) < THRESHOLD || Math.abs(dy) > Math.abs(dx) * 0.7) return;
-
-        // Drawer always lives on the right — same swipe direction in both
-        // locales: swipe LEFT from the right half opens; swipe RIGHT closes.
-        if (dx < 0 && !isOpen() && startX > window.innerWidth * 0.5) {
-          setOpen(true);
-        } else if (dx > 0 && isOpen()) {
-          setOpen(false);
-        }
-      }, { passive: true });
-
-      // Close drawer whenever a page transition starts
       document.addEventListener("astro:before-swap", function () { setOpen(false); });
     }
 
-    // Bind element listeners on initial load + after every client-side nav
     bindElementListeners();
     document.addEventListener("astro:page-load", bindElementListeners);
-
-    // ── Back button handling ────────────────────────────────────────
-    // Show back button on non-homepage, with smart navigation
-    (function () {
-      var lastPath = location.pathname;
-
-      function updateBackButton() {
-        var btn = document.getElementById("header-back-btn");
-        if (!btn) return;
-
-        var path = location.pathname;
-        // Hide back button on home pages (/en/, /ar/). Mobile-only display
-        // is enforced via the .header-back-btn CSS media query.
-        var isHome = path === "/en/" || path === "/ar/" || path === "/";
-        btn.classList.toggle("is-hidden", isHome);
-      }
-
-      function handleBackClick(e) {
-        e.preventDefault();
-        // Try history.back() first — most reliable
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          // Fallback: navigate to language-specific home
-          var path = location.pathname;
-          if (path.startsWith("/ar/")) {
-            location.href = "/ar/";
-          } else {
-            location.href = "/en/";
-          }
-        }
-      }
-
-      function bindButton() {
-        var btn = document.getElementById("header-back-btn");
-        if (btn) {
-          // Remove old listeners and re-bind
-          var newBtn = btn.cloneNode(true);
-          btn.parentNode.replaceChild(newBtn, btn);
-          btn = newBtn;
-
-          btn.addEventListener("click", handleBackClick);
-          btn.addEventListener("touchend", handleBackClick);
-          updateBackButton();
-        }
-      }
-
-      // Initial bind
-      bindButton();
-
-      // Re-bind on page transitions (View Transitions API)
-      document.addEventListener("astro:page-load", function () {
-        lastPath = location.pathname;
-        bindButton();
-      });
-
-      // Also update on history changes
-      window.addEventListener("popstate", function () {
-        lastPath = location.pathname;
-        bindButton();
-      });
-    })();
   })();
 </script>
 
 <style>
-  /* ============================================================= HEADER */
+  /* ─── Header shell ────────────────────────────────────────── */
   .site-header {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
   }
   .header-row {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    height: var(--header-h);
-    padding-block: 0;
+    gap: 16px;
+    min-height: var(--header-h);
+    padding-block: 12px;
   }
 
-  /* Back button — iOS style: chevron + section label, top-left, mobile-only */
-  .header-back-btn {
+  /* ─── Masthead ────────────────────────────────────────────── */
+  .masthead {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    flex-shrink: 0;
+    padding-block: 4px;
+  }
+  .masthead:hover { text-decoration: none; color: var(--ink); }
+  .masthead-rule {
+    width: 3px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .masthead-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+  }
+  .masthead-name {
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1.1;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  html[dir="rtl"] .masthead-name {
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0;
+  }
+  .masthead-sub {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+  html[dir="rtl"] .masthead-sub {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 13px;
+  }
+
+  /* ─── Desktop nav (≥ 860px) ───────────────────────────────── */
+  .primary-nav {
     display: none;
     align-items: center;
-    gap: 0.25em;
-    height: 48px;
-    padding: 0 0.5em 0 0.25em;
-    /* Push action buttons (theme/lang/burger) to the right when the logo
-       is hidden on mobile non-home pages. */
-    margin: 0 auto 0 0;
-    background: transparent;
-    border: none;
-    color: var(--brand);
-    cursor: pointer;
-    flex-shrink: 0;
-    font: inherit;
-    font-size: 1rem;
-    font-weight: 400;
-    transition: opacity 0.2s ease;
+    gap: 4px;
+    margin-inline-start: auto;
   }
-  .header-back-btn:hover { opacity: 0.7; }
-  .header-back-btn:active { opacity: 0.5; }
-  .header-back-btn .chev-back { flex-shrink: 0; }
-  .header-back-btn .back-label {
-    /* Line-height must clear descenders (Arabic ج/ح/خ) — line-height: 1
-       clipped them against `overflow: hidden`. */
-    line-height: 1.4;
-    max-width: 8em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  /* Arrow always points left in both LTR and RTL (matches browser back convention).
-     Header row is dir="ltr" so the chevron stays on the left of the label too. */
-
-  @media (max-width: 767px) {
-    /* Show on mobile only */
-    .header-back-btn { display: inline-flex; }
-  }
-  /* JS toggles this class on home pages to hide the button */
-  .header-back-btn.is-hidden { display: none !important; }
-
-  /* Logo */
-  .logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    color: var(--ink);
-    font-weight: 700;
+  .nav-link {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--body);
     text-decoration: none;
-    white-space: nowrap;
-    margin-right: auto;
-    flex-shrink: 0;
-    height: 100%;
+    border-radius: 2px;
+    transition: color 0.15s ease, background-color 0.15s ease;
   }
-  .logo:hover { text-decoration: none; color: var(--brand); }
-  .logo-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .logo-mark svg {
-    display: block;
-  }
-  .logo-text { display: flex; flex-direction: column; line-height: 1.1; justify-content: center; }
-  .logo-name { font-size: 1.05rem; color: var(--brand); }
-  .logo-sub { font-size: 0.75rem; color: var(--ink-muted); font-weight: 500; }
+  html[dir="rtl"] .nav-link { font-size: 15px; }
+  .nav-link:hover { color: var(--accent); text-decoration: none; background: var(--surface); }
+  .nav-link.active { color: var(--accent); }
 
-  /* On mobile, hide the whole logo on non-home pages so it can't be confused
-     with the iOS-style back button sitting to its left. Tablet and desktop
-     keep the full logo (icon + text) on every page. */
-  @media (max-width: 767px) {
-    .logo:not(.is-home) { display: none; }
-  }
-
-
-  /* Actions row (theme toggle, burger, desktop call button) */
+  /* ─── Header actions (right side) ─────────────────────────── */
   .header-actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    flex-shrink: 0;
+    gap: 10px;
+    margin-inline-start: auto;
+  }
+  @media (min-width: 860px) {
+    .header-actions { margin-inline-start: 0; }
   }
 
-  .icon-btn {
+  .lang-switch {
+    padding: 8px 14px;
+    font-size: 14px;
+    color: var(--body);
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .lang-switch:hover { color: var(--accent); text-decoration: none; border-color: var(--line); }
+
+  /* Hide the "Call the secretary" pill on tight screens; the drawer has one. */
+  .call-btn { display: none; }
+  @media (min-width: 640px) {
+    .call-btn { display: inline-flex; }
+  }
+
+  /* ─── Burger button ───────────────────────────────────────── */
+  .menu-btn {
     display: inline-flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    padding: 0;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0 12px;
     background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 2px;
     cursor: pointer;
-    font-size: 0;
   }
-  .icon-btn:hover { color: var(--brand); border-color: var(--brand); }
-  .icon-btn svg { display: block; }
-  .desktop-only { display: none; }
-
-  /* ==================================================== PRIMARY NAV */
-  .primary-nav { display: none; }
-  .primary-nav > ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.15rem;
-  }
-  /* In AR mode, force the nav LIST to read right-to-left so Home is on the
-     right and Contact on the left — matches Arabic reading direction.
-     The outer header-row stays LTR (see dir="ltr" on the container) so the
-     logo remains on the left and Call/Theme/Language remain on the right. */
-  :global(html[dir="rtl"]) .primary-nav > ul {
-    direction: rtl;
-  }
-  .nav-item { position: relative; }
-  .nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35em;
-    padding: 0.55em 0.9em;
-    border-radius: 8px;
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background-color 0.15s ease, color 0.15s ease;
-  }
-  .nav-item:hover > .nav-link,
-  .nav-item.active > .nav-link {
-    background: var(--brand-soft);
-    color: var(--brand);
-    text-decoration: none;
-  }
-  .chev { opacity: 0.5; }
-
-  /* Tajawal has a smaller x-height than IBM Plex Sans, so Arabic text renders
-     visually smaller at the same font-size. Bump Arabic nav ~10% so both
-     languages read at the same optical weight. */
-  :global(html[dir="rtl"]) .nav-link {
-    font-size: 1.05rem;
-  }
-
-  /* Mega-menu panel (desktop, CSS-only hover reveal) */
-  .mega {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 640px;
-    max-width: 90vw;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    padding: 1.5rem;
-    margin-top: 4px;
-    z-index: 60;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-50%) translateY(4px);
-    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
-  }
-  .nav-item.has-mega:hover > .mega,
-  .nav-item.has-mega:focus-within > .mega {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-  }
-  .mega-inner {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1.5rem;
-  }
-  .mega-col h4 {
-    color: var(--brand);
-    font-size: 0.8rem;
-    margin: 0 0 0.5em;
-    padding-bottom: 0.4em;
-    border-bottom: 1px solid var(--border);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .mega-col h4 a { color: inherit; }
-  .mega-col ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .mega-col a {
+  .menu-btn span {
     display: block;
-    padding: 0.35em 0;
-    color: var(--ink-soft);
-    font-size: 0.9rem;
-    text-decoration: none;
+    width: 18px;
+    height: 1.5px;
+    background: var(--ink);
   }
-  .mega-col a:hover { color: var(--brand); }
+  .menu-btn:hover { border-color: var(--accent); }
 
-  /* ==================================================== MOBILE DRAWER */
-  /* Same footprint as kaleem-web: 65% viewport width, capped at 400px. */
+  @media (min-width: 860px) {
+    .primary-nav { display: inline-flex; }
+    .menu-btn { display: none; }
+  }
+
+  /* ─── Mobile drawer ───────────────────────────────────────── */
   .mobile-nav {
     position: fixed;
-    top: 0; right: 0; bottom: 0;
-    width: 65%;
-    max-width: 400px;
-    background: var(--surface);
-    border-left: 1px solid var(--border);
-    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.08);
+    top: 0; bottom: 0;
+    inset-inline-end: 0;
+    width: min(320px, 82vw);
+    background: var(--white);
+    border-inline-start: 1px solid var(--line);
     z-index: 90;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    padding: 20px;
+    gap: 8px;
     transform: translateX(100%);
     transition: transform 0.25s ease-out;
   }
+  html[dir="rtl"] .mobile-nav { transform: translateX(-100%); }
   .mobile-nav.open { transform: translateX(0); }
-
-  /* Drawer always slides in from the RIGHT in both LTR and AR — matches
-     the fixed burger position on the right side of the header. */
-
-  .menu-scrim {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 26, 34, 0.5);
-    z-index: 80;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-  }
-  .menu-scrim.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-  :global(body.nav-open) { overflow: hidden; }
 
   .drawer-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.85rem 1.25rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 8px;
   }
-  .drawer-title {
-    color: var(--ink-muted);
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+  .close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink);
   }
+  .close-btn:hover { border-color: var(--accent); color: var(--accent); }
 
   .drawer-list {
     list-style: none;
-    margin: 0;
-    padding: 0.5rem 0;
-    flex: 1;
-  }
-  .drawer-list > li { border-bottom: 1px solid var(--border); }
-  .drawer-list > li > a,
-  .drawer-list summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1em 1.25em;
-    color: var(--ink);
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: start;   /* logical — auto-flips for RTL */
-  }
-  .drawer-list summary { list-style: none; }
-  .drawer-list summary::-webkit-details-marker { display: none; }
-  .drawer-list summary::after {
-    content: "+";
-    color: var(--ink-muted);
-    font-weight: 400;
-    font-size: 1.2em;
-    line-height: 1;
-    margin-inline-start: auto;   /* auto-flip in RTL */
-  }
-  .drawer-list details[open] summary::after { content: "−"; }
-  .drawer-list details[open] summary {
-    background: var(--brand-soft);
-    color: var(--brand);
-  }
-  .drawer-list > li > a:hover,
-  .drawer-list summary:hover {
-    background: var(--brand-soft);
-    color: var(--brand);
-  }
-
-  .drawer-sub {
-    background: var(--surface-alt);
-    padding: 0.5rem 1.25rem 0.75rem;
-  }
-  .drawer-sub-all {
-    display: inline-block;
-    color: var(--brand);
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.5em 0;
-    text-decoration: none;
-  }
-  .drawer-col h5 {
-    color: var(--ink-muted);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin: 0.75em 0 0.3em;
-    font-weight: 600;
-    text-align: start;
-  }
-  .drawer-col ul {
-    list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
   }
-  .drawer-col a {
+  .drawer-link {
     display: block;
-    padding: 0.45em 0;
-    color: var(--ink-soft);
-    font-size: 0.95rem;
+    padding: 16px 4px;
+    min-height: 56px;
+    font-size: 17px;
+    color: var(--ink);
     text-decoration: none;
-    text-align: start;   /* logical — RTL-safe */
+    border-bottom: 1px solid var(--line-soft);
   }
-  .drawer-col a:hover { color: var(--brand); }
-
-  /* ==================================================== DESKTOP */
-  @media (min-width: 1024px) {
-    .primary-nav { display: flex; flex: 1 1 auto; justify-content: center; }
-    #menu-toggle { display: none; }
-    .desktop-only { display: inline-flex; }
-
-    /* On desktop the drawer, scrim, and drawer content never show. */
-    .mobile-nav,
-    .menu-scrim { display: none; }
+  .drawer-link:hover { color: var(--accent); text-decoration: none; }
+  .drawer-lang { color: var(--body); font-size: 15px; }
+  .drawer-sep { flex: 1 1 auto; min-height: 12px; }
+  .drawer-call {
+    width: 100%;
+    margin-top: 8px;
   }
+
+  .menu-scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(16, 28, 34, 0.4);
+    z-index: 80;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+  .menu-scrim.visible { opacity: 1; visibility: visible; }
+  :global(body.nav-open) { overflow: hidden; }
 </style>
