@@ -1,38 +1,52 @@
 ---
 title: "Osteoporosis"
-description: "Osteoporosis is a disease that affects the bones as a result of losing bone material or not producing enough bone"
+description: "Bone disease characterized by loss of bone material and density, resulting in weak and brittle bones prone to fracture"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/03/osteoporosis/"
 publishedAt: "2020-12-03T16:26:30"
 source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: false
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What is osteoporosis?"
+        value: "Disease affecting bones through loss of bone material or insufficient bone tissue production, resulting in weak, brittle bones"
+      - label: "Common causes"
+        value: "Hormonal changes (menopause), calcium deficiency, vitamin D deficiency, aging"
+  - type: prose
+    heading: "Osteoporosis Overview"
+    body: |
+      Osteoporosis is a disease affecting bones as a result of losing bone material or not producing enough bone tissue. This results in weak and brittle bones prone to fracture with minimal force.
+      
+      The condition can occur due to hormonal changes such as menopause, or from deficiency of calcium or vitamin D. There are usually no symptoms until bones become too weak. Back pain may develop due to collapsed or fractured vertebrae. The most common sites of osteoporosis are the back, hips, and legs.
+  - type: treatment-groups
+    heading: "Treatment Options at Alimran Center"
+    intro: "We offer comprehensive treatment approaches for osteoporosis:"
+    groups:
+      - title: "Physical Therapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Long and short wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Cold laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound treatment](/services/physiotherapy/ultrasound-therapy/)"
+          - "Therapeutic gymnastics and exercises"
+      - title: "Chiropractic Care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma shock wave therapy](/services/chiropractic/sigma/)"
+      - title: "Injection Therapies"
+        items:
+          - "Steroid injections"
+          - "Trigger point injections"
+          - "Epidural injections"
+      - title: "Advanced Treatments"
+        items:
+          - "[Ozone therapy](/services/ozone-therapy/review/)"
+          - "[Pulsed radiofrequency treatment](/services/radiofrequency/)"
+          - "[Botox injection therapy](/services/botox/)"
+          - "[Acupuncture](/services/acupuncture/)"
+          - "[Prolotherapy (regenerative medicine)](/services/regenerative-medicine/)"
 ---
 
 ![](/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام-300x143.jpg)
-
-Osteoporosis is a disease that affects the bones as a result of losing bone material or not producing enough bone tissue. This results in weak and brittle bones which are liable to fracture with little force. It can happen due to hormonal changes such as menopause but in some cases it can be sued to a deficiency of calcium or vitamin D. There are usually no symptoms. However, when the bone becomes too weak it may fracture. Back pain may be felt due to the presence of a collapsed or fractured vertebra. There is usually no pain until the fracture occurs. The most common sites of osteoporosis are the back, hips, and legs.
-
-In Alimran Center we recommend the following treatments:
-
--   [Physical therapy (physical therapy](/services/physiotherapy/))
-
-[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)  
-[Long and short wave therapy](/services/physiotherapy/shortwave-therapy/)  
-[Cold lasers](/services/physiotherapy/laser-therapy/)  
-[Ultrasound treatment (sonar)](/services/physiotherapy/ultrasound-therapy/)  
-Gymnastics
-
--   Chiropractic
-
-[SpineMED® system](/services/chiropractic/spinmed/)  
-[Sigma](/services/chiropractic/sigma/)
-
--   Steroid injection
--   Trigger point injection  
-    Epidural injection
--   [Ozone treatment](/services/ozone-therapy/review/)
--   [Pulsed radiofrequency treatment](/services/radiofrequency/)
--   [Botox injection therapy](/services/botox/)
--   [Acupuncture](/services/acupuncture/)
--   [Prolotherapy](/services/regenerative-medicine/)

@@ -1,11 +1,52 @@
 ---
 title: "هشاشة العظام"
+description: "مرض العظام يتميز بفقدان مادة العظم والكثافة مما يؤدي لعظام ضعيفة وهشة عرضة للكسر"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%87%d8%b4%d8%a7%d8%b4%d8%a9-%d8%a7%d9%84%d8%b9%d8%b8%d8%a7%d9%85"
 order: 999
 publishedAt: "2020-12-03T16:26:30"
 redesigned: true
 clinicallyRelevant: false
+sections:
+  - type: at-a-glance
+    items:
+      - label: "ما هي هشاشة العظام؟"
+        value: "مرض يصيب العظام بفقدان المادة أو عدم انتاج ما يكفي من النسيج، مما يؤدي لعظام ضعيفة وهشة"
+      - label: "الأسباب الشائعة"
+        value: "التغيرات الهرمونية (سن اليأس)، نقص الكالسيوم، نقص فيتامين D، التقدم بالعمر"
+  - type: prose
+    heading: "نظرة عامة على هشاشة العظام"
+    body: |
+      هشاشة العظام مرض يصيب العظام نتيجة فقدان مادة العظم أو عدم انتاج ما يكفي من النسيج العظمي. يؤدي هذا لضعف العظام وهشاشتها وعرضتها للكسر مع قوة بسيطة.
+      
+      يحدث المرض بسبب التغيرات الهرمونية مثل سن اليأس أو نقص الكالسيوم وفيتامين D. عادة لا توجد أعراض حتى تصبح العظام ضعيفة جداً. قد تحدث آلام ظهر بسبب الفقرات المنهارة أو المكسورة. المواقع الأكثر شيوعاً هي الظهر والوركين والساقين.
+  - type: treatment-groups
+    heading: "خيارات العلاج في مركز العمران"
+    intro: "نقدم نهجاً شاملاً لعلاج هشاشة العظام:"
+    groups:
+      - title: "العلاج الفيزيائي"
+        items:
+          - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"
+          - "[العلاج بالموجات الطويلة والقصيرة](/services/physiotherapy/shortwave-therapy/)"
+          - "[الليزر البارد](/services/physiotherapy/laser-therapy/)"
+          - "[علاج الموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
+          - "التمارين العلاجية والرياضية"
+      - title: "تقويم العمود الفقري"
+        items:
+          - "[نظام SpineMED](/services/chiropractic/spinmed/)"
+          - "[علاج Sigma](/services/chiropractic/sigma/)"
+      - title: "العلاجات بالحقن"
+        items:
+          - "حقن السيترويدات"
+          - "حقن نقاط الألم"
+          - "الحقن فوق الجافية"
+      - title: "العلاجات المتقدمة"
+        items:
+          - "[علاج الأوزون](/services/ozone-therapy/review/)"
+          - "[علاج الموجات الراديوية النبضية](/services/radiofrequency/)"
+          - "[حقن البوتوكس](/services/botox/)"
+          - "[الوخز بالإبر الصينية](/services/acupuncture/)"
+          - "[Prolotherapy (الطب التجديدي)](/services/regenerative-medicine/)"
 ---
 
 ![](/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام-300x143.jpg)
