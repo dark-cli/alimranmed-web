@@ -85,6 +85,38 @@ html[dir="rtl"] {
   --font-sans:   var(--font-body);
 }
 
+/* ─── Dark mode ──────────────────────────────────────────────
+   Same visual language as light — hairlines stay hairlines, no
+   shadows, no radii. Only the palette flips. Ink footer keeps its
+   `#101c22` — in dark mode the whole page adopts it as page-bg,
+   which makes the footer visually seamless. */
+html[data-theme="dark"] {
+  --ink:            #eaf0f4;   /* was #101c22 — now the primary text */
+  --body:           #b8c3cc;   /* was #3c4a52 */
+  --muted:          #7f929a;   /* was #77858c — dimmer for legibility */
+  --accent:         #4bb3d4;   /* was #0b5e78 — brighter teal for contrast on dark */
+  --accent-hover:   #6cc7e4;
+  --line:           #22333c;   /* was #dde4e7 — dark hairline */
+  --line-soft:      #1a2a33;
+  --line-strong:    #33454e;
+  --surface:        #182631;   /* was #f4f7f8 — tinted panel bg, LIGHTER than page-bg */
+  --white:          #101c22;   /* was #ffffff — this is the page background now */
+  --selection:      #1e4a5c;
+
+  /* Footer stays as-is since it already used ink hues; muted just brightens. */
+  --footer-bg:      #0b1418;
+  --footer-text:    #d7e2e6;
+  --footer-muted:   #a8b8bf;
+  --footer-label:   #7f929a;
+  --footer-rule:    #1a2a33;
+}
+
+/* Theme toggle icon-swap — must live here because Astro strips the
+   `html[data-theme="…"]` prefix from component-scoped styles. */
+.theme-btn .theme-icon.sun { display: none; }
+html[data-theme="dark"] .theme-btn .theme-icon.moon { display: none; }
+html[data-theme="dark"] .theme-btn .theme-icon.sun  { display: inline-flex; }
+
 /* ─── Reset + base ────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -292,7 +324,7 @@ html[dir="rtl"] .eyebrow {
 /* Diagonal-hatch photo placeholder — HANDOFF §1.7 (values from prototype) */
 .photo-slot {
   position: relative;
-  background-image: repeating-linear-gradient(135deg, #eef2f4 0 10px, #f7fafb 10px 20px);
+  background-image: repeating-linear-gradient(135deg, var(--line-soft) 0 10px, var(--surface) 10px 20px);
   border: 1px solid var(--line);
   display: flex;
   align-items: center;

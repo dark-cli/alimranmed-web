@@ -80,6 +80,23 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     </nav>
 
     <div class="header-actions">
+      <button
+        id="theme-toggle"
+        class="theme-btn"
+        type="button"
+        aria-label={locale === "ar" ? "تبديل الوضع الداكن" : "Toggle dark mode"}
+        title={locale === "ar" ? "الوضع الداكن" : "Dark mode"}
+      >
+        <!-- Moon icon (shown in light mode → click for dark) -->
+        <svg class="theme-icon moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <!-- Sun icon (shown in dark mode → click for light) -->
+        <svg class="theme-icon sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+      </button>
       <a class="lang-switch" href={altHref} aria-label={altLabel} title={altLabel}>
         {altLabel}
       </a>
@@ -176,6 +193,27 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     bindElementListeners();
     document.addEventListener("astro:page-load", bindElementListeners);
   })();
+
+  /**
+   * Theme toggle — persists to localStorage, syncs across tabs,
+   * survives Astro View Transitions. Initial theme is applied by
+   * the anti-FOUC script in BaseHead before paint.
+   */
+  (function () {
+    function bindThemeToggle() {
+      var btn = document.getElementById("theme-toggle");
+      if (!btn || btn.__bound) return;
+      btn.__bound = true;
+      btn.addEventListener("click", function () {
+        var current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        var next = current === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+      });
+    }
+    bindThemeToggle();
+    document.addEventListener("astro:page-load", bindThemeToggle);
+  })();
 </script>
 
 <style>
@@ -184,7 +222,10 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(255, 255, 255, 0.96);
+    background: var(--white);
+    /* Slight translucency + blur only when backdrop-filter is supported.
+       Falls back to the flat token so dark mode still reads correctly. */
+    background: color-mix(in srgb, var(--white) 96%, transparent);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
@@ -294,6 +335,29 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     .lang-switch { min-height: 48px; padding: 0 14px; }
   }
 
+  /* ─── Theme toggle (dark mode) ────────────────────────────── */
+  .theme-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    color: var(--body);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+  @media (max-width: 859px) {
+    .theme-btn { width: 44px; height: 44px; }
+  }
+  /* Icon-swap between .moon and .sun lives in global.css because Astro
+     strips the `html[data-theme="…"]` prefix from scoped styles (same
+     issue as html[dir="rtl"]). */
+
   /* Hide the "Call the secretary" pill on tight screens; the drawer has one. */
   .call-btn { display: none; }
   @media (min-width: 640px) {
@@ -395,7 +459,7 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
   .menu-scrim {
     position: fixed;
     inset: 0;
-    background: rgba(16, 28, 34, 0.4);
+    background: color-mix(in srgb, var(--footer-bg) 40%, transparent);
     z-index: 80;
     opacity: 0;
     visibility: hidden;

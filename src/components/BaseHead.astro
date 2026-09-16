@@ -80,6 +80,27 @@ const businessSchema = {
   if (window.self !== window.top) {
     document.documentElement.classList.add("is-embedded");
   }
+  // Apply theme before paint to avoid FOUC. Preference precedence:
+  // 1) explicit user choice in localStorage, 2) prefers-color-scheme.
+  // Also re-apply on Astro View Transitions swaps — ClientRouter replaces
+  // the <html> attributes on navigation, which would drop data-theme.
+  (function () {
+    function apply() {
+      try {
+        var stored = localStorage.getItem("theme");
+        var wantsDark = stored
+          ? stored === "dark"
+          : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (wantsDark) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      } catch (e) {}
+    }
+    apply();
+    document.addEventListener("astro:after-swap", apply);
+  })();
 </script>
 
 <meta charset="utf-8" />
