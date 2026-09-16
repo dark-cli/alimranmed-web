@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/02/22/physiotherapy/"
 publishedAt: "2020-02-22T15:05:28"
 source: "translated-by-llm"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 **ما هو العلاج الطبيعي؟**

@@ -5,7 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/archives/910"
 order: 999
 publishedAt: "2020-01-03T07:25:09"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2020/01/STUBB-rTMS-207x300.png)

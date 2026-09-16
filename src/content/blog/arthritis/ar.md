@@ -5,7 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/archives/1113"
 order: 999
 publishedAt: "2020-01-03T07:54:04"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2020/01/images-4-1.jpg)

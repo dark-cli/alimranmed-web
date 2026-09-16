@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/12/05/diabetic-foot-pain-and-ulcers/"
 publishedAt: "2020-12-05T16:46:20"
 source: "legacy-wp"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2020/12/FootCare_29766673_M-300x200.jpg)

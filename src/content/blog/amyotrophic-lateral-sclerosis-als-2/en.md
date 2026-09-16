@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/04/09/amyotrophic-lateral-sclerosis-als-
 publishedAt: "2020-04-09T10:57:25"
 source: "legacy-wp"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 # Amyotrophic Lateral Sclerosis (ALS)

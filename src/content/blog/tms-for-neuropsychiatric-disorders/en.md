@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/07/01/tms-for-neuropsychiatric-disorders
 publishedAt: "2020-07-01T07:59:26"
 source: "legacy-wp"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2020/07/brain_magnet-300x292.jpg)

@@ -5,7 +5,7 @@ legacyUrl: "%%d8%a7%d9%84%d8%aa%d9%87%d8%a7%d8%a8-%d9%88%d8%aa%d8%b1-%d8%a3%d8%a
 order: 999
 publishedAt: "2021-02-09T14:53:12"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2021/02/تنزيل-3.jpg)

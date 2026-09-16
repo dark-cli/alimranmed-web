@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/11/23/covid-19-symptoms-on-the-nervous-a
 publishedAt: "2020-11-23T14:53:06"
 source: "legacy-wp"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 Symptoms of the locomotor system and after infection with Covid-19 ??

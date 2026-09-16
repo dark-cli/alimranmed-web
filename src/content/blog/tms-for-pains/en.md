@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/07/01/tms-for-pains/"
 publishedAt: "2020-07-01T07:54:01"
 source: "legacy-wp"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2020/07/1-s2.0-S1388245718311052-gr1-221x300.jpg)

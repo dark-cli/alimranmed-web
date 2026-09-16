@@ -22,6 +22,12 @@ allTreatments.filter((e) => isLocale(e.id, "en")).forEach((e) => {
   bySlug[topicOf(e.id)] = e.data.redesigned === true;
 });
 
+// Fetch clinically-relevant blogs to show as "related reading"
+const relatedBlogs = (await getCollection("blog"))
+  .filter((e) => isLocale(e.id, "en") && e.data.clinicallyRelevant === true)
+  .sort((a, b) => (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0))
+  .slice(0, 8);
+
 const pathways = [
   { num: "Pathway 01", title: "Brain",
     items: [
@@ -186,6 +192,28 @@ const interventional = [
       </div>
     </div>
   </section>
+
+  <!-- Related articles from blog -->
+  {relatedBlogs.length > 0 && (
+    <section class="related-section">
+      <header class="related-head">
+        <span class="related-num">Related</span>
+        <h2 class="related-h2">Medical articles & updates</h2>
+      </header>
+      <div class="related-grid">
+        {relatedBlogs.map((blog) => (
+          <a class="related-card card" href={L(`/blog/${topicOf(blog.id)}/`)}>
+            <h3>{blog.data.title}</h3>
+            {blog.data.description && <p>{blog.data.description}</p>}
+            {blog.data.publishedAt && (
+              <span class="date">{blog.data.publishedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}</span>
+            )}
+          </a>
+        ))}
+      </div>
+      <a class="related-link" href={L("/blog/")}>Browse all articles →</a>
+    </section>
+  )}
 </BaseLayout>
 
 <style>
@@ -351,4 +379,54 @@ const interventional = [
 .appt-body { font-size: 16px; line-height: 1.65; color: var(--body); margin: 0; max-width: 52ch; }
 .appt-buttons { display: flex; flex-direction: column; gap: 10px; }
   .appt-btn { min-height: 52px; font-size: 16px; justify-content: center; }
+
+  /* Related articles */
+  .related-section {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(48px, 6vw, 80px) 24px clamp(56px, 7vw, 96px);
+    border-top: 1px solid var(--line);
+  }
+  .related-head {
+    display: flex; gap: 12px; align-items: baseline; margin-bottom: clamp(28px, 4vw, 44px);
+  }
+  .related-num {
+    font-family: var(--font-mono);
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .related-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(23px, 3vw, 30px);
+    font-weight: 400; letter-spacing: -0.02em;
+    margin: 0; color: var(--ink);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(20px, 2vw, 32px);
+    margin-bottom: clamp(28px, 4vw, 44px);
+  }
+  .related-card {
+    display: block; text-decoration: none; color: inherit;
+    border: 1px solid var(--line); padding: clamp(20px, 2vw, 24px);
+    border-radius: 2px; transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+  .related-card:hover {
+    background: var(--surface); border-color: var(--accent);
+  }
+  .related-card h3 {
+    font-size: 16px; font-weight: 600; margin: 0 0 8px; color: var(--ink);
+  }
+  .related-card p {
+    font-size: 14px; line-height: 1.5; color: var(--body); margin: 0 0 12px;
+  }
+  .related-card .date {
+    font-family: var(--font-mono); font-size: 12px; color: var(--muted);
+  }
+  .related-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: color 0.15s ease;
+  }
+  .related-link:hover { color: var(--accent-hover); }
 </style>

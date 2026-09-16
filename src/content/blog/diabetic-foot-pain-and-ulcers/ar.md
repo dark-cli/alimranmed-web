@@ -5,7 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/archives/2366"
 order: 999
 publishedAt: "2020-12-05T16:46:20"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2020/12/FootCare_29766673_M-300x200.jpg)

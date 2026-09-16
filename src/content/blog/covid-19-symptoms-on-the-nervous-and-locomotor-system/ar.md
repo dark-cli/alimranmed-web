@@ -5,7 +5,7 @@ legacyUrl: "https://ar.alimranmed.com/archives/2370"
 order: 999
 publishedAt: "2020-11-23T14:53:06"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 **اعراض الجهاز الحركي ومابعد الاصابة بكوفيد – 19؟؟**

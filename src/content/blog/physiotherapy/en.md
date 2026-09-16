@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/02/22/physiotherapy/"
 publishedAt: "2020-02-22T15:05:28"
 source: "legacy-wp"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 **What is physiotherapy?**

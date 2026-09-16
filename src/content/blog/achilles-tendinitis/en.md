@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2021/02/09/achilles-tendinitis/"
 publishedAt: "2021-02-09T14:53:12"
 source: "legacy-wp"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2021/02/تنزيل-3.jpg)

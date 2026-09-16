@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/12/21/what-is-an-intrathecal-pump/"
 publishedAt: "2020-12-21T16:48:46"
 source: "translated-by-llm"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2020/12/pain-pump-34-300x229.jpg)

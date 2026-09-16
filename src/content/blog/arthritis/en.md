@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/01/03/arthritis/"
 publishedAt: "2020-01-03T07:54:04"
 source: "legacy-wp"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2020/01/images-4-1.jpg)

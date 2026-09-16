@@ -6,7 +6,7 @@ legacyUrl: "https://alimranmed.com/2020/01/03/transcranial-magnetic-stimulation/
 publishedAt: "2020-01-03T07:25:09"
 source: "legacy-wp"
 redesigned: true
-clinicallyRelevant: false
+clinicallyRelevant: true
 ---
 
 ![](/images/legacy/2020/01/STUBB-rTMS-207x300.png)
