@@ -26,7 +26,9 @@ const { num, heading, id, intro, note, groups } = Astro.props;
         <h3 class="tg-title">{g.title}</h3>
         {g.subtitle && <p class="tg-sub">{g.subtitle}</p>}
         <ul class="tg-list">
-          {g.items.map((it) => <li>{it}</li>)}
+          {g.items.map((it) => (
+            <li set:html={it.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')} />
+          ))}
         </ul>
       </div>
     ))}
@@ -68,6 +70,14 @@ const { num, heading, id, intro, note, groups } = Astro.props;
     color: var(--ink);
     border-top: 1px solid var(--line-soft);
     padding-top: 9px;
+  }
+  .tg-list a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .tg-list a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
   }
   .tg-note {
     font-size: 15px;
