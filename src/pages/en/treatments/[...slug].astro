@@ -48,10 +48,24 @@ const cat = ((entry.data as { pathwayOverride?: string; category?: string })
   .pathwayOverride || entry.data.category || "pain").toLowerCase();
 const pathway = PATHWAY[cat] || PATHWAY.pain;
 
-// Reading time
-const bodyText = (entry.body || "").replace(/!\[[^\]]*]\([^)]+\)/g, "");
-const wordCount = bodyText.split(/\s+/).filter(Boolean).length;
-const readingLabel = `${Math.max(1, Math.round(wordCount / 200))} min read`;
+// Reading time — walks the section blocks (redesigned articles keep
+// their content there, not in the markdown body) and adds the raw
+// markdown body for legacy articles. 180 wpm reflects clinical prose,
+// which reads slower than casual content.
+function wordsIn(v: unknown): number {
+  if (v == null) return 0;
+  if (typeof v === "string") {
+    const t = v.replace(/!\[[^\]]*]\([^)]+\)/g, "").trim();
+    return t ? t.split(/\s+/).length : 0;
+  }
+  if (Array.isArray(v)) return v.reduce((n, x) => n + wordsIn(x), 0);
+  if (typeof v === "object") return Object.values(v as Record<string, unknown>).reduce((n, x) => n + wordsIn(x), 0);
+  return 0;
+}
+const wordCount =
+  wordsIn((entry.data as { sections?: unknown }).sections) +
+  wordsIn(entry.body);
+const readingLabel = `${Math.max(1, Math.round(wordCount / 180))} min read`;
 
 // Last reviewed
 const publishedAt: unknown = (entry.data as { publishedAt?: unknown }).publishedAt;
