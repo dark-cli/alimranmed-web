@@ -1,5 +1,12 @@
 ---
 import { render } from "astro:content";
+import AtGlance from "./article/AtGlance.astro";
+import Prose from "./article/Prose.astro";
+import PullQuote from "./article/PullQuote.astro";
+import ComparisonPair from "./article/ComparisonPair.astro";
+import StatsFacts from "./article/StatsFacts.astro";
+import TreatmentGroups from "./article/TreatmentGroups.astro";
+import Related from "./article/Related.astro";
 
 interface Props {
   entry: any;
@@ -11,6 +18,15 @@ interface Props {
 const { entry, backHref = "/blog/", backLabel = "← All posts", dateLocale = "en-US" } = Astro.props;
 const { Content } = await render(entry);
 const d = entry.data;
+const isRedesigned = d.redesigned === true;
+
+// For section numbering
+let sectionIndex = 0;
+function nextNumId(hasHeading: boolean): { num?: string; id?: string } {
+  if (!hasHeading) return {};
+  sectionIndex += 1;
+  return { num: String(sectionIndex).padStart(2, "0"), id: `s-${sectionIndex}` };
+}
 ---
 
 <article class="container post">
@@ -24,8 +40,22 @@ const d = entry.data;
       )}
     </p>
   </header>
-  <div class="prose">
-    <Content />
+  <div class={isRedesigned && Array.isArray(d.sections) ? "post-blocks" : "prose"}>
+    {isRedesigned && Array.isArray(d.sections) ? (
+      d.sections.map((s: any) => {
+        const { num, id } = nextNumId(!!s.heading);
+        if (s.type === "at-a-glance")     return <AtGlance items={s.items} glanceLabel="At a glance" />;
+        if (s.type === "prose")           return <Prose num={num} heading={s.heading} body={s.body} id={id} />;
+        if (s.type === "pull-quote")      return <PullQuote text={s.text} attribution={s.attribution} />;
+        if (s.type === "comparison-pair") return <ComparisonPair num={num} heading={s.heading} id={id} intro={s.intro} a={s.a} b={s.b} />;
+        if (s.type === "stats-facts")     return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="Key facts" factNumbers={s.facts.map((_: string, i: number) => String(i + 1).padStart(2, "0"))} />;
+        if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} />;
+        if (s.type === "related")         return <Related items={[]} relatedLabel="Related reading" />;
+        return null;
+      })
+    ) : (
+      <Content />
+    )}
   </div>
 </article>
 
@@ -36,4 +66,5 @@ const d = entry.data;
   .post-header { text-align: center; margin-bottom: 1.5rem; }
   @media (min-width: 640px) { .post-header { margin-bottom: 2.5rem; } }
   .meta { color: var(--ink-muted); font-size: 0.85rem; }
+  .post-blocks { max-width: 740px; margin: 0 auto; }
 </style>
