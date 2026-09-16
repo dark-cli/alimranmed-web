@@ -1,49 +1,60 @@
 ---
 title: "Transcranial direct current stimulation (tDCS)"
-description: "Transcranial direct current stimulation (tDCS) is a wearable, portable brain stimulation technology that delivers low electrical current to the scalp,"
+description: "Wearable, portable brain stimulation technology delivering low electrical current to produce immediate and permanent changes in brain function"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/26/transcranial-direct-current-stimulation-tdcs/"
 publishedAt: "2020-12-26T17:18:38"
 source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What is tDCS?"
+        value: "Wearable brain stimulation technology delivering low electrical current to scalp for neuromodulation"
+      - label: "How it works"
+        value: "Sub-threshold current changes neuronal electrical patterns and enhances synaptic transmission through increased plasticity"
+  - type: prose
+    heading: "How tDCS Works"
+    body: |
+      Transcranial direct current stimulation (tDCS) is a neuromodulation technique that produces immediate and permanent changes in brain function. The positioning of positive (anode) and negative electrodes on the head determines how current flows to specific brain areas.
+      
+      The electrical current delivered is too weak to trigger an action potential in individual neurons. Instead, it sub-threshold modulates the electrical patterns of neurons. During brain activity, tDCS reinforces ongoing neural activity at the cellular level. It alters neuron firing patterns and enhances synaptic transmission between neurons by increasing synaptic plasticity.
+  - type: prose
+    heading: "The tDCS Device"
+    body: |
+      tDCS devices are small, battery-powered units with a control panel allowing you to program duration and intensity of stimulation. Electrodes are placed on the scalp and held in place by a head cover (typically an elastic band), with cables connecting each electrode to the stimulator.
+      
+      When activated, current flows from the device through the electrodes and across the brain. Professional-grade devices include features ensuring safety and reliability, such as impedance meters and ammeters.
+  - type: prose
+    heading: "Side Effects"
+    body: |
+      Reported side effects are minor and limited to the electrode site, including:
+      
+      - Temporary skin redness
+      - Itching
+      - Twitching
+      - Headache
+      - Nausea
+      - Dizziness
+      
+      Importantly, these last three side effects occur at the same rate as placebo stimulation when tDCS is improperly administered.
+  - type: prose
+    heading: "What tDCS Feels Like"
+    body: |
+      Users typically experience slight tingling, itching, or warmth sensations. These sensations are not painful and disappear immediately when stimulation stops.
+  - type: prose
+    heading: "Clinical Applications and Benefits"
+    body: |
+      tDCS has been studied for conditions where modulating brain activity affects thinking or mood, including:
+      
+      - Depression
+      - Schizophrenia
+      - Aphasia (language disorders)
+      - Addiction
+      - Memory enhancement
+      
+      Research shows tDCS helps people learn faster and improves focus, concentration, relaxation, and meditation. Clinical trials from leading medical centers demonstrate tDCS can reduce anxiety and treat depression with fewer side effects than medications.
 ---
-
-Transcranial direct current stimulation (tDCS) is a wearable, portable brain stimulation technology that delivers low electrical current to the scalp, meaning that tDCS is a neuromodulation technique that produces immediate and permanent changes in brain function. The anode and negative electrode position on the head is used to determine how current is flowing to specific areas of the brain. The current delivered by tDCS is not strong enough to release an action potential in a neuron. Instead, the sub-threshold actually changes the electrical pattern of the neurons. The thought in the brain as being active while trying to do something or teaching it like this comes the role of tDCS to reinforce this ongoing activity at the cellular level. TDCS alters the firing of neurons and by enhancing the synaptic transmission between neurons by increasing synaptic plasticity
-
-What does a tDCS device look like?  
-Small devices powered by batteries. There is a control panel that allows you to program the device (to set the duration and intensity of stimulation). The electrodes are placed on the head and held in place by the head cover – usually a rubber band – the cable of each electrode is attached to the stimulator  
-When the alarm is turned on, current flows from the device to the electrode and then crosses the brain  
-Our professional grade catalysts have many features that help ensure stimulation and reliability including an impedance meter and ammeter.
-
-What are the side effects of direct transcranial stimulation?  
-The side effects that have been fixed so far are minor, limited to the site of the electrode, and include:  
-Temporary redness of the skin  
-Itching  
-Twitching  
-Headache  
-Nausea  
-Dizziness
-
-It should be noted that these last three side effects have been reported to occur at approximately the same rate as placebo stimulation when tDCS is administered insufficiently.
-
-How does tDCS feel?  
-People feel a slight tingling, itching or warmth. These sensations are not painful and disappear when the stimulation stops
-
-What are the benefits of tDCS?  
-TDCS is used for many different applications that involve changing the brain to affect how people think or feel  
-Depression  
-Schizophrenia  
-Aphasia  
-Addictive  
-Memory enhancement
-
-TDCS has been proven to make people learn faster, and it also uses rapid education, focus, relaxation and meditation  
-.  
-Can tDCS treat anxiety?  
-The effects of tDCS have been shown to reduce anxiety in several clinical trials from top medical centers
-
-Can tDCS treat depression?  
-Several clinical trials have reported that tDCS can treat depression, and it has fewer side effects than drugs
 
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=Iu0H0csxLmM)

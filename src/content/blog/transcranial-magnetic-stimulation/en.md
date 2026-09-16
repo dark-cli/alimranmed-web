@@ -1,42 +1,54 @@
 ---
 title: "Transcranial magnetic stimulation"
-description: "Did the operating system happen in your brain? Now a brain-mimicking technology to help it boost cells When we talk"
+description: "Brain stimulation technology using magnetic waves and pulses to treat neurological and psychiatric disorders"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/01/03/transcranial-magnetic-stimulation/"
 publishedAt: "2020-01-03T07:25:09"
 source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What is TMS?"
+        value: "Brain stimulation using magnetic waves and pulses to change electrical activity in the brain"
+      - label: "Conditions treated"
+        value: "Parkinson’s, depression, migraine, addiction, memory loss, anxiety, tinnitus, stroke recovery and more"
+  - type: prose
+    heading: "Understanding Brain Function and TMS"
+    body: |
+      The brain is a network of trillions of neuronal connections controlling our conscious and unconscious actions. This network relies on electrical impulses spreading along nerve fibers, with different regions responsible for feelings, vision, hearing, muscle movement, and information processing.
+      
+      Transcranial magnetic stimulation (TMS) uses magnetic pulses to change electrical events in the brain. By stimulating neurons in specific brain areas, TMS increases activity and communication between brain cells, forming necessary neural networks.
+  - type: prose
+    heading: "Conditions Treated with TMS"
+    body: |
+      TMS is used to treat numerous neurological and psychiatric disorders:
+      
+      - Parkinson’s Disease
+      - Depression, fatigue, and negative symptoms of schizophrenia
+      - Migraine headaches
+      - Addiction (smoking, alcohol, drugs)
+      - Memory loss and Alzheimer’s disease
+      - Generalized anxiety and panic disorder
+      - Tinnitus and auditory hallucinations
+      - Stroke recovery and treatment of paralysis
+  - type: prose
+    heading: "TMS vs. Electroconvulsive Therapy (ECT)"
+    body: |
+      Unlike electroconvulsive therapy, which distributes electrical currents throughout the brain with risk of memory loss, TMS targets specific brain areas. This targeted approach produces minimal side effects compared to ECT’s potential risks, making it a safer alternative.
+  - type: prose
+    heading: "TMS Treatment Session"
+    body: |
+      During a TMS session, the patient sits in a comfortable chair while a coil above the head delivers painless magnetic pulses. The coil stimulates neurons in specific brain areas and can activate regions with reduced activity. Treatment requires daily sessions five times per week for 4-6 weeks.
+      
+      **Timeline:**
+      - First effects felt within 10 sessions (2-3 weeks)
+      - Long-term effects after 4-8 weeks of intensive treatment
+      - Few or no permanent side effects (possible temporary headaches or minor discomfort at stimulation site)
 ---
 
 ![](/images/legacy/2020/01/STUBB-rTMS-207x300.png)
-![](/images/legacy/2020/01/tms-treatment-768-300x180.jpg)  
+![](/images/legacy/2020/01/tms-treatment-768-300x180.jpg)
 
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=bmBV1r4_HrE)
-
-Did the operating system happen in your brain?  
-Now a brain-mimicking technology to help it boost cells
-
-When we talk about controversial treatments, this technique is the most exciting for each of them, where magnetic waves and pulses can help treat many of the many conditions.  
-1\. Parkinson’s Disease  
-2\. Depression, fatigue, negative symptoms of schizophrenia, mental disorders, obsessive compulsive disorder  
-3\. Migraine or migraine  
-4\. Addiction to smoking, alcohol or drugs  
-5\. Memory loss (Alzheimer’s disease) or frequent forgetfulness  
-6\. Generalized anxiety or panic disorder  
-7\. For tinnitus or auditory hallucinations  
-8\. Removement of paralyzed people and treatment of stroke effects  
-The brain is a group of neurons with trillions of connections that control our conscious and unconscious actions, and this network relies on the spread of electrical impulses along the nerve fibers.  
-Parts of this network are responsible for different aspects of our lives, such as feelings, vision, listening, muscle movement.  
-And the ability to process information  
-Parts of this network can be treated using magnetic pulses to change electrical events in the brain by using transcranial magnetic stimulation to increase the activity of certain areas of the brain. I.e. stimulating neurons in the brain thus increase communication between brain cells and form the necessary networks  
-ECTHow is it different from electroshock therapy? RTMS  
-Electrical currents are distributed throughout the brain and there is an increased risk of memory loss, while  
-Targeting a certain area of the brain, on the other hand, the unsubeffects are very minor, unlike the effects of electric shocks.  
-RTMs
-
-What’s the session like?  
-The patient sits in a comfortable chair with a figure 8 file above the head delivers an electric magnet magnetic pulse without pain stimulating neurons in the area of your brain and may activate areas of the brain that have reduced their activity and get permanent results requires daily sessions five times a week for four to six a Sell  
-• The first effects are already felt within 10 sessions (2-3 weeks)  
-• Long-term effect after 4-8 weeks of intensive treatment  
-• This technique leaves few or no side effects but quickly disappears (possible side effects of headaches and minor discomfort at the location where it is stimulated)
