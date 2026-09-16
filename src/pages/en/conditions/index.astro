@@ -160,10 +160,14 @@ const interventional = [
       <h2 class="proc-h2">Interventional pain register</h2>
     </header>
     <div class="int-grid">
-      {interventional.map((name, i) => (
-        <div class="int-row">
-          <span class="int-num">{String(i + 1).padStart(2, "0")}</span>
-          <span class="int-name">{name}</span>
+      {[interventional.slice(0, 6), interventional.slice(6, 12)].map((col, colIdx) => (
+        <div class="int-col">
+          {col.map((name, i) => (
+            <div class="int-row">
+              <span class="int-num">{String(colIdx * 6 + i + 1).padStart(2, "0")}</span>
+              <span class="int-name">{name}</span>
+            </div>
+          ))}
         </div>
       ))}
     </div>
@@ -290,9 +294,17 @@ const interventional = [
 /* 02 Interventional register */
   .int-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+    /* Two explicit columns above 640px, single column below.
+       Prototype markup pattern: wrap items in .int-col so long labels
+       stay within their own column instead of collapsing into a 4-col
+       auto-fit grid that overflows adjacent cells. */
+    grid-template-columns: 1fr;
     gap: 0 clamp(32px, 4vw, 64px);
   }
+  @media (min-width: 640px) {
+    .int-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .int-col { min-width: 0; }
   .int-row {
     display: grid;
     grid-template-columns: 40px minmax(0, 1fr);
@@ -301,7 +313,7 @@ const interventional = [
     border-bottom: 1px solid var(--line);
   }
   .int-num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
-.int-name { font-size: 15px; color: var(--ink); }
+  .int-name { font-size: 15px; color: var(--ink); overflow-wrap: anywhere; }
 
   /* Appointment band */
   .appt-section {

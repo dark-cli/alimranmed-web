@@ -156,10 +156,18 @@ const interventional = [
       <h2 class="proc-h2">سجل إجراءات الألم</h2>
     </header>
     <div class="int-grid">
-      {interventional.map((name, i) => (
-        <div class="int-row">
-          <span class="int-num">{String(i + 1).padStart(2, "٠")}</span>
-          <span class="int-name">{name}</span>
+      {[interventional.slice(0, 6), interventional.slice(6, 12)].map((col, colIdx) => (
+        <div class="int-col">
+          {col.map((name, i) => {
+            const n = colIdx * 6 + i + 1;
+            const ar = String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]).padStart(2, "٠");
+            return (
+              <div class="int-row">
+                <span class="int-num">{ar}</span>
+                <span class="int-name">{name}</span>
+              </div>
+            );
+          })}
         </div>
       ))}
     </div>
@@ -247,15 +255,19 @@ const interventional = [
 
   .int-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+    grid-template-columns: 1fr;
     gap: 0 clamp(32px, 4vw, 64px);
   }
+  @media (min-width: 640px) {
+    .int-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .int-col { min-width: 0; }
   .int-row {
     display: grid; grid-template-columns: 40px minmax(0, 1fr);
     gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line);
   }
   .int-num { font-size: 13px; color: var(--accent); }
-  .int-name { font-size: 15px; color: var(--ink); }
+  .int-name { font-size: 15px; color: var(--ink); overflow-wrap: anywhere; }
 
   .appt-section {
     max-width: var(--page-max); margin: 0 auto;
