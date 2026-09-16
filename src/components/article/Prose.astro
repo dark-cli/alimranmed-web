@@ -20,7 +20,9 @@ const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 
 <section class="prose-block">
   {heading && num && id && <SectionHead num={num} heading={heading} id={id} />}
-  {paras.map((p) => <p class="p">{p}</p>)}
+  {paras.map((p) => (
+    <p class="p" set:html={p.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')} />
+  ))}
 </section>
 
 <style>
@@ -34,5 +36,13 @@ const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
     text-wrap: pretty;
   }
   .p:last-child { margin-bottom: 0; }
+  .p :global(a) {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .p :global(a:hover) {
+    color: var(--accent-hover);
+    text-decoration: underline;
+  }
   :global(html[dir="rtl"]) .p { line-height: 1.95; }
 </style>
