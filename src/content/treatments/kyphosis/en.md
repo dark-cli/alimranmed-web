@@ -1,81 +1,70 @@
 ---
-title: "Kyphosis﻿"
-description: "Kyphosis is an exaggerated, forward rounding of the back. It can occur at any age but is most common in"
+title: "Kyphosis"
+description: "Excessive forward curvature of the thoracic spine. May be postural, structural (Scheuermann's disease), degenerative, or post-traumatic. Correction is surgical when severe."
 category: "spine"
 order: 999
-legacyUrl: "https://alimranmed.com/kyphosis%ef%bb%bf/"
+legacyUrl: "https://alimranmed.com/kyphosis/"
 source: "legacy-wp"
+publishedAt: "2021-03-10T00:00:00Z"
+redesigned: true
+
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Excessive forward rounding of the thoracic spine, creating a 'hunched' posture. May be postural, developmental (Scheuermann's), degenerative, or post-traumatic."
+      - label: "Typical signs"
+        value: "Visible forward curvature, back pain, shortness of breath in severe cases, cosmetic concern."
+      - label: "How we treat it"
+        value: "Postural kyphosis: posture correction and core strengthening. Scheuermann's: bracing in growing children, surgery for severe curves. Degenerative: pain management and physical therapy."
+
+  - type: prose
+    heading: "What kyphosis is"
+    body: |
+      Kyphosis is anterior (forward) curvature of the thoracic spine. Normal thoracic kyphosis is 20–40°; beyond 50° is usually considered excessive. The causes vary: postural slouching, Scheuermann's disease (juvenile-onset structural kyphosis), degenerative disc disease in older patients, or post-traumatic deformity.
+
+  - type: stats-facts
+    heading: "What we see in clinic"
+    stats:
+      - value: "1–8%"
+        label: "Of adolescents have Scheuermann's kyphosis"
+      - value: "50°"
+        label: "Threshold angle — cosmetic and functional concern intensifies above this"
+      - value: "70–80%"
+        label: "Achieve pain relief and cosmetic improvement after surgical correction"
+    facts:
+      - "Scheuermann's disease is vertebral wedging (>5° wedging in three consecutive vertebrae)."
+      - "Degenerative kyphosis develops from disc collapse and facet joint arthropathy over decades."
+      - "Pulmonary and cardiac reserve may be compromised in severe kyphosis (>75°)."
+
+  - type: treatment-groups
+    heading: "How it is treated"
+    intro: "Postural kyphosis responds to core work. Structural kyphosis requires bracing or surgery depending on severity and age."
+    groups:
+      - title: "Postural correction"
+        subtitle: "Postural kyphosis (flexible, no structural wedging)"
+        items:
+          - "Posture awareness and ergonomic education"
+          - "Core strengthening (back extensors, scapular stabilisers)"
+          - "Chest opening and hip flexor stretching"
+      - title: "Bracing"
+        subtitle: "Scheuermann's kyphosis, growing skeleton, curves 50–75°"
+        items:
+          - "Rigid thoracolumbosacral orthosis (TLSO) worn 18–20 hours daily"
+          - "Effective in halting progression; less effective at correcting established curves"
+      - title: "Surgery"
+        subtitle: "Severe or progressive curves (>75°) causing pain, disability or cardiopulmonary compromise"
+        items:
+          - "Posterior spinal fusion with instrumentation"
+          - "Anterior release and fusion for rigid curves"
+          - "Osteotomy (bone cuts) for fixed deformity"
+      - title: "Pain management"
+        subtitle: "Degenerative kyphosis"
+        items:
+          - "NSAIDs for inflammation"
+          - "Physical therapy and postural support"
+          - "Interventional pain procedures if conservative therapy fails"
+
+  - type: related
+    slugs: ["scoliosis", "back-pain"]
 ---
-
-![](/images/legacy/2021/01/congenital-kyphosis-1-300x185.png)
-
-Kyphosis is an exaggerated, forward rounding of the back. It can occur at any age but is most common in older women.
-
-Age-related kyphosis is often due to weakness in the spinal bones that causes them to compress or crack. Other types of kyphosis can appear in infants or teens due to malformation of the spine or wedging of the spinal bones over time.
-
-Mild kyphosis causes few problems. Severe kyphosis can cause pain and be disfiguring. Treatment for kyphosis depends on your age, and the cause and effects of the curvature.
-
-## **Symptoms**
-
-Mild kyphosis may produce no noticeable signs or symptoms. But some people experience back pain and stiffness in addition to an abnormally curved spine.
-
-## **Causes**
-
-The individual bones (vertebrae) that make up a healthy spine look like cylinders stacked in a column. Kyphosis occurs when the vertebrae in the upper back become more wedge shaped.
-
-Abnormal vertebrae can be caused by:
-
--   Broken or crushed vertebrae (compression fractures) can result in curvature of the spine. Mild compression fractures often don’t produce noticeable signs or symptoms.
--   This bone-thinning disorder can cause spinal curvature, especially if weakened vertebrae result in compression fractures. Osteoporosis is most common in older women and people who have taken corticosteroids for long periods of time.
--   **Disk degeneration.**Soft, circular disks act as cushions between spinal vertebrae. With age, these disks dry out and shrink, which often worsens kyphosis.
--   **Scheuermann’s disease.**Also called Scheuermann’s kyphosis, this disease typically begins during the growth spurt that occurs before puberty. Boys are affected more often than girls.
--   **Birth defects.**Spinal bones that don’t develop properly before birth can cause kyphosis.
--   Kyphosis in children can also be associated with certain syndromes, such as Ehlers-Danlos syndrome and Marfan syndrome.
--   **Cancer and cancer treatments.**Cancer in the spine can weaken vertebrae and make them more prone to compression fractures, as can chemotherapy and radiation cancer treatments.
-
-## **Complications**
-
-In addition to causing back pain, kyphosis may cause:
-
--   **Breathing problems.**Severe kyphosis can put pressure on the lungs.
--   **Limited physical functions.**Kyphosis is associated with weakened back muscles and difficulty doing tasks such as walking and getting out of chairs. The spinal curvature can also make it difficult to gaze upward or drive and can cause pain when you lie down.
--   **Digestive problems.**Severe kyphosis can compress the digestive tract, causing problems such as acid reflux and difficulty with swallowing.
--   **Body image problems.**People with kyphosis, especially adolescents, may develop a poor body image from having a rounded back or from wearing a brace to correct the condition. For older people, poor body image can lead to social isolation.
-
-## **Treatment**
-
-Kyphosis treatment depends on the cause and severity of your condition.
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[SpineMED® system](/services/chiropractic/spinmed/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)
-
-### Surgical and other procedures
-
-Surgery might be recommended for severe kyphosis that is pinching the spinal cord or nerve roots. Spinal fusion is the most common procedure for reducing the degree of curvature. The surgeon inserts pieces of bone between the vertebrae and then fastens the vertebrae together with metal rods and screws until the spine heals together in a corrected position.

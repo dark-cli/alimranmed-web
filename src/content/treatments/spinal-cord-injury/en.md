@@ -1,96 +1,72 @@
 ---
-title: "Spinal Cord Injury"
-description: "Summary Spinal cord = the bundle of nerves that connect the brain to the rest of the body Injury = damage The"
+title: "Spinal cord injury"
+description: "Acute traumatic or non-traumatic damage to the spinal cord. Rehabilitation and neuroprotection are critical in the acute phase; long-term management focuses on function restoration."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/spinal-cord-injury/"
 source: "legacy-wp"
+publishedAt: "2021-03-10T00:00:00Z"
+redesigned: true
+
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Damage to the spinal cord from trauma, tumour, infection or inflammation. Results in loss of motor and sensory function below the injury level."
+      - label: "Typical signs"
+        value: "Paralysis or weakness below injury; loss of sensation and bladder/bowel control; spasticity; neuropathic pain; sexual dysfunction."
+      - label: "How we treat it"
+        value: "Acute: immobilisation, neuroprotection, high-dose methylprednisolone within 8 hours. Chronic: rehabilitation, bladder management, pain control, and functional restoration."
+
+  - type: prose
+    heading: "What spinal cord injury is"
+    body: |
+      Spinal cord injury (SCI) is damage to the neural tissue of the spinal cord, resulting in loss of motor and sensory function below the injury level. Traumatic SCI is usually from falls, motor vehicle crashes or gunshot wounds. Non-traumatic causes include myelitis, tumour, or haemorrhage.
+
+  - type: stats-facts
+    heading: "What we see in clinic"
+    stats:
+      - value: "250–500K"
+        label: "People living with SCI globally"
+      - value: "50%"
+        label: "Sustain complete injury (no motor or sensory preservation)"
+      - value: "15–20 years"
+        label: "Life expectancy after SCI, with mortality from pulmonary complications"
+    facts:
+      - "Complete injury: total loss of motor and sensory function below the lesion."
+      - "Incomplete injury: some motor or sensory preservation — recovery potential is higher."
+      - "Spasticity develops in 65–78% of SCI patients within months."
+      - "Autonomic dysreflexia (sudden hypertension triggered by visceral distention) is a medical emergency."
+
+  - type: treatment-groups
+    heading: "How it is treated"
+    intro: "Acute management focuses on neuroprotection and stabilisation. Long-term care is multidisciplinary rehabilitation."
+    groups:
+      - title: "Acute management"
+        subtitle: "First 24–48 hours post-injury"
+        items:
+          - "Immobilisation to prevent secondary injury"
+          - "High-dose methylprednisolone within 8 hours if initiated"
+          - "ICU-level supportive care"
+      - title: "Rehabilitation"
+        subtitle: "Weeks to months post-injury"
+        items:
+          - "Physical therapy for mobility and transfers"
+          - "Occupational therapy for activities of daily living"
+          - "Bowel and bladder retraining"
+      - title: "Spasticity management"
+        subtitle: "Months to years post-injury"
+        items:
+          - "Physical therapy and stretching"
+          - "Oral agents: baclofen, tizanidine"
+          - "Intrathecal baclofen pump for severe spasticity"
+      - title: "Pain management"
+        subtitle: "Neuropathic pain is common"
+        items:
+          - "Neuropathic agents: gabapentin, pregabalin"
+          - "Tricyclic antidepressants"
+          - "Interventional pain procedures if medical management fails"
+
+  - type: related
+    slugs: ["motor-disorders", "back-pain"]
 ---
-
-### **Summary**
-
-**Spinal cord** = the bundle of nerves that connect the brain to the rest of the body  
-**Injury** = damage
-
-The spinal cord is the bundle of nerves and other tissue that connects brain to body. It carries instructions about movement from the brain, and information about sensation to the brain. It runs from the base of the brain down through the cervical spine (in the neck) and the thoracic spine (in the upper and mid-back). There it ends–the spinal cord does not actually run the entire length of the spine.  After the spinal cord ends, in the lumbar (lower) spine, is the *cauda equina*: the bundle of *nerve roots* that branch out to the legs.
-
-Acute spinal cord injury (SCI) is caused by a trauma to the cervical or thoracic spine, where the spinal cord is located. SCI can disrupt movement, sensation, and body organ function below the level of the injury.
-
-Spinal cord injuries can be either complete or incomplete.
-
--   Complete injury: no sensation or movement below the level of the injury; both sides of the body are equally affected.
--   Incomplete injury: some function below the level of the injury–for example, movement in one limb more than another, sensation in some parts of the body, or more function on one side of the body than the other.
-
-Although there is currently no cure for spinal cord injury, the outlook for people affected by SCI has improved dramatically over the last few decades. New treatments, specialized rehabilitation training, and novel technologies may all improve the life experience of people with spinal cord injury. Worldwide, scientists are researching ways to someday repair the injured spinal cord.
-
-### **Symptoms**
-
-Symptoms of a spinal cord injury vary by location and severity of the injury.
-
--   Location: the higher in the spinal column the injury occurs, the more widespread the resulting disability.
--   Severity: the more severe the injury, the more severe the resulting deficits.
-
-Symptoms may include:
-
--   Muscle weakness or paralysis in the trunk, arms or legs:
-    -   Quadriplegia (quad = four) — loss of movement and sensation in all four limbs (both arms and both legs). It usually occurs as a result of an injury toward the top of the neck.
-    -   Paraplegia (para = two like parts) — loss of movement and sensation in the lower half of the body (both legs). It usually occurs as a result of an injury at the first thoracic vertebra or below.
-    -   Triplegia (tri = three) — loss of movement and sensation in one arm and both legs. It usually results from incomplete spinal cord injury.
-    -   Quadriparesis and paraparesis —  partial loss of function in two or four limbs.
--   Muscle spasms
--   Difficulty breathing (if the injury has occurred in the upper portion of the spine)
--   Changes in heart rate and blood pressure
--   Digestive problems
--   Loss of bowel and bladder function (if the injury has occurred in the lower portion of the spine)
--   Sexual dysfunction
-
-Symptoms do not always begin immediately. They can develop gradually after an injury if bleeding or swelling put pressure on the spinal cord. Any person who has experienced a dangerous fall or motor vehicle accident should be evaluated for a spinal injury. Prompt treatment may help control this type of gradual damage.
-
-### **Causes and Risk Factors**
-
-The most common causes of spinal cord injury are car accidents, falls, gunshot or knife wounds, and sports accidents.
-
-Most spinal cord injuries occur in young men between the ages of 16 to 30.
-
-### **Treatments**
-
-Recovery from a spinal cord injury requires long-term hospitalization and rehabilitation. An interdisciplinary team of physicians, nurses, therapists (physical, occupational, or speech), and other specialists work together with each patient affected by a spinal cord injury.
-
-At Alimran Medical Center, we may recommend any of the following treatments:
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [SpineMED® system](/services/chiropractic/spinmed/)
--   [Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
--   Transforaminal injections
-
-Ozone injection
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-Prolotherapy
-
-[Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
-
-Spinal cord stimulation
-
-Intrathecal baclofen pump
-
-In some cases, surgery may be necessary to stabilize fractured bones, decompress (relieve the pressure on) the injured area, and to manage any other injuries. However, there is not yet a way to reverse damage to an injured spinal cord. Even so, as the body heals from the injury, some patients may recover some spinal cord function up to six or twelve months after injury.

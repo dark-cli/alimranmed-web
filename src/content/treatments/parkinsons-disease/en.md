@@ -1,45 +1,73 @@
 ---
-title: "Parkinson’s Disease"
-description: "Parkinson’s disease is a progressive neurological disease of the brain. There is no known cure for it as of yet."
-category: "motor"
+title: "Parkinson's disease"
+description: "Progressive movement disorder caused by loss of dopamine-producing neurons. Tremor, rigidity and slowness are hallmarks; surgery offered for advanced disease when drugs alone fail."
+category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/parkinsons-disease/"
 source: "legacy-wp"
+publishedAt: "2021-03-10T00:00:00Z"
+redesigned: true
+
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Progressive loss of dopamine-producing neurons in the midbrain, causing difficulty initiating and controlling movement."
+      - label: "Typical signs"
+        value: "Resting tremor (pill-rolling), rigidity, bradykinesia (slowness), postural instability, balance and gait difficulties."
+      - label: "How we treat it"
+        value: "Dopamine-replacement therapy (levodopa) is first-line. Deep brain stimulation (DBS) for advanced disease when medication loses efficacy."
+
+  - type: prose
+    heading: "What Parkinson's disease is"
+    body: |
+      Parkinson's disease is progressive neurodegeneration of dopamine-producing neurons in the substantia nigra. Dopamine loss leads to slow, stiff, tremulous movement. Most cases present after age 60, though early-onset cases occur. Cause is unknown in most patients.
+
+  - type: stats-facts
+    heading: "What we see in clinic"
+    stats:
+      - value: "10M"
+        label: "People worldwide with Parkinson's"
+      - value: "4–6 years"
+        label: "Average motor control duration on levodopa before DBS needed"
+      - value: "80%"
+        label: "Show improvement in tremor and rigidity after DBS"
+    facts:
+      - "Diagnosis is clinical — no blood test exists yet."
+      - "MRI rules out atypical syndromes (PSP, MSA)."
+      - "Medication-induced dyskinesia develops after 5–10 years of levodopa."
+      - "DBS works best for tremor and rigidity; bradykinesia is less responsive."
+      - "Quality of life often improves dramatically after DBS."
+
+  - type: treatment-groups
+    heading: "How it is treated"
+    intro: "Medical management is first-line. Surgery considered when medication complications emerge."
+    groups:
+      - title: "Dopamine replacement"
+        subtitle: "First-line for all patients"
+        items:
+          - "Levodopa — converted to dopamine in brain"
+          - "Dopamine agonists (pramipexole, ropinirole)"
+          - "MAO-B inhibitors to slow dopamine breakdown"
+      - title: "Adjunctive medication"
+        subtitle: "When first-line drugs lose potency"
+        items:
+          - "COMT inhibitors to prolong levodopa effect"
+          - "Amantadine for dyskinesia reduction"
+          - "Anticholinergics for tremor"
+      - title: "Deep brain stimulation (DBS)"
+        subtitle: "Advanced disease, medication complications"
+        items:
+          - "Electrodes in subthalamic nucleus (STN) or globus pallidus interna (GPi)"
+          - "Continuous electrical pulses normalise circuit activity"
+          - "Allows levodopa dose reduction, minimising dyskinesia"
+      - title: "Rehabilitation"
+        subtitle: "All stages"
+        items:
+          - "Physical therapy for gait and postural stability"
+          - "Speech therapy for voice and swallowing"
+          - "Occupational therapy for daily activities"
+
+  - type: related
+    slugs: ["motor-disorders", "stroke"]
 ---
-
-Parkinson’s disease is a progressive neurological disease of the brain. There is no known cure for it as of yet. Parkinson’s is caused due to the shortage of dopamine in the brain. Dopamine is a neurotransmitter, which is needed to allow continuous flow of impulses from one synapse to another in the brain.
-
-We all lose dopamine as we age but when it becomes 80% depleted we experience symptoms such as:
-
-1) Tremors e.g. a limb may seen tremble at rest
-
-2) Slow movement patterns e.g. speed of moving your limbs becomes difficult
-
-3) Rigidity e.g. the muscles of the body become stiffened making movement rigid.
-
-Physiotherapy helps with the above and is important to start it in the early days of the disease. Depression is common with Parkinson’s disease or any disease for that matter. Parkinson’s patients can feel very lost as they lose the ability to perform daily tasks as easily as before. Physiotherapy will help with this and therefore reduce the patient’s stresses. Our physiotherapists at archives understand the difficulties any individual faces with the development of a disease and how this affects your overall lifestyle. We aim to keep you fit and upbeat and more focused on a positive future and to make tasks that you feel are impossible possible. To talk with one of our physiotherapists please call reception and we can arrange that for you.
-
-At Alimran Medical Center, we may recommend any of the following treatments:
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [SpineMED® system](/services/chiropractic/spinmed/)
--   [Sigma](/services/chiropractic/sigma/)
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-Prolotherapy
-
-[Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
