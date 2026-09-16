@@ -5,7 +5,7 @@ import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i1
 
 const locale = currentLocale(Astro);
 
-const posts = (await getCollection("posts"))
+const blogs = (await getCollection("blog"))
   .filter((e) => isLocale(e.id, "en"))
   .sort((a, b) => {
     const ad = a.data.publishedAt?.getTime() ?? 0;
@@ -22,7 +22,7 @@ const posts = (await getCollection("posts"))
     </header>
 
     <div class="post-list">
-      {posts.map((p) => (
+      {blogs.map((p) => (
         <a class="post-card card" href={localizedHref(`/blog/${topicOf(p.id)}/`, locale)}>
           <h3>{p.data.title}</h3>
           {p.data.description && <p>{p.data.description}</p>}
@@ -35,7 +35,7 @@ const posts = (await getCollection("posts"))
       ))}
     </div>
 
-    {posts.length === 0 && (
+    {blogs.length === 0 && (
       <p class="empty">Posts will appear here after the blog migration runs.</p>
     )}
   </div>

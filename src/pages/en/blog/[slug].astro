@@ -7,8 +7,8 @@ import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i1
 const locale = currentLocale(Astro);
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
-  return posts
+  const blogs = await getCollection("blog");
+  return blogs
     .filter((e) => isLocale(e.id, "en"))
     .map((entry) => ({ params: { slug: topicOf(entry.id) }, props: { entry } }));
 }

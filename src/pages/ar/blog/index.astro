@@ -5,9 +5,9 @@ import { topicOf, pickForLocale, localizedHref, currentLocale } from "../../../l
 
 const locale = currentLocale(Astro);
 
-const all = await getCollection("posts");
+const all = await getCollection("blog");
 const topics = Array.from(new Set(all.map((e) => topicOf(e.id))));
-const posts = topics
+const blogs = topics
   .map((topic) => pickForLocale(all, topic, "ar"))
   .filter((x): x is NonNullable<typeof x> => !!x)
   .map(({ entry }) => entry)
@@ -18,7 +18,7 @@ const posts = topics
   <div class="container page">
     <header class="page-head"><h1>المدونة</h1></header>
     <div class="post-list">
-      {posts.map((p) => (
+      {blogs.map((p) => (
         <a class="post-card card" href={localizedHref(`/blog/${topicOf(p.id)}/`, locale)}>
           <h3>{p.data.title}</h3>
           {p.data.description && <p>{p.data.description}</p>}

@@ -135,6 +135,21 @@ const doctors = defineCollection({
   }),
 });
 
+// Blog collection — redesigned with block-based schema.
+// Blogs can be marked as clinically-relevant to appear in /conditions page.
+const blog = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+  schema: pageBase.extend({
+    author: z.string().optional(),
+    publishedAt: z.coerce.date().optional(),
+    tags: z.array(z.string()).default([]),
+    redesigned: z.boolean().optional(),        // opt-in to block-based rendering
+    sections: z.array(articleSection).optional(), // block-based content
+    relatedTreatments: z.array(z.string()).optional(), // link to treatment slugs
+    clinicallyRelevant: z.boolean().default(false),    // appears in /conditions
+  }),
+});
+
 const posts = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/posts" }),
   schema: pageBase.extend({
@@ -168,6 +183,7 @@ export const collections = {
   treatments,
   services,
   doctors,
+  blog,
   posts,
   cases,
   testimonies,
