@@ -56,6 +56,15 @@ const conferences = [
   { year: "Beirut 2010",     body: "Cadaveric bioskills in advanced spinal approaches, under Boston University Medical School supervision." },
   { year: "Chandigarh 2009", body: "Advanced training in Professor Destandau's endoscopic spine technique, Gian Sagar Medical College." },
 ];
+
+// Practice stats — same 4-cell band used on the home page, repeated here
+// so the CV can stand on its own without visitors having to bounce back.
+const stats = [
+  { fig: "5,000+", desc: "Operations performed by the lead consultant" },
+  { fig: "25",     desc: "Years of neurosurgical practice behind the clinic" },
+  { fig: "4",      desc: "Departments — surgery, pain medicine, physiotherapy, rehabilitation" },
+  { fig: "6",      desc: "Clinic days a week, including an out-of-hours on-call roster" },
+];
 ---
 
 <BaseLayout title={`${entry.data.fullName} — Alimran Clinic`} description={entry.data.description}>
@@ -78,6 +87,18 @@ const conferences = [
         loading="eager"
         fetchpriority="high"
       />
+    </div>
+  </section>
+
+  <!-- Practice stats — mirrors the home page's stat band -->
+  <section class="cv-stats">
+    <div class="cv-stats-grid">
+      {stats.map((s) => (
+        <div class="cv-stat-cell">
+          <p class="cv-stat-fig">{s.fig}</p>
+          <p class="cv-stat-desc">{s.desc}</p>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -163,6 +184,30 @@ const conferences = [
 <style>
   /* ─── Head ───────────────────────────────────────────────── */
   .cv-head-band { border-bottom: 1px solid var(--line); }
+
+  /* Practice stat band (same visual language as the home page) */
+  .cv-stats {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .cv-stats-grid {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr));
+    gap: 1px;
+    background: var(--line);
+  }
+  .cv-stat-cell { background: var(--surface); padding: 32px 24px; }
+  .cv-stat-fig {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.4vw, 40px);
+    line-height: 1;
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .cv-stat-desc { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--body); }
   .cv-head {
     max-width: var(--page-max);
     margin: 0 auto;
