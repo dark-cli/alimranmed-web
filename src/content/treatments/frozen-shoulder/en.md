@@ -1,51 +1,94 @@
 ---
-title: "Frozen Shoulder"
-description: "Frozen shoulder also known as adhesive capsulitis is a very painful and debilitating condition of the shoulder which can take nearly"
+title: "Frozen shoulder"
+description: "Pain and progressive stiffness in the shoulder that can lock the joint for months. Most cases self-resolve within 18–30 months — the clinic's job is to shorten that runway with targeted treatment."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/frozen-shoulder/"
 source: "legacy-wp"
+publishedAt: "2020-02-04T00:00:00Z"
+redesigned: true
+
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Inflammation and thickening of the shoulder capsule (adhesive capsulitis) causing pain and loss of movement."
+      - label: "Typical signs"
+        value: "Deep aching pain, inability to reach behind the back or overhead, worse at night."
+      - label: "How we treat it"
+        value: "Physiotherapy for range; intra-articular injection to break the pain cycle; capsular release surgery in the small stuck-solid minority."
+
+  - type: prose
+    heading: "What frozen shoulder is"
+    body: |
+      Frozen shoulder — clinically, adhesive capsulitis — is an inflammatory condition in which the capsule around the shoulder joint thickens, tightens, and adheres to itself. The result is severe pain and progressive loss of movement, particularly external rotation.
+
+      The condition is self-limiting: even without treatment most cases resolve within 18 to 30 months. But that is a long time to lose a shoulder, and the point of active treatment is to shorten the runway meaningfully — often to a matter of months instead.
+
+  - type: comparison-pair
+    heading: "Three phases you go through"
+    intro: "The condition moves through three overlapping phases. The right treatment depends on which phase you are in — pushing physiotherapy hard in the freezing phase makes pain worse and doesn't restore movement any faster."
+    a:
+      label: "Phase 1"
+      title: "Freezing (pain-dominant)"
+      items:
+        - "2–9 months. Pain is worst; movement gradually declines."
+        - "Focus on pain control: injection, gentle mobilisation only."
+        - "Aggressive stretching now is counter-productive."
+    b:
+      label: "Phase 2 & 3"
+      title: "Frozen → Thawing"
+      items:
+        - "4–12 months frozen; 5–24 months thawing."
+        - "Pain reduces; stiffness is the main problem."
+        - "Focused physiotherapy delivers most of the gain here."
+
+  - type: stats-facts
+    heading: "What we see in clinic"
+    stats:
+      - value: "2–5%"
+        label: "Lifetime prevalence in the general population"
+      - value: "70%"
+        label: "Improve substantially within 3 months of intra-articular steroid injection"
+      - value: "10%"
+        label: "Require surgical capsular release for refractory stiffness"
+    facts:
+      - "Diabetes, thyroid disease, and prior shoulder immobilisation are the main risk factors."
+      - "Imaging (X-ray, MRI) is used to exclude other causes; frozen shoulder itself is a clinical diagnosis."
+      - "The 'freezing' phase is the wrong time for aggressive physiotherapy; pain control first."
+      - "Intra-articular steroid injection is most effective in the first six months of symptoms."
+      - "Manipulation under anaesthesia and arthroscopic capsular release are reserved for cases that remain stuck after 6+ months of full conservative care."
+
+  - type: treatment-groups
+    heading: "How it is treated"
+    intro: "Care is phase-matched. Same interventions in the wrong order can slow you down; matched to the phase, they measurably shorten the timeline."
+    note: "The plan is reviewed at 6-week intervals — the phases shift, and the treatment shifts with them."
+    groups:
+      - title: "Pain control"
+        subtitle: "Freezing phase"
+        items:
+          - "Simple analgesia + short NSAID course"
+          - "Sleep positioning advice"
+          - "Intra-articular steroid injection (image-guided)"
+      - title: "Physiotherapy"
+        subtitle: "Frozen + thawing phases"
+        items:
+          - "Passive range-of-motion techniques"
+          - "Capsular stretching (rotator cuff, pendulum)"
+          - "Home exercise programme, reviewed every 4–6 weeks"
+      - title: "Injection therapy"
+        subtitle: "When pain blocks progress"
+        items:
+          - "Suprascapular nerve block"
+          - "Hydro-dilatation (capsular distension with saline + steroid)"
+          - "Repeat intra-articular steroid at 8–12 weeks if needed"
+      - title: "Surgery"
+        subtitle: "Small minority"
+        items:
+          - "Manipulation under anaesthesia (MUA)"
+          - "Arthroscopic capsular release"
+          - "Immediate post-op physiotherapy is non-negotiable"
+
+  - type: related
+    slugs: ["fibromyalgia", "back-pain"]
 ---
-
-![](/images/legacy/2020/02/Frozen-shoulder-300x169-1.png)
-
-Frozen shoulder also known as adhesive capsulitis is a very painful and debilitating condition of the shoulder which can take nearly 18 months to heal. During this time, physiotherapy is needed to help improve and maintain It is characterised by stiffness and pain. Movements such as reaching above shoulder height, throwing a ball, reaching your hand behind your back or put on a seat belt become increasingly difficult. Approximately 20% of those who develop frozen shoulder will develop frozen shoulder in the other shoulder at some point in the future.
-
-There are stages to the frozen shoulder:
-
-1) Freezing: characterised by pain around the shoulder initially, followed by a progressive loss of range of movement.
-
-2) Frozen – minimal pain, with no further loss or regain of range
-
-3) Thawing– Movement begings to return to normal ranges
-
-The shoulder capsule becomes inflamed and starts to shrink causing limitation in shoulder movements. This condition is very painful and can cause a lot of disruption. Daily activities such as brushing your teeth, feeding using your shoulder can become very painful. There is no exact reason why some people develop frozen shoulder. However, there is some research to suggest that 35-50 year old age groups are more prone. Those who have a history of shoulder trauma or surgery to the shoulder, suffering from diabetes, hyperthyroidism, autoimmune disease, inflammatory conditions, in activity of the shoulder are also more prone.
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [SpineMED® system](/services/chiropractic/spinmed/)
--   [Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
--   Trigger point injections
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Prolotherapy](/services/regenerative-medicine/)
