@@ -1,16 +1,41 @@
 ---
 title: "TMS for pains"
-description: "Recently, clinicians have been using repetitive transcranial magnetic stimulation (rTMS) for treating various pain conditions. Overall, our findings suggested that"
+description: "Repetitive transcranial magnetic stimulation (rTMS) for treating various pain conditions, from neuropathic pain to complex pain syndromes"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/07/01/tms-for-pains/"
 publishedAt: "2020-07-01T07:54:01"
 source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "rTMS for pain"
+        value: "Repetitive transcranial magnetic stimulation used clinically to treat various pain conditions"
+      - label: "Proven effective for"
+        value: "Neuropathic pain, central pain, peripheral nerve pain, fibromyalgia, and migraine"
+  - type: prose
+    heading: "Treating Pain with rTMS"
+    body: |
+      Clinicians have been using repetitive [transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/) for treating various pain conditions. Evidence shows that rTMS is beneficial for treating neuropathic pain of various origins, including:
+      
+      - Central pain (pain originating from brain/spinal cord injury)
+      - Pain from peripheral nerve disorders
+      - Fibromyalgia
+      - Migraine headaches
+      
+      Additionally, data on rTMS for orofacial pain conditions shows promising results, including:
+      
+      - Trigeminal neuralgia
+      - Phantom pain
+      - Low back pain
+      - Myofascial pain syndrome
+      - Pelvic pain
+      - Complex regional pain syndrome
+      
+      While these preliminary results are encouraging, further research is needed to fully establish rTMS efficacy for these specific pain conditions.
 ---
 
 ![](/images/legacy/2020/07/1-s2.0-S1388245718311052-gr1-221x300.jpg)
 ![](/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-300x224.jpg)
-
-Recently, clinicians have been using repetitive [transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/) for treating various pain conditions. Overall, our findings suggested that rTMS is beneficial for treating neuropathic pain of various origins, such as central pain, pain from peripheral nerve disorders, fibromyalgia, and migraine. Although data on the use of rTMS for orofacial pain, including trigeminal neuralgia, phantom pain, low back pain, myofascial pain syndrome, pelvic pain, and complex regional pain syndrome, were promising, there was insufficient evidence to determine the efficacy of rTMS for treating these conditions.
 

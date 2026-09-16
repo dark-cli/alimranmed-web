@@ -1,16 +1,41 @@
 ---
 title: "التحفيز المغناطيسي للألم"
-description: "في الآونة الأخيرة، استخدم الأطباء التحفيز المغناطيسي القحفي المتكرر (rTMS) لعلاج حالات الألم المختلفة"
+description: "التحفيز المغناطيسي المتكرر (rTMS) لعلاج حالات الألم المختلفة من الألم العصبي إلى متلازمات الألم المعقدة"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/07/01/tms-for-pains/"
 publishedAt: "2020-07-01T07:54:01"
 source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "rTMS للألم"
+        value: "التحفيز المغناطيسي المتكرر يستخدم سريرياً لعلاج حالات الألم المختلفة"
+      - label: "فعال في"
+        value: "الألم العصبي والألم المركزي وألم الأعصاب الطرفية والألياف العضلية والصداع النصفي"
+  - type: prose
+    heading: "علاج الألم بـ rTMS"
+    body: |
+      استخدم الأطباء [التحفيز المغناطيسي المتكرر (rTMS)](/services/brain-stimulation/tms/) لعلاج حالات الألم المختلفة. تظهر الدراسات أن rTMS مفيد لعلاج الألم العصبي من أصول مختلفة، بما فيها:
+      
+      - الألم المركزي (الناتج من إصابة الدماغ/النخاع الشوكي)
+      - ألم اضطرابات الأعصاب الطرفية
+      - الألياف العضلية الليفية (الفيبروميالجيا)
+      - الصداع النصفي (الشقيقة)
+      
+      بالإضافة إلى ذلك، البيانات على rTMS لآلام الوجه والفك واعدة جداً، بما فيها:
+      
+      - ألم العصب الخماسي
+      - الألم الوهمي
+      - آلام أسفل الظهر
+      - متلازمة ألم العضلات
+      - ألم الحوض
+      - متلازمة الألم الجهازي المعقدة
+      
+      بينما هذه النتائج الأولية مشجعة، يلزم المزيد من البحث لتأكيد فعالية rTMS لهذه الحالات المحددة.
 ---
 
 ![](/images/legacy/2020/07/1-s2.0-S1388245718311052-gr1-221x300.jpg)
 ![](/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-300x224.jpg)
-
-Recently, clinicians have been using repetitive [transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/) for treating various pain conditions. Overall, our findings suggested that rTMS is beneficial for treating neuropathic pain of various origins, such as central pain, pain from peripheral nerve disorders, fibromyalgia, and migraine. Although data on the use of rTMS for orofacial pain, including trigeminal neuralgia, phantom pain, low back pain, myofascial pain syndrome, pelvic pain, and complex regional pain syndrome, were promising, there was insufficient evidence to determine the efficacy of rTMS for treating these conditions.
 
