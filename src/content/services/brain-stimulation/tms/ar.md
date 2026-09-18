@@ -7,7 +7,7 @@ legacyUrl: "https://ar.alimranmed.com/tms"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2021/01/TMS-procedure-300x274.png)
+![](/images/legacy/2021/01/TMS-procedure.png)
 
 هل حدثت العملية في دماغك؟
 الآن تكنولوجيا تحاكي الدماغ لمساعدته على تعزيز الخلايا

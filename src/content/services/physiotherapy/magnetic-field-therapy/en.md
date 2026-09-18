@@ -8,7 +8,7 @@ publishedAt: "2021-01-21T15:18:26"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2021/01/salus_talent_a_list2-300x200.jpg)
+![](/images/legacy/2021/01/salus_talent_a_list2.jpg)
 
 Magnetic field therapy is a safe, and non-invasive way to reduce pain and inflammation uses magnets to maintain health and treat illness.
 

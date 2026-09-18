@@ -8,7 +8,7 @@ publishedAt: "2020-04-29T08:00:43"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2020/04/rf-for-knee-300x200.jpg)
+![](/images/legacy/2020/04/rf-for-knee.jpg)
 
 Radiofrequency Ablation of Knee Joint
 

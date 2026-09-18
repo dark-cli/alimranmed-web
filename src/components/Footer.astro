@@ -1,137 +1,169 @@
 ---
+/**
+ * Footer — Alimran Clinic (redesign Sep 2026).
+ * 1:1 port of the footer in `Alimran Neurosurgery.dc.html` (lines 556–593).
+ * Ink background, mono uppercase column labels, four-column grid.
+ */
 import { CONTACT } from "../consts";
-import { currentLocale, dictFor } from "../lib/i18n";
+import { currentLocale, localizedHref, alternateHref } from "../lib/i18n";
 
 const locale = currentLocale(Astro);
-const dict = dictFor(locale);
+const currentPath = Astro.url.pathname;
 const year = new Date().getFullYear();
 
-const brandTitle = locale === "ar" ? "مركز العمران الطبي" : "Alimran Medical Center";
-const brandDesc = locale === "ar"
-  ? "أمراض الأعصاب والاضطرابات العضلية الهيكلية — البصرة، العراق."
-  : "Neurology & Musculoskeletal Disorders — Basra, Iraq.";
+const L = (href: string) => localizedHref(href, locale);
+const otherLocale = locale === "en" ? "ar" : "en";
+const altHref = alternateHref(currentPath, otherLocale);
+const altLabel = otherLocale === "ar" ? "عربي" : "English";
 
-const socialLinks = [
-  { icon: "fa-facebook-f", label: "Facebook", url: CONTACT.social.facebook },
-  { icon: "fa-instagram", label: "Instagram", url: CONTACT.social.instagram },
-  { icon: "fa-youtube", label: "YouTube", url: CONTACT.social.youtube },
-  { icon: "fa-telegram", label: "Telegram", url: CONTACT.social.telegram },
-  { icon: "fa-tiktok", label: "TikTok", url: CONTACT.social.tiktok },
+const isAr = locale === "ar";
+
+const brand = isAr ? "مركز العمران الطبي" : "Alimran Clinic";
+const brandSub = isAr ? "جراحة الأعصاب · العمود الفقري · طب الألم"
+                     : "Neurosurgery · Spine · Pain medicine";
+const addr1 = isAr
+  ? "مركز العمران الطبي — البصرة، البراهة، مجمّع النقبة الطبي، العراق."
+  : "Alimran Medical Centre — Basra, Breaha, Alnkba Medical Collection, Iraq.";
+const addr2 = isAr
+  ? "الاستشاري المسؤول: الدكتور حسين عمران موسى، بكالوريوس طب وجراحة، بورد جراحة الأعصاب."
+  : "Lead consultant: Hussein Imran Mousa, MBChB, FIBMS (Neurosurgery).";
+
+const lContact  = isAr ? "الاتصال"    : "Contact";
+const lSections = isAr ? "الأقسام"    : "Sections";
+const lElsewhere = isAr ? "روابط أخرى" : "Elsewhere";
+
+const nav = [
+  { label: isAr ? "الرئيسية"          : "Home",                    href: "/" },
+  { label: isAr ? "السيرة العلمية"     : "Consultant CV",           href: "/doctors/hussein-imran-mousa/" },
+  { label: isAr ? "الحالات والإجراءات" : "Conditions & procedures", href: "/conditions/" },
 ];
+
+const elsewhere = [
+  { label: isAr ? "الاتجاهات"  : "Directions", href: CONTACT.mapsUrl,        external: true },
+  { label: "YouTube",                          href: CONTACT.social.youtube,  external: true },
+  { label: "Facebook",                         href: CONTACT.social.facebook, external: true },
+  { label: "Instagram",                        href: CONTACT.social.instagram, external: true },
+];
+
+const copyright = isAr
+  ? `© ${year} مركز العمران الطبي. جميع الحقوق محفوظة.`
+  : `© ${year} Alimran Medical Centre. All rights reserved.`;
+const disclaimer = isAr
+  ? "المعلومات المنشورة هنا للاسترشاد ولا تُغني عن الاستشارة الطبية الفردية."
+  : "Information on this site is for guidance and does not replace individual medical advice.";
 ---
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <h3>{brandTitle}</h3>
-      <p>{brandDesc}</p>
+<footer class="footer">
+  <div class="footer-grid">
+    <!-- Brand column -->
+    <div>
+      <p class="f-brand">{brand}</p>
+      <p class="f-brand-sub">{brandSub}</p>
+      <p class="f-brand-line">{addr1}</p>
+      <p class="f-brand-line">{addr2}</p>
     </div>
 
+    <!-- Contact -->
     <div>
-      <h4>{dict["footer.contactUs"]}</h4>
-      <ul class="footer-list">
-        {CONTACT.phones.map((p) => (
-          <li><a href={`tel:${p.replace(/\s/g, "")}`}><bdi>{p}</bdi></a></li>
+      <p class="f-label">{lContact}</p>
+      {CONTACT.phones.map((p) => (
+        <p class="f-item"><a href={`tel:${p.replace(/\s/g, "")}`}><span dir="ltr">{p}</span></a></p>
+      ))}
+      <p class="f-item"><a href={`mailto:${CONTACT.email}`}><span dir="ltr">{CONTACT.email}</span></a></p>
+    </div>
+
+    <!-- Sections -->
+    <div>
+      <p class="f-label">{lSections}</p>
+      <div class="f-links">
+        {nav.map((l) => <a href={L(l.href)}>{l.label}</a>)}
+        <a href={altHref}>{altLabel}</a>
+      </div>
+    </div>
+
+    <!-- Elsewhere -->
+    <div>
+      <p class="f-label">{lElsewhere}</p>
+      <div class="f-links">
+        {elsewhere.map((l) => (
+          <a href={l.href} target="_blank" rel="noopener">{l.label}</a>
         ))}
-        <li><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>{dict["footer.locations"]}</h4>
-      <ul class="footer-list">
-        <li><a href={CONTACT.mapsUrl} target="_blank" rel="noopener">{CONTACT.addresses[locale]}</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>{dict["footer.followUs"]}</h4>
-      <ul class="footer-list social">
-        {socialLinks.map((link) => (
-          <li>
-            <a href={link.url} target="_blank" rel="noopener" title={link.label} aria-label={link.label}>
-              <i class={`fa-brands ${link.icon}`}></i>
-              <span class="sr-only">{link.label}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+      </div>
     </div>
   </div>
 
-  <div class="footer-bottom container">
-    <span>&copy; {year} {dict["footer.copyright"]}</span>
+  <div class="footer-bottom">
+    <p>{copyright}</p>
+    <p>{disclaimer}</p>
   </div>
 </footer>
 
 <style>
-  .site-footer {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: 3rem 0 1rem;
-    color: var(--ink-soft);
-    margin-top: 4rem;
+  .footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    margin-top: 0;
   }
   .footer-grid {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: clamp(40px, 5vw, 64px) 24px 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr));
+    gap: 40px;
   }
-  .footer-brand h3 { color: var(--brand); margin-bottom: 0.3em; font-size: 1.15rem; }
-  .footer-grid h4 {
-    color: var(--ink);
-    font-size: 0.9rem;
+
+  .f-brand {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--white);
+    margin: 0 0 6px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+.f-brand-sub {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.75rem;
+    color: var(--footer-label);
+    margin: 0 0 20px;
   }
-  .footer-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+.f-brand-line {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--footer-muted);
+    margin: 0 0 10px;
+    max-width: 34ch;
   }
-  .footer-list a { color: var(--ink-soft); }
-  .footer-list a:hover { color: var(--brand); }
-  .footer-list.social {
-    flex-direction: row;
-    gap: 1rem;
+.f-brand-line:last-of-type { margin-bottom: 0; }
+
+  .f-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--footer-label);
+    margin: 0 0 16px;
   }
-  .footer-list.social a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--brand-soft);
-    transition: all 0.3s ease;
-    font-size: 1rem;
-  }
-  .footer-list.social a:hover {
-    background: var(--brand);
-    color: white;
-    transform: translateY(-2px);
-  }
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-  }
+.f-item { margin: 0 0 8px; font-size: 14.5px; overflow-wrap: anywhere; }
+  .f-item:last-child { margin-bottom: 0; }
+  .f-item a { color: var(--footer-text); text-decoration: none; }
+  .f-item a:hover { color: var(--white); text-decoration: none; }
+
+  .f-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .f-links a { font-size: 14.5px; color: var(--footer-text); text-decoration: none; }
+  .f-links a:hover { color: var(--white); text-decoration: none; }
+
   .footer-bottom {
-    margin-top: 2rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.85rem;
-    color: var(--ink-muted);
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+    border-top: 1px solid var(--footer-rule);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
   }
+  .footer-bottom p { margin: 0; font-size: 12.5px; color: var(--footer-label); }
 </style>

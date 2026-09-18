@@ -6,7 +6,7 @@ legacyUrl: "https://ar.alimranmed.com/archives/2091"
 order: 999
 ---
 
-![](/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500-300x140.jpg)
+![](/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500.jpg)
 
 عامل التغذية العصبية المشتقة من الدماغ (BDNF) له دور مهم في [اللدونة العصبية](/services/rehabilitation/neuroplasticity/). 
 

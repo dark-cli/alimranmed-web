@@ -1,0 +1,61 @@
+---
+/**
+ * SoonLink — renders as a normal <a> when the target treatment is
+ * redesigned, or as a greyed-out inert span when it isn't. Clicking the
+ * greyed version fires a small toast (see BaseLayout `<div id="soon-toast">`).
+ *
+ * Usage:
+ *   <SoonLink href={L(`/treatments/${slug}/`)} redesigned={t.redesigned}>
+ *     {name}
+ *   </SoonLink>
+ */
+interface Props {
+  href: string;
+  redesigned: boolean;
+  soonLabel?: string;
+  className?: string;
+}
+const {
+  href,
+  redesigned,
+  soonLabel = "This article isn't in the new design yet — coming soon.",
+  className = "",
+} = Astro.props;
+---
+
+{redesigned ? (
+  <a href={href} class={className}>
+    <slot />
+  </a>
+) : (
+  <button
+    type="button"
+    class={`soon-link ${className}`}
+    data-soon-message={soonLabel}
+    aria-disabled="true"
+    title={soonLabel}
+  >
+    <slot />
+  </button>
+)}
+
+<style>
+  .soon-link {
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    text-align: inherit;
+    color: var(--muted);
+    cursor: not-allowed;
+    opacity: 0.55;
+    filter: grayscale(0.4);
+    display: inline-flex;
+    align-items: baseline;
+    gap: inherit;
+    width: 100%;
+    justify-content: inherit;
+  }
+  .soon-link:hover { color: var(--muted); }
+</style>

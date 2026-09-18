@@ -8,8 +8,8 @@ publishedAt: "2020-12-05T16:25:11"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2020/12/1834-300x169.jpg)
-![](/images/legacy/2020/12/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1-300x221.jpg)
+![](/images/legacy/2020/12/1834.jpg)
+![](/images/legacy/2020/12/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1.jpg)
 
 Losing excess weight and obtaining a slim and beautiful body with no fatty flawless, even a small one, is one of the dreams that many people have and their imaginations flirted with their imaginations. Mesotherapy is considered one of the effective body contouring and muscle contouring methods that have provided a number of beautiful and satisfying results. You will get rid of the accumulated body fat and get a fit and tight body.
 

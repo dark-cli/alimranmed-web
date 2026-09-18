@@ -1,0 +1,40 @@
+---
+/**
+ * Pull quote — 2px accent border-inline-start, serif text, optional attribution.
+ */
+interface Props {
+  text: string;
+  attribution?: string;
+}
+const { text, attribution } = Astro.props;
+---
+
+<blockquote class="q">
+  <p class="q-text">{text}</p>
+  {attribution && <footer class="q-attr">{attribution}</footer>}
+</blockquote>
+
+<style>
+  .q {
+    margin: 32px 0;
+    border-inline-start: 2px solid var(--accent);
+    padding: 4px 0 4px clamp(20px, 2.5vw, 28px);
+  }
+  .q-text {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.4vw, 25px);
+    line-height: 1.45;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0 0 12px;
+    text-wrap: pretty;
+  }
+  :global(html[dir="rtl"]) .q-text { font-weight: 700; line-height: 1.5; }
+  .q-attr {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+  :global(html[dir="rtl"]) .q-attr { font-family: var(--font-body); font-size: 13px; }
+</style>

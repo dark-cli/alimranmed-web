@@ -6,7 +6,7 @@ category: "الألم"
 order: 999
 ---
 
-![](/images/legacy/2021/02/209457-189x300.jpg)
+![](/images/legacy/2021/02/209457.jpg)
 
 ## 
 

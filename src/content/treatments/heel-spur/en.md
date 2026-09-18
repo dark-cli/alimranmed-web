@@ -8,7 +8,7 @@ publishedAt: "2020-12-03T15:36:05"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2020/12/fig-3_epi-compressor-300x184.jpg) ![](/images/legacy/2020/12/a00149f02_epi-compressor-300x284.jpg)
+![](/images/legacy/2020/12/fig-3_epi-compressor.jpg) ![](/images/legacy/2020/12/a00149f02_epi-compressor.jpg)
 
 What is the heel spur?
 

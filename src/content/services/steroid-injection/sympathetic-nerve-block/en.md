@@ -7,7 +7,7 @@ category: "steroid-injection"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2019/06/2-300x158.jpg)
+![](/images/legacy/2019/06/2.jpg)
 ![](/images/legacy/2019/06/1-1.jpg)
 ![](/images/legacy/2019/06/3-1.jpg)
 ![](/images/legacy/2019/06/4.jpg) ![](/images/legacy/2019/06/5.jpg)

@@ -8,7 +8,7 @@ publishedAt: "2021-01-16T07:34:45"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2021/01/2258659-300x225.jpg)
+![](/images/legacy/2021/01/2258659.jpg)
 
 Avascular necrosis is the death of bone tissue due to a lack of blood supply. Also called osteonecrosis, avascular necrosis can lead to tiny breaks in the bone and the bone’s eventual collapse.
 

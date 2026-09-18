@@ -7,7 +7,7 @@ category: "pain"
 source: "legacy-wp"
 ---
 
-**![](/images/legacy/2021/01/PAD-300x260.jpg)**Peripheral artery disease (also called peripheral arterial disease) is a common circulatory problem in which narrowed arteries reduce blood flow to your limbs.
+**![](/images/legacy/2021/01/PAD.jpg)**Peripheral artery disease (also called peripheral arterial disease) is a common circulatory problem in which narrowed arteries reduce blood flow to your limbs.
 
 When you develop peripheral artery disease (PAD), your extremities — usually your legs — don’t receive enough blood flow to keep up with demand. This causes symptoms, most notably leg pain when walking (claudication).
 

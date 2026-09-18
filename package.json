@@ -27,6 +27,7 @@
     "migrate": "node --experimental-strip-types --no-warnings scripts/migrate.mjs",
     "migrate:dry": "node --experimental-strip-types --no-warnings scripts/migrate.mjs --dry-run --limit=5",
     "media": "node --experimental-strip-types --no-warnings scripts/download-media.mjs",
+    "media:upgrade": "node --experimental-strip-types --no-warnings scripts/upgrade-media.mjs",
     "redirects": "node --experimental-strip-types --no-warnings scripts/generate-redirects.mjs",
     "rewrite-links": "node --experimental-strip-types --no-warnings scripts/rewrite-legacy-links.mjs",
     "fetch-ar": "node --experimental-strip-types --no-warnings scripts/fetch-ar-content.mjs",

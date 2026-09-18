@@ -1,0 +1,558 @@
+---
+/**
+ * Conditions & Procedures — English. 1:1 port of the "care" view in
+ * `Alimran Neurosurgery.dc.html` (lines 431–545).
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SoonLink from "../../../components/article/SoonLink.astro";
+import { CONTACT } from "../../../consts";
+import { localizedHref, currentLocale, topicOf, isLocale } from "../../../lib/i18n";
+import { getCollection } from "astro:content";
+
+const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
+
+// Look up which of the treatments in each pathway are already redesigned,
+// so the pathway lists can grey out the ones that aren't ready yet.
+const allTreatments = await getCollection("treatments");
+const bySlug: Record<string, boolean> = {};
+allTreatments.filter((e) => isLocale(e.id, "en")).forEach((e) => {
+  bySlug[topicOf(e.id)] = e.data.redesigned === true;
+});
+
+// Blog → pathway assignment. Simple hand-mapped table so each pathway can
+// surface its own related reading. Anything not in the table falls under
+// "Other" and won't render alongside a pathway.
+const BLOG_PATHWAY: Record<string, "brain" | "spine" | "pain"> = {
+  "amyotrophic-lateral-sclerosis-als-2": "brain",
+  "covid-19-symptoms-on-the-nervous-and-locomotor-system": "brain",
+  "results-of-treatment-of-cerebral-palsy-in-children": "brain",
+  "tms-for-alzheimer-disease": "brain",
+  "tms-for-neuropsychiatric-disorders": "brain",
+  "tms-for-tinnitus": "brain",
+  "tms-for-tinnitus-2": "brain",
+  "transcranial-direct-current-stimulation-tdcs": "brain",
+  "transcranial-magnetic-stimulation": "brain",
+  "poliomyelitis": "spine",
+  "spin-med": "spine",
+  "what-is-an-intrathecal-pump": "spine",
+  "achilles-tendinitis": "pain",
+  "arthritis": "pain",
+  "diabetic-foot-pain-and-ulcers": "pain",
+  "osteoporosis": "pain",
+  "physiotherapy": "pain",
+  "tension-headaches": "pain",
+  "tms-for-migraine": "pain",
+  "tms-for-pains": "pain",
+  "vasotrain-or-air-pressure-massage": "pain",
+};
+
+// Fetch clinically-relevant blogs and bucket by pathway so each pathway
+// column can carry its own contextual "Related reading" links.
+const allBlogs = (await getCollection("blog"))
+  .filter((e) => isLocale(e.id, "en") && e.data.clinicallyRelevant === true)
+  .sort((a, b) => (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0));
+
+const blogsByPathway: Record<"brain" | "spine" | "pain", typeof allBlogs> = {
+  brain: [], spine: [], pain: [],
+};
+for (const b of allBlogs) {
+  const p = BLOG_PATHWAY[topicOf(b.id)];
+  if (p) blogsByPathway[p].push(b);
+}
+
+// Curated "Procedures & therapies we offer" — 6 flagship service categories,
+// 25 items total. Same visual density as the 3 pathway columns above.
+// Each item resolves to /services/{category}/{slug}/ which already renders.
+const procedureCategories = [
+  { num: "Category 01", title: "Physiotherapy", basePath: "physiotherapy",
+    items: [
+      { name: "Physical therapy",       slug: "physical-therapy" },
+      { name: "Electrical stimulation", slug: "electrical-stimulation" },
+      { name: "Laser therapy",          slug: "laser-therapy" },
+      { name: "Ultrasound therapy",     slug: "ultrasound-therapy" },
+      { name: "LUNA EMG robot",         slug: "luna-emg-robot" },
+    ] },
+  { num: "Category 02", title: "Chiropractic", basePath: "chiropractic",
+    items: [
+      { name: "Chiropractic",  slug: "chiropractic" },
+      { name: "Sigma",         slug: "sigma" },
+      { name: "SpineMED",      slug: "spinmed" },
+    ] },
+  { num: "Category 03", title: "Brain stimulation", basePath: "brain-stimulation",
+    items: [
+      { name: "TMS",             slug: "tms" },
+      { name: "tDCS",            slug: "tdcs" },
+      { name: "TMS for pain",    slug: "tms-pain" },
+      { name: "TMS for tinnitus", slug: "tms-tinnitus" },
+      { name: "TMS for migraine", slug: "tms-migraine" },
+    ] },
+  { num: "Category 04", title: "Radiofrequency", basePath: "radiofrequency",
+    items: [
+      { name: "Radiofrequency",        slug: "radiofrequency" },
+      { name: "Nucleoplasty",          slug: "nucleoplasty" },
+      { name: "Spine radiofrequency",  slug: "spine" },
+      { name: "Knee radiofrequency",   slug: "knee" },
+      { name: "Trigeminal neuralgia RF", slug: "trigeminal-neuralgia" },
+    ] },
+  { num: "Category 05", title: "Surgery", basePath: "surgery",
+    items: [
+      { name: "Endoscopic spine surgery",   slug: "endoscopic-spine" },
+      { name: "Deep brain stimulation",     slug: "dbs" },
+      { name: "Lumbar microdiscectomy",     slug: "lumbar-microdiscectomy" },
+      { name: "Vertebroplasty",             slug: "vertebroplasty" },
+      { name: "Transnasal skull-base surgery", slug: "transnasal-transsphenoidal" },
+    ] },
+  { num: "Category 06", title: "Regenerative", basePath: "regenerative-medicine",
+    items: [
+      { name: "Prolotherapy",         slug: "prolotherapy" },
+      { name: "Regenerative medicine", slug: "regenerative-medicine" },
+    ] },
+];
+
+const pathways = [
+  { num: "Pathway 01", title: "Brain", key: "brain" as const,
+    items: [
+      { name: "Brain tumour",         slug: "brain-tumor" },
+      { name: "Stroke",               slug: "stroke" },
+      { name: "Epilepsy and seizures", slug: "epilepsy-seizures" },
+      { name: "Head injury",          slug: "head-injury" },
+      { name: "Parkinson's disease",  slug: "parkinsons-disease" },
+      { name: "Motor disorders",      slug: "motor-disorders" },
+      { name: "Bell's palsy",         slug: "bells-palsy" },
+    ] },
+  { num: "Pathway 02", title: "Spine", key: "spine" as const,
+    items: [
+      { name: "Herniated disc",       slug: "herniated-disc" },
+      { name: "Sciatica",             slug: "sciatica" },
+      { name: "Spinal cord injury",   slug: "spinal-cord-injury" },
+      { name: "Scoliosis",            slug: "scoliosis" },
+      { name: "Kyphosis",             slug: "kyphosis" },
+      { name: "Whiplash",             slug: "whiplash" },
+      { name: "Neurogenic bladder",   slug: "neurogenic-bladder" },
+    ] },
+  { num: "Pathway 03", title: "Pain", key: "pain" as const,
+    items: [
+      { name: "Chronic and daily headache", slug: "headaches" },
+      { name: "Neck pain",            slug: "neck-pain" },
+      { name: "Back pain",            slug: "back-pain" },
+      { name: "Frozen shoulder",      slug: "frozen-shoulder" },
+      { name: "Knee pain",            slug: "knee-pain" },
+      { name: "Fibromyalgia",         slug: "fibromyalgia" },
+      { name: "Cancer-related intractable pain", slug: "cancer-pain" },
+    ] },
+];
+
+// Photo strip — three images that break up the two hairline-grid content
+// sections above with a visual pause. Just imagery and mono captions; the
+// procedures they represent are already listed in "Procedures & therapies".
+const photoStrip = [
+  {
+    caption: "Endoscopic spine surgery",
+    src: "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=1200&q=80&auto=format&fit=crop",
+    alt: "Consultant surgeon operating in theatre",
+  },
+  {
+    caption: "Neuromodulation",
+    src: "/images/home/tms-treatment-768.jpg",
+    alt: "Neuromodulation delivered by trained operator",
+  },
+  {
+    caption: "Radiofrequency ablation",
+    src: "https://images.unsplash.com/photo-1754941622138-b3c3671f2fa8?w=1200&q=80&auto=format&fit=crop",
+    alt: "Clinical device applied to a patient in a treatment session",
+  },
+];
+---
+
+<BaseLayout
+  title="Conditions & Procedures — Alimran Clinic"
+  description="The clinic groups referrals into three pathways: brain, spine and pain. Surgical, interventional and rehabilitative procedures under one team."
+>
+  <!-- Intro band -->
+  <section class="intro">
+    <div class="intro-inner">
+      <p class="intro-eyebrow">Conditions & procedures</p>
+      <h1 class="intro-h1">What we assess, and how we treat it.</h1>
+      <p class="intro-lede">The clinic groups referrals into three pathways. Each first appointment includes a full neurological examination and a review of existing imaging; a written plan is issued to the patient and the referring clinician.</p>
+    </div>
+  </section>
+
+  <!-- Three pathway columns (hairline grid) — "What we treat" -->
+  <section class="pathways-section">
+    <header class="section-head">
+      <span class="section-eyebrow">Conditions</span>
+      <h2 class="section-h2">What we treat</h2>
+    </header>
+    <div class="pathway-grid">
+      {pathways.map((p) => (
+        <div class="pathway-cell">
+          <p class="pathway-num">{p.num}</p>
+          <h3 class="pathway-name">{p.title}</h3>
+          <ul>
+            {p.items.map((c) => (
+              <li>
+                <SoonLink
+                  href={L(`/treatments/${c.slug}/`)}
+                  redesigned={bySlug[c.slug] === true}
+                >{c.name}</SoonLink>
+              </li>
+            ))}
+          </ul>
+          {blogsByPathway[p.key].length > 0 && (
+            <div class="pathway-reading">
+              <p class="pathway-reading-label">Related reading</p>
+              <ul class="pathway-reading-list">
+                {blogsByPathway[p.key].slice(0, 4).map((b) => (
+                  <li>
+                    <a href={L(`/blog/${topicOf(b.id)}/`)}>{b.data.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+    <p class="section-see-all">
+      <a class="see-all-link" href={L("/treatments/")}>Browse all conditions →</a>
+    </p>
+  </section>
+
+  <!-- "Procedures & therapies we offer" — 6 curated service categories -->
+  <section class="pathways-section">
+    <header class="section-head">
+      <span class="section-eyebrow">Procedures</span>
+      <h2 class="section-h2">Procedures &amp; therapies we offer</h2>
+    </header>
+    <div class="pathway-grid">
+      {procedureCategories.map((cat) => (
+        <div class="pathway-cell">
+          <p class="pathway-num">{cat.num}</p>
+          <h3 class="pathway-name">{cat.title}</h3>
+          <ul>
+            {cat.items.map((it) => (
+              <li>
+                <a href={L(`/services/${cat.basePath}/${it.slug}/`)}>{it.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <p class="section-see-all">
+      <a class="see-all-link" href={L("/services/")}>Browse all procedures →</a>
+    </p>
+  </section>
+
+  <!-- Photo strip — visual break between the two hairline-grid sections
+       above and the CTA below. No card chrome; just images with tiny
+       mono captions. -->
+  <section class="photo-strip">
+    <div class="photo-strip-grid">
+      {photoStrip.map((p) => (
+        <figure class="photo-cell">
+          <img src={p.src} alt={p.alt} width="1200" height="900" loading="lazy" />
+          <figcaption>{p.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <!-- Appointment band -->
+  <section class="appt-section">
+    <div class="appt-card">
+      <div>
+        <h2 class="appt-h2">Arranging an appointment</h2>
+        <p class="appt-body">Appointments are booked by telephone through the clinic secretary. Please have prior imaging, operative notes and a current medication list available at the time of the call.</p>
+      </div>
+      <div class="appt-buttons">
+        <a class="btn btn-primary appt-btn" href={callHref}><span dir="ltr">{CONTACT.phones[0]}</span></a>
+        <a class="btn btn-secondary appt-btn" href={secondCallHref}><span dir="ltr">{CONTACT.phones[1]}</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent articles — kept minimal since each pathway now carries its own
+       contextual reading list; this is the general entry point. -->
+  {allBlogs.length > 0 && (
+    <section class="related-section">
+      <header class="section-head">
+        <span class="section-eyebrow">Articles</span>
+        <h2 class="section-h2">Recent from the blog</h2>
+      </header>
+      <div class="related-grid">
+        {allBlogs.slice(0, 6).map((blog) => (
+          <a class="related-card card" href={L(`/blog/${topicOf(blog.id)}/`)}>
+            <h3>{blog.data.title}</h3>
+            {blog.data.description && <p>{blog.data.description}</p>}
+            {blog.data.publishedAt && (
+              <span class="date">{blog.data.publishedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}</span>
+            )}
+          </a>
+        ))}
+      </div>
+      <p class="section-see-all">
+        <a class="see-all-link" href={L("/blog/")}>Browse all articles →</a>
+      </p>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  /* Intro band */
+  .intro { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .intro-inner {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(44px, 5.5vw, 72px) 24px clamp(40px, 5vw, 64px);
+  }
+  .intro-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 20px;
+  }
+.intro-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin: 0 0 18px;
+    color: var(--ink);
+    max-width: 20ch;
+  }
+.intro-lede { font-size: 17px; line-height: 1.65; color: var(--body); margin: 0; max-width: 62ch; }
+/* Section header — shared by "What we treat" / "Procedures we offer" */
+  .section-head {
+    display: flex; gap: 14px; align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: clamp(28px, 3.5vw, 44px);
+  }
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  :global(html[dir="rtl"]) .section-eyebrow {
+    font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 13px;
+  }
+  .section-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3.4vw, 34px);
+    font-weight: 400; letter-spacing: -0.02em;
+    margin: 0; color: var(--ink); line-height: 1.1;
+  }
+  .section-see-all {
+    margin: clamp(20px, 2vw, 28px) 0 0;
+    text-align: end;
+  }
+  .see-all-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  :global(html[dir="rtl"]) .see-all-link {
+    font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 14px;
+  }
+  .see-all-link:hover { color: var(--accent-hover); text-decoration: none; }
+
+/* Pathways — hairline grid */
+  .pathways-section {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(44px, 5.5vw, 72px) 24px 0;
+  }
+  .pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .pathway-cell { background: var(--white); padding: 34px 30px; }
+  .pathway-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+  }
+.pathway-name {
+    font-family: var(--font-display);
+    font-size: clamp(21px, 2.6vw, 26px);
+    font-weight: 400;
+    margin: 0 0 22px;
+    color: var(--ink);
+  }
+.pathway-cell ul { list-style: none; margin: 0; padding: 0; }
+  .pathway-cell li {
+    padding: 11px 0;
+    border-top: 1px solid var(--line-soft);
+    font-size: 15px;
+  }
+  /* :global(a) reaches into SoonLink's own scope — without it, SoonLink's
+     anchor renders default-browser blue underline while our plain <a>s get
+     the styled version, so the two sections look inconsistent. */
+  .pathway-cell li :global(a) {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  }
+  .pathway-cell li :global(a):hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Mobile: cap each column at 4 items so the page doesn't tower.
+     The "Browse all …" link at the bottom of each section covers the rest. */
+  @media (max-width: 639px) {
+    .pathway-cell li:nth-child(n+5) { display: none; }
+  }
+
+  /* Per-pathway related-reading block (blog links inside each column) */
+  .pathway-reading {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .pathway-reading-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  :global(html[dir="rtl"]) .pathway-reading-label {
+    font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 12px;
+  }
+  .pathway-reading-list { list-style: none; margin: 0; padding: 0; }
+  .pathway-reading-list li { padding: 8px 0; border-top: none; font-size: 14px; }
+  .pathway-reading-list li:first-child { padding-top: 0; }
+  .pathway-reading-list a { color: var(--accent); text-decoration: none; line-height: 1.5; }
+  .pathway-reading-list a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+  /* Photo strip — visual break between hairline-grid sections.
+     No card chrome; hairline border on the image itself and a mono caption
+     underneath. */
+  .photo-strip {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(48px, 6vw, 80px) 24px 0;
+  }
+  .photo-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: clamp(20px, 2.5vw, 32px);
+  }
+  .photo-cell { margin: 0; min-width: 0; }
+  .photo-cell img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+  .photo-cell figcaption {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 12px;
+    text-align: center;
+  }
+  :global(html[dir="rtl"]) .photo-cell figcaption {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 13px;
+  }
+
+  /* Appointment band */
+  .appt-section {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(48px, 6vw, 80px) 24px clamp(56px, 7vw, 96px);
+  }
+  .appt-card {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: clamp(28px, 4vw, 44px) clamp(24px, 3.5vw, 40px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(245px, 100%), 1fr));
+    gap: 36px;
+    align-items: center;
+  }
+  .appt-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(23px, 3vw, 30px);
+    font-weight: 400; letter-spacing: -0.02em;
+    margin: 0 0 12px; color: var(--ink);
+  }
+.appt-body { font-size: 16px; line-height: 1.65; color: var(--body); margin: 0; max-width: 52ch; }
+.appt-buttons { display: flex; flex-direction: column; gap: 10px; }
+  .appt-btn { min-height: 52px; font-size: 16px; justify-content: center; }
+
+  /* Related articles */
+  .related-section {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(48px, 6vw, 80px) 24px clamp(56px, 7vw, 96px);
+    border-top: 1px solid var(--line);
+  }
+  .related-head {
+    display: flex; gap: 12px; align-items: baseline; margin-bottom: clamp(28px, 4vw, 44px);
+  }
+  .related-num {
+    font-family: var(--font-mono);
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .related-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(23px, 3vw, 30px);
+    font-weight: 400; letter-spacing: -0.02em;
+    margin: 0; color: var(--ink);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(20px, 2vw, 32px);
+    margin-bottom: clamp(28px, 4vw, 44px);
+  }
+  .related-card {
+    display: block; text-decoration: none; color: inherit;
+    border: 1px solid var(--line); padding: clamp(20px, 2vw, 24px);
+    border-radius: 2px; transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+  .related-card:hover {
+    background: var(--surface); border-color: var(--accent);
+  }
+  .related-card h3 {
+    font-size: 16px; font-weight: 600; margin: 0 0 8px; color: var(--ink);
+  }
+  .related-card p {
+    font-size: 14px; line-height: 1.5; color: var(--body); margin: 0 0 12px;
+  }
+  .related-card .date {
+    font-family: var(--font-mono); font-size: 12px; color: var(--muted);
+  }
+  .related-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: color 0.15s ease;
+  }
+  .related-link:hover { color: var(--accent-hover); }
+</style>

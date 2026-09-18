@@ -6,7 +6,7 @@ category: "الألم"
 order: 999
 ---
 
-![](/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05-300x201.jpg)
+![](/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05.jpg)
 
 يشير لين العظام إلى لين ملحوظ في عظامك، وغالبًا ما يحدث بسبب نقص حاد في فيتامين (د). ويمكن أن يؤدي لين العظام لدى الأطفال والشباب المصابين بلين العظام إلى الانحناء أثناء النمو، وخاصة في عظام الساقين الحاملة للوزن. ويمكن أن يؤدي لين العظام عند كبار السن إلى كسور.
 

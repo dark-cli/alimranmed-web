@@ -6,7 +6,7 @@ category: "الألم"
 order: 999
 ---
 
-![](/images/legacy/2021/01/Modifications-of-longitudinally-extensive-transverse-myelitis-LETM-Spinal-cord-MRI_Q640-300x300.jpg)
+![](/images/legacy/2021/01/Modifications-of-longitudinally-extensive-transverse-myelitis-LETM-Spinal-cord-MRI_Q640.jpg)
 
 إن الْتِهاب كلا جانبَيْ قطاع واحد من الحبل النخاعي ما هو إلا الْتِهاب النخاع المستعرض. أحيانًا يُدمِّر هذا الاضطراب العصبي المادة العازلة التي تُغطِّي ألياف الخلايا العصبية (المَيَالين).
 

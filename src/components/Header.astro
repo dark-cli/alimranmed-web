@@ -1,171 +1,203 @@
 ---
 /**
- * Header — plain HTML/CSS/JS, no third-party nav library.
- * Same pattern that shipped and worked in kaleem-web:
- *   - Desktop: horizontal nav, CSS :hover reveals mega-menu panels
- *   - Mobile:  burger opens a fixed slide-in drawer + dim scrim.
- *              Close by tapping the X, the scrim, or a nav link.
+ * Header — Alimran Clinic (redesigned Sep 2026).
+ *
+ * Layout (HANDOFF §4):
+ *   Masthead (Alimran Clinic + subheading, vertical accent rule)
+ *   Nav (3 items only): Home · Consultant CV · Conditions & Procedures
+ *   Language toggle (عربي / English)
+ *   Call the secretary — primary button
+ *
+ * Mobile (< 860px): burger opens the same links as a drawer.
+ * No dark-mode toggle. No mega-menu. No dropdowns.
  */
-import { HEADER_NAV, navLabel } from "../data/header-nav.ts";
-import ThemeToggle from "./ThemeToggle.astro";
-import LanguageSwitcher from "./LanguageSwitcher.astro";
 import { CONTACT } from "../consts";
-import { currentLocale, dictFor, localizedHref } from "../lib/i18n";
+import { currentLocale, dictFor, localizedHref, alternateHref } from "../lib/i18n";
 
 const locale = currentLocale(Astro);
 const t = dictFor(locale);
 const currentPath = Astro.url.pathname;
 
-// href helper: turn a canonical (EN) href into the locale-scoped one
+// Localised href helper
 const L = (href: string) => localizedHref(href, locale);
 
-// Check if on home page (no back button shown)
-const isHome = currentPath === "/en/" || currentPath === "/ar/" || currentPath === "/";
+// Nav items. Blog earns a slot now that the index page has its own
+// filter UI and doesn't feel like an afterthought; the full A–Z
+// treatment/service indices remain reachable via /conditions/ and search.
+type NavItem = { label: string; labelAr: string; href: string };
+const NAV: NavItem[] = [
+  { label: "Home",                    labelAr: "الرئيسية",     href: "/" },
+  { label: "Consultant CV",           labelAr: "السيرة العلمية", href: "/doctors/hussein-imran-mousa/" },
+  { label: "Conditions & Procedures", labelAr: "ما نعالج",      href: "/conditions/" },
+  { label: "Blog",                    labelAr: "المدونة",       href: "/blog/" },
+];
 
-// Active if the current URL is (a) an exact match for a leaf nav item
-// (like Home = "/"), or (b) nested under a section (like "/services/foo/"
-// under Services). Check against the ORIGINAL href — not the localized one —
-// so the Home check works identically in EN and AR.
 const isActive = (href: string) => {
   const target = L(href);
-  if (href === "/") return currentPath === target;  // Home = exact match only
+  if (href === "/") return currentPath === target;
   return currentPath === target || currentPath.startsWith(target);
 };
+
+// Language toggle target (path swap only — content mirroring)
+const otherLocale = locale === "en" ? "ar" : "en";
+const altHref = alternateHref(currentPath, otherLocale);
+const altLabel = otherLocale === "ar" ? "عربي" : "English";
+
+// Primary call number (dial the first configured number)
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+
+// Masthead copy — matches the design spec, not a page title.
+const brand = locale === "ar" ? "مركز العمران الطبي" : "Alimran Clinic";
+const brandSub = locale === "ar"
+  ? "جراحة الأعصاب وطب الألم — البصرة"
+  : "Neurosurgery & Pain Medicine · Basra";
+
+// Call button label
+const callLabel = locale === "ar" ? "اتصل بالسكرتير" : "Call the secretary";
+const menuLabel = locale === "ar" ? "القائمة" : "Menu";
+const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
 ---
 
 <header class="site-header">
-  <!-- Header chrome is always LTR (logo left, actions right) regardless of
-       document direction. Only the nav LINKS inside get RTL order in AR. -->
-  <div class="container header-row" dir="ltr">
-    <!-- Back button: iOS-style (chevron + "Back" text), mobile-visible only. -->
-    <button id="header-back-btn" class="header-back-btn is-hidden" aria-label={t["common.back"] || "Back"} type="button">
-      <svg class="chev-back" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="15 18 9 12 15 6" />
-      </svg>
-      <span class="back-label">{t["common.back"] || "Back"}</span>
-    </button>
-
-    <a class="logo" class:list={["logo", { "is-home": isHome }]} href={L("/")} aria-label="Alimran Medical Center">
-      <span class="logo-mark" aria-hidden="true">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="15" fill="var(--brand)" />
-          <path d="M16 8v16M8 16h16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
-        </svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-name">Alimran</span>
-        <span class="logo-sub">Medical Center</span>
+  <div class="container header-row">
+    <!-- Masthead: vertical accent rule + name + subheading -->
+    <a class="masthead" href={L("/")} aria-label={brand}>
+      <span class="masthead-rule" aria-hidden="true"></span>
+      <span class="masthead-text">
+        <span class="masthead-name">{brand}</span>
+        <span class="masthead-sub">{brandSub}</span>
       </span>
     </a>
 
-    <!-- Desktop primary nav (hidden on mobile via CSS) -->
+    <!-- Desktop nav (≥ 860px). Mobile uses the drawer below. -->
     <nav class="primary-nav" aria-label="Primary">
-      <ul>
-        {HEADER_NAV.map((item) => (
-          <li class:list={["nav-item", { active: isActive(item.href), "has-mega": !!item.columns }]}>
-            <a class="nav-link" href={L(item.href)}>
-              {navLabel(item, locale)}
-              {item.columns && (
-                <svg class="chev" viewBox="0 0 20 20" width="10" height="10" fill="currentColor" aria-hidden="true">
-                  <path d="M5 8l5 5 5-5H5z" />
-                </svg>
-              )}
-            </a>
-            {item.columns && (
-              <div class="mega" role="menu">
-                <div class="mega-inner">
-                  {item.columns.map((col) => (
-                    <div class="mega-col">
-                      {col.href
-                        ? <h4><a href={L(col.href)}>{navLabel(col, locale)}</a></h4>
-                        : <h4>{navLabel(col, locale)}</h4>}
-                      <ul>
-                        {col.items.map((sub) => (
-                          <li><a href={L(sub.href)}>{navLabel(sub, locale)}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
+      {NAV.map((item) => (
+        <a
+          class:list={["nav-link", { active: isActive(item.href) }]}
+          href={L(item.href)}
+        >
+          {locale === "ar" ? item.labelAr : item.label}
+        </a>
+      ))}
     </nav>
 
     <div class="header-actions">
-      <ThemeToggle />
-      <LanguageSwitcher />
-      <button id="menu-toggle" class="icon-btn burger" aria-label={t["common.menu"]} type="button">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-          <line x1="4" y1="7"  x2="20" y2="7"  />
-          <line x1="4" y1="12" x2="20" y2="12" />
-          <line x1="4" y1="17" x2="20" y2="17" />
+      <button
+        id="search-toggle"
+        class="search-btn"
+        type="button"
+        aria-label={locale === "ar" ? "بحث" : "Search"}
+        title={locale === "ar" ? "بحث" : "Search"}
+        aria-expanded="false"
+        aria-controls="search-panel"
+      >
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="m20 20-3.5-3.5"/>
         </svg>
+      </button>
+      <button
+        id="theme-toggle"
+        class="theme-btn"
+        type="button"
+        aria-label={locale === "ar" ? "تبديل الوضع الداكن" : "Toggle dark mode"}
+        title={locale === "ar" ? "الوضع الداكن" : "Dark mode"}
+      >
+        <!-- Moon icon (shown in light mode → click for dark) -->
+        <svg class="theme-icon moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <!-- Sun icon (shown in dark mode → click for light) -->
+        <svg class="theme-icon sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+      </button>
+      <a class="lang-switch" href={altHref} aria-label={altLabel} title={altLabel}>
+        {altLabel}
+      </a>
+      <a class="btn btn-primary btn-sm call-btn" href={callHref}>
+        {callLabel}
+      </a>
+      <button
+        id="menu-toggle"
+        class="menu-btn"
+        aria-label={menuLabel}
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        type="button"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </div>
 </header>
 
-<!-- Mobile drawer + scrim (sit outside .site-header so their fixed positioning
-     isn't relative to the sticky header stacking context).
-     Explicit dir so Arabic content flows right-to-left inside the drawer. -->
-<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile" dir={locale === "ar" ? "rtl" : "ltr"}>
+<!-- Search overlay — opened by the header search button, fixed-positioned
+     under the header. Fetches /search-index.json on first open and filters
+     client-side. Grouped results (Conditions / Procedures / Articles / …). -->
+<div id="search-panel" class="search-panel" role="dialog" aria-modal="false" aria-label={locale === "ar" ? "بحث" : "Search"} hidden>
+  <div class="search-wrap">
+    <div class="search-input-row">
+      <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="m20 20-3.5-3.5"/>
+      </svg>
+      <input
+        id="search-input"
+        type="search"
+        class="search-input"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder={locale === "ar" ? "ابحث في الحالات، الإجراءات، المقالات…" : "Search conditions, procedures, articles…"}
+        aria-label={locale === "ar" ? "استعلام البحث" : "Search query"}
+        aria-controls="search-results"
+      />
+      <kbd class="search-kbd" aria-hidden="true">Esc</kbd>
+    </div>
+    <div id="search-results" class="search-results" role="listbox" aria-label={locale === "ar" ? "نتائج البحث" : "Search results"}>
+      <p class="search-hint">{locale === "ar" ? "ابدأ الكتابة للبحث في جميع صفحات الموقع." : "Start typing to search across every page on the site."}</p>
+    </div>
+  </div>
+</div>
+<div id="search-scrim" class="search-scrim" aria-hidden="true"></div>
+
+<!-- Mobile drawer (< 860px). Same NAV links; kept outside .site-header so its
+     fixed positioning is relative to the viewport, not the sticky header. -->
+<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
   <div class="drawer-head">
-    <span class="drawer-title">{t["common.menu"]}</span>
-    <button id="menu-close" class="icon-btn" aria-label="Close menu" type="button">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-        <line x1="6"  y1="6"  x2="18" y2="18" />
-        <line x1="18" y1="6"  x2="6"  y2="18" />
+    <span class="eyebrow">{menuLabel}</span>
+    <button id="menu-close" class="close-btn" aria-label={closeMenuLabel} type="button">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18" />
+        <line x1="18" y1="6" x2="6" y2="18" />
       </svg>
     </button>
   </div>
-
-  <nav>
-    <ul class="drawer-list">
-      {HEADER_NAV.map((item) => (
-        <li>
-          {item.columns ? (
-            <details>
-              <summary>{navLabel(item, locale)}</summary>
-              <div class="drawer-sub">
-                <a class="drawer-sub-all" href={L(item.href)}>
-                  {locale === "ar" ? `جميع ${navLabel(item, locale)} ←` : `All ${navLabel(item, locale)} →`}
-                </a>
-                {item.columns.map((col) => (
-                  <div class="drawer-col">
-                    <h5>{navLabel(col, locale)}</h5>
-                    <ul>
-                      {col.items.map((sub) => (
-                        <li><a href={L(sub.href)}>{navLabel(sub, locale)}</a></li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </details>
-          ) : (
-            <a href={L(item.href)}>{navLabel(item, locale)}</a>
-          )}
-        </li>
-      ))}
-    </ul>
-  </nav>
-
+  <ul class="drawer-list">
+    {NAV.map((item) => (
+      <li>
+        <a class="drawer-link" href={L(item.href)}>
+          {locale === "ar" ? item.labelAr : item.label}
+        </a>
+      </li>
+    ))}
+    <li class="drawer-sep" aria-hidden="true"></li>
+    <li>
+      <a class="drawer-link drawer-lang" href={altHref}>{altLabel}</a>
+    </li>
+  </ul>
+  <a class="btn btn-primary drawer-call" href={callHref}>{callLabel}</a>
 </aside>
-
 <div id="menu-scrim" class="menu-scrim" aria-hidden="true"></div>
 
 <script is:inline>
   /**
-   * Drawer + swipe wiring, View-Transitions-aware.
-   *
-   * - Element-level listeners (burger click, close click, scrim click, drawer
-   *   link clicks) attach on every page load AND on every astro:page-load
-   *   event so they re-bind after client-side navigation swaps the header DOM.
-   * - Document-level listeners (touch swipe, Escape key) attach exactly once
-   *   per session, guarded by a flag on window, so they don't accumulate.
+   * Mobile drawer wiring — View-Transitions aware.
+   * Element listeners rebind after every astro:page-load swap.
+   * Document listeners (Escape, page-load close) attach once per session.
    */
   (function () {
     function bindElementListeners() {
@@ -176,497 +208,754 @@ const isActive = (href: string) => {
       if (!toggle || !nav || !scrim) return;
 
       toggle.addEventListener("click", function () { setOpen(true); });
-      close  && close.addEventListener("click", function () { setOpen(false); });
+      close && close.addEventListener("click", function () { setOpen(false); });
       scrim.addEventListener("click", function () { setOpen(false); });
-      // Close after tapping any link inside the drawer
       nav.querySelectorAll("a").forEach(function (a) {
         a.addEventListener("click", function () { setOpen(false); });
       });
     }
 
-    function isOpen() {
-      var nav = document.getElementById("mobile-nav");
-      return !!nav && nav.classList.contains("open");
-    }
     function setOpen(open) {
-      var nav   = document.getElementById("mobile-nav");
+      var nav = document.getElementById("mobile-nav");
       var scrim = document.getElementById("menu-scrim");
+      var toggle = document.getElementById("menu-toggle");
       if (!nav || !scrim) return;
       nav.classList.toggle("open", open);
       scrim.classList.toggle("visible", open);
       document.body.classList.toggle("nav-open", open);
       nav.setAttribute("aria-hidden", String(!open));
+      if (toggle) toggle.setAttribute("aria-expanded", String(open));
     }
 
-    // Document-level listeners: attach once per session
     if (!window.__navGlobalsBound) {
       window.__navGlobalsBound = true;
-
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") setOpen(false);
       });
-
-      // ── Swipe gestures ──────────────────────────────────────────
-      var startX = 0, startY = 0, tracking = false;
-      var THRESHOLD = 50;
-
-      document.addEventListener("touchstart", function (e) {
-        if (e.touches.length !== 1) { tracking = false; return; }
-        var t = e.touches[0];
-        startX = t.clientX;
-        startY = t.clientY;
-        tracking = true;
-      }, { passive: true });
-
-      document.addEventListener("touchend", function (e) {
-        if (!tracking) return;
-        tracking = false;
-        var t = (e.changedTouches && e.changedTouches[0]);
-        if (!t) return;
-        var dx = t.clientX - startX;
-        var dy = t.clientY - startY;
-        if (Math.abs(dx) < THRESHOLD || Math.abs(dy) > Math.abs(dx) * 0.7) return;
-
-        // Drawer always lives on the right — same swipe direction in both
-        // locales: swipe LEFT from the right half opens; swipe RIGHT closes.
-        if (dx < 0 && !isOpen() && startX > window.innerWidth * 0.5) {
-          setOpen(true);
-        } else if (dx > 0 && isOpen()) {
-          setOpen(false);
-        }
-      }, { passive: true });
-
-      // Close drawer whenever a page transition starts
       document.addEventListener("astro:before-swap", function () { setOpen(false); });
     }
 
-    // Bind element listeners on initial load + after every client-side nav
     bindElementListeners();
     document.addEventListener("astro:page-load", bindElementListeners);
+  })();
 
-    // ── Back button handling ────────────────────────────────────────
-    // Show back button on non-homepage, with smart navigation
-    (function () {
-      var lastPath = location.pathname;
+  /**
+   * Theme toggle — persists to localStorage, syncs across tabs,
+   * survives Astro View Transitions. Initial theme is applied by
+   * the anti-FOUC script in BaseHead before paint.
+   */
+  (function () {
+    function bindThemeToggle() {
+      var btn = document.getElementById("theme-toggle");
+      if (!btn || btn.__bound) return;
+      btn.__bound = true;
+      btn.addEventListener("click", function () {
+        var current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        var next = current === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+      });
+    }
+    bindThemeToggle();
+    document.addEventListener("astro:page-load", bindThemeToggle);
+  })();
 
-      function updateBackButton() {
-        var btn = document.getElementById("header-back-btn");
-        if (!btn) return;
+  /**
+   * Site-wide search — top-bar overlay.
+   * Fetches /search-index.json on first open, caches on window.
+   * Client-side scoring: title starts-with > title contains > desc contains.
+   * Groups results by type (Conditions / Procedures / Articles / …).
+   * Filters to current locale (based on the path prefix).
+   */
+  (function () {
+    var GROUP_LABELS_EN = {
+      treatment: "Conditions",
+      service:   "Procedures & therapies",
+      blog:      "Articles",
+      case:      "Case studies",
+      doctor:    "Doctors",
+      static:    "Pages",
+    };
+    var GROUP_LABELS_AR = {
+      treatment: "الحالات",
+      service:   "الإجراءات والعلاجات",
+      blog:      "المقالات",
+      case:      "دراسات الحالة",
+      doctor:    "الأطباء",
+      static:    "الصفحات",
+    };
+    // Per-hit badge — the shorter singular label shown next to each result title.
+    var BADGE_EN = {
+      treatment: "Condition",
+      service:   "Procedure",
+      blog:      "Article",
+      case:      "Case study",
+      doctor:    "Doctor",
+      static:    "Page",
+    };
+    var BADGE_AR = {
+      treatment: "حالة",
+      service:   "إجراء",
+      blog:      "مقال",
+      case:      "دراسة",
+      doctor:    "طبيب",
+      static:    "صفحة",
+    };
+    var GROUP_ORDER = ["treatment", "service", "blog", "case", "doctor", "static"];
+    var PER_GROUP = 5;
 
-        var path = location.pathname;
-        // Hide back button on home pages (/en/, /ar/). Mobile-only display
-        // is enforced via the .header-back-btn CSS media query.
-        var isHome = path === "/en/" || path === "/ar/" || path === "/";
-        btn.classList.toggle("is-hidden", isHome);
+    function currentLocale() {
+      return document.documentElement.getAttribute("lang") === "ar" ? "ar" : "en";
+    }
+
+    function loadIndex() {
+      if (window.__searchIndex) return Promise.resolve(window.__searchIndex);
+      if (window.__searchIndexPromise) return window.__searchIndexPromise;
+      window.__searchIndexPromise = fetch("/search-index.json")
+        .then(function (r) { return r.json(); })
+        .then(function (d) { window.__searchIndex = d.entries || []; return window.__searchIndex; })
+        .catch(function () { return []; });
+      return window.__searchIndexPromise;
+    }
+
+    function score(entry, q) {
+      var t = (entry.title || "").toLowerCase();
+      var d = (entry.description || "").toLowerCase();
+      if (!t && !d) return 0;
+      if (t === q) return 100;
+      if (t.indexOf(q) === 0) return 80;
+      if (t.indexOf(" " + q) !== -1) return 60;
+      if (t.indexOf(q) !== -1) return 40;
+      if (d.indexOf(q) !== -1) return 20;
+      return 0;
+    }
+
+    function esc(s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
+      });
+    }
+
+    function render(results, container, labels, badges, emptyText) {
+      if (!results.length) {
+        container.innerHTML = '<p class="search-empty">' + esc(emptyText) + "</p>";
+        return;
       }
+      var byType = {};
+      for (var i = 0; i < results.length; i++) {
+        var r = results[i];
+        (byType[r.type] = byType[r.type] || []).push(r);
+      }
+      var html = "";
+      for (var j = 0; j < GROUP_ORDER.length; j++) {
+        var key = GROUP_ORDER[j];
+        var items = byType[key];
+        if (!items || !items.length) continue;
+        html += '<section class="search-group"><p class="search-group-label">' + esc(labels[key] || key) + "</p>";
+        var shown = items.slice(0, PER_GROUP);
+        for (var k = 0; k < shown.length; k++) {
+          var it = shown[k];
+          html += '<a class="search-hit" href="' + esc(it.href) + '" role="option">'
+                + '<div class="search-hit-head">'
+                +   '<h4 class="search-hit-title">' + esc(it.title) + "</h4>"
+                +   '<span class="search-hit-badge search-hit-badge-' + esc(it.type) + '">' + esc(badges[key] || key) + "</span>"
+                + "</div>"
+                + (it.description ? '<p class="search-hit-desc">' + esc(it.description) + "</p>" : "")
+                + '<p class="search-hit-path">' + esc(it.href.replace(/^\//, "").replace(/\/$/, "").split("/").join(" › ")) + "</p>"
+                + "</a>";
+        }
+        html += "</section>";
+      }
+      container.innerHTML = html;
+    }
 
-      function handleBackClick(e) {
-        e.preventDefault();
-        // Try history.back() first — most reliable
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          // Fallback: navigate to language-specific home
-          var path = location.pathname;
-          if (path.startsWith("/ar/")) {
-            location.href = "/ar/";
+    function filterIndex(index, q, locale) {
+      q = q.trim().toLowerCase();
+      if (!q) return [];
+      var out = [];
+      for (var i = 0; i < index.length; i++) {
+        var e = index[i];
+        if (e.locale !== locale) continue;
+        var s = score(e, q);
+        if (s > 0) out.push({ e: e, s: s });
+      }
+      out.sort(function (a, b) { return b.s - a.s; });
+      // Bring redesigned/curated ordering: return raw entries
+      return out.slice(0, 50).map(function (x) { return x.e; });
+    }
+
+    var searchOpen = false;
+    var activeIndex = -1;
+
+    function setSearchOpen(open) {
+      var panel = document.getElementById("search-panel");
+      var scrim = document.getElementById("search-scrim");
+      var toggle = document.getElementById("search-toggle");
+      var input = document.getElementById("search-input");
+      if (!panel || !scrim || !input) return;
+      searchOpen = open;
+      if (open) {
+        panel.hidden = false;
+        scrim.classList.add("visible");
+        if (toggle) toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("search-open");
+        loadIndex(); // prime the cache
+        setTimeout(function () { input.focus(); input.select(); }, 20);
+      } else {
+        panel.hidden = true;
+        scrim.classList.remove("visible");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("search-open");
+        activeIndex = -1;
+      }
+    }
+
+    function bindSearchListeners() {
+      var toggle = document.getElementById("search-toggle");
+      var input  = document.getElementById("search-input");
+      var results = document.getElementById("search-results");
+      var scrim = document.getElementById("search-scrim");
+      if (!toggle || !input || !results || !scrim) return;
+
+      if (!toggle.__bound) {
+        toggle.__bound = true;
+        toggle.addEventListener("click", function () { setSearchOpen(!searchOpen); });
+      }
+      if (!scrim.__searchBound) {
+        scrim.__searchBound = true;
+        scrim.addEventListener("click", function () { setSearchOpen(false); });
+      }
+      if (!input.__bound) {
+        input.__bound = true;
+        var locale = currentLocale();
+        var labels = locale === "ar" ? GROUP_LABELS_AR : GROUP_LABELS_EN;
+        var emptyText = locale === "ar" ? "لا توجد نتائج." : "No results.";
+        var hintHtml = results.innerHTML; // preserve the initial hint
+
+        input.addEventListener("input", function () {
+          var q = input.value;
+          if (!q.trim()) { results.innerHTML = hintHtml; activeIndex = -1; return; }
+          loadIndex().then(function (index) {
+            var loc = currentLocale();
+            var hits = filterIndex(index, q, loc);
+            render(hits, results,
+              loc === "ar" ? GROUP_LABELS_AR : GROUP_LABELS_EN,
+              loc === "ar" ? BADGE_AR : BADGE_EN,
+              loc === "ar" ? "لا توجد نتائج." : "No results.");
+            activeIndex = -1;
+          });
+        });
+
+        input.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") { setSearchOpen(false); return; }
+          var hits = results.querySelectorAll(".search-hit");
+          if (!hits.length) return;
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            activeIndex = Math.min(hits.length - 1, activeIndex + 1);
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            activeIndex = Math.max(0, activeIndex - 1);
+          } else if (e.key === "Enter" && activeIndex >= 0) {
+            e.preventDefault();
+            var href = hits[activeIndex].getAttribute("href");
+            if (href) window.location.href = href;
+            return;
+          } else if (e.key === "Enter" && hits.length) {
+            e.preventDefault();
+            var href2 = hits[0].getAttribute("href");
+            if (href2) window.location.href = href2;
+            return;
           } else {
-            location.href = "/en/";
+            return;
           }
-        }
+          for (var i = 0; i < hits.length; i++) hits[i].classList.remove("active");
+          hits[activeIndex].classList.add("active");
+          hits[activeIndex].scrollIntoView({ block: "nearest" });
+        });
       }
+    }
 
-      function bindButton() {
-        var btn = document.getElementById("header-back-btn");
-        if (btn) {
-          // Remove old listeners and re-bind
-          var newBtn = btn.cloneNode(true);
-          btn.parentNode.replaceChild(newBtn, btn);
-          btn = newBtn;
-
-          btn.addEventListener("click", handleBackClick);
-          btn.addEventListener("touchend", handleBackClick);
-          updateBackButton();
+    if (!window.__searchGlobalsBound) {
+      window.__searchGlobalsBound = true;
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && searchOpen) setSearchOpen(false);
+        // Cmd/Ctrl-K opens search from any page
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+          e.preventDefault();
+          setSearchOpen(true);
         }
-      }
-
-      // Initial bind
-      bindButton();
-
-      // Re-bind on page transitions (View Transitions API)
-      document.addEventListener("astro:page-load", function () {
-        lastPath = location.pathname;
-        bindButton();
       });
+      document.addEventListener("astro:before-swap", function () { setSearchOpen(false); });
+    }
 
-      // Also update on history changes
-      window.addEventListener("popstate", function () {
-        lastPath = location.pathname;
-        bindButton();
-      });
-    })();
+    bindSearchListeners();
+    document.addEventListener("astro:page-load", bindSearchListeners);
   })();
 </script>
 
 <style>
-  /* ============================================================= HEADER */
+  /* ─── Header shell ────────────────────────────────────────── */
   .site-header {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
+    background: var(--white);
+    /* Slight translucency + blur only when backdrop-filter is supported.
+       Falls back to the flat token so dark mode still reads correctly. */
+    background: color-mix(in srgb, var(--white) 96%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
   }
   .header-row {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    height: var(--header-h);
-    padding-block: 0;
+    gap: 16px;
+    min-height: var(--header-h);
+    padding-block: 12px;
   }
 
-  /* Back button — iOS style: chevron + section label, top-left, mobile-only */
-  .header-back-btn {
+  /* ─── Masthead ────────────────────────────────────────────── */
+  .masthead {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    /* Allow the masthead to shrink if the header row runs tight — the
+       actions on the right (عربي, call, burger) are the priority items. */
+    min-width: 0;
+    padding-block: 4px;
+  }
+  .masthead:hover { text-decoration: none; color: var(--ink); }
+  .masthead-rule {
+    width: 3px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .masthead-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+  }
+  .masthead-name {
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1.1;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+.masthead-sub {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+  /* On very narrow phones the long EN subheading overflows the header row.
+     Drop it below 460px — the brand name alone still identifies the clinic
+     and matches what iOS-style headers do at phone widths. */
+  @media (max-width: 459px) {
+    .masthead-sub { display: none; }
+  }
+/* ─── Desktop nav (≥ 860px) ───────────────────────────────── */
+  .primary-nav {
     display: none;
     align-items: center;
-    gap: 0.25em;
-    height: 48px;
-    padding: 0 0.5em 0 0.25em;
-    /* Push action buttons (theme/lang/burger) to the right when the logo
-       is hidden on mobile non-home pages. */
-    margin: 0 auto 0 0;
-    background: transparent;
-    border: none;
-    color: var(--brand);
-    cursor: pointer;
-    flex-shrink: 0;
-    font: inherit;
-    font-size: 1rem;
-    font-weight: 400;
-    transition: opacity 0.2s ease;
+    gap: 4px;
+    margin-inline-start: auto;
   }
-  .header-back-btn:hover { opacity: 0.7; }
-  .header-back-btn:active { opacity: 0.5; }
-  .header-back-btn .chev-back { flex-shrink: 0; }
-  .header-back-btn .back-label {
-    /* Line-height must clear descenders (Arabic ج/ح/خ) — line-height: 1
-       clipped them against `overflow: hidden`. */
-    line-height: 1.4;
-    max-width: 8em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  /* Arrow always points left in both LTR and RTL (matches browser back convention).
-     Header row is dir="ltr" so the chevron stays on the left of the label too. */
-
-  @media (max-width: 767px) {
-    /* Show on mobile only */
-    .header-back-btn { display: inline-flex; }
-  }
-  /* JS toggles this class on home pages to hide the button */
-  .header-back-btn.is-hidden { display: none !important; }
-
-  /* Logo */
-  .logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    color: var(--ink);
-    font-weight: 700;
+  .nav-link {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--body);
     text-decoration: none;
-    white-space: nowrap;
-    margin-right: auto;
-    flex-shrink: 0;
-    height: 100%;
+    border-radius: 2px;
+    transition: color 0.15s ease, background-color 0.15s ease;
   }
-  .logo:hover { text-decoration: none; color: var(--brand); }
-  .logo-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .logo-mark svg {
-    display: block;
-  }
-  .logo-text { display: flex; flex-direction: column; line-height: 1.1; justify-content: center; }
-  .logo-name { font-size: 1.05rem; color: var(--brand); }
-  .logo-sub { font-size: 0.75rem; color: var(--ink-muted); font-weight: 500; }
+.nav-link:hover { color: var(--accent); text-decoration: none; background: var(--surface); }
+  .nav-link.active { color: var(--accent); }
 
-  /* On mobile, hide the whole logo on non-home pages so it can't be confused
-     with the iOS-style back button sitting to its left. Tablet and desktop
-     keep the full logo (icon + text) on every page. */
-  @media (max-width: 767px) {
-    .logo:not(.is-home) { display: none; }
-  }
-
-
-  /* Actions row (theme toggle, burger, desktop call button) */
+  /* ─── Header actions (right side) ─────────────────────────── */
   .header-actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    flex-shrink: 0;
+    gap: 10px;
+    margin-inline-start: auto;
+  }
+  @media (min-width: 860px) {
+    .header-actions { margin-inline-start: 0; }
   }
 
-  .icon-btn {
+  .lang-switch {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--ink);
-    cursor: pointer;
-    font-size: 0;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--body);
+    text-decoration: none;
+    /* Always-visible hairline box — matches the prototype (Alimran
+       Neurosurgery.dc.html line 39). Older impl had it on :hover only. */
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    white-space: nowrap;
+    transition: color 0.15s ease, border-color 0.15s ease;
   }
-  .icon-btn:hover { color: var(--brand); border-color: var(--brand); }
-  .icon-btn svg { display: block; }
-  .desktop-only { display: none; }
+  .lang-switch:hover { color: var(--accent); text-decoration: none; border-color: var(--accent); }
+  /* Mobile: comfortable 48px tap target */
+  @media (max-width: 859px) {
+    .lang-switch { min-height: 48px; padding: 0 14px; }
+  }
 
-  /* ==================================================== PRIMARY NAV */
-  .primary-nav { display: none; }
-  .primary-nav > ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.15rem;
-  }
-  /* In AR mode, force the nav LIST to read right-to-left so Home is on the
-     right and Contact on the left — matches Arabic reading direction.
-     The outer header-row stays LTR (see dir="ltr" on the container) so the
-     logo remains on the left and Call/Theme/Language remain on the right. */
-  :global(html[dir="rtl"]) .primary-nav > ul {
-    direction: rtl;
-  }
-  .nav-item { position: relative; }
-  .nav-link {
+  /* ─── Search button (opens overlay) ───────────────────────── */
+  .search-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.35em;
-    padding: 0.55em 0.9em;
-    border-radius: 8px;
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background-color 0.15s ease, color 0.15s ease;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--body);
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
   }
-  .nav-item:hover > .nav-link,
-  .nav-item.active > .nav-link {
-    background: var(--brand-soft);
-    color: var(--brand);
-    text-decoration: none;
-  }
-  .chev { opacity: 0.5; }
+  .search-btn:hover { color: var(--accent); border-color: var(--accent); }
+  .search-btn[aria-expanded="true"] { color: var(--accent); border-color: var(--accent); }
 
-  /* Tajawal has a smaller x-height than IBM Plex Sans, so Arabic text renders
-     visually smaller at the same font-size. Bump Arabic nav ~10% so both
-     languages read at the same optical weight. */
-  :global(html[dir="rtl"]) .nav-link {
-    font-size: 1.05rem;
-  }
-
-  /* Mega-menu panel (desktop, CSS-only hover reveal) */
-  .mega {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 640px;
-    max-width: 90vw;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    padding: 1.5rem;
-    margin-top: 4px;
-    z-index: 60;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-50%) translateY(4px);
-    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
-  }
-  .nav-item.has-mega:hover > .mega,
-  .nav-item.has-mega:focus-within > .mega {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-  }
-  .mega-inner {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1.5rem;
-  }
-  .mega-col h4 {
-    color: var(--brand);
-    font-size: 0.8rem;
-    margin: 0 0 0.5em;
-    padding-bottom: 0.4em;
-    border-bottom: 1px solid var(--border);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .mega-col h4 a { color: inherit; }
-  .mega-col ul {
-    list-style: none;
-    margin: 0;
+  /* ─── Theme toggle (dark mode) ────────────────────────────── */
+  .theme-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     padding: 0;
+    background: transparent;
+    color: var(--body);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
   }
-  .mega-col a {
-    display: block;
-    padding: 0.35em 0;
-    color: var(--ink-soft);
-    font-size: 0.9rem;
-    text-decoration: none;
+  .theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+  @media (max-width: 859px) {
+    .theme-btn { width: 44px; height: 44px; }
   }
-  .mega-col a:hover { color: var(--brand); }
+  /* Icon-swap between .moon and .sun lives in global.css because Astro
+     strips the `html[data-theme="…"]` prefix from scoped styles (same
+     issue as html[dir="rtl"]). */
 
-  /* ==================================================== MOBILE DRAWER */
-  /* Same footprint as kaleem-web: 65% viewport width, capped at 400px. */
+  /* Hide the "Call the secretary" pill on tight screens; the drawer has one. */
+  .call-btn { display: none; }
+  @media (min-width: 640px) {
+    .call-btn { display: inline-flex; }
+  }
+
+  /* ─── Burger button ───────────────────────────────────────── */
+  .menu-btn {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0 12px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .menu-btn span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: var(--ink);
+  }
+  .menu-btn:hover { border-color: var(--accent); }
+
+  @media (min-width: 860px) {
+    .primary-nav { display: inline-flex; }
+    .menu-btn { display: none; }
+  }
+
+  /* ─── Mobile drawer ───────────────────────────────────────── */
   .mobile-nav {
     position: fixed;
-    top: 0; right: 0; bottom: 0;
-    width: 65%;
-    max-width: 400px;
-    background: var(--surface);
-    border-left: 1px solid var(--border);
-    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.08);
+    top: 0; bottom: 0;
+    inset-inline-end: 0;
+    width: min(320px, 82vw);
+    background: var(--white);
+    border-inline-start: 1px solid var(--line);
     z-index: 90;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    padding: 20px;
+    gap: 8px;
     transform: translateX(100%);
     transition: transform 0.25s ease-out;
   }
-  .mobile-nav.open { transform: translateX(0); }
-
-  /* Drawer always slides in from the RIGHT in both LTR and AR — matches
-     the fixed burger position on the right side of the header. */
-
-  .menu-scrim {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 26, 34, 0.5);
-    z-index: 80;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-  }
-  .menu-scrim.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-  :global(body.nav-open) { overflow: hidden; }
+.mobile-nav.open { transform: translateX(0); }
 
   .drawer-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.85rem 1.25rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 8px;
   }
-  .drawer-title {
-    color: var(--ink-muted);
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+  .close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink);
   }
+  .close-btn:hover { border-color: var(--accent); color: var(--accent); }
 
   .drawer-list {
     list-style: none;
+    padding: 0;
     margin: 0;
-    padding: 0.5rem 0;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
   }
-  .drawer-list > li { border-bottom: 1px solid var(--border); }
-  .drawer-list > li > a,
-  .drawer-list summary {
+  .drawer-link {
+    display: block;
+    padding: 16px 4px;
+    min-height: 56px;
+    font-size: 17px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .drawer-link:hover { color: var(--accent); text-decoration: none; }
+  .drawer-lang { color: var(--body); font-size: 15px; }
+  .drawer-sep { flex: 1 1 auto; min-height: 12px; }
+  .drawer-call {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .menu-scrim {
+    position: fixed;
+    inset: 0;
+    background: color-mix(in srgb, var(--footer-bg) 40%, transparent);
+    z-index: 80;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+  .menu-scrim.visible { opacity: 1; visibility: visible; }
+  :global(body.nav-open) { overflow: hidden; }
+
+  /* ─── Search overlay ──────────────────────────────────────── */
+  .search-panel {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    z-index: 60;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    max-height: calc(100vh - var(--header-h));
+    overflow-y: auto;
+  }
+  .search-panel[hidden] { display: none; }
+  .search-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(16px, 2.5vw, 24px);
+  }
+  .search-input-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1em 1.25em;
+    gap: 12px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  .search-icon { color: var(--muted); flex-shrink: 0; }
+  .search-input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 17px;
     color: var(--ink);
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: start;   /* logical — auto-flips for RTL */
+    padding: 4px 0;
   }
-  .drawer-list summary { list-style: none; }
-  .drawer-list summary::-webkit-details-marker { display: none; }
-  .drawer-list summary::after {
-    content: "+";
-    color: var(--ink-muted);
-    font-weight: 400;
-    font-size: 1.2em;
-    line-height: 1;
-    margin-inline-start: auto;   /* auto-flip in RTL */
-  }
-  .drawer-list details[open] summary::after { content: "−"; }
-  .drawer-list details[open] summary {
-    background: var(--brand-soft);
-    color: var(--brand);
-  }
-  .drawer-list > li > a:hover,
-  .drawer-list summary:hover {
-    background: var(--brand-soft);
-    color: var(--brand);
-  }
-
-  .drawer-sub {
-    background: var(--surface-alt);
-    padding: 0.5rem 1.25rem 0.75rem;
-  }
-  .drawer-sub-all {
-    display: inline-block;
-    color: var(--brand);
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.5em 0;
-    text-decoration: none;
-  }
-  .drawer-col h5 {
-    color: var(--ink-muted);
-    font-size: 0.7rem;
-    text-transform: uppercase;
+  .search-input::placeholder { color: var(--muted); }
+  .search-input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+  .search-kbd {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
     letter-spacing: 0.08em;
-    margin: 0.75em 0 0.3em;
-    font-weight: 600;
-    text-align: start;
+    padding: 3px 7px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--muted);
+    background: var(--surface);
   }
-  .drawer-col ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  @media (max-width: 460px) { .search-kbd { display: none; } }
+
+  .search-results { min-height: 60px; }
+  .search-hint {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 8px 0 0;
+    text-align: center;
+    padding: 24px 0;
   }
-  .drawer-col a {
+  .search-scrim {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    z-index: 55;
+    background: rgba(16, 28, 34, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+  }
+  .search-scrim.visible { opacity: 1; visibility: visible; }
+</style>
+
+<!--
+  Search result markup is injected at runtime via innerHTML, which means
+  Astro's scoped [data-astro-cid-…] attributes are never applied to it and
+  scoped styles silently fail. These rules live in a global block so they
+  actually hit the dynamic nodes.
+-->
+<style is:global>
+  .search-group {
+    margin-bottom: 32px;
+  }
+  .search-group:last-child { margin-bottom: 0; }
+  .search-group-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+    padding: 0 0 8px;
+    border-bottom: 1px solid var(--ink);
+  }
+  html[dir="rtl"] .search-group-label {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+
+  /* Each result is its own bordered card with real breathing room between
+     cards so titles never blur into the next result. */
+  .search-hit {
     display: block;
-    padding: 0.45em 0;
-    color: var(--ink-soft);
-    font-size: 0.95rem;
+    padding: 16px 16px 14px;
     text-decoration: none;
-    text-align: start;   /* logical — RTL-safe */
+    border: 1px solid var(--line);
+    background: var(--white);
+    margin: 0 0 18px;
   }
-  .drawer-col a:hover { color: var(--brand); }
+  .search-hit:last-child { margin-bottom: 0; }
+  .search-hit:hover,
+  .search-hit.active {
+    background: var(--surface);
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+  .search-hit.active { box-shadow: inset 0 0 0 1px var(--accent); }
 
-  /* ==================================================== DESKTOP */
-  @media (min-width: 1024px) {
-    .primary-nav { display: flex; flex: 1 1 auto; justify-content: center; }
-    #menu-toggle { display: none; }
-    .desktop-only { display: inline-flex; }
+  .search-hit-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 0 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .search-hit-title {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    line-height: 1.2;
+    margin: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .search-hit:hover .search-hit-title,
+  .search-hit.active .search-hit-title { color: var(--accent); }
+  html[dir="rtl"] .search-hit-title { font-weight: 700; font-size: 18px; letter-spacing: 0; }
 
-    /* On desktop the drawer, scrim, and drawer content never show. */
-    .mobile-nav,
-    .menu-scrim { display: none; }
+  .search-hit-badge {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 3px 7px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: var(--white);
+    white-space: nowrap;
+  }
+  html[dir="rtl"] .search-hit-badge {
+    font-family: var(--font-body); letter-spacing: 0; text-transform: none; font-size: 11px;
+  }
+  .search-hit-badge-treatment { color: var(--accent); border-color: var(--accent); }
+  .search-hit-badge-service   { color: #5a3d8a; border-color: #d7cae8; }
+  .search-hit-badge-blog      { color: #7a5a1a; border-color: #ecd9a8; }
+  .search-hit-badge-case      { color: #2f6d47; border-color: #bbdec5; }
+  .search-hit-badge-doctor    { color: var(--ink); border-color: var(--line-strong); }
+  .search-hit-badge-static    { color: var(--muted); border-color: var(--line); }
+
+  .search-hit-desc {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin: 0 0 6px;
+    line-height: 1.55;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .search-hit-path {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    margin: 0;
+    opacity: 0.75;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  html[dir="rtl"] .search-hit-path { font-family: var(--font-body); font-size: 12px; }
+
+  .search-empty {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+    text-align: center;
+    padding: 24px 0;
   }
 </style>

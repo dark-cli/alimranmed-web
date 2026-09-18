@@ -1,0 +1,270 @@
+/**
+ * RTL overrides — Alimran Clinic (Arabic).
+ *
+ * Astro scopes `<style>` blocks per-component and — as of v5.10 —
+ * strips the `html[dir="rtl"]` prefix even when wrapped in `:global()`.
+ * So all Arabic-side typography overrides live here (a plain global
+ * stylesheet imported by `global.css`) where the selector is preserved.
+ *
+ * These rules override component-scoped LTR defaults. Every class name
+ * used here is unique to the redesign, so there's no risk of collision.
+ */
+
+/* ─── Global body ─────────────────────────────────────────── */
+html[dir="rtl"] body { line-height: 1.95; }
+html[dir="rtl"] p { line-height: 1.9; }
+html[dir="rtl"] :is(h1, h2, h3, h4, h5, h6) {
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.22;
+}
+
+/* Base helpers */
+html[dir="rtl"] .eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 12px;
+}
+html[dir="rtl"] .section-num {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+}
+html[dir="rtl"] .section-head {
+  grid-template-columns: 1fr 56px;
+}
+html[dir="rtl"] .register-label {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 12px;
+}
+html[dir="rtl"] .photo-slot {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+html[dir="rtl"] .prose { line-height: 1.95; }
+html[dir="rtl"] .prose figcaption {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}
+
+/* ─── Header ──────────────────────────────────────────────── */
+html[dir="rtl"] .masthead-name {
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0;
+}
+html[dir="rtl"] .masthead-sub {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .nav-link { font-size: 15px; }
+html[dir="rtl"] .mobile-nav { transform: translateX(-100%); }
+
+/* ─── Footer ──────────────────────────────────────────────── */
+html[dir="rtl"] .f-brand { font-weight: 700; font-size: 24px; }
+html[dir="rtl"] .f-brand-sub {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .f-brand-line { line-height: 1.9; }
+html[dir="rtl"] .f-label {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 12px;
+}
+html[dir="rtl"] .footer-bottom p { font-size: 13.5px; }
+
+/* ─── Home page ───────────────────────────────────────────── */
+html[dir="rtl"] .hero-eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .hero-h1 {
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.22;
+}
+html[dir="rtl"] .hero-p { line-height: 1.9; }
+html[dir="rtl"] .hero-photo p {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  font-size: 12px;
+}
+html[dir="rtl"] .stat-fig { font-weight: 700; }
+html[dir="rtl"] .stat-desc { line-height: 1.9; }
+html[dir="rtl"] .pg-num {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  font-size: 13px;
+}
+html[dir="rtl"] .pg-h2 {
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.22;
+}
+html[dir="rtl"] .pg-lede { line-height: 1.9; }
+html[dir="rtl"] .care-title {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .care-desc { line-height: 1.9; }
+html[dir="rtl"] .pathway-num {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .pathway-name {
+  font-weight: 700;
+  font-size: clamp(24px, 2.8vw, 28px);
+}
+html[dir="rtl"] .facility-slot p {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  font-size: 12px;
+}
+html[dir="rtl"] .inside-body { line-height: 1.9; }
+html[dir="rtl"] .fact-row dt {
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+html[dir="rtl"] .fact-row dd { line-height: 1.9; }
+html[dir="rtl"] .consultant-name { font-weight: 700; }
+html[dir="rtl"] .consultant-quals {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .consultant-body { line-height: 1.9; }
+html[dir="rtl"] .referral-eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .referral-body { line-height: 1.9; }
+html[dir="rtl"] .referral-label {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 12px;
+}
+
+/* ─── Consultant CV ───────────────────────────────────────── */
+html[dir="rtl"] .cv-eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .cv-h1 {
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.22;
+}
+html[dir="rtl"] .cv-lede { line-height: 1.9; }
+html[dir="rtl"] .cv-chip {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0;
+}
+html[dir="rtl"] .cv-portrait p {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  font-size: 12px;
+}
+html[dir="rtl"] .reg-label {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .reg-period {
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+html[dir="rtl"] .reg-text { line-height: 1.9; }
+html[dir="rtl"] .member-year {
+  font-family: var(--font-body);
+  font-size: 13px;
+}
+html[dir="rtl"] .pub-title {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ─── Conditions & Procedures ─────────────────────────────── */
+html[dir="rtl"] .intro-eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+}
+html[dir="rtl"] .intro-h1 {
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.22;
+}
+html[dir="rtl"] .intro-lede { line-height: 1.9; }
+html[dir="rtl"] .proc-num {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  font-size: 13px;
+}
+html[dir="rtl"] .proc-h2 {
+  font-weight: 700;
+  letter-spacing: 0;
+  font-size: clamp(26px, 3.6vw, 36px);
+  line-height: 1.22;
+}
+html[dir="rtl"] .surg-photo p {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  font-size: 12px;
+  line-height: 1.9;
+}
+html[dir="rtl"] .surg-title {
+  font-weight: 700;
+  font-size: 24px;
+}
+html[dir="rtl"] .surg-desc { line-height: 1.85; }
+html[dir="rtl"] .int-num {
+  font-family: var(--font-body);
+  font-size: 13px;
+}
+html[dir="rtl"] .appt-h2 {
+  font-weight: 700;
+  letter-spacing: 0;
+  font-size: clamp(24px, 3vw, 32px);
+}
+html[dir="rtl"] .appt-body {
+  line-height: 1.85;
+  max-width: 54ch;
+}
+
+/* ─── Article template ────────────────────────────────────── */
+html[dir="rtl"] .crumbs {
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+html[dir="rtl"] .head-copy h1 { line-height: 1.22; }
+html[dir="rtl"] .standfirst { line-height: 1.9; }
+html[dir="rtl"] .toc li a::before {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}

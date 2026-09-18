@@ -1,21 +1,86 @@
 ---
 title: "Acoustic neuroma"
-description: "Acoustic neuroma is a rare noncancerous tumor. It grows slowly from an overproduction of Schwann cells and is also called"
+description: "A slow-growing, non-cancerous tumour of the balance and hearing nerve. Treatment ranges from observation to microsurgery — the choice depends on the size of the tumour and what it is doing to the patient."
 category: "pain"
+pathwayOverride: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/12/acoustic-neuroma/"
 publishedAt: "2021-01-12T13:42:59"
 source: "legacy-wp"
+redesigned: true
+
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A benign tumour arising from Schwann cells on the vestibular (balance) nerve; also called vestibular schwannoma."
+      - label: "Typical signs"
+        value: "One-sided hearing loss, tinnitus, unsteadiness — signs are progressive, not sudden."
+      - label: "How we treat it"
+        value: "Three options: observation with serial MRI, focused radiosurgery, or microsurgical removal."
+
+  - type: prose
+    heading: "What acoustic neuroma is"
+    body: |
+      Acoustic neuroma is a rare non-cancerous tumour. It grows slowly from an overproduction of Schwann cells on the balance and hearing nerve as it leaves the brainstem. Schwann cells normally wrap around and support nerve fibres — when they multiply out of control, they form a mass that presses on nearby structures.
+
+      A small tumour affects only the balance nerve. A larger one can compress the facial nerve, the brainstem, or the fourth ventricle. The clinical picture reflects what the tumour is pressing on, not simply its size.
+
+  - type: comparison-pair
+    heading: "Two forms of acoustic neuroma"
+    intro: "The distinction matters because unilateral and bilateral tumours behave differently — different age of onset, different genetic basis, different treatment planning."
+    a:
+      label: "Form A"
+      title: "Unilateral acoustic neuroma"
+      items:
+        - "Affects one ear only; the most common form."
+        - "Presents between 30 and 60 years of age."
+        - "No inherited pattern; cause is usually unknown."
+    b:
+      label: "Form B"
+      title: "Bilateral acoustic neuroma"
+      items:
+        - "Affects both ears; inherited."
+        - "Caused by neurofibromatosis type 2 (NF2)."
+        - "Presents earlier — often in the teens or twenties."
+
+  - type: prose
+    heading: "How it is diagnosed"
+    body: |
+      Diagnosis is confirmed by an MRI of the internal auditory canals with contrast. This is ordered whenever hearing loss is asymmetric — the scan finds tumours as small as a few millimetres. Audiometry (a formal hearing test) is used both at diagnosis and to track the ear over time.
+
+      When a tumour is found, it is measured precisely and its relationship to the brainstem and facial nerve is mapped. This defines the treatment options and the risk of each.
+
+  - type: pull-quote
+    text: "Very small acoustic neuromas do not need treatment. They need to be watched. A patient can be needlessly harmed by treating a tumour that would have stayed quiet on its own."
+    attribution: "Hussein Imran Mousa, consultant neurosurgeon"
+
+  - type: treatment-groups
+    heading: "How it is treated"
+    intro: "The three treatment options are complementary, not competing. Which is right for a given patient depends on tumour size, growth rate, symptoms, age, and hearing status."
+    note: "The choice is always discussed with the patient in detail. Nobody with an acoustic neuroma leaves the clinic without a written plan they understand."
+    groups:
+      - title: "Observation"
+        subtitle: "Small, stable, minimally symptomatic tumours"
+        items:
+          - "Serial MRI at intervals (6, 12, then 24 months)"
+          - "Annual audiometry to track hearing"
+          - "Escalate to active treatment only if the tumour grows or symptoms worsen"
+      - title: "Radiosurgery"
+        subtitle: "Focused radiation for medium tumours"
+        items:
+          - "Gamma knife or linear accelerator"
+          - "Single or fractionated dose"
+          - "No incision; day-case"
+          - "Aim: arrest growth, preserve hearing where possible"
+      - title: "Microsurgery"
+        subtitle: "Larger tumours, or when observation/radiosurgery fails"
+        items:
+          - "Suboccipital, translabyrinthine, or middle fossa approach"
+          - "Intra-operative facial nerve monitoring throughout"
+          - "Hospital stay of 5–10 days depending on approach"
+          - "Follow-up MRI at 6 and 12 months, then annually"
+
+  - type: related
+    slugs: ["fibromyalgia", "back-pain"]
 ---
-
-![](/images/legacy/2021/01/5b319cbcb8fad25af7316150927fbdd7-8-300x210.jpg)
-
-Acoustic neuroma is a rare noncancerous tumor. It grows slowly from an overproduction of Schwann cells and is also called a vestibular schwannoma. The tumor then presses on the hearing and balance nerves in the inner ear. Schwann cells normally wrap around and support nerve fibers. A large tumor can press on the facial nerve or brain structures.  
-**There are 2 types of acoustic neuromas:**  
-• Unilateral acoustic neuromas. This type affects only one ear. It is the most common type of acoustic neuroma. This tumor may develop at any age. It most often happens between the ages of 30 and 60. Acoustic neuroma may be the result of nerve damage caused by environmental factors. No environmental factor has been shown to cause acoustic neuromas.  
-• Bilateral acoustic neuromas. This type affects both ears and is inherited. It is caused by a genetic problem called neurofibromatosis-2 (NF2). The treatment for acoustic neuromas depends on the size of the tumor and the patient’s age, general health and preferences, and may involve surgery, radiosurgery and sometimes observation.  
-Surgeons have developed several types of craniotomy to remove acoustic neuromas. Surgical craniotomy may use a suboccipital, translabyrinthine approach or middle fossa approach.  
-• Radiosurgery  
-Radiosurgery treatments can be single or fractionated (multiple smaller treatments rather than one large one). Fractionated stereotactic radiosurgery (FSR) (Gamma knife) appears to offer very high rates of control with preservation of hearing and preservation of the facial strength.  
-• Observation  
-For some slow-growing acoustic neuromas observation with delayed treatment may be acceptable. This is a common treatment option for elderly or infirm patients with mild symptoms where the risks of therapy may be greater and where the tumor may not grow during their lifespan.
