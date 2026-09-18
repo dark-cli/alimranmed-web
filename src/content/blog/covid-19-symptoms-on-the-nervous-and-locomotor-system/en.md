@@ -1,38 +1,49 @@
 ---
-title: "Covid-19 symptoms on the nervous and locomotor system"
-description: "Symptoms of the locomotor system and after infection with Covid-19 ?? Symptoms last for weeks or even months and include:"
+title: "COVID-19 effects on the nervous and musculoskeletal systems"
+description: "Post-COVID symptoms affecting the muscles, nerves, and mood can persist for weeks or months. Here is how we follow up patients after infection."
 order: 999
 legacyUrl: "https://alimranmed.com/2020/11/23/covid-19-symptoms-on-the-nervous-and-locomotor-system/"
 publishedAt: "2020-11-23T14:53:06"
 source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What patients feel"
+        value: "Chronic pain and weakness, muscle aches, difficulty concentrating, memory problems, and headache — sometimes for weeks or months after the acute infection."
+      - label: "Who is most affected"
+        value: "Patients with pre-existing chronic disease — hypertension, diabetes, viral hepatitis, autoimmune conditions — have longer and more intense post-COVID symptoms."
+      - label: "Follow-up window"
+        value: "Primary follow-up starts three weeks after the first symptoms and continues up to twelve weeks, coordinated across neurology, rheumatology, internal medicine, cardiology, chest medicine, and rehabilitation."
+  - type: prose
+    heading: "Musculoskeletal and neurological symptoms"
+    body: |
+      The symptoms of the musculoskeletal system after COVID-19 infection can last for weeks or even months. They include chronic pain and weakness, difficulty with concentration and memory, muscle pain (myasthenia), headache, and other complaints.
+
+      Patients often describe the pain as if their body has been run over. This clinical picture is known medically as *myalgic encephalomyelitis* or *chronic fatigue syndrome*.
+
+      Symptoms are worse in patients with chronic disease — hypertension, diabetes, viral hepatitis, immune disorders, and others. Alongside the muscular weakness, there is a distinct period of exhaustion and loss of focus that follows even minor exertion, such as walking a short distance. This is what is known as **post-exertional malaise**.
+  - type: prose
+    heading: "Psychological effects"
+    body: |
+      A small proportion of recovering patients will develop excessive irritability, [depression](/treatments/depression/), and post-traumatic stress symptoms.
+
+      Treatment combines medication, [psychological intervention](/services/rehabilitation/psychological-intervention/), and a graduated increase in physical exercise — with the pace of progression chosen carefully to preserve the patient's energy levels rather than exhaust them further.
+  - type: prose
+    heading: "What follow-up studies show"
+    body: |
+      In a study of 180 patients followed up after severe COVID-19 infection, 87.4% reported that some symptoms — chronic fatigue and shortness of breath among them — persisted for at least a month, regardless of their baseline before infection.
+
+      It is worth noting that patients recovering from community-acquired pneumonia (CAP) show the same pattern of symptoms, so these post-infection complaints are not exclusive to COVID-19.
+  - type: prose
+    heading: "Primary care after infection"
+    body: |
+      COVID-19 is a multi-system disease, so follow-up is shared across several specialties: neurology, rheumatology, internal medicine, cardiology, chest medicine, and [rehabilitation](/services/rehabilitation/rehablitation-medicine/).
+
+      We begin primary follow-up three weeks after the first symptoms appear, continuing up to twelve weeks. It includes a full blood work-up and inflammatory markers — ESR, CRP, ferritin, and troponin.
+
+      For patients whose infection required admission to intensive care, a chest X-ray at twelve weeks is essential to check whether the disease is regressing or progressing. Patients with visible lung damage — identified on X-ray and by pulse oximetry — are followed up jointly with the chest medicine and rehabilitation units.
+
+      Psychological support and post-infection care are an important part of the recommendation, because they raise the body's immunity and contribute directly to recovery.
 ---
-
-Symptoms of the locomotor system and after infection with Covid-19 ??
-
-Symptoms last for weeks or even months and include: chronic pain and tenderness, problems with concentration and memory, muscle pain (myasthenia), headache and more …
-
-The mother is described as the patient being run over, and this is medically called (Myalgic encephalomeylitis) or (Chronic fatigue syndwme)
-
-Symptoms increase in patients with chronic diseases: pressure, diabetes, viral hepatitis, immune diseases and others. In addition to myasthenia, there is a period of fatigue and loss of focus.
-
-After a short period of making any effort, no matter how simple, such as walking, for example, which is known as post extertional
-
-A small percentage of those recovering will suffer from excessive nervousness, depression, and post-traumatic stress disorder. And its treatment lies in medical drugs, psychotherapy and increasing the rate of exercise, taking into account the progression of exercise to maintain energy levels.
-
-In a study of 180 patients on following up with Covid-19 patients and their infection was under severe infection, the results showed that 87.4% of them reported the persistence of some symptoms for at least a month, such as chronic fatigue and shortness of breath, regardless of the comparison from before the injury, and the CAP patients They exhibit the same symptoms, so they are not exclusive to Covid-19 patients
-
-Primary care for post-traumatic cases ??
-
-Covid is considered one of the diseases that target more than one organ in the human body, so follow-up is done with a number of specialties such as the nervous system – joints – internal – cardiac – thoracic – and rehabilitation
-
-We start primary care 3 weeks after the first symptoms appear and last up to 12 weeks
-
-It includes complete blood tests and inflammatory tests for ESR, CRP, Ferritin, and toponin
-
-For patients whose injury required admission to intensive care, a chest X-ray after 12 weeks is necessary for follow-up, if there is a regression or progression of the disease.
-
-For patients with damage to the lungs (as it appears through an X-ray and an OXYMATER) follow-up with the chest diseases and rehabilitation units.
-
-Emphasizing the importance of psychological support and post-traumatic care is an important recommendation as it raises immunity levels in the body.
