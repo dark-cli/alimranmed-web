@@ -1,77 +1,71 @@
 ---
 title: "Bioresonance"
-description: "What Is Bioresonance and Does It Work? Bioresonance is a type of therapy used in holistic or complementary medicine. It uses"
+description: "A complementary therapy that reads the body's electromagnetic wavelengths through skin electrodes, used at the clinic for smoking cessation, allergies, fibromyalgia, and other chronic conditions."
 order: 999
 legacyUrl: "https://alimranmed.com/2021/05/31/bioresonance/"
 publishedAt: "2021-05-31T17:07:49"
 source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: false
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A complementary-medicine therapy that measures the frequency of electromagnetic wavelengths coming from the body and uses those readings for diagnosis and treatment."
+      - label: "How it's applied"
+        value: "Electrodes are placed on the skin — commonly on the hands or feet — and connected to a device that reads and then modulates the body's energy frequencies. The session is painless."
+      - label: "Where it fits"
+        value: "Used alongside conventional care for smoking cessation, allergic conditions, fibromyalgia, rheumatoid arthritis, muscle cramps, and selected chronic complaints."
+  - type: media
+    kind: image
+    src: /images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160.jpg
+    alt: "Clinician operating a bioresonance device during a therapy session"
+  - type: prose
+    heading: "How bioresonance works"
+    body: |
+      Bioresonance rests on the idea that unhealthy cells and organs emit altered electromagnetic waves as a result of cellular damage. Detecting those altered waves is used to identify the condition; returning them to their normal frequency is used to treat it.
+
+      In practice, electrodes are placed on the skin — most often on the hands or feet — and connected to a device that reads the wavelengths coming from the body. The device first measures the frequency and severity of the disturbance, then modulates the signal to restore the body's cells toward their natural frequency. The patient feels no pain or discomfort during the session.
+  - type: prose
+    heading: "Conditions we treat with bioresonance"
+    body: |
+      At the clinic, bioresonance is used as an adjunct in a defined set of conditions:
+
+      - Smoking cessation
+      - Stomach pain and digestive disorders, including irritable bowel syndrome
+      - Allergic conditions — asthma and eczema
+      - Autoimmune disease, particularly [rheumatoid arthritis](/treatments/rheumatoid-disease/)
+      - Patients at elevated risk of cancer
+      - [Fibromyalgia](/treatments/fibromyalgia/) and neuromuscular fibrosis
+      - Muscle cramps and spasms
+      - Diabetes
+  - type: prose
+    heading: "What the studies show"
+    body: |
+      **Smoking cessation.** A recent study reported that 77.2% of patients treated with bioresonance had quit smoking after a single week of sessions, compared with 54.8% treated by conventional methods.
+
+      **Stomach pain and digestive disorders.** In patients tracked with chronic stomach pain and irritable bowel syndrome, bioresonance produced a significant reduction in symptoms compared with standard pharmacological treatment.
+
+      **Allergic conditions.** Allergies — and the conditions associated with them, particularly asthma and eczema — are among the most frequently treated with this technique. Studies show most cases achieved substantial symptom reduction, whereas comparison groups treated without bioresonance did not.
+
+      **Rheumatoid arthritis.** Some studies suggest bioresonance supports the body's own antioxidant activity. Antioxidants counter the free radicals that drive cellular and tissue breakdown in rheumatoid patients.
+
+      **Neuromuscular fibrosis.** A comparison between manual therapy (massage) alone and manual therapy combined with bioresonance showed 72% improvement in muscle pain in the bioresonance group, versus 37% in the manual-therapy-only group — alongside gains in sleep quality and reduced sensitivity to cold and weather changes.
+
+      **Diabetes.** Recent work has shown benefit in diabetic patients, with treatment focused on energy circulation and on the organs directly involved in the disease — the pancreas and the liver. Research centres now apply the technique in both type 1 and type 2 diabetes.
+  - type: prose
+    heading: "Muscle burnout in athletes"
+    body: |
+      Under intense or prolonged exertion, muscle fibres undergo breakdown — a burnout state that occurs in athletes who do not allow adequate recovery time. It leads to:
+
+      - Recurrent cramps
+      - Fatigue and mood changes
+      - Disrupted sleep patterns
+      - Changes in heart rate
+
+      Bioresonance addresses this by returning heart rate and blood pressure toward normal and by reducing over-stimulation of the sympathetic nervous system.
+  - type: prose
+    heading: "Side effects"
+    body: |
+      No side effects have been documented for this alternative-medicine method, which is also referred to as "pain-free therapy." If any adverse response appears during a session, treatment is stopped immediately and the effect resolves.
 ---
-
-What Is Bioresonance and Does It Work?
-
-## ![Bioresonance](/images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160.jpg)
-
-Bioresonance is a type of therapy used in holistic or complementary medicine. It uses a machine to measure the frequency of energy wavelengths coming from the body. Those measures are then used to diagnose disease. Promoters say it can also cure certain diseases.
-
-How bioresonance works
-
-Bioresonance is based on the idea that unhealthy cells or organs emit altered electromagnetic waves due to DNA damage. Proponents of bioresonance believe that detection of these waves can be used to diagnose disease, while changing these waves back to their normal frequency will treat disease. To use bioresonance, electrodes are placed on the skin and hooked up to a machine that "reads" the energy wavelengths coming from the body. This is process of diagnosis. Then, those energy frequencies can be manipulated by the machine to allow the body's cells to vibrate at their "natural frequency," which purportedly treats the condition.
-
-What conditions does bioresonance therapy treat?
-
-Bioresonance therapy is used to address a variety of health conditions, including:
-
-1. Smoking cessation
-2. Stomach pain and digestive system disorders
-3. Allergies (asthma and eczema)
-4. Autoimmune diseases (rheumatoid arthritis)
-5. Cancer-prone individuals
-6. Neuromuscular fibrosis
-7. Muscle cramps and spasms
-8. Diabetes
-
-Side Effects
-
-No side effects have been documented to date for this alternative medicine treatment method, also known as "pain-free therapy." If any side effects appear related to gender, they are immediately stopped and therefore disappear immediately.
-
-Detailed Discussion of Targeted Treatment Cases
-
-1. Smoking Cessation
-
-A recent study found that 77.2% of cases treated with this technique quit smoking after just one week of starting sessions, compared to 54.8% of cases treated with conventional methods.
-
-2. Stomach Pain and Digestive System Disorders
-
-A study tracking chronic stomach pain patients and those with irritable bowel syndrome found significant symptom reduction compared to chemical treatments and conventional medications.
-
-3. Allergies and Related Conditions
-
-Allergies and conditions associated with them (asthma and eczema) are among the most commonly treated conditions with this technique. Studies show that most cases showed symptom reduction to minimal levels compared to other cases that were not treated with this technique, which showed all negative results.
-
-4. Rheumatoid Arthritis
-
-Some studies have shown that using bioresonance technology in rheumatoid arthritis cases is effective through bioactive antioxidant substances in the body for their natural function. The importance of these antioxidants is that they fight free radicals, which reduces cellular and tissue breakdown in rheumatoid arthritis patients.
-
-5. Neuromuscular Fibrosis Patients
-
-A study comparing several treatment groups including manual therapy (massage) without bioresonance and manual therapy with bioresonance showed 72% improvement in muscle pain compared to only 37% improvement in a group of people who received conventional manual therapy without bioresonance. In addition to improvements in sleep quality and depth, cold sensitivity, and weather sensitivity experienced during their treatment.
-
-6. Muscle Cramps and Spasms
-
-In cases of severity and increased exercise, muscle breakdown occurs in muscle fibers (burnout), which happens to athletes if they don't get adequate time for muscle recovery and leads to:
-
-A. Recurring cramps
-B. Fatigue and mood changes
-C. Changes in sleep patterns
-D. Changes in heart rate
-
-Treatment with bioresonance technology is important through:
-
-1. Restoring heart rate and blood pressure to normal levels
-2. Reducing stimulation of the sympathetic system (Sympathetic system)
-
-7. Diabetes Treatment
-
-Recent studies have found that diabetic patients have received good results and benefits from bioresonance treatment, with treatment focused on energy level circulation and working on its direct centers in diabetes, specifically the pancreas and liver. The Bioresonance Research Center has shown that this type of treatment is tested and reliable and is now being used in both type 1 and type 2 diabetes.
