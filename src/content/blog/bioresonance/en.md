@@ -11,7 +11,7 @@ clinicallyRelevant: false
 
 What Is Bioresonance and Does It Work?
 
-## ![Bioresonance](/images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160-300x200.jpg)
+## ![Bioresonance](/images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160.jpg)
 
 Bioresonance is a type of therapy used in holistic or complementary medicine. It uses a machine to measure the frequency of energy wavelengths coming from the body. Those measures are then used to diagnose disease. Promoters say it can also cure certain diseases.
 

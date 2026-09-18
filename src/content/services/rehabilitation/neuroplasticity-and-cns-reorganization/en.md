@@ -10,7 +10,7 @@ source: "legacy-wp"
 
 Later recovery of function in post-stroke patients is associated with neuroplasticity and central nervous system reorganization, which can be influenced in part by relearning through rehabilitation training. Neurological reorganization and its impact on functional recovery can continue for a much longer period than the acute neurological post-stroke recovery process (reduction of oedema, reperfusion of the penumbra, etc.). Following a stroke, this neurological reorganization of the undamaged cortex occurs to allow for motor and somatosensory recovery. In the end, this reorganization is not an acquisition of new neurons, but an adjustment of the undamaged connections to create new functional connections.
 
-**![](/images/legacy/2020/06/brains-e1466640765329-300x169.jpg)Motor Learning and its Application to Functional Recovery in Stroke Patients**
+**![](/images/legacy/2020/06/brains-e1466640765329.jpg)Motor Learning and its Application to Functional Recovery in Stroke Patients**
 
 The motor cortex in the brain is composed of interconnected cortical areas that function together to bring about movement. Different areas of the motor cortex are shown to be active when performing different functional tasks, this is called cortical motor mapping. Research shows that motor learning causes morphological changes or reorganization in the motor cortex influencing these cortical maps. First, newly acquired movements or skills have been shown to expand across a larger cortical area. Moreover, in both intact and injured brains learned motor tasks demonstrate reorganization of the cerebral cortex. The reorganization of the cortex is improved through enriched environments and repetition of a task.
 

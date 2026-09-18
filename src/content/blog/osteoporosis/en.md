@@ -49,4 +49,4 @@ sections:
           - "[Prolotherapy (regenerative medicine)](/services/regenerative-medicine/)"
 ---
 
-![](/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام-300x143.jpg)
+![](/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام.jpg)

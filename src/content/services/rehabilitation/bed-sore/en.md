@@ -8,7 +8,7 @@ publishedAt: "2020-07-01T07:04:50"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2020/07/247674_10151945256634968_1158683050_n-300x223.jpg)
+![](/images/legacy/2020/07/247674_10151945256634968_1158683050_n.jpg)
 ![](/images/legacy/2020/07/قرحة-الضغطpressure-ulcer.jpg)
 
 Bed sore (or what is known scientifically as pressure sore ) occurs as a result of constant friction or permanent pressure on a specific area of ​​the body without rest, as in cases of prolonged lying down for patients with paralysis, for example

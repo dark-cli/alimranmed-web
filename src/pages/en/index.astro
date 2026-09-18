@@ -22,21 +22,65 @@ const stats = [
   { fig: "6",      desc: "Clinic days a week, including an out-of-hours on-call roster" },
 ];
 
+// Home services — each card carries a "reading" list pointing at blog
+// articles that go deeper on that service group. Slugs must exist under
+// src/content/blog/{slug}/en.md.
 const services = [
   { title: "Neurosurgery",        desc: "Open and endoscopic surgery of the brain and spine, including trauma and tumour work.",
-    items: ["Burr holes & craniotomy", "Microdiscectomy", "Cervical discectomy & fusion", "Artificial disc replacement", "Spinal decompression"] },
+    items: ["Burr holes & craniotomy", "Microdiscectomy", "Cervical discectomy & fusion", "Artificial disc replacement", "Spinal decompression"],
+    reading: [
+      { slug: "what-is-an-intrathecal-pump", title: "What is an intrathecal pump?" },
+      { slug: "spin-med",                    title: "SpineMED spinal decompression" },
+    ] },
   { title: "Interventional pain", desc: "Image-guided injections and ablation for pain that has not responded to medication.",
-    items: ["Radiofrequency ablation", "Epidural & facet injections", "Sympathetic nerve blocks", "Steroid injections", "Botulinum toxin for headache"] },
+    items: ["Radiofrequency ablation", "Epidural & facet injections", "Sympathetic nerve blocks", "Steroid injections", "Botulinum toxin for headache"],
+    reading: [
+      { slug: "tension-headaches",  title: "Tension headaches — causes and management" },
+      { slug: "tms-for-pains",      title: "TMS for chronic pain" },
+      { slug: "arthritis",          title: "Arthritis — treatment options" },
+    ] },
   { title: "Neuromodulation",     desc: "Stereotactic and functional procedures for movement disorders and refractory pain.",
-    items: ["Deep brain stimulation", "Spinal cord stimulation", "Intrathecal pump & catheter", "Selective dorsal rhizotomy", "Brain lesioning"] },
+    items: ["Deep brain stimulation", "Spinal cord stimulation", "Intrathecal pump & catheter", "Selective dorsal rhizotomy", "Brain lesioning"],
+    reading: [
+      { slug: "transcranial-magnetic-stimulation",       title: "Transcranial magnetic stimulation (TMS)" },
+      { slug: "transcranial-direct-current-stimulation-tdcs", title: "Transcranial direct current stimulation (tDCS)" },
+      { slug: "tms-for-neuropsychiatric-disorders",       title: "TMS for neuropsychiatric disorders" },
+    ] },
   { title: "Recovery & therapy",  desc: "Rehabilitation that begins on the ward and continues in the clinic after discharge.",
-    items: ["Physiotherapy", "Post-operative rehabilitation", "Regenerative medicine", "Ozone therapy", "Supervised exercise & fitness"] },
+    items: ["Physiotherapy", "Post-operative rehabilitation", "Regenerative medicine", "Ozone therapy", "Supervised exercise & fitness"],
+    reading: [
+      { slug: "physiotherapy",                       title: "Physiotherapy — what it treats" },
+      { slug: "vasotrain-or-air-pressure-massage",   title: "Vasotrain pressure massage" },
+      { slug: "achilles-tendinitis",                 title: "Achilles tendinitis recovery" },
+    ] },
 ];
 
+// Each chip links to /treatments/{slug}/ — slugs match src/content/treatments/*
 const pathways = [
-  { num: "PATHWAY 01", title: "Brain", items: ["Brain tumour", "Stroke", "Epilepsy", "Head injury", "Parkinson's disease", "Motor disorders"] },
-  { num: "PATHWAY 02", title: "Spine", items: ["Herniated disc", "Sciatica", "Spinal cord injury", "Scoliosis", "Kyphosis", "Whiplash"] },
-  { num: "PATHWAY 03", title: "Pain",  items: ["Chronic headache", "Neck pain", "Back pain", "Frozen shoulder", "Knee pain", "Cancer pain"] },
+  { num: "PATHWAY 01", title: "Brain", items: [
+    { name: "Brain tumour",         slug: "brain-tumor" },
+    { name: "Stroke",               slug: "stroke" },
+    { name: "Epilepsy",             slug: "epilepsy-seizures" },
+    { name: "Head injury",          slug: "head-injury" },
+    { name: "Parkinson's disease",  slug: "parkinsons-disease" },
+    { name: "Motor disorders",      slug: "motor-disorders" },
+  ] },
+  { num: "PATHWAY 02", title: "Spine", items: [
+    { name: "Herniated disc",       slug: "herniated-disc" },
+    { name: "Sciatica",             slug: "sciatica" },
+    { name: "Spinal cord injury",   slug: "spinal-cord-injury" },
+    { name: "Scoliosis",            slug: "scoliosis" },
+    { name: "Kyphosis",             slug: "kyphosis" },
+    { name: "Whiplash",             slug: "whiplash" },
+  ] },
+  { num: "PATHWAY 03", title: "Pain", items: [
+    { name: "Chronic headache",     slug: "headaches" },
+    { name: "Neck pain",            slug: "neck-pain" },
+    { name: "Back pain",            slug: "back-pain" },
+    { name: "Frozen shoulder",      slug: "frozen-shoulder" },
+    { name: "Knee pain",            slug: "knee-pain" },
+    { name: "Cancer pain",          slug: "cancer-pain" },
+  ] },
 ];
 
 // Facility grid — `src` is filled where a real photo (or a stand-in during
@@ -150,6 +194,16 @@ const consultantFacts = [
           <ul class="care-list">
             {s.items.map((i) => <li>{i}</li>)}
           </ul>
+          {s.reading && s.reading.length > 0 && (
+            <div class="care-reading">
+              <p class="care-reading-label">Related reading</p>
+              <ul class="care-reading-list">
+                {s.reading.map((r) => (
+                  <li><a href={`/en/blog/${r.slug}/`}>{r.title}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
         </article>
       ))}
     </div>
@@ -169,7 +223,9 @@ const consultantFacts = [
             <h3 class="pathway-name">{p.title}</h3>
           </div>
           <div class="chips">
-            {p.items.map((c) => <span class="chip">{c}</span>)}
+            {p.items.map((c) => (
+              <a class="chip" href={`/en/treatments/${c.slug}/`}>{c.name}</a>
+            ))}
           </div>
         </div>
       ))}
@@ -500,6 +556,26 @@ const consultantFacts = [
     padding-top: 9px;
   }
 
+  /* Per-service reading block — same visual language as the pathway
+     reading block on /conditions/. */
+  .care-reading {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+  .care-reading-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .care-reading-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .care-reading-list li { border-top: none; padding-top: 0; font-size: 13.5px; }
+  .care-reading-list a { color: var(--accent); text-decoration: none; line-height: 1.5; }
+  .care-reading-list a:hover { color: var(--accent-hover); text-decoration: underline; }
+
   /* ─── 02 PATHWAYS + CHIPS ─────────────────────────────────── */
   .pathways {
     display: grid;
@@ -532,6 +608,14 @@ const consultantFacts = [
     border: 1px solid var(--line);
     background: var(--white);
     padding: 7px 12px;
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .chip:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--surface);
+    text-decoration: none;
   }
 
   /* ─── 03 FACILITIES + SPLIT ───────────────────────────────── */

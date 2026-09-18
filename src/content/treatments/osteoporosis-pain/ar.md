@@ -8,7 +8,7 @@ legacyUrl: "https://alimranmed.com/osteoporosis-pain/"
 source: "translated-by-llm"
 ---
 
-![](/images/legacy/2020/02/175957-241x300.jpg)
+![](/images/legacy/2020/02/175957.jpg)
 
 **ما هو ألم هشاشة العظام؟**
 

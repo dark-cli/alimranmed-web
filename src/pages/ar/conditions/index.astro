@@ -16,19 +16,98 @@ _allT.filter((e) => isLocale(e.id, "en")).forEach((e) => {
   _bySlug[topicOf(e.id)] = e.data.redesigned === true;
 });
 
-// Fetch clinically-relevant blogs to show as "related reading"
-const relatedBlogs = (await getCollection("blog"))
+// Blog → pathway assignment (mirrors the English page's mapping).
+const BLOG_PATHWAY: Record<string, "brain" | "spine" | "pain"> = {
+  "amyotrophic-lateral-sclerosis-als-2": "brain",
+  "covid-19-symptoms-on-the-nervous-and-locomotor-system": "brain",
+  "results-of-treatment-of-cerebral-palsy-in-children": "brain",
+  "tms-for-alzheimer-disease": "brain",
+  "tms-for-neuropsychiatric-disorders": "brain",
+  "tms-for-tinnitus": "brain",
+  "tms-for-tinnitus-2": "brain",
+  "transcranial-direct-current-stimulation-tdcs": "brain",
+  "transcranial-magnetic-stimulation": "brain",
+  "poliomyelitis": "spine",
+  "spin-med": "spine",
+  "what-is-an-intrathecal-pump": "spine",
+  "achilles-tendinitis": "pain",
+  "arthritis": "pain",
+  "diabetic-foot-pain-and-ulcers": "pain",
+  "osteoporosis": "pain",
+  "physiotherapy": "pain",
+  "tension-headaches": "pain",
+  "tms-for-migraine": "pain",
+  "tms-for-pains": "pain",
+  "vasotrain-or-air-pressure-massage": "pain",
+};
+
+const allBlogs = (await getCollection("blog"))
   .filter((e) => isLocale(e.id, "ar") && e.data.clinicallyRelevant === true)
-  .sort((a, b) => (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0))
-  .slice(0, 8);
+  .sort((a, b) => (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0));
+
+const blogsByPathway: Record<"brain" | "spine" | "pain", typeof allBlogs> = {
+  brain: [], spine: [], pain: [],
+};
+for (const b of allBlogs) {
+  const p = BLOG_PATHWAY[topicOf(b.id)];
+  if (p) blogsByPathway[p].push(b);
+}
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
 const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
 const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
 
+// Curated "Procedures & therapies we offer" — 6 flagship service categories,
+// 25 items total. Mirror of the EN page structure.
+const procedureCategories = [
+  { num: "الفئة ٠١", title: "العلاج الطبيعي", basePath: "physiotherapy",
+    items: [
+      { name: "العلاج الطبيعي",           slug: "physical-therapy" },
+      { name: "التحفيز الكهربائي",         slug: "electrical-stimulation" },
+      { name: "العلاج بالليزر",           slug: "laser-therapy" },
+      { name: "العلاج بالموجات فوق الصوتية", slug: "ultrasound-therapy" },
+      { name: "روبوت LUNA EMG",           slug: "luna-emg-robot" },
+    ] },
+  { num: "الفئة ٠٢", title: "تقويم العمود الفقري", basePath: "chiropractic",
+    items: [
+      { name: "تقويم العمود الفقري", slug: "chiropractic" },
+      { name: "سيغما",              slug: "sigma" },
+      { name: "SpineMED",           slug: "spinmed" },
+    ] },
+  { num: "الفئة ٠٣", title: "تحفيز الدماغ", basePath: "brain-stimulation",
+    items: [
+      { name: "TMS",              slug: "tms" },
+      { name: "tDCS",             slug: "tdcs" },
+      { name: "TMS للألم",         slug: "tms-pain" },
+      { name: "TMS للطنين",        slug: "tms-tinnitus" },
+      { name: "TMS للصداع النصفي", slug: "tms-migraine" },
+    ] },
+  { num: "الفئة ٠٤", title: "الترددات الراديوية", basePath: "radiofrequency",
+    items: [
+      { name: "الترددات الراديوية",             slug: "radiofrequency" },
+      { name: "رأب النواة",                    slug: "nucleoplasty" },
+      { name: "ترددات راديوية للعمود الفقري",   slug: "spine" },
+      { name: "ترددات راديوية للركبة",         slug: "knee" },
+      { name: "ترددات راديوية للعصب الثلاثي التوائم", slug: "trigeminal-neuralgia" },
+    ] },
+  { num: "الفئة ٠٥", title: "الجراحة", basePath: "surgery",
+    items: [
+      { name: "جراحة العمود الفقري بالمنظار", slug: "endoscopic-spine" },
+      { name: "التحفيز العميق للدماغ",       slug: "dbs" },
+      { name: "استئصال القرص القطني",        slug: "lumbar-microdiscectomy" },
+      { name: "رأب الفقرة",                 slug: "vertebroplasty" },
+      { name: "جراحة قاعدة الجمجمة عبر الأنف", slug: "transnasal-transsphenoidal" },
+    ] },
+  { num: "الفئة ٠٦", title: "الطب التجديدي", basePath: "regenerative-medicine",
+    items: [
+      { name: "برولوثيرابي",     slug: "prolotherapy" },
+      { name: "الطب التجديدي",   slug: "regenerative-medicine" },
+    ] },
+];
+
 const pathways = [
-  { num: "المسار ٠١", title: "الدماغ",
+  { num: "المسار ٠١", title: "الدماغ", key: "brain" as const,
     items: [
       { name: "أورام الدماغ",       slug: "brain-tumor" },
       { name: "الجلطة الدماغية",     slug: "stroke" },
@@ -38,7 +117,7 @@ const pathways = [
       { name: "اضطرابات الحركة",     slug: "motor-disorders" },
       { name: "شلل الوجه النصفي",    slug: "bells-palsy" },
     ] },
-  { num: "المسار ٠٢", title: "العمود الفقري",
+  { num: "المسار ٠٢", title: "العمود الفقري", key: "spine" as const,
     items: [
       { name: "القرص المنزلق",       slug: "herniated-disc" },
       { name: "عرق النسا",           slug: "sciatica" },
@@ -48,7 +127,7 @@ const pathways = [
       { name: "إصابة السوط",         slug: "whiplash" },
       { name: "المثانة العصبية",     slug: "neurogenic-bladder" },
     ] },
-  { num: "المسار ٠٣", title: "الألم",
+  { num: "المسار ٠٣", title: "الألم", key: "pain" as const,
     items: [
       { name: "الصداع المزمن واليومي", slug: "headaches" },
       { name: "آلام الرقبة",           slug: "neck-pain" },
@@ -60,43 +139,23 @@ const pathways = [
     ] },
 ];
 
-const surgical = [
+// Photo strip — visual break between the two hairline-grid sections.
+const photoStrip = [
   {
-    label: "صورة من غرفة العمليات", sub: "جراحة منظارية للعمود الفقري",
-    title: "جراحة العمود الفقري بالمنظار",
-    desc: "استئصال القرص المنزلق بتقنية ديستاندو للفقرات الرقبية والقطنية، مع التثبيت والدمج ورفع الفقرة عند وجود كسر أو تشوّه.",
+    caption: "جراحة العمود الفقري بالمنظار",
     src: "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=1200&q=80&auto=format&fit=crop",
     alt: "استشاري جراحة الأعصاب أثناء عملية",
   },
   {
-    label: "صورة للإجراء", sub: "تحفيز الدماغ أو الحبل الشوكي",
-    title: "التحفيز العصبي",
-    desc: "التحفيز العميق للدماغ وتحفيز الحبل الشوكي والإجراءات التجسيمية لاضطرابات الحركة والتشنّج والألم العصبي المستعصي.",
+    caption: "التحفيز العصبي",
     src: "/images/home/tms-treatment-768.jpg",
     alt: "جلسة تحفيز مغناطيسي عبر الجمجمة",
   },
   {
-    label: "صورة للإجراء", sub: "الكيّ بالترددات الراديوية",
-    title: "الكيّ بالترددات الراديوية",
-    desc: "ترددات حرارية ونابضة لألم المفاصل الفقرية والصداع المزمن ومتلازمات الألم الودّي، بتخدير موضعي وتهدئة خفيفة.",
+    caption: "الكيّ بالترددات الراديوية",
     src: "https://images.unsplash.com/photo-1754941622138-b3c3671f2fa8?w=1200&q=80&auto=format&fit=crop",
     alt: "جهاز علاجي مُطبَّق على مريض خلال جلسة",
   },
-];
-
-const interventional = [
-  "تخدير الأعصاب الموضعي",
-  "الإجراءات المحلِّلة للأعصاب",
-  "الكيّ بالترددات الراديوية",
-  "حقن المفصل العجزي الحرقفي",
-  "الحقن فوق الجافية الذَنَبي",
-  "حقن العصب الأوسط",
-  "حقن المفاصل الفقرية",
-  "الحقن فوق الجافية بين الصفيحتين",
-  "الحقن عبر الثقبة حول العصب",
-  "تخدير العقدة النجمية والودّية الصدرية",
-  "تخدير الضفيرة البطنية والعقدة الفردية",
-  "تخدير الضفيرة فوق المعانة والودّية القطنية",
 ];
 ---
 
@@ -112,12 +171,17 @@ const interventional = [
     </div>
   </section>
 
+  <!-- "ما نعالج" — Three pathway columns -->
   <section class="pathways-section">
+    <header class="section-head">
+      <span class="section-eyebrow">الحالات</span>
+      <h2 class="section-h2">ما نعالج</h2>
+    </header>
     <div class="pathway-grid">
       {pathways.map((p) => (
         <div class="pathway-cell">
           <p class="pathway-num">{p.num}</p>
-          <h2 class="pathway-name">{p.title}</h2>
+          <h3 class="pathway-name">{p.title}</h3>
           <ul>
             {p.items.map((c) => (
               <li>
@@ -129,52 +193,60 @@ const interventional = [
               </li>
             ))}
           </ul>
+          {blogsByPathway[p.key].length > 0 && (
+            <div class="pathway-reading">
+              <p class="pathway-reading-label">قراءة ذات صلة</p>
+              <ul class="pathway-reading-list">
+                {blogsByPathway[p.key].slice(0, 4).map((b) => (
+                  <li>
+                    <a href={L(`/blog/${topicOf(b.id)}/`)}>{b.data.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       ))}
     </div>
+    <p class="section-see-all">
+      <a class="see-all-link" href={L("/treatments/")}>← عرض جميع الحالات</a>
+    </p>
   </section>
 
-  <section class="proc-section">
-    <header class="proc-head">
-      <span class="proc-num">٠١</span>
-      <h2 class="proc-h2">الإجراءات الجراحية والمتقدمة</h2>
+  <!-- "الإجراءات والعلاجات" — 6 curated service categories -->
+  <section class="pathways-section">
+    <header class="section-head">
+      <span class="section-eyebrow">الإجراءات</span>
+      <h2 class="section-h2">الإجراءات والعلاجات التي نقدمها</h2>
     </header>
-    <div class="surg-grid">
-      {surgical.map((s) => (
-        <article class="surg-card">
-          {s.src
-            ? <img class="surg-photo surg-photo-img" src={s.src} alt={s.alt} width="1200" height="900" loading="lazy" />
-            : (
-              <div class="surg-photo photo-slot" aria-hidden="true">
-                <p>{s.label}<br>{s.sub}</p>
-              </div>
-            )}
-          <h3 class="surg-title">{s.title}</h3>
-          <p class="surg-desc">{s.desc}</p>
-        </article>
+    <div class="pathway-grid">
+      {procedureCategories.map((cat) => (
+        <div class="pathway-cell">
+          <p class="pathway-num">{cat.num}</p>
+          <h3 class="pathway-name">{cat.title}</h3>
+          <ul>
+            {cat.items.map((it) => (
+              <li>
+                <a href={L(`/services/${cat.basePath}/${it.slug}/`)}>{it.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
     </div>
+    <p class="section-see-all">
+      <a class="see-all-link" href={L("/services/")}>← عرض جميع الإجراءات</a>
+    </p>
   </section>
 
-  <section class="proc-section">
-    <header class="proc-head">
-      <span class="proc-num">٠٢</span>
-      <h2 class="proc-h2">سجل إجراءات الألم</h2>
-    </header>
-    <div class="int-grid">
-      {[interventional.slice(0, 6), interventional.slice(6, 12)].map((col, colIdx) => (
-        <div class="int-col">
-          {col.map((name, i) => {
-            const n = colIdx * 6 + i + 1;
-            const ar = String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]).padStart(2, "٠");
-            return (
-              <div class="int-row">
-                <span class="int-num">{ar}</span>
-                <span class="int-name">{name}</span>
-              </div>
-            );
-          })}
-        </div>
+  <!-- Photo strip — visual break between hairline-grid sections and CTA. -->
+  <section class="photo-strip">
+    <div class="photo-strip-grid">
+      {photoStrip.map((p) => (
+        <figure class="photo-cell">
+          <img src={p.src} alt={p.alt} width="1200" height="900" loading="lazy" />
+          <figcaption>{p.caption}</figcaption>
+        </figure>
       ))}
     </div>
   </section>
@@ -192,15 +264,16 @@ const interventional = [
     </div>
   </section>
 
-  <!-- Related articles from blog -->
-  {relatedBlogs.length > 0 && (
+  <!-- Recent articles — general entry point; contextual reading is now
+       shown inside each pathway column. -->
+  {allBlogs.length > 0 && (
     <section class="related-section">
-      <header class="related-head">
-        <span class="related-num">مقالات ذات صلة</span>
-        <h2 class="related-h2">مقالات طبية وتحديثات</h2>
+      <header class="section-head">
+        <span class="section-eyebrow">المقالات</span>
+        <h2 class="section-h2">جديد المدونة</h2>
       </header>
       <div class="related-grid">
-        {relatedBlogs.map((blog) => (
+        {allBlogs.slice(0, 6).map((blog) => (
           <a class="related-card card" href={L(`/blog/${topicOf(blog.id)}/`)}>
             <h3>{blog.data.title}</h3>
             {blog.data.description && <p>{blog.data.description}</p>}
@@ -210,7 +283,9 @@ const interventional = [
           </a>
         ))}
       </div>
-      <a class="related-link" href={L("/blog/")}>← عرض جميع المقالات</a>
+      <p class="section-see-all">
+        <a class="see-all-link" href={L("/blog/")}>← عرض جميع المقالات</a>
+      </p>
     </section>
   )}
 </BaseLayout>
@@ -229,6 +304,26 @@ const interventional = [
     margin: 0 0 18px; color: var(--ink); max-width: 24ch;
   }
   .intro-lede { font-size: 17px; line-height: 1.85; color: var(--body); margin: 0; max-width: 64ch; }
+
+  /* Section header — shared by "ما نعالج" / "الإجراءات" */
+  .section-head {
+    display: flex; gap: 14px; align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: clamp(28px, 3.5vw, 44px);
+  }
+  .section-eyebrow { font-size: 13px; color: var(--muted); }
+  .section-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3.4vw, 34px);
+    font-weight: 700; margin: 0; color: var(--ink); line-height: 1.22;
+  }
+  .section-see-all { margin: clamp(20px, 2vw, 28px) 0 0; text-align: end; }
+  .see-all-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; color: var(--accent); text-decoration: none;
+  }
+  .see-all-link:hover { color: var(--accent-hover); text-decoration: none; }
 
   .pathways-section {
     max-width: var(--page-max); margin: 0 auto;
@@ -251,59 +346,61 @@ const interventional = [
     padding: 11px 0; border-top: 1px solid var(--line-soft);
     font-size: 15px;
   }
-  .pathway-cell li a { color: var(--ink); text-decoration: none; }
-  .pathway-cell li a:hover { color: var(--accent); text-decoration: none; }
+  /* :global(a) reaches into SoonLink's own scope so both plain <a> and
+     SoonLink-rendered anchors get the same clickable styling. */
+  .pathway-cell li :global(a) {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  }
+  .pathway-cell li :global(a):hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
-  .proc-section {
+  /* Mobile: cap each column at 4 items — full lists are one tap away
+     via the "Browse all …" links. */
+  @media (max-width: 639px) {
+    .pathway-cell li:nth-child(n+5) { display: none; }
+  }
+
+  .pathway-reading {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .pathway-reading-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .pathway-reading-list { list-style: none; margin: 0; padding: 0; }
+  .pathway-reading-list li { padding: 8px 0; border-top: none; font-size: 14px; }
+  .pathway-reading-list li:first-child { padding-top: 0; }
+  .pathway-reading-list a { color: var(--accent); text-decoration: none; line-height: 1.7; }
+  .pathway-reading-list a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+  /* Photo strip — visual break between hairline-grid sections. */
+  .photo-strip {
     max-width: var(--page-max); margin: 0 auto;
     padding: clamp(48px, 6vw, 80px) 24px 0;
-    position: relative;
   }
-  .proc-head {
-    display: flex; align-items: baseline; gap: 20px;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 14px; margin-bottom: 44px;
-  }
-  .proc-num { font-size: 12px; letter-spacing: 0.06em; color: var(--muted); }
-  .proc-h2 {
-    font-family: var(--font-display);
-    font-size: clamp(26px, 3.6vw, 36px);
-    font-weight: 700; margin: 0; color: var(--ink); line-height: 1.22;
-  }
-
-  .surg-grid {
+  .photo-strip-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: clamp(20px, 2.5vw, 32px);
   }
-  .surg-card { min-width: 0; }
-  .surg-photo { aspect-ratio: 4 / 3; min-height: 0; margin-bottom: 18px; padding: 0 20px; }
-  .surg-photo-img {
-    display: block; padding: 0;
-    width: 100%; height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+  .photo-cell { margin: 0; min-width: 0; }
+  .photo-cell img {
+    display: block; width: 100%; height: auto;
+    aspect-ratio: 4 / 3; object-fit: cover;
     border: 1px solid var(--line);
   }
-  .surg-photo p { font-size: 12px; color: var(--muted); text-align: center; margin: 0; line-height: 1.9; }
-  .surg-title { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin: 0 0 10px; color: var(--ink); }
-  .surg-desc { font-size: 15px; line-height: 1.8; color: var(--body); margin: 0; }
-
-  .int-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0 clamp(32px, 4vw, 64px);
+  .photo-cell figcaption {
+    font-size: 13px; color: var(--muted);
+    margin-top: 12px; text-align: center;
   }
-  @media (min-width: 640px) {
-    .int-grid { grid-template-columns: 1fr 1fr; }
-  }
-  .int-col { min-width: 0; }
-  .int-row {
-    display: grid; grid-template-columns: 40px minmax(0, 1fr);
-    gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line);
-  }
-  .int-num { font-size: 13px; color: var(--accent); }
-  .int-name { font-size: 15px; color: var(--ink); overflow-wrap: anywhere; }
 
   .appt-section {
     max-width: var(--page-max); margin: 0 auto;

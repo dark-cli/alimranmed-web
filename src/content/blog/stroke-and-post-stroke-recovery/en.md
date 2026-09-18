@@ -9,7 +9,7 @@ redesigned: true
 clinicallyRelevant: false
 ---
 
-![](/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية-300x143.jpg)
+![](/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية.jpg)
 
 Overview
 

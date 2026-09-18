@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/brachial-plexus-injuries/"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2021/01/13-300x206.jpg)
+![](/images/legacy/2021/01/13.jpg)
 
 The brachial plexus is a bundle of nerves that stems from nerve roots in the cervical (neck) and upper trunk (torso) sections of the spinal cord (C5-T1), creating a network that connects to the nerves in the arm. These nerves control the motions of your wrists, hands and arms, allowing you to raise your arm, type on your keyboard or throw a baseball.
 
@@ -15,7 +15,7 @@ The brachial plexus nerves extend to the skin and are sensory, too. For instance
 
 -   **Ulnar nerve:** Rooted in C8-T1, it allows for fine motor control of the fingers.
 
-### ![](/images/legacy/2021/01/12-300x208.jpg)Brachial Plexus Anatomy
+### ![](/images/legacy/2021/01/12.jpg)Brachial Plexus Anatomy
 
 The brachial plexus can be injured in many different ways — from pressure, stress or being stretched too far. The nerves may also be cut or damaged by cancer or radiation treatment. Sometimes, brachial plexus injuries happen to babies during birth.
 

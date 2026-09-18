@@ -27,4 +27,4 @@ sections:
 ---
 
 ![](/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0-300x191.jpeg)
-![](/images/legacy/2020/07/z-tinnitus-300x171.png)
+![](/images/legacy/2020/07/z-tinnitus.png)

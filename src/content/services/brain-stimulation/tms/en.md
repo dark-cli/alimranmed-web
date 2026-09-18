@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/rtms/"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2021/01/TMS-procedure-300x274.png)
+![](/images/legacy/2021/01/TMS-procedure.png)
 
 Did the operating system happen in your brain?  
 Now a brain-mimicking technology to help it boost cells

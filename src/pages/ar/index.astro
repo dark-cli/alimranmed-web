@@ -24,19 +24,60 @@ const stats = [
 
 const services = [
   { title: "الجراحة",                       desc: "جراحة مفتوحة ومنظارية للدماغ والعمود الفقري، وتشمل الرضوح والأورام.",
-    items: ["تثقيب الجمجمة", "مايكرودسك", "تثبيت الفقرات واستئصال القرص المنزلق", "استبدال القرص الاصطناعي", "العمليات المنظارية"] },
+    items: ["تثقيب الجمجمة", "مايكرودسك", "تثبيت الفقرات واستئصال القرص المنزلق", "استبدال القرص الاصطناعي", "العمليات المنظارية"],
+    reading: [
+      { slug: "what-is-an-intrathecal-pump", title: "المضخة داخل القراب" },
+      { slug: "spin-med",                    title: "SpineMED لتخفيف ضغط العمود الفقري" },
+    ] },
   { title: "إدارة الألم",                    desc: "حقن وكيّ موجَّه بالتصوير للألم الذي لم يستجب للأدوية.",
-    items: ["الترددات الراديوية", "حقن فوق الجافية والمفاصل الفقرية", "تخدير العُقد الودّية", "حقن الستيرويد", "البوتوكس لعلاج الصداع"] },
+    items: ["الترددات الراديوية", "حقن فوق الجافية والمفاصل الفقرية", "تخدير العُقد الودّية", "حقن الستيرويد", "البوتوكس لعلاج الصداع"],
+    reading: [
+      { slug: "tension-headaches",  title: "صداع التوتر — الأسباب والعلاج" },
+      { slug: "tms-for-pains",      title: "TMS للألم المزمن" },
+      { slug: "arthritis",          title: "التهاب المفاصل — خيارات العلاج" },
+    ] },
   { title: "تحفيز الدماغ والأعصاب",           desc: "إجراءات تجسيمية ووظيفية لاضطرابات الحركة والألم المستعصي.",
-    items: ["التحفيز العميق للدماغ", "قسطرة وتحفيز الحبل الشوكي", "المضخة داخل القراب", "قطع الجذور الظهرية الانتقائي", "التحفيز المغناطيسي عبر الجمجمة"] },
+    items: ["التحفيز العميق للدماغ", "قسطرة وتحفيز الحبل الشوكي", "المضخة داخل القراب", "قطع الجذور الظهرية الانتقائي", "التحفيز المغناطيسي عبر الجمجمة"],
+    reading: [
+      { slug: "transcranial-magnetic-stimulation",            title: "التحفيز المغناطيسي عبر الجمجمة (TMS)" },
+      { slug: "transcranial-direct-current-stimulation-tdcs", title: "التحفيز الكهربائي عبر الجمجمة (tDCS)" },
+      { slug: "tms-for-neuropsychiatric-disorders",           title: "TMS للاضطرابات النفسية العصبية" },
+    ] },
   { title: "إعادة التأهيل والعلاج الطبيعي",   desc: "تأهيل يبدأ في الردهة ويستمر في المركز بعد الخروج.",
-    items: ["العلاج الطبيعي", "التأهيل بعد الجراحة", "الطب التجديدي", "العلاج بالأوزون", "تمارين ولياقة تحت الإشراف"] },
+    items: ["العلاج الطبيعي", "التأهيل بعد الجراحة", "الطب التجديدي", "العلاج بالأوزون", "تمارين ولياقة تحت الإشراف"],
+    reading: [
+      { slug: "physiotherapy",                     title: "العلاج الطبيعي — ماذا يعالج" },
+      { slug: "vasotrain-or-air-pressure-massage", title: "Vasotrain — تدليك بالضغط" },
+      { slug: "achilles-tendinitis",               title: "التهاب وتر أخيل — التعافي" },
+    ] },
 ];
 
+// Each chip links to /treatments/{slug}/ — same slugs as the EN mirror.
 const pathways = [
-  { num: "المسار ٠١", title: "الدماغ",          items: ["أورام الدماغ", "الجلطة الدماغية", "الصرع", "إصابات الرأس", "داء باركنسون", "اضطرابات الحركة"] },
-  { num: "المسار ٠٢", title: "العمود الفقري",   items: ["الديسك", "عرق النسا", "إصابات الحبل الشوكي", "الجنف", "الحدب", "إصابة العنق"] },
-  { num: "المسار ٠٣", title: "الألم",            items: ["الصداع المزمن", "آلام الرقبة", "آلام الظهر", "الكتف المتجمد", "آلام الركبة", "آلام الأورام"] },
+  { num: "المسار ٠١", title: "الدماغ", items: [
+    { name: "أورام الدماغ",     slug: "brain-tumor" },
+    { name: "الجلطة الدماغية",   slug: "stroke" },
+    { name: "الصرع",             slug: "epilepsy-seizures" },
+    { name: "إصابات الرأس",      slug: "head-injury" },
+    { name: "داء باركنسون",      slug: "parkinsons-disease" },
+    { name: "اضطرابات الحركة",   slug: "motor-disorders" },
+  ] },
+  { num: "المسار ٠٢", title: "العمود الفقري", items: [
+    { name: "الديسك",              slug: "herniated-disc" },
+    { name: "عرق النسا",           slug: "sciatica" },
+    { name: "إصابات الحبل الشوكي", slug: "spinal-cord-injury" },
+    { name: "الجنف",               slug: "scoliosis" },
+    { name: "الحدب",               slug: "kyphosis" },
+    { name: "إصابة العنق",         slug: "whiplash" },
+  ] },
+  { num: "المسار ٠٣", title: "الألم", items: [
+    { name: "الصداع المزمن",    slug: "headaches" },
+    { name: "آلام الرقبة",       slug: "neck-pain" },
+    { name: "آلام الظهر",        slug: "back-pain" },
+    { name: "الكتف المتجمد",     slug: "frozen-shoulder" },
+    { name: "آلام الركبة",       slug: "knee-pain" },
+    { name: "آلام الأورام",      slug: "cancer-pain" },
+  ] },
 ];
 
 const facilities = [
@@ -147,6 +188,16 @@ const consultantFacts = [
           <ul class="care-list">
             {s.items.map((i) => <li>{i}</li>)}
           </ul>
+          {s.reading && s.reading.length > 0 && (
+            <div class="care-reading">
+              <p class="care-reading-label">قراءة ذات صلة</p>
+              <ul class="care-reading-list">
+                {s.reading.map((r) => (
+                  <li><a href={`/ar/blog/${r.slug}/`}>{r.title}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
         </article>
       ))}
     </div>
@@ -166,7 +217,9 @@ const consultantFacts = [
             <h3 class="pathway-name">{p.title}</h3>
           </div>
           <div class="chips">
-            {p.items.map((c) => <span class="chip">{c}</span>)}
+            {p.items.map((c) => (
+              <a class="chip" href={`/ar/treatments/${c.slug}/`}>{c.name}</a>
+            ))}
           </div>
         </div>
       ))}
@@ -381,6 +434,14 @@ const consultantFacts = [
   .care-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; }
   .care-list li { font-size: 14.5px; color: var(--ink); border-top: 1px solid var(--line-soft); padding-top: 9px; }
 
+  /* Per-service reading block */
+  .care-reading { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .care-reading-label { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
+  .care-reading-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .care-reading-list li { border-top: none; padding-top: 0; font-size: 13.5px; }
+  .care-reading-list a { color: var(--accent); text-decoration: none; line-height: 1.7; }
+  .care-reading-list a:hover { color: var(--accent-hover); text-decoration: underline; }
+
   /* 02 PATHWAYS */
   .pathways {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(min(255px, 100%), 1fr));
@@ -396,6 +457,12 @@ const consultantFacts = [
   .chip {
     font-size: 14px; color: var(--ink);
     border: 1px solid var(--line); background: var(--white); padding: 7px 12px;
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .chip:hover {
+    color: var(--accent); border-color: var(--accent);
+    background: var(--surface); text-decoration: none;
   }
 
   /* 03 FACILITIES + SPLIT */

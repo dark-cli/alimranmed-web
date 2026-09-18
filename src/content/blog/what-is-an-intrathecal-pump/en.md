@@ -9,7 +9,7 @@ redesigned: true
 clinicallyRelevant: true
 ---
 
-![](/images/legacy/2020/12/pain-pump-34-300x229.jpg)
+![](/images/legacy/2020/12/pain-pump-34.jpg)
 
 WHAT IS AN INTRATHECAL PUMP?
 

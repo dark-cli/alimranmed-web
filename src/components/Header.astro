@@ -21,13 +21,15 @@ const currentPath = Astro.url.pathname;
 // Localised href helper
 const L = (href: string) => localizedHref(href, locale);
 
-// Nav items — kept intentionally short. Other pages (About, Contact, blog,
-// full treatments A–Z) are reachable via the footer, not the header.
+// Nav items. Blog earns a slot now that the index page has its own
+// filter UI and doesn't feel like an afterthought; the full A–Z
+// treatment/service indices remain reachable via /conditions/ and search.
 type NavItem = { label: string; labelAr: string; href: string };
 const NAV: NavItem[] = [
   { label: "Home",                    labelAr: "الرئيسية",     href: "/" },
   { label: "Consultant CV",           labelAr: "السيرة العلمية", href: "/doctors/hussein-imran-mousa/" },
   { label: "Conditions & Procedures", labelAr: "ما نعالج",      href: "/conditions/" },
+  { label: "Blog",                    labelAr: "المدونة",       href: "/blog/" },
 ];
 
 const isActive = (href: string) => {
@@ -81,6 +83,20 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
 
     <div class="header-actions">
       <button
+        id="search-toggle"
+        class="search-btn"
+        type="button"
+        aria-label={locale === "ar" ? "بحث" : "Search"}
+        title={locale === "ar" ? "بحث" : "Search"}
+        aria-expanded="false"
+        aria-controls="search-panel"
+      >
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="m20 20-3.5-3.5"/>
+        </svg>
+      </button>
+      <button
         id="theme-toggle"
         class="theme-btn"
         type="button"
@@ -119,7 +135,36 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
   </div>
 </header>
 
-<!-- Mobile drawer (< 860px). Same 3 links; kept outside .site-header so its
+<!-- Search overlay — opened by the header search button, fixed-positioned
+     under the header. Fetches /search-index.json on first open and filters
+     client-side. Grouped results (Conditions / Procedures / Articles / …). -->
+<div id="search-panel" class="search-panel" role="dialog" aria-modal="false" aria-label={locale === "ar" ? "بحث" : "Search"} hidden>
+  <div class="search-wrap">
+    <div class="search-input-row">
+      <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="m20 20-3.5-3.5"/>
+      </svg>
+      <input
+        id="search-input"
+        type="search"
+        class="search-input"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder={locale === "ar" ? "ابحث في الحالات، الإجراءات، المقالات…" : "Search conditions, procedures, articles…"}
+        aria-label={locale === "ar" ? "استعلام البحث" : "Search query"}
+        aria-controls="search-results"
+      />
+      <kbd class="search-kbd" aria-hidden="true">Esc</kbd>
+    </div>
+    <div id="search-results" class="search-results" role="listbox" aria-label={locale === "ar" ? "نتائج البحث" : "Search results"}>
+      <p class="search-hint">{locale === "ar" ? "ابدأ الكتابة للبحث في جميع صفحات الموقع." : "Start typing to search across every page on the site."}</p>
+    </div>
+  </div>
+</div>
+<div id="search-scrim" class="search-scrim" aria-hidden="true"></div>
+
+<!-- Mobile drawer (< 860px). Same NAV links; kept outside .site-header so its
      fixed positioning is relative to the viewport, not the sticky header. -->
 <aside id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
   <div class="drawer-head">
@@ -213,6 +258,239 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
     }
     bindThemeToggle();
     document.addEventListener("astro:page-load", bindThemeToggle);
+  })();
+
+  /**
+   * Site-wide search — top-bar overlay.
+   * Fetches /search-index.json on first open, caches on window.
+   * Client-side scoring: title starts-with > title contains > desc contains.
+   * Groups results by type (Conditions / Procedures / Articles / …).
+   * Filters to current locale (based on the path prefix).
+   */
+  (function () {
+    var GROUP_LABELS_EN = {
+      treatment: "Conditions",
+      service:   "Procedures & therapies",
+      blog:      "Articles",
+      case:      "Case studies",
+      doctor:    "Doctors",
+      static:    "Pages",
+    };
+    var GROUP_LABELS_AR = {
+      treatment: "الحالات",
+      service:   "الإجراءات والعلاجات",
+      blog:      "المقالات",
+      case:      "دراسات الحالة",
+      doctor:    "الأطباء",
+      static:    "الصفحات",
+    };
+    // Per-hit badge — the shorter singular label shown next to each result title.
+    var BADGE_EN = {
+      treatment: "Condition",
+      service:   "Procedure",
+      blog:      "Article",
+      case:      "Case study",
+      doctor:    "Doctor",
+      static:    "Page",
+    };
+    var BADGE_AR = {
+      treatment: "حالة",
+      service:   "إجراء",
+      blog:      "مقال",
+      case:      "دراسة",
+      doctor:    "طبيب",
+      static:    "صفحة",
+    };
+    var GROUP_ORDER = ["treatment", "service", "blog", "case", "doctor", "static"];
+    var PER_GROUP = 5;
+
+    function currentLocale() {
+      return document.documentElement.getAttribute("lang") === "ar" ? "ar" : "en";
+    }
+
+    function loadIndex() {
+      if (window.__searchIndex) return Promise.resolve(window.__searchIndex);
+      if (window.__searchIndexPromise) return window.__searchIndexPromise;
+      window.__searchIndexPromise = fetch("/search-index.json")
+        .then(function (r) { return r.json(); })
+        .then(function (d) { window.__searchIndex = d.entries || []; return window.__searchIndex; })
+        .catch(function () { return []; });
+      return window.__searchIndexPromise;
+    }
+
+    function score(entry, q) {
+      var t = (entry.title || "").toLowerCase();
+      var d = (entry.description || "").toLowerCase();
+      if (!t && !d) return 0;
+      if (t === q) return 100;
+      if (t.indexOf(q) === 0) return 80;
+      if (t.indexOf(" " + q) !== -1) return 60;
+      if (t.indexOf(q) !== -1) return 40;
+      if (d.indexOf(q) !== -1) return 20;
+      return 0;
+    }
+
+    function esc(s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
+      });
+    }
+
+    function render(results, container, labels, badges, emptyText) {
+      if (!results.length) {
+        container.innerHTML = '<p class="search-empty">' + esc(emptyText) + "</p>";
+        return;
+      }
+      var byType = {};
+      for (var i = 0; i < results.length; i++) {
+        var r = results[i];
+        (byType[r.type] = byType[r.type] || []).push(r);
+      }
+      var html = "";
+      for (var j = 0; j < GROUP_ORDER.length; j++) {
+        var key = GROUP_ORDER[j];
+        var items = byType[key];
+        if (!items || !items.length) continue;
+        html += '<section class="search-group"><p class="search-group-label">' + esc(labels[key] || key) + "</p>";
+        var shown = items.slice(0, PER_GROUP);
+        for (var k = 0; k < shown.length; k++) {
+          var it = shown[k];
+          html += '<a class="search-hit" href="' + esc(it.href) + '" role="option">'
+                + '<div class="search-hit-head">'
+                +   '<h4 class="search-hit-title">' + esc(it.title) + "</h4>"
+                +   '<span class="search-hit-badge search-hit-badge-' + esc(it.type) + '">' + esc(badges[key] || key) + "</span>"
+                + "</div>"
+                + (it.description ? '<p class="search-hit-desc">' + esc(it.description) + "</p>" : "")
+                + '<p class="search-hit-path">' + esc(it.href.replace(/^\//, "").replace(/\/$/, "").split("/").join(" › ")) + "</p>"
+                + "</a>";
+        }
+        html += "</section>";
+      }
+      container.innerHTML = html;
+    }
+
+    function filterIndex(index, q, locale) {
+      q = q.trim().toLowerCase();
+      if (!q) return [];
+      var out = [];
+      for (var i = 0; i < index.length; i++) {
+        var e = index[i];
+        if (e.locale !== locale) continue;
+        var s = score(e, q);
+        if (s > 0) out.push({ e: e, s: s });
+      }
+      out.sort(function (a, b) { return b.s - a.s; });
+      // Bring redesigned/curated ordering: return raw entries
+      return out.slice(0, 50).map(function (x) { return x.e; });
+    }
+
+    var searchOpen = false;
+    var activeIndex = -1;
+
+    function setSearchOpen(open) {
+      var panel = document.getElementById("search-panel");
+      var scrim = document.getElementById("search-scrim");
+      var toggle = document.getElementById("search-toggle");
+      var input = document.getElementById("search-input");
+      if (!panel || !scrim || !input) return;
+      searchOpen = open;
+      if (open) {
+        panel.hidden = false;
+        scrim.classList.add("visible");
+        if (toggle) toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("search-open");
+        loadIndex(); // prime the cache
+        setTimeout(function () { input.focus(); input.select(); }, 20);
+      } else {
+        panel.hidden = true;
+        scrim.classList.remove("visible");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("search-open");
+        activeIndex = -1;
+      }
+    }
+
+    function bindSearchListeners() {
+      var toggle = document.getElementById("search-toggle");
+      var input  = document.getElementById("search-input");
+      var results = document.getElementById("search-results");
+      var scrim = document.getElementById("search-scrim");
+      if (!toggle || !input || !results || !scrim) return;
+
+      if (!toggle.__bound) {
+        toggle.__bound = true;
+        toggle.addEventListener("click", function () { setSearchOpen(!searchOpen); });
+      }
+      if (!scrim.__searchBound) {
+        scrim.__searchBound = true;
+        scrim.addEventListener("click", function () { setSearchOpen(false); });
+      }
+      if (!input.__bound) {
+        input.__bound = true;
+        var locale = currentLocale();
+        var labels = locale === "ar" ? GROUP_LABELS_AR : GROUP_LABELS_EN;
+        var emptyText = locale === "ar" ? "لا توجد نتائج." : "No results.";
+        var hintHtml = results.innerHTML; // preserve the initial hint
+
+        input.addEventListener("input", function () {
+          var q = input.value;
+          if (!q.trim()) { results.innerHTML = hintHtml; activeIndex = -1; return; }
+          loadIndex().then(function (index) {
+            var loc = currentLocale();
+            var hits = filterIndex(index, q, loc);
+            render(hits, results,
+              loc === "ar" ? GROUP_LABELS_AR : GROUP_LABELS_EN,
+              loc === "ar" ? BADGE_AR : BADGE_EN,
+              loc === "ar" ? "لا توجد نتائج." : "No results.");
+            activeIndex = -1;
+          });
+        });
+
+        input.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") { setSearchOpen(false); return; }
+          var hits = results.querySelectorAll(".search-hit");
+          if (!hits.length) return;
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            activeIndex = Math.min(hits.length - 1, activeIndex + 1);
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            activeIndex = Math.max(0, activeIndex - 1);
+          } else if (e.key === "Enter" && activeIndex >= 0) {
+            e.preventDefault();
+            var href = hits[activeIndex].getAttribute("href");
+            if (href) window.location.href = href;
+            return;
+          } else if (e.key === "Enter" && hits.length) {
+            e.preventDefault();
+            var href2 = hits[0].getAttribute("href");
+            if (href2) window.location.href = href2;
+            return;
+          } else {
+            return;
+          }
+          for (var i = 0; i < hits.length; i++) hits[i].classList.remove("active");
+          hits[activeIndex].classList.add("active");
+          hits[activeIndex].scrollIntoView({ block: "nearest" });
+        });
+      }
+    }
+
+    if (!window.__searchGlobalsBound) {
+      window.__searchGlobalsBound = true;
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && searchOpen) setSearchOpen(false);
+        // Cmd/Ctrl-K opens search from any page
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+          e.preventDefault();
+          setSearchOpen(true);
+        }
+      });
+      document.addEventListener("astro:before-swap", function () { setSearchOpen(false); });
+    }
+
+    bindSearchListeners();
+    document.addEventListener("astro:page-load", bindSearchListeners);
   })();
 </script>
 
@@ -334,6 +612,23 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
   @media (max-width: 859px) {
     .lang-switch { min-height: 48px; padding: 0 14px; }
   }
+
+  /* ─── Search button (opens overlay) ───────────────────────── */
+  .search-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--body);
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .search-btn:hover { color: var(--accent); border-color: var(--accent); }
+  .search-btn[aria-expanded="true"] { color: var(--accent); border-color: var(--accent); }
 
   /* ─── Theme toggle (dark mode) ────────────────────────────── */
   .theme-btn {
@@ -467,4 +762,200 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
   }
   .menu-scrim.visible { opacity: 1; visibility: visible; }
   :global(body.nav-open) { overflow: hidden; }
+
+  /* ─── Search overlay ──────────────────────────────────────── */
+  .search-panel {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    z-index: 60;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    max-height: calc(100vh - var(--header-h));
+    overflow-y: auto;
+  }
+  .search-panel[hidden] { display: none; }
+  .search-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(16px, 2.5vw, 24px);
+  }
+  .search-input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  .search-icon { color: var(--muted); flex-shrink: 0; }
+  .search-input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 17px;
+    color: var(--ink);
+    padding: 4px 0;
+  }
+  .search-input::placeholder { color: var(--muted); }
+  .search-input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+  .search-kbd {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    padding: 3px 7px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--muted);
+    background: var(--surface);
+  }
+  @media (max-width: 460px) { .search-kbd { display: none; } }
+
+  .search-results { min-height: 60px; }
+  .search-hint {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 8px 0 0;
+    text-align: center;
+    padding: 24px 0;
+  }
+  .search-scrim {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    z-index: 55;
+    background: rgba(16, 28, 34, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+  }
+  .search-scrim.visible { opacity: 1; visibility: visible; }
+</style>
+
+<!--
+  Search result markup is injected at runtime via innerHTML, which means
+  Astro's scoped [data-astro-cid-…] attributes are never applied to it and
+  scoped styles silently fail. These rules live in a global block so they
+  actually hit the dynamic nodes.
+-->
+<style is:global>
+  .search-group {
+    margin-bottom: 32px;
+  }
+  .search-group:last-child { margin-bottom: 0; }
+  .search-group-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+    padding: 0 0 8px;
+    border-bottom: 1px solid var(--ink);
+  }
+  html[dir="rtl"] .search-group-label {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+
+  /* Each result is its own bordered card with real breathing room between
+     cards so titles never blur into the next result. */
+  .search-hit {
+    display: block;
+    padding: 16px 16px 14px;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    background: var(--white);
+    margin: 0 0 18px;
+  }
+  .search-hit:last-child { margin-bottom: 0; }
+  .search-hit:hover,
+  .search-hit.active {
+    background: var(--surface);
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+  .search-hit.active { box-shadow: inset 0 0 0 1px var(--accent); }
+
+  .search-hit-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 0 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .search-hit-title {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    line-height: 1.2;
+    margin: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .search-hit:hover .search-hit-title,
+  .search-hit.active .search-hit-title { color: var(--accent); }
+  html[dir="rtl"] .search-hit-title { font-weight: 700; font-size: 18px; letter-spacing: 0; }
+
+  .search-hit-badge {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 3px 7px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: var(--white);
+    white-space: nowrap;
+  }
+  html[dir="rtl"] .search-hit-badge {
+    font-family: var(--font-body); letter-spacing: 0; text-transform: none; font-size: 11px;
+  }
+  .search-hit-badge-treatment { color: var(--accent); border-color: var(--accent); }
+  .search-hit-badge-service   { color: #5a3d8a; border-color: #d7cae8; }
+  .search-hit-badge-blog      { color: #7a5a1a; border-color: #ecd9a8; }
+  .search-hit-badge-case      { color: #2f6d47; border-color: #bbdec5; }
+  .search-hit-badge-doctor    { color: var(--ink); border-color: var(--line-strong); }
+  .search-hit-badge-static    { color: var(--muted); border-color: var(--line); }
+
+  .search-hit-desc {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin: 0 0 6px;
+    line-height: 1.55;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .search-hit-path {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    margin: 0;
+    opacity: 0.75;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  html[dir="rtl"] .search-hit-path { font-family: var(--font-body); font-size: 12px; }
+
+  .search-empty {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+    text-align: center;
+    padding: 24px 0;
+  }
 </style>

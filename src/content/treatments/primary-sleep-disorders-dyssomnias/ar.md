@@ -6,7 +6,7 @@ category: "الألم"
 order: 999
 ---
 
-![](/images/legacy/2021/02/135-171948-sleep-disorders-blood-pressure-intestines_700x400-300x171.jpg)
+![](/images/legacy/2021/02/135-171948-sleep-disorders-blood-pressure-intestines_700x400.jpg)
 
 يغطي مصطلح اضطراب النوم مجموعة واسعة من الحالات والأعراض ، ولكن يمكن تقسيم اضطرابات النوم إلى أنواع مختلفة.
 

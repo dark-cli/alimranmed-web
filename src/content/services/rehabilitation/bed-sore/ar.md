@@ -7,7 +7,7 @@ order: 999
 publishedAt: "2020-07-01T07:04:50"
 ---
 
-![](/images/legacy/2020/07/247674_10151945256634968_1158683050_n-300x223.jpg)
+![](/images/legacy/2020/07/247674_10151945256634968_1158683050_n.jpg)
 ![](/images/legacy/2020/07/قرحة-الضغطpressure-ulcer.jpg)
 ![](/images/legacy/2020/07/قرحة-الضغطpressure-ulcer.jpg)
 

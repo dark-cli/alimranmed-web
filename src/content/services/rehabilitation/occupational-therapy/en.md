@@ -10,7 +10,7 @@ source: "legacy-wp"
 
 **What is Occupational Therapy?**
 
-**![](/images/legacy/2020/11/OT-header-300x122.jpg)**
+**![](/images/legacy/2020/11/OT-header.jpg)**
 
 OT is both an art and a science wherein therapists working for Occupational Therapy Centers are responsible for inclining the afflicted individual towards normalcy in human upkeep tasks in order to undergo rehabilitation and foster independent action.
 

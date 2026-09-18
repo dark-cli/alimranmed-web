@@ -5,7 +5,7 @@ source: "legacy-wp"
 legacyUrl: "https://alimranmed.com/fitness"
 ---
 
-![](/images/legacy/2020/07/image_750x422_5eab388777161-300x169.jpg)
+![](/images/legacy/2020/07/image_750x422_5eab388777161.jpg)
 
 Starting a fitness program may be one of the best things you can do for your health. After all, physical activity can reduce your risk of chronic disease, improve your balance and coordination, help you lose weight, and even boost your self-esteem. You can reap these benefits regardless of your age, gender, or physical ability.
 

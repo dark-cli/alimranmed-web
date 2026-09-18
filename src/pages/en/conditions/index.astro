@@ -22,14 +22,98 @@ allTreatments.filter((e) => isLocale(e.id, "en")).forEach((e) => {
   bySlug[topicOf(e.id)] = e.data.redesigned === true;
 });
 
-// Fetch clinically-relevant blogs to show as "related reading"
-const relatedBlogs = (await getCollection("blog"))
+// Blog → pathway assignment. Simple hand-mapped table so each pathway can
+// surface its own related reading. Anything not in the table falls under
+// "Other" and won't render alongside a pathway.
+const BLOG_PATHWAY: Record<string, "brain" | "spine" | "pain"> = {
+  "amyotrophic-lateral-sclerosis-als-2": "brain",
+  "covid-19-symptoms-on-the-nervous-and-locomotor-system": "brain",
+  "results-of-treatment-of-cerebral-palsy-in-children": "brain",
+  "tms-for-alzheimer-disease": "brain",
+  "tms-for-neuropsychiatric-disorders": "brain",
+  "tms-for-tinnitus": "brain",
+  "tms-for-tinnitus-2": "brain",
+  "transcranial-direct-current-stimulation-tdcs": "brain",
+  "transcranial-magnetic-stimulation": "brain",
+  "poliomyelitis": "spine",
+  "spin-med": "spine",
+  "what-is-an-intrathecal-pump": "spine",
+  "achilles-tendinitis": "pain",
+  "arthritis": "pain",
+  "diabetic-foot-pain-and-ulcers": "pain",
+  "osteoporosis": "pain",
+  "physiotherapy": "pain",
+  "tension-headaches": "pain",
+  "tms-for-migraine": "pain",
+  "tms-for-pains": "pain",
+  "vasotrain-or-air-pressure-massage": "pain",
+};
+
+// Fetch clinically-relevant blogs and bucket by pathway so each pathway
+// column can carry its own contextual "Related reading" links.
+const allBlogs = (await getCollection("blog"))
   .filter((e) => isLocale(e.id, "en") && e.data.clinicallyRelevant === true)
-  .sort((a, b) => (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0))
-  .slice(0, 8);
+  .sort((a, b) => (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0));
+
+const blogsByPathway: Record<"brain" | "spine" | "pain", typeof allBlogs> = {
+  brain: [], spine: [], pain: [],
+};
+for (const b of allBlogs) {
+  const p = BLOG_PATHWAY[topicOf(b.id)];
+  if (p) blogsByPathway[p].push(b);
+}
+
+// Curated "Procedures & therapies we offer" — 6 flagship service categories,
+// 25 items total. Same visual density as the 3 pathway columns above.
+// Each item resolves to /services/{category}/{slug}/ which already renders.
+const procedureCategories = [
+  { num: "Category 01", title: "Physiotherapy", basePath: "physiotherapy",
+    items: [
+      { name: "Physical therapy",       slug: "physical-therapy" },
+      { name: "Electrical stimulation", slug: "electrical-stimulation" },
+      { name: "Laser therapy",          slug: "laser-therapy" },
+      { name: "Ultrasound therapy",     slug: "ultrasound-therapy" },
+      { name: "LUNA EMG robot",         slug: "luna-emg-robot" },
+    ] },
+  { num: "Category 02", title: "Chiropractic", basePath: "chiropractic",
+    items: [
+      { name: "Chiropractic",  slug: "chiropractic" },
+      { name: "Sigma",         slug: "sigma" },
+      { name: "SpineMED",      slug: "spinmed" },
+    ] },
+  { num: "Category 03", title: "Brain stimulation", basePath: "brain-stimulation",
+    items: [
+      { name: "TMS",             slug: "tms" },
+      { name: "tDCS",            slug: "tdcs" },
+      { name: "TMS for pain",    slug: "tms-pain" },
+      { name: "TMS for tinnitus", slug: "tms-tinnitus" },
+      { name: "TMS for migraine", slug: "tms-migraine" },
+    ] },
+  { num: "Category 04", title: "Radiofrequency", basePath: "radiofrequency",
+    items: [
+      { name: "Radiofrequency",        slug: "radiofrequency" },
+      { name: "Nucleoplasty",          slug: "nucleoplasty" },
+      { name: "Spine radiofrequency",  slug: "spine" },
+      { name: "Knee radiofrequency",   slug: "knee" },
+      { name: "Trigeminal neuralgia RF", slug: "trigeminal-neuralgia" },
+    ] },
+  { num: "Category 05", title: "Surgery", basePath: "surgery",
+    items: [
+      { name: "Endoscopic spine surgery",   slug: "endoscopic-spine" },
+      { name: "Deep brain stimulation",     slug: "dbs" },
+      { name: "Lumbar microdiscectomy",     slug: "lumbar-microdiscectomy" },
+      { name: "Vertebroplasty",             slug: "vertebroplasty" },
+      { name: "Transnasal skull-base surgery", slug: "transnasal-transsphenoidal" },
+    ] },
+  { num: "Category 06", title: "Regenerative", basePath: "regenerative-medicine",
+    items: [
+      { name: "Prolotherapy",         slug: "prolotherapy" },
+      { name: "Regenerative medicine", slug: "regenerative-medicine" },
+    ] },
+];
 
 const pathways = [
-  { num: "Pathway 01", title: "Brain",
+  { num: "Pathway 01", title: "Brain", key: "brain" as const,
     items: [
       { name: "Brain tumour",         slug: "brain-tumor" },
       { name: "Stroke",               slug: "stroke" },
@@ -39,7 +123,7 @@ const pathways = [
       { name: "Motor disorders",      slug: "motor-disorders" },
       { name: "Bell's palsy",         slug: "bells-palsy" },
     ] },
-  { num: "Pathway 02", title: "Spine",
+  { num: "Pathway 02", title: "Spine", key: "spine" as const,
     items: [
       { name: "Herniated disc",       slug: "herniated-disc" },
       { name: "Sciatica",             slug: "sciatica" },
@@ -49,7 +133,7 @@ const pathways = [
       { name: "Whiplash",             slug: "whiplash" },
       { name: "Neurogenic bladder",   slug: "neurogenic-bladder" },
     ] },
-  { num: "Pathway 03", title: "Pain",
+  { num: "Pathway 03", title: "Pain", key: "pain" as const,
     items: [
       { name: "Chronic and daily headache", slug: "headaches" },
       { name: "Neck pain",            slug: "neck-pain" },
@@ -61,43 +145,25 @@ const pathways = [
     ] },
 ];
 
-const surgical = [
+// Photo strip — three images that break up the two hairline-grid content
+// sections above with a visual pause. Just imagery and mono captions; the
+// procedures they represent are already listed in "Procedures & therapies".
+const photoStrip = [
   {
-    label: "THEATRE PHOTO", sub: "endoscopic spine procedure",
-    title: "Endoscopic spine surgery",
-    desc: "Destandau-technique discectomy for cervical and lumbar herniation, with fixation, fusion, kyphoplasty and vertebroplasty where deformity or fracture is present.",
+    caption: "Endoscopic spine surgery",
     src: "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=1200&q=80&auto=format&fit=crop",
     alt: "Consultant surgeon operating in theatre",
   },
   {
-    label: "PROCEDURE PHOTO", sub: "DBS or spinal cord stimulation",
-    title: "Neuromodulation",
-    desc: "Deep brain stimulation, spinal cord stimulation and stereotactic lesioning for movement disorders, spasticity and refractory neuropathic pain.",
+    caption: "Neuromodulation",
     src: "/images/home/tms-treatment-768.jpg",
     alt: "Neuromodulation delivered by trained operator",
   },
   {
-    label: "PROCEDURE PHOTO", sub: "radiofrequency ablation, in clinic",
-    title: "Radiofrequency ablation",
-    desc: "Continuous and pulsed radiofrequency for facet-mediated pain, chronic headache and sympathetically maintained pain syndromes.",
+    caption: "Radiofrequency ablation",
     src: "https://images.unsplash.com/photo-1754941622138-b3c3671f2fa8?w=1200&q=80&auto=format&fit=crop",
     alt: "Clinical device applied to a patient in a treatment session",
   },
-];
-
-const interventional = [
-  "Regional blocks",
-  "Neurolytic procedures",
-  "Radiofrequency ablation",
-  "Sacroiliac joint injections",
-  "Caudal epidural injections",
-  "Median nerve injections",
-  "Facet joint injections",
-  "Interlaminar epidural injections",
-  "Transforaminal (perineural) epidural injections",
-  "Stellate ganglion & thoracic sympathetic blocks",
-  "Coeliac ganglion & ganglion impar blocks",
-  "Superior hypogastric plexus & lumbar sympathetic blocks",
 ];
 ---
 
@@ -114,13 +180,17 @@ const interventional = [
     </div>
   </section>
 
-  <!-- Three pathway columns (hairline grid) -->
+  <!-- Three pathway columns (hairline grid) — "What we treat" -->
   <section class="pathways-section">
+    <header class="section-head">
+      <span class="section-eyebrow">Conditions</span>
+      <h2 class="section-h2">What we treat</h2>
+    </header>
     <div class="pathway-grid">
       {pathways.map((p) => (
         <div class="pathway-cell">
           <p class="pathway-num">{p.num}</p>
-          <h2 class="pathway-name">{p.title}</h2>
+          <h3 class="pathway-name">{p.title}</h3>
           <ul>
             {p.items.map((c) => (
               <li>
@@ -131,50 +201,62 @@ const interventional = [
               </li>
             ))}
           </ul>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- 01 Surgical & advanced -->
-  <section class="proc-section">
-    <header class="proc-head">
-      <span class="proc-num">01</span>
-      <h2 class="proc-h2">Surgical & advanced procedures</h2>
-    </header>
-    <div class="surg-grid">
-      {surgical.map((s) => (
-        <article class="surg-card">
-          {s.src
-            ? <img class="surg-photo surg-photo-img" src={s.src} alt={s.alt} width="1200" height="900" loading="lazy" />
-            : (
-              <div class="surg-photo photo-slot" aria-hidden="true">
-                <p>{s.label}<br>{s.sub}<br>4:3 · min 1200px wide</p>
-              </div>
-            )}
-          <h3 class="surg-title">{s.title}</h3>
-          <p class="surg-desc">{s.desc}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <!-- 02 Interventional register -->
-  <section class="proc-section">
-    <header class="proc-head">
-      <span class="proc-num">02</span>
-      <h2 class="proc-h2">Interventional pain register</h2>
-    </header>
-    <div class="int-grid">
-      {[interventional.slice(0, 6), interventional.slice(6, 12)].map((col, colIdx) => (
-        <div class="int-col">
-          {col.map((name, i) => (
-            <div class="int-row">
-              <span class="int-num">{String(colIdx * 6 + i + 1).padStart(2, "0")}</span>
-              <span class="int-name">{name}</span>
+          {blogsByPathway[p.key].length > 0 && (
+            <div class="pathway-reading">
+              <p class="pathway-reading-label">Related reading</p>
+              <ul class="pathway-reading-list">
+                {blogsByPathway[p.key].slice(0, 4).map((b) => (
+                  <li>
+                    <a href={L(`/blog/${topicOf(b.id)}/`)}>{b.data.title}</a>
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
+          )}
         </div>
+      ))}
+    </div>
+    <p class="section-see-all">
+      <a class="see-all-link" href={L("/treatments/")}>Browse all conditions →</a>
+    </p>
+  </section>
+
+  <!-- "Procedures & therapies we offer" — 6 curated service categories -->
+  <section class="pathways-section">
+    <header class="section-head">
+      <span class="section-eyebrow">Procedures</span>
+      <h2 class="section-h2">Procedures &amp; therapies we offer</h2>
+    </header>
+    <div class="pathway-grid">
+      {procedureCategories.map((cat) => (
+        <div class="pathway-cell">
+          <p class="pathway-num">{cat.num}</p>
+          <h3 class="pathway-name">{cat.title}</h3>
+          <ul>
+            {cat.items.map((it) => (
+              <li>
+                <a href={L(`/services/${cat.basePath}/${it.slug}/`)}>{it.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <p class="section-see-all">
+      <a class="see-all-link" href={L("/services/")}>Browse all procedures →</a>
+    </p>
+  </section>
+
+  <!-- Photo strip — visual break between the two hairline-grid sections
+       above and the CTA below. No card chrome; just images with tiny
+       mono captions. -->
+  <section class="photo-strip">
+    <div class="photo-strip-grid">
+      {photoStrip.map((p) => (
+        <figure class="photo-cell">
+          <img src={p.src} alt={p.alt} width="1200" height="900" loading="lazy" />
+          <figcaption>{p.caption}</figcaption>
+        </figure>
       ))}
     </div>
   </section>
@@ -193,15 +275,16 @@ const interventional = [
     </div>
   </section>
 
-  <!-- Related articles from blog -->
-  {relatedBlogs.length > 0 && (
+  <!-- Recent articles — kept minimal since each pathway now carries its own
+       contextual reading list; this is the general entry point. -->
+  {allBlogs.length > 0 && (
     <section class="related-section">
-      <header class="related-head">
-        <span class="related-num">Related</span>
-        <h2 class="related-h2">Medical articles & updates</h2>
+      <header class="section-head">
+        <span class="section-eyebrow">Articles</span>
+        <h2 class="section-h2">Recent from the blog</h2>
       </header>
       <div class="related-grid">
-        {relatedBlogs.map((blog) => (
+        {allBlogs.slice(0, 6).map((blog) => (
           <a class="related-card card" href={L(`/blog/${topicOf(blog.id)}/`)}>
             <h3>{blog.data.title}</h3>
             {blog.data.description && <p>{blog.data.description}</p>}
@@ -211,7 +294,9 @@ const interventional = [
           </a>
         ))}
       </div>
-      <a class="related-link" href={L("/blog/")}>Browse all articles →</a>
+      <p class="section-see-all">
+        <a class="see-all-link" href={L("/blog/")}>Browse all articles →</a>
+      </p>
     </section>
   )}
 </BaseLayout>
@@ -242,6 +327,47 @@ const interventional = [
     max-width: 20ch;
   }
 .intro-lede { font-size: 17px; line-height: 1.65; color: var(--body); margin: 0; max-width: 62ch; }
+/* Section header — shared by "What we treat" / "Procedures we offer" */
+  .section-head {
+    display: flex; gap: 14px; align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: clamp(28px, 3.5vw, 44px);
+  }
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  :global(html[dir="rtl"]) .section-eyebrow {
+    font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 13px;
+  }
+  .section-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3.4vw, 34px);
+    font-weight: 400; letter-spacing: -0.02em;
+    margin: 0; color: var(--ink); line-height: 1.1;
+  }
+  .section-see-all {
+    margin: clamp(20px, 2vw, 28px) 0 0;
+    text-align: end;
+  }
+  .see-all-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  :global(html[dir="rtl"]) .see-all-link {
+    font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 14px;
+  }
+  .see-all-link:hover { color: var(--accent-hover); text-decoration: none; }
+
 /* Pathways — hairline grid */
   .pathways-section {
     max-width: var(--page-max); margin: 0 auto;
@@ -276,85 +402,85 @@ const interventional = [
     border-top: 1px solid var(--line-soft);
     font-size: 15px;
   }
-  .pathway-cell li a { color: var(--ink); text-decoration: none; }
-  .pathway-cell li a:hover { color: var(--accent); text-decoration: none; }
+  /* :global(a) reaches into SoonLink's own scope — without it, SoonLink's
+     anchor renders default-browser blue underline while our plain <a>s get
+     the styled version, so the two sections look inconsistent. */
+  .pathway-cell li :global(a) {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  }
+  .pathway-cell li :global(a):hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
-  /* Procedure section shell (01, 02) */
-  .proc-section {
+  /* Mobile: cap each column at 4 items so the page doesn't tower.
+     The "Browse all …" link at the bottom of each section covers the rest. */
+  @media (max-width: 639px) {
+    .pathway-cell li:nth-child(n+5) { display: none; }
+  }
+
+  /* Per-pathway related-reading block (blog links inside each column) */
+  .pathway-reading {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .pathway-reading-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  :global(html[dir="rtl"]) .pathway-reading-label {
+    font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 12px;
+  }
+  .pathway-reading-list { list-style: none; margin: 0; padding: 0; }
+  .pathway-reading-list li { padding: 8px 0; border-top: none; font-size: 14px; }
+  .pathway-reading-list li:first-child { padding-top: 0; }
+  .pathway-reading-list a { color: var(--accent); text-decoration: none; line-height: 1.5; }
+  .pathway-reading-list a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+  /* Photo strip — visual break between hairline-grid sections.
+     No card chrome; hairline border on the image itself and a mono caption
+     underneath. */
+  .photo-strip {
     max-width: var(--page-max); margin: 0 auto;
     padding: clamp(48px, 6vw, 80px) 24px 0;
-    position: relative;   /* creates its own stacking context */
   }
-  .proc-head {
-    display: flex; align-items: baseline; gap: 20px;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 14px; margin-bottom: 44px;
-  }
-  .proc-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); }
-.proc-h2 {
-    font-family: var(--font-display);
-    font-size: clamp(24px, 3.4vw, 34px);
-    font-weight: 400; letter-spacing: -0.02em;
-    margin: 0; color: var(--ink); line-height: 1.1;
-  }
-/* 01 Surgical cards */
-  .surg-grid {
+  .photo-strip-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: clamp(20px, 2.5vw, 32px);
   }
-  .surg-card { min-width: 0; }
-  .surg-photo { aspect-ratio: 4 / 3; min-height: 0; margin-bottom: 18px; padding: 0 20px; }
-  /* When rendered as <img>, use aspect-ratio to size height (do NOT set
-     height:100% — it can leave the img with no height reference and cause
-     the wrapping section's content to overflow into the following one). */
-  .surg-photo-img {
+  .photo-cell { margin: 0; min-width: 0; }
+  .photo-cell img {
     display: block;
-    padding: 0;
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border: 1px solid var(--line);
   }
-  .surg-photo p {
+  .photo-cell figcaption {
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     color: var(--muted);
+    margin-top: 12px;
     text-align: center;
-    margin: 0;
-    line-height: 1.7;
   }
-.surg-title {
-    font-family: var(--font-display);
-    font-size: 22px; font-weight: 400;
-    margin: 0 0 10px; color: var(--ink);
+  :global(html[dir="rtl"]) .photo-cell figcaption {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 13px;
   }
-.surg-desc { font-size: 15px; line-height: 1.6; color: var(--body); margin: 0; }
-/* 02 Interventional register */
-  .int-grid {
-    display: grid;
-    /* Two explicit columns above 640px, single column below.
-       Prototype markup pattern: wrap items in .int-col so long labels
-       stay within their own column instead of collapsing into a 4-col
-       auto-fit grid that overflows adjacent cells. */
-    grid-template-columns: 1fr;
-    gap: 0 clamp(32px, 4vw, 64px);
-  }
-  @media (min-width: 640px) {
-    .int-grid { grid-template-columns: 1fr 1fr; }
-  }
-  .int-col { min-width: 0; }
-  .int-row {
-    display: grid;
-    grid-template-columns: 40px minmax(0, 1fr);
-    gap: 16px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .int-num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
-  .int-name { font-size: 15px; color: var(--ink); overflow-wrap: anywhere; }
 
   /* Appointment band */
   .appt-section {

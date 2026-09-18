@@ -6,8 +6,8 @@ legacyUrl: "https://ar.alimranmed.com/rtms-%d9%84%d8%b9%d9%84%d8%a7%d8%ac-%d8%ad
 order: 999
 ---
 
-![](/images/legacy/2020/07/1-s2.0-S1388245718311052-gr1-221x300.jpg)
-![](/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-300x224.jpg)
+![](/images/legacy/2020/07/1-s2.0-S1388245718311052-gr1.jpg)
+![](/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9.jpg)
 
 **![](/assets/images/1-s2.0-S1388245718311052-gr1-221x300.jpg)**
 

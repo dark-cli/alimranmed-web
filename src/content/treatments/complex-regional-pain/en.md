@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/complex-regional-pain/"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2020/12/shutterstock_98725853-300x216.jpg)
+![](/images/legacy/2020/12/shutterstock_98725853.jpg)
 
 What is Complex Regional Pain Syndrome?
 

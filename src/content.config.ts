@@ -90,6 +90,19 @@ const blockRelated = z.object({
   slugs: z.array(z.string()).min(1),   // links into other treatments/*
 });
 
+// Media — image, self-hosted video, or YouTube embed. Sits inline between
+// other blocks so it lands where it makes editorial sense. Not numbered /
+// not in the TOC. `src` for youtube accepts a bare 11-char ID or any full
+// URL; the component extracts the ID.
+const blockMedia = z.object({
+  type: z.literal("media"),
+  kind: z.enum(["image", "video", "youtube"]),
+  src: z.string(),
+  alt: z.string().optional(),
+  caption: z.string().optional(),
+  aspect: z.enum(["16/9", "4/3", "3/2", "1/1"]).optional(),
+});
+
 const articleSection = z.discriminatedUnion("type", [
   blockAtGlance,
   blockProse,
@@ -98,6 +111,7 @@ const articleSection = z.discriminatedUnion("type", [
   blockStatsFacts,
   blockTreatmentGroups,
   blockRelated,
+  blockMedia,
 ]);
 
 const treatments = defineCollection({

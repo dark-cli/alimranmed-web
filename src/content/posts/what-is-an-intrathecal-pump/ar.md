@@ -7,7 +7,7 @@ publishedAt: "2020-12-21T16:48:46"
 source: "translated-by-llm"
 ---
 
-![](/images/legacy/2020/12/pain-pump-34-300x229.jpg)
+![](/images/legacy/2020/12/pain-pump-34.jpg)
 
 ما هي مضخة التوصيل داخل السحايا؟
 

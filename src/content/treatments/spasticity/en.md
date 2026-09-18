@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/spasticity/"
 source: "legacy-wp"
 ---
 
-**![](/images/legacy/2021/02/Spasticity-300x210.jpg)Spasticity** is abnormal muscle tightness due to prolonged muscle contraction. It is a symptom associated with damage to the brain, spinal cord or motor nerves, and is seen in individuals with neurological conditions, such as:
+**![](/images/legacy/2021/02/Spasticity.jpg)Spasticity** is abnormal muscle tightness due to prolonged muscle contraction. It is a symptom associated with damage to the brain, spinal cord or motor nerves, and is seen in individuals with neurological conditions, such as:
 
 -   Cerebral palsy (CP)
 -   Multiple sclerosis (MS)

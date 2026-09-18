@@ -7,8 +7,8 @@ legacyUrl: "https://alimranmed.com/osteoporosis-pain/"
 source: "legacy-wp"
 ---
 
-![](/images/legacy/2020/02/175957-241x300.jpg)
-![](/images/legacy/2020/12/هشاشة-العظام-1-300x169.jpg)
+![](/images/legacy/2020/02/175957.jpg)
+![](/images/legacy/2020/12/هشاشة-العظام-1.jpg)
 
 **What is Osteoporosis Pain?**
 
