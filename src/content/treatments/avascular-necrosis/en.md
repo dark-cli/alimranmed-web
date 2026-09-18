@@ -1,73 +1,68 @@
 ---
 title: "Avascular necrosis"
-description: "Avascular necrosis is the death of bone tissue due to a lack of blood supply. Also called osteonecrosis, avascular necrosis"
+description: "Death of bone tissue caused by a loss of blood supply. Also called osteonecrosis. Without adequate blood flow, the bone develops tiny fractures and eventually collapses. Most commonly affects the hip. Associated with trauma, high-dose steroids, and excessive alcohol use."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/16/avascular-necrosis/"
 publishedAt: "2021-01-16T07:34:45"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Death of bone tissue caused by interrupted or reduced blood supply to the bone. Also called osteonecrosis. Without blood flow, the bone develops microfractures and can ultimately collapse. Most commonly affects the hip in adults aged 30–60."
+      - label: "Symptoms"
+        value: "Often asymptomatic early. As the condition progresses: joint pain when bearing weight, eventually pain even at rest. In the hip, pain centres on the groin, thigh, or buttock. Can also affect the shoulder, knee, hand, and foot."
+      - label: "Approach"
+        value: "Goals are to relieve pain, preserve joint function, and slow bone damage. Best treatment depends on disease stage, location, and amount of bone affected. Physiotherapy, injection therapies, and pain management are the non-surgical options."
+  - type: media
+    kind: image
+    src: /images/legacy/2021/01/2258659.jpg
+    alt: "Avascular necrosis — bone tissue death from loss of blood supply"
+  - type: prose
+    heading: "What avascular necrosis is"
+    body: |
+      Avascular necrosis (AVN) occurs when blood flow to a section of bone is interrupted or substantially reduced. Without adequate blood supply, bone cells begin to die. Over time, the affected bone develops tiny fractures (microfractures) that eventually cause structural collapse. The collapsed bone surface then causes severe arthritis in the adjacent joint.
+
+      The hip is the most commonly affected site. Avascular necrosis can also develop in the shoulder, knee, hand, and foot. It can occur on both sides simultaneously (bilateral) — for example, in both hips or both knees.
+
+      **Causes:**
+      - **Trauma** — a fractured bone or dislocated joint can directly damage the blood vessels supplying the bone. Radiation treatment for cancer can also weaken bone and harm blood vessels.
+      - **Fatty deposits in blood vessels** — lipids can block small vessels, reducing bone blood flow. This is the mechanism behind steroid-induced and alcohol-related AVN.
+      - **Long-term high-dose corticosteroid use** — one of the most common causes; the exact mechanism involves fat emboli and direct toxic effects on bone cells.
+      - **Excessive alcohol intake** — similarly causes fatty changes in blood vessels.
+      - **Systemic diseases** — sickle cell anaemia, Gaucher's disease, and systemic lupus erythematosus are associated with AVN.
+      - **Idiopathic** — in about 25% of cases, no cause is identified.
+
+      **Symptoms** evolve gradually:
+      - Early: no symptoms
+      - Middle: pain when bearing weight on the affected joint
+      - Late: pain at rest, including when lying down; severe limitation of movement
+
+      Treatment outcome is best when AVN is diagnosed early, before significant bone collapse occurs.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "Steroid injections"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Magnetic therapy"
+          - "Therapeutic exercises"
+      - title: "Chiropractic care"
+        items:
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2021/01/2258659.jpg)
-
-Avascular necrosis is the death of bone tissue due to a lack of blood supply. Also called osteonecrosis, avascular necrosis can lead to tiny breaks in the bone and the bone’s eventual collapse.
-
-The blood flow to a section of bone can be interrupted if the bone is fractured or the joint becomes dislocated. Avascular necrosis of bone is also associated with long-term use of high-dose steroid medications and excessive alcohol intake.
-
-The hip is the joint most commonly affected by avascular necrosis. While avascular necrosis of bone can happen to anyone, it usually occurs in men between the ages of 30 and 60.
-
-**Symptoms**
-
-Many people have no symptoms in the early stages of avascular necrosis. As the condition worsens, your affected joint might hurt only when you put weight on it. Eventually, you might feel the pain even when you’re lying down.
-
-Pain can be mild or severe and usually develops gradually. Pain associated with avascular necrosis of the hip might center on the groin, thigh or buttock. Besides the hip, the areas likely to be affected are the shoulder, knee, hand and foot.
-
-Some people develop avascular necrosis on both sides (bilaterally) — such as in both hips or in both knees.
-
-## **Causes**
-
-Avascular necrosis occurs when blood flow to a bone is interrupted or reduced. Reduced blood supply can be caused by:
-
--   **Joint or bone trauma.**An injury, such as a dislocated joint, might damage nearby blood vessels. Cancer treatments involving radiation also can weaken bone and harm blood vessels.
--   **Fatty deposits in blood vessels.**The fat (lipids) can block small blood vessels, reducing the blood flow that feeds bones.
--   **Certain diseases.**Medical conditions, such as sickle cell anemia and Gaucher’s disease, also can cause diminished blood flow to bone.
-
-For about 25 percent of people with avascular necrosis, the cause of interrupted blood flow is unknown.
-
-## **Complications**
-
-Untreated, avascular necrosis worsens with time. Eventually, the bone can collapse. Avascular necrosis also causes bone to lose its smooth shape, potentially leading to severe arthritis.
-
-**Avascular Necrosis Treatment**
-
-Treatment goals for AVN are to improve the joint, stop the bone damage, and ease pain. The best treatment will depend on a number of things, like:
-
--   Your age
--   Stage of the disease
--   Location and amount of bone damage
--   Cause of AVN
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)

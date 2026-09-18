@@ -1,63 +1,78 @@
 ---
-title: "Syringomyelia (Syrinx)"
-description: "Also known as syringomyelia and hydromyelia are commonly known as syrinx. Essentially, a syrinx is a fluid collection in the spinal cord"
+title: "Syringomyelia (syrinx)"
+description: "A fluid-filled cavity (syrinx) within the spinal cord, most often caused by Chiari malformation, tethered cord, trauma, hydrocephalus, or spinal tumour. The expanding cavity compresses cord tissue, producing progressive weakness, numbness, pain, and autonomic dysfunction. Treatment targets the underlying cause; direct syrinx drainage is reserved for cases where the cause cannot be corrected."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/syringomyelia-syrinx/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A syrinx is an abnormal fluid-filled cavity within the central canal or parenchyma of the spinal cord — essentially a pocket of CSF-like fluid that forms under abnormal pressure dynamics. Also called hydromyelia when it involves the central canal. Causes include Chiari I malformation (the most common), tethered spinal cord, spinal cord trauma, hydrocephalus, spinal arachnoiditis, and spinal cord tumours. A large proportion of syringes are idiopathic. The cavity expands over time, compressing cord grey and white matter and producing a progressive neurological deficit. MRI has revolutionised diagnosis and monitoring."
+      - label: "Symptoms"
+        value: "Symptoms develop gradually over months to years and reflect the level and extent of the syrinx. Characteristic early features of a central cord lesion: cape-like distribution of dissociated sensory loss (loss of pain and temperature but preserved light touch and proprioception) in the upper body. Progressive weakness and wasting of the hands and arms; spasticity and hyperreflexia below the lesion; scoliosis (especially in children). Pain — often a deep, aching discomfort in the neck, shoulders, or arms. Bladder and bowel dysfunction. Symptoms may also arise from the underlying cause (e.g. headache and neck pain from Chiari malformation)."
+      - label: "Approach"
+        value: "MRI of the full neuraxis to identify the syrinx extent and underlying cause. If a cause is found, treat the cause first: Chiari decompression (posterior fossa craniectomy) reliably resolves the syrinx in 50–70% of cases; tethered cord release and tumour resection also allow spontaneous syrinx resolution. If the syrinx persists or the cause cannot be corrected, direct surgical drainage via stenting or syringopleural/syringoperitoneal shunting is considered. Asymptomatic or non-progressive syringes may be observed with periodic MRI. Pain, spasticity, and neuropathy are managed symptomatically with physiotherapy, neuromodulation, and medications."
+  - type: prose
+    heading: "What syringomyelia is"
+    body: |
+      The spinal cord contains a central canal that is normally microscopic. Under abnormal CSF flow dynamics — usually caused by a structural obstruction at the craniocervical junction, tethering at the cord's lower end, or post-traumatic scarring — fluid is driven under pressure into the cord substance, creating an expanding cavity (syrinx). The enlarging syrinx destroys cord tissue from the inside outward.
+
+      **How it causes symptoms**
+
+      The syrinx first damages crossing sensory fibres in the cord's central grey matter, producing the characteristic dissociated sensory loss: pain and temperature sensation (carried by spinothalamic fibres that cross at that cord level) is lost, while vibration and proprioception (carried in the posterior columns) are initially preserved. This creates the "cape" pattern over the shoulders and arms in cervical syringes.
+
+      As the cavity expands:
+      - Anterior horn cells are destroyed → weakness and wasting of the hands and arms
+      - Corticospinal tracts are compressed → spasticity in the legs below the lesion
+      - Posterior columns are eventually affected → loss of proprioception and vibration
+      - Autonomic fibres may be involved → Horner's syndrome, bladder/bowel/sexual dysfunction
+
+      **Causes and their treatment**
+
+      *Chiari I malformation* — herniation of cerebellar tonsils > 5 mm below the foramen magnum obstructs CSF pulsations at the craniocervical junction. Posterior fossa decompression (removing a small amount of occipital bone and C1 arch) restores normal CSF flow and allows the syrinx to collapse in the majority of cases.
+
+      *Tethered cord* — restriction of the cord at its lower end creates traction that alters CSF dynamics. Surgical release of the tether allows the syrinx to resolve.
+
+      *Post-traumatic syrinx* — scar tissue and arachnoiditis following spinal cord injury or surgery alter CSF flow. These syringes may progress slowly or be asymptomatic and are managed expectantly unless symptoms progress.
+
+      *Idiopathic syrinx* — no identifiable cause despite full neuraxis imaging. Careful observation with serial MRI is appropriate if the patient is stable; surgical exploration may be considered if the syrinx is progressing and causing neurological deterioration.
+
+      **Direct syrinx surgery**
+
+      When the underlying cause cannot be treated or when the syrinx persists after cause correction, direct drainage is performed. Options include:
+      - *Syrinx stenting* — a short hollow tube is placed to drain the cavity into the subarachnoid space
+      - *Syringoperitoneal or syringopleural shunting* — fluid is diverted to the peritoneal or pleural cavity
+
+      Results vary and re-accumulation can occur; follow-up imaging is essential.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
+          - "[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Spasticity management and scoliosis rehabilitation"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-Also known as syringomyelia and hydromyelia are commonly known as syrinx. Essentially, a syrinx is a fluid collection in the spinal cord. There are many causes of this such as [hydrocephalus](/treatments/normal-pressure-hydrocephalus/), Chiari Malformation, trauma, [tethered spinal cord](/treatments/tethered-spinal-cord/), tumor and a very large number without any clear cause, the so-called idiopathic. These collections are usually similar to spinal fluid. They can cause symptoms in two main ways. 
-
-One is due to the direct pressure of the fluid collection on the spinal cord. The symptoms will then be related to the level of the spinal cord at which the collection is. It may cause weakness, numbness, stiffness, pain, scoliosis, and incontinence to name a few. These symptoms usually come on quite gradually.
-
-The other way the symptoms may be found is due to the underlying cause of the syrinx. For instance, a syrinx may be caused by a Chiari Malformation, and the symptom may be one of headaches or neck pain even though the syrinx may be lower in the spinal cord. The important thing is for the physician to recognize the possibilities and perform the appropriate tests.
-
-## **Diagnosis**
-
-The availability of MRI has greatly improved our ability to both diagnose and follow these collections. Once one is identified it is usually prudent to study the entire nervous system looking for associated abnormalities which may influence treatment. Detailed neurological examination and imaging studies are essential to determine the extent and cause of the syrinx.
-
-## **Treatment Approach**
-
-Once it is determined that the syrinx is of clinical significance (causing problems such as injury to the spinal cord or progressive scoliosis) treatment must be considered. The only treatment available for clinically significant syrinxes is surgery.
-
-There are many different opinions as to how best to treat these collections. In the broadest sense they are as follows:
-
-1. **Treating the Underlying Cause:** If there is an obvious cause (such as hydrocephalus or Chiari Malformation) treat the cause with the expectation that the syrinx will then resolve on its own. This approach addresses the root problem causing fluid accumulation.
-
-2. **Treating the Syrinx Directly:** Treat the syrinx as the initial problem with some form of drainage system. This addresses the fluid collection itself.
-
-3. **Combined Approach:** Combine both of these options and treat both the underlying cause and the syrinx at the same operation. This comprehensive approach is often preferred when multiple issues are present.
-
-## **Surgical Options**
-
-The drains used to treat syrinxes are quite variable. Some surgeons prefer to place a small tube or "stent" in the syrinx. This is a rather short length of hollow tubing that extends from inside the spinal cord collection to just outside the spinal cord where the spinal fluid space is. Others prefer to use a shunt type system similar to that used in hydrocephalus to divert the fluid to other body cavities such as the chest or abdomen.
-
-## **Non-Surgical Treatment Options**
-
-At Alimran Medical Center, we may recommend any of the following non-surgical treatments:
-
-**Physiotherapy (Physical Therapy)**
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-**Chiropractic**
--   [SpineMED® system](/services/chiropractic/spinmed/)
--   [Sigma](/services/chiropractic/sigma/)
-
-**Steroid Injection**
--   Trigger point injections
--   Epidural steroid injections
-
-**Ozone Therapy**
-
-**Pulsed Radiofrequency Ablation**
-
-**Botox® Injections**
-
-**Acupuncture**
-
-The management of syringomyelia requires careful evaluation and individualized treatment plans based on the specific cause and clinical presentation of each patient.

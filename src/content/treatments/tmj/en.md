@@ -1,58 +1,62 @@
 ---
-title: "The temporomandibular joint (TMJ)"
-description: "The temporomandibular joint (TMJ) acts like a sliding hinge, connecting your jawbone to your skull. You have one joint on"
+title: "Temporomandibular joint (TMJ) disorders"
+description: "Pain and dysfunction in the jaw joint and surrounding muscles. Caused by genetics, arthritis, or jaw injury — often co-occurs with teeth grinding. Most cases resolve without surgery; treated with injections, physiotherapy, and radiofrequency."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/the-temporomandibular-joint-tmj/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Pain and dysfunction in the temporomandibular joint — the sliding hinge connecting the jawbone to the skull. One joint on each side of the jaw."
+      - label: "Symptoms"
+        value: "Jaw pain, earache, facial aching, difficulty or pain while chewing, and locking of the jaw. A clicking or grating sound is common."
+      - label: "Approach"
+        value: "Most cases resolve with conservative treatment. Injections (Botox, corticosteroids, ozone) and physiotherapy are the first approach; surgery is a last resort."
+  - type: media
+    kind: image
+    src: /images/legacy/2021/02/تنزيل-2.jpg
+    alt: "Diagram of the temporomandibular joint showing how the jawbone connects to the skull"
+  - type: prose
+    heading: "What TMJ disorders are"
+    body: |
+      The temporomandibular joint (TMJ) acts like a sliding hinge, connecting the jawbone to the skull — one joint on each side of the jaw. TMJ disorders (also called temporomandibular disorders, or TMD) cause pain in the jaw joint and in the muscles that control jaw movement.
+
+      The exact cause is often difficult to determine. Contributing factors include genetics, arthritis, or jaw injury. Some people with jaw pain also clench or grind their teeth (bruxism), though many people who grind their teeth never develop a TMJ disorder.
+
+      **Symptoms** of TMJ disorders may include:
+
+      - Pain or tenderness of the jaw
+      - Pain in one or both temporomandibular joints
+      - Aching pain in and around the ear
+      - Difficulty or pain while chewing
+      - Aching facial pain
+      - Locking of the joint, making it difficult to open or close the mouth
+      - Clicking or grating sensation when opening the mouth or chewing
+
+      In most cases, pain and discomfort are temporary and respond well to conservative, non-surgical treatment. Surgery is a last resort after other measures have failed.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "Corticosteroid injections"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Magnetic therapy"
+          - "Therapeutic exercises"
 ---
-
-![](/images/legacy/2021/02/تنزيل-2.jpg)
-
-The temporomandibular joint (TMJ) acts like a sliding hinge, connecting your jawbone to your skull. You have one joint on each side of your jaw. TMJ disorders — a type of temporomandibular disorder or TMD — can cause pain in your jaw joint and in the muscles that control jaw movement.
-
-The exact cause of a person’s TMJ disorder is often difficult to determine. Your pain may be due to a combination of factors, such as genetics, arthritis or jaw injury. Some people who have jaw pain also tend to clench or grind their teeth (bruxism), although many people habitually clench or grind their teeth and never develop TMJ disorders.
-
-In most cases, the pain and discomfort associated with TMJ disorders is temporary and can be relieved with self-managed care or nonsurgical treatments. Surgery is typically a last resort after conservative measures have failed, but some people with TMJ disorders may benefit from surgical treatments.
-
-Symptoms
-
-Signs and symptoms of TMJ disorders may include:
-
--   Pain or tenderness of your jaw
--   Pain in one or both of the temporomandibular joints
--   Aching pain in and around your ear
--   Difficulty chewing or pain while chewing
--   Aching facial pain
--   Locking of the joint, making it difficult to open or close your mouth
-
-TMJ disorders can also cause a clicking sound or grating sensation when you open your mouth or chew. But if there’s no pain or limitation of movement associated with your jaw clicking, you probably don’t need treatment for a TMJ disorder.
-
-## Treatment
-
-In some cases, the symptoms of TMJ disorders may go away without treatment. If your symptoms persist, your doctor may recommend a variety of treatment options, often more than one to be done at the same time.
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)

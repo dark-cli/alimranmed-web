@@ -1,104 +1,63 @@
 ---
 title: "Tendinitis"
-description: "Tendinitis is inflammation or irritation of a tendon — the thick fibrous cords that attach muscle to bone. The condition"
+description: "Inflammation or irritation of a tendon — the fibrous cords connecting muscle to bone. Most common around the shoulders, elbows, wrists, knees, and heels. Usually treated with rest, physiotherapy, and injections."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/tendinitis/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Inflammation or irritation of a tendon — most commonly from overuse or repetitive motion. Presents as pain and tenderness just outside a joint."
+      - label: "Common locations"
+        value: "Shoulders, elbows, wrists, knees, and heels. Includes conditions known as tennis elbow, golfer's elbow, swimmer's shoulder, and jumper's knee."
+      - label: "Approach"
+        value: "Rest and physiotherapy for most cases. Injections (corticosteroids, ozone, prolotherapy) and radiofrequency for persistent or severe tendinitis."
+  - type: media
+    kind: image
+    src: /images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1.jpg
+    alt: "Person holding the wrist in pain illustrating tendinitis discomfort"
+  - type: prose
+    heading: "What tendinitis is"
+    body: |
+      Tendinitis is inflammation or irritation of a tendon — the thick fibrous cords that attach muscle to bone. It causes pain and tenderness at the point where a tendon meets bone. While it can affect any tendon in the body, it most commonly occurs around the shoulders, elbows, wrists, knees, and heels.
+
+      **Symptoms:**
+      - Dull ache, especially when moving the affected limb or joint
+      - Tenderness to touch
+      - Mild swelling
+
+      **Causes:** Although tendinitis can follow a sudden injury, most cases develop from repetitive movements over time — whether from work activities (frequent overhead reaching, forceful exertion, vibration) or sports (baseball, basketball, golf, swimming, tennis). Improper technique amplifies stress on the tendon.
+
+      **Risk factors:** Age reduces tendon flexibility. Certain occupations and sports with repetitive motion carry higher risk.
+
+      **Complications:** Without adequate treatment, chronic tendon irritation may cause tendon rupture (requiring surgery) or tendinopathy — degenerative changes with abnormal new blood vessel growth.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Magnetic therapy"
+          - "Therapeutic exercises"
+      - title: "Injection therapies"
+        items:
+          - "[Trigger point injections](/services/steroid-injection/trigger-point/)"
+          - "Epidural steroid injections"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1.jpg)
-
-Tendinitis is inflammation or irritation of a tendon — the thick fibrous cords that attach muscle to bone. The condition causes pain and tenderness just outside a joint.
-
-While tendinitis can occur in any of your tendons, it’s most common around your shoulders, elbows, wrists, knees and heels.
-
-Some common names for various tendinitis problems are:
-
--   Tennis elbow
--   Golfer’s elbow
--   Pitcher’s shoulder
--   Swimmer’s shoulder
--   Jumper’s knee
-
-Most cases of tendinitis can be successfully treated with rest, physical therapy and medications to reduce pain. If tendinitis is severe and leads to the rupture of a tendon, you may need surgery.
-
-## **Symptoms**
-
-Signs and symptoms of tendinitis tend to occur at the point where a tendon attaches to a bone and typically include:
-
--   Pain often described as a dull ache, especially when moving the affected limb or joint
--   Tenderness
--   Mild swelling
-
-## **Causes**
-
-Although tendinitis can be caused by a sudden injury, the condition is much more likely to stem from the repetition of a particular movement over time. Most people develop tendinitis because their jobs or hobbies involve repetitive motions, which put stress on the tendons.
-
-Using proper technique is especially important when performing repetitive sports movements or job-related activities. Improper technique can overload the tendon — which can occur, for instance, with tennis elbow — and lead to tendinitis.
-
-## **Risk factors**
-
-Risk factors for developing tendinitis include age, working in particular jobs or participating in certain sports.
-
-### Age
-
-As people get older, their tendons become less flexible — which makes them easier to injure.
-
-### Occupation
-
-Tendinitis is more common in people whose jobs involve:
-
--   Repetitive motions
--   Awkward positions
--   Frequent overhead reaching
--   Vibration
--   Forceful exertion
-
-### Sports
-
-You may be more likely to develop tendinitis if you participate in certain sports that involve repetitive motions, especially if your technique isn’t optimal. This can occur with:
-
--   Baseball
--   Basketball
--   Bowling
--   Golf
--   Running
--   Swimming
--   Tennis
-
-Treatment
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[SpineMED® system](/services/chiropractic/spinmed/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-**Neurons stimulation**
-
-[Steroid injection](/services/steroid-injection/)
-
--   [Trigger point injections](/services/steroid-injection/trigger-point/)
--   Epidural steroid injections
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)
-
-Chiropractic

@@ -1,126 +1,91 @@
 ---
 title: "Claudication"
-description: "Claudication is pain caused by too little blood flow to muscles during exercise. Most often this pain occurs in the"
+description: "Muscle pain or cramping in the legs (and occasionally arms) triggered by exercise and relieved by rest — caused by insufficient blood flow through narrowed peripheral arteries. A symptom of peripheral artery disease and an indicator of systemic atherosclerosis. Managed with exercise, risk factor modification, medication, and — when conservative measures fail — vascular or neuromodulatory interventions."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/claudication/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Intermittent muscle pain caused by inadequate oxygen delivery to exercising muscles due to narrowed peripheral arteries (peripheral artery disease). The pain consistently appears after a predictable distance or exertion level and resolves within minutes of rest. A marker of systemic atherosclerosis — patients with claudication have substantially elevated cardiovascular risk."
+      - label: "Symptoms"
+        value: "Reproducible pain, aching, cramp, or heaviness in the calf (most common), thigh, buttock, hip, or — less often — shoulder, bicep, or forearm, appearing with activity and resolving with rest. Cool skin, poor wound healing, discoloration, and eventually rest pain indicate advanced disease. Symptoms typically worsen gradually over time."
+      - label: "Approach"
+        value: "Supervised exercise training is the most effective non-surgical intervention — a structured walk-rest-walk programme improves walking distance and vascular function. Cardiovascular risk reduction (smoking cessation, statins, antiplatelets, blood pressure and glucose control) is essential. For refractory or disabling claudication: spinal cord stimulation, pulsed radiofrequency, and vascular interventions (angioplasty, bypass) improve perfusion and pain."
+  - type: prose
+    heading: "What claudication is"
+    body: |
+      Claudication describes reproducible muscle pain triggered by activity and relieved within minutes of rest. It is a symptom of peripheral artery disease (PAD) — narrowing of the arteries supplying blood to the limbs, most often the legs.
+
+      **Pathophysiology**
+
+      The peripheral arteries deliver oxygenated blood to the muscles of the arms and legs. At rest, even significantly narrowed arteries can usually supply enough blood to meet basal metabolic demand. During exercise, however, active muscles need a substantial increase in blood flow. When atherosclerotic plaques limit arterial diameter, this demand cannot be met — muscles become oxygen-deprived, producing the characteristic cramping or aching that forces the patient to stop.
+
+      Atherosclerosis — the accumulation of cholesterol, inflammatory cells, and fibrous tissue in arterial walls as plaques — is the underlying cause in the vast majority of cases. As plaques enlarge they narrow and stiffen the artery; ruptured plaques trigger clot formation, causing acute-on-chronic worsening.
+
+      **Claudication as a cardiovascular warning sign**
+
+      Claudication is not merely a local limb problem. It reflects systemic atherosclerosis — patients with symptomatic PAD have a two- to three-fold increased risk of myocardial infarction and stroke. Identifying and aggressively managing cardiovascular risk factors is as important as treating the limb symptoms.
+
+      **Risk factors**
+
+      - Smoking (the strongest modifiable risk factor)
+      - Diabetes mellitus
+      - Hypertension
+      - Hypercholesterolaemia
+      - Obesity (BMI > 30)
+      - Chronic kidney disease
+      - Age over 70, or over 50 with smoking or diabetes
+      - Family history of atherosclerosis, PAD, or claudication
+
+      **Complications of untreated or progressive PAD**
+
+      - Non-healing skin ulcers
+      - Gangrene (tissue death from ischaemia)
+      - Limb amputation
+      - Myocardial infarction and stroke (from shared atherosclerotic disease)
+
+      **Management**
+
+      *Exercise therapy:* Structured supervised exercise — walking to moderate pain, resting to recovery, and repeating for 30–45 minutes, three or more times per week — is the most effective non-invasive treatment. It improves walking distance, collateral circulation, and cardiovascular fitness.
+
+      *Cardiovascular risk reduction:* Smoking cessation, antiplatelet therapy (aspirin or clopidogrel), statin therapy, blood pressure control, and glucose management address the underlying disease and reduce cardiac and cerebrovascular event risk.
+
+      *Pharmacological:* Cilostazol, a phosphodiesterase inhibitor with vasodilatory properties, modestly increases pain-free walking distance.
+
+      *Neuromodulatory:* Spinal cord stimulation significantly improves rest pain, tissue perfusion, and quality of life in patients with severe limb ischaemia who are not candidates for vascular reconstruction.
+
+      *Vascular intervention:* Percutaneous transluminal angioplasty (with or without stenting) or surgical bypass restores blood flow for patients with lifestyle-limiting claudication unresponsive to exercise and medical therapy.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Supervised exercise programme and vascular rehabilitation"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2021/02/atherosclerosis-289x300-1.gif)
-
-Claudication is pain caused by too little blood flow to muscles during exercise. Most often this pain occurs in the legs after walking at a certain pace and for a certain amount of time — depending on the severity of the condition.
-
-The condition is also called intermittent claudication because the pain usually isn’t constant. It begins during exercise and ends with rest. As claudication worsens, however, the pain may occur during rest.
-
-Claudication is technically a symptom of disease, most often peripheral artery disease, a narrowing of arteries in the limbs that restricts blood flow.
-
-Treatments focus on lowering the risks of vascular disease, reducing pain, increasing mobility and preventing damage to tissues.
-
-## **Symptoms**
-
-Claudication refers to muscle pain due to lack of oxygen that’s triggered by activity and relieved by rest. Symptoms include the following:
-
--   Pain, ache, discomfort or fatigue in muscles every time you use those muscles
--   Pain in the calves, thighs, buttocks, hips or feet
--   Less often, pain in shoulders, biceps and forearms
--   Pain that gets better soon after resting
-
-The pain may become more severe over time. You may even start to have pain at rest.
-
-Signs or symptoms of peripheral artery disease, usually in more-advanced stages, include:
-
--   Cool skin
--   Severe, constant pain that progresses to numbness
--   Skin discoloration
--   Wounds that don’t heal
-
-## **Causes**
-
-Claudication is most often a symptom of peripheral artery disease. The peripheral arteries are the large vessels that deliver blood to the network of vessels in your legs and arms.
-
-Peripheral artery disease is damage to an artery that restricts the flow of blood in an arm or leg (a limb). When you’re at rest, the limited blood flow is generally still enough. When you’re active, however, the muscles aren’t getting enough oxygen and nutrients to work well and remain healthy.
-
-Damage to peripheral arteries is usually caused by atherosclerosis. This is the buildup of cholesterol and other fats, blood cells, and other cellular debris into abnormal structures (plaques) on the lining of an artery.
-
-Plaques cause a narrowing and stiffening of the artery, limiting the flow of blood. If the plaques rupture, a blood clot can form, further reducing blood flow.
-
-## **Risk factors**
-
-The risk factors for peripheral artery disease and claudication include the following:
-
--   Smoking
--   High cholesterol
--   High blood pressure
--   Obesity (a body mass index, or BMI, over 30)
--   Diabetes
--   Chronic kidney disease
--   Age older than 70 years
--   Age older than 50 years if you also smoke or have diabetes
--   A family history of atherosclerosis, peripheral artery disease or claudication
-
-## **Complications**
-
-Claudication is generally considered a warning of significant atherosclerosis in the circulatory system, indicating an increased risk of heart attack or stroke. Additional complications of peripheral artery disease due to atherosclerosis include:
-
--   Skin lesions that don’t heal
--   Death of muscle and skin tissues (gangrene)
--   Amputation of a limb
-
-## **Treatment**
-
-The goals of treating claudication and peripheral artery disease are to reduce pain and manage the risk factors that contribute to vascular disease.
-
-### Exercise
-
-Exercise reduces pain, increases exercise duration, improves vascular health in the affected limbs, and contributes to weight management and an overall improvement in your quality of life.
-
-Recommended walking programs include:
-
--   Walking until you feel moderate pain
--   Resting to relieve pain
--   Walking again
--   Repeating the walk-rest-walk cycle for 30 to 45 minutes
--   Walking three or more days a week
-
-Supervised exercise is recommended for beginning the treatment, but long-term exercise at home is important for ongoing disease management.
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[SpineMED® system](/services/chiropractic/spinmed/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-**Neurons stimulation**
-
-[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
-
-[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)
-
-[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)
-
-[Steroid injection](/services/steroid-injection/)
-
--   [Trigger point injections](/services/steroid-injection/trigger-point/)
--   [Epidural steroid injections](/services/steroid-injection/spinal/)
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Magnatic therapy](/services/physiotherapy/magnetic-field-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic

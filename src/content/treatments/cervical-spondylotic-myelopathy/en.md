@@ -1,98 +1,82 @@
 ---
-title: "Cervical Spondylotic Myelopathy"
-description: "Summary Cervical= having to do with the spine in the neck Spondylotic= having to do with spinal degeneration Myelopathy= damage"
+title: "Cervical spondylotic myelopathy"
+description: "The most common cause of spinal cord dysfunction in adults over 55 — age-related degeneration of the cervical spine compresses the spinal cord, producing progressive weakness, numbness, and gait disturbance in the arms and legs. Treated with decompressive surgery when neurological function is at risk, supported by non-surgical rehabilitation."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/cervical-spondylotic-myelopathy/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Spinal cord damage (myelopathy) caused by age-related degeneration (spondylosis) of the cervical spine — the bones, discs, and ligaments of the neck. Degenerative changes narrow the spinal canal, compressing the spinal cord. The most common spinal disorder in adults over 55. Affects the nerve fibres transmitting signals to the arms, hands, and legs."
+      - label: "Symptoms"
+        value: "Numbness and clumsiness of the hands; arm and hand weakness; leg stiffness and a broad-based, unsteady gait ('walking like a robot'); loss of balance; urinary urgency. Neck pain may be present but is often minor. Symptoms may worsen rapidly then plateau, or progress slowly and steadily. Severe compression can cause significant disability."
+      - label: "Approach"
+        value: "Mild or stable cases may be managed non-surgically with physiotherapy, cervical collar protection, and pain-directed interventions (pulsed radiofrequency, steroid injections, spinal cord stimulation). Progressive neurological deficits or significant cord compression require surgical decompression — anterior discectomy and fusion, or posterior laminectomy/laminoplasty — to halt deterioration and allow partial recovery."
+  - type: prose
+    heading: "What cervical spondylotic myelopathy is"
+    body: |
+      Cervical spondylotic myelopathy (CSM) is compression and injury of the spinal cord at the neck level, caused by degenerative changes in the cervical spine. It is the most common cause of spinal cord dysfunction in adults over 55 in developed countries.
+
+      **Anatomy and mechanism**
+
+      The spinal cord runs from the base of the brain down through the spinal canal — a protective bony tube formed by the vertebrae. It is surrounded by a few millimetres of cerebrospinal fluid that cushions it from normal movement.
+
+      With age, the cervical intervertebral discs lose height and may bulge; bone spurs (osteophytes) form on the vertebral endplates and facet joints; and the posterior longitudinal ligament and ligamentum flavum may thicken and buckle. These changes progressively narrow the spinal canal (*stenosis*), encroaching on the fluid-filled buffer around the cord. When the canal is narrow enough, the cord itself is compressed — disrupting the delicate nerve fibres that transmit motor and sensory signals to the arms, hands, and legs.
+
+      **Risk factors and natural history**
+
+      CSM is primarily a condition of ageing. It is more common in men and in individuals with a constitutionally narrow spinal canal. The rate of progression is unpredictable — some patients deteriorate rapidly, others experience prolonged periods of stability, and a minority improve spontaneously. Trauma (even minor) can precipitate acute worsening in patients with pre-existing stenosis.
+
+      **Diagnosis**
+
+      MRI is the investigation of choice, demonstrating cord compression and any signal change within the cord (indicating established injury). CT myelography is used when MRI is contraindicated. Neurophysiological studies (nerve conduction studies, somatosensory evoked potentials) can quantify functional deficit.
+
+      **Non-surgical management**
+
+      For mild or stable CSM without severe cord signal change:
+      - Cervical collar to limit extreme flexion or extension
+      - Physiotherapy: cervical stabilisation exercises, balance training, gait rehabilitation
+      - Pain management: epidural steroid injections, pulsed radiofrequency for radicular pain, spinal cord stimulation for refractory pain
+      - Close neurological monitoring — surgery is indicated if deterioration occurs
+
+      **Surgical decompression**
+
+      The primary goal of surgery is to relieve pressure on the spinal cord and prevent further neurological decline. Partial recovery of cord function is possible, particularly when surgery is performed before advanced cord damage has occurred, but the degree of recovery is difficult to predict.
+
+      Surgical approach depends on the level and pattern of compression, disc versus bony disease, cervical alignment, and other patient factors:
+      - *Anterior approaches:* anterior cervical discectomy and fusion (ACDF); anterior cervical corpectomy and fusion — used when compression is primarily from the front (disc, osteophyte)
+      - *Posterior approaches:* cervical laminectomy; laminectomy and fusion; laminoplasty — used for multilevel disease or predominantly posterior compression
+      - *Combined anterior-posterior:* for severe multilevel disease or kyphotic deformity requiring realignment
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Cervical stabilisation, balance, and gait rehabilitation"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-### **Summary**
-
-**Cervical**\= having to do with the spine in the neck  
-**Spondylotic**\= having to do with spinal degeneration  
-**Myelopathy**\= damage to the spinal cord
-
-Cervical spondylotic myelopathy is damage to the spinal cord in the neck.
-
-The spinal cord begins at the base of the brain and runs down through the spinal canal, an enclosed tube made of bones, cartilage and ligament tissue of the spine. The spinal cord transmits electrochemical signals between the brain and the body. The spinal cord is surrounded by a few millimeters of fluid-filled space, which helps to protect it from trauma and allows flexibility without injury to the spinal cord.
-
-*Myelopathy*, or damage to the spinal cord, can occur for a number of reasons. The most common cause of myelopathy is when the spinal cord is compressed, or squeezed. This compression disrupts normal nerve transmission. Arthritis of the spine, or *spondylosis* is the most common reason the spinal cord is compressed.
-
-*Spondylosis* refers to degenerative, or age-related, changes in the spine. These changes include disc degeneration, bone spurs, and thickened ligaments.
-
-*Cervical spondylotic myelopathy*, therefore, is *myelopathy* (spinal cord damage) caused by *spondylosis* (degeneration) in the *cervical spine* (neck). It affects the fibers of the spinal cord that transmit impulses to the arms, hands, and legs. As a result, it can cause weakness, numbness, tingling, or rarely, pain in these areas.
-
-### **Symptoms**
-
-The symptoms of cervical spondylotic myelopathy depend on the level(s) of the spinal cord that are involved and the pattern of the involvement.
-
-Symptoms may include:
-
--   numbness of the hands
--   clumsiness of the hands
--   arm and/or hand weakness
--   leg stiffness (“walking like a robot”)
--   loss of balance
--   urinary urgency
--   neck pain–may be present but is not usually a significant complaint
-
-The timing of the appearance of symptoms and progression varies from person to person. The rate of progression of symptoms may also change over time. Symptoms may progress rapidly for a period of time and then enter a period of stability. Alternatively, the symptoms may progress slowly but steadily.
-
-### **Causes and Risk Factors**
-
-Cervical spondylotic myelopathy is caused by *spondylosis*, or age-related degeneration. In fact, cervical spondylotic myelopathy is the most common spinal disorder in Americans over 55 years of age. Common degenerative changes include bone spurs (osteophytes), disc bulges, and thickened ligaments. These changes may narrow the spinal canal, encroaching on the fluid-filled space around the spinal cord. Eventually this stenosis, or narrowing, can impinge on the spinal cord itself. The resulting compression (squeezing) damages the delicate fibers of the spinal cord.
-
-### **Treatments**
-
-Non surgical treatment, At Alimran Medical Center, we may recommend any of the following treatments:
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [SpineMED® system](/services/chiropractic/spinmed/)
--   [Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
--   Transforaminal injections
-
-Ozone injection
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-Prolotherapy
-
-Spinal cord stimulation
-
-Surgical treatment
-
-The primary treatment of cervical spondylotic myelopathy is to decompress the spinal cord (remove the pressure from it). The surgery is performed to prevent the progression of symptoms. In other words, the goal of surgery is simply to prevent symptoms from getting any worse. Damage that has occurred in the spinal cord itself can heal, but it is impossible to predict the degree of healing. The prognosis is different in every case.
-
-The surgeon may perform surgery from the front of the neck, which is called an anterior approach. These surgical procedures may include the following:
-
--   anterior cervical discectomy and fusion
--   anterior cervical corpectomy
-
-In other situations, the surgeon may perform surgery from the back of the neck, which is called a posterior approach. These surgical procedures may include the following:
-
--   cervical laminectomy
--   cervical laminectomy and fusion
--   cervical laminoplasty
-
-In some cases, the surgeon may perform surgery using both an anterior and a posterior approach.
-
-The surgeon will provide information on the available surgical procedures and will tailor the treatment to each patient and case.

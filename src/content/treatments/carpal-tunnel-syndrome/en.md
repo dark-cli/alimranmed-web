@@ -1,78 +1,66 @@
 ---
-title: "Carpal Tunnel Syndrome"
-description: "What Is Carpal Tunnel Syndrome? Carpal tunnel syndrome is the compression of the median nerve as it passes into the"
+title: "Carpal tunnel syndrome"
+description: "Compression of the median nerve as it passes through the carpal tunnel in the wrist, causing numbness, tingling, and weakness in the thumb and first three fingers. More common in women aged 30–60. Treated with splinting, physiotherapy, steroid injections, and in severe cases surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/carpal-tunnel-syndrome/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Compression of the median nerve as it passes through the carpal tunnel in the wrist. The median nerve supplies sensation to the thumb, index, middle, and part of the ring finger, and controls thumb muscles."
+      - label: "Symptoms"
+        value: "Numbness, tingling, and pain in the thumb and first three fingers. Wrist pain at night that disrupts sleep. Weakness and clumsiness of the hand. Symptoms often worsen with prolonged wrist use."
+      - label: "Approach"
+        value: "Wrist splinting, activity modification, and treatment of underlying conditions. Steroid injections, physiotherapy, and radiofrequency for persistent symptoms. Untreated carpal tunnel syndrome can cause permanent nerve damage and loss of hand function."
+  - type: prose
+    heading: "What carpal tunnel syndrome is"
+    body: |
+      The carpal tunnel is a narrow passageway on the palm side of the wrist, bounded by bones and the transverse carpal ligament. The median nerve and nine flexor tendons pass through this tunnel. When the tunnel narrows or its contents swell, the median nerve is compressed — causing the characteristic symptoms of carpal tunnel syndrome (CTS).
+
+      **The median nerve** supplies sensation to the thumb, index, middle finger, and the thumb-side half of the ring finger. It also controls the thenar muscles that power thumb movement. Compression impairs both sensation and grip strength.
+
+      **Causes and risk factors:**
+      - Medical conditions causing wrist swelling: diabetes, thyroid dysfunction, rheumatoid arthritis, fluid retention in pregnancy or menopause, hypertension
+      - Repetitive wrist movements: typing, assembly line work, carpentry, use of vibrating tools, playing keyboard instruments
+      - Poor wrist positioning at the keyboard or mouse
+      - Women are three times more likely than men to develop CTS; most common between ages 30 and 60
+      - Lifestyle factors: smoking, high salt intake, sedentary lifestyle, high BMI, wrist fractures
+
+      **Symptoms:**
+      - Numbness, tingling, and pain in the thumb, index, middle, and part of the ring finger
+      - Burning pain that radiates up the arm
+      - Wrist pain at night, waking from sleep; hands "fall asleep"
+      - Weakness in the hand — dropping objects; reduced pinch and grip strength
+
+      **Untreated CTS** can progress to permanent nerve damage, persistent weakness, and permanent loss of hand function.
+
+      First-line management includes wrist splinting (especially at night), avoidance of aggravating activities, and treatment of any underlying medical condition. When these measures fail, injection therapies and physiotherapy are the next steps. Surgery (carpal tunnel release) is reserved for severe or persistent cases.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "Trigger point injections"
+          - "Carpal tunnel steroid injections"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Nerve gliding and strengthening exercises"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-What Is Carpal Tunnel Syndrome?
-
-Carpal tunnel syndrome is the compression of the median nerve as it passes into the hand. The median nerve is located on the palm side of your hand (also called the carpal tunnel). The median nerve provides sensation (ability to feel) to your thumb, index finger, long finger, and part of the ring finger. It supplies the impulse to the muscle going to the thumb. Carpal tunnel syndrome can occur in one or both of your hands.
-
-Swelling inside your wrist causes the compression in carpal tunnel syndrome. It can lead to numbness, weakness, and tingling on the side of your hand near the thumb.
-
-What Causes Carpal Tunnel Syndrome?
-
-The pain in your carpal tunnel is due to excess pressure in your wrist and on the median nerve. Inflammation can cause swelling. The most common cause of this inflammation is an underlying medical condition that causes swelling in the wrist, and sometimes obstructed blood flow. Some of the most frequent conditions linked with carpal tunnel syndrome are:
-
--   diabetes
--   thyroid dysfunction
--   fluid retention from pregnancy or menopause
--   high blood pressure
--   autoimmune disorders such as rheumatoid arthritis
--   fractures or trauma to the wrist
-
-Carpal tunnel syndrome can be made worse if the wrist is overextended repeatedly. Repeated motions of your wrist contribute to swelling and compression of the median nerve. Problems include:
-
--   poor positioning of your wrists while using your keyboard or mouse
--   prolonged exposure to vibrations from using hand tools or power tools
--   any repeated movement that overextends your wrist, such as playing the piano or typing
-
-**Symptoms**
-
-Who Is at Risk for Carpal Tunnel Syndrome?
-
-Women are three times more likely to have carpal tunnel syndrome than men. Carpal tunnel syndrome is most frequently diagnosed between the ages of 30 and 60. Certain conditions increase your risk for developing carpal tunnel syndrome, including diabetes, high blood pressure, and arthritis.
-
-Lifestyle factors that may increase the risk for carpal tunnel syndrome include smoking, high salt intake, sedentary lifestyle, and a high body mass index (BMI).
-
-Jobs that involve repetitive wrist movement include manufacturing, assembly line work, keyboarding occupations, and construction work. People employed in these occupations may be at higher risk of developing carpal tunnel syndrome.
-
-**Treatment**
-
-Treatment of carpal tunnel syndrome depends on how severe your pain and symptoms are and if there is weakness.
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [SpineMED® system](/services/chiropractic/spinmed/)
--   [Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
--   Transforaminal injections
-
-Ozone injection
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-Prolotherapy
-
-Untreated carpal tunnel syndrome can lead to permanent nerve damage, disability, and loss of hand function.

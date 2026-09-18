@@ -1,87 +1,87 @@
 ---
-title: "Sports Injuries"
-description: "Sports injuries, along with back and neck pain form the largest client base in our clinics. In recent years, we"
+title: "Sports injuries"
+description: "A broad category of musculoskeletal injuries sustained during sport or exercise — from hamstring strains and Achilles tendinopathy to ACL tears, stress fractures, and tennis elbow. Most respond to physiotherapy and targeted interventions; severe ligament or tendon ruptures may require surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/sports-injuries/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Injuries to muscles, tendons, ligaments, cartilage, or bone arising from athletic activity. Includes acute traumatic injuries (ACL tear, shoulder dislocation, hamstring rupture) and overuse injuries (Achilles tendinopathy, stress fractures, shin splints, tennis elbow, patellofemoral pain). Common at every level from recreational runners to competitive athletes."
+      - label: "Symptoms"
+        value: "Vary by injury: sharp pain at the moment of injury or gradual onset with overuse; localised tenderness, swelling, or bruising; reduced range of motion or strength; clicking, popping, or instability at the affected joint. Overuse injuries often cause pain at the start of exercise that eases with warm-up, then returns after activity."
+      - label: "Approach"
+        value: "Acute phase: RICE (Rest, Ice, Compression, Elevation) plus protection of the injured area. Physiotherapy is the cornerstone — restoring strength, flexibility, proprioception, and sport-specific movement patterns. Targeted interventions (prolotherapy, ozone, pulsed radiofrequency, Botox) address chronic tendinopathy and ligament laxity. Surgical repair for complete tendon or ligament ruptures."
+  - type: prose
+    heading: "Common sports injuries"
+    body: |
+      Sports injuries span a spectrum from minor muscle strains that resolve in days to complete ligament ruptures requiring surgical reconstruction. Understanding the nature of the injury guides treatment and determines realistic return-to-sport timelines.
+
+      **Hamstring strain and rupture**
+
+      Hamstring injuries typically occur during sprinting, jumping, or lunging — the athlete feels a sharp pain at the back of the thigh. Minor strains heal in 1–2 weeks; complete ruptures may take months and occasionally require surgery. Re-injury is common, making it essential to identify contributing factors (hip weakness, muscle imbalance) and correct them before return to sport.
+
+      **Achilles tendinopathy**
+
+      The Achilles tendon — the thickest in the body — is vulnerable in runners, especially after a rapid increase in training load or change in footwear. Pain is initially felt after activity; in advanced cases it persists during exercise. Progressive eccentric strengthening exercises are central to recovery. Addressing predisposing biomechanical factors (over-pronation, calf tightness) reduces recurrence.
+
+      **Shin splints (medial tibial stress syndrome)**
+
+      Pain along the inner tibia, typically sore at the start of exercise but easing with warm-up — only to return after training and worsen the next day. Over-pronation and tight calf muscles are common contributors. Treatment includes calf stretching, trigger point release, orthotic correction of foot mechanics, and activity modification.
+
+      **Stress fractures**
+
+      Bone remodels continuously in response to mechanical load. When stress exceeds the bone's repair capacity, a stress fracture develops. Common sites: tibia, metatarsals, fibula, femur, and pelvis. X-rays are often normal early; MRI is more sensitive. Treatment begins with relative rest to allow healing, progressing to graduated loading once pain-free.
+
+      **Patellofemoral pain syndrome (jumper's knee)**
+
+      Pain in or around the kneecap, aggravated by sustained sitting, stair climbing, squatting, and running. Traditionally attributed to patellar malalignment, but hip weakness, femoral rotation, and poor foot mechanics are major contributing factors. Treatment targets all contributing variables — hip strengthening, VMO activation, and footwear or orthotic correction.
+
+      **ACL tear**
+
+      The anterior cruciate ligament is commonly torn during landing, pivoting, or sudden deceleration — often with an audible pop and immediate instability. Complete tears generally require surgical reconstruction, particularly in active individuals. Pre-operative physiotherapy to maintain range of motion and quad strength shortens post-operative recovery. Return to sport typically takes 6–9 months after reconstruction.
+
+      **Meniscal injuries**
+
+      Meniscal tears occur when the knee twists with the foot planted — common in football and basketball. The knee may swell and click. Most partial tears respond well to physiotherapy; severe tears causing locking or persistent mechanical symptoms may need arthroscopic surgery. Rehabilitation focuses on swelling control, range of motion, and graduated strengthening.
+
+      **Tennis elbow (lateral epicondylalgia)**
+
+      An overuse injury of the common extensor tendon at the lateral elbow — not limited to tennis players. Repetitive wrist extension (typing, painting, gardening) is a common trigger. Manual therapy and dry needling improve pain and grip strength. Eccentric strengthening exercises are key to durable recovery and preventing recurrence.
+
+      **Shoulder dislocation**
+
+      Traumatic anterior dislocation usually results from a fall or forced external rotation. After reduction in hospital and a protective sling phase, structured physiotherapy rebuilds rotator cuff and scapular control to prevent re-dislocation. Athletes with recurrent instability may require stabilisation surgery before returning to contact sports.
+
+      **Prevention and conditioning**
+
+      Many sports injuries are preventable. A proper warm-up, progressive training load, neuromuscular conditioning, and addressing prior injuries significantly reduce risk. Athletes returning to sport after injury should meet objective strength and movement criteria — not just symptom resolution — before resuming full training.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Steroid injection"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Stretching, strengthening, and sports rehabilitation"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/assets/images/images-2-300x167.jpg)
-![](/assets/images/تنزيل-3.jpg)
-![](/assets/images/تنزيل-5.jpg)
-![](/assets/images/تنزيل-2.jpg)
-![](/assets/images/2EEA703C-6BFC-4207-844F-3C8A5B652BE0-231x300.gif)
-![](/assets/images/تنزيل-1.jpg)
-![](/assets/images/تنزيل.jpg)
-
-Sports injuries, along with back and neck pain form the largest client base in our clinics. In recent years, we have noticed a dramatic increase in people taking up sports, running and boot-camp style exercises classes. Unfortunately, this has lead to an associated increase in sporting injuries. It is important to make sure you are ready to get fit! If you have not been overly active and have been spending a lot of time sitting at desks, driving or leading a more sedentary lifestyle, it is important to visit a physiotherapist before you enter into an exercise regime. We try to educate out patients on the importance of proper body conditioning and maintenance to prevent injury enabling them to enjoy their exercise activities to the full!
-
-**Hamstring strain and ruptures**
-
-Hamstring injuries are very common in sport and often happen when the athlete is sprinting or occasionally with jumping or lunging. The athlete will often feel a sharp, pain in the back of the leg. Hamstring injuries range from minor strains that will heal in about 10 days to complete ruptures that can take months to heal. The physiotherapist will prescribe you an exercise programmer to strengthen your hamstrings. As this is, an injury that tends to re-occur the most important aspect of treatment is to identify factors, which contributed to the injury occurring such as weak hip muscles, and correct these.
-
-**Achilles tendinopathy**
-
-The Achilles tendon is the thickest and strongest tendon in the human body. It is the tendon of the calf muscles and inserts into the heel bone. Achilles tendinopathy is common in runners especially following an increase in activity or a change in footwear. Initially the Achilles tendon will be painful following activity. As the condition worsens, the Achilles will then be sore during activity as well. Progressive strengthening exercises have been shown to be beneficial for treating Achilles tendinopathy. As well as this correcting any predisposing factors such as poor foot, biomechanics is also really important.
-
-**Shin splints or Medial Tibia Stress Syndrome (MTSS)**
-
-The term shin splints describe pain on the inside of the tibia or shin bone, which is usually sore at the start of exercise but decreases with warming up. Often training can be completed but the pain will come back at the end of training and will be worse the next day. Over-pronation of the foot or a "flattened arch" and tightness in the calf muscles are common cause of this type of injury. Treatment can involve addressing tightness in the calf muscles with stretches and manual release of trigger points of the lower leg muscles. Correction of poor foot mechanics by insertion of an orthotic is important in addition to strengthening for the muscles of the foot and activity modification.
-
-**Stress Fractures**
-
-Bones are constantly remodeling and repairing due to stress placed on them during activity. If the stress placed on the bone with sporting activities for example, exceeds the bones ability to heal this can lead to the development of a weakened area or stress fracture. Common sites of stress fractures include the tibia (shin bone), metatarsals (foot), fibula (shin), femur (thigh bone) and pelvis. Stress fractures often will not show up on X-ray, but sometimes an X-ray will be recommended to rule-out any other causes of bony tenderness. Treatment normally involves an initial period of rest to allow the bone to heal. Strengthening exercises can then be commenced. These should be done within pain free range to avoid aggravating the condition.
-
-**Jumpers knee or Patellofemoral Pain Syndrome**
-
-Patellofemoral pain syndrome describes pain in or around the knee cap (patella). The pain is aggravated by sustained sitting, kneeling, ascending or descending stairs, squatting, walking or running. The pain normally comes on gradually. Traditionally the pain was believed to originate from misalignment of the patella but many factors such as weak hip muscles, rotation at the hip and poor foot biomechanics are involved. Treatment includes identification of any factors that have contributed to development of the condition and correction of these.
-
-**ACL tears**
-
-ACL or Anterior Cruciate Ligament tears can happen when an athlete is landing from a jump, blocking a kick, turning or slowing down quickly. Often this may be accompanied by a pop or crack. If it is a complete tear, often surgery is required to repair the ligament. But even if surgery is required it is worth visiting you physiotherapist before surgery to help with pain relief, maintaining your movement and strengthening the muscles around the knee as they begin to weaken within the first 24 hours of pain. Your physiotherapist will also be instrumental after the operation to guide your rehabilitation and return to sport. This can take 6-9 months post-operatively.
-
-**Meniscal injuries**
-
-Meniscal injuries or injuries to the cartilage of the knee occur commonly when the knee twists with the foot anchored to the ground. This injury is common in footballers and basketballers. These injuries can occur with/without an injury to the cruciate ligament. The knee may be swollen and may click. For severe meniscal injuries, keyhole surgery may be indicated but the majority do well with physiotherapy management. Physiotherapy is focused on relieving pain, getting rid of swelling, working on range of movement, strengthening exercises and a gradual return to sport.
-
-**Tennis Elbow**
-
-Tennis elbow or lateral epicondylalgia is an overuse injury of the tendons of the elbow. It normally comes on after a bout of unaccustomed activity involving wrist movement such as typing, painting or gardening. In tennis players, it may happen after changing grip size, increasing playing times and performing repetitive backhand shots. Manual treatment of the joint around the elbow and dry needling has been shown to be successful in improving pain and grip strength in tennis elbow. Strengthening exercises are also really important in improving strength and preventing reoccurrence of the injury.
-
-**Dislocated shoulder**
-
-Dislocation of the shoulder is a common traumatic sports injury. It can occur from a direct blow to the shoulder or if the arm is forced back when it is out to the side. It will require a visit to the hospital to be relocated. Following this, the arm is usually placed in a sling for about 3 weeks. An intensive physiotherapy programmer is then commenced and advice will be given about position that could cause the shoulder to re-dislocate. Gradual return to sport will follow.
-
-Treatment
-
-At Alimran Medical Center, we may recommend any of the following treatments:
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [SpineMED® system](/services/chiropractic/spinmed/)
--   [Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
--   Transforaminal injections
-
-Ozone injection
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-Prolotherapy

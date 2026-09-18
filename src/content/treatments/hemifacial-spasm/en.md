@@ -1,43 +1,49 @@
 ---
-title: "Hemifacial Spasm"
-description: "Hemifacial Spasm is a neurological condition in which the muscles on one side of the face begin to involuntarily twitch"
+title: "Hemifacial spasm"
+description: "A neurological condition causing involuntary muscle twitching on one side of the face, typically from pressure on the facial nerve. Managed with Botox injections, rTMS, physiotherapy, and rarely surgery."
 category: "motor"
 order: 999
 legacyUrl: "https://alimranmed.com/hemifacial-spasm/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A neurological condition in which muscles on one side of the face involuntarily twitch or contract. More common in middle-aged to elderly women."
+      - label: "Common cause"
+        value: "Pressure on the facial nerve — most often from an enlarged blood vessel near the brainstem, less commonly from a tumour."
+      - label: "Approach"
+        value: "Botox injections are the primary treatment. rTMS, physiotherapy, and pulsed radiofrequency are added as needed. Surgery (microvascular decompression) is reserved for refractory cases."
+  - type: prose
+    heading: "What hemifacial spasm is"
+    body: |
+      Hemifacial spasm is a neurological condition in which the muscles on one side of the face begin to involuntarily twitch or contract. Intensity varies widely among patients. It occurs in both men and women but most commonly affects middle-aged to elderly women.
+
+      The two facial nerves emerge directly from the brainstem and enter the face just in front of the ear — one nerve on each side — controlling the muscles of facial expression. Hemifacial spasm typically arises when one of these nerves is irritated by pressure or injury.
+
+      **Causes:** The most common cause is an enlarged blood vessel pressing on the nerve at its exit from the brainstem. Less frequently, a tumour may cause the pressure. In some cases, no identifiable cause is found.
+
+      **Symptoms:** Symptoms usually begin with mild, intermittent twitching of one eyelid and may progress to involve the lower face. In more severe cases, intense and continuous muscle spasms spread across the entire affected side.
+
+      **Prognosis:** Outcomes vary with severity. Some patients are managed successfully with minimal intervention; others require multiple treatment modalities. Ongoing treatment to suppress muscle spasms may be needed in persistent cases.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "First-line treatment"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Therapeutic exercises"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
 ---
-
-Hemifacial Spasm is a neurological condition in which the muscles on one side of the face begin to involuntarily twitch or contract. The intensity of this condition can vary widely and while it occurs in both men and women, it more commonly affects middle-aged to elderly women.
-
-Causes  
-Usually hemifacial spasm is caused by some kind of injury to or pressure on the facial nerve. There are two facial nerves that come directly off of the brain stem and enter the face just in front of the ear. One on each side, these nerves control the muscles of facial expression.  
-One common cause of pressure on the facial nerve is the presence of an enlarged blood vessel. More rarely, a tumor can be the cause of the pressure.  
-In some cases, no apparent cause can be determined.  
-Symptoms  
-Symptoms include involuntary muscle spasms or twitching of the muscles, usually on just one side of the face. Symptoms often begin with mild intermittent twitching of one eyelid and may progress to the lower face. In more severe cases, this then progresses to more intense and continuous muscle spasms on one whole side of the face.  
-Treatment  
-The first line of treatment is usually drug therapy to relax muscles. This can be by way of oral medications such as clonazepam, diazepam, and levodopa or via injections into the muscles with botox. In cases that are not adequately controlled with [botox injections](/services/botox/), a surgical procedure,microvascular decompression, is often considered.
-
-At Alimran Medical Center, we may recommend other of the following treatments:
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [Sigma](/services/chiropractic/sigma/)
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Acupuncture](/services/acupuncture/)
-
-Prolotherapy
-
-[Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)  
-Prognosis  
-The prognosis for each patient varies according to the severity of the condition. Some patients are successfully managed with minimal intervention. Others require more than one form of treatment before they are free of the condition. Still others, may continue to require ongoing treatment to relieve their muscle spasms.

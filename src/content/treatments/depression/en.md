@@ -1,71 +1,70 @@
 ---
-title: "Depression (major depressive disorder)﻿"
-description: "Depression is a mood disorder that causes a persistent feeling of sadness and loss of interest. Also called major depressive"
+title: "Depression (major depressive disorder)"
+description: "A mood disorder causing persistent sadness, loss of interest, and reduced ability to function. Affects how a person feels, thinks, and behaves. Responds well to medication, psychotherapy, and neuromodulation including rTMS — a non-drug option particularly valuable when medications fail."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/depression-major-depressive-disorder%ef%bb%bf/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A clinical mood disorder characterised by persistent low mood, loss of interest or pleasure in activities, and a range of cognitive, physical, and emotional symptoms that impair daily functioning. Not a character weakness — a medical condition with effective treatments."
+      - label: "Symptoms"
+        value: "Persistent sadness or emptiness, loss of interest in usual activities, sleep disturbances, fatigue, appetite changes, difficulty concentrating, feelings of worthlessness or guilt, and recurrent thoughts of death. Symptoms must persist for at least two weeks and cause meaningful impairment."
+      - label: "Approach"
+        value: "Antidepressant medications and psychotherapy remain the foundation. rTMS (repetitive transcranial magnetic stimulation) and tDCS are effective non-pharmacological options — particularly valuable when medications are ineffective or not tolerated. Most patients achieve good outcomes with appropriate treatment."
+  - type: prose
+    heading: "What depression is"
+    body: |
+      Major depressive disorder (MDD) is a clinical mood disorder characterised by persistent episodes of low mood, loss of interest or pleasure in activities, and a constellation of cognitive, physical, and emotional symptoms that together cause meaningful impairment in daily life. It is one of the most common mental health conditions worldwide, and one of the leading causes of disability. Depression is not a weakness or a character flaw — it is a medical condition with a well-understood neurobiological basis and effective treatments.
+
+      **Who is affected:** Depression can occur at any age, affecting children, adolescents, adults, and older people. It is twice as common in women as in men. Most people experience multiple episodes over their lifetime.
+
+      **Symptoms** — during a depressive episode, the following symptoms occur most of the day, nearly every day for at least two weeks:
+      - Persistent sadness, emptiness, or hopelessness
+      - Loss of interest or pleasure in most or all activities (anhedonia)
+      - Sleep disturbances: insomnia or excessive sleep
+      - Fatigue and loss of energy — even small tasks require disproportionate effort
+      - Changes in appetite and weight (either loss or gain)
+      - Psychomotor changes: slowing of thought, speech, and movement, or agitation
+      - Difficulty concentrating, making decisions, or remembering things
+      - Feelings of worthlessness, excessive guilt, or self-blame
+      - Recurrent thoughts of death, suicidal ideation, or suicide attempts
+
+      **Depression in children and teenagers:** Irritability, clinginess, unexplained physical complaints, declining school performance, social withdrawal, and substance use are common presentations. Sadness may be less prominent than in adults.
+
+      **Depression in older adults:** May present as memory difficulties, personality changes, physical aches, sleep problems, social withdrawal, and reduced appetite — often mistaken for normal ageing or physical illness.
+
+      **Types and specifiers:** Subtypes of depression include anxious depression, depression with melancholic features, atypical depression (mood reactivity, increased sleep and appetite), psychotic depression (with delusions or hallucinations), peripartum (postpartum) depression, and seasonal affective disorder.
+
+      **Untreated depression** is associated with significant personal and social costs — impaired relationships, reduced productivity, physical health deterioration, and increased mortality risk. With appropriate treatment, most people with depression improve substantially.
+
+      First-line treatments include antidepressant medications (SSRIs, SNRIs, and others) and evidence-based psychotherapies (cognitive behavioural therapy, interpersonal therapy). When medications are inadequate or not tolerated, neuromodulation — particularly rTMS — provides an effective, well-tolerated, drug-free alternative that is delivered in an outpatient setting.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Therapeutic exercise programme"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-Depression is a mood disorder that causes a persistent feeling of sadness and loss of interest. Also called major depressive disorder or clinical depression, it affects how you feel, think and behave and can lead to a variety of emotional and physical problems. You may have trouble doing normal day-to-day activities, and sometimes you may feel as if life isn’t worth living.
-
-More than just a bout of the blues, depression isn’t a weakness and you can’t simply “snap out” of it. Depression may require long-term treatment. But don’t get discouraged. Most people with depression feel better with medication, psychotherapy or both.
-
-## **Symptoms**
-
-Although depression may occur only once during your life, people typically have multiple episodes. During these episodes, symptoms occur most of the day, nearly every day and may include:
-
--   Feelings of sadness, tearfulness, emptiness or hopelessness
--   Angry outbursts, irritability or frustration, even over small matters
--   Loss of interest or pleasure in most or all normal activities, such as sex, hobbies or sports
--   Sleep disturbances, including insomnia or sleeping too much
--   Tiredness and lack of energy, so even small tasks take extra effort
--   Reduced appetite and weight loss or increased cravings for food and weight gain
--   Anxiety, agitation or restlessness
--   Slowed thinking, speaking or body movements
--   Feelings of worthlessness or guilt, fixating on past failures or self-blame
--   Trouble thinking, concentrating, making decisions and remembering things
--   Frequent or recurrent thoughts of death, suicidal thoughts, suicide attempts or suicide
--   Unexplained physical problems, such as back pain or headaches
-
-For many people with depression, symptoms usually are severe enough to cause noticeable problems in day-to-day activities, such as work, school, social activities or relationships with others. Some people may feel generally miserable or unhappy without really knowing why.
-
-### Depression symptoms in children and teens
-
-Common signs and symptoms of depression in children and teenagers are similar to those of adults, but there can be some differences.
-
--   In younger children, symptoms of depression may include sadness, irritability, clinginess, worry, aches and pains, refusing to go to school, or being underweight.
--   In teens, symptoms may include sadness, irritability, feeling negative and worthless, anger, poor performance or poor attendance at school, feeling misunderstood and extremely sensitive, using recreational drugs or alcohol, eating or sleeping too much, self-harm, loss of interest in normal activities, and avoidance of social interaction.
-
-### Depression symptoms in older adults
-
-Depression is not a normal part of growing older, and it should never be taken lightly. Unfortunately, depression often goes undiagnosed and untreated in older adults, and they may feel reluctant to seek help. Symptoms of depression may be different or less obvious in older adults, such as:
-
--   Memory difficulties or personality changes
--   Physical aches or pain
--   Fatigue, loss of appetite, sleep problems or loss of interest in sex — not caused by a medical condition or medication
--   Often wanting to stay at home, rather than going out to socialize or doing new things
--   Suicidal thinking or feelings, especially in older men
-
-### Types of depression
-
-Symptoms caused by major depression can vary from person to person. To clarify the type of depression you have, your doctor may add one or more specifiers. A specifier means that you have depression with specific features, such as:
-
--   **Anxious distress**— depression with unusual restlessness or worry about possible events or loss of control
--   **Mixed features**— simultaneous depression and mania, which includes elevated self-esteem, talking too much and increased energy
--   **Melancholic features**— severe depression with lack of response to something that used to bring pleasure and associated with early morning awakening, worsened mood in the morning, major changes in appetite, and feelings of guilt, agitation or sluggishness
--   **Atypical features**— depression that includes the ability to temporarily be cheered by happy events, increased appetite, excessive need for sleep, sensitivity to rejection, and a heavy feeling in the arms or legs
--   **Psychotic features**— depression accompanied by delusions or hallucinations, which may involve personal inadequacy or other negative themes
--   **Catatonia**— depression that includes motor activity that involves either uncontrollable and purposeless movement or fixed and inflexible posture
--   **Peripartum onset**— depression that occurs during pregnancy or in the weeks or months after delivery (postpartum)
--   **Seasonal pattern**— depression related to changes in seasons and reduced exposure to sunlight
-
-## **Treatment**
-
-Medications and psychotherapy are effective for most people with depression. At Alimran Medical Center, we may recommend any of the following treatments
-
-**Neurons stimulation**
-
-[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
-
-[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)

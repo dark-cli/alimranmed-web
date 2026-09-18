@@ -1,54 +1,67 @@
 ---
 title: "Temporal arteritis"
-description: "Giant cell arteritis is an inflammation of the lining of your arteries. Most often, it affects the arteries in your"
+description: "Giant cell arteritis (GCA) — a granulomatous inflammation of medium and large arteries, especially the superficial temporal arteries. Presents with severe temporal headache, scalp tenderness, jaw claudication, and vision loss. Closely associated with polymyalgia rheumatica (50% overlap). A medical emergency when visual symptoms are present: high-dose corticosteroids are started immediately to prevent permanent blindness."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/temporal-arteritis/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Giant cell arteritis (GCA), also called temporal arteritis, is a systemic vasculitis characterised by granulomatous inflammation of the walls of medium and large arteries — predominantly the superficial temporal, ophthalmic, posterior ciliary, and branches of the carotid and aorta. It affects almost exclusively adults over 50 (peak incidence 70–80 years). The inflamed vessel walls thicken and may occlude, leading to tissue ischaemia. The most feared complication is permanent visual loss from anterior ischaemic optic neuropathy."
+      - label: "Symptoms"
+        value: "New-onset, severe temporal headache — usually unilateral or bilateral, persistent, and often described as boring or throbbing. Scalp tenderness (combing hair is painful; temporal artery may feel nodular and non-pulsatile on examination). Jaw claudication — pain and fatigue on chewing, relieved by rest: a highly specific symptom. Visual disturbances: amaurosis fugax (transient loss of vision in one eye), diplopia, or sudden permanent visual loss in one or both eyes. Constitutional symptoms: fever, malaise, fatigue, and unintentional weight loss. Neck and shoulder girdle stiffness suggests coexisting polymyalgia rheumatica. Elevated ESR (often > 100 mm/hr) and CRP are characteristic."
+      - label: "Approach"
+        value: "GCA is a medical emergency when visual symptoms are present. High-dose prednisolone (40–60 mg/day, or 1 g IV methylprednisolone daily for 3 days if visual loss has already occurred) is started immediately — before biopsy results are available. Temporal artery biopsy (the gold standard) confirms the diagnosis but must not delay treatment. Tocilizumab (IL-6 inhibitor) is now approved as a steroid-sparing agent, reducing relapse rates and total steroid burden. Steroids are tapered over 1–2 years guided by symptoms and inflammatory markers. Annual imaging of the aorta screens for late aortic aneurysm."
+  - type: prose
+    heading: "What temporal arteritis is"
+    body: |
+      Giant cell arteritis is the most common form of systemic vasculitis in adults over 50. The name "temporal arteritis" reflects its predilection for the superficial temporal arteries, but GCA is a systemic disease affecting medium and large arteries throughout the body — including the aorta and its major branches.
+
+      **Pathophysiology**
+
+      Activated CD4+ T cells and macrophages infiltrate the arterial wall at the adventitia-media junction, forming granulomas containing multinucleated giant cells. Intimal hyperplasia narrows and may occlude the arterial lumen. In affected vessels, blood flow is reduced — in the ophthalmic and posterior ciliary arteries, this can lead to ischaemia of the optic nerve head (anterior ischaemic optic neuropathy), producing sudden, painless, permanent visual loss.
+
+      **Relationship with polymyalgia rheumatica (PMR)**
+
+      Polymyalgia rheumatica — bilateral aching and morning stiffness in the shoulder and hip girdles in patients over 50 — is present in approximately 50% of GCA patients. Conversely, about 15–20% of PMR patients have GCA. The two conditions share the same underlying inflammatory process. PMR responds to low-dose prednisolone (15–20 mg/day), which is insufficient to treat GCA; GCA always requires higher doses.
+
+      **Diagnosis**
+
+      The ACR classification criteria incorporate age ≥ 50, new headache, abnormal temporal artery on examination, elevated ESR, and biopsy findings. Temporal artery ultrasound (showing the "halo sign" from oedematous vessel walls) is increasingly used as a non-invasive alternative to biopsy, especially when bilateral and with high sensitivity. Temporal artery biopsy remains the gold standard, but a negative biopsy does not exclude GCA if clinical features are compelling.
+
+      **Treatment and monitoring**
+
+      *Corticosteroids* are the cornerstone — initiated immediately when GCA is suspected. Doses are gradually reduced over 1–2 years, but relapse is common; monitoring of symptoms, ESR, and CRP guides tapering. Side effects of prolonged corticosteroid use (osteoporosis, diabetes, hypertension, cataracts) require prophylaxis and monitoring.
+
+      *Tocilizumab* (subcutaneous, weekly or fortnightly) is approved as an adjunct, allowing faster steroid tapering and significantly reducing the relapse rate.
+
+      *Aortic surveillance* — GCA carries a lifetime risk of aortic aneurysm (especially thoracic aortic aneurysm) that may manifest years after the initial diagnosis. Annual chest imaging and periodic CT/ultrasound surveillance are recommended.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Shoulder and hip girdle rehabilitation"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2021/02/occipital-nerve-label-e1584509060138.png)
-
-Giant cell arteritis is an inflammation of the lining of your arteries. Most often, it affects the arteries in your head, especially those in your temples. For this reason, giant cell arteritis is sometimes called temporal arteritis.
-
-Giant cell arteritis frequently causes headaches, scalp tenderness, jaw pain and vision problems. Untreated, it can lead to blindness.
-
-Prompt treatment with corticosteroid medications usually relieves symptoms of giant cell arteritis and might prevent loss of vision. You’ll likely begin to feel better within days of starting treatment. But even with treatment, relapses are common.
-
-You’ll need to visit your doctor regularly for checkups and treatment of any side effects from taking corticosteroids.
-
-Symptoms
-
-The most common symptoms of giant cell arteritis are head pain and tenderness — often severe — that usually affects both temples. Head pain can progressively worsen, come and go, or subside temporarily.
-
-Generally, signs and symptoms of giant cell arteritis include:
-
--   Persistent, severe head pain, usually in your temple area
--   Scalp tenderness
--   Jaw pain when you chew or open your mouth wide
--   Fever
--   Fatigue
--   Unintended weight loss
--   Vision loss or double vision, particularly in people who also have jaw pain
--   Sudden, permanent loss of vision in one eye
-
-Pain and stiffness in the neck, shoulders or hips are common symptoms of a related disorder, polymyalgia rheumatica. About 50 percent of people with giant cell arteritis also have polymyalgia rheumatica.
-
-Complications
-
-Giant cell arteritis can cause serious complications, including:
-
--   Diminished blood flow to your eyes can cause sudden, painless vision loss in one or, rarely, both eyes. Loss of vision is usually permanent.
--   **Aortic aneurysm.**An aneurysm is a bulge that forms in a weakened blood vessel, usually in the large artery that runs down the center of your chest and abdomen (aorta). An aortic aneurysm might burst, causing life-threatening internal bleeding.
-
-Because this complication can occur even years after the diagnosis of giant cell arteritis, your doctor might monitor your aorta with annual chest X-rays or other imaging tests, such as ultrasound and CT.
-
--   This is an uncommon complication of giant cell arteritis.
-
-## Treatment
-
-The main treatment for giant cell arteritis consists of high doses of a corticosteroid drug such as prednisone. Because immediate treatment is necessary to prevent vision loss, your doctor is likely to start medication even before confirming the diagnosis with a biopsy.
-
-You’ll likely begin to feel better within a few days of beginning treatment. If you have visual loss before starting treatment with corticosteroids, it’s unlikely that your vision will improve. However, your unaffected eye might be able to compensate for some of the visual changes.
-
-You may need to continue taking medication for one to two years or longer. After the first month, your doctor might gradually begin to lower the dosage until you reach the lowest dose of corticosteroids needed to control inflammation.

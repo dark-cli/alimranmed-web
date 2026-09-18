@@ -1,79 +1,58 @@
 ---
-title: "Brain Abscess"
-description: "What is a brain abscess? A brain abscess is an infection in the brain that is encapsulated (confined within its"
+title: "Brain abscess"
+description: "A rare but life-threatening localised infection inside the brain, encapsulated within a pus-filled cavity. More common in children of school age. Requires immediate hospitalisation, surgical drainage, and antibiotics. Rehabilitation supports recovery of any neurological deficits."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/brain-abscess/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A rare, localised infection inside the brain in which bacteria or viruses form a pus-filled cavity. More common in children. Requires immediate hospitalisation and surgical drainage — a medical emergency."
+      - label: "Symptoms"
+        value: "In infants: fever, bulging fontanelle, irritability, projectile vomiting, seizures. In older children and adults: severe headache, nausea, personality changes, speech or walking difficulties, seizures."
+      - label: "Approach"
+        value: "Emergency medical and surgical treatment: IV antibiotics, surgical drainage to relieve intracranial pressure. After recovery: physiotherapy and speech therapy to regain strength and function."
+  - type: prose
+    heading: "What a brain abscess is"
+    body: |
+      A brain abscess is a localised infection inside the brain in which micro-organisms — most commonly bacteria — form a pus-filled cavity encapsulated within its own membranous wall. The expanding abscess raises intracranial pressure and can cause severe neurological damage if not treated urgently.
+
+      **Routes of infection:**
+      1. Spread from an infection elsewhere in the body (most common) — including chronic middle ear or sinus infections, dental or jaw infections, face or scalp infections
+      2. Blood-borne spread from the lungs or chest
+      3. Direct entry through an open head wound, skull fracture, or neurosurgical procedure
+
+      **Risk factors include:** congenital heart disease, meningitis, shunt infections, chronic ear/sinus disease, head trauma, and immunocompromised states.
+
+      **Symptoms differ by age:**
+
+      *Infants and young children:* fever, bulging fontanelle (soft spot on top of the head), unusual sleepiness or reduced alertness, increased irritability, high-pitched cry, poor feeding, projectile vomiting, seizures.
+
+      *Older children and adults:* fever, severe headache, nausea and vomiting, personality or behaviour changes, speech changes, difficulty walking, limb spasticity, seizures.
+
+      **Treatment** must begin immediately upon diagnosis:
+      - Hospitalisation with close neurological monitoring
+      - High-dose intravenous antibiotics (or antifungals, depending on organism)
+      - Surgical drainage — aspiration or excision of the abscess to reduce intracranial pressure and obtain samples for culture
+      - Anticonvulsants and steroids as needed
+      - Ventilatory support in severe cases
+
+      After the acute phase resolves, rehabilitation is often needed to recover function lost during the illness.
+  - type: treatment-groups
+    heading: "Rehabilitation at Alimran Medical Center"
+    groups:
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Muscle strengthening and functional rehabilitation"
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
 ---
-
-### What is a brain abscess?
-
-A brain abscess is an infection in the brain that is encapsulated (confined within its own area) and localized to one or more areas inside of the brain. This condition may cause problems with the brain and spinal cord function. Brain abscesses are rare, but are more common in young school-aged children than other ages.
-
-### What causes a brain abscess?
-
-The more common causes of a brain abscess include viruses and bacteria. There are three ways a virus or bacteria can enter the body and infect the brain, including the following:
-
-1.  Infection is spread from another area of infection in the body. This accounts for the majority of brain abscess cases.
-2.  Infection is spread through the blood stream from the lung or chest area.
-3.  Viral or bacterial germs enter directly into the brain through an open wound in the head.
-
-Risk factors for developing a brain abscess include the following:
-
--   congenital (present at birth) heart disease
--   meningitis
--   chronic middle ear and sinus infections
--   dental or jaw infections
--   infections of the face or scalp
--   head injury or skull fracture
--   traction – a medical device that uses pins/screws that are placed around the head to hold the head and neck areas still; used in patients with broken necks or for specific surgeries that require the head and neck to be immobilized.
--   shunt (devices used to drain excess amounts of cerebral spinal fluid) infections
-
-### What are the symptoms of a brain abscess?
-
-The following are the most common symptoms of a brain abscess. However, each child may experience symptoms differently. Symptoms may include:
-
-**in babies and younger children:**
-
--   fever
--   a full or bulging fontanelle (soft spot located on the top of the head)
--   sleepiness or less alert than usual
--   increased irritability
--   high-pitched cry
--   poor feeding
--   projectile vomiting
--   seizures
-
-**in older children:**
-
--   fever
--   complaints of severe headaches
--   nausea and vomiting
--   changes in personality or behavior
--   changes in speech
--   problems walking
--   increased movement in the arms or legs (spasticity)
--   seizures
-
-The symptoms of a brain abscess may resemble other conditions or medical problems. Always consult your child’s physician for a diagnosis.
-
-### Treatment for a brain abscess:
-
-Specific treatment for a brain abscess will be determined by your child’s physician based on:
-
--   your child’s age, overall health, and medical history
--   the extent of the condition
--   your child’s tolerance for specific medications, procedures, or therapies
--   expectations for the course of condition
--   your opinion or preference
-
-The key to treating a brain abscess is early detection and treatment. A child with a brain abscess requires immediate hospitalization, surgery, and close monitoring.
-
-The goal of treatment is to reduce the pressure in the head and to properly drain the infection. Medications are used to control the infection, seizures, fever, and/or other conditions that may be present.
-
-The extent of the problem is dependent on the severity of the brain abscess and the presence of other organ system problems that could affect the child. In severe cases, a breathing machine may be required to help the child breathe easier.
-
-As the child recovers, physical, occupational, or speech therapy may be needed to help the child regain muscle strength and/or speech skills.
-
-The healthcare team educates the family after hospitalization on how to best care for their child at home and outlines specific clinical problems that require immediate medical attention by his/her physician. A child with a brain abscess requires frequent medical evaluations following hospitalization.

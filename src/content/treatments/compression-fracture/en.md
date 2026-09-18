@@ -1,86 +1,82 @@
 ---
-title: "Compression Fracture"
-description: "Compression = the application of strong pressure Fracture = a break in a bone A compression fracture occurs when part of a"
+title: "Compression fracture"
+description: "A collapse of a vertebral body — most commonly caused by osteoporosis, less often by trauma or tumour. Typically affects the thoracic or lumbar spine. Produces sudden or gradual back pain and, with multiple fractures, progressive kyphosis and height loss. Most cases are managed non-surgically; vertebroplasty or kyphoplasty is available for refractory pain."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/compression-fracture/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A fracture in which the cylindrical vertebral body collapses — most often in a wedge pattern, with the front of the vertebra collapsing more than the back. Most common in the thoracic (mid-back) and lumbar (lower back) spine. Osteoporosis accounts for the majority of cases; trauma and spinal metastases are less common causes. Multiple compression fractures cause kyphosis and height loss."
+      - label: "Symptoms"
+        value: "Sudden severe back pain (acute fracture) or gradually worsening pain (osteoporotic fractures that accumulate over time). Pain may radiate to the abdomen or around the ribs in thoracic fractures. Numbness, weakness, or bowel/bladder dysfunction if the fracture impinges on neural structures. Progressive kyphosis ('dowager's hump') and measurable height loss with multiple fractures."
+      - label: "Approach"
+        value: "Most compression fractures are managed non-surgically: pain management, activity modification, back bracing, and physiotherapy. Osteoporosis treatment (bisphosphonates, calcium, vitamin D, weight-bearing exercise) prevents further fractures. Vertebroplasty or kyphoplasty — cement injection into the fractured vertebra — is indicated for refractory pain. Spinal fusion is reserved for instability or neurological compromise."
+  - type: prose
+    heading: "What a compression fracture is"
+    body: |
+      A compression fracture occurs when a vertebral body — the cylindrical load-bearing portion of a spinal vertebra — collapses under compressive force. Unlike fractures of the vertebral arch (which surrounds and protects the spinal cord), compression fractures primarily affect the anterior vertebral body and typically produce a wedge deformity.
+
+      **Anatomy of the vertebra**
+
+      Each vertebra has two main parts:
+      - The *vertebral body* — the large cylindrical block at the front that bears most of the axial load of the spine. In compression fractures, this is the part that collapses
+      - The *vertebral arch* — the ring-shaped posterior structure that forms the roof of the spinal canal and protects the spinal cord
+
+      In a wedge fracture (the most common type), the front of the vertebral body collapses while the back remains intact, creating a forward-tapered shape. When many vertebrae fracture in this way, the cumulative wedging causes the spine to bow forward, producing kyphosis.
+
+      **Causes and risk factors**
+
+      - *Osteoporosis:* the most common cause. Thin, brittle bone can fracture under loads that would not injure normal bone — sometimes from a minor fall, bending forward, or even a cough. Elderly women are most affected
+      - *Trauma:* high-energy injuries (motor vehicle accidents, falls from height) can fracture otherwise healthy vertebrae; also common in younger men
+      - *Spinal metastases or primary bone tumours:* pathological fractures through tumour-infiltrated bone
+      - *Long-term corticosteroid use:* accelerates bone loss and significantly raises fracture risk
+
+      **Neurological involvement**
+
+      Most compression fractures do not compromise the spinal canal. Severe fractures, burst variants (in which fragments are driven posteriorly), or fractures at multiple levels can narrow the canal and compress the spinal cord or nerve roots, causing radicular pain, weakness, or — in severe cases — myelopathy or cauda equina syndrome requiring urgent surgical decompression.
+
+      **Non-surgical management**
+
+      - *Analgesia:* NSAIDs, paracetamol, opioids for severe acute pain; short-term calcitonin may modestly reduce pain in acute osteoporotic fractures
+      - *Bracing:* a thoracolumbar orthosis limits spinal motion, reducing pain during the acute healing phase
+      - *Physiotherapy:* spinal extension exercises, postural training, and core strengthening reduce load on the fractured segment and protect against future fractures
+      - *Osteoporosis treatment:* bisphosphonates, denosumab, or teriparatide address the underlying bone disease
+
+      **Surgical options**
+
+      - *Vertebroplasty:* percutaneous injection of bone cement (polymethylmethacrylate) directly into the fractured vertebral body — stabilises the fracture and significantly reduces pain in most patients
+      - *Kyphoplasty:* a balloon is first inflated inside the vertebral body to create a cavity and partially restore vertebral height, then cement is injected — associated with slightly better height restoration than vertebroplasty
+      - *Spinal fusion:* internal fixation with screws and rods is reserved for spinal instability or significant neurological compromise
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Neuromodulation"
+        items:
+          - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Spinal extension, postural training, and core strengthening"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-**Compression** = the application of strong pressure  
-**Fracture** = a break in a bone
-
-A compression fracture occurs when part of a vertebra, or bone in the spine, collapses.
-
-The bones of the spine have two main section. The *vertebral arch* is a ring-shaped section that forms the roof of the spinal canal and protects the spinal cord. You can feel the *spinous process*, a projection from this arch, when you press on the skin in the middle of your back. The *vertebral body*is the cylindrical shaped portion of the vertebral one that lies in front and provides the majority of structural support. In a compression fracture, the vertebral body collapses.
-
-The most common type of compression fracture is a wedge fracture, in which the front of the vertebral body collapses but the back does not, meaning that the bone assumes a wedge shape.
-
-Sometimes, more than one vertebra fractures, a condition called multiple compression fractures. Multiple compression fractures can lead to kyphosis, a spinal deformity when the upper back curves forward, creating the appearance of a hunchback. In some cases, a person who experiences multiple compression fractures may notice a loss of height.
-
-Compression fractures usually occur in the thoracic (middle) or lumbar (lower) spine.
-
-### **Symptoms**
-
-Compression fractures may or may not cause symptoms. If compression fractures cause symptoms, these may include:
-
--   pain in back, arms, or legs
--   numbness and/or weakness in arms or legs (if the fracture has affected the spinal cord and/or surrounding nerves in the spine)
--   over an extended period, patients may notice a loss of height
-
-A compression fracture that occurs suddenly can be very painful, but a compression fracture that occurs gradually may cause pain only gradually.
-
-### **Causes and Risk Factors**
-
-Rarely, compression fractures occur in healthy vertebrae as a result of trauma.
-
-More often, the vertebra with a compression fracture is already weakened. The most common cause of weakening is osteoporosis, a condition that causes weak and brittle bones. Osteoporosis is most common in elderly women, and it is for this reason that elderly women are the group most affected by compression fracture.
-
-Less frequently, the vertebra may be weakened by a tumor or infection.
-
-### **Treatments**
-
-For the most part, nonoperative treatments are recommended for compression fracture.
-
-At Alimran Medical Center, we may recommend any of the following treatments:
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [SpineMED® system](/services/chiropractic/spinmed/)
--   [Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
--   Transforaminal injections
-
-Ozone injection
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-Prolotherapy
-
-Spinal cord stimulation
-
-If the fracture is caused by osteoporosis, treatment of the osteoporosis can help prevent additional fractures. Treatment may include calcium and vitamin D supplements, bisphosphonates, and weight bearing exercises.
-
-Surgery may be necessary if the spine appears to be unstable. The surgeon may perform a vertebroplasty or a kyphoplasty. During these surgical procedures, the surgeon injects a cement mixture into the fractured bone to stabilize the fracture, treat pain, and prevent a spinal deformity from progressing.
-
-[▶ Watch on YouTube](https://www.youtube.com/watch?v=B9JQ4rv1S24)
-
-In some cases, the surgeon may need to perform a spinal stabilization and fusion surgery to support the spine until the bone heals. During these procedures, the surgeon places a bone graft across the area of instability, allowing the vertebrae to fuse (grow together). The surgeon secures the spine with an internal fixation implant, using screws and rods, to hold the vertebrae in place while the bone heals.
-
-The surgeon will tailor the treatment to each individual patient and specific presentation.

@@ -1,58 +1,60 @@
 ---
 title: "Occipital neuralgia"
-description: "Most feeling in the back and top of the head is transmitted to the brain by the two greater occipital"
+description: "Sharp, shooting, or electric pain along the back and top of the head, caused by irritation of the greater occipital nerves. Often confused with migraine. Treated with nerve blocks, Botox, rTMS, and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/occipital-neuralgia/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Irritation or compression of the greater occipital nerves — which run from the upper neck through the back of the scalp — causing intense, shooting pain."
+      - label: "Symptoms"
+        value: "Electric, shooting, or tingling pain along one side of the scalp; scalp hypersensitivity; pain that may radiate toward one eye. Numbness is also possible."
+      - label: "Approach"
+        value: "Greater occipital nerve injections are the first specific treatment. Botox, radiofrequency, rTMS, and physiotherapy address persistent or widespread pain."
+  - type: media
+    kind: image
+    src: /images/legacy/2021/02/CEYU7_1546590895_6083-1.jpg
+    alt: "Diagram showing the path of the greater occipital nerve from the neck through the scalp"
+  - type: prose
+    heading: "What occipital neuralgia is"
+    body: |
+      Most sensation in the back and top of the head travels to the brain via the two greater occipital nerves — one on each side. These nerves emerge from between the vertebrae of the upper neck, pass through the muscles at the back of the head, and extend into the scalp, sometimes reaching nearly as far forward as the forehead. They do not supply the face or the area near the ears.
+
+      When one of these nerves is irritated anywhere along its course, it produces a shooting, electric, or tingling pain very similar to trigeminal neuralgia, but confined to one side of the scalp rather than the face. The pain may also radiate forward toward one eye. In some patients the scalp becomes so sensitive that washing the hair or resting on a pillow is nearly impossible. Numbness in the affected area and extreme tenderness where the nerves enter the scalp are also common.
+
+      **Causes:** Occipital neuralgia may occur spontaneously, or from a pinched nerve root in the neck (due to arthritis, for example), prior injury, or surgery to the scalp or skull. Tight muscles at the back of the head can also entrap the nerves.
+
+      **Important note:** True isolated occipital neuralgia is relatively rare. Many headaches — especially migraines — repeatedly involve the back of the head and inflame the greater occipital nerve, leading to diagnostic confusion. These cases are generally classified as migraines involving the greater occipital nerve rather than occipital neuralgia itself.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "Greater occipital nerve injections"
+          - "Epidural steroid injections"
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Magnetic therapy"
+          - "Therapeutic exercises"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2021/02/CEYU7_1546590895_6083-1.jpg)
-
-Most feeling in the back and top of the head is transmitted to the brain by the two greater occipital nerves. There is one nerve on each side of the head. Emerging from between bones of the spine in the upper neck, the two greater occipital nerves make their way through muscles at the back of the head and into the scalp. They sometimes reach nearly as far forward as the forehead, but do not cover the face or the area near the ears; other nerves supply these regions.
-
-Irritation of one of these nerves anywhere along its course can cause a shooting, zapping, electric, or tingling pain very similar to that of trigeminal neuralgia, only with symptoms on one side of the scalp rather than in the face. Sometimes the pain can also seem to shoot forward (radiate) toward one eye. In some patients the scalp becomes extremely sensitive to even the lightest touch, making washing the hair or lying on a pillow nearly impossible. In other patients there may be numbness in the affected area. The region where the nerves enter the scalp may be extremely tender.
-
-## Occipital neuralgia
-
-Occipital neuralgia may occur spontaneously, or as the result of a pinched nerve root in the neck (from arthritis, for example), or because of prior injury or surgery to the scalp or skull. Sometimes “tight” muscles at the back of the head can entrap the nerves.
-
-True isolated occipital neuralgia is actually quite rare. However, many other types of headaches —especially migraines — can predominantly or repeatedly involve the back of the head on one particular side, inflaming the greater occipital nerve on the involved side and causing confusion as to the actual diagnosis. These patients are generally diagnosed as having migraines involving the greater occipital nerve, rather than as having occipital neuralgia itself.
-
-## Treatment
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[SpineMED® system](/services/chiropractic/spinmed/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-**Neurons stimulation**
-
-[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
-
-[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)
-
-Steroid injection
-
--   Greater occipital nerves injections
--   Epidural steroid injections
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)

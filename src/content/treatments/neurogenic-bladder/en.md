@@ -1,37 +1,81 @@
 ---
 title: "Neurogenic bladder"
-description: "ِNeurogenic bladder dysfunction, or neurogenic bladder, refers to urinary bladder problems due to disease or injury of the central nervous system or peripheral nerves involved"
+description: "Urinary bladder dysfunction caused by disease or injury to the nervous system. Affects bladder storage and emptying through disruption of the neural pathways that coordinate urination. Common in spinal cord injury, multiple sclerosis, stroke, and Parkinson's disease. Managed with catheterisation, medications, Botox, and neuromodulation."
+category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/neurogenic-bladder/"
-source: "ai-draft"
+source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Bladder dysfunction resulting from disruption of the neurological control of urination — involving the brain, spinal cord, or peripheral pelvic nerves. The bladder may be hyperreflexic (overactive, failing to store), hypotonic (underactive, failing to empty), or show detrusor-sphincter dyssynergia. The pattern depends on where the nervous system is affected. Can cause kidney damage if high bladder pressures are not managed."
+      - label: "Symptoms"
+        value: "Overactive type: urinary urgency, frequency, urge incontinence. Underactive type: difficulty initiating urination, incomplete emptying, overflow incontinence. Both types: recurrent urinary tract infections (often the presenting sign), bladder stones. High-pressure dysfunction causes upper urinary tract damage. Severity and quality-of-life impact vary widely depending on the underlying neurological condition."
+      - label: "Approach"
+        value: "Treat the underlying neurological disease. Bladder-specific management: intermittent clean catheterisation for retention; anticholinergics or beta-3 agonists for overactivity; Botox injected into the detrusor for refractory overactivity or dyssynergia; sacral neuromodulation and spinal cord stimulation for selected cases; intrathecal baclofen for spasticity-related dysfunction. Physiotherapy for pelvic floor and bladder retraining."
+  - type: prose
+    heading: "What neurogenic bladder is"
+    body: |
+      The normal bladder stores urine at low pressure and empties completely on a voluntary cue. This requires coordinated activity between the detrusor muscle (bladder wall), the urethral sphincter, and an intact neural control system spanning the pontine micturition centre, sacral spinal cord (S2–S4), sympathetic pathways (T10–L2), and the pudendal nerve. Disruption at any point in this system produces neurogenic bladder.
+
+      **Types of neurogenic bladder**
+
+      *Uninhibited (supraspinal):* Brain lesions — stroke, Parkinson's disease, dementia, brain tumours — impair the brain's inhibitory influence on the spinal micturition reflex. The result is bladder overactivity with urgency, frequency, and urge incontinence. Bladder pressures remain low and kidney damage is uncommon.
+
+      *Spastic (upper motor neuron):* Spinal cord damage above T10 (traumatic or atraumatic) disconnects the bladder from pontine coordination. The detrusor becomes hyperreflexic. Critically, detrusor-external sphincter dyssynergia (DESD) develops — the detrusor contracts against a simultaneously contracting sphincter. This causes urinary retention, high intravesical pressures, vesicoureteral reflux, and — if untreated — progressive kidney damage.
+
+      *Flaccid (lower motor neuron):* Sacral spinal cord or peripheral pelvic nerve injury (S2–S4 damage from cauda equina injury, pelvic surgery, diabetes mellitus, or lumbar disc disease) causes loss of detrusor contractility. The bladder becomes large, hypotonic, and fails to empty. Overflow incontinence is common; catheterisation is needed.
+
+      *Mixed:* Multiple levels of nervous system involvement (common in multiple sclerosis) produce mixed patterns that may combine elements of overactivity and underactivity.
+
+      **Causes**
+
+      Neurogenic bladder can result from any condition affecting the neural control of the lower urinary tract, including:
+      - Spinal cord injury (most common cause of spastic neurogenic bladder)
+      - Multiple sclerosis
+      - Stroke and brain injury
+      - Spina bifida and tethered cord syndrome
+      - Parkinson's disease and other neurodegenerative diseases
+      - Peripheral neuropathy (diabetic, post-surgical, post-irradiation)
+      - Cauda equina syndrome
+
+      **Diagnosis**
+
+      Urodynamic studies (cystometry, pressure-flow studies, sphincter EMG) precisely characterise the type of dysfunction and guide treatment decisions. Imaging (ultrasound, cystography) assesses the upper urinary tract for damage. Video urodynamics are used in complex cases.
+
+      **Management principles**
+
+      The primary goals are to protect the upper urinary tract from high-pressure damage, prevent recurrent infections, and restore as much bladder function and continence as possible.
+
+      - *Clean intermittent self-catheterisation (CISC):* the cornerstone of management for underactive bladder and the most effective strategy for preventing upper tract damage in DESD
+      - *Anticholinergic medications:* reduce detrusor overactivity; side effects limit long-term use
+      - *Botulinum toxin A (Botox) injection:* cystoscopic injection into the detrusor dramatically reduces overactivity, incontinence, and bladder pressures with effects lasting 6–12 months
+      - *Sacral neuromodulation:* implanted electrical stimulator modulates the sacral nerve roots — effective for urgency incontinence and non-obstructive retention
+      - *Intrathecal baclofen pump:* directly suppresses spinal cord excitability, reducing both limb spasticity and detrusor hyperreflexia in high spinal cord injury and MS
+      - *Spinal cord stimulation:* can improve bladder function and reduce autonomic dysreflexia risk in selected spinal cord injury patients
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
+          - "[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Pelvic floor rehabilitation and bladder retraining"
 ---
-
-ِ![](/images/legacy/2020/07/3.jpg)Neurogenic bladder dysfunction, or neurogenic bladder, refers to urinary bladder problems due to disease or injury of the central nervous system or peripheral nerves involved in the control of urination. There are multiple types of neurogenic bladder depending on the underlying cause and the symptoms. Symptoms include overactive bladder, urinary urgency, frequency, incontinence or difficulty passing urine. A range of diseases or conditions can cause neurogenic bladder including spinal cord injury, multiple sclerosis, stroke, brain injury, spina bifida, peripheral nerve damage, Parkinson’s disease, or other neurodegenerative diseases. Neurogenic bladder can be diagnosed through a history and physical as well as imaging and more specialized testing. Treatment depends on underlying disease as well as symptoms and can be managed with behavioral changes, medications, surgeries, or other procedures. The symptoms of neurogenic bladder, especially incontinence, can have a significant impact on quality of life.
-
-**Classification**
-
-There are different types of neurogenic bladder depending on the underlying cause. Many of these types may have similar symptoms.
-
-**Uninhibited**
-
-Uninhibited bladder is usually due to damage to the brain from a stroke or brain tumor. This can cause reduced sensation of bladder fullness, low capacity bladder and urinary incontinence. Unlike other forms of neurogenic bladder, it does not lead to high bladder pressures that can cause kidney damage.
-
-**Spastic**
-
-In spastic neurogenic bladder (also known as upper motor neuron or hyper-reflexive bladder), the muscle of the bladder (detrusor) and urethral sphincter do not work together and are usually tightly contracted at the same time. This phenomenon is also called detrusor external sphincter dyssynergia (DESD). This leads to urinary retention with high pressures in the bladder that can damage the kidneys. The bladder volume is usually smaller than normal due to increased muscle tone in the bladder. Spastic neurogenic bladder is usually caused by damage to the spinal cord above the level of the 10th thoracic vertebrae (T10).
-
-**Flaccid**
-
-In flaccid bladder (also known as lower motor neuron or hypotonic bladder), the muscles of the bladder lose ability to contract normally. This can cause the inability to void urine even if the bladder is full and cause a large bladder capacity. The internal urinary sphincter can contract normally, however urinary incontinence is common. This type of neurogenic bladder is caused by damage to the peripheral nerves that travel from the spinal cord to the bladder.
-
-**Mixed**
-
-Mixed type of neurogenic bladder can cause a combination of the above presentations. In mixed type A, the bladder muscle is flaccid but the sphincter is overactive. This creates a large, low pressure bladder and inability to void, but does not carry as much risk for kidney damage as a spastic bladder. Mixed type B is characterized by a flaccid external sphincter and a spastic bladder causing problems with incontinence.
-
-**Signs and symptoms**
-
-Neurogenic bladder can cause a range of urinary symptoms including urinary urgency, urinary incontinence or difficulty urinating (urinary retention.) The first sign of bladder dysfunction may be recurrent urinary tract infections (UTIs).
-
-Physical therapy for bladder stimulation in spinal cord injury.
-
-[▶ Watch on YouTube](https://www.youtube.com/watch?v=qAyFuCFkDqA)

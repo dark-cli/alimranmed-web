@@ -1,86 +1,77 @@
 ---
 title: "Sprains"
-description: "A sprain is a stretching or tearing of ligaments — the tough bands of fibrous tissue that connect two bones"
+description: "Injuries to ligaments — the tough fibrous bands connecting bones at joints — caused by overstretching or tearing. The ankle is the most commonly affected joint. Range from mild stretching to complete rupture. Managed with RICE, physiotherapy, injections, and occasionally surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/sprains/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "An injury to a ligament (the fibrous band connecting bone to bone at a joint) caused by overstretching or tearing. Distinct from a muscle strain, which involves the muscle-tendon unit. Most commonly affects the ankle, but also the knee, wrist, and thumb. Range from Grade I (stretch) to Grade III (complete tear)."
+      - label: "Symptoms"
+        value: "Pain, swelling, bruising, and tenderness at the joint. Reduced ability to move the affected joint. A popping sensation may occur at the time of injury. Grade III sprains cause marked instability and may be mistaken for a fracture. Symptoms onset within minutes to hours of injury."
+      - label: "Approach"
+        value: "Acute phase: RICE (Rest, Ice, Compression, Elevation). For persistent pain or incomplete healing: prolotherapy, ozone, and pulsed radiofrequency promote ligament repair. Physiotherapy restores stability and proprioception. Severe ligament ruptures — particularly of the knee — may require surgical reconstruction."
+  - type: prose
+    heading: "What a sprain is"
+    body: |
+      A sprain is an injury to a ligament — the strong, fibrous band of connective tissue that connects one bone to another and stabilises joints. Sprains occur when a joint is forced beyond its normal range of motion, overstretching or tearing the ligament.
+
+      **Severity grading:**
+      - **Grade I (mild):** ligament fibres are stretched but not torn; mild pain and tenderness; joint stability maintained; full recovery in 1–3 weeks
+      - **Grade II (moderate):** partial tear of the ligament; moderate pain, swelling, and bruising; some joint instability; recovery in 3–8 weeks
+      - **Grade III (severe):** complete rupture of the ligament; marked pain, swelling, and bruising; significant joint instability; may require surgical reconstruction
+
+      **Common locations and mechanisms:**
+      - **Ankle:** the most common site — inversion injuries (rolling the ankle inward) damage the lateral ligament complex (anterior talofibular, calcaneofibular ligaments). Can occur during walking on uneven ground or landing awkwardly
+      - **Knee:** medial or lateral collateral ligaments sprained by pivoting or direct blows; anterior cruciate ligament from sudden deceleration or landing from a jump
+      - **Wrist:** falling on an outstretched hand — scapholunate ligament; ulnar collateral ligament of the wrist
+      - **Thumb:** skiing (skier's thumb) — ulnar collateral ligament of the first MCP joint from forced radial deviation
+
+      **Risk factors:**
+      - Slippery, uneven, or unstable surfaces
+      - Muscle fatigue — tired muscles provide less dynamic joint protection
+      - Poor footwear or sporting equipment
+      - Prior sprain in the same joint (the most important predictor of re-sprain)
+      - Insufficient warm-up and neuromuscular conditioning
+
+      *Note for children:* Growth plate cartilage at the ends of long bones is weaker than ligaments, so children are more likely to sustain a fracture (growth plate injury) than a Grade III ligament sprain with the same force.
+
+      **Acute management — RICE:**
+      - **Rest:** protect the joint; use crutches if weight-bearing on an ankle sprain is painful
+      - **Ice:** 15–20 minutes every 2–3 hours for the first 48–72 hours
+      - **Compression:** elastic bandage to control swelling
+      - **Elevation:** above heart level
+
+      After the acute phase, physiotherapy rehabilitation focuses on restoring range of motion, strength, balance, and proprioception — essential for preventing re-sprain. Return-to-sport criteria should be met before resuming full activity.
+
+      For chronic ligament laxity or incompletely healed sprains, prolotherapy (dextrose injection) and platelet-rich plasma (PRP) stimulate fibroblast activity and collagen repair. Persistent ankle instability may ultimately require lateral ligament reconstruction.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Steroid injection"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Balance, proprioception, and sports rehabilitation exercises"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2021/02/f164a2d49d71b3344b2c74185d9764ff.png)
-
-A sprain is a stretching or tearing of ligaments — the tough bands of fibrous tissue that connect two bones together in your joints. The most common location for a sprain is in your ankle.
-
-Initial treatment includes rest, ice, compression and elevation. Mild sprains can be successfully treated at home. Severe sprains sometimes require surgery to repair torn ligaments.
-
-The difference between a sprain and a strain is that a sprain injures the bands of tissue that connect two bones together, while a strain involves an injury to a muscle or to the band of tissue that attaches a muscle to a bone.
-
-Symptoms
-
-Signs and symptoms will vary, depending on the severity of the injury, and may include:
-
--   Pain
--   Swelling
--   Bruising
--   Limited ability to move the affected joint
--   Hearing or feeling a “pop” in your joint at the time of injury
-
-Causes
-
-A sprain occurs when you overextend or tear a ligament while severely stressing a joint. Sprains often occur in the following circumstances:
-
--   Ankle — Walking or exercising on an uneven surface, landing awkwardly from a jump
--   Knee — Pivoting during an athletic activity
--   Wrist — Landing on an outstretched hand during a fall
--   Thumb — Skiing injury or overextension when playing racquet sports, such as tennis
-
-Children have areas of softer tissue, called growth plates, near the ends of their bones. The ligaments around a joint are often stronger than these growth plates, so children are more likely to experience a fracture than a sprain.
-
-Risk factors
-
-Factors contributing to sprains include:
-
--   **Environmental conditions.**Slippery or uneven surfaces can make you more prone to injury.
--   Tired muscles are less likely to provide good support for your joints. When you’re tired, you’re also more likely to succumb to forces that could stress a joint.
--   **Poor equipment.**Ill-fitting or poorly maintained footwear or other sporting equipment can contribute to your risk of a sprain.
-
-Treatment
-
-For immediate self-care of a sprain, try the R.I.C.E. approach — rest, ice, compression, elevation:
-
--   Avoid activities that cause pain, swelling or discomfort. But don’t avoid all physical activity.
--   Even if you’re seeking medical help, ice the area immediately. Use an ice pack or slush bath of ice and water for 15 to 20 minutes each time and repeat every two to three hours while you’re awake for the first few days after the injury.
--   To help stop swelling, compress the area with an elastic bandage until the swelling stops. Don’t wrap it too tightly or you may hinder circulation. Begin wrapping at the end farthest from your heart. Loosen the wrap if the pain increases, the area becomes numb or swelling is occurring below the wrapped area.
--   Elevate the injured area above the level of your heart, especially at night, which allows gravity to help reduce swelling.
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[SpineMED® system](/services/chiropractic/spinmed/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-[Steroid injection](/services/steroid-injection/)
-
--   [Trigger point injections](/services/steroid-injection/trigger-point/)
--   [Epidural steroid injections](/services/steroid-injection/spinal/)
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Magnatic therapy](/services/physiotherapy/magnetic-field-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic

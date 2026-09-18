@@ -1,99 +1,71 @@
 ---
-title: "Arthritis of the Hip"
-description: "Arthritis is one of the most common causes of pain in the hip. Arthritis is a progressive disorder, which means"
+title: "Arthritis of the hip"
+description: "One of the most common causes of hip pain. A progressive disorder in which joint cartilage wears away or becomes inflamed, causing pain, stiffness, and reduced mobility. No cure, but non-surgical treatments can significantly relieve symptoms and delay the need for joint replacement."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/arthritis-of-the-hip/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A progressive joint disorder causing pain and stiffness in the hip. The five main types affecting the hip are osteoarthritis, rheumatoid arthritis, ankylosing spondylitis, systemic lupus erythematosus, and psoriatic arthritis."
+      - label: "Symptoms"
+        value: "Pain in the hip, groin, outer thigh, or buttock — typically worse in the morning and after prolonged activity. Stiffness, limited range of motion, and walking with a limp. Fatigue may occur with inflammatory types."
+      - label: "Approach"
+        value: "No cure. Goals are pain relief, preservation of joint function, and delaying surgical intervention. Physiotherapy, injection therapies, radiofrequency, and lifestyle modification are the main non-surgical options."
+  - type: media
+    kind: image
+    src: /images/legacy/2020/02/1-3.jpg
+    alt: "Hip arthritis — joint anatomy"
+  - type: prose
+    heading: "What arthritis of the hip is"
+    body: |
+      Arthritis means inflammation of the joint. In the hip, it describes a group of conditions that progressively damage the ball-and-socket joint formed by the femoral head (thigh bone) and the acetabular socket (hip socket). The joint surfaces are normally lined with smooth cartilage that allows frictionless movement. When cartilage wears away or becomes inflamed, the rough bone surfaces grind against each other, causing pain and eventual joint damage.
+
+      **The five main types affecting the hip:**
+
+      **Osteoarthritis** — the most common type. Progressive wear-and-tear of cartilage, typically in older adults. Associated with structural hip problems (hip dysplasia, femoroacetabular impingement), advancing age, obesity, and prior hip injury.
+
+      **Rheumatoid arthritis** — an autoimmune disease in which the immune system attacks the joint lining, causing inflammation in both hips simultaneously. Associated with fatigue and systemic symptoms.
+
+      **Ankylosing spondylitis** — primarily a spinal condition, but can affect the hips and cause progressive stiffness.
+
+      **Systemic lupus erythematosus (SLE)** — an autoimmune condition that can cause hip joint inflammation and avascular necrosis of the femoral head.
+
+      **Psoriatic arthritis** — inflammatory arthritis associated with psoriasis; may affect one hip but not the other.
+
+      **Symptoms** common to all types:
+      - Pain in the hip joint, groin, outer thigh, or buttock
+      - Worse in the morning and after prolonged activity; eases somewhat with movement
+      - Walking with a limp; difficulty with daily activities
+      - Stiffness and reduced range of motion
+      - With rheumatoid arthritis and lupus: fatigue and generalised weakness
+
+      **Non-surgical management** focuses on pain relief, joint protection, and preserving function. Lifestyle modifications — weight management, activity modification to reduce hip loading, and appropriate exercise to build supporting muscle — complement medical treatment.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "Trigger point injections"
+          - "Intra-articular steroid injections"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Strengthening and joint mobility exercises"
+      - title: "Chiropractic care"
+        items:
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2020/02/1-3.jpg)
-![](/images/legacy/2020/02/footPain-1045328130-770x553-650x428-2.jpg)
-
-Arthritis is one of the most common causes of pain in the hip. Arthritis is a progressive disorder, which means that it typically starts gradually and gets worse with time. The term arthritis literally means “inflammation of the joint.”
-
-There are different types of arthritis that can affect the hip. The type of arthritis you have may affect your treatment options.
-
-**Types of Arthritis**
-
-There are five main types of arthritis that can affect the hip joint. They are:
-
--   Osteoarthritis
--   Rheumatoid arthritis
--   Ankylosing spondylitis
--   Systemic lupus erythematosus
--   Psoriatic arthritis
-
-There is no cure for any type of arthritis, but there are ways to treat the pain and other associated symptoms.
-
-***Osteoarthritis***
-
-Osteoarthritis means “arthritis of the bone” and is the most common form of arthritis. It is often described as the result of wear and tear on the joints, which explains why it is more common in older than younger people.
-
-The hip joint consists of the ball-shaped end of the thigh bone (femoral head) which fits into the hip socket (acetabular socket). The inside of this ball-and-socket joint is lined with smooth cartilage to help the joint move easily. If this smooth cartilage wears away, the remaining rough surfaces of the ball-and-socket grind against each other, causing pain. Over time, osteoarthritis can degenerate or permanently damage the joint.
-
-Osteoarthritis of the hip (and other parts of the body) has been associated with the following:
-
--   Structural problems with the hip joint (hip dysplasia, femoroacetabular impingement)
--   Advancing age
--   Obesity
--   Previous damage or injury to the hip
-
-However, osteoarthritis may develop in people without these risk factors.
-
-Figure a
-
-Figure b
-
-*Two radiographs of a female patient showing acetabular dysplasia (a shallow hip socket). The patient started to have hip pain when she was 20 years-old (a). This hip dysplasia was not treated and 15 years later she had end-stage osteoarthritis of the hip (b). Note the complete loss of cartilage joint space between the ball and the socket over this 15-year interval.*
-
-**Arthritis Symptoms**
-
-Regardless of the type of arthritis, symptoms of hip arthritis include:
-
--   Pain in the hip joint that may include pain in the groin, outer thigh, or buttocks
--   Pain that is typically worse in the morning and lessens with activity
--   Difficulty walking or walking with a limp
--   Pain that worsens with vigorous or extended activity
--   Stiffness in the hip or limited range of motion
-
-In patients with rheumatoid arthritis or lupus, fatigue and weakness may also occur. Arthritis often occurs in flares with remission, but some people experience a relatively stable level of pain without flares.
-
-Any type of arthritis can involve more than one joint in the body, so a person with osteoarthritis of the hands may develop the condition in the hip as well. Rheumatoid arthritis and lupus typically affect both hips at the same time, while osteoarthritis and psoriatic arthritis may occur in one hip but not the other.
-
-**Diagnosis**
-
-If you suspect you may have arthritis of the hip, the most important first step is an accurate diagnosis. Dr. Clohisy and his colleagues are experts in arthritis of the hip. A diagnostic evaluation will likely include the following:
-
--   Your medical history, including where you experience pain and if you limp at times
--   A physical examination, in particular to see how well you can move the hip
--   Radiographs or X-rays to determine if there are any abnormalities in the joint
--   Blood tests to determine antibodies that may be associated with a specific type of arthritis (only if needed).
-
-**Treatment**
-
-Nonsurgical treatment of arthritis of the hip at Alimran Medical Center, we may recommend any of the following treatments
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
-Ozone injection
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-Prolotherapy

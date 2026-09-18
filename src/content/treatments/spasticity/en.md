@@ -1,87 +1,83 @@
 ---
 title: "Spasticity"
-description: "Spasticity is abnormal muscle tightness due to prolonged muscle contraction. It is a symptom associated with damage to the brain, spinal"
+description: "Abnormal increase in muscle tone caused by damage to the brain, spinal cord, or motor nerves. A common complication of cerebral palsy, multiple sclerosis, stroke, and spinal cord injury. Management focuses on reducing tone, relieving pain, preventing deformity, and improving function."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/spasticity/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Abnormal, velocity-dependent increase in muscle tone caused by damage to descending motor pathways in the brain or spinal cord. Results in stiff, rigid muscles that resist passive movement. A common complication of stroke, cerebral palsy, multiple sclerosis, and spinal cord injury."
+      - label: "Symptoms"
+        value: "Muscle stiffness and tightness, involuntary muscle spasms, exaggerated tendon reflexes, clonus (rhythmic involuntary contractions), scissoring gait, and difficulty with movement and personal care. Can be painful and lead to joint contractures and pressure sores if untreated."
+      - label: "Approach"
+        value: "Multidisciplinary management targeting the underlying neurological condition alongside spasticity itself. Botox injections and intrathecal baclofen pump for focal or generalised spasticity; rTMS and physiotherapy to improve motor control. Early, sustained treatment prevents deformities."
+  - type: prose
+    heading: "What spasticity is"
+    body: |
+      Spasticity is an abnormal increase in muscle tone — a stiffness or tightness of the muscles — caused by disruption to the nerve signals that normally regulate muscle activity. It is not a disease in itself but a symptom of damage to the upper motor neurons, which run from the brain through the spinal cord to control voluntary movement.
+
+      **Underlying conditions that cause spasticity:**
+      - Cerebral palsy (CP)
+      - Multiple sclerosis (MS)
+      - Stroke
+      - Traumatic brain injury (TBI)
+      - Spinal cord injury
+      - Hypoxic brain injury
+
+      Voluntary movement requires a finely tuned exchange of signals between the muscles, spinal cord, and brain. When a neurological condition damages the pathways that carry these signals, the spinal cord's own reflex circuits become overactive, producing the characteristic increased tone and exaggerated reflexes of spasticity.
+
+      **Spasticity in cerebral palsy** results from damage to the brain's motor control areas occurring during development. The arms and legs may be affected, and the pattern varies by CP type — diplegia, quadriplegia, or hemiplegia.
+
+      **Spasticity in multiple sclerosis** typically affects the legs and hips. Flexor spasticity locks the legs and hips in a bent position; extensor spasticity holds the legs rigidly straight, occasionally causing the ankles to cross.
+
+      **Spasticity after stroke or brain injury** can appear within days of the event as swelling resolves and abnormal tone emerges. Its severity often correlates with the size and location of the lesion.
+
+      **Symptoms and complications:**
+      - Stiff, rigid, or tight muscles resistant to passive movement
+      - Painful involuntary muscle spasms
+      - Exaggerated stretch reflexes and clonus
+      - Difficulty with gait, transfers, and daily activities
+      - Scissor gait (in spastic diplegia)
+      - Joint contractures and fixed deformities if untreated
+      - Pressure sores from abnormal posture
+      - Urinary tract infections and chronic constipation
+
+      **Untreated spasticity** progressively worsens joint deformity, causes chronic pain, and erodes independence and quality of life. Treatment aims to relax the muscles, relieve pain and stiffness, encourage optimal growth and development in children, and improve the person's ability to function at home and in the community.
+
+      Management combines pharmacological approaches (oral medications, focal injections, intrathecal baclofen), neuromodulation, and intensive physiotherapy and occupational therapy — tailored to the individual's pattern of spasticity and goals.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
+          - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
+          - "[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Stretching, strengthening, and motor retraining exercises"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-**![](/images/legacy/2021/02/Spasticity.jpg)Spasticity** is abnormal muscle tightness due to prolonged muscle contraction. It is a symptom associated with damage to the brain, spinal cord or motor nerves, and is seen in individuals with neurological conditions, such as:
-
--   Cerebral palsy (CP)
--   Multiple sclerosis (MS)
--   Stroke
--   Traumatic brain or spinal cord injury
-
-Spasticity can affect muscles in any part of the body, but is most common in leg muscles. Symptoms can vary among individuals and can be painful, disfiguring and disabling.
-
-Spasticity Causes
-
-Voluntary movement involves a series of communications between muscles and the brain, with signals transmitted through the nerves and spinal cord. Congenital conditions or other factors affecting a particular area of the brain, spinal cord or nerves can affect the flow of signals to and from the muscles.
-
-Spasticity in Cerebral Palsy
-
-Spasticity in people with CP results from damage to the part of the brain that controls muscle tone and movement. Arm and leg muscles may be affected. Children who are eventually diagnosed with cerebral palsy may not show spasticity symptoms as infants, but the problem can become more evident over time as the child matures.
-
-## Spasticity in Multiple Sclerosis
-
-People with MS can experience spasticity of the leg and hip muscles, resulting in flexor spasticity (legs and hips locked in a bent position) or extensor spasticity, where stiff muscles hold the legs straight and occasionally crossed at the ankles.
-
-## Spasticity Resulting from Brain Injury
-
-Shortly after a traumatic brain injury (TBI), spinal cord injury or stroke, an individual may show signs of muscle tightness in different parts of the body, which may improve as the brain injury heals.
-
-Spasticity due to TBI, spinal cord injury or stroke can be challenging to address since the location of the injury can affect the brain’s communication signals with different muscles. Reflex messages from the muscles may not reach the brain, or too many disorganized signals from the brain to the muscle may prevent it from responding normally.
-
-## Spasticity Treatment
-
-It is important to treat spasticity to improve comfort, mobility and independence. Without therapy, spasticity can result in pain, permanent joint deformity, urinary tract infection, chronic constipation and pressure sores.
-
-Treatment goals include relaxing the muscles as much as possible, relieving pain and stiffness, encouraging optimal long muscle growth in children and improving your child’s ambulation and independence.
-
-**Physical and occupational therapy** can help maximize your child’s muscle flexibility, range of motion, coordination and strength. Temporary casts or braces, therapeutic heat, cold, electrical stimulation and biofeedback may be included in the spasticity treatment program. Therapy can enhance the child’s ability to perform daily tasks so he or she can live as independently as possible.
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[SpineMED® system](/services/chiropractic/spinmed/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-**Neurons stimulation**
-
-[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
-
-[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)
-
-[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)
-
-[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
-**Surgical treatment** for spasticity may be recommended for selected patients. **Rhizotomy** is a surgical procedure that involves a neurosurgeon accessing the cable-like sensory nerves along the spine and carefully isolating the nerves that transfer contraction messages to the affected muscles. The surgeon cuts the most abnormal of those fibers to relieve the spasticity while preserving other motor and sensory functions.

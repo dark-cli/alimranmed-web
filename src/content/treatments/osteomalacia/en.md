@@ -1,83 +1,81 @@
 ---
-title: "Osteomalacia﻿"
-description: "Osteomalacia refers to a marked softening of your bones, most often caused by severe vitamin D deficiency. The softened bones"
+title: "Osteomalacia"
+description: "Softening of the bones due to impaired mineralisation, most often from severe vitamin D deficiency. Causes diffuse bone pain, muscle weakness, and fractures. Distinct from osteoporosis — the bone matrix is deficient in mineral content rather than reduced in quantity. Treated with vitamin D and calcium supplementation plus pain management."
 category: "pain"
 order: 999
-legacyUrl: "https://alimranmed.com/osteomalacia%ef%bb%bf/"
+legacyUrl: "https://alimranmed.com/osteomalacia/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Defective mineralisation of newly formed bone matrix (osteoid), causing bones to become soft and prone to deformity or fracture. Distinguished from osteoporosis (reduced bone quantity) by the primary defect in bone quality — osteoid is laid down but not properly mineralised. Most often results from vitamin D deficiency, with contributing roles from calcium deficiency, phosphate wasting, and certain medications."
+      - label: "Symptoms"
+        value: "Diffuse, aching bone pain — most prominent in the lower back, pelvis, hips, legs, and ribs. Pain may worsen at night or with weight-bearing and is rarely fully relieved by rest. Proximal muscle weakness produces a waddling gait and difficulty rising from chairs. Fragility fractures, particularly of the ribs and long bones, in more advanced cases. Early osteomalacia may be asymptomatic and detected incidentally on imaging."
+      - label: "Approach"
+        value: "Identify and treat the underlying cause: vitamin D and calcium supplementation is curative in deficiency-related cases (weeks to months). Treat malabsorption syndromes (coeliac disease, post-bariatric surgery), renal osteodystrophy, and drug-induced forms specifically. Pain management, physiotherapy, and fall prevention during recovery. Monitor bone density and mineral levels during treatment."
+  - type: prose
+    heading: "What osteomalacia is"
+    body: |
+      Bone is a composite material — an organic matrix (primarily collagen) onto which mineral crystals (mainly hydroxyapatite, composed of calcium and phosphate) are deposited. Osteomalacia occurs when this mineralisation process fails: newly formed osteoid accumulates but is not properly hardened, leaving bones soft, painful, and mechanically weak.
+
+      **Causes**
+
+      *Vitamin D deficiency* — the most common cause worldwide. Vitamin D is required for intestinal calcium absorption; without it, calcium and phosphate levels fall and mineralisation is impaired. Deficiency results from:
+      - Insufficient sunlight exposure (latitude, indoor lifestyle, cultural dress)
+      - Inadequate dietary intake
+      - Malabsorption: coeliac disease, Crohn's disease, post-gastrectomy or bariatric surgery
+
+      *Renal and hepatic causes:* Activation of vitamin D requires hydroxylation steps in the liver and kidney. Chronic kidney disease and liver disease impair these steps.
+
+      *Phosphate wasting:* Rare hereditary conditions (X-linked hypophosphataemia) and tumour-induced osteomalacia cause renal phosphate wasting despite normal vitamin D.
+
+      *Medications:* Anticonvulsants (phenytoin, phenobarbital) accelerate vitamin D catabolism; prolonged use causes osteomalacia.
+
+      **Distinguishing osteomalacia from osteoporosis**
+
+      Both conditions increase fracture risk, but the mechanisms differ. Osteoporosis is a reduction in bone mass (the scaffold is normal but there is less of it). Osteomalacia is a mineralisation defect (there is sufficient scaffold but it is not hardened). The two conditions can coexist, particularly in older adults with multiple nutritional deficiencies.
+
+      **Diagnosis**
+
+      - Blood tests: low 25-hydroxyvitamin D, low calcium, low phosphate, elevated alkaline phosphatase (bone isoform), elevated parathyroid hormone (secondary hyperparathyroidism)
+      - X-ray: pseudofractures (Looser's zones) — radiolucent bands perpendicular to the cortex, most common at the medial femoral neck, pubic rami, ribs, and ulna
+      - Bone densitometry underestimates severity (DEXA signal reflects mineralised bone — unmineralised osteoid is invisible)
+
+      **Treatment**
+
+      *Nutritional replacement:* Oral vitamin D (cholecalciferol or ergocalciferol) with calcium supplementation for several weeks to months corrects deficiency-related osteomalacia. Maintenance supplementation is usually required long-term.
+
+      *Cause-specific treatment:* Malabsorption requires high-dose or intramuscular vitamin D; renal osteodystrophy requires activated vitamin D (calcitriol); phosphate wasting disorders require phosphate supplementation ± calcitriol.
+
+      *Pain management and rehabilitation:* Bone pain can be severe before mineralisation is restored. Exercise, physiotherapy, and pain interventions support function and recovery during the treatment period.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Exercise and bone-loading rehabilitation"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05.jpg)
-
-Osteomalacia refers to a marked softening of your bones, most often caused by severe vitamin D deficiency. The softened bones of children and young adults with osteomalacia can lead to bowing during growth, especially in weight-bearing bones of the legs. Osteomalacia in older adults can lead to fractures.
-
-Treatment for osteomalacia involves providing enough vitamin D and calcium, both required to harden and strengthen bones, and treating disorders that might cause the condition.
-
-## **Symptoms**
-
-When osteomalacia is in its early stages, you might not have symptoms, although signs of osteomalacia might show on an X-ray or other diagnostic tests. As osteomalacia progresses, you might develop bone pain and muscle weakness.
-
-The dull, aching pain associated with osteomalacia most commonly affects the lower back, pelvis, hips, legs and ribs. The pain might be worse at night or when you put pressure on the bones. The pain is rarely relieved completely by rest.
-
-Decreased muscle tone and leg weakness can cause a waddling gait and make walking slower and more difficult.
-
-## **Causes**
-
-Osteomalacia results from a defect in the bone-maturing process. Your body uses the minerals calcium and phosphate to help build strong bones. You might develop osteomalacia if you don’t get enough of these minerals in your diet or if your body doesn’t absorb them properly. These problems can be caused by:
-
--   **Vitamin D deficiency.**Sunlight produces vitamin D in your skin. Dietary vitamin D is usually from foods to which the vitamin has been added, such as cow’s milk.
-
-People who live in areas where sunlight is limited, get little exposure to sunlight or eat a diet low in vitamin D can develop osteomalacia. Vitamin D deficiency is the most common cause of osteomalacia worldwide.
-
--   **Certain surgeries.**Normally, the stomach breaks down food to release calcium and other minerals that are absorbed in the intestine. This process is disrupted if you have surgery to remove part or all of your stomach or to bypass your small intestine and can result in vitamin D and calcium deficiency.
--   **Celiac disease.**In this autoimmune disorder, foods containing gluten, a protein found in wheat, barley and rye, can damage the lining of your small intestine. A damaged intestinal lining doesn’t absorb nutrients well, and can lead to vitamin D and calcium deficiency.
--   **Kidney or liver disorders.**These organs are involved in activating vitamin D in your body. Problems with your kidneys or liver can affect your body’s ability to make active vitamin D.
--   Some drugs used to treat seizures, including phenytoin (Dilantin, Phenytek) and phenobarbital, can cause severe vitamin D deficiency and osteomalacia.
-
-## **Risk factors**
-
-The risk of developing osteomalacia is highest in people who don’t get enough dietary vitamin D and have little sun exposure, such as older adults and those who are housebound or hospitalized.
-
-## **Complications**
-
-If you have osteomalacia, you’re more likely to break bones, particularly those in your ribs, spine and legs.
-
-## **Treatment**
-
-Fortunately, getting enough vitamin D through oral supplements for several weeks to months can cure osteomalacia. To maintain normal blood levels of vitamin D, you’ll likely have to continue taking the supplements.
-
-Your health care provider might also recommend that you increase your calcium or phosphorus intake, either through supplements or diet. To improve the signs and symptoms of osteomalacia, we may recommend at Alimran Medical Center any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[SpineMED® system](/services/chiropractic/spinmed/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-**Neurons stimulation**
-
-[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
-
-[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)

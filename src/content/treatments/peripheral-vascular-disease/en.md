@@ -1,113 +1,78 @@
 ---
-title: "peripheral vascular disease"
-description: "Peripheral artery disease (also called peripheral arterial disease) is a common circulatory problem in which narrowed arteries reduce blood flow"
+title: "Peripheral vascular disease"
+description: "A common circulatory condition in which narrowed arteries reduce blood flow to the limbs, most often the legs. The most prevalent form is peripheral artery disease (PAD), caused by atherosclerosis. Ranges from exercise-induced claudication to critical limb ischaemia with rest pain and ulceration. Managed with lifestyle modification, cardiovascular risk reduction, spinal cord stimulation, and revascularisation."
+category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/peripheral-vascular-disease/"
-category: "pain"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Peripheral artery disease (PAD) is a progressive narrowing of the arteries supplying the extremities — predominantly the lower limbs — by atherosclerotic plaque. Reduced arterial flow impairs oxygen delivery to muscles during activity and, in severe cases, at rest. PAD is a systemic disease: patients have a markedly elevated risk of myocardial infarction and stroke from concurrent coronary and cerebrovascular atherosclerosis. Peripheral vascular disease is the broader term covering both arterial and venous disease of the limb circulation."
+      - label: "Symptoms"
+        value: "Intermittent claudication: cramping, aching, or fatigue in the calf, thigh, or buttock that appears predictably after walking a fixed distance and resolves within minutes of rest. Advanced disease: rest pain (worse at night, relieved by hanging the limb over the bed), skin pallor or discolouration, hair and nail changes, poor wound healing. Critical limb ischaemia: severe rest pain, ischaemic ulcers, gangrene — at risk of limb loss without urgent treatment. Aortoiliac disease may also cause erectile dysfunction (Leriche syndrome)."
+      - label: "Approach"
+        value: "Lifestyle: smoking cessation (most important single intervention), exercise programme, healthy diet. Medical: antiplatelet therapy (aspirin/clopidogrel), high-intensity statin, blood pressure and glucose control. Spinal cord stimulation: established for critical limb ischaemia not amenable to revascularisation — improves microcirculation, reduces rest pain, promotes wound healing. Revascularisation: angioplasty ± stenting or bypass surgery for disabling claudication or limb-threatening disease."
+  - type: prose
+    heading: "What peripheral vascular disease is"
+    body: |
+      The arterial supply to the lower limbs originates from the aorta and divides into the iliac, femoral, popliteal, and tibial arteries. Atherosclerosis — the accumulation of lipid-rich plaques within the arterial wall — progressively narrows these vessels, reducing perfusion reserve. During rest, even significantly narrowed arteries can meet basal metabolic demand; during exercise, when muscles require a 5- to 10-fold increase in blood flow, stenosed arteries cannot respond and ischaemia develops — producing claudication.
+
+      **Classification by severity**
+
+      The Fontaine classification stages PAD:
+      - *Stage I:* Asymptomatic (incidental finding on ABI or imaging)
+      - *Stage IIa:* Mild claudication (pain after > 200 m of walking)
+      - *Stage IIb:* Moderate/severe claudication (pain after < 200 m)
+      - *Stage III:* Rest pain
+      - *Stage IV:* Ulceration or gangrene (critical limb-threatening ischaemia)
+
+      **Ankle-brachial index (ABI)**
+
+      The ratio of ankle systolic blood pressure to brachial systolic pressure. A normal ABI is 1.0–1.4; values ≤ 0.9 indicate PAD; values ≤ 0.4 indicate severe disease. The ABI is the primary non-invasive diagnostic tool.
+
+      **Critical limb-threatening ischaemia**
+
+      When perfusion is insufficient to meet basal tissue demand, ischaemic rest pain develops — classically in the foot and toes, worsened by elevation and improved by hanging the leg over the bed (gravity assist). Without revascularisation or effective alternative perfusion, ulceration and gangrene develop and amputation is at risk.
+
+      **Management**
+
+      *Supervised exercise therapy:* Walking programmes to moderate pain, repeated for 30–45 minutes three times weekly, consistently improve pain-free walking distance and are recommended as first-line treatment for stable claudication.
+
+      *Cardiovascular risk reduction:* The primary cause of death in PAD patients is cardiovascular disease — myocardial infarction and stroke. Antiplatelet therapy, high-dose statin, antihypertensive treatment, and smoking cessation are essential.
+
+      *Spinal cord stimulation (SCS):* An established, evidence-based treatment for critical limb-threatening ischaemia not amenable to revascularisation. SCS improves microvascular flow, reduces rest pain and analgesic requirements, and promotes ulcer healing. The mechanism involves modulation of sympathetic vasomotor tone and release of vasodilatory neuropeptides.
+
+      *Revascularisation:* Percutaneous transluminal angioplasty (PTA) with or without stenting — endovascular; lower procedural risk but higher re-stenosis rate. Surgical bypass using vein or synthetic graft — more durable; preferred for long-segment disease or failed angioplasty. Urgently indicated for critical limb ischaemia.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
+          - "[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Supervised walking programme and vascular rehabilitation"
+      - title: "Chiropractic care"
+        items:
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-**![](/images/legacy/2021/01/PAD.jpg)**Peripheral artery disease (also called peripheral arterial disease) is a common circulatory problem in which narrowed arteries reduce blood flow to your limbs.
-
-When you develop peripheral artery disease (PAD), your extremities — usually your legs — don’t receive enough blood flow to keep up with demand. This causes symptoms, most notably leg pain when walking (claudication).
-
-Peripheral artery disease is also likely to be a sign of a more widespread accumulation of fatty deposits in your arteries (atherosclerosis). This condition may be reducing blood flow to your heart and brain, as well as your legs.
-
-You often can successfully treat peripheral artery disease by quitting tobacco, exercising and eating a healthy diet.
-
-## **Symptoms**
-
-While many people with peripheral artery disease have mild or no symptoms, some people have leg pain when walking (claudication).
-
-Claudication symptoms include muscle pain or cramping in your legs or arms that’s triggered by activity, such as walking, but disappears after a few minutes of rest. The location of the pain depends on the location of the clogged or narrowed artery. Calf pain is the most common location.
-
-The severity of claudication varies widely, from mild discomfort to debilitating pain. Severe claudication can make it hard for you to walk or do other types of physical activity.
-
-Peripheral artery disease signs and symptoms include:
-
--   Painful cramping in one or both of your hips, thighs or calf muscles after certain activities, such as walking or climbing stairs (claudication)
--   Leg numbness or weakness
--   Coldness in your lower leg or foot, especially when compared with the other side
--   Sores on your toes, feet or legs that won’t heal
--   A change in the color of your legs
--   Hair loss or slower hair growth on your feet and legs
--   Slower growth of your toenails
--   Shiny skin on your legs
--   No pulse or a weak pulse in your legs or feet
--   Erectile dysfunction in men
-
-If peripheral artery disease progresses, pain may even occur when you’re at rest or when you’re lying down (ischemic rest pain). It may be intense enough to disrupt sleep. Hanging your legs over the edge of your bed or walking around your room may temporarily relieve the pain.
-
-## **Causes**
-
-Peripheral artery disease is often caused by atherosclerosis. In atherosclerosis, fatty deposits (plaques) build up on your artery walls and reduce blood flow.
-
-Although discussions of atherosclerosis usually focus on the heart, the disease can and usually does affect arteries throughout your body. When it occurs in the arteries supplying blood to your limbs, it causes peripheral artery disease.
-
-Less commonly, the cause of peripheral artery disease may be blood vessel inflammation, injury to your limbs, unusual anatomy of your ligaments or muscles, or radiation exposure.
-
-## **Risk factors**
-
-Factors that increase your risk of developing peripheral artery disease include:
-
--   Smoking
--   Diabetes
--   Obesity (a body mass index over 30)
--   High blood pressure
--   High cholesterol
--   Increasing age, especially after reaching 50 years of age
--   A family history of peripheral artery disease, heart disease or stroke
--   High levels of homocysteine, a protein component that helps build and maintain tissue
-
-People who smoke or have diabetes have the greatest risk of developing peripheral artery disease due to reduced blood flow.
-
-## **Treatment**
-
-Treatment for peripheral artery disease has two major goals:
-
--   Manage symptoms, such as leg pain, so that you can resume physical activities
--   Stop the progression of atherosclerosis throughout your body to reduce your risk of heart attack and stroke
-
-You may be able to accomplish these goals with lifestyle changes, especially early in the course of peripheral artery disease. If you smoke, quitting is the single most important thing you can do to reduce your risk of complications.
-
-If you have signs or symptoms of peripheral artery disease, you likely will need additional medical treatment. Your doctor may prescribe medicine to prevent blood clots, lower blood pressure and cholesterol, and control pain and other symptoms.
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-**Neurons stimulation**
-
-[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
-
-[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)
-
-[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)
-
-[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)
-
-Chiropractic

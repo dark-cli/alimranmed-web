@@ -1,51 +1,53 @@
 ---
 title: "Flatfeet"
-description: "You have flatfeet when the arches on the inside of your feet are flattened, allowing the entire soles of your"
+description: "A condition in which the foot's arch is absent or falls over time, allowing the entire sole to contact the ground. Often painless, but can cause foot, ankle, and knee pain when symptomatic. Treated with orthotics, supportive footwear, and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/flatfeet/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A common condition in which the arch of the foot is flattened, allowing the entire sole to touch the floor when standing. Often painless; no treatment is needed unless symptoms arise."
+      - label: "When it causes problems"
+        value: "Heel or arch pain that worsens with activity, inner ankle swelling, and altered leg alignment that strains the ankles and knees."
+      - label: "Approach"
+        value: "Arch supports, supportive footwear, and stretching exercises for mild cases. Physiotherapy and targeted orthotics for active runners or persistent pain."
+  - type: media
+    kind: image
+    src: /images/legacy/2021/02/Flat-Feet-300x249-1.jpg
+    alt: "Comparison showing a flatfoot versus a foot with a normal arch"
+  - type: prose
+    heading: "What flatfeet is"
+    body: |
+      Flatfeet (pes planus) occurs when the arch on the inside of the foot is absent or collapses, allowing the entire sole to contact the ground when standing. It is a common and usually painless condition.
+
+      **How it develops:**
+      - A flat foot is normal in infants and toddlers; arches typically develop during childhood.
+      - Some children have flexible flatfoot — the arch appears when sitting or standing on tiptoe but disappears when standing normally. Most outgrow this without problems.
+      - In adults, arches can fall over time as the tendon running along the inside of the ankle weakens through years of wear.
+
+      **Risk factors:** Obesity, foot or ankle injury, rheumatoid arthritis, diabetes, and aging.
+
+      **When it causes symptoms:** Most people with flatfeet have no pain at all. When pain does occur, it typically affects the heel or arch and worsens with activity. Swelling along the inner ankle and altered leg alignment contributing to knee problems can also occur.
+
+      No treatment is necessary if flatfeet are painless.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Conservative measures"
+        items:
+          - "Custom or over-the-counter arch supports (orthotic devices)"
+          - "Structurally supportive footwear"
+          - "Achilles tendon stretching exercises"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Gait analysis and technique correction"
+          - "Therapeutic exercises"
 ---
-
-![](/images/legacy/2021/02/Flat-Feet-300x249-1.jpg)
-
-You have flatfeet when the arches on the inside of your feet are flattened, allowing the entire soles of your feet to touch the floor when you stand up.
-
-A common and usually painless condition, flatfeet can occur when the arches don’t develop during childhood. In other cases, flatfeet develop after an injury or from the simple wear-and-tear stresses of age.
-
-Flatfeet can sometimes contribute to problems in your ankles and knees because the condition can alter the alignment of your legs. If you aren’t having pain, no treatment is usually necessary for flatfeet.
-
-## **Symptoms**
-
-Most people have no signs or symptoms associated with flatfeet. But some people with flatfeet experience foot pain, particularly in the heel or arch area. Pain may worsen with activity. Swelling along the inside of the ankle can also occur.
-
-## **Causes**
-
-A flat foot is normal in infants and toddlers, because the foot’s arch hasn’t yet developed. Most people’s arches develop throughout childhood, but some people never develop arches. This is a normal variation in foot type, and people without arches may or may not have problems.
-
-Some children have flexible flatfoot, in which the arch is visible when the child is sitting or standing on tiptoes, but disappears when the child stands. Most children outgrow flexible flatfoot without problems.
-
-Arches can also fall over time. Years of wear and tear can weaken the tendon that runs along the inside of your ankle and helps support your arch.
-
-## **Risk factors**
-
-Factors that can increase your risk of flatfeet include:
-
--   Obesity
--   Injury to your foot or ankle
--   Rheumatoid arthritis
--   Aging
--   Diabetes
-
-## **Treatment**
-
-No treatment is necessary for flatfeet if they don’t cause pain.
-
-### Therapy
-
-If your flatfeet are painful, your doctor might suggest:
-
--   **Arch supports (orthotic devices).**Over-the-counter arch supports may help relieve the pain caused by flatfeet. Or your doctor might suggest custom-designed arch supports, which are molded to the contours of your feet. Arch supports won’t cure flatfeet, but they often reduce symptoms.
--   **Stretching exercises.**Some people with flatfeet also have a shortened Achilles tendon. Exercises to stretch this tendon may help.
--   **Supportive shoes.**A structurally supportive shoe might be more comfortable than sandals or shoes with minimal support.
--   **Physical therapy.**Flatfeet may contribute to overuse injuries in some runners. A physical therapist can do a video analysis of how you run to help you improve your form and technique.

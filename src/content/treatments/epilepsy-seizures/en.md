@@ -1,57 +1,69 @@
 ---
-title: "Epilepsy & Seizures"
-description: "About 10 percent of all people, approximately eight million Americans, may experience a seizure during their lifetimes. It is estimated"
+title: "Epilepsy & seizures"
+description: "A neurological disorder characterised by recurrent, unprovoked seizures — brief episodes of abnormal electrical activity in the brain. Affects approximately 1–3% of the population. Managed with anticonvulsant medications and, for drug-resistant cases, surgical or neuromodulatory interventions."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/epilepsy-seizures/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A neurological disorder defined by recurrent unprovoked seizures — transient episodes of abnormal, excessive, or synchronous neuronal activity in the brain. Approximately 1–3% of the population has epilepsy. Seizures can be generalised (affecting the whole brain) or focal (beginning in one area)."
+      - label: "Symptoms"
+        value: "Depends on seizure type and the brain area involved: staring spells, muscle jerks, convulsions (tonic-clonic), sudden falls, automatisms (repetitive movements), sensory disturbances, or loss of consciousness. Between seizures, most people are neurologically normal."
+      - label: "Approach"
+        value: "Anticonvulsant medications control seizures in approximately 70% of patients. For drug-resistant epilepsy, surgical resection, vagal nerve stimulation, corpus callosotomy, and rTMS provide additional options. Multidisciplinary evaluation identifies the best approach for each patient."
+  - type: prose
+    heading: "What epilepsy is"
+    body: |
+      Epilepsy is a neurological condition characterised by a predisposition to recurrent, unprovoked seizures. A seizure is a transient episode of signs or symptoms caused by abnormal, excessive, or synchronous neuronal activity in the brain. Epilepsy is defined by two or more unprovoked seizures occurring more than 24 hours apart, or one unprovoked seizure with a high risk of recurrence.
+
+      Approximately 1–3% of the population has epilepsy. Around 10% of people will have at least one seizure during their lifetime — but a single provoked seizure (caused by fever, drugs, or metabolic disturbance) does not constitute epilepsy.
+
+      **Causes:**
+      - Structural: head injury, stroke, brain tumour, vascular malformation, cortical dysplasia
+      - Metabolic: electrolyte abnormalities, glucose disorders, toxic exposures
+      - Infectious: encephalitis, meningitis, brain abscess
+      - Genetic: several epilepsy syndromes have identified genetic causes (e.g., Dravet syndrome)
+      - In many cases (particularly primary generalised epilepsies), no specific cause is found
+
+      **Types of seizures** — the major classification divides seizures by onset:
+
+      *Generalised-onset seizures* (both hemispheres involved simultaneously):
+      - **Absence (petit mal):** brief lapse in awareness, staring, eyelid flickering; no post-ictal confusion; may occur hundreds of times a day
+      - **Tonic-clonic (grand mal):** loss of consciousness, bilateral stiffening (tonic phase), then rhythmic jerking (clonic phase); post-ictal confusion and fatigue
+      - **Tonic:** bilateral stiffening without a clonic phase
+      - **Myoclonic:** brief, lightning-like jerks of the limbs or whole body; no loss of consciousness
+      - **Atonic (drop attacks):** sudden loss of muscle tone causing collapse
+
+      *Focal-onset seizures* (arising from one region of the brain):
+      - **Simple focal (aware):** no loss of consciousness; motor, sensory, autonomic, or psychic symptoms depending on the brain region involved
+      - **Complex focal (impaired awareness):** typically begins with an aura (fear, smell, déjà vu), followed by altered consciousness, automatisms (repetitive movements such as chewing or hand fumbling)
+      - Focal seizures can secondarily generalise
+
+      **Diagnosis** relies on a detailed clinical history, electroencephalography (EEG), and brain imaging (MRI). Video-EEG telemetry — recording both EEG and clinical behaviour simultaneously — is the gold standard for characterising seizure type and identifying a surgical target in drug-resistant cases. Functional MRI and PET scanning provide additional localising information.
+
+      **Treatment:**
+      - *First-line:* Anticonvulsant medications (carbamazepine, valproate, levetiracetam, lamotrigine, and others) achieve seizure control in approximately 70% of patients
+      - *Drug-resistant epilepsy:* When two appropriately chosen anticonvulsants fail, surgical evaluation is indicated. Options include focal resection (curative in suitable temporal lobe epilepsy), vagal nerve stimulation, corpus callosotomy, deep brain stimulation, and ketogenic diet
+      - *Neuromodulation:* rTMS has an emerging evidence base in reducing seizure frequency in selected patients with focal epilepsy
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Therapeutic exercise and rehabilitation"
+      - title: "Advanced therapies"
+        items:
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
 ---
-
-About 10 percent of all people, approximately eight million Americans, may experience a seizure during their lifetimes. It is estimated that one to three percent of the population has recurrent seizures, or epilepsy, or seizure disorder.
-
-### Causes
-
-Sometimes, a clear cause of epilepsy can be identified. A common cause of epilepsy is head injury due to an automobile accident or gunshot wound, and other causes include stroke, infection, poisoning, brain tumors, vascular malformations and developmental abnormalities of the brain. In some cases, epilepsy is genetic. Several types of epilepsy, such as temporal lobe epilepsy, can be cured with surgery, while other types are best treated with medication.
-
-### Symptoms
-
-Epilepsy encompasses a group of conditions characterized by recurrent seizures — brief electrical disturbances in the brain that can cause a variety of symptoms such as strange sensations, changes in behavior or emotions, muscle spasms, convulsions, and a sudden loss of awareness or consciousness.
-
-### Diagnosis
-
-Sophisticated diagnostic techniques, such an encephalograms (EEGs), video-EEG telemetry, computed tomography (CT), magnetic resonance imaging (MRI), positron emission tomography (PET), and functional MRI, are used to assess epilepsy.
-
-### Treatment
-
-**Generalized epilepsy:** Because these seizures are generalized and do not have a single initiation point, they cannot be cured with surgery, but still may be improved with surgery, such as vagal nerve stimulation and corpus callosotomy. Most patients, particularly those with idiopathic generalized seizures, respond well to anticonvulsant medication.
-
-**Partial (or Focal) epilepsy:** Close to 50% of patients with partial epilepsy are not completely controlled by medication. Many are amenable to surgery because the source of the seizures can be identified and safely removed. Often defined by their point of origin, partial epilepsy includes frontal lobe epilepsy, occipital lobe epilepsy, mesial temporal lobe epilepsy, and parietal lobe epilepsy.
-
-### Types of Epilepsy
-
-There are many different types of epilepsy that are distinguished by causes, extent, and effects. Among these, there are two major types of epilepsy: generalized epilepsy, in which seizures affect the entire brain, and partial (or focal) epilepsy, in which seizures begin in a specific portion of the brain.
-
-**Generalized epilepsies** have no defined area in the brain from which the seizures originate. There are two varieties of generalized epilepsies:
-
--   Idiopathic, in which the brain behaves normally between seizures and the cause of seizures is unknown; and
--   Symptomatic, in which there is a clear structural abnormality that contributes to the seizures.
-
-The seizures caused by generalized epilepsy include:
-
--   Absence, or petit mal, seizures  
-    These seizures are characterized by a brief lapse in awareness that lasts a few seconds and causes the person to stare or have twitches in the eyelids or face muscles. These seizures, which may occur up to hundreds of times a day, commonly begin in before age two and end after childhood.
--   Tonic-clonic, or grand mal, seizures  
-    These seizures are characterized by a sudden and complete loss of consciousness and a stiffening the arms and legs that causes the person to fall (called the tonic phase) before a rhythmic jerking (called the clonic phase) begins. When the seizing does not stop, it may become a status epilepticus seizure. This uncontrolled seizing requires immediate medical attention to prevent brain damage or death.
--   Tonic seizures  
-    These seizures are similar to tonic-clonic seizures, but are not followed by a rhythmic jerking of the clonic phase.
--   Myoclonic seizures  
-    These generalized seizures involve very brief, lightning-like jerks of any part of the body without a loss of consciousness.
--   Atonic seizures  
-    People with these seizures experience a sudden loss of muscle tone resulting in collapse, sometimes head first, into the ground.
-
-**Partial (focal) epilepsy** involve seizures that begin in a region of the most highly developed part of the brain’s hemispheres. While the seizures sometimes are localized, they can spread to become generalized seizures. The seizures caused by these epilepsies, which may spread and become generalized, include:
-
--   Complex partial seizures (psychomotor attacks)  
-    These seizures often begin with an aura, or a neurological warning, such as a sense of fear, an unpleasant smell, or change in perception. After the aura, consciousness may be altered; speech may stop and the person may perform automatic repetitive movements such as chewing, swallowing, hand fidgeting, or purposeless movement from place to place.
--   Simple partial seizures  
-    These seizures typically affect the motor or sensory areas of the brain, causing jerking movements in the hand or facial muscles, or sensory symptoms such as flashing lights or a buzzing sound, but without altering consciousness.

@@ -1,36 +1,81 @@
 ---
-title: "Pediatric Hydrocephalus"
-description: "Also known as water on the brain, hydrocephalus is one of the most frequently seen problems in a busy pediatric neurosurgical practice."
+title: "Pediatric hydrocephalus"
+description: "Abnormal accumulation of cerebrospinal fluid in the cerebral ventricles, one of the most common conditions in paediatric neurosurgery. Causes include bleeding, infection, congenital malformations, tumours, and vascular abnormalities. Presents with a rapidly enlarging head in infancy, vomiting, irritability, and developmental delay. Treated surgically with a CSF shunt or endoscopic third ventriculostomy."
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/pediatric-hydrocephalus/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "An abnormal build-up of cerebrospinal fluid (CSF) within the brain's ventricles, causing them to enlarge and compress surrounding brain tissue. CSF is produced continuously within the ventricles and normally circulates around the brain and spinal cord before being reabsorbed. Hydrocephalus occurs when this cycle is disrupted — by obstruction within the ventricular system, impaired absorption over the brain surface, or (rarely) overproduction. The underlying cause determines the prognosis more than the hydrocephalus itself."
+      - label: "Symptoms"
+        value: "In early infancy: rapidly enlarging head circumference (the skull can expand because the sutures are not yet fused), bulging fontanelle, prominent scalp veins, downward deviation of the eyes ('setting sun' sign). In older children: headache, nausea and vomiting, visual disturbance, papilloedema, gait abnormality, declining school performance. With high intracranial pressure: altered consciousness, Cushing response (bradycardia + hypertension)."
+      - label: "Approach"
+        value: "Neurosurgical intervention is required in almost all cases. If a definable mass obstructs CSF flow, removing it may restore normal circulation. Otherwise, CSF must be diverted: ventriculoperitoneal (VP) shunting channels fluid from the ventricles to the abdominal cavity for reabsorption. Endoscopic third ventriculostomy (ETV) creates a bypass within the ventricle — lower infection risk than shunting and preferable when there is an identifiable obstruction. Long-term follow-up is essential; shunt hardware can fail or become infected."
+  - type: prose
+    heading: "What pediatric hydrocephalus is"
+    body: |
+      Everyone produces approximately half a litre of CSF per day. The fluid is generated in the choroid plexus within the cerebral ventricles, circulates through the ventricular system and around the brain and spinal cord via the subarachnoid space, and is reabsorbed by arachnoid granulations into the venous sinuses. This continuous cycle maintains a stable, protective environment for the central nervous system.
+
+      Hydrocephalus interrupts this cycle. When CSF cannot flow or be reabsorbed normally, it accumulates in the ventricles. Ventricular enlargement compresses the surrounding brain parenchyma and raises intracranial pressure, causing the symptoms described above. In infants, whose skull sutures are still open, the head circumference can increase rapidly; once the sutures fuse, the same fluid accumulation produces a more acute rise in intracranial pressure.
+
+      **Causes**
+
+      Many cases have no clearly identified cause, but recognised associations include:
+      - *Intraventricular haemorrhage* — the most common cause in premature infants; blood clots obstruct CSF pathways
+      - *Congenital malformations* — aqueductal stenosis (narrowing of the cerebral aqueduct), Chiari malformation, Dandy-Walker syndrome, neural tube defects
+      - *Infection* — bacterial meningitis or intrauterine infection (TORCH) scarring
+      - *Tumours* — a posterior fossa tumour is a common cause of obstructive hydrocephalus in older children
+      - *Vascular anomalies* — vein of Galen malformation
+      - *Genetic* — a small proportion are inherited (X-linked hydrocephalus from L1CAM mutation)
+
+      **Diagnosis**
+
+      - *Ultrasound* — used in infants with an open fontanelle; fast, non-irradiating, bedside-capable
+      - *MRI* — preferred when possible; provides detail of ventricle size, the CSF pathway obstruction, and brain parenchymal changes; usually requires sedation
+      - *CT* — faster than MRI; useful in emergency presentations or when MRI is unavailable
+
+      Serial imaging is used to monitor ventricular size over time and assess whether the hydrocephalus is progressive or stable.
+
+      **Prognosis**
+
+      Hydrocephalus itself is highly treatable. The outcome for the child depends primarily on the underlying cause and any associated brain injury. Premature infants with post-haemorrhagic hydrocephalus and children with severe congenital anomalies often have additional developmental challenges; isolated aqueductal stenosis treated early typically carries a good prognosis.
+
+      **Treatment**
+
+      *Ventriculoperitoneal (VP) shunt:* A thin silicone catheter placed from the lateral ventricle under the scalp and down the neck to the peritoneal cavity. A one-way valve prevents backflow. Many modern shunts have magnetically programmable valves that allow non-invasive pressure adjustment. Shunts can fail mechanically (obstruction or disconnection), requiring revision surgery; they can also become infected, most commonly in the first months after implantation.
+
+      *Endoscopic third ventriculostomy (ETV):* A small fenestration made in the floor of the third ventricle using an endoscope, allowing CSF to bypass the obstructed aqueduct and enter the subarachnoid space. Avoids implanted hardware; infection risk is lower than shunting. Most effective in older children with obstructive hydrocephalus (aqueductal stenosis); less effective in infants and in communicating hydrocephalus. Can fail over time, requiring conversion to shunting or repeat ETV.
+
+      *ETV + choroid plexus cauterisation (ETV-CPC):* In young infants, particularly those with post-infectious hydrocephalus, cauterising the choroid plexus (which produces much of the CSF) in combination with ETV improves success rates compared with ETV alone.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neurosurgery"
+        items:
+          - "Ventriculoperitoneal (VP) shunt implantation"
+          - "Endoscopic third ventriculostomy (ETV)"
+          - "ETV with choroid plexus cauterisation (ETV-CPC)"
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Neurodevelopmental rehabilitation"
 ---
-
-Also known as "water on the brain," hydrocephalus is one of the most frequently seen problems in a busy pediatric neurosurgical practice. The term "water on the brain" is actually more of a misnomer. In reality most cases of hydrocephalus represent a buildup of spinal fluid inside the brain.
-
-Everyone produces spinal fluid inside their brains every minute of their lives. This fluid is very similar to the liquid portion of blood and contains various salts and products such as sodium and glucose. The fluid is primarily produced in connected chambers within the brain known as ventricles. The fluid volume produced in an adult is about equal to one pint per day. This fluid then circulates through the ventricles and around the brain and spinal cord. Eventually it is reabsorbed over the surface of the brain into large veins which carry the fluid back to the heart. This orderly cycle of spinal fluid production, flow and absorption maintains a protective environment to the nervous system. In addition, there is no loss of fluids or the salts contained in the spinal fluid.
-
-Hydrocephalus occurs when something prevents this orderly cycle of spinal fluid flow. If this occurs, there is a relative buildup of spinal fluid in the brain which can lead to injury or even death if not treated. It is very important to realize that hydrocephalus is the result of some event on the nervous system and that a child's prognosis is not so much based on the hydrocephalus as the cause of the hydrocephalus. While many cases have no clear cause, the following have been associated with the development of hydrocephalus: bleeding, infection, trauma, tumors, vascular problems, and structural problems. Some occur during pregnancy and others after birth. In addition, a small number can be transmitted genetically.
-
-## Symptoms and Diagnosis
-
-In early infancy hydrocephalus is usually detected by the family or pediatrician as a rapidly enlarging head. This may or may not be associated with symptoms such as vomiting, failure to thrive, irritability, delay or loss of developmental milestones. Later in infancy and into childhood, there are rarely rapid changes in head size, but rather symptoms as already described.
-
-Depending on the child's age at the time of discovery, various radiographic techniques are available to confirm the diagnosis. In the first six to twelve months of life, the diagnosis can often be made with an ultrasound of the brain. After the skull fuses, the diagnosis is best made with MRI or CT scanning. Each of these tests have their advantages and disadvantages, but overall most neurosurgeons would favor an MRI scan. While this test takes longer than a CT scan and usually requires sedation, it gives a much better picture of the brain and the possible cause of the hydrocephalus. This information may affect the treatment options for the child.
-
-## Prognosis and Treatment Considerations
-
-It is important to realize that while hydrocephalus is very treatable, the underlying cause may not be or may have caused irreversible damage to the brain. It is important for the doctors taking care of a child with hydrocephalus to determine if the problem is ongoing or if it has resolved but left enlarged but stable ventricles. This can sometimes be difficult to tell and often the decision will be based on many factors including symptoms, eye exams, changes in level of activity or school performance. In addition, the child will often have repeated (serial) radiographic exams to look for changes in the ventricles.
-
-## Treatment Options
-
-If the diagnosis of hydrocephalus has been made there are rarely options other than surgery for treatment. If a definable mass is causing the obstruction of flow it may be possible, if not essential, to remove the mass and allow for normal flow and resolution of the hydrocephalus. More often than not, the blockage cannot be removed and the fluid needs to bypass the normal circulation. Most surgeons use various types of systems called shunts to channel the fluid from the ventricles to other sites in the body such as the abdominal cavity, chest cavity, or the heart. Each of these sites have various pros and cons, but by far and away the most popular for pediatrics is the abdominal cavity. Here the spinal fluid is absorbed onto the surface of the bowels to be returned to the bloodstream along with the vital salts and other products it contains.
-
-There are many different shunt systems on the market and there is no such thing as a luxury model versus an economy model. Most neurosurgeons are comfortable with one or more systems and utilize these almost exclusively. What is most important is that your surgeon be well trained in all shunt systems and shunting methods. In its most simplistic form, a shunt is an inert plastic tube less than an eighth of an inch thick that allows for fluid to flow through it in one direction. There is usually a valve system that regulates the flow as well as a reservoir or "bubble" which can be felt through the skin. This reservoir allows for sampling of the spinal fluid with the use of a tiny needle if indicated to test for function or infection.
-
-In addition to these operations, certain types of hydrocephalus can be treated by making a tiny hole internally in the ventricle to reestablish normal flow. This procedure called a ventriculostomy is becoming very popular due to better surgical instruments and imaging techniques. As with shunts, the third ventriculostomy can fail over time, requiring further surgery. The risk of infection with a ventriculostomy is certainly lower than in shunting and this is one of the main reasons it has become an attractive alternative to shunting in the appropriate patient.
-
-## Prognosis
-
-As mentioned earlier, the prognosis for successful management of hydrocephalus is excellent. It is however the underlying cause that will ultimately determine a child's outcome.

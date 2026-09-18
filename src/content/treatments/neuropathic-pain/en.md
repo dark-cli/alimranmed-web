@@ -1,108 +1,86 @@
 ---
-title: "Neuropathic Pain"
-description: "Neuropathic Pain is a complex, chronic pain state that usually is accompanied by tissue injury. With neuropathic pain, the nerve"
+title: "Neuropathic pain"
+description: "Chronic pain caused by damage or dysfunction of the nervous system rather than by tissue injury. Characterised by burning, shooting, or electric-shock sensations. Common causes include diabetes, shingles, multiple sclerosis, spinal cord injury, and post-surgical nerve damage."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/neuropathic-pain/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Chronic pain arising from damage, dysfunction, or abnormal processing by the peripheral or central nervous system — rather than from ongoing tissue injury. The nerve fibres themselves are damaged or malfunctioning and send incorrect pain signals to the brain."
+      - label: "Symptoms"
+        value: "Burning, shooting, stabbing, or electric-shock pain; allodynia (pain from normally non-painful stimuli like light touch); hyperalgesia (exaggerated pain response); numbness, tingling, or pins and needles; muscle weakness; and impaired coordination."
+      - label: "Approach"
+        value: "Targeting both the underlying condition and the abnormal pain signalling itself. Pulsed radiofrequency, spinal cord stimulation, rTMS, and Botox directly modulate pain pathways. Combined with physiotherapy and appropriate medications, most patients achieve meaningful pain reduction."
+  - type: prose
+    heading: "What neuropathic pain is"
+    body: |
+      Neuropathic pain is a distinct category of chronic pain that arises from damage to, or dysfunction of, the nervous system itself — rather than from ongoing injury to tissues such as muscles, joints, or skin. The damaged or malfunctioning nerve fibres send abnormal signals to pain-processing centres in the brain, producing pain that persists even in the absence of any ongoing injury.
+
+      **What distinguishes neuropathic pain** from other types is its quality and associated features. It is characteristically described as burning, shooting, stabbing, or electric-shock-like. Two hallmark phenomena are particularly characteristic:
+      - **Allodynia:** pain produced by stimuli that do not normally cause pain, such as the light touch of clothing or a gentle breeze
+      - **Hyperalgesia:** an exaggerated, disproportionate pain response to stimuli that are ordinarily only mildly painful
+
+      **Common causes:**
+      - Diabetic peripheral neuropathy (most common worldwide)
+      - Postherpetic neuralgia (pain persisting after shingles)
+      - Trigeminal neuralgia
+      - Complex regional pain syndrome (CRPS)
+      - Nerve compression: herniated disc, spinal stenosis, carpal tunnel syndrome
+      - Multiple sclerosis
+      - Spinal cord injury or stroke (central neuropathic pain)
+      - Post-surgical or post-traumatic nerve damage
+      - Chemotherapy-induced neuropathy
+      - HIV-associated neuropathy
+
+      **Symptoms** depend on which nerves are affected and whether the damage is peripheral or central:
+
+      *Peripheral neuropathic pain:*
+      - Gradual onset of numbness, tingling, or prickling in the feet or hands, spreading upward
+      - Burning, jabbing, or shooting pain
+      - Extreme sensitivity to touch (allodynia)
+      - Muscle weakness or loss of coordination
+      - Feeling of wearing gloves or socks that aren't there
+
+      *Autonomic involvement (if autonomic nerves are affected):*
+      - Heat intolerance and abnormal sweating
+      - Bowel, bladder, or digestive problems
+      - Blood pressure fluctuations causing dizziness
+
+      **Phantom limb pain** — pain perceived in an amputated limb — is a form of neuropathic pain in which the brain continues receiving and misinterpreting signals from the severed nerve ends.
+
+      **Management** of neuropathic pain requires treating both the underlying condition (where possible) and the abnormal pain signalling itself. Standard pharmacological options include anticonvulsants (gabapentin, pregabalin), tricyclic antidepressants, and topical agents (lidocaine, capsaicin). When these prove inadequate, interventional approaches — spinal cord stimulation, pulsed radiofrequency, and neuromodulation — offer effective alternatives or complements.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
+          - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Therapeutic exercises and desensitisation"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-Neuropathic Pain is a complex, chronic pain state that usually is accompanied by tissue injury. With neuropathic pain, the nerve fibers themselves might be damaged, dysfunctional, or injured. These damaged nerve fibers send incorrect signals to other pain centers. The impact of a nerve fiber injury includes a change in nerve function both at the site of injury and areas around the injury. (ClevelandClinic.org)
-
-Neuropathic pain – otherwise known as nerve pain – is a type of chronic pain that occurs when nerves in the central nervous system become injured or damaged. If you or someone you care about has nerve pain, you know that it can erode quality of life.
-
-Neuropathic pain is often described as a shooting or burning pain. It can go away on its own but is often chronic. Sometimes it is unrelenting and severe, and sometimes it comes and goes. It often is the result of nerve damage or a malfunctioning nervous system. The impact of nerve damage is a change in nerve function both at the site of the injury and areas around it.
-
-One example of neuropathic pain is called phantom limb syndrome. This rare condition occurs when an arm or a leg has been removed because of illness or injury, but the brain still gets pain messages from the nerves that originally carried impulses from the missing limb. These nerves now misfire and cause pain.
-
-**Causes of Neuropathic Pain**
-
-Neuropathic pain often seems to have no obvious cause. But some common causes of neuropathic pain include:
-
--   Alcoholism
--   Amputation
--   Chemotherapy
--   Diabetes
--   Facial nerve problems
--   [HIV](https://www.webmd.com/hiv-aids/default.htm) infection or AIDS
--   Multiple myeloma
--   Multiple sclerosis
--   Nerve or spinal cord compression from herniated discs or from arthritis in the spine
--   Shingles
--   Spine surgery
--   Syphilis
--   Thyroid problems
-
-**Symptoms of Neuropathic Pain**
-
-Symptoms
-
-Every nerve in your peripheral system has a specific function, so symptoms depend on the type of nerves affected. Nerves are classified into:
-
--   Sensory nerves that receive sensation, such as temperature, pain, vibration or touch, from the skin
--   Motor nerves that control muscle movement
--   Autonomic nerves that control functions such as blood pressure, heart rate, digestion and bladder
-
-Signs and symptoms of peripheral neuropathy might include:
-
--   Gradual onset of numbness, prickling or tingling in your feet or hands, which can spread upward into your legs and arms
--   Sharp, jabbing, throbbing or burning pain
--   Extreme sensitivity to touch
--   Pain during activities that shouldn’t cause pain, such as pain in your feet when putting weight on them or when they’re under a blanket
--   Lack of coordination and falling
--   Muscle weakness
--   Feeling as if you’re wearing gloves or socks when you’re not
--   Paralysis if motor nerves are affected
-
-If autonomic nerves are affected, signs and symptoms might include:
-
--   Heat intolerance
--   Excessive sweating or not being able to sweat
--   Bowel, bladder or digestive problems
--   Changes in blood pressure, causing dizziness or lightheadedness
-
-Peripheral neuropathy can affect one nerve (mononeuropathy), two or more nerves in different areas (multiple mononeuropathy) or many nerves (polyneuropathy). Carpal tunnel syndrome is an example of mononeuropathy. Most people with peripheral neuropathy have polyneuropathy.
-
-## Neuropathic Pain Treatment
-
-## Treatment
-
-Treatment goals are to manage the condition causing your neuropathy and to relieve symptoms. At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[SpineMED® system](/services/chiropractic/spinmed/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-**Neurons stimulation**
-
-[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)
-
-[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
-
-[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)
-
-Chiropractic

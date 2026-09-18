@@ -1,53 +1,58 @@
 ---
-title: "Complex Regional Pain"
-description: "What is Complex Regional Pain Syndrome? Complex regional pain syndrome (CRPS) is a condition that occurs when the nervous system"
+title: "Complex regional pain syndrome"
+description: "A chronic pain condition triggered by injury or surgery in which the nervous system misfires and generates persistent pain — usually in a limb. No cure, but pain-management options at the clinic can restore function and quality of life."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/complex-regional-pain/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A chronic pain condition where the nervous system misfires and generates pain signals — often after an injury or surgery — most commonly affecting a limb."
+      - label: "How we approach it"
+        value: "No single cure; the plan combines physiotherapy, chiropractic care, targeted injections, and neuromodulation to control pain and preserve function."
+  - type: media
+    kind: image
+    src: /images/legacy/2020/12/shutterstock_98725853.jpg
+    alt: "Hand affected by complex regional pain syndrome"
+  - type: prose
+    heading: "What complex regional pain syndrome is"
+    body: |
+      Complex regional pain syndrome (CRPS) is a condition that occurs when the nervous system misfires and sends signals to the brain that get interpreted as pain. The exact cause is unclear, but CRPS is believed to develop from a dysfunction in the nervous system triggered by injury or surgery.
+
+      CRPS commonly affects the arms or legs but can occur anywhere in the body. It is a chronic condition that can be extremely difficult to manage. With pain-management services at Alimran Medical Center, patients can achieve relief and improved quality of life.
+  - type: prose
+    heading: "How CRPS is treated"
+    body: |
+      There is no cure for CRPS, but many treatments can help patients manage their pain and return to the activities they value. At Alimran Medical Center the plan is built from the options below, tailored to each patient.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Therapeutic exercises"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
+      - title: "Injection therapies"
+        items:
+          - "Trigger point injections"
+          - "Stellate ganglion block"
+          - "Lumbar sympathetic block"
+          - "[Ozone injection](/services/ozone-therapy/osteoarthritis/)"
+          - "[Botox® injections](/services/botox/botox-injection/)"
+      - title: "Advanced and neuromodulation"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "Spinal cord stimulation"
+          - "Intrathecal baclofen pump"
 ---
-
-![](/images/legacy/2020/12/shutterstock_98725853.jpg)
-
-What is Complex Regional Pain Syndrome?
-
-Complex regional pain syndrome (CRPS) is a condition that occurs when the nervous system misfires and sends signals to the brain. These signals get interpreted as pain signals, causing you to feel pain in various areas of the body. The exact cause of this condition is unclear, but it is believed that CRPS develops due to a dysfunction in the nervous system that is triggered by injury or surgery.
-
-CRPS commonly affects the arms or legs, but it can occur anywhere in the body. Complex regional pain syndrome is a chronic condition that can be incredibly frustrating to manage. However, with pain management services at Alimran Medical Center, patients can achieve relief and enjoy an improved quality of life.
-
-How is Complex Regional Pain Syndrome Treated**?**
-
-There is no cure for complex regional pain syndrome, but there are many treatments available that can help patients manage their pain and return to the activities that they love. At Alimran Medical Center, we may recommend any of the following treatments for CRPS:
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
--   [SpineMED® system](/services/chiropractic/spinmed/)
--   [Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
--   Trigger point injections
--   Stellate ganglion block
--   Lumbar sympathetic block
-
-[Ozone injection](/services/ozone-therapy/osteoarthritis/)
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Prolotherapy](/services/regenerative-medicine/)
-
-[Spinal cord stimulation](/services/rehabilitation/spinal-cord-rehabilitation/)
-
-Intrathecal baclofen pump

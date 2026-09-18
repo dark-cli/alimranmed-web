@@ -1,90 +1,70 @@
 ---
 title: "Bell's palsy"
-description: "The symptoms of Bell's palsy include sudden weakness in your facial muscles. In most cases, the weakness is temporary and"
+description: "Sudden, usually temporary weakness or paralysis of one side of the face caused by inflammation of the facial nerve (cranial nerve VII). Most people recover fully within 6 months. Treatment with steroids, rTMS, Botox, and physiotherapy accelerates recovery and prevents complications."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/16/bells-palsy/"
 publishedAt: "2021-01-16T15:50:53"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Sudden weakness or paralysis of one side of the face caused by inflammation and swelling of the facial nerve. Often follows a viral infection. Usually temporary — most people recover fully in about 6 months."
+      - label: "Symptoms"
+        value: "Rapid-onset facial drooping, inability to close the eye or smile on the affected side, drooling, pain behind the ear, altered taste, and sound sensitivity. Symptoms appear within hours to days."
+      - label: "Approach"
+        value: "Corticosteroids started within days of onset reduce nerve swelling and improve recovery. rTMS, physiotherapy, and Botox address residual weakness, synkinesis, and muscle rehabilitation."
+  - type: prose
+    heading: "What Bell's palsy is"
+    body: |
+      Bell's palsy is an acute peripheral facial palsy — sudden weakness or total paralysis of the muscles on one side of the face caused by inflammation and swelling of the seventh cranial nerve (facial nerve). As the swollen nerve presses against the narrow bony canal through which it passes, nerve conduction is impaired and facial muscle control is lost.
+
+      The exact cause is unknown but is believed to involve a viral trigger — most commonly reactivation of herpes simplex or herpes zoster virus. Other viruses linked to Bell's palsy include Epstein-Barr, cytomegalovirus, adenovirus, rubella, mumps, influenza B, and coxsackievirus. Bell's palsy can occur at any age.
+
+      **Symptoms** appear suddenly and include:
+      - Rapid onset of mild weakness to complete paralysis on one side of the face — within hours to days
+      - Facial drooping; inability to close the eye or smile on the affected side
+      - Drooling
+      - Pain around the jaw or behind the ear on the affected side
+      - Increased sound sensitivity (hyperacusis) on the affected side
+      - Headache
+      - Loss of taste
+      - Changes in tear and saliva production
+      - Rarely, both sides of the face are affected
+
+      **Prognosis:** Most cases are temporary. Symptoms begin to improve within a few weeks, with complete recovery in about 6 months. A small minority have permanent symptoms. Bell's palsy can rarely recur.
+
+      **Complications** in severe cases include:
+      - Permanent damage to the facial nerve
+      - Synkinesis — abnormal nerve fibre regrowth causing involuntary muscle contractions (e.g., the eye closes when smiling)
+      - Corneal damage from inability to close the eye (exposure keratopathy)
+
+      **Medical treatment:** Corticosteroids (prednisone) started within several days of symptom onset reduce nerve inflammation and improve recovery rates. Antiviral drugs (valacyclovir, acyclovir) may be added in severe cases, though evidence remains mixed. Eye protection is essential when the eye cannot close.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Magnetic therapy"
+          - "Facial muscle re-education exercises"
 ---
-
-The symptoms of Bell’s palsy include sudden weakness in your facial muscles. In most cases, the weakness is temporary and significantly improves over weeks. The weakness makes half of your face appear to droop. Your smile is one-sided, and your eye on that side resists closing.
-
-Bell’s palsy, also known as acute peripheral facial palsy of unknown cause, can occur at any age. The exact cause is unknown. It’s believed to be the result of swelling and inflammation of the nerve that controls the muscles on one side of your face. Or it might be a reaction that occurs after a viral infection.
-
-For most people, Bell’s palsy is temporary. Symptoms usually start to improve within a few weeks, with complete recovery in about six months. A small number of people continue to have some Bell’s palsy symptoms for life. Rarely, Bell’s palsy can recur.
-
-## **Symptoms**
-
-**Facial paralysis**
-
-Signs and symptoms of Bell’s palsy come on suddenly and may include:
-
--   Rapid onset of mild weakness to total paralysis on one side of your face — occurring within hours to days
--   Facial droop and difficulty making facial expressions, such as closing your eye or smiling
--   Drooling
--   Pain around the jaw or in or behind your ear on the affected side
--   Increased sensitivity to sound on the affected side
--   Headache
--   A loss of taste
--   Changes in the amount of tears and saliva you produce
-
-In rare cases, Bell’s palsy can affect the nerves on both sides of your face.
-
-Although the exact reason Bell’s palsy occurs isn’t clear, it’s often related to having a viral infection. Viruses that have been linked to Bell’s palsy include viruses that cause:
-
--   Cold sores and genital herpes (herpes simplex)
--   Chickenpox and shingles (herpes zoster)
--   Infectious mononucleosis (Epstein-Barr)
--   Cytomegalovirus infections
--   Respiratory illnesses (adenovirus)
--   German measles (rubella)
--   Mumps (mumps virus)
--   Flu (influenza B)
--   Hand-foot-and-mouth disease (coxsackievirus)
-
-## **Complications**
-
-A mild case of Bell’s palsy normally disappears within a month. Recovery from a more severe case involving total paralysis varies. Complications may include:
-
--   Irreversible damage to your facial nerve.
--   Abnormal regrowth of nerve fibers. This may result in involuntary contraction of certain muscles when you’re trying to move others (synkinesis) — for example, when you smile, the eye on the affected side may close.
--   Partial or complete blindness of the eye that won’t close due to excessive dryness and scratching of the clear protective covering of the eye (cornea).
-
-### Medications
-
-Commonly used medications to treat Bell’s palsy include:
-
--   **Corticosteroids,**such as prednisone, are powerful anti-inflammatory agents. If they can reduce the swelling of the facial nerve, it will fit more comfortably within the bony corridor that surrounds it. Corticosteroids may work best if they’re started within several days of when your symptoms started.
--   **Antiviral drugs.**The role of antivirals remains unsettled. Antivirals alone have shown no benefit compared with placebo. Antivirals added to steroids are possibly beneficial for some people with Bell’s palsy, but this is still unproved.
-
-However, despite this, valacyclovir (Valtrex) or acyclovir (Zovirax) is sometimes given in combination with prednisone in people with severe facial palsy.
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-**Neurons stimulation**
-
-[Repetitive Transcranial Magnetic Stimulation, rTMS](/services/brain-stimulation/tms/)
-
-[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)

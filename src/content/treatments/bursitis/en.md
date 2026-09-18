@@ -1,89 +1,71 @@
 ---
 title: "Bursitis"
-description: "Bursitis is a painful condition that affects the small fluid-filled pads — called bursae — that act as cushions among"
+description: "Inflammation of the bursae — small fluid-filled sacs that cushion bones, tendons, and muscles near joints. Most commonly affects the shoulder, elbow, hip, and knee. Usually caused by repetitive motion or prolonged pressure. Most cases resolve with conservative care; injection therapies and physiotherapy help persistent cases."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/bursitis/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Inflammation of the bursae — small fluid-filled cushioning sacs that reduce friction between bones, tendons, and muscles at joints. Most common in the shoulder, elbow, hip, and knee. Usually caused by repetitive motion or sustained pressure."
+      - label: "Symptoms"
+        value: "Pain that builds gradually or occurs suddenly (especially with calcium deposits). Stiffness, swelling, and redness over the affected joint. Pain worsens with movement or pressure on the area."
+      - label: "Approach"
+        value: "Most cases resolve with rest, ice, and analgesics. When conservative measures fail: steroid or ozone injections, physiotherapy, prolotherapy, and radiofrequency are the main options. Surgical drainage is rarely needed."
+  - type: media
+    kind: image
+    src: /images/legacy/2021/01/image.axd_-20.jpg
+    alt: "Bursitis — inflamed bursa near joint"
+  - type: prose
+    heading: "What bursitis is"
+    body: |
+      Bursae are small, flat, fluid-filled sacs distributed throughout the body at points where tendons, muscles, or skin slide over bone. They act as cushions, minimising friction and reducing wear at high-pressure areas. When a bursa becomes inflamed — a condition called bursitis — the sac swells, filling with excess fluid and causing pain around the joint.
+
+      **Most commonly affected sites:** shoulder, elbow, hip, buttock, knee, Achilles tendon/heel.
+
+      **Causes and risk factors:**
+      - Repetitive motion or sustained pressure on a joint (gardening, carpentry, tennis, golf, throwing)
+      - Prolonged kneeling, leaning on elbows, or poor posture at work
+      - Acute injury or trauma
+      - Advancing age — tendons become less elastic and more vulnerable after 40
+      - Structural joint problems (leg length discrepancy, arthritis)
+      - Systemic conditions: rheumatoid arthritis, gout, psoriatic arthritis, thyroid disorders
+      - Infection with *Staphylococcus aureus* (septic bursitis)
+
+      **Symptoms:**
+      - Pain that builds gradually or begins suddenly and severely (especially if calcium deposits are present)
+      - Stiffness and aching at the affected joint
+      - Swelling, warmth, and redness over the bursa
+      - Pain worsens with direct pressure or movement
+
+      **Seek urgent care** if you have fever (>38.9°C/102°F), rapidly spreading redness and warmth, or systemic illness — these suggest septic bursitis, which requires antibiotics and may need surgical drainage.
+
+      Most non-infectious bursitis resolves within a few weeks with appropriate conservative management. Recurrence is common without addressing the underlying cause (e.g., repetitive activity or structural problems).
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "Steroid injections"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Magnetic therapy"
+          - "Therapeutic exercises"
+      - title: "Chiropractic care"
+        items:
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2021/01/image.axd_-20.jpg)
-
-Bursitis is a painful condition that affects the small fluid-filled pads — called bursae — that act as cushions among your bones and the tendons and muscles near your joints. Bursitis occurs when a bursa becomes inflamed.
-
-The most common locations for bursitis are in the shoulders, elbows or hips. But you can also have bursitis by your knee, heel and the base of your big toe. Bursitis often occurs in joints that perform frequent repetitive motion.
-
-## What Is Bursitis?
-
-Bursitis is inflammation or irritation of a bursa sac. You have these sacs all over your body. They’re filled with fluid that helps ease rubbing and friction between tissues like bone, muscle, tendons, and skin. Bursitis is common around major joints like your shoulder, elbow, hip, or knee.
-
-## Bursitis Causes and Risk Factors
-
-Bursitis is common in adults, especially after age 40.
-
-It’s usually caused by repeated pressure on an area or by using a joint too much. High-risk activities include gardening, raking, carpentry, shoveling, painting, scrubbing, tennis, golf, skiing, and throwing. You can also get bursitis by sitting or standing the wrong way for a long time at work or home, or by not stretching enough before you exercise. Sudden injury can sometimes cause bursitis.
-
-As you age, your tendons aren’t able to handle stress as well. They’re less elastic and easier to tear.
-
-If there’s a problem with the structure of a bone or joint (such as legs that are different lengths or arthritis in a joint), that can put more stress on a bursa, causing bursitis. Reactions to medications and stress or inflammation from other conditions, such as rheumatoid arthritis, gout, psoriatic arthritis, or thyroid disorders, may also raise your risk.
-
-An infection, especially with *Staphylococcus aureus* bacteria, can sometimes cause bursitis.
-
-## Bursitis Types
-
-Bursitis might affect:
-
--   Elbow
--   Shoulder
--   Hip or thigh
--   Buttocks
--   Knee
--   Achilles tendon or heel
-
-## Bursitis Symptoms
-
-Pain is the most common symptom of bursitis. It might build up slowly or be sudden and severe, especially if you have calcium deposits in the area. Your joint might also be:
-
--   Stiff
--   Swollen
--   Red
-
-Call your doctor if you have:
-
--   Fever (over 102)
--   Swelling, redness, and warmth in the area
--   General illness or more than one area that hurts
--   Trouble moving the joi
-
-**Bursitis Treatment**
-
-Treatment
-
-Bursitis generally gets better on its own. Conservative measures, such as rest, ice and taking a pain reliever, can relieve discomfort. If not relieve discomfort at Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)
-
-Chiropractic
-
-**Surgery.** Sometimes an inflamed bursa must be surgically drained, but only rarely is surgical removal of the affected bursa necessary

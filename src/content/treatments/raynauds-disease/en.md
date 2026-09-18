@@ -1,126 +1,76 @@
 ---
 title: "Raynaud's disease"
-description: "Raynaud's (ray-NOSE) disease causes some areas of your body — such as your fingers and toes — to feel numb"
-category: "motor"
+description: "An exaggerated vasospastic response in the small arteries of the fingers and toes — and sometimes the nose, lips, and ears — triggered by cold or emotional stress. Produces the characteristic three-phase colour change: white (ischaemia), blue (cyanosis), then red (reperfusion). Primary Raynaud's has no underlying cause; secondary Raynaud's is driven by connective tissue disease, most often scleroderma."
+category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/raynauds-disease/"
-source: "ai-draft"
+source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Episodic vasospasm of the digital (and sometimes other peripheral) arteries in response to cold or stress. The arteries transiently narrow, severely restricting blood flow and causing the characteristic colour sequence. Primary Raynaud's is idiopathic and usually mild; secondary Raynaud's occurs in the context of connective tissue disease (scleroderma, lupus, Sjögren's, rheumatoid arthritis), arterial disease, or medication use, and is more severe and more likely to cause tissue damage."
+      - label: "Symptoms"
+        value: "Episodes triggered by cold exposure or stress: affected fingers/toes first turn white (blanching from vasospasm), then blue (cyanosis from deoxygenated blood pooling), then red (reactive hyperaemia as circulation returns). Numbness, tingling, or burning pain during and after episodes. Episodes typically last minutes and resolve with rewarming. Nose, lips, ears, and nipples can also be affected. In secondary Raynaud's: digital ulcers (painful, slow-healing sores at fingertips) indicate severe ischaemia."
+      - label: "Approach"
+        value: "Avoidance: keeping warm (layering, gloves, hand warmers), avoiding cold triggers and vasoconstrictive medications (sympathomimetics, beta-blockers, ergotamine). Pharmacological: calcium channel blockers (nifedipine, amlodipine) are first-line vasodilators; phosphodiesterase inhibitors (sildenafil) for severe or refractory cases; prostacyclin infusion for digital ulcers. Botox injection into the hand: effective for refractory vasospasm and digital ulcer healing. Sympathectomy (surgical or chemical) for severe refractory cases."
+  - type: prose
+    heading: "What Raynaud's disease is"
+    body: |
+      In healthy individuals, cold exposure causes mild, generalised peripheral vasoconstriction to conserve core body temperature. In Raynaud's, this reflex is massively amplified in the digital arteries — a vasospasm that essentially shuts off blood flow to the affected digits. The sympathetic nervous system, local vascular hyperreactivity, and abnormal release of vasoactive substances (endothelin, serotonin) all contribute.
+
+      **Primary vs secondary Raynaud's**
+
+      *Primary Raynaud's disease* (idiopathic) — accounts for about 80% of cases. Young women (15–30 years) are most commonly affected. Episodes are triggered by cold or stress; no underlying condition is identified; tissue damage does not occur. Often improves or resolves spontaneously with time.
+
+      *Secondary Raynaud's phenomenon* — associated with an underlying disease or cause. More common after age 40. Symptoms tend to be more severe and more likely to cause ischaemic complications (digital ulcers, gangrene). Key associated conditions:
+      - *Scleroderma (systemic sclerosis):* the strongest association; Raynaud's is often the first manifestation of scleroderma and occurs in > 90% of patients
+      - *Other connective tissue diseases:* systemic lupus erythematosus, Sjögren's syndrome, rheumatoid arthritis, mixed connective tissue disease
+      - *Arterial disease:* peripheral artery disease, thromboangiitis obliterans
+      - *Vibration-induced:* jackhammer operators, pianists, and others with repetitive hand vibration
+      - *Medications:* beta-blockers, migraine medications (ergotamine, sumatriptan), chemotherapy agents, amphetamines, decongestants
+
+      **Digital ulcers**
+
+      In secondary Raynaud's — particularly in scleroderma — sustained or severe vasospasm leads to digital tip ischaemia, producing painful, punched-out ulcers at the fingertips. These heal slowly and are prone to infection. Severe cases require prostacyclin infusion and wound care.
+
+      **Treatment**
+
+      *Non-pharmacological:* keeping warm is the most important intervention; thermal gloves, layered clothing, chemical hand warmers. Avoid beta-blockers and sympathomimetic cold remedies. Biofeedback for stress-related episodes.
+
+      *Calcium channel blockers:* nifedipine (slow-release) or amlodipine is first-line; reduces episode frequency and severity in 70–80% of patients.
+
+      *Phosphodiesterase-5 inhibitors:* sildenafil (Viagra) is an effective vasodilator for severe or refractory Raynaud's and digital ulcers.
+
+      *Prostacyclin infusion:* iloprost given intravenously is reserved for severe digital ulcers or critical ischaemia; hospitalization required.
+
+      *Botulinum toxin (Botox) injections:* injection into the palm and digital neurovascular bundles provides effective, prolonged reduction in vasospasm and promotes digital ulcer healing — an evidence-supported interventional option.
+
+      *Chemical or surgical sympathectomy:* cutting or chemical ablation of the sympathetic fibres to the hands; reserved for severe refractory cases.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Injection therapies"
+        items:
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Epidural steroid injections"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Thermal biofeedback and desensitisation"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-![](/images/legacy/2021/02/1520059351001.jpg)
-
-Raynaud’s (ray-NOSE) disease causes some areas of your body — such as your fingers and toes — to feel numb and cold in response to cold temperatures or stress. In Raynaud’s disease, smaller arteries that supply blood to your skin become narrow, limiting blood flow to affected areas (vasospasm).
-
-Women are more likely than men to have Raynaud’s disease, also known as Raynaud’s or Raynaud’s phenomenon or syndrome. It appears to be more common in people who live in colder climates.
-
-Treatment of Raynaud’s disease depends on its severity and whether you have other health conditions. For most people, Raynaud’s disease isn’t disabling, but it can affect your quality of life.
-
-**Symptoms**
-
-Signs and symptoms of Raynaud’s disease include:
-
--   Cold fingers or toes
--   Color changes in your skin in response to cold or stress
--   Numb, prickly feeling or stinging pain upon warming or stress relief
-
-During an attack of Raynaud’s, affected areas of your skin usually first turn white. Then, they often turn blue and feel cold and numb. As you warm and your circulation improves, the affected areas may turn red, throb, tingle or swell.
-
-Although Raynaud’s most commonly affects your fingers and toes, it can also affect other areas of your body, such as your nose, lips, ears and even nipples. After you warm up, the return of normal blood flow to the area can take 15 minutes.
-
-## **Causes**
-
-Doctors don’t completely understand the cause of Raynaud’s attacks, but blood vessels in the hands and feet appear to overreact to cold temperatures or stress.
-
-### Blood vessels in spasm
-
-With Raynaud’s, arteries to your fingers and toes become narrow and briefly limit blood supply when exposed to cold or stress. Over time, these small arteries can thicken slightly, further limiting blood flow.
-
-Cold temperatures are most likely to trigger an attack. Exposure to cold, such as putting your hands in cold water, taking something from a freezer or being in cold air, is the most likely trigger. For some people, emotional stress can trigger an episode.
-
-### Primary vs. secondary Raynaud’s
-
-There are two main types of the condition.
-
--   **Primary Raynaud’s.**Also called Raynaud’s disease, this most common form isn’t the result of an associated medical condition. It can be so mild that many people with primary Raynaud’s don’t seek treatment. And it can resolve on its own.
--   **Secondary Raynaud’s.**Also called Raynaud’s phenomenon, this form is caused by an underlying problem. Although secondary Raynaud’s is less common than the primary form, it tends to be more serious.
-
-Signs and symptoms of secondary Raynaud’s usually appear around age 40, later than they do for primary Raynaud’s.
-
-Causes of secondary Raynaud’s include:
-
--   **Connective tissue diseases.**Most people who have a rare disease that leads to hardening and scarring of the skin (scleroderma) have Raynaud’s. Other diseases that increase the risk of Raynaud’s include lupus, rheumatoid arthritis and Sjogren’s syndrome.
--   **Diseases of the arteries.**These include a buildup of plaques in blood vessels that feed the heart, a disorder in which the blood vessels of the hands and feet become inflamed, and a type of high blood pressure that affects the arteries of the lungs.
--   **Carpal tunnel syndrome.**This condition involves pressure on a major nerve to your hand, producing numbness and pain in the hand that can make the hand more susceptible to cold temperatures.
--   **Repetitive action or vibration.**Typing, playing piano or doing similar movements for long periods and operating vibrating tools, such as jackhammers, can lead to overuse injuries.
--   Smoking constricts blood vessels.
--   **Injuries to the hands or feet.**Examples include a wrist fracture, surgery or frostbite.
--   **Certain medications.**These include beta blockers for high blood pressure, migraine medications that contain ergotamine and sumatriptan, attention-deficit/hyperactivity disorder medications, certain chemotherapy agents, and drugs that cause blood vessels to narrow, such as some over-the-counter cold medications.
-
-## Risk factors
-
-Risk factors for primary Raynaud's include:
-
--   **Sex.**It affects women more than men.
--   **Age.**Although anyone can develop the condition, primary Raynaud's often begins in people between the ages of 15 and 30.
--   **Climate.**The disorder is also more common in people who live in colder climates.
--   **Family history.**A first-degree relative — a parent, sibling or child — having the disorder appears to increase your risk of primary Raynaud's.
-
-Risk factors for secondary Raynaud's include:
-
--   **Associated diseases.**These include conditions such as scleroderma and lupus.
--   **Certain occupations.**These include jobs that cause repeated trauma or injuries, such as those involving vibrating tools.
--   **Exposure to certain substances.**These include smoking, taking medications that affect the blood vessels and being exposed to certain chemicals, such as vinyl chloride.
-
-## Complications
-
-If Raynaud's is severe — which is rare — reduced blood flow to your fingers or toes could cause tissue damage.
-
-A completely blocked artery can lead to sores (skin ulcers) or dead tissue (gangrene), both of which can be difficult to treat. Rarely, extreme untreated cases might require amputation of the affected body part.
-
-## Prevention
-
-To help prevent Raynaud's attacks:
-
--   **Bundle up outdoors.**When it's cold, don a hat, scarf, socks and boots, and two layers of mittens or gloves before you go outside. Wear a coat with snug cuffs to go around your mittens or gloves, to prevent cold air from reaching your hands. Use chemical hand warmers. Wear earmuffs and a face mask if the tip of your nose and your earlobes are sensitive to cold.
--   **Warm your car.**Run your car heater for a few minutes before driving in cold weather.
--   **Take precautions indoors.**Wear socks. When taking food out of the refrigerator or freezer, put on mittens, gloves or oven mitts. Some people find it helpful to wear mittens and socks to bed during winter.
-
-Because air conditioning can trigger attacks, set your air conditioner to a warmer temperature. Use insulated drinking glasses.
-
-## Treatment
-
-Dressing for the cold in layers and wearing gloves or heavy socks usually are effective in dealing with mild symptoms of Raynaud’s. Medications are available to treat more-severe forms of the condition. The goals of treatment are to:
-
--   Reduce the number and severity of attacks
--   Prevent tissue damage
--   Treat the underlying disease or condition
-
-At Alimran Medical Center, we may recommend any of the following treatments
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-[Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
-
-[Ozone injection](/services/ozone-therapy/review/)
-
-[SpineMED® system](/services/chiropractic/spinmed/)
-
-[Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
--   Trigger point injections
--   Epidural steroid injections
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
--   Magnatic therapy
--   [Exercises](/services/exercises/)

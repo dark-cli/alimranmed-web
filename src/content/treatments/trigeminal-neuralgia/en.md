@@ -1,60 +1,74 @@
 ---
-title: "Trigeminal Neuralgia"
-description: "Trigeminal neuralgia (or tic douloureux) is the most common craniofacial pain syndrome. This facial pain syndrome usually develops in individuals"
+title: "Trigeminal neuralgia"
+description: "The most common craniofacial pain syndrome — brief, intense electric-shock-like facial pain in the distribution of the trigeminal nerve. Typically affects adults over 50. Often caused by vascular compression of the nerve near the brainstem. Treatable with medications, radiofrequency, and surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/trigeminal-neuralgia/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Sudden, severe, brief facial pain in the distribution of the trigeminal nerve (cranial nerve V). Typically described as electric-shock-like or stabbing, lasting a fraction of a second to two seconds. Most common craniofacial pain syndrome, predominantly affecting adults over 50."
+      - label: "Symptoms"
+        value: "Sudden, excruciating, electric-shock or stabbing pain on one side of the face, typically in the cheek, jaw, teeth, gums, or lips. Triggered by everyday activities — eating, talking, touching the face, or a light breeze. Pain-free intervals between attacks. Can become near-constant in advanced cases."
+      - label: "Approach"
+        value: "Anticonvulsant medications (carbamazepine, oxcarbazepine) are first-line. Pulsed radiofrequency, Botox, and other interventional procedures provide relief when medications fail or cause side effects. Microvascular decompression surgery offers long-term cure in suitable candidates."
+  - type: prose
+    heading: "What trigeminal neuralgia is"
+    body: |
+      Trigeminal neuralgia (TN), also called tic douloureux, is the most common craniofacial pain syndrome. It is characterised by sudden, severe, brief episodes of electric-shock-like or stabbing pain in the face, along the distribution of the trigeminal nerve (cranial nerve V) — the large sensory nerve that supplies sensation to the face, scalp, teeth, gums, sinuses, and parts of the mouth.
+
+      It occurs predominantly in adults over 50, with an incidence of approximately 4 per 100,000 per year, and is more common in women. Because of its severity and the way pain can be triggered by entirely ordinary activities, trigeminal neuralgia profoundly affects quality of life.
+
+      **Cause:** In most cases, the underlying mechanism is vascular compression — typically an arterial loop (superior cerebellar artery, basilar artery, or a vein) pressing against the trigeminal nerve root near the brainstem. Over time, this pulsatile compression damages the myelin sheath around the nerve, disrupting its electrical insulation and causing spontaneous, inappropriate firing. Less commonly, TN is caused by a tumour near the trigeminal nerve or by demyelination from multiple sclerosis.
+
+      **Three branches of the trigeminal nerve** are each associated with a distribution of pain:
+      - **V1 (ophthalmic)** — forehead, scalp, upper eyelid, nose
+      - **V2 (maxillary)** — cheek, upper lip, upper teeth, gums, side of nose
+      - **V3 (mandibular)** — lower jaw, lower teeth, gums, chin, lower lip
+
+      Most cases involve V2, V3, or both. Bilateral cases are rare and may suggest multiple sclerosis.
+
+      **Symptoms:** Pain attacks are typically:
+      - Sudden and severe — described as electric shock, stabbing, or lancinating
+      - Brief — lasting a fraction of a second to 2 seconds, though repetitive volleys may feel continuous
+      - Unilateral — strictly on one side of the face
+      - Triggered by: touch to a "trigger zone" (upper lip, lower teeth, eyebrow), eating, talking, chewing, cold wind, tooth brushing, or even the light touch of clothing
+      - Followed by a refractory period in which triggers do not produce pain
+
+      Between attacks, most patients have completely normal sensation and no pain. In advanced cases, attacks become more frequent, the pain may become more constant, and the refractory period disappears.
+
+      **Diagnosis** is clinical, based on the characteristic history. High-resolution MRI can demonstrate the compressing vessel or, in atypical cases, a tumour or demyelinating plaque.
+
+      **Treatment** is staged:
+      1. *Pharmacological:* Carbamazepine (Tegretol®) or oxcarbazepine are first-line and provide initial relief in most patients. Side effects (sedation, unsteadiness, blood count changes) often limit long-term use.
+      2. *Interventional:* When medications fail or cause intolerable effects, percutaneous procedures (radiofrequency rhizotomy, glycerol injection, balloon compression), Botox injection, or Gamma Knife radiosurgery offer effective alternatives.
+      3. *Surgical:* Microvascular decompression (MVD) — removing or repositioning the offending blood vessel — has the highest long-term success rates and is the preferred option for suitable, younger, medically fit patients.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Botox® injections](/services/botox/botox-injection/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+      - title: "Injection therapies"
+        items:
+          - "Sphenopalatine ganglion block"
+          - "Steroid injection"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+      - title: "Chiropractic care"
+        items:
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-Trigeminal neuralgia (or tic douloureux) is the most common craniofacial pain syndrome. This facial pain syndrome usually develops in individuals over 50 years old. Its incidence is 4/100,000, and it is the most common facial pain syndrome in this age group.
-
-Other neuropathic syndromes affect the trigeminal nerve and warrant different treatments with varied rates of success. Rarely, neuralgias of other cranial nerves mimic trigeminal neuralgia. Finally, it is essential to distinguish atypical facial pains from these neuropathic syndromes to avoid unsuccessful therapies.
-
-### Causes
-
-Causes are uncertain, but there is considerable evidence that vascular compression of the trigeminal nerve near the brainstem is the cause. This may be due to branches of the superior cerebellar artery, basilar artery, or local veins compressing the trigeminal nerve. Additionally, trigeminal neuralgia can be caused by tumors in the region of cranial nerve V or by multiple sclerosis.
-
-### Diagnosis
-
-Although the diagnosis remains based exclusively on history and symptomatology, modern diagnostic techniques, particularly high-resolution magnetic resonance imaging, provides valuable new insight into the pathophysiology of these cases with additional implications for therapeutic strategies. In most cases, a compressive vessel, or less commonly a tumor or demyelinating plaque from multiple sclerosis, is clearly seen on the high resolution MRI scan.
-
-### Symptoms
-
-Trigeminal neuralgia pain is classically described as “stabbing,” or electrical shock-like” in nature. Episodes are typically brief, lasting a second or two, but can be quite debilitating. They usually occur on one side of the face, but in rare cases may be bilateral. Painful attacks may occur spontaneously but are more often associated with a specific stimulus in a “trigger area.” Common trigger points are the eyebrow for ophthalmic division pain, the upper lip for maxillary division involvement, and the lower molar teeth for mandibular division pain. Sensory stimuli by touch, cold, wind, talking or chewing can precipate the attacks. Pain-free intervals last for minutes to weeks, but long-term spontaneous remission is rare. The attacks cease during sleep but often occur upon arising in the morning. This constellation of symptoms provides the diagnosis.
-
-### Treatment
-
-**Pharmacological**The primary treatment of trigeminal neuralgia is pharmacological. Most patients obtain relief, at least initially, within 30 minutes of administration of carbamazepine (Tegretol®) or oxcarbazepine (Trileptal®). These drugs sometimes have side effects, including lethargy or weight gain. If these medications are ineffective or have intolerable side effectrs, a variety of other medications may be used.
-
-**Non surgical treatment**
-
-At Alimran Medical Center, we may recommend any of the following treatments:
-
-[Physiotherapy](/services/physiotherapy/)
-
--   [Electrical stimulation](/services/physiotherapy/electrical-stimulation/)
--   [Short and long wave](/services/physiotherapy/shortwave-therapy/)
--   [Laser therapy](/services/physiotherapy/laser-therapy/)
--   [Ultrasonic therapy](/services/physiotherapy/ultrasound-therapy/)
-
-Chiropractic
-
--   [Sigma](/services/chiropractic/sigma/)
-
-Steroid injection
-
-[Pulsed radiofrequency](/services/radiofrequency/)
-
-[Botox® injections](/services/botox/)
-
-[Acupuncture](/services/acupuncture/)
-
-Prolotherapy
-
-[Repetitive transcranial magnatic stimulation (rTMS)](/services/brain-stimulation/tms/)
-
-**Surgical**  
-Percutaneous trigeminal radiofrequency rhizotomy, glycerol rhizotomy, balloon compression, or Gamma Knife radiosurgery are all good options. Neurostimulation techniques, such as trigeminal branch stimulation, high cervical spinal cord stimulation, and motor cortex stimulation, may be used when other treatment methods are ineffective.
-
-Should above management be ineffective, surgical intervention is indicated. The first-choice treatment is typically microvascular decompression (MVD), as it has the highest initial and long-term success rates. Patients unable to tolerate such an operation due to advanced age or other medical problems may consider one of the many less invasive options.

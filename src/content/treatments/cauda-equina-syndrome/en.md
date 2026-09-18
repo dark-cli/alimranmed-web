@@ -1,57 +1,61 @@
 ---
 title: "Cauda equina syndrome"
-description: "Summary Cauda= a tail Equina= a horse Syndrome= a collection of symptoms that occur together Cauda equina syndrome results from"
+description: "A rare but serious medical emergency caused by compression of the cauda equina — the bundle of nerves at the base of the spinal cord. Causes severe low back pain, bladder and bowel dysfunction, and leg weakness. Requires emergency surgical decompression to prevent permanent paralysis."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/cauda-equina-syndrome/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "A rare surgical emergency caused by compression of the cauda equina — the bundle of nerve roots at the base of the spinal cord in the lumbosacral canal. These nerves control the legs and bladder/bowel function."
+      - label: "Symptoms"
+        value: "Severe low back pain, bladder retention or incontinence, bowel incontinence, leg weakness or sensory loss, saddle anaesthesia (numbness in the groin/perineum). Any combination of these symptoms requires immediate evaluation."
+      - label: "Approach"
+        value: "Medical emergency. Emergency surgical decompression within hours offers the best chance of recovery. Untreated, cauda equina syndrome causes permanent paralysis and permanent loss of bladder and bowel control. Rehabilitation follows surgery."
+  - type: prose
+    heading: "What cauda equina syndrome is"
+    body: |
+      The cauda equina (Latin: "horse's tail") is the bundle of nerve roots that descend from the end of the spinal cord through the lumbosacral canal. These roots, which resemble a horse's tail, supply motor and sensory function to the legs and control bladder and bowel sphincters. When compression of these roots is severe and sudden, the result is cauda equina syndrome — a neurological emergency.
+
+      **Most common cause:** A massive lumbar disc herniation in which the nucleus pulposus ruptures and occupies a large portion of the spinal canal, directly compressing multiple nerve roots simultaneously.
+
+      **Other causes:** Spinal tumour, spinal stenosis, vertebral fracture (e.g., from trauma or osteoporosis), spinal haematoma or abscess, or post-surgical complications.
+
+      **Symptoms** — the classic presentation includes some or all of:
+      - Severe low back pain
+      - Bladder dysfunction: urinary retention (most common) or incontinence
+      - Bowel incontinence
+      - Muscle weakness or sensory loss in one or both legs
+      - Difficulty walking
+      - Loss or reduction of leg reflexes
+      - Saddle anaesthesia — numbness in the buttocks, perineum, and inner thighs (the areas that would contact a horse's saddle)
+
+      Symptoms vary in severity depending on which roots are compressed and to what degree. Early presentation may be incomplete — any suggestion of bladder or bowel involvement in the context of acute back pain requires emergency imaging (MRI).
+
+      **Diagnosis:** MRI is the gold standard — it images the spinal cord, nerve roots, discs, and ligaments and identifies the level and cause of compression. CT myelogram is an alternative.
+
+      **Treatment:** Cauda equina syndrome is a surgical emergency. Decompression surgery performed within hours of onset gives the best chance of recovery of motor, sensory, and sphincter function. Delayed surgery significantly worsens the prognosis.
+
+      Following surgery, bladder function often takes longer to recover than motor function. Intermittent self-catheterisation and medications may be needed. With appropriate rehabilitation, gradual improvement of bladder and sphincter function can continue for years after surgery.
+  - type: treatment-groups
+    heading: "Rehabilitation at Alimran Medical Center"
+    groups:
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "Motor retraining and strengthening exercises"
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® system](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
 ---
-
-### **Summary**
-
-**Cauda**\= a tail  
-**Equina**\= a horse  
-**Syndrome**\= a collection of symptoms that occur together
-
-Cauda equina syndrome results from compression (squeezing) of the *cauda equina*–the sac of nerves and nerve roots at the base and just below the spinal cord in the lumbosacral spinal canal. It is a rare but serious disorder, and a medical emergency.
-
-The nerves of the cauda equina provide motor and sensory function to the legs and the bladder. Compression of these nerves can interrupt their function, and the effects can be severe. Cauda equina syndrome can lead to bladder and bowel dysfunction (loss of bladder/bowel control) and even permanent paralysis in the muscles of one or both legs.
-
-The cauda equina gets its name from the Latin words meaning “horse’s tail.” The sac of nerve roots has an appearance similar to a horse’s tail.
-
-### **Symptoms**
-
-Cauda equina syndrome can cause a variety of symptoms, including:
-
--   severe low back pain
--   bladder dysfunction such as urinary retention or incontinence (loss of control)
--   bowel incontinence (loss of control)
--   muscle weakness or sensory loss in both legs
--   loss of motor function in legs (difficulty walking)
--   loss or reduction of reflexes
--   saddle anesthesia (inability to feel anything in the body areas that would sit on a saddle)
-
-Exact symptoms and their severity depend on which nerve root(s) are affected and the degree to which they are compressed.
-
-### **Causes and Risk Factors**
-
-Cauda equina syndrome is most commonly caused by a massive disc herniation in the lumbar spine (low back). A disc herniation occurs when the jelly-like core of a disc herniates, or shifts out of position, putting pressure on nearby nerves in the spine. Herniated discs can occur with advanced age or can be caused by a spinal injury.
-
-Cauda equina syndrome can also be caused by trauma, a spinal tumor,spinal stenosis or a severe infection. In rare cases, spinal stenosis and vertebral fractures from osteoporosis can lead to cauda equina syndrome.
-
-### **Tests and Diagnosis**
-
-Cauda equina syndrome is difficult to diagnose. It is rare, and its early symptoms may be similar to symptoms of other conditions. In addition, symptoms associated with cauda equina syndrome may vary in intensity and evolve slowly over time.
-
-If a patient presents with symptoms associated with cauda equina syndrome, a doctor may order the following diagnostic procedures:
-
--   Magnetic resonance (MR) imaging – the best method of imaging the spinal cord, nerve roots, intervertebral discs, and ligaments. Since these scans can detect damage or disease of soft tissue, MRIs are valuable in diagnosing the cause of cauda equina syndrome.
--   Myelogram – procedure that involves injecting a liquid dye into the spinal column. These X-ray and CT images (usually performed with a Computerized Tomography (CT) scan) can show pressure on the cauda equina from herniated discs and other conditions.
-
-### **Treatments**
-
-Cauda equina syndrome is a potential surgical emergency, and may require timely decompression surgery to reduce/remove the pressure on the nerve(s). Undergoing early surgery seems to offer the best chance for improvement of sensory and muscle function as well as bowel and bladder function.
-
-If left untreated, cauda equina syndrome can lead to permanent paralysis in the muscle of one or both legs and permanent loss of bladder/bowel control.
-
-An important thing to note is that following surgery, bladder function may take longer to improve than muscle function. Following surgery, the surgeon may prescribe certain medications to be given with intermittent self-catheterization of the bladder. These interventions can lead to a steady recovery and improvement of bladder and sphincter function for years after surgery.
