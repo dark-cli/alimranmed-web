@@ -9,7 +9,7 @@ source: "legacy-wp"
 
 ### What Is Adhesiolysis?
 
-Adhesiolysis is sometimes called epidural adhesiolysis or percutaneous epidural adhesiolysis. It is a treatment that is used to treat pain and scar tissue buildup along the spine. Scar tissue buildup can result in nerve root compression and cause severe pain. Additionally, [chronic pain](https://paindoctor.com/conditions/common/chronic-pain/) can result from irritated or inflamed nerve roots.
+Adhesiolysis is sometimes called epidural adhesiolysis or percutaneous epidural adhesiolysis. It is a treatment that is used to treat pain and scar tissue buildup along the spine. Scar tissue buildup can result in nerve root compression and cause severe pain. Additionally, chronic pain can result from irritated or inflamed nerve roots.
 
 If nerve root inflammation is found to be the source of a patient’s pain, a needle is placed into the back in the lower posterior region, close to the buttock, and a steroid is injected via the needle to relieve the pain. Conversely, if scar tissue is found to be responsible for the pain, X-rays are utilized to carefully insert a slightly bigger needle into the back. Once the needle is in the proper position, a catheter is inserted through the needle and steroids and other medications are injected to destroy the scar tissue, thereby helping to reduce inflammation and pain. This minimally invasive procedure treats pain by blocking activity of the nerves in the damaged areas and by reducing fluid accumulation and infection occurrence.
 
@@ -25,14 +25,14 @@ There are rare cases where incorrect needle placement can cause perforating of t
 
 Various conditions can be treated with adhesiolysis, including:
 
--   [Spinal surgery syndrome](https://paindoctor.com/conditions/back/pain-after-spine-surgery/)
--   [Spinal stenosis](https://paindoctor.com/conditions/back/spinal-stenosis/)
+-   Spinal surgery syndrome
+-   Spinal stenosis
 -   Lumbar and cervical pain
 -   Leg pain
 
 Spinal stenosis refers to a narrowing of the spinal canal that can result in spinal nerve compression. Symptoms of spinal stenosis include sensory and motor problems, muscle weakness, lumbar spinal pain, and leg pain. These symptoms may be caused by scar tissue and inflamed spinal nerves. Patients usually have an MRI prior to this procedure and again after it is completed. Following treatment with adhesiolysis, patients typically report less pain, with some patients reporting no pain at all.
 
-Spinal surgery can lead to scar tissue development that can place pressure on spinal nerves, resulting in chronic pain in the lumbar spine. Some patients may also report leg pain with this condition. The first line of treatment for this condition is usually [epidural steroid injections](https://paindoctor.com/treatments/interventional-procedures/epidural-steroid-injection/); however, adhesiolysis has been found to provide more effective and longer-lasting pain relief. This is because steroid injections may help to reduce inflammation but do not address the scar tissue.
+Spinal surgery can lead to scar tissue development that can place pressure on spinal nerves, resulting in chronic pain in the lumbar spine. Some patients may also report leg pain with this condition. The first line of treatment for this condition is usually epidural steroid injections; however, adhesiolysis has been found to provide more effective and longer-lasting pain relief. This is because steroid injections may help to reduce inflammation but do not address the scar tissue.
 
 The mixture of steroids and additional medications administered during an adhesiolysis procedure is what helps to remove the scar tissue. Therefore, while some patients suffering from spinal surgery syndrome may report some relief from an epidural steroid injection, others may not report any relief until an adhesiolysis procedure is performed.
 

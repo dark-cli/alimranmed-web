@@ -7,21 +7,31 @@
  * through markdown-it here.
  */
 import SectionHead from "./SectionHead.astro";
+import { localizedHref } from "../../lib/i18n";
+import type { Locale } from "../../lib/i18n";
 
 interface Props {
   num?: string;
   heading?: string;
   body: string;
   id?: string;
+  locale?: Locale;
 }
-const { num, heading, body, id } = Astro.props;
+const { num, heading, body, id, locale = "en" } = Astro.props;
 const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+
+function rewriteLinks(md: string): string {
+  return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+    const h = href.startsWith("/") ? localizedHref(href, locale) : href;
+    return `<a href="${h}">${label}</a>`;
+  });
+}
 ---
 
 <section class="prose-block">
   {heading && num && id && <SectionHead num={num} heading={heading} id={id} />}
   {paras.map((p) => (
-    <p class="p" set:html={p.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')} />
+    <p class="p" set:html={rewriteLinks(p)} />
   ))}
 </section>
 

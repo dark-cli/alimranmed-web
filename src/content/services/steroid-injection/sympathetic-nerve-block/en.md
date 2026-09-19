@@ -16,7 +16,7 @@ source: "legacy-wp"
 
 A lumbar sympathetic block is an injection of local anesthetic into the back using X-ray guidance or ultrasound. With this procedure, we are blocking the sympathetic nerves to the leg. These nerves typically are not responsible for sensation, but they can be “turned on” in certain pain syndromes.
 
-This procedure is typically ordered by your doctor for pain located in the buttocks and/or legs that is caused by sympathetically maintained pain, or complex regional pain syndrome, formerly known as reflex sympathetic dystrophy (RSD). It may also be ordered for nerve injury or post-herpetic neuralgia ([herpes zoster](http://www.painclinicofindia.com/procedures2.htm), shingles). Lumbar sympathetic blocks are also used with circulation problems (e.g., vascular insufficiency) to see if blood flow can be improved.
+This procedure is typically ordered by your doctor for pain located in the buttocks and/or legs that is caused by sympathetically maintained pain, or complex regional pain syndrome, formerly known as reflex sympathetic dystrophy (RSD). It may also be ordered for nerve injury or post-herpetic neuralgia (herpes zoster, shingles). Lumbar sympathetic blocks are also used with circulation problems (e.g., vascular insufficiency) to see if blood flow can be improved.
 
 complex regional pain syndrome
 

@@ -30,6 +30,13 @@ const lines = [
   "/en        /en/       301",
   "/ar        /ar/       301",
   "",
+  "# ── Locale-less path catch-alls ────────────────────────────────────────",
+  "# Bare /treatments/* and /services/* originate from legacy redirects below",
+  "# and from internal markdown links in content files. Route them to English.",
+  "/treatments/*  /en/treatments/:splat  301",
+  "/services/*    /en/services/:splat    301",
+  "/blog/*        /en/blog/:splat        301",
+  "",
 ];
 
 const seen = new Set();

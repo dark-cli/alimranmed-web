@@ -179,11 +179,11 @@ const soonMsg = "This article isn't in the new design yet — coming soon.";
           entry.data.sections.map((s: any) => {
             const { num, id } = nextNumId(!!s.heading);
             if (s.type === "at-a-glance")     return <AtGlance items={s.items} glanceLabel="At a glance" />;
-            if (s.type === "prose")           return <Prose num={num} heading={s.heading} body={s.body} id={id} />;
+            if (s.type === "prose")           return <Prose num={num} heading={s.heading} body={s.body} id={id} locale={locale} />;
             if (s.type === "pull-quote")      return <PullQuote text={s.text} attribution={s.attribution} />;
             if (s.type === "comparison-pair") return <ComparisonPair num={num} heading={s.heading} id={id} intro={s.intro} a={s.a} b={s.b} />;
             if (s.type === "stats-facts")     return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="Key facts" factNumbers={s.facts.map((_: string, i: number) => String(i + 1).padStart(2, "0"))} />;
-            if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} />;
+            if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} locale={locale} />;
             if (s.type === "related")         return <Related items={resolveRelated(s.slugs)} relatedLabel="Related reading" soonLabel={soonMsg} />;
             if (s.type === "media")           return <Media kind={s.kind} src={s.src} alt={s.alt} caption={s.caption} aspect={s.aspect} />;
             return null;

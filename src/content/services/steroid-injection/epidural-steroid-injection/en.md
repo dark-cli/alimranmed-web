@@ -13,5 +13,5 @@ Epidural glucocorticoid injections are commonly given to patients with leg and/o
 
 During a transforaminal injection, a thin needle is inserted into the epidural space through the bony opening of the exiting nerve root. This technique allows the cortisone medicine to be placed closer to the irritated nerve root.
 
-Indications include disc herniations, Lumbar canal stenosis, vertebral fractures, tumor compressing epidural space, [Herpes zoster](http://www.painclinicofindia.com/Epidural_Steroid.htm) pain etc.
+Indications include disc herniations, Lumbar canal stenosis, vertebral fractures, tumor compressing epidural space, Herpes zoster pain etc.
 
