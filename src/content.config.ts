@@ -134,7 +134,11 @@ const treatments = defineCollection({
 
 const services = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/services" }),
-  schema: pageBase,
+  schema: pageBase.extend({
+    redesigned: z.boolean().optional(),
+    sections: z.array(articleSection).optional(),
+    isHub: z.boolean().optional(),
+  }),
 });
 
 const doctors = defineCollection({

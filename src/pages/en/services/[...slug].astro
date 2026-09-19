@@ -1,8 +1,20 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EntryPage from "../../../components/EntryPage.astro";
-import { topicOf, isLocale } from "../../../lib/i18n";
+import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { CONTACT } from "../../../consts";
+import AtGlance from "../../../components/article/AtGlance.astro";
+import Prose from "../../../components/article/Prose.astro";
+import PullQuote from "../../../components/article/PullQuote.astro";
+import StatsFacts from "../../../components/article/StatsFacts.astro";
+import TreatmentGroups from "../../../components/article/TreatmentGroups.astro";
+import Media from "../../../components/article/Media.astro";
+
+const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
 
 export async function getStaticPaths() {
   const items = await getCollection("services");
@@ -12,12 +24,205 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const isRedesigned = entry.data.redesigned === true;
+const { Content } = await render(entry);
+
+// Build TOC from section headings
+type TocItem = { id: string; text: string; num: string };
+let toc: TocItem[] = [];
+if (isRedesigned && Array.isArray(entry.data.sections)) {
+  let n = 0;
+  entry.data.sections.forEach((s: { type: string; heading?: string }) => {
+    if (!s.heading) return;
+    n += 1;
+    toc.push({ id: `s-${n}`, text: s.heading, num: String(n).padStart(2, "0") });
+  });
+}
+const showToc = toc.length >= 2;
+
+let sectionIndex = 0;
+function nextNumId(hasHeading: boolean): { num?: string; id?: string } {
+  if (!hasHeading) return {};
+  sectionIndex += 1;
+  return { num: String(sectionIndex).padStart(2, "0"), id: `s-${sectionIndex}` };
+}
+
+const standfirst = entry.data.description || "";
 ---
 
-<BaseLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  image={entry.data.image}
->
-  <EntryPage entry={entry} />
-</BaseLayout>
+{isRedesigned ? (
+  <BaseLayout title={`${entry.data.title} — Alimran Clinic`} description={standfirst}>
+    <!-- Head band -->
+    <section class="art-head-band">
+      <div class="art-head-wrap">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href={L("/")}>Home</a>
+          <span class="crumb-sep" aria-hidden="true">›</span>
+          <a href={L("/services/")}>Services</a>
+          <span class="crumb-sep" aria-hidden="true">›</span>
+          <span class="crumb-current">{entry.data.category || "Service"}</span>
+        </nav>
+        <div class="art-head-grid">
+          <div class="art-head-copy">
+            <h1 class="art-h1">{entry.data.title}</h1>
+            {standfirst && <p class="art-standfirst">{standfirst}</p>}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="art-container">
+      <div class="art-grid">
+        <aside class="art-aside">
+          {showToc && (
+            <nav class="art-toc" aria-label="On this page">
+              <p class="art-toc-label">On this page</p>
+              <span class="art-toc-rule" aria-hidden="true"></span>
+              {toc.map((t) => (<a href={`#${t.id}`}>{t.text}</a>))}
+            </nav>
+          )}
+          <div class="art-call-card">
+            <p class="art-call-label">Book now</p>
+            <p class="art-call-body">Speak to the secretary about this service.</p>
+            <a class="art-call-btn" href={callHref} dir="ltr">{CONTACT.phones[0]}</a>
+          </div>
+        </aside>
+
+        <article class="art-body">
+          {entry.data.sections.map((s: any) => {
+            const { num, id } = nextNumId(!!s.heading);
+            if (s.type === "at-a-glance")      return <AtGlance items={s.items} glanceLabel="At a glance" />;
+            if (s.type === "prose")            return <Prose num={num} heading={s.heading} body={s.body} id={id} />;
+            if (s.type === "pull-quote")       return <PullQuote text={s.text} attribution={s.attribution} />;
+            if (s.type === "stats-facts")      return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="Key facts" factNumbers={s.facts.map((_: string, i: number) => String(i + 1).padStart(2, "0"))} />;
+            if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} />;
+            if (s.type === "media")            return <Media kind={s.kind} src={s.src} alt={s.alt} caption={s.caption} aspect={s.aspect} />;
+            return null;
+          })}
+
+          <section class="art-cta">
+            <div>
+              <h2>Book a consultation</h2>
+              <p>The secretary schedules first appointments during clinic hours.</p>
+            </div>
+            <div class="art-cta-buttons">
+              <a class="btn btn-primary art-cta-btn" href={callHref} dir="ltr">{CONTACT.phones[0]}</a>
+              <a class="btn btn-secondary art-cta-btn" href={secondCallHref} dir="ltr">{CONTACT.phones[1]}</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+  </BaseLayout>
+) : (
+  <BaseLayout title={entry.data.title} description={standfirst} image={entry.data.image}>
+    <EntryPage entry={entry} />
+  </BaseLayout>
+)}
+
+<style>
+  .art-head-band { border-bottom: 1px solid var(--line); }
+  .art-head-wrap {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(24px, 3.5vw, 40px) 24px clamp(32px, 4.5vw, 52px);
+  }
+  .crumbs {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    margin-bottom: clamp(24px, 3.5vw, 36px);
+  }
+  .crumbs a {
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--muted); text-decoration: none; letter-spacing: 0.02em;
+  }
+  .crumbs a:hover { color: var(--accent); text-decoration: none; }
+  .crumb-sep { color: var(--line-strong); font-size: 12px; }
+  .crumb-current { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+
+  .art-head-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+    gap: clamp(24px, 4vw, 64px); align-items: end;
+  }
+  .art-head-copy { container-type: inline-size; min-width: 0; }
+  .art-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(29px, 7cqw, 54px);
+    line-height: 1.08; font-weight: 400; letter-spacing: -0.02em;
+    margin: 0 0 18px; color: var(--ink); text-wrap: pretty;
+  }
+  .art-standfirst {
+    font-size: clamp(16.5px, 1.9vw, 19px);
+    line-height: 1.6; color: var(--body); max-width: 58ch;
+    text-wrap: pretty; margin: 0;
+  }
+
+  .art-container {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: 0 24px; container-type: inline-size;
+  }
+  .art-grid {
+    display: grid; grid-template-columns: minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 72px); align-items: start;
+  }
+  .art-aside { padding-top: clamp(32px, 4.5vw, 56px); min-width: 0; position: static; }
+  .art-toc { display: none; flex-direction: column; }
+  @container (min-width: 820px) {
+    .art-grid { grid-template-columns: minmax(0, 240px) minmax(0, 1fr); }
+    .art-grid > .art-body { max-width: 740px; }
+    .art-aside { position: sticky; top: 96px; }
+    .art-toc { display: flex; }
+  }
+
+  .art-toc-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 14px;
+  }
+  .art-toc-rule { display: block; border-top: 1px solid var(--ink); }
+  .art-toc a {
+    display: block; font-size: 14.5px; line-height: 1.45;
+    color: var(--body); padding: 11px 0;
+    border-bottom: 1px solid var(--line-soft); text-decoration: none;
+  }
+  .art-toc a:hover { color: var(--accent); text-decoration: none; }
+
+  .art-call-card {
+    display: none;
+    margin-top: 24px;
+    border: 1px solid var(--line); background: var(--surface); padding: 20px;
+  }
+  @container (min-width: 820px) { .art-call-card { display: block; } }
+  .art-call-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 10px;
+  }
+  .art-call-body { font-size: 14px; line-height: 1.72; color: var(--body); margin: 0 0 16px; }
+  .art-call-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 100%; min-height: 44px; padding: 0 16px;
+    background: var(--accent); color: var(--white);
+    font-size: 14.5px; font-weight: 500; border-radius: 2px;
+    text-decoration: none;
+  }
+  .art-call-btn:hover { background: var(--accent-hover); color: var(--white); text-decoration: none; }
+
+  .art-body { padding: clamp(32px, 4.5vw, 56px) 0 0; min-width: 0; }
+
+  .art-cta {
+    border: 1px solid var(--line); background: var(--surface);
+    padding: clamp(24px, 3.5vw, 36px);
+    margin: clamp(40px, 5vw, 56px) 0 clamp(36px, 4.5vw, 48px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+    gap: 26px; align-items: center;
+  }
+  .art-cta h2 {
+    font-family: var(--font-display); font-size: clamp(22px, 2.7vw, 28px);
+    font-weight: 400; letter-spacing: -0.015em;
+    margin: 0 0 10px; color: var(--ink);
+  }
+  .art-cta p { font-size: 16px; line-height: 1.72; color: var(--body); margin: 0; max-width: 46ch; }
+  .art-cta-buttons { display: flex; flex-direction: column; gap: 10px; }
+  .art-cta-btn { min-height: 52px; font-size: 16px; justify-content: center; }
+</style>

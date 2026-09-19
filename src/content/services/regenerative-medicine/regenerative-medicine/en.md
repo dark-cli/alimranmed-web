@@ -1,27 +1,40 @@
 ---
 title: "Regenerative Medicine"
-description: "What is regenerative medicine? regenerative medicine (Prolotherapy Therapy), also know as Non-Surgical Ligament and Tendon Reconstruction and Regenerative Joint Injection,"
+description: "Regenerative medicine uses directed injections of dextrose, PRP, or stem cells to stimulate the body's natural healing and repair damaged ligaments, tendons, and joints."
 category: "regenerative-medicine"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/07/regenerative-medicine/"
 publishedAt: "2020-05-07T01:45:04"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Regenerative medicine uses natural injection formulas — including dextrose, saline, PRP, and stem cells — to stimulate collagen growth, repair connective tissue, and stabilise painful joints."
+      - label: "What it treats"
+        value: "Low back and neck pain, knee pain, shoulder and rotator cuff injuries, elbow, ankle, wrist, TMJ, plantar fasciitis, IT band syndrome, and piriformis syndrome."
+      - label: "What to expect"
+        value: "A directed injection is administered at the injury site. Mild temporary inflammation is expected as the healing response begins. Multiple sessions may be required."
+  - type: prose
+    heading: "Regenerative medicine at Alimran Medical Center"
+    body: |
+      Regenerative medicine is an orthopaedic injection approach that stimulates the body's natural healing mechanisms to repair injured ligaments, tendons, and joints. When connective tissue is stretched or torn, the joint it supports becomes unstable and painful. A directed injection at the injury site triggers a mild inflammatory response, stimulating the growth of new collagen fibres that tighten the weakened structure and restore stability. Once stabilised, pain typically resolves.
+
+      Injection formulas are tailored to each patient. Traditional formulas use dextrose, saline, and local anaesthetic. Advanced formulas include Platelet Rich Plasma (PRP), which contains growth factors, and autologous adult stem cells from bone marrow or adipose (fat) tissue — enabling more robust regenerative responses for complex or chronic cases.
+
+      Areas treatable with regenerative medicine include: low back and mid-back (including degenerative disc disease and sacroiliac instability), neck, knee, shoulder, elbow, ankle, wrist, TMJ, plantar fasciitis, IT band syndrome, piriformis syndrome, and other musculoskeletal pain conditions.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Regenerative medicine"
+        items:
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Injection therapies"
+        items:
+          - "[Ozone therapy](/services/ozone-therapy/review/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
 ---
-
-What is regenerative medicine?
-
-regenerative medicine (Prolotherapy Therapy), also know as Non-Surgical Ligament and Tendon Reconstruction and Regenerative Joint Injection, is a recognized orthopedic procedure that stimulates the body’s healing processes to strengthen and repair injured and painful joints and connective tissue. It is based on the fact that when ligaments or tendons (connective tissue) are stretched or torn, the joint they are holding destabilizes and can become painful. Regenerative medicine, with its unique ability to directly address the cause of the instability, can repair the weakened sites and produce new collagen tissue, resulting in permanent stabilization of the joint. Once the joint is stabilized, pain usually resolves. Traditional approaches with surgery have more risk and may fail to stabilize the joint and relieve pain, and anti-inflammatory or other pain relievers only act temporarily.
-
-[▶ Watch on YouTube](https://www.youtube.com/watch?v=hpaqz9ufcVo)
-
-How does Regenerative medicine work?
-
-Regenerative medicine works by stimulating the body’s natural healing mechanisms to lay down new tissue in the weakened area. This is done by a very directed injection to the injury site, “tricking” the body to repair again. The mild inflammatory response which is created by the injection encourages growth of new, normal ligament or tendon fibers, resulting in a tightening of the weakened structure. Additional treatments repeat this process, allowing a gradual buildup of tissue to restore the original strength to the area.
-
-What is in the solution that is injected?
-
-Regenerative medicine injections contain natural substances that stimulate the healing response, as well as local anesthetic agents to help with the pain of the injection. Traditional formulas include ingredients such as dextrose, saline, sarapin and procaine or lidocaine. In the last several years newer formulas include Platelet Rich Plasma (PRP) and autologous (from the same person) adult stem cell sources, typically taken from bone marrow or adipose (fat) tissue. Each treating physician tailors the selection of the appropriate formula according to the patient’s need.
-
-What areas of the body can be treated?
-
-Areas/problems treated include: Low back or mid-back pain including degenerative disc disease and sacro-iliac joint instability/dysfunction, neck pain, knee pain, knee meniscal tears, wrist or hand pain, osteoarthritis, shoulder pain including rotator cuff tears, elbow pain including golfers or tennis elbow, foot pain including plantar fasciitis, ankle pain or instability, hypermobility, osteitis pubis, IT band syndrome, piriformis syndrome, temporal mandibular joint syndrome (TMJ), or other musculoskeletal pain or injury. Some areas or problems can be more challenging than others, and it is therefore important to be evaluated by a physician trained and experienced in this procedure so that an accurate assessment and treatment plan can be given.

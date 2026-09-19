@@ -1,72 +1,42 @@
 ---
 title: "TMS"
-description: "Did the operating system happen in your brain? Now a brain-mimicking technology to help it boost cells A Transcranial magnetic"
+description: "Repetitive transcranial magnetic stimulation (rTMS) uses a copper coil on the scalp to deliver brief magnetic pulses that alter neuronal activity for a range of neurological and psychiatric conditions."
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/rtms/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "TMS uses a magnetic coil placed on the scalp to generate brief pulses approximately 2–2.5 cm deep, stimulating or inhibiting neuronal activity without surgery or sedation."
+      - label: "What it treats"
+        value: "Parkinson's disease, depression, schizophrenia, bipolar disorder, neuropathic pain, fibromyalgia, migraine, addiction, Alzheimer's, anxiety, tinnitus, stroke rehabilitation, and epilepsy."
+      - label: "What to expect"
+        value: "Sessions last 30–40 minutes, five days a week over 4–6 weeks. No anaesthesia is needed and patients can drive home immediately after."
+  - type: prose
+    heading: "TMS at Alimran Medical Center"
+    body: |
+      Transcranial magnetic stimulation (TMS) uses a copper coil positioned on the patient's scalp to produce brief, focused magnetic pulses reaching approximately 2 to 2.5 centimetres into the brain. These pulses trigger changes in neuronal activity and communication, modulating unwanted or insufficient brain activity depending on stimulation parameters.
+
+      TMS can act as a stimulant or an inhibitor of cerebral activity. Different coil sizes and magnetic impulse patterns influence outcomes, leveraging the brain's neuroplasticity — the capacity of neurons to adapt and reorganise in response to injury or disease.
+
+      A typical course involves sessions 5 days per week for 4 to 6 weeks, each lasting 30 to 40 minutes. Because no sedation or general anaesthesia is required, patients remain fully awake and return to normal activities immediately after each session.
+
+      The most common side effect is headache, reported by approximately half of patients — mild and typically diminishing over the course of treatment. About one third of patients experience scalp sensations or facial twitching, which also tend to lessen with treatment adjustments. Earplugs are provided due to the device's clicking noise. The risk of seizure is very low (approximately 1 in 1,000). Patients with non-removable metallic implants in or near the head are not eligible for TMS.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Brain stimulation"
+        items:
+          - "[TMS for migraine](/services/brain-stimulation/tms-migraine/)"
+          - "[TMS for pain](/services/brain-stimulation/tms-pain/)"
+          - "[TMS for tinnitus](/services/brain-stimulation/tms-tinnitus/)"
+          - "[tDCS](/services/brain-stimulation/tdcs/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
 ---
-
-![](/images/legacy/2021/01/TMS-procedure.png)
-
-Did the operating system happen in your brain?  
-Now a brain-mimicking technology to help it boost cells
-
-[▶ Watch on YouTube](https://www.youtube.com/watch?v=NmciYGTXOBo)
-
-**A Transcranial magnetic stimulation (TMS)**
-
-TMS device is made of one or two copper coils, positioned on an external, targeted area of a patient’s scalp, which produces brief, magnetic pulses to an estimated depth of approximately 2 to 2.5 centimeters. The magnetic field triggers changes in neuronal activity and communication, which can alter unwanted activity within the brain.
-
-TMS can work as a stimulant or an inhibitor of cerebral activity, or both. In addition, different sized coils and varying magnetic impulses can impact outcomes, depending on a patient’s neuroplasticity—the capacity for neurons and the nerve cells to change and compensate for injury and disease.
-
-TMS short-term effects are due to changes in neuronal excitability caused by shifts in ionic balance of active neurons. Longer-lasting effects of TMS appear to depend on synaptic changes among cortical neurons, also known as long-term depression and long-term potentiation.
-
-Most importantly, TMS is well-tolerated by most patients with few side effects.
-
-## **When is TMS used?**
-
-TMS it is one of the latest therapeutic methods for the treatment of various diseases and neuropsychiatric disorders, among which are:
-
-1.  [Parkinson’s Disease](/treatments/parkinsons-disease/)
-2.  Depression, fatigue, negative symptoms of schizophrenia, mental disorders, obsessive–compulsive and bipolar disorder
-3.  Beneficial for treating neuropathic pain of various origins, such as central pain, pain from peripheral nerve disorders, [fibromyalgia](/treatments/fibromyalgia/), and [migraine](/treatments/migraine/).  
-    4\. Addiction to smoking, alcohol or drugs.
-4.  Memory loss (Alzheimer’s disease) or frequent forgetfulness  
-    6\. Generalized anxiety or panic disorder.
-5.  For tinnitus or auditory hallucinations.
-6.  Removement of paralyzed people and treatment of [stroke](/treatments/hemorrhagic-stroke/) effects
-7.  epilepsy
-
-## **How long is an TMS procedure?**
-
-TMS therapy involves a series of treatment sessions. Treatment sessions vary in length depending on the TMS coil used and the number of pulses delivered but typically last around 30 – 40 minutes. Patients receive TMS 5 days a week. A typical course of TMS is 4 to 6 weeks. However, this can vary depending on an individual’s response to treatment.
-
-## **Do I need to be hospitalized for a course of TMS?**
-
-Unlike electroconvulsive therapy (ECT), TMS does not require any sedation or general anesthesia, so patients are fully awake and aware during the treatment. There is no “recovery time”, so patients can drive home afterwards and return to their usual activities.
-
-## **What are the side-effects of TMS?**
-
-TMS is well-tolerated and associated with few side-effects and only a small percentage of patients discontinue treatment because of these. The most common side-effect, which is reported in about half of patients treated with TMS, is headaches. These are mild and generally diminish over the course of the treatment.  Over-the-counter pain medication can be used to treat these headaches.
-
-About one third of patients may experience painful scalp sensations or facial twitching with TMS pulses. These too tend to diminish over the course of treatment although adjustments can be made immediately in coil positioning and stimulation settings to reduce discomfort.
-
-The TMS machine produces a loud noise and because of this earplugs are given to the patient to use during the treatment. However, some patients may still complain of hearing problems immediately following treatment. No evidence suggests these effects are permanent if earplugs are worn during the treatment.
-
-TMS has not been associated with many of the side-effects caused by antidepressant medications, such as gastrointestinal upset, dry mouth, sexual dysfunction, weight gain, or sedation.
-
-The most serious risk of TMS is seizures. However, the risk of a seizure is exceedingly low, One in 1,000 patients experience a provoked seizure; while this risk is similar to that from some antidepressant medications (e.g. bupropion) seizures related to TMS exposure have terminated soon after the magnetic stimulation ends.
-
-## **Who cannot get TMS therapy?**
-
-Patients with any type of non-removable metal in their heads (with the exception of braces or dental fillings), should not receive TMS. Failure to follow this rule could cause the object to heat up, move, or malfunction, and result in serious injury or death. The following is a list of metal implants that can prevent a patient from receiving TMS:
-
--   Aneurysm clips or coils
--   Stents in the neck or brain
--   Deep brain stimulators
--   Electrodes to monitor brain activity
--   Metallic implants in your ears and eyes
--   Shrapnel or bullet fragments in or near the head
--   Facial tattoos with metallic or magnetic-sensitive ink
--   Other metal devices or object implanted in or near the head

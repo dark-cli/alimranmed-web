@@ -1,17 +1,37 @@
 ---
 title: "TMS for Tinnitus"
-description: "Tinnitus is a disturbing noise that is heard without any hearing stimulus, affects the quality of life of the individual,"
+description: "Tinnitus is a disturbing noise heard without any external stimulus, affecting 33% of the population. rTMS has shown successful results in multiple clinical studies."
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/tinnitus/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Low-frequency repetitive TMS is applied to auditory cortex areas to reduce the abnormal neuronal activity underlying tinnitus."
+      - label: "Who it is for"
+        value: "Patients with persistent tinnitus — a disturbing ringing or noise without external sound source — especially those unresponsive to other treatments."
+      - label: "What to expect"
+        value: "Outpatient sessions requiring no anaesthesia. A course of treatment is needed; most studies report significant reduction in tinnitus severity."
+  - type: prose
+    heading: "TMS for tinnitus at Alimran Medical Center"
+    body: |
+      Tinnitus is a disturbing noise heard without any external hearing stimulus. It affects the quality of life of the individual and leads to psychosocial problems. Its prevalence characteristically increases with aging and is seen in approximately 33% of the general population. The pathophysiology of tinnitus accompanying disorders of the auditory system is not fully understood, which has historically made evaluation and treatment difficult.
+
+      Progress in auditory neuroscience now provides a positive outlook for tinnitus treatment. Transcranial magnetic stimulation (TMS) is a method that stimulates neuronal tissue non-invasively, without depending on the transfer of electrical current through electrodes or skin.
+
+      In recent years, the number of studies on repetitive low-frequency TMS for tinnitus has increased significantly, with most reporting successful results. The growing evidence base supports rTMS as a meaningful treatment option, particularly for patients for whom pharmacological or audiological interventions have not been effective.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Brain stimulation"
+        items:
+          - "[TMS](/services/brain-stimulation/tms/)"
+          - "[tDCS](/services/brain-stimulation/tdcs/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
 ---
-
-![](/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0.jpeg)
-![](/images/legacy/2020/07/z-tinnitus.png)
-
-Tinnitus is a disturbing noise that is heard without any hearing stimulus, affects the quality of life of the individual, and leads to psychosocial problems. Its prevalence characteristically increases with aging. It is seen in 33% of the general population. Pathophysiology of tinnitus known to accompany nearly all disorders in auditory system has not been fully understood; therefore, there are some difficulties in evaluation and treatment thereof.
-
-Despite the restrictive factors of tinnitus treatment, progress in auditory neuroscience provides a positive view of tinnitus treatment. [Transcranial magnetic stimulation (TMS)](/services/brain-stimulation/tms/) is a method based on the stimulation of neuronal tissue without depending on the transfer of electrical current by means of electrodes or the skin.
-
-TMS is used in the treatment of various diseases with developing neuroscience. In the recent years, the number of studies on TMS application with repetitive low frequency for the treatment of tinnitus has increased, and most of these studies have given successful results. Repetitive use of TMS in tinnitus is very novel.

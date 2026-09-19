@@ -1,14 +1,39 @@
 ---
 title: "Lumbar Microdiscectomy"
-description: "What is a lumbar microdiscectomy? Lumbar microdiscectomy is a procedure that uses an operating microscope to remove a herniated disc"
+description: "Lumbar microdiscectomy uses an operating microscope to remove a herniated disc pressing on a lumbar nerve root, through a small incision under general anaesthesia."
 order: 999
 legacyUrl: "https://alimranmed.com/lumbar-microdiscectomy/"
 category: "surgery"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Lumbar microdiscectomy uses an operating microscope to remove a herniated lumbar disc pressing on a spinal nerve, through a small incision with minimal tissue disruption."
+      - label: "What it treats"
+        value: "Herniated lumbar disc causing nerve compression, radiculopathy, and leg pain unresponsive to conservative treatment."
+      - label: "What to expect"
+        value: "Performed under general anaesthesia in prone position. A small incision is made, the disc herniation and loose fragments are removed, and a fat graft is placed to minimise scarring."
+  - type: prose
+    heading: "Lumbar microdiscectomy at Alimran Medical Center"
+    body: |
+      Lumbar microdiscectomy uses an operating microscope to remove a herniated disc that is causing pressure on a nerve in the lower spine. The magnification of the microscope enables the neurosurgeon to work through a small skin incision, reducing trauma to surrounding muscle and bone.
+
+      Procedure description: intravenous antibiotics are given before surgery to reduce infection risk. The patient is placed face down under general anaesthesia. X-ray confirms the correct disc level. A small piece of fat is removed from beneath the skin and saved for later use. Muscle is carefully dissected off the spine, then the microscope is used for the remainder of the operation. A small amount of bone is removed to allow clear visualisation of the nerve and disc. The disc herniation and any loose fragments are removed. The wound is irrigated with antibiotic solution. The saved fat graft is placed adjacent to the nerve to minimise post-operative scarring. Absorbable sutures are used under the skin, with stitches, staples, or skin glue on the surface.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Surgery"
+        items:
+          - "[Endoscopic spine surgery](/services/surgery/endoscopic-spine/)"
+          - "[Vertebroplasty](/services/surgery/vertebroplasty/)"
+      - title: "Radiofrequency"
+        items:
+          - "[Nucleoplasty](/services/radiofrequency/nucleoplasty/)"
+          - "[Spine radiofrequency](/services/radiofrequency/spine/)"
+      - title: "Physiotherapy"
+        items:
+          - "[SpineMED](/services/chiropractic/spinmed/)"
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
 ---
-
-**What is a lumbar microdiscectomy?**
-
-Lumbar microdiscectomy is a procedure that uses an operating microscope to remove a herniated disc that is causing pressure on a nerve in the lower spine. The magnification provided by the microscope enables the neurosurgeon to make a small incision in the skin to perform the discectomy.
-
-Description of Surgery: Intravenous antibiotics are administered before surgery to decrease the risk of infection. You will be anesthetized (put to sleep), and turned face down on the operating table for the surgery. The appropriate disc level may need to be confirmed with an x-ray. A small piece of fat will be removed from under the skin and saved for later use. Muscle is then carefully dissected off the spine. The microscope is then used for better visualization during the remainder of the operation. A small amount of bone will be removed. This bone removal allows easy visualization and identification of the nerve and disc. The disc herniation and any loose fragments in the disc space are removed. The area is then inspected to confirm that there are no other disc fragments pressing on the nerve. The wound is then irrigated with antibiotic solution to decrease the risk of infection. The small piece of saved fat is then placed adjacent to the nerve to minimize scarring. Absorbable stitches are used under the skin to close the incision. Stitches, staples or special “skin glue” are used on the surface of the skin. A sterile dressing is placed over the incision. You will be placed on your back in a hospital bed. The breathing tube is removed (extubated) and you will be taken to the recovery room.

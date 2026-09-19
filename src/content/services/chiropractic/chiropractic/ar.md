@@ -1,13 +1,42 @@
 ---
 locale: "ar"
-title: "العلاج بتقويم العمود الفقري"
-description: "تقويم العمود الفقري - SPIN MED و SIGMA"
+title: "تقويم العمود الفقري"
+description: "يقدم قسم تقويم العمود الفقري في مركز العمران الطبي تقنيتين محوسبتين: SpineMED لتفريج الضغط عن الفقرات، وSigma للتعديل الدقيق للمفاصل."
 category: "العلاج بتقويم العمود الفقري"
 order: 999
 legacyUrl: "https://alimranmed.com/chiropractic/"
-source: "translated-by-llm"
+source: "legacy-wp"
+redesigned: true
+isHub: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "ما هو"
+        value: "تقويم العمود الفقري في مركز العمران يعتمد تقنيتين محوسبتين قائمتين على الأجهزة لتفريج الضغط عن الفقرات وتعديل المفاصل — دون ضغط يدوي مفاجئ."
+      - label: "الحالات التي يُعالجها"
+        value: "انزلاق غضروفي، تنكس الفقرات، آلام الرقبة والظهر، وضعف المفاصل."
+      - label: "كيف يُجرى"
+        value: "الجلسات غير جراحية ومريحة. يعمل جهازا SpineMED وSigma تحت سيطرة الحاسوب لضمان الدقة وسلامة المريض."
+  - type: prose
+    heading: "تقويم العمود الفقري في مركز العمران الطبي"
+    body: |
+      يقدم قسم تقويم العمود الفقري في مركز العمران تقنيتين متقدمتين ومحوسبتين لرعاية العمود الفقري والمفاصل:
+
+      [SpineMED](/services/chiropractic/spinmed/) — جهاز تفريج الضغط عن الفقرات الذي يستهدف الأقراص التالفة ويُفرّج الضغط بين الفقرات دون التسبب في تشنج عضلي. يراقب الضغط المُطبَّق كل 2.5 ثانية ويُجري تعديلات كل 20 ثانية، مما يُنشئ ضغطاً سلبياً داخل القرص يسمح للسوائل والمواد المغذية والأكسجين بالعودة إلى القرص.
+
+      [Sigma](/services/chiropractic/sigma/) — تقنية تعديل مفصلي دقيق تعتمد الأجهزة، تُوصّل نبضات ميكانيكية محكومة دون أي تلاعب يدوي بالقوة. آمنة ومريحة ومناسبة للمرضى الذين لا يصلحون للعلاج اليدوي التقليدي.
+
+      كلتا التقنيتين لا تنطوي على دفعات يدوية مفاجئة، مما يجعلهما مناسبتين لطيف واسع من المرضى، بمن فيهم من يعانون من هشاشة العظام أو التغيرات ما بعد الجراحة.
+  - type: treatment-groups
+    heading: "خيارات العلاج في مركز العمران"
+    groups:
+      - title: "تقويم العمود الفقري"
+        items:
+          - "[SpineMED](/services/chiropractic/spinmed/)"
+          - "[Sigma](/services/chiropractic/sigma/)"
+      - title: "العلاج الطبيعي"
+        items:
+          - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"
+          - "[العلاج بالليزر](/services/physiotherapy/laser-therapy/)"
+          - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
 ---
-
-[SPIN MED](/services/chiropractic/spinmed/)
-
-[SIGMA](/services/chiropractic/sigma/)

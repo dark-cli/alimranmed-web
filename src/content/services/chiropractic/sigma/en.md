@@ -1,30 +1,60 @@
 ---
-title: "Sigma"
-description: "We help people feel better, by resetting the spine and nerves of the body using a computerized medical device that"
+title: "Sigma instrument-assisted chiropractic"
+description: "Computerised chiropractic adjustment using the Sigma instrument — precise mechanical impulses to joints and spinal segments, with real-time biofeedback on a built-in computer display. Eliminates the guesswork of manual manipulation and adapts treatment force to the individual segment's response."
 category: "chiropractic"
 order: 999
 legacyUrl: "/services/chiropractic/sigma/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Computerised instrument-assisted chiropractic — precise mechanical impulses delivered by a handheld probe, with real-time biofeedback on a built-in display. No manual thrusts."
+      - label: "What it helps with"
+        value: "Muscle and joint pain, spasm, fibrosis, restricted range of motion, and nerve receptor dysfunction — cervical, thoracic, lumbar, and peripheral joints."
+      - label: "How it is done"
+        value: "Probe applied to the target segment; device transmits percussive impulses and plots the joint's mechanical response live. Performed fully clothed."
+  - type: prose
+    heading: "Sigma at Alimran Medical Center"
+    body: |
+      The Sigma instrument is a computerised adjustment device used in the chiropractic department at Alimran Medical Center. Unlike conventional manual chiropractic — where the practitioner applies a rapid, high-velocity thrust by hand — the Sigma delivers precisely measured mechanical impulses through a handheld probe, and records the joint's response on a built-in computer display. This allows the therapist to monitor the biomechanical state of each segment during treatment, not just before and after.
+
+      **How it works**
+
+      The device transmits controlled shock waves to the musculoskeletal receptors at the target site. These impulses reset the mechanical behaviour of the joint, reduce muscle spasm, and stimulate the nerve pathways running through the treated region. The force applied is adjusted segment by segment based on the real-time biofeedback — the computer plots the stiffness and motion of the joint, and the therapist modifies technique accordingly.
+
+      **Clinical benefits**
+
+      - Reduction of muscle and joint pain
+      - Treatment of muscle spasm and muscular fibrosis
+      - Improvement of nerve receptor function
+      - Increased muscle strength in the treated region
+      - Increased range of joint movement
+
+      **Who it is suitable for**
+
+      The Sigma technique is suitable for patients who prefer a non-manual approach, those with joint hypersensitivity, post-operative patients returning to spinal rehabilitation, and children or elderly patients who cannot tolerate high-velocity manual manipulation. It is applied safely by a trained therapist and the treatment parameters are guided by the computerised output rather than by manual estimation.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Chiropractic care"
+        items:
+          - "[SpineMED® spinal decompression](/services/chiropractic/spinmed/)"
+          - "Sigma instrument adjustment"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
+          - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+      - title: "Injection therapies"
+        items:
+          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "Trigger point injections"
+          - "Steroid injection"
+      - title: "Advanced therapies"
+        items:
+          - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
 ---
-
-![](/images/legacy/2019/07/Sigma-7R-768x511-300x200.jpg)
-
-We help people feel better, by resetting the spine and nerves of the body using a computerized medical device that eliminates the traditional guesswork of chiropractic.
-
-Sigma resets the joints and skeletons with absolute precision.
-
-Is a sophisticated and modern device of physical therapy based on the transmission of regular shock waves to the muscular receptors to restore the function of the joint normally.
-
-It also reorganizes muscle fiber and stimulates the pathway through which it passes
-
-It is managed safely by the competent therapist according to the place to be treated and the results are shown through the drawings of his drawings on the computer on which the patient is diagnosed and treated at the same time.
-
-What are its practical benefits?
-
-1\. Reduces muscle and joint pain  
-2\. Treatment of muscle spasms and muscle fibrosis  
-3\. Improves nerve receptors  
-4\. Increases muscle strength  
-5\. Increases the area of ​​the joint movement
-
-[▶ Watch on YouTube](https://www.youtube.com/watch?v=k280_J4ssoI)

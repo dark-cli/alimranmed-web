@@ -1,22 +1,48 @@
 ---
 title: "Spine Radiofrequency"
-description: "Radiofrequency ablation (RFA), or radiofrequency neurotomy, is a type of injection procedure that is used to treat several conditions including"
+description: "Radiofrequency ablation for the spine targets pain-transmitting nerves at facet and sacroiliac joints, providing durable relief from chronic neck and back pain without surgery."
 category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/28/radiofrequency-ablation-for-spine/"
 publishedAt: "2020-04-28T07:54:03"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Spinal RFA heats a targeted section of a pain-transmitting nerve at the facet or sacroiliac joint, creating a lesion that prevents pain signals reaching the brain."
+      - label: "What it treats"
+        value: "Chronic cervical and lumbar facet joint pain, sacroiliac joint pain, and posterior pelvic pain."
+      - label: "What to expect"
+        value: "Outpatient procedure under local anaesthesia. Goals include reducing neck and back pain for more than 6 months, improving range of motion, and reducing pain medication use."
+  - type: prose
+    heading: "Spine radiofrequency at Alimran Medical Center"
+    body: |
+      Radiofrequency ablation (RFA) for the spine is an injection-based procedure that treats chronic neck and back pain arising from the facet joints or sacroiliac joints. In the spine, pain from vertebral facet joints or the hip's sacroiliac joints can be effectively treated using RFA.
+
+      The procedure involves heating a part of the pain-transmitting nerve with a radiofrequency needle to create a heat lesion. This lesion prevents the nerve from sending pain signals to the brain. The goals of treating facet and sacroiliac joints with RFA are to:
+
+      - Reduce neck or back pain for longer periods — typically more than 6 months
+      - Improve range of motion to allow participation in physiotherapy programs
+      - Reduce intake of pain medications, which carry significant side effects when used long-term
+      - Avoid or delay surgery
+
+      Spinal RFA is performed on an outpatient basis. It is a well-tolerated procedure with a strong safety profile.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Radiofrequency"
+        items:
+          - "[Radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Knee radiofrequency](/services/radiofrequency/knee/)"
+          - "[Nucleoplasty](/services/radiofrequency/nucleoplasty/)"
+      - title: "Injection therapies"
+        items:
+          - "[Ozone therapy](/services/ozone-therapy/review/)"
+          - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[SpineMED](/services/chiropractic/spinmed/)"
 ---
-
-Radiofrequency ablation (RFA), or radiofrequency neurotomy, is a type of injection procedure that is used to treat several conditions including chronic neck and/or back pain. In the neck and back, pain stemming from the vertebral [facet joints](https://www.spine-health.com/conditions/arthritis/facet-joint-disorders-and-back-pain) or the hip’s [sacroiliac joints](https://www.spine-health.com/conditions/spine-anatomy/sacroiliac-joint-anatomy) or the posterior pelvis may be treated using RFA.
-
-RFA involves heating a part of the pain-transmitting nerve with a radiofrequency needle to create a heat lesion. This resulting lesion prevents the nerve from sending pain signals to the brain.
-
-**Goals of Radiofrequency Ablation**
-
-The goals of treating facet and sacroiliac joints with RFA are to:
-
--   **Reduce neck or back pain** for longer periods of time, typically for more than 6 months.[1](https://www.spine-health.com/treatment/injections/radiofrequency-ablation-rfa-facet-and-sacroiliac-joint-pain#vh_footnotes),[2](https://www.spine-health.com/treatment/injections/radiofrequency-ablation-rfa-facet-and-sacroiliac-joint-pain#vh_footnotes)
--   **Improve neck and back function** for more range of motion, which may allow the patient to continue with a physical therapy program.
--   **Reduce the intake of pain medications**, which tend to have serious side effects or risks when used long term.
--   **Avoid or delay surger**

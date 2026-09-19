@@ -1,42 +1,40 @@
 ---
 title: "Laser Therapy"
-description: "What is laser therapy and how does it work? A laser is essentially a focused beam of light used to"
+description: "Low-level laser therapy (photobioactivation) uses focused light to stimulate cellular repair, reduce inflammation, and relieve pain in musculoskeletal conditions."
 order: 999
 legacyUrl: "https://alimranmed.com/laser-therapy/"
 category: "physiotherapy"
 source: "ai-draft"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "Laser therapy delivers focused light energy to tissues, triggering biochemical changes at the cell membrane that improve cellular metabolism, immune response, and tissue repair."
+      - label: "What it treats"
+        value: "Inflammatory pain (tendinitis, bursitis, synovitis), ligament and muscle tears, joint pain including rheumatoid arthritis, and myofascial trigger points."
+      - label: "What to expect"
+        value: "A handheld device is moved over the treatment area during a brief, painless session. Therapeutic effects accumulate over a course of treatment."
+  - type: prose
+    heading: "Laser therapy at Alimran Medical Center"
+    body: |
+      Laser therapy — also described as photobioactivation — uses a focused beam of light to deliver energy deep into tissues. The laser generates heat and disrupts electron flow, initiating biochemical changes at the cell membrane. Cells in a poorer metabolic state tend to absorb more energy than healthier surrounding cells, targeting the therapy naturally to areas that need it most.
+
+      The primary effects of laser therapy include improved cellular proliferation and motility, activation of immune mechanisms, and up-regulated metabolism in treated tissue. These mechanisms support faster tissue repair, reduced inflammation, and pain relief.
+
+      **Indications** for laser therapy include: inflammatory pain such as tendinitis, bursitis, and synovitis; tissue repair in ligament sprains and muscle tears; joint pain including rheumatoid arthritis and finger joint pain; and trigger point pain from myofascial knots.
+
+      **Clinical functions** of laser therapy: relieves pain, reduces inflammation, deactivates trigger points responsible for myofascial pain, increases tissue repair speed and tensile capacity, improves blood circulation, stimulates immune and nerve function, promotes collagen development, and accelerates wound healing.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Physiotherapy"
+        items:
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
+          - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
+          - "[Luna EMG robot](/services/physiotherapy/luna-emg-robot/)"
+      - title: "Advanced therapies"
+        items:
+          - "[Radiofrequency](/services/radiofrequency/radiofrequency/)"
+          - "[Acupuncture](/services/acupuncture/acupuncture/)"
 ---
-
-## What is laser therapy and how does it work?
-
-A laser is essentially a focused beam of light used to transmit high energy light into a medium. There is some variation in how laser light is delivered therapeutically, it can for example be applied as a single focused beam, or a as a set of beams pulsing at a high rate. Different methods have different efficacies depending on what they are being used to treat and how, and your physiotherapist will make a recommendation based on their knowledge and experience.
-
-As in other electrotherapies, your tissues have to absorb light energy to achieve any effect. Typically, shorter wavelengths of light are more readily absorbed by the darker pigments in your skin like melanin. What a laser does upon delivery is generate heat, disrupt electron flow, and through these two mechanisms begin biochemical changes. These may not sound like therapeutic mechanisms, but they are, targeting the cell membrane to achieve their effects.
-
-The term used to describe the therapeutic biological changes that laser therapy initiates is photobioactivation. The energy from laser therapy is primarily absorbed by the cell membrane, and the physiological state of the cell prior to treatment often determines the amount of energy observed. Cells in a poorer metabolic state often absorb more than neighbors who are in good condition. The effects of laser therapy in terms of the outcomes achieved are generally considered to be an improvement in proliferation and motility, the triggering of immune mechanisms (white blood cells etc.), and an up regulated metabolism.
-
-## Laser therapy and physiotherapy
-
-Laser therapy is used to augment traditional physiotherapeutic techniques like massage and exercise. Advancements in technology have made delivering the treatment quick, efficient, and safe, particularly at the lower wavelengths of light used in this capacity. In general, terms your physic might recommend laser treatment for chronic pain issues and for wound healing, both of which are areas in which the technique’s efficacy has been proven.
-
-**What are its indication of LT?**
-
--   Inflammatory pain: tendinitis, bursitis, synovits
--   Tissue repair: ligaments strains, sprain and muscle tears
--   Joint Pain: rheumatoid arthritis, finger joint pain
--   Trigger point pain: trigger point knots in muscles
-
-[▶ Watch on YouTube](https://www.youtube.com/watch?v=Jcd7HVQh9yw)
-
-### **Functions of laser therapy:**
-
-1.  Relieves pain
-2.  Reduces inflammation
-3.  Deactivates trigger points responsible for myofascial pain
-4.  Increases specific speed strength and tensile capacity to repair damaged tissue
-5.  Increases blood circulation activity
-6.  Stimulates the immune system
-7.  Stimulates nerve function
-8.  Develops collagen and muscle tissue
-9.  Helps generate new healthy cellular tissue
-10.  Accelerates wound healing and blood clot formation

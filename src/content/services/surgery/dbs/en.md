@@ -1,43 +1,43 @@
 ---
 title: "Deep brain stimulation"
-description: "Deep brain stimulation involves implanting electrodes within certain areas of your brain. These electrodes produce electrical impulses that regulate abnormal"
+description: "Deep brain stimulation (DBS) implants electrodes in specific brain regions connected to a pacemaker-like device that regulates abnormal electrical impulses for movement and psychiatric disorders."
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/deep-brain-stimulation/"
 source: "legacy-wp"
+redesigned: true
+sections:
+  - type: at-a-glance
+    items:
+      - label: "What it is"
+        value: "DBS surgically implants electrodes in targeted brain regions, connected by wire to a pacemaker-like device in the chest that delivers regulated electrical impulses."
+      - label: "What it treats"
+        value: "Approved for dystonia, epilepsy, essential tremor, OCD, and Parkinson's disease. Under investigation for addiction, chronic pain, cluster headache, dementia, major depression, Huntington's, MS, stroke recovery, Tourette's, and TBI."
+      - label: "What to expect"
+        value: "Reserved for patients not controlled by medication. DBS significantly improves but does not cure the underlying condition. Programming the device may require several follow-up appointments."
+  - type: prose
+    heading: "Deep brain stimulation at Alimran Medical Center"
+    body: |
+      Deep brain stimulation (DBS) involves surgically implanting electrodes within specific areas of the brain. These electrodes produce electrical impulses that regulate the abnormal electrical activity associated with movement and psychiatric disorders. The amount of stimulation is controlled by a pacemaker-like device placed under the skin in the upper chest, connected to the brain electrodes by a wire that travels under the skin.
+
+      DBS is approved to treat dystonia, epilepsy, essential tremor, obsessive-compulsive disorder, and Parkinson's disease. It is also being actively studied as a treatment for addiction, chronic pain, cluster headache, dementia, major depression, Huntington's disease, multiple sclerosis, stroke recovery, Tourette syndrome, and traumatic brain injury.
+
+      DBS is an established treatment for movement disorders such as essential tremor, Parkinson's disease, and dystonia, as well as psychiatric conditions such as OCD. It is also FDA-approved to reduce seizures in difficult-to-treat epilepsy. Treatment is reserved for patients whose symptoms are not adequately controlled by medications.
+
+      DBS will not cure the underlying disease, but it can significantly reduce symptoms and improve quality of life. In most cases, medications may still be needed alongside the device.
+  - type: treatment-groups
+    heading: "Treatment options at Alimran Medical Center"
+    groups:
+      - title: "Surgery"
+        items:
+          - "[Endoscopic spine surgery](/services/surgery/endoscopic-spine/)"
+          - "[Transnasal transsphenoidal surgery](/services/surgery/transnasal-transsphenoidal/)"
+      - title: "Brain stimulation"
+        items:
+          - "[TMS](/services/brain-stimulation/tms/)"
+          - "[tDCS](/services/brain-stimulation/tdcs/)"
+      - title: "Physiotherapy"
+        items:
+          - "[Luna EMG robot](/services/physiotherapy/luna-emg-robot/)"
+          - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
 ---
-
-Deep brain stimulation involves implanting electrodes within certain areas of your brain. These electrodes produce electrical impulses that regulate abnormal impulses. Or the electrical impulses can affect certain cells and chemicals within the brain.
-
-The amount of stimulation in deep brain stimulation is controlled by a pacemaker-like device placed under the skin in your upper chest. A wire that travels under your skin connects this device to the electrodes in your brain.
-
-Deep brain stimulation is approved to treat a number of conditions, such as:
-
--   Dystonia
--   Epilepsy
--   Essential tremor
--   Obsessive-compulsive disorder
--   Parkinson’s disease
-
-Deep brain stimulation is also being studied as a potential treatment for:
-
--   Addiction
--   Chronic pain
--   Cluster headache
--   Dementia
--   Depression (major)
--   Huntington’s disease
--   Multiple sclerosis
--   Stroke recovery
--   Tourette syndrome
--   Traumatic brain injury
-
-Indictions
-
--   Deep brain stimulation is an established treatment for people with movement disorders, such as essential tremor, Parkinson’s disease and dystonia, and psychiatric conditions, such as obsessive-compulsive disorder. It’s also approved for use by the Food and Drug Administration to reduce seizures in difficult-to-treat epilepsy.
--   This treatment is reserved for people who aren’t able to get control of their symptoms with medications.
-
-Results
-
--   Deep brain stimulation won’t cure your disease, but it may help lessen your symptoms. If deep brain stimulation works, your symptoms will improve significantly, but they usually don’t go away completely. In some cases, medications may still be needed for certain conditions.
--   Deep brain stimulation isn’t successful for everyone. There are a number of variables involved in the success of deep brain stimulation. It’s important to talk with your doctor before surgery about what type of improvement you can expect for your condition.
