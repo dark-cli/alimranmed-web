@@ -146,14 +146,25 @@ const disclaimer = isAr
     color: var(--footer-label);
     margin: 0 0 16px;
   }
-.f-item { margin: 0 0 8px; font-size: 14.5px; overflow-wrap: anywhere; }
+  .f-item { margin: 0 0 8px; font-size: 14.5px; overflow-wrap: anywhere; }
   .f-item:last-child { margin-bottom: 0; }
-  .f-item a { color: var(--footer-text); text-decoration: none; }
-  .f-item a:hover { color: var(--white); text-decoration: none; }
+  .f-item a {
+    color: var(--footer-text);
+    text-decoration: underline;
+    text-decoration-color: var(--footer-rule);
+    text-underline-offset: 3px;
+  }
+  .f-item a:hover { color: #4bb3d4; text-decoration-color: #4bb3d4; }
 
   .f-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-  .f-links a { font-size: 14.5px; color: var(--footer-text); text-decoration: none; }
-  .f-links a:hover { color: var(--white); text-decoration: none; }
+  .f-links a {
+    font-size: 14.5px;
+    color: var(--footer-text);
+    text-decoration: underline;
+    text-decoration-color: var(--footer-rule);
+    text-underline-offset: 3px;
+  }
+  .f-links a:hover { color: #4bb3d4; text-decoration-color: #4bb3d4; }
 
   .footer-bottom {
     max-width: var(--page-max);
