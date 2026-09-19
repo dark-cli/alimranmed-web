@@ -56,13 +56,11 @@ sections:
         items:
           - "[التحفيز المغناطيسي المتكرر عبر الجمجمة (rTMS)](/services/brain-stimulation/tms/)"
           - "[تحفيز الحبل الشوكي](/services/radiofrequency/epidural-adhesiolysis/)"
-      - title: "علاجات الحقن"
+      - title: "علاجات الحقن والعلاجات المتقدمة"
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"
           - "[حقن الأوزون](/services/ozone-therapy/review/)"
           - "حقن نقاط الزناد"
-      - title: "العلاجات المتقدمة"
-        items:
           - "[الترددات الراديوية النبضية](/services/radiofrequency/radiofrequency/)"
           - "[الوخز بالإبر](/services/acupuncture/acupuncture/)"
       - title: "العلاج الطبيعي"

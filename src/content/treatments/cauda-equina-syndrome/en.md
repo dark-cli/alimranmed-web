@@ -47,15 +47,13 @@ sections:
         items:
           - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
           - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
-      - title: "Physiotherapy"
+      - title: "Physiotherapy & rehabilitation"
         items:
           - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
           - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
           - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
           - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
           - "Motor retraining and strengthening exercises"
-      - title: "Chiropractic care"
-        items:
           - "[SpineMED® system](/services/chiropractic/spinmed/)"
           - "[Sigma](/services/chiropractic/sigma/)"
 ---

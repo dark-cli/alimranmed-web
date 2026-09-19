@@ -54,7 +54,7 @@ sections:
         items:
           - "[الترددات الراديوية النبضية](/services/radiofrequency/radiofrequency/)"
           - "[الوخز بالإبر](/services/acupuncture/acupuncture/)"
-      - title: "العلاج الطبيعي"
+      - title: "العلاج الطبيعي وإعادة التأهيل"
         items:
           - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"
           - "[العلاج بالموجات القصيرة والطويلة](/services/physiotherapy/shortwave-therapy/)"
@@ -62,8 +62,6 @@ sections:
           - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
           - "العلاج بالموجات المغناطيسية"
           - "التمارين العلاجية"
-      - title: "تقويم العمود الفقري"
-        items:
           - "[نظام SpineMED®](/services/chiropractic/spinmed/)"
           - "[سيغما](/services/chiropractic/sigma/)"
 ---

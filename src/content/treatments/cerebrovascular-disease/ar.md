@@ -28,15 +28,13 @@ sections:
     heading: "خيارات العلاج في مركز العمران"
     intro: "التأهيل هو محور الخطة بعد الرعاية الحادّة. يجمع المركز بين العلاج الطبيعي والتدخلات الموجّهة وخيارات التحفيز العصبي."
     groups:
-      - title: "العلاج الطبيعي"
+      - title: "العلاج الطبيعي وإعادة التأهيل"
         items:
           - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"
           - "[العلاج بالموجات القصيرة والطويلة](/services/physiotherapy/shortwave-therapy/)"
           - "[العلاج بالليزر](/services/physiotherapy/laser-therapy/)"
           - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
           - "التمارين العلاجية"
-      - title: "تقويم العمود الفقري"
-        items:
           - "[سيغما](/services/chiropractic/sigma/)"
       - title: "التدخلات وتحفيز الدماغ"
         items:

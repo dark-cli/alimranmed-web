@@ -48,15 +48,13 @@ sections:
         items:
           - "[التحفيز المغناطيسي المتكرر عبر الجمجمة (rTMS)](/services/brain-stimulation/tms/)"
           - "[تحفيز النخاع الشوكي](/services/radiofrequency/epidural-adhesiolysis/)"
-      - title: "العلاج الطبيعي"
+      - title: "العلاج الطبيعي وإعادة التأهيل"
         items:
           - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"
           - "[العلاج بالموجات القصيرة والطويلة](/services/physiotherapy/shortwave-therapy/)"
           - "[العلاج بالليزر](/services/physiotherapy/laser-therapy/)"
           - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
           - "تمارين إعادة التدريب الحركي والتقوية"
-      - title: "تقويم العمود الفقري"
-        items:
           - "[نظام SpineMED®](/services/chiropractic/spinmed/)"
           - "[سيغما](/services/chiropractic/sigma/)"
 ---

@@ -63,13 +63,11 @@ sections:
         items:
           - "حصار العقدة الحنكية الأنفية"
           - "حقن ستيرويد"
-      - title: "العلاج الطبيعي"
+      - title: "العلاج الطبيعي وإعادة التأهيل"
         items:
           - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"
           - "[العلاج بالموجات القصيرة والطويلة](/services/physiotherapy/shortwave-therapy/)"
           - "[العلاج بالليزر](/services/physiotherapy/laser-therapy/)"
           - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
-      - title: "تقويم العمود الفقري"
-        items:
           - "[سيغما](/services/chiropractic/sigma/)"
 ---

@@ -43,15 +43,17 @@ sections:
   - type: treatment-groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
-      - title: "Physiotherapy"
+      - title: "Neuromodulation"
+        items:
+          - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
+          - "[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)"
+      - title: "Physiotherapy & rehabilitation"
         items:
           - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
           - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
           - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
           - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
           - "Muscle strengthening and developmental exercises"
-      - title: "Chiropractic care"
-        items:
           - "[SpineMED® system](/services/chiropractic/spinmed/)"
           - "[Sigma](/services/chiropractic/sigma/)"
 ---

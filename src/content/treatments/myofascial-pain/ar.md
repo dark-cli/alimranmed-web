@@ -35,15 +35,13 @@ sections:
   - type: treatment-groups
     heading: "خيارات العلاج في مركز العمران"
     groups:
-      - title: "العلاج الطبيعي"
+      - title: "العلاج الطبيعي وإعادة التأهيل"
         items:
           - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"
           - "[العلاج بالموجات القصيرة والطويلة](/services/physiotherapy/shortwave-therapy/)"
           - "[العلاج بالليزر](/services/physiotherapy/laser-therapy/)"
           - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
           - "التمارين العلاجية"
-      - title: "تقويم العمود الفقري"
-        items:
           - "[نظام SpineMED®](/services/chiropractic/spinmed/)"
           - "[سيغما](/services/chiropractic/sigma/)"
       - title: "علاجات الحقن"

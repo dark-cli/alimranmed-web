@@ -61,15 +61,13 @@ sections:
       - title: "Neuromodulation"
         items:
           - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
-      - title: "Physiotherapy"
+      - title: "Physiotherapy & rehabilitation"
         items:
           - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
           - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
           - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
           - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
           - "Joint-protection exercises, strengthening, and flexibility training"
-      - title: "Chiropractic care"
-        items:
           - "[SpineMED® system](/services/chiropractic/spinmed/)"
           - "[Sigma](/services/chiropractic/sigma/)"
 ---

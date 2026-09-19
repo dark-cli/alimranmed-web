@@ -44,15 +44,17 @@ sections:
   - type: treatment-groups
     heading: "خيارات العلاج في مركز العمران"
     groups:
-      - title: "العلاج الطبيعي"
+      - title: "التعديل العصبي"
+        items:
+          - "[التحفيز المغناطيسي المتكرر عبر الجمجمة (rTMS)](/services/brain-stimulation/tms/)"
+          - "[مضخة الباكلوفين داخل القراب](/services/surgery/intrathecal-pump/)"
+      - title: "العلاج الطبيعي وإعادة التأهيل"
         items:
           - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"
           - "[العلاج بالموجات القصيرة والطويلة](/services/physiotherapy/shortwave-therapy/)"
           - "[العلاج بالليزر](/services/physiotherapy/laser-therapy/)"
           - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
           - "تمارين تقوية العضلات وإعادة التأهيل"
-      - title: "تقويم العمود الفقري"
-        items:
           - "[نظام SpineMED®](/services/chiropractic/spinmed/)"
           - "[سيغما](/services/chiropractic/sigma/)"
 ---

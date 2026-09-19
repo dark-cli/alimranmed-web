@@ -51,13 +51,11 @@ sections:
         items:
           - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
           - "[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)"
-      - title: "Injection therapies"
+      - title: "Injection & advanced therapies"
         items:
           - "[Botox® injections](/services/botox/botox-injection/)"
           - "[Ozone injection](/services/ozone-therapy/review/)"
           - "Trigger point injections"
-      - title: "Advanced therapies"
-        items:
           - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
           - "[Acupuncture](/services/acupuncture/acupuncture/)"
       - title: "Physiotherapy"

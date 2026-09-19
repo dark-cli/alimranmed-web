@@ -62,13 +62,11 @@ sections:
         items:
           - "Sphenopalatine ganglion block"
           - "Steroid injection"
-      - title: "Physiotherapy"
+      - title: "Physiotherapy & rehabilitation"
         items:
           - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
           - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
           - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
           - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
-      - title: "Chiropractic care"
-        items:
           - "[Sigma](/services/chiropractic/sigma/)"
 ---

@@ -57,15 +57,13 @@ sections:
         items:
           - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
           - "[Acupuncture](/services/acupuncture/acupuncture/)"
-      - title: "Physiotherapy"
+      - title: "Physiotherapy & rehabilitation"
         items:
           - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"
           - "[Short and long wave therapy](/services/physiotherapy/shortwave-therapy/)"
           - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
           - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
           - "Muscle stretching, strengthening, and gait training"
-      - title: "Chiropractic care"
-        items:
           - "[SpineMED® system](/services/chiropractic/spinmed/)"
           - "[Sigma](/services/chiropractic/sigma/)"
 ---

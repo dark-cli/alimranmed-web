@@ -62,15 +62,13 @@ sections:
       - title: "التعديل العصبي"
         items:
           - "[تحفيز التيار المباشر عبر الجمجمة (tDCS)](/services/brain-stimulation/tdcs/)"
-      - title: "العلاج الطبيعي"
+      - title: "العلاج الطبيعي وإعادة التأهيل"
         items:
           - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"
           - "[العلاج بالموجات القصيرة والطويلة](/services/physiotherapy/shortwave-therapy/)"
           - "[العلاج بالليزر](/services/physiotherapy/laser-therapy/)"
           - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
           - "تمارين حماية المفاصل والتقوية ومرونة الحركة"
-      - title: "تقويم العمود الفقري"
-        items:
           - "[نظام SpineMED®](/services/chiropractic/spinmed/)"
           - "[سيغما](/services/chiropractic/sigma/)"
 ---
