@@ -1,12 +1,10 @@
 # Robots.txt for Alimran Medical Center — alimran.clinic
-# Last updated: 2026-09-13
+# Last updated: 2026-09-20
 
 # Default rules for all crawlers
 User-agent: *
 Allow: /
 Disallow: /_astro/
-Crawl-delay: 1
-Request-rate: 10/1s
 
 # Sitemap location
 Sitemap: https://alimran.clinic/sitemap-index.xml
