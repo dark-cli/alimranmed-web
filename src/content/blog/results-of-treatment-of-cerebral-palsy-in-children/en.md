@@ -1,5 +1,5 @@
 ---
-title: "Results of treatment of cerebral palsy in children"
+title: "Cerebral Palsy Treatment in Children"
 description: "A short case-study video showing outcomes from the clinic's cerebral-palsy rehabilitation programme in children."
 order: 999
 legacyUrl: "https://alimranmed.com/2019/07/05/results-of-treatment-of-cerebral-palsy-in-children/"

@@ -1,5 +1,5 @@
 ---
-title: "Transcranial direct current stimulation (tDCS)"
+title: "Direct Current Brain Stimulation (tDCS)"
 description: "Wearable, portable brain stimulation technology delivering low electrical current to produce immediate and permanent changes in brain function"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/26/transcranial-direct-current-stimulation-tdcs/"

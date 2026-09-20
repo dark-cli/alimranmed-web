@@ -1,5 +1,5 @@
 ---
-title: "تقنية تحاكي الدماغ لمساعدته على تعزيز خلاياه العصبية "
+title: "التحفيز المغناطيسي عبر الجمجمة (TMS)"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/910"
 order: 999

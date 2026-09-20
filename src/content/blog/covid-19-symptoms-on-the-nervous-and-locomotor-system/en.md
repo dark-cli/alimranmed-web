@@ -1,5 +1,5 @@
 ---
-title: "COVID-19 effects on the nervous and musculoskeletal systems"
+title: "COVID-19 and Neurological Complications"
 description: "Post-COVID symptoms affecting the muscles, nerves, and mood can persist for weeks or months. Here is how we follow up patients after infection."
 order: 999
 legacyUrl: "https://alimranmed.com/2020/11/23/covid-19-symptoms-on-the-nervous-and-locomotor-system/"
