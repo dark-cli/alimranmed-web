@@ -37,8 +37,21 @@ function youtubeId(input: string): string {
 // Video/youtube get a default frame ratio; images keep their natural size.
 const frameAspect = aspect || (kind === "image" ? undefined : "16/9");
 const frameStyle = frameAspect ? `aspect-ratio: ${frameAspect};` : "";
+
+// VideoObject schema for YouTube embeds — helps Google index the video.
+const ytId = kind === "youtube" ? youtubeId(src) : null;
+const videoSchema = ytId ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": caption || alt || "Video",
+  "description": caption || alt || "Video",
+  "thumbnailUrl": `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`,
+  "contentUrl": `https://www.youtube.com/watch?v=${ytId}`,
+  "embedUrl": `https://www.youtube-nocookie.com/embed/${ytId}`,
+}) : null;
 ---
 
+{videoSchema && <script type="application/ld+json" set:html={videoSchema} />}
 <figure class="media">
   <div class="media-frame" style={frameStyle}>
     {kind === "image" && (
