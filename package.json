@@ -1,6 +1,8 @@
 {
   "name": "alimranmed-web",
   "description": "Alimran Medical Center — Neurology and Musculoskeletal Disorders",
+  "author": "Ali Mussa Imran <ali.musa.omran@gmail.com> (https://kaleem.dev)",
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "@astrojs/cloudflare": "12.6.0",

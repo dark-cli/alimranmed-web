@@ -1,4 +1,6 @@
 // @ts-check
+// Copyright (c) 2026 Ali Mussa Imran — https://kaleem.dev
+// All rights reserved. See LICENSE in the project root.
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
