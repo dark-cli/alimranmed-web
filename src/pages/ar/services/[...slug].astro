@@ -109,7 +109,7 @@ const standfirst = entry.data.description || "";
             if (s.type === "pull-quote")       return <PullQuote text={s.text} attribution={s.attribution} />;
             if (s.type === "stats-facts")      return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="حقائق أساسية" factNumbers={s.facts.map((_: string, i: number) => toArabicDigits(i + 1).padStart(2, "٠"))} />;
             if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} locale={locale} />;
-            if (s.type === "media")            return <Media kind={s.kind} src={s.src} alt={s.alt} caption={s.caption} aspect={s.aspect} />;
+            if (s.type === "media")            return <Media kind={s.kind} src={s.src} alt={s.alt} caption={s.caption} aspect={s.aspect} uploadDate={s.uploadDate} />;
             return null;
           })}
 

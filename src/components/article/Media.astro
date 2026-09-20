@@ -19,8 +19,9 @@ interface Props {
   alt?: string;
   caption?: string;
   aspect?: "16/9" | "4/3" | "3/2" | "1/1";
+  uploadDate?: string;
 }
-const { kind, src, alt, caption, aspect } = Astro.props;
+const { kind, src, alt, caption, aspect, uploadDate } = Astro.props;
 
 // YouTube: accept "abc123XYZ", full watch URL, youtu.be URL, or embed URL.
 function youtubeId(input: string): string {
@@ -46,6 +47,7 @@ const videoSchema = ytId ? JSON.stringify({
   "name": caption || alt || "Video",
   "description": caption || alt || "Video",
   "thumbnailUrl": `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`,
+  "uploadDate": uploadDate || "2020-01-01",
   "contentUrl": `https://www.youtube.com/watch?v=${ytId}`,
   "embedUrl": `https://www.youtube-nocookie.com/embed/${ytId}`,
 }) : null;

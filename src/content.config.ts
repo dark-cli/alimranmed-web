@@ -101,6 +101,7 @@ const blockMedia = z.object({
   alt: z.string().optional(),
   caption: z.string().optional(),
   aspect: z.enum(["16/9", "4/3", "3/2", "1/1"]).optional(),
+  uploadDate: z.string().optional(),
 });
 
 const articleSection = z.discriminatedUnion("type", [

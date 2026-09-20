@@ -153,7 +153,7 @@ const bodyImages = usingSections ? extractBodyImages(entry.body) : [];
             if (s.type === "stats-facts")     return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="Key facts" factNumbers={s.facts.map((_: string, i: number) => String(i + 1).padStart(2, "0"))} />;
             if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} />;
             if (s.type === "related")         return <Related items={[]} relatedLabel="Related reading" />;
-            if (s.type === "media")           return <Media kind={s.kind} src={s.src} alt={s.alt} caption={s.caption} aspect={s.aspect} />;
+            if (s.type === "media")           return <Media kind={s.kind} src={s.src} alt={s.alt} caption={s.caption} aspect={s.aspect} uploadDate={s.uploadDate} />;
             return null;
           })
         ) : (
