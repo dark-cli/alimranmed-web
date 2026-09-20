@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /**
- * Generate public/_redirects (Cloudflare Pages / Workers Assets format) from
- * navigation.ts so every legacy alimranmed.com URL 301s to the new site path.
+ * Generate public/_redirects (Cloudflare Workers Assets format).
  *
- * This preserves inbound Google/Bing traffic to old URLs like /pain/,
- * /2020/05/07/regenerative-medicine/, etc.
+ * Cloudflare Workers Assets limit: 100 rules total.
+ * We only emit the essential rules — locale roots and catch-alls.
+ * Individual legacy WP path redirects are omitted; the catch-alls
+ * handle bare /treatments/* and /services/* paths instead.
  */
 
 import { writeFile } from "node:fs/promises";
@@ -39,26 +40,6 @@ const lines = [
   "",
 ];
 
-const seen = new Set();
-let count = 0;
-
-for (const item of flattenNav(NAV)) {
-  if (!item.legacyUrl) continue;
-  let legacyPath;
-  try {
-    legacyPath = new URL(item.legacyUrl).pathname;
-  } catch { continue; }
-  if (seen.has(legacyPath)) continue;
-  seen.add(legacyPath);
-
-  // Skip if legacy path already matches new path — nothing to redirect
-  if (legacyPath === item.href) continue;
-
-  // Cloudflare _redirects format: <from> <to> <status>
-  lines.push(`${legacyPath}  ${item.href}  301`);
-  count++;
-}
-
 lines.push("");
 await writeFile(OUT, lines.join("\n"));
-console.log(`Wrote ${count} redirects to ${path.relative(REPO_ROOT, OUT)}`);
+console.log(`Wrote _redirects (6 essential rules) to ${path.relative(REPO_ROOT, OUT)}`);
