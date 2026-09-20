@@ -184,7 +184,7 @@ export const NAV: NavItem[] = [
 
   {
     label: "Rehabilitation",
-    href: "/services/rehabilitation/",
+    href: "/services/rehabilitation/rehablitation-medicine/",
     legacyUrl: "https://alimranmed.com/rehablitation-medicine/",
     collection: "services",
     category: "rehabilitation",
@@ -219,7 +219,7 @@ export const NAV: NavItem[] = [
   {
     labelKey: "nav.chiropractic",
     label: "Chiropractic",
-    href: "/services/chiropractic/",
+    href: "/services/chiropractic/chiropractic/",
     legacyUrl: "https://alimranmed.com/chiropractic/",
     collection: "services",
     category: "chiropractic",
@@ -232,7 +232,7 @@ export const NAV: NavItem[] = [
   {
     labelKey: "nav.brainStimulation",
     label: "Brain Stimulation",
-    href: "/services/brain-stimulation/",
+    href: "/services/brain-stimulation/tms/",
     legacyUrl: "https://alimranmed.com/brain-stimulation/",
     collection: "services",
     category: "brain-stimulation",
@@ -268,7 +268,7 @@ export const NAV: NavItem[] = [
 
   {
     label: "Steroid injection",
-    href: "/services/steroid-injection/",
+    href: "/services/steroid-injection/steroid-injection/",
     legacyUrl: "https://alimranmed.com/steroid-injection/",
     collection: "services",
     category: "steroid-injection",
@@ -281,15 +281,19 @@ export const NAV: NavItem[] = [
 
   {
     label: "Regenerative Medicine",
-    href: "/services/regenerative-medicine/",
+    href: "/services/regenerative-medicine/regenerative-medicine/",
     legacyUrl: "https://alimranmed.com/2020/05/07/regenerative-medicine/",
     collection: "services",
     category: "regenerative-medicine",
+    children: [
+      { label: "Regenerative Medicine", href: "/services/regenerative-medicine/regenerative-medicine/", legacyUrl: "https://alimranmed.com/2020/05/07/regenerative-medicine/", collection: "services", category: "regenerative-medicine" },
+      { label: "Prolotherapy", href: "/services/regenerative-medicine/prolotherapy/", legacyUrl: "https://alimranmed.com/prolotherapy/", collection: "services", category: "regenerative-medicine" },
+    ],
   },
 
   {
     label: "Ozone Therapy",
-    href: "/services/ozone-therapy/",
+    href: "/services/ozone-therapy/ozone-therapy/",
     legacyUrl: "https://alimranmed.com/ozone-therapy/",
     collection: "services",
     category: "ozone-therapy",
@@ -302,10 +306,14 @@ export const NAV: NavItem[] = [
 
   {
     label: "BOTOX",
-    href: "/services/botox/",
+    href: "/services/botox/botox/",
     legacyUrl: "https://alimranmed.com/botox/",
     collection: "services",
     category: "botox",
+    children: [
+      { label: "Botox", href: "/services/botox/botox/", legacyUrl: "https://alimranmed.com/botox/", collection: "services", category: "botox" },
+      { label: "Botox Injection", href: "/services/botox/botox-injection/", legacyUrl: "https://alimranmed.com/botox-injection/", collection: "services", category: "botox" },
+    ],
   },
 
   {
@@ -370,7 +378,7 @@ export const NAV: NavItem[] = [
 
   {
     label: "Acupuncture",
-    href: "/services/acupuncture/",
+    href: "/services/acupuncture/acupuncture/",
     legacyUrl: "https://alimranmed.com/acupuncture/",
     collection: "services",
     category: "acupuncture",
