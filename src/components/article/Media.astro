@@ -47,7 +47,7 @@ const videoSchema = ytId ? JSON.stringify({
   "name": caption || alt || "Video",
   "description": caption || alt || "Video",
   "thumbnailUrl": `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`,
-  "uploadDate": uploadDate || "2020-01-01",
+  "uploadDate": uploadDate || "2020-01-01T00:00:00+00:00",
   "contentUrl": `https://www.youtube.com/watch?v=${ytId}`,
   "embedUrl": `https://www.youtube-nocookie.com/embed/${ytId}`,
 }) : null;
