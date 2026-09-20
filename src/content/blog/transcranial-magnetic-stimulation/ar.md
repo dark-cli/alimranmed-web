@@ -47,8 +47,8 @@ sections:
       - آثار جانبية قليلة أو معدومة (صداع مؤقت أو عدم راحة بسيط في موقع التحفيز)
 ---
 
-![](/images/legacy/2020/01/STUBB-rTMS-207x300.png)
-![](/images/legacy/2020/01/tms-treatment-768-300x180.jpg)  
+![وضع ملف rTMS للتحفيز المغناطيسي عبر الجمجمة](/images/legacy/2020/01/STUBB-rTMS-207x300.png)
+![جلسة علاج TMS في عيادة الأعصاب](/images/legacy/2020/01/tms-treatment-768-300x180.jpg)  
 
 [▶ شاهد على يوتيوب](https://www.youtube.com/watch?v=bmBV1r4_HrE)
 

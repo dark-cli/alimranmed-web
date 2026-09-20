@@ -26,8 +26,8 @@ sections:
       يستخدم TMS لعلاج أمراض عصبية مختلفة مع تقدم العلم. في السنوات الأخيرة، زادت الدراسات حول تحفيز منخفض التردد المتكرر لعلاج الطنين وأظهرت معظمها نتائج ناجحة. التحفيز المتكرر يمثل نهجاً علاجياً مبتكراً وواعداً.
 ---
 
-![](/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0-300x191.jpeg)
-![](/images/legacy/2020/07/z-tinnitus.png)
+![جهاز TMS المستخدم في علاج الطنين](/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0-300x191.jpeg)
+![رسم تشريحي للأذن الداخلية يوضح مناطق الطنين](/images/legacy/2020/07/z-tinnitus.png)
 
 طنين الأذن هو صوت مزعج يتم سماعه بدون أي محفز سمعي، يؤثر على جودة حياة الفرد، ويؤدي إلى مشاكل نفسية واجتماعية. تتميز انتشاره بالزيادة المميزة مع التقدم في السن. يُرى في 33٪ من السكان العام. لم تُفهم الفسيولوجيا المرضية لطنين الأذن المعروف بمصاحبة جميع الاضطرابات في الجهاز السمعي بشكل كامل؛ لذلك، هناك بعض الصعوبات في تقييم وعلاج طنين الأذن.
 

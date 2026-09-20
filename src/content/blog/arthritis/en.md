@@ -106,4 +106,4 @@ sections:
           - "Assistive devices (crutches, walkers, high toilet seats) to protect joints and improve daily function"
 ---
 
-![](/images/legacy/2020/01/images-4-1.jpg)
+![Diagram showing joint inflammation in arthritis](/images/legacy/2020/01/images-4-1.jpg)

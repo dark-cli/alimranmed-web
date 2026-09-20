@@ -24,4 +24,4 @@ sections:
       First-line medications typically include simple analgesics and non-steroidal anti-inflammatory drugs. However, many patients have attacks that don't respond to various medications or develop medication overuse headache. Among non-pharmacologic therapies, TMS has been extensively studied as a preventive migraine treatment with excellent outcome results.
 ---
 
-![](/images/legacy/2020/07/TMS.jpg)
+![TMS device used for migraine treatment](/images/legacy/2020/07/TMS.jpg)

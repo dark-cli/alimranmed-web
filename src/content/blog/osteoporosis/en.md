@@ -49,4 +49,4 @@ sections:
           - "[Prolotherapy (regenerative medicine)](/services/regenerative-medicine/)"
 ---
 
-![](/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام.jpg)
+![Illustration of the causes of osteoporosis](/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام.jpg)

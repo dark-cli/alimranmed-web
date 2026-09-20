@@ -32,6 +32,6 @@ sections:
       Results demonstrated significant improvement in the Alzheimer Disease Assessment Scale-Cognitive (ADAS-Cog) after 6 weeks of treatment, suggesting rTMS combined with cognitive training can meaningfully improve cognitive function in Alzheimer's patients.
 ---
 
-![](/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500.jpg)
+![TMS therapy applied for Alzheimer disease treatment](/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500.jpg)
 
 Brain-Derived Neurotrophic Factor (BDNF) has an important role in [neuronal plasticity](/services/rehabilitation/neuroplasticity/). 

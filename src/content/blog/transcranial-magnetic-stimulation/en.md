@@ -48,7 +48,7 @@ sections:
       - Few or no permanent side effects (possible temporary headaches or minor discomfort at stimulation site)
 ---
 
-![](/images/legacy/2020/01/STUBB-rTMS-207x300.png)
-![](/images/legacy/2020/01/tms-treatment-768-300x180.jpg)
+![rTMS coil placement for repetitive transcranial magnetic stimulation](/images/legacy/2020/01/STUBB-rTMS-207x300.png)
+![TMS treatment session at a neurology clinic](/images/legacy/2020/01/tms-treatment-768-300x180.jpg)
 
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=bmBV1r4_HrE)

@@ -52,8 +52,8 @@ sections:
       rTMS clinical trials show it is generally safe and well-tolerated. Due to its non-invasive nature and minimal lasting side effects, it has been studied for treating unipolar major depression (strongest evidence), schizophrenia (reducing auditory hallucinations and negative symptoms), Parkinson's disease, dystonia, tinnitus, anxiety, migraine, eating disorders, bipolar disorder, pain, stroke, and ALS.
 ---
 
-![](/images/legacy/2020/07/brain_magnet.jpg)
-![](/images/legacy/2020/07/capt.jpg)
+![Magnetic coil positioned over the brain for TMS neuropsychiatric therapy](/images/legacy/2020/07/brain_magnet.jpg)
+![TMS study results for neuropsychiatric disorders](/images/legacy/2020/07/capt.jpg)
 
 Repetitive transcranial magnetic stimulation (rTMS) it is one of the latest therapeutic methods for the treatment of various diseases and neuropsychiatric disorders, among which: depression, anxiety, attention deficit, schizophrenia, post-traumatic stress disorder, obsessive–compulsive and bipolar disorder, tinnitus, neuropathic pain, migraine, stroke , epilepsy, Parkinson’s disease. rTMS  is a non-invasive treatment that delivers repetitive pulses of an MRI-strength magnetic field from a coil placed over the scalp. Powered by a rapidly pulsed current, the magnetic field passes unimpeded through the skull and stimulates brain tissue beneath, inducing currents that may help normalize activity in the area stimulated without producing seizure activity.
 

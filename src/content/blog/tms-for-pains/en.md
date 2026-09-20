@@ -36,6 +36,6 @@ sections:
       While these preliminary results are encouraging, further research is needed to fully establish rTMS efficacy for these specific pain conditions.
 ---
 
-![](/images/legacy/2020/07/1-s2.0-S1388245718311052-gr1-221x300.jpg)
-![](/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-300x224.jpg)
+![Clinical study chart: TMS response rates for pain conditions](/images/legacy/2020/07/1-s2.0-S1388245718311052-gr1-221x300.jpg)
+![Research graph: TMS treatment outcomes for chronic pain](/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-300x224.jpg)
 
