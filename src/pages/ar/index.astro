@@ -81,31 +81,19 @@ const pathways = [
 ];
 
 const facilities = [
-  {
-    label: "الاستقبال", sub: "صالة الانتظار",
-    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80&auto=format&fit=crop",
-    alt: "استقبال المركز الطبي",
-  },
-  {
-    label: "غرفة الاستشارة", sub: "الفحص ومراجعة الصور",
-    src: "https://images.unsplash.com/photo-1682365114691-f0264ad25c52?w=1200&q=80&auto=format&fit=crop",
-    alt: "غرفة استشارة مع منظار أذن وجهاز ضغط ومنصة فحص",
-  },
+  { label: "الاستقبال",      sub: "صالة الانتظار" },
+  { label: "غرفة الاستشارة", sub: "الفحص ومراجعة الصور" },
   {
     label: "غرفة الإجراءات", sub: "تخفيف الضغط عن العمود الفقري وتدخلات الألم",
     src: "/images/home/DSC_0054-1-1024x684.jpg",
-    alt: "طاولة SpineMED لتخفيف الضغط عن العمود الفقري",
+    alt: "طاولة SpineMED لتخفيف الضغط عن العمود الفقري في مركز العمران",
   },
-  {
-    label: "قاعة التأهيل", sub: "العلاج الطبيعي والتمارين",
-    src: "https://images.unsplash.com/photo-1649751361457-01d3a696c7e6?w=1200&q=80&auto=format&fit=crop",
-    alt: "أخصائي علاج طبيعي يعمل على ركبة مريض",
-  },
+  { label: "قاعة التأهيل",   sub: "العلاج الطبيعي والتمارين" },
 ];
 
 const insideFacts = [
   { label: "العنوان",      value: "مجمّع النقبة الطبي، بريهة، البصرة، العراق" },
-  { label: "أيام العمل",   value: "ستة أيام أسبوعيًا، مع مناوبة للحالات الطارئة" },
+  { label: "أوقات العمل",  value: "السبت–الخميس ٩:٠٠–١٨:٠٠ · الجمعة ١٤:٠٠–١٨:٠٠" },
   { label: "العمليات",     value: "مستشفى الصدر التعليمي، البصرة" },
   { label: "حالات الأورام", value: "تُراجع في مركز البصرة التخصصي للأورام" },
 ];
@@ -247,7 +235,10 @@ const consultantFacts = [
     <div class="inside-split">
       <div>
         <p class="inside-body">يقع المركز في مجمّع النقبة الطبي في بريهة بالبصرة، على مقربة من مستشفى الصدر التعليمي حيث تُجرى العمليات. الاستشارة الخارجية وإجراءات الألم اليومية والعلاج بعد الجراحة كلها في موقع المركز.</p>
-        <a class="btn btn-secondary" href={CONTACT.mapsUrl} target="_blank" rel="noopener">الموقع على الخريطة</a>
+        <div class="inside-actions">
+          <a class="btn btn-secondary" href={CONTACT.mapsUrl} target="_blank" rel="noopener">الموقع على الخريطة</a>
+          <a class="pg-quiet-link" href={CONTACT.mapsUrl} target="_blank" rel="noopener">اقرأ آراء مرضانا على Google ←</a>
+        </div>
       </div>
       <dl class="facts">
         {insideFacts.map((f) => (
@@ -346,6 +337,7 @@ const consultantFacts = [
   }
   .hero-p:last-of-type { margin-bottom: 34px; }
   .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .inside-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 0; }
 
   .hero-credit {
     margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);

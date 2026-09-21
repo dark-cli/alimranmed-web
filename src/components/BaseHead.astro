@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_NAME, SITE_DESCRIPTION } from "../consts";
 import { currentLocale, alternateHref } from "../lib/i18n";
 
 interface Props {
@@ -129,7 +129,7 @@ const businessSchema = {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.site)} />
-<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:site_name" content={SITE_NAME} />
 <meta property="og:locale" content={locale === "ar" ? "ar_IQ" : "en_US"} />
 <meta property="og:locale:alternate" content={otherLocale === "ar" ? "ar_IQ" : "en_US"} />
 

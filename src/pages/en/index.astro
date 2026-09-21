@@ -87,31 +87,19 @@ const pathways = [
 // the demo) is available. Slots without `src` fall back to a labelled hatch
 // placeholder so the design's "photo needed here" honesty is preserved.
 const facilities = [
-  {
-    label: "RECEPTION", sub: "waiting area",
-    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80&auto=format&fit=crop",
-    alt: "Clinic reception with tiled counter and directional signage",
-  },
-  {
-    label: "CONSULTING ROOM", sub: "examination & imaging review",
-    src: "https://images.unsplash.com/photo-1682365114691-f0264ad25c52?w=1200&q=80&auto=format&fit=crop",
-    alt: "Consulting room with otoscope, blood pressure cuff, monitor and examination table",
-  },
+  { label: "RECEPTION",      sub: "waiting area" },
+  { label: "CONSULTING ROOM", sub: "examination & imaging review" },
   {
     label: "PROCEDURE ROOM", sub: "spinal decompression & interventional pain",
-    src: "/images/home/DSC_0054-1-1024x684.jpg",   // real Alimran SpineMED table
-    alt: "SpineMED decompression table in a treatment room",
+    src: "/images/home/DSC_0054-1-1024x684.jpg",
+    alt: "SpineMED decompression table in the Alimran Clinic procedure room",
   },
-  {
-    label: "THERAPY GYM", sub: "physiotherapy & rehabilitation",
-    src: "https://images.unsplash.com/photo-1649751361457-01d3a696c7e6?w=1200&q=80&auto=format&fit=crop",
-    alt: "Physiotherapist working on a patient's knee",
-  },
+  { label: "THERAPY GYM",   sub: "physiotherapy & rehabilitation" },
 ];
 
 const insideFacts = [
   { label: "Address",         value: "Alnkba Medical Collection, Breaha, Basra, Iraq" },
-  { label: "Clinic days",     value: "Six days a week, with an out-of-hours on-call roster" },
+  { label: "Clinic hours",    value: "Sat–Thu 09:00–18:00 · Fri 14:00–18:00" },
   { label: "Surgery",         value: "Alsadr Teaching Hospital, Basra" },
   { label: "Oncology cases",  value: "Seen at the Basra Specialised Oncology Centre" },
 ];
@@ -253,7 +241,10 @@ const consultantFacts = [
     <div class="inside-split">
       <div>
         <p class="inside-body">The clinic sits within the Alnkba medical collection in Breaha, Basra, minutes from Alsadr Teaching Hospital, where the surgical lists are held. Outpatient assessment, day-case pain procedures and post-operative therapy all take place on site.</p>
-        <a class="btn btn-secondary" href={CONTACT.mapsUrl} target="_blank" rel="noopener">Directions on the map</a>
+        <div class="inside-actions">
+          <a class="btn btn-secondary" href={CONTACT.mapsUrl} target="_blank" rel="noopener">Directions on the map</a>
+          <a class="pg-quiet-link" href={CONTACT.mapsUrl} target="_blank" rel="noopener">Read our Google reviews →</a>
+        </div>
       </div>
       <dl class="facts">
         {insideFacts.map((f) => (
@@ -375,6 +366,7 @@ const consultantFacts = [
 .hero-p:last-of-type { margin-bottom: 34px; }
 
   .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .inside-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 0; }
 
   .hero-credit {
     margin-top: 32px;
