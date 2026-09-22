@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
-import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
-import { wordsIn } from "../../../lib/word-count";
+import { topicOf, isLocale, localizedHref, currentLocale, toArabicDigits } from "../../../lib/i18n";
+import { wordsIn, readingTimeAr, extractBodyImages } from "../../../lib/word-count";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
 import ArticleSections from "../../../components/article/ArticleSections.astro";
 import Media from "../../../components/article/Media.astro";
@@ -20,20 +20,10 @@ const { entry } = Astro.props;
 const isRedesigned = entry.data.redesigned === true;
 const { Content } = await render(entry);
 
-function toArabicDigits(n: number): string {
-  return String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
-}
-function readingTimeAr(n: number): string {
-  if (n <= 1) return "دقيقة واحدة";
-  if (n === 2) return "دقيقتان";
-  if (n <= 10) return `${toArabicDigits(n)} دقائق`;
-  return `${toArabicDigits(n)} دقيقة`;
-}
-
 const wordCount =
   wordsIn((entry.data as { sections?: unknown }).sections) +
   wordsIn(entry.body);
-const readingLabel = readingTimeAr(Math.max(1, Math.round(wordCount / 140)));
+const readingLabel = readingTimeAr(Math.max(1, Math.round(wordCount / 140)), toArabicDigits);
 
 const publishedAt: unknown = (entry.data as { publishedAt?: unknown }).publishedAt;
 const lastReviewed = publishedAt
@@ -51,14 +41,6 @@ if (isRedesigned && Array.isArray(entry.data.sections)) {
   });
 }
 
-function extractBodyImages(body: string | undefined): { alt: string; src: string }[] {
-  if (!body) return [];
-  const re = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
-  const out: { alt: string; src: string }[] = [];
-  let m;
-  while ((m = re.exec(body)) !== null) out.push({ alt: m[1], src: m[2] });
-  return out;
-}
 const usingSections = isRedesigned && Array.isArray(entry.data.sections);
 const bodyImages = usingSections ? extractBodyImages(entry.body) : [];
 ---

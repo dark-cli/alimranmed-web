@@ -16,6 +16,7 @@
  *                     for blog / service pages where related blocks show an
  *                     empty list.
  */
+import { toArabicDigits } from "../../lib/i18n";
 import AtGlance        from "./AtGlance.astro";
 import Prose           from "./Prose.astro";
 import PullQuote       from "./PullQuote.astro";
@@ -49,10 +50,6 @@ const relatedLabel = isAr ? "قراءة ذات صلة" : "Related reading";
 const soonLabel    = isAr
   ? "هذا المقال لم يُعاد تصميمه بعد — قريبًا."
   : "This article isn't in the new design yet — coming soon.";
-
-function toArabicDigits(n: number): string {
-  return String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
-}
 
 function padNum(n: number): string {
   return isAr

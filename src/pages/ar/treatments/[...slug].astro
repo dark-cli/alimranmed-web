@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
-import { topicOf, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
-import { wordsIn } from "../../../lib/word-count";
+import { topicOf, pickForLocale, localizedHref, currentLocale, toArabicDigits } from "../../../lib/i18n";
+import { wordsIn, readingTimeAr } from "../../../lib/word-count";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
 import ArticleSections from "../../../components/article/ArticleSections.astro";
 
@@ -30,20 +30,10 @@ const cat = ((entry.data as { pathwayOverride?: string; category?: string })
   .pathwayOverride || entry.data.category || "pain").toLowerCase();
 const pathway = PATHWAY[cat] || PATHWAY.pain;
 
-function toArabicDigits(n: number): string {
-  return String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
-}
-function readingTimeAr(n: number): string {
-  if (n <= 1) return "دقيقة واحدة";
-  if (n === 2) return "دقيقتان";
-  if (n <= 10) return `${toArabicDigits(n)} دقائق`;
-  return `${toArabicDigits(n)} دقيقة`;
-}
-
 const wordCount =
   wordsIn((entry.data as { sections?: unknown }).sections) +
   wordsIn(entry.body);
-const readingLabel = readingTimeAr(Math.max(1, Math.round(wordCount / 140)));
+const readingLabel = readingTimeAr(Math.max(1, Math.round(wordCount / 140)), toArabicDigits);
 
 const publishedAt: unknown = (entry.data as { publishedAt?: unknown }).publishedAt;
 const lastReviewed = publishedAt

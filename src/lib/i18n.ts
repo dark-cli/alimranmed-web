@@ -7,6 +7,10 @@
  */
 
 export type Locale = "en" | "ar";
+
+export function toArabicDigits(n: number): string {
+  return String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
+}
 export const LOCALES: Locale[] = ["en", "ar"];
 export const DEFAULT_LOCALE: Locale = "en";
 

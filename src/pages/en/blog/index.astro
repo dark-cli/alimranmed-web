@@ -11,54 +11,13 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { wordsIn, readingMinutes } from "../../../lib/word-count";
+import { BLOG_PATHWAY, PATHWAY_LABELS } from "../../../lib/pathways";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
 
-// Same mapping as /conditions/ — kept inline so the two pages stay in
-// lock-step. Anything not in the table falls under "other".
-const BLOG_PATHWAY: Record<string, "brain" | "spine" | "pain"> = {
-  "amyotrophic-lateral-sclerosis-als-2": "brain",
-  "covid-19-symptoms-on-the-nervous-and-locomotor-system": "brain",
-  "results-of-treatment-of-cerebral-palsy-in-children": "brain",
-  "tms-for-alzheimer-disease": "brain",
-  "tms-for-neuropsychiatric-disorders": "brain",
-  "tms-for-tinnitus": "brain",
-  "tms-for-tinnitus-2": "brain",
-  "transcranial-direct-current-stimulation-tdcs": "brain",
-  "transcranial-magnetic-stimulation": "brain",
-  "poliomyelitis": "spine",
-  "spin-med": "spine",
-  "what-is-an-intrathecal-pump": "spine",
-  "achilles-tendinitis": "pain",
-  "arthritis": "pain",
-  "diabetic-foot-pain-and-ulcers": "pain",
-  "osteoporosis": "pain",
-  "physiotherapy": "pain",
-  "tension-headaches": "pain",
-  "tms-for-migraine": "pain",
-  "tms-for-pains": "pain",
-  "vasotrain-or-air-pressure-massage": "pain",
-};
-const PATHWAY_LABEL: Record<string, string> = {
-  brain: "Brain", spine: "Spine", pain: "Pain", other: "Other",
-};
-
-// Reading time estimator — same 180 wpm baseline as article pages.
-function wordsIn(v: unknown): number {
-  if (v == null) return 0;
-  if (typeof v === "string") {
-    const t = v.replace(/!\[[^\]]*]\([^)]+\)/g, "").trim();
-    return t ? t.split(/\s+/).length : 0;
-  }
-  if (Array.isArray(v)) return v.reduce((n, x) => n + wordsIn(x), 0);
-  if (typeof v === "object") return Object.values(v as Record<string, unknown>).reduce((n, x) => n + wordsIn(x), 0);
-  return 0;
-}
-function readingMinutes(entry: { data: { sections?: unknown }; body?: string }): number {
-  const w = wordsIn(entry.data.sections) + wordsIn(entry.body);
-  return Math.max(1, Math.round(w / 180));
-}
+const PATHWAY_LABEL = PATHWAY_LABELS.en;
 
 const blogsRaw = (await getCollection("blog"))
   .filter((e) => isLocale(e.id, "en"))

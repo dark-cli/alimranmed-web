@@ -7,6 +7,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SoonLink from "../../../components/article/SoonLink.astro";
 import { CONTACT } from "../../../consts";
 import { localizedHref, currentLocale, topicOf, isLocale } from "../../../lib/i18n";
+import { BLOG_PATHWAY } from "../../../lib/pathways";
 import { getCollection } from "astro:content";
 
 // Redesigned-flag lookup (shared with EN via the treatments collection).
@@ -15,31 +16,6 @@ const _bySlug: Record<string, boolean> = {};
 _allT.filter((e) => isLocale(e.id, "en")).forEach((e) => {
   _bySlug[topicOf(e.id)] = e.data.redesigned === true;
 });
-
-// Blog → pathway assignment (mirrors the English page's mapping).
-const BLOG_PATHWAY: Record<string, "brain" | "spine" | "pain"> = {
-  "amyotrophic-lateral-sclerosis-als-2": "brain",
-  "covid-19-symptoms-on-the-nervous-and-locomotor-system": "brain",
-  "results-of-treatment-of-cerebral-palsy-in-children": "brain",
-  "tms-for-alzheimer-disease": "brain",
-  "tms-for-neuropsychiatric-disorders": "brain",
-  "tms-for-tinnitus": "brain",
-  "tms-for-tinnitus-2": "brain",
-  "transcranial-direct-current-stimulation-tdcs": "brain",
-  "transcranial-magnetic-stimulation": "brain",
-  "poliomyelitis": "spine",
-  "spin-med": "spine",
-  "what-is-an-intrathecal-pump": "spine",
-  "achilles-tendinitis": "pain",
-  "arthritis": "pain",
-  "diabetic-foot-pain-and-ulcers": "pain",
-  "osteoporosis": "pain",
-  "physiotherapy": "pain",
-  "tension-headaches": "pain",
-  "tms-for-migraine": "pain",
-  "tms-for-pains": "pain",
-  "vasotrain-or-air-pressure-massage": "pain",
-};
 
 const allBlogs = (await getCollection("blog"))
   .filter((e) => isLocale(e.id, "ar") && e.data.clinicallyRelevant === true)
