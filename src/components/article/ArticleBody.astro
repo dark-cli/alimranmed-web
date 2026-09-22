@@ -1,0 +1,28 @@
+---
+import ArticleSections from "./ArticleSections.astro";
+import type { RelatedItem } from "./ArticleSections.astro";
+import Media from "./Media.astro";
+
+interface Props {
+  sections?: unknown[];
+  locale: "en" | "ar";
+  bodyImages?: { alt: string; src: string }[];
+  resolveRelated?: (slugs: string[]) => RelatedItem[];
+}
+
+const { sections, locale, bodyImages = [], resolveRelated } = Astro.props;
+const usingSections = Array.isArray(sections) && sections.length > 0;
+---
+
+{usingSections ? (
+  <>
+    <ArticleSections sections={sections} locale={locale} resolveRelated={resolveRelated} />
+    {bodyImages.map((img) => (
+      <Media kind="image" src={img.src} alt={img.alt} />
+    ))}
+  </>
+) : (
+  <div class="art-prose">
+    <slot />
+  </div>
+)}

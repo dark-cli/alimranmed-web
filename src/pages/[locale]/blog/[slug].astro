@@ -1,0 +1,78 @@
+---
+import { getCollection, render } from "astro:content";
+import { topicOf, localeOf, localizedHref, currentLocale } from "../../../lib/i18n";
+import { wordsIn, articleReadingLabel, extractBodyImages } from "../../../lib/word-count";
+import { buildToc } from "../../../lib/toc";
+import { BLOG_LABELS, NAV_LABELS } from "../../../lib/labels";
+import ArticleLayout from "../../../components/article/ArticleLayout.astro";
+import ArticleBody from "../../../components/article/ArticleBody.astro";
+
+const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const nav = NAV_LABELS[locale];
+const labels = BLOG_LABELS[locale];
+
+export async function getStaticPaths() {
+  const blogs = await getCollection("blog");
+  return blogs.map((entry) => ({
+    params: { locale: localeOf(entry.id)!, slug: topicOf(entry.id) },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const isRedesigned = entry.data.redesigned === true;
+const { Content } = await render(entry);
+
+const wordCount =
+  wordsIn((entry.data as { sections?: unknown }).sections) +
+  wordsIn(entry.body);
+const readingLabel = articleReadingLabel(wordCount, locale);
+
+const publishedAt: unknown = (entry.data as { publishedAt?: unknown }).publishedAt;
+const dateLocale = locale === "ar" ? "ar-IQ" : "en-US";
+const lastReviewed = publishedAt
+  ? new Date(publishedAt as string).toLocaleDateString(dateLocale, { month: "long", year: "numeric" })
+  : "—";
+
+const toc = buildToc(
+  isRedesigned ? (entry.data as { sections?: Array<{ heading?: string }> }).sections : null,
+  null,
+  locale,
+);
+
+const usingSections = isRedesigned && Array.isArray((entry.data as any).sections);
+const bodyImages = usingSections ? extractBodyImages(entry.body) : [];
+---
+
+<ArticleLayout
+  pageTitle={`${entry.data.title} — ${nav.siteName}`}
+  description={entry.data.description}
+  locale={locale}
+  breadcrumbs={[
+    { label: nav.home, href: L("/") },
+    { label: nav.blog, href: L("/blog/") },
+    { label: entry.data.title },
+  ]}
+  h1={entry.data.title}
+  meta={[
+    { label: labels.reviewedByLabel,   value: labels.reviewer },
+    { label: labels.readingTimeLabel,  value: readingLabel },
+    { label: labels.lastReviewedLabel, value: lastReviewed },
+  ]}
+  toc={toc}
+  tocLabel={labels.tocLabel}
+  callLabel={labels.callLabel}
+  callBody={labels.callBody}
+  ctaHeading={labels.ctaHeading}
+  ctaBody={labels.ctaBody}
+  disclaimer={labels.disclaimer}
+>
+  <ArticleBody
+    sections={isRedesigned ? (entry.data as any).sections : undefined}
+    locale={locale}
+    bodyImages={bodyImages}
+  >
+    <Content />
+  </ArticleBody>
+</ArticleLayout>

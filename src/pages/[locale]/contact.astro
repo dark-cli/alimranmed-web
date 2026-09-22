@@ -1,0 +1,224 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { CONTACT } from "../../consts";
+import { currentLocale } from "../../lib/i18n";
+
+export async function getStaticPaths() {
+  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+}
+
+const locale = currentLocale(Astro);
+
+const socials = [
+  { label: "Facebook",  href: CONTACT.social.facebook,  icon: "fa-brands fa-facebook-f" },
+  { label: "Instagram", href: CONTACT.social.instagram, icon: "fa-brands fa-instagram"  },
+  { label: "YouTube",   href: CONTACT.social.youtube,   icon: "fa-brands fa-youtube"    },
+  { label: "Telegram",  href: CONTACT.social.telegram,  icon: "fa-brands fa-telegram"   },
+  { label: "TikTok",    href: CONTACT.social.tiktok,    icon: "fa-brands fa-tiktok"     },
+];
+
+const T = locale === "ar" ? {
+  title:         "اتصل بنا — مركز العمران الطبي",
+  description:   "تواصل مع مركز العمران الطبي في البصرة، العراق.",
+  h1:            "اتصل بنا",
+  subhead:       "نجيب خلال ساعات العمل. للحالات العاجلة يرجى الاتصال المسبق.",
+  ariaActions:   "طرق الاتصال الرئيسية",
+  callLabel:     "اتصل",
+  emailLabel:    "البريد",
+  locationsHead: "مواقعنا",
+  address:       CONTACT.addresses.ar,
+  followHead:    "تابعنا",
+  mapHead:       "موقعنا على الخريطة",
+  ariaMap:       "خريطة الموقع",
+  mapTitle:      "موقع مركز العمران الطبي على خرائط جوجل",
+  mapLang:       "ar",
+} : {
+  title:         "Contact Us — Alimran Medical Center",
+  description:   "Get in touch with Alimran Medical Center in Basra, Iraq. Phone, email, addresses, and social channels.",
+  h1:            "Contact Us",
+  subhead:       "We answer during clinic hours. For urgent matters, please call ahead.",
+  ariaActions:   "Primary contact methods",
+  callLabel:     "Call",
+  emailLabel:    "Email",
+  locationsHead: "Locations",
+  address:       CONTACT.addresses.en,
+  followHead:    "Follow us",
+  mapHead:       "Find us on the map",
+  ariaMap:       "Location map",
+  mapTitle:      "Alimran Medical Center location in Basra, Iraq",
+  mapLang:       "en",
+};
+---
+
+<BaseLayout title={T.title} description={T.description}>
+  <div class="container page">
+    <header class="page-head">
+      <h1>{T.h1}</h1>
+      <p>{T.subhead}</p>
+    </header>
+
+    <section class="actions" aria-label={T.ariaActions}>
+      {CONTACT.phones.map((p) => (
+        <a class="action" href={`tel:${p.replace(/\s/g, "")}`}>
+          <span class="action-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+          <span class="action-body">
+            <span class="action-label">{T.callLabel}</span>
+            <span class="action-value"><bdi>{p}</bdi></span>
+          </span>
+        </a>
+      ))}
+      <a class="action" href={`mailto:${CONTACT.email}`}>
+        <span class="action-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+        <span class="action-body">
+          <span class="action-label">{T.emailLabel}</span>
+          <span class="action-value">{CONTACT.email}</span>
+        </span>
+      </a>
+    </section>
+
+    <section class="info" aria-label={locale === "en" ? "Locations and social channels" : undefined}>
+      <div class="info-block">
+        <h2><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {T.locationsHead}</h2>
+        <ul class="addresses">
+          <li>{T.address}</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h2><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> {T.followHead}</h2>
+        <ul class="social">
+          {socials.map((s) => (
+            <li>
+              <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}>
+                <i class={s.icon} aria-hidden="true"></i>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="map-section" aria-label={T.ariaMap}>
+      <h2>{T.mapHead}</h2>
+      <div class="map-container">
+        <iframe
+          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.29801709611!2d47.834783515126176!3d30.512611081714454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf65ac49b64c2ccf!2zMzDCsDMwJzQ1LjQiTiA0N8KwNTAnMTMuMSJF!5e0!3m2!1s${T.mapLang}!2siq!4v1637681705351!5m2!1s${T.mapLang}!2siq`}
+          width="100%"
+          height="280"
+          style="border: 0; border-radius: var(--radius-lg);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title={T.mapTitle}
+        ></iframe>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 1.5rem 2.5rem; }
+  @media (min-width: 640px) { .page { padding-block: 3rem 4rem; } }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 1.5rem; }
+  @media (min-width: 640px) { .page-head { margin-bottom: 2.5rem; } }
+  .page-head p { color: var(--ink-soft); }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 500px) { .actions { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px) { .actions { grid-template-columns: repeat(3, 1fr); } }
+
+  .action {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.85rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+  }
+  .action:hover, .action:focus-visible {
+    border-color: var(--brand);
+    background: var(--brand-soft);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+  .action-icon {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--brand); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .action-icon i { font-size: 1.05rem; line-height: 1; }
+  .action-body { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+  .action-label {
+    color: var(--ink-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 0.15em;
+  }
+  .action-value {
+    color: var(--ink); font-weight: 600; font-size: 0.95rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  @media (min-width: 700px) { .info { grid-template-columns: 1.5fr 1fr; gap: 2rem; } }
+
+  .info-block h2 {
+    display: flex; align-items: center; gap: 0.5em;
+    color: var(--ink-muted); font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+  .info-block h2 i { color: var(--brand); font-size: 0.9rem; }
+
+  .addresses {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .addresses li {
+    color: var(--ink-soft); font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface-alt); border-radius: var(--radius);
+  }
+
+  .social {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .social a {
+    width: 44px; height: 44px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border); border-radius: 50%;
+    color: var(--ink-soft);
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .social a:hover {
+    color: var(--brand); border-color: var(--brand); background: var(--brand-soft);
+    text-decoration: none;
+  }
+  .social a i { font-size: 1rem; line-height: 1; }
+
+  .map-section {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+  @media (min-width: 640px) { .map-section { margin-top: 3rem; padding-top: 3rem; } }
+  .map-section h2 { text-align: center; margin-bottom: 1.5rem; }
+  .map-container { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+</style>

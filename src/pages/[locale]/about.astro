@@ -1,0 +1,186 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+import TranslationBanner from "../../components/TranslationBanner.astro";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../lib/i18n";
+
+export async function getStaticPaths() {
+  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+}
+
+const locale = currentLocale(Astro);
+
+const all = await getCollection("pages");
+const aboutTopics = ["about/mission", "about/vision", "about/values"];
+
+let rendered: { entry: any; Content: any }[];
+let anyFallback = false;
+
+if (locale === "ar") {
+  const picks = aboutTopics.map((topic) => pickForLocale(all, topic, "ar"));
+  anyFallback = picks.some((p) => p && p.fallback);
+  const items = picks.filter((x): x is NonNullable<typeof x> => !!x);
+  rendered = await Promise.all(items.map(async ({ entry }) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  }));
+} else {
+  const aboutPages = all
+    .filter((e) => isLocale(e.id, "en") && e.data.category === "about")
+    .sort((a, b) => {
+      const order = ["about/mission", "about/vision", "about/values"];
+      return order.indexOf(topicOf(a.id)) - order.indexOf(topicOf(b.id));
+    });
+  rendered = await Promise.all(aboutPages.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  }));
+}
+
+const ICON: Record<string, string> = {
+  mission: "fa-solid fa-bullseye",
+  vision:  "fa-solid fa-eye",
+  values:  "fa-solid fa-heart",
+};
+
+const T = (locale === "ar" && !anyFallback) ? {
+  title:    "من نحن — مركز العمران الطبي",
+  eyebrow:  "من نحن",
+  h1:       "رعاية تُصغي إلى المريض، وطبٌ يفكر.",
+  lede:     "مركز العمران الطبي عيادة متخصصة في الأعصاب والجهاز العضلي الهيكلي في البصرة، العراق. فريقنا متعدد التخصصات يجمع خبرة الاستشاريين الجراحية مع أحدث أساليب التأهيل والتحفيز الدماغي وإدارة الألم.",
+  ctaTitle: "أطباؤنا",
+  ctaSub:   "استشاريون معتمدون بخبرة عقود متراكمة.",
+  ctaLabel: "تعرّف على الفريق",
+} : {
+  title:    "About — Alimran Medical Center",
+  eyebrow:  "About Us",
+  h1:       "Care that listens, medicine that thinks.",
+  lede:     "Alimran Medical Center is a specialised neurology and musculoskeletal clinic in Basra, Iraq. Our multidisciplinary team combines consultant-led surgical expertise with modern rehabilitation, brain-stimulation, and pain-management techniques.",
+  ctaTitle: "Meet our doctors",
+  ctaSub:   "Board-certified consultants with decades of combined experience.",
+  ctaLabel: "See the team",
+};
+---
+
+<BaseLayout title={T.title} description={locale === "en" ? "Learn about Alimran Medical Center — our mission, clinical values, and the consultant neurosurgeon leading the team in Basra, Iraq." : undefined}>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">{T.eyebrow}</span>
+      <h1>{T.h1}</h1>
+      <p class="lede">{T.lede}</p>
+    </div>
+  </section>
+
+  {anyFallback && (
+    <div class="container banner-wrap">
+      <TranslationBanner fromLocale="en" toLocale="ar" />
+    </div>
+  )}
+
+  <section class="values container">
+    {rendered.map(({ entry, Content }) => {
+      const slug = topicOf(entry.id).split("/").pop() ?? "";
+      const iconClass = ICON[slug] ?? "fa-solid fa-circle-check";
+      return (
+        <article class="value-row" id={slug}>
+          <div class="value-icon" aria-hidden="true">
+            <i class={iconClass}></i>
+          </div>
+          <div class="value-body">
+            <h2>{entry.data.title.replace(/^OUR\s+/i, "")}</h2>
+            <div class="prose">
+              <Content />
+            </div>
+          </div>
+        </article>
+      );
+    })}
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <h2>{T.ctaTitle}</h2>
+      <p>{T.ctaSub}</p>
+      <a class="btn btn-primary" href={localizedHref("/doctors/", locale)}>{T.ctaLabel}</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 2rem 0 1.25rem;
+    background: linear-gradient(180deg, var(--brand-soft) 0%, var(--surface-alt) 100%);
+    text-align: center;
+  }
+  @media (min-width: 640px) { .hero { padding: 4rem 0 2rem; } }
+  .eyebrow {
+    display: inline-block;
+    color: var(--brand);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  @media (min-width: 640px) { .eyebrow { font-size: 0.85rem; margin-bottom: 1rem; } }
+  .hero h1 { margin: 0 auto 0.75rem; max-width: 22ch; }
+  .lede {
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin: 0 auto;
+    font-size: clamp(0.95rem, 2.6vw, 1.1rem);
+  }
+  .banner-wrap { padding-top: 1.25rem; }
+
+  .values {
+    padding-block: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) { .values { padding-block: 3rem; gap: 1.75rem; } }
+
+  .value-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding-inline-start: 0.75rem;
+    border-inline-start: 3px solid var(--brand);
+  }
+  @media (min-width: 640px) { .value-row { gap: 1.25rem; padding-inline-start: 1.25rem; } }
+
+  .value-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand-soft);
+    color: var(--brand);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .value-icon i { font-size: 1rem; line-height: 1; }
+  @media (min-width: 640px) { .value-icon { width: 48px; height: 48px; } .value-icon i { font-size: 1.15rem; } }
+
+  .value-body h2 {
+    color: var(--brand);
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    margin: 0 0 0.5em;
+  }
+  @media (min-width: 640px) { .value-body h2 { font-size: 1.25rem; } }
+  .value-body .prose { max-width: none; }
+  .value-body .prose p:last-child,
+  .value-body .prose ul:last-child { margin-bottom: 0; }
+
+  .cta-strip {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    text-align: center;
+  }
+  @media (min-width: 640px) { .cta-strip { padding: 3rem 0; } }
+  .cta-strip p { color: var(--ink-soft); margin-bottom: 1.5rem; }
+</style>

@@ -1,0 +1,115 @@
+---
+/**
+ * ArticleSections — central block dispatcher.
+ *
+ * Owns the if-chain that maps a `sections` array from any content collection
+ * (treatments, services, blog, or a standalone page) to the correct block
+ * component. Previously this logic was copy-pasted across 6 page templates;
+ * any new block type now only needs to be added here.
+ *
+ * Props
+ *   sections        — the raw sections array from entry.data.sections
+ *   locale          — "en" | "ar" — controls labels and digit style
+ *   resolveRelated  — optional callback that turns slugs into RelatedItem
+ *                     objects; pass it from treatment templates that have
+ *                     access to the full collection. Omit (or pass undefined)
+ *                     for blog / service pages where related blocks show an
+ *                     empty list.
+ */
+import { toArabicDigits } from "../../lib/i18n";
+import AtGlance        from "./AtGlance.astro";
+import Prose           from "./Prose.astro";
+import PullQuote       from "./PullQuote.astro";
+import ComparisonPair  from "./ComparisonPair.astro";
+import StatsFacts      from "./StatsFacts.astro";
+import TreatmentGroups from "./TreatmentGroups.astro";
+import Related         from "./Related.astro";
+import Media           from "./Media.astro";
+
+export interface RelatedItem {
+  slug: string;
+  title: string;
+  category: string;
+  href: string;
+  redesigned: boolean;
+}
+
+interface Props {
+  sections: any[];
+  locale: "en" | "ar";
+  resolveRelated?: (slugs: string[]) => RelatedItem[];
+}
+
+const { sections, locale, resolveRelated } = Astro.props;
+const isAr = locale === "ar";
+
+// Localized UI strings
+const glanceLabel  = isAr ? "لمحة سريعة"    : "At a glance";
+const factsTitle   = isAr ? "حقائق أساسية"  : "Key facts";
+const relatedLabel = isAr ? "قراءة ذات صلة" : "Related reading";
+const soonLabel    = isAr
+  ? "هذا المقال لم يُعاد تصميمه بعد — قريبًا."
+  : "This article isn't in the new design yet — coming soon.";
+
+function padNum(n: number): string {
+  return isAr
+    ? toArabicDigits(n).padStart(2, "٠")
+    : String(n).padStart(2, "0");
+}
+
+// Mutable counter — increments only for sections that carry a heading so
+// the badge numbers (01, 02 …) match the TOC built by the parent template.
+let sectionIndex = 0;
+function nextNumId(hasHeading: boolean): { num?: string; id?: string } {
+  if (!hasHeading) return {};
+  sectionIndex += 1;
+  return { num: padNum(sectionIndex), id: `s-${sectionIndex}` };
+}
+---
+
+{sections.map((s: any) => {
+  const { num, id } = nextNumId(!!s.heading);
+
+  if (s.type === "at-a-glance")
+    return <AtGlance items={s.items} glanceLabel={glanceLabel} />;
+
+  if (s.type === "prose")
+    return <Prose num={num} heading={s.heading} body={s.body} id={id} locale={locale} />;
+
+  if (s.type === "pull-quote")
+    return <PullQuote text={s.text} attribution={s.attribution} />;
+
+  if (s.type === "comparison-pair")
+    return <ComparisonPair num={num} heading={s.heading} id={id} intro={s.intro} a={s.a} b={s.b} />;
+
+  if (s.type === "stats-facts")
+    return <StatsFacts
+      num={num} heading={s.heading} id={id} intro={s.intro}
+      stats={s.stats} facts={s.facts}
+      factsTitle={factsTitle}
+      factNumbers={s.facts.map((_: string, i: number) => padNum(i + 1))}
+    />;
+
+  if (s.type === "treatment-groups")
+    return <TreatmentGroups
+      num={num} heading={s.heading} id={id}
+      intro={s.intro} note={s.note} groups={s.groups}
+      locale={locale}
+    />;
+
+  if (s.type === "related")
+    return <Related
+      items={resolveRelated ? resolveRelated(s.slugs) : []}
+      relatedLabel={relatedLabel}
+      soonLabel={soonLabel}
+    />;
+
+  if (s.type === "media")
+    return <Media
+      kind={s.kind} src={s.src} alt={s.alt}
+      caption={s.caption} aspect={s.aspect}
+      uploadDate={s.uploadDate}
+    />;
+
+  return null;
+})}

@@ -268,3 +268,32 @@ html[dir="rtl"] .toc li a::before {
   font-family: var(--font-body);
   letter-spacing: 0;
 }
+
+/* ─── Art layout system (ArticleLayout.astro) ─────────────── */
+html[dir="rtl"] .art-h1 { font-size: clamp(28px, 7.4cqw, 52px); }
+html[dir="rtl"] .art-meta dt {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+html[dir="rtl"] .art-meta dd { line-height: 1.7; }
+html[dir="rtl"] .art-toc-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+html[dir="rtl"] .art-toc a { font-size: 15px; line-height: 1.7; }
+html[dir="rtl"] .art-call-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+html[dir="rtl"] .art-call-body { line-height: 1.9; }
+html[dir="rtl"] .art-cta p { line-height: 1.9; }
+html[dir="rtl"] .art-prose h2 { font-size: clamp(23px, 3.1vw, 30px); }
+html[dir="rtl"] .art-prose h3 { font-size: 21px; }
+html[dir="rtl"] .art-prose li { line-height: 1.9; }
+html[dir="rtl"] .art-prose blockquote p { line-height: 1.5; }

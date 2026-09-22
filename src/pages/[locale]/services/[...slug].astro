@@ -1,0 +1,89 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import EntryPage from "../../../components/EntryPage.astro";
+import TranslationBanner from "../../../components/TranslationBanner.astro";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { buildToc } from "../../../lib/toc";
+import { SERVICE_LABELS, NAV_LABELS } from "../../../lib/labels";
+import ArticleLayout from "../../../components/article/ArticleLayout.astro";
+import ArticleSections from "../../../components/article/ArticleSections.astro";
+
+const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const nav = NAV_LABELS[locale];
+const labels = SERVICE_LABELS[locale];
+
+export async function getStaticPaths() {
+  const items = await getCollection("services");
+  const paths: Array<{ params: { locale: string; slug: string }; props: any }> = [];
+
+  for (const entry of items.filter((e) => isLocale(e.id, "en"))) {
+    paths.push({
+      params: { locale: "en", slug: topicOf(entry.id) },
+      props: { entry, fallback: false },
+    });
+  }
+
+  const topics = [...new Set(items.map((e) => topicOf(e.id)))];
+  for (const topic of topics) {
+    const pick = pickForLocale(items, topic, "ar");
+    if (pick) paths.push({ params: { locale: "ar", slug: topic }, props: pick });
+  }
+
+  return paths;
+}
+
+const { entry, fallback } = Astro.props;
+const isRedesigned = entry.data.redesigned === true;
+const { Content } = await render(entry);
+
+const toc = buildToc(
+  isRedesigned ? (entry.data as { sections?: Array<{ heading?: string }> }).sections : null,
+  null,
+  locale,
+);
+
+const standfirst = entry.data.description || "";
+const serviceCategory = entry.data.category || (locale === "ar" ? "خدمة" : "Service");
+---
+
+{isRedesigned ? (
+  <ArticleLayout
+    pageTitle={`${entry.data.title} — ${nav.siteName}`}
+    description={standfirst}
+    locale={locale}
+    breadcrumbs={[
+      { label: nav.home, href: L("/") },
+      { label: nav.services, href: L("/services/") },
+      { label: serviceCategory },
+    ]}
+    h1={entry.data.title}
+    toc={toc}
+    tocLabel={labels.tocLabel}
+    callLabel={labels.callLabel}
+    callBody={labels.callBody}
+    ctaHeading={labels.ctaHeading}
+    ctaBody={labels.ctaBody}
+  >
+    <ArticleSections sections={(entry.data as any).sections} locale={locale} />
+  </ArticleLayout>
+) : (
+  <BaseLayout title={entry.data.title} description={standfirst} image={(entry.data as any).image}>
+    {fallback && locale === "ar" ? (
+      <div dir="ltr" lang="en">
+        <div class="container banner-wrap">
+          <TranslationBanner fromLocale="en" toLocale="ar" />
+        </div>
+        <EntryPage entry={entry} />
+      </div>
+    ) : (
+      <EntryPage entry={entry} />
+    )}
+  </BaseLayout>
+)}
+
+<style>
+  .banner-wrap { padding-top: 1.25rem; }
+  @media (min-width: 640px) { .banner-wrap { padding-top: 2rem; } }
+</style>
