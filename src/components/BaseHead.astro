@@ -118,8 +118,7 @@ const businessSchema = {
 <meta name="robots" content={robotsContent} />
 <link rel="canonical" href={canonicalURL} />
 
-<!-- Language alternates -->
-<link rel="alternate" hreflang={locale}          href={canonicalURL} />
+<!-- Language alternates: only declare alternates, not self-reference -->
 <link rel="alternate" hreflang={otherLocale}     href={alternateURL} />
 <link rel="alternate" hreflang="x-default"       href={locale === "en" ? canonicalURL : alternateURL} />
 
