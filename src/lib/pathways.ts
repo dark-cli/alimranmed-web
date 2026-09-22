@@ -1,5 +1,20 @@
 export type Pathway = "brain" | "spine" | "pain";
 
+export type TreatmentPathwayInfo = { label: string; pathway: string };
+
+export const TREATMENT_PATHWAY: Record<"en" | "ar", Record<string, TreatmentPathwayInfo>> = {
+  en: {
+    brain: { label: "Brain", pathway: "Brain — neurosurgical" },
+    spine: { label: "Spine", pathway: "Spine — surgical" },
+    pain:  { label: "Pain",  pathway: "Pain — interventional" },
+  },
+  ar: {
+    brain: { label: "الدماغ",        pathway: "الدماغ — جراحي" },
+    spine: { label: "العمود الفقري",  pathway: "العمود الفقري — جراحي" },
+    pain:  { label: "الألم",          pathway: "الألم — تداخلي" },
+  },
+};
+
 export const BLOG_PATHWAY: Record<string, Pathway> = {
   "amyotrophic-lateral-sclerosis-als-2": "brain",
   "covid-19-symptoms-on-the-nervous-and-locomotor-system": "brain",

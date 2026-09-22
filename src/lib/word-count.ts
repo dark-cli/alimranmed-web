@@ -1,3 +1,5 @@
+import { toArabicDigits } from "./i18n";
+
 export function wordsIn(v: unknown): number {
   if (v == null) return 0;
   if (typeof v === "string") {
@@ -16,11 +18,19 @@ export function readingMinutes(
   return Math.max(1, Math.round((wordsIn(entry.data.sections) + wordsIn(entry.body)) / wpm));
 }
 
-export function readingTimeAr(minutes: number, toArabicDigits: (n: number) => string): string {
+export function readingTimeAr(minutes: number): string {
   if (minutes <= 1) return "دقيقة واحدة";
   if (minutes === 2) return "دقيقتان";
   if (minutes <= 10) return `${toArabicDigits(minutes)} دقائق`;
   return `${toArabicDigits(minutes)} دقيقة`;
+}
+
+/** Returns a locale-appropriate reading-time string from a raw word count. */
+export function articleReadingLabel(wordCount: number, locale: "en" | "ar"): string {
+  if (locale === "ar") {
+    return readingTimeAr(Math.max(1, Math.round(wordCount / 140)));
+  }
+  return `${Math.max(1, Math.round(wordCount / 180))} min read`;
 }
 
 export function extractBodyImages(body: string | undefined): { alt: string; src: string }[] {

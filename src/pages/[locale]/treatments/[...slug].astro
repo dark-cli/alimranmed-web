@@ -1,0 +1,104 @@
+---
+import { getCollection, render } from "astro:content";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { wordsIn, articleReadingLabel } from "../../../lib/word-count";
+import { buildToc } from "../../../lib/toc";
+import { TREATMENT_PATHWAY } from "../../../lib/pathways";
+import { makeResolveRelatedEn, makeResolveRelatedAr } from "../../../lib/related";
+import { TREATMENT_LABELS, NAV_LABELS } from "../../../lib/labels";
+import ArticleLayout from "../../../components/article/ArticleLayout.astro";
+import ArticleBody from "../../../components/article/ArticleBody.astro";
+
+const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const nav = NAV_LABELS[locale];
+const labels = TREATMENT_LABELS[locale];
+
+export async function getStaticPaths() {
+  const items = await getCollection("treatments");
+  const paths: Array<{ params: { locale: string; slug: string }; props: any }> = [];
+
+  for (const entry of items.filter((e) => isLocale(e.id, "en"))) {
+    paths.push({
+      params: { locale: "en", slug: topicOf(entry.id) },
+      props: { entry, fallback: false },
+    });
+  }
+
+  const topics = [...new Set(items.map((e) => topicOf(e.id)))];
+  for (const topic of topics) {
+    const pick = pickForLocale(items, topic, "ar");
+    if (pick) paths.push({ params: { locale: "ar", slug: topic }, props: pick });
+  }
+
+  return paths;
+}
+
+const { entry } = Astro.props;
+const isRedesigned = entry.data.redesigned === true;
+const { Content, headings } = await render(entry);
+
+const cat = ((entry.data as { pathwayOverride?: string; category?: string })
+  .pathwayOverride || entry.data.category || "pain").toLowerCase();
+const pathway = TREATMENT_PATHWAY[locale][cat] || TREATMENT_PATHWAY[locale].pain;
+
+const wordCount =
+  wordsIn((entry.data as { sections?: unknown }).sections) +
+  wordsIn(entry.body);
+const readingLabel = articleReadingLabel(wordCount, locale);
+
+const publishedAt: unknown = (entry.data as { publishedAt?: unknown }).publishedAt;
+const dateLocale = locale === "ar" ? "ar-IQ" : "en-US";
+const lastReviewed = publishedAt
+  ? new Date(publishedAt as string).toLocaleDateString(dateLocale, { month: "long", year: "numeric" })
+  : "—";
+
+const toc = buildToc(
+  isRedesigned ? (entry.data as { sections?: Array<{ heading?: string }> }).sections : null,
+  headings,
+  locale,
+);
+
+const allTreatments = await getCollection("treatments");
+const resolveRelated = locale === "ar"
+  ? makeResolveRelatedAr(allTreatments, (slug) => L(`/treatments/${slug}/`))
+  : makeResolveRelatedEn(allTreatments, (slug) => L(`/treatments/${slug}/`));
+
+const standfirst = entry.data.description || "";
+const disclaimer = locale === "ar"
+  ? `تقدم هذه الصفحة معلومات عامة حول ${entry.data.title} وليست بديلاً عن التقييم الطبي الفردي. إذا كانت أعراضك شديدة أو تزداد سوءاً، فاتصل بطبيب على الفور.`
+  : `This page provides general information about ${entry.data.title.toLowerCase()} and is not a substitute for individual medical assessment. If your symptoms are severe or worsening, contact a clinician promptly.`;
+---
+
+<ArticleLayout
+  pageTitle={`${entry.data.title} — ${nav.siteName}`}
+  description={standfirst}
+  locale={locale}
+  breadcrumbs={[
+    { label: nav.home, href: L("/") },
+    { label: nav.treatments, href: L("/conditions/") },
+    { label: pathway.label },
+  ]}
+  h1={entry.data.title}
+  meta={[
+    { label: labels.pathwayLabel,      value: pathway.pathway },
+    { label: labels.reviewedByLabel,   value: labels.reviewer },
+    { label: labels.readingTimeLabel,  value: readingLabel },
+    { label: labels.lastReviewedLabel, value: lastReviewed },
+  ]}
+  toc={toc}
+  tocLabel={labels.tocLabel}
+  callLabel={labels.callLabel}
+  callBody={labels.callBody}
+  ctaHeading={labels.ctaHeading}
+  ctaBody={labels.ctaBody}
+  disclaimer={disclaimer}
+>
+  <ArticleBody
+    sections={isRedesigned ? (entry.data as any).sections : undefined}
+    locale={locale}
+    resolveRelated={resolveRelated}
+  >
+    <Content />
+  </ArticleBody>
+</ArticleLayout>

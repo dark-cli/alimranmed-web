@@ -1,0 +1,442 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { topicOf, isLocale, pickForLocale, currentLocale } from "../../../lib/i18n";
+
+export async function getStaticPaths() {
+  const items = await getCollection("doctors");
+  const topics = Array.from(new Set(items.map((e) => topicOf(e.id))));
+
+  const enPaths = items
+    .filter((e) => isLocale(e.id, "en"))
+    .map((entry) => ({
+      params: { locale: "en", slug: topicOf(entry.id) },
+      props: { entry },
+    }));
+
+  const arPaths = topics.flatMap((topic) => {
+    const pick = pickForLocale(items, topic, "ar");
+    return pick ? [{ params: { locale: "ar", slug: topic }, props: { entry: pick.entry } }] : [];
+  });
+
+  return [...enPaths, ...arPaths];
+}
+
+const { entry } = Astro.props;
+const locale = currentLocale(Astro);
+const isAr = locale === "ar";
+
+const chips = isAr
+  ? ["بكالوريوس طب وجراحة", "زمالة البورد العراقي — جراحة الأعصاب", "FIAANS", "FINASS"]
+  : ["MBChB", "FIBMS (Neurosurgery)", "FIAANS", "FIISSP", "FINASS"];
+
+const appointments = isAr ? [
+  { period: "٢٠٠٦ — الآن",  body: "استشاري جراحة الجهاز العصبي، مستشفى الصدر التعليمي، البصرة. مُنح لقب الاستشاري في ١٧ كانون الثاني ٢٠١٦." },
+  { period: "٢٠٢٢ — الآن",  body: "مدير العراق في جمعية الشرق الأوسط للجراحة التجسيمية والوظيفية، وعضو مجلس إدارتها." },
+  { period: "٢٠١٦ — الآن",  body: "مشرف على أطباء البورد العربي في جراحة الأعصاب." },
+  { period: "١٩٩٩ — ٢٠٠٠", body: "طبيب مقيم أول، الجراحة العامة، مستشفى البصرة العام." },
+] : [
+  { period: "2006 — present", body: "Consultant Neurosurgeon, Alsadr Teaching Hospital, Basra. Consultant status conferred 17 January 2016." },
+  { period: "2022 — present", body: "Iraq Director, Middle East Stereotactic and Functional Neurosurgery; Board of Directors member, MESSFN." },
+  { period: "2016 — present", body: "Supervisor of Arabian Board neurosurgery junior doctors." },
+  { period: "1999 — 2000",    body: "Senior House Officer, General Surgery, Basrah General Hospital." },
+];
+
+const education = isAr ? [
+  { period: "١٩٩٦",         body: "بكالوريوس طب وجراحة، كلية طب البصرة، العراق." },
+  { period: "٢٠٠٠ — ٢٠٠٥", body: "التدريب العالي في جراحة الأعصاب، مركز البورد الطبي العراقي، بغداد." },
+  { period: "٢٠٠٥",         body: "زمالة البورد العراقي للاختصاصات الطبية — جراحة الأعصاب." },
+  { period: "٢٠١٧",         body: "زمالة التخدير وطب الألم، مستشفى جامعة سيؤول الوطنية." },
+  { period: "٢٠١٣",         body: "زمالة إدارة الألم التداخلي، عيادة موبي للألم، مومباي." },
+] : [
+  { period: "1996",        body: "MBChB, Medical College of Basra, Iraq." },
+  { period: "2000 — 2005", body: "Postgraduate neurosurgical training, Iraqi Medical Board Centre, Baghdad." },
+  { period: "2005",        body: "Fellowship, Iraqi Board of Medical Specialization — Neurosurgery." },
+  { period: "2017",        body: "Fellowship in Anaesthesiology and Pain Medicine, Seoul National University Hospital." },
+  { period: "2013",        body: "Fellowship in Interventional Pain Management, Mobi Pain Clinic, Mumbai." },
+];
+
+const memberships = isAr ? [
+  { name: "الجمعية الأوروبية للجراحة التجسيمية والوظيفية", year: "٢٠٢٢" },
+  { name: "منظمة السكتة الدماغية الأوروبية",                 year: "٢٠٢٠" },
+  { name: "منظمة السكتة الدماغية العالمية",                   year: "٢٠٢٠" },
+  { name: "الجمعية الدولية للحبل الشوكي",                     year: "٢٠٢٠" },
+  { name: "جمعية أمريكا الشمالية للعمود الفقري",               year: "٢٠١٦" },
+  { name: "الجمعية الدولية لدراسة الألم",                      year: "٢٠١٥" },
+  { name: "AOSpine",                                         year: "٢٠١١" },
+  { name: "الجمعية الأمريكية لجراحي الجهاز العصبي",            year: "٢٠١٠" },
+] : [
+  { name: "European Society for Stereotactic and Functional Neurosurgery", year: "2022" },
+  { name: "European Stroke Organization",                                   year: "2020" },
+  { name: "World Stroke Organization",                                      year: "2020" },
+  { name: "International Spinal Cord Society",                              year: "2020" },
+  { name: "North American Spine Society",                                   year: "2016" },
+  { name: "International Association for the Study of Pain",                year: "2015" },
+  { name: "AOSpine",                                                        year: "2011" },
+  { name: "American Association of Neurological Surgeons",                  year: "2010" },
+];
+
+const publications = isAr ? [
+  { year: "٢٠١٣", title: "ارتفاع عدد الكريات البيض كمؤشر لشدة الرضوح المتعددة",                      source: "مجلة ذي قار الطبية، المجلد ٧، العدد ٢، الصفحات ٥٠–٥٧. ISSN 1992-9218." },
+  { year: "٢٠١٤", title: "فعالية حقن البوتوكس حول أعصاب فروة الرأس للوقاية من الصداع اليومي المزمن", source: "Int. Journal of Medicine and Pharmaceutical Sciences، المجلد ٤، العدد ٥، الصفحات ٤٩–٥٨." },
+  { year: "٢٠١٤", title: "إصابات الأسلحة النارية بين المدنيين في البصرة",                             source: "Int. Journal of Medicine and Pharmaceutical Sciences، المجلد ٤، العدد ٦، الصفحات ١–١٠." },
+  { year: "٢٠١٤", title: "دواعي استخدام المبزل فوق الجافية في جراحة الفقرات القطنية وعدمها",          source: "Int. Journal of Medicine and Pharmaceutical Sciences، المجلد ٤، العدد ٦، الصفحات ١٠–١٦." },
+  { year: "٢٠١٥", title: "حصيلة إصابات الرأس بالأسلحة النارية عند الأطفال",                          source: "Int. Journal of Medicine and Pharmaceutical Sciences، المجلد ٣، العدد ٣، الصفحات ٩٩–١٠٨." },
+] : [
+  { year: "2013", title: "Elevated white blood cell count as a predictor for severe polytrauma",                                      source: "Thi-Qar Medical Journal, Vol. 7, No. 2, pp. 50–57. ISSN 1992-9218." },
+  { year: "2014", title: "Efficacy of Botox injections around scalp nerves for prevention of chronic daily headache",                 source: "Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 5, pp. 49–58." },
+  { year: "2014", title: "Civilian gunshot injuries in Basra",                                                                        source: "Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 6, pp. 1–10." },
+  { year: "2014", title: "Indications and non-indications for epidural drain use in lumbar spine surgery up to three levels",          source: "Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 6, pp. 10–16." },
+  { year: "2015", title: "The outcome of paediatric gunshot head injuries",                                                           source: "Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 3, No. 3, pp. 99–108." },
+];
+
+const conferences = isAr ? [
+  { year: "يوكوهاما ٢٠١٦", body: "المؤتمر العالمي السادس عشر للألم (IASP) — الترددات الراديوية النابضة للصداع المزمن." },
+  { year: "دبي ٢٠١٦",      body: "المؤتمر الدولي السنوي للعمود الفقري — استعمال الكيس الرملي والتسريب السحائي بعد جراحة العمود." },
+  { year: "تامبا ٢٠١٤",    body: "الجمعية الأمريكية لإدارة الألم — ورشة عمل التدخلات الموجَّهة بالأمواج فوق الصوتية." },
+  { year: "تسوگ ٢٠١٢",    body: "ورشة عمل جراحة العمود الفقري بأقل تدخل، شركة DePuy، سويسرا." },
+  { year: "بيروت ٢٠١٠",    body: "دورة عملية على المقاطع التشريحية في الأساليب الفقرية المتقدمة، بإشراف كلية طب جامعة بوسطن." },
+] : [
+  { year: "Yokohama 2016",   body: "16th World Congress on Pain (IASP) — pulsed radiofrequency for chronic headache." },
+  { year: "Dubai 2016",      body: "Annual International Spine Conference — sandbag use and CSF leak after spine surgery." },
+  { year: "Tampa 2014",      body: "American Society for Pain Management — ultrasound-guided pain interventions workshop." },
+  { year: "Zug 2012",        body: "Minimally Invasive Spine Workshop, DePuy, Switzerland." },
+  { year: "Beirut 2010",     body: "Cadaveric bioskills in advanced spinal approaches, under Boston University Medical School supervision." },
+  { year: "Chandigarh 2009", body: "Advanced training in Professor Destandau's endoscopic spine technique, Gian Sagar Medical College." },
+];
+
+const stats = isAr ? [
+  { fig: "+٥٠٠٠", desc: "عملية أجراها الاستشاري بشكل مستقل" },
+  { fig: "٢٥",    desc: "عامًا من الخبرة في جراحة الجهاز العصبي" },
+  { fig: "٤",     desc: "أقسام — الجراحة، إدارة الألم، العلاج الطبيعي، إعادة التأهيل" },
+  { fig: "٦",     desc: "أيام عمل أسبوعيًا، مع مناوبة للحالات الطارئة" },
+] : [
+  { fig: "5,000+", desc: "Operations performed by the lead consultant" },
+  { fig: "25",     desc: "Years of neurosurgical practice behind the clinic" },
+  { fig: "4",      desc: "Departments — surgery, pain medicine, physiotherapy, rehabilitation" },
+  { fig: "6",      desc: "Clinic days a week, including an out-of-hours on-call roster" },
+];
+
+const T = isAr ? {
+  titleSuffix:    "مركز العمران الطبي",
+  eyebrow:        "الاستشاري المسؤول · السيرة العلمية",
+  h1:             "الدكتور حسين عمران موسى",
+  lede:           "مؤسس مركز العمران الطبي والاستشاري المسؤول فيه. استشاري جراحة الجهاز العصبي في مستشفى البصرة التعليمي، ومدير العراق في جمعية الشرق الأوسط للجراحة التجسيمية والوظيفية.",
+  sAppointments:  "المناصب",
+  sEducation:     "التعليم",
+  sMemberships:   "العضويات",
+  sPublications:  "البحوث المنشورة",
+  sConferences:   "المشاركات والمؤتمرات",
+} : {
+  titleSuffix:    "Alimran Clinic",
+  eyebrow:        "Lead consultant · Clinical profile",
+  h1:             entry.data.fullName,
+  lede:           "Founder and lead consultant of Alimran Clinic. Consultant Neurosurgeon, Neurosurgical Department, Basra Teaching Hospital, and Iraq Director for Middle East Stereotactic and Functional Neurosurgery.",
+  sAppointments:  "Appointments",
+  sEducation:     "Education",
+  sMemberships:   "Memberships",
+  sPublications:  "Published research",
+  sConferences:   "Conference papers & training",
+};
+---
+
+<BaseLayout title={`${entry.data.fullName} — ${T.titleSuffix}`} description={entry.data.description}>
+  <section class="cv-head-band">
+    <div class="cv-head">
+      <div class="cv-head-copy">
+        <p class="cv-eyebrow">{T.eyebrow}</p>
+        <h1 class="cv-h1">{T.h1}</h1>
+        <p class="cv-lede">{T.lede}</p>
+        <div class="cv-chips">
+          {chips.map((c) => <span class="cv-chip">{c}</span>)}
+        </div>
+      </div>
+      <img
+        class="cv-portrait cv-portrait-img"
+        src="/images/doctors/hussein-imran-mousa-portrait.jpg"
+        alt={entry.data.fullName}
+        width="826" height="1032"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+  </section>
+
+  <section class="cv-stats">
+    <div class="cv-stats-grid">
+      {stats.map((s) => (
+        <div class="cv-stat-cell">
+          <p class="cv-stat-fig">{s.fig}</p>
+          <p class="cv-stat-desc">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">{T.sAppointments}</h2>
+      <div class="reg-body">
+        {appointments.map((r) => (
+          <div class="reg-row">
+            <span class="reg-period">{r.period}</span>
+            <span class="reg-text">{r.body}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">{T.sEducation}</h2>
+      <div class="reg-body">
+        {education.map((r) => (
+          <div class="reg-row">
+            <span class="reg-period">{r.period}</span>
+            <span class="reg-text">{r.body}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">{T.sMemberships}</h2>
+      <ul class="reg-body reg-members">
+        {memberships.map((m) => (
+          <li>
+            {m.name}
+            <span class="member-year">{m.year}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="reg-section">
+    <div class="reg-wrap">
+      <h2 class="reg-label">{T.sPublications}</h2>
+      <ol class="reg-body reg-pubs">
+        {publications.map((p) => (
+          <li>
+            <span class="reg-period reg-period-wide">{p.year}</span>
+            <span>
+              <span class="pub-title">{p.title}</span>
+              <span class="pub-source">{p.source}</span>
+            </span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="reg-section reg-section-last">
+    <div class="reg-wrap">
+      <h2 class="reg-label">{T.sConferences}</h2>
+      <div class="reg-body">
+        {conferences.map((r) => (
+          <div class="reg-row">
+            <span class="reg-period">{r.year}</span>
+            <span class="reg-text">{r.body}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ─── Head ───────────────────────────────────────────────── */
+  .cv-head-band { border-bottom: 1px solid var(--line); }
+
+  .cv-stats { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .cv-stats-grid {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr));
+    gap: 1px;
+    background: var(--line);
+  }
+  .cv-stat-cell { background: var(--surface); padding: 32px 24px; }
+  .cv-stat-fig {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.4vw, 40px);
+    line-height: 1;
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .cv-stat-desc { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--body); }
+
+  .cv-head {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: clamp(44px, 5.5vw, 72px) 24px clamp(40px, 5vw, 64px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(265px, 100%), 1fr));
+    gap: clamp(32px, 4vw, 64px);
+    align-items: start;
+  }
+  .cv-head-copy { container-type: inline-size; }
+  .cv-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 20px;
+  }
+  .cv-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 9cqw, 54px);
+    line-height: 1.07;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  .cv-lede { font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 24px; max-width: 54ch; }
+  .cv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cv-chip {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    padding: 6px 11px;
+  }
+  .cv-portrait { aspect-ratio: 4 / 5; min-height: 0; }
+  .cv-portrait-img {
+    width: 100%; height: auto;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    display: block;
+  }
+  .cv-portrait p {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-align: center;
+    margin: 0;
+    padding: 0 24px;
+    line-height: 1.7;
+  }
+
+  /* ─── Register sections ─────────────────────────────────── */
+  .reg-section {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: clamp(40px, 5vw, 64px) 24px 0;
+  }
+  .reg-section-last { padding-bottom: clamp(56px, 7vw, 96px); }
+  .reg-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px clamp(32px, 4vw, 64px);
+    align-items: flex-start;
+  }
+  .reg-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+    position: sticky;
+    top: 96px;
+    flex: 0 0 min(190px, 100%);
+    font-weight: 500;
+  }
+  .reg-body {
+    border-top: 1px solid var(--ink);
+    flex: 1 1 380px;
+    min-width: 0;
+    margin: 0; padding: 0; list-style: none;
+  }
+  .reg-row {
+    display: grid;
+    grid-template-columns: minmax(92px, 140px) minmax(0, 1fr);
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .reg-period { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+  .reg-text { font-size: 15.5px; line-height: 1.55; color: var(--ink); }
+
+  .reg-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(245px, 100%), 1fr));
+    gap: 0 48px;
+  }
+  .reg-members li {
+    font-size: 15px;
+    color: var(--ink);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .member-year { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+  .reg-pubs li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 24px;
+  }
+  .reg-period-wide { padding-top: 3px; }
+  .pub-title {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 19px;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .pub-source { display: block; font-size: 13.5px; color: var(--muted); margin-top: 5px; }
+
+  @media (max-width: 640px) {
+    .reg-row, .reg-pubs li { grid-template-columns: 1fr; gap: 4px; }
+    .reg-label { position: static; }
+  }
+
+  /* ─── RTL OVERRIDES ───────────────────────────────────────── */
+  :global(html[dir="rtl"]) .cv-eyebrow {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+  :global(html[dir="rtl"]) .cv-h1 {
+    font-weight: 700;
+    font-size: clamp(30px, 8cqw, 54px);
+    line-height: 1.18;
+    letter-spacing: 0;
+  }
+  :global(html[dir="rtl"]) .cv-lede { line-height: 1.85; max-width: 56ch; }
+  :global(html[dir="rtl"]) .cv-chip {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    letter-spacing: 0;
+  }
+  :global(html[dir="rtl"]) .cv-stat-fig { font-weight: 700; line-height: 1.2; }
+  :global(html[dir="rtl"]) .cv-stat-desc { line-height: 1.9; }
+  :global(html[dir="rtl"]) .reg-label {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-weight: 700;
+  }
+  :global(html[dir="rtl"]) .reg-period { font-family: var(--font-body); font-size: 13px; }
+  :global(html[dir="rtl"]) .reg-text { line-height: 1.7; }
+  :global(html[dir="rtl"]) .member-year { font-family: var(--font-body); font-size: 13px; }
+  :global(html[dir="rtl"]) .pub-title { font-weight: 700; line-height: 1.5; }
+  :global(html[dir="rtl"]) .pub-source { line-height: 1.7; }
+</style>

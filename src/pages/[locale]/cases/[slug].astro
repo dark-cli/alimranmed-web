@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import EntryPage from "../../../components/EntryPage.astro";
+import TranslationBanner from "../../../components/TranslationBanner.astro";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+
+export async function getStaticPaths() {
+  const items = await getCollection("cases");
+  const topics = Array.from(new Set(items.map((e) => topicOf(e.id))));
+
+  const enPaths = items
+    .filter((e) => isLocale(e.id, "en"))
+    .map((entry) => ({
+      params: { locale: "en", slug: topicOf(entry.id) },
+      props: { entry, fallback: false },
+    }));
+
+  const arPaths = topics.flatMap((topic) => {
+    const pick = pickForLocale(items, topic, "ar");
+    return pick ? [{ params: { locale: "ar", slug: topic }, props: pick }] : [];
+  });
+
+  return [...enPaths, ...arPaths];
+}
+
+const { entry, fallback } = Astro.props;
+const locale = currentLocale(Astro);
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  {fallback ? (
+    <div dir="ltr" lang="en">
+      <div class="container banner-wrap">
+        <TranslationBanner fromLocale="en" toLocale="ar" />
+      </div>
+      <EntryPage entry={entry} backHref={localizedHref("/cases/", locale)} backLabel="All cases" />
+    </div>
+  ) : (
+    <EntryPage entry={entry} backHref={localizedHref("/cases/", locale)} backLabel={locale === "ar" ? "الحالات" : "All cases"} />
+  )}
+</BaseLayout>
+
+<style>
+  .banner-wrap { padding-top: 1.25rem; }
+  @media (min-width: 640px) { .banner-wrap { padding-top: 2rem; } }
+</style>

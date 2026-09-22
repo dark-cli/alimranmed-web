@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+
+export async function getStaticPaths() {
+  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+}
+
+const locale = currentLocale(Astro);
+const all = await getCollection("cases");
+
+const cases = locale === "ar"
+  ? Array.from(new Set(all.map((e) => topicOf(e.id))))
+      .map((topic) => pickForLocale(all, topic, "ar"))
+      .filter((x): x is NonNullable<typeof x> => !!x)
+      .map(({ entry }) => entry)
+      .sort((a, b) => a.data.title.localeCompare(b.data.title))
+  : all
+      .filter((e) => isLocale(e.id, "en"))
+      .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout
+  title={locale === "ar" ? "الحالات — مركز العمران الطبي" : "Cases — Alimran Medical Center"}
+  description={locale === "en" ? "Clinical cases from Alimran Medical Center — real patient outcomes in neurosurgery, spine, pain management and rehabilitation." : undefined}
+>
+  <div class="container page">
+    <header class="page-head">
+      <h1>{locale === "ar" ? "الحالات" : "Cases"}</h1>
+      {locale === "en" && <p class="lede">Selected clinical cases across our specialties.</p>}
+    </header>
+
+    <div class="grid">
+      {cases.map((c) => (
+        <a class="card case" href={localizedHref(`/cases/${topicOf(c.id)}/`, locale)}>
+          <h3>{c.data.title}</h3>
+          {c.data.description && <p>{c.data.description}</p>}
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page { padding-block: 1.5rem 2.5rem; }
+  @media (min-width: 640px) { .page { padding-block: 3rem 4rem; } }
+  .page-head { text-align: center; max-width: 60ch; margin: 0 auto 1.5rem; }
+  @media (min-width: 640px) { .page-head { margin-bottom: 3rem; } }
+  .page-head .lede { color: var(--ink-soft); font-size: 1.1rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .case {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .case:hover { text-decoration: none; }
+  .case h3 { color: var(--brand); margin: 0 0 0.4em; }
+  .case p { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
+</style>
