@@ -4,12 +4,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EntryPage from "../../../components/EntryPage.astro";
 import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
 import { CONTACT } from "../../../consts";
-import AtGlance from "../../../components/article/AtGlance.astro";
-import Prose from "../../../components/article/Prose.astro";
-import PullQuote from "../../../components/article/PullQuote.astro";
-import StatsFacts from "../../../components/article/StatsFacts.astro";
-import TreatmentGroups from "../../../components/article/TreatmentGroups.astro";
-import Media from "../../../components/article/Media.astro";
+import ArticleSections from "../../../components/article/ArticleSections.astro";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
@@ -39,13 +34,6 @@ if (isRedesigned && Array.isArray(entry.data.sections)) {
   });
 }
 const showToc = toc.length >= 2;
-
-let sectionIndex = 0;
-function nextNumId(hasHeading: boolean): { num?: string; id?: string } {
-  if (!hasHeading) return {};
-  sectionIndex += 1;
-  return { num: String(sectionIndex).padStart(2, "0"), id: `s-${sectionIndex}` };
-}
 
 const standfirst = entry.data.description || "";
 ---
@@ -89,16 +77,7 @@ const standfirst = entry.data.description || "";
         </aside>
 
         <article class="art-body">
-          {entry.data.sections.map((s: any) => {
-            const { num, id } = nextNumId(!!s.heading);
-            if (s.type === "at-a-glance")      return <AtGlance items={s.items} glanceLabel="At a glance" />;
-            if (s.type === "prose")            return <Prose num={num} heading={s.heading} body={s.body} id={id} locale={locale} />;
-            if (s.type === "pull-quote")       return <PullQuote text={s.text} attribution={s.attribution} />;
-            if (s.type === "stats-facts")      return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="Key facts" factNumbers={s.facts.map((_: string, i: number) => String(i + 1).padStart(2, "0"))} />;
-            if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} locale={locale} />;
-            if (s.type === "media")            return <Media kind={s.kind} src={s.src} alt={s.alt} caption={s.caption} aspect={s.aspect} uploadDate={s.uploadDate} />;
-            return null;
-          })}
+          <ArticleSections sections={entry.data.sections} locale={locale} />
 
           <section class="art-cta">
             <div>

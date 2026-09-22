@@ -14,14 +14,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
 import { CONTACT } from "../../../consts";
-import AtGlance from "../../../components/article/AtGlance.astro";
-import Prose from "../../../components/article/Prose.astro";
-import PullQuote from "../../../components/article/PullQuote.astro";
-import ComparisonPair from "../../../components/article/ComparisonPair.astro";
-import StatsFacts from "../../../components/article/StatsFacts.astro";
-import TreatmentGroups from "../../../components/article/TreatmentGroups.astro";
-import Related from "../../../components/article/Related.astro";
-import Media from "../../../components/article/Media.astro";
+import ArticleSections from "../../../components/article/ArticleSections.astro";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
@@ -98,15 +91,8 @@ const showToc = toc.length >= 2;
 
 // For the redesigned dispatcher we need to know the section index at
 // render-time so each block can pass num/id to SectionHead.
-let sectionIndex = 0;
-function nextNumId(hasHeading: boolean): { num?: string; id?: string } {
-  if (!hasHeading) return {};
-  sectionIndex += 1;
-  return { num: String(sectionIndex).padStart(2, "0"), id: `s-${sectionIndex}` };
-}
 
-// Related lookup — resolve slugs to entries in the same locale so we can
-// mark each as redesigned/not, pick title + category label.
+// Related lookup — resolve slugs to entries in the same locale.
 const allTreatments = await getCollection("treatments");
 const enTreatments = allTreatments.filter((e) => isLocale(e.id, "en"));
 function resolveRelated(slugs: string[]) {
@@ -128,7 +114,6 @@ function resolveRelated(slugs: string[]) {
 }
 
 const standfirst = entry.data.description || "";
-const soonMsg = "This article isn't in the new design yet — coming soon.";
 ---
 
 <BaseLayout title={`${entry.data.title} — Alimran Clinic`} description={standfirst}>
@@ -176,18 +161,7 @@ const soonMsg = "This article isn't in the new design yet — coming soon.";
 
       <article class="art-body">
         {isRedesigned && Array.isArray(entry.data.sections) ? (
-          entry.data.sections.map((s: any) => {
-            const { num, id } = nextNumId(!!s.heading);
-            if (s.type === "at-a-glance")     return <AtGlance items={s.items} glanceLabel="At a glance" />;
-            if (s.type === "prose")           return <Prose num={num} heading={s.heading} body={s.body} id={id} locale={locale} />;
-            if (s.type === "pull-quote")      return <PullQuote text={s.text} attribution={s.attribution} />;
-            if (s.type === "comparison-pair") return <ComparisonPair num={num} heading={s.heading} id={id} intro={s.intro} a={s.a} b={s.b} />;
-            if (s.type === "stats-facts")     return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="Key facts" factNumbers={s.facts.map((_: string, i: number) => String(i + 1).padStart(2, "0"))} />;
-            if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} locale={locale} />;
-            if (s.type === "related")         return <Related items={resolveRelated(s.slugs)} relatedLabel="Related reading" soonLabel={soonMsg} />;
-            if (s.type === "media")           return <Media kind={s.kind} src={s.src} alt={s.alt} caption={s.caption} aspect={s.aspect} uploadDate={s.uploadDate} />;
-            return null;
-          })
+          <ArticleSections sections={entry.data.sections} locale={locale} resolveRelated={resolveRelated} />
         ) : (
           <div class="art-prose">
             <Content />
