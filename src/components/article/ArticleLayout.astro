@@ -1,0 +1,309 @@
+---
+/**
+ * Shared chrome for all article-style pages (blog, treatments, services).
+ * Renders: head band (breadcrumbs + h1 + optional meta strip), two-column
+ * grid (TOC sidebar + article body), CTA section, optional disclaimer.
+ *
+ * RTL typography overrides for .art-* classes live in
+ * src/styles/rtl-overrides.css (Astro strips [dir="rtl"] from scoped styles).
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { CONTACT } from "../../consts";
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+interface MetaItem {
+  label: string;
+  value: string;
+}
+interface Props {
+  pageTitle: string;
+  description?: string;
+  locale: "en" | "ar";
+  breadcrumbs: BreadcrumbItem[];
+  h1: string;
+  meta?: MetaItem[];
+  toc: Array<{ id: string; text: string }>;
+  tocLabel: string;
+  callLabel: string;
+  callBody: string;
+  ctaHeading: string;
+  ctaBody: string;
+  disclaimer?: string;
+}
+
+const {
+  pageTitle, description, locale, breadcrumbs, h1, meta,
+  toc, tocLabel, callLabel, callBody,
+  ctaHeading, ctaBody, disclaimer,
+} = Astro.props;
+
+const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
+const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
+const showToc = toc.length >= 2;
+const crumbSep = locale === "ar" ? "‹" : "›";
+---
+
+<BaseLayout title={pageTitle} description={description}>
+  <section class="art-head-band">
+    <div class="art-head-wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        {breadcrumbs.map((item, i) => (
+          i < breadcrumbs.length - 1 ? (
+            <>
+              <a href={item.href}>{item.label}</a>
+              <span class="crumb-sep" aria-hidden="true">{crumbSep}</span>
+            </>
+          ) : (
+            <span class="crumb-current">{item.label}</span>
+          )
+        ))}
+      </nav>
+      <div class="art-head-grid">
+        <div class="art-head-copy">
+          <h1 class="art-h1">{h1}</h1>
+          {description && <p class="art-standfirst">{description}</p>}
+        </div>
+        {meta && meta.length > 0 && (
+          <dl class="art-meta">
+            {meta.map((m) => (
+              <div><dt>{m.label}</dt><dd>{m.value}</dd></div>
+            ))}
+          </dl>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <div class="art-container">
+    <div class="art-grid">
+      <aside class="art-aside">
+        {showToc && (
+          <nav class="art-toc" aria-label={tocLabel}>
+            <p class="art-toc-label">{tocLabel}</p>
+            <span class="art-toc-rule" aria-hidden="true"></span>
+            {toc.map((t) => (<a href={`#${t.id}`}>{t.text}</a>))}
+          </nav>
+        )}
+        <div class="art-call-card">
+          <p class="art-call-label">{callLabel}</p>
+          <p class="art-call-body">{callBody}</p>
+          <a class="art-call-btn" href={callHref} dir="ltr">{CONTACT.phones[0]}</a>
+        </div>
+      </aside>
+
+      <article class="art-body">
+        <slot />
+
+        <section class="art-cta">
+          <div>
+            <h2>{ctaHeading}</h2>
+            <p>{ctaBody}</p>
+          </div>
+          <div class="art-cta-buttons">
+            <a class="btn btn-primary art-cta-btn" href={callHref} dir="ltr">{CONTACT.phones[0]}</a>
+            <a class="btn btn-secondary art-cta-btn" href={secondCallHref} dir="ltr">{CONTACT.phones[1]}</a>
+          </div>
+        </section>
+
+        {disclaimer && <p class="art-disclaimer">{disclaimer}</p>}
+      </article>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  /* ── Head band ─────────────────────────────────────────────── */
+  .art-head-band { border-bottom: 1px solid var(--line); }
+  .art-head-wrap {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(24px, 3.5vw, 40px) 24px clamp(32px, 4.5vw, 52px);
+  }
+  .crumbs {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    margin-bottom: clamp(24px, 3.5vw, 36px);
+  }
+  .crumbs a {
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--muted); text-decoration: none; letter-spacing: 0.02em;
+  }
+  .crumbs a:hover { color: var(--accent); text-decoration: none; }
+  .crumb-sep { color: var(--line-strong); font-size: 12px; }
+  .crumb-current { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+
+  .art-head-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+    gap: clamp(24px, 4vw, 64px); align-items: end;
+  }
+  .art-head-copy { container-type: inline-size; min-width: 0; }
+  .art-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(29px, 7cqw, 54px);
+    line-height: 1.08; font-weight: 400; letter-spacing: -0.02em;
+    margin: 0 0 18px; color: var(--ink); text-wrap: pretty;
+  }
+  .art-standfirst {
+    font-size: clamp(16.5px, 1.9vw, 19px);
+    line-height: 1.6; color: var(--body); max-width: 58ch;
+    text-wrap: pretty; margin: 0;
+  }
+
+  /* ── Meta strip ────────────────────────────────────────────── */
+  .art-meta {
+    margin: 0; display: flex; flex-direction: column; gap: 13px;
+    border-inline-start: 1px solid var(--line);
+    padding-inline-start: clamp(18px, 2.5vw, 28px);
+    min-width: 0;
+  }
+  .art-meta dt {
+    font-family: var(--font-mono);
+    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 4px;
+  }
+  .art-meta dd { margin: 0; font-size: 15px; color: var(--ink); line-height: 1.5; }
+
+  /* ── Layout grid ───────────────────────────────────────────── */
+  .art-container {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: 0 24px; container-type: inline-size;
+  }
+  .art-grid {
+    display: grid; grid-template-columns: minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 72px); align-items: start;
+  }
+  .art-aside { padding-top: clamp(32px, 4.5vw, 56px); min-width: 0; position: static; }
+  .art-toc { display: none; flex-direction: column; }
+  @container (min-width: 820px) {
+    .art-grid { grid-template-columns: minmax(0, 240px) minmax(0, 1fr); }
+    .art-grid > .art-body { max-width: 740px; }
+    .art-aside { position: sticky; top: 96px; }
+    .art-toc { display: flex; }
+  }
+
+  /* ── TOC ───────────────────────────────────────────────────── */
+  .art-toc-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 14px;
+  }
+  .art-toc-rule { display: block; border-top: 1px solid var(--ink); }
+  .art-toc a {
+    display: block; font-size: 14.5px; line-height: 1.45;
+    color: var(--body); padding: 11px 0;
+    border-bottom: 1px solid var(--line-soft); text-decoration: none;
+  }
+  .art-toc a:hover { color: var(--accent); text-decoration: none; }
+
+  /* ── Sidebar call card ─────────────────────────────────────── */
+  .art-call-card {
+    display: none;
+    margin-top: 24px;
+    border: 1px solid var(--line); background: var(--surface); padding: 20px;
+  }
+  @container (min-width: 820px) { .art-call-card { display: block; } }
+
+  .art-call-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 10px;
+  }
+  .art-call-body { font-size: 14px; line-height: 1.72; color: var(--body); margin: 0 0 16px; }
+  .art-call-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 100%; min-height: 44px; padding: 0 16px;
+    background: var(--accent); color: var(--white);
+    font-size: 14.5px; font-weight: 500; border-radius: 2px;
+    text-decoration: none;
+  }
+  .art-call-btn:hover { background: var(--accent-hover); color: var(--white); text-decoration: none; }
+
+  /* ── Article body ──────────────────────────────────────────── */
+  .art-body { padding: clamp(32px, 4.5vw, 56px) 0 0; min-width: 0; }
+
+  /* Legacy prose (article.redesigned !== true) */
+  :global(.art-prose) { color: var(--ink); }
+  :global(.art-prose p) {
+    font-size: 17px; line-height: 1.72; color: var(--body);
+    margin: 0 0 20px; text-wrap: pretty;
+  }
+  :global(.art-prose h2) {
+    scroll-margin-top: 96px;
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.9vw, 29px);
+    font-weight: 400; letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: clamp(36px, 4.5vw, 52px) 0 20px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--ink);
+    line-height: 1.1;
+  }
+  :global(.art-prose h3) {
+    font-family: var(--font-display);
+    font-size: 20px; font-weight: 400; color: var(--ink);
+    margin: clamp(28px, 3.5vw, 38px) 0 14px; line-height: 1.2;
+  }
+  :global(.art-prose strong) { font-weight: 600; color: var(--ink); }
+  :global(.art-prose ul), :global(.art-prose ol) {
+    list-style: none; margin: 0 0 24px; padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  :global(.art-prose li) {
+    display: grid; grid-template-columns: 28px minmax(0, 1fr);
+    gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line);
+    font-size: 16px; line-height: 1.72; color: var(--body);
+  }
+  :global(.art-prose li)::before {
+    content: "·"; font-family: var(--font-mono);
+    font-size: 22px; color: var(--accent); line-height: 1;
+  }
+  :global(.art-prose figure) { margin: 0 0 28px; max-width: 100%; }
+  :global(.art-prose figure img) {
+    display: block; width: 100%; height: auto;
+    border: 1px solid var(--line); background: var(--surface);
+  }
+  :global(.art-prose figure figcaption) {
+    font-family: var(--font-mono); font-size: 12px; line-height: 1.6;
+    color: var(--muted); margin-top: 10px; letter-spacing: 0.02em;
+  }
+  :global(.art-prose p) > :global(img) {
+    display: block; max-width: 100%; height: auto;
+    border: 1px solid var(--line); background: var(--surface); margin: 0 0 28px;
+  }
+  :global(.art-prose blockquote) {
+    margin: 32px 0;
+    border-inline-start: 2px solid var(--accent);
+    padding-inline-start: clamp(18px, 2.5vw, 26px);
+  }
+  :global(.art-prose blockquote p) {
+    font-family: var(--font-display); font-size: clamp(19px, 2.3vw, 24px);
+    line-height: 1.45; font-weight: 400; color: var(--ink); margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ── CTA ───────────────────────────────────────────────────── */
+  .art-cta {
+    border: 1px solid var(--line); background: var(--surface);
+    padding: clamp(24px, 3.5vw, 36px);
+    margin: clamp(40px, 5vw, 56px) 0 clamp(36px, 4.5vw, 48px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+    gap: 26px; align-items: center;
+  }
+  .art-cta h2 {
+    font-family: var(--font-display); font-size: clamp(22px, 2.7vw, 28px);
+    font-weight: 400; letter-spacing: -0.015em;
+    margin: 0 0 10px; color: var(--ink); line-height: 1.1;
+  }
+  .art-cta p { font-size: 16px; line-height: 1.72; color: var(--body); margin: 0; max-width: 46ch; }
+  .art-cta-buttons { display: flex; flex-direction: column; gap: 10px; }
+  .art-cta-btn { min-height: 52px; font-size: 16px; justify-content: center; }
+
+  /* ── Disclaimer ────────────────────────────────────────────── */
+  .art-disclaimer {
+    font-size: 13.5px; line-height: 1.75; color: var(--muted);
+    margin: 0 0 clamp(48px, 6vw, 88px);
+    padding-top: 18px; border-top: 1px solid var(--line);
+  }
+</style>

@@ -4,13 +4,11 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EntryPage from "../../../components/EntryPage.astro";
 import TranslationBanner from "../../../components/TranslationBanner.astro";
 import { topicOf, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
-import { CONTACT } from "../../../consts";
+import ArticleLayout from "../../../components/article/ArticleLayout.astro";
 import ArticleSections from "../../../components/article/ArticleSections.astro";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
-const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
-const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
 
 export async function getStaticPaths() {
   const items = await getCollection("services");
@@ -39,73 +37,30 @@ if (isRedesigned && Array.isArray(entry.data.sections)) {
     toc.push({ id: `s-${n}`, text: s.heading, num: toArabicDigits(n).padStart(2, "٠") });
   });
 }
-const showToc = toc.length >= 2;
 
 const standfirst = entry.data.description || "";
 ---
 
 {isRedesigned ? (
-  <BaseLayout title={`${entry.data.title} — مركز العمران الطبي`} description={standfirst}>
-    {fallback && (
-      <div dir="ltr" lang="en">
-        <div class="container banner-wrap">
-          <TranslationBanner fromLocale="en" toLocale="ar" />
-        </div>
-      </div>
-    )}
-
-    <section class="art-head-band">
-      <div class="art-head-wrap">
-        <nav class="crumbs" aria-label="Breadcrumb">
-          <a href={L("/")}>الرئيسية</a>
-          <span class="crumb-sep" aria-hidden="true">‹</span>
-          <a href={L("/services/")}>الخدمات</a>
-          <span class="crumb-sep" aria-hidden="true">‹</span>
-          <span class="crumb-current">{entry.data.category || "خدمة"}</span>
-        </nav>
-        <div class="art-head-grid">
-          <div class="art-head-copy">
-            <h1 class="art-h1">{entry.data.title}</h1>
-            {standfirst && <p class="art-standfirst">{standfirst}</p>}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="art-container">
-      <div class="art-grid">
-        <aside class="art-aside">
-          {showToc && (
-            <nav class="art-toc" aria-label="في هذه الصفحة">
-              <p class="art-toc-label">في هذه الصفحة</p>
-              <span class="art-toc-rule" aria-hidden="true"></span>
-              {toc.map((t) => (<a href={`#${t.id}`}>{t.text}</a>))}
-            </nav>
-          )}
-          <div class="art-call-card">
-            <p class="art-call-label">احجز الآن</p>
-            <p class="art-call-body">تحدث مع السكرتير للاستفسار عن هذه الخدمة.</p>
-            <a class="art-call-btn" href={callHref} dir="ltr">{CONTACT.phones[0]}</a>
-          </div>
-        </aside>
-
-        <article class="art-body">
-          <ArticleSections sections={entry.data.sections} locale={locale} />
-
-          <section class="art-cta">
-            <div>
-              <h2>احجز استشارة</h2>
-              <p>يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل.</p>
-            </div>
-            <div class="art-cta-buttons">
-              <a class="btn btn-primary art-cta-btn" href={callHref} dir="ltr">{CONTACT.phones[0]}</a>
-              <a class="btn btn-secondary art-cta-btn" href={secondCallHref} dir="ltr">{CONTACT.phones[1]}</a>
-            </div>
-          </section>
-        </article>
-      </div>
-    </div>
-  </BaseLayout>
+  <ArticleLayout
+    pageTitle={`${entry.data.title} — مركز العمران الطبي`}
+    description={standfirst}
+    locale="ar"
+    breadcrumbs={[
+      { label: "الرئيسية", href: L("/") },
+      { label: "الخدمات", href: L("/services/") },
+      { label: entry.data.category || "خدمة" },
+    ]}
+    h1={entry.data.title}
+    toc={toc}
+    tocLabel="في هذه الصفحة"
+    callLabel="احجز الآن"
+    callBody="تحدث مع السكرتير للاستفسار عن هذه الخدمة."
+    ctaHeading="احجز استشارة"
+    ctaBody="يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل."
+  >
+    <ArticleSections sections={entry.data.sections} locale={locale} />
+  </ArticleLayout>
 ) : (
   <BaseLayout title={entry.data.title} description={standfirst}>
     {fallback ? (
@@ -124,109 +79,4 @@ const standfirst = entry.data.description || "";
 <style>
   .banner-wrap { padding-top: 1.25rem; }
   @media (min-width: 640px) { .banner-wrap { padding-top: 2rem; } }
-
-  .art-head-band { border-bottom: 1px solid var(--line); }
-  .art-head-wrap {
-    max-width: var(--page-max); margin: 0 auto;
-    padding: clamp(24px, 3.5vw, 40px) 24px clamp(32px, 4.5vw, 52px);
-  }
-  .crumbs {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
-    margin-bottom: clamp(24px, 3.5vw, 36px);
-  }
-  .crumbs a {
-    font-family: var(--font-mono); font-size: 12px;
-    color: var(--muted); text-decoration: none; letter-spacing: 0.02em;
-  }
-  .crumbs a:hover { color: var(--accent); text-decoration: none; }
-  .crumb-sep { color: var(--line-strong); font-size: 12px; }
-  .crumb-current { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
-
-  .art-head-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
-    gap: clamp(24px, 4vw, 64px); align-items: end;
-  }
-  .art-head-copy { container-type: inline-size; min-width: 0; }
-  .art-h1 {
-    font-family: var(--font-display);
-    font-size: clamp(29px, 7cqw, 54px);
-    line-height: 1.08; font-weight: 400; letter-spacing: -0.02em;
-    margin: 0 0 18px; color: var(--ink); text-wrap: pretty;
-  }
-  .art-standfirst {
-    font-size: clamp(16.5px, 1.9vw, 19px);
-    line-height: 1.6; color: var(--body); max-width: 58ch;
-    text-wrap: pretty; margin: 0;
-  }
-
-  .art-container {
-    max-width: var(--page-max); margin: 0 auto;
-    padding: 0 24px; container-type: inline-size;
-  }
-  .art-grid {
-    display: grid; grid-template-columns: minmax(0, 1fr);
-    gap: clamp(28px, 4vw, 72px); align-items: start;
-  }
-  .art-aside { padding-top: clamp(32px, 4.5vw, 56px); min-width: 0; position: static; }
-  .art-toc { display: none; flex-direction: column; }
-  @container (min-width: 820px) {
-    .art-grid { grid-template-columns: minmax(0, 240px) minmax(0, 1fr); }
-    .art-grid > .art-body { max-width: 740px; }
-    .art-aside { position: sticky; top: 96px; }
-    .art-toc { display: flex; }
-  }
-
-  .art-toc-label {
-    font-family: var(--font-mono);
-    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--muted); margin: 0 0 14px;
-  }
-  .art-toc-rule { display: block; border-top: 1px solid var(--ink); }
-  .art-toc a {
-    display: block; font-size: 14.5px; line-height: 1.45;
-    color: var(--body); padding: 11px 0;
-    border-bottom: 1px solid var(--line-soft); text-decoration: none;
-  }
-  .art-toc a:hover { color: var(--accent); text-decoration: none; }
-
-  .art-call-card {
-    display: none;
-    margin-top: 24px;
-    border: 1px solid var(--line); background: var(--surface); padding: 20px;
-  }
-  @container (min-width: 820px) { .art-call-card { display: block; } }
-  .art-call-label {
-    font-family: var(--font-mono);
-    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); margin: 0 0 10px;
-  }
-  .art-call-body { font-size: 14px; line-height: 1.72; color: var(--body); margin: 0 0 16px; }
-  .art-call-btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 100%; min-height: 44px; padding: 0 16px;
-    background: var(--accent); color: var(--white);
-    font-size: 14.5px; font-weight: 500; border-radius: 2px;
-    text-decoration: none;
-  }
-  .art-call-btn:hover { background: var(--accent-hover); color: var(--white); text-decoration: none; }
-
-  .art-body { padding: clamp(32px, 4.5vw, 56px) 0 0; min-width: 0; }
-
-  .art-cta {
-    border: 1px solid var(--line); background: var(--surface);
-    padding: clamp(24px, 3.5vw, 36px);
-    margin: clamp(40px, 5vw, 56px) 0 clamp(36px, 4.5vw, 48px);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
-    gap: 26px; align-items: center;
-  }
-  .art-cta h2 {
-    font-family: var(--font-display); font-size: clamp(22px, 2.7vw, 28px);
-    font-weight: 400; letter-spacing: -0.015em;
-    margin: 0 0 10px; color: var(--ink);
-  }
-  .art-cta p { font-size: 16px; line-height: 1.72; color: var(--body); margin: 0; max-width: 46ch; }
-  .art-cta-buttons { display: flex; flex-direction: column; gap: 10px; }
-  .art-cta-btn { min-height: 52px; font-size: 16px; justify-content: center; }
 </style>
