@@ -1,13 +1,11 @@
 ---
 /**
- * DoctorSections — dispatches doctor CV sections to the correct block
- * component. Mirrors the pattern in components/article/ArticleSections.astro
- * but for the doctor-only block types (cv_hero, cv_stats, cv_timeline,
- * cv_publications).
+ * DoctorSections — dispatches every doctor CV block. Mirrors the article
+ * `sections` pattern (see components/article/ArticleSections.astro).
  *
- * Memberships live at the top level of the doctor frontmatter (not in the
- * sections list) so the listing card and detail page use the same source.
- * They render after the sections loop; the parent page decides where.
+ * Only the hero is at the "top" of the doctor entry; everything else —
+ * stats, timelines (appointments, education, conferences), memberships,
+ * publications — is a block in the sections list.
  */
 import CvHero         from "./CvHero.astro";
 import CvStats        from "./CvStats.astro";
@@ -21,52 +19,20 @@ interface Props {
   photo?: string;
   photoAlt?: string;
   titles: string[];
-  memberships: { name: string; year: string }[];
-  membershipsHeading: string;
 }
-const { sections, fullName, photo, photoAlt, titles, memberships, membershipsHeading } = Astro.props;
+const { sections, fullName, photo, photoAlt, titles } = Astro.props;
 
-// The membership list slots into the section flow after the last cv_timeline
-// coming from the frontmatter (typically Education). Everything after it —
-// publications and remaining timelines — renders below. This keeps the
-// existing on-page order without needing an explicit block for memberships.
-const membershipInsertAfter = (() => {
-  const educationIdx = sections.findIndex(
-    (s: any) => s.type === "cv_timeline" && (s.heading === "Education" || s.heading === "التعليم")
-  );
-  return educationIdx >= 0 ? educationIdx : sections.length - 1;
-})();
-
-// Last "register-style" element (timeline / memberships / publications) gets
-// extra bottom padding via isLast. We include the injected memberships block
-// in that calculation.
-type Item = { kind: "section"; s: any; i: number } | { kind: "memberships" };
-const flow: Item[] = [];
-sections.forEach((s: any, i: number) => {
-  flow.push({ kind: "section", s, i });
-  if (i === membershipInsertAfter && memberships.length > 0) {
-    flow.push({ kind: "memberships" });
-  }
-});
-
-const lastRegisterIdx = flow
-  .map((item, i) => ({ i, item }))
-  .filter(({ item }) => {
-    if (item.kind === "memberships") return true;
-    const t = item.s.type;
-    return t === "cv_timeline" || t === "cv_publications";
-  })
+// Last register-style block (timeline / memberships / publications) gets
+// isLast so its bottom padding matches the end of the page.
+const lastRegisterIdx = sections
+  .map((s, i) => ({ i, t: s.type }))
+  .filter(({ t }) => t === "cv_timeline" || t === "cv_memberships" || t === "cv_publications")
   .map(({ i }) => i)
   .pop();
 ---
 
-{flow.map((item, i) => {
+{sections.map((s: any, i: number) => {
   const isLast = i === lastRegisterIdx;
-
-  if (item.kind === "memberships")
-    return <CvMemberships heading={membershipsHeading} items={memberships} isLast={isLast} />;
-
-  const s = item.s;
 
   if (s.type === "cv_hero")
     return <CvHero
@@ -83,6 +49,9 @@ const lastRegisterIdx = flow
 
   if (s.type === "cv_timeline")
     return <CvTimeline heading={s.heading} rows={s.rows} isLast={isLast} />;
+
+  if (s.type === "cv_memberships")
+    return <CvMemberships heading={s.heading} items={s.items} isLast={isLast} />;
 
   if (s.type === "cv_publications")
     return <CvPublications heading={s.heading} items={s.items} isLast={isLast} />;

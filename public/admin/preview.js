@@ -115,81 +115,71 @@
     );
   }
 
-  var DoctorPreview = createClass({
-    render: function () {
-      var entry = this.props.entry;
-      var getAsset = this.props.getAsset;
+  // Factory so we can register two templates that share the same render logic
+  // but each knows its own locale (for RTL + Arabic fonts in the preview).
+  function makePreview(locale) {
+    return createClass({
+      render: function () {
+        return renderDoctorPreview(this.props, locale);
+      }
+    });
+  }
 
-      // Pull top-level fields once as plain JS.
-      var fullName    = entry.getIn(["data", "fullName"]) || "";
-      var photoAlt    = entry.getIn(["data", "photoAlt"]) || "";
-      var photoField  = entry.getIn(["data", "photo"]);
-      var titles      = toArray(entry.getIn(["data", "titles"]));
-      var memberships = toArray(entry.getIn(["data", "memberships"]));
-      var membershipsHeading = entry.getIn(["data", "membershipsHeading"]) || "Memberships";
-      var sections    = toArray(entry.getIn(["data", "sections"]));
+  function renderDoctorPreview(props, locale) {
+    var entry = props.entry;
+    var getAsset = props.getAsset;
+    var isAr = locale === "ar";
 
-      // Resolve photo through getAsset so relative paths from Sveltia's media
-      // library resolve (blob URLs while unsaved, absolute paths after save).
-      var photoSrc = photoField
-        ? (getAsset ? getAsset(photoField).toString() : photoField)
-        : null;
+    // Pull top-level fields once as plain JS.
+    var fullName   = entry.getIn(["data", "fullName"]) || "";
+    var photoAlt   = entry.getIn(["data", "photoAlt"]) || "";
+    var photoField = entry.getIn(["data", "photo"]);
+    var titles     = toArray(entry.getIn(["data", "titles"]));
+    var sections   = toArray(entry.getIn(["data", "sections"]));
 
-      var ctx = {
-        fullName: fullName,
-        photoSrc: photoSrc,
-        photoAlt: photoAlt,
-        titles: titles
-      };
+    // Resolve photo through getAsset so relative paths from Sveltia's media
+    // library resolve (blob URLs while unsaved, absolute paths after save).
+    var photoSrc = photoField
+      ? (getAsset ? getAsset(photoField).toString() : photoField)
+      : null;
 
-      // Mirror DoctorSections.astro: memberships render after the second
-      // cv_timeline (typically Education). Fall back to end of list.
-      var timelineCount = 0;
-      var membershipsInsertAfter = sections.length - 1;
-      sections.forEach(function (s, i) {
-        if (s && s.type === "cv_timeline") {
-          timelineCount++;
-          if (timelineCount === 2) membershipsInsertAfter = i;
-        }
-      });
+    var ctx = {
+      fullName: fullName,
+      photoSrc: photoSrc,
+      photoAlt: photoAlt,
+      titles: titles
+    };
 
-      // Build an ordered list that includes an injected memberships block.
-      var items = [];
-      sections.forEach(function (s, i) {
-        items.push({ kind: "section", s: s, idx: i });
-        if (i === membershipsInsertAfter && memberships.length > 0) {
-          items.push({ kind: "memberships" });
-        }
-      });
+    // Last register-style block gets isLast for its bottom padding.
+    var lastRegisterIdx = -1;
+    sections.forEach(function (s, i) {
+      if (s && (s.type === "cv_timeline" || s.type === "cv_memberships" || s.type === "cv_publications")) {
+        lastRegisterIdx = i;
+      }
+    });
 
-      // Last "register-style" element gets extra bottom padding.
-      var lastRegisterIdx = -1;
-      items.forEach(function (it, i) {
-        if (it.kind === "memberships") lastRegisterIdx = i;
-        else if (it.s && (it.s.type === "cv_timeline" || it.s.type === "cv_publications")) {
-          lastRegisterIdx = i;
-        }
-      });
+    var elements = sections.map(function (s, i) {
+      var isLast = i === lastRegisterIdx;
+      var key = "s" + i;
+      if (!s) return null;
+      if (s.type === "cv_hero")         return renderHero(s, ctx, key);
+      if (s.type === "cv_stats")        return renderStats(s, key);
+      if (s.type === "cv_timeline")     return renderTimeline(s, key, isLast);
+      if (s.type === "cv_memberships")  return renderMemberships(s.items || [], s.heading || "", key, isLast);
+      if (s.type === "cv_publications") return renderPublications(s, key, isLast);
+      return null;
+    });
 
-      var elements = items.map(function (it, i) {
-        var isLast = i === lastRegisterIdx;
-        if (it.kind === "memberships") {
-          return renderMemberships(memberships, membershipsHeading, "m", isLast);
-        }
-        var s = it.s || {};
-        var key = "s" + it.idx;
-        if (s.type === "cv_hero")         return renderHero(s, ctx, key);
-        if (s.type === "cv_stats")        return renderStats(s, key);
-        if (s.type === "cv_timeline")     return renderTimeline(s, key, isLast);
-        if (s.type === "cv_publications") return renderPublications(s, key, isLast);
-        return null;
-      });
+    // dir="rtl" on the wrapper flips the preview iframe's direction and
+    // triggers the [dir="rtl"] font-stack + weight overrides in preview.css.
+    return h("div", {
+      className: "doctor-preview",
+      dir: isAr ? "rtl" : "ltr",
+      lang: locale
+    }, elements);
+  }
 
-      return h("div", { className: "doctor-preview" }, elements);
-    }
-  });
-
-  CMS.registerPreviewTemplate("doctors_en", DoctorPreview);
-  CMS.registerPreviewTemplate("doctors_ar", DoctorPreview);
+  CMS.registerPreviewTemplate("doctors_en", makePreview("en"));
+  CMS.registerPreviewTemplate("doctors_ar", makePreview("ar"));
   CMS.registerPreviewStyle("/admin/preview.css");
 })();

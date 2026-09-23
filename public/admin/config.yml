@@ -179,8 +179,17 @@ _doctor_sections_field: &doctor_sections_field
           fields:
             - { label: Period, name: period, widget: string }
             - { label: Body, name: body, widget: text }
-    # Memberships live at the doctor's top level (see "Memberships list" +
-    # "Memberships heading" fields) so they're shared with the listing card.
+    - name: cv_memberships
+      label: Memberships
+      fields:
+        - { label: Heading, name: heading, widget: string }
+        - label: Items
+          name: items
+          widget: list
+          min: 1
+          fields:
+            - { label: Society name, name: name, widget: string }
+            - { label: Year joined, name: year, widget: string }
     - name: cv_publications
       label: Publications
       fields:
@@ -240,19 +249,7 @@ collections:
         public_folder: "/images/doctors"
       - { label: Photo alt text, name: photoAlt, widget: string, required: false, hint: "Screen-reader description. Defaults to Full name." }
 
-      # ── Memberships (shared: listing count + detail block) ───────────
-      - { label: Memberships heading, name: membershipsHeading, widget: string, default: "Memberships", hint: "Label above the memberships list on the detail page." }
-      - label: Memberships list
-        name: memberships
-        widget: list
-        required: false
-        default: []
-        hint: "Renders as a two-column list on the detail page; count shown on the listing card."
-        fields:
-          - { label: Society name, name: name, widget: string }
-          - { label: Year joined, name: year, widget: string }
-
-      # ── CV sections (page body blocks) ───────────────────────────────
+      # ── CV sections (page body blocks — including memberships) ───────
       - *doctor_sections_field
 
       # ── Metadata (bookkeeping — not shown on the detail page) ────────
@@ -313,19 +310,7 @@ collections:
         public_folder: "/images/doctors"
       - { label: Photo alt text, name: photoAlt, widget: string, required: false, hint: "Screen-reader description. Defaults to Full name." }
 
-      # ── Memberships (shared: listing count + detail block) ───────────
-      - { label: Memberships heading, name: membershipsHeading, widget: string, default: "Memberships", hint: "Label above the memberships list on the detail page." }
-      - label: Memberships list
-        name: memberships
-        widget: list
-        required: false
-        default: []
-        hint: "Renders as a two-column list on the detail page; count shown on the listing card."
-        fields:
-          - { label: Society name, name: name, widget: string }
-          - { label: Year joined, name: year, widget: string }
-
-      # ── CV sections (page body blocks) ───────────────────────────────
+      # ── CV sections (page body blocks — including memberships) ───────
       - *doctor_sections_field
 
       # ── Metadata (bookkeeping — not shown on the detail page) ────────

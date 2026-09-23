@@ -5,7 +5,15 @@
  * IMPORTANT: this is a copy of tokens from src/styles/global.css plus the
  * component styles from src/components/doctor/. Keep in sync when either
  * changes — the preview isn't wired to Astro's build so it can't import them.
+ *
+ * The RTL blocks at the bottom target [dir="rtl"] instead of html[dir="rtl"]
+ * because the preview iframe root isn't <html>; preview.js sets dir="rtl"
+ * on the wrapping .doctor-preview div when the collection is doctors_ar.
  */
+
+/* Fonts — same set as src/styles/global.css so Amiri / IBM Plex Sans Arabic
+   are available inside the preview iframe. */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Amiri:wght@400;700&display=fallback');
 
 /* ─── Design tokens (from src/styles/global.css) ─────────────────────── */
 :root {
@@ -181,3 +189,51 @@ body {
 @media (max-width: 640px) {
   .reg-row, .reg-pubs li { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* ─── Arabic / RTL overrides ─────────────────────────────────────────── */
+/* Applied when preview.js sets dir="rtl" on .doctor-preview for doctors_ar.
+   Mirrors the html[dir="rtl"] blocks in each src/components/doctor/*.astro. */
+[dir="rtl"] {
+  --font-display: "Amiri", "Times New Roman", serif;
+  --font-body:    "IBM Plex Sans Arabic", system-ui, "Segoe UI", sans-serif;
+  --font-mono:    "IBM Plex Sans Arabic", system-ui, sans-serif;
+  text-align: right;
+}
+
+/* CvHero */
+[dir="rtl"] .cv-eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+[dir="rtl"] .cv-h1 {
+  font-weight: 700;
+  font-size: clamp(30px, 8cqw, 54px);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+[dir="rtl"] .cv-lede { line-height: 1.85; max-width: 56ch; }
+[dir="rtl"] .cv-chip {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  letter-spacing: 0;
+}
+
+/* CvStats */
+[dir="rtl"] .cv-stat-fig { font-weight: 700; line-height: 1.2; }
+[dir="rtl"] .cv-stat-desc { line-height: 1.9; }
+
+/* CvTimeline / CvMemberships / CvPublications shared */
+[dir="rtl"] .reg-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-weight: 700;
+}
+[dir="rtl"] .reg-period { font-family: var(--font-body); font-size: 13px; }
+[dir="rtl"] .reg-text { line-height: 1.7; }
+[dir="rtl"] .member-year { font-family: var(--font-body); font-size: 13px; }
+[dir="rtl"] .pub-title { font-weight: 700; line-height: 1.5; }
+[dir="rtl"] .pub-source { line-height: 1.7; }

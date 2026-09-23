@@ -12,27 +12,6 @@ titles:
   - FIISSP
   - FINASS
 languages: []
-membershipsHeading: Memberships
-memberships:
-  - name: European Society for Stereotactic and Functional Neurosurgery
-    year: '2022'
-  - name: European Stroke Organization
-    year: '2020'
-  - name: World Stroke Organization
-    year: '2020'
-  - name: International Spinal Cord Society
-    year: '2020'
-  - name: North American Spine Society
-    year: '2016'
-  - name: International Association for the Study of Pain
-    year: '2015'
-  - name: AOSpine
-    year: '2011'
-  - name: American Association of Neurological Surgeons
-    year: '2010'
-order: 1
-legacyUrl: https://alimranmed.com/doctors/hussein-imran-mousa/
-source: human-reviewed
 sections:
   - type: cv_hero
     eyebrow: Lead consultant · Clinical profile
@@ -71,6 +50,25 @@ sections:
         body: Fellowship in Anaesthesiology and Pain Medicine, Seoul National University Hospital.
       - period: '2013'
         body: Fellowship in Interventional Pain Management, Mobi Pain Clinic, Mumbai.
+  - type: cv_memberships
+    heading: Memberships
+    items:
+      - name: European Society for Stereotactic and Functional Neurosurgery
+        year: '2022'
+      - name: European Stroke Organization
+        year: '2020'
+      - name: World Stroke Organization
+        year: '2020'
+      - name: International Spinal Cord Society
+        year: '2020'
+      - name: North American Spine Society
+        year: '2016'
+      - name: International Association for the Study of Pain
+        year: '2015'
+      - name: AOSpine
+        year: '2011'
+      - name: American Association of Neurological Surgeons
+        year: '2010'
   - type: cv_publications
     heading: Published research
     items:
@@ -104,4 +102,7 @@ sections:
         body: Cadaveric bioskills in advanced spinal approaches, under Boston University Medical School supervision.
       - period: Chandigarh 2009
         body: Advanced training in Professor Destandau's endoscopic spine technique, Gian Sagar Medical College.
+order: 1
+legacyUrl: https://alimranmed.com/doctors/hussein-imran-mousa/
+source: human-reviewed
 ---
