@@ -34,7 +34,6 @@ sections:
       - "زمالة البورد العراقي — جراحة الأعصاب"
       - "FIAANS"
       - "FINASS"
-    portrait: "/images/doctors/hussein-imran-mousa-portrait.jpg"
   - type: cv_stats
     items:
       - fig: "+٥٠٠٠"

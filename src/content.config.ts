@@ -126,8 +126,8 @@ const blockCvHero = z.object({
   headline: z.string().optional(),         // defaults to fullName when omitted
   lede: z.string(),                        // one-paragraph intro under the h1
   chips: z.array(z.string()).default([]),  // credential badges under the lede
-  portrait: z.string().optional(),         // portrait image path
-  portraitAlt: z.string().optional(),
+  // Portrait image comes from the doctor's top-level `photo` field; keeping a
+  // second image widget on the hero block was confusing editors.
 });
 
 const blockCvStats = z.object({

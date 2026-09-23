@@ -149,7 +149,7 @@ _doctor_sections_field: &doctor_sections_field
   typeKey: type
   types:
     - name: cv_hero
-      label: Hero (name, lede, chips, portrait)
+      label: Hero (name, lede, chips)
       fields:
         - { label: Eyebrow, name: eyebrow, widget: string }
         - { label: Headline (defaults to full name), name: headline, widget: string, required: false }
@@ -160,8 +160,7 @@ _doctor_sections_field: &doctor_sections_field
           required: false
           default: []
           field: { label: Chip, name: chip, widget: string }
-        - { label: Portrait image, name: portrait, widget: image, required: false }
-        - { label: Portrait alt text, name: portraitAlt, widget: string, required: false }
+        # The portrait is the doctor's top-level "Photo" field — edit it there.
     - name: cv_stats
       label: Stats band
       fields:
@@ -252,7 +251,14 @@ collections:
         default: []
         field: { label: Title, name: title, widget: string }
       - { label: Specialty, name: specialty, widget: string, required: false }
-      - { label: Photo, name: photo, widget: image, required: false }
+      - label: Photo
+        name: photo
+        widget: image
+        required: false
+        # Save uploaded images to public/images/doctors/ and reference them as
+        # /images/doctors/xxx.jpg, not next to the .md file with a bare name.
+        media_folder: "/public/images/doctors"
+        public_folder: "/images/doctors"
       - label: Memberships
         name: memberships
         widget: list
@@ -305,7 +311,14 @@ collections:
         default: []
         field: { label: Title, name: title, widget: string }
       - { label: Specialty, name: specialty, widget: string, required: false }
-      - { label: Photo, name: photo, widget: image, required: false }
+      - label: Photo
+        name: photo
+        widget: image
+        required: false
+        # Save uploaded images to public/images/doctors/ and reference them as
+        # /images/doctors/xxx.jpg, not next to the .md file with a bare name.
+        media_folder: "/public/images/doctors"
+        public_folder: "/images/doctors"
       - label: Memberships
         name: memberships
         widget: list

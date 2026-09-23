@@ -1,8 +1,8 @@
 ---
 /**
  * cv_hero — top-of-page CV band: small caps eyebrow, name h1, lede paragraph,
- * credential chips, portrait. Fields come from the block, portrait falls back
- * to the doctor's `photo` frontmatter if omitted.
+ * credential chips, portrait. The portrait is passed in from the dispatcher,
+ * which sources it from the doctor's top-level `photo` frontmatter field.
  */
 interface Props {
   eyebrow: string;
