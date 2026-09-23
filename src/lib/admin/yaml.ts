@@ -38,12 +38,14 @@ function parseYAML(yaml: string): FrontmatterData {
     if (!line.startsWith(' ') && line.includes(':')) {
       // Save previous key-value
       if (currentKey) {
-        obj[currentKey] = parseValue(currentValue.join('\n'));
+        const joinedValue = currentValue.join('\n').trim();
+        obj[currentKey] = parseValue(joinedValue);
       }
 
       const [key, ...rest] = line.split(':');
       currentKey = key.trim();
-      currentValue = [rest.join(':').trim()];
+      const restValue = rest.join(':').trim();
+      currentValue = restValue ? [restValue] : [];
     } else if (currentKey && (line.startsWith('  - ') || line.startsWith('  ') && line.includes(':'))) {
       // Multi-line or array continuation
       currentValue.push(line);
@@ -52,7 +54,8 @@ function parseYAML(yaml: string): FrontmatterData {
 
   // Save last key-value
   if (currentKey) {
-    obj[currentKey] = parseValue(currentValue.join('\n'));
+    const joinedValue = currentValue.join('\n').trim();
+    obj[currentKey] = parseValue(joinedValue);
   }
 
   return obj;
@@ -78,12 +81,15 @@ function parseValue(value: string): unknown {
     return value.slice(1, -1);
   }
 
-  // Handle arrays
-  if (value.startsWith('  - ')) {
+  // Handle arrays (check for lines starting with dash after trimming)
+  if (value.includes('\n') && value.split('\n').some(line => line.trim().startsWith('- '))) {
     const items = value.split('\n')
       .filter(line => line.trim().startsWith('- '))
-      .map(line => parseValue(line.replace(/^\s*- /, '')));
-    return items;
+      .map(line => {
+        const trimmedLine = line.trim().replace(/^- /, '');
+        return parseValue(trimmedLine);
+      });
+    return items.length > 0 ? items : value;
   }
 
   // Default: return as string
