@@ -1,0 +1,640 @@
+# Sveltia CMS configuration
+# Mirrors the Zod schema in src/content.config.ts.
+#
+# Content is bilingual with structure `<collection>/<slug>/en.md` and
+# `<collection>/<slug>/ar.md`. Sveltia's built-in i18n structures don't match
+# this exactly, so we define two separate entry collections per content type
+# (mirroring the earlier tina/config.ts approach) using `path: "{{slug}}/<locale>"`.
+
+# Placeholder GitHub backend for production. Sveltia CMS uses the browser's
+# File System Access API for local editing (via "Work with Local Repository"),
+# so no decap-server proxy or local_backend flag is needed. The user picks
+# the repo folder once from the CMS login screen.
+# NOTE: local editing requires a Chromium-based browser (Chrome, Edge, Brave).
+backend:
+  name: github
+  repo: placeholder/alimranmed-web
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+# CRITICAL: prevents empty optional fields from being written as `null`,
+# which would fail Zod's `.optional()` for arrays (e.g. `titles: null`).
+output:
+  omit_empty_optional_fields: true
+
+# ── Section block templates (variable-type list) ─────────────────────────
+# Referenced by *sections_field below. YAML anchors DO work for whole node
+# reuse (objects), so we can alias the entire sections field definition —
+# but they can't splice into sequences, so per-collection field lists are
+# written out explicitly.
+
+_sections_field: &sections_field
+  label: Sections
+  name: sections
+  widget: list
+  required: false
+  typeKey: type
+  types:
+    - name: at_a_glance
+      label: At a Glance
+      fields:
+        - label: Items
+          name: items
+          widget: list
+          min: 2
+          max: 4
+          fields:
+            - { label: Label, name: label, widget: string }
+            - { label: Value, name: value, widget: text }
+    - name: prose
+      label: Prose
+      fields:
+        - { label: Heading (appears in TOC), name: heading, widget: string, required: false }
+        - { label: Body (markdown), name: body, widget: markdown }
+    - name: pull_quote
+      label: Pull Quote
+      fields:
+        - { label: Quote text, name: text, widget: text }
+        - { label: Attribution, name: attribution, widget: string, required: false }
+    - name: comparison_pair
+      label: Comparison Pair
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false }
+        - { label: Intro, name: intro, widget: text, required: false }
+        - label: Side A
+          name: a
+          widget: object
+          fields:
+            - { label: Label, name: label, widget: string }
+            - { label: Title, name: title, widget: string }
+            - { label: Items, name: items, widget: list, field: { label: Item, name: item, widget: string } }
+        - label: Side B
+          name: b
+          widget: object
+          fields:
+            - { label: Label, name: label, widget: string }
+            - { label: Title, name: title, widget: string }
+            - { label: Items, name: items, widget: list, field: { label: Item, name: item, widget: string } }
+    - name: stats_facts
+      label: Stats & Facts
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false }
+        - { label: Intro, name: intro, widget: text, required: false }
+        - label: Stats
+          name: stats
+          widget: list
+          min: 2
+          max: 4
+          fields:
+            - { label: Value, name: value, widget: string }
+            - { label: Label, name: label, widget: string }
+        - label: Facts
+          name: facts
+          widget: list
+          required: false
+          default: []
+          field: { label: Fact, name: fact, widget: string }
+    - name: treatment_groups
+      label: Treatment Groups
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false }
+        - { label: Intro, name: intro, widget: text, required: false }
+        - { label: Note, name: note, widget: string, required: false }
+        - label: Groups
+          name: groups
+          widget: list
+          min: 2
+          max: 4
+          fields:
+            - { label: Title, name: title, widget: string }
+            - { label: Subtitle, name: subtitle, widget: string, required: false }
+            - { label: Items, name: items, widget: list, field: { label: Item, name: item, widget: string } }
+    - name: related
+      label: Related Treatments
+      fields:
+        - label: Treatment slugs
+          name: slugs
+          widget: list
+          min: 1
+          field: { label: Slug, name: slug, widget: string }
+    - name: media
+      label: Media
+      fields:
+        - label: Kind
+          name: kind
+          widget: select
+          options: [image, video, youtube]
+        - { label: Source URL / YouTube ID, name: src, widget: string }
+        - { label: Alt text, name: alt, widget: string, required: false }
+        - { label: Caption, name: caption, widget: string, required: false }
+        - label: Aspect ratio
+          name: aspect
+          widget: select
+          required: false
+          options: ["16/9", "4/3", "3/2", "1/1"]
+        - { label: Upload date, name: uploadDate, widget: string, required: false }
+
+# ── Collections ──────────────────────────────────────────────────────────
+# Base fields (from pageBase in src/content.config.ts) are inlined into each
+# collection's field list; YAML doesn't support splicing arrays via anchors.
+
+collections:
+  # ── Doctors ────────────────────────────────────────────────────────────
+  - name: doctors_en
+    label: "Doctors — English"
+    label_singular: Doctor
+    folder: src/content/doctors
+    path: "{{slug}}/en"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Full name, name: fullName, widget: string }
+      - label: Credentials / titles
+        name: titles
+        widget: list
+        required: false
+        default: []
+        field: { label: Title, name: title, widget: string }
+      - { label: Specialty, name: specialty, widget: string, required: false }
+      - { label: Photo, name: photo, widget: image, required: false }
+      - label: Memberships
+        name: memberships
+        widget: list
+        required: false
+        default: []
+        field: { label: Membership, name: membership, widget: string }
+      - label: Languages
+        name: languages
+        widget: list
+        required: false
+        default: []
+        field: { label: Language, name: language, widget: string }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: doctors_ar
+    label: "Doctors — العربية"
+    label_singular: طبيب
+    folder: src/content/doctors
+    path: "{{slug}}/ar"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Full name, name: fullName, widget: string }
+      - label: Credentials / titles
+        name: titles
+        widget: list
+        required: false
+        default: []
+        field: { label: Title, name: title, widget: string }
+      - { label: Specialty, name: specialty, widget: string, required: false }
+      - { label: Photo, name: photo, widget: image, required: false }
+      - label: Memberships
+        name: memberships
+        widget: list
+        required: false
+        default: []
+        field: { label: Membership, name: membership, widget: string }
+      - label: Languages
+        name: languages
+        widget: list
+        required: false
+        default: []
+        field: { label: Language, name: language, widget: string }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # ── Treatments ─────────────────────────────────────────────────────────
+  - name: treatments_en
+    label: "Treatments — English"
+    label_singular: Treatment
+    folder: src/content/treatments
+    path: "{{slug}}/en"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Body region, name: bodyRegion, widget: string, required: false }
+      - { label: Published at, name: publishedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Redesigned (block layout), name: redesigned, widget: boolean, required: false, default: false }
+      - { label: Pathway override, name: pathwayOverride, widget: string, required: false }
+      - label: FAQ
+        name: faqItems
+        widget: list
+        required: false
+        fields:
+          - { label: Question, name: question, widget: string }
+          - { label: Answer, name: answer, widget: text }
+      - *sections_field
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: treatments_ar
+    label: "Treatments — العربية"
+    label_singular: علاج
+    folder: src/content/treatments
+    path: "{{slug}}/ar"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Body region, name: bodyRegion, widget: string, required: false }
+      - { label: Published at, name: publishedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Redesigned (block layout), name: redesigned, widget: boolean, required: false, default: false }
+      - { label: Pathway override, name: pathwayOverride, widget: string, required: false }
+      - label: FAQ
+        name: faqItems
+        widget: list
+        required: false
+        fields:
+          - { label: Question, name: question, widget: string }
+          - { label: Answer, name: answer, widget: text }
+      - *sections_field
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # ── Services ───────────────────────────────────────────────────────────
+  - name: services_en
+    label: "Services — English"
+    label_singular: Service
+    folder: src/content/services
+    path: "{{slug}}/en"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Redesigned (block layout), name: redesigned, widget: boolean, required: false, default: false }
+      - { label: Category hub page, name: isHub, widget: boolean, required: false, default: false }
+      - *sections_field
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: services_ar
+    label: "Services — العربية"
+    label_singular: خدمة
+    folder: src/content/services
+    path: "{{slug}}/ar"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Redesigned (block layout), name: redesigned, widget: boolean, required: false, default: false }
+      - { label: Category hub page, name: isHub, widget: boolean, required: false, default: false }
+      - *sections_field
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # ── Blog ───────────────────────────────────────────────────────────────
+  - name: blog_en
+    label: "Blog — English"
+    label_singular: Post
+    folder: src/content/blog
+    path: "{{slug}}/en"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Published at, name: publishedAt, widget: datetime, required: false, picker_utc: true }
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        default: []
+        field: { label: Tag, name: tag, widget: string }
+      - { label: Redesigned (block layout), name: redesigned, widget: boolean, required: false, default: false }
+      - { label: Clinically relevant, name: clinicallyRelevant, widget: boolean, required: false, default: false }
+      - label: Related treatment slugs
+        name: relatedTreatments
+        widget: list
+        required: false
+        field: { label: Slug, name: slug, widget: string }
+      - *sections_field
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: blog_ar
+    label: "Blog — العربية"
+    label_singular: منشور
+    folder: src/content/blog
+    path: "{{slug}}/ar"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Published at, name: publishedAt, widget: datetime, required: false, picker_utc: true }
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        default: []
+        field: { label: Tag, name: tag, widget: string }
+      - { label: Redesigned (block layout), name: redesigned, widget: boolean, required: false, default: false }
+      - { label: Clinically relevant, name: clinicallyRelevant, widget: boolean, required: false, default: false }
+      - label: Related treatment slugs
+        name: relatedTreatments
+        widget: list
+        required: false
+        field: { label: Slug, name: slug, widget: string }
+      - *sections_field
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # ── Cases ──────────────────────────────────────────────────────────────
+  - name: cases_en
+    label: "Cases — English"
+    label_singular: Case
+    folder: src/content/cases
+    path: "{{slug}}/en"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Condition, name: condition, widget: string, required: false }
+      - { label: Outcome, name: outcome, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: cases_ar
+    label: "Cases — العربية"
+    label_singular: حالة
+    folder: src/content/cases
+    path: "{{slug}}/ar"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Condition, name: condition, widget: string, required: false }
+      - { label: Outcome, name: outcome, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # ── Pages ──────────────────────────────────────────────────────────────
+  - name: pages_en
+    label: "Pages — English"
+    label_singular: Page
+    folder: src/content/pages
+    path: "{{slug}}/en"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: pages_ar
+    label: "Pages — العربية"
+    label_singular: صفحة
+    folder: src/content/pages
+    path: "{{slug}}/ar"
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: title
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image alt, name: imageAlt, widget: string, required: false }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      - label: Source
+        name: source
+        widget: select
+        default: legacy-wp
+        options:
+          - { label: Legacy WordPress, value: legacy-wp }
+          - { label: AI draft, value: ai-draft }
+          - { label: Human reviewed, value: human-reviewed }
+          - { label: Original, value: original }
+          - { label: Translated by LLM, value: translated-by-llm }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Body, name: body, widget: markdown, required: false }

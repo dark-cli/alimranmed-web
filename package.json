@@ -10,11 +10,9 @@
     "@astrojs/rss": "4.0.11",
     "@astrojs/sitemap": "3.4.1",
     "astro": "5.10.1",
-    "tinacms": "^3.14.0",
     "typescript": "5.8.3"
   },
   "devDependencies": {
-    "@tinacms/cli": "^3.0.0",
     "hast-util-from-html": "^2.0.3",
     "turndown": "^7.2.4",
     "unist-util-visit": "^5.1.0",
@@ -36,7 +34,7 @@
     "rewrite-links": "node --experimental-strip-types --no-warnings scripts/rewrite-legacy-links.mjs",
     "fetch-ar": "node --experimental-strip-types --no-warnings scripts/fetch-ar-content.mjs",
     "sync-ar-fm": "node --experimental-strip-types --no-warnings scripts/sync-ar-frontmatter.mjs",
-    "cms": "tinacms dev -c 'astro dev --host'"
+    "cms": "astro dev --host"
   },
   "type": "module"
 }

@@ -1,0 +1,18 @@
+---
+// Sveltia CMS admin — served as an Astro page so `/admin/` resolves correctly
+// under the site's trailingSlash: "always" config. The CMS itself is loaded
+// from unpkg and reads its schema from /admin/config.yml (public/admin/config.yml).
+export const prerender = true;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Content Editor — Alimran Medical</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" is:inline></script>
+  </body>
+</html>
