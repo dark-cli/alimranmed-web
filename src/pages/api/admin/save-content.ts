@@ -3,6 +3,8 @@ import { writeFileSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { serializeFrontmatter, parseFrontmatter } from '../../../lib/admin/yaml';
 
+export const prerender = false;
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     const { collection, slug, locale, frontmatter, body } = await request.json();

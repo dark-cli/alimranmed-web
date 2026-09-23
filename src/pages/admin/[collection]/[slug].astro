@@ -99,10 +99,10 @@ try {
         </div>
       </div>
     </div>
-    <script type="application/json" id="data">{JSON.stringify({collection, slug, locale, frontmatterData: frontmatter})}</script>
+    <script type="application/json" id="data" set:html={JSON.stringify({collection, slug, locale, frontmatterData: frontmatter})}></script>
   </div>
 
-  <script>
+  <script is:inline>
     const { collection, slug, locale, frontmatterData } = JSON.parse(document.getElementById('data').textContent);
 
     function renderForm() {
@@ -219,7 +219,7 @@ try {
       const body = document.getElementById('body-editor').value;
 
       try {
-        const res = await fetch('/api/admin/save-content', {
+        const res = await fetch('/api/admin/save-content/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ collection, slug, locale, frontmatter, body })
@@ -238,7 +238,7 @@ try {
       const frontmatter = getFormData();
 
       try {
-        const res = await fetch('/api/admin/save-content', {
+        const res = await fetch('/api/admin/save-content/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ collection, slug, locale, frontmatter, body })
