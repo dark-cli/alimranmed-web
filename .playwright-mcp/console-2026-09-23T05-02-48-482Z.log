@@ -1,0 +1,8 @@
+[  828977ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:4001/admin/node_modules/.vite/deps/chunk-B56I3BKX.js?v=f9118e3d:21608
+[  829111ms] Error: Static config must have a schema
+    at defineStaticConfig (http://localhost:4001/admin/node_modules/.vite/deps/tinacms.js?v=3e2230e1:231056:11)
+    at http://localhost:4001/admin/@fs/home/max/Videos/alimranmed-web/tina/__generated__/config.prebuild.jsx?t=1790140596958:215:22
+[  830571ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:4001/admin/node_modules/.vite/deps/chunk-B56I3BKX.js?v=f9118e3d:21608
+[  830652ms] Error: Static config must have a schema
+    at defineStaticConfig (http://localhost:4001/admin/node_modules/.vite/deps/tinacms.js?v=3e2230e1:231056:11)
+    at http://localhost:4001/admin/@fs/home/max/Videos/alimranmed-web/tina/__generated__/config.prebuild.jsx?t=1790140596958:215:22

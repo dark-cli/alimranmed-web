@@ -1,0 +1,22 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e3]:
+    - heading "Failed loading TinaCMS assets" [level=1] [ref=f11e4]
+    - paragraph [ref=f11e5]: Your TinaCMS configuration may be misconfigured, and we could not load the assets for this page.
+    - paragraph [ref=f11e6]:
+      - text: Please visit
+      - link "this doc" [ref=f11e7] [cursor=pointer]:
+        - /url: https://tina.io/docs/r/FAQ/#13-how-do-i-resolve-failed-loading-tinacms-assets-error
+      - text: for help.
+  - generic [ref=f11e10]:
+    - generic [ref=f11e11]: "[plugin:vite:import-analysis] Failed to resolve import \"TINA_IMPORT\" from \"node_modules/@tinacms/app/src/App.tsx\". Does the file exist?"
+    - generic [ref=f11e12]: /home/max/Videos/alimranmed-web/node_modules/@tinacms/app/src/App.tsx:9:19
+    - generic [ref=f11e13]: "5 | import Playground from \"./Playground\"; 6 | import { RawEditorErrorBoundary } from \"./fields/rich-text/error-boundary\"; 7 | import config from \"TINA_IMPORT\"; | ^ 8 | import schemaJson from \"SCHEMA_IMPORT\"; 9 | import staticMedia from \"STATIC_MEDIA_IMPORT\";"
+    - generic [ref=f11e14]: at TransformPluginContext._formatLog (file:///home/max/Videos/alimranmed-web/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42658:41) at TransformPluginContext.error (file:///home/max/Videos/alimranmed-web/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42655:16) at normalizeUrl (file:///home/max/Videos/alimranmed-web/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:40634:23) at process.processTicksAndRejections (node:internal/process/task_queues:103:5) at async file:///home/max/Videos/alimranmed-web/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:40753:37 at async Promise.all (index 6) at async TransformPluginContext.transform (file:///home/max/Videos/alimranmed-web/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:40680:7) at async EnvironmentPluginContainer.transform (file:///home/max/Videos/alimranmed-web/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18) at async loadAndTransform (file:///home/max/Videos/alimranmed-web/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27) at async viteTransformMiddleware (file:///home/max/Videos/alimranmed-web/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:37369:24
+    - generic [ref=f11e15]:
+      - text: Click outside, press Esc key, or fix the code to dismiss.You can also disable this overlay by setting
+      - code [ref=f11e16]: server.hmr.overlay
+      - text: to
+      - code [ref=f11e17]: "false"
+      - text: in
+      - code [ref=f11e18]: vite.config.js
+      - text: .

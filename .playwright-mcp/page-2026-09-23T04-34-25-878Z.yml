@@ -1,0 +1,23 @@
+- generic [active]:
+  - generic:
+    - generic:
+      - generic [ref=e30]:
+        - heading "Enter into edit mode" [level=2] [ref=e35]
+        - paragraph [ref=e37]: When you save, changes will be saved to the local filesystem.
+        - button "Enter Edit Mode" [ref=e39] [cursor=pointer]
+      - generic [ref=e2]:
+        - button "Show editing panel"
+        - generic [ref=e3]:
+          - generic [ref=e5]:
+            - generic [ref=e6]:
+              - button "Open navigation menu" [ref=e7] [cursor=pointer]
+              - link "You are in local mode" [ref=e15] [cursor=pointer]:
+                - /url: https://tina.io/docs/r/what-is-tinacloud/
+            - button "Hide editing panel" [ref=e17] [cursor=pointer]
+          - generic [ref=e41]:
+            - paragraph [ref=e42]: TinaCMS form fields will appear here.
+            - paragraph [ref=e43]:
+              - link "📖 Visual Editing Docs" [ref=e44] [cursor=pointer]:
+                - /url: https://tina.io/docs/r/visual-editing-setup
+                - generic [ref=e45]: 📖
+                - text: Visual Editing Docs
