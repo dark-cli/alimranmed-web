@@ -1,0 +1,56 @@
+---
+/**
+ * DoctorSections — dispatches doctor CV sections to the correct block
+ * component. Mirrors the pattern in components/article/ArticleSections.astro
+ * but for the doctor-only block types (cv_hero, cv_stats, cv_timeline,
+ * cv_memberships, cv_publications). The last non-hero/non-stats block gets
+ * `isLast` so its bottom padding matches the page layout.
+ */
+import CvHero         from "./CvHero.astro";
+import CvStats        from "./CvStats.astro";
+import CvTimeline     from "./CvTimeline.astro";
+import CvMemberships  from "./CvMemberships.astro";
+import CvPublications from "./CvPublications.astro";
+
+interface Props {
+  sections: any[];
+  fullName: string;
+  photo?: string;
+}
+const { sections, fullName, photo } = Astro.props;
+
+// The bottom-padding-adjusted "last section" is the last register-style block
+// (timeline / memberships / publications). Hero and stats have their own
+// bottom borders and don't need it.
+const lastRegisterIdx = sections
+  .map((s, i) => ({ i, type: s.type }))
+  .filter(({ type }) => type === "cv_timeline" || type === "cv_memberships" || type === "cv_publications")
+  .map(({ i }) => i)
+  .pop();
+---
+
+{sections.map((s: any, i: number) => {
+  if (s.type === "cv_hero")
+    return <CvHero
+      eyebrow={s.eyebrow}
+      headline={s.headline ?? fullName}
+      lede={s.lede}
+      chips={s.chips ?? []}
+      portrait={s.portrait ?? photo}
+      portraitAlt={s.portraitAlt ?? fullName}
+    />;
+
+  if (s.type === "cv_stats")
+    return <CvStats items={s.items} />;
+
+  if (s.type === "cv_timeline")
+    return <CvTimeline heading={s.heading} rows={s.rows} isLast={i === lastRegisterIdx} />;
+
+  if (s.type === "cv_memberships")
+    return <CvMemberships heading={s.heading} items={s.items} isLast={i === lastRegisterIdx} />;
+
+  if (s.type === "cv_publications")
+    return <CvPublications heading={s.heading} items={s.items} isLast={i === lastRegisterIdx} />;
+
+  return null;
+})}

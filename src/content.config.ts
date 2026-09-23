@@ -115,6 +115,66 @@ const articleSection = z.discriminatedUnion("type", [
   blockMedia,
 ]);
 
+// ── Doctor CV block system ────────────────────────────────────────────
+// Mirrors the article `sections` pattern but with block types tuned to a
+// clinician's CV. Kept as a separate union so treatment/blog schemas don't
+// pick up CV-only blocks by accident. See src/components/doctor/ for renderers.
+
+const blockCvHero = z.object({
+  type: z.literal("cv_hero"),
+  eyebrow: z.string(),                     // small caps label above the name
+  headline: z.string().optional(),         // defaults to fullName when omitted
+  lede: z.string(),                        // one-paragraph intro under the h1
+  chips: z.array(z.string()).default([]),  // credential badges under the lede
+  portrait: z.string().optional(),         // portrait image path
+  portraitAlt: z.string().optional(),
+});
+
+const blockCvStats = z.object({
+  type: z.literal("cv_stats"),
+  items: z.array(z.object({
+    fig: z.string(),   // "5,000+", "25"
+    desc: z.string(),  // "Operations performed…"
+  })).min(2).max(6),
+});
+
+// Period + body rows — used for appointments, education, and conference lists.
+const blockCvTimeline = z.object({
+  type: z.literal("cv_timeline"),
+  heading: z.string(),
+  rows: z.array(z.object({
+    period: z.string(),  // "2006 — present", "Yokohama 2016", "١٩٩٦"
+    body: z.string(),
+  })).min(1),
+});
+
+const blockCvMemberships = z.object({
+  type: z.literal("cv_memberships"),
+  heading: z.string(),
+  items: z.array(z.object({
+    name: z.string(),
+    year: z.string(),
+  })).min(1),
+});
+
+const blockCvPublications = z.object({
+  type: z.literal("cv_publications"),
+  heading: z.string(),
+  items: z.array(z.object({
+    year: z.string(),
+    title: z.string(),
+    source: z.string(),
+  })).min(1),
+});
+
+const doctorSection = z.discriminatedUnion("type", [
+  blockCvHero,
+  blockCvStats,
+  blockCvTimeline,
+  blockCvMemberships,
+  blockCvPublications,
+]);
+
 const treatments = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/treatments" }),
   schema: pageBase.extend({
@@ -151,6 +211,10 @@ const doctors = defineCollection({
     photo: z.string().optional(),
     memberships: z.array(z.string()).default([]),
     languages: z.array(z.string()).default([]),
+    // Block-based CV. When present, the doctor page renders each entry via
+    // src/components/doctor/DoctorSections.astro instead of the legacy
+    // hardcoded template. See doctorSection above for the block types.
+    sections: z.array(doctorSection).optional(),
   }),
 });
 

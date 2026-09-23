@@ -1,0 +1,108 @@
+---
+/**
+ * cv_hero — top-of-page CV band: small caps eyebrow, name h1, lede paragraph,
+ * credential chips, portrait. Fields come from the block, portrait falls back
+ * to the doctor's `photo` frontmatter if omitted.
+ */
+interface Props {
+  eyebrow: string;
+  headline: string;
+  lede: string;
+  chips: string[];
+  portrait?: string;
+  portraitAlt: string;
+}
+const { eyebrow, headline, lede, chips, portrait, portraitAlt } = Astro.props;
+---
+
+<section class="cv-head-band">
+  <div class="cv-head">
+    <div class="cv-head-copy">
+      <p class="cv-eyebrow">{eyebrow}</p>
+      <h1 class="cv-h1">{headline}</h1>
+      <p class="cv-lede">{lede}</p>
+      {chips.length > 0 && (
+        <div class="cv-chips">
+          {chips.map((c) => <span class="cv-chip">{c}</span>)}
+        </div>
+      )}
+    </div>
+    {portrait && (
+      <img
+        class="cv-portrait cv-portrait-img"
+        src={portrait}
+        alt={portraitAlt}
+        width="826" height="1032"
+        loading="eager"
+        fetchpriority="high"
+      />
+    )}
+  </div>
+</section>
+
+<style>
+  .cv-head-band { border-bottom: 1px solid var(--line); }
+  .cv-head {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: clamp(44px, 5.5vw, 72px) 24px clamp(40px, 5vw, 64px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(265px, 100%), 1fr));
+    gap: clamp(32px, 4vw, 64px);
+    align-items: start;
+  }
+  .cv-head-copy { container-type: inline-size; }
+  .cv-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 20px;
+  }
+  .cv-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 9cqw, 54px);
+    line-height: 1.07;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  .cv-lede { font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 24px; max-width: 54ch; }
+  .cv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cv-chip {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    padding: 6px 11px;
+  }
+  .cv-portrait { aspect-ratio: 4 / 5; min-height: 0; }
+  .cv-portrait-img {
+    width: 100%; height: auto;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    display: block;
+  }
+
+  :global(html[dir="rtl"]) .cv-eyebrow {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+  :global(html[dir="rtl"]) .cv-h1 {
+    font-weight: 700;
+    font-size: clamp(30px, 8cqw, 54px);
+    line-height: 1.18;
+    letter-spacing: 0;
+  }
+  :global(html[dir="rtl"]) .cv-lede { line-height: 1.85; max-width: 56ch; }
+  :global(html[dir="rtl"]) .cv-chip {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    letter-spacing: 0;
+  }
+</style>

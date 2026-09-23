@@ -1,0 +1,95 @@
+---
+/**
+ * cv_publications — heading + ordered list of publications. Each item shows
+ * the year, a Newsreader-styled title, and a smaller source line beneath.
+ */
+interface Props {
+  heading: string;
+  items: { year: string; title: string; source: string }[];
+  isLast?: boolean;
+}
+const { heading, items, isLast = false } = Astro.props;
+---
+
+<section class:list={["reg-section", isLast && "reg-section-last"]}>
+  <div class="reg-wrap">
+    <h2 class="reg-label">{heading}</h2>
+    <ol class="reg-body reg-pubs">
+      {items.map((p) => (
+        <li>
+          <span class="reg-period reg-period-wide">{p.year}</span>
+          <span>
+            <span class="pub-title">{p.title}</span>
+            <span class="pub-source">{p.source}</span>
+          </span>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .reg-section {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: clamp(40px, 5vw, 64px) 24px 0;
+  }
+  .reg-section-last { padding-bottom: clamp(56px, 7vw, 96px); }
+  .reg-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px clamp(32px, 4vw, 64px);
+    align-items: flex-start;
+  }
+  .reg-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+    position: sticky;
+    top: 96px;
+    flex: 0 0 min(190px, 100%);
+    font-weight: 500;
+  }
+  .reg-body {
+    border-top: 1px solid var(--ink);
+    flex: 1 1 380px;
+    min-width: 0;
+    margin: 0; padding: 0; list-style: none;
+  }
+  .reg-period { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+  .reg-pubs li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 24px;
+  }
+  .reg-period-wide { padding-top: 3px; }
+  .pub-title {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 19px;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .pub-source { display: block; font-size: 13.5px; color: var(--muted); margin-top: 5px; }
+
+  @media (max-width: 640px) {
+    .reg-pubs li { grid-template-columns: 1fr; gap: 4px; }
+    .reg-label { position: static; }
+  }
+
+  :global(html[dir="rtl"]) .reg-label {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-weight: 700;
+  }
+  :global(html[dir="rtl"]) .reg-period { font-family: var(--font-body); font-size: 13px; }
+  :global(html[dir="rtl"]) .pub-title { font-weight: 700; line-height: 1.5; }
+  :global(html[dir="rtl"]) .pub-source { line-height: 1.7; }
+</style>

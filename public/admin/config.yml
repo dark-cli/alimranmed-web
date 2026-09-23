@@ -136,6 +136,78 @@ _sections_field: &sections_field
           options: ["16/9", "4/3", "3/2", "1/1"]
         - { label: Upload date, name: uploadDate, widget: string, required: false }
 
+# ── Doctor CV block templates (variable-type list) ───────────────────────
+# Referenced by *doctor_sections_field below. Mirrors the doctorSection
+# discriminatedUnion in src/content.config.ts and the block components
+# under src/components/doctor/.
+
+_doctor_sections_field: &doctor_sections_field
+  label: Sections
+  name: sections
+  widget: list
+  required: false
+  typeKey: type
+  types:
+    - name: cv_hero
+      label: Hero (name, lede, chips, portrait)
+      fields:
+        - { label: Eyebrow, name: eyebrow, widget: string }
+        - { label: Headline (defaults to full name), name: headline, widget: string, required: false }
+        - { label: Lede, name: lede, widget: text }
+        - label: Credential chips
+          name: chips
+          widget: list
+          required: false
+          default: []
+          field: { label: Chip, name: chip, widget: string }
+        - { label: Portrait image, name: portrait, widget: image, required: false }
+        - { label: Portrait alt text, name: portraitAlt, widget: string, required: false }
+    - name: cv_stats
+      label: Stats band
+      fields:
+        - label: Stats
+          name: items
+          widget: list
+          min: 2
+          max: 6
+          fields:
+            - { label: Figure, name: fig, widget: string }
+            - { label: Description, name: desc, widget: string }
+    - name: cv_timeline
+      label: Timeline (appointments, education, conferences)
+      fields:
+        - { label: Heading, name: heading, widget: string }
+        - label: Rows
+          name: rows
+          widget: list
+          min: 1
+          fields:
+            - { label: Period, name: period, widget: string }
+            - { label: Body, name: body, widget: text }
+    - name: cv_memberships
+      label: Memberships
+      fields:
+        - { label: Heading, name: heading, widget: string }
+        - label: Items
+          name: items
+          widget: list
+          min: 1
+          fields:
+            - { label: Name, name: name, widget: string }
+            - { label: Year, name: year, widget: string }
+    - name: cv_publications
+      label: Publications
+      fields:
+        - { label: Heading, name: heading, widget: string }
+        - label: Items
+          name: items
+          widget: list
+          min: 1
+          fields:
+            - { label: Year, name: year, widget: string }
+            - { label: Title, name: title, widget: string }
+            - { label: Source, name: source, widget: text }
+
 # ── Collections ──────────────────────────────────────────────────────────
 # Base fields (from pageBase in src/content.config.ts) are inlined into each
 # collection's field list; YAML doesn't support splicing arrays via anchors.
@@ -193,7 +265,7 @@ collections:
         required: false
         default: []
         field: { label: Language, name: language, widget: string }
-      - { label: Body, name: body, widget: markdown, required: false }
+      - *doctor_sections_field
 
   - name: doctors_ar
     label: "Doctors — العربية"
@@ -246,7 +318,7 @@ collections:
         required: false
         default: []
         field: { label: Language, name: language, widget: string }
-      - { label: Body, name: body, widget: markdown, required: false }
+      - *doctor_sections_field
 
   # ── Treatments ─────────────────────────────────────────────────────────
   - name: treatments_en
