@@ -149,18 +149,14 @@ _doctor_sections_field: &doctor_sections_field
   typeKey: type
   types:
     - name: cv_hero
-      label: Hero (name, lede, chips)
+      label: Hero (eyebrow, name, lede)
       fields:
-        - { label: Eyebrow, name: eyebrow, widget: string }
-        - { label: Headline (defaults to full name), name: headline, widget: string, required: false }
-        - { label: Lede, name: lede, widget: text }
-        - label: Credential chips
-          name: chips
-          widget: list
-          required: false
-          default: []
-          field: { label: Chip, name: chip, widget: string }
-        # The portrait is the doctor's top-level "Photo" field — edit it there.
+        - { label: Eyebrow, name: eyebrow, widget: string, hint: "Small caps label above the name (e.g. 'Lead consultant · Clinical profile')." }
+        - { label: Headline, name: headline, widget: string, required: false, hint: "Defaults to the doctor's Full name when empty." }
+        - { label: Lede, name: lede, widget: text, hint: "One-paragraph intro shown under the name." }
+        # Chips = doctor's top-level "Credentials / titles" field.
+        # Portrait = doctor's top-level "Photo" field. Both are shared with the
+        # listing card so they only need to be edited once.
     - name: cv_stats
       label: Stats band
       fields:
@@ -183,17 +179,8 @@ _doctor_sections_field: &doctor_sections_field
           fields:
             - { label: Period, name: period, widget: string }
             - { label: Body, name: body, widget: text }
-    - name: cv_memberships
-      label: Memberships
-      fields:
-        - { label: Heading, name: heading, widget: string }
-        - label: Items
-          name: items
-          widget: list
-          min: 1
-          fields:
-            - { label: Name, name: name, widget: string }
-            - { label: Year, name: year, widget: string }
+    # Memberships live at the doctor's top level (see "Memberships list" +
+    # "Memberships heading" fields) so they're shared with the listing card.
     - name: cv_publications
       label: Publications
       fields:
@@ -223,55 +210,68 @@ collections:
     identifier_field: title
     create: true
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Description, name: description, widget: text, required: false }
-      - { label: Category, name: category, widget: string, required: false }
-      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
-      - { label: Image, name: image, widget: image, required: false }
-      - { label: Image alt, name: imageAlt, widget: string, required: false }
-      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
-      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      # ── Identity ─────────────────────────────────────────────────────
+      - { label: Full name, name: fullName, widget: string, hint: "Displayed as the H1 fallback and on the listing card." }
+      - { label: Page title, name: title, widget: string, hint: "Used in the browser tab and site search." }
+      - { label: Description, name: description, widget: text, required: false, hint: "One-line summary — meta description tag + listing card blurb." }
+      - { label: Specialty, name: specialty, widget: string, required: false, hint: "Small caps chip on the listing card." }
+      - label: Credentials / titles
+        name: titles
+        widget: list
+        required: false
+        default: []
+        hint: "Post-nominal letters. Renders as chips in the detail hero AND as the creds line on the listing card."
+        field: { label: Credential, name: credential, widget: string }
+      - label: Languages
+        name: languages
+        widget: list
+        required: false
+        default: []
+        hint: "Only shown on the listing card."
+        field: { label: Language, name: language, widget: string }
+
+      # ── Portrait ─────────────────────────────────────────────────────
+      - label: Photo
+        name: photo
+        widget: image
+        required: false
+        hint: "Shown on both listing card and detail hero."
+        media_folder: "/public/images/doctors"
+        public_folder: "/images/doctors"
+      - { label: Photo alt text, name: photoAlt, widget: string, required: false, hint: "Screen-reader description. Defaults to Full name." }
+
+      # ── Memberships (shared: listing count + detail block) ───────────
+      - { label: Memberships heading, name: membershipsHeading, widget: string, default: "Memberships", hint: "Label above the memberships list on the detail page." }
+      - label: Memberships list
+        name: memberships
+        widget: list
+        required: false
+        default: []
+        hint: "Renders as a two-column list on the detail page; count shown on the listing card."
+        fields:
+          - { label: Society name, name: name, widget: string }
+          - { label: Year joined, name: year, widget: string }
+
+      # ── CV sections (page body blocks) ───────────────────────────────
+      - *doctor_sections_field
+
+      # ── Metadata (bookkeeping — not shown on the detail page) ────────
+      - { label: Listing order, name: order, widget: number, required: false, default: 999, value_type: int, hint: "Sort key for the /doctors/ listing." }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true, hint: "Not displayed — used by SEO schema." }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false, hint: "Original alimranmed.com URL — migration bookkeeping only." }
       - label: Source
         name: source
         widget: select
         default: legacy-wp
+        hint: "Provenance tag — not displayed on the page."
         options:
           - { label: Legacy WordPress, value: legacy-wp }
           - { label: AI draft, value: ai-draft }
           - { label: Human reviewed, value: human-reviewed }
           - { label: Original, value: original }
           - { label: Translated by LLM, value: translated-by-llm }
-      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false, hint: "Clinician name — SEO schema only." }
       - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
-      - { label: Full name, name: fullName, widget: string }
-      - label: Credentials / titles
-        name: titles
-        widget: list
-        required: false
-        default: []
-        field: { label: Title, name: title, widget: string }
-      - { label: Specialty, name: specialty, widget: string, required: false }
-      - label: Photo
-        name: photo
-        widget: image
-        required: false
-        # Save uploaded images to public/images/doctors/ and reference them as
-        # /images/doctors/xxx.jpg, not next to the .md file with a bare name.
-        media_folder: "/public/images/doctors"
-        public_folder: "/images/doctors"
-      - label: Memberships
-        name: memberships
-        widget: list
-        required: false
-        default: []
-        field: { label: Membership, name: membership, widget: string }
-      - label: Languages
-        name: languages
-        widget: list
-        required: false
-        default: []
-        field: { label: Language, name: language, widget: string }
-      - *doctor_sections_field
 
   - name: doctors_ar
     label: "Doctors — العربية"
@@ -283,55 +283,68 @@ collections:
     identifier_field: title
     create: true
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Description, name: description, widget: text, required: false }
-      - { label: Category, name: category, widget: string, required: false }
-      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
-      - { label: Image, name: image, widget: image, required: false }
-      - { label: Image alt, name: imageAlt, widget: string, required: false }
-      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
-      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
+      # ── Identity ─────────────────────────────────────────────────────
+      - { label: Full name, name: fullName, widget: string, hint: "Displayed as the H1 fallback and on the listing card." }
+      - { label: Page title, name: title, widget: string, hint: "Used in the browser tab and site search." }
+      - { label: Description, name: description, widget: text, required: false, hint: "One-line summary — meta description tag + listing card blurb." }
+      - { label: Specialty, name: specialty, widget: string, required: false, hint: "Small caps chip on the listing card." }
+      - label: Credentials / titles
+        name: titles
+        widget: list
+        required: false
+        default: []
+        hint: "Post-nominal letters. Renders as chips in the detail hero AND as the creds line on the listing card."
+        field: { label: Credential, name: credential, widget: string }
+      - label: Languages
+        name: languages
+        widget: list
+        required: false
+        default: []
+        hint: "Only shown on the listing card."
+        field: { label: Language, name: language, widget: string }
+
+      # ── Portrait ─────────────────────────────────────────────────────
+      - label: Photo
+        name: photo
+        widget: image
+        required: false
+        hint: "Shown on both listing card and detail hero."
+        media_folder: "/public/images/doctors"
+        public_folder: "/images/doctors"
+      - { label: Photo alt text, name: photoAlt, widget: string, required: false, hint: "Screen-reader description. Defaults to Full name." }
+
+      # ── Memberships (shared: listing count + detail block) ───────────
+      - { label: Memberships heading, name: membershipsHeading, widget: string, default: "Memberships", hint: "Label above the memberships list on the detail page." }
+      - label: Memberships list
+        name: memberships
+        widget: list
+        required: false
+        default: []
+        hint: "Renders as a two-column list on the detail page; count shown on the listing card."
+        fields:
+          - { label: Society name, name: name, widget: string }
+          - { label: Year joined, name: year, widget: string }
+
+      # ── CV sections (page body blocks) ───────────────────────────────
+      - *doctor_sections_field
+
+      # ── Metadata (bookkeeping — not shown on the detail page) ────────
+      - { label: Listing order, name: order, widget: number, required: false, default: 999, value_type: int, hint: "Sort key for the /doctors/ listing." }
+      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true, hint: "Not displayed — used by SEO schema." }
+      - { label: Legacy URL, name: legacyUrl, widget: string, required: false, hint: "Original alimranmed.com URL — migration bookkeeping only." }
       - label: Source
         name: source
         widget: select
         default: legacy-wp
+        hint: "Provenance tag — not displayed on the page."
         options:
           - { label: Legacy WordPress, value: legacy-wp }
           - { label: AI draft, value: ai-draft }
           - { label: Human reviewed, value: human-reviewed }
           - { label: Original, value: original }
           - { label: Translated by LLM, value: translated-by-llm }
-      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+      - { label: Reviewed by, name: reviewedBy, widget: string, required: false, hint: "Clinician name — SEO schema only." }
       - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
-      - { label: Full name, name: fullName, widget: string }
-      - label: Credentials / titles
-        name: titles
-        widget: list
-        required: false
-        default: []
-        field: { label: Title, name: title, widget: string }
-      - { label: Specialty, name: specialty, widget: string, required: false }
-      - label: Photo
-        name: photo
-        widget: image
-        required: false
-        # Save uploaded images to public/images/doctors/ and reference them as
-        # /images/doctors/xxx.jpg, not next to the .md file with a bare name.
-        media_folder: "/public/images/doctors"
-        public_folder: "/images/doctors"
-      - label: Memberships
-        name: memberships
-        widget: list
-        required: false
-        default: []
-        field: { label: Membership, name: membership, widget: string }
-      - label: Languages
-        name: languages
-        widget: list
-        required: false
-        default: []
-        field: { label: Language, name: language, widget: string }
-      - *doctor_sections_field
 
   # ── Treatments ─────────────────────────────────────────────────────────
   - name: treatments_en

@@ -1,38 +1,42 @@
 ---
 title: Hussein Imran Mousa Mohammed
 description: Consultant Neurosurgeon at Alsadr Teaching Hospital, Basra. Over 25 years in neurosurgery with 5000+ independent operations.
-order: 1
-legacyUrl: https://alimranmed.com/doctors/hussein-imran-mousa/
-source: human-reviewed
 fullName: Hussein Imran Mousa Muhammed
+specialty: Consultant Neurosurgeon
+photo: /images/doctors/hussein-imran-mousa.jpg
+photoAlt: Hussein Imran Mousa Muhammed
 titles:
   - MBChB
   - FIBMS (Neurosurgery)
   - FIAANS
   - FIISSP
   - FINASS
-specialty: Consultant Neurosurgeon
-photo: /images/doctors/343996-379547214.jpg
+languages: []
+membershipsHeading: Memberships
 memberships:
-  - European Society for Stereotactic and Functional Neurosurgery (2022)
-  - European Stroke Organization (2020)
-  - World Stroke Organization (2020)
-  - International Spinal Cord Society (2020)
-  - North American Spine Society (2016)
-  - International Association for the Study of Pain (2015)
-  - AOSpine (2011)
-  - American Association of Neurological Surgeons (2010)
-  - ATLS and ACLS Member (2011)
+  - name: European Society for Stereotactic and Functional Neurosurgery
+    year: '2022'
+  - name: European Stroke Organization
+    year: '2020'
+  - name: World Stroke Organization
+    year: '2020'
+  - name: International Spinal Cord Society
+    year: '2020'
+  - name: North American Spine Society
+    year: '2016'
+  - name: International Association for the Study of Pain
+    year: '2015'
+  - name: AOSpine
+    year: '2011'
+  - name: American Association of Neurological Surgeons
+    year: '2010'
+order: 1
+legacyUrl: https://alimranmed.com/doctors/hussein-imran-mousa/
+source: human-reviewed
 sections:
   - type: cv_hero
     eyebrow: Lead consultant · Clinical profile
     lede: Founder and lead consultant of Alimran Clinic. Consultant Neurosurgeon, Neurosurgical Department, Basra Teaching Hospital, and Iraq Director for Middle East Stereotactic and Functional Neurosurgery.
-    chips:
-      - MBChB
-      - FIBMS (Neurosurgery)
-      - FIAANS
-      - FIISSP
-      - FINASS
   - type: cv_stats
     items:
       - fig: 5,000+
@@ -67,25 +71,6 @@ sections:
         body: Fellowship in Anaesthesiology and Pain Medicine, Seoul National University Hospital.
       - period: '2013'
         body: Fellowship in Interventional Pain Management, Mobi Pain Clinic, Mumbai.
-  - type: cv_memberships
-    heading: Memberships
-    items:
-      - name: European Society for Stereotactic and Functional Neurosurgery
-        year: '2022'
-      - name: European Stroke Organization
-        year: '2020'
-      - name: World Stroke Organization
-        year: '2020'
-      - name: International Spinal Cord Society
-        year: '2020'
-      - name: North American Spine Society
-        year: '2016'
-      - name: International Association for the Study of Pain
-        year: '2015'
-      - name: AOSpine
-        year: '2011'
-      - name: American Association of Neurological Surgeons
-        year: '2010'
   - type: cv_publications
     heading: Published research
     items:
@@ -119,5 +104,4 @@ sections:
         body: Cadaveric bioskills in advanced spinal approaches, under Boston University Medical School supervision.
       - period: Chandigarh 2009
         body: Advanced training in Professor Destandau's endoscopic spine technique, Gian Sagar Medical College.
-locale: en
 ---

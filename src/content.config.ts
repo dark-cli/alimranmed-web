@@ -125,9 +125,9 @@ const blockCvHero = z.object({
   eyebrow: z.string(),                     // small caps label above the name
   headline: z.string().optional(),         // defaults to fullName when omitted
   lede: z.string(),                        // one-paragraph intro under the h1
-  chips: z.array(z.string()).default([]),  // credential badges under the lede
-  // Portrait image comes from the doctor's top-level `photo` field; keeping a
-  // second image widget on the hero block was confusing editors.
+  // Portrait comes from the doctor's top-level `photo` field.
+  // Credential chips come from the doctor's top-level `titles` field —
+  // same source as the listing card so they can't drift.
 });
 
 const blockCvStats = z.object({
@@ -148,15 +148,6 @@ const blockCvTimeline = z.object({
   })).min(1),
 });
 
-const blockCvMemberships = z.object({
-  type: z.literal("cv_memberships"),
-  heading: z.string(),
-  items: z.array(z.object({
-    name: z.string(),
-    year: z.string(),
-  })).min(1),
-});
-
 const blockCvPublications = z.object({
   type: z.literal("cv_publications"),
   heading: z.string(),
@@ -171,9 +162,12 @@ const doctorSection = z.discriminatedUnion("type", [
   blockCvHero,
   blockCvStats,
   blockCvTimeline,
-  blockCvMemberships,
   blockCvPublications,
 ]);
+
+// Membership heading label shown above the auto-rendered list on doctor pages.
+// Localized per-doctor so EN and AR .md files each pick their own wording.
+const doctorMembershipHeading = z.string().default("Memberships");
 
 const treatments = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/treatments" }),
@@ -206,14 +200,23 @@ const doctors = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/doctors" }),
   schema: pageBase.extend({
     fullName: z.string(),
+    // Shared across listing card and detail hero — one source of truth.
     titles: z.array(z.string()).default([]),
-    specialty: z.string().optional(),
-    photo: z.string().optional(),
-    memberships: z.array(z.string()).default([]),
-    languages: z.array(z.string()).default([]),
+    specialty: z.string().optional(),           // listing card chip
+    photo: z.string().optional(),               // listing + detail portrait
+    photoAlt: z.string().optional(),            // portrait alt (falls back to fullName)
+    // Memberships as structured objects — used for the detail page block AND
+    // the listing card count. Editing in one place updates both.
+    memberships: z.array(z.object({
+      name: z.string(),
+      year: z.string(),
+    })).default([]),
+    // Localized heading shown above the memberships list on the detail page.
+    membershipsHeading: doctorMembershipHeading,
+    languages: z.array(z.string()).default([]), // listing card only
     // Block-based CV. When present, the doctor page renders each entry via
-    // src/components/doctor/DoctorSections.astro instead of the legacy
-    // hardcoded template. See doctorSection above for the block types.
+    // src/components/doctor/DoctorSections.astro. Memberships render outside
+    // this loop (from the top-level `memberships` field).
     sections: z.array(doctorSection).optional(),
   }),
 });
