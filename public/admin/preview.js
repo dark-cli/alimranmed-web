@@ -62,17 +62,27 @@
     );
   }
 
-  function renderTimeline(s, key, isLast) {
-    var rows = s.rows || [];
+  // Unified list block renderer — dispatches on variant.
+  // Item shape is always { label, body, subtitle? }. Variant picks the
+  // layout (stacked rows / wrapping grid / emphasised-title rows).
+  function renderList(s, key, isLast) {
+    var variant = s.variant || "timeline";
+    if (variant === "memberships") return renderListMemberships(s, key, isLast);
+    if (variant === "publications") return renderListPublications(s, key, isLast);
+    return renderListTimeline(s, key, isLast);
+  }
+
+  function renderListTimeline(s, key, isLast) {
+    var items = s.items || [];
     var cls = "reg-section" + (isLast ? " reg-section-last" : "");
     return h("section", { key: key, className: cls },
       h("div", { className: "reg-wrap" },
         h("h2", { className: "reg-label" }, s.heading || ""),
         h("div", { className: "reg-body" },
-          rows.map(function (row, i) {
+          items.map(function (it, i) {
             return h("div", { key: i, className: "reg-row" },
-              h("span", { className: "reg-period" }, row.period || ""),
-              h("span", { className: "reg-text" }, row.body || "")
+              h("span", { className: "reg-period" }, it.label || ""),
+              h("span", { className: "reg-text" }, it.body || "")
             );
           })
         )
@@ -80,16 +90,17 @@
     );
   }
 
-  function renderMemberships(items, heading, key, isLast) {
+  function renderListMemberships(s, key, isLast) {
+    var items = s.items || [];
     var cls = "reg-section" + (isLast ? " reg-section-last" : "");
     return h("section", { key: key, className: cls },
       h("div", { className: "reg-wrap" },
-        h("h2", { className: "reg-label" }, heading),
+        h("h2", { className: "reg-label" }, s.heading || ""),
         h("ul", { className: "reg-body reg-members" },
-          items.map(function (m, i) {
+          items.map(function (it, i) {
             return h("li", { key: i },
-              m.name || "",
-              h("span", { className: "member-year" }, m.year || "")
+              it.body || "",
+              h("span", { className: "member-year" }, it.label || "")
             );
           })
         )
@@ -97,19 +108,19 @@
     );
   }
 
-  function renderPublications(s, key, isLast) {
+  function renderListPublications(s, key, isLast) {
     var items = s.items || [];
     var cls = "reg-section" + (isLast ? " reg-section-last" : "");
     return h("section", { key: key, className: cls },
       h("div", { className: "reg-wrap" },
         h("h2", { className: "reg-label" }, s.heading || ""),
         h("ol", { className: "reg-body reg-pubs" },
-          items.map(function (pub, i) {
+          items.map(function (it, i) {
             return h("li", { key: i },
-              h("span", { className: "reg-period reg-period-wide" }, pub.year || ""),
+              h("span", { className: "reg-period reg-period-wide" }, it.label || ""),
               h("span", null,
-                h("span", { className: "pub-title" }, pub.title || ""),
-                h("span", { className: "pub-source" }, pub.source || "")
+                h("span", { className: "pub-title" }, it.body || ""),
+                it.subtitle && h("span", { className: "pub-source" }, it.subtitle)
               )
             );
           })
@@ -159,24 +170,20 @@
       heroLede: heroLede
     };
 
-    // Last register-style block gets isLast for its bottom padding.
-    var lastRegisterIdx = -1;
+    // Last list block gets isLast for its bottom padding.
+    var lastListIdx = -1;
     sections.forEach(function (s, i) {
-      if (s && (s.type === "cv_timeline" || s.type === "cv_memberships" || s.type === "cv_publications")) {
-        lastRegisterIdx = i;
-      }
+      if (s && s.type === "list") lastListIdx = i;
     });
 
     // Hero renders first, unconditionally. Then sections loop.
     var elements = [renderHero(ctx, "hero")];
     sections.forEach(function (s, i) {
-      var isLast = i === lastRegisterIdx;
+      var isLast = i === lastListIdx;
       var key = "s" + i;
       if (!s) return;
-      if (s.type === "cv_stats")        elements.push(renderStats(s, key));
-      else if (s.type === "cv_timeline")     elements.push(renderTimeline(s, key, isLast));
-      else if (s.type === "cv_memberships")  elements.push(renderMemberships(s.items || [], s.heading || "", key, isLast));
-      else if (s.type === "cv_publications") elements.push(renderPublications(s, key, isLast));
+      if (s.type === "cv_stats") elements.push(renderStats(s, key));
+      else if (s.type === "list") elements.push(renderList(s, key, isLast));
     });
 
     // dir="rtl" on the wrapper flips the preview iframe's direction and

@@ -132,40 +132,33 @@ const blockCvStats = z.object({
   })).min(2).max(6),
 });
 
-// Period + body rows — used for appointments, education, and conference lists.
-const blockCvTimeline = z.object({
-  type: z.literal("cv_timeline"),
+// Unified list block — replaces cv_timeline / cv_memberships / cv_publications.
+// One block type, three visual variants driven by the `variant` field.
+// Items share a generic shape so the editor sees the same three inputs
+// regardless of variant; renderer picks the right layout.
+//
+//   variant: "timeline"     — label = period, body = activity, subtitle unused.
+//                             Stacked rows, label on the left (mono, small).
+//   variant: "memberships"  — label = year joined, body = society name,
+//                             subtitle unused. Grid that wraps to 2 columns;
+//                             body on the left (main), label on the right (mono).
+//   variant: "publications" — label = year, body = paper title, subtitle = source.
+//                             Stacked rows, label left, title emphasised (serif),
+//                             subtitle below in muted small text.
+const blockList = z.object({
+  type: z.literal("list"),
+  variant: z.enum(["timeline", "memberships", "publications"]),
   heading: z.string(),
-  rows: z.array(z.object({
-    period: z.string(),  // "2006 — present", "Yokohama 2016", "١٩٩٦"
+  items: z.array(z.object({
+    label: z.string(),
     body: z.string(),
-  })).min(1),
-});
-
-const blockCvMemberships = z.object({
-  type: z.literal("cv_memberships"),
-  heading: z.string(),
-  items: z.array(z.object({
-    name: z.string(),
-    year: z.string(),
-  })).min(1),
-});
-
-const blockCvPublications = z.object({
-  type: z.literal("cv_publications"),
-  heading: z.string(),
-  items: z.array(z.object({
-    year: z.string(),
-    title: z.string(),
-    source: z.string(),
+    subtitle: z.string().optional(),
   })).min(1),
 });
 
 const doctorSection = z.discriminatedUnion("type", [
   blockCvStats,
-  blockCvTimeline,
-  blockCvMemberships,
-  blockCvPublications,
+  blockList,
 ]);
 
 const treatments = defineCollection({

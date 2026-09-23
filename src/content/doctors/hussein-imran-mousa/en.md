@@ -25,81 +25,86 @@ sections:
         desc: Departments — surgery, pain medicine, physiotherapy, rehabilitation
       - fig: '6'
         desc: Clinic days a week, including an out-of-hours on-call roster
-  - type: cv_timeline
+  - type: list
+    variant: timeline
     heading: Appointments
-    rows:
-      - period: 2006 — present
+    items:
+      - label: 2006 — present
         body: Consultant Neurosurgeon, Alsadr Teaching Hospital, Basra. Consultant status conferred 17 January 2016.
-      - period: 2022 — present
+      - label: 2022 — present
         body: Iraq Director, Middle East Stereotactic and Functional Neurosurgery; Board of Directors member, MESSFN.
-      - period: 2016 — present
+      - label: 2016 — present
         body: Supervisor of Arabian Board neurosurgery junior doctors.
-      - period: 1999 — 2000
+      - label: 1999 — 2000
         body: Senior House Officer, General Surgery, Basrah General Hospital.
-  - type: cv_timeline
+  - type: list
+    variant: timeline
     heading: Education
-    rows:
-      - period: '1996'
+    items:
+      - label: '1996'
         body: MBChB, Medical College of Basra, Iraq.
-      - period: 2000 — 2005
+      - label: 2000 — 2005
         body: Postgraduate neurosurgical training, Iraqi Medical Board Centre, Baghdad.
-      - period: '2005'
+      - label: '2005'
         body: Fellowship, Iraqi Board of Medical Specialization — Neurosurgery.
-      - period: '2017'
+      - label: '2017'
         body: Fellowship in Anaesthesiology and Pain Medicine, Seoul National University Hospital.
-      - period: '2013'
+      - label: '2013'
         body: Fellowship in Interventional Pain Management, Mobi Pain Clinic, Mumbai.
-  - type: cv_memberships
+  - type: list
+    variant: memberships
     heading: Memberships
     items:
-      - name: European Society for Stereotactic and Functional Neurosurgery
-        year: '2022'
-      - name: European Stroke Organization
-        year: '2020'
-      - name: World Stroke Organization
-        year: '2020'
-      - name: International Spinal Cord Society
-        year: '2020'
-      - name: North American Spine Society
-        year: '2016'
-      - name: International Association for the Study of Pain
-        year: '2015'
-      - name: AOSpine
-        year: '2011'
-      - name: American Association of Neurological Surgeons
-        year: '2010'
-  - type: cv_publications
+      - label: '2022'
+        body: European Society for Stereotactic and Functional Neurosurgery
+      - label: '2020'
+        body: European Stroke Organization
+      - label: '2020'
+        body: World Stroke Organization
+      - label: '2020'
+        body: International Spinal Cord Society
+      - label: '2016'
+        body: North American Spine Society
+      - label: '2015'
+        body: International Association for the Study of Pain
+      - label: '2011'
+        body: AOSpine
+      - label: '2010'
+        body: American Association of Neurological Surgeons
+  - type: list
+    variant: publications
     heading: Published research
     items:
-      - year: '2013'
-        title: Elevated white blood cell count as a predictor for severe polytrauma
-        source: Thi-Qar Medical Journal, Vol. 7, No. 2, pp. 50–57. ISSN 1992-9218.
-      - year: '2014'
-        title: Efficacy of Botox injections around scalp nerves for prevention of chronic daily headache
-        source: Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 5, pp. 49–58.
-      - year: '2014'
-        title: Civilian gunshot injuries in Basra
-        source: Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 6, pp. 1–10.
-      - year: '2014'
-        title: Indications and non-indications for epidural drain use in lumbar spine surgery up to three levels
-        source: Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 6, pp. 10–16.
-      - year: '2015'
-        title: The outcome of paediatric gunshot head injuries
-        source: Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 3, No. 3, pp. 99–108.
-  - type: cv_timeline
+      - label: '2013'
+        body: Elevated white blood cell count as a predictor for severe polytrauma
+        subtitle: Thi-Qar Medical Journal, Vol. 7, No. 2, pp. 50–57. ISSN 1992-9218.
+      - label: '2014'
+        body: Efficacy of Botox injections around scalp nerves for prevention of chronic daily headache
+        subtitle: Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 5, pp. 49–58.
+      - label: '2014'
+        body: Civilian gunshot injuries in Basra
+        subtitle: Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 6, pp. 1–10.
+      - label: '2014'
+        body: Indications and non-indications for epidural drain use in lumbar spine surgery up to three levels
+        subtitle: Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 4, No. 6, pp. 10–16.
+      - label: '2015'
+        body: The outcome of paediatric gunshot head injuries
+        subtitle: Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 3, No. 3, pp. 99–108.
+  - type: list
+    variant: timeline
     heading: Conference papers & training
-    rows:
-      - period: Yokohama 2016
+    items:
+      - label: Yokohama 2016
         body: 16th World Congress on Pain (IASP) — pulsed radiofrequency for chronic headache.
-      - period: Dubai 2016
+      - label: Dubai 2016
         body: Annual International Spine Conference — sandbag use and CSF leak after spine surgery.
-      - period: Tampa 2014
+      - label: Tampa 2014
         body: American Society for Pain Management — ultrasound-guided pain interventions workshop.
-      - period: Zug 2012
+      - label: Zug 2012
         body: Minimally Invasive Spine Workshop, DePuy, Switzerland.
-      - period: Beirut 2010
+      - label: Beirut 2010
         body: Cadaveric bioskills in advanced spinal approaches, under Boston University Medical School supervision.
-      - period: Chandigarh 2009
+      - label: Chandigarh 2009
         body: Advanced training in Professor Destandau's endoscopic spine technique, Gian Sagar Medical College.
 order: 1
 legacyUrl: https://alimranmed.com/doctors/hussein-imran-mousa/

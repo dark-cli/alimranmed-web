@@ -2,17 +2,15 @@
 /**
  * DoctorSections — renders the doctor CV.
  *
- * The hero is standalone (every doctor has exactly one) and renders first
- * from the doctor's top-level heroEyebrow / heroHeadline / heroLede fields.
- * Everything else — stats, timelines (appointments, education, conferences),
- * memberships, publications — is a block in the sections list, dispatched
- * by type below.
+ * The hero is standalone (every doctor has exactly one). Everything below
+ * is a block in the sections list: `cv_stats`, or `list` with a variant
+ * (timeline / memberships / publications).
  */
-import CvHero         from "./CvHero.astro";
-import CvStats        from "./CvStats.astro";
-import CvTimeline     from "./CvTimeline.astro";
-import CvMemberships  from "./CvMemberships.astro";
-import CvPublications from "./CvPublications.astro";
+import CvHero           from "./CvHero.astro";
+import CvStats          from "./CvStats.astro";
+import ListTimeline     from "./ListTimeline.astro";
+import ListMemberships  from "./ListMemberships.astro";
+import ListPublications from "./ListPublications.astro";
 
 interface Props {
   sections: any[];
@@ -26,11 +24,11 @@ interface Props {
 }
 const { sections, fullName, photo, photoAlt, titles, heroEyebrow, heroHeadline, heroLede } = Astro.props;
 
-// Last register-style block (timeline / memberships / publications) gets
-// isLast so its bottom padding matches the end of the page.
-const lastRegisterIdx = sections
+// Last register-style block (any `list` variant) gets isLast so its bottom
+// padding matches the end of the page.
+const lastListIdx = sections
   .map((s, i) => ({ i, t: s.type }))
-  .filter(({ t }) => t === "cv_timeline" || t === "cv_memberships" || t === "cv_publications")
+  .filter(({ t }) => t === "list")
   .map(({ i }) => i)
   .pop();
 ---
@@ -45,19 +43,19 @@ const lastRegisterIdx = sections
 />
 
 {sections.map((s: any, i: number) => {
-  const isLast = i === lastRegisterIdx;
+  const isLast = i === lastListIdx;
 
   if (s.type === "cv_stats")
     return <CvStats items={s.items} />;
 
-  if (s.type === "cv_timeline")
-    return <CvTimeline heading={s.heading} rows={s.rows} isLast={isLast} />;
-
-  if (s.type === "cv_memberships")
-    return <CvMemberships heading={s.heading} items={s.items} isLast={isLast} />;
-
-  if (s.type === "cv_publications")
-    return <CvPublications heading={s.heading} items={s.items} isLast={isLast} />;
+  if (s.type === "list") {
+    if (s.variant === "timeline")
+      return <ListTimeline heading={s.heading} items={s.items} isLast={isLast} />;
+    if (s.variant === "memberships")
+      return <ListMemberships heading={s.heading} items={s.items} isLast={isLast} />;
+    if (s.variant === "publications")
+      return <ListPublications heading={s.heading} items={s.items} isLast={isLast} />;
+  }
 
   return null;
 })}

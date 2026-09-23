@@ -162,40 +162,30 @@ _doctor_sections_field: &doctor_sections_field
           fields:
             - { label: Figure, name: fig, widget: string }
             - { label: Description, name: desc, widget: string }
-    - name: cv_timeline
-      label: Timeline (appointments, education, conferences)
+    # Unified list block — one entry-list widget with three visual variants.
+    # Same fields shown regardless of variant (label / body / subtitle); the
+    # site chooses the layout at render time based on the variant picker.
+    - name: list
+      label: List (timeline / memberships / publications)
       fields:
-        - { label: Heading, name: heading, widget: string }
-        - label: Rows
-          name: rows
-          widget: list
-          min: 1
-          fields:
-            - { label: Period, name: period, widget: string }
-            - { label: Body, name: body, widget: text }
-    - name: cv_memberships
-      label: Memberships
-      fields:
-        - { label: Heading, name: heading, widget: string }
-        - label: Items
-          name: items
-          widget: list
-          min: 1
-          fields:
-            - { label: Society name, name: name, widget: string }
-            - { label: Year joined, name: year, widget: string }
-    - name: cv_publications
-      label: Publications
-      fields:
+        - label: Variant
+          name: variant
+          widget: select
+          default: timeline
+          hint: "Timeline = stacked rows (period → activity). Memberships = 2-column grid (name + year joined). Publications = year + emphasised title + source."
+          options:
+            - { label: "Timeline — period → activity", value: timeline }
+            - { label: "Memberships — name + year (2-col grid)", value: memberships }
+            - { label: "Publications — year + title + source", value: publications }
         - { label: Heading, name: heading, widget: string }
         - label: Items
           name: items
           widget: list
           min: 1
           fields:
-            - { label: Year, name: year, widget: string }
-            - { label: Title, name: title, widget: string }
-            - { label: Source, name: source, widget: text }
+            - { label: Label, name: label, widget: string, hint: "Timeline: period (e.g. '2006 — present'). Memberships: year joined. Publications: year." }
+            - { label: Body, name: body, widget: text, hint: "Timeline: activity description. Memberships: society name. Publications: paper title." }
+            - { label: Subtitle, name: subtitle, widget: text, required: false, hint: "Publications only — citation / source. Leave empty for Timeline and Memberships." }
 
 # ── Collections ──────────────────────────────────────────────────────────
 # Base fields (from pageBase in src/content.config.ts) are inlined into each
