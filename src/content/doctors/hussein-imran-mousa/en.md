@@ -12,10 +12,9 @@ titles:
   - FIISSP
   - FINASS
 languages: []
+heroEyebrow: Lead consultant · Clinical profile
+heroLede: Founder and lead consultant of Alimran Clinic. Consultant Neurosurgeon, Neurosurgical Department, Basra Teaching Hospital, and Iraq Director for Middle East Stereotactic and Functional Neurosurgery.
 sections:
-  - type: cv_hero
-    eyebrow: Lead consultant · Clinical profile
-    lede: Founder and lead consultant of Alimran Clinic. Consultant Neurosurgeon, Neurosurgical Department, Basra Teaching Hospital, and Iraq Director for Middle East Stereotactic and Functional Neurosurgery.
   - type: cv_stats
     items:
       - fig: 5,000+

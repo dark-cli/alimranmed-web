@@ -148,15 +148,9 @@ _doctor_sections_field: &doctor_sections_field
   required: false
   typeKey: type
   types:
-    - name: cv_hero
-      label: Hero (eyebrow, name, lede)
-      fields:
-        - { label: Eyebrow, name: eyebrow, widget: string, hint: "Small caps label above the name (e.g. 'Lead consultant · Clinical profile')." }
-        - { label: Headline, name: headline, widget: string, required: false, hint: "Defaults to the doctor's Full name when empty." }
-        - { label: Lede, name: lede, widget: text, hint: "One-paragraph intro shown under the name." }
-        # Chips = doctor's top-level "Credentials / titles" field.
-        # Portrait = doctor's top-level "Photo" field. Both are shared with the
-        # listing card so they only need to be edited once.
+    # Hero is not a block — every doctor has exactly one hero, so its fields
+    # (heroEyebrow, heroHeadline, heroLede) live at the top of the entry
+    # in the Identity group. See _doctor_hero_fields below.
     - name: cv_stats
       label: Stats band
       fields:
@@ -249,6 +243,11 @@ collections:
         public_folder: "/images/doctors"
       - { label: Photo alt text, name: photoAlt, widget: string, required: false, hint: "Screen-reader description. Defaults to Full name." }
 
+      # ── Hero copy (always present — every doctor has one) ────────────
+      - { label: Hero eyebrow, name: heroEyebrow, widget: string, hint: "Small caps label above the name (e.g. 'Lead consultant · Clinical profile')." }
+      - { label: Hero headline, name: heroHeadline, widget: string, required: false, hint: "Defaults to Full name if left empty." }
+      - { label: Hero lede, name: heroLede, widget: text, hint: "One-paragraph intro shown under the name." }
+
       # ── CV sections (page body blocks — including memberships) ───────
       - *doctor_sections_field
 
@@ -309,6 +308,11 @@ collections:
         media_folder: "/public/images/doctors"
         public_folder: "/images/doctors"
       - { label: Photo alt text, name: photoAlt, widget: string, required: false, hint: "Screen-reader description. Defaults to Full name." }
+
+      # ── Hero copy (always present — every doctor has one) ────────────
+      - { label: Hero eyebrow, name: heroEyebrow, widget: string, hint: "Small caps label above the name (e.g. 'Lead consultant · Clinical profile')." }
+      - { label: Hero headline, name: heroHeadline, widget: string, required: false, hint: "Defaults to Full name if left empty." }
+      - { label: Hero lede, name: heroLede, widget: text, hint: "One-paragraph intro shown under the name." }
 
       # ── CV sections (page body blocks — including memberships) ───────
       - *doctor_sections_field

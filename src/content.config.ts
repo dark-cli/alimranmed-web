@@ -119,16 +119,10 @@ const articleSection = z.discriminatedUnion("type", [
 // Mirrors the article `sections` pattern but with block types tuned to a
 // clinician's CV. Kept as a separate union so treatment/blog schemas don't
 // pick up CV-only blocks by accident. See src/components/doctor/ for renderers.
-
-const blockCvHero = z.object({
-  type: z.literal("cv_hero"),
-  eyebrow: z.string(),                     // small caps label above the name
-  headline: z.string().optional(),         // defaults to fullName when omitted
-  lede: z.string(),                        // one-paragraph intro under the h1
-  // Portrait comes from the doctor's top-level `photo` field.
-  // Credential chips come from the doctor's top-level `titles` field —
-  // same source as the listing card so they can't drift.
-});
+//
+// The hero is NOT a section block — every doctor has exactly one hero, so
+// its fields (heroEyebrow, heroHeadline, heroLede) live at the top of the
+// doctor schema and render unconditionally above the sections list.
 
 const blockCvStats = z.object({
   type: z.literal("cv_stats"),
@@ -168,7 +162,6 @@ const blockCvPublications = z.object({
 });
 
 const doctorSection = z.discriminatedUnion("type", [
-  blockCvHero,
   blockCvStats,
   blockCvTimeline,
   blockCvMemberships,
@@ -212,10 +205,15 @@ const doctors = defineCollection({
     photo: z.string().optional(),               // listing + detail portrait
     photoAlt: z.string().optional(),            // portrait alt (falls back to fullName)
     languages: z.array(z.string()).default([]), // listing card only
-    // Block-based CV. Everything below the hero is a section — including
-    // memberships (cv_memberships) and publications (cv_publications). The
-    // listing card derives its memberships count from the cv_memberships
-    // block in this list.
+    // Hero copy — always present, single instance per doctor. Rendered at
+    // the top of the detail page by DoctorSections before the sections loop.
+    heroEyebrow: z.string(),                    // small caps label above name
+    heroHeadline: z.string().optional(),        // defaults to fullName
+    heroLede: z.string(),                       // paragraph under the h1
+    // Block-based CV. Everything below the hero is a section: stats,
+    // timelines (appointments/education/conferences), memberships, publications.
+    // The listing card derives its memberships count from the cv_memberships
+    // blocks in this list.
     sections: z.array(doctorSection).optional(),
   }),
 });

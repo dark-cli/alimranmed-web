@@ -1,11 +1,12 @@
 ---
 /**
- * DoctorSections — dispatches every doctor CV block. Mirrors the article
- * `sections` pattern (see components/article/ArticleSections.astro).
+ * DoctorSections — renders the doctor CV.
  *
- * Only the hero is at the "top" of the doctor entry; everything else —
- * stats, timelines (appointments, education, conferences), memberships,
- * publications — is a block in the sections list.
+ * The hero is standalone (every doctor has exactly one) and renders first
+ * from the doctor's top-level heroEyebrow / heroHeadline / heroLede fields.
+ * Everything else — stats, timelines (appointments, education, conferences),
+ * memberships, publications — is a block in the sections list, dispatched
+ * by type below.
  */
 import CvHero         from "./CvHero.astro";
 import CvStats        from "./CvStats.astro";
@@ -19,8 +20,11 @@ interface Props {
   photo?: string;
   photoAlt?: string;
   titles: string[];
+  heroEyebrow: string;
+  heroHeadline?: string;
+  heroLede: string;
 }
-const { sections, fullName, photo, photoAlt, titles } = Astro.props;
+const { sections, fullName, photo, photoAlt, titles, heroEyebrow, heroHeadline, heroLede } = Astro.props;
 
 // Last register-style block (timeline / memberships / publications) gets
 // isLast so its bottom padding matches the end of the page.
@@ -31,18 +35,17 @@ const lastRegisterIdx = sections
   .pop();
 ---
 
+<CvHero
+  eyebrow={heroEyebrow}
+  headline={heroHeadline ?? fullName}
+  lede={heroLede}
+  chips={titles}
+  portrait={photo}
+  portraitAlt={photoAlt ?? fullName}
+/>
+
 {sections.map((s: any, i: number) => {
   const isLast = i === lastRegisterIdx;
-
-  if (s.type === "cv_hero")
-    return <CvHero
-      eyebrow={s.eyebrow}
-      headline={s.headline ?? fullName}
-      lede={s.lede}
-      chips={titles}
-      portrait={photo}
-      portraitAlt={photoAlt ?? fullName}
-    />;
 
   if (s.type === "cv_stats")
     return <CvStats items={s.items} />;

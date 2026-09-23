@@ -22,14 +22,17 @@
     return v;
   }
 
-  function renderHero(s, ctx, key) {
+  // Hero is standalone (not a section) — rendered from the doctor's
+  // top-level heroEyebrow / heroHeadline / heroLede fields, matching
+  // DoctorSections.astro's behaviour.
+  function renderHero(ctx, key) {
     var titles = ctx.titles;
     return h("section", { key: key, className: "cv-head-band" },
       h("div", { className: "cv-head" },
         h("div", { className: "cv-head-copy" },
-          h("p", { className: "cv-eyebrow" }, s.eyebrow || ""),
-          h("h1", { className: "cv-h1" }, s.headline || ctx.fullName || ""),
-          h("p", { className: "cv-lede" }, s.lede || ""),
+          h("p", { className: "cv-eyebrow" }, ctx.heroEyebrow || ""),
+          h("h1", { className: "cv-h1" }, ctx.heroHeadline || ctx.fullName || ""),
+          h("p", { className: "cv-lede" }, ctx.heroLede || ""),
           titles.length > 0 && h("div", { className: "cv-chips" },
             titles.map(function (c, i) {
               return h("span", { key: i, className: "cv-chip" }, c);
@@ -131,11 +134,14 @@
     var isAr = locale === "ar";
 
     // Pull top-level fields once as plain JS.
-    var fullName   = entry.getIn(["data", "fullName"]) || "";
-    var photoAlt   = entry.getIn(["data", "photoAlt"]) || "";
-    var photoField = entry.getIn(["data", "photo"]);
-    var titles     = toArray(entry.getIn(["data", "titles"]));
-    var sections   = toArray(entry.getIn(["data", "sections"]));
+    var fullName     = entry.getIn(["data", "fullName"]) || "";
+    var photoAlt     = entry.getIn(["data", "photoAlt"]) || "";
+    var photoField   = entry.getIn(["data", "photo"]);
+    var titles       = toArray(entry.getIn(["data", "titles"]));
+    var heroEyebrow  = entry.getIn(["data", "heroEyebrow"]) || "";
+    var heroHeadline = entry.getIn(["data", "heroHeadline"]) || "";
+    var heroLede     = entry.getIn(["data", "heroLede"]) || "";
+    var sections     = toArray(entry.getIn(["data", "sections"]));
 
     // Resolve photo through getAsset so relative paths from Sveltia's media
     // library resolve (blob URLs while unsaved, absolute paths after save).
@@ -147,7 +153,10 @@
       fullName: fullName,
       photoSrc: photoSrc,
       photoAlt: photoAlt,
-      titles: titles
+      titles: titles,
+      heroEyebrow: heroEyebrow,
+      heroHeadline: heroHeadline,
+      heroLede: heroLede
     };
 
     // Last register-style block gets isLast for its bottom padding.
@@ -158,16 +167,16 @@
       }
     });
 
-    var elements = sections.map(function (s, i) {
+    // Hero renders first, unconditionally. Then sections loop.
+    var elements = [renderHero(ctx, "hero")];
+    sections.forEach(function (s, i) {
       var isLast = i === lastRegisterIdx;
       var key = "s" + i;
-      if (!s) return null;
-      if (s.type === "cv_hero")         return renderHero(s, ctx, key);
-      if (s.type === "cv_stats")        return renderStats(s, key);
-      if (s.type === "cv_timeline")     return renderTimeline(s, key, isLast);
-      if (s.type === "cv_memberships")  return renderMemberships(s.items || [], s.heading || "", key, isLast);
-      if (s.type === "cv_publications") return renderPublications(s, key, isLast);
-      return null;
+      if (!s) return;
+      if (s.type === "cv_stats")        elements.push(renderStats(s, key));
+      else if (s.type === "cv_timeline")     elements.push(renderTimeline(s, key, isLast));
+      else if (s.type === "cv_memberships")  elements.push(renderMemberships(s.items || [], s.heading || "", key, isLast));
+      else if (s.type === "cv_publications") elements.push(renderPublications(s, key, isLast));
     });
 
     // dir="rtl" on the wrapper flips the preview iframe's direction and
