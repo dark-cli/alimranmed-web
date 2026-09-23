@@ -1,8 +1,14 @@
 ---
 /**
- * list / variant=timeline — heading + stacked rows.
- * Label on the left (mono, small); body on the right (main text).
- * Used for appointments, education, conferences.
+ * list / variant=columns — fixed 2 columns, always.
+ * Each cell is a full label + body entry (same shape as `rows`), just
+ * placed in two side-by-side columns to save vertical space when the page
+ * is wide. Collapses to a single column on narrow viewports.
+ *
+ * Different from `wrap`: wrap fits as many columns as the space allows
+ * (could be 1, 2, or 3); columns is always exactly 2 (or 1 on mobile).
+ * Use this for medium-length entries where linear stacking wastes space
+ * but density-packing would look cramped.
  */
 interface Props {
   heading: string;
@@ -15,11 +21,14 @@ const { heading, items, isLast = false } = Astro.props;
 <section class:list={["reg-section", isLast && "reg-section-last"]}>
   <div class="reg-wrap">
     <h2 class="reg-label">{heading}</h2>
-    <div class="reg-body">
+    <div class="reg-body reg-columns">
       {items.map((it) => (
-        <div class="reg-row">
+        <div class="col-row">
           <span class="reg-period">{it.label}</span>
-          <span class="reg-text">{it.body}</span>
+          <div class="reg-text">
+            <span>{it.body}</span>
+            {it.subtitle && <span class="reg-subtitle">{it.subtitle}</span>}
+          </div>
         </div>
       ))}
     </div>
@@ -39,18 +48,29 @@ const { heading, items, isLast = false } = Astro.props;
     font-weight: 500;
   }
   .reg-body { border-top: 1px solid var(--ink); flex: 1 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; }
-  .reg-row {
+
+  .reg-columns {
     display: grid;
-    grid-template-columns: minmax(92px, 140px) minmax(0, 1fr);
-    gap: 16px;
-    padding: 18px 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+  }
+  .col-row {
+    display: grid;
+    grid-template-columns: minmax(60px, 100px) minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px 0;
     border-bottom: 1px solid var(--line);
   }
   .reg-period { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
-  .reg-text { font-size: 15.5px; line-height: 1.55; color: var(--ink); }
+  .reg-text {
+    font-size: 15px; line-height: 1.55; color: var(--ink);
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .reg-subtitle { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-  @media (max-width: 640px) {
-    .reg-row { grid-template-columns: 1fr; gap: 4px; }
+  @media (max-width: 720px) {
+    .reg-columns { grid-template-columns: 1fr; }
+    .col-row { grid-template-columns: 1fr; gap: 4px; }
     .reg-label { position: static; }
   }
 
@@ -59,4 +79,5 @@ const { heading, items, isLast = false } = Astro.props;
   }
   :global(html[dir="rtl"]) .reg-period { font-family: var(--font-body); font-size: 13px; }
   :global(html[dir="rtl"]) .reg-text { line-height: 1.7; }
+  :global(html[dir="rtl"]) .reg-subtitle { line-height: 1.7; }
 </style>

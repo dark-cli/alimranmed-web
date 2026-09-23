@@ -162,30 +162,30 @@ _doctor_sections_field: &doctor_sections_field
           fields:
             - { label: Figure, name: fig, widget: string }
             - { label: Description, name: desc, widget: string }
-    # Unified list block — one entry-list widget with three visual variants.
-    # Same fields shown regardless of variant (label / body / subtitle); the
-    # site chooses the layout at render time based on the variant picker.
+    # Unified list block. One widget, three layouts driven by the `variant`
+    # field. Variant names describe the LAYOUT — same block is used for
+    # appointments, education, memberships, publications, conferences.
     - name: list
-      label: List (timeline / memberships / publications)
+      label: List
       fields:
-        - label: Variant
+        - label: Layout
           name: variant
           widget: select
-          default: timeline
-          hint: "Timeline = stacked rows (period → activity). Memberships = 2-column grid (name + year joined). Publications = year + emphasised title + source."
+          default: rows
+          hint: "Rows: single-column stacked (label + body, optional subtitle). Wrap: auto-fit responsive columns (fits as many as viewport allows) — good for short entries. Columns: fixed 2 columns, halves vertical space for medium-length entries."
           options:
-            - { label: "Timeline — period → activity", value: timeline }
-            - { label: "Memberships — name + year (2-col grid)", value: memberships }
-            - { label: "Publications — year + title + source", value: publications }
+            - { label: "Rows — single column, stacked", value: rows }
+            - { label: "Wrap — responsive (as many cols as fit)", value: wrap }
+            - { label: "Columns — fixed 2 columns", value: columns }
         - { label: Heading, name: heading, widget: string }
         - label: Items
           name: items
           widget: list
           min: 1
           fields:
-            - { label: Label, name: label, widget: string, hint: "Timeline: period (e.g. '2006 — present'). Memberships: year joined. Publications: year." }
-            - { label: Body, name: body, widget: text, hint: "Timeline: activity description. Memberships: society name. Publications: paper title." }
-            - { label: Subtitle, name: subtitle, widget: text, required: false, hint: "Publications only — citation / source. Leave empty for Timeline and Memberships." }
+            - { label: Label, name: label, widget: string, hint: "Small mono column — a date, a period, a year, whatever short tag identifies the entry." }
+            - { label: Body, name: body, widget: text, hint: "The main text of the entry." }
+            - { label: Subtitle, name: subtitle, widget: text, required: false, hint: "Optional secondary line under the body. Supported by Rows and Columns; Wrap ignores it." }
 
 # ── Collections ──────────────────────────────────────────────────────────
 # Base fields (from pageBase in src/content.config.ts) are inlined into each

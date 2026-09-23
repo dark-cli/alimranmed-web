@@ -132,22 +132,30 @@ const blockCvStats = z.object({
   })).min(2).max(6),
 });
 
-// Unified list block — replaces cv_timeline / cv_memberships / cv_publications.
-// One block type, three visual variants driven by the `variant` field.
-// Items share a generic shape so the editor sees the same three inputs
-// regardless of variant; renderer picks the right layout.
+// Unified list block. One block type, three visual layouts driven by
+// `variant`. Item shape is generic (label / body / subtitle?); the renderer
+// picks the layout. Variant names describe HOW they look, not what they're
+// used for — same block can be appointments, memberships, publications, etc.
 //
-//   variant: "timeline"     — label = period, body = activity, subtitle unused.
-//                             Stacked rows, label on the left (mono, small).
-//   variant: "memberships"  — label = year joined, body = society name,
-//                             subtitle unused. Grid that wraps to 2 columns;
-//                             body on the left (main), label on the right (mono).
-//   variant: "publications" — label = year, body = paper title, subtitle = source.
-//                             Stacked rows, label left, title emphasised (serif),
-//                             subtitle below in muted small text.
+//   variant: "rows"    — single-column stacked entries. Label on the left
+//                        (mono, small); body on the right (main text);
+//                        optional subtitle underneath the body in muted small.
+//                        Good for anything read top-to-bottom.
+//
+//   variant: "wrap"    — auto-fit responsive grid. Body on the left (main
+//                        text); label on the right (mono, small). Items
+//                        wrap into AS MANY columns as fit the viewport
+//                        (typically 1 on mobile, 2–3 on desktop). Subtitle
+//                        unused. Best for short single-line entries where
+//                        density matters (memberships, languages, tags).
+//
+//   variant: "columns" — fixed 2 columns, always. Each cell is a full
+//                        label + body row (same shape as `rows`). Halves
+//                        vertical space for medium-length entries when the
+//                        page is wide enough. Subtitle supported.
 const blockList = z.object({
   type: z.literal("list"),
-  variant: z.enum(["timeline", "memberships", "publications"]),
+  variant: z.enum(["rows", "wrap", "columns"]),
   heading: z.string(),
   items: z.array(z.object({
     label: z.string(),

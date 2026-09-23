@@ -62,17 +62,15 @@
     );
   }
 
-  // Unified list block renderer — dispatches on variant.
-  // Item shape is always { label, body, subtitle? }. Variant picks the
-  // layout (stacked rows / wrapping grid / emphasised-title rows).
+  // Unified list block renderer — dispatches on variant (layout name).
+  // Item shape is always { label, body, subtitle? }.
   function renderList(s, key, isLast) {
-    var variant = s.variant || "timeline";
-    if (variant === "memberships") return renderListMemberships(s, key, isLast);
-    if (variant === "publications") return renderListPublications(s, key, isLast);
-    return renderListTimeline(s, key, isLast);
+    if (s.variant === "wrap")    return renderListWrap(s, key, isLast);
+    if (s.variant === "columns") return renderListColumns(s, key, isLast);
+    return renderListRows(s, key, isLast);
   }
 
-  function renderListTimeline(s, key, isLast) {
+  function renderListRows(s, key, isLast) {
     var items = s.items || [];
     var cls = "reg-section" + (isLast ? " reg-section-last" : "");
     return h("section", { key: key, className: cls },
@@ -82,7 +80,10 @@
           items.map(function (it, i) {
             return h("div", { key: i, className: "reg-row" },
               h("span", { className: "reg-period" }, it.label || ""),
-              h("span", { className: "reg-text" }, it.body || "")
+              h("div", { className: "reg-text" },
+                h("span", null, it.body || ""),
+                it.subtitle && h("span", { className: "reg-subtitle" }, it.subtitle)
+              )
             );
           })
         )
@@ -90,7 +91,7 @@
     );
   }
 
-  function renderListMemberships(s, key, isLast) {
+  function renderListWrap(s, key, isLast) {
     var items = s.items || [];
     var cls = "reg-section" + (isLast ? " reg-section-last" : "");
     return h("section", { key: key, className: cls },
@@ -108,19 +109,19 @@
     );
   }
 
-  function renderListPublications(s, key, isLast) {
+  function renderListColumns(s, key, isLast) {
     var items = s.items || [];
     var cls = "reg-section" + (isLast ? " reg-section-last" : "");
     return h("section", { key: key, className: cls },
       h("div", { className: "reg-wrap" },
         h("h2", { className: "reg-label" }, s.heading || ""),
-        h("ol", { className: "reg-body reg-pubs" },
+        h("div", { className: "reg-body reg-columns" },
           items.map(function (it, i) {
-            return h("li", { key: i },
-              h("span", { className: "reg-period reg-period-wide" }, it.label || ""),
-              h("span", null,
-                h("span", { className: "pub-title" }, it.body || ""),
-                it.subtitle && h("span", { className: "pub-source" }, it.subtitle)
+            return h("div", { key: i, className: "col-row" },
+              h("span", { className: "reg-period" }, it.label || ""),
+              h("div", { className: "reg-text" },
+                h("span", null, it.body || ""),
+                it.subtitle && h("span", { className: "reg-subtitle" }, it.subtitle)
               )
             );
           })

@@ -65,11 +65,11 @@ const T = locale === "ar" ? {
     <div class="doctor-grid">
       {doctors.map((d) => {
         const href = L(`/doctors/${topicOf(d.id)}/`);
-        // Memberships live in list blocks with variant="memberships" inside
-        // sections. Sum items across all such blocks so the card count stays
-        // in sync with what the detail page shows.
+        // Memberships live in list blocks rendered as the wrap layout
+        // (density-packed short entries). Sum items across all such blocks
+        // so the card count stays in sync with what the detail page shows.
         const membershipsCount = (d.data.sections ?? [])
-          .filter((s: any) => s.type === "list" && s.variant === "memberships")
+          .filter((s: any) => s.type === "list" && s.variant === "wrap")
           .reduce((total: number, s: any) => total + (s.items?.length ?? 0), 0);
         return (
           <a class="doctor-card" href={href}>

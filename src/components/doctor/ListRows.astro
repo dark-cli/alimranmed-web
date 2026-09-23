@@ -1,8 +1,12 @@
 ---
 /**
- * list / variant=publications — heading + ordered list of citations.
- * Label on the left (year, mono small); body is the paper title (serif,
- * emphasised); subtitle is the source line (small muted) stacked below.
+ * list / variant=rows — stacked single-column rows.
+ * Label on the left (mono, small); body on the right (site body font);
+ * optional subtitle below the body in muted small text.
+ *
+ * Used for anything read top-to-bottom: appointments, education, conferences,
+ * publications. Typography is intentionally uniform (no display-serif emphasis
+ * on any variant) so items look consistent regardless of what they contain.
  */
 interface Props {
   heading: string;
@@ -15,17 +19,17 @@ const { heading, items, isLast = false } = Astro.props;
 <section class:list={["reg-section", isLast && "reg-section-last"]}>
   <div class="reg-wrap">
     <h2 class="reg-label">{heading}</h2>
-    <ol class="reg-body reg-pubs">
+    <div class="reg-body">
       {items.map((it) => (
-        <li>
-          <span class="reg-period reg-period-wide">{it.label}</span>
-          <span>
-            <span class="pub-title">{it.body}</span>
-            {it.subtitle && <span class="pub-source">{it.subtitle}</span>}
-          </span>
-        </li>
+        <div class="reg-row">
+          <span class="reg-period">{it.label}</span>
+          <div class="reg-text">
+            <span>{it.body}</span>
+            {it.subtitle && <span class="reg-subtitle">{it.subtitle}</span>}
+          </div>
+        </div>
       ))}
-    </ol>
+    </div>
   </div>
 </section>
 
@@ -42,20 +46,22 @@ const { heading, items, isLast = false } = Astro.props;
     font-weight: 500;
   }
   .reg-body { border-top: 1px solid var(--ink); flex: 1 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; }
-  .reg-period { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
-  .reg-pubs li {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
+  .reg-row {
     display: grid;
-    grid-template-columns: 56px minmax(0, 1fr);
-    gap: 24px;
+    grid-template-columns: minmax(92px, 140px) minmax(0, 1fr);
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
   }
-  .reg-period-wide { padding-top: 3px; }
-  .pub-title { display: block; font-family: var(--font-display); font-size: 19px; line-height: 1.35; color: var(--ink); }
-  .pub-source { display: block; font-size: 13.5px; color: var(--muted); margin-top: 5px; }
+  .reg-period { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+  .reg-text {
+    font-size: 15.5px; line-height: 1.55; color: var(--ink);
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .reg-subtitle { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
 
   @media (max-width: 640px) {
-    .reg-pubs li { grid-template-columns: 1fr; gap: 4px; }
+    .reg-row { grid-template-columns: 1fr; gap: 4px; }
     .reg-label { position: static; }
   }
 
@@ -63,6 +69,6 @@ const { heading, items, isLast = false } = Astro.props;
     font-family: var(--font-body); font-size: 12px; letter-spacing: 0.04em; text-transform: none; font-weight: 700;
   }
   :global(html[dir="rtl"]) .reg-period { font-family: var(--font-body); font-size: 13px; }
-  :global(html[dir="rtl"]) .pub-title { font-weight: 700; line-height: 1.5; }
-  :global(html[dir="rtl"]) .pub-source { line-height: 1.7; }
+  :global(html[dir="rtl"]) .reg-text { line-height: 1.7; }
+  :global(html[dir="rtl"]) .reg-subtitle { line-height: 1.7; }
 </style>

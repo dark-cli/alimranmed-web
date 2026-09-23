@@ -26,7 +26,7 @@ sections:
       - fig: "٦"
         desc: "أيام عمل أسبوعيًا، مع مناوبة للحالات الطارئة"
   - type: list
-    variant: timeline
+    variant: rows
     heading: "المناصب"
     items:
       - label: "٢٠٠٦ — الآن"
@@ -38,7 +38,7 @@ sections:
       - label: "١٩٩٩ — ٢٠٠٠"
         body: "طبيب مقيم أول، الجراحة العامة، مستشفى البصرة العام."
   - type: list
-    variant: timeline
+    variant: rows
     heading: "التعليم"
     items:
       - label: "١٩٩٦"
@@ -52,7 +52,7 @@ sections:
       - label: "٢٠١٣"
         body: "زمالة إدارة الألم التداخلي، عيادة موبي للألم، مومباي."
   - type: list
-    variant: memberships
+    variant: wrap
     heading: "العضويات"
     items:
       - label: "٢٠٢٢"
@@ -72,7 +72,7 @@ sections:
       - label: "٢٠١٠"
         body: "الجمعية الأمريكية لجراحي الجهاز العصبي"
   - type: list
-    variant: publications
+    variant: rows
     heading: "البحوث المنشورة"
     items:
       - label: "٢٠١٣"
@@ -91,7 +91,7 @@ sections:
         body: "حصيلة إصابات الرأس بالأسلحة النارية عند الأطفال"
         subtitle: "Int. Journal of Medicine and Pharmaceutical Sciences، المجلد ٣، العدد ٣، الصفحات ٩٩–١٠٨."
   - type: list
-    variant: timeline
+    variant: rows
     heading: "المشاركات والمؤتمرات"
     items:
       - label: "يوكوهاما ٢٠١٦"

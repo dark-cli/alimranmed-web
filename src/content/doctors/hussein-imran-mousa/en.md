@@ -26,7 +26,7 @@ sections:
       - fig: '6'
         desc: Clinic days a week, including an out-of-hours on-call roster
   - type: list
-    variant: timeline
+    variant: rows
     heading: Appointments
     items:
       - label: 2006 — present
@@ -38,7 +38,7 @@ sections:
       - label: 1999 — 2000
         body: Senior House Officer, General Surgery, Basrah General Hospital.
   - type: list
-    variant: timeline
+    variant: rows
     heading: Education
     items:
       - label: '1996'
@@ -52,7 +52,7 @@ sections:
       - label: '2013'
         body: Fellowship in Interventional Pain Management, Mobi Pain Clinic, Mumbai.
   - type: list
-    variant: memberships
+    variant: wrap
     heading: Memberships
     items:
       - label: '2022'
@@ -72,7 +72,7 @@ sections:
       - label: '2010'
         body: American Association of Neurological Surgeons
   - type: list
-    variant: publications
+    variant: rows
     heading: Published research
     items:
       - label: '2013'
@@ -91,7 +91,7 @@ sections:
         body: The outcome of paediatric gunshot head injuries
         subtitle: Int. Journal of Medicine and Pharmaceutical Sciences, Vol. 3, No. 3, pp. 99–108.
   - type: list
-    variant: timeline
+    variant: rows
     heading: Conference papers & training
     items:
       - label: Yokohama 2016

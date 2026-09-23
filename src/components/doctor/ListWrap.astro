@@ -1,8 +1,13 @@
 ---
 /**
- * list / variant=memberships — heading + wrapping 2-column grid.
- * Body on the left (society name, main text); label on the right
- * (year joined, mono small). Wraps into 2 pairs per row when wide.
+ * list / variant=wrap — auto-fit responsive columns.
+ * Body on the left (main text); label on the right (mono, small).
+ * Items wrap into as MANY columns as fit the viewport (1 on mobile,
+ * 2 or 3 on wider screens). NOT fixed 2-col — use variant=columns
+ * for that. Subtitle is ignored by this layout.
+ *
+ * Best for short single-line entries where density matters:
+ * memberships, languages, tags.
  */
 interface Props {
   heading: string;
