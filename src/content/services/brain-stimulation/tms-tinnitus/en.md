@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/tinnitus/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Low-frequency repetitive TMS is applied to auditory cortex areas to reduce the abnormal neuronal activity underlying tinnitus."
@@ -23,7 +23,7 @@ sections:
       Progress in auditory neuroscience now provides a positive outlook for tinnitus treatment. Transcranial magnetic stimulation (TMS) is a method that stimulates neuronal tissue non-invasively, without depending on the transfer of electrical current through electrodes or skin.
 
       In recent years, the number of studies on repetitive low-frequency TMS for tinnitus has increased significantly, with most reporting successful results. The growing evidence base supports rTMS as a meaningful treatment option, particularly for patients for whom pharmacological or audiological interventions have not been effective.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Brain stimulation"

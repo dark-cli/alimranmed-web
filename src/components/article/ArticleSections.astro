@@ -70,19 +70,19 @@ function nextNumId(hasHeading: boolean): { num?: string; id?: string } {
 {sections.map((s: any) => {
   const { num, id } = nextNumId(!!s.heading);
 
-  if (s.type === "at-a-glance")
+  if (s.type === "at_a_glance")
     return <AtGlance items={s.items} glanceLabel={glanceLabel} />;
 
   if (s.type === "prose")
     return <Prose num={num} heading={s.heading} body={s.body} id={id} locale={locale} />;
 
-  if (s.type === "pull-quote")
+  if (s.type === "pull_quote")
     return <PullQuote text={s.text} attribution={s.attribution} />;
 
-  if (s.type === "comparison-pair")
+  if (s.type === "comparison_pair")
     return <ComparisonPair num={num} heading={s.heading} id={id} intro={s.intro} a={s.a} b={s.b} />;
 
-  if (s.type === "stats-facts")
+  if (s.type === "stats_facts")
     return <StatsFacts
       num={num} heading={s.heading} id={id} intro={s.intro}
       stats={s.stats} facts={s.facts}
@@ -90,7 +90,7 @@ function nextNumId(hasHeading: boolean): { num?: string; id?: string } {
       factNumbers={s.facts.map((_: string, i: number) => padNum(i + 1))}
     />;
 
-  if (s.type === "treatment-groups")
+  if (s.type === "treatment_groups")
     return <TreatmentGroups
       num={num} heading={s.heading} id={id}
       intro={s.intro} note={s.note} groups={s.groups}

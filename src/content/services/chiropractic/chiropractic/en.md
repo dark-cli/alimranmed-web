@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 isHub: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Chiropractic care at Alimran uses two computerised instrument-based techniques for spinal decompression and joint adjustment — no high-velocity manual thrusts."
@@ -26,7 +26,7 @@ sections:
       [Sigma](/services/chiropractic/sigma/) — a precise instrument-assisted joint adjustment technique that delivers controlled mechanical impulses without high-velocity manual manipulation. It is safe, comfortable, and suitable for patients who are not candidates for traditional manual chiropractic.
 
       Neither technique involves forceful manual thrusts, making both approaches suitable for a wide range of patients including those with osteoporosis or post-surgical changes.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Chiropractic techniques"

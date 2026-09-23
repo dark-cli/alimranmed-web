@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/subdural-hematoma/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A blood clot (hematoma) that forms between the skull and the outer membrane covering the brain (dura mater), typically following a head injury."
@@ -35,7 +35,7 @@ sections:
       **Raised intracranial pressure:** Head injury may cause brain swelling. Because the skull has limited space, swelling raises pressure inside the skull (intracranial pressure, ICP) — which can lead to brain damage. Severe cases require ICP monitoring.
 
       **Surgical option:** When the hematoma is significant and does not resolve, burr hole evacuation (surgical drainage) may be required.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Non-surgical treatment at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

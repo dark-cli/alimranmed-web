@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is ALS?"
         value: "A progressive neurological disease marked by atrophy and weakness of skeletal, spinal, and bulbar muscles due to degeneration of motor neurons in the anterior horn of the spinal cord and in the corticospinal system."
@@ -30,7 +30,7 @@ sections:
       At present there are no drugs that can effectively alter the course of the disease, but medication can help ease specific symptoms. What makes the greatest difference to the patient is rehabilitation — with the participation of different specialists, and started from the earliest stages of the disease. Consistently applied, it improves quality of life significantly.
 
       In more advanced cases, a pacemaker surgically implanted in the diaphragm can be used to stimulate muscle contraction. For patients with neuromuscular diseases such as ALS who depend on continuous mechanical ventilatory support, this offers the ability to breathe without the ventilator after appropriate training. It represents a significant improvement in quality of life, a reduction in recurrent respiratory infections, and ultimately an increase in survival.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Rehabilitation programme"
     intro: "Rehabilitation for ALS is multidisciplinary — combining physical, functional, cognitive, social, and speech components. The goals are to keep the affected regions active and to reduce the patient's dependency on others."
     groups:

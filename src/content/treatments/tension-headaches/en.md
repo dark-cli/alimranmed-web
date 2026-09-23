@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/%ef%bb%bftension-headaches/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "The most common type of headache — a steady, dull ache affecting both sides of the head, often described as a tight band around the skull."
@@ -31,7 +31,7 @@ sections:
       Unlike migraine, tension headaches do not typically cause nausea, vomiting, or visual disturbances. Physical activity does not worsen them. Some light or sound sensitivity is possible but is not a defining feature.
 
       **Self-management** plays an important role: consistent sleep and wake times, daily exercise, regular meals (especially breakfast), avoiding personal headache triggers, and stress-reduction practices such as massage or yoga.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

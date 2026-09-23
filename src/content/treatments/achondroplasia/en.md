@@ -8,7 +8,7 @@ publishedAt: "2021-01-11T13:17:17"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A genetic bone disorder caused by an FGFR3 gene mutation that impairs growth of long bones in the limbs and causes abnormal development of the spine and skull. Affects approximately 1 in 10,000 infants."
@@ -40,7 +40,7 @@ sections:
       **Treatment** centres on managing neurological complications. When dangerous compression of the foramen magnum or spinal column is found, surgical decompression — removing bone and ligaments — creates more room for neural structures without compromising structural integrity. Because children continue to grow, repeat decompressions may be needed. Early intervention yields the best outcomes: symptoms allowed to progress for months or years may become permanent.
 
       If hydrocephalus develops, a paediatric neurosurgeon may place a ventriculoperitoneal (VP) shunt — a long thin tube running from the brain's ventricles under the skin to the abdomen — to drain CSF at a controlled rate. With timely diagnosis and treatment, achondroplastic children can develop intellectual and social capacities equivalent to other children.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

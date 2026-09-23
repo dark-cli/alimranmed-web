@@ -8,7 +8,7 @@ publishedAt: "2021-01-16T06:18:39"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A rare hormonal disorder in which the pituitary gland overproduces growth hormone — most commonly due to a benign pituitary adenoma. Causes progressive bone and soft tissue enlargement, typically in middle-aged adults."
@@ -51,7 +51,7 @@ sections:
       - **Dopamine agonists** (cabergoline, bromocriptine) — oral medications that lower GH and IGF-1 and may shrink the tumour.
       - **GH receptor antagonist** (pegvisomant) — daily injection that blocks GH action on tissues; normalises IGF-1 without reducing GH or tumour size.
       - **Radiosurgery** — used when tumour cells remain after surgery; slowly reduces GH over years.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/cranial-gunshot-wounds/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Penetrating traumatic brain injury caused by a projectile entering the cranial cavity. Among the most lethal of all firearm injuries — the majority of victims do not survive to reach hospital. Survivors face severe neurological deficits from direct brain destruction, haemorrhage, oedema, and elevated intracranial pressure. Management is guided by trajectory, Glasgow Coma Scale score, CT findings, and evidence of brainstem function."
@@ -49,7 +49,7 @@ sections:
       **Rehabilitation**
 
       Survivors of cranial gunshot wounds require prolonged, specialised neurorehabilitation addressing motor deficits, aphasia, cognitive impairment, behavioural changes, and epilepsy (which develops in a significant proportion). Neuromodulatory therapies including rTMS and physiotherapy form part of the post-acute rehabilitation programme at Alimran Medical Center.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

@@ -9,7 +9,7 @@ publishedAt: "2020-06-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Loss of blood supply to part of the brain — from a blocked artery (ischaemic) or a burst vessel (haemorrhagic)."
@@ -25,11 +25,11 @@ sections:
 
       There are two main types. The great majority are ischaemic (an artery blocked by a clot). A smaller share are haemorrhagic (a vessel bursts and blood enters the brain tissue). The symptoms often look the same at the start, but the treatment paths in the first hours are opposite — which is why a scan is done immediately in hospital before any drug is given.
 
-  - type: pull-quote
+  - type: pull_quote
     text: "The most valuable minute in the whole illness is the one before the ambulance arrives. Every clinic visit after that is downstream — worth doing well, but downstream."
     attribution: "Hussein Imran Mousa, consultant neurosurgeon"
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Two types of stroke"
     intro: "The two look similar clinically but are managed very differently in the acute phase — a scan in the emergency department decides which is which."
     a:
@@ -47,7 +47,7 @@ sections:
         - "Treatment: blood-pressure reduction; neurosurgical evacuation in selected cases."
         - "Long-term: strict BP control, avoid anticoagulants, address any underlying vascular malformation."
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "1 in 4"
@@ -63,7 +63,7 @@ sections:
       - "Secondary prevention — controlling blood pressure, cholesterol, diabetes, and atrial fibrillation — reduces recurrence risk by more than half."
       - "Depression after stroke is common and undertreated; screening at every follow-up matters."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How we treat stroke recovery"
     intro: "The clinic sees stroke patients after the acute admission — for rehabilitation, spasticity management, and secondary prevention. Every plan combines interventions from the four groups below, weighted to the patient's residual deficit."
     note: "The acute event is managed at the emergency department. Anyone who suspects a stroke should call for an ambulance immediately, not book a clinic appointment."

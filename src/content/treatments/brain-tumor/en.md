@@ -9,7 +9,7 @@ publishedAt: "2020-08-15T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "An abnormal growth of tissue in the brain — either primary (arising in the brain) or metastatic (spread from elsewhere)."
@@ -25,7 +25,7 @@ sections:
 
       Two tumours of the same histology can have very different management if one is in silent brain territory and the other is next to the motor strip or speech area. The plan is made together with the patient after the imaging is reviewed in detail.
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Two categories to distinguish"
     intro: "The most useful distinction at the first consultation is primary vs secondary — it dictates the workup, the specialists involved, and the tone of the conversation."
     a:
@@ -43,7 +43,7 @@ sections:
         - "Systemic disease workup is essential — the brain is not always the whole story."
         - "Radiosurgery is often the first-line brain treatment; surgery for symptomatic single lesions."
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "70%+"
@@ -59,7 +59,7 @@ sections:
       - "Awake craniotomy allows resection close to eloquent brain areas while continuously monitoring speech and movement."
       - "Follow-up MRI at 3 and 6 months is standard after any resection — the interval scan matters as much as the operation."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "The four options are combined, not chosen. A meningioma might be watched, then resected years later. A metastatic lesion might get radiosurgery today and systemic therapy alongside. The plan is built for the specific tumour, in the specific patient."
     note: "Cases are discussed in a multidisciplinary meeting before a definitive plan is offered — neurosurgery, oncology, radiology, and pathology in the same room."

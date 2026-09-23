@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/tennis-elbow/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Degeneration of the tendon at the outer elbow (lateral epicondyle), weakening its attachment to bone and causing pain with wrist and forearm activities."
@@ -33,7 +33,7 @@ sections:
       Most common in people aged 30–50, though it affects both younger and older individuals of either sex.
 
       **Symptoms:** Tenderness and pain over the lateral epicondyle, worse with any gripping or lifting activity. Pain often starts at the elbow and radiates down the forearm to the hand.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy"

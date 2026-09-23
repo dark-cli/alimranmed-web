@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/sports-injuries/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Injuries to muscles, tendons, ligaments, cartilage, or bone arising from athletic activity. Includes acute traumatic injuries (ACL tear, shoulder dislocation, hamstring rupture) and overuse injuries (Achilles tendinopathy, stress fractures, shin splints, tennis elbow, patellofemoral pain). Common at every level from recreational runners to competitive athletes."
@@ -59,7 +59,7 @@ sections:
       **Prevention and conditioning**
 
       Many sports injuries are preventable. A proper warm-up, progressive training load, neuromuscular conditioning, and addressing prior injuries significantly reduce risk. Athletes returning to sport after injury should meet objective strength and movement criteria — not just symptom resolution — before resuming full training.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

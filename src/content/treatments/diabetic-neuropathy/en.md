@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/diabetic-neuropathy/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Nerve damage caused by sustained high blood sugar — a serious complication of diabetes affecting approximately 50% of patients. Can involve the feet, legs, internal organs, and other nerves."
@@ -31,7 +31,7 @@ sections:
       **4. Focal neuropathy (mononeuropathy)** — affects a single nerve, causing double vision, eye pain, facial paralysis (Bell's palsy), chest pain mimicking heart attack, or hand weakness.
 
       **Complications** of diabetic neuropathy include: foot ulcers and amputation risk, urinary tract infections and incontinence, sudden blood pressure drops, digestive problems, and sexual dysfunction.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

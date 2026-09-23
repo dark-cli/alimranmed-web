@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/muscle-strains/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "An injury to a muscle or tendon (the fibrous tissue connecting muscle to bone) from overstretching or tearing. Range from Grade I (mild overstretching, no structural disruption) to Grade III (complete rupture). Distinct from a sprain, which injures ligaments connecting bones."
@@ -49,7 +49,7 @@ sections:
       After the acute phase, a structured physiotherapy rehabilitation programme is essential for full recovery — addressing muscle flexibility, strength, neuromuscular control, and sport-specific movement patterns. Returning to activity too early is the main cause of re-injury.
 
       For strains that fail to respond to conservative management, targeted interventions (prolotherapy, ozone, pulsed radiofrequency) address chronic inflammation and impaired tendon healing. Complete tendon ruptures (e.g., Achilles or quadriceps) require surgical repair.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

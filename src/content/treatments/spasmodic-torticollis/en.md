@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/spasmodic-torticollis/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Involuntary contractions of the neck muscles that cause the head to twist or tilt. A rare neurological disorder most common in middle-aged women."
@@ -35,7 +35,7 @@ sections:
       Some people experience combinations of postures, along with a jerking head motion. Neck pain radiating into the shoulders is common, as are headaches. In some patients, pain is exhausting and disabling.
 
       **Causes:** In most cases the cause is unknown. A family history of the disorder is sometimes present, and gene mutations associated with cervical dystonia have been identified. Head, neck, or shoulder injuries are also linked to onset.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "First-line treatment"

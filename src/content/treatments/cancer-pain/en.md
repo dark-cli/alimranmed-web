@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Severe pain in cancer patients caused by the tumour itself (invasion, compression, inflammation) or treatment side effects (surgery, chemotherapy, radiation). Intractable pain fails to respond to standard therapies."
@@ -23,7 +23,7 @@ sections:
     body: |
       Cancer-related pain affects 30–50% of patients during active treatment and up to 75% of those with advanced disease. Pain arises from tumour invasion of bone, viscera or nerves; treatment toxicity; infection; or post-treatment complications. Intractable cancer pain is severe enough to substantially impair function and quality of life despite conventional analgesics.
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "30–50%"
@@ -37,7 +37,7 @@ sections:
       - "Tolerance (the need for escalating doses) develops over months to years; this is different from addiction."
       - "Interventional pain procedures (nerve blocks, spinal infusions) can dramatically reduce opioid requirements and side effects."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "WHO analgesic ladder guides escalation. Multimodal therapy (opioids + adjuvants + interventional procedures) is standard for intractable pain."
     note: "Palliative care is NOT end-of-life care — it is concurrent with curative treatment and focuses on symptom management and quality of life."

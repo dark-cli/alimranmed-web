@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "An overuse injury of the Achilles tendon — the band of tissue connecting the calf muscles at the back of the lower leg to the heel bone."
@@ -53,7 +53,7 @@ sections:
       Tendinitis usually responds well to self-care measures. When the signs and symptoms are severe or persistent, further options are considered.
 
       If over-the-counter pain medications — such as ibuprofen or naproxen — are not enough, stronger anti-inflammatory medication may be prescribed to reduce inflammation and relieve pain.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     intro: "Depending on the severity and duration of symptoms, we may recommend any of the following:"
     groups:

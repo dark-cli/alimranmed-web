@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/sickle-cell-anemia/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A hereditary haemoglobinopathy caused by a point mutation in the β-globin gene (HbS), producing abnormal haemoglobin that polymerises when deoxygenated. The resulting rigid, sickle-shaped red blood cells have a shortened lifespan (10–20 days vs the normal 120 days), cause haemolytic anaemia, and obstruct the microcirculation — triggering ischaemia, infarction, and pain. Autosomal recessive inheritance: both alleles must be abnormal for disease expression."
@@ -56,7 +56,7 @@ sections:
       **Pain management**
 
       Vaso-occlusive crises require multimodal analgesia: NSAIDs and paracetamol for mild episodes; opioids for moderate-to-severe crises; patient-controlled analgesia (PCA) during hospital admissions. Chronic pain — from avascular necrosis, neuropathy, and organ damage — is common and requires chronic pain management approaches including neuromodulation.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

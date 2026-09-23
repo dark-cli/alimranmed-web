@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/transcranial-magnetic-stimulation-tms-for-mig
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "TMS for migraine is a non-invasive brain stimulation technique applied as a prophylactic therapy to reduce migraine frequency and severity without medication."
@@ -23,7 +23,7 @@ sections:
       Pharmacological migraine therapy is divided into abortive treatment of acute attacks and prophylactic prevention. Many patients continue to experience attacks refractory to various prophylactic and abortive therapies, while others are at high risk of medication overuse headache. For these patients, TMS offers a non-pharmacological alternative.
 
       By delivering controlled magnetic pulses to specific cortical areas, TMS modulates the neuronal excitability patterns that contribute to migraine pathophysiology. It acts as a prophylactic intervention — reducing the frequency and severity of attacks over time rather than aborting an acute episode.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Brain stimulation"

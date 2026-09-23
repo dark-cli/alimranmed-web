@@ -36,3 +36,8 @@ package-lock.json
 
 # Discovery output from `npm run fetch-ar` — regenerable, not source
 scripts/ar-staging/Neurosurgeon consultant website design.zip
+
+# TinaCMS generated
+.tina/__generated__
+public/admin
+tina-lock.json

@@ -8,7 +8,7 @@ legacyUrl: "https://alimranmed.com/osteoporosis-pain/"
 source: "translated-by-llm"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هي"
         value: "مرض عظمي تنكّسي يُقلّل كثافة معادن العظام مع الوقت، ويجعلها ضعيفة وهشّة — يُصيب غالباً كبار السنّ."

@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Excessive forward rounding of the thoracic spine, creating a 'hunched' posture. May be postural, developmental (Scheuermann's), degenerative, or post-traumatic."
@@ -23,7 +23,7 @@ sections:
     body: |
       Kyphosis is anterior (forward) curvature of the thoracic spine. Normal thoracic kyphosis is 20–40°; beyond 50° is usually considered excessive. The causes vary: postural slouching, Scheuermann's disease (juvenile-onset structural kyphosis), degenerative disc disease in older patients, or post-traumatic deformity.
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "1–8%"
@@ -37,7 +37,7 @@ sections:
       - "Degenerative kyphosis develops from disc collapse and facet joint arthropathy over decades."
       - "Pulmonary and cardiac reserve may be compromised in severe kyphosis (>75°)."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Postural kyphosis responds to core work. Structural kyphosis requires bracing or surgery depending on severity and age."
     groups:

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/flatfeet/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A common condition in which the arch of the foot is flattened, allowing the entire sole to touch the floor when standing. Often painless; no treatment is needed unless symptoms arise."
@@ -34,7 +34,7 @@ sections:
       **When it causes symptoms:** Most people with flatfeet have no pain at all. When pain does occur, it typically affects the heel or arch and worsens with activity. Swelling along the inner ankle and altered leg alignment contributing to knee problems can also occur.
 
       No treatment is necessary if flatfeet are painless.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Conservative measures"

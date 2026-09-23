@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/tethered-spinal-cord/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "An umbrella term for conditions in which the lower end of the spinal cord is abnormally anchored, preventing it from moving freely upward within the spinal canal as the spine flexes or grows. The resulting traction stresses the delicate spinal cord tissue, particularly over time. Congenital causes include: tight (thickened) filum terminale, lipomeningomyelocele, split cord malformation, dermal sinus tract, and spinal cord cysts. Acquired causes include post-operative scar tissue, spinal tumour, and post-traumatic adhesions. Congenital forms are usually identified in childhood or adolescence during growth spurts; a minority are not diagnosed until adulthood. Nearly all adults with open spina bifida require lifelong monitoring for tethered cord."
@@ -39,7 +39,7 @@ sections:
       **Surgery and outcome**
 
       Tether release surgery opens the spinal canal from behind, identifies the cause of tethering, and divides or removes the offending structure under neurophysiological monitoring (to protect motor and sensory nerve roots in real time). The majority of patients stabilise or improve. Re-tethering occurs in a proportion, necessitating further surgery. Long-term neurological follow-up is essential.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

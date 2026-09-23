@@ -41,7 +41,7 @@ const pageBase = z.object({
 const kv = z.object({ label: z.string(), value: z.string() });
 
 const blockAtGlance = z.object({
-  type: z.literal("at-a-glance"),
+  type: z.literal("at_a_glance"),
   items: z.array(kv).min(2).max(4),
 });
 
@@ -52,13 +52,13 @@ const blockProse = z.object({
 });
 
 const blockPullQuote = z.object({
-  type: z.literal("pull-quote"),
+  type: z.literal("pull_quote"),
   text: z.string(),
   attribution: z.string().optional(),
 });
 
 const blockComparisonPair = z.object({
-  type: z.literal("comparison-pair"),
+  type: z.literal("comparison_pair"),
   heading: z.string().optional(),
   intro: z.string().optional(),
   a: z.object({ label: z.string(), title: z.string(), items: z.array(z.string()) }),
@@ -66,7 +66,7 @@ const blockComparisonPair = z.object({
 });
 
 const blockStatsFacts = z.object({
-  type: z.literal("stats-facts"),
+  type: z.literal("stats_facts"),
   heading: z.string().optional(),
   intro: z.string().optional(),
   stats: z.array(z.object({ value: z.string(), label: z.string() })).min(2).max(4),
@@ -74,7 +74,7 @@ const blockStatsFacts = z.object({
 });
 
 const blockTreatmentGroups = z.object({
-  type: z.literal("treatment-groups"),
+  type: z.literal("treatment_groups"),
   heading: z.string().optional(),
   intro: z.string().optional(),
   note: z.string().optional(),

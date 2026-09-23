@@ -8,7 +8,7 @@ source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو rTMS؟"
         value: "التحفيز المغناطيسي المتكرر—طريقة علاجية حديثة باستخدام نبضات مغناطيسية من ملف على فروة الرأس"

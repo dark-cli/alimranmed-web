@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "BDNF role"
         value: "Brain-derived neurotrophic factor important for neuronal plasticity, synaptic plasticity and memory"

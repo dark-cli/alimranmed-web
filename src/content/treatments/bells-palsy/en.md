@@ -8,7 +8,7 @@ publishedAt: "2021-01-16T15:50:53"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Sudden weakness or paralysis of one side of the face caused by inflammation and swelling of the facial nerve. Often follows a viral infection. Usually temporary — most people recover fully in about 6 months."
@@ -42,7 +42,7 @@ sections:
       - Corneal damage from inability to close the eye (exposure keratopathy)
 
       **Medical treatment:** Corticosteroids (prednisone) started within several days of symptom onset reduce nerve inflammation and improve recovery rates. Antiviral drugs (valacyclovir, acyclovir) may be added in severe cases, though evidence remains mixed. Eye protection is essential when the eye cannot close.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

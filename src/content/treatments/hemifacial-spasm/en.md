@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/hemifacial-spasm/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A neurological condition in which muscles on one side of the face involuntarily twitch or contract. More common in middle-aged to elderly women."
@@ -27,7 +27,7 @@ sections:
       **Symptoms:** Symptoms usually begin with mild, intermittent twitching of one eyelid and may progress to involve the lower face. In more severe cases, intense and continuous muscle spasms spread across the entire affected side.
 
       **Prognosis:** Outcomes vary with severity. Some patients are managed successfully with minimal intervention; others require multiple treatment modalities. Ongoing treatment to suppress muscle spasms may be needed in persistent cases.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "First-line treatment"

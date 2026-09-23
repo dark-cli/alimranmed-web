@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Group of conditions with abnormal muscle tone or involuntary movement — cerebral palsy, spasticity, dystonia, ataxia. May be congenital, acquired, or progressive."
@@ -23,7 +23,7 @@ sections:
     body: |
       Motor disorders span a spectrum from congenital cerebral palsy to acquired spasticity following stroke, spinal cord injury or brain trauma. The underlying problem is loss of normal inhibitory control over motor neurons, resulting in overactive reflexes, muscle tightness or involuntary movement.
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "2–3 per 1000"
@@ -38,7 +38,7 @@ sections:
       - "Botulinum toxin works within 1–2 weeks and lasts 3–4 months, requiring repeat injections."
       - "Functional neurosurgery (dorsal rhizotomy, GPi deep brain stimulation) is reserved for severe cases refractory to conservative management."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Physical therapy is the foundation. Pharmacological and surgical options escalate with severity."
     groups:

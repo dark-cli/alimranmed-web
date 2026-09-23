@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 isHub: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it covers"
         value: "The spine category encompasses disorders of the vertebral column, intervertebral discs, spinal cord, and nerve roots. Conditions range from common degenerative disease (herniated disc, spondylotic myelopathy) to congenital anomalies (spina bifida, tethered cord), traumatic injury, and cord pathology (syringomyelia, transverse myelitis)."
@@ -30,7 +30,7 @@ sections:
       - [Syringomyelia (syrinx)](/treatments/syringomyelia/)
       - [Tethered spinal cord](/treatments/tethered-spinal-cord/)
       - [Transverse myelitis](/treatments/transverse-myelitis/)
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

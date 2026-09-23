@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is tinnitus?"
         value: "Disturbing noise heard without external stimulus, affects quality of life and causes psychosocial problems"

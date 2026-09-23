@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/normal-pressure-hydrocephalus/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Communicating hydrocephalus in which CSF accumulates in the cerebral ventricles despite initially normal or borderline CSF pressure. Most cases are idiopathic; secondary NPH follows subarachnoid haemorrhage, head injury, meningitis, or brain tumour. Predominantly affects adults over 60. Causes progressive ventricular enlargement that compresses and stretches periventricular white matter tracts, producing the characteristic triad of symptoms."
@@ -44,7 +44,7 @@ sections:
       **Outcomes**
 
       Patients who respond to CSF drainage have an > 80% chance of sustained gait improvement after shunt implantation. Cognitive and urinary function improvement is more variable but occurs in over half of patients. Long-term shunt valve programming is often required to optimise benefit as the condition evolves.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neurosurgery"

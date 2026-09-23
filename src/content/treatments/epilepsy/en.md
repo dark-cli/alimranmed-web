@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A tendency to have seizures — episodes of involuntary muscle contractions, altered awareness, or unusual sensations caused by abnormal electrical discharge in the brain."
@@ -25,7 +25,7 @@ sections:
 
       The causes vary widely. Many cases are genetic or developmental. Others arise from head trauma, stroke, brain tumour, or infection. In many cases the cause remains unknown even after investigation.
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Generalised vs focal seizures"
     intro: "The seizure type guides investigation and treatment choice. Some patients have both."
     a:
@@ -45,7 +45,7 @@ sections:
         - "Hand movements, lip smacking, or automatisms are common."
         - "EEG abnormality is localised."
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "1%"
@@ -61,7 +61,7 @@ sections:
       - "Driving restrictions apply in most countries; seizure freedom (usually 6–12 months) must be confirmed before licensing resumes."
       - "Sudden Unexpected Nocturnal Death in Epilepsy (SUDEP) is rare but serious — risk falls with seizure control."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Anti-seizure medication is first-line. Surgery is the next step for drug-resistant epilepsy."
     note: "Seizure freedom is the goal, but some patients settle for a significant reduction if complete freedom is not achievable."

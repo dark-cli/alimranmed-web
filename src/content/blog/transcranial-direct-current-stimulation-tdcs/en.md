@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is tDCS?"
         value: "Wearable brain stimulation technology delivering low electrical current to scalp for neuromodulation"

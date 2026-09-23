@@ -9,7 +9,7 @@ publishedAt: "2020-10-01T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "The gel-like nucleus of an intervertebral disc protrudes through a tear in its fibrous outer ring, often compressing a nerve root."
@@ -25,7 +25,7 @@ sections:
 
       The herniated fragment often compresses a nerve root as it exits the spine, producing the classic radicular pain pattern — sciatica in the leg from a lumbar disc, radiating arm pain from a cervical disc. The compression can be from mechanical pressure, chemical irritation, or both.
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Where herniations occur"
     intro: "The two locations that dominate clinic — cervical and lumbar — present differently because of what each nerve root controls. Thoracic herniations exist but are rare and don't fit the same pattern."
     a:
@@ -43,7 +43,7 @@ sections:
         - "Pain radiates from the neck into the arm and hand."
         - "Weakness of biceps (C5/6) or triceps/wrist extension (C6/7) if severe."
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "90%"
@@ -59,7 +59,7 @@ sections:
       - "The natural history is favourable: even severe disc herniations shrink on repeat imaging in most patients over months."
       - "Surgery in the first six weeks is reserved for progressive weakness; earlier surgery for pain alone does not change long-term outcome."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "The plan is stepped and evidence-based. Most patients never leave the first two tiers."
     note: "The plan is written and reviewed at 4–6 week intervals; the treatment shifts as symptoms shift."

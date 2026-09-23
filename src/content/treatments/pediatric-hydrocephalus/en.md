@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/pediatric-hydrocephalus/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "An abnormal build-up of cerebrospinal fluid (CSF) within the brain's ventricles, causing them to enlarge and compress surrounding brain tissue. CSF is produced continuously within the ventricles and normally circulates around the brain and spinal cord before being reabsorbed. Hydrocephalus occurs when this cycle is disrupted — by obstruction within the ventricular system, impaired absorption over the brain surface, or (rarely) overproduction. The underlying cause determines the prognosis more than the hydrocephalus itself."
@@ -51,7 +51,7 @@ sections:
       *Endoscopic third ventriculostomy (ETV):* A small fenestration made in the floor of the third ventricle using an endoscope, allowing CSF to bypass the obstructed aqueduct and enter the subarachnoid space. Avoids implanted hardware; infection risk is lower than shunting. Most effective in older children with obstructive hydrocephalus (aqueductal stenosis); less effective in infants and in communicating hydrocephalus. Can fail over time, requiring conversion to shunting or repeat ETV.
 
       *ETV + choroid plexus cauterisation (ETV-CPC):* In young infants, particularly those with post-infectious hydrocephalus, cauterising the choroid plexus (which produces much of the CSF) in combination with ETV improves success rates compared with ETV alone.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neurosurgery"

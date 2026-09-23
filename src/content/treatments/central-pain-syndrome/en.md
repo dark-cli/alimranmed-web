@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/central-pain-syndrome/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A neurological pain condition caused by damage to or dysfunction of the central nervous system — the brain, brainstem, and spinal cord."
@@ -27,7 +27,7 @@ sections:
       Individuals experience one or more types of pain sensations, the most prominent being burning. Mingled with the burning may be "pins and needles"; pressing, lacerating, or aching pain; and brief, intolerable bursts of sharp pain similar to the pain of a dental probe on an exposed nerve. Numbness in the affected areas is common. The burning and loss of touch sensations are usually most severe on the distant parts of the body, such as the feet or hands.
 
       Central pain syndrome often begins shortly after the causative injury, but may be delayed by months or even years — especially if it is related to post-stroke pain.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     intro: "Neuromodulation drives the plan; the other options support it."
     groups:

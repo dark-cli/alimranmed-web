@@ -8,7 +8,7 @@ publishedAt: "2020-05-07T01:45:04"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Regenerative medicine uses natural injection formulas — including dextrose, saline, PRP, and stem cells — to stimulate collagen growth, repair connective tissue, and stabilise painful joints."
@@ -24,7 +24,7 @@ sections:
       Injection formulas are tailored to each patient. Traditional formulas use dextrose, saline, and local anaesthetic. Advanced formulas include Platelet Rich Plasma (PRP), which contains growth factors, and autologous adult stem cells from bone marrow or adipose (fat) tissue — enabling more robust regenerative responses for complex or chronic cases.
 
       Areas treatable with regenerative medicine include: low back and mid-back (including degenerative disc disease and sacroiliac instability), neck, knee, shoulder, elbow, ankle, wrist, TMJ, plantar fasciitis, IT band syndrome, piriformis syndrome, and other musculoskeletal pain conditions.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Regenerative medicine"

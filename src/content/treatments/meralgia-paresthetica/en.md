@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/meralgia-paresthetica/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Compression of the lateral femoral cutaneous nerve — a pure sensory nerve supplying the outer thigh — causing pain and sensory changes. Also called Bernhardt-Roth syndrome."
@@ -35,7 +35,7 @@ sections:
       - Scar tissue near the inguinal ligament from prior injury or surgery
 
       In many cases symptoms improve within a few months. Conservative measures — wearing loose clothing and managing weight — are tried first. When these are not enough, targeted treatments are available.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

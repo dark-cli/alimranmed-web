@@ -7,7 +7,7 @@ category: "physiotherapy"
 source: "ai-draft"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Therapeutic ultrasound delivers high-frequency sound waves (1 million pulses per second) more than two inches into tissue, creating heat and cellular changes that promote healing."
@@ -27,7 +27,7 @@ sections:
       Benefits of ultrasound therapy include accelerated healing, reduced inflammation and pain, improved scar tissue flexibility, and decreased trigger point pain. It has been proven effective for repair of ligaments, tendons, scar tissue, and joints.
 
       Contraindications include pregnancy (particularly over the abdomen), malignant tissue, vascular abnormalities, and pacemakers or other electronic implants.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy"

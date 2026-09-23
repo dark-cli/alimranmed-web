@@ -9,7 +9,7 @@ publishedAt: "2021-01-04T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Pain radiating down the leg along the sciatic nerve, from a compressed nerve root in the lumbar spine."
@@ -32,7 +32,7 @@ sections:
 
       Numbness, tingling, or weakness in the leg or foot changes the plan: those symptoms indicate the nerve is not just irritated but functionally impaired, and urgent evaluation is warranted if weakness is progressive.
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Two things sciatica is often confused with"
     intro: "The word 'sciatica' gets applied loosely. Two conditions look similar but have different treatment paths — telling them apart is done at the physical examination, not on the scan."
     a:
@@ -50,7 +50,7 @@ sections:
         - "Tenderness on deep buttock palpation; SLR often negative."
         - "MRI of the spine is normal; diagnosis is clinical."
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "80%"
@@ -66,7 +66,7 @@ sections:
       - "Progressive weakness, saddle-area numbness, or loss of bladder/bowel control is a red flag and needs same-day assessment."
       - "Surgery for pain alone (no weakness) is a decision made with the patient, not a default."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "The stepped plan mirrors back pain: start conservative, escalate when the evidence supports it, and reserve surgery for defined indications."
     note: "The plan is written and shared with the patient and the referring clinician at the end of the first visit; imaging is arranged only when the exam demands it."

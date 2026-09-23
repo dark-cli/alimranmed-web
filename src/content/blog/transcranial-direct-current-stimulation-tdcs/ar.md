@@ -8,7 +8,7 @@ source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو tDCS؟"
         value: "تكنولوجيا تحفيز دماغ قابلة للارتداء توفر تيار كهربائي منخفض على فروة الرأس"

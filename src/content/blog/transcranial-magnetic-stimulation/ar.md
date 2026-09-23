@@ -7,7 +7,7 @@ publishedAt: "2020-01-03T07:25:09"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو TMS؟"
         value: "تحفيز دماغ باستخدام موجات ونبضات مغناطيسية لتغيير النشاط الكهربائي في الدماغ"

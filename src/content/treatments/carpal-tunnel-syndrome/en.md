@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/carpal-tunnel-syndrome/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Compression of the median nerve as it passes through the carpal tunnel in the wrist. The median nerve supplies sensation to the thumb, index, middle, and part of the ring finger, and controls thumb muscles."
@@ -38,7 +38,7 @@ sections:
       **Untreated CTS** can progress to permanent nerve damage, persistent weakness, and permanent loss of hand function.
 
       First-line management includes wrist splinting (especially at night), avoidance of aggravating activities, and treatment of any underlying medical condition. When these measures fail, injection therapies and physiotherapy are the next steps. Surgery (carpal tunnel release) is reserved for severe or persistent cases.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

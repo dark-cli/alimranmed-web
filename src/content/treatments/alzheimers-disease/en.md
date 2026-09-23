@@ -8,7 +8,7 @@ publishedAt: "2021-01-16T06:56:50"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "The most common cause of dementia. A progressive neurological disorder in which brain cells die and the brain shrinks, leading to relentless cognitive and functional decline. Affects an estimated 60–70% of all dementia cases worldwide."
@@ -38,7 +38,7 @@ sections:
       - **Cholinesterase inhibitors** (donepezil, galantamine, rivastigmine) — preserve the neurotransmitter acetylcholine to temporarily improve communication between neurons; modest but consistent cognitive benefit; may also reduce agitation and depression
       - **Memantine** (Namenda) — acts on a separate glutamate communication network; used in moderate-to-severe Alzheimer's, sometimes with a cholinesterase inhibitor
       - **rTMS combined with cognitive training** — clinical studies in Alzheimer's patients show that daily rTMS sessions over the relevant cortical and hippocampal networks, combined with structured cognitive training, produce significant improvement in Alzheimer's Disease Assessment Scale (ADAS-Cog) scores after 6 weeks, with benefits maintained with ongoing maintenance sessions. rTMS is thought to enhance synaptic plasticity and increase brain-derived neurotrophic factor (BDNF) — processes that are impaired in Alzheimer's disease.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

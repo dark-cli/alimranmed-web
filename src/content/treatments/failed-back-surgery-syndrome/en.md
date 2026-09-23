@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/failed-back-surgery-syndrome/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Persistent or new pain after spinal surgery — not a true syndrome but a general term for unsuccessful surgical outcomes. Affects an estimated 20–40% of spinal surgery patients."
@@ -31,7 +31,7 @@ sections:
       **Treatment pathway:** Initial treatment typically includes targeted injections, nerve blocks, or radiofrequency ablation to temporarily interrupt pain signals. A graduated exercise programme to restore muscle strength is also a core component.
 
       For pain that is disabling and does not respond to initial measures, **spinal cord stimulation** is an option. One or more leads with small electrical contacts are placed near the affected nerves (along the spine); if a trial period reduces pain, a small battery is implanted to provide continuous stimulation. Large, carefully conducted trials have shown spinal cord stimulation to achieve superior outcomes at lower cost than repeat back surgery for FBSS.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"
