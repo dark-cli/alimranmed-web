@@ -120,6 +120,33 @@ function stringifyYAML(obj: FrontmatterData): string {
     } else {
       // String
       const str = String(value);
+
+      // Detect array-like strings (contain YAML array syntax) and convert to arrays
+      if (str.includes('\n') && (str.includes('- "') || str.includes('- '))) {
+        const arrayItems = str.split('\n')
+          .map(line => line.trim())
+          .filter(line => line && (line.startsWith('- ') || line.startsWith('- "')))
+          .map(line => {
+            let item = line.replace(/^-\s*/, '');
+            // Remove quotes if present
+            if ((item.startsWith('"') && item.endsWith('"')) ||
+                (item.startsWith("'") && item.endsWith("'"))) {
+              item = item.slice(1, -1);
+            }
+            // Unescape quotes
+            item = item.replace(/\\"/g, '"');
+            return item;
+          });
+
+        if (arrayItems.length > 0) {
+          lines.push(`${key}:`);
+          for (const item of arrayItems) {
+            lines.push(`  - ${JSON.stringify(item)}`);
+          }
+          continue;
+        }
+      }
+
       // Quote if contains special chars
       if (str.includes(':') || str.includes('#') || str.includes('\n')) {
         lines.push(`${key}: ${JSON.stringify(str)}`);
