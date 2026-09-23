@@ -1,0 +1,183 @@
+/*
+ * Sveltia preview stylesheet — attached to the CMS preview pane via
+ * CMS.registerPreviewStyle in public/admin/preview.js.
+ *
+ * IMPORTANT: this is a copy of tokens from src/styles/global.css plus the
+ * component styles from src/components/doctor/. Keep in sync when either
+ * changes — the preview isn't wired to Astro's build so it can't import them.
+ */
+
+/* ─── Design tokens (from src/styles/global.css) ─────────────────────── */
+:root {
+  --ink:            #101c22;
+  --body:           #3c4a52;
+  --muted:          #77858c;
+  --accent:         #0b5e78;
+  --line:           #dde4e7;
+  --line-soft:      #eef2f4;
+  --line-strong:    #c7d4d9;
+  --surface:        #f4f7f8;
+  --white:          #ffffff;
+
+  --font-display:   "Newsreader", "Times New Roman", serif;
+  --font-body:      "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:      "IBM Plex Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
+
+  --page-max:       1180px;
+}
+
+/* Body reset so the preview iframe doesn't inherit CMS chrome */
+body {
+  font-family: var(--font-body);
+  color: var(--body);
+  background: var(--white);
+  margin: 0;
+}
+* { box-sizing: border-box; }
+
+/* ─── CvHero ─────────────────────────────────────────────────────────── */
+.cv-head-band { border-bottom: 1px solid var(--line); }
+.cv-head {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: clamp(44px, 5.5vw, 72px) 24px clamp(40px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(265px, 100%), 1fr));
+  gap: clamp(32px, 4vw, 64px);
+  align-items: start;
+}
+.cv-head-copy { container-type: inline-size; }
+.cv-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 20px;
+}
+.cv-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 9cqw, 54px);
+  line-height: 1.07;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+.cv-lede { font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 24px; max-width: 54ch; }
+.cv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.cv-chip {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  padding: 6px 11px;
+}
+.cv-portrait-img {
+  width: 100%; height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  display: block;
+}
+
+/* ─── CvStats ────────────────────────────────────────────────────────── */
+.cv-stats { border-bottom: 1px solid var(--line); background: var(--surface); }
+.cv-stats-grid {
+  max-width: var(--page-max); margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr));
+  gap: 1px;
+  background: var(--line);
+}
+.cv-stat-cell { background: var(--surface); padding: 32px 24px; }
+.cv-stat-fig {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.4vw, 40px);
+  line-height: 1;
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-weight: 400;
+}
+.cv-stat-desc { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--body); }
+
+/* ─── CvTimeline / CvMemberships / CvPublications shared ─────────────── */
+.reg-section {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 64px) 24px 0;
+}
+.reg-section-last { padding-bottom: clamp(56px, 7vw, 96px); }
+.reg-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px clamp(32px, 4vw, 64px);
+  align-items: flex-start;
+}
+.reg-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+  flex: 0 0 min(190px, 100%);
+  font-weight: 500;
+}
+.reg-body {
+  border-top: 1px solid var(--ink);
+  flex: 1 1 380px;
+  min-width: 0;
+  margin: 0; padding: 0; list-style: none;
+}
+.reg-row {
+  display: grid;
+  grid-template-columns: minmax(92px, 140px) minmax(0, 1fr);
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.reg-period { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+.reg-text { font-size: 15.5px; line-height: 1.55; color: var(--ink); }
+
+/* Memberships */
+.reg-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(245px, 100%), 1fr));
+  gap: 0 48px;
+}
+.reg-members li {
+  font-size: 15px;
+  color: var(--ink);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.member-year { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+/* Publications */
+.reg-pubs li {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 24px;
+}
+.reg-period-wide { padding-top: 3px; }
+.pub-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 19px;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.pub-source { display: block; font-size: 13.5px; color: var(--muted); margin-top: 5px; }
+
+@media (max-width: 640px) {
+  .reg-row, .reg-pubs li { grid-template-columns: 1fr; gap: 4px; }
+}

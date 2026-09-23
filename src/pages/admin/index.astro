@@ -14,5 +14,8 @@ export const prerender = true;
   </head>
   <body>
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" is:inline></script>
+    <!-- Custom preview templates + styles. Registered after Sveltia loads so
+         CMS.registerPreviewTemplate / registerPreviewStyle are defined. -->
+    <script src="/admin/preview.js" is:inline></script>
   </body>
 </html>
