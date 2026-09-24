@@ -28,6 +28,8 @@ export default defineConfig({
   trailingSlash: "always",
   integrations: [
     sitemap({
+      // `/` is a 301 to /en/ at the edge; redirects don't belong in a sitemap.
+      filter: (page) => new URL(page).pathname !== "/",
       serialize(item) {
         return { ...item, lastmod: new Date().toISOString() };
       },
