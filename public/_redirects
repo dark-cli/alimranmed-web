@@ -15,3 +15,24 @@
 /services/*    /en/services/:splat    301
 /blog/*        /en/blog/:splat        301
 
+# ── Merged duplicate pages ─────────────────────────────────────────────
+/en/services/brain-stimulation/tms-alzheimer/  /en/blog/tms-for-alzheimer-disease/  301
+/ar/services/brain-stimulation/tms-alzheimer/  /ar/blog/tms-for-alzheimer-disease/  301
+/en/blog/tms-for-migraine/  /en/services/brain-stimulation/tms-migraine/  301
+/ar/blog/tms-for-migraine/  /ar/services/brain-stimulation/tms-migraine/  301
+/en/blog/tms-for-pains/  /en/services/brain-stimulation/tms-pain/  301
+/ar/blog/tms-for-pains/  /ar/services/brain-stimulation/tms-pain/  301
+/en/blog/amyotrophic-lateral-sclerosis-als-2/  /en/treatments/als/  301
+/ar/blog/amyotrophic-lateral-sclerosis-als-2/  /ar/treatments/als/  301
+/en/blog/tms-for-tinnitus-2/  /en/blog/tms-for-tinnitus/  301
+/ar/blog/tms-for-tinnitus-2/  /ar/blog/tms-for-tinnitus/  301
+/en/treatments/nervous-bladder/  /en/treatments/neurogenic-bladder/  301
+/ar/treatments/nervous-bladder/  /ar/treatments/neurogenic-bladder/  301
+/en/services/natural-therapy/  /en/blog/physiotherapy/  301
+/ar/services/natural-therapy/  /ar/blog/physiotherapy/  301
+/en/services/physiotherapy/physiotherapy-3/  /en/blog/physiotherapy/  301
+/ar/services/physiotherapy/physiotherapy-3/  /ar/blog/physiotherapy/  301
+/en/services/surgery/arthroplasty/  /en/services/surgery/artificial-disc/  301
+/ar/services/surgery/arthroplasty/  /ar/services/surgery/artificial-disc/  301
+/en/services/physiotherapy/shortwave/  /en/services/physiotherapy/shortwave-therapy/  301
+/ar/services/physiotherapy/shortwave/  /ar/services/physiotherapy/shortwave-therapy/  301

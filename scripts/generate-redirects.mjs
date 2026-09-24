@@ -40,6 +40,29 @@ const lines = [
   "",
 ];
 
+// ── Merged duplicate pages ──────────────────────────────────────────────
+// Pages that duplicated another page's content were removed; each old path
+// 301s to the page that was kept. Applies to both locales.
+const MERGED = [
+  ["services/brain-stimulation/tms-alzheimer", "blog/tms-for-alzheimer-disease"],
+  ["blog/tms-for-migraine", "services/brain-stimulation/tms-migraine"],
+  ["blog/tms-for-pains", "services/brain-stimulation/tms-pain"],
+  ["blog/amyotrophic-lateral-sclerosis-als-2", "treatments/als"],
+  ["blog/tms-for-tinnitus-2", "blog/tms-for-tinnitus"],
+  ["treatments/nervous-bladder", "treatments/neurogenic-bladder"],
+  ["services/natural-therapy", "blog/physiotherapy"],
+  ["services/physiotherapy/physiotherapy-3", "blog/physiotherapy"],
+  ["services/surgery/arthroplasty", "services/surgery/artificial-disc"],
+  ["services/physiotherapy/shortwave", "services/physiotherapy/shortwave-therapy"],
+];
+lines.push("# ── Merged duplicate pages ─────────────────────────────────────────────");
+for (const [from, to] of MERGED) {
+  for (const locale of ["en", "ar"]) {
+    lines.push(`/${locale}/${from}/  /${locale}/${to}/  301`);
+  }
+}
+
 lines.push("");
 await writeFile(OUT, lines.join("\n"));
-console.log(`Wrote _redirects (6 essential rules) to ${path.relative(REPO_ROOT, OUT)}`);
+const ruleCount = lines.filter((l) => l.startsWith("/")).length;
+console.log(`Wrote _redirects (${ruleCount} rules) to ${path.relative(REPO_ROOT, OUT)}`);

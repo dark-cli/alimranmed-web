@@ -94,6 +94,21 @@ for (const [host, map] of Object.entries(extra)) {
   }
 }
 
+// Follow the new site's own 301s (merged duplicate pages) so old URLs land
+// on the final page in one hop instead of chaining through a redirect.
+const siteRedirects = new Map();
+for (const line of (await readFile(path.join(REPO_ROOT, "public", "_redirects"), "utf8")).split("\n")) {
+  const [from, to, code] = line.trim().split(/\s+/);
+  if (from?.startsWith("/") && !from.includes("*") && code === "301") siteRedirects.set(from, to);
+}
+for (const map of Object.values(rules)) {
+  for (const rule of map.values()) {
+    let p = rule.target.slice(NEW_SITE.length);
+    for (let hops = 0; siteRedirects.has(p) && hops < 5; hops++) p = siteRedirects.get(p);
+    rule.target = `${NEW_SITE}${p}`;
+  }
+}
+
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 for (const [host, map] of Object.entries(rules)) {
