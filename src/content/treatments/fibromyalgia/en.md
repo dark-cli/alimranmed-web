@@ -1,6 +1,6 @@
 ---
 title: "Fibromyalgia and myofascial pain"
-description: "Widespread muscle pain that routine scans do not explain. Most of it originates in muscle and fascia — and most of it is treatable once the source is correctly identified."
+description: "Widespread muscle pain that routine scans don't explain. Most of it comes from muscle and fascia, and is treatable once the source is found."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/fibromyalgia/"

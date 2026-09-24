@@ -1,6 +1,6 @@
 ---
 title: "Brachial plexus injuries"
-description: "Injuries to the network of nerves (C5–T1) that transmit signals from the spinal cord to the shoulder, arm, and hand. Range from minor stretching to complete nerve avulsion. Causes include trauma, difficult childbirth, and sports injuries. Treated with physiotherapy, neuromodulation, and surgery in severe cases."
+description: "Injuries to the nerve network supplying the shoulder, arm and hand, from stretching to root avulsion. Treated with physiotherapy, neuromodulation or surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/brachial-plexus-injuries/"

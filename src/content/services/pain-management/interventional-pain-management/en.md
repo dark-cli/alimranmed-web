@@ -1,6 +1,6 @@
 ---
 title: "INTERVENTIONAL PAIN MANAGEMENT"
-description: "Adhesiolysis Botox injection Epidural steroid injection Facet Joint pain syndrome Gasserian ganglion block INTERVENTIONAL PAIN MANAGEMENT ozone prolotherapy prolotherapy Radiofrequency"
+description: "Interventional pain management at Alimran Medical Center: nerve blocks, epidural steroids, radiofrequency, ozone, prolotherapy, Botox and adhesiolysis."
 order: 999
 legacyUrl: "https://alimranmed.com/interventional-pain-management/"
 category: "pain-management"

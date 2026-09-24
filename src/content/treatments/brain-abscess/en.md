@@ -1,6 +1,6 @@
 ---
 title: "Brain abscess"
-description: "A rare but life-threatening localised infection inside the brain, encapsulated within a pus-filled cavity. More common in children of school age. Requires immediate hospitalisation, surgical drainage, and antibiotics. Rehabilitation supports recovery of any neurological deficits."
+description: "A rare, life-threatening pus-filled infection inside the brain that needs urgent hospital care, surgical drainage and antibiotics, then rehabilitation."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/brain-abscess/"

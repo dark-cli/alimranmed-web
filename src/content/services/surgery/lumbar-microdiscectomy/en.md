@@ -1,6 +1,6 @@
 ---
 title: "Lumbar Microdiscectomy"
-description: "Lumbar microdiscectomy uses an operating microscope to remove a herniated disc pressing on a lumbar nerve root, through a small incision under general anaesthesia."
+description: "Lumbar microdiscectomy removes a herniated disc pressing on a lumbar nerve root through a small incision, using an operating microscope."
 order: 999
 legacyUrl: "https://alimranmed.com/lumbar-microdiscectomy/"
 category: "surgery"

@@ -1,6 +1,6 @@
 ---
 title: "TMS for migraine"
-description: "Transcranial magnetic stimulation (TMS) is a non-pharmacological preventive treatment for migraine that maps cortical reactivity and reduces the frequency and severity of attacks."
+description: "Transcranial magnetic stimulation (TMS) is a drug-free preventive treatment for migraine that reduces how often attacks happen and how severe they are."
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/transcranial-magnetic-stimulation-tms-for-migraine/"

@@ -1,6 +1,6 @@
 ---
 title: "Regenerative Medicine"
-description: "Regenerative medicine uses directed injections of dextrose, PRP, or stem cells to stimulate the body's natural healing and repair damaged ligaments, tendons, and joints."
+description: "Regenerative medicine uses injections of dextrose, PRP or stem cells to stimulate natural healing of damaged ligaments, tendons and joints."
 category: "regenerative-medicine"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/07/regenerative-medicine/"

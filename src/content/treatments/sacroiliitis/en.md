@@ -1,6 +1,6 @@
 ---
 title: "Sacroiliitis"
-description: "Inflammation of one or both sacroiliac joints where the lower spine meets the pelvis. Causes buttock and lower back pain that worsens with prolonged standing or stair climbing. Treated with injections, neuromodulation, and physiotherapy."
+description: "Inflammation of the joint where the lower spine meets the pelvis, causing buttock and low back pain. Treated with injections and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/sacroiliitis/"

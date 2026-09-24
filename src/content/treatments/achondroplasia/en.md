@@ -1,6 +1,6 @@
 ---
 title: "Achondroplasia"
-description: "A genetic bone disorder caused by a mutation in the FGFR3 gene that impairs limb bone growth and causes abnormal skull and spine development. Affects about 1 in 10,000 infants. Neurological complications arise from spinal cord and brainstem compression."
+description: "A genetic bone disorder (FGFR3 mutation) that limits limb growth and affects the skull and spine, seen in about 1 in 10,000 births."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/11/achondroplasia/"

@@ -1,6 +1,6 @@
 ---
 title: "Neurogenic bladder"
-description: "Urinary bladder dysfunction caused by disease or injury to the nervous system. Affects bladder storage and emptying through disruption of the neural pathways that coordinate urination. Common in spinal cord injury, multiple sclerosis, stroke, and Parkinson's disease. Managed with catheterisation, medications, Botox, and neuromodulation."
+description: "Bladder problems caused by nerve damage, common after spinal cord injury, MS, stroke and Parkinson's. Managed with catheters, medication and Botox."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/neurogenic-bladder/"

@@ -1,6 +1,6 @@
 ---
 title: "Neck pain"
-description: "Pain in the neck from mechanical dysfunction, cervical spondylosis, or facet arthropathy. Most acute episodes resolve within weeks; chronic neck pain may require multimodal management including physiotherapy, medication, and interventional procedures."
+description: "Neck pain from strain, disc wear or facet joint arthritis. Most flare-ups settle in weeks; chronic pain may need physiotherapy, medication or procedures."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/neck-pain/"

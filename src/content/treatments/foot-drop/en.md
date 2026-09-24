@@ -1,6 +1,6 @@
 ---
 title: "Foot drop"
-description: "Weakness or paralysis of the muscles that lift the front part of the foot, causing it to drag along the ground when walking. A sign of an underlying neurological, muscular, or anatomical problem — not a disease itself. Can be temporary or permanent depending on the underlying cause."
+description: "Weakness of the muscles that lift the front of the foot, making it drag when walking. A sign of a nerve or muscle problem; may be temporary or permanent."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/foot-drop/"

@@ -1,6 +1,6 @@
 ---
 title: "Carpal tunnel syndrome"
-description: "Compression of the median nerve as it passes through the carpal tunnel in the wrist, causing numbness, tingling, and weakness in the thumb and first three fingers. More common in women aged 30–60. Treated with splinting, physiotherapy, steroid injections, and in severe cases surgery."
+description: "Compression of the median nerve at the wrist, causing numbness, tingling and weakness in the thumb and fingers. Treated with splints, injections or surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/carpal-tunnel-syndrome/"

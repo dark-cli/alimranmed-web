@@ -1,6 +1,6 @@
 ---
 title: "Chiropractic"
-description: "The chiropractic department at Alimran Medical Center offers two computerised, instrument-based techniques: SpineMED for spinal decompression and Sigma for precise joint adjustment."
+description: "Our chiropractic department offers two computerised techniques: SpineMED for spinal decompression and Sigma for precise joint adjustment."
 category: "chiropractic"
 order: 999
 legacyUrl: "https://alimranmed.com/chiropractic/"

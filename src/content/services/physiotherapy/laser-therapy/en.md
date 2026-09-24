@@ -1,6 +1,6 @@
 ---
 title: "Laser Therapy"
-description: "Low-level laser therapy (photobioactivation) uses focused light to stimulate cellular repair, reduce inflammation, and relieve pain in musculoskeletal conditions."
+description: "Low-level laser therapy uses focused light to stimulate tissue repair, reduce inflammation and relieve pain in muscle and joint conditions."
 order: 999
 legacyUrl: "https://alimranmed.com/laser-therapy/"
 category: "physiotherapy"

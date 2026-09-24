@@ -1,6 +1,6 @@
 ---
 title: "Spasticity"
-description: "Abnormal increase in muscle tone caused by damage to the brain, spinal cord, or motor nerves. A common complication of cerebral palsy, multiple sclerosis, stroke, and spinal cord injury. Management focuses on reducing tone, relieving pain, preventing deformity, and improving function."
+description: "Abnormally stiff muscles after brain or spinal cord damage, common in cerebral palsy, MS and stroke. Treatment eases tone and prevents deformity."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/spasticity/"

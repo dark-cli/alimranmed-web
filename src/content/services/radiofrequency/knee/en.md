@@ -1,6 +1,6 @@
 ---
 title: "Knee Radiofrequency"
-description: "Radiofrequency ablation of the genicular nerves is an effective non-surgical treatment for chronic knee osteoarthritis pain, offering lasting relief for patients unable or unwilling to undergo surgery."
+description: "Genicular nerve radiofrequency ablation is a non-surgical treatment for chronic knee osteoarthritis pain, for patients who can't or won't have surgery."
 category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/29/radiofrequency-of-knee-joint/"

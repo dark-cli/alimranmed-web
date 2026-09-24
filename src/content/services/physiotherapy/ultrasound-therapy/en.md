@@ -1,6 +1,6 @@
 ---
 title: "Ultrasound Therapy"
-description: "Therapeutic ultrasound uses high-frequency sound waves to produce deep tissue heat and non-thermal cellular effects that accelerate healing, reduce inflammation, and relieve pain."
+description: "Therapeutic ultrasound uses high-frequency sound waves to heat deep tissue and speed healing, reduce inflammation and relieve pain."
 order: 999
 legacyUrl: "https://alimranmed.com/ultrasound-therapy/"
 category: "physiotherapy"

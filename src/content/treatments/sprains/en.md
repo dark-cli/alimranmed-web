@@ -1,6 +1,6 @@
 ---
 title: "Sprains"
-description: "Injuries to ligaments — the tough fibrous bands connecting bones at joints — caused by overstretching or tearing. The ankle is the most commonly affected joint. Range from mild stretching to complete rupture. Managed with RICE, physiotherapy, injections, and occasionally surgery."
+description: "Stretched or torn ligaments, most often in the ankle. Treated with rest, ice, compression and elevation, then physiotherapy, and rarely surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/sprains/"

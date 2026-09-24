@@ -1,6 +1,6 @@
 ---
 title: "Cancer-related intractable pain"
-description: "Severe, persistent pain in patients with cancer that fails to respond to conventional opioid and non-opioid analgesics. Multimodal management includes aggressive pharmacotherapy, regional and neuroablative procedures, and palliative care."
+description: "Severe cancer pain that doesn't respond to standard painkillers, managed with stronger medication, nerve procedures and palliative care."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/cancer-pain/"

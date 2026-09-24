@@ -1,6 +1,6 @@
 ---
 title: "Cauda equina syndrome"
-description: "A rare but serious medical emergency caused by compression of the cauda equina — the bundle of nerves at the base of the spinal cord. Causes severe low back pain, bladder and bowel dysfunction, and leg weakness. Requires emergency surgical decompression to prevent permanent paralysis."
+description: "A rare emergency: compressed nerve roots at the base of the spine cause back pain, bladder problems and leg weakness. Urgent surgery prevents paralysis."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/cauda-equina-syndrome/"

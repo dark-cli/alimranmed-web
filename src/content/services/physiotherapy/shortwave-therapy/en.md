@@ -1,6 +1,6 @@
 ---
 title: "Shortwave Therapy"
-description: "Pulsed shortwave therapy uses short pulses of an electromagnetic field to reduce inflammation and help muscle and nerve tissue repair. How it works and who shouldn't have it."
+description: "Pulsed shortwave therapy uses pulses of an electromagnetic field to reduce inflammation and help muscles and nerves repair. How it works and who it suits."
 category: "physiotherapy"
 order: 999
 legacyUrl: "https://alimranmed.com/shortwave-therapy/"

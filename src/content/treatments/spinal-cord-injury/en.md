@@ -1,6 +1,6 @@
 ---
 title: "Spinal cord injury"
-description: "Acute traumatic or non-traumatic damage to the spinal cord. Rehabilitation and neuroprotection are critical in the acute phase; long-term management focuses on function restoration."
+description: "Traumatic or non-traumatic damage to the spinal cord. Early care protects the cord; long-term rehabilitation focuses on restoring function."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/spinal-cord-injury/"

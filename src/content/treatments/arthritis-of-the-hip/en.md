@@ -1,6 +1,6 @@
 ---
 title: "Arthritis of the hip"
-description: "One of the most common causes of hip pain. A progressive disorder in which joint cartilage wears away or becomes inflamed, causing pain, stiffness, and reduced mobility. No cure, but non-surgical treatments can significantly relieve symptoms and delay the need for joint replacement."
+description: "One of the most common causes of hip pain: worn or inflamed cartilage causing pain and stiffness. Non-surgical care can relieve it and delay hip replacement."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/arthritis-of-the-hip/"

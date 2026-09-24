@@ -1,6 +1,6 @@
 ---
 title: "Avascular necrosis"
-description: "Death of bone tissue caused by a loss of blood supply. Also called osteonecrosis. Without adequate blood flow, the bone develops tiny fractures and eventually collapses. Most commonly affects the hip. Associated with trauma, high-dose steroids, and excessive alcohol use."
+description: "Bone death caused by loss of blood supply (osteonecrosis), leading to collapse, most often in the hip. Linked to trauma, high-dose steroids and alcohol."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/16/avascular-necrosis/"

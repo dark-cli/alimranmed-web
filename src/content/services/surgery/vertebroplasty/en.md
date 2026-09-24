@@ -1,6 +1,6 @@
 ---
 title: "Vertebroplasty"
-description: "Vertebroplasty is an outpatient procedure that injects bone cement into cracked or broken vertebrae to stabilise compression fractures, relieve severe pain, and restore mobility."
+description: "Vertebroplasty injects bone cement into cracked vertebrae to stabilise compression fractures, relieve severe pain and restore mobility."
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/vertebroplasty/"

@@ -1,6 +1,6 @@
 ---
 title: "Intercostal neuralgia"
-description: "Nerve pain that wraps around the trunk in a band-like distribution, usually from compression, surgery, trauma, or shingles affecting the intercostal nerves. Treatment blends physiotherapy with targeted injections."
+description: "Band-like nerve pain around the chest or trunk, often after surgery, injury or shingles. Treated with physiotherapy and targeted nerve injections."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/intercostal-neuralgia/"

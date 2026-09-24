@@ -1,6 +1,6 @@
 ---
 title: "Spina bifida"
-description: "A neural tube defect in which the developing spine fails to close completely. Classified by severity: occulta (bone only, usually asymptomatic), meningocele (meninges herniate, cord spared), and myelomeningocele (open spina bifida, cord exposed). Adults with open forms are managed for associated conditions — hydrocephalus, Chiari malformation, tethered cord, and syringomyelia — requiring ongoing neurosurgical follow-up."
+description: "A birth defect where the spine doesn't close fully, from mild hidden forms to open forms that need lifelong neurosurgical follow-up."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/spina-bifida/"

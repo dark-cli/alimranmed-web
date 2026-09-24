@@ -1,6 +1,6 @@
 ---
 title: "Muscle cramp"
-description: "A sudden, involuntary contraction of one or more muscles — most commonly in the calf — causing intense, brief pain and a palpable knot of muscle tissue. Usually benign and self-limiting, but recurrent or nocturnal cramps may indicate underlying vascular, neurological, or metabolic causes warranting investigation."
+description: "A sudden, painful muscle contraction, usually in the calf. Mostly harmless, but frequent or night-time cramps may point to a cause worth checking."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/muscle-cramp/"

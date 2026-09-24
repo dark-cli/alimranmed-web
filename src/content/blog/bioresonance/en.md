@@ -1,6 +1,6 @@
 ---
 title: "Bioresonance"
-description: "A complementary therapy that reads the body's electromagnetic wavelengths through skin electrodes, used at the clinic for smoking cessation, allergies, fibromyalgia, and other chronic conditions."
+description: "A complementary therapy that reads the body's electromagnetic signals through skin electrodes, used for smoking cessation, allergies and fibromyalgia."
 order: 999
 legacyUrl: "https://alimranmed.com/2021/05/31/bioresonance/"
 publishedAt: "2021-05-31T17:07:49"

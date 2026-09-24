@@ -1,6 +1,6 @@
 ---
 title: "Normal pressure hydrocephalus"
-description: "Progressive accumulation of cerebrospinal fluid in the brain ventricles, most often in adults over 60. Presents with the classic triad of gait disturbance, urinary incontinence, and cognitive slowing. Diagnosis requires MRI and a CSF drainage trial. Treatment is VP shunt implantation with a magnetically programmable valve; endoscopic third ventriculostomy is an alternative in selected cases."
+description: "Fluid build-up in the brain in adults over 60, causing walking problems, incontinence and slowed thinking. Treated with a programmable shunt."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/normal-pressure-hydrocephalus/"

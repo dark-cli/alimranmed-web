@@ -1,6 +1,6 @@
 ---
 title: "Tennis elbow (lateral epicondylitis)"
-description: "Degeneration of the tendon attaching to the outer elbow, causing pain with gripping, lifting, and grasping. Most common between ages 30–50. Treated conservatively with physiotherapy, injections, and radiofrequency."
+description: "Wear of the tendon on the outer elbow, causing pain when gripping or lifting, usually at 30–50. Treated with physiotherapy, injections and radiofrequency."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/tennis-elbow/"

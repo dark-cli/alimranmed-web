@@ -1,6 +1,6 @@
 ---
 title: "Spasmodic torticollis (cervical dystonia)"
-description: "A painful condition in which neck muscles involuntarily contract, causing the head to twist or tilt to one side. No cure exists, but Botox injections, rTMS, and physiotherapy significantly reduce symptoms."
+description: "Painful involuntary neck muscle spasms that twist or tilt the head. There's no cure, but Botox, rTMS and physiotherapy greatly reduce symptoms."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/spasmodic-torticollis/"

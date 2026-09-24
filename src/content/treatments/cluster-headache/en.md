@@ -1,6 +1,6 @@
 ---
 title: "Cluster headache"
-description: "One of the most intensely painful headache types, occurring in cyclical clusters of attacks lasting weeks to months. Characterised by severe unilateral eye or periorbital pain with autonomic features. Affects males more than females, typically starting around age 30."
+description: "One of the most painful headaches, striking in cycles of attacks with severe pain around one eye. More common in men, usually starting around age 30."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/cluster-headache/"

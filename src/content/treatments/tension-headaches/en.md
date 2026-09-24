@@ -1,6 +1,6 @@
 ---
 title: "Tension headache"
-description: "The most common type of headache — a dull, pressing pain around both sides of the head, caused by muscle tension and stress. Can be episodic or chronic. Treated with lifestyle management, neuromodulation, injections, and physiotherapy."
+description: "The most common headache: a dull, pressing pain on both sides of the head from muscle tension and stress. Eased with lifestyle changes and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/%ef%bb%bftension-headaches/"

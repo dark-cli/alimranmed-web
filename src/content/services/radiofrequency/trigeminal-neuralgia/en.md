@@ -1,6 +1,6 @@
 ---
 title: "Radiofrequency for trigeminal neuralgia"
-description: "Gasserian ganglion radiofrequency ablation is a minimally invasive procedure for trigeminal neuralgia, using a fine needle guided through the cheek under local anaesthesia and X-ray."
+description: "Gasserian ganglion radiofrequency ablation treats trigeminal neuralgia with a fine needle guided through the cheek, under local anaesthesia and X-ray."
 category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/08/radiofrequency-for-trigeminal-neuralgia/"

@@ -1,6 +1,6 @@
 ---
 title: "Sports injuries"
-description: "A broad category of musculoskeletal injuries sustained during sport or exercise — from hamstring strains and Achilles tendinopathy to ACL tears, stress fractures, and tennis elbow. Most respond to physiotherapy and targeted interventions; severe ligament or tendon ruptures may require surgery."
+description: "Injuries from sport or exercise, from hamstring strains and Achilles problems to ACL tears and tennis elbow. Most respond to physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/sports-injuries/"

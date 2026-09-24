@@ -1,6 +1,6 @@
 ---
 title: "Craniosynostosis"
-description: "A congenital condition in which one or more of the fibrous sutures between the skull bones close prematurely, restricting normal brain and skull growth. Affects approximately 1 in 2,000 live births. Surgery before 12 months of age is the primary treatment — to relieve elevated intracranial pressure, allow normal brain development, and correct skull deformity."
+description: "Early fusion of one or more skull sutures in babies, restricting skull and brain growth. Surgery before 12 months is the main treatment."
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/craniosynostosis/"

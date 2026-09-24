@@ -1,6 +1,6 @@
 ---
 title: "SpineMED"
-description: "SpineMED is a computerised spinal decompression system that targets damaged discs, relieves intradiscal pressure, and allows the spine's natural healing without surgery or medication."
+description: "SpineMED is a computerised spinal decompression system that relieves pressure on damaged discs so the spine can heal without surgery or medication."
 category: "chiropractic"
 order: 999
 legacyUrl: "/services/chiropractic/spinmed/"

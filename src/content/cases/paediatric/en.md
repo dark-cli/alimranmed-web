@@ -1,6 +1,6 @@
 ---
-title: "Cerebral palsy in children"
-description: "Watch this video on YouTube"
+title: "Paediatric Neurosurgery Cases"
+description: "Paediatric neurosurgery cases at Alimran Medical Center: congenital brain and spinal cord malformations, hydrocephalus and cysts in infants and children."
 order: 999
 legacyUrl: "https://alimranmed.com/2019/03/26/paediatric-cases/"
 publishedAt: "2019-03-26T14:42:32"

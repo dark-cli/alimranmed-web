@@ -1,6 +1,6 @@
 ---
 title: "Neuropathic pain"
-description: "Chronic pain caused by damage or dysfunction of the nervous system rather than by tissue injury. Characterised by burning, shooting, or electric-shock sensations. Common causes include diabetes, shingles, multiple sclerosis, spinal cord injury, and post-surgical nerve damage."
+description: "Chronic pain from nerve damage rather than tissue injury, felt as burning, shooting or electric shocks. Common causes include diabetes and shingles."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/neuropathic-pain/"

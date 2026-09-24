@@ -1,6 +1,6 @@
 ---
 title: "Flatfeet"
-description: "A condition in which the foot's arch is absent or falls over time, allowing the entire sole to contact the ground. Often painless, but can cause foot, ankle, and knee pain when symptomatic. Treated with orthotics, supportive footwear, and physiotherapy."
+description: "A missing or fallen foot arch. Often painless, but it can cause foot, ankle and knee pain, treated with orthotics, good footwear and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/flatfeet/"

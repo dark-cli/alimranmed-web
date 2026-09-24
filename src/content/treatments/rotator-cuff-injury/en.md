@@ -1,6 +1,6 @@
 ---
 title: "Rotator cuff injury"
-description: "Damage to the group of four muscles and tendons stabilising the shoulder joint, causing deep aching pain, weakness, and restricted movement. Ranges from tendinitis and partial tears to full-thickness ruptures. Treated with physiotherapy, injections, and — for significant tears — surgical repair."
+description: "Damage to the shoulder's four stabilising tendons, from inflammation to full tears. Treated with physiotherapy, injections or surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/rotator-cuff-injury/"

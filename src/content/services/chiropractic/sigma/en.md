@@ -1,6 +1,6 @@
 ---
 title: "Sigma instrument-assisted chiropractic"
-description: "Computerised chiropractic adjustment using the Sigma instrument — precise mechanical impulses to joints and spinal segments, with real-time biofeedback on a built-in computer display. Eliminates the guesswork of manual manipulation and adapts treatment force to the individual segment's response."
+description: "Computerised chiropractic adjustment with the Sigma instrument: precise mechanical impulses to joints and spinal segments, guided by real-time feedback."
 category: "chiropractic"
 order: 999
 legacyUrl: "/services/chiropractic/sigma/"

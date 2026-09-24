@@ -1,6 +1,6 @@
 ---
 title: "Failed back surgery syndrome (FBSS)"
-description: "Persistent or new back or leg pain following spinal surgery, affecting an estimated 20–40% of patients. Caused by scar tissue, persistent nerve irritation, or inadequately identified pre-operative pathology. Managed with neuromodulation, injections, and physiotherapy."
+description: "Ongoing back or leg pain after spine surgery, affecting 20–40% of patients. Managed with neuromodulation, injections and physiotherapy."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/failed-back-surgery-syndrome/"

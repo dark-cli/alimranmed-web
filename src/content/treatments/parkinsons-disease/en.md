@@ -1,6 +1,6 @@
 ---
 title: "Parkinson's disease"
-description: "Progressive movement disorder caused by loss of dopamine-producing neurons. Tremor, rigidity and slowness are hallmarks; surgery offered for advanced disease when drugs alone fail."
+description: "A progressive movement disorder from loss of dopamine cells, causing tremor, stiffness and slowness. Surgery is offered when medication alone fails."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/parkinsons-disease/"

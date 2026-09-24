@@ -1,6 +1,6 @@
 ---
 title: "Rheumatoid arthritis"
-description: "A chronic autoimmune inflammatory disease affecting the synovial joints, causing progressive pain, swelling, stiffness, and joint destruction. More common in women (ratio 2:1). Managed with disease-modifying drugs, physiotherapy, and targeted interventional treatments to reduce inflammation and preserve function."
+description: "An autoimmune disease causing joint pain, swelling and gradual damage, more common in women. Treated with disease-modifying drugs and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/rheumatoid-disease/"

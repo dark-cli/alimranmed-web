@@ -1,6 +1,6 @@
 ---
 title: "Motor disorders"
-description: "Neurological conditions affecting motor control — cerebral palsy, spasticity, dystonia. Management ranges from physical therapy to botulinum toxin to functional neurosurgery."
+description: "Conditions affecting movement control, such as cerebral palsy, spasticity and dystonia, treated with physiotherapy, Botox or functional neurosurgery."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/motor-disorders/"

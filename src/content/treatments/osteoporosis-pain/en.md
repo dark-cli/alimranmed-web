@@ -1,6 +1,6 @@
 ---
 title: "Osteoporosis pain"
-description: "A degenerative bone disease that reduces bone mineral density and makes bones fragile, most commonly in the elderly. Pain from fractures and postural strain — treated with medication, physiotherapy, injections, and kyphoplasty for spinal fractures."
+description: "Fragile bones that break easily, mostly in older adults. Pain from fractures is treated with medication, physiotherapy and kyphoplasty for spinal fractures."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/osteoporosis-pain/"

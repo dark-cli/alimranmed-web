@@ -1,6 +1,6 @@
 ---
 title: "Herniated disc"
-description: "The soft centre of a spinal disc pushes through a tear in its outer wall and presses on a nearby nerve. Most heal without surgery — the clinic's role is to identify who does, and who doesn't."
+description: "The soft centre of a spinal disc bulges through a tear and presses on a nerve. Most heal without surgery; the task is spotting the ones that don't."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/herniated-disc/"

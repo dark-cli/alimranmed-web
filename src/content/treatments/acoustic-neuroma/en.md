@@ -1,6 +1,6 @@
 ---
 title: "Acoustic neuroma"
-description: "A slow-growing, non-cancerous tumour of the balance and hearing nerve. Treatment ranges from observation to microsurgery — the choice depends on the size of the tumour and what it is doing to the patient."
+description: "A slow-growing, non-cancerous tumour of the hearing and balance nerve. Treatment ranges from monitoring to microsurgery, depending on its size and effects."
 category: "pain"
 pathwayOverride: "brain"
 order: 999

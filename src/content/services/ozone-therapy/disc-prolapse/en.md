@@ -1,6 +1,6 @@
 ---
 title: "Ozone Therapy for Disc Prolapse"
-description: "Oxygen-Ozone Therapy: An Alternative to Injections and Spine Surgery? A study published in 2014 examined the long-term effectiveness of oxygen-ozone"
+description: "Oxygen-ozone injections for herniated discs: a 10-year follow-up study found them safe and effective in about 75% of patients, before surgery is considered."
 category: "ozone-therapy"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/15/ozone-therapy-for-disc-prolapse/"

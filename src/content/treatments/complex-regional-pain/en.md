@@ -1,6 +1,6 @@
 ---
 title: "Complex regional pain syndrome"
-description: "A chronic pain condition triggered by injury or surgery in which the nervous system misfires and generates persistent pain — usually in a limb. No cure, but pain-management options at the clinic can restore function and quality of life."
+description: "Chronic pain, usually in a limb after injury or surgery, caused by a misfiring nervous system. No cure, but pain management can restore function."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/complex-regional-pain/"

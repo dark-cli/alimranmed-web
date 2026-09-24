@@ -1,6 +1,6 @@
 ---
-title: "Ozone Therapy"
-description: "Watch this video on YouTube Ozone was discovered as gas with a peculiar odour by Schönbein around 1840 and was"
+title: "Spine Cases"
+description: "Spine cases treated at Alimran Medical Center: back pain, disc disease and spinal cord disorders, from physiotherapy and analgesia to surgery."
 order: 999
 legacyUrl: "https://alimranmed.com/2019/03/26/spine-cases/"
 publishedAt: "2019-03-26T14:43:33"

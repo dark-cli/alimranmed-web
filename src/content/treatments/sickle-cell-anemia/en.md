@@ -1,6 +1,6 @@
 ---
 title: "Sickle cell anaemia"
-description: "An inherited disorder of haemoglobin causing red blood cells to assume a rigid, crescent (sickle) shape that blocks small blood vessels. Presents with haemolytic anaemia, episodic vaso-occlusive pain crises, and progressive organ damage from chronic ischaemia. Managed with hydroxyurea, folic acid, pain control, blood transfusion, and — in eligible patients — stem cell transplant."
+description: "An inherited blood disorder where sickle-shaped cells block small vessels, causing anaemia and pain crises. Managed with hydroxyurea and pain control."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/sickle-cell-anemia/"

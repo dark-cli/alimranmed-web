@@ -1,6 +1,6 @@
 ---
 title: "TMS for pains"
-description: "Repetitive transcranial magnetic stimulation (rTMS) is an effective non-invasive treatment for neuropathic pain conditions including central pain, fibromyalgia, and migraine."
+description: "Repetitive transcranial magnetic stimulation (rTMS) is a non-invasive treatment for neuropathic pain, including central pain, fibromyalgia and migraine."
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/repetitive-transcranial-magnetic-stimulation-rtms-for-treating-various-pain-conditions/"

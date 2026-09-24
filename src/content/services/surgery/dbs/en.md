@@ -1,6 +1,6 @@
 ---
 title: "Deep brain stimulation"
-description: "Deep brain stimulation (DBS) implants electrodes in specific brain regions connected to a pacemaker-like device that regulates abnormal electrical impulses for movement and psychiatric disorders."
+description: "Deep brain stimulation (DBS) places electrodes in the brain, linked to a pacemaker-like device, to regulate abnormal signals in movement disorders."
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/deep-brain-stimulation/"

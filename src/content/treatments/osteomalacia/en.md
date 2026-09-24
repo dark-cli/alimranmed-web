@@ -1,6 +1,6 @@
 ---
 title: "Osteomalacia"
-description: "Softening of the bones due to impaired mineralisation, most often from severe vitamin D deficiency. Causes diffuse bone pain, muscle weakness, and fractures. Distinct from osteoporosis — the bone matrix is deficient in mineral content rather than reduced in quantity. Treated with vitamin D and calcium supplementation plus pain management."
+description: "Soft bones from poor mineralisation, usually severe vitamin D deficiency, causing bone pain, weakness and fractures. Treated with vitamin D and calcium."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/osteomalacia/"

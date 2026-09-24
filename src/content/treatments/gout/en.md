@@ -1,6 +1,6 @@
 ---
 title: "Gout"
-description: "A common form of inflammatory arthritis caused by the deposition of monosodium urate crystals in joints due to elevated uric acid levels. Characterised by sudden, excruciating attacks of pain, swelling, and redness — classically in the big toe. Effectively managed with medications and lifestyle modification."
+description: "Inflammatory arthritis caused by uric acid crystals, with sudden attacks of pain, swelling and redness, classically in the big toe. Controlled with medication."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/gout/"

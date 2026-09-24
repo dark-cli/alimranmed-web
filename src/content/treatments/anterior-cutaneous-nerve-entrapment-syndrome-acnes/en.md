@@ -1,6 +1,6 @@
 ---
-title: "Anterior cutaneous nerve entrapment syndrome (ACNES)"
-description: "A recognised but frequently overlooked cause of chronic abdominal pain. Cutaneous branches of the lower thoracoabdominal intercostal nerves become trapped at the lateral border of the rectus abdominis, causing severe, localised abdominal wall pain unrelated to gastrointestinal symptoms."
+title: "Anterior Cutaneous Nerve Entrapment (ACNES)"
+description: "An often-missed cause of chronic abdominal pain: nerve branches trapped in the abdominal wall, causing severe, localised pain unrelated to digestion."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/anterior-cutaneous-nerve-entrapment-syndrome-acnes/"

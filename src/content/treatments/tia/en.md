@@ -1,6 +1,6 @@
 ---
 title: "Transient ischaemic attack (TIA)"
-description: "A brief episode of focal neurological dysfunction caused by temporary disruption of blood flow to the brain, lasting minutes to hours with full recovery within 24 hours and no permanent infarction on imaging. Often called a 'ministroke', TIA is a medical emergency — 1 in 3 people who has a TIA will go on to have a full stroke, half within a year. Immediate evaluation and secondary prevention reduce that risk by 80%."
+description: "A 'mini-stroke': brief symptoms from a temporary loss of blood flow to the brain. An emergency warning; prompt care cuts the risk of a full stroke by 80%."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/transient-ischemic-attack-tia/"

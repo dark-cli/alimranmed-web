@@ -1,6 +1,6 @@
 ---
 title: "Bursitis"
-description: "Inflammation of the bursae — small fluid-filled sacs that cushion bones, tendons, and muscles near joints. Most commonly affects the shoulder, elbow, hip, and knee. Usually caused by repetitive motion or prolonged pressure. Most cases resolve with conservative care; injection therapies and physiotherapy help persistent cases."
+description: "Inflammation of the bursae, the fluid sacs that cushion joints, usually in the shoulder, elbow, hip or knee. Most cases settle with conservative care."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/bursitis/"

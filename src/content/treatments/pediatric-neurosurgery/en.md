@@ -1,6 +1,6 @@
 ---
 title: "Pediatric neurosurgery"
-description: "Specialised neurosurgical care for conditions unique to infants and children, including hydrocephalus, tethered spinal cord, craniosynostosis, and cerebral palsy. Paediatric neurosurgical conditions differ from adult conditions in anatomy, pathophysiology, and surgical technique — outcomes depend on early diagnosis and timely intervention."
+description: "Neurosurgery for infants and children: hydrocephalus, tethered cord, craniosynostosis and cerebral palsy. Early diagnosis and timely surgery matter most."
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/pediatric-neurosurgery/"

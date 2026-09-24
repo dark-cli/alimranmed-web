@@ -1,6 +1,6 @@
 ---
 title: "Metatarsalgia"
-description: "Pain and inflammation in the ball of the foot — the padded area just behind the toes — caused by overloading the metatarsal heads. Common in runners and people who spend long periods on their feet. Usually managed conservatively with footwear changes, offloading insoles, and physiotherapy."
+description: "Pain in the ball of the foot from overload, common in runners and people on their feet all day. Usually eased with better footwear, insoles and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/metatarsalgia/"

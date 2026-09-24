@@ -1,5 +1,6 @@
 ---
 title: "النطق"
+description: "علاج النطق لتحسين الكلام وفهم اللغة والتعبير عنها، بما في ذلك التواصل غير اللفظي، بعد الجلطة وإصابات الدماغ."
 category: "إعادة التأهيل"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d8%a7%d9%84%d9%86%d8%b7%d9%82"

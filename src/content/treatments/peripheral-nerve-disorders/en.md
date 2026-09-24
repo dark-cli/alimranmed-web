@@ -1,6 +1,6 @@
 ---
 title: "Peripheral nerve disorders"
-description: "Conditions affecting the nerves outside the brain and spinal cord — causing weakness, numbness, pain, and autonomic dysfunction. Peripheral neuropathy affects millions worldwide; the most common cause is diabetes mellitus. Presents as polyneuropathy (most common), mononeuropathy, or mononeuropathy multiplex. Treatment targets the underlying cause plus symptom management with neuromodulation, medications, and physiotherapy."
+description: "Disorders of the nerves outside the brain and spine, causing weakness, numbness and pain. Diabetes is the commonest cause; treatment targets cause and symptoms."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/peripheral-nerve-disorders/"

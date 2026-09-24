@@ -1,6 +1,6 @@
 ---
 title: "Cerebral palsy"
-description: "A lifelong group of neurological disorders caused by abnormal brain development or injury, resulting in permanent impairment of movement and posture. Occurs in approximately 2–3 per 1,000 live births. Management focuses on reducing spasticity, preventing deformities, and maximising the child's abilities through multidisciplinary rehabilitation."
+description: "A lifelong group of disorders affecting movement and posture after early brain injury. Care focuses on easing spasticity and building the child's abilities."
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/cerebral-palsy/"

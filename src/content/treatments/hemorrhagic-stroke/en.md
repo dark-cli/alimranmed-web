@@ -1,6 +1,6 @@
 ---
 title: "Haemorrhagic stroke"
-description: "Bleeding into or around the brain — accounting for approximately 13% of all strokes. Far more dangerous than ischaemic stroke: brain cells are deprived of oxygen while accumulating blood raises intracranial pressure. Divided into intracerebral haemorrhage (bleeding within the brain) and subarachnoid haemorrhage (bleeding around the brain). Requires urgent evaluation and often surgical or neurosurgical intervention."
+description: "Bleeding in or around the brain, about 13% of strokes and more dangerous than ischaemic stroke. It needs urgent assessment and often surgery."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/hemorrhagic-stroke/"

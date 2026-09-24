@@ -1,6 +1,6 @@
 ---
 title: "Stroke and post-stroke recovery"
-description: "A stroke is a medical emergency — early treatment reduces brain damage. This guide covers symptoms, causes, risk factors, complications, prevention, and the rehabilitation programme we use for post-stroke recovery."
+description: "A stroke is a medical emergency and early treatment limits brain damage. Symptoms, causes, risk factors, prevention and our post-stroke rehabilitation."
 order: 999
 legacyUrl: "https://alimranmed.com/2020/01/03/stroke-and-post-stroke-recovery/"
 publishedAt: "2020-01-03T08:51:37"

@@ -1,6 +1,6 @@
 ---
 title: "Vasotrain — air pressure massage"
-description: "An adjunctive pressure-massage therapy used in rehabilitation and physiotherapy. Varying air pressure delivered through a programmed sleeve, chosen for the specific condition."
+description: "An adjunctive air-pressure massage used in rehabilitation, delivered through a programmed sleeve with pressure settings chosen for the condition."
 order: 999
 legacyUrl: "https://alimranmed.com/2020/01/04/vasotrain-or-air-pressure-massage/"
 publishedAt: "2020-01-04T06:33:23"

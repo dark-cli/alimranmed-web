@@ -1,6 +1,6 @@
 ---
 title: "Intermittent claudication"
-description: "Reproducible leg pain or cramping that appears predictably during walking or exercise and subsides quickly with rest — the hallmark symptom of peripheral artery disease. Caused by inadequate blood flow to exercising leg muscles through atherosclerotic arteries. Managed with supervised exercise, cardiovascular risk reduction, and when necessary vascular or neuromodulatory intervention."
+description: "Leg pain that comes on with walking and eases with rest, the hallmark of peripheral artery disease. Managed with exercise, risk reduction or intervention."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/intermittent-claudication/"

@@ -1,5 +1,6 @@
 ---
 title: "إعادة تأهيل الحبل الشوكي"
+description: "تأهيل إصابات الحبل الشوكي بفريق متعدد التخصصات يعمل معاً لاستعادة أفضل قدر من الحركة والاستقلالية."
 category: "إعادة التأهيل"
 source: "legacy-wp"
 legacyUrl: "%%d8%a5%d8%b9%d8%a7%d8%af%d8%a9-%d8%aa%d8%a3%d9%87%d9%8a%d9%84-%d8%a7%d9%84%d8%ad%d8%a8%d9%84-%d8%a7%d9%84%d8%b4%d9%88%d9%83%d9%8a"
@@ -49,8 +50,8 @@ publishedAt: "2020-07-12T13:53:08"
 
 تقويم العمود الفقري
 
--   [سباينمد](/services/chiropractic/spinmed//)
--   [سيكما](/services/chiropractic/sigma//)
+-   [سباينمد](/services/chiropractic/spinmed/)
+-   [سيكما](/services/chiropractic/sigma/)
 
 حقن الستيرود
 

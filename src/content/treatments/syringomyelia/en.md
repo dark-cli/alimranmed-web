@@ -1,6 +1,6 @@
 ---
 title: "Syringomyelia (syrinx)"
-description: "A fluid-filled cavity (syrinx) within the spinal cord, most often caused by Chiari malformation, tethered cord, trauma, hydrocephalus, or spinal tumour. The expanding cavity compresses cord tissue, producing progressive weakness, numbness, pain, and autonomic dysfunction. Treatment targets the underlying cause; direct syrinx drainage is reserved for cases where the cause cannot be corrected."
+description: "A fluid-filled cavity in the spinal cord, often from Chiari malformation, causing gradual weakness, numbness and pain. Treatment targets the cause."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/syringomyelia-syrinx/"

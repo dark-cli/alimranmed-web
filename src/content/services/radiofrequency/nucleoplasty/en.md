@@ -1,6 +1,6 @@
 ---
 title: "Nucleoplasty"
-description: "Nucleoplasty is a minimally invasive radiofrequency disc decompression procedure that dissolves and decompresses a bulging disc through a small needle, under local anaesthesia with no muscle incision."
+description: "Nucleoplasty is a minimally invasive radiofrequency procedure that shrinks a bulging disc through a small needle, under local anaesthesia."
 category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/04/nucleoplasty/"

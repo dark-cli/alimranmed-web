@@ -1,6 +1,6 @@
 ---
 title: "Restless legs syndrome"
-description: "A neurological sensorimotor disorder causing an irresistible urge to move the legs, typically due to uncomfortable sensations that worsen at rest and ease with movement. Symptoms peak in the evening and night, disrupting sleep. Manageable with lifestyle changes, medications, and neuromodulation."
+description: "An irresistible urge to move the legs that worsens at rest and at night, disturbing sleep. Managed with lifestyle changes, medication and neuromodulation."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/restless-legs-syndrome/"

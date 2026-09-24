@@ -1,6 +1,6 @@
 ---
 title: "Trigeminal neuralgia"
-description: "The most common craniofacial pain syndrome — brief, intense electric-shock-like facial pain in the distribution of the trigeminal nerve. Typically affects adults over 50. Often caused by vascular compression of the nerve near the brainstem. Treatable with medications, radiofrequency, and surgery."
+description: "Brief, severe electric-shock face pain along the trigeminal nerve, usually after 50. Treated with medication, radiofrequency or surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/trigeminal-neuralgia/"

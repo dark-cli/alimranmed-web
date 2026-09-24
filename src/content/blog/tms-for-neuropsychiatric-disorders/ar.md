@@ -1,5 +1,5 @@
 ---
-title: "التحفيز المغناطيسي للاضطرابات النفسية العصبية"
+title: "TMS للاضطرابات النفسية العصبية"
 description: "التحفيز المغناطيسي المتكرر المعتمد من قبل FDA لعلاج الاكتئاب والحالات النفسية العصبية"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/07/01/tms-for-neuropsychiatric-disorders/"

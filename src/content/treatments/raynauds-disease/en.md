@@ -1,6 +1,6 @@
 ---
 title: "Raynaud's disease"
-description: "An exaggerated vasospastic response in the small arteries of the fingers and toes — and sometimes the nose, lips, and ears — triggered by cold or emotional stress. Produces the characteristic three-phase colour change: white (ischaemia), blue (cyanosis), then red (reperfusion). Primary Raynaud's has no underlying cause; secondary Raynaud's is driven by connective tissue disease, most often scleroderma."
+description: "Fingers and toes turn white, blue then red in the cold or under stress as small arteries spasm. It can occur alone or with connective tissue disease."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/raynauds-disease/"

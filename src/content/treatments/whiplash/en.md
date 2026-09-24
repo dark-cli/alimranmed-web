@@ -1,6 +1,6 @@
 ---
 title: "Whiplash"
-description: "Neck injury from sudden acceleration–deceleration, classically from motor vehicle collision. Most recover within weeks; chronic pain and dysfunction persist in 10–15%."
+description: "Neck injury from a sudden jolt, classically a car crash. Most people recover in weeks; 10–15% develop long-term pain."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/whiplash/"

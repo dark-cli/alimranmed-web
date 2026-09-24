@@ -1,6 +1,6 @@
 ---
 title: "Cerebrovascular disease"
-description: "Brain conditions caused by disease of the vessels that supply it — most often driven by long-standing hypertension damaging vessel walls. Presents as ischemic or hemorrhagic stroke; rehabilitation is the core of the plan."
+description: "Brain conditions caused by diseased blood vessels, often from long-term high blood pressure. They present as stroke; rehabilitation is central to care."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/cerebrovascular-disease/"

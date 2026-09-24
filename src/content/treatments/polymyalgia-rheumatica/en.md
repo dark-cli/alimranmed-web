@@ -1,6 +1,6 @@
 ---
 title: "Polymyalgia rheumatica"
-description: "An inflammatory disorder causing bilateral muscle pain and stiffness predominantly in the neck, shoulders, upper arms, hips, and thighs — almost always in patients over 50. The most common inflammatory condition in older adults. Responds dramatically to low-dose corticosteroids. Closely associated with giant cell arteritis, which requires higher-dose steroids to prevent visual loss and stroke."
+description: "Inflammatory pain and stiffness in the neck, shoulders and hips, almost always after 50. Responds dramatically to low-dose steroids."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/polymyalgia-rheumatica/"

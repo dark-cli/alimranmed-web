@@ -1,6 +1,6 @@
 ---
 title: "Sciatica"
-description: "Leg pain along the sciatic nerve, usually from a compressed nerve root at the lower spine. Most cases settle within weeks — the clinic's job is to identify the ones that need targeted intervention, not to over-treat the rest."
+description: "Leg pain along the sciatic nerve, usually from a pinched nerve root. Most cases settle in weeks; the task is spotting those that need targeted treatment."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/sciatica/"

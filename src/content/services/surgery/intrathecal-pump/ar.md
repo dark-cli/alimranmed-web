@@ -1,5 +1,6 @@
 ---
 title: "المضخة الدوائية"
+description: "المضخة الدوائية داخل القراب توصل الدواء مباشرة إلى القناة الشوكية لعلاج الألم المزمن والتشنج وآلام السرطان."
 category: "الجراحة"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/2424"
