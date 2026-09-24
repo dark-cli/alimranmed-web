@@ -1,0 +1,144 @@
+---
+/**
+ * Media block — inline figure that renders one of:
+ *   • image     → <img> served from /public
+ *   • video     → <video controls> for self-hosted media
+ *   • youtube   → <iframe> for a YouTube embed (accepts full URL or bare ID)
+ *
+ * Follows the article block chrome: hairline border, square corners, no
+ * shadow, mono-uppercase caption label. Sits between other blocks with
+ * the same bottom margin as Prose / TreatmentGroups so rhythm holds.
+ *
+ * Not numbered / not part of TOC — media is inline supporting content,
+ * not a section.
+ */
+
+interface Props {
+  kind: "image" | "video" | "youtube";
+  src: string;
+  alt?: string;
+  caption?: string;
+  aspect?: "16/9" | "4/3" | "3/2" | "1/1";
+  uploadDate?: string;
+}
+const { kind, src, alt, caption, aspect, uploadDate } = Astro.props;
+
+// YouTube: accept "abc123XYZ", full watch URL, youtu.be URL, or embed URL.
+function youtubeId(input: string): string {
+  const t = input.trim();
+  if (/^[a-zA-Z0-9_-]{11}$/.test(t)) return t;
+  const m =
+    t.match(/[?&]v=([a-zA-Z0-9_-]{11})/) ||
+    t.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/) ||
+    t.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/) ||
+    t.match(/youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/);
+  return m ? m[1] : t;
+}
+
+// Video/youtube get a default frame ratio; images keep their natural size.
+const frameAspect = aspect || (kind === "image" ? undefined : "16/9");
+const frameStyle = frameAspect ? `aspect-ratio: ${frameAspect};` : "";
+
+// VideoObject schema for YouTube embeds — helps Google index the video.
+const ytId = kind === "youtube" ? youtubeId(src) : null;
+const videoSchema = ytId ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": caption || alt || "Video",
+  "description": caption || alt || "Video",
+  "thumbnailUrl": `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`,
+  "uploadDate": uploadDate || "2020-01-01T00:00:00+00:00",
+  "contentUrl": `https://www.youtube.com/watch?v=${ytId}`,
+  "embedUrl": `https://www.youtube-nocookie.com/embed/${ytId}`,
+}) : null;
+---
+
+{videoSchema && <script type="application/ld+json" set:html={videoSchema} />}
+<figure class="media">
+  <div class="media-frame" style={frameStyle}>
+    {kind === "image" && (
+      <img src={src} alt={alt || ""} loading="lazy" decoding="async" />
+    )}
+    {kind === "video" && (
+      <video controls preload="metadata" playsinline>
+        <source src={src} />
+      </video>
+    )}
+    {kind === "youtube" && (
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${youtubeId(src)}`}
+        title={caption || alt || "YouTube video"}
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    )}
+  </div>
+  {caption && (
+    <figcaption class="media-caption">
+      <span class="media-caption-label">Figure</span>
+      <span class="media-caption-text">{caption}</span>
+    </figcaption>
+  )}
+</figure>
+
+<style>
+  .media {
+    margin: 0 0 clamp(44px, 5.5vw, 64px);
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .media:last-child { margin-bottom: 0; }
+
+  .media-frame {
+    display: block;
+    width: 100%;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .media-frame img,
+  .media-frame video,
+  .media-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0;
+  }
+  /* Images without an aspect ratio: keep intrinsic height, don't crop. */
+  .media-frame:not([style*="aspect-ratio"]) img {
+    height: auto;
+    object-fit: initial;
+  }
+
+  .media-caption {
+    display: flex;
+    gap: 14px;
+    padding: 14px clamp(16px, 2vw, 20px);
+    border-top: 1px solid var(--line);
+    background: var(--white);
+  }
+  .media-caption-label {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+  :global(html[dir="rtl"]) .media-caption-label {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .media-caption-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--body);
+    margin: 0;
+  }
+  :global(html[dir="rtl"]) .media-caption-text { line-height: 1.85; }
+</style>

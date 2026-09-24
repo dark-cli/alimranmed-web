@@ -1,0 +1,70 @@
+---
+/**
+ * facts — auto-numbered narrative list. The old stats_facts block bundled
+ * this together with a stats grid; splitting them means editors add a
+ * `stats` block for the tile grid and a `facts` block for the numbered list.
+ *
+ * Fields: heading? (defaults to "Key facts"), items (array of strings).
+ * The renderer auto-generates 01/02/03… labels in the local numeric style.
+ */
+import { toArabicDigits } from "../../lib/i18n";
+
+interface Props {
+  heading?: string;
+  items: string[];
+  locale?: "en" | "ar";
+}
+const { heading, items, locale = "en" } = Astro.props;
+const isAr = locale === "ar";
+
+function pad(n: number): string {
+  return isAr ? toArabicDigits(n).padStart(2, "٠") : String(n).padStart(2, "0");
+}
+---
+
+<section class="facts-block">
+  {heading && <p class="facts-title">{heading}</p>}
+  <div class="facts-list">
+    {items.map((f, i) => (
+      <div class="fact-row">
+        <span class="fact-num">{pad(i + 1)}</span>
+        <span class="fact-text">{f}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .facts-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .facts-title {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+  .facts-list { border-top: 1px solid var(--ink); }
+  .fact-row {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .fact-num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .fact-text { font-size: 15.5px; line-height: 1.6; color: var(--ink); }
+
+  :global(html[dir="rtl"]) .facts-title {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  :global(html[dir="rtl"]) .fact-num { font-family: var(--font-body); font-size: 13px; }
+  :global(html[dir="rtl"]) .fact-text { line-height: 1.9; }
+</style>
