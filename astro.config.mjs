@@ -29,7 +29,11 @@ export default defineConfig({
   integrations: [
     sitemap({
       // `/` is a 301 to /en/ at the edge; redirects don't belong in a sitemap.
-      filter: (page) => new URL(page).pathname !== "/",
+      // /admin/ (CMS) and /{locale}/dev-blocks/ (widget preview) are internal.
+      filter: (page) => {
+        const path = new URL(page).pathname;
+        return path !== "/" && !path.startsWith("/admin/") && !/^\/(en|ar)\/dev-blocks\//.test(path);
+      },
       serialize(item) {
         return { ...item, lastmod: new Date().toISOString() };
       },
