@@ -1,4 +1,5 @@
 ---
+name: seo-auditor
 description: Run a full SEO audit on a website or codebase. Use when user asks to "audit my site", "SEO audit", "check SEO health", "find SEO problems", or wants a comprehensive analysis of their website's search engine optimization. This agent autonomously crawls the codebase or fetches URLs to deliver a complete report.
 tools:
   - Read

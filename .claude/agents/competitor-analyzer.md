@@ -1,4 +1,5 @@
 ---
+name: competitor-analyzer
 description: Analyze competitors' SEO and content strategy. Use when user asks to "analyze competitors", "competitor analysis", "compare SEO with competitors", "what are competitors doing", "competitive audit", "competitor research", or wants to understand how they stack up against competitors in search.
 tools:
   - Read
