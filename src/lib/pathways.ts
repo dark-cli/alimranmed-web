@@ -16,13 +16,11 @@ export const TREATMENT_PATHWAY: Record<"en" | "ar", Record<string, TreatmentPath
 };
 
 export const BLOG_PATHWAY: Record<string, Pathway> = {
-  "amyotrophic-lateral-sclerosis-als-2": "brain",
   "covid-19-symptoms-on-the-nervous-and-locomotor-system": "brain",
   "results-of-treatment-of-cerebral-palsy-in-children": "brain",
   "tms-for-alzheimer-disease": "brain",
   "tms-for-neuropsychiatric-disorders": "brain",
   "tms-for-tinnitus": "brain",
-  "tms-for-tinnitus-2": "brain",
   "transcranial-direct-current-stimulation-tdcs": "brain",
   "transcranial-magnetic-stimulation": "brain",
   "poliomyelitis": "spine",
@@ -34,8 +32,6 @@ export const BLOG_PATHWAY: Record<string, Pathway> = {
   "osteoporosis": "pain",
   "physiotherapy": "pain",
   "tension-headaches": "pain",
-  "tms-for-migraine": "pain",
-  "tms-for-pains": "pain",
   "vasotrain-or-air-pressure-massage": "pain",
 };
 
