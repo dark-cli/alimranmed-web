@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A battery-operated pump that delivers medication — usually pain-killers or antispasmodics — directly into the spinal fluid through a small catheter."

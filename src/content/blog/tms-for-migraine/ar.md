@@ -8,7 +8,7 @@ source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو التحفيز المغناطيسي؟"
         value: "تحفيز غير غازي للدماغ يحدث نبضات تيار محكومة في مناطق قشرية معينة لعلاج الحالات العصبية"

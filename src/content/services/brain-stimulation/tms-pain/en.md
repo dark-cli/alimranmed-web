@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/repetitive-transcranial-magnetic-stimulation-
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "rTMS applies repetitive magnetic pulses to the brain to disrupt aberrant pain signalling pathways without drugs or surgery."
@@ -23,7 +23,7 @@ sections:
       Evidence is strong for central pain, peripheral nerve disorders, fibromyalgia, and migraine. Promising but still-developing evidence supports rTMS for orofacial pain, trigeminal neuralgia, phantom limb pain, low back pain, myofascial pain, pelvic pain, and complex regional pain syndrome (CRPS).
 
       Treatment is conducted on an outpatient basis with no anaesthesia. Sessions are brief and patients return to daily activities immediately. A course of treatment is typically required for sustained benefit, and protocols are tailored to the specific pain condition.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Brain stimulation"

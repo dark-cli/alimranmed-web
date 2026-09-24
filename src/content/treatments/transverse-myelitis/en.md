@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/transverse-myelitis/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Transverse myelitis (TM) is an inflammatory myelopathy in which focal inflammation at one or more spinal cord levels disrupts the sensory, motor, and autonomic tracts passing through. The term 'transverse' implies dysfunction across the cord at a given level — though anatomically complete transverse disruption is rare; partial cord involvement is more common. TM can be idiopathic (cause unknown) or associated with autoimmune disease (multiple sclerosis, neuromyelitis optica spectrum disorder/NMOSD, SLE, Sjögren's, sarcoidosis) or infection. It affects all ages and both sexes. In younger patients, TM may be the first presentation of MS or NMOSD."
@@ -39,7 +39,7 @@ sections:
       **Chronic management**
 
       Chronic sequelae — spasticity, neuropathic pain, bladder and bowel dysfunction, fatigue, depression — require a multidisciplinary approach. Spasticity responds to physiotherapy, baclofen, and Botox®. Neuropathic pain is managed with anticonvulsants (pregabalin, gabapentin) or antidepressants (duloxetine). Bladder dysfunction requires urological review; intermittent self-catheterisation may be needed. Neuromodulation (rTMS, tDCS, SCS, intrathecal baclofen pump) has a role in refractory spasticity and chronic pain.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

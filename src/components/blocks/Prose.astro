@@ -1,0 +1,63 @@
+---
+/**
+ * prose — heading + paragraphs. `body` is markdown-with-links (inline
+ * `[label](/href)` gets rewritten to localised anchor tags). Paragraphs
+ * split on double newlines. No block-level markdown parsing to stay
+ * dependency-free.
+ */
+import { localizedHref } from "../../lib/i18n";
+import type { Locale } from "../../lib/i18n";
+
+interface Props {
+  heading?: string;
+  body: string;
+  locale?: Locale;
+}
+const { heading, body, locale = "en" } = Astro.props;
+const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+
+function rewriteLinks(md: string): string {
+  return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+    const h = href.startsWith("/") ? localizedHref(href, locale) : href;
+    return `<a href="${h}">${label}</a>`;
+  });
+}
+---
+
+<section class="prose-block">
+  {heading && <h2 class="prose-heading">{heading}</h2>}
+  {paras.map((p) => (
+    <p class="p" set:html={rewriteLinks(p)} />
+  ))}
+</section>
+
+<style>
+  .prose-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .prose-block:last-child { margin-bottom: 0; }
+  .prose-heading {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(22px, 2.8vw, 30px);
+    color: var(--ink);
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+  :global(html[dir="rtl"]) .prose-heading { font-weight: 700; letter-spacing: 0; }
+  .p {
+    font-size: 17px;
+    line-height: 1.72;
+    color: var(--body);
+    margin: 0 0 20px;
+    text-wrap: pretty;
+  }
+  .p:last-child { margin-bottom: 0; }
+  .p :global(a) {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .p :global(a:hover) {
+    color: var(--accent-hover);
+    text-decoration: underline;
+  }
+  :global(html[dir="rtl"]) .p { line-height: 1.95; }
+</style>

@@ -9,7 +9,7 @@ source: "legacy-wp"
 redesigned: true
 isHub: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما يشمله"
         value: "تضم فئة العمود الفقري اضطرابات الأجسام الفقرية والأقراص بين الفقارية والحبل الشوكي وجذور الأعصاب. تتراوح الحالات من الأمراض التنكسية الشائعة (انفتاق القرص، الاعتلال النخاعي الفقاري) إلى الشذوذات الخلقية (السنسنة المشقوقة، الحبل المربوط) والإصابات الرضية وأمراض الحبل الشوكي (تكهف النخاع، التهاب النخاع المستعرض)."
@@ -31,7 +31,7 @@ sections:
       - [تكهف النخاع](/treatments/syringomyelia/)
       - [الحبل الشوكي المربوط](/treatments/tethered-spinal-cord/)
       - [التهاب النخاع المستعرض](/treatments/transverse-myelitis/)
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "خيارات العلاج في مركز العمران"
     groups:
       - title: "التعديل العصبي"

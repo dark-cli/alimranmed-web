@@ -7,7 +7,7 @@ category: "regenerative-medicine"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Prolotherapy (Proliferative Therapy) injects a natural solution (dextrose, saline, or PRP) at the injury site, triggering mild inflammation that stimulates new collagen growth and joint stabilisation."
@@ -25,7 +25,7 @@ sections:
       Studies in low back pain show an 85–95% improvement rate with prolotherapy, compared to 52% for back surgery. A typical course is 4 to 6 treatments at 3–6 week intervals. Anti-inflammatory medications (aspirin, ibuprofen) should not be taken after treatment, as they suppress the inflammatory healing process that makes prolotherapy effective.
 
       Areas treated include: low back, neck, knee, shoulder, elbow, ankle, wrist, TMJ, plantar fasciitis, IT band syndrome, and piriformis syndrome.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Regenerative medicine"

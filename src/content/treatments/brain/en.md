@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 isHub: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it covers"
         value: "Conditions affecting the brain and cranial cavity managed at Alimran Medical Center: subdural haematoma, normal pressure hydrocephalus, haemorrhagic stroke, head injury, epilepsy and seizures, cranial gunshot wounds, cerebrospinal fluid leaks, brain tumours, and brain abscess. Each requires specialist evaluation and individualised management."
@@ -34,7 +34,7 @@ sections:
       - **Brain abscess** — focal intracranial infection requiring antibiotic therapy and often surgical drainage
 
       Alimran Medical Center's neurosurgical team evaluates each case individually, using advanced neuroimaging and surgical planning to tailor treatment to the diagnosis and the patient's overall condition.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

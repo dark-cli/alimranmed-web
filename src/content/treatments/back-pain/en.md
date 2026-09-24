@@ -10,7 +10,7 @@ publishedAt: "2020-02-15T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Pain in the lower back — mechanical, disc-related, or (rarely) systemic."
@@ -33,7 +33,7 @@ sections:
 
       Leg pain, numbness, or weakness — with or without back pain — points to nerve root involvement and shifts the assessment away from muscle-and-ligament territory towards disc or spinal stenosis.
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Two common presentations"
     intro: "Most patients arrive with one of two patterns. The distinction shapes both the examination and the treatment plan."
     a:
@@ -51,7 +51,7 @@ sections:
         - "Usually a disc herniation compressing a nerve root."
         - "Most improve without surgery over 6–12 weeks; injection can accelerate that."
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "80%"
@@ -67,7 +67,7 @@ sections:
       - "Injection is a diagnostic and therapeutic tool — a good response confirms the pain source."
       - "Surgery for back pain alone (without nerve compression) rarely helps; the decision belongs to the patient after full information."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Care is stepped: start conservative, escalate on evidence, reserve surgery for defined indications. Most patients never reach the last group."
     note: "The plan is written and given to the patient and the referring clinician at the end of the first visit."

@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is arthritis?"
         value: "An inflammation affecting joints like knees, hips, shoulders or spine, often worsening with age"
@@ -72,7 +72,7 @@ sections:
     heading: "Complications"
     body: |
       Severe arthritis can make daily tasks difficult, especially when affecting hands or arms. Arthritis in weight-bearing joints may prevent comfortable walking or sitting. In advanced cases, joints can become twisted and permanently deformed.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment Options"
     intro: "Treatment focuses on relieving symptoms and improving joint function. Early diagnosis and proper treatment planning prevents disease progression through these approaches:"
     groups:

@@ -1,0 +1,108 @@
+---
+/**
+ * cards — grid of card-style links to sibling content. The dispatcher
+ * resolves each slug to a { title, category, href, redesigned } item.
+ * Un-resolved slugs render as greyed-out non-links so the grid still
+ * shows the intent while the target is being built.
+ *
+ * Previously called `related`. Kept the same rendering so live pages
+ * look identical.
+ */
+interface Item {
+  slug: string;
+  title: string;
+  category: string;   // localised label
+  href: string;       // full localised href when target exists; empty otherwise
+  redesigned: boolean;
+}
+interface Props {
+  heading?: string;
+  items: Item[];
+  soonLabel: string;      // greyed-out hover title
+}
+const { heading = "Related reading", items, soonLabel } = Astro.props;
+---
+
+<section class="cards-block">
+  {heading && <p class="cards-title">{heading}</p>}
+  <div class="cards-grid">
+    {items.map((it) => (
+      it.redesigned
+        ? (
+          <a class="card" href={it.href}>
+            <p class="card-cat">{it.category}</p>
+            <p class="card-name">{it.title}</p>
+          </a>
+        )
+        : (
+          <span class="card card--soon" title={soonLabel}>
+            <p class="card-cat card-cat--soon">{it.category}</p>
+            <p class="card-name card-name--soon">{it.title}</p>
+          </span>
+        )
+    ))}
+  </div>
+</section>
+
+<style>
+  .cards-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .cards-title {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 18px;
+  }
+  :global(html[dir="rtl"]) .cards-title {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .card {
+    background: var(--white);
+    padding: 20px 22px;
+    display: block;
+    text-decoration: none;
+  }
+  .card:hover { background: var(--surface); text-decoration: none; }
+  .card-cat {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  :global(html[dir="rtl"]) .card-cat {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .card-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0;
+  }
+  :global(html[dir="rtl"]) .card-name { font-weight: 700; }
+
+  .card--soon {
+    cursor: not-allowed;
+    opacity: 0.55;
+    filter: grayscale(0.4);
+  }
+  .card--soon:hover { background: var(--white); }
+  .card-cat--soon { color: var(--muted); }
+  .card-name--soon { color: var(--muted); }
+</style>

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/muscle-cramp/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "An involuntary, sustained muscle contraction producing sudden, intense pain — most often in the calf (charley horse), but also in the thigh, foot, or hand. Usually benign and resolves within seconds to minutes. Recurrent cramps may reflect peripheral artery disease (ischaemic cramping), lumbar stenosis (neurogenic cramping), electrolyte deficiency (hypokalaemia, hypomagnesaemia, hypocalcaemia), or medication effects (diuretics, statins)."
@@ -56,7 +56,7 @@ sections:
       - Quinine (limited by side effects) and muscle relaxants (mexiletine, baclofen) are used in refractory cases
       - Botox injection into the affected muscle produces prolonged relaxation and relieves chronic, severely disabling cramps
       - Pulsed radiofrequency and spinal cord stimulation address neurogenic and ischaemic components
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

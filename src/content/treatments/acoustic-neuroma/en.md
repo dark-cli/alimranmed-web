@@ -10,7 +10,7 @@ source: "legacy-wp"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A benign tumour arising from Schwann cells on the vestibular (balance) nerve; also called vestibular schwannoma."
@@ -26,7 +26,7 @@ sections:
 
       A small tumour affects only the balance nerve. A larger one can compress the facial nerve, the brainstem, or the fourth ventricle. The clinical picture reflects what the tumour is pressing on, not simply its size.
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Two forms of acoustic neuroma"
     intro: "The distinction matters because unilateral and bilateral tumours behave differently — different age of onset, different genetic basis, different treatment planning."
     a:
@@ -51,11 +51,11 @@ sections:
 
       When a tumour is found, it is measured precisely and its relationship to the brainstem and facial nerve is mapped. This defines the treatment options and the risk of each.
 
-  - type: pull-quote
+  - type: pull_quote
     text: "Very small acoustic neuromas do not need treatment. They need to be watched. A patient can be needlessly harmed by treating a tumour that would have stayed quiet on its own."
     attribution: "Hussein Imran Mousa, consultant neurosurgeon"
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "The three treatment options are complementary, not competing. Which is right for a given patient depends on tumour size, growth rate, symptoms, age, and hearing status."
     note: "The choice is always discussed with the patient in detail. Nobody with an acoustic neuroma leaves the clinic without a written plan they understand."

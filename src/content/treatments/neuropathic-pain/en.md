@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/neuropathic-pain/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Chronic pain arising from damage, dysfunction, or abnormal processing by the peripheral or central nervous system — rather than from ongoing tissue injury. The nerve fibres themselves are damaged or malfunctioning and send incorrect pain signals to the brain."
@@ -53,7 +53,7 @@ sections:
       **Phantom limb pain** — pain perceived in an amputated limb — is a form of neuropathic pain in which the brain continues receiving and misinterpreting signals from the severed nerve ends.
 
       **Management** of neuropathic pain requires treating both the underlying condition (where possible) and the abnormal pain signalling itself. Standard pharmacological options include anticonvulsants (gabapentin, pregabalin), tricyclic antidepressants, and topical agents (lidocaine, capsaicin). When these prove inadequate, interventional approaches — spinal cord stimulation, pulsed radiofrequency, and neuromodulation — offer effective alternatives or complements.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

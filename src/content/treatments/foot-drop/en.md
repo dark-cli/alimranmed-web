@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/foot-drop/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Weakness or paralysis of the ankle dorsiflexors — the muscles that lift the front of the foot — causing the foot or toes to drag along the ground during walking. A symptom of an underlying neurological, muscular, or anatomical problem, not a disease in itself. May be temporary or permanent."
@@ -57,7 +57,7 @@ sections:
       - *Functional electrical stimulation (FES):* surface electrodes applied over the peroneal nerve stimulate dorsiflexion with each step — restores near-normal gait in suitable patients
       - *Neuromodulation:* rTMS and tDCS targeting the motor cortex can augment neurological recovery after central lesions
       - *Surgery:* peroneal nerve decompression or neurolysis for compressive injuries; tendon transfer (tibialis posterior) for permanent foot drop with no neurological recovery expected
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

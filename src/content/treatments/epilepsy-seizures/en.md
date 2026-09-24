@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/epilepsy-seizures/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A neurological disorder defined by recurrent unprovoked seizures — transient episodes of abnormal, excessive, or synchronous neuronal activity in the brain. Approximately 1–3% of the population has epilepsy. Seizures can be generalised (affecting the whole brain) or focal (beginning in one area)."
@@ -49,7 +49,7 @@ sections:
       - *First-line:* Anticonvulsant medications (carbamazepine, valproate, levetiracetam, lamotrigine, and others) achieve seizure control in approximately 70% of patients
       - *Drug-resistant epilepsy:* When two appropriately chosen anticonvulsants fail, surgical evaluation is indicated. Options include focal resection (curative in suitable temporal lobe epilepsy), vagal nerve stimulation, corpus callosotomy, deep brain stimulation, and ketogenic diet
       - *Neuromodulation:* rTMS has an emerging evidence base in reducing seizure frequency in selected patients with focal epilepsy
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

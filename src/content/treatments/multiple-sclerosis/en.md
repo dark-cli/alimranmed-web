@@ -8,7 +8,7 @@ publishedAt: "2020-04-09T10:55:27"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A chronic autoimmune disease of the central nervous system in which the immune system attacks the myelin sheath surrounding nerve fibres, impairing signal transmission."
@@ -35,7 +35,7 @@ sections:
       Although pharmacological treatments can modify the course of the disease, diagnosing and treating complications requires an interdisciplinary team of specialists working with a unified care plan tailored to each patient's deficits.
 
       **Rehabilitation goals:** Restore the affected part to function and reduce dependence on others. Includes physical, adaptive, cognitive, social, functional, and speech rehabilitation.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

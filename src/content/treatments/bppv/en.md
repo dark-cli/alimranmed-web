@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/benign-paroxysmal-positional-vertigo-bppv/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Brief, intense episodes of dizziness or spinning triggered by specific head movements — caused by dislodged calcium crystals in the inner ear's semicircular canals."
@@ -35,7 +35,7 @@ sections:
       - Abnormal, rhythmic eye movements (nystagmus) accompanying episodes
 
       **Canalith repositioning:** The primary treatment, performed in the clinic, involves a series of slow, deliberate head positions designed to move displaced calcium crystals (otoliths) from the semicircular canals back into the vestibule, where they no longer cause symptoms. Each position is held for about 30 seconds. Most patients respond after one or two sessions.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "First-line treatment"

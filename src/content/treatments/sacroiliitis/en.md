@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/sacroiliitis/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Inflammation of one or both sacroiliac joints — where the lower spine connects to the pelvis. Often mistaken for general low back pain."
@@ -32,7 +32,7 @@ sections:
       - **Arthritis** — both osteoarthritis and ankylosing spondylitis can affect the sacroiliac joints.
       - **Pregnancy** — the joints must loosen to accommodate childbirth; the added weight and altered gait during pregnancy can cause abnormal wear.
       - **Infection** — the joint can become infected in rare cases.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

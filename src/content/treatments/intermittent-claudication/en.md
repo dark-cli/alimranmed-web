@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/intermittent-claudication/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Cramping, aching, or fatigue pain in the calf, thigh, or buttock that begins consistently after walking a predictable distance and resolves within minutes of rest. The defining symptom of peripheral artery disease — atherosclerotic narrowing of the arteries supplying the legs restricts blood flow below the demand of exercising muscle. Pain location reflects the level of arterial blockage: calf (superficial femoral artery), thigh (iliac artery), buttock/groin (aortoiliac disease)."
@@ -52,7 +52,7 @@ sections:
       *Spinal cord stimulation:* An established treatment for critical limb ischaemia and refractory claudication not amenable to revascularisation — improves microcirculation, reduces rest pain, and promotes wound healing.
 
       *Revascularisation:* Percutaneous transluminal angioplasty (PTA) with or without stenting, or surgical bypass, is indicated for disabling claudication that fails exercise and medical therapy, or for limb-threatening ischaemia.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

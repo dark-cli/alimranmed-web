@@ -7,7 +7,7 @@ legacyUrl: "/services/chiropractic/spinmed/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "SpineMED is a computerised spinal decompression device that relieves pressure on damaged discs without causing muscle spasm, creating conditions for natural disc healing."
@@ -23,7 +23,7 @@ sections:
       The goal of decompression is to create negative intradiscal pressure, allowing fluids, nutrients and oxygen to flow back into the disc. This exchange process supports the body's natural reconstruction mechanisms and can accelerate healing in damaged spinal discs. Reducing intradiscal pressure can also help restore herniated nucleus material back toward the centre of the disc, relieving pressure on adjacent nerve roots.
 
       SpineMED is indicated for cervical and lumbar disc herniation and degeneration, pain from swollen herniated discs persisting more than four weeks, chronic pain following failed back surgery lasting more than six months, and spinal deformity or scoliosis. A typical course consists of 20 to 25 sessions, each 30 minutes, conducted 3 to 5 times per week over 4 to 6 weeks.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Chiropractic care"

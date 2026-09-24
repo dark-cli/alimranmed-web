@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/cerebrovascular-disease/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Brain abnormalities related to disease of the blood vessels supplying the brain — usually presenting as ischemic or hemorrhagic stroke."
@@ -23,7 +23,7 @@ sections:
       A drop in blood pressure during sleep can reduce flow in the narrowed vessels — this may cause an ischemic [stroke](/treatments/stroke/) in the morning. A sudden rise in pressure from excitement during the day may tear the vessel wall, causing intracranial hemorrhage.
 
       Cerebrovascular disease primarily affects elderly patients and those with diabetes, heart disease, or a history of smoking. It can result in ischemic stroke or [hemorrhagic stroke](/treatments/hemorrhagic-stroke/); ischemia or blood-vessel abnormalities affect the patient during a cerebrovascular episode.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     intro: "Rehabilitation drives the plan after acute care. The clinic combines physical therapy with targeted interventional and neuromodulation options."
     groups:

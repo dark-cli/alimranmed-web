@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is TMS?"
         value: "Brain stimulation using magnetic waves and pulses to change electrical activity in the brain"

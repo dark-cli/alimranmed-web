@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/rheumatoid-disease/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A systemic autoimmune disease in which the immune system attacks the synovial lining of joints, causing chronic inflammation, cartilage destruction, and bone erosion. Can also affect extra-articular organs. More common in women (2:1), typically onset between ages 30–60."
@@ -44,7 +44,7 @@ sections:
       - *NSAIDs and corticosteroids:* for short-term symptom control and bridging therapy
       - *Physiotherapy and occupational therapy:* essential throughout all stages; includes joint protection, exercise prescription, and assistive devices
       - *Interventional:* intra-articular steroid injections for localised flares; Botox, prolotherapy, and low-level laser therapy as adjuncts; tDCS and electrical stimulation for pain and muscle tone
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Knee pain from mechanical dysfunction (meniscal tear, ligament injury), osteoarthritis, or patellofemoral syndrome. Pain may be activity-related or constant."
@@ -23,7 +23,7 @@ sections:
     body: |
       Knee pain is extremely common, affecting 25% of adults. Causes include osteoarthritis (the most common), meniscal tears, ligament injuries (ACL, MCL), and patellofemoral syndrome. Mechanical dysfunction from weak hip or quadriceps muscles is a frequent contributor.
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "25%"
@@ -37,7 +37,7 @@ sections:
       - "Physiotherapy addressing hip and quadriceps strength is more effective than bracing alone."
       - "Intra-articular corticosteroid injections provide 6–12 weeks of relief; hyaluronic acid injections may have longer-lasting benefit."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Early intervention with physiotherapy and activity modification prevents progression. Intra-articular injections and surgery are reserved for refractory cases."
     groups:

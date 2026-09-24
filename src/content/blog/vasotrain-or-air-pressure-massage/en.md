@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: false
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A pressure-massage device that treats the affected limb through varying air pressure, delivered by a programmable sleeve — used alongside conventional physiotherapy, not as a replacement."

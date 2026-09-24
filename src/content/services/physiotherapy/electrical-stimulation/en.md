@@ -7,7 +7,7 @@ category: "physiotherapy"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Electrotherapy uses controlled electrical currents applied through the skin to stimulate nerves and muscles, relieving pain and improving function without medication."
@@ -27,7 +27,7 @@ sections:
       Benefits of electrical stimulation include awakening weak or inactive muscles, improving muscle strength and endurance, strengthening muscle-brain pathways, increasing blood supply, reducing pain, and improving joint movement by supporting associated musculature.
 
       Contraindications include pacemakers and other electronic implants, pregnancy (electrodes should not be applied to the abdomen), active skin conditions such as eczema or infection at the electrode site, and allergy to electrode adhesives.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy"

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/compression-fracture/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A fracture in which the cylindrical vertebral body collapses — most often in a wedge pattern, with the front of the vertebra collapsing more than the back. Most common in the thoracic (mid-back) and lumbar (lower back) spine. Osteoporosis accounts for the majority of cases; trauma and spinal metastases are less common causes. Multiple compression fractures cause kyphosis and height loss."
@@ -51,7 +51,7 @@ sections:
       - *Vertebroplasty:* percutaneous injection of bone cement (polymethylmethacrylate) directly into the fractured vertebral body — stabilises the fracture and significantly reduces pain in most patients
       - *Kyphoplasty:* a balloon is first inflated inside the vertebral body to create a cavity and partially restore vertebral height, then cement is injected — associated with slightly better height restoration than vertebroplasty
       - *Spinal fusion:* internal fixation with screws and rods is reserved for spinal instability or significant neurological compromise
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

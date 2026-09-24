@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/restless-legs-syndrome/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A neurological sensorimotor disorder (Willis-Ekbom disease) causing an irresistible urge to move the legs, typically driven by uncomfortable sensations felt deep inside the limbs. Symptoms worsen with rest, improve with movement, are worst in the evening and night, and can disrupt sleep significantly."
@@ -50,7 +50,7 @@ sections:
       2. Sleep hygiene and lifestyle: regular exercise, avoiding caffeine and alcohol, warm baths, massage
       3. Pharmacological: dopamine agonists (pramipexole, ropinirole, rotigotine), pregabalin or gabapentin, low-dose opioids for severe refractory cases
       4. Non-pharmacological interventions: rTMS, tDCS, acupuncture, and pulsed radiofrequency for cases where medications are inadequate or not tolerated
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

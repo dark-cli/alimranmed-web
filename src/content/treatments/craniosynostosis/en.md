@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/craniosynostosis/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Premature fusion of one or more cranial sutures — the fibrous joints between the flat bones of the skull — before brain growth is complete. The fused suture cannot expand, so the skull compensates by growing in other directions, producing a characteristic deformity whose pattern depends on which suture(s) are involved. Raised intracranial pressure, facial asymmetry, and neurodevelopmental problems may result."
@@ -52,7 +52,7 @@ sections:
       **Multidisciplinary follow-up**
 
       Children with craniosynostosis require long-term follow-up by a multidisciplinary team including neurosurgery, craniofacial surgery, ophthalmology (for raised ICP and orbital asymmetry), and developmental paediatrics to monitor neurological progress and identify any complications early.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

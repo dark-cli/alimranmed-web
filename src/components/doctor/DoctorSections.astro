@@ -1,0 +1,61 @@
+---
+/**
+ * DoctorSections — renders the doctor CV.
+ *
+ * The hero is standalone (every doctor has exactly one). Everything below
+ * is a block in the sections list: `cv_stats`, or `list` with a variant
+ * (timeline / memberships / publications).
+ */
+import CvHero      from "./CvHero.astro";
+import CvStats     from "./CvStats.astro";
+import ListRows    from "./ListRows.astro";
+import ListWrap    from "./ListWrap.astro";
+import ListColumns from "./ListColumns.astro";
+
+interface Props {
+  sections: any[];
+  fullName: string;
+  photo?: string;
+  photoAlt?: string;
+  titles: string[];
+  heroEyebrow: string;
+  heroHeadline?: string;
+  heroLede: string;
+}
+const { sections, fullName, photo, photoAlt, titles, heroEyebrow, heroHeadline, heroLede } = Astro.props;
+
+// Last register-style block (any `list` variant) gets isLast so its bottom
+// padding matches the end of the page.
+const lastListIdx = sections
+  .map((s, i) => ({ i, t: s.type }))
+  .filter(({ t }) => t === "list")
+  .map(({ i }) => i)
+  .pop();
+---
+
+<CvHero
+  eyebrow={heroEyebrow}
+  headline={heroHeadline ?? fullName}
+  lede={heroLede}
+  chips={titles}
+  portrait={photo}
+  portraitAlt={photoAlt ?? fullName}
+/>
+
+{sections.map((s: any, i: number) => {
+  const isLast = i === lastListIdx;
+
+  if (s.type === "cv_stats")
+    return <CvStats items={s.items} />;
+
+  if (s.type === "list") {
+    if (s.variant === "rows")
+      return <ListRows heading={s.heading} items={s.items} isLast={isLast} />;
+    if (s.variant === "wrap")
+      return <ListWrap heading={s.heading} items={s.items} isLast={isLast} />;
+    if (s.variant === "columns")
+      return <ListColumns heading={s.heading} items={s.items} isLast={isLast} />;
+  }
+
+  return null;
+})}

@@ -8,7 +8,7 @@ publishedAt: "2020-12-03T15:36:05"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A bony growth (osteophyte) on the underside of the heel, caused by chronic strain on the plantar fascia — the tendon forming the arch of the foot."
@@ -32,7 +32,7 @@ sections:
       **Causes:** Chronic, excessive pressure on the sole of the foot — from incorrect gait (particularly over-pronation, where the foot rolls inward and the arch collapses), weight gain, aging, or occupations requiring prolonged standing on hard floors. Usually a combination of these factors is responsible.
 
       **Conservative first steps:** Rest from aggravating activities; apply ice packs (5–10 minutes); anti-inflammatory medication; orthotic insoles to correct over-pronation; daily stretching exercises.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy"

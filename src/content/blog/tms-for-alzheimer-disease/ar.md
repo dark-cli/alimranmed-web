@@ -8,7 +8,7 @@ source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "دور BDNF"
         value: "عامل التغذية العصبية مهم للدونة العصبية والدونة المشبكية والذاكرة"

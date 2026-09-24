@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/vulvodynia/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Chronic pain or discomfort in the vulvar area lasting at least three months, with no identifiable underlying cause."
@@ -32,7 +32,7 @@ sections:
       - Pelvic floor muscle spasm or weakness
 
       If you have vulvodynia, the absence of visible signs and embarrassment should not prevent you from seeking help — effective treatments are available.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/depression-major-depressive-disorder%ef%bb%bf
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A clinical mood disorder characterised by persistent low mood, loss of interest or pleasure in activities, and a range of cognitive, physical, and emotional symptoms that impair daily functioning. Not a character weakness — a medical condition with effective treatments."
@@ -42,7 +42,7 @@ sections:
       **Untreated depression** is associated with significant personal and social costs — impaired relationships, reduced productivity, physical health deterioration, and increased mortality risk. With appropriate treatment, most people with depression improve substantially.
 
       First-line treatments include antidepressant medications (SSRIs, SNRIs, and others) and evidence-based psychotherapies (cognitive behavioural therapy, interpersonal therapy). When medications are inadequate or not tolerated, neuromodulation — particularly rTMS — provides an effective, well-tolerated, drug-free alternative that is delivered in an outpatient setting.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

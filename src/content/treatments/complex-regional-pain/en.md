@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/complex-regional-pain/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A chronic pain condition where the nervous system misfires and generates pain signals — often after an injury or surgery — most commonly affecting a limb."
@@ -27,7 +27,7 @@ sections:
     heading: "How CRPS is treated"
     body: |
       There is no cure for CRPS, but many treatments can help patients manage their pain and return to the activities they value. At Alimran Medical Center the plan is built from the options below, tailored to each patient.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy & rehabilitation"

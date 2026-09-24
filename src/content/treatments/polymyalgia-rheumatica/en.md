@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/polymyalgia-rheumatica/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A systemic inflammatory condition characterised by bilateral aching and stiffness in the shoulder and hip girdle muscles. Onset may be rapid — developing over days — or gradual. The cause is unknown; genetic susceptibility and environmental triggers (possibly viral) are implicated. Classified as a vasculitis-spectrum disease and closely related to giant cell arteritis (GCA), with which it overlaps in 15–20% of cases. ESR and CRP are markedly elevated."
@@ -55,7 +55,7 @@ sections:
       *Bone protection:* long-term corticosteroids cause osteoporosis; calcium + vitamin D + bisphosphonate should be prescribed from the outset.
 
       *Symptom management:* physiotherapy, pain management interventions, and low-impact exercise support function during the recovery period.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

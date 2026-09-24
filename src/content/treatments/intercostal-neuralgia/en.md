@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/intercostal-neuralgia/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Nerve pain from the intercostal nerves that supply the ribcage — typically wraps around the trunk in a band-like distribution."
@@ -29,7 +29,7 @@ sections:
       Intercostal neuralgia is caused by nerve compression in the abdominal area, near the ribcage. The intercostal nerves arise from the spinal cord and lie under each rib alongside the vein and artery, supplying the ribcage muscles, skin, and chest cavity. These nerves can be injured from surgery or trauma, from viral infections such as shingles, or idiopathically — with no identifiable cause.
 
       Symptoms include spasmodic pain around the ribs. Because of the placement of the nerve, ordinary movements such as breathing, laughing, or sneezing can trigger the pain. Other symptoms include left-sided back pain, pain in the left side of the ribs, tingling, numbness, loss of appetite, and — in advanced cases — paralysis and atrophy of the muscles. In severe cases the pain feels like a lightning bolt and can extend to the back.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy & rehabilitation"

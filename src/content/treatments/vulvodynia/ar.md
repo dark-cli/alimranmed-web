@@ -8,7 +8,7 @@ legacyUrl: "https://ar.alimranmed.com/التهاب-الأعضاء-التناسل
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو"
         value: "ألم مزمن أو إزعاج في منطقة الفرج لا يمتد لأقل من ثلاثة أشهر ولا سبب عضوي محدد له."
@@ -33,7 +33,7 @@ sections:
       - تشنج أو ضعف في عضلات قاع الحوض
 
       إذا كنتِ تعانين من هذه الحالة، فلا تسمحي للعلامات غير الظاهرة أو الحرج من مناقشتها أن يمنعك من طلب المساعدة — فالعلاجات الفعّالة متاحة.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "خيارات العلاج في مركز العمران"
     groups:
       - title: "علاجات الحقن"

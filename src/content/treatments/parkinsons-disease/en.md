@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Progressive loss of dopamine-producing neurons in the midbrain, causing difficulty initiating and controlling movement."
@@ -23,7 +23,7 @@ sections:
     body: |
       Parkinson's disease is progressive neurodegeneration of dopamine-producing neurons in the substantia nigra. Dopamine loss leads to slow, stiff, tremulous movement. Most cases present after age 60, though early-onset cases occur. Cause is unknown in most patients.
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "10M"
@@ -39,7 +39,7 @@ sections:
       - "DBS works best for tremor and rigidity; bradykinesia is less responsive."
       - "Quality of life often improves dramatically after DBS."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Medical management is first-line. Surgery considered when medication complications emerge."
     groups:

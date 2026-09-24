@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/spina-bifida/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A spinal dysraphism caused by incomplete closure of the embryonic neural tube, typically in the first weeks of pregnancy. Three forms: spina bifida occulta (bone defect only; up to 10% of people have this incidentally, rarely symptomatic), meningocele (meninges herniate through the bony defect but cord is intact; rare, usually mild), and myelomeningocele / open spina bifida (cord and/or its coverings are exposed; always diagnosed at birth or prenatally). Open spina bifida is surgically closed within days of birth to prevent further cord damage — but damage already present at birth cannot be reversed. Adults with open forms require lifelong neurosurgical monitoring."
@@ -41,7 +41,7 @@ sections:
       **Adult neurosurgical care**
 
       Adults with open spina bifida continue to benefit from neurosurgical follow-up. Shunt malfunction, progressive tethering, Chiari progression, and syrinx expansion can develop insidiously. Baseline MRI of the full neuraxis, periodic imaging, and review of neurological function are standard elements of long-term care. A specialist familiar with the lifelong complications of spina bifida is invaluable.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

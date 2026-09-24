@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/osteomalacia/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Defective mineralisation of newly formed bone matrix (osteoid), causing bones to become soft and prone to deformity or fracture. Distinguished from osteoporosis (reduced bone quantity) by the primary defect in bone quality — osteoid is laid down but not properly mineralised. Most often results from vitamin D deficiency, with contributing roles from calcium deficiency, phosphate wasting, and certain medications."
@@ -50,7 +50,7 @@ sections:
       *Cause-specific treatment:* Malabsorption requires high-dose or intramuscular vitamin D; renal osteodystrophy requires activated vitamin D (calcitriol); phosphate wasting disorders require phosphate supplementation ± calcitriol.
 
       *Pain management and rehabilitation:* Bone pain can be severe before mineralisation is restored. Exercise, physiotherapy, and pain interventions support function and recovery during the treatment period.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

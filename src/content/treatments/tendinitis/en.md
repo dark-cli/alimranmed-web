@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/tendinitis/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Inflammation or irritation of a tendon — most commonly from overuse or repetitive motion. Presents as pain and tenderness just outside a joint."
@@ -34,7 +34,7 @@ sections:
       **Risk factors:** Age reduces tendon flexibility. Certain occupations and sports with repetitive motion carry higher risk.
 
       **Complications:** Without adequate treatment, chronic tendon irritation may cause tendon rupture (requiring surgery) or tendinopathy — degenerative changes with abnormal new blood vessel growth.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy"

@@ -9,7 +9,7 @@ publishedAt: "2020-04-20T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Trauma to the head that may affect the scalp, skull, or brain — ranging from mild concussion to severe intracranial haemorrhage."
@@ -25,11 +25,11 @@ sections:
 
       Getting the CT right is the pivotal decision. Missed bleeds kill; unnecessary CTs cost money and radiation without gain. Validated decision rules (Canadian CT Head Rule, NEXUS) tell us which patients need imaging and which can be safely observed.
 
-  - type: pull-quote
+  - type: pull_quote
     text: "Everyone worries about the operation. What matters more is the twelve hours after: seizure, re-bleed, rising pressure. The bedside review, not the theatre, is where most patients are saved."
     attribution: "Hussein Imran Mousa, consultant neurosurgeon"
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Two intracranial injuries you must not miss"
     intro: "The two most time-critical intracranial injuries look different on imaging and behave very differently. Both need urgent surgical assessment; the outcome depends on how fast the operation happens."
     a:
@@ -47,7 +47,7 @@ sections:
         - "More common in the elderly and in patients on anticoagulants."
         - "Prognosis heavily depends on underlying brain injury, not just the clot."
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "80%"
@@ -63,7 +63,7 @@ sections:
       - "Second-impact syndrome is a serious risk in young athletes who return to play before the first concussion has fully resolved."
       - "Return-to-driving, return-to-work, and return-to-sport are three separate conversations with different timelines."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is managed"
     intro: "Care spans emergency assessment, surgical intervention where indicated, and structured rehabilitation. Most patients only need the first two boxes; a minority need the full pathway."
     note: "The acute phase is managed at the emergency department. The clinic sees patients afterwards for follow-up, rehabilitation, and secondary prevention."

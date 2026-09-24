@@ -8,7 +8,7 @@ source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو طنين الأذن؟"
         value: "صوت مزعج بدون محفز خارجي يؤثر على جودة الحياة ويسبب مشاكل نفسية واجتماعية"

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/claudication/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Intermittent muscle pain caused by inadequate oxygen delivery to exercising muscles due to narrowed peripheral arteries (peripheral artery disease). The pain consistently appears after a predictable distance or exertion level and resolves within minutes of rest. A marker of systemic atherosclerosis — patients with claudication have substantially elevated cardiovascular risk."
@@ -59,7 +59,7 @@ sections:
       *Neuromodulatory:* Spinal cord stimulation significantly improves rest pain, tissue perfusion, and quality of life in patients with severe limb ischaemia who are not candidates for vascular reconstruction.
 
       *Vascular intervention:* Percutaneous transluminal angioplasty (with or without stenting) or surgical bypass restores blood flow for patients with lifestyle-limiting claudication unresponsive to exercise and medical therapy.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

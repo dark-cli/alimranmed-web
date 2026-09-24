@@ -1,0 +1,46 @@
+---
+/**
+ * cv_stats — full-bleed stats grid on a subtle tinted background. Each cell
+ * is a big Newsreader figure and a short description.
+ */
+interface Props {
+  items: { fig: string; desc: string }[];
+}
+const { items } = Astro.props;
+---
+
+<section class="cv-stats">
+  <div class="cv-stats-grid">
+    {items.map((s) => (
+      <div class="cv-stat-cell">
+        <p class="cv-stat-fig">{s.fig}</p>
+        <p class="cv-stat-desc">{s.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .cv-stats { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .cv-stats-grid {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr));
+    gap: 1px;
+    background: var(--line);
+  }
+  .cv-stat-cell { background: var(--surface); padding: 32px 24px; }
+  .cv-stat-fig {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.4vw, 40px);
+    line-height: 1;
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .cv-stat-desc { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--body); }
+
+  :global(html[dir="rtl"]) .cv-stat-fig { font-weight: 700; line-height: 1.2; }
+  :global(html[dir="rtl"]) .cv-stat-desc { line-height: 1.9; }
+</style>

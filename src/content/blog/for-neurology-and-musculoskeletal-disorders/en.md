@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A minimally invasive procedure that uses radiofrequency current to heat targeted nerves and switch off pain signals travelling from arthritic or facet joints to the brain."
@@ -35,7 +35,7 @@ sections:
       - Chronic neck pain from cervical facet joints
       - [Knee](/services/radiofrequency/knee/) osteoarthritis pain, via genicular nerve ablation
       - [Spinal](/services/radiofrequency/spine/) pain that has not responded to conservative care or steroid injections
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Thermal vs pulsed radiofrequency"
     intro: "There are two types of radiofrequency ablation. The choice depends on the nerve being targeted and the goal of treatment."
     a:
@@ -54,7 +54,7 @@ sections:
         - "Modulates the nerve without destroying it"
         - "Preferred near mixed motor-sensory nerves"
         - "Lower risk of numbness or deafferentation"
-  - type: stats-facts
+  - type: stats_facts
     heading: "What the outcomes look like"
     intro: "The degree of pain relief depends on the cause and location of the pain."
     stats:

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/temporal-arteritis/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Giant cell arteritis (GCA), also called temporal arteritis, is a systemic vasculitis characterised by granulomatous inflammation of the walls of medium and large arteries — predominantly the superficial temporal, ophthalmic, posterior ciliary, and branches of the carotid and aorta. It affects almost exclusively adults over 50 (peak incidence 70–80 years). The inflamed vessel walls thicken and may occlude, leading to tissue ischaemia. The most feared complication is permanent visual loss from anterior ischaemic optic neuropathy."
@@ -39,7 +39,7 @@ sections:
       *Tocilizumab* (subcutaneous, weekly or fortnightly) is approved as an adjunct, allowing faster steroid tapering and significantly reducing the relapse rate.
 
       *Aortic surveillance* — GCA carries a lifetime risk of aortic aneurysm (especially thoracic aortic aneurysm) that may manifest years after the initial diagnosis. Annual chest imaging and periodic CT/ultrasound surveillance are recommended.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

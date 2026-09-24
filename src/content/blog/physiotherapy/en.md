@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is physiotherapy?"
         value: "A healthcare profession that assesses, diagnoses, treats and prevents disease and disability through physical means and movement science"

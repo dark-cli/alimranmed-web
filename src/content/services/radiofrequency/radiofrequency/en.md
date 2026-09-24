@@ -7,7 +7,7 @@ category: "radiofrequency"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Radiofrequency ablation (RFA) applies heat to pain-transmitting nerve pathways, disrupting the signal to the brain and providing relief lasting 6 months to 2 years."
@@ -25,7 +25,7 @@ sections:
       RFA is performed on an outpatient basis requiring only local anaesthetic and mild sedation, avoiding the risks of open surgery and general anaesthesia. Benefits include: up to 2 years of pain relief, less risk of side effects compared to steroid injections, low complication rate, improved range of motion, reduced analgesic use, and short recovery time.
 
       Preparation: fast for 6 hours before the procedure and arrange a driver. Post-procedure restrictions: no driving or machinery for 24 hours, no strenuous activity for 24 hours, avoid baths for 1–2 days (showering is permitted).
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Radiofrequency procedures"

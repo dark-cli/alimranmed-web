@@ -41,7 +41,7 @@ const pageBase = z.object({
 const kv = z.object({ label: z.string(), value: z.string() });
 
 const blockAtGlance = z.object({
-  type: z.literal("at-a-glance"),
+  type: z.literal("at_a_glance"),
   items: z.array(kv).min(2).max(4),
 });
 
@@ -52,13 +52,13 @@ const blockProse = z.object({
 });
 
 const blockPullQuote = z.object({
-  type: z.literal("pull-quote"),
+  type: z.literal("pull_quote"),
   text: z.string(),
   attribution: z.string().optional(),
 });
 
 const blockComparisonPair = z.object({
-  type: z.literal("comparison-pair"),
+  type: z.literal("comparison_pair"),
   heading: z.string().optional(),
   intro: z.string().optional(),
   a: z.object({ label: z.string(), title: z.string(), items: z.array(z.string()) }),
@@ -66,7 +66,7 @@ const blockComparisonPair = z.object({
 });
 
 const blockStatsFacts = z.object({
-  type: z.literal("stats-facts"),
+  type: z.literal("stats_facts"),
   heading: z.string().optional(),
   intro: z.string().optional(),
   stats: z.array(z.object({ value: z.string(), label: z.string() })).min(2).max(4),
@@ -74,7 +74,7 @@ const blockStatsFacts = z.object({
 });
 
 const blockTreatmentGroups = z.object({
-  type: z.literal("treatment-groups"),
+  type: z.literal("treatment_groups"),
   heading: z.string().optional(),
   intro: z.string().optional(),
   note: z.string().optional(),
@@ -115,6 +115,60 @@ const articleSection = z.discriminatedUnion("type", [
   blockMedia,
 ]);
 
+// ── Doctor CV block system ────────────────────────────────────────────
+// Mirrors the article `sections` pattern but with block types tuned to a
+// clinician's CV. Kept as a separate union so treatment/blog schemas don't
+// pick up CV-only blocks by accident. See src/components/doctor/ for renderers.
+//
+// The hero is NOT a section block — every doctor has exactly one hero, so
+// its fields (heroEyebrow, heroHeadline, heroLede) live at the top of the
+// doctor schema and render unconditionally above the sections list.
+
+const blockCvStats = z.object({
+  type: z.literal("cv_stats"),
+  items: z.array(z.object({
+    fig: z.string(),   // "5,000+", "25"
+    desc: z.string(),  // "Operations performed…"
+  })).min(2).max(6),
+});
+
+// Unified list block. One block type, three visual layouts driven by
+// `variant`. Item shape is generic (label / body / subtitle?); the renderer
+// picks the layout. Variant names describe HOW they look, not what they're
+// used for — same block can be appointments, memberships, publications, etc.
+//
+//   variant: "rows"    — single-column stacked entries. Label on the left
+//                        (mono, small); body on the right (main text);
+//                        optional subtitle underneath the body in muted small.
+//                        Good for anything read top-to-bottom.
+//
+//   variant: "wrap"    — auto-fit responsive grid. Body on the left (main
+//                        text); label on the right (mono, small). Items
+//                        wrap into AS MANY columns as fit the viewport
+//                        (typically 1 on mobile, 2–3 on desktop). Subtitle
+//                        unused. Best for short single-line entries where
+//                        density matters (memberships, languages, tags).
+//
+//   variant: "columns" — fixed 2 columns, always. Each cell is a full
+//                        label + body row (same shape as `rows`). Halves
+//                        vertical space for medium-length entries when the
+//                        page is wide enough. Subtitle supported.
+const blockList = z.object({
+  type: z.literal("list"),
+  variant: z.enum(["rows", "wrap", "columns"]),
+  heading: z.string(),
+  items: z.array(z.object({
+    label: z.string(),
+    body: z.string(),
+    subtitle: z.string().optional(),
+  })).min(1),
+});
+
+const doctorSection = z.discriminatedUnion("type", [
+  blockCvStats,
+  blockList,
+]);
+
 const treatments = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/treatments" }),
   schema: pageBase.extend({
@@ -146,11 +200,22 @@ const doctors = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/doctors" }),
   schema: pageBase.extend({
     fullName: z.string(),
+    // Shared across listing card and detail hero — one source of truth.
     titles: z.array(z.string()).default([]),
-    specialty: z.string().optional(),
-    photo: z.string().optional(),
-    memberships: z.array(z.string()).default([]),
-    languages: z.array(z.string()).default([]),
+    specialty: z.string().optional(),           // listing card chip
+    photo: z.string().optional(),               // listing + detail portrait
+    photoAlt: z.string().optional(),            // portrait alt (falls back to fullName)
+    languages: z.array(z.string()).default([]), // listing card only
+    // Hero copy — always present, single instance per doctor. Rendered at
+    // the top of the detail page by DoctorSections before the sections loop.
+    heroEyebrow: z.string(),                    // small caps label above name
+    heroHeadline: z.string().optional(),        // defaults to fullName
+    heroLede: z.string(),                       // paragraph under the h1
+    // Block-based CV. Everything below the hero is a section: stats,
+    // timelines (appointments/education/conferences), memberships, publications.
+    // The listing card derives its memberships count from the cv_memberships
+    // blocks in this list.
+    sections: z.array(doctorSection).optional(),
   }),
 });
 

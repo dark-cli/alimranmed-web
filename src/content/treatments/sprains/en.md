@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/sprains/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "An injury to a ligament (the fibrous band connecting bone to bone at a joint) caused by overstretching or tearing. Distinct from a muscle strain, which involves the muscle-tendon unit. Most commonly affects the ankle, but also the knee, wrist, and thumb. Range from Grade I (stretch) to Grade III (complete tear)."
@@ -49,7 +49,7 @@ sections:
       After the acute phase, physiotherapy rehabilitation focuses on restoring range of motion, strength, balance, and proprioception — essential for preventing re-sprain. Return-to-sport criteria should be met before resuming full activity.
 
       For chronic ligament laxity or incompletely healed sprains, prolotherapy (dextrose injection) and platelet-rich plasma (PRP) stimulate fibroblast activity and collagen repair. Persistent ankle instability may ultimately require lateral ligament reconstruction.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"
