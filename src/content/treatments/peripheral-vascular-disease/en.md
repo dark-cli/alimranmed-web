@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/peripheral-vascular-disease/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Peripheral artery disease (PAD) is a progressive narrowing of the arteries supplying the extremities — predominantly the lower limbs — by atherosclerotic plaque. Reduced arterial flow impairs oxygen delivery to muscles during activity and, in severe cases, at rest. PAD is a systemic disease: patients have a markedly elevated risk of myocardial infarction and stroke from concurrent coronary and cerebrovascular atherosclerosis. Peripheral vascular disease is the broader term covering both arterial and venous disease of the limb circulation."
@@ -46,7 +46,7 @@ sections:
       *Spinal cord stimulation (SCS):* An established, evidence-based treatment for critical limb-threatening ischaemia not amenable to revascularisation. SCS improves microvascular flow, reduces rest pain and analgesic requirements, and promotes ulcer healing. The mechanism involves modulation of sympathetic vasomotor tone and release of vasodilatory neuropeptides.
 
       *Revascularisation:* Percutaneous transluminal angioplasty (PTA) with or without stenting — endovascular; lower procedural risk but higher re-stenosis rate. Surgical bypass using vein or synthetic graft — more durable; preferred for long-segment disease or failed angioplasty. Urgently indicated for critical limb ischaemia.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

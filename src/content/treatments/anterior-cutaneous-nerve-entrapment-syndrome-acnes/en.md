@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/anterior-cutaneous-nerve-entrapment-syndrome-
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A recognised cause of chronic abdominal pain in which the cutaneous branches of the lower intercostal nerves become entrapped at the lateral border of the rectus abdominis muscle, causing ischaemic neuropathy and localised abdominal wall pain."
@@ -38,7 +38,7 @@ sections:
       **Causes:** The exact aetiology is unclear. Predisposing factors include previous abdominal surgery, pregnancy, and trauma. However, in more than half of patients the pain begins suddenly with no identifiable precipitating event.
 
       Diagnosis requires excluding underlying gastrointestinal or abdominal pathology first. A diagnostic local anaesthetic injection at the point of maximum tenderness both confirms the diagnosis and provides temporary relief.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

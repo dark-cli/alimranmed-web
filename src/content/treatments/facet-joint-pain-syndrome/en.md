@@ -7,7 +7,7 @@ category: "pain"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Pain from the small paired facet joints at the back of the spine — anywhere from the neck to the low back — usually caused by whiplash, arthritis, or degenerative change."

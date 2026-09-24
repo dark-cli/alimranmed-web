@@ -44,12 +44,12 @@ function nextNumId(hasHeading: boolean): { num?: string; id?: string } {
     {isRedesigned && Array.isArray(d.sections) ? (
       d.sections.map((s: any) => {
         const { num, id } = nextNumId(!!s.heading);
-        if (s.type === "at-a-glance")     return <AtGlance items={s.items} glanceLabel="At a glance" />;
+        if (s.type === "at_a_glance")     return <AtGlance items={s.items} glanceLabel="At a glance" />;
         if (s.type === "prose")           return <Prose num={num} heading={s.heading} body={s.body} id={id} />;
-        if (s.type === "pull-quote")      return <PullQuote text={s.text} attribution={s.attribution} />;
-        if (s.type === "comparison-pair") return <ComparisonPair num={num} heading={s.heading} id={id} intro={s.intro} a={s.a} b={s.b} />;
-        if (s.type === "stats-facts")     return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="Key facts" factNumbers={s.facts.map((_: string, i: number) => String(i + 1).padStart(2, "0"))} />;
-        if (s.type === "treatment-groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} />;
+        if (s.type === "pull_quote")      return <PullQuote text={s.text} attribution={s.attribution} />;
+        if (s.type === "comparison_pair") return <ComparisonPair num={num} heading={s.heading} id={id} intro={s.intro} a={s.a} b={s.b} />;
+        if (s.type === "stats_facts")     return <StatsFacts num={num} heading={s.heading} id={id} intro={s.intro} stats={s.stats} facts={s.facts} factsTitle="Key facts" factNumbers={s.facts.map((_: string, i: number) => String(i + 1).padStart(2, "0"))} />;
+        if (s.type === "treatment_groups") return <TreatmentGroups num={num} heading={s.heading} id={id} intro={s.intro} note={s.note} groups={s.groups} />;
         if (s.type === "related")         return <Related items={[]} relatedLabel="Related reading" />;
         return null;
       })

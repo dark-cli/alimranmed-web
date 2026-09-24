@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/bursitis/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Inflammation of the bursae — small fluid-filled cushioning sacs that reduce friction between bones, tendons, and muscles at joints. Most common in the shoulder, elbow, hip, and knee. Usually caused by repetitive motion or sustained pressure."
@@ -44,7 +44,7 @@ sections:
       **Seek urgent care** if you have fever (>38.9°C/102°F), rapidly spreading redness and warmth, or systemic illness — these suggest septic bursitis, which requires antibiotics and may need surgical drainage.
 
       Most non-infectious bursitis resolves within a few weeks with appropriate conservative management. Recurrence is common without addressing the underlying cause (e.g., repetitive activity or structural problems).
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/peripheral-nerve-disorders/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Damage to or dysfunction of the peripheral nerves — those outside the brain and spinal cord — producing sensory, motor, and/or autonomic symptoms. Peripheral neuropathy encompasses many distinct conditions grouped by distribution (single nerve vs. many), fibre type affected (large vs. small fibre), and underlying cause (metabolic, autoimmune, hereditary, toxic, infectious, or idiopathic). The pattern and progression of symptoms, nerve conduction studies, and laboratory tests together identify the type and guide treatment."
@@ -49,7 +49,7 @@ sections:
       - Neuromodulation: rTMS targeting primary motor or prefrontal cortex modulates central pain processing
 
       *Rehabilitation:* physiotherapy for weakness, balance, and fall prevention; occupational therapy for adaptive equipment; orthotics for foot drop.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

@@ -7,7 +7,7 @@ legacyUrl: "/services/chiropractic/sigma/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Computerised instrument-assisted chiropractic — precise mechanical impulses delivered by a handheld probe, with real-time biofeedback on a built-in display. No manual thrusts."
@@ -35,7 +35,7 @@ sections:
       **Who it is suitable for**
 
       The Sigma technique is suitable for patients who prefer a non-manual approach, those with joint hypersensitivity, post-operative patients returning to spinal rehabilitation, and children or elderly patients who cannot tolerate high-velocity manual manipulation. It is applied safely by a trained therapist and the treatment parameters are guided by the computerised output rather than by manual estimation.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Chiropractic care"

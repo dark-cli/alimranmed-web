@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/myofascial-pain/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A chronic pain condition affecting the fascia — the soft tissue that connects muscles. Pressure on sensitive trigger points causes referred pain in unrelated parts of the body."
@@ -32,7 +32,7 @@ sections:
       Most symptoms can be treated using self-care techniques or gentle therapies such as massage, heat therapy, and physical therapy. When these are not enough, further treatment options are available.
 
       At Alimran Medical Center we often recommend **trigger point injections** for myofascial pain syndrome. These injections force the muscles to relax, which helps relieve many of the symptoms. Because the injections contain an anaesthetic, they also provide short-term pain relief.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy & rehabilitation"

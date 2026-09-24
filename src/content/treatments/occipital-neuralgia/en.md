@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/occipital-neuralgia/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Irritation or compression of the greater occipital nerves — which run from the upper neck through the back of the scalp — causing intense, shooting pain."
@@ -29,7 +29,7 @@ sections:
       **Causes:** Occipital neuralgia may occur spontaneously, or from a pinched nerve root in the neck (due to arthritis, for example), prior injury, or surgery to the scalp or skull. Tight muscles at the back of the head can also entrap the nerves.
 
       **Important note:** True isolated occipital neuralgia is relatively rare. Many headaches — especially migraines — repeatedly involve the back of the head and inflame the greater occipital nerve, leading to diagnostic confusion. These cases are generally classified as migraines involving the greater occipital nerve rather than occipital neuralgia itself.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

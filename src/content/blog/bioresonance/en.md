@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: false
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A complementary-medicine therapy that measures the frequency of electromagnetic wavelengths coming from the body and uses those readings for diagnosis and treatment."

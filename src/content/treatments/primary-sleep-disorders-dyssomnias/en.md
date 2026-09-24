@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/primary-sleep-disorders-dyssomnias/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Sleep disorders fall into two broad categories: primary (not caused by another medical or psychological condition) and secondary (caused by an underlying condition such as depression, thyroid disease, or chronic pain). Primary disorders are further subdivided into dyssomnias (disrupted sleep quantity or quality) and parasomnias (abnormal behaviours during sleep). Dyssomnias are the most clinically significant group — they encompass sleep apnoea, restless legs syndrome, periodic limb movements, and the various forms of insomnia."
@@ -50,7 +50,7 @@ sections:
       **Neuromodulation for sleep disorders**
 
       Repetitive TMS targeting the dorsolateral prefrontal cortex or primary motor cortex modulates neural circuits involved in sleep regulation. Evidence supports rTMS for improving sleep quality and reducing insomnia severity, including in cases refractory to pharmacotherapy.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

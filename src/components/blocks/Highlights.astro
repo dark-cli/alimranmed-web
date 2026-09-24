@@ -1,0 +1,73 @@
+---
+/**
+ * highlights — bordered inset panel with 2–4 label/value pairs.
+ * Previously called at_a_glance. Compact quick-reference block, usually
+ * sits near the top of an article.
+ */
+interface Props {
+  heading?: string;
+  items: { label: string; value: string }[];
+}
+const { heading = "At a glance", items } = Astro.props;
+---
+
+<section class="highlights">
+  <p class="highlights-label">{heading}</p>
+  <div class="highlights-grid">
+    {items.map((it) => (
+      <div>
+        <p class="hl-item-label">{it.label}</p>
+        <p class="hl-item-value">{it.value}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .highlights {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: clamp(24px, 3vw, 32px);
+    margin: clamp(28px, 3.5vw, 44px) 0;
+  }
+  .highlights-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  :global(html[dir="rtl"]) .highlights-label {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 22px;
+  }
+  .hl-item-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 6px;
+  }
+  :global(html[dir="rtl"]) .hl-item-label {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .hl-item-value {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.72;
+    color: var(--ink);
+  }
+  :global(html[dir="rtl"]) .hl-item-value { line-height: 1.95; }
+</style>

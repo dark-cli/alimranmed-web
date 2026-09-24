@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/luna-emg-robot/"
 source: "ai-draft"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Luna EMG is a robotic rehabilitation device that uses electromyography (EMG) signals from the patient's muscles to drive active, personalised therapy — training the sensorimotor cortex directly."
@@ -23,7 +23,7 @@ sections:
       The device features a 6-channel electromyograph, integrated torque sensor, and position measurements, enabling comprehensive kinesiotherapy with personalised automatic training programs. Clinical assessments can be exported in PDF or CSV format. A wide range of interchangeable attachments makes Luna adaptable to upper and lower limb rehabilitation, and its portable design allows use at the patient's bedside.
 
       Luna EMG is indicated for: stroke recovery, incomplete spinal cord injury, spina bifida, multiple sclerosis, ALS, Duchenne muscular dystrophy, spinal muscular atrophy, any partial peripheral neurological disorder, pelvic floor dysfunction and urinary incontinence, bone formation complications, and post-surgical recovery.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy"

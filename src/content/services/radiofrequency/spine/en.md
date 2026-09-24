@@ -8,7 +8,7 @@ publishedAt: "2020-04-28T07:54:03"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Spinal RFA heats a targeted section of a pain-transmitting nerve at the facet or sacroiliac joint, creating a lesion that prevents pain signals reaching the brain."
@@ -29,7 +29,7 @@ sections:
       - Avoid or delay surgery
 
       Spinal RFA is performed on an outpatient basis. It is a well-tolerated procedure with a strong safety profile.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Radiofrequency"

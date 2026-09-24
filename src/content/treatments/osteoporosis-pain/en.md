@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/osteoporosis-pain/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A degenerative bone disease that reduces bone mineral density over time, making bones weak or brittle — most commonly in elderly individuals."

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/syringomyelia-syrinx/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A syrinx is an abnormal fluid-filled cavity within the central canal or parenchyma of the spinal cord — essentially a pocket of CSF-like fluid that forms under abnormal pressure dynamics. Also called hydromyelia when it involves the central canal. Causes include Chiari I malformation (the most common), tethered spinal cord, spinal cord trauma, hydrocephalus, spinal arachnoiditis, and spinal cord tumours. A large proportion of syringes are idiopathic. The cavity expands over time, compressing cord grey and white matter and producing a progressive neurological deficit. MRI has revolutionised diagnosis and monitoring."
@@ -47,7 +47,7 @@ sections:
       - *Syringoperitoneal or syringopleural shunting* — fluid is diverted to the peritoneal or pleural cavity
 
       Results vary and re-accumulation can occur; follow-up imaging is essential.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

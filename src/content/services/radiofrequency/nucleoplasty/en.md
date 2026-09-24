@@ -8,7 +8,7 @@ publishedAt: "2020-05-04T19:21:36"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Nucleoplasty inserts a small needle into a bulging disc and uses radiofrequency energy to dissolve and decompress the disc material — no muscle incision, no general anaesthesia."
@@ -24,7 +24,7 @@ sections:
       Unlike open surgical approaches, nucleoplasty does not require muscle incision, resulting in minimal muscle pain. The risk of nerve damage is greatly reduced compared to conventional surgery, and the hospital stay is brief. Patients with conditions that prevent general anaesthesia — including cardiac or respiratory comorbidities — can safely undergo this procedure.
 
       Nucleoplasty is indicated for: patients with herniated discs of the cervical or lumbar spine, mild degenerative disc changes, patients who have had minimal improvement from conservative therapies such as physiotherapy, patients who fear surgery, and those with conditions preventing general anaesthesia.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Radiofrequency"

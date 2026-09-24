@@ -8,7 +8,7 @@ legacyUrl: "https://ar.alimranmed.com/خراج-الدماغ"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو"
         value: "عدوى موضعية نادرة داخل الدماغ تُشكّل فيها البكتيريا أو الفيروسات تجويفاً مملوءاً بالصديد. أكثر شيوعاً عند الأطفال. يستلزم دخول المستشفى فوراً والصرف الجراحي — حالة طارئة طبية."
@@ -42,7 +42,7 @@ sections:
       - الدعم التنفسي في الحالات الشديدة
 
       بعد حل المرحلة الحادة، يُحتاج في الغالب إلى إعادة التأهيل لاستعادة الوظيفة المفقودة.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "إعادة التأهيل في مركز العمران"
     groups:
       - title: "العلاج الطبيعي"

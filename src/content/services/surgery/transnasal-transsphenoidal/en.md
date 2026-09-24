@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/endoscopic-transnasal-transsphenoidal-surgery
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A surgical instrument is passed through the nostril and alongside the nasal septum to reach and remove a pituitary tumour — entirely endoscopic, without craniotomy."
@@ -23,7 +23,7 @@ sections:
       This approach offers significant advantages over traditional open skull base surgery: no visible scarring, reduced risk of complications from extensive brain retraction, shorter hospital stay, and faster recovery. It is the standard-of-care approach for pituitary adenomas (both secretory and non-secretory) and other sellar lesions including craniopharyngiomas and Rathke's cleft cysts.
 
       High-definition endoscopic imaging provides excellent intraoperative visualisation of the tumour and critical surrounding structures, including the carotid arteries and optic nerves, enabling safe and complete tumour removal.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Surgery"

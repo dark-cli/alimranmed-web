@@ -7,7 +7,7 @@ category: "physiotherapy"
 source: "ai-draft"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Laser therapy delivers focused light energy to tissues, triggering biochemical changes at the cell membrane that improve cellular metabolism, immune response, and tissue repair."
@@ -25,7 +25,7 @@ sections:
       **Indications** for laser therapy include: inflammatory pain such as tendinitis, bursitis, and synovitis; tissue repair in ligament sprains and muscle tears; joint pain including rheumatoid arthritis and finger joint pain; and trigger point pain from myofascial knots.
 
       **Clinical functions** of laser therapy: relieves pain, reduces inflammation, deactivates trigger points responsible for myofascial pain, increases tissue repair speed and tensile capacity, improves blood circulation, stimulates immune and nerve function, promotes collagen development, and accelerates wound healing.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy"

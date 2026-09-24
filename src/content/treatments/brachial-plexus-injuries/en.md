@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/brachial-plexus-injuries/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Injury to the brachial plexus — the network of nerves (C5–T1) that controls movement and sensation in the shoulder, arm, and hand. Ranges from mild stretching (neuropraxia) to complete avulsion of nerve roots from the spinal cord."
@@ -47,7 +47,7 @@ sections:
       - Burning, stinging, or severe pain in the shoulder or arm
 
       Mild injuries (neuropraxia) may resolve without treatment. More severe injuries require rehabilitation, and some need surgery — ideally within 6 months of injury, since nerve tissue heals slowly and delayed repair reduces outcomes.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

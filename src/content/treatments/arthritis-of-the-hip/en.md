@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/arthritis-of-the-hip/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A progressive joint disorder causing pain and stiffness in the hip. The five main types affecting the hip are osteoarthritis, rheumatoid arthritis, ankylosing spondylitis, systemic lupus erythematosus, and psoriatic arthritis."
@@ -44,7 +44,7 @@ sections:
       - With rheumatoid arthritis and lupus: fatigue and generalised weakness
 
       **Non-surgical management** focuses on pain relief, joint protection, and preserving function. Lifestyle modifications — weight management, activity modification to reduce hip loading, and appropriate exercise to build supporting muscle — complement medical treatment.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

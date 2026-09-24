@@ -8,7 +8,7 @@ source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو العلاج الطبيعي؟"
         value: "تخصص صحي يقيّم وينظّم ويعالج ويعمل على الوقاية من الأمراض والإعاقات من خلال الوسائل الجسدية وعلوم الحركة"

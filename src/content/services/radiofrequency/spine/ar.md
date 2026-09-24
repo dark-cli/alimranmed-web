@@ -9,7 +9,7 @@ publishedAt: "2020-04-28T07:54:03"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو"
         value: "يُسخّن RFA للعمود الفقري جزءاً من العصب الناقل للألم عند المفصل الوجهي أو العجزي الحرقفي، مُنشئاً آفة حرارية تمنع الإشارة المؤلمة من بلوغ الدماغ."
@@ -30,7 +30,7 @@ sections:
       - تجنب الجراحة أو تأجيلها
 
       يُجرى RFA للعمود الفقري خارجياً وهو إجراء ذو ملف أمان جيد.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "خيارات العلاج في مركز العمران"
     groups:
       - title: "الترددات الراديوية"

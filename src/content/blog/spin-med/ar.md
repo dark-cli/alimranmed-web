@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: false
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو"
         value: "جهاز لفك الضغط عن العمود الفقري بدون جراحة، يستهدف الأقراص الفقرية المتضررة ويعمل على تباعد الفقرات بلطف لتخفيف الضغط عن القرص وجذر العصب."

@@ -8,7 +8,7 @@ publishedAt: "2021-05-31T17:07:49"
 redesigned: true
 clinicallyRelevant: false
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو"
         value: "علاج بالطب التكميلي يعتمد على قياس تردد الموجات الكهرومغناطيسية القادمة من الجسم، ويستخدم هذه القراءات في التشخيص والعلاج."

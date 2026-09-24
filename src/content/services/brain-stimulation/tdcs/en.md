@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/tdcs/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "tDCS is a non-invasive neuromodulation technique that delivers a weak electrical current through electrodes placed on the scalp to alter brain activity."
@@ -25,7 +25,7 @@ sections:
       Side effects are mild and limited to the electrode site: temporary skin redness, itching, twitching, headache, nausea, and dizziness. Notably, the last three have been reported at similar rates during placebo stimulation when tDCS is applied insufficiently. Most patients report only a slight tingling or warmth that disappears when stimulation ends.
 
       Clinical evidence supports tDCS for depression, schizophrenia, aphasia, addiction, and memory enhancement. It has also been shown to reduce anxiety in multiple trials and to accelerate learning in healthy individuals.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Brain stimulation"

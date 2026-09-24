@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 isHub: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Physical therapy at Alimran encompasses a full range of modalities — electrical stimulation, laser, ultrasound, and robotic rehabilitation — tailored to each patient's condition."
@@ -30,7 +30,7 @@ sections:
       [Luna EMG robot](/services/physiotherapy/luna-emg-robot/) — interactive electromyography-driven robotic rehabilitation for neurological and orthopaedic recovery.
 
       Treatments are frequently combined with each other and with complementary services such as radiofrequency, acupuncture, and chiropractic care for comprehensive patient management.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Physiotherapy modalities"

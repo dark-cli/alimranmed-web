@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: false
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A non-surgical spinal decompression system that targets damaged disc segments and gently separates the vertebrae to relieve pressure on the disc and nerve root."

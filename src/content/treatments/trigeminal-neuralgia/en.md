@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/trigeminal-neuralgia/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Sudden, severe, brief facial pain in the distribution of the trigeminal nerve (cranial nerve V). Typically described as electric-shock-like or stabbing, lasting a fraction of a second to two seconds. Most common craniofacial pain syndrome, predominantly affecting adults over 50."
@@ -46,7 +46,7 @@ sections:
       1. *Pharmacological:* Carbamazepine (Tegretol®) or oxcarbazepine are first-line and provide initial relief in most patients. Side effects (sedation, unsteadiness, blood count changes) often limit long-term use.
       2. *Interventional:* When medications fail or cause intolerable effects, percutaneous procedures (radiofrequency rhizotomy, glycerol injection, balloon compression), Botox injection, or Gamma Knife radiosurgery offer effective alternatives.
       3. *Surgical:* Microvascular decompression (MVD) — removing or repositioning the offending blood vessel — has the highest long-term success rates and is the preferred option for suitable, younger, medically fit patients.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Advanced therapies"

@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/gout/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "An inflammatory arthritis caused by the deposition of monosodium urate (MSU) crystals in joints and surrounding tissues when blood uric acid levels are chronically elevated. Episodic but can become chronic. Most common form of inflammatory arthritis in men over 40."
@@ -52,7 +52,7 @@ sections:
       *Long-term urate-lowering therapy (ULT):* allopurinol or febuxostat, targeting a serum urate below 360 µmol/L (below 300 µmol/L in tophaceous gout). Initiated after the acute flare has fully resolved.
 
       *Lifestyle:* low-purine diet, adequate hydration, weight loss, alcohol reduction, medication review.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

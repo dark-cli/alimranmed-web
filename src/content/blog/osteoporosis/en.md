@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: false
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is osteoporosis?"
         value: "Disease affecting bones through loss of bone material or insufficient bone tissue production, resulting in weak, brittle bones"
@@ -20,7 +20,7 @@ sections:
       Osteoporosis is a disease affecting bones as a result of losing bone material or not producing enough bone tissue. This results in weak and brittle bones prone to fracture with minimal force.
       
       The condition can occur due to hormonal changes such as menopause, or from deficiency of calcium or vitamin D. There are usually no symptoms until bones become too weak. Back pain may develop due to collapsed or fractured vertebrae. The most common sites of osteoporosis are the back, hips, and legs.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment Options at Alimran Center"
     intro: "We offer comprehensive treatment approaches for osteoporosis:"
     groups:

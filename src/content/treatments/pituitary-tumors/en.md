@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/pituitary-tumors/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Pituitary tumours are abnormal growths originating from the anterior or posterior pituitary gland. Over 90% are benign adenomas. Microadenomas are < 1 cm; macroadenomas are ≥ 1 cm and may compress adjacent structures. Functioning tumours secrete hormones in excess — the type of hormone determines the clinical syndrome. Non-functioning tumours present through mass effect on the optic chiasm, normal pituitary tissue, and cavernous sinuses. Most are sporadic; some occur in the context of MEN1 syndrome."
@@ -52,7 +52,7 @@ sections:
       - *Stereotactic radiosurgery (Gamma Knife, CyberKnife):* single high-dose, focused; best for small, well-defined residual tumour ≥ 3mm from optic chiasm
       - *Fractionated stereotactic radiotherapy (FSRT) / IMRT:* for larger tumours or those close to the optic apparatus; delivered over 4–6 weeks
       - Benefits may take months to years; risk of hypopituitarism increases with time after radiation
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neurosurgery"

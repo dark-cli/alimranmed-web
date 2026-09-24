@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/cervical-spondylotic-myelopathy/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Spinal cord damage (myelopathy) caused by age-related degeneration (spondylosis) of the cervical spine — the bones, discs, and ligaments of the neck. Degenerative changes narrow the spinal canal, compressing the spinal cord. The most common spinal disorder in adults over 55. Affects the nerve fibres transmitting signals to the arms, hands, and legs."
@@ -50,7 +50,7 @@ sections:
       - *Anterior approaches:* anterior cervical discectomy and fusion (ACDF); anterior cervical corpectomy and fusion — used when compression is primarily from the front (disc, osteophyte)
       - *Posterior approaches:* cervical laminectomy; laminectomy and fusion; laminoplasty — used for multilevel disease or predominantly posterior compression
       - *Combined anterior-posterior:* for severe multilevel disease or kyphotic deformity requiring realignment
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

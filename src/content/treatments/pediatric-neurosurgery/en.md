@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 isHub: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "The subspecialty of neurosurgery focused on conditions affecting the developing brain, spinal cord, and nervous system in children. The paediatric nervous system is anatomically and physiologically distinct from the adult — the skull is compliant, the brain is rapidly growing, and many conditions are congenital or developmental rather than acquired. Surgical timing, technique, and approach must account for these differences."
@@ -37,7 +37,7 @@ sections:
       - Surgical technique must accommodate the small size and fragility of paediatric anatomy while allowing for future growth
       - Long-term developmental follow-up is an integral part of care — the impact of brain and spinal cord conditions extends far beyond the surgical result
       - Family education and support are essential components of management
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neurosurgery"

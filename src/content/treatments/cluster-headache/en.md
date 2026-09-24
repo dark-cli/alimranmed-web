@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/cluster-headache/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A primary headache disorder causing severe, unilateral pain around or behind one eye in recurring cluster periods lasting weeks to months, separated by remissions of months to years. Among the most painful conditions known. More common in men, typically starting around age 30."
@@ -43,7 +43,7 @@ sections:
       **Cluster periods** are consistent in their characteristics for a given individual — often occurring seasonally (e.g., every spring or autumn). Most patients have episodic cluster headache, with cluster periods of one week to one year separated by remissions of at least 12 months. Chronic cluster headache (fewer than 30 days of remission per year) affects a minority.
 
       **Treatment** has two components: acute (aborting attacks) and preventive (reducing attack frequency during cluster periods). High-flow oxygen and subcutaneous triptans are the standard acute treatments. Preventive medications include verapamil, corticosteroids, and lithium. When medications are insufficient or poorly tolerated, interventional approaches targeting the sphenopalatine ganglion or occipital nerve offer effective alternatives.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

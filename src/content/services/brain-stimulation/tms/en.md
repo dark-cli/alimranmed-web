@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/rtms/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "TMS uses a magnetic coil placed on the scalp to generate brief pulses approximately 2–2.5 cm deep, stimulating or inhibiting neuronal activity without surgery or sedation."
@@ -25,7 +25,7 @@ sections:
       A typical course involves sessions 5 days per week for 4 to 6 weeks, each lasting 30 to 40 minutes. Because no sedation or general anaesthesia is required, patients remain fully awake and return to normal activities immediately after each session.
 
       The most common side effect is headache, reported by approximately half of patients — mild and typically diminishing over the course of treatment. About one third of patients experience scalp sensations or facial twitching, which also tend to lessen with treatment adjustments. Earplugs are provided due to the device's clicking noise. The risk of seizure is very low (approximately 1 in 1,000). Patients with non-removable metallic implants in or near the head are not eligible for TMS.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Brain stimulation"

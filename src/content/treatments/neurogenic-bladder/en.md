@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/neurogenic-bladder/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Bladder dysfunction resulting from disruption of the neurological control of urination — involving the brain, spinal cord, or peripheral pelvic nerves. The bladder may be hyperreflexic (overactive, failing to store), hypotonic (underactive, failing to empty), or show detrusor-sphincter dyssynergia. The pattern depends on where the nervous system is affected. Can cause kidney damage if high bladder pressures are not managed."
@@ -55,7 +55,7 @@ sections:
       - *Sacral neuromodulation:* implanted electrical stimulator modulates the sacral nerve roots — effective for urgency incontinence and non-obstructive retention
       - *Intrathecal baclofen pump:* directly suppresses spinal cord excitability, reducing both limb spasticity and detrusor hyperreflexia in high spinal cord injury and MS
       - *Spinal cord stimulation:* can improve bladder function and reduce autonomic dysreflexia risk in selected spinal cord injury patients
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

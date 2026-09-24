@@ -8,7 +8,7 @@ publishedAt: "2020-04-07T15:40:58"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A fatal neurodegenerative disease in which motor neurons in the brain and spinal cord progressively degenerate, causing worsening muscle weakness and atrophy while sensation and intellect are usually preserved."
@@ -42,7 +42,7 @@ sections:
       - Psychological and social support
 
       Early, multidisciplinary rehabilitation — including physical, adaptive, cognitive, social, functional, and speech components — is the single most effective way to preserve quality of life and reduce dependence on others.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

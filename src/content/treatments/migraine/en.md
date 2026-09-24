@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/migrain/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A neurological condition causing recurrent, intense headaches — typically one-sided and throbbing. More common in women; often hereditary. First appears between ages 10 and 45."
@@ -42,7 +42,7 @@ sections:
     kind: video
     src: https://www.youtube.com/watch?v=2HI355rV-YI
     caption: "Understanding migraine — how attacks happen and how they are treated"
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

@@ -8,7 +8,7 @@ publishedAt: "2020-11-23T14:53:06"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما يشعر به المريض"
         value: "ألم مزمن ونحول، ألم في العضلات، صعوبة في التركيز والذاكرة، وصداع — قد تستمر هذه الأعراض لأسابيع أو أشهر بعد الإصابة الحادة."

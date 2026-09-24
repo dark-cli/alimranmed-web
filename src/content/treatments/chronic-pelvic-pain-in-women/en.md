@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/chronic-pelvic-pain-in-women/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Pelvic pain below the navel and between the hips lasting six months or longer. May have a single identifiable cause (endometriosis, pelvic inflammatory disease, fibroids) or multiple overlapping contributors. When no structural cause is found, central sensitisation, pelvic floor dysfunction, and psychological factors play a significant role. Affects daily function, work, sleep, and relationships."
@@ -48,7 +48,7 @@ sections:
       - *Regenerative:* prolotherapy and ozone injections for ligamentous and fascial pelvic pain
       - *Physiotherapy:* pelvic floor downtraining, manual therapy, and therapeutic exercise
       - *Psychological support:* pain psychology, cognitive behavioural therapy, and mindfulness significantly improve outcomes in CPP with central sensitisation
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

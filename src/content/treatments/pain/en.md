@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 isHub: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Pain is a protective sensory and emotional experience associated with actual or potential tissue damage. Acute pain serves as a warning; chronic pain outlasts its usefulness and becomes a disease in its own right — driven by peripheral sensitisation, central sensitisation, neuroplastic changes, and psychosocial factors. Identifying the type, distribution, and mechanism of pain guides effective treatment."
@@ -52,7 +52,7 @@ sections:
       - [Myofascial pain](/treatments/myofascial-pain/)
       - [Heel spur](/treatments/heel-spur/)
       - [Intercostal neuralgia](/treatments/intercostal-neuralgia/)
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

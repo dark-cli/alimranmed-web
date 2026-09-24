@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is a stroke?"
         value: "A medical emergency caused by a problem with blood supply to the brain. Immediate treatment is essential — early intervention can limit brain damage and complications."
@@ -36,7 +36,7 @@ sections:
       - **Vision problems in one or both eyes.** Sudden blurred or blackened vision, or double vision.
       - **Headache.** A sudden, severe headache — sometimes with vomiting, dizziness, or a change in consciousness — can signal a stroke.
       - **Trouble walking.** You may stumble or feel suddenly dizzy, and lose balance or coordination.
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "The two types of stroke"
     intro: "A stroke happens when something disrupts the blood supply to the brain. Which type it is determines the emergency treatment."
     a:
@@ -158,7 +158,7 @@ sections:
       2. Reduce dependence on others.
 
       The programme is multidisciplinary — rehabilitation, physiotherapy, adaptive training, mental, social, functional, and [speech therapy](/services/rehabilitation/speech-therapy/).
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "The rehabilitation programme"
     intro: "Post-stroke recovery at the centre is organised into four lines of treatment, chosen and combined for each patient."
     groups:

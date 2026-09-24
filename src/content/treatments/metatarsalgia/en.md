@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/metatarsalgia/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Pain and inflammation at the metatarsal heads — the bony prominences at the ball of the foot. Results from excessive or repetitive loading of the forefoot. Can be primary (no underlying deformity) or secondary to foot deformities, Morton's neuroma, inflammatory arthritis, or stress fractures. Common in runners, jumpers, and anyone wearing ill-fitting or high-heeled footwear."
@@ -48,7 +48,7 @@ sections:
 
       *When conservative measures are insufficient:*
       Corticosteroid injection reduces acute inflammation around a painful metatarsal head or Morton's neuroma. Pulsed radiofrequency, ozone therapy, and prolotherapy can address chronic forefoot pain and promote tissue recovery. Severe Morton's neuroma or structural foot deformities may ultimately require surgical intervention.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

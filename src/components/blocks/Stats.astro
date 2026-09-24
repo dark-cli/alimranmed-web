@@ -1,0 +1,80 @@
+---
+/**
+ * stats — big-number tile grid. Unifies the old cv_stats (doctor pages)
+ * and stats_facts stats portion (article pages) into one widget.
+ *
+ * Defaults (per initial spec — iterate on these later):
+ * - Contained to article width (no full-bleed tinted band).
+ * - No extra inner side padding — tiles fill the available width.
+ * - Side bars enabled: 1px separators between tiles + 1px perimeter border.
+ * - Big Newsreader figure in accent colour, short body-font label below.
+ *
+ * Fields: heading?, intro?, items (2-6 of { value, label }).
+ */
+interface Props {
+  heading?: string;
+  intro?: string;
+  items: { value: string; label: string }[];
+}
+const { heading, intro, items } = Astro.props;
+---
+
+<section class="stats-block">
+  {heading && <h2 class="stats-heading">{heading}</h2>}
+  {intro && <p class="stats-intro">{intro}</p>}
+  <div class="stats-grid">
+    {items.map((it) => (
+      <div class="stats-cell">
+        <p class="stats-fig">{it.value}</p>
+        <p class="stats-lbl">{it.label}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .stats-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .stats-heading {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(22px, 2.6vw, 28px);
+    color: var(--ink);
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+  .stats-intro {
+    font-size: 16px; line-height: 1.65; color: var(--body);
+    margin: 0 0 20px; max-width: 62ch;
+  }
+
+  /* Grid uses `background: var(--line)` and `gap: 1px` — the gaps show the
+     underlying colour, producing 1px separator "bars" between tiles.
+     The 1px border wraps the outer edges so bars are enabled on all sides. */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .stats-cell { background: var(--surface); padding: 26px 22px; }
+  .stats-fig {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.2vw, 38px);
+    line-height: 1.1;
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .stats-lbl {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--body);
+  }
+
+  :global(html[dir="rtl"]) .stats-heading { font-weight: 700; letter-spacing: 0; }
+  :global(html[dir="rtl"]) .stats-intro { line-height: 1.9; }
+  :global(html[dir="rtl"]) .stats-fig { font-weight: 700; line-height: 1.2; }
+  :global(html[dir="rtl"]) .stats-lbl { line-height: 1.85; }
+</style>

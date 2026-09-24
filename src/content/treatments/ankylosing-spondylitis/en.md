@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/ankylosing-spondylitis/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A chronic inflammatory disease of the spine in which vertebrae progressively fuse, reducing flexibility and causing a hunched-forward posture. Affects men more than women; usually begins in late adolescence or early adulthood."
@@ -39,7 +39,7 @@ sections:
       - Aortic valve involvement (enlarged inflamed aorta)
 
       Treatment is most effective before irreversible joint damage occurs. Goals are pain relief, stiffness reduction, posture preservation, and slowing progression.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

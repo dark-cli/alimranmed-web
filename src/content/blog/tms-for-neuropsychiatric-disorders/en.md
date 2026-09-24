@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is rTMS?"
         value: "Repetitive transcranial magnetic stimulation—latest therapeutic method using magnetic field pulses delivered through scalp coil"

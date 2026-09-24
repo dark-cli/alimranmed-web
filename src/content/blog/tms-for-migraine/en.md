@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What is TMS?"
         value: "Non-invasive brain stimulation inducing controlled current pulses in specific cortical areas to treat neurological conditions"

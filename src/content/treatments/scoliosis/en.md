@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "An abnormal sideways (S- or C-shaped) curve of the spine, usually of unknown cause and noticed during adolescent growth."
@@ -25,7 +25,7 @@ sections:
 
       In most cases (~80%) the cause is unknown — adolescent idiopathic scoliosis. In others, scoliosis is a feature of a syndrome, neuromuscular disease, or a congenital vertebral anomaly. The distinction changes the workup and the risk of progression.
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Adolescent vs adult scoliosis"
     intro: "Two very different clinical problems share the same name. Deciding which one you have is the first job at the consultation."
     a:
@@ -43,7 +43,7 @@ sections:
         - "Pain, radiculopathy, and stenosis dominate; the curve is often incidental."
         - "Treatment targets the symptoms, not the curve number."
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "80%"
@@ -59,7 +59,7 @@ sections:
       - "Curves under 20° in a skeletally mature patient rarely progress and usually just need periodic review."
       - "Modern surgical techniques give substantial correction with much shorter recovery than 20 years ago."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Care is matched to the curve severity, skeletal maturity, and the pattern of progression. Most curves land in observation."
     note: "Progression is judged by comparing X-rays over time, not by a single snapshot. Skipping the follow-up is what turns a small curve into a large one."

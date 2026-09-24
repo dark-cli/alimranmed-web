@@ -1,0 +1,74 @@
+---
+/**
+ * list / variant=rows — stacked single-column rows.
+ * Label on the left (mono, small); body on the right (site body font);
+ * optional subtitle below the body in muted small text.
+ *
+ * Used for anything read top-to-bottom: appointments, education, conferences,
+ * publications. Typography is intentionally uniform (no display-serif emphasis
+ * on any variant) so items look consistent regardless of what they contain.
+ */
+interface Props {
+  heading: string;
+  items: { label: string; body: string; subtitle?: string }[];
+  isLast?: boolean;
+}
+const { heading, items, isLast = false } = Astro.props;
+---
+
+<section class:list={["reg-section", isLast && "reg-section-last"]}>
+  <div class="reg-wrap">
+    <h2 class="reg-label">{heading}</h2>
+    <div class="reg-body">
+      {items.map((it) => (
+        <div class="reg-row">
+          <span class="reg-period">{it.label}</span>
+          <div class="reg-text">
+            <span>{it.body}</span>
+            {it.subtitle && <span class="reg-subtitle">{it.subtitle}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reg-section { max-width: var(--page-max); margin: 0 auto; padding: clamp(40px, 5vw, 64px) 24px 0; }
+  .reg-section-last { padding-bottom: clamp(56px, 7vw, 96px); }
+  .reg-wrap { display: flex; flex-wrap: wrap; gap: 18px clamp(32px, 4vw, 64px); align-items: flex-start; }
+  .reg-label {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent);
+    margin: 0; position: sticky; top: 96px;
+    flex: 0 0 min(190px, 100%);
+    font-weight: 500;
+  }
+  .reg-body { border-top: 1px solid var(--ink); flex: 1 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; }
+  .reg-row {
+    display: grid;
+    grid-template-columns: minmax(92px, 140px) minmax(0, 1fr);
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .reg-period { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+  .reg-text {
+    font-size: 15.5px; line-height: 1.55; color: var(--ink);
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .reg-subtitle { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+
+  @media (max-width: 640px) {
+    .reg-row { grid-template-columns: 1fr; gap: 4px; }
+    .reg-label { position: static; }
+  }
+
+  :global(html[dir="rtl"]) .reg-label {
+    font-family: var(--font-body); font-size: 12px; letter-spacing: 0.04em; text-transform: none; font-weight: 700;
+  }
+  :global(html[dir="rtl"]) .reg-period { font-family: var(--font-body); font-size: 13px; }
+  :global(html[dir="rtl"]) .reg-text { line-height: 1.7; }
+  :global(html[dir="rtl"]) .reg-subtitle { line-height: 1.7; }
+</style>

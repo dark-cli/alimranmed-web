@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/deep-brain-stimulation/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "DBS surgically implants electrodes in targeted brain regions, connected by wire to a pacemaker-like device in the chest that delivers regulated electrical impulses."
@@ -25,7 +25,7 @@ sections:
       DBS is an established treatment for movement disorders such as essential tremor, Parkinson's disease, and dystonia, as well as psychiatric conditions such as OCD. It is also FDA-approved to reduce seizures in difficult-to-treat epilepsy. Treatment is reserved for patients whose symptoms are not adequately controlled by medications.
 
       DBS will not cure the underlying disease, but it can significantly reduce symptoms and improve quality of life. In most cases, medications may still be needed alongside the device.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Surgery"

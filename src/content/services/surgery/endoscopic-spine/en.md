@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/endoscopic-spine-surgery/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Full-endoscopic spine surgery uses high-resolution intraoperative imaging and minimally invasive access to address disc and spinal canal pathology without large incisions."
@@ -29,7 +29,7 @@ sections:
       **Interlaminar technique** — preferred for intraspinal pathologies at L5/S1 where the interlaminar window allows direct access without extensive bone removal.
 
       **Indications** include: disc herniation (direct neural decompression with minimal access trauma and selective discectomy to reduce recurrence risk), spinal canal stenosis (foraminal, lateral recess, and central), facet and sacroiliac joint syndrome, and diskogenic pain syndrome including nucleoplasty.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Surgery"

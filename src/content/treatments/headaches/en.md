@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Headache occurring 15+ days per month for at least 3 months. May be tension-type (mild, pressing), migraine (moderate–severe, pulsating, often one-sided), or medication-overuse related."
@@ -23,7 +23,7 @@ sections:
     body: |
       Chronic daily headache is defined as headache occurring ≥15 days per month for ≥3 months. It includes chronic tension-type headache, chronic migraine, and new daily persistent headache. In many patients, medication overuse (analgesics, triptans, opioids) perpetuates the headache cycle.
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "4%"
@@ -37,7 +37,7 @@ sections:
       - "Discontinuation of overused medication triggers temporary worsening before improvement (rebound headache)."
       - "Botulinum toxin is approved for chronic migraine (≥4 migraine days per month) and is given as fixed-dose sets every 12 weeks."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Identify and eliminate triggers and medication overuse. Escalate preventive therapy. Interventional options for refractory cases."
     groups:

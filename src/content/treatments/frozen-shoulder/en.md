@@ -9,7 +9,7 @@ publishedAt: "2020-02-04T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Inflammation and thickening of the shoulder capsule (adhesive capsulitis) causing pain and loss of movement."
@@ -25,7 +25,7 @@ sections:
 
       The condition is self-limiting: even without treatment most cases resolve within 18 to 30 months. But that is a long time to lose a shoulder, and the point of active treatment is to shorten the runway meaningfully — often to a matter of months instead.
 
-  - type: comparison-pair
+  - type: comparison_pair
     heading: "Three phases you go through"
     intro: "The condition moves through three overlapping phases. The right treatment depends on which phase you are in — pushing physiotherapy hard in the freezing phase makes pain worse and doesn't restore movement any faster."
     a:
@@ -43,7 +43,7 @@ sections:
         - "Pain reduces; stiffness is the main problem."
         - "Focused physiotherapy delivers most of the gain here."
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "2–5%"
@@ -59,7 +59,7 @@ sections:
       - "Intra-articular steroid injection is most effective in the first six months of symptoms."
       - "Manipulation under anaesthesia and arthroscopic capsular release are reserved for cases that remain stuck after 6+ months of full conservative care."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Care is phase-matched. Same interventions in the wrong order can slow you down; matched to the phase, they measurably shorten the timeline."
     note: "The plan is reviewed at 6-week intervals — the phases shift, and the treatment shifts with them."

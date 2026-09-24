@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/spinal-trauma/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Traumatic injury to the spinal cord producing a contusion (bruise), partial tear, or complete transection. Because the spinal cord is the main conduit for signals between the brain and body, damage interrupts motor control, sensation, and autonomic regulation below the injury site. Severity ranges from mild contusion (partial, potentially reversible deficit) to complete transection (total permanent loss of sensation and movement below the level of injury). The higher the injury level in the cervical, thoracic, or lumbar cord, the more body systems are affected. Bladder, bowel, and skin infections are common secondary complications."
@@ -47,7 +47,7 @@ sections:
       *Bladder dysfunction* — neurogenic bladder requires intermittent self-catheterisation or an indwelling catheter; urological follow-up prevents recurrent infection and upper urinary tract damage.
 
       *Rehabilitation* — intensive multidisciplinary rehabilitation (physiotherapy, occupational therapy, and speech therapy where relevant) is the cornerstone of functional recovery and community reintegration.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

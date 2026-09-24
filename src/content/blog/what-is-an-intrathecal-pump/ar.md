@@ -8,7 +8,7 @@ source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هي"
         value: "مضخة تعمل بالبطارية توصل الدواء — عادة مسكنات الألم أو مضادات التشنج — مباشرة إلى السائل النخاعي عبر قسطرة صغيرة."

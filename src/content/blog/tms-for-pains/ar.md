@@ -8,7 +8,7 @@ source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "rTMS للألم"
         value: "التحفيز المغناطيسي المتكرر يستخدم سريرياً لعلاج حالات الألم المختلفة"

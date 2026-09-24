@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/vertebroplasty/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Bone cement is injected into fractured vertebrae (usually from osteoporosis), hardening to stabilise the fracture and support the spine."
@@ -25,7 +25,7 @@ sections:
       **Kyphoplasty** is a related variation of the procedure that uses small inflatable balloons inserted into the vertebra to create a cavity before the cement is injected. This additional step can correct spinal deformity caused by the fracture and restore lost vertebral height — making kyphoplasty particularly useful for patients with significant kyphotic deformity or height loss.
 
       Both vertebroplasty and kyphoplasty are minimally invasive procedures performed under image guidance, avoiding the risks of open spinal surgery.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Surgery"

@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "Most common headache"
         value: "Tension headaches are the most common type of headache, often caused by stress and muscle tension"
@@ -42,7 +42,7 @@ sections:
       - Resting in a quiet, dark environment when needed
       - Stress management through yoga, massage, and relaxation exercises
       - Taking medications as recommended by your healthcare provider
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment Options at Alimran Medical Center"
     intro: "We offer comprehensive treatment approaches for tension headaches:"
     groups:

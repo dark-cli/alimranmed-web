@@ -8,7 +8,7 @@ source: "translated-by-llm"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "أكثر أنواع الصداع شيوعاً"
         value: "الصداع التوتري هو النوع الأكثر شيوعاً، غالباً ما يكون ناتجاً عن الإجهاد والتوتر العضلي"
@@ -42,7 +42,7 @@ sections:
       - الراحة في بيئة هادئة مظلمة عند الحاجة
       - إدارة التوتر عبر اليوجا والتدليك وتمارين الاسترخاء
       - تناول الأدوية حسب توصيات مقدم الرعاية الصحية
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "خيارات العلاج في مركز العمران الطبي"
     intro: "نقدم نهجاً شاملاً لعلاج الصداع التوتري:"
     groups:

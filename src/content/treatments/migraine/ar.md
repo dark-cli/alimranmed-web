@@ -8,7 +8,7 @@ legacyUrl: "https://ar.alimranmed.com/الشقيقة"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هي"
         value: "حالة عصبية تُسبّب نوبات متكررة من الصداع الشديد — غالباً في جانب واحد ونابض. أكثر شيوعاً عند النساء؛ وكثيراً ما تكون وراثية. تظهر للمرة الأولى بين عمر 10 و45 سنة."
@@ -43,7 +43,7 @@ sections:
     kind: video
     src: https://www.youtube.com/watch?v=2HI355rV-YI
     caption: "فهم الشقيقة — كيف تحدث النوبات وكيف تُعالَج"
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "خيارات العلاج في مركز العمران"
     groups:
       - title: "التعديل العصبي"

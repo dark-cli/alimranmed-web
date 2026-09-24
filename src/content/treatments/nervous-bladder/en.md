@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/nervous-bladder/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Bladder dysfunction resulting from disruption of the nervous system pathways that coordinate urination — including the brain, spinal cord, and peripheral pelvic nerves. The bladder may be overactive (failing to store urine), underactive (failing to empty), or exhibit detrusor-sphincter dyssynergia (the muscle and sphincter working in opposition). The pattern depends on the level and nature of the neurological injury."
@@ -66,7 +66,7 @@ sections:
       *Intrathecal baclofen pump:* continuous delivery of baclofen to the spinal cord reduces detrusor hyperreflexia in patients with spasticity-related bladder dysfunction.
 
       *Physiotherapy:* pelvic floor strengthening and bladder retraining for patients with residual volitional control.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

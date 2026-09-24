@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/rotator-cuff-injury/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Damage to the rotator cuff — the four muscles (supraspinatus, infraspinatus, subscapularis, teres minor) and their tendons that surround the shoulder joint and hold the humeral head in the glenoid socket. Ranges from tendinitis and bursitis to partial or full-thickness tendon tears."
@@ -44,7 +44,7 @@ sections:
       - *Injections:* subacromial corticosteroid injection for acute bursitis and impingement; prolotherapy and platelet-rich plasma (PRP) for chronic tendinopathy; ozone therapy
       - *Surgical:* arthroscopic or open repair for full-thickness tears, particularly in younger, active patients; debridement for partial tears that fail conservative management
       - *Adjunct interventions:* pulsed radiofrequency, low-level laser therapy, and acupuncture as complements to physiotherapy
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

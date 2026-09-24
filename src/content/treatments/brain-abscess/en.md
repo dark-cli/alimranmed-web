@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/brain-abscess/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A rare, localised infection inside the brain in which bacteria or viruses form a pus-filled cavity. More common in children. Requires immediate hospitalisation and surgical drainage — a medical emergency."
@@ -41,7 +41,7 @@ sections:
       - Ventilatory support in severe cases
 
       After the acute phase resolves, rehabilitation is often needed to recover function lost during the illness.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Rehabilitation at Alimran Medical Center"
     groups:
       - title: "Physiotherapy"

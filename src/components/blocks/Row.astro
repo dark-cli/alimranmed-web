@@ -1,0 +1,124 @@
+---
+/**
+ * row — a row of images (with optional captions and links). The number of
+ * columns is either "auto" (fit as many as space allows, min ~220px each)
+ * or fixed 2/3/4. Collapses to a single column on mobile.
+ *
+ * This is a *scoped* layout widget: it composes images side-by-side, but it
+ * doesn't accept arbitrary child widgets. If we later need side-by-side text
+ * cards or mixed content rows, that's a separate widget — see
+ * project_page_builder_primitives_deferred.md for the trade-offs.
+ *
+ * Fields:
+ *   heading?     — optional label above the row
+ *   columns      — "auto" | "2" | "3" | "4"
+ *   items[]      — { src, alt?, caption?, href?, aspect? }
+ */
+import { localizedHref } from "../../lib/i18n";
+import type { Locale } from "../../lib/i18n";
+
+interface Item {
+  src: string;
+  alt?: string;
+  caption?: string;
+  href?: string;
+  aspect?: "16/9" | "4/3" | "3/2" | "1/1";
+}
+interface Props {
+  heading?: string;
+  columns?: "auto" | "2" | "3" | "4";
+  items: Item[];
+  locale?: Locale;
+}
+const { heading, columns = "auto", items, locale = "en" } = Astro.props;
+
+function link(href?: string): string | undefined {
+  if (!href) return undefined;
+  return href.startsWith("/") ? localizedHref(href, locale) : href;
+}
+
+// Map the columns choice to a grid-template-columns rule. "auto" uses
+// auto-fit responsive; 2/3/4 are fixed but collapse via the media query.
+const gridStyle = columns === "auto"
+  ? "grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));"
+  : `grid-template-columns: repeat(${columns}, minmax(0, 1fr));`;
+---
+
+<section class="row-block">
+  {heading && <p class="row-heading">{heading}</p>}
+  <div class="row-grid" style={gridStyle} data-cols={columns}>
+    {items.map((it) => {
+      const href = link(it.href);
+      const frameStyle = it.aspect ? `aspect-ratio: ${it.aspect};` : "aspect-ratio: 4 / 3;";
+      const body = (
+        <figure class="row-cell">
+          <div class="row-frame" style={frameStyle}>
+            <img src={it.src} alt={it.alt || ""} loading="lazy" decoding="async" />
+          </div>
+          {it.caption && <figcaption class="row-caption">{it.caption}</figcaption>}
+        </figure>
+      );
+      return href ? <a class="row-link" href={href}>{body}</a> : body;
+    })}
+  </div>
+</section>
+
+<style>
+  .row-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .row-heading {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+  :global(html[dir="rtl"]) .row-heading {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+
+  .row-grid {
+    display: grid;
+    gap: 20px;
+  }
+
+  .row-link { text-decoration: none; color: inherit; display: block; }
+  .row-link:hover .row-frame { border-color: var(--accent); }
+
+  .row-cell { margin: 0; }
+  .row-frame {
+    display: block;
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: border-color 0.15s ease;
+  }
+  .row-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .row-caption {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 10px 0 0;
+  }
+  :global(html[dir="rtl"]) .row-caption { line-height: 1.85; }
+
+  /* Fixed-column rows collapse to 1-col on narrow viewports (below 640px)
+     and to 2-col at tablet-ish widths for 4-col rows. */
+  @media (max-width: 640px) {
+    .row-grid[data-cols="2"],
+    .row-grid[data-cols="3"],
+    .row-grid[data-cols="4"] { grid-template-columns: 1fr !important; }
+  }
+  @media (min-width: 641px) and (max-width: 900px) {
+    .row-grid[data-cols="4"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  }
+</style>

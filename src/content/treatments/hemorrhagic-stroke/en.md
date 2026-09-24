@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/hemorrhagic-stroke/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A stroke caused by rupture of a blood vessel supplying the brain, causing bleeding that deprives brain cells of oxygen and raises intracranial pressure through mass effect. Two main types: intracerebral haemorrhage (bleeding within brain tissue, usually from hypertension) and subarachnoid haemorrhage (bleeding in the space surrounding the brain, usually from a ruptured aneurysm or AVM). Accounts for ~13% of all strokes but causes disproportionately high mortality and disability."
@@ -49,7 +49,7 @@ sections:
       **Rehabilitation**
 
       After medical and surgical stabilisation, structured neurorehabilitation — physiotherapy, occupational therapy, speech therapy, and neuromodulation — is essential to maximise recovery of motor, cognitive, and communication function.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

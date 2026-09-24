@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/raynauds-disease/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Episodic vasospasm of the digital (and sometimes other peripheral) arteries in response to cold or stress. The arteries transiently narrow, severely restricting blood flow and causing the characteristic colour sequence. Primary Raynaud's is idiopathic and usually mild; secondary Raynaud's occurs in the context of connective tissue disease (scleroderma, lupus, Sjögren's, rheumatoid arthritis), arterial disease, or medication use, and is more severe and more likely to cause tissue damage."
@@ -48,7 +48,7 @@ sections:
       *Botulinum toxin (Botox) injections:* injection into the palm and digital neurovascular bundles provides effective, prolonged reduction in vasospasm and promotes digital ulcer healing — an evidence-supported interventional option.
 
       *Chemical or surgical sympathectomy:* cutting or chemical ablation of the sympathetic fibres to the hands; reserved for severe refractory cases.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

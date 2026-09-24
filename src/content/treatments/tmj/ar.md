@@ -8,7 +8,7 @@ legacyUrl: "https://ar.alimranmed.com/المفصل-الصدغي-الفكي"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو"
         value: "ألم وخلل في المفصل الصدغي الفكي — المفصل المنزلق الذي يربط عظم الفك بالجمجمة. مفصل واحد على كل جانب من الوجه."
@@ -38,7 +38,7 @@ sections:
       - صوت نقر أو احتكاك عند فتح الفم أو المضغ
 
       في معظم الحالات يكون الألم مؤقتاً ويستجيب جيداً للعلاج التحفظي غير الجراحي. والجراحة ملاذ أخير بعد فشل سائر الخيارات.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "خيارات العلاج في مركز العمران"
     groups:
       - title: "علاجات الحقن"

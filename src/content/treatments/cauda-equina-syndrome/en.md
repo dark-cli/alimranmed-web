@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/cauda-equina-syndrome/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A rare surgical emergency caused by compression of the cauda equina — the bundle of nerve roots at the base of the spinal cord in the lumbosacral canal. These nerves control the legs and bladder/bowel function."
@@ -40,7 +40,7 @@ sections:
       **Treatment:** Cauda equina syndrome is a surgical emergency. Decompression surgery performed within hours of onset gives the best chance of recovery of motor, sensory, and sphincter function. Delayed surgery significantly worsens the prognosis.
 
       Following surgery, bladder function often takes longer to recover than motor function. Intermittent self-catheterisation and medications may be needed. With appropriate rehabilitation, gradual improvement of bladder and sphincter function can continue for years after surgery.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Rehabilitation at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

@@ -8,7 +8,7 @@ publishedAt: "2020-01-04T06:33:23"
 redesigned: true
 clinicallyRelevant: false
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو"
         value: "جهاز يعمل على تدليك الطرف المصاب بضغط هواء متغيّر عبر كُم مُبرمَج — يُستخدم كطريقة بديلة ومساعدة إلى جانب العلاج الفيزيائي، لا كبديل عنه."

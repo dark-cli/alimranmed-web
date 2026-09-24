@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Damage to the spinal cord from trauma, tumour, infection or inflammation. Results in loss of motor and sensory function below the injury level."
@@ -23,7 +23,7 @@ sections:
     body: |
       Spinal cord injury (SCI) is damage to the neural tissue of the spinal cord, resulting in loss of motor and sensory function below the injury level. Traumatic SCI is usually from falls, motor vehicle crashes or gunshot wounds. Non-traumatic causes include myelitis, tumour, or haemorrhage.
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "250–500K"
@@ -38,7 +38,7 @@ sections:
       - "Spasticity develops in 65–78% of SCI patients within months."
       - "Autonomic dysreflexia (sudden hypertension triggered by visceral distention) is a medical emergency."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Acute management focuses on neuroprotection and stabilisation. Long-term care is multidisciplinary rehabilitation."
     groups:

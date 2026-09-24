@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/cerebral-palsy/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A lifelong neurological condition caused by abnormal development or early damage to the areas of the brain that control motor function. Causes permanent, non-progressive impairment of movement, posture, and coordination."
@@ -41,7 +41,7 @@ sections:
       Children with CP are typically slow to reach motor developmental milestones (rolling, sitting, crawling, walking). Some retain primitive reflexes that normally disappear in infancy.
 
       Since CP is lifelong and cannot be cured, management focuses on preventing or minimising deformities, reducing spasticity, and maximising the child's ability to function independently at home and in the community. Best outcomes result from multidisciplinary care involving neurology, physiotherapy, occupational therapy, orthopaedic surgery, and speech therapy — started as early as possible and maintained throughout development.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

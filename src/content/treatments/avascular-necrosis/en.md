@@ -8,7 +8,7 @@ publishedAt: "2021-01-16T07:34:45"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Death of bone tissue caused by interrupted or reduced blood supply to the bone. Also called osteonecrosis. Without blood flow, the bone develops microfractures and can ultimately collapse. Most commonly affects the hip in adults aged 30–60."
@@ -41,7 +41,7 @@ sections:
       - Late: pain at rest, including when lying down; severe limitation of movement
 
       Treatment outcome is best when AVN is diagnosed early, before significant bone collapse occurs.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

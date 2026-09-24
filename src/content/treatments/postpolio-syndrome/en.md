@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/2020/04/09/postpolio-syndrome/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A late-onset neurological condition affecting polio survivors, characterised by new muscle weakness, fatigue, and pain appearing 15–40 years after the original polio infection. Caused by the gradual failure of surviving motor neurons that have been overworked since initial recovery."
@@ -39,7 +39,7 @@ sections:
       **Diagnosis** is clinical — based on a history of paralytic polio, a period of functional recovery or stability, and new onset of the symptoms above, with no other medical explanation. Electromyography (EMG) can confirm chronic denervation and reinnervation patterns consistent with old polio.
 
       Since PPS cannot be cured, management focuses on conserving energy, protecting joints, preventing overuse, and maintaining the best possible function. An interdisciplinary team including neurology, physiotherapy, occupational therapy, respiratory medicine, and orthopaedics provides the most comprehensive care. Fatigue management — including pacing, energy conservation techniques, and appropriate rest — is a cornerstone of treatment.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

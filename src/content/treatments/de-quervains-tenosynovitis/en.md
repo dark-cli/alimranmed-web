@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/de-quervains-tenosynovitis/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Inflammation of the sheath surrounding two tendons that run from the wrist to the base of the thumb, restricting their smooth movement."
@@ -35,7 +35,7 @@ sections:
       **Other causes:** Direct injury to the wrist or tendon; inflammatory arthritis such as rheumatoid arthritis.
 
       **First aid measures:** Immobilise the thumb and wrist with a splint; avoid repetitive thumb movements; apply ice to the area.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

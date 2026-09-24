@@ -9,7 +9,7 @@ source: "legacy-wp"
 redesigned: true
 isHub: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "ما هو"
         value: "الألم تجربة حسية وعاطفية وقائية مرتبطة بتلف فعلي أو محتمل في الأنسجة. الألم الحاد يؤدي وظيفة إنذارية؛ الألم المزمن يتجاوز نفعيته ويغدو مرضاً بحد ذاته — تُحرّكه الحساسية الطرفية والمركزية والتغيرات العصبية التكيفية والعوامل النفسية الاجتماعية. تحديد نوع الألم وتوزيعه وآليته يوجّه العلاج الفعّال."
@@ -53,7 +53,7 @@ sections:
       - [ألم الأنسجة الرخوة](/treatments/myofascial-pain/)
       - [نتوء الكعب](/treatments/heel-spur/)
       - [ألم الأعصاب بين الأضلاع](/treatments/intercostal-neuralgia/)
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "خيارات العلاج في مركز العمران"
     groups:
       - title: "التعديل العصبي"

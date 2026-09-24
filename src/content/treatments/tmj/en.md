@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/the-temporomandibular-joint-tmj/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Pain and dysfunction in the temporomandibular joint — the sliding hinge connecting the jawbone to the skull. One joint on each side of the jaw."
@@ -37,7 +37,7 @@ sections:
       - Clicking or grating sensation when opening the mouth or chewing
 
       In most cases, pain and discomfort are temporary and respond well to conservative, non-surgical treatment. Surgery is a last resort after other measures have failed.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Injection therapies"

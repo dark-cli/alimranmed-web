@@ -1,0 +1,142 @@
+---
+/**
+ * panels — 2–4 side-by-side hairline panels, each with optional eyebrow +
+ * title + optional subtitle + bullet list. Unifies the previous
+ * comparison_pair (2 panels with eyebrows for compare/contrast) and
+ * treatment_groups (2–4 panels with subtitles for options/tiles).
+ *
+ * With 2 panels it reads as a comparison; with 3–4 as a grid of options.
+ * The item shape supports both use cases:
+ *   • eyebrow  — small mono label above the title (was comparison_pair.label)
+ *   • title    — panel title (serif h3)
+ *   • subtitle — muted line under the title (was treatment_groups.subtitle)
+ *   • items    — bullet list (both use it)
+ */
+import { localizedHref } from "../../lib/i18n";
+import type { Locale } from "../../lib/i18n";
+
+interface Panel {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  items: string[];
+}
+interface Props {
+  heading?: string;
+  intro?: string;
+  note?: string;
+  panels: Panel[];
+  locale?: Locale;
+}
+const { heading, intro, note, panels, locale = "en" } = Astro.props;
+
+function rewriteLinks(md: string): string {
+  return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+    const h = href.startsWith("/") ? localizedHref(href, locale) : href;
+    return `<a href="${h}">${label}</a>`;
+  });
+}
+
+// Wider minimum for 2-panel layouts so both panels always sit side-by-side
+// on a normal viewport; narrower for 3–4 so they fit as tiles.
+const minCol = panels.length <= 2 ? 255 : 230;
+---
+
+<section class="panels">
+  {heading && <h2 class="panels-heading">{heading}</h2>}
+  {intro && <p class="panels-intro">{intro}</p>}
+  <div class="panels-grid" style={`--min-col: ${minCol}px;`}>
+    {panels.map((p) => (
+      <div class="panel">
+        {p.eyebrow && <p class="panel-eyebrow">{p.eyebrow}</p>}
+        <h3 class="panel-title">{p.title}</h3>
+        {p.subtitle && <p class="panel-sub">{p.subtitle}</p>}
+        {p.items?.length > 0 && (
+          <ul class="panel-list">
+            {p.items.map((it) => <li set:html={rewriteLinks(it)} />)}
+          </ul>
+        )}
+      </div>
+    ))}
+  </div>
+  {note && <p class="panels-note">{note}</p>}
+</section>
+
+<style>
+  .panels { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .panels-heading {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(22px, 2.8vw, 30px);
+    color: var(--ink);
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+  :global(html[dir="rtl"]) .panels-heading { font-weight: 700; letter-spacing: 0; }
+  .panels-intro {
+    font-size: 17px; line-height: 1.72; color: var(--body);
+    margin: 0 0 24px; text-wrap: pretty; max-width: 62ch;
+  }
+  :global(html[dir="rtl"]) .panels-intro { line-height: 1.95; }
+
+  .panels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--min-col, 230px), 100%), 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .panel { background: var(--white); padding: 26px 24px; }
+
+  .panel-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  :global(html[dir="rtl"]) .panel-eyebrow {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+
+  .panel-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  :global(html[dir="rtl"]) .panel-title { font-weight: 700; }
+
+  .panel-sub { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 0 0 16px; }
+  :global(html[dir="rtl"]) .panel-sub { line-height: 1.85; }
+
+  .panel-list {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex; flex-direction: column; gap: 9px;
+  }
+  .panel-list li {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--body);
+    border-top: 1px solid var(--line-soft);
+    padding-top: 9px;
+  }
+  :global(html[dir="rtl"]) .panel-list li { line-height: 1.85; }
+  .panel-list :global(a) { color: var(--accent); text-decoration: none; }
+  .panel-list :global(a:hover) { color: var(--accent-hover); text-decoration: underline; }
+
+  .panels-note {
+    font-size: 15px;
+    line-height: 1.72;
+    color: var(--muted);
+    margin: 20px 0 0;
+  }
+  :global(html[dir="rtl"]) .panels-note { line-height: 1.95; }
+</style>

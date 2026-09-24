@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/spasticity/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Abnormal, velocity-dependent increase in muscle tone caused by damage to descending motor pathways in the brain or spinal cord. Results in stiff, rigid muscles that resist passive movement. A common complication of stroke, cerebral palsy, multiple sclerosis, and spinal cord injury."
@@ -49,7 +49,7 @@ sections:
       **Untreated spasticity** progressively worsens joint deformity, causes chronic pain, and erodes independence and quality of life. Treatment aims to relax the muscles, relieve pain and stiffness, encourage optimal growth and development in children, and improve the person's ability to function at home and in the community.
 
       Management combines pharmacological approaches (oral medications, focal injections, intrathecal baclofen), neuromodulation, and intensive physiotherapy and occupational therapy — tailored to the individual's pattern of spasticity and goals.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

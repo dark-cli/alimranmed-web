@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A neurological disease caused by the poliovirus. Systematic vaccination has all but eliminated new cases; almost all patients seen today are survivors living with late complications."
@@ -45,7 +45,7 @@ sections:
       - Physical and occupational therapists
       - Orthopaedic surgeon — a surgeon specialising in conditions of the muscles, ligaments, tendons, and bones
       - Orthotist — a specialist who designs and fits braces and splints
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Center"
     intro: "The programme is built around the patient's specific deficits and combines physical rehabilitation, interventional pain and spasticity management, and — where indicated — neuromodulation."
     groups:

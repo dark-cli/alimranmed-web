@@ -7,7 +7,7 @@ legacyUrl: "https://alimranmed.com/transient-ischemic-attack-tia/"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A transient ischaemic attack (TIA) is a temporary episode of focal neurological deficit caused by reduced blood flow to the brain or retina, resolving completely within 24 hours (usually within minutes) and leaving no permanent infarction on diffusion-weighted MRI. The mechanism mirrors that of ischaemic stroke: arterial thromboembolism from atherosclerotic plaques (carotid, vertebral, or intracranial arteries) or cardiac embolism (atrial fibrillation being the most important source). TIA is a warning — without treatment, the short-term risk of full stroke is 10–15% within the first 48 hours. The ABCD2 score stratifies early stroke risk."
@@ -53,7 +53,7 @@ sections:
       - *Antihypertensives*: blood pressure < 130/80 mmHg
       - *Carotid revascularisation*: endarterectomy or stenting for symptomatic stenosis > 50–70% within 2 weeks
       - *Lifestyle*: smoking cessation, Mediterranean diet, regular moderate exercise, moderate alcohol restriction
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Neuromodulation"

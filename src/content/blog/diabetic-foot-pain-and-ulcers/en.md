@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "A breakdown of skin tissue on the foot that exposes the layers underneath — a common complication of poorly controlled diabetes, most often under the big toe or the ball of the foot."
@@ -51,7 +51,7 @@ sections:
       1. **Regulating cumulative blood sugar** — bringing HbA1c and daily glucose under control.
       2. **Treating infection** — antibiotics and local wound cleaning.
       3. **Physiotherapy** — an indispensable complement to the medical management, not an optional add-on.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Physiotherapy for the diabetic foot"
     intro: "Physiotherapy plays a central role in supporting circulation, reducing inflammation, and encouraging wound healing. The following modalities are used at the centre — selected and combined according to the patient's condition:"
     groups:

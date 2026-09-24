@@ -1,0 +1,795 @@
+---
+// TEMP page — visual showcase of every widget in src/components/blocks/.
+// Bilingual: /en/dev-blocks/ (LTR) and /ar/dev-blocks/ (RTL, Amiri + IBM
+// Plex Sans Arabic). Each widget shown twice: STRUCTURE (placeholder) then
+// IN USE (real content). Delete this page once widgets are approved.
+export const prerender = true;
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Prose       from "../../components/blocks/Prose.astro";
+import Highlights  from "../../components/blocks/Highlights.astro";
+import Stats       from "../../components/blocks/Stats.astro";
+import Facts       from "../../components/blocks/Facts.astro";
+import ListRows    from "../../components/blocks/ListRows.astro";
+import ListWrap    from "../../components/blocks/ListWrap.astro";
+import ListColumns from "../../components/blocks/ListColumns.astro";
+import Quote       from "../../components/blocks/Quote.astro";
+import Panels      from "../../components/blocks/Panels.astro";
+import Media       from "../../components/blocks/Media.astro";
+import Cards       from "../../components/blocks/Cards.astro";
+import Pathway     from "../../components/blocks/Pathway.astro";
+import Row         from "../../components/blocks/Row.astro";
+import { currentLocale, toArabicDigits } from "../../lib/i18n";
+
+export function getStaticPaths() {
+  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+}
+
+const locale = currentLocale(Astro);
+const isAr = locale === "ar";
+
+// Convert any Latin digits inside a string to Arabic-Indic digits when the
+// page is rendered in Arabic. Used for section codes, panel counts, etc.
+const num = (s: string | number): string => {
+  const str = String(s);
+  return isAr ? toArabicDigits(str) : str;
+};
+
+// Inline SVG placeholder for image slots — light surface with a locale-
+// appropriate label. Kept as a data URI so no external assets are needed.
+const placeholderLabel = isAr ? "صورة" : "IMAGE";
+const PLACEHOLDER_IMG = "data:image/svg+xml;utf8," + encodeURIComponent(
+  `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' preserveAspectRatio='xMidYMid slice'>
+    <rect fill='#f4f7f8' width='400' height='300'/>
+    <text x='200' y='150' fill='#77858c' font-family='monospace' font-size='16' letter-spacing='2' text-anchor='middle' dominant-baseline='middle'>${placeholderLabel}</text>
+  </svg>`.replace(/\n\s+/g, "")
+);
+
+// ── Localised strings for the page chrome ────────────────────────────────
+const T = isAr ? {
+  eyebrow:   "معاينة للمطوّرين",
+  title:     "مكتبة المكوّنات",
+  lede:      "كل مكوّن معروض مرتين — أولًا بالبنية (بيانات بديلة، للتركيز على التخطيط)، ثم بالاستخدام (محتوى حقيقي، للتركيز على السياق).",
+  structure: "البنية",
+  inUse:     "الاستخدام",
+} : {
+  eyebrow:   "Dev preview",
+  title:     "Widget catalog",
+  lede:      "Every block widget available in the unified catalog. Each widget shown twice — structure (placeholder data, focus on layout) then in use (real content, focus on context).",
+  structure: "Structure",
+  inUse:     "In use",
+};
+
+// ── Widget metadata (description + field list) per widget, localised. ────
+const W = isAr ? {
+  prose:      { desc: "عنوان + فقرات. الجسم يقبل روابط ماركداون. الفقرات تُقسَم على السطور الفارغة.",
+                fields: "الحقول: heading?، body" },
+  highlights: { desc: "لوحة داخلية بحدود، تعرض ٢–٤ أزواج من التسمية والقيمة. كان يُسمّى at_a_glance.",
+                fields: "الحقول: heading?، items[] من { label, value } (٢–٤)" },
+  stats:      { desc: "شبكة أرقام كبيرة داخل خلايا بحدود. يوحّد cv_stats (صفحة الطبيب) وجزء الأرقام في stats_facts (المقالات).",
+                fields: "الحقول: heading?، intro?، items[] من { value, label } (٢–٦)" },
+  facts:      { desc: "قائمة سردية مُرقَّمة تلقائيًا. المحرِّر يقدّم نصوصًا فقط، والمكوّن ينشئ ٠١/٠٢/٠٣ (بالأرقام العربية عند RTL).",
+                fields: "الحقول: heading? (افتراضي «حقائق أساسية»)، items[] من نصوص" },
+  listRows:   { desc: "عمود واحد من الصفوف المتتابعة. تسمية يسارًا (مونو صغير)، جسم يمينًا؛ عنوان فرعي اختياري تحت الجسم. مناسب للسير الذاتية والاقتباسات.",
+                fields: "الحقول: heading، items[] من { label, body, subtitle? }" },
+  listWrap:   { desc: "أعمدة متجاوبة auto-fit — تحوي أكبر عدد من الأعمدة يستوعبها العرض. الجسم يسارًا (رئيسي)، التسمية يمينًا (مونو). مناسب للعناصر القصيرة كالعضويات والوسوم.",
+                fields: "نفس الحقول؛ العنوان الفرعي مُتجاهَل في هذا النمط." },
+  listColumns:{ desc: "عمودان ثابتان دائمًا. كل خلية إدخال كامل من تسمية + جسم. ينهار إلى عمود واحد على الجوال. مناسب للإدخالات متوسطة الطول.",
+                fields: "نفس الحقول؛ العنوان الفرعي مدعوم." },
+  quote:      { desc: "اقتباس مقتطف. حافّة تمييز على الجانب البادئ، خط سيريف، ومصدر اختياري بالمونو أسفله. كان يُسمّى pull_quote.",
+                fields: "الحقول: text، attribution?" },
+  panels:     { desc: "٢–٤ لوحات متجاورة. مع ٢ تُقرأ كمقارنة (كانت comparison_pair)؛ مع ٣–٤ كشبكة خيارات (كانت treatment_groups).",
+                fields: "الحقول: heading?، intro?، note?، panels[] من { eyebrow?, title, subtitle?, items[] }" },
+  media:      { desc: "شكل داخلي. صورة / فيديو / تضمين يوتيوب. يُصدر VideoObject JSON-LD لروابط اليوتيوب حتى تفهرسه جوجل.",
+                fields: "الحقول: kind، src، alt?، caption?، aspect?، uploadDate?" },
+  pathway:    { desc: "صفوف من مجموعات الروابط بشكل رقاقات. لكل مجموعة تصنيف علوي وعنوان وقائمة روابط بشكل أزرار رقائق. يطابق نمط «الحالات التي نعالجها» في الصفحة الرئيسية.",
+                fields: "الحقول: heading?، intro?، groups[] من { eyebrow?, title, items[] } حيث items[] = { name, href }" },
+  row:        { desc: "صفّ من الصور. عدد الأعمدة auto (متجاوب) أو ثابت ٢ / ٣ / ٤. كل عنصر صورة مع شرح ورابط اختياريين. ينهار إلى عمود واحد على الجوال.",
+                fields: "الحقول: heading?، columns، items[] من { src, alt?, caption?, href?, aspect? }" },
+  cards:      { desc: "شبكة بطاقات روابط. كانت related. الموزِّع يحوّل الـslugs إلى { title, category, href, redesigned }؛ البطاقات غير المتوفّرة تُعرض بلون رمادي.",
+                fields: "حقل المحرِّر: slugs[] (١ على الأقل). الموزِّع يوفّر العناصر المُحلَّلة." },
+} : {
+  prose:      { desc: "Heading + paragraphs. Body is markdown-lite (inline links). Paragraphs split on double newlines.",
+                fields: "Fields: heading?, body" },
+  highlights: { desc: "Bordered inset panel with 2–4 key/value pairs. Was at_a_glance. Compact overview near the top of an article.",
+                fields: "Fields: heading?, items[] of { label, value } (2–4)" },
+  stats:      { desc: "Big-number tile grid. Unifies old cv_stats (doctor) and stats_facts stats portion (article).",
+                fields: "Fields: heading?, intro?, items[] of { value, label } (2–6)" },
+  facts:      { desc: "Auto-numbered narrative list. Editor supplies strings; widget generates 01/02/03 labels (Arabic digits for RTL).",
+                fields: "Fields: heading? (default \"Key facts\"), items[] of strings" },
+  listRows:   { desc: "Single-column stacked entries. Label on the left (mono, small); body on the right; optional subtitle underneath. Good for timelines and citations.",
+                fields: "Fields: heading, items[] of { label, body, subtitle? }" },
+  listWrap:   { desc: "Auto-fit responsive columns — fits as MANY columns as viewport allows. Body left (main), label right (mono). Good for short entries: memberships, tags.",
+                fields: "Same fields; subtitle ignored in this variant." },
+  listColumns:{ desc: "Fixed 2 columns. Each cell is a full label + body entry. Collapses to 1 column on mobile. Good for medium-length entries where linear stacking wastes space.",
+                fields: "Same fields; subtitle supported." },
+  quote:      { desc: "Pull quote. Accent border on the leading edge, serif text, optional attribution in mono below. Was pull_quote.",
+                fields: "Fields: text, attribution?" },
+  panels:     { desc: "2–4 side-by-side panels. With 2 reads as a comparison (was comparison_pair); with 3–4 as an options grid (was treatment_groups).",
+                fields: "Fields: heading?, intro?, note?, panels[] of { eyebrow?, title, subtitle?, items[] }" },
+  media:      { desc: "Inline figure. image / video / YouTube embed. Emits VideoObject JSON-LD for YouTube so Google indexes it.",
+                fields: "Fields: kind, src, alt?, caption?, aspect?, uploadDate?" },
+  pathway:    { desc: "Rows of link-chip groups. Each group has an eyebrow, title, and a list of chip-button links. Matches the home page \"Conditions we treat\" pattern.",
+                fields: "Fields: heading?, intro?, groups[] of { eyebrow?, title, items[] } where items[] = { name, href }" },
+  row:        { desc: "A row of images. Columns is auto (responsive fit) or fixed 2 / 3 / 4. Each item is an image with optional caption and link. Collapses to 1 column on mobile.",
+                fields: "Fields: heading?, columns, items[] of { src, alt?, caption?, href?, aspect? }" },
+  cards:      { desc: "Grid of link cards. Was related. Dispatcher resolves slugs to { title, category, href, redesigned }; unresolved cards render greyed.",
+                fields: "Editor field: slugs[] (min 1). Dispatcher provides the resolved items." },
+};
+
+// ── Placeholder content (localised) ──────────────────────────────────────
+const P = isAr ? {
+  heading:      "العنوان",
+  intro:        "فقرة تعريفية بديلة.",
+  note:         "ملاحظة اختيارية.",
+  attribution:  "— المصدر",
+  quote:        "نص اقتباس بديل — سطر قصير من التأكيد المسحوب يجلس بين الفقرات.",
+  eyebrow:      "التصنيف",
+  category:     "الفئة",
+  captionMain:  "نص الشرح يظهر هنا.",
+  subtitleAlt:  "عنوان فرعي اختياري يظهر تحت النص.",
+  subtitleWith: "نص فرعي بديل.",
+  proseHeading: "العنوان",
+  proseBody:    `نص الفقرة البديل. هذه فقرة أولى توضّح كيف يعرض حاجي البروز الخطّ الأساسي بمقاس ١٧ بكسل.\n\nفقرة ثانية تظهر عندما يحتوي المصدر على سطر فارغ. يُحفظ تنسيق [الرابط](/some-page/) داخل النص.`,
+  label:        (n: number | string) => `تسمية ${n}`,
+  value:        (n: number) => `القيمة ${n} — نص بديل يوضّح كيف يُعرض كل عنصر داخل اللوحة.`,
+  factItem:     (n: string) => `حقيقة ${n} — نص بديل يوضّح كيف تُعرض كل حقيقة كصف مُرقَّم.`,
+  itemBody:     (n: string) => `نص العنصر ${n}`,
+  itemBodyFull: (n: string) => `نص جسم للعنصر ${n}`,
+  chip:         (n: string) => `رقاقة ${n}`,
+  group:        (n: string) => `مجموعة ${n}`,
+  panelTitle:   (n: string) => `عنوان اللوحة ${n}`,
+  panelItem:    (n: string) => `عنصر ${n}`,
+  cardTitle:    (n: string) => `عنوان البطاقة ${n}`,
+  caption:      (n: string) => `شرح ${n}`,
+  groupEyebrow: (n: string) => `مجموعة ٠${n}`,
+} : {
+  heading:      "Heading",
+  intro:        "Intro paragraph placeholder.",
+  note:         "Optional note.",
+  attribution:  "— Attribution",
+  quote:        "Quote text placeholder — a short line of pulled-out emphasis that sits between paragraphs.",
+  eyebrow:      "Eyebrow",
+  category:     "Category",
+  captionMain:  "Caption text goes here.",
+  subtitleAlt:  "Optional subtitle appears below body.",
+  subtitleWith: "Placeholder subtitle.",
+  proseHeading: "Heading",
+  proseBody:    `Body paragraph text goes here. This is a first paragraph showing how prose blocks render body text with the site's body font at 17px.\n\nA second paragraph appears when the source contains a blank line. Inline [link](/some-page/) styling is preserved.`,
+  label:        (n: number | string) => `Label ${n}`,
+  value:        (n: number) => `Value ${n} — placeholder text showing how each item renders in the panel.`,
+  factItem:     (n: string) => `Fact ${n} — placeholder text showing how each fact renders as a numbered narrative row.`,
+  itemBody:     (n: string) => `Item body ${n}`,
+  itemBodyFull: (n: string) => `Body text for the ${n} entry`,
+  chip:         (n: string) => `Chip ${n}`,
+  group:        (n: string) => `Group ${n}`,
+  panelTitle:   (n: string) => `Panel ${n} title`,
+  panelItem:    (n: string) => `Item ${n}`,
+  cardTitle:    (n: string) => `Card ${n} title`,
+  caption:      (n: string) => `Caption ${n}`,
+  groupEyebrow: (n: string) => `GROUP 0${n}`,
+};
+
+// ── Real "in use" sample content (localised) ─────────────────────────────
+const R = isAr ? {
+  proseHeading: "ما هو التهاب الفقار اللاصق",
+  proseBody:    `التهاب الفقار اللاصق هو نوع من التهاب المفاصل المزمن يستهدف بشكل أساسي العمود الفقري والمفاصل العجزية الحرقفية. بمرور الوقت، يحفّز الالتهاب تكوّن عظم جديد يجسر فجوات الفقرات، ما يؤدي إلى التحام أقسام من العمود الفقري في هيكل صلب.\n\nالسبب الدقيق غير معروف، لكن الجين [HLA-B27](/ar/blog/hla-b27/) مرتبط بشكل قوي بالمرض. يصيب الرجال أكثر من النساء، ويبدأ عادة في أواخر المراهقة أو أوائل البلوغ.`,
+  highlights: [
+    { label: "ما هو",    value: "مرض التهابي مزمن للعمود الفقري تلتحم فيه الفقرات تدريجيًا، ما يقلّل المرونة." },
+    { label: "الأعراض",  value: "ألم وتيبّس صباحي في أسفل الظهر والوركين، ألم الرقبة، تعب." },
+    { label: "المقاربة", value: "لا يوجد علاج شافٍ. الأهداف: تخفيف الألم والتيبّس، الحفاظ على القوام والحركة، تأخير التحام العمود الفقري." },
+  ],
+  statsHeading: "ما نراه في العيادة",
+  stats: [
+    { value: "٣٠–٥٠٪", label: "من مرضى السرطان يعانون من الألم أثناء العلاج النشط" },
+    { value: "٧٥٪",     label: "من ذوي المرض المتقدّم يعانون من الألم" },
+    { value: "٦٠–٧٠٪", label: "يحققون تسكينًا كافيًا بالأفيونيات والمساعِدات" },
+  ],
+  factsHeading: "حقائق أساسية",
+  facts: [
+    "ألم السرطان غير المُسيطَر عليه من أقوى مؤشّرات الرغبة في تسريع الوفاة.",
+    "التحمّل (الحاجة إلى جرعات متصاعدة) يتطوّر خلال أشهر إلى سنوات، وهو يختلف عن الإدمان.",
+    "إجراءات الألم التداخلية (حجب الأعصاب، الحقن الشوكي) قد تقلّل بشكل كبير من متطلّبات الأفيونيات وآثارها الجانبية.",
+  ],
+  appointmentsHeading: "المناصب",
+  appointments: [
+    { label: "٢٠٠٦ — الآن", body: "استشاري جراحة الجهاز العصبي، مستشفى الصدر التعليمي، البصرة. مُنح لقب الاستشاري في ١٧ كانون الثاني ٢٠١٦." },
+    { label: "٢٠٢٢ — الآن", body: "مدير العراق في جمعية الشرق الأوسط للجراحة التجسيمية والوظيفية." },
+    { label: "١٩٩٦", body: "بكالوريوس طب وجراحة، كلية طب البصرة، العراق.", subtitle: "الشهادة الأولى." },
+  ],
+  membershipsHeading: "العضويات",
+  memberships: [
+    { label: "٢٠٢٢", body: "الجمعية الأوروبية للجراحة التجسيمية والوظيفية" },
+    { label: "٢٠٢٠", body: "منظمة السكتة الدماغية الأوروبية" },
+    { label: "٢٠٢٠", body: "منظمة السكتة الدماغية العالمية" },
+    { label: "٢٠٢٠", body: "الجمعية الدولية للحبل الشوكي" },
+    { label: "٢٠١٦", body: "جمعية أمريكا الشمالية للعمود الفقري" },
+    { label: "٢٠١٥", body: "الجمعية الدولية لدراسة الألم" },
+    { label: "٢٠١١", body: "AOSpine" },
+    { label: "٢٠١٠", body: "الجمعية الأمريكية لجراحي الجهاز العصبي" },
+  ],
+  fellowshipsHeading: "الزمالات",
+  fellowships: [
+    { label: "٢٠٠٥", body: "زمالة البورد العراقي للاختصاصات الطبية" },
+    { label: "٢٠١٣", body: "إدارة الألم التداخلي، عيادة موبي، مومباي" },
+    { label: "٢٠١٧", body: "التخدير وطب الألم، جامعة سيؤول الوطنية" },
+    { label: "٢٠٠٩", body: "التدريب على جراحة العمود الفقري بالمنظار، كلية طب Gian Sagar" },
+  ],
+  quote: "دور الطبيب أن يعين الطبيعة — لا أكثر ولا أقل.",
+  quoteAttribution: "— من المبادئ الأبقراطية",
+  panelsHeading2: "مقاربتان",
+  panelsIntro2:  "قبل وبعد اعتماد إدارة الألم متعدّدة الوسائط في آلام القرص المزمنة.",
+  panelsPair: [
+    { eyebrow: "قبل", title: "إدارة قائمة على الأعراض", items: ["راحة ومضادّات الالتهاب غير الستيرويدية", "تصاعد الأفيونيات مع النوبات", "تصوير متكرّر كل ٦ أشهر"] },
+    { eyebrow: "بعد", title: "علاج جذري السبب",       items: ["حجب الأعصاب + الاستئصال بالتردّد الراديوي", "علاج طبيعي موجَّه", "حقن الأوزون عند الحاجة"] },
+  ],
+  panelsHeading4: "خيارات العلاج في مركز العمران الطبي",
+  panelsIntro4:  "أربعة أقسام تُختار بحسب العرض والصور الشعاعية.",
+  panelsNote4:   "الرعاية التلطيفية تُقدَّم بالتزامن مع العلاج الشافي — وليست رعاية نهاية الحياة.",
+  panelsFour: [
+    { title: "التحفيز العصبي", subtitle: "تحفيز غير جراحي للدماغ والعمود الفقري", items: ["[rTMS](/services/tms/)", "[tDCS](/services/tdcs/)", "تحفيز الحبل الشوكي"] },
+    { title: "علاجات الحقن",   subtitle: "تسكين موجّه", items: ["حقن نقاط الزناد", "الستيرويدات فوق الجافية", "[حقن الأوزون](/services/ozone/)"] },
+    { title: "علاجات متقدّمة", subtitle: "للآلام المستعصية", items: ["التردّد الراديوي النابض", "[البوتوكس®](/services/botox/)", "[الوخز بالإبر](/services/acupuncture/)"] },
+    { title: "العلاج الطبيعي", subtitle: "التأهيل والقوام", items: ["التحفيز الكهربائي", "العلاج بالليزر", "العلاج بالموجات فوق الصوتية"] },
+  ],
+  mediaAlt:     "استشاري جراحة الأعصاب حسين عمران موسى",
+  mediaCaption: "استشاري جراحة الأعصاب حسين عمران موسى، الاستشاري المسؤول في مركز العمران الطبي.",
+  pathwayHeading: "الحالات التي نعالجها",
+  pathwayGroups: [
+    { eyebrow: "المسار ٠١", title: "الدماغ", items: [
+      { name: "ورم دماغي",         href: "/treatments/brain-tumor/" },
+      { name: "السكتة الدماغية",   href: "/treatments/stroke/" },
+      { name: "الصرع",              href: "/treatments/epilepsy-seizures/" },
+      { name: "إصابة الرأس",       href: "/treatments/head-injury/" },
+      { name: "باركنسون",           href: "/treatments/parkinsons-disease/" },
+      { name: "اضطرابات حركية",   href: "/treatments/motor-disorders/" },
+    ] },
+    { eyebrow: "المسار ٠٢", title: "العمود الفقري", items: [
+      { name: "انزلاق غضروفي",     href: "/treatments/herniated-disc/" },
+      { name: "عرق النسا",         href: "/treatments/sciatica/" },
+      { name: "إصابة الحبل الشوكي", href: "/treatments/spinal-cord-injury/" },
+      { name: "الجنف",              href: "/treatments/scoliosis/" },
+      { name: "الحداب",             href: "/treatments/kyphosis/" },
+      { name: "المشلطة",            href: "/treatments/whiplash/" },
+    ] },
+    { eyebrow: "المسار ٠٣", title: "الألم", items: [
+      { name: "الصداع المزمن",     href: "/treatments/headaches/" },
+      { name: "ألم الرقبة",         href: "/treatments/neck-pain/" },
+      { name: "ألم الظهر",          href: "/treatments/back-pain/" },
+      { name: "الكتف المتجمّد",     href: "/treatments/frozen-shoulder/" },
+      { name: "ألم الركبة",         href: "/treatments/knee-pain/" },
+      { name: "ألم الأورام",        href: "/treatments/cancer-pain/" },
+    ] },
+  ],
+  rowHeading:   "داخل العيادة",
+  rowCaptions:  ["غرفة الاستشارة", "غرفة الإجراءات", "قاعة التأهيل"],
+  cardsHeading: "قراءات ذات صلة",
+  cardsSoon:    "لم تُتَح بعد بالتصميم الجديد",
+  cards: [
+    { slug: "sciatica",       title: "عرق النسا",              category: "ألم",            href: "/ar/treatments/sciatica/",       redesigned: true },
+    { slug: "herniated-disc", title: "الانزلاق الغضروفي",     category: "عمود فقري", href: "/ar/treatments/herniated-disc/", redesigned: true },
+    { slug: "old-treatment",  title: "مقال قديم (لم يُعَد تصميمه)", category: "ألم",       href: "",                                redesigned: false },
+  ],
+} : {
+  proseHeading: "What ankylosing spondylitis is",
+  proseBody:    `Ankylosing spondylitis is a chronic inflammatory arthritis that primarily targets the spine and sacroiliac joints. Over time, inflammation triggers new bone formation that bridges vertebral gaps, fusing sections of the spine into a rigid, inflexible structure.\n\nThe exact cause is unknown, but the [HLA-B27 gene](/en/blog/hla-b27/) is strongly associated. Men are affected more than women; onset typically occurs in late adolescence or early adulthood.`,
+  highlights: [
+    { label: "What it is", value: "A chronic inflammatory disease of the spine in which vertebrae progressively fuse, reducing flexibility." },
+    { label: "Symptoms",   value: "Pain and morning stiffness in the lower back and hips, neck pain, fatigue." },
+    { label: "Approach",   value: "No cure. Goals: relieve pain and stiffness, preserve posture and mobility, delay spinal fusion." },
+  ],
+  statsHeading: "What we see in clinic",
+  stats: [
+    { value: "30–50%", label: "Of cancer patients experience pain during active treatment" },
+    { value: "75%",    label: "With advanced disease have pain" },
+    { value: "60–70%", label: "Achieve adequate analgesia with opioids and adjuvants" },
+  ],
+  factsHeading: "Key facts",
+  facts: [
+    "Uncontrolled cancer pain is one of the strongest predictors of desire for hastened death or suicide.",
+    "Tolerance (the need for escalating doses) develops over months to years; this is different from addiction.",
+    "Interventional pain procedures (nerve blocks, spinal infusions) can dramatically reduce opioid requirements and side effects.",
+  ],
+  appointmentsHeading: "Appointments",
+  appointments: [
+    { label: "2006 — present", body: "Consultant Neurosurgeon, Alsadr Teaching Hospital, Basra. Consultant status conferred 17 January 2016." },
+    { label: "2022 — present", body: "Iraq Director, Middle East Stereotactic and Functional Neurosurgery." },
+    { label: "1996", body: "MBChB, Medical College of Basra, Iraq.", subtitle: "Foundation degree." },
+  ],
+  membershipsHeading: "Memberships",
+  memberships: [
+    { label: "2022", body: "European Society for Stereotactic and Functional Neurosurgery" },
+    { label: "2020", body: "European Stroke Organization" },
+    { label: "2020", body: "World Stroke Organization" },
+    { label: "2020", body: "International Spinal Cord Society" },
+    { label: "2016", body: "North American Spine Society" },
+    { label: "2015", body: "International Association for the Study of Pain" },
+    { label: "2011", body: "AOSpine" },
+    { label: "2010", body: "American Association of Neurological Surgeons" },
+  ],
+  fellowshipsHeading: "Fellowships",
+  fellowships: [
+    { label: "2005", body: "Fellowship, Iraqi Board of Medical Specialization" },
+    { label: "2013", body: "Interventional Pain Management, Mobi Pain Clinic, Mumbai" },
+    { label: "2017", body: "Anaesthesiology & Pain Medicine, Seoul National University" },
+    { label: "2009", body: "Endoscopic spine training, Gian Sagar Medical College" },
+  ],
+  quote: "The role of the physician is to help nature — nothing more, nothing less.",
+  quoteAttribution: "— Hippocratic principle",
+  panelsHeading2: "Two approaches",
+  panelsIntro2:  "Before and after adopting multi-modal pain management for chronic disc pain.",
+  panelsPair: [
+    { eyebrow: "Before", title: "Symptom-focused management", items: ["Rest and NSAIDs", "Escalating opioids for flare-ups", "Repeat imaging every 6 months"] },
+    { eyebrow: "After",  title: "Root-cause treatment",       items: ["Nerve blocks + radiofrequency ablation", "Guided physiotherapy", "Ozone injections when indicated"] },
+  ],
+  panelsHeading4: "Treatment options at Alimran Medical Center",
+  panelsIntro4:  "Four departments, chosen based on presentation and imaging.",
+  panelsNote4:   "Palliative care is concurrent with curative treatment — not end-of-life care.",
+  panelsFour: [
+    { title: "Neuromodulation",     subtitle: "Non-invasive brain and spine stimulation", items: ["[rTMS](/services/tms/)", "[tDCS](/services/tdcs/)", "Spinal cord stimulation"] },
+    { title: "Injection therapies", subtitle: "Targeted analgesia",                        items: ["Trigger point injections", "Epidural steroids", "[Ozone injection](/services/ozone/)"] },
+    { title: "Advanced therapies",  subtitle: "For refractory pain",                       items: ["Pulsed radiofrequency", "[Botox®](/services/botox/)", "[Acupuncture](/services/acupuncture/)"] },
+    { title: "Physiotherapy",       subtitle: "Rehabilitation and posture",                items: ["Electrical stimulation", "Laser therapy", "Ultrasound therapy"] },
+  ],
+  mediaAlt:     "Consultant Neurosurgeon Hussein Imran Mousa",
+  mediaCaption: "Consultant Neurosurgeon Hussein Imran Mousa, lead consultant of Alimran Medical Center.",
+  pathwayHeading: "Conditions we treat",
+  pathwayGroups: [
+    { eyebrow: "PATHWAY 01", title: "Brain", items: [
+      { name: "Brain tumour",         href: "/treatments/brain-tumor/" },
+      { name: "Stroke",               href: "/treatments/stroke/" },
+      { name: "Epilepsy",             href: "/treatments/epilepsy-seizures/" },
+      { name: "Head injury",          href: "/treatments/head-injury/" },
+      { name: "Parkinson's disease",  href: "/treatments/parkinsons-disease/" },
+      { name: "Motor disorders",      href: "/treatments/motor-disorders/" },
+    ] },
+    { eyebrow: "PATHWAY 02", title: "Spine", items: [
+      { name: "Herniated disc",       href: "/treatments/herniated-disc/" },
+      { name: "Sciatica",             href: "/treatments/sciatica/" },
+      { name: "Spinal cord injury",   href: "/treatments/spinal-cord-injury/" },
+      { name: "Scoliosis",            href: "/treatments/scoliosis/" },
+      { name: "Kyphosis",             href: "/treatments/kyphosis/" },
+      { name: "Whiplash",             href: "/treatments/whiplash/" },
+    ] },
+    { eyebrow: "PATHWAY 03", title: "Pain", items: [
+      { name: "Chronic headache",     href: "/treatments/headaches/" },
+      { name: "Neck pain",            href: "/treatments/neck-pain/" },
+      { name: "Back pain",            href: "/treatments/back-pain/" },
+      { name: "Frozen shoulder",      href: "/treatments/frozen-shoulder/" },
+      { name: "Knee pain",            href: "/treatments/knee-pain/" },
+      { name: "Cancer pain",          href: "/treatments/cancer-pain/" },
+    ] },
+  ],
+  rowHeading:   "Inside the clinic",
+  rowCaptions:  ["Consulting room", "Procedure room", "Therapy gym"],
+  cardsHeading: "Related reading",
+  cardsSoon:    "Not yet available in the new design",
+  cards: [
+    { slug: "sciatica",       title: "Sciatica",                       category: "Pain",  href: "/en/treatments/sciatica/",       redesigned: true },
+    { slug: "herniated-disc", title: "Herniated disc",                 category: "Spine", href: "/en/treatments/herniated-disc/", redesigned: true },
+    { slug: "old-treatment",  title: "Older article (not redesigned)", category: "Pain",  href: "",                              redesigned: false },
+  ],
+};
+
+const heroImgSrc    = "/images/doctors/hussein-imran-mousa.jpg";
+const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
+---
+
+<BaseLayout title={T.title + " (dev only)"} description="Temp preview page">
+  <div class="wrap">
+    <header class="hd">
+      <p class="hd-eyebrow">{T.eyebrow}</p>
+      <h1>{T.title}</h1>
+      <p class="lede">{T.lede}</p>
+    </header>
+
+    {/* ─── prose ───────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(1)}</p>
+        <div>
+          <h2>prose</h2>
+          <p class="meta-desc">{W.prose.desc}</p>
+          <p class="meta-fields">{W.prose.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Prose heading={P.proseHeading} body={P.proseBody} locale={locale} />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <Prose heading={R.proseHeading} body={R.proseBody} locale={locale} />
+      </div>
+    </section>
+
+    {/* ─── highlights ──────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(2)}</p>
+        <div>
+          <h2>highlights</h2>
+          <p class="meta-desc">{W.highlights.desc}</p>
+          <p class="meta-fields">{W.highlights.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Highlights items={[1, 2, 3].map((n) => ({ label: P.label(n), value: P.value(n) }))} />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <Highlights items={R.highlights} />
+      </div>
+    </section>
+
+    {/* ─── stats ───────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(3)}</p>
+        <div>
+          <h2>stats</h2>
+          <p class="meta-desc">{W.stats.desc}</p>
+          <p class="meta-fields">{W.stats.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Stats
+          heading={P.heading}
+          items={[1, 2, 3, 4].map((n) => ({ value: isAr ? `٠${n}` : String(n).padStart(2, "0"), label: P.label(n) }))}
+        />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <Stats heading={R.statsHeading} items={R.stats} />
+      </div>
+    </section>
+
+    {/* ─── facts ───────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(4)}</p>
+        <div>
+          <h2>facts</h2>
+          <p class="meta-desc">{W.facts.desc}</p>
+          <p class="meta-fields">{W.facts.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Facts
+          heading={P.heading}
+          items={[isAr ? "١" : "one", isAr ? "٢" : "two", isAr ? "٣" : "three"].map(P.factItem)}
+          locale={locale}
+        />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <Facts heading={R.factsHeading} items={R.facts} locale={locale} />
+      </div>
+    </section>
+
+    {/* ─── list (rows) ─────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(5)}{isAr ? "أ" : "a"}</p>
+        <div>
+          <h2>list <em>variant=rows</em></h2>
+          <p class="meta-desc">{W.listRows.desc}</p>
+          <p class="meta-fields">{W.listRows.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <ListRows
+          heading={P.heading}
+          items={[
+            { label: P.label(1), body: P.itemBody("1") },
+            { label: P.label(2), body: P.itemBody("2") },
+            { label: P.label(3), body: P.itemBody("3"), subtitle: P.subtitleAlt },
+          ]}
+        />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <ListRows heading={R.appointmentsHeading} items={R.appointments} />
+      </div>
+    </section>
+
+    {/* ─── list (wrap) ─────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(5)}{isAr ? "ب" : "b"}</p>
+        <div>
+          <h2>list <em>variant=wrap</em></h2>
+          <p class="meta-desc">{W.listWrap.desc}</p>
+          <p class="meta-fields">{W.listWrap.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <ListWrap
+          heading={P.heading}
+          items={[1, 2, 3, 4, 5, 6].map((n) => ({ label: isAr ? String(n) : `L${n}`, body: P.itemBody(String(n)) }))}
+        />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <ListWrap heading={R.membershipsHeading} items={R.memberships} />
+      </div>
+    </section>
+
+    {/* ─── list (columns) ──────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(5)}{isAr ? "ج" : "c"}</p>
+        <div>
+          <h2>list <em>variant=columns</em></h2>
+          <p class="meta-desc">{W.listColumns.desc}</p>
+          <p class="meta-fields">{W.listColumns.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <ListColumns
+          heading={P.heading}
+          items={[1, 2, 3, 4].map((n) => ({ label: isAr ? String(n) : `L${n}`, body: P.itemBodyFull(String(n)) }))}
+        />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <ListColumns heading={R.fellowshipsHeading} items={R.fellowships} />
+      </div>
+    </section>
+
+    {/* ─── quote ───────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(6)}</p>
+        <div>
+          <h2>quote</h2>
+          <p class="meta-desc">{W.quote.desc}</p>
+          <p class="meta-fields">{W.quote.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Quote text={P.quote} attribution={P.attribution} />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <Quote text={R.quote} attribution={R.quoteAttribution} />
+      </div>
+    </section>
+
+    {/* ─── panels ──────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(7)}</p>
+        <div>
+          <h2>panels</h2>
+          <p class="meta-desc">{W.panels.desc}</p>
+          <p class="meta-fields">{W.panels.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure} — {num(2)}</p>
+        <Panels
+          heading={P.heading}
+          intro={P.intro}
+          panels={[1, 2].map((n) => ({
+            eyebrow: P.eyebrow,
+            title: P.panelTitle(String(n)),
+            items: [1, 2, 3].map((k) => P.panelItem(String(k))),
+          }))}
+          locale={locale}
+        />
+        <p class="preview-tag mt">{T.structure} — {num(4)}</p>
+        <Panels
+          heading={P.heading}
+          intro={P.intro}
+          note={P.note}
+          panels={[1, 2, 3, 4].map((n) => ({
+            title: P.panelTitle(String(n)),
+            subtitle: P.subtitleWith,
+            items: [1, 2].map((k) => P.panelItem(String(k))),
+          }))}
+          locale={locale}
+        />
+        <p class="preview-tag mt">{T.inUse} — {num(2)}</p>
+        <Panels heading={R.panelsHeading2} intro={R.panelsIntro2} panels={R.panelsPair} locale={locale} />
+        <p class="preview-tag mt">{T.inUse} — {num(4)}</p>
+        <Panels heading={R.panelsHeading4} intro={R.panelsIntro4} note={R.panelsNote4} panels={R.panelsFour} locale={locale} />
+      </div>
+    </section>
+
+    {/* ─── media ───────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(8)}</p>
+        <div>
+          <h2>media</h2>
+          <p class="meta-desc">{W.media.desc}</p>
+          <p class="meta-fields">{W.media.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Media kind="image" src={PLACEHOLDER_IMG} alt={placeholderLabel} caption={P.captionMain} aspect="16/9" />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <Media kind="image" src={heroImgSrc} alt={R.mediaAlt} caption={R.mediaCaption} aspect="16/9" />
+      </div>
+    </section>
+
+    {/* ─── pathway ─────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(9)}</p>
+        <div>
+          <h2>pathway</h2>
+          <p class="meta-desc">{W.pathway.desc}</p>
+          <p class="meta-fields">{W.pathway.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Pathway
+          heading={P.heading}
+          groups={[1, 2, 3].map((n) => ({
+            eyebrow: P.groupEyebrow(String(n)),
+            title: P.group(String(n)),
+            items: [1, 2, 3].map((k) => ({ name: P.chip(String(k)), href: "/#" })),
+          }))}
+          locale={locale}
+        />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <Pathway heading={R.pathwayHeading} groups={R.pathwayGroups} locale={locale} />
+      </div>
+    </section>
+
+    {/* ─── row ─────────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(10)}</p>
+        <div>
+          <h2>row</h2>
+          <p class="meta-desc">{W.row.desc}</p>
+          <p class="meta-fields">{W.row.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure} — {num(3)}</p>
+        <Row
+          heading={P.heading}
+          columns="3"
+          items={[1, 2, 3].map((n) => ({ src: PLACEHOLDER_IMG, alt: placeholderLabel, caption: P.caption(String(n)) }))}
+        />
+        <p class="preview-tag mt">{T.structure} — {isAr ? "تلقائي" : "auto"}</p>
+        <Row
+          columns="auto"
+          items={[1, 2, 3, 4].map((n) => ({ src: PLACEHOLDER_IMG, alt: String(n) }))}
+        />
+        <p class="preview-tag mt">{T.inUse} — {num(3)}</p>
+        <Row
+          heading={R.rowHeading}
+          columns="3"
+          items={[
+            { src: heroImgSrc,    alt: R.rowCaptions[0], caption: R.rowCaptions[0] },
+            { src: heroImgSrcAlt, alt: R.rowCaptions[1], caption: R.rowCaptions[1] },
+            { src: heroImgSrc,    alt: R.rowCaptions[2], caption: R.rowCaptions[2] },
+          ]}
+        />
+      </div>
+    </section>
+
+    {/* ─── cards ───────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(11)}</p>
+        <div>
+          <h2>cards</h2>
+          <p class="meta-desc">{W.cards.desc}</p>
+          <p class="meta-fields">{W.cards.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Cards
+          heading={P.heading}
+          soonLabel={R.cardsSoon}
+          items={[
+            { slug: "a", title: P.cardTitle("1"), category: P.category, href: "/#", redesigned: true },
+            { slug: "b", title: P.cardTitle("2"), category: P.category, href: "/#", redesigned: true },
+            { slug: "c", title: P.cardTitle("3"), category: P.category, href: "",  redesigned: false },
+          ]}
+        />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <Cards heading={R.cardsHeading} soonLabel={R.cardsSoon} items={R.cards} />
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .wrap {
+    max-width: 1240px;
+    margin: 40px auto 120px;
+    padding: 0 24px;
+    font-family: var(--font-body);
+  }
+  .hd { margin-bottom: 56px; }
+  .hd-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+  }
+  :global(html[dir="rtl"]) .hd-eyebrow {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 13px;
+  }
+  .hd h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 44px);
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  :global(html[dir="rtl"]) .hd h1 { font-weight: 700; letter-spacing: 0; }
+  .hd .lede { font-size: 17px; line-height: 1.65; color: var(--body); margin: 0; max-width: 62ch; }
+  :global(html[dir="rtl"]) .hd .lede { line-height: 1.95; }
+
+  .showcase {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 32px;
+    padding: 40px 0;
+    border-top: 1px dashed var(--line-strong);
+    align-items: start;
+  }
+  .meta { position: sticky; top: 88px; display: flex; gap: 12px; align-items: flex-start; }
+  .meta-code {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    margin: 4px 0 0;
+    letter-spacing: 0.06em;
+  }
+  .meta h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+    color: var(--ink);
+  }
+  :global(html[dir="rtl"]) .meta h2 { font-weight: 700; letter-spacing: 0; }
+  .meta h2 em { font-style: normal; color: var(--muted); font-size: 15px; font-family: var(--font-mono); margin-left: 6px; }
+  .meta-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--body);
+    margin: 8px 0 6px;
+  }
+  :global(html[dir="rtl"]) .meta-desc { line-height: 1.85; }
+  .meta-fields {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+  :global(html[dir="rtl"]) .meta-fields { line-height: 1.85; }
+  .preview { min-width: 0; }
+
+  .preview-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 14px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed var(--line-strong);
+  }
+  :global(html[dir="rtl"]) .preview-tag {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .mt { margin-top: 40px; }
+
+  @media (max-width: 640px) {
+    .showcase { grid-template-columns: 1fr; gap: 20px; }
+    .meta { position: static; }
+  }
+</style>

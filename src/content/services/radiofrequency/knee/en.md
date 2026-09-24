@@ -8,7 +8,7 @@ publishedAt: "2020-04-29T08:00:43"
 source: "legacy-wp"
 redesigned: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Radiofrequency ablation of the knee's articular (genicular) nerves interrupts the pain signals from a painful joint, providing long-lasting relief without surgery."
@@ -26,7 +26,7 @@ sections:
       The procedure is based on interrupting the nerve supply to the painful joint. By creating a radiofrequency heat lesion on the genicular nerve branches, the pain signal pathway is disrupted, providing relief that can last from several months to over a year.
 
       Indications include chronic knee pain secondary to osteoarthritis, failed knee replacement, patients unfit for knee replacement surgery, and patients who wish to avoid surgery.
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "Treatment options at Alimran Medical Center"
     groups:
       - title: "Radiofrequency"

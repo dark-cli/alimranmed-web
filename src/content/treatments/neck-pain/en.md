@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Neck pain from mechanical dysfunction (muscle strain, postural), degenerative disc disease (cervical spondylosis), or facet joint arthropathy. Pain may radiate to shoulder or arm if nerve is irritated."
@@ -23,7 +23,7 @@ sections:
     body: |
       Neck pain is extremely common — 30–50% of people report neck pain in any given year. Causes range from simple muscle strain and postural dysfunction to cervical spondylosis (degenerative disc disease and facet arthropathy), disc herniation, and cervical myelopathy (spinal cord compression).
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "30–50%"
@@ -37,7 +37,7 @@ sections:
       - "Most imaging abnormalities (disc bulges, osteophytes) are found incidentally and may not be the pain source."
       - "Early mobilisation and activity grading are superior to prolonged immobilisation for most cases."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Acute mechanical neck pain improves with activity, posture and analgesia. Chronic pain may require multimodal therapy."
     groups:

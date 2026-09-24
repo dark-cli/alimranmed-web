@@ -8,7 +8,7 @@ source: "legacy-wp"
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "rTMS for pain"
         value: "Repetitive transcranial magnetic stimulation used clinically to treat various pain conditions"

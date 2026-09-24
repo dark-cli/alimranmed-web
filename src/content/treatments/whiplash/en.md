@@ -9,7 +9,7 @@ publishedAt: "2021-03-10T00:00:00Z"
 redesigned: true
 
 sections:
-  - type: at-a-glance
+  - type: at_a_glance
     items:
       - label: "What it is"
         value: "Neck injury from sudden backward or forward head movement (acceleration–deceleration), classically from motor vehicle collision. Soft-tissue injury to ligaments and muscles."
@@ -23,7 +23,7 @@ sections:
     body: |
       Whiplash occurs when the neck is forcibly flexed and extended (or vice versa) by sudden acceleration or deceleration, classically in motor vehicle collisions. The underlying injury is to the soft tissues — ligaments, muscles, and facet joints — though MRI and X-ray are often normal.
 
-  - type: stats-facts
+  - type: stats_facts
     heading: "What we see in clinic"
     stats:
       - value: "10–15%"
@@ -37,7 +37,7 @@ sections:
       - "Psychological factors (catastrophising, fear-avoidance) are independent predictors of chronicity."
       - "Imaging (X-ray, MRI, CT) is often normal despite significant symptoms; absence of imaging findings does not invalidate the diagnosis."
 
-  - type: treatment-groups
+  - type: treatment_groups
     heading: "How it is treated"
     intro: "Early mobilisation and active rehabilitation are key. Most recover with conservative care."
     groups:
