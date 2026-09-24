@@ -1,6 +1,6 @@
 ---
 title: "Claudication"
-description: "Muscle pain or cramping in the legs (and occasionally arms) triggered by exercise and relieved by rest — caused by insufficient blood flow through narrowed peripheral arteries. A symptom of peripheral artery disease and an indicator of systemic atherosclerosis. Managed with exercise, risk factor modification, medication, and — when conservative measures fail — vascular or neuromodulatory interventions."
+description: "Leg pain or cramping brought on by walking and eased by rest, caused by narrowed arteries. Managed with exercise, risk-factor control and medication."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/claudication/"

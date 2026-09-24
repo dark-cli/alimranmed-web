@@ -1,6 +1,6 @@
 ---
 title: "Frozen shoulder"
-description: "Pain and progressive stiffness in the shoulder that can lock the joint for months. Most cases self-resolve within 18–30 months — the clinic's job is to shorten that runway with targeted treatment."
+description: "Shoulder pain and stiffness that can lock the joint for months. Most cases resolve in 18–30 months; targeted treatment shortens recovery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/frozen-shoulder/"

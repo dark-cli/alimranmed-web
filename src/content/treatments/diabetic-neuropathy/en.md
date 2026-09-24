@@ -1,6 +1,6 @@
 ---
 title: "Diabetic neuropathy"
-description: "Nerve damage caused by prolonged high blood sugar in diabetes. Affects up to 50% of diabetic patients, most commonly causing numbness, burning, and pain in the feet and legs. No cure, but blood sugar control and targeted treatments reduce progression and symptoms."
+description: "Nerve damage from long-term high blood sugar, affecting up to half of diabetics with numbness, burning and foot pain. Sugar control slows it."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/diabetic-neuropathy/"

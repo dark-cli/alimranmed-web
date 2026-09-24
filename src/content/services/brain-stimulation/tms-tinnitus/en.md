@@ -1,6 +1,6 @@
 ---
 title: "TMS for Tinnitus"
-description: "Tinnitus is a disturbing noise heard without any external stimulus, affecting 33% of the population. rTMS has shown successful results in multiple clinical studies."
+description: "Tinnitus is a noise heard with no external source, affecting about a third of people. rTMS has shown good results in several clinical studies."
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/tinnitus/"

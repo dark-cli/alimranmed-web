@@ -95,7 +95,7 @@ const BLURB_AR: Record<string, string> = {
   "acupuncture":         "الوخز بالإبر الصينية لعلاج الألم المزمن والحالات الالتهابية في مركز العمران الطبي بالبصرة.",
 };
 const blurb = locale === "en"
-  ? (BLURB[category] ?? `${prettyCategory} services at Alimran Medical Center.`)
+  ? (BLURB[category] ? `${BLURB[category].replace(/\.$/, "")} at Alimran Medical Center in Basra.` : `${prettyCategory} services at Alimran Medical Center in Basra.`)
   : (BLURB_AR[category] ?? `خدمات ${categoryTitle} في مركز العمران الطبي بالبصرة.`);
 const siteName = locale === "ar" ? "مركز العمران الطبي" : "Alimran Medical Center";
 ---

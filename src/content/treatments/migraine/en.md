@@ -1,6 +1,6 @@
 ---
 title: "Migraine"
-description: "A neurological condition causing intense, throbbing headaches — often one-sided, lasting 6–48 hours, with nausea, light sensitivity, and sometimes a preceding aura. No cure, but triggers can be managed and attacks treated with rTMS, Botox, and other therapies."
+description: "Intense, throbbing headaches, often one-sided, lasting 6–48 hours with nausea and light sensitivity. rTMS, Botox and other therapies reduce attacks."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/migrain/"

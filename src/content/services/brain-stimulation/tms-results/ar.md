@@ -1,5 +1,6 @@
 ---
 title: "نتائج تحفيز الدماغ"
+description: "فيديوهات لنتائج التحفيز المغناطيسي للدماغ في مركز العمران الطبي: شلل نصفي وضعف الأطراف بعد الجلطة الدماغية والشقيقة."
 category: "تحفيز الدماغ"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/%d9%86%d8%aa%d8%a7%d8%a6%d8%ac-%d8%aa%d8%ad%d9%81%d9%8a%d8%b2-%d8%a7%d9%84%d8%af%d9%85%d8%a7%d8%ba"

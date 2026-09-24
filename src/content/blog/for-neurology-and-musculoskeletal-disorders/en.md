@@ -1,6 +1,6 @@
 ---
 title: "Radiofrequency Ablation for Arthritis Pain"
-description: "Radiofrequency neurotomy (also called radiofrequency ablation or lesioning) is a minimally invasive, outpatient procedure that shuts off pain signals from facet joints and arthritic joints — with lasting relief for one to two years in most patients."
+description: "Radiofrequency neurotomy is an outpatient procedure that shuts off pain signals from facet and arthritic joints, giving 1–2 years of relief in most patients."
 order: 999
 legacyUrl: "https://alimranmed.com/2019/04/23/for-neurology-and-musculoskeletal-disorders/"
 publishedAt: "2019-04-23T08:21:32"

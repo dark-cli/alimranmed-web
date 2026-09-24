@@ -1,6 +1,6 @@
 ---
 title: "Epilepsy & seizures"
-description: "A neurological disorder characterised by recurrent, unprovoked seizures — brief episodes of abnormal electrical activity in the brain. Affects approximately 1–3% of the population. Managed with anticonvulsant medications and, for drug-resistant cases, surgical or neuromodulatory interventions."
+description: "Recurrent seizures from abnormal brain electrical activity, affecting 1–3% of people. Treated with medication, or surgery when drugs don't work."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/epilepsy-seizures/"

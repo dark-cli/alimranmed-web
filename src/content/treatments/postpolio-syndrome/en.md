@@ -1,6 +1,6 @@
 ---
 title: "Post-polio syndrome"
-description: "A neurological condition affecting polio survivors decades after recovery, causing new muscle weakness, fatigue, and pain. Occurs in 25–40% of people who had polio. Management focuses on preserving function, preventing deterioration, and maximising independence through rehabilitation."
+description: "New muscle weakness, fatigue and pain in 25–40% of polio survivors decades later. Rehabilitation helps preserve function and independence."
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/09/postpolio-syndrome/"

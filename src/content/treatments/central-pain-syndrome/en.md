@@ -1,6 +1,6 @@
 ---
 title: "Central pain syndrome"
-description: "Neurological pain from damage to the central nervous system — brain, brainstem, or spinal cord. Presents variably (burning, pins-and-needles, sharp bursts) and is worsened by touch, movement, or cold. Managed with neuromodulation and multimodal therapy."
+description: "Nerve pain from damage to the brain or spinal cord: burning, pins and needles or sharp bursts, worse with touch or cold. Treated with neuromodulation."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/central-pain-syndrome/"

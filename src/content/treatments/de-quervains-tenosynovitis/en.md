@@ -1,6 +1,6 @@
 ---
 title: "De Quervain's tenosynovitis"
-description: "Painful inflammation of the tendon sheath on the thumb side of the wrist, causing pain and swelling at the base of the thumb. Aggravated by gripping, pinching, and repetitive wrist movements. Treated with splinting, injections, and physiotherapy."
+description: "Painful inflammation of the thumb-side wrist tendons, worse with gripping and pinching. Treated with splinting, injections and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/de-quervains-tenosynovitis/"

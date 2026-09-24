@@ -1,6 +1,6 @@
 ---
 title: "Tendinitis"
-description: "Inflammation or irritation of a tendon — the fibrous cords connecting muscle to bone. Most common around the shoulders, elbows, wrists, knees, and heels. Usually treated with rest, physiotherapy, and injections."
+description: "Inflamed or irritated tendons, most often at the shoulder, elbow, wrist, knee or heel. Usually treated with rest, physiotherapy and injections."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/tendinitis/"

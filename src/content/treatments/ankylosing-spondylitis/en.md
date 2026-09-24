@@ -1,6 +1,6 @@
 ---
 title: "Ankylosing spondylitis"
-description: "A chronic inflammatory disease of the spine in which vertebrae gradually fuse, reducing flexibility and causing a hunched posture. Affects men more than women, typically beginning in early adulthood. No cure, but treatment relieves symptoms and may slow progression."
+description: "A chronic inflammatory spine disease in which vertebrae gradually fuse, reducing flexibility. More common in men, it usually starts in early adulthood."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/ankylosing-spondylitis/"

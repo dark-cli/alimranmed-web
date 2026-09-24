@@ -1,6 +1,6 @@
 ---
 title: "Bell's palsy"
-description: "Sudden, usually temporary weakness or paralysis of one side of the face caused by inflammation of the facial nerve (cranial nerve VII). Most people recover fully within 6 months. Treatment with steroids, rTMS, Botox, and physiotherapy accelerates recovery and prevents complications."
+description: "Sudden weakness of one side of the face from facial nerve inflammation. Most people recover within 6 months; early treatment speeds recovery."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/16/bells-palsy/"

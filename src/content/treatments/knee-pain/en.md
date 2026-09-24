@@ -1,6 +1,6 @@
 ---
 title: "Knee pain"
-description: "Pain in the knee from osteoarthritis, ligament or meniscal injury, or patellofemoral dysfunction. Treatment ranges from activity modification and physiotherapy to intra-articular injection and surgical repair."
+description: "Knee pain from osteoarthritis, ligament or meniscus injury, or kneecap problems. Treatment ranges from physiotherapy to injections and surgery."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/knee-pain/"

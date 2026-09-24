@@ -1,6 +1,6 @@
 ---
 title: "Endoscopic spine surgery"
-description: "Full-endoscopic spine surgery uses high-resolution intraoperative imaging and minimised access ports for disc herniation, spinal canal stenosis, and facet joint syndrome."
+description: "Full-endoscopic spine surgery treats disc herniation, spinal stenosis and facet joint syndrome through small ports with high-resolution imaging."
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/endoscopic-spine-surgery/"

@@ -1,6 +1,6 @@
 ---
 title: "Radiofrequency"
-description: "Radiofrequency neurotomy is a minimally invasive procedure that applies targeted heat to nerve pathways to provide lasting pain relief for chronic back and neck pain."
+description: "Radiofrequency neurotomy is a minimally invasive procedure that applies targeted heat to nerves for lasting relief from chronic back and neck pain."
 order: 999
 legacyUrl: "https://alimranmed.com/radiofrequency/"
 category: "radiofrequency"

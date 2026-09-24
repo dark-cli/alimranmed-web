@@ -1,6 +1,6 @@
 ---
 title: "Transverse myelitis"
-description: "Inflammation of the spinal cord — usually at a single level — that disrupts sensory, motor, and autonomic signals across the cord. Presents with rapid-onset limb weakness, sensory disturbance, and bladder/bowel dysfunction below the lesion. Causes include autoimmune conditions (MS, neuromyelitis optica), infection, and post-infectious inflammation. Acute treatment uses high-dose IV steroids or plasma exchange; recovery ranges from near-complete to severe permanent disability."
+description: "Inflammation of the spinal cord causing rapid limb weakness, numbness and bladder problems. Treated urgently with IV steroids or plasma exchange."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/transverse-myelitis/"

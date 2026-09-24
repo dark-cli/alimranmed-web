@@ -1,6 +1,6 @@
 ---
 title: "tDCS"
-description: "Transcranial direct current stimulation (tDCS) is a wearable, portable brain stimulation technology that delivers low electrical current to targeted areas of the scalp."
+description: "Transcranial direct current stimulation (tDCS) is a portable brain stimulation technique that delivers a low electrical current to targeted scalp areas."
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/tdcs/"

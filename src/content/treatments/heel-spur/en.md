@@ -1,6 +1,6 @@
 ---
 title: "Heel spur"
-description: "A bony growth on the underside of the heel bone caused by chronic stress on the plantar fascia. Characterised by sharp pain under the heel on first steps in the morning. Treated with orthotic insoles, physiotherapy, and injections."
+description: "A bony growth under the heel from strain on the plantar fascia, causing sharp pain with the first steps in the morning. Treated with insoles and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/03/heel-spur/"

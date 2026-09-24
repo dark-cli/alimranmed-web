@@ -1,6 +1,6 @@
 ---
 title: "Depression (major depressive disorder)"
-description: "A mood disorder causing persistent sadness, loss of interest, and reduced ability to function. Affects how a person feels, thinks, and behaves. Responds well to medication, psychotherapy, and neuromodulation including rTMS — a non-drug option particularly valuable when medications fail."
+description: "A mood disorder causing lasting sadness and loss of interest. It responds to medication, therapy and rTMS, a drug-free option when medication fails."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/depression-major-depressive-disorder%ef%bb%bf/"

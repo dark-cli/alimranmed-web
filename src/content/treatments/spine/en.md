@@ -1,6 +1,6 @@
 ---
 title: "Spine"
-description: "Conditions affecting the spinal cord, spinal column, and nerve roots — ranging from congenital anomalies and traumatic injury to degenerative disc disease and spinal cord tumours. Browse the conditions we treat below."
+description: "Conditions of the spinal cord, spine and nerve roots, from birth defects and injuries to disc disease and tumours. Browse the conditions we treat."
 category: "spine"
 order: 1
 legacyUrl: "https://alimranmed.com/spine/"

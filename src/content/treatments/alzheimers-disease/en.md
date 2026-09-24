@@ -1,6 +1,6 @@
 ---
 title: "Alzheimer's disease"
-description: "The most common cause of dementia — a progressive neurological disorder in which the brain shrinks and neurons die, causing irreversible memory loss, cognitive decline, and loss of independence. No cure, but medications and rTMS can temporarily improve or slow symptoms."
+description: "The most common cause of dementia, causing progressive memory loss and cognitive decline. No cure, but medication and rTMS can ease symptoms for a time."
 category: "motor"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/16/alzheimers-disease/"

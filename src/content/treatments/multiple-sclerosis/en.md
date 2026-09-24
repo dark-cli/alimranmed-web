@@ -1,6 +1,6 @@
 ---
 title: "Multiple sclerosis (MS)"
-description: "A chronic autoimmune disease in which the immune system attacks the myelin sheath of nerve fibres, disrupting nerve conduction in the brain and spinal cord. Produces variable neurological symptoms. Managed with medication, rTMS, physiotherapy, and rehabilitation."
+description: "An autoimmune disease that damages the nerve coating in the brain and spinal cord, causing varied symptoms. Managed with medication, rTMS and rehab."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/09/multiple-sclerosis/"

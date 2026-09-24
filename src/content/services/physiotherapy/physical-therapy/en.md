@@ -1,6 +1,6 @@
 ---
 title: "Physical Therapy"
-description: "The physical therapy department at Alimran Medical Center offers a comprehensive range of evidence-based modalities for pain relief, rehabilitation, and functional recovery."
+description: "Our physical therapy department offers a full range of evidence-based treatments for pain relief, rehabilitation and recovery of function."
 order: 999
 legacyUrl: "https://alimranmed.com/physical-therapy/"
 category: "physiotherapy"

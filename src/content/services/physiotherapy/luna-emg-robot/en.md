@@ -1,6 +1,6 @@
 ---
 title: "Luna EMG Robot"
-description: "The Luna EMG robot uses interactive electromyography for neurological rehabilitation and orthopaedic therapy, driven by the patient's own bioelectric muscle signals."
+description: "The Luna EMG robot uses the patient's own muscle signals (electromyography) to drive interactive neurological and orthopaedic rehabilitation."
 category: "physiotherapy"
 order: 999
 legacyUrl: "https://alimranmed.com/luna-emg-robot/"

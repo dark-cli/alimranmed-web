@@ -1,6 +1,6 @@
 ---
 title: "Vulvodynia"
-description: "Chronic pain or discomfort around the vulva with no identifiable cause, lasting at least three months. May cause burning, stinging, and painful intercourse. Treated with a combination of injections, neuromodulation, and physiotherapy."
+description: "Chronic vulval pain with no clear cause, lasting three months or more. Treated with a mix of injections, neuromodulation and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/vulvodynia/"

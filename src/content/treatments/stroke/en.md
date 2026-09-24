@@ -1,6 +1,6 @@
 ---
 title: "Stroke"
-description: "A medical emergency where blood supply to part of the brain is cut off. Speed of assessment matters more than any other single factor — brain tissue dies by the minute. The clinic manages recovery and secondary prevention, not the acute event."
+description: "A medical emergency where blood flow to part of the brain stops, and every minute counts. We handle recovery and preventing another stroke."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/stroke/"

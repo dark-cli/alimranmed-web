@@ -1,6 +1,6 @@
 ---
 title: "Chronic and daily headache"
-description: "Tension-type, migraine, or medication-overuse headache occurring 15+ days per month. Treatment escalates from lifestyle modification and abortive medication to preventive drugs and interventional procedures."
+description: "Tension-type, migraine or medication-overuse headache on 15+ days a month. Treatment steps up from lifestyle changes to preventive drugs and procedures."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/headaches/"

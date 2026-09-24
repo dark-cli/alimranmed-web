@@ -1,6 +1,6 @@
 ---
 title: "Hemifacial spasm"
-description: "A neurological condition causing involuntary muscle twitching on one side of the face, typically from pressure on the facial nerve. Managed with Botox injections, rTMS, physiotherapy, and rarely surgery."
+description: "Involuntary twitching on one side of the face, usually from pressure on the facial nerve. Treated with Botox, rTMS and physiotherapy, rarely surgery."
 category: "motor"
 order: 999
 legacyUrl: "https://alimranmed.com/hemifacial-spasm/"

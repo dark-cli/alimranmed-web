@@ -1,6 +1,6 @@
 ---
 title: "Peripheral vascular disease"
-description: "A common circulatory condition in which narrowed arteries reduce blood flow to the limbs, most often the legs. The most prevalent form is peripheral artery disease (PAD), caused by atherosclerosis. Ranges from exercise-induced claudication to critical limb ischaemia with rest pain and ulceration. Managed with lifestyle modification, cardiovascular risk reduction, spinal cord stimulation, and revascularisation."
+description: "Narrowed arteries reducing blood flow to the legs, from pain when walking to ulcers. Managed with lifestyle changes, risk control and spinal cord stimulation."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/peripheral-vascular-disease/"

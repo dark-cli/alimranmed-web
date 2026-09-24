@@ -1,6 +1,6 @@
 ---
 title: "Spinal trauma"
-description: "Damage to the spinal cord resulting in a contusion, partial tear, or complete transection — causing varying degrees of motor, sensory, and autonomic dysfunction below the level of injury. Primary causes are motor vehicle accidents, falls, violence, and sports. Acute management focuses on preventing secondary injury; long-term rehabilitation addresses functional recovery, spasticity, pain, and bladder and bowel control."
+description: "Spinal cord damage from accidents, falls or sport, causing loss of movement and feeling below the injury. Rehabilitation focuses on regaining function."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/spinal-trauma/"

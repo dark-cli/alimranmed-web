@@ -1,6 +1,6 @@
 ---
 title: "Head injury"
-description: "A blow to the head — from mild concussion to major intracranial injury. The urgent question is always the same: is there bleeding on the brain that needs surgery, or a swelling that needs monitoring, or neither."
+description: "A blow to the head, from mild concussion to major injury. The key question: is there bleeding that needs surgery, swelling to monitor, or neither?"
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/head-injury/"

@@ -1,6 +1,6 @@
 ---
 title: "A selective dorsal rhizotomy(SDR)"
-description: "also known as a rhizotomy, dorsal rhizotomy, or a selective posterior rhizotomy, is a neurosurgical procedure that selectively destroys problematic nerve roots in the spinal"
+description: "Selective dorsal rhizotomy (SDR) is a neurosurgical procedure that selectively cuts problem nerve roots in the spinal cord to reduce spasticity."
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/a-selective-dorsal-rhizotomysdr/"

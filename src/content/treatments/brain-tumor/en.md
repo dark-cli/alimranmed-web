@@ -1,6 +1,6 @@
 ---
 title: "Brain tumour"
-description: "An abnormal growth of tissue in the brain. Whether it needs surgery, radiation, observation, or a combination depends on what kind it is, where it sits, and what it is doing — three questions decided together, not in sequence."
+description: "An abnormal growth in the brain. Whether it needs surgery, radiation or monitoring depends on its type, location and effects, decided together."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/brain-tumor/"

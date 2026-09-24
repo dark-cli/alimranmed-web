@@ -1,6 +1,6 @@
 ---
 title: "Acromegaly"
-description: "A hormonal disorder caused by excess growth hormone from the pituitary gland, usually from a benign pituitary adenoma. Causes progressive enlargement of the hands, feet, and facial features. Untreated, it leads to serious complications including cardiovascular disease, diabetes, and spinal cord compression."
+description: "A hormonal disorder caused by excess growth hormone, usually from a benign pituitary tumour, that gradually enlarges the hands, feet and face."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2021/01/16/acromegaly/"

@@ -1,6 +1,6 @@
 ---
 title: "Benign paroxysmal positional vertigo (BPPV)"
-description: "One of the most common causes of vertigo — brief, intense spinning triggered by head position changes. Caused by calcium crystals dislodging in the inner ear. Often resolves with canalith repositioning manoeuvres."
+description: "A common cause of vertigo: brief spinning spells triggered by head movement, caused by loose inner-ear crystals. Usually fixed with repositioning manoeuvres."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/benign-paroxysmal-positional-vertigo-bppv/"

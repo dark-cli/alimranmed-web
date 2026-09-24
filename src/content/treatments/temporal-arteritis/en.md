@@ -1,6 +1,6 @@
 ---
 title: "Temporal arteritis"
-description: "Giant cell arteritis (GCA) — a granulomatous inflammation of medium and large arteries, especially the superficial temporal arteries. Presents with severe temporal headache, scalp tenderness, jaw claudication, and vision loss. Closely associated with polymyalgia rheumatica (50% overlap). A medical emergency when visual symptoms are present: high-dose corticosteroids are started immediately to prevent permanent blindness."
+description: "Inflamed temple arteries causing severe headache, jaw pain and risk of vision loss. An emergency needing immediate steroids to prevent blindness."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/temporal-arteritis/"

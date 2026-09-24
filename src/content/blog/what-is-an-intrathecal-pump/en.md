@@ -1,6 +1,6 @@
 ---
 title: "Intrathecal pump"
-description: "A battery-operated device implanted under the skin that delivers medication directly into the spinal canal — used for chronic pain, cancer-related pain, and spasticity."
+description: "A battery-operated device implanted under the skin that delivers medication directly into the spinal canal for chronic pain, cancer pain and spasticity."
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/21/what-is-an-intrathecal-pump/"
 publishedAt: "2020-12-21T16:48:46"

@@ -1,6 +1,6 @@
 ---
 title: "Scoliosis"
-description: "A sideways curvature of the spine, most often noticed in the growth spurt before puberty. Most curves stay mild and just need watching; a small proportion need bracing or surgery to stop them progressing."
+description: "A sideways curve of the spine, often noticed before puberty. Most curves stay mild and just need monitoring; a few need a brace or surgery."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/scoliosis/"

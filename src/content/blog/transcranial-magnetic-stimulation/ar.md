@@ -1,5 +1,6 @@
 ---
 title: "التحفيز المغناطيسي عبر الجمجمة (TMS)"
+description: "التحفيز المغناطيسي عبر الجمجمة (TMS) تقنية غير جراحية تحفّز خلايا الدماغ العصبية، تُستخدم لعلاج اضطرابات عصبية ونفسية متعددة."
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/910"
 order: 999

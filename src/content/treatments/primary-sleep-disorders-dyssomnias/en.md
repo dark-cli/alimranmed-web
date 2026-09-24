@@ -1,6 +1,6 @@
 ---
 title: "Primary sleep disorders: dyssomnias"
-description: "Sleep disorders affecting the ability to fall asleep, stay asleep, or achieve restorative sleep — not caused by another medical or psychiatric condition. Categories include obstructive and central sleep apnoea, restless legs syndrome, periodic limb movement disorder, and primary insomnia. Management combines sleep hygiene, behavioural interventions, medications, and neuromodulation."
+description: "Trouble falling or staying asleep, including sleep apnoea, restless legs and primary insomnia. Managed with sleep habits, behavioural therapy and medication."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/primary-sleep-disorders-dyssomnias/"

@@ -1,6 +1,6 @@
 ---
 title: "Occipital neuralgia"
-description: "Sharp, shooting, or electric pain along the back and top of the head, caused by irritation of the greater occipital nerves. Often confused with migraine. Treated with nerve blocks, Botox, rTMS, and physiotherapy."
+description: "Sharp, electric pain at the back of the head from irritated occipital nerves, often mistaken for migraine. Treated with nerve blocks, Botox and rTMS."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/occipital-neuralgia/"

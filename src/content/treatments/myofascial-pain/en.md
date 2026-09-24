@@ -1,6 +1,6 @@
 ---
 title: "Myofascial pain syndrome"
-description: "Chronic pain from the fascia — the connective tissue linking muscles. Pressure on trigger points causes referred pain elsewhere in the body. Treated with self-care first, then trigger point injections and adjunct therapies."
+description: "Chronic pain from the fascia around muscles, where trigger points refer pain elsewhere. Treated with self-care first, then trigger point injections."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/myofascial-pain/"

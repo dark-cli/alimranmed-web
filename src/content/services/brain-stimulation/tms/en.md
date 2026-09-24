@@ -1,6 +1,6 @@
 ---
 title: "TMS"
-description: "Repetitive transcranial magnetic stimulation (rTMS) uses a copper coil on the scalp to deliver brief magnetic pulses that alter neuronal activity for a range of neurological and psychiatric conditions."
+description: "Repetitive transcranial magnetic stimulation (rTMS) uses a coil on the scalp to deliver magnetic pulses that alter nerve activity in neurological conditions."
 category: "brain-stimulation"
 order: 999
 legacyUrl: "https://alimranmed.com/rtms/"

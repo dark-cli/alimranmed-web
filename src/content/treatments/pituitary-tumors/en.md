@@ -1,6 +1,6 @@
 ---
 title: "Pituitary tumours"
-description: "Abnormal growths of the pituitary gland — most are benign adenomas. Functioning tumours overproduce hormones (ACTH causing Cushing syndrome; GH causing acromegaly; prolactin causing prolactinoma; TSH causing hyperthyroidism). Non-functioning tumours cause symptoms through mass effect: headache and visual loss from optic chiasm compression. Treated with surgery, radiation, and medication depending on tumour type and size."
+description: "Mostly benign growths of the pituitary gland that can overproduce hormones or press on the optic nerves. Treated with surgery, radiation or medication."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/pituitary-tumors/"

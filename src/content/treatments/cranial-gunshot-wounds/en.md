@@ -1,6 +1,6 @@
 ---
 title: "Cranial gunshot wounds"
-description: "Penetrating ballistic injuries to the head — among the most lethal of all traumatic injuries. Survival depends on the trajectory, the level of consciousness on arrival, and the speed of neurosurgical intervention. Survivors require intensive neurorehabilitation to maximise recovery of neurological function."
+description: "Gunshot injuries to the head are among the most lethal traumas. Survival depends on the bullet's path and fast neurosurgery, followed by intensive rehab."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/cranial-gunshot-wounds/"

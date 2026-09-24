@@ -1,6 +1,6 @@
 ---
 title: "Spine Radiofrequency"
-description: "Radiofrequency ablation for the spine targets pain-transmitting nerves at facet and sacroiliac joints, providing durable relief from chronic neck and back pain without surgery."
+description: "Spinal radiofrequency ablation targets pain nerves at the facet and sacroiliac joints, giving lasting relief from chronic neck and back pain without surgery."
 category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/28/radiofrequency-ablation-for-spine/"

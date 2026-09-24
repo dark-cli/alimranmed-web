@@ -1,6 +1,6 @@
 ---
 title: "Poliomyelitis"
-description: "Poliomyelitis is a neurological disease caused by the poliovirus. Vaccination has nearly eliminated it, but survivors may develop late complications — including post-polio syndrome — that need ongoing rehabilitation."
+description: "Polio is a viral neurological disease that vaccination has nearly eliminated, but survivors may develop post-polio syndrome and need ongoing rehabilitation."
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/05/poliomyelitis/"
 publishedAt: "2020-12-05T17:32:35"

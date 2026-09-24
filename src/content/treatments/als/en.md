@@ -1,6 +1,6 @@
 ---
 title: "Amyotrophic lateral sclerosis (ALS)"
-description: "A progressive neurodegenerative disease that destroys both upper and lower motor neurons, causing relentless muscle weakness, atrophy, and eventual paralysis while leaving sensation and cognition largely intact. No cure exists, but rehabilitative and symptomatic treatments improve function and quality of life."
+description: "A progressive disease that destroys motor neurons, causing weakness, muscle wasting and paralysis. No cure, but rehabilitation improves quality of life."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/04/07/amyotrophic-lateral-sclerosis-als/"

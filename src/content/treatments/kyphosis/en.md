@@ -1,6 +1,6 @@
 ---
 title: "Kyphosis"
-description: "Excessive forward curvature of the thoracic spine. May be postural, structural (Scheuermann's disease), degenerative, or post-traumatic. Correction is surgical when severe."
+description: "Excessive forward curve of the upper spine: postural, Scheuermann's, degenerative or after injury. Severe cases are corrected with surgery."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/kyphosis/"

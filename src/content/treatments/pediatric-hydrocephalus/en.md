@@ -1,6 +1,6 @@
 ---
 title: "Pediatric hydrocephalus"
-description: "Abnormal accumulation of cerebrospinal fluid in the cerebral ventricles, one of the most common conditions in paediatric neurosurgery. Causes include bleeding, infection, congenital malformations, tumours, and vascular abnormalities. Presents with a rapidly enlarging head in infancy, vomiting, irritability, and developmental delay. Treated surgically with a CSF shunt or endoscopic third ventriculostomy."
+description: "Excess fluid in a child's brain, causing a rapidly growing head, vomiting and delayed development. Treated with a shunt or endoscopic surgery."
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/pediatric-hydrocephalus/"

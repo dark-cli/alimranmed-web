@@ -1,6 +1,6 @@
 ---
 title: "Electrical stimulation"
-description: "Electrical stimulation (e-stim) uses TENS and interferential therapy to relieve chronic pain, strengthen weak muscles, and improve circulation using the body's natural pain mechanisms."
+description: "Electrical stimulation (TENS and interferential therapy) relieves chronic pain, strengthens weak muscles and improves circulation."
 order: 999
 legacyUrl: "https://alimranmed.com/electrical-stimulation/"
 category: "physiotherapy"

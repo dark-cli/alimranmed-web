@@ -1,6 +1,6 @@
 ---
 title: "Diabetic foot pain and ulcers"
-description: "Foot ulcers are a common complication of poorly controlled diabetes. What causes them, how to spot them early, and how physiotherapy fits alongside medical management."
+description: "Foot ulcers are a common complication of poorly controlled diabetes: what causes them, how to spot them early, and how physiotherapy helps."
 order: 999
 legacyUrl: "https://alimranmed.com/2020/12/05/diabetic-foot-pain-and-ulcers/"
 publishedAt: "2020-12-05T16:46:20"

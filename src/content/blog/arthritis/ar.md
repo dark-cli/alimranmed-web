@@ -1,5 +1,6 @@
 ---
 title: "التهاب المفاصل"
+description: "التهاب المفاصل يسبب آلام العظام ويزداد مع العمر. تعرّف على أسبابه وأعراضه وأنواعه وطرق علاجه في مركز العمران الطبي."
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1113"
 order: 999

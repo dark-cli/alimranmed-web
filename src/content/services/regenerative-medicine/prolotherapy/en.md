@@ -1,6 +1,6 @@
 ---
 title: "Prolotherapy"
-description: "Prolotherapy is an orthopaedic injection therapy that stimulates the body's natural healing response to strengthen and repair injured ligaments, tendons, and joints."
+description: "Prolotherapy is an injection therapy that triggers the body's natural healing to strengthen and repair injured ligaments, tendons and joints."
 order: 999
 legacyUrl: "https://alimranmed.com/prolotherapy/"
 category: "regenerative-medicine"

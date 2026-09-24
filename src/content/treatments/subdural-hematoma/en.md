@@ -1,6 +1,6 @@
 ---
 title: "Subdural hematoma"
-description: "A blood clot that forms beneath the skull and the dura mater, outside the brain — usually caused by head injury. Ranges from mild (conservatively managed) to severe (requiring surgical drainage). Post-acute rehabilitation is key to recovery."
+description: "A blood collection between the skull and brain, usually after a head injury. Mild cases are monitored; severe ones need surgical drainage."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/subdural-hematoma/"

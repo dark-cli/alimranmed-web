@@ -1,6 +1,6 @@
 ---
 title: "Epilepsy"
-description: "Recurrent seizures caused by abnormal electrical activity in the brain. Most seizures are controlled with medication; surgery is offered when drugs fail or side effects limit life."
+description: "Recurrent seizures caused by abnormal brain electrical activity. Most are controlled with medication; surgery is an option when drugs fail."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/epilepsy/"

@@ -1,6 +1,6 @@
 ---
 title: "Radiofrequency"
-description: "Radiofrequency Ablation Radiofrequency neurotomy (also called radiofrequency ablation or lesioning) is a minimally invasive procedure that can provide lasting relief"
+description: "Radiofrequency neurotomy (ablation or lesioning) is a minimally invasive procedure that can provide lasting relief from chronic joint and spine pain."
 category: "radiofrequency"
 order: 999
 legacyUrl: "/services/radiofrequency/"

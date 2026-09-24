@@ -1,6 +1,6 @@
 ---
 title: "Compression fracture"
-description: "A collapse of a vertebral body — most commonly caused by osteoporosis, less often by trauma or tumour. Typically affects the thoracic or lumbar spine. Produces sudden or gradual back pain and, with multiple fractures, progressive kyphosis and height loss. Most cases are managed non-surgically; vertebroplasty or kyphoplasty is available for refractory pain."
+description: "A collapsed vertebra, usually from osteoporosis, causing back pain and sometimes a stoop. Mostly treated without surgery; vertebroplasty helps stubborn pain."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/compression-fracture/"

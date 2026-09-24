@@ -1,6 +1,6 @@
 ---
 title: "Anterior Cervical Discectomy and Fusion (ACDF)"
-description: "ACDF removes a damaged neck disc through the front of the neck to relieve spinal cord or nerve pressure, then fuses the level for stability. How it works and what to expect."
+description: "ACDF removes a damaged neck disc through the front of the neck to relieve spinal cord or nerve pressure, then fuses the level for stability."
 order: 999
 legacyUrl: "https://alimranmed.com/anterior-cervical-discectomy-and-fusion/"
 category: "surgery"

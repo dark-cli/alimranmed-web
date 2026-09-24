@@ -1,6 +1,6 @@
 ---
 title: "Brain conditions"
-description: "An overview of brain and central nervous system conditions managed at Alimran Medical Center — including haemorrhagic stroke, normal pressure hydrocephalus, epilepsy, cranial gunshot wounds, brain tumours, and CSF leaks. Each condition is evaluated and treated by a specialist neurosurgical team."
+description: "Brain conditions treated at Alimran Medical Center, including haemorrhagic stroke, hydrocephalus, epilepsy, gunshot wounds, tumours and CSF leaks."
 category: "brain"
 order: 999
 legacyUrl: "https://alimranmed.com/brain/"

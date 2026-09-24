@@ -1,6 +1,6 @@
 ---
 title: "Pain"
-description: "Pain is among the most common reasons patients seek medical care. Chronic pain — persisting beyond 3–6 months — affects function, sleep, mood, and quality of life. Alimran Medical Center specialises in the assessment and treatment of acute and chronic pain across all body systems, using interventional, neuromodulatory, and rehabilitative approaches."
+description: "Chronic pain lasting over 3–6 months affects sleep, mood and daily life. We assess and treat acute and chronic pain with procedures and rehabilitation."
 category: "pain"
 order: 1
 legacyUrl: "https://alimranmed.com/pain/"

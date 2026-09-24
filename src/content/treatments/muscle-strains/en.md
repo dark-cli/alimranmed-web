@@ -1,6 +1,6 @@
 ---
 title: "Muscle strains"
-description: "Injuries to muscles or tendons from overstretching or tearing, causing pain, swelling, and reduced strength. Range from minor overstretching to complete ruptures. Common in athletes and active individuals. Most recover with rest, physiotherapy, and targeted interventions."
+description: "Overstretched or torn muscles or tendons causing pain, swelling and weakness, common in active people. Most recover with rest and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/muscle-strains/"

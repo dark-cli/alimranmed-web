@@ -1,6 +1,6 @@
 ---
 title: "Facet joint pain syndrome"
-description: "Pain from the small paired joints at the back of every spinal segment — usually from whiplash, arthritis, or degeneration. Diagnosed by anaesthetic block, treated with radiofrequency ablation of the medial branch nerves."
+description: "Pain from the small joints at the back of the spine, often after whiplash or wear. Diagnosed with a nerve block and treated with radiofrequency ablation."
 order: 999
 legacyUrl: "https://alimranmed.com/facet-joint-pain-syndrome/"
 category: "pain"

@@ -1,6 +1,6 @@
 ---
 title: "Occupational Therapy"
-description: "What is Occupational Therapy? OT is both an art and a science wherein therapists working for Occupational Therapy Centers are"
+description: "Occupational therapy helps patients regain independence in everyday tasks such as bathing, dressing and preparing food after illness or injury."
 category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/11/25/occupational-therapy/"

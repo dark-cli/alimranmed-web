@@ -1,6 +1,6 @@
 ---
 title: "Endoscopic transnasal transsphenoidal surgery"
-description: "Endoscopic transnasal transsphenoidal surgery accesses pituitary tumours through the nostril and alongside the nasal septum, avoiding craniotomy with a minimally invasive endoscopic approach."
+description: "Endoscopic transnasal transsphenoidal surgery removes pituitary tumours through the nose, avoiding opening the skull."
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/endoscopic-transnasal-transsphenoidal-surgery/"

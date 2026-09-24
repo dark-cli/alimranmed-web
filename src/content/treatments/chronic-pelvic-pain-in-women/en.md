@@ -1,6 +1,6 @@
 ---
 title: "Chronic pelvic pain in women"
-description: "Persistent pain in the lower abdomen and pelvis lasting six months or more. Often multifactorial — endometriosis, musculoskeletal tension, interstitial cystitis, and pelvic congestion syndrome are common contributors. Management focuses on identifying underlying causes and combining treatments to reduce pain and restore quality of life."
+description: "Pelvic pain lasting six months or more, often with several causes such as endometriosis or muscle tension. Treatment targets each cause to reduce pain."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/chronic-pelvic-pain-in-women/"

@@ -1,6 +1,6 @@
 ---
 title: "Tethered spinal cord"
-description: "A condition in which the spinal cord's movement within the spinal canal is restricted at its base, causing traction on the cord during everyday activity. May be congenital (tight filum terminale, lipomeningomyelocele, spina bifida) or acquired (post-surgical scar, tumour). Presents with progressive back pain, leg weakness, bladder dysfunction, and scoliosis. Surgical cord untethering halts progression and may improve function."
+description: "The spinal cord is tethered at its base and stretches with movement, causing back pain, leg weakness and bladder problems. Surgery stops it progressing."
 category: "pediatric"
 order: 999
 legacyUrl: "https://alimranmed.com/tethered-spinal-cord/"

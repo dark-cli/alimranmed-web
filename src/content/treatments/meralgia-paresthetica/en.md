@@ -1,6 +1,6 @@
 ---
 title: "Meralgia paresthetica"
-description: "Compression of the lateral femoral cutaneous nerve causing numbness, tingling, and burning pain along the outer thigh. Common causes include tight clothing, weight gain, and pregnancy. Most cases resolve with conservative measures and targeted injections."
+description: "A trapped nerve causing numbness and burning on the outer thigh, often from tight clothing, weight gain or pregnancy. Most cases improve with simple care."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/meralgia-paresthetica/"

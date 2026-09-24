@@ -1,6 +1,6 @@
 ---
 title: "Back pain"
-description: "Most back pain is mechanical and resolves in weeks. The task at the first visit is to identify the small fraction that needs imaging, injection, or surgery — and not to over-treat the rest."
+description: "Most back pain is mechanical and settles in weeks. The first visit identifies the few cases that need imaging, injections or surgery, without over-treating."
 category: "pain"
 pathwayOverride: "spine"
 order: 999

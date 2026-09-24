@@ -1,6 +1,6 @@
 ---
 title: "Temporomandibular joint (TMJ) disorders"
-description: "Pain and dysfunction in the jaw joint and surrounding muscles. Caused by genetics, arthritis, or jaw injury — often co-occurs with teeth grinding. Most cases resolve without surgery; treated with injections, physiotherapy, and radiofrequency."
+description: "Pain and stiffness in the jaw joint and muscles, often with teeth grinding. Most cases improve without surgery, using injections and physiotherapy."
 category: "pain"
 order: 999
 legacyUrl: "https://alimranmed.com/the-temporomandibular-joint-tmj/"

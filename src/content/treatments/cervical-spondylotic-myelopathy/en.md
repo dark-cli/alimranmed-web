@@ -1,6 +1,6 @@
 ---
 title: "Cervical spondylotic myelopathy"
-description: "The most common cause of spinal cord dysfunction in adults over 55 — age-related degeneration of the cervical spine compresses the spinal cord, producing progressive weakness, numbness, and gait disturbance in the arms and legs. Treated with decompressive surgery when neurological function is at risk, supported by non-surgical rehabilitation."
+description: "The most common cause of spinal cord problems over 55: neck degeneration compresses the cord, causing weakness, numbness and walking difficulty."
 category: "spine"
 order: 999
 legacyUrl: "https://alimranmed.com/cervical-spondylotic-myelopathy/"
