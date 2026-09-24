@@ -6,6 +6,7 @@ import { buildToc } from "../../../lib/toc";
 import { BLOG_LABELS, NAV_LABELS } from "../../../lib/labels";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
 import ArticleBody from "../../../components/article/ArticleBody.astro";
+import { excerpt } from "../../../lib/excerpt";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
@@ -47,7 +48,7 @@ const bodyImages = usingSections ? extractBodyImages(entry.body) : [];
 
 <ArticleLayout
   pageTitle={`${entry.data.title} — ${nav.siteName}`}
-  description={entry.data.description}
+  description={entry.data.description || excerpt(entry.body)}
   locale={locale}
   breadcrumbs={[
     { label: nav.home, href: L("/") },

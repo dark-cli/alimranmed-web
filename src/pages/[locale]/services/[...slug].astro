@@ -71,7 +71,7 @@ const serviceCategory = entry.data.category || (locale === "ar" ? "خدمة" : "
     <ArticleSections sections={(entry.data as any).sections} locale={locale} />
   </ArticleLayout>
 ) : (
-  <BaseLayout title={entry.data.title} description={metaDescription} image={(entry.data as any).image}>
+  <BaseLayout fontAwesome={fallback && locale === "ar"} title={entry.data.title} description={metaDescription} image={(entry.data as any).image}>
     {fallback && locale === "ar" ? (
       <div dir="ltr" lang="en">
         <div class="container banner-wrap">
