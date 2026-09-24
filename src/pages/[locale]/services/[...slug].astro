@@ -5,6 +5,7 @@ import EntryPage from "../../../components/EntryPage.astro";
 import TranslationBanner from "../../../components/TranslationBanner.astro";
 import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
 import { buildToc } from "../../../lib/toc";
+import { excerpt } from "../../../lib/excerpt";
 import { SERVICE_LABELS, NAV_LABELS } from "../../../lib/labels";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
 import ArticleSections from "../../../components/article/ArticleSections.astro";
@@ -45,13 +46,14 @@ const toc = buildToc(
 );
 
 const standfirst = entry.data.description || "";
+const metaDescription = standfirst || excerpt(entry.body);
 const serviceCategory = entry.data.category || (locale === "ar" ? "خدمة" : "Service");
 ---
 
 {isRedesigned ? (
   <ArticleLayout
     pageTitle={`${entry.data.title} — ${nav.siteName}`}
-    description={standfirst}
+    description={metaDescription}
     locale={locale}
     breadcrumbs={[
       { label: nav.home, href: L("/") },
@@ -69,7 +71,7 @@ const serviceCategory = entry.data.category || (locale === "ar" ? "خدمة" : "
     <ArticleSections sections={(entry.data as any).sections} locale={locale} />
   </ArticleLayout>
 ) : (
-  <BaseLayout title={entry.data.title} description={standfirst} image={(entry.data as any).image}>
+  <BaseLayout title={entry.data.title} description={metaDescription} image={(entry.data as any).image}>
     {fallback && locale === "ar" ? (
       <div dir="ltr" lang="en">
         <div class="container banner-wrap">

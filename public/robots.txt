@@ -4,7 +4,6 @@
 # Default rules for all crawlers
 User-agent: *
 Allow: /
-Disallow: /_astro/
 
 # Sitemap location
 Sitemap: https://alimran.clinic/sitemap-index.xml
