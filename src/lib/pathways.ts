@@ -20,7 +20,6 @@ export const BLOG_PATHWAY: Record<string, Pathway> = {
   "results-of-treatment-of-cerebral-palsy-in-children": "brain",
   "tms-for-alzheimer-disease": "brain",
   "tms-for-neuropsychiatric-disorders": "brain",
-  "tms-for-tinnitus": "brain",
   "transcranial-direct-current-stimulation-tdcs": "brain",
   "transcranial-magnetic-stimulation": "brain",
   "poliomyelitis": "spine",

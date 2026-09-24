@@ -24,8 +24,12 @@
 /ar/blog/tms-for-pains/  /ar/services/brain-stimulation/tms-pain/  301
 /en/blog/amyotrophic-lateral-sclerosis-als-2/  /en/treatments/als/  301
 /ar/blog/amyotrophic-lateral-sclerosis-als-2/  /ar/treatments/als/  301
-/en/blog/tms-for-tinnitus-2/  /en/blog/tms-for-tinnitus/  301
-/ar/blog/tms-for-tinnitus-2/  /ar/blog/tms-for-tinnitus/  301
+/en/blog/tms-for-tinnitus-2/  /en/services/brain-stimulation/tms-tinnitus/  301
+/ar/blog/tms-for-tinnitus-2/  /ar/services/brain-stimulation/tms-tinnitus/  301
+/en/blog/tms-for-tinnitus/  /en/services/brain-stimulation/tms-tinnitus/  301
+/ar/blog/tms-for-tinnitus/  /ar/services/brain-stimulation/tms-tinnitus/  301
+/en/services/surgery/acdf/  /en/services/surgery/anterior-cervical-discectomy-and-fusion/  301
+/ar/services/surgery/acdf/  /ar/services/surgery/anterior-cervical-discectomy-and-fusion/  301
 /en/treatments/nervous-bladder/  /en/treatments/neurogenic-bladder/  301
 /ar/treatments/nervous-bladder/  /ar/treatments/neurogenic-bladder/  301
 /en/services/natural-therapy/  /en/blog/physiotherapy/  301

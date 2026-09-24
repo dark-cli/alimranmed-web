@@ -42,7 +42,7 @@ sections:
     groups:
       - title: "Spine surgery"
         items:
-          - "[Anterior cervical discectomy and fusion (ACDF)](/services/surgery/acdf/)"
+          - "[Anterior cervical discectomy and fusion (ACDF)](/services/surgery/anterior-cervical-discectomy-and-fusion/)"
           - "[Lumbar microdiscectomy](/services/surgery/lumbar-microdiscectomy/)"
       - title: "Conditions"
         items:

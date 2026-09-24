@@ -42,7 +42,7 @@ sections:
     groups:
       - title: "جراحة العمود الفقري"
         items:
-          - "[تثبيت الفقرات واستئصال القرص من الجهة الأمامية](/services/surgery/acdf/)"
+          - "[تثبيت الفقرات واستئصال القرص من الجهة الأمامية](/services/surgery/anterior-cervical-discectomy-and-fusion/)"
           - "[استئصال الغضروف القطني المجهري](/services/surgery/lumbar-microdiscectomy/)"
       - title: "الحالات"
         items:
