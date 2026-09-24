@@ -5,6 +5,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
 import rehypeYouTube from "./src/lib/rehype-youtube.mjs";
+import rehypeLazyImages from "./src/lib/rehype-lazy-images.mjs";
 import { remarkLocalizeLinks } from "./src/lib/remark-localize-links.mjs";
 import { remarkAutoAlt } from "./src/lib/remark-auto-alt.mjs";
 
@@ -46,6 +47,6 @@ export default defineConfig({
   }),
   markdown: {
     remarkPlugins: [remarkAutoAlt, remarkLocalizeLinks],
-    rehypePlugins: [rehypeYouTube],
+    rehypePlugins: [rehypeYouTube, rehypeLazyImages],
   },
 });
