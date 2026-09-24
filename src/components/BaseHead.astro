@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import { SITE_TITLE, SITE_NAME, SITE_DESCRIPTION, SITE_DESCRIPTION_AR } from "../consts";
 import { currentLocale, alternateHref } from "../lib/i18n";
+import { excerpt } from "../lib/excerpt";
 
 interface Props {
   title?: string;
@@ -9,6 +10,8 @@ interface Props {
   image?: string;
   /** Keep the page out of the index and skip canonical/hreflang (e.g. 404). */
   noindex?: boolean;
+  /** Load the Font Awesome stylesheet (only legacy pages use fa-* icons). */
+  fontAwesome?: boolean;
 }
 
 const locale = currentLocale(Astro);
@@ -16,11 +19,16 @@ const {
   title = SITE_TITLE,
   image = "/images/doctors/hussein-imran-mousa.jpg",
   noindex = false,
+  fontAwesome = false,
 } = Astro.props;
 // Empty strings (content entries with no `description`) fall back too, and
 // Arabic pages get an Arabic default rather than the English one.
-const description =
-  Astro.props.description?.trim() || (locale === "ar" ? SITE_DESCRIPTION_AR : SITE_DESCRIPTION);
+// Search results cut descriptions off around 160 characters; trim at a word
+// boundary so the snippet ends cleanly instead of mid-word.
+const description = excerpt(
+  Astro.props.description?.trim() || (locale === "ar" ? SITE_DESCRIPTION_AR : SITE_DESCRIPTION),
+  160,
+);
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const otherLocale = locale === "en" ? "ar" : "en";
@@ -119,9 +127,9 @@ const businessSchema = {
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Amiri:wght@400;700&display=fallback" />
-<!-- Font Awesome kept for legacy pages (about/contact/blog etc.) that still
-     render fa-* icons. New redesigned pages use inline SVG and don't need it. -->
-<link rel="stylesheet" href="/fonts/fontawesome/fontawesome.css" />
+<!-- Font Awesome only for legacy pages that still render fa-* icons (about,
+     contact, translation banner). Redesigned pages use inline SVG. -->
+{fontAwesome && <link rel="stylesheet" href="/fonts/fontawesome/fontawesome.css" />}
 <meta name="generator" content={Astro.generator} />
 
 <title>{title}</title>

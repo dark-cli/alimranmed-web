@@ -78,7 +78,25 @@ const BLURB: Record<string, string> = {
   "botox":               "Botulinum toxin applications for spasticity, headache, and chronic pain.",
   "acupuncture":         "Traditional Chinese needle therapy for chronic pain and inflammatory conditions.",
 };
-const blurb = locale === "en" ? (BLURB[category] ?? `${prettyCategory} services at Alimran Medical Center.`) : undefined;
+const BLURB_AR: Record<string, string> = {
+  "brain-stimulation":   "تحفيز الدماغ غير الجراحي بالتحفيز المغناطيسي (TMS) والتيار المباشر منخفض الشدة (tDCS) في مركز العمران الطبي بالبصرة.",
+  "chiropractic":        "تقويم العمود الفقري وتخفيف الضغط عن الفقرات بأجهزة SPINMED وSigma في مركز العمران الطبي بالبصرة.",
+  "exercises":           "برامج تمارين علاجية مصنّفة حسب منطقة الجسم للتأهيل المنزلي، من مركز العمران الطبي.",
+  "fitness":             "إجراءات نحت الجسم والعلاجات التجميلية غير الجراحية في مركز العمران الطبي بالبصرة.",
+  "ozone-therapy":       "العلاج بالأوزون للالتهابات وآلام الانزلاق الغضروفي وخشونة المفاصل في مركز العمران الطبي بالبصرة.",
+  "pain-management":     "علاج الألم المزمن بالتداخلات الموضعية ونهج متعدد التخصصات في مركز العمران الطبي بالبصرة.",
+  "physiotherapy":       "العلاج الطبيعي والتأهيل بالروبوت والليزر والموجات فوق الصوتية والتحفيز الكهربائي في مركز العمران الطبي.",
+  "radiofrequency":      "كيّ الأعصاب بالترددات الراديوية لآلام المفاصل والعمود الفقري المزمنة، إجراء طفيف التوغل في مركز العمران الطبي.",
+  "regenerative-medicine":"الطب التجديدي: البلازما الغنية بالصفائح والحقن التكاثري والخلايا الجذعية لشفاء الأربطة والمفاصل.",
+  "rehabilitation":      "تأهيل متعدد التخصصات بعد الجلطة الدماغية وإصابات الحبل الشوكي وغيرها، بإشراف استشاريين في مركز العمران الطبي.",
+  "steroid-injection":   "حقن الستيرويد والتخدير الموضعي الموجّه بالتصوير لآلام المفاصل والعمود الفقري في مركز العمران الطبي.",
+  "surgery":             "جراحة الدماغ والأعصاب والعمود الفقري، من الإجراءات طفيفة التوغل إلى العمليات المعقدة، في مركز العمران الطبي.",
+  "botox":               "حقن البوتوكس لعلاج التشنج العضلي والصداع والألم المزمن في مركز العمران الطبي بالبصرة.",
+  "acupuncture":         "الوخز بالإبر الصينية لعلاج الألم المزمن والحالات الالتهابية في مركز العمران الطبي بالبصرة.",
+};
+const blurb = locale === "en"
+  ? (BLURB[category] ?? `${prettyCategory} services at Alimran Medical Center.`)
+  : (BLURB_AR[category] ?? `خدمات ${categoryTitle} في مركز العمران الطبي بالبصرة.`);
 const siteName = locale === "ar" ? "مركز العمران الطبي" : "Alimran Medical Center";
 ---
 

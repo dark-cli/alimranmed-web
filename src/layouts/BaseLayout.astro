@@ -14,9 +14,10 @@ interface Props {
   description?: string;
   image?: string;
   noindex?: boolean;
+  fontAwesome?: boolean;
 }
 
-const { title, description, image, noindex } = Astro.props;
+const { title, description, image, noindex, fontAwesome } = Astro.props;
 const locale = currentLocale(Astro);
 const dir = locale === "ar" ? "rtl" : "ltr";
 
@@ -30,7 +31,7 @@ const isProduction = !NON_PROD_BRANCHES.has(cfBranch);
 
 <html lang={locale} dir={dir}>
   <head>
-    <BaseHead title={title} description={description} image={image} noindex={noindex} />
+    <BaseHead title={title} description={description} image={image} noindex={noindex} fontAwesome={fontAwesome} />
     <ClientRouter />
   </head>
   <body>

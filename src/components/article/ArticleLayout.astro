@@ -43,10 +43,26 @@ const {
 const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
 const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
 const showToc = toc.length >= 2;
+
+// Mirrors the visible breadcrumb trail so Google can show it in results.
+// Linked crumbs, then the page itself (the visible trail can end on an
+// unlinked category label, which would misname the page).
+const crumbsForSchema: BreadcrumbItem[] = [...breadcrumbs.filter((item) => item.href), { label: h1 }];
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: crumbsForSchema.map((item, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: item.label,
+    item: new URL(item.href ?? Astro.url.pathname, Astro.site).href,
+  })),
+};
 const crumbSep = locale === "ar" ? "‹" : "›";
 ---
 
 <BaseLayout title={pageTitle} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <section class="art-head-band">
     <div class="art-head-wrap">
       <nav class="crumbs" aria-label="Breadcrumb">
