@@ -1,28 +1,71 @@
 ---
-title: "Anterior Cervical Discectomy and Fusion"
-description: "What is an anterior cervical discectomy and fusion? Anterior Cervical Discectomy and Fusion is a procedure that uses an operating"
+title: "Anterior Cervical Discectomy and Fusion (ACDF)"
+description: "ACDF removes a damaged neck disc through the front of the neck to relieve spinal cord or nerve pressure, then fuses the level for stability. How it works and what to expect."
 order: 999
 legacyUrl: "https://alimranmed.com/anterior-cervical-discectomy-and-fusion/"
 category: "surgery"
 source: "ai-draft"
+redesigned: true
+sections:
+  - type: at_a_glance
+    items:
+      - label: "What it is"
+        value: "Neck surgery that removes a damaged disc to relieve pressure on the spinal cord or a nerve root, then fuses the level with a bone graft or implant."
+      - label: "What it treats"
+        value: "Symptomatic cervical disc herniation, cervical degenerative disc disease, bone spurs from arthritis, and cervical spinal stenosis."
+      - label: "How it's done"
+        value: "Under general anaesthesia, through a small incision at the front of the neck, using an operating microscope."
+  - type: prose
+    heading: "What is an anterior cervical discectomy and fusion?"
+    body: |
+      Anterior cervical discectomy and fusion (ACDF) is a type of neck surgery that removes a damaged disc to relieve spinal cord or nerve root pressure and the pain, weakness, numbness and tingling that come with it. A discectomy is a form of surgical decompression, so the procedure may also be called an anterior cervical decompression.
+
+      The operating microscope's magnification lets the neurosurgeon work through a small skin incision in the neck. The surgery has two parts:
+
+      - **Anterior cervical discectomy.** The spine is approached through the front (anterior) of the neck, and the disc is removed from between two vertebrae.
+      - **Fusion.** Done at the same time to stabilise the segment: a bone graft and/or implant is placed where the disc was, to provide stability and strength.
+
+      While ACDF is most commonly done for a symptomatic cervical herniated disc, it may also be done for cervical degenerative disc disease, to remove bone spurs (osteophytes) caused by arthritis, and to relieve the symptoms of cervical spinal stenosis.
+  - type: comparison_pair
+    heading: "Why the anterior approach?"
+    intro: "ACDF is performed through the front of the neck rather than the back. This approach has two typical advantages."
+    a:
+      label: "Access"
+      title: "Direct access to the disc"
+      items:
+        - "Direct view of the cervical discs, which usually cause the spinal cord or nerve compression."
+        - "Removing the disc directly decompresses the nerve and spinal cord."
+        - "Reaches almost the whole cervical spine, from C2 down to the cervicothoracic junction (C7–T1)."
+    b:
+      label: "Recovery"
+      title: "Less postoperative pain"
+      items:
+        - "A relatively uncomplicated pathway to the spine."
+        - "Only one thin muscle needs to be cut; natural tissue planes are followed down to the spine."
+        - "Patients tend to have less pain than after an operation from the back."
+  - type: prose
+    heading: "Description of the surgery"
+    body: |
+      Before surgery, intravenous antibiotics are given to reduce the risk of infection. You are anaesthetised while lying on your back, and your head is placed in a special head-holder.
+
+      The surgery is performed through a small incision on the right or left side of the neck over the diseased disc or discs. The surgeon works down to the cervical spine by gently moving the carotid artery to one side and the oesophagus and trachea to the other. The disc level is confirmed with an X-ray, and the microscope is used for the rest of the operation.
+
+      Careful micro-dissection allows the disc to be removed. The neurosurgeon can then see and remove bone spurs pressing on the nerve or spinal cord, and checks that no other disc fragments remain. The wound is irrigated with antibiotic solution.
+
+      A bone graft (usually from the bone bank) or a PEEK spacer with autograft bone is placed in the disc space. Often a titanium plate is fixed to the front of the spine with screws into the vertebrae above and below to maintain alignment.
+  - type: prose
+    heading: "After the operation"
+    body: |
+      Absorbable stitches close the incision under the skin, with stitches or skin glue on the surface and a sterile dressing on top. A hard or soft cervical collar may be needed after surgery; if so, it is fitted at the end of the operation. The breathing tube is removed and you are taken to the recovery room.
+  - type: treatment_groups
+    heading: "Related at Alimran Medical Center"
+    groups:
+      - title: "Spine surgery"
+        items:
+          - "[Artificial disc replacement](/services/surgery/artificial-disc/)"
+          - "[Lumbar microdiscectomy](/services/surgery/lumbar-microdiscectomy/)"
+      - title: "Conditions"
+        items:
+          - "[Herniated disc](/treatments/herniated-disc/)"
+          - "[Neck pain](/treatments/neck-pain/)"
 ---
-
-**What is an anterior cervical discectomy and fusion?**
-
-Anterior Cervical Discectomy and Fusion (ACDF) is a type of neck surgery that involves removing a damaged disc to relieve spinal cord or nerve root pressure and alleviate corresponding pain, weakness, numbness, and tingling. A discectomy is a form of surgical decompression, so the procedure may also be called an anterior cervical decompression. It is a procedure that uses an operating microscope to remove a herniated disc that is causing pressure on a cervical nerve root or the spinal cord. The magnification provided by the microscope enables the neurosurgeon to make a small incision in the skin of the neck to perform the discectomy.
-
-The surgery has two parts:
-
--   **Anterior cervical discectomy.** The surgery is approached through the anterior (front) of the cervical spine (neck). The disc is then removed from between two vertebral bones.
--   **Fusion.** A fusion surgery is done at the same time as the discectomy operation in order to stabilize the cervical segment. It involves placing a bone graft and/or implants where the disc originally was in order to provide stability and strength to the area.
-
-While this surgery is most commonly done to treat a symptomatic cervical herniated disc, it may also be done for cervical degenerative disc disease. It is also commonly done to remove bone spurs (osteophytes) caused by arthritis and to alleviate the symptoms associated with cervical spinal stenosis.
-
-ACDF is performed with an anterior approach, meaning that the surgery is done through the front of the neck rather than through the back. This approach has several typical advantages:
-
--   **Direct access to the disc.** The anterior approach allows direct visualization of the cervical discs, which are usually involved in causing spinal cord or nerve compression and symptoms. Removing the discs results in direct nerve and spinal cord decompression. The anterior approach can provide access to almost the entire cervical spine, from C2 at the top of the neck down to the cervicothoracic junction (C7-T1).
--   **Less postoperative pain.** Spine surgeons often prefer this approach because it provides access through a relatively uncomplicated pathway. Patients tend to have less postoperative pain compared with a posterior operation.
-
-After a skin incision is made in the front of the neck, only one thin vestigial muscle needs to be cut, after which anatomic planes can be followed down to the spine. The limited amount of muscle division helps to limit postoperative pain.
-
-**Description of the surgery:** Before surgery, intravenous antibiotics are administered to decrease the risk of infection. You will be anesthetized (put to sleep) while lying on your back following which your head will be placed in special head-holder for the surgery. The surgery is performed through a small incision on either the right or left side of the neck over the diseased disc or discs. The surgical dissection continues down to the cervical spine by gently retracting the large artery in the neck (carotid artery) to one side, while retracting the swallowing tube (esophagus) and breathing tube (trachea) to the other side. The diseased disc level(s) is/are confirmed with an x-ray. The microscope is then used for the rest of the operation. Careful micro-dissection allows the disc to be removed. After the disc is removed, the neurosurgeon can see and remove the bone spurs pressing on the nerve or spinal cord. The area is then inspected to confirm that there are no other disc fragments pressing on the nerve or spinal cord. The wound is irrigated with antibiotic solution to decrease the likelihood of infection. A bone graft (usually from the bone bank) or a PEEK spacer and autograft bone is then placed in the discectomy site. Often, a titanium cervical plate will be positioned in front of the spine using screws into the vertebral bodies above and below the discectomy to maintain spinal alignment. Absorbable stitches are used under the skin to close the incision. Stitches or a special “skin glue,” are used on the skin layer. A sterile dressing is placed over the incision. A hard cervical collar or a soft cervical collar may need to be worn after surgery. If needed, it will be placed on your neck at the end of the operation. The breathing tube is removed (extubated) and then you will be taken to the recovery room.

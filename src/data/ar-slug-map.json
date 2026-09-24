@@ -250,8 +250,8 @@
   "مايكرودسك-2":                                  "services/surgery/lumbar-microdiscectomy",
   "تثقيب-الجمجمة":                                "services/surgery/burr-holes-craniotomy",
   "تثقيب-الجمجمة-2":                              "services/surgery/burr-holes-craniotomy",
-  "عملية-تثبيث-الفقرات-واستئصال-القرص-ال":       "services/surgery/acdf",
-  "عملية-تثبيث-الفقرات-واستئصال-القرص-ال-2":     "services/surgery/acdf",
+  "عملية-تثبيث-الفقرات-واستئصال-القرص-ال":       "services/surgery/anterior-cervical-discectomy-and-fusion",
+  "عملية-تثبيث-الفقرات-واستئصال-القرص-ال-2":     "services/surgery/anterior-cervical-discectomy-and-fusion",
 
   "حقن-الستيرويد":                                "services/steroid-injection/steroid-injection",
   "حقن-الستيرويد-لآلام-المفاصل":                  "services/steroid-injection/joint-pain",
