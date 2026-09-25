@@ -304,14 +304,21 @@
   }
 
   function renderCards(s, key) {
-    var slugs = s.slugs || [];
+    var items = s.items || [];
     return h("section", { key: key, className: "cards-block" },
-      h("p", { className: "cards-title" }, s.heading || "Related reading"),
+      h("p", { className: "cards-label" }, s.heading || "Related reading"),
       h("div", { className: "cards-grid" },
-        slugs.map(function (slug, i) {
-          return h("span", { key: i, className: "card" },
-            h("p", { className: "card-cat" }, "—"),
-            h("p", { className: "card-name" }, slug)
+        items.map(function (path, i) {
+          var parts      = (path || "").replace(/^\//, "").replace(/\/$/, "").split("/");
+          var collection = parts[0] || "—";
+          var slug       = parts[1] || path;
+          var title      = slug.replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+          return h("div", { key: i, className: "xcard" },
+            h("div", { className: "xcard-top" },
+              h("span", { className: "xcard-badge" }, collection)
+            ),
+            h("p", { className: "xcard-title" }, title),
+            h("p", { className: "xcard-placeholder" }, path)
           );
         })
       )

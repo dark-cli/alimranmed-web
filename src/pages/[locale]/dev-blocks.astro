@@ -87,8 +87,8 @@ const W = isAr ? {
                 fields: "الحقول: heading?، intro?، groups[] من { eyebrow?, title, items[] } حيث items[] = { name, href }" },
   row:        { desc: "صفّ من الصور. عدد الأعمدة auto (متجاوب) أو ثابت ٢ / ٣ / ٤. كل عنصر صورة مع شرح ورابط اختياريين. ينهار إلى عمود واحد على الجوال.",
                 fields: "الحقول: heading?، columns، items[] من { src, alt?, caption?, href?, aspect? }" },
-  cards:      { desc: "شبكة بطاقات روابط. كانت related. الموزِّع يحوّل الـslugs إلى { title, category, href, redesigned }؛ البطاقات غير المتوفّرة تُعرض بلون رمادي.",
-                fields: "حقل المحرِّر: slugs[] (١ على الأقل). الموزِّع يوفّر العناصر المُحلَّلة." },
+  cards:      { desc: "شبكة بطاقات روابط لصفحات أخرى في الموقع. كل عنصر هو مسار مثل /treatments/back-pain/ أو /blog/my-post/. العنوان والوصف والتاريخ والفئة تُسحب تلقائيًا من مجموعة المحتوى عند البناء.",
+                fields: "الحقول: heading?، items[] من مسارات النص (مثل: /treatments/back-pain/)" },
 } : {
   prose:      { desc: "Heading + paragraphs. Body is markdown-lite (inline links). Paragraphs split on double newlines.",
                 fields: "Fields: heading?, body" },
@@ -114,8 +114,8 @@ const W = isAr ? {
                 fields: "Fields: heading?, intro?, groups[] of { eyebrow?, title, items[] } where items[] = { name, href }" },
   row:        { desc: "A row of images. Columns is auto (responsive fit) or fixed 2 / 3 / 4. Each item is an image with optional caption and link. Collapses to 1 column on mobile.",
                 fields: "Fields: heading?, columns, items[] of { src, alt?, caption?, href?, aspect? }" },
-  cards:      { desc: "Grid of link cards. Was related. Dispatcher resolves slugs to { title, category, href, redesigned }; unresolved cards render greyed.",
-                fields: "Editor field: slugs[] (min 1). Dispatcher provides the resolved items." },
+  cards:      { desc: "Grid of link cards to other pages on the site. Each item is a path like /treatments/back-pain/ or /blog/my-post/. Title, description, date and category are resolved automatically from the content collection at build time.",
+                fields: "Fields: heading?, items[] of path strings (e.g. /treatments/back-pain/)" },
 };
 
 // ── Placeholder content (localised) ──────────────────────────────────────

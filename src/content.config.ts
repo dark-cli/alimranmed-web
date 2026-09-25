@@ -157,7 +157,7 @@ const blockRow = z.object({
 const blockCards = z.object({
   type: z.literal("cards"),
   heading: z.string().optional(),
-  slugs: z.array(z.string()).min(1),   // resolved to items by the page template
+  items: z.array(z.string()).min(1),  // locale-agnostic paths: /treatments/back-pain/
 });
 
 const section = z.discriminatedUnion("type", [

@@ -1,53 +1,87 @@
 ---
-/**
- * cards — grid of card-style links to sibling content. The dispatcher
- * resolves each slug to a { title, category, href, redesigned } item.
- * Un-resolved slugs render as greyed-out non-links so the grid still
- * shows the intent while the target is being built.
- *
- * Previously called `related`. Kept the same rendering so live pages
- * look identical.
- */
-interface Item {
-  slug: string;
-  title: string;
-  category: string;   // localised label
-  href: string;       // full localised href when target exists; empty otherwise
-  redesigned: boolean;
-}
+import { getCollection } from "astro:content";
+import { topicOf, isLocale, localizedHref } from "../../lib/i18n";
+
 interface Props {
   heading?: string;
-  items: Item[];
-  soonLabel: string;      // greyed-out hover title
+  items: string[];    // locale-agnostic paths: /treatments/back-pain/
+  locale: "en" | "ar";
   id?: string;
 }
-const { heading = "Related reading", items, soonLabel, id } = Astro.props;
+
+const { heading, items, locale, id } = Astro.props;
+const isAr = locale === "ar";
+
+const TYPE_LABELS: Record<string, { en: string; ar: string }> = {
+  treatments: { en: "Treatment", ar: "علاج" },
+  services:   { en: "Service",   ar: "خدمة" },
+  blog:       { en: "Article",   ar: "مقال" },
+  doctors:    { en: "Doctor",    ar: "طبيب" },
+};
+
+function parsePath(path: string) {
+  const parts = path.replace(/^\//, "").replace(/\/$/, "").split("/");
+  return parts.length >= 2 ? { collection: parts[0], slug: parts[1] } : null;
+}
+
+// Load only the collections referenced by items in this block.
+const needed = new Set(items.map(p => parsePath(p)?.collection).filter(Boolean) as string[]);
+const loaded: Record<string, any[]> = {};
+await Promise.all([...needed].map(async (col) => {
+  try { loaded[col] = await getCollection(col as any); } catch { loaded[col] = []; }
+}));
+
+const dateLocale = isAr ? "ar-IQ" : "en-US";
+
+const cards = items.map((path) => {
+  const parsed = parsePath(path);
+  const href   = localizedHref(path, locale);
+  if (!parsed) return { title: path, href, badge: null, desc: null, date: null };
+
+  const { collection, slug } = parsed;
+  const entries = loaded[collection] ?? [];
+  const entry   = entries.find(e => isLocale(e.id, locale) && topicOf(e.id) === slug)
+               ?? entries.find(e => topicOf(e.id) === slug);
+
+  if (!entry) {
+    return { title: slug, href, badge: TYPE_LABELS[collection]?.[locale] ?? collection, desc: null, date: null };
+  }
+
+  const dateRaw = (entry.data as any).publishedAt ?? (entry.data as any).updated ?? null;
+  const badge   = (entry.data as any).category || TYPE_LABELS[collection]?.[locale] || null;
+
+  return {
+    title: entry.data.title as string,
+    href,
+    badge,
+    desc:  (entry.data as any).description ?? null,
+    date:  dateRaw
+      ? new Date(dateRaw).toLocaleDateString(dateLocale, { year: "numeric", month: "short" })
+      : null,
+  };
+});
 ---
 
 <section class="cards-block" id={id}>
-  {heading && <p class="cards-title">{heading}</p>}
+  {heading && <p class="cards-label">{heading}</p>}
   <div class="cards-grid">
-    {items.map((it) => (
-      it.redesigned
-        ? (
-          <a class="card" href={it.href}>
-            <p class="card-cat">{it.category}</p>
-            <p class="card-name">{it.title}</p>
-          </a>
-        )
-        : (
-          <span class="card card--soon" title={soonLabel}>
-            <p class="card-cat card-cat--soon">{it.category}</p>
-            <p class="card-name card-name--soon">{it.title}</p>
-          </span>
-        )
+    {cards.map((c) => (
+      <a class="xcard" href={c.href}>
+        <div class="xcard-top">
+          {c.badge && <span class="xcard-badge">{c.badge}</span>}
+          {c.date  && <span class="xcard-date">{c.date}</span>}
+        </div>
+        <p class="xcard-title">{c.title}</p>
+        {c.desc && <p class="xcard-desc">{c.desc}</p>}
+      </a>
     ))}
   </div>
 </section>
 
 <style>
   .cards-block { margin: clamp(28px, 3.5vw, 44px) 0; scroll-margin-top: 96px; }
-  .cards-title {
+
+  .cards-label {
     font-family: var(--font-mono);
     font-size: 10.5px;
     letter-spacing: 0.12em;
@@ -55,55 +89,87 @@ const { heading = "Related reading", items, soonLabel, id } = Astro.props;
     color: var(--muted);
     margin: 0 0 18px;
   }
-  :global(html[dir="rtl"]) .cards-title {
+  :global(html[dir="rtl"]) .cards-label {
     font-family: var(--font-body);
     letter-spacing: 0.02em;
     text-transform: none;
     font-size: 12px;
   }
+
   .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
     gap: 1px;
     background: var(--line);
     border: 1px solid var(--line);
   }
-  .card {
+
+  .xcard {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 22px 20px;
     background: var(--white);
-    padding: 20px 22px;
-    display: block;
     text-decoration: none;
+    color: inherit;
+    transition: background-color 0.15s ease;
   }
-  .card:hover { background: var(--surface); text-decoration: none; }
-  .card-cat {
+  .xcard:hover { background: var(--surface); text-decoration: none; }
+
+  .xcard-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .xcard-badge {
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 10px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
-    margin: 0 0 8px;
+    border: 1px solid var(--line);
+    padding: 2px 7px;
+    border-radius: 2px;
+    background: var(--white);
   }
-  :global(html[dir="rtl"]) .card-cat {
+  :global(html[dir="rtl"]) .xcard-badge {
     font-family: var(--font-body);
     letter-spacing: 0.02em;
     text-transform: none;
-    font-size: 12px;
+    font-size: 11px;
   }
-  .card-name {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--ink);
-    margin: 0;
-  }
-  :global(html[dir="rtl"]) .card-name { font-weight: 700; }
 
-  .card--soon {
-    cursor: not-allowed;
-    opacity: 0.55;
-    filter: grayscale(0.4);
+  .xcard-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-inline-start: auto;
   }
-  .card--soon:hover { background: var(--white); }
-  .card-cat--soon { color: var(--muted); }
-  .card-name--soon { color: var(--muted); }
+  :global(html[dir="rtl"]) .xcard-date { font-family: var(--font-body); font-size: 12px; }
+
+  .xcard-title {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+  .xcard:hover .xcard-title { color: var(--accent); }
+  :global(html[dir="rtl"]) .xcard-title { font-weight: 700; letter-spacing: 0; line-height: 1.3; }
+
+  .xcard-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--body);
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    flex: 1 1 auto;
+  }
+  :global(html[dir="rtl"]) .xcard-desc { line-height: 1.85; }
 </style>
