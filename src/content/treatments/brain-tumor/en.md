@@ -116,7 +116,7 @@ sections:
           - Symptom monitoring
           - Escalate only if the tumour grows or symptoms change
   - type: cards
-    slugs:
-      - acoustic-neuroma
-      - stroke
+    items:
+      - /treatments/acoustic-neuroma/
+      - /treatments/stroke/
 ---

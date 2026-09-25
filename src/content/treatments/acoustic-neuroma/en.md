@@ -94,7 +94,7 @@ sections:
           - Hospital stay of 5–10 days depending on approach
           - Follow-up MRI at 6 and 12 months, then annually
   - type: cards
-    slugs:
-      - fibromyalgia
-      - back-pain
+    items:
+      - /treatments/fibromyalgia/
+      - /treatments/back-pain/
 ---

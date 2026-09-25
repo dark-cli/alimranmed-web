@@ -99,7 +99,7 @@ sections:
           - Arthroscopic capsular release
           - Immediate post-op physiotherapy is non-negotiable
   - type: cards
-    slugs:
-      - fibromyalgia
-      - back-pain
+    items:
+      - /treatments/fibromyalgia/
+      - /treatments/back-pain/
 ---

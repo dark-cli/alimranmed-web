@@ -80,7 +80,7 @@ sections:
           - ACL reconstruction if giving-way episodes are disabling
           - Osteotomy or arthroplasty for advanced osteoarthritis
   - type: cards
-    slugs:
-      - back-pain
-      - frozen-shoulder
+    items:
+      - /treatments/back-pain/
+      - /treatments/frozen-shoulder/
 ---

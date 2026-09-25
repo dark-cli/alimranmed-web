@@ -102,7 +102,7 @@ sections:
           - آثار القيادة والعمل
           - التخطيط للحمل (بعض الأدوية تحمل خطرًا للجنين)
   - type: cards
-    slugs:
-      - stroke
-      - head-injury
+    items:
+      - /treatments/stroke/
+      - /treatments/head-injury/
 ---

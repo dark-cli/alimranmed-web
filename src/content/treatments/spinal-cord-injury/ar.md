@@ -67,7 +67,7 @@ sections:
           - مضادات الاكتئاب
           - إجراءات تدخلية للألم
   - type: cards
-    slugs:
-      - motor-disorders
-      - back-pain
+    items:
+      - /treatments/motor-disorders/
+      - /treatments/back-pain/
 ---

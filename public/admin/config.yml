@@ -129,7 +129,11 @@ _sections_field: &sections_field
           name: kind
           widget: select
           options: [image, video, youtube]
-        - { label: "Source — image path, video path, or YouTube ID/URL", name: src, widget: string }
+        - label: "Source"
+          name: src
+          widget: image
+          hint: "For image/video — pick from media library or upload. For YouTube — type the video ID or full URL."
+          required: false
         - { label: Alt text, name: alt, widget: string, required: false }
         - { label: Caption, name: caption, widget: string, required: false }
         - label: Aspect ratio

@@ -104,7 +104,7 @@ sections:
           - Growing rod systems for very young patients
           - Vertebral body tethering for suitable adolescents
   - type: cards
-    slugs:
-      - back-pain
-      - herniated-disc
+    items:
+      - /treatments/back-pain/
+      - /treatments/herniated-disc/
 ---

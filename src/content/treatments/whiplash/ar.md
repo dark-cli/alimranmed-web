@@ -66,7 +66,7 @@ sections:
           - الطمأنة والتثقيف عن التعافي المتوقع
           - العودة التدريجية للعمل
   - type: cards
-    slugs:
-      - neck-pain
-      - back-pain
+    items:
+      - /treatments/neck-pain/
+      - /treatments/back-pain/
 ---

@@ -69,7 +69,7 @@ sections:
           - علاج النطق للصوت والبلع
           - العلاج الوظيفي للأنشطة اليومية
   - type: cards
-    slugs:
-      - motor-disorders
-      - stroke
+    items:
+      - /treatments/motor-disorders/
+      - /treatments/stroke/
 ---

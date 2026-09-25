@@ -74,7 +74,7 @@ sections:
           - Tricyclic antidepressants
           - Interventional pain procedures if medical management fails
   - type: cards
-    slugs:
-      - motor-disorders
-      - back-pain
+    items:
+      - /treatments/motor-disorders/
+      - /treatments/back-pain/
 ---

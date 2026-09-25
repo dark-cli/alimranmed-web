@@ -77,7 +77,7 @@ sections:
           - Cervical facet joint injections or medial branch blocks
           - Cervical radiofrequency ablation for chronic facet pain
   - type: cards
-    slugs:
-      - back-pain
-      - whiplash
+    items:
+      - /treatments/back-pain/
+      - /treatments/whiplash/
 ---

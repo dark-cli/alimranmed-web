@@ -75,7 +75,7 @@ sections:
           - Speech therapy for voice and swallowing
           - Occupational therapy for daily activities
   - type: cards
-    slugs:
-      - motor-disorders
-      - stroke
+    items:
+      - /treatments/motor-disorders/
+      - /treatments/stroke/
 ---

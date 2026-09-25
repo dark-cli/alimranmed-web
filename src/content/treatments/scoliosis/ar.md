@@ -93,7 +93,7 @@ sections:
           - أنظمة قضبان نامية للأطفال الصغار جدًّا
           - ربط جسم الفقرة للمراهقين المناسبين
   - type: cards
-    slugs:
-      - back-pain
-      - herniated-disc
+    items:
+      - /treatments/back-pain/
+      - /treatments/herniated-disc/
 ---

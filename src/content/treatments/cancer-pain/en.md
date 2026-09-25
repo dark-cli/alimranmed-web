@@ -83,7 +83,7 @@ sections:
           - Neurolytic procedures (alcohol or phenol injection) for life-threatening pain in terminal illness
           - Dorsal root entry zone (DREZ) lesioning for neuropathic cancer pain
   - type: cards
-    slugs:
-      - fibromyalgia
-      - back-pain
+    items:
+      - /treatments/fibromyalgia/
+      - /treatments/back-pain/
 ---
