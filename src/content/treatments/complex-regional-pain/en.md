@@ -20,9 +20,10 @@ sections:
           No single cure; the plan combines physiotherapy, chiropractic care, targeted injections, and neuromodulation
           to control pain and preserve function.
   - type: media
-    kind: image
-    src: /images/legacy/2020/12/shutterstock_98725853.jpg
-    alt: Hand affected by complex regional pain syndrome
+    items:
+      - kind: image
+        src: /images/legacy/2020/12/shutterstock_98725853.jpg
+        alt: Hand affected by complex regional pain syndrome
   - type: prose
     heading: What complex regional pain syndrome is
     body: >

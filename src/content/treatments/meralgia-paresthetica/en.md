@@ -24,9 +24,10 @@ sections:
           Conservative measures first (loose clothing, weight management). Nerve blocks and injections for persistent
           cases; surgery is rarely needed.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/349099be60c5a2cd153700a1dfecf4ec.jpg
-    alt: Diagram showing the path of the lateral femoral cutaneous nerve through the pelvis and thigh
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/349099be60c5a2cd153700a1dfecf4ec.jpg
+        alt: Diagram showing the path of the lateral femoral cutaneous nerve through the pelvis and thigh
   - type: prose
     heading: What meralgia paresthetica is
     body: >

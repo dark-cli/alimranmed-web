@@ -24,9 +24,10 @@ sections:
           Targeted joint injections and radiofrequency to reduce inflammation; physiotherapy for strength and mobility;
           neuromodulation for persistent pain.
   - type: media
-    kind: image
-    src: /images/legacy/2021/02/Sacroiliac_wiki_1200x1200.jpg
-    alt: Diagram showing the sacroiliac joint where the spine meets the pelvis
+    items:
+      - kind: image
+        src: /images/legacy/2021/02/Sacroiliac_wiki_1200x1200.jpg
+        alt: Diagram showing the sacroiliac joint where the spine meets the pelvis
   - type: prose
     heading: What sacroiliitis is
     body: >

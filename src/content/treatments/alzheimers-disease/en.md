@@ -27,9 +27,10 @@ sections:
           cognitive training shows evidence of improving cognitive scores. Ongoing support and care planning are
           essential.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/ALZHEIMERS_DISEASE.jpg
-    alt: Brain changes in Alzheimer's disease
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/ALZHEIMERS_DISEASE.jpg
+        alt: Brain changes in Alzheimer's disease
   - type: prose
     heading: What Alzheimer's disease is
     body: >

@@ -26,9 +26,10 @@ sections:
           الراحة والثلج ودعامات التقويم أولاً. العلاج الطبيعي وحقن الكورتيزون والأوزون والترددات الراديوية للحالات
           المستمرة.
   - type: media
-    kind: image
-    src: /images/legacy/2020/12/fig-3_epi-compressor.jpg
-    alt: صورة أشعة تُظهر نتوء الكعب — النمو العظمي في الجانب السفلي من عظم الكعب
+    items:
+      - kind: image
+        src: /images/legacy/2020/12/fig-3_epi-compressor.jpg
+        alt: صورة أشعة تُظهر نتوء الكعب — النمو العظمي في الجانب السفلي من عظم الكعب
   - type: prose
     heading: ما هو نتوء الكعب
     body: >

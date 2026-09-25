@@ -25,9 +25,10 @@ sections:
           إلى جانب العلاج التقليدي في الإقلاع عن التدخين، والحساسية، والتليف العصبي والعضلي، والروماتويد، وتشنجات
           العضلات، وحالات مزمنة مختارة.
   - type: media
-    kind: image
-    src: /images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160.jpg
-    alt: طبيب يستخدم جهاز الرنين الحيوي أثناء جلسة علاجية
+    items:
+      - kind: image
+        src: /images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160.jpg
+        alt: طبيب يستخدم جهاز الرنين الحيوي أثناء جلسة علاجية
   - type: prose
     heading: ما معنى العلاج بالطاقة الحيوية أو الرنين الحيوي؟
     body: >

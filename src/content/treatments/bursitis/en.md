@@ -26,9 +26,10 @@ sections:
           injections, physiotherapy, prolotherapy, and radiofrequency are the main options. Surgical drainage is rarely
           needed.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/image.axd_-20.jpg
-    alt: Bursitis — inflamed bursa near joint
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/image.axd_-20.jpg
+        alt: Bursitis — inflamed bursa near joint
   - type: prose
     heading: What bursitis is
     body: >

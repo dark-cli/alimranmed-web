@@ -26,9 +26,10 @@ sections:
           لا علاج شافٍ. مثبطات الكولينستيراز والميمانتين يُبطئان التدهور المعرفي مؤقتاً. الـ rTMS مقروناً بالتدريب
           المعرفي أظهر أدلة على تحسين المقاييس المعرفية. الدعم المستمر وتخطيط الرعاية ضروريان.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/ALZHEIMERS_DISEASE.jpg
-    alt: التغيرات الدماغية في مرض الزهايمر
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/ALZHEIMERS_DISEASE.jpg
+        alt: التغيرات الدماغية في مرض الزهايمر
   - type: prose
     heading: ما هو مرض الزهايمر
     body: >

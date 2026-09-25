@@ -81,8 +81,8 @@ const W = isAr ? {
                 fields: "الحقول: text، attribution?" },
   panels:     { desc: "٢–٤ لوحات متجاورة. مع ٢ تُقرأ كمقارنة (كانت comparison_pair)؛ مع ٣–٤ كشبكة خيارات (كانت treatment_groups).",
                 fields: "الحقول: heading?، intro?، note?، panels[] من { eyebrow?, title, subtitle?, items[] }" },
-  media:      { desc: "شكل داخلي. صورة / فيديو / تضمين يوتيوب. يُصدر VideoObject JSON-LD لروابط اليوتيوب حتى تفهرسه جوجل.",
-                fields: "الحقول: kind، src، alt?، caption?، aspect?، uploadDate?" },
+  media:      { desc: "شكل داخلي. قائمة من الوسائط (صور / فيديو / يوتيوب) تُعرض جنبًا إلى جنب. عنصر واحد = عرض كامل، أكثر = شبكة متساوية. يُصدر VideoObject JSON-LD لكل رابط يوتيوب.",
+                fields: "الحقول: heading?، items[] من { kind (image|video|youtube), src, alt?, caption?, aspect?, uploadDate? }" },
   pathway:    { desc: "صفوف من مجموعات الروابط بشكل رقاقات. لكل مجموعة تصنيف علوي وعنوان وقائمة روابط بشكل أزرار رقائق. يطابق نمط «الحالات التي نعالجها» في الصفحة الرئيسية.",
                 fields: "الحقول: heading?، intro?، groups[] من { eyebrow?, title, items[] } حيث items[] = { name, href }" },
   row:        { desc: "صفّ من الصور. عدد الأعمدة auto (متجاوب) أو ثابت ٢ / ٣ / ٤. كل عنصر صورة مع شرح ورابط اختياريين. ينهار إلى عمود واحد على الجوال.",
@@ -108,8 +108,8 @@ const W = isAr ? {
                 fields: "Fields: text, attribution?" },
   panels:     { desc: "2–4 side-by-side panels. With 2 reads as a comparison (was comparison_pair); with 3–4 as an options grid (was treatment_groups).",
                 fields: "Fields: heading?, intro?, note?, panels[] of { eyebrow?, title, subtitle?, items[] }" },
-  media:      { desc: "Inline figure. image / video / YouTube embed. Emits VideoObject JSON-LD for YouTube so Google indexes it.",
-                fields: "Fields: kind, src, alt?, caption?, aspect?, uploadDate?" },
+  media:      { desc: "Inline figure. A list of image / video / YouTube items shown side by side. One item = full width; multiple = equal-column grid. Emits VideoObject JSON-LD per YouTube item so Google indexes it.",
+                fields: "Fields: heading?, items[] of { kind (image|video|youtube), src, alt?, caption?, aspect?, uploadDate? }" },
   pathway:    { desc: "Rows of link-chip groups. Each group has an eyebrow, title, and a list of chip-button links. Matches the home page \"Conditions we treat\" pattern.",
                 fields: "Fields: heading?, intro?, groups[] of { eyebrow?, title, items[] } where items[] = { name, href }" },
   row:        { desc: "A row of images. Columns is auto (responsive fit) or fixed 2 / 3 / 4. Each item is an image with optional caption and link. Collapses to 1 column on mobile.",
@@ -265,12 +265,6 @@ const R = isAr ? {
   rowHeading:   "داخل العيادة",
   rowCaptions:  ["غرفة الاستشارة", "غرفة الإجراءات", "قاعة التأهيل"],
   cardsHeading: "قراءات ذات صلة",
-  cardsSoon:    "لم تُتَح بعد بالتصميم الجديد",
-  cards: [
-    { slug: "sciatica",       title: "عرق النسا",              category: "ألم",            href: "/ar/treatments/sciatica/",       redesigned: true },
-    { slug: "herniated-disc", title: "الانزلاق الغضروفي",     category: "عمود فقري", href: "/ar/treatments/herniated-disc/", redesigned: true },
-    { slug: "old-treatment",  title: "مقال قديم (لم يُعَد تصميمه)", category: "ألم",       href: "",                                redesigned: false },
-  ],
 } : {
   proseHeading: "What ankylosing spondylitis is",
   proseBody:    `Ankylosing spondylitis is a chronic inflammatory arthritis that primarily targets the spine and sacroiliac joints. Over time, inflammation triggers new bone formation that bridges vertebral gaps, fusing sections of the spine into a rigid, inflexible structure.\n\nThe exact cause is unknown, but the [HLA-B27 gene](/en/blog/hla-b27/) is strongly associated. Men are affected more than women; onset typically occurs in late adolescence or early adulthood.`,
@@ -364,12 +358,6 @@ const R = isAr ? {
   rowHeading:   "Inside the clinic",
   rowCaptions:  ["Consulting room", "Procedure room", "Therapy gym"],
   cardsHeading: "Related reading",
-  cardsSoon:    "Not yet available in the new design",
-  cards: [
-    { slug: "sciatica",       title: "Sciatica",                       category: "Pain",  href: "/en/treatments/sciatica/",       redesigned: true },
-    { slug: "herniated-disc", title: "Herniated disc",                 category: "Spine", href: "/en/treatments/herniated-disc/", redesigned: true },
-    { slug: "old-treatment",  title: "Older article (not redesigned)", category: "Pain",  href: "",                              redesigned: false },
-  ],
 };
 
 const heroImgSrc    = "/images/doctors/hussein-imran-mousa.jpg";
@@ -600,10 +588,15 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
         </div>
       </div>
       <div class="preview">
-        <p class="preview-tag">{T.structure}</p>
-        <Media kind="image" src={PLACEHOLDER_IMG} alt={placeholderLabel} caption={P.captionMain} aspect="16/9" />
+        <p class="preview-tag">{T.structure} — {isAr ? "عنصر واحد" : "single item"}</p>
+        <Media items={[{ kind: "image", src: PLACEHOLDER_IMG, alt: placeholderLabel, caption: P.captionMain, aspect: "16/9" }]} />
+        <p class="preview-tag mt">{T.structure} — {isAr ? "عنصران جنبًا إلى جنب" : "two items side by side"}</p>
+        <Media items={[
+          { kind: "image", src: PLACEHOLDER_IMG, alt: placeholderLabel, caption: P.caption("1"), aspect: "4/3" },
+          { kind: "image", src: PLACEHOLDER_IMG, alt: placeholderLabel, caption: P.caption("2"), aspect: "4/3" },
+        ]} />
         <p class="preview-tag mt">{T.inUse}</p>
-        <Media kind="image" src={heroImgSrc} alt={R.mediaAlt} caption={R.mediaCaption} aspect="16/9" />
+        <Media items={[{ kind: "image", src: heroImgSrc, alt: R.mediaAlt, caption: R.mediaCaption, aspect: "16/9" }]} />
       </div>
     </section>
 
@@ -682,15 +675,15 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
         <p class="preview-tag">{T.structure}</p>
         <Cards
           heading={P.heading}
-          soonLabel={R.cardsSoon}
-          items={[
-            { slug: "a", title: P.cardTitle("1"), category: P.category, href: "/#", redesigned: true },
-            { slug: "b", title: P.cardTitle("2"), category: P.category, href: "/#", redesigned: true },
-            { slug: "c", title: P.cardTitle("3"), category: P.category, href: "",  redesigned: false },
-          ]}
+          items={["/treatments/sciatica/", "/treatments/herniated-disc/", "/blog/stroke-and-post-stroke-recovery/"]}
+          locale={locale}
         />
         <p class="preview-tag mt">{T.inUse}</p>
-        <Cards heading={R.cardsHeading} soonLabel={R.cardsSoon} items={R.cards} />
+        <Cards
+          heading={R.cardsHeading}
+          items={["/treatments/sciatica/", "/treatments/herniated-disc/", "/treatments/back-pain/"]}
+          locale={locale}
+        />
       </div>
     </section>
 

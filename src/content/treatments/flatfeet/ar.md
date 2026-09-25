@@ -23,9 +23,10 @@ sections:
           دعامات القوس والأحذية الداعمة وتمارين الإطالة للحالات الخفيفة. العلاج الطبيعي ودعامات مخصصة للعدائين النشطين
           أو الألم المستمر.
   - type: media
-    kind: image
-    src: /images/legacy/2021/02/Flat-Feet-300x249-1.jpg
-    alt: مقارنة بين قدم مسطحة وقدم ذات قوس طبيعية
+    items:
+      - kind: image
+        src: /images/legacy/2021/02/Flat-Feet-300x249-1.jpg
+        alt: مقارنة بين قدم مسطحة وقدم ذات قوس طبيعية
   - type: prose
     heading: ما هي القدم المسطحة
     body: >

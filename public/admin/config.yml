@@ -125,23 +125,28 @@ _sections_field: &sections_field
     - name: media
       label: Media (image / video / YouTube)
       fields:
-        - label: Kind
-          name: kind
-          widget: select
-          options: [image, video, youtube]
-        - label: "Source"
-          name: src
-          widget: image
-          hint: "For image/video — pick from media library or upload. For YouTube — type the video ID or full URL."
-          required: false
-        - { label: Alt text, name: alt, widget: string, required: false }
-        - { label: Caption, name: caption, widget: string, required: false }
-        - label: Aspect ratio
-          name: aspect
-          widget: select
-          required: false
-          options: ["16/9", "4/3", "3/2", "1/1"]
-        - { label: Upload date (YouTube JSON-LD), name: uploadDate, widget: string, required: false }
+        - { label: Heading, name: heading, widget: string, required: false, hint: "Optional heading above the media. Not added to TOC." }
+        - label: Items
+          name: items
+          widget: list
+          min: 1
+          typeKey: kind
+          hint: "Add one item for a full-width figure; add more for a side-by-side grid."
+          types:
+            - name: image
+              label: Image
+              fields:
+                - { label: Image, name: src, widget: image, required: true }
+                - { label: Alt text, name: alt, widget: string, required: false }
+                - { label: Caption, name: caption, widget: string, required: false }
+                - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
+            - name: youtube
+              label: YouTube
+              fields:
+                - { label: YouTube URL or ID, name: src, widget: string, required: true, hint: "Full URL or bare ID (e.g. dQw4w9WgXcQ)." }
+                - { label: Caption, name: caption, widget: string, required: false }
+                - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
+                - { label: Upload date (JSON-LD), name: uploadDate, widget: string, required: false, hint: "ISO date, e.g. 2024-03-15. Helps Google index the video." }
     - name: pathway
       label: Pathway (link chip groups)
       fields:
@@ -211,6 +216,8 @@ collections:
     format: yaml-frontmatter
     identifier_field: title
     create: true
+    media_folder: /public/images
+    public_folder: /images
     fields:
       # ── Identity ─────────────────────────────────────────────────────
       - { label: Full name, name: fullName, widget: string, hint: "Displayed as the H1 fallback and on the listing card." }
@@ -277,6 +284,8 @@ collections:
     format: yaml-frontmatter
     identifier_field: title
     create: true
+    media_folder: /public/images
+    public_folder: /images
     fields:
       # ── Identity ─────────────────────────────────────────────────────
       - { label: Full name, name: fullName, widget: string, hint: "Displayed as the H1 fallback and on the listing card." }
@@ -344,6 +353,8 @@ collections:
     format: yaml-frontmatter
     identifier_field: title
     create: true
+    media_folder: /public/images
+    public_folder: /images
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: text, required: false }
@@ -387,6 +398,8 @@ collections:
     extension: md
     format: yaml-frontmatter
     identifier_field: title
+    media_folder: /public/images
+    public_folder: /images
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -432,6 +445,8 @@ collections:
     extension: md
     format: yaml-frontmatter
     identifier_field: title
+    media_folder: /public/images
+    public_folder: /images
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -467,6 +482,8 @@ collections:
     extension: md
     format: yaml-frontmatter
     identifier_field: title
+    media_folder: /public/images
+    public_folder: /images
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -503,6 +520,8 @@ collections:
     extension: md
     format: yaml-frontmatter
     identifier_field: title
+    media_folder: /public/images
+    public_folder: /images
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -551,6 +570,8 @@ collections:
     extension: md
     format: yaml-frontmatter
     identifier_field: title
+    media_folder: /public/images
+    public_folder: /images
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -600,6 +621,8 @@ collections:
     extension: md
     format: yaml-frontmatter
     identifier_field: title
+    media_folder: /public/images
+    public_folder: /images
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -634,6 +657,8 @@ collections:
     extension: md
     format: yaml-frontmatter
     identifier_field: title
+    media_folder: /public/images
+    public_folder: /images
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -669,6 +694,8 @@ collections:
     extension: md
     format: yaml-frontmatter
     identifier_field: title
+    media_folder: /public/images
+    public_folder: /images
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -701,6 +728,8 @@ collections:
     extension: md
     format: yaml-frontmatter
     identifier_field: title
+    media_folder: /public/images
+    public_folder: /images
     create: true
     fields:
       - { label: Title, name: title, widget: string }

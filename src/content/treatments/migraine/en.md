@@ -67,9 +67,10 @@ sections:
       There is no specific cure for migraine. The goals are to treat attacks quickly and to prevent them by avoiding
       triggers.
   - type: media
-    kind: video
-    src: https://www.youtube.com/watch?v=2HI355rV-YI
-    caption: Understanding migraine — how attacks happen and how they are treated
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=2HI355rV-YI
+        caption: Understanding migraine — how attacks happen and how they are treated
   - type: panels
     heading: Treatment options at Alimran Medical Center
     panels:

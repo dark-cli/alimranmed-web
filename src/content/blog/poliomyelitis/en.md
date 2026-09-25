@@ -25,9 +25,10 @@ sections:
           Long-term follow-up with a specialist, well-timed surgery where indicated, and sustained rehabilitation —
           aimed at preventing functional decline rather than curing the original infection.
   - type: media
-    kind: image
-    src: /images/legacy/2020/12/54fcfbefb0b21d8c1acc74980729584a-258x300-1.jpg
-    alt: Illustration of a child affected by poliomyelitis
+    items:
+      - kind: image
+        src: /images/legacy/2020/12/54fcfbefb0b21d8c1acc74980729584a-258x300-1.jpg
+        alt: Illustration of a child affected by poliomyelitis
   - type: prose
     heading: Where the disease stands today
     body: >

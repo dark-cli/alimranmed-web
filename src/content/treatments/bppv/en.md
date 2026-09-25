@@ -24,9 +24,10 @@ sections:
           Canalith repositioning (e.g. Epley manoeuvre) is the primary treatment and works within one or two sessions.
           Physiotherapy and rTMS support recovery when symptoms persist.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV.png
-    alt: Diagram of the inner ear showing the semicircular canals affected in BPPV
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV.png
+        alt: Diagram of the inner ear showing the semicircular canals affected in BPPV
   - type: prose
     heading: What BPPV is
     body: >

@@ -24,9 +24,10 @@ sections:
           Arch supports, supportive footwear, and stretching exercises for mild cases. Physiotherapy and targeted
           orthotics for active runners or persistent pain.
   - type: media
-    kind: image
-    src: /images/legacy/2021/02/Flat-Feet-300x249-1.jpg
-    alt: Comparison showing a flatfoot versus a foot with a normal arch
+    items:
+      - kind: image
+        src: /images/legacy/2021/02/Flat-Feet-300x249-1.jpg
+        alt: Comparison showing a flatfoot versus a foot with a normal arch
   - type: prose
     heading: What flatfeet is
     body: >

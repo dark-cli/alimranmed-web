@@ -24,9 +24,10 @@ sections:
           Greater occipital nerve injections are the first specific treatment. Botox, radiofrequency, rTMS, and
           physiotherapy address persistent or widespread pain.
   - type: media
-    kind: image
-    src: /images/legacy/2021/02/CEYU7_1546590895_6083-1.jpg
-    alt: Diagram showing the path of the greater occipital nerve from the neck through the scalp
+    items:
+      - kind: image
+        src: /images/legacy/2021/02/CEYU7_1546590895_6083-1.jpg
+        alt: Diagram showing the path of the greater occipital nerve from the neck through the scalp
   - type: prose
     heading: What occipital neuralgia is
     body: >

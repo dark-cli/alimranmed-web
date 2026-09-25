@@ -25,9 +25,10 @@ sections:
           الراحة والعلاج الطبيعي لمعظم الحالات. الحقن (كورتيزون، أوزون، برولوثيرابي) والترددات الراديوية للحالات
           المستمرة أو الشديدة.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1.jpg
-    alt: شخص يُمسك رسغه بألم يُجسّد التهاب الأوتار
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1.jpg
+        alt: شخص يُمسك رسغه بألم يُجسّد التهاب الأوتار
   - type: prose
     heading: ما هو التهاب الأوتار
     body: >

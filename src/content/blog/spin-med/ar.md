@@ -25,9 +25,10 @@ sections:
           من 20 إلى 25 جلسة، مدة كل جلسة 30 دقيقة، بمعدل 3–5 جلسات أسبوعياً على مدى 4 إلى 6 أسابيع. الجلسات آمنة وخالية
           من الألم وتأثيرها تراكمي.
   - type: media
-    kind: image
-    src: /images/legacy/2020/01/DSC_0054-1-1024x684-1-300x200.jpg
-    alt: مريض خلال جلسة فك ضغط باستخدام جهاز SpineMED في المركز
+    items:
+      - kind: image
+        src: /images/legacy/2020/01/DSC_0054-1-1024x684-1-300x200.jpg
+        alt: مريض خلال جلسة فك ضغط باستخدام جهاز SpineMED في المركز
   - type: prose
     heading: لماذا ألم الديسك مختلف
     body: >
@@ -46,9 +47,10 @@ sections:
       الأقراص التالفة نادراً ما تُشفى من تلقاء نفسها لأنها تبقى تحت ضغط مستمر حتى حين يشعر المريض بالراحة أثناء
       الاستلقاء. لذلك فإن الطريقة الأكثر فعالية لمساعدة القرص على التعافي هي تقليل الضغط داخله.
   - type: media
-    kind: image
-    src: /images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png
-    alt: رسم توضيحي لفك الضغط عن القرص الفقري باستخدام SpineMED
+    items:
+      - kind: image
+        src: /images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png
+        alt: رسم توضيحي لفك الضغط عن القرص الفقري باستخدام SpineMED
   - type: prose
     heading: كيف يعمل SpineMED
     body: >

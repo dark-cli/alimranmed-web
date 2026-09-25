@@ -24,9 +24,10 @@ sections:
           Most cases resolve with conservative treatment. Injections (Botox, corticosteroids, ozone) and physiotherapy
           are the first approach; surgery is a last resort.
   - type: media
-    kind: image
-    src: /images/legacy/2021/02/تنزيل-2.jpg
-    alt: Diagram of the temporomandibular joint showing how the jawbone connects to the skull
+    items:
+      - kind: image
+        src: /images/legacy/2021/02/تنزيل-2.jpg
+        alt: Diagram of the temporomandibular joint showing how the jawbone connects to the skull
   - type: prose
     heading: What TMJ disorders are
     body: >

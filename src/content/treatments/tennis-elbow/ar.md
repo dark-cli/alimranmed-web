@@ -21,9 +21,10 @@ sections:
           العلاج التحفظي أولاً: علاج طبيعي وتعديل النشاط. الحقن (كورتيزون، أوزون، برولوثيرابي) والترددات الراديوية
           للحالات المقاومة.
   - type: media
-    kind: image
-    src: /images/legacy/2020/02/StockPhoto2SportsInjuries-1.jpg
-    alt: رياضي يُمسك بمنطقة المرفق يُظهر موقع ألم مرفق التنس
+    items:
+      - kind: image
+        src: /images/legacy/2020/02/StockPhoto2SportsInjuries-1.jpg
+        alt: رياضي يُمسك بمنطقة المرفق يُظهر موقع ألم مرفق التنس
   - type: prose
     heading: ما هو مرفق التنس
     body: >

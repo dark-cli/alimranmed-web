@@ -26,9 +26,10 @@ sections:
           Diagnosis first requires excluding gastrointestinal or visceral pathology. Local nerve blocks, radiofrequency,
           and targeted injections are the primary treatment options. Physiotherapy supports recovery.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/stomach-pain_400x267.jpg
-    alt: Anterior cutaneous nerve entrapment syndrome — abdominal wall pain
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/stomach-pain_400x267.jpg
+        alt: Anterior cutaneous nerve entrapment syndrome — abdominal wall pain
   - type: prose
     heading: What ACNES is
     body: >

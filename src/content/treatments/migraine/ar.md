@@ -66,9 +66,10 @@ sections:
 
       لا يوجد علاج شافٍ للشقيقة. الهدفان هما معالجة النوبات بسرعة والوقاية منها عبر تجنب المحفزات.
   - type: media
-    kind: video
-    src: https://www.youtube.com/watch?v=2HI355rV-YI
-    caption: فهم الشقيقة — كيف تحدث النوبات وكيف تُعالَج
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=2HI355rV-YI
+        caption: فهم الشقيقة — كيف تحدث النوبات وكيف تُعالَج
   - type: panels
     heading: خيارات العلاج في مركز العمران
     panels:

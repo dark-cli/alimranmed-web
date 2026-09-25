@@ -1,32 +1,36 @@
 ---
 /**
- * Media block — inline figure that renders one of:
- *   • image     → <img> served from /public
- *   • video     → <video controls> for self-hosted media
- *   • youtube   → <iframe> for a YouTube embed (accepts full URL or bare ID)
+ * Media block — one or more image / video / YouTube items shown side by side.
  *
- * Follows the article block chrome: hairline border, square corners, no
- * shadow, mono-uppercase caption label. Sits between other blocks with
- * the same bottom margin as Prose / TreatmentGroups so rhythm holds.
+ * Single item  → full-width figure.
+ * Multiple items → equal-width columns (responsive: stacks below 560 px).
  *
- * Not numbered / not part of TOC — media is inline supporting content,
- * not a section.
+ * Each item carries its own caption; an optional block-level heading sits
+ * above the grid. Not numbered / not in TOC.
  */
 
-interface Props {
-  kind: "image" | "video" | "youtube";
+interface MediaItem {
+  kind: "image" | "youtube";
   src: string;
   alt?: string;
   caption?: string;
   aspect?: "16/9" | "4/3" | "3/2" | "1/1";
   uploadDate?: string;
 }
-const { kind, src, alt, caption, aspect, uploadDate } = Astro.props;
 
-// YouTube: accept "abc123XYZ", full watch URL, youtu.be URL, or embed URL.
+interface Props {
+  heading?: string;
+  items: MediaItem[];
+}
+
+const { heading, items } = Astro.props;
+if (!items || items.length === 0) return;
+
 function youtubeId(input: string): string {
   const t = input.trim();
-  if (/^[a-zA-Z0-9_-]{11}$/.test(t)) return t;
+  // Bare 11-char ID, possibly followed by ?si= or other tracking params
+  const bare = t.match(/^([a-zA-Z0-9_-]{11})(?:[?#].*)?$/);
+  if (bare) return bare[1];
   const m =
     t.match(/[?&]v=([a-zA-Z0-9_-]{11})/) ||
     t.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/) ||
@@ -35,61 +39,94 @@ function youtubeId(input: string): string {
   return m ? m[1] : t;
 }
 
-// Video/youtube get a default frame ratio; images keep their natural size.
-const frameAspect = aspect || (kind === "image" ? undefined : "16/9");
-const frameStyle = frameAspect ? `aspect-ratio: ${frameAspect};` : "";
-
-// VideoObject schema for YouTube embeds — helps Google index the video.
-const ytId = kind === "youtube" ? youtubeId(src) : null;
-const videoSchema = ytId ? JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": caption || alt || "Video",
-  "description": caption || alt || "Video",
-  "thumbnailUrl": `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`,
-  "uploadDate": uploadDate || "2020-01-01T00:00:00+00:00",
-  "contentUrl": `https://www.youtube.com/watch?v=${ytId}`,
-  "embedUrl": `https://www.youtube-nocookie.com/embed/${ytId}`,
-}) : null;
+const ytItems = items.filter((it) => it.kind === "youtube");
+const multi   = items.length > 1;
 ---
 
-{videoSchema && <script type="application/ld+json" set:html={videoSchema} />}
-<figure class="media">
-  <div class="media-frame" style={frameStyle}>
-    {kind === "image" && (
-      <img src={src} alt={alt || ""} loading="lazy" decoding="async" />
-    )}
-    {kind === "video" && (
-      <video controls preload="metadata" playsinline>
-        <source src={src} />
-      </video>
-    )}
-    {kind === "youtube" && (
-      <iframe
-        src={`https://www.youtube-nocookie.com/embed/${youtubeId(src)}`}
-        title={caption || alt || "YouTube video"}
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    )}
+{ytItems.map((it) => {
+  const ytId  = youtubeId(it.src);
+  const schema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": it.caption || it.alt || "Video",
+    "description": it.caption || it.alt || "Video",
+    "thumbnailUrl": `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`,
+    "uploadDate": it.uploadDate || "2020-01-01T00:00:00+00:00",
+    "contentUrl": `https://www.youtube.com/watch?v=${ytId}`,
+    "embedUrl": `https://www.youtube-nocookie.com/embed/${ytId}`,
+  });
+  return <script type="application/ld+json" set:html={schema} />;
+})}
+
+<section class:list={["media-block", multi && "media-block--multi"]}>
+  {heading && <h2 class="media-heading">{heading}</h2>}
+  <div class="media-grid" style={multi ? `grid-template-columns: repeat(${items.length}, 1fr);` : undefined}>
+    {items.map((it) => {
+      const frameAspect = it.aspect || (it.kind === "image" ? undefined : "16/9");
+      const frameStyle  = frameAspect ? `aspect-ratio: ${frameAspect};` : undefined;
+      const ytId        = it.kind === "youtube" ? youtubeId(it.src) : null;
+      return (
+        <figure class="media">
+          <div class="media-frame" style={frameStyle}>
+            {it.kind === "image" && (
+              <img src={it.src} alt={it.alt || ""} loading="lazy" decoding="async" />
+            )}
+            {it.kind === "youtube" && ytId && (
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${ytId}`}
+                title={it.caption || it.alt || "YouTube video"}
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            )}
+          </div>
+          {it.caption && (
+            <figcaption class="media-caption">
+              <span class="media-caption-label">Figure</span>
+              <span class="media-caption-text">{it.caption}</span>
+            </figcaption>
+          )}
+        </figure>
+      );
+    })}
   </div>
-  {caption && (
-    <figcaption class="media-caption">
-      <span class="media-caption-label">Figure</span>
-      <span class="media-caption-text">{caption}</span>
-    </figcaption>
-  )}
-</figure>
+</section>
 
 <style>
-  .media {
+  .media-block {
     margin: 0 0 clamp(44px, 5.5vw, 64px);
+  }
+  .media-block:last-child { margin-bottom: 0; }
+
+  .media-heading {
+    font-size: clamp(17px, 1.9vw, 20px);
+    font-weight: 600;
+    margin: 0 0 clamp(16px, 2vw, 24px);
+  }
+
+  /* Single item — block-level */
+  .media-grid { display: contents; }
+
+  /* Multi-item — side-by-side grid */
+  .media-block--multi .media-grid {
+    display: grid;
+    gap: 1px;
+  }
+  @media (max-width: 560px) {
+    .media-block--multi .media-grid { grid-template-columns: 1fr !important; }
+  }
+
+  .media {
     border: 1px solid var(--line);
     background: var(--surface);
+    margin: 0;
   }
-  .media:last-child { margin-bottom: 0; }
+  /* Single-item block keeps bottom margin on the figure */
+  .media-block:not(.media-block--multi) .media {
+    margin-bottom: 0; /* outer .media-block has the margin */
+  }
 
   .media-frame {
     display: block;
