@@ -23,9 +23,10 @@ sections:
       - label: كيف نعالجها
         value: خطة ثلاثية تجمع بين ضبط سكر الدم، معالجة الالتهاب، والعلاج الفيزيائي — لتحقيق أفضل فرصة للشفاء.
   - type: media
-    kind: image
-    src: /images/legacy/2020/12/FootCare_29766673_M.jpg
-    alt: صورة مقربة للقدم أثناء فحص العناية بقدم مريض السكري
+    items:
+      - kind: image
+        src: /images/legacy/2020/12/FootCare_29766673_M.jpg
+        alt: صورة مقربة للقدم أثناء فحص العناية بقدم مريض السكري
   - type: prose
     heading: نظرة عامة
     body: >

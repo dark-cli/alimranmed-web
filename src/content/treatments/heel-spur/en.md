@@ -25,9 +25,10 @@ sections:
           Rest, ice, and orthotic insoles first. Physiotherapy, corticosteroid injections, ozone, and radiofrequency for
           persistent cases.
   - type: media
-    kind: image
-    src: /images/legacy/2020/12/fig-3_epi-compressor.jpg
-    alt: X-ray showing a heel spur — the bony projection on the underside of the heel bone
+    items:
+      - kind: image
+        src: /images/legacy/2020/12/fig-3_epi-compressor.jpg
+        alt: X-ray showing a heel spur — the bony projection on the underside of the heel bone
   - type: prose
     heading: What a heel spur is
     body: >

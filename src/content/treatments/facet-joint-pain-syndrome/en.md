@@ -22,9 +22,10 @@ sections:
       - label: How we treat it
         value: Radiofrequency ablation of the medial branch nerves for lasting relief once the diagnostic block is positive.
   - type: media
-    kind: image
-    src: /images/legacy/2019/06/3.jpg
-    alt: Diagram of the facet joints at the back of the spine
+    items:
+      - kind: image
+        src: /images/legacy/2019/06/3.jpg
+        alt: Diagram of the facet joints at the back of the spine
   - type: prose
     heading: What facet joints are
     body: >

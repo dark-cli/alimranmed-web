@@ -25,9 +25,10 @@ sections:
           Outpatient day-case. Local anaesthetic and light sedation — no open surgery, no general anaesthesia. Someone
           drives you home the same day.
   - type: media
-    kind: image
-    src: /images/legacy/2019/04/Device-g4.png
-    alt: Radiofrequency ablation generator used in the clinic
+    items:
+      - kind: image
+        src: /images/legacy/2019/04/Device-g4.png
+        alt: Radiofrequency ablation generator used in the clinic
   - type: prose
     heading: How radiofrequency neurotomy works
     body: >
@@ -94,9 +95,10 @@ sections:
       - Patients typically report greater range of motion, lower use of analgesics, and improved quality of life.
       - Recovery time is short — most patients return to normal activity within 24 hours.
   - type: media
-    kind: image
-    src: /images/legacy/2019/04/images-2.jpg
-    alt: Diagram of a radiofrequency needle placed against a spinal nerve target
+    items:
+      - kind: image
+        src: /images/legacy/2019/04/images-2.jpg
+        alt: Diagram of a radiofrequency needle placed against a spinal nerve target
   - type: prose
     heading: Is RFA safe? Who should not have it
     body: >
@@ -178,7 +180,8 @@ sections:
       increased leg weakness, contact your doctor — you need to be evaluated for bleeding or injection-related
       complications.
   - type: media
-    kind: youtube
-    src: https://www.youtube.com/watch?v=fjd9qrovP64
-    caption: Radiofrequency ablation procedure — clinical overview
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=fjd9qrovP64
+        caption: Radiofrequency ablation procedure — clinical overview
 ---

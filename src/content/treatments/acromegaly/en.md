@@ -27,9 +27,10 @@ sections:
           Primary treatment targets the tumour: surgery, somatostatin analogues, dopamine agonists, or radiosurgery.
           Physiotherapy and pain management support joint pain, muscle weakness, and recovery from complications.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/تنزيل-1.jpg
-    alt: Acromegaly — facial and extremity changes
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/تنزيل-1.jpg
+        alt: Acromegaly — facial and extremity changes
   - type: prose
     heading: What acromegaly is
     body: >

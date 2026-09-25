@@ -20,13 +20,15 @@ sections:
       - label: Approach
         value: Physiotherapy first, then targeted injections and neuromodulation options for persistent or severe pain.
   - type: media
-    kind: image
-    src: /images/legacy/2020/02/2.jpg
-    alt: Pattern of pain in intercostal neuralgia — band-like distribution around the trunk
+    items:
+      - kind: image
+        src: /images/legacy/2020/02/2.jpg
+        alt: Pattern of pain in intercostal neuralgia — band-like distribution around the trunk
   - type: media
-    kind: image
-    src: /images/legacy/2020/02/frozen-shoulder51-1.jpg
-    alt: Anatomy of the intercostal nerves along the ribcage
+    items:
+      - kind: image
+        src: /images/legacy/2020/02/frozen-shoulder51-1.jpg
+        alt: Anatomy of the intercostal nerves along the ribcage
   - type: prose
     heading: What intercostal neuralgia is
     body: >

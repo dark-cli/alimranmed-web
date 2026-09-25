@@ -24,9 +24,10 @@ sections:
           Rest and physiotherapy for most cases. Injections (corticosteroids, ozone, prolotherapy) and radiofrequency
           for persistent or severe tendinitis.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1.jpg
-    alt: Person holding the wrist in pain illustrating tendinitis discomfort
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1.jpg
+        alt: Person holding the wrist in pain illustrating tendinitis discomfort
   - type: prose
     heading: What tendinitis is
     body: >

@@ -28,9 +28,10 @@ sections:
           stage, location, and amount of bone affected. Physiotherapy, injection therapies, and pain management are the
           non-surgical options.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/2258659.jpg
-    alt: Avascular necrosis — bone tissue death from loss of blood supply
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/2258659.jpg
+        alt: Avascular necrosis — bone tissue death from loss of blood supply
   - type: prose
     heading: What avascular necrosis is
     body: >

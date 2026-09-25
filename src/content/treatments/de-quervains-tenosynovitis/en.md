@@ -24,9 +24,10 @@ sections:
           Splinting and activity modification first. Corticosteroid injection into the tendon sheath is highly
           effective. Physiotherapy and ozone injection for persistent cases.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/images-3.jpg
-    alt: Close-up of wrist and thumb showing the area affected by De Quervain's tenosynovitis
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/images-3.jpg
+        alt: Close-up of wrist and thumb showing the area affected by De Quervain's tenosynovitis
   - type: prose
     heading: What De Quervain's tenosynovitis is
     body: >

@@ -21,9 +21,10 @@ sections:
       - label: المقاربة
         value: تقليل التوتر وتنظيم النوم هما الخط الأول. حين تقصر هذه التدابير، تُضاف الحقن والـ rTMS والعلاج الطبيعي.
   - type: media
-    kind: image
-    src: /images/legacy/2021/02/5bce4f720238a_shutterstock_606426755.jpg
-    alt: شخص يضغط على صدغيه مُعبّراً عن ألم صداع التوتر
+    items:
+      - kind: image
+        src: /images/legacy/2021/02/5bce4f720238a_shutterstock_606426755.jpg
+        alt: شخص يضغط على صدغيه مُعبّراً عن ألم صداع التوتر
   - type: prose
     heading: ما هو صداع التوتر
     body: >

@@ -24,13 +24,15 @@ sections:
           Slow the decline (medication + supplements + physiotherapy), treat pain with targeted injections, and use
           kyphoplasty for existing spinal fractures.
   - type: media
-    kind: image
-    src: /images/legacy/2020/02/175957.jpg
-    alt: Illustration of osteoporosis showing weakened bone structure
+    items:
+      - kind: image
+        src: /images/legacy/2020/02/175957.jpg
+        alt: Illustration of osteoporosis showing weakened bone structure
   - type: media
-    kind: image
-    src: /images/legacy/2020/12/هشاشة-العظام-1.jpg
-    alt: Osteoporotic vertebra compared to a healthy vertebra
+    items:
+      - kind: image
+        src: /images/legacy/2020/12/هشاشة-العظام-1.jpg
+        alt: Osteoporotic vertebra compared to a healthy vertebra
   - type: prose
     heading: What osteoporosis pain is
     body: >

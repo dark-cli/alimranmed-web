@@ -24,9 +24,10 @@ sections:
           No cure. Botox injections into affected muscles are the most effective treatment. rTMS, physiotherapy, and
           radiofrequency support long-term management.
   - type: media
-    kind: image
-    src: /images/legacy/2021/02/20160223115358_upload_file_th.jpg
-    alt: Illustration showing abnormal head posture caused by cervical dystonia
+    items:
+      - kind: image
+        src: /images/legacy/2021/02/20160223115358_upload_file_th.jpg
+        alt: Illustration showing abnormal head posture caused by cervical dystonia
   - type: prose
     heading: What spasmodic torticollis is
     body: >

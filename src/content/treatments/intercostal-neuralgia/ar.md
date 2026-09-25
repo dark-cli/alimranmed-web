@@ -19,13 +19,15 @@ sections:
       - label: المقاربة
         value: العلاج الطبيعي أولاً، ثم الحقن الموجّهة وخيارات تحفيز الأعصاب للألم المستمر أو الشديد.
   - type: media
-    kind: image
-    src: /images/legacy/2020/02/2.jpg
-    alt: نمط الألم في ألم الأعصاب الوربية — توزيع حزامي حول الجذع
+    items:
+      - kind: image
+        src: /images/legacy/2020/02/2.jpg
+        alt: نمط الألم في ألم الأعصاب الوربية — توزيع حزامي حول الجذع
   - type: media
-    kind: image
-    src: /images/legacy/2020/02/frozen-shoulder51-1.jpg
-    alt: تشريح الأعصاب الوربية على طول القفص الصدري
+    items:
+      - kind: image
+        src: /images/legacy/2020/02/frozen-shoulder51-1.jpg
+        alt: تشريح الأعصاب الوربية على طول القفص الصدري
   - type: prose
     heading: ما هو ألم الأعصاب الوربية
     body: >

@@ -25,9 +25,10 @@ sections:
           20–25 sessions, 30 minutes each, typically 3–5 times per week over 4 to 6 weeks. Sessions are safe, painless,
           and cumulative in effect.
   - type: media
-    kind: image
-    src: /images/legacy/2020/01/DSC_0054-1-1024x684-1-300x200.jpg
-    alt: Patient receiving a SpineMED decompression session at the clinic
+    items:
+      - kind: image
+        src: /images/legacy/2020/01/DSC_0054-1-1024x684-1-300x200.jpg
+        alt: Patient receiving a SpineMED decompression session at the clinic
   - type: prose
     heading: Why disc pain is different
     body: >
@@ -47,9 +48,10 @@ sections:
       Damaged discs rarely heal on their own because they remain under constant load, even when the patient feels
       comfortable at rest. The most effective way to help a disc recover is to reduce the pressure inside it.
   - type: media
-    kind: image
-    src: /images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png
-    alt: Diagram of intervertebral disc decompression under SpineMED traction
+    items:
+      - kind: image
+        src: /images/legacy/2020/01/SpineMEd-Bandscheiben-768x565-300x221-300x221.png
+        alt: Diagram of intervertebral disc decompression under SpineMED traction
   - type: prose
     heading: How SpineMED works
     body: >

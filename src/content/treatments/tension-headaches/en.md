@@ -24,9 +24,10 @@ sections:
           Stress reduction and sleep hygiene are first-line. When lifestyle measures fall short, injections, rTMS, and
           physiotherapy are added.
   - type: media
-    kind: image
-    src: /images/legacy/2021/02/5bce4f720238a_shutterstock_606426755.jpg
-    alt: Person holding their temples illustrating tension headache pain
+    items:
+      - kind: image
+        src: /images/legacy/2021/02/5bce4f720238a_shutterstock_606426755.jpg
+        alt: Person holding their temples illustrating tension headache pain
   - type: prose
     heading: What tension headaches are
     body: >

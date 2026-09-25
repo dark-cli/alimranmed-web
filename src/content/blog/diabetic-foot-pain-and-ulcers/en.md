@@ -25,9 +25,10 @@ sections:
           A three-part plan — blood sugar control, treating infection, and physiotherapy — combined for the best chance
           of healing.
   - type: media
-    kind: image
-    src: /images/legacy/2020/12/FootCare_29766673_M.jpg
-    alt: Close-up of a foot being examined during diabetic foot care
+    items:
+      - kind: image
+        src: /images/legacy/2020/12/FootCare_29766673_M.jpg
+        alt: Close-up of a foot being examined during diabetic foot care
   - type: prose
     heading: Overview
     body: >

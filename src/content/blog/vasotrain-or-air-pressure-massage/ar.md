@@ -30,13 +30,15 @@ sections:
       يُستخدم الجهاز إلى جانب [العلاج الفيزيائي](/services/physiotherapy/physical-therapy/) التقليدي — لا كبديل عنه —
       ضمن خطة تأهيل شاملة.
   - type: media
-    kind: image
-    src: /images/legacy/2020/01/5d3bd323-dd02-49f0-9ac3-a31aa39170a6-300x300.jpg
-    alt: كُم جهاز Vasotrain مُطبَّق على الطرف السفلي أثناء جلسة علاجية
+    items:
+      - kind: image
+        src: /images/legacy/2020/01/5d3bd323-dd02-49f0-9ac3-a31aa39170a6-300x300.jpg
+        alt: كُم جهاز Vasotrain مُطبَّق على الطرف السفلي أثناء جلسة علاجية
   - type: media
-    kind: image
-    src: /images/legacy/2020/01/thSSC7CZ2W.jpg
-    alt: جهاز التدليك بضغط الهواء Vasotrain في المركز
+    items:
+      - kind: image
+        src: /images/legacy/2020/01/thSSC7CZ2W.jpg
+        alt: جهاز التدليك بضغط الهواء Vasotrain في المركز
   - type: prose
     heading: متى نستخدمه
     body: |
@@ -50,7 +52,8 @@ sections:
       - التعافي بعد رفع الجبيرة في حالات الكسور
       - آلام الظهر والأطراف لدى مرضى انزلاق الديسك
   - type: media
-    kind: youtube
-    src: https://www.youtube.com/watch?v=aLDH_C_AJHI
-    caption: جلسة تدليك بضغط الهواء Vasotrain في المركز
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=aLDH_C_AJHI
+        caption: جلسة تدليك بضغط الهواء Vasotrain في المركز
 ---

@@ -25,9 +25,10 @@ sections:
           The reservoir is implanted under the skin of the abdomen or back, and can be refilled from time to time
           through a small needle through the skin.
   - type: media
-    kind: image
-    src: /images/legacy/2020/12/pain-pump-34.jpg
-    alt: Diagram of an intrathecal pump implanted under the skin, with a catheter running into the spinal canal
+    items:
+      - kind: image
+        src: /images/legacy/2020/12/pain-pump-34.jpg
+        alt: Diagram of an intrathecal pump implanted under the skin, with a catheter running into the spinal canal
   - type: prose
     heading: How it works
     body: >

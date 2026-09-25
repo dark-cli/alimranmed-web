@@ -24,9 +24,10 @@ sections:
           Conservative treatment first: physiotherapy and activity modification. Injections (corticosteroids, ozone,
           PRP/prolotherapy) and radiofrequency for resistant cases.
   - type: media
-    kind: image
-    src: /images/legacy/2020/02/StockPhoto2SportsInjuries-1.jpg
-    alt: Athlete holding elbow area showing the location of tennis elbow pain
+    items:
+      - kind: image
+        src: /images/legacy/2020/02/StockPhoto2SportsInjuries-1.jpg
+        alt: Athlete holding elbow area showing the location of tennis elbow pain
   - type: prose
     heading: What tennis elbow is
     body: >

@@ -25,9 +25,10 @@ sections:
           إعادة تهيئة وضع القناة (مناورة إيبلي وغيرها) هي العلاج الأساسي وتُجدي في جلسة أو جلستين. العلاج الطبيعي والـ
           rTMS يدعمان التعافي عند استمرار الأعراض.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV.png
-    alt: رسم توضيحي للأذن الداخلية يُظهر القنوات شبه الدائرية المتأثرة في BPPV
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV.png
+        alt: رسم توضيحي للأذن الداخلية يُظهر القنوات شبه الدائرية المتأثرة في BPPV
   - type: prose
     heading: ما هو دوار الوضعة الانتيابي الحميد
     body: >

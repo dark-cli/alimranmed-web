@@ -26,9 +26,10 @@ sections:
           Physiotherapy, injection therapies, radiofrequency, and lifestyle modification are the main non-surgical
           options.
   - type: media
-    kind: image
-    src: /images/legacy/2020/02/1-3.jpg
-    alt: Hip arthritis — joint anatomy
+    items:
+      - kind: image
+        src: /images/legacy/2020/02/1-3.jpg
+        alt: Hip arthritis — joint anatomy
   - type: prose
     heading: What arthritis of the hip is
     body: >

@@ -25,9 +25,10 @@ sections:
           Used alongside conventional care for smoking cessation, allergic conditions, fibromyalgia, rheumatoid
           arthritis, muscle cramps, and selected chronic complaints.
   - type: media
-    kind: image
-    src: /images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160.jpg
-    alt: Clinician operating a bioresonance device during a therapy session
+    items:
+      - kind: image
+        src: /images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160.jpg
+        alt: Clinician operating a bioresonance device during a therapy session
   - type: prose
     heading: How bioresonance works
     body: >

@@ -117,14 +117,29 @@ const blockPanels = z.object({
   })).min(2).max(4),
 });
 
+// Individual item inside a media block.
+const mediaItem = z.discriminatedUnion("kind", [
+  z.object({
+    kind: z.literal("image"),
+    src: z.string(),
+    alt: z.string().optional(),
+    caption: z.string().optional(),
+    aspect: z.enum(["16/9", "4/3", "3/2", "1/1"]).optional(),
+  }),
+  z.object({
+    kind: z.literal("youtube"),
+    src: z.string(),
+    caption: z.string().optional(),
+    aspect: z.enum(["16/9", "4/3", "3/2", "1/1"]).optional(),
+    uploadDate: z.string().optional(),
+  }),
+]);
+
+// Media block — one or more image/video/youtube items shown side by side.
 const blockMedia = z.object({
   type: z.literal("media"),
-  kind: z.enum(["image", "video", "youtube"]),
-  src: z.string(),
-  alt: z.string().optional(),
-  caption: z.string().optional(),
-  aspect: z.enum(["16/9", "4/3", "3/2", "1/1"]).optional(),
-  uploadDate: z.string().optional(),
+  heading: z.string().optional(),
+  items: z.array(mediaItem).min(1),
 });
 
 const blockPathway = z.object({

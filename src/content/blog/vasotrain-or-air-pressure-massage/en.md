@@ -30,13 +30,15 @@ sections:
       The device sits inside a wider rehabilitation plan — used alongside conventional
       [physiotherapy](/services/physiotherapy/physical-therapy/), not as a substitute for it.
   - type: media
-    kind: image
-    src: /images/legacy/2020/01/5d3bd323-dd02-49f0-9ac3-a31aa39170a6-300x300.jpg
-    alt: Vasotrain sleeve applied to a patient's lower limb during a therapy session
+    items:
+      - kind: image
+        src: /images/legacy/2020/01/5d3bd323-dd02-49f0-9ac3-a31aa39170a6-300x300.jpg
+        alt: Vasotrain sleeve applied to a patient's lower limb during a therapy session
   - type: media
-    kind: image
-    src: /images/legacy/2020/01/thSSC7CZ2W.jpg
-    alt: Vasotrain pressure-massage device in the clinic
+    items:
+      - kind: image
+        src: /images/legacy/2020/01/thSSC7CZ2W.jpg
+        alt: Vasotrain pressure-massage device in the clinic
   - type: prose
     heading: When we use it
     body: >
@@ -58,7 +60,8 @@ sections:
 
       - Back and limb pain in patients with a slipped disc
   - type: media
-    kind: youtube
-    src: https://www.youtube.com/watch?v=aLDH_C_AJHI
-    caption: Vasotrain pressure-massage session at the clinic
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=aLDH_C_AJHI
+        caption: Vasotrain pressure-massage session at the clinic
 ---

@@ -25,9 +25,10 @@ sections:
           Most cases settle with simple at-home care under a doctor's supervision. Severe cases can progress to a tendon
           rupture that may need surgical repair.
   - type: media
-    kind: image
-    src: /images/legacy/2021/02/تنزيل-3.jpg
-    alt: Illustration of the Achilles tendon at the back of the lower leg and heel
+    items:
+      - kind: image
+        src: /images/legacy/2021/02/تنزيل-3.jpg
+        alt: Illustration of the Achilles tendon at the back of the lower leg and heel
   - type: prose
     heading: Symptoms
     body: >

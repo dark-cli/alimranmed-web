@@ -88,14 +88,7 @@ const lastListIdx = sections.reduce(
     />;
 
   if (s.type === "media")
-    return <Media
-      kind={s.kind}
-      src={s.src}
-      alt={s.alt}
-      caption={s.caption}
-      aspect={s.aspect}
-      uploadDate={s.uploadDate}
-    />;
+    return <Media heading={s.heading} items={s.items} />;
 
   if (s.type === "pathway")
     return <Pathway

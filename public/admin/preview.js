@@ -231,26 +231,71 @@
     );
   }
 
-  function renderMedia(s, key, getAsset) {
-    var src = s.src || "";
-    if (s.kind === "image" && src && getAsset) {
+  function youtubeId(input) {
+    var t = (input || "").trim();
+    // Bare 11-char ID, possibly followed by ?si= or other tracking params
+    var bare = t.match(/^([a-zA-Z0-9_-]{11})(?:[?#].*)?$/);
+    if (bare) return bare[1];
+    var m = t.match(/[?&]v=([a-zA-Z0-9_-]{11})/) ||
+            t.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/) ||
+            t.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/) ||
+            t.match(/youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/);
+    return m ? m[1] : t;
+  }
+
+  function renderMediaItem(it, i, getAsset) {
+    var src = it.src || "";
+    if (it.kind === "image" && src && getAsset && !/^https?:\/\//.test(src)) {
       src = getAsset(src).toString();
     }
-    var frameStyle = s.aspect ? { aspectRatio: s.aspect } : {};
+    var aspect = it.aspect || (it.kind === "image" ? null : "16/9");
+    var frameStyle = aspect ? { aspectRatio: aspect } : {};
     var mediaEl;
-    if (s.kind === "image") {
-      mediaEl = h("img", { src: src, alt: s.alt || "", style: { width: "100%", display: "block" } });
-    } else if (s.kind === "video") {
-      mediaEl = h("video", { src: src, controls: true, style: { width: "100%" } });
+    if (it.kind === "image") {
+      mediaEl = h("img", { src: src, alt: it.alt || "", style: { width: "100%", display: "block" } });
     } else {
-      mediaEl = h("div", { style: { background: "#111", color: "#fff", padding: "24px", fontSize: "13px" } }, "YouTube: " + src);
+      // YouTube: CMS previews run in sandboxed iframes where YouTube blocks
+      // iframe-within-iframe embeds (Error 153). Show the thumbnail + play
+      // button instead — clicking opens the video on YouTube.
+      var ytId = youtubeId(src);
+      var thumb = "https://img.youtube.com/vi/" + ytId + "/hqdefault.jpg";
+      var watchUrl = "https://www.youtube.com/watch?v=" + ytId;
+      mediaEl = h("a", { href: watchUrl, target: "_blank", rel: "noopener",
+                         style: { display: "block", position: "relative", lineHeight: 0, height: "100%" } },
+        h("img", { src: thumb, alt: it.caption || "YouTube video",
+                   style: { width: "100%", height: "100%", display: "block", objectFit: "cover" } }),
+        h("div", { style: {
+          position: "absolute", inset: 0, display: "flex",
+          alignItems: "center", justifyContent: "center",
+          background: "rgba(0,0,0,0.18)",
+        }},
+          h("svg", { viewBox: "0 0 68 48", width: "68", height: "48", "aria-hidden": "true" },
+            h("rect", { x: 0, y: 0, width: 68, height: 48, rx: 10, fill: "#f00" }),
+            h("polygon", { points: "27,14 27,34 47,24", fill: "#fff" })
+          )
+        )
+      );
     }
-    return h("figure", { key: key, className: "media" },
+    return h("figure", { key: i, className: "media" },
       h("div", { className: "media-frame", style: frameStyle }, mediaEl),
-      s.caption ? h("figcaption", { className: "media-caption" },
+      it.caption ? h("figcaption", { className: "media-caption" },
         h("span", { className: "media-caption-label" }, "Figure"),
-        h("span", { className: "media-caption-text" }, s.caption)
+        h("span", { className: "media-caption-text" }, it.caption)
       ) : null
+    );
+  }
+
+  function renderMedia(s, key, getAsset) {
+    var items = toArray(s.items);
+    var multi = items.length > 1;
+    var gridStyle = multi
+      ? { display: "grid", gridTemplateColumns: "repeat(" + items.length + ", 1fr)", gap: "1px" }
+      : {};
+    return h("section", { key: key, className: multi ? "media-block media-block--multi" : "media-block" },
+      s.heading ? h("h2", { className: "media-heading" }, s.heading) : null,
+      h("div", { className: "media-grid", style: gridStyle },
+        items.map(function (it, i) { return renderMediaItem(it, i, getAsset); })
+      )
     );
   }
 

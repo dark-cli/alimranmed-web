@@ -25,9 +25,10 @@ sections:
           Stroke often leaves temporary or permanent disabilities. A structured rehabilitation programme aims to return
           the affected part to function and reduce dependence on others.
   - type: media
-    kind: image
-    src: /images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية.jpg
-    alt: Illustration showing the causes of a stroke in the brain
+    items:
+      - kind: image
+        src: /images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية.jpg
+        alt: Illustration showing the causes of a stroke in the brain
   - type: prose
     heading: Overview
     body: >

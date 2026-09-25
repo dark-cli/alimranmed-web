@@ -1,26 +1,30 @@
 ---
-title: "Knee Exercises"
-description: "Home knee strengthening and rehabilitation exercises for pain relief and recovery."
-category: "exercises"
+title: Knee Exercises
+description: Home knee strengthening and rehabilitation exercises for pain relief and recovery.
+category: exercises
 order: 999
-legacyUrl: "https://alimranmed.com/knee/"
-source: "legacy-wp"
+legacyUrl: https://alimranmed.com/knee/
+source: legacy-wp
 redesigned: true
 sections:
   - type: media
-    kind: youtube
-    src: "https://www.youtube.com/watch?v=ne5VhVNn1Iw"
-    caption: "Knee exercises for strength and pain relief"
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=ne5VhVNn1Iw
+        caption: Knee exercises for strength and pain relief
   - type: media
-    kind: youtube
-    src: "https://www.youtube.com/watch?v=Gl255J2zYRY"
-    caption: "Knee rehabilitation exercises at home"
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=Gl255J2zYRY
+        caption: Knee rehabilitation exercises at home
   - type: media
-    kind: youtube
-    src: "https://www.youtube.com/watch?v=mq-hy6r1Pm4"
-    caption: "Advanced knee strengthening exercises"
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=mq-hy6r1Pm4
+        caption: Advanced knee strengthening exercises
   - type: media
-    kind: youtube
-    src: "https://www.youtube.com/watch?v=pPYefCyO-XY"
-    caption: "Additional knee mobility and recovery exercises"
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=pPYefCyO-XY
+        caption: Additional knee mobility and recovery exercises
 ---

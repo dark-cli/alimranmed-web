@@ -26,9 +26,10 @@ sections:
           for non-surgical cases. Severe nerve ruptures or avulsions may require surgery within 6 months of injury for
           best results.
   - type: media
-    kind: image
-    src: /images/legacy/2021/01/13.jpg
-    alt: Brachial plexus — nerve network from spine to arm
+    items:
+      - kind: image
+        src: /images/legacy/2021/01/13.jpg
+        alt: Brachial plexus — nerve network from spine to arm
   - type: prose
     heading: What brachial plexus injuries are
     body: >
