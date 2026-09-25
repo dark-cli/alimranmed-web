@@ -30,6 +30,8 @@ output:
 # but they can't splice into sequences, so per-collection field lists are
 # written out explicitly.
 
+# Unified sections field — used by ALL collections (treatments, services,
+# blog, doctors). Mirrors the section discriminated union in content.config.ts.
 _sections_field: &sections_field
   label: Sections
   name: sections
@@ -37,9 +39,15 @@ _sections_field: &sections_field
   required: false
   typeKey: type
   types:
-    - name: at_a_glance
-      label: At a Glance
+    - name: prose
+      label: Prose
       fields:
+        - { label: Heading (appears in TOC), name: heading, widget: string, required: false }
+        - { label: Body (markdown — inline links supported), name: body, widget: text }
+    - name: highlights
+      label: Highlights (At a glance)
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'At a glance' / 'لمحة سريعة'." }
         - label: Items
           name: items
           widget: list
@@ -48,123 +56,27 @@ _sections_field: &sections_field
           fields:
             - { label: Label, name: label, widget: string }
             - { label: Value, name: value, widget: text }
-    - name: prose
-      label: Prose
-      fields:
-        - { label: Heading (appears in TOC), name: heading, widget: string, required: false }
-        - { label: Body (markdown), name: body, widget: markdown }
-    - name: pull_quote
-      label: Pull Quote
-      fields:
-        - { label: Quote text, name: text, widget: text }
-        - { label: Attribution, name: attribution, widget: string, required: false }
-    - name: comparison_pair
-      label: Comparison Pair
+    - name: stats
+      label: Stats
       fields:
         - { label: Heading, name: heading, widget: string, required: false }
         - { label: Intro, name: intro, widget: text, required: false }
-        - label: Side A
-          name: a
-          widget: object
-          fields:
-            - { label: Label, name: label, widget: string }
-            - { label: Title, name: title, widget: string }
-            - { label: Items, name: items, widget: list, field: { label: Item, name: item, widget: string } }
-        - label: Side B
-          name: b
-          widget: object
-          fields:
-            - { label: Label, name: label, widget: string }
-            - { label: Title, name: title, widget: string }
-            - { label: Items, name: items, widget: list, field: { label: Item, name: item, widget: string } }
-    - name: stats_facts
-      label: Stats & Facts
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false }
-        - { label: Intro, name: intro, widget: text, required: false }
-        - label: Stats
-          name: stats
-          widget: list
-          min: 2
-          max: 4
-          fields:
-            - { label: Value, name: value, widget: string }
-            - { label: Label, name: label, widget: string }
-        - label: Facts
-          name: facts
-          widget: list
-          required: false
-          default: []
-          field: { label: Fact, name: fact, widget: string }
-    - name: treatment_groups
-      label: Treatment Groups
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false }
-        - { label: Intro, name: intro, widget: text, required: false }
-        - { label: Note, name: note, widget: string, required: false }
-        - label: Groups
-          name: groups
-          widget: list
-          min: 2
-          max: 4
-          fields:
-            - { label: Title, name: title, widget: string }
-            - { label: Subtitle, name: subtitle, widget: string, required: false }
-            - { label: Items, name: items, widget: list, field: { label: Item, name: item, widget: string } }
-    - name: related
-      label: Related Treatments
-      fields:
-        - label: Treatment slugs
-          name: slugs
-          widget: list
-          min: 1
-          field: { label: Slug, name: slug, widget: string }
-    - name: media
-      label: Media
-      fields:
-        - label: Kind
-          name: kind
-          widget: select
-          options: [image, video, youtube]
-        - { label: Source URL / YouTube ID, name: src, widget: string }
-        - { label: Alt text, name: alt, widget: string, required: false }
-        - { label: Caption, name: caption, widget: string, required: false }
-        - label: Aspect ratio
-          name: aspect
-          widget: select
-          required: false
-          options: ["16/9", "4/3", "3/2", "1/1"]
-        - { label: Upload date, name: uploadDate, widget: string, required: false }
-
-# ── Doctor CV block templates (variable-type list) ───────────────────────
-# Referenced by *doctor_sections_field below. Mirrors the doctorSection
-# discriminatedUnion in src/content.config.ts and the block components
-# under src/components/doctor/.
-
-_doctor_sections_field: &doctor_sections_field
-  label: Sections
-  name: sections
-  widget: list
-  required: false
-  typeKey: type
-  types:
-    # Hero is not a block — every doctor has exactly one hero, so its fields
-    # (heroEyebrow, heroHeadline, heroLede) live at the top of the entry
-    # in the Identity group. See _doctor_hero_fields below.
-    - name: cv_stats
-      label: Stats band
-      fields:
-        - label: Stats
+        - label: Items
           name: items
           widget: list
           min: 2
           max: 6
           fields:
-            - { label: Figure, name: fig, widget: string }
-            - { label: Description, name: desc, widget: string }
-    # Unified list block. One widget, three layouts driven by the `variant`
-    # field. Variant names describe the LAYOUT — same block is used for
-    # appointments, education, memberships, publications, conferences.
+            - { label: Value (big number / metric), name: value, widget: string }
+            - { label: Label (short description), name: label, widget: string }
+    - name: facts
+      label: Facts (numbered list)
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Key facts' / 'حقائق أساسية'." }
+        - label: Items
+          name: items
+          widget: list
+          field: { label: Fact, name: fact, widget: text }
     - name: list
       label: List
       fields:
@@ -172,7 +84,7 @@ _doctor_sections_field: &doctor_sections_field
           name: variant
           widget: select
           default: rows
-          hint: "Rows: single-column stacked (label + body, optional subtitle). Wrap: auto-fit responsive columns (fits as many as viewport allows) — good for short entries. Columns: fixed 2 columns, halves vertical space for medium-length entries."
+          hint: "Rows: single-column stacked. Wrap: auto-fit responsive columns (good for memberships/tags). Columns: fixed 2-column grid."
           options:
             - { label: "Rows — single column, stacked", value: rows }
             - { label: "Wrap — responsive (as many cols as fit)", value: wrap }
@@ -183,9 +95,101 @@ _doctor_sections_field: &doctor_sections_field
           widget: list
           min: 1
           fields:
-            - { label: Label, name: label, widget: string, hint: "Small mono column — a date, a period, a year, whatever short tag identifies the entry." }
-            - { label: Body, name: body, widget: text, hint: "The main text of the entry." }
-            - { label: Subtitle, name: subtitle, widget: text, required: false, hint: "Optional secondary line under the body. Supported by Rows and Columns; Wrap ignores it." }
+            - { label: Label, name: label, widget: string, hint: "Short mono tag — date, year, code." }
+            - { label: Body, name: body, widget: text }
+            - { label: Subtitle, name: subtitle, widget: text, required: false, hint: "Optional secondary line. Supported by Rows and Columns; Wrap ignores it." }
+    - name: quote
+      label: Pull Quote
+      fields:
+        - { label: Quote text, name: text, widget: text }
+        - { label: Attribution, name: attribution, widget: string, required: false }
+    - name: panels
+      label: Panels (comparison or options grid)
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false }
+        - { label: Intro, name: intro, widget: text, required: false }
+        - { label: Note (footer line), name: note, widget: string, required: false }
+        - label: Panels
+          name: panels
+          widget: list
+          min: 2
+          max: 4
+          fields:
+            - { label: Eyebrow, name: eyebrow, widget: string, required: false, hint: "Small label above title — e.g. 'Before' / 'After'." }
+            - { label: Title, name: title, widget: string }
+            - { label: Subtitle, name: subtitle, widget: string, required: false }
+            - label: Items
+              name: items
+              widget: list
+              field: { label: Item (markdown links ok), name: item, widget: string }
+    - name: media
+      label: Media (image / video / YouTube)
+      fields:
+        - label: Kind
+          name: kind
+          widget: select
+          options: [image, video, youtube]
+        - { label: "Source — image path, video path, or YouTube ID/URL", name: src, widget: string }
+        - { label: Alt text, name: alt, widget: string, required: false }
+        - { label: Caption, name: caption, widget: string, required: false }
+        - label: Aspect ratio
+          name: aspect
+          widget: select
+          required: false
+          options: ["16/9", "4/3", "3/2", "1/1"]
+        - { label: Upload date (YouTube JSON-LD), name: uploadDate, widget: string, required: false }
+    - name: pathway
+      label: Pathway (link chip groups)
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false }
+        - { label: Intro, name: intro, widget: text, required: false }
+        - label: Groups
+          name: groups
+          widget: list
+          fields:
+            - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+            - { label: Title, name: title, widget: string }
+            - label: Items
+              name: items
+              widget: list
+              fields:
+                - { label: Name, name: name, widget: string }
+                - { label: Link (href), name: href, widget: string }
+    - name: row
+      label: Row (image row)
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false }
+        - label: Columns
+          name: columns
+          widget: select
+          default: auto
+          options:
+            - { label: "Auto (responsive fit)", value: auto }
+            - { label: "2 columns", value: "2" }
+            - { label: "3 columns", value: "3" }
+            - { label: "4 columns", value: "4" }
+        - label: Items
+          name: items
+          widget: list
+          fields:
+            - { label: Image path, name: src, widget: string }
+            - { label: Alt text, name: alt, widget: string, required: false }
+            - { label: Caption, name: caption, widget: string, required: false }
+            - { label: Link (href), name: href, widget: string, required: false }
+            - label: Aspect ratio
+              name: aspect
+              widget: select
+              required: false
+              options: ["16/9", "4/3", "3/2", "1/1"]
+    - name: cards
+      label: Cards (related links)
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Related reading' / 'قراءات ذات صلة'." }
+        - label: Slugs
+          name: slugs
+          widget: list
+          min: 1
+          field: { label: Treatment/article slug, name: slug, widget: string }
 
 # ── Collections ──────────────────────────────────────────────────────────
 # Base fields (from pageBase in src/content.config.ts) are inlined into each
@@ -239,7 +243,7 @@ collections:
       - { label: Hero lede, name: heroLede, widget: text, hint: "One-paragraph intro shown under the name." }
 
       # ── CV sections (page body blocks — including memberships) ───────
-      - *doctor_sections_field
+      - *sections_field
 
       # ── Metadata (bookkeeping — not shown on the detail page) ────────
       - { label: Listing order, name: order, widget: number, required: false, default: 999, value_type: int, hint: "Sort key for the /doctors/ listing." }
@@ -305,7 +309,7 @@ collections:
       - { label: Hero lede, name: heroLede, widget: text, hint: "One-paragraph intro shown under the name." }
 
       # ── CV sections (page body blocks — including memberships) ───────
-      - *doctor_sections_field
+      - *sections_field
 
       # ── Metadata (bookkeeping — not shown on the detail page) ────────
       - { label: Listing order, name: order, widget: number, required: false, default: 999, value_type: int, hint: "Sort key for the /doctors/ listing." }
