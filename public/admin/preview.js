@@ -441,6 +441,77 @@
     },
   };
 
+  /* ── Body markdown renderer ──────────────────────────────────────────── */
+  // Legacy .md files still carry a raw markdown body below the frontmatter.
+  // We parse it with marked (loaded from CDN in /admin/index.astro) and then
+  // post-process the resulting HTML so YouTube-only paragraphs and standalone
+  // images gain the same chrome as the Media block (border + caption strip).
+
+  var YT_RE = /^(?:https?:)?\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([\w-]{6,20})/;
+
+  function ytIdFromHref(href) {
+    if (!href) return null;
+    var m = String(href).match(YT_RE);
+    return m ? m[1] : null;
+  }
+
+  // Replace <p><a href="youtube…">…</a></p> with a media-frame iframe embed.
+  function transformYouTube(html) {
+    return html.replace(
+      /<p>\s*<a[^>]*href="([^"]+)"[^>]*>[^<]*<\/a>\s*<\/p>/g,
+      function (m, href) {
+        var id = ytIdFromHref(href);
+        if (!id) return m;
+        return '<figure class="media body-media">'
+          + '<div class="media-frame" style="aspect-ratio:16/9;">'
+          + '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '"'
+          + ' title="YouTube video" loading="lazy"'
+          + ' referrerpolicy="strict-origin-when-cross-origin"'
+          + ' allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'
+          + ' allowfullscreen></iframe>'
+          + '</div></figure>';
+      }
+    );
+  }
+
+  // Replace <p><img …></p> with a media-frame figure. Preserves alt as caption.
+  function transformImages(html) {
+    return html.replace(
+      /<p>\s*<img\s+([^>]*)\/?>\s*<\/p>/g,
+      function (m, attrs) {
+        var altM = attrs.match(/alt="([^"]*)"/);
+        var alt  = altM ? altM[1] : "";
+        var cap  = alt
+          ? '<figcaption class="media-caption"><span class="media-caption-label">Figure</span><span class="media-caption-text">' + alt + '</span></figcaption>'
+          : '';
+        return '<figure class="media body-media">'
+          + '<div class="media-frame"><img ' + attrs + '/></div>'
+          + cap + '</figure>';
+      }
+    );
+  }
+
+  function renderBody(md, key) {
+    if (!md || typeof md !== "string" || !md.trim()) return null;
+    if (typeof window === "undefined" || !window.marked || !window.marked.parse) {
+      // marked failed to load — fall back to plain paragraphs so preview still shows something.
+      var paras = md.split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+      return h("div", { key: key, className: "art-prose body-prose" },
+        paras.map(function (p, i) {
+          return h("p", { key: i, dangerouslySetInnerHTML: { __html: rewriteLinks(p) } });
+        })
+      );
+    }
+    var html = window.marked.parse(md, { breaks: true, gfm: true });
+    html = transformYouTube(html);
+    html = transformImages(html);
+    return h("div", {
+      key: key,
+      className: "art-prose body-prose",
+      dangerouslySetInnerHTML: { __html: html },
+    });
+  }
+
   /* ── Article preview helpers ─────────────────────────────────────────── */
 
   function buildPreviewToc(sections) {
@@ -471,8 +542,9 @@
     return total;
   }
 
-  function readingTimeStr(sections, isAr) {
-    var mins = Math.max(1, Math.round(estimateSectionWords(sections) / 200));
+  function readingTimeStr(sections, isAr, extraBody) {
+    var words = estimateSectionWords(sections) + countWords(extraBody || "");
+    var mins  = Math.max(1, Math.round(words / 200));
     return isAr ? toAr(mins) + " دقائق" : mins + " min read";
   }
 
@@ -603,6 +675,7 @@
         var category    = entry.getIn(["data", "category"])    || "";
         var dateRaw     = entry.getIn(["data", "publishedAt"]) || entry.getIn(["data", "updated"]) || "";
         var sections    = toArray(entry.getIn(["data", "sections"]));
+        var bodyMd      = entry.getIn(["data", "body"]) || "";
         var llIdx       = lastListIndex(sections);
 
         var toc = buildPreviewToc(sections);
@@ -615,11 +688,11 @@
         if (kind === "treatments") {
           if (category) meta.push({ label: L.pathwayLabel,      value: category });
           meta.push(     { label: L.reviewedByLabel,  value: L.reviewer });
-          meta.push(     { label: L.readingTimeLabel, value: readingTimeStr(sections, isAr) });
+          meta.push(     { label: L.readingTimeLabel, value: readingTimeStr(sections, isAr, bodyMd) });
           if (dateStr !== "—") meta.push({ label: L.lastReviewedLabel, value: dateStr });
         } else if (kind === "blog") {
           meta.push({ label: L.reviewedByLabel,  value: L.reviewer });
-          meta.push({ label: L.readingTimeLabel, value: readingTimeStr(sections, isAr) });
+          meta.push({ label: L.readingTimeLabel, value: readingTimeStr(sections, isAr, bodyMd) });
           if (dateStr !== "—") meta.push({ label: L.lastReviewedLabel, value: dateStr });
         }
 
@@ -682,9 +755,11 @@
 
               // Article body
               h("article", { className: "art-body" },
-                sectionEls.length > 0
-                  ? sectionEls
-                  : h("p", { style: { color: "var(--muted)", fontSize: "14px", paddingTop: "32px" } }, L.noSections),
+                sectionEls.length > 0 ? sectionEls : null,
+                renderBody(bodyMd, "body"),
+                (sectionEls.length === 0 && !bodyMd)
+                  ? h("p", { style: { color: "var(--muted)", fontSize: "14px", paddingTop: "32px" } }, L.noSections)
+                  : null,
 
                 // CTA
                 h("section", { className: "art-cta" },
