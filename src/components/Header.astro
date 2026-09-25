@@ -21,15 +21,15 @@ const currentPath = Astro.url.pathname;
 // Localised href helper
 const L = (href: string) => localizedHref(href, locale);
 
-// Nav items. Blog earns a slot now that the index page has its own
-// filter UI and doesn't feel like an afterthought; the full A–Z
-// treatment/service indices remain reachable via /conditions/ and search.
+// Nav items. Library replaces Blog because it's the superset: blog posts,
+// conditions, procedures and cases all live there under a single type filter.
+// /blog/ still resolves for direct URLs and search-crawler continuity.
 type NavItem = { label: string; labelAr: string; href: string };
 const NAV: NavItem[] = [
   { label: "Home",                    labelAr: "الرئيسية",     href: "/" },
   { label: "Consultant CV",           labelAr: "السيرة العلمية", href: "/doctors/hussein-imran-mousa/" },
   { label: "Conditions & Procedures", labelAr: "ما نعالج",      href: "/conditions/" },
-  { label: "Blog",                    labelAr: "المدونة",       href: "/blog/" },
+  { label: "Library",                 labelAr: "المكتبة",       href: "/library/" },
 ];
 
 const isActive = (href: string) => {

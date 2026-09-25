@@ -1,0 +1,453 @@
+---
+/**
+ * /library — unified content index. Lists every published article across
+ * collections so patients (and search crawlers) have one place to browse the
+ * full corpus. Semantically distinct from /blog (editorial posts only) and
+ * /conditions (clinical taxonomy view).
+ *
+ * Sources: blog, treatments, services, cases. Doctors and utility `pages`
+ * (about, contact) are excluded — they aren't articles.
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+
+export async function getStaticPaths() {
+  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+}
+
+const locale = currentLocale(Astro);
+const L = (href: string) => localizedHref(href, locale);
+const isAr = locale === "ar";
+const dateLocale = isAr ? "ar-IQ" : "en-US";
+
+type Kind = "blog" | "treatments" | "services" | "cases";
+
+interface Item {
+  kind: Kind;
+  slug: string;
+  title: string;
+  description: string;
+  href: string;
+  date: Date | null;
+}
+
+function dateOf(data: any): Date | null {
+  const v = data?.publishedAt || data?.updated || data?.reviewedAt;
+  if (!v) return null;
+  return v instanceof Date ? v : new Date(v);
+}
+
+async function loadKind(kind: Kind, basePath: string): Promise<Item[]> {
+  const entries = await getCollection(kind);
+  return entries
+    .filter((e) => isLocale(e.id, locale))
+    .map((e) => {
+      const slug = topicOf(e.id);
+      const data = e.data as any;
+      return {
+        kind,
+        slug,
+        title: data.title || slug,
+        description: data.description || "",
+        href: L(`${basePath}/${slug}/`),
+        date: dateOf(data),
+      };
+    });
+}
+
+const items: Item[] = [
+  ...(await loadKind("blog",       "/blog")),
+  ...(await loadKind("treatments", "/treatments")),
+  ...(await loadKind("services",   "/services")),
+  ...(await loadKind("cases",      "/cases")),
+];
+
+// Newest first; entries without a date fall to the bottom, sub-sorted A→Z.
+items.sort((a, b) => {
+  const at = a.date?.getTime() ?? 0;
+  const bt = b.date?.getTime() ?? 0;
+  if (at !== bt) return bt - at;
+  return a.title.localeCompare(b.title, isAr ? "ar" : "en");
+});
+
+const counts: Record<"all" | Kind, number> = {
+  all: items.length,
+  blog: 0, treatments: 0, services: 0, cases: 0,
+};
+for (const it of items) counts[it.kind] += 1;
+
+const T = isAr ? {
+  title:        "المكتبة — مركز العمران الطبي",
+  description:  "فهرس موحّد لكل ما نكتبه: مقالات، حالات نعالجها، إجراءات، وحالات سريرية.",
+  eyebrow:      "المكتبة",
+  h1:           "كل ما نشرناه في مكان واحد.",
+  lede:         "مقالات ومراجع سريرية عن الحالات التي نعالجها والإجراءات التي نقدمها، جنبًا إلى جنب مع حالات مختارة. صنّف حسب النوع أو ابحث لتصل إلى ما يهمك.",
+  filterLabel:  "تصفية حسب النوع",
+  ariaFilter:   "تصفية النوع",
+  all:          "الكل",
+  blog:         "مدونة",
+  treatments:   "حالة",
+  services:     "إجراء",
+  cases:        "حالة سريرية",
+  emptyFilter:  "لا توجد نتائج تطابق هذه التصفية.",
+  emptyAll:     "لا يوجد محتوى منشور بعد.",
+  showMore:     "عرض المزيد",
+  showing:      "عرض",
+  of:           "من",
+  searchPh:     "ابحث في العناوين والوصف…",
+  searchAria:   "ابحث في المكتبة",
+} : {
+  title:        "Library — Alimran Medical Center",
+  description:  "A single index of everything we publish: articles, condition pages, procedures and cases.",
+  eyebrow:      "Library",
+  h1:           "Everything we've published, in one place.",
+  lede:         "Articles and clinical reference pages on the conditions we treat and the procedures we offer, alongside selected case reports. Filter by type to find what you need.",
+  filterLabel:  "Filter by type",
+  ariaFilter:   "Type filter",
+  all:          "All",
+  blog:         "Blog",
+  treatments:   "Condition",
+  services:     "Procedure",
+  cases:        "Case",
+  emptyFilter:  "No entries match this filter yet.",
+  emptyAll:     "No content published yet.",
+  showMore:     "Show more",
+  showing:      "Showing",
+  of:           "of",
+  searchPh:     "Search titles and descriptions…",
+  searchAria:   "Search library",
+};
+
+// Initial batch size and step for the "Show more" button. 24 fills roughly
+// 4×6 on desktop and stays under a screen height on mobile so the first
+// interaction reveals a lot of scannable content without a long scroll.
+const PAGE_SIZE = 24;
+
+function fmtDate(d: Date | null): string {
+  if (!d) return "";
+  return d.toLocaleDateString(dateLocale, { year: "numeric", month: "short" });
+}
+---
+
+<BaseLayout title={T.title} description={T.description}>
+  <section class="intro">
+    <div class="intro-inner">
+      <p class="intro-eyebrow">{T.eyebrow}</p>
+      <h1 class="intro-h1">{T.h1}</h1>
+      <p class="intro-lede">{T.lede}</p>
+    </div>
+  </section>
+
+  <section class="filter-band">
+    <div class="filter-inner">
+      <p class="filter-label">{T.filterLabel}</p>
+      <div class="filter-pills" role="tablist" aria-label={T.ariaFilter}>
+        <button type="button" class="pill active" data-filter="all"        role="tab" aria-selected="true">{T.all}        <span class="pill-n">{counts.all}</span></button>
+        <button type="button" class="pill"        data-filter="blog"       role="tab" aria-selected="false">{T.blog}       <span class="pill-n">{counts.blog}</span></button>
+        <button type="button" class="pill"        data-filter="treatments" role="tab" aria-selected="false">{T.treatments} <span class="pill-n">{counts.treatments}</span></button>
+        <button type="button" class="pill"        data-filter="services"   role="tab" aria-selected="false">{T.services}   <span class="pill-n">{counts.services}</span></button>
+        {counts.cases > 0 && (
+          <button type="button" class="pill"      data-filter="cases"      role="tab" aria-selected="false">{T.cases}      <span class="pill-n">{counts.cases}</span></button>
+        )}
+      </div>
+      <label class="lib-search">
+        <span class="visually-hidden">{T.searchAria}</span>
+        <input
+          id="lib-search"
+          type="search"
+          placeholder={T.searchPh}
+          aria-label={T.searchAria}
+          autocomplete="off"
+          enterkeyhint="search"
+        />
+      </label>
+    </div>
+  </section>
+
+  <section class="lib-grid-band">
+    <div class="lib-grid" id="lib-grid">
+      {items.map((it, i) => (
+        <a
+          class="lib-card"
+          href={it.href}
+          data-kind={it.kind}
+          data-search={(it.title + " " + (it.description || "")).toLowerCase()}
+          hidden={i >= PAGE_SIZE}
+        >
+          <div class="lib-card-meta">
+            <span class="lib-card-badge" data-k={it.kind}>{
+              it.kind === "blog"       ? T.blog :
+              it.kind === "treatments" ? T.treatments :
+              it.kind === "services"   ? T.services :
+                                          T.cases
+            }</span>
+            {it.date && <span class="lib-card-date">{fmtDate(it.date)}</span>}
+          </div>
+          <h3 class="lib-card-title">{it.title}</h3>
+          {it.description && <p class="lib-card-desc">{it.description}</p>}
+        </a>
+      ))}
+    </div>
+
+    <p class="empty-state" id="lib-empty" hidden>{T.emptyFilter}</p>
+    {items.length === 0 && (
+      <p class="empty-state">{T.emptyAll}</p>
+    )}
+
+    <div class="lib-more" id="lib-more" data-page-size={PAGE_SIZE} data-show-more={T.showMore} data-showing={T.showing} data-of={T.of}>
+      <p class="lib-more-count" id="lib-more-count"></p>
+      <button type="button" class="lib-more-btn" id="lib-more-btn">{T.showMore}</button>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    function bind() {
+      var pills   = document.querySelectorAll(".pill[data-filter]");
+      var more    = document.getElementById("lib-more");
+      var moreBtn = document.getElementById("lib-more-btn");
+      var moreN   = document.getElementById("lib-more-count");
+      var empty   = document.getElementById("lib-empty");
+      var search  = document.getElementById("lib-search");
+      if (!pills.length || !more) return;
+
+      var PAGE_SIZE = parseInt(more.getAttribute("data-page-size"), 10) || 24;
+      var showingTxt  = more.getAttribute("data-showing")   || "Showing";
+      var ofTxt       = more.getAttribute("data-of")        || "of";
+
+      // Current state: which filter is active, the search query, and how
+      // many matching cards should be visible. Reset the visible count on
+      // any filter/search change so the user always sees a fresh first page.
+      var filter   = "all";
+      var query    = "";
+      var visibleN = PAGE_SIZE;
+
+      function render() {
+        var cards = document.querySelectorAll(".lib-card");
+        var matched = 0;
+        var shown = 0;
+        cards.forEach(function (c) {
+          var kindOk = filter === "all" || c.getAttribute("data-kind") === filter;
+          var textOk = !query || (c.getAttribute("data-search") || "").indexOf(query) !== -1;
+          var isMatch = kindOk && textOk;
+          if (!isMatch) { c.hidden = true; return; }
+          matched += 1;
+          if (shown < visibleN) { c.hidden = false; shown += 1; }
+          else { c.hidden = true; }
+        });
+        if (empty) empty.hidden = matched !== 0;
+        // Count line: "Showing 24 of 108"
+        if (moreN) {
+          moreN.textContent = matched === 0 ? "" : (showingTxt + " " + shown + " " + ofTxt + " " + matched);
+        }
+        // Hide the button when everything matching is already on screen.
+        var done = shown >= matched;
+        more.hidden = matched === 0;
+        if (moreBtn) moreBtn.hidden = done;
+      }
+
+      pills.forEach(function (pill) {
+        if (pill.__bound) return;
+        pill.__bound = true;
+        pill.addEventListener("click", function () {
+          filter = pill.getAttribute("data-filter") || "all";
+          visibleN = PAGE_SIZE;
+          pills.forEach(function (p) {
+            var active = p === pill;
+            p.classList.toggle("active", active);
+            p.setAttribute("aria-selected", String(active));
+          });
+          render();
+          // Scroll pinned card row into view so the new filter's first
+          // results aren't hidden below the fold.
+          var grid = document.getElementById("lib-grid");
+          if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      if (moreBtn && !moreBtn.__bound) {
+        moreBtn.__bound = true;
+        moreBtn.addEventListener("click", function () {
+          visibleN += PAGE_SIZE;
+          render();
+        });
+      }
+
+      if (search && !search.__bound) {
+        search.__bound = true;
+        // Debounce typing so we don't re-render on every keystroke.
+        var t;
+        search.addEventListener("input", function () {
+          clearTimeout(t);
+          t = setTimeout(function () {
+            query = (search.value || "").trim().toLowerCase();
+            visibleN = PAGE_SIZE;
+            render();
+          }, 100);
+        });
+      }
+
+      render();
+    }
+    bind();
+    document.addEventListener("astro:page-load", bind);
+  })();
+</script>
+
+<style>
+  .intro { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .intro-inner {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(44px, 5.5vw, 72px) 24px clamp(40px, 5vw, 64px);
+  }
+  .intro-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 20px;
+  }
+  .intro-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 5vw, 52px); line-height: 1.08;
+    font-weight: 400; letter-spacing: -0.025em;
+    margin: 0 0 18px; color: var(--ink); max-width: 22ch;
+  }
+  .intro-lede { font-size: 17px; line-height: 1.65; color: var(--body); margin: 0; max-width: 62ch; }
+
+  .filter-band { border-bottom: 1px solid var(--line); }
+  .filter-inner {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(20px, 2.5vw, 28px) 24px;
+    display: flex; align-items: center; flex-wrap: wrap; gap: 20px;
+  }
+  .filter-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin: 0; flex-shrink: 0;
+  }
+  .filter-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  /* Search sits to the far end of the filter row on desktop, drops below
+     on narrower widths. */
+  .lib-search { display: flex; align-items: center; flex: 1 1 220px; min-width: 200px; margin-inline-start: auto; }
+  .lib-search input {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 9px 14px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--ink);
+    border-radius: 2px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .lib-search input::placeholder { color: var(--muted); }
+  .lib-search input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(11, 94, 120, 0.15);
+  }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+  :global(html[dir="rtl"]) .lib-search input { font-size: 15px; }
+  .pill {
+    font-family: var(--font-body);
+    font-size: 13.5px; color: var(--body);
+    background: var(--white); border: 1px solid var(--line);
+    padding: 8px 14px; cursor: pointer;
+    display: inline-flex; align-items: baseline; gap: 6px;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .pill:hover { color: var(--accent); border-color: var(--accent); }
+  .pill.active { color: var(--white); background: var(--accent); border-color: var(--accent); }
+  .pill.active .pill-n { color: var(--white); opacity: 0.85; }
+  .pill-n { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+
+  .lib-grid-band {
+    max-width: var(--page-max); margin: 0 auto;
+    padding: clamp(40px, 5vw, 64px) 24px clamp(56px, 7vw, 96px);
+  }
+  .lib-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    gap: 1px; background: var(--line); border: 1px solid var(--line);
+  }
+  .lib-card {
+    display: flex; flex-direction: column;
+    padding: 24px 22px; text-decoration: none; color: inherit;
+    background: var(--white); transition: background-color 0.15s ease;
+  }
+  .lib-card:hover { background: var(--surface); text-decoration: none; }
+  .lib-card-meta { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+  .lib-card-badge {
+    font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 3px 7px; border: 1px solid var(--line); border-radius: 2px; background: var(--white);
+  }
+  /* Colour code the badge per content type — mirrors the blog pathway palette. */
+  .lib-card-badge[data-k="blog"]       { color: #5a3d8a; border-color: #d7cae8; }
+  .lib-card-badge[data-k="treatments"] { color: #7a5a1a; border-color: #ecd9a8; }
+  .lib-card-badge[data-k="services"]   { color: #2f6d47; border-color: #bbdec5; }
+  .lib-card-badge[data-k="cases"]      { color: var(--muted); border-color: var(--line); }
+  .lib-card-date { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-inline-start: auto; }
+  .lib-card-title {
+    font-family: var(--font-display);
+    font-size: 20px; font-weight: 400; letter-spacing: -0.01em;
+    line-height: 1.2; margin: 0 0 10px; color: var(--ink);
+  }
+  .lib-card:hover .lib-card-title { color: var(--accent); }
+  .lib-card-desc {
+    font-size: 14px; line-height: 1.55; color: var(--body);
+    margin: 0;
+    overflow: hidden; display: -webkit-box;
+    -webkit-line-clamp: 3; -webkit-box-orient: vertical; flex: 1 1 auto;
+  }
+
+  .empty-state { text-align: center; color: var(--muted); font-size: 14px; margin: 40px 0; }
+  :global(.lib-card[hidden]) { display: none !important; }
+
+  /* Pagination footer — count line + "Show more" button. */
+  .lib-more {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 14px; margin-top: clamp(32px, 4vw, 48px);
+  }
+  .lib-more[hidden] { display: none; }
+  .lib-more-count {
+    font-family: var(--font-mono);
+    font-size: 12px; letter-spacing: 0.06em; color: var(--muted); margin: 0;
+  }
+  .lib-more-btn {
+    font-family: var(--font-body);
+    font-size: 14px; font-weight: 500;
+    color: var(--accent);
+    background: var(--white);
+    border: 1px solid var(--accent);
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+  }
+  .lib-more-btn:hover { color: var(--white); background: var(--accent); }
+  .lib-more-btn[hidden] { display: none; }
+  :global(html[dir="rtl"]) .lib-more-count { font-family: var(--font-body); letter-spacing: 0.02em; font-size: 13px; }
+  :global(html[dir="rtl"]) .lib-more-btn   { font-size: 15px; }
+
+  /* AR typography overrides */
+  :global(html[dir="rtl"]) .intro-eyebrow,
+  :global(html[dir="rtl"]) .filter-label,
+  :global(html[dir="rtl"]) .lib-card-badge,
+  :global(html[dir="rtl"]) .lib-card-date,
+  :global(html[dir="rtl"]) .pill-n {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em; text-transform: none;
+  }
+  :global(html[dir="rtl"]) .intro-eyebrow { font-size: 12px; }
+  :global(html[dir="rtl"]) .filter-label { font-size: 13px; }
+  :global(html[dir="rtl"]) .intro-h1 { font-weight: 700; letter-spacing: 0; line-height: 1.18; max-width: 26ch; }
+  :global(html[dir="rtl"]) .intro-lede { line-height: 1.85; }
+  :global(html[dir="rtl"]) .lib-card-title { font-weight: 700; letter-spacing: 0; line-height: 1.3; }
+  :global(html[dir="rtl"]) .lib-card-desc { line-height: 1.85; }
+</style>
