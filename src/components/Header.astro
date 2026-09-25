@@ -166,7 +166,7 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
 
 <!-- Mobile drawer (< 860px). Same NAV links; kept outside .site-header so its
      fixed positioning is relative to the viewport, not the sticky header. -->
-<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+<aside id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
   <div class="drawer-head">
     <span class="eyebrow">{menuLabel}</span>
     <button id="menu-close" class="close-btn" aria-label={closeMenuLabel} type="button">
@@ -224,6 +224,10 @@ const closeMenuLabel = locale === "ar" ? "إغلاق" : "Close";
       scrim.classList.toggle("visible", open);
       document.body.classList.toggle("nav-open", open);
       nav.setAttribute("aria-hidden", String(!open));
+      // `inert` takes focusable descendants out of the tab order while the
+      // drawer is off-screen — the accessibility fix Lighthouse flags when
+      // aria-hidden alone is set on a container of buttons/links.
+      if (open) nav.removeAttribute("inert"); else nav.setAttribute("inert", "");
       if (toggle) toggle.setAttribute("aria-expanded", String(open));
     }
 

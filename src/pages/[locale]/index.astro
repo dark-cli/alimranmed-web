@@ -264,7 +264,17 @@ const T = isAr ? {
 };
 ---
 
-<BaseLayout title={T.title} description={T.description}>
+<BaseLayout
+  title={T.title}
+  description={T.description}
+  heroPreload={{
+    srcset:
+      "/images/doctors/hussein-imran-mousa-portrait-480.webp 480w," +
+      "/images/doctors/hussein-imran-mousa-portrait-800.webp 800w," +
+      "/images/doctors/hussein-imran-mousa-portrait-1200.webp 1200w",
+    sizes: "(min-width: 980px) 50vw, 100vw",
+  }}
+>
   <!-- ─── HERO ───────────────────────────────────────────────── -->
   <section class="hero-band">
     <div class="container hero">
@@ -295,11 +305,18 @@ const T = isAr ? {
     </div>
     <img
       class="hero-photo hero-photo-img"
-      src="/images/doctors/hussein-imran-mousa-portrait.jpg"
+      src="/images/doctors/hussein-imran-mousa-portrait-800.webp"
+      srcset="
+        /images/doctors/hussein-imran-mousa-portrait-480.webp 480w,
+        /images/doctors/hussein-imran-mousa-portrait-800.webp 800w,
+        /images/doctors/hussein-imran-mousa-portrait-1200.webp 1200w
+      "
+      sizes="(min-width: 980px) 50vw, 100vw"
       alt={T.heroImgAlt}
       width="831" height="866"
       loading="eager"
       fetchpriority="high"
+      decoding="async"
     />
     </div>
   </section>
