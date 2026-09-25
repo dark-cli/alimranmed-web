@@ -98,7 +98,7 @@ sections:
       - title: التعديل العصبي
         items:
           - "[تحفيز الحبل الشوكي](/services/radiofrequency/epidural-adhesiolysis/)"
-          - "[مضخة الباكلوفين داخل القراب](/services/surgery/intrathecal-pump/)"
+          - "[مضخة الباكلوفين داخل القراب](/blog/what-is-an-intrathecal-pump/)"
       - title: علاجات الحقن
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"

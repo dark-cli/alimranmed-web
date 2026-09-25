@@ -65,7 +65,7 @@ sections:
           - "[التحفيز المغناطيسي المتكرر عبر الجمجمة (rTMS)](/services/brain-stimulation/tms/)"
           - "[التحفيز الكهربائي المباشر عبر الجمجمة (tDCS)](/services/brain-stimulation/tdcs/)"
           - "[تحفيز النخاع الشوكي](/services/radiofrequency/epidural-adhesiolysis/)"
-          - "[المضخة العلاجية داخل القناة الشوكية](/services/surgery/intrathecal-pump/)"
+          - "[المضخة العلاجية داخل القناة الشوكية](/blog/what-is-an-intrathecal-pump/)"
       - title: العلاجات المتقدمة
         items:
           - "[الترددات الراديوية النبضية](/services/radiofrequency/radiofrequency/)"

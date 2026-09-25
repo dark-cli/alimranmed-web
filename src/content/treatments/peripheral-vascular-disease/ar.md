@@ -97,7 +97,7 @@ sections:
         items:
           - "[التحفيز المغناطيسي المتكرر عبر الجمجمة (rTMS)](/services/brain-stimulation/tms/)"
           - "[تحفيز الحبل الشوكي](/services/radiofrequency/epidural-adhesiolysis/)"
-          - "[مضخة الباكلوفن الشوكي](/services/surgery/intrathecal-pump/)"
+          - "[مضخة الباكلوفن الشوكي](/blog/what-is-an-intrathecal-pump/)"
       - title: علاجات الحقن
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"

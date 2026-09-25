@@ -75,7 +75,7 @@ sections:
         items:
           - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
           - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
-          - "[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)"
+          - "[Intrathecal baclofen pump](/blog/what-is-an-intrathecal-pump/)"
       - title: Injection therapies
         items:
           - "[Botox® injections](/services/botox/botox-injection/)"

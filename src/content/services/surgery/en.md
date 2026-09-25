@@ -12,4 +12,4 @@ legacyUrl: "https://alimranmed.com/surgery"
 -   [Arthroplasty (Artificial Disc Replacement)](/services/surgery/artificial-disc/)
 -   [Endoscopic Procedures](/services/surgery/endoscopic-spine/)
 -   [Syringomyelia](/services/surgery/spinal-decompression/)
--   [Spinal Cord Stimulation and Catheter](/services/surgery/intrathecal-pump/)
+-   [Spinal Cord Stimulation and Catheter](/blog/what-is-an-intrathecal-pump/)
