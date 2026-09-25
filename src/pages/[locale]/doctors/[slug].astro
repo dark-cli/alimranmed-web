@@ -55,5 +55,20 @@ const titleSuffix = isAr ? "مركز العمران الطبي" : "Alimran Clini
     portrait={entry.data.photo}
     portraitAlt={entry.data.photoAlt ?? entry.data.fullName}
   />
-  <Sections sections={sections} locale={locale} />
+  <div class="cv-sections">
+    <Sections sections={sections} locale={locale} />
+  </div>
 </BaseLayout>
+
+<style>
+  /* Stats block has no self-constraining padding — it relies on an article
+     container that doesn't exist on doctor pages. Pin it to match CvHero
+     and the list blocks (.reg-section uses the same values). */
+  .cv-sections :global(.stats-block) {
+    max-width: var(--page-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+</style>
