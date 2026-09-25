@@ -20,7 +20,9 @@ import Pathway     from "../../components/blocks/Pathway.astro";
 import Row         from "../../components/blocks/Row.astro";
 import { currentLocale, toArabicDigits } from "../../lib/i18n";
 
+// Dev-only: `astro dev` serves it, production builds emit no pages for it.
 export function getStaticPaths() {
+  if (!import.meta.env.DEV) return [];
   return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
 }
 
