@@ -1,0 +1,126 @@
+---
+/**
+ * Sections — the single dispatcher for the unified widget catalog. Replaces
+ * both the older article/ArticleSections.astro and doctor/DoctorSections.astro.
+ *
+ * Any collection whose schema declares `sections: array(section)` renders its
+ * body through this component. Each block in the array is dispatched to its
+ * matching widget in src/components/blocks/.
+ *
+ * `resolveRelated` (optional) turns `cards` block slugs into resolved
+ * { slug, title, category, href, redesigned } items. Treatment pages pass a
+ * real resolver; other pages omit it and the cards block shows an empty grid.
+ */
+import Prose       from "./Prose.astro";
+import Highlights  from "./Highlights.astro";
+import Stats       from "./Stats.astro";
+import Facts       from "./Facts.astro";
+import ListRows    from "./ListRows.astro";
+import ListWrap    from "./ListWrap.astro";
+import ListColumns from "./ListColumns.astro";
+import Quote       from "./Quote.astro";
+import Panels      from "./Panels.astro";
+import Media       from "./Media.astro";
+import Pathway     from "./Pathway.astro";
+import Row         from "./Row.astro";
+import Cards       from "./Cards.astro";
+
+export interface RelatedItem {
+  slug: string;
+  title: string;
+  category: string;
+  href: string;
+  redesigned: boolean;
+}
+
+interface Props {
+  sections: any[];
+  locale: "en" | "ar";
+  resolveRelated?: (slugs: string[]) => RelatedItem[];
+}
+const { sections, locale, resolveRelated } = Astro.props;
+const isAr = locale === "ar";
+
+// Localised default headings + labels used by widgets that fall back to
+// a canonical string when the editor left the heading empty.
+const factsDefaultHeading = isAr ? "حقائق أساسية" : "Key facts";
+const cardsDefaultHeading = isAr ? "قراءات ذات صلة" : "Related reading";
+const cardsSoonLabel      = isAr
+  ? "لم يُعَد تصميم هذا العنصر بعد — قريبًا."
+  : "Not yet available in the new design";
+---
+
+{sections.map((s: any) => {
+  if (!s || !s.type) return null;
+
+  if (s.type === "prose")
+    return <Prose heading={s.heading} body={s.body} locale={locale} />;
+
+  if (s.type === "highlights")
+    return <Highlights heading={s.heading} items={s.items} />;
+
+  if (s.type === "stats")
+    return <Stats heading={s.heading} intro={s.intro} items={s.items} />;
+
+  if (s.type === "facts")
+    return <Facts heading={s.heading ?? factsDefaultHeading} items={s.items} locale={locale} />;
+
+  if (s.type === "list") {
+    if (s.variant === "rows")
+      return <ListRows heading={s.heading} items={s.items} />;
+    if (s.variant === "wrap")
+      return <ListWrap heading={s.heading} items={s.items} />;
+    if (s.variant === "columns")
+      return <ListColumns heading={s.heading} items={s.items} />;
+    return null;
+  }
+
+  if (s.type === "quote")
+    return <Quote text={s.text} attribution={s.attribution} />;
+
+  if (s.type === "panels")
+    return <Panels
+      heading={s.heading}
+      intro={s.intro}
+      note={s.note}
+      panels={s.panels}
+      locale={locale}
+    />;
+
+  if (s.type === "media")
+    return <Media
+      kind={s.kind}
+      src={s.src}
+      alt={s.alt}
+      caption={s.caption}
+      aspect={s.aspect}
+      uploadDate={s.uploadDate}
+    />;
+
+  if (s.type === "pathway")
+    return <Pathway
+      heading={s.heading}
+      intro={s.intro}
+      groups={s.groups}
+      locale={locale}
+    />;
+
+  if (s.type === "row")
+    return <Row
+      heading={s.heading}
+      columns={s.columns}
+      items={s.items}
+      locale={locale}
+    />;
+
+  if (s.type === "cards") {
+    const items = resolveRelated ? resolveRelated(s.slugs) : [];
+    return <Cards
+      heading={s.heading ?? cardsDefaultHeading}
+      soonLabel={cardsSoonLabel}
+      items={items}
+    />;
+  }
+
+  return null;
+})}

@@ -32,18 +32,21 @@ const pageBase = z.object({
   reviewedAt: z.coerce.date().optional(), // when the human review happened
 });
 
-// ── Redesign block system ─────────────────────────────────────────────
-// Treatment articles that opt into the new design (redesigned: true) declare
-// an ordered `sections` array. Each entry is a discriminated union — the
-// renderer dispatches on `type` and only draws the blocks the article
-// actually needs. Articles without `sections` fall through to the plain
-// prose template that renders their existing markdown body.
-const kv = z.object({ label: z.string(), value: z.string() });
-
-const blockAtGlance = z.object({
-  type: z.literal("at_a_glance"),
-  items: z.array(kv).min(2).max(4),
-});
+// ── Unified widget catalog ────────────────────────────────────────────────
+// One `section` discriminated union used by every collection (doctors,
+// treatments, services, blog). Renders through src/components/blocks/
+// Sections.astro. Names describe the widget's LAYOUT, not its usage — the
+// same block type can serve multiple editorial purposes.
+//
+// Migration notes:
+//   • at_a_glance      → highlights
+//   • pull_quote       → quote
+//   • related          → cards
+//   • stats_facts      → SPLIT into `stats` + `facts` (facts is now a widget)
+//   • cv_stats         → stats (field rename: fig → value, desc → label)
+//   • comparison_pair  → panels (2-panel form; a/b become panels[0/1] with
+//                        original label → eyebrow)
+//   • treatment_groups → panels (groups → panels, otherwise identical shape)
 
 const blockProse = z.object({
   type: z.literal("prose"),
@@ -51,108 +54,39 @@ const blockProse = z.object({
   body: z.string(),                    // markdown allowed
 });
 
-const blockPullQuote = z.object({
-  type: z.literal("pull_quote"),
-  text: z.string(),
-  attribution: z.string().optional(),
-});
-
-const blockComparisonPair = z.object({
-  type: z.literal("comparison_pair"),
+const blockHighlights = z.object({
+  type: z.literal("highlights"),
   heading: z.string().optional(),
-  intro: z.string().optional(),
-  a: z.object({ label: z.string(), title: z.string(), items: z.array(z.string()) }),
-  b: z.object({ label: z.string(), title: z.string(), items: z.array(z.string()) }),
-});
-
-const blockStatsFacts = z.object({
-  type: z.literal("stats_facts"),
-  heading: z.string().optional(),
-  intro: z.string().optional(),
-  stats: z.array(z.object({ value: z.string(), label: z.string() })).min(2).max(4),
-  facts: z.array(z.string()).default([]),
-});
-
-const blockTreatmentGroups = z.object({
-  type: z.literal("treatment_groups"),
-  heading: z.string().optional(),
-  intro: z.string().optional(),
-  note: z.string().optional(),
-  groups: z.array(z.object({
-    title: z.string(),
-    subtitle: z.string().optional(),
-    items: z.array(z.string()),
+  items: z.array(z.object({
+    label: z.string(),
+    value: z.string(),
   })).min(2).max(4),
 });
 
-const blockRelated = z.object({
-  type: z.literal("related"),
-  slugs: z.array(z.string()).min(1),   // links into other treatments/*
-});
-
-// Media — image, self-hosted video, or YouTube embed. Sits inline between
-// other blocks so it lands where it makes editorial sense. Not numbered /
-// not in the TOC. `src` for youtube accepts a bare 11-char ID or any full
-// URL; the component extracts the ID.
-const blockMedia = z.object({
-  type: z.literal("media"),
-  kind: z.enum(["image", "video", "youtube"]),
-  src: z.string(),
-  alt: z.string().optional(),
-  caption: z.string().optional(),
-  aspect: z.enum(["16/9", "4/3", "3/2", "1/1"]).optional(),
-  uploadDate: z.string().optional(),
-});
-
-const articleSection = z.discriminatedUnion("type", [
-  blockAtGlance,
-  blockProse,
-  blockPullQuote,
-  blockComparisonPair,
-  blockStatsFacts,
-  blockTreatmentGroups,
-  blockRelated,
-  blockMedia,
-]);
-
-// ── Doctor CV block system ────────────────────────────────────────────
-// Mirrors the article `sections` pattern but with block types tuned to a
-// clinician's CV. Kept as a separate union so treatment/blog schemas don't
-// pick up CV-only blocks by accident. See src/components/doctor/ for renderers.
-//
-// The hero is NOT a section block — every doctor has exactly one hero, so
-// its fields (heroEyebrow, heroHeadline, heroLede) live at the top of the
-// doctor schema and render unconditionally above the sections list.
-
-const blockCvStats = z.object({
-  type: z.literal("cv_stats"),
+const blockStats = z.object({
+  type: z.literal("stats"),
+  heading: z.string().optional(),
+  intro: z.string().optional(),
   items: z.array(z.object({
-    fig: z.string(),   // "5,000+", "25"
-    desc: z.string(),  // "Operations performed…"
+    value: z.string(),   // "5,000+", "25", "30–50%"
+    label: z.string(),   // short description under the figure
   })).min(2).max(6),
 });
 
-// Unified list block. One block type, three visual layouts driven by
-// `variant`. Item shape is generic (label / body / subtitle?); the renderer
-// picks the layout. Variant names describe HOW they look, not what they're
-// used for — same block can be appointments, memberships, publications, etc.
+const blockFacts = z.object({
+  type: z.literal("facts"),
+  heading: z.string().optional(),      // defaults to "Key facts" / "حقائق أساسية" in renderer
+  items: z.array(z.string()).min(1),
+});
+
+// One list block, three layout variants. Item shape is generic
+// (label / body / subtitle?); the renderer picks the layout.
 //
-//   variant: "rows"    — single-column stacked entries. Label on the left
-//                        (mono, small); body on the right (main text);
-//                        optional subtitle underneath the body in muted small.
-//                        Good for anything read top-to-bottom.
-//
-//   variant: "wrap"    — auto-fit responsive grid. Body on the left (main
-//                        text); label on the right (mono, small). Items
-//                        wrap into AS MANY columns as fit the viewport
-//                        (typically 1 on mobile, 2–3 on desktop). Subtitle
-//                        unused. Best for short single-line entries where
-//                        density matters (memberships, languages, tags).
-//
-//   variant: "columns" — fixed 2 columns, always. Each cell is a full
-//                        label + body row (same shape as `rows`). Halves
-//                        vertical space for medium-length entries when the
-//                        page is wide enough. Subtitle supported.
+//   rows    — single-column stacked entries, label mono-left, body right,
+//              optional subtitle beneath the body.
+//   wrap    — auto-fit responsive grid, body main-left, label mono-right.
+//              Items pack as many columns as fit; subtitle unused.
+//   columns — fixed 2 columns; each cell is a full label+body row.
 const blockList = z.object({
   type: z.literal("list"),
   variant: z.enum(["rows", "wrap", "columns"]),
@@ -164,9 +98,80 @@ const blockList = z.object({
   })).min(1),
 });
 
-const doctorSection = z.discriminatedUnion("type", [
-  blockCvStats,
+const blockQuote = z.object({
+  type: z.literal("quote"),
+  text: z.string(),
+  attribution: z.string().optional(),
+});
+
+const blockPanels = z.object({
+  type: z.literal("panels"),
+  heading: z.string().optional(),
+  intro: z.string().optional(),
+  note: z.string().optional(),
+  panels: z.array(z.object({
+    eyebrow: z.string().optional(),   // small caps label above title
+    title: z.string(),
+    subtitle: z.string().optional(),
+    items: z.array(z.string()).default([]),
+  })).min(2).max(4),
+});
+
+const blockMedia = z.object({
+  type: z.literal("media"),
+  kind: z.enum(["image", "video", "youtube"]),
+  src: z.string(),
+  alt: z.string().optional(),
+  caption: z.string().optional(),
+  aspect: z.enum(["16/9", "4/3", "3/2", "1/1"]).optional(),
+  uploadDate: z.string().optional(),
+});
+
+const blockPathway = z.object({
+  type: z.literal("pathway"),
+  heading: z.string().optional(),
+  intro: z.string().optional(),
+  groups: z.array(z.object({
+    eyebrow: z.string().optional(),
+    title: z.string(),
+    items: z.array(z.object({
+      name: z.string(),
+      href: z.string(),
+    })).min(1),
+  })).min(1),
+});
+
+const blockRow = z.object({
+  type: z.literal("row"),
+  heading: z.string().optional(),
+  columns: z.enum(["auto", "2", "3", "4"]).default("auto"),
+  items: z.array(z.object({
+    src: z.string(),
+    alt: z.string().optional(),
+    caption: z.string().optional(),
+    href: z.string().optional(),
+    aspect: z.enum(["16/9", "4/3", "3/2", "1/1"]).optional(),
+  })).min(1),
+});
+
+const blockCards = z.object({
+  type: z.literal("cards"),
+  heading: z.string().optional(),
+  slugs: z.array(z.string()).min(1),   // resolved to items by the page template
+});
+
+const section = z.discriminatedUnion("type", [
+  blockProse,
+  blockHighlights,
+  blockStats,
+  blockFacts,
   blockList,
+  blockQuote,
+  blockPanels,
+  blockMedia,
+  blockPathway,
+  blockRow,
+  blockCards,
 ]);
 
 const treatments = defineCollection({
@@ -183,7 +188,7 @@ const treatments = defineCollection({
     redesigned: z.boolean().optional(),
     publishedAt: z.coerce.date().optional(),
     pathwayOverride: z.string().optional(), // when frontmatter category is legacy-wrong
-    sections: z.array(articleSection).optional(),
+    sections: z.array(section).optional(),
   }),
 });
 
@@ -191,7 +196,7 @@ const services = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/services" }),
   schema: pageBase.extend({
     redesigned: z.boolean().optional(),
-    sections: z.array(articleSection).optional(),
+    sections: z.array(section).optional(),
     isHub: z.boolean().optional(),
   }),
 });
@@ -215,7 +220,7 @@ const doctors = defineCollection({
     // timelines (appointments/education/conferences), memberships, publications.
     // The listing card derives its memberships count from the cv_memberships
     // blocks in this list.
-    sections: z.array(doctorSection).optional(),
+    sections: z.array(section).optional(),
   }),
 });
 
@@ -228,7 +233,7 @@ const blog = defineCollection({
     publishedAt: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
     redesigned: z.boolean().optional(),        // opt-in to block-based rendering
-    sections: z.array(articleSection).optional(), // block-based content
+    sections: z.array(section).optional(), // block-based content
     relatedTreatments: z.array(z.string()).optional(), // link to treatment slugs
     clinicallyRelevant: z.boolean().default(false),    // appears in /conditions
   }),
