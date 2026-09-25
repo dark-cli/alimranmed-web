@@ -377,6 +377,7 @@
 
         var title       = entry.getIn(["data", "title"])       || "";
         var description = entry.getIn(["data", "description"]) || "";
+        var category    = entry.getIn(["data", "category"])    || "";
         var sections    = toArray(entry.getIn(["data", "sections"]));
         var llIdx       = lastListIndex(sections);
 
@@ -387,23 +388,17 @@
         return h("div", { className: "article-preview", dir: isAr ? "rtl" : "ltr", lang: locale },
           h("section", { className: "art-head-band" },
             h("div", { className: "art-head-wrap" },
-              h("div", { className: "art-head-copy" },
-                h("h1", { className: "art-h1" }, title),
-                description ? h("p", { className: "art-standfirst" }, description) : null
-              )
+              category ? h("p", { className: "art-eyebrow" }, category) : null,
+              h("h1", { className: "art-h1" }, title || (isAr ? "(بدون عنوان)" : "(untitled)")),
+              description ? h("p", { className: "art-standfirst" }, description) : null
             )
           ),
           h("div", { className: "art-container" },
-            h("div", { className: "art-grid" },
-              h("aside", { className: "art-aside" },
-                h("div", { className: "art-sidebar-ph" }, isAr ? "المحتويات" : "Contents")
-              ),
-              h("article", { className: "art-body" },
-                sectionEls.length > 0
-                  ? sectionEls
-                  : h("p", { style: { color: "var(--muted)", fontSize: "14px" } },
-                      isAr ? "لا توجد أقسام بعد." : "No sections yet.")
-              )
+            h("article", { className: "art-body-full" },
+              sectionEls.length > 0
+                ? sectionEls
+                : h("p", { style: { color: "var(--muted)", fontSize: "14px" } },
+                    isAr ? "لا توجد أقسام بعد." : "No sections yet.")
             )
           )
         );

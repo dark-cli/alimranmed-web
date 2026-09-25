@@ -248,7 +248,11 @@ body {
   margin: 0 auto;
   padding: clamp(24px, 3.5vw, 40px) 24px clamp(32px, 4.5vw, 52px);
 }
-.art-head-copy { min-width: 0; }
+.art-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 16px;
+}
 .art-h1 {
   font-family: var(--font-display);
   font-size: clamp(28px, 5vw, 48px);
@@ -260,22 +264,11 @@ body {
   line-height: 1.6; color: var(--body); margin: 0;
 }
 .art-container { max-width: var(--page-max); margin: 0 auto; padding: 0 24px; }
-.art-grid { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
-@media (min-width: 760px) {
-  .art-grid { grid-template-columns: 200px minmax(0, 1fr); }
-}
-.art-aside { padding-top: clamp(28px, 4vw, 48px); }
-.art-sidebar-ph {
-  font-family: var(--font-mono);
-  font-size: 11px; color: var(--muted); text-transform: uppercase;
-  letter-spacing: 0.1em; padding: 16px;
-  border: 1px dashed var(--line-strong); text-align: center;
-}
-.art-body { padding: clamp(28px, 4vw, 48px) 0 48px; min-width: 0; }
+.art-body-full { padding: clamp(28px, 4vw, 48px) 0 48px; min-width: 0; }
 
+[dir="rtl"] .art-eyebrow { font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 12px; }
 [dir="rtl"] .art-h1 { font-weight: 700; letter-spacing: 0; }
 [dir="rtl"] .art-standfirst { line-height: 1.95; }
-[dir="rtl"] .art-sidebar-ph { font-family: var(--font-body); letter-spacing: 0; text-transform: none; }
 
 /* ─── prose ──────────────────────────────────────────────────────────── */
 .prose-block { margin: clamp(28px, 3.5vw, 44px) 0; }
