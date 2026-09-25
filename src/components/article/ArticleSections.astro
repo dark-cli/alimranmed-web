@@ -17,6 +17,7 @@
  *                     empty list.
  */
 import { toArabicDigits } from "../../lib/i18n";
+import type { RelatedItem } from "../../lib/related";
 import AtGlance        from "./AtGlance.astro";
 import Prose           from "./Prose.astro";
 import PullQuote       from "./PullQuote.astro";
@@ -26,13 +27,7 @@ import TreatmentGroups from "./TreatmentGroups.astro";
 import Related         from "./Related.astro";
 import Media           from "./Media.astro";
 
-export interface RelatedItem {
-  slug: string;
-  title: string;
-  category: string;
-  href: string;
-  redesigned: boolean;
-}
+export type { RelatedItem };
 
 interface Props {
   sections: any[];
