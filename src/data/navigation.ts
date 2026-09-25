@@ -9,8 +9,8 @@
  */
 
 export interface NavItem {
-  labelKey: string;           // i18n key OR fallback literal (see resolveLabel below)
-  label?: string;             // literal label if no i18n key
+  labelKey?: string;          // i18n key (resolveLabel below); optional per-entry
+  label?: string;             // literal fallback label
   href: string;               // new site URL (not the legacy one)
   legacyUrl?: string;         // original URL on alimranmed.com
   category?: string;          // maps to content collection category

@@ -1,6 +1,16 @@
 import { topicOf, isLocale, pickForLocale } from "./i18n";
 import { TREATMENT_PATHWAY } from "./pathways";
-import type { RelatedItem } from "../components/article/ArticleSections.astro";
+
+// Shape consumed by <Related> block via ArticleSections. Kept in this
+// TypeScript module so both the .astro dispatcher and these makeResolve*
+// helpers can import it without triggering tsc's "no .astro modules" error.
+export interface RelatedItem {
+  slug: string;
+  title: string;
+  category: string;
+  href: string;
+  redesigned: boolean;
+}
 
 type TreatmentEntry = {
   id: string;
