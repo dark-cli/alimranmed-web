@@ -188,13 +188,14 @@ Two panels read as a comparison; three or four read as an options grid.
 
 ## cards
 
-Slugs are resolved by the page dispatcher into card data.
+Each item is a locale-agnostic path. Title, description, date, and category are
+resolved automatically from the target collection entry at build time.
 
 ```yaml
 - type: cards
   heading: "Related reading"       # optional — defaults to locale label
-  slugs:
-    - herniated-disc
-    - sciatica
-    - back-pain
+  items:
+    - /treatments/herniated-disc/
+    - /treatments/sciatica/
+    - /blog/living-with-back-pain/  # works across any collection
 ```

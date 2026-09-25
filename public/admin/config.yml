@@ -185,11 +185,12 @@ _sections_field: &sections_field
       label: Cards (related links)
       fields:
         - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Related reading' / 'قراءات ذات صلة'." }
-        - label: Slugs
-          name: slugs
+        - label: Items
+          name: items
           widget: list
           min: 1
-          field: { label: Treatment/article slug, name: slug, widget: string }
+          hint: "Locale-agnostic paths, e.g. /treatments/back-pain/ or /blog/my-post/. Title, description and date are pulled automatically."
+          field: { label: Path, name: item, widget: string }
 
 # ── Collections ──────────────────────────────────────────────────────────
 # Base fields (from pageBase in src/content.config.ts) are inlined into each

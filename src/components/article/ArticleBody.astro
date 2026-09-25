@@ -1,22 +1,20 @@
 ---
 import Sections from "../blocks/Sections.astro";
-import type { RelatedItem } from "../blocks/Sections.astro";
 import Media from "./Media.astro";
 
 interface Props {
   sections?: unknown[];
   locale: "en" | "ar";
   bodyImages?: { alt: string; src: string }[];
-  resolveRelated?: (slugs: string[]) => RelatedItem[];
 }
 
-const { sections, locale, bodyImages = [], resolveRelated } = Astro.props;
+const { sections, locale, bodyImages = [] } = Astro.props;
 const usingSections = Array.isArray(sections) && sections.length > 0;
 ---
 
 {usingSections ? (
   <>
-    <Sections sections={sections} locale={locale} resolveRelated={resolveRelated} />
+    <Sections sections={sections} locale={locale} />
     {bodyImages.map((img) => (
       <Media kind="image" src={img.src} alt={img.alt} />
     ))}

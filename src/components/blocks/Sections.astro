@@ -6,10 +6,6 @@
  * Any collection whose schema declares `sections: array(section)` renders its
  * body through this component. Each block in the array is dispatched to its
  * matching widget in src/components/blocks/.
- *
- * `resolveRelated` (optional) turns `cards` block slugs into resolved
- * { slug, title, category, href, redesigned } items. Treatment pages pass a
- * real resolver; other pages omit it and the cards block shows an empty grid.
  */
 import Prose       from "./Prose.astro";
 import Highlights  from "./Highlights.astro";
@@ -25,29 +21,17 @@ import Pathway     from "./Pathway.astro";
 import Row         from "./Row.astro";
 import Cards       from "./Cards.astro";
 
-export interface RelatedItem {
-  slug: string;
-  title: string;
-  category: string;
-  href: string;
-  redesigned: boolean;
-}
-
 interface Props {
   sections: any[];
   locale: "en" | "ar";
-  resolveRelated?: (slugs: string[]) => RelatedItem[];
 }
-const { sections, locale, resolveRelated } = Astro.props;
+const { sections, locale } = Astro.props;
 const isAr = locale === "ar";
 
-// Localised default headings + labels used by widgets that fall back to
-// a canonical string when the editor left the heading empty.
+// Localised default headings used by widgets that fall back to a canonical
+// string when the editor left the heading empty.
 const factsDefaultHeading = isAr ? "حقائق أساسية" : "Key facts";
 const cardsDefaultHeading = isAr ? "قراءات ذات صلة" : "Related reading";
-const cardsSoonLabel      = isAr
-  ? "لم يُعَد تصميم هذا العنصر بعد — قريبًا."
-  : "Not yet available in the new design";
 
 // Sequentially assign anchor IDs for sections that have headings.
 // Must match the logic in buildToc (src/lib/toc.ts): id = "s-{n}".
@@ -131,15 +115,13 @@ const lastListIdx = sections.reduce(
       id={nextId(s)}
     />;
 
-  if (s.type === "cards") {
-    const items = resolveRelated ? resolveRelated(s.slugs) : [];
+  if (s.type === "cards")
     return <Cards
       heading={s.heading ?? cardsDefaultHeading}
-      soonLabel={cardsSoonLabel}
-      items={items}
+      items={s.items}
+      locale={locale}
       id={nextId(s)}
     />;
-  }
 
   return null;
 })}
