@@ -19,6 +19,38 @@
 (function () {
   "use strict";
 
+  /* ── Theme toggle ────────────────────────────────────────────────────── */
+
+  // Moon icon — shown in light mode
+  var moonSvg = h("svg", { className: "pt-icon pt-moon", viewBox: "0 0 24 24", width: "18", height: "18",
+    fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true" },
+    h("path", { d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" })
+  );
+
+  // Sun icon — shown in dark mode
+  var sunSvg = h("svg", { className: "pt-icon pt-sun", viewBox: "0 0 24 24", width: "18", height: "18",
+    fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true" },
+    h("circle", { cx: "12", cy: "12", r: "5" }),
+    h("line", { x1: "12", y1: "1",  x2: "12", y2: "3" }),
+    h("line", { x1: "12", y1: "21", x2: "12", y2: "23" }),
+    h("line", { x1: "4.22",  y1: "4.22",  x2: "5.64",  y2: "5.64"  }),
+    h("line", { x1: "18.36", y1: "18.36", x2: "19.78", y2: "19.78" }),
+    h("line", { x1: "1",  y1: "12", x2: "3",  y2: "12" }),
+    h("line", { x1: "21", y1: "12", x2: "23", y2: "12" }),
+    h("line", { x1: "4.22",  y1: "19.78", x2: "5.64",  y2: "18.36" }),
+    h("line", { x1: "18.36", y1: "5.64",  x2: "19.78", y2: "4.22"  })
+  );
+
+  function themeBtn(onToggle) {
+    return h("button", {
+      className: "preview-theme-btn",
+      onClick: onToggle,
+      title: "Toggle dark mode",
+      "aria-label": "Toggle dark mode",
+      type: "button",
+    }, moonSvg, sunSvg);
+  }
+
   /* ── Helpers ─────────────────────────────────────────────────────────── */
 
   function toArray(v) {
@@ -452,10 +484,19 @@
 
   function makeDocPreview(locale) {
     return createClass({
+      getInitialState: function () { return { dark: false }; },
       render: function () {
+        var self     = this;
         var entry    = this.props.entry;
         var getAsset = this.props.getAsset;
         var isAr     = locale === "ar";
+        var toggle   = function (e) {
+          var next = !self.state.dark;
+          self.setState({ dark: next });
+          var html = e.currentTarget.ownerDocument.documentElement;
+          if (next) html.setAttribute("data-theme", "dark");
+          else html.removeAttribute("data-theme");
+        };
 
         var fullName     = entry.getIn(["data", "fullName"]) || "";
         var photoAlt     = entry.getIn(["data", "photoAlt"]) || "";
@@ -480,6 +521,7 @@
           if (el) elements.push(el);
         });
 
+        elements.unshift(themeBtn(toggle));
         return h("div", { className: "doctor-preview", dir: isAr ? "rtl" : "ltr", lang: locale }, elements);
       }
     });
@@ -489,11 +531,20 @@
 
   function makeArticlePreview(locale, kind) {
     return createClass({
+      getInitialState: function () { return { dark: false }; },
       render: function () {
+        var self     = this;
         var entry    = this.props.entry;
         var getAsset = this.props.getAsset;
         var isAr     = locale === "ar";
         var L        = PREVIEW_LABELS[kind][locale];
+        var toggle   = function (e) {
+          var next = !self.state.dark;
+          self.setState({ dark: next });
+          var html = e.currentTarget.ownerDocument.documentElement;
+          if (next) html.setAttribute("data-theme", "dark");
+          else html.removeAttribute("data-theme");
+        };
 
         var title       = entry.getIn(["data", "title"])       || "";
         var description = entry.getIn(["data", "description"]) || "";
@@ -533,6 +584,7 @@
         }).filter(Boolean);
 
         return h("div", { className: "article-preview", dir: isAr ? "rtl" : "ltr", lang: locale },
+          themeBtn(toggle),
 
           // ── Header band ──────────────────────────────────────────────
           h("section", { className: "art-head-band" },
