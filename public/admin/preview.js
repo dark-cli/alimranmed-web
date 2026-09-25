@@ -286,6 +286,125 @@
     );
   }
 
+  /* ── Article labels (mirrors src/lib/labels.ts) ─────────────────────── */
+
+  var PREVIEW_LABELS = {
+    treatments: {
+      en: {
+        home: "Home", collection: "Conditions",
+        pathwayLabel: "Pathway", reviewedByLabel: "Reviewed by",
+        reviewer: "Hussein Imran Mousa, consultant neurosurgeon",
+        readingTimeLabel: "Reading time", lastReviewedLabel: "Last reviewed",
+        tocLabel: "On this page", callLabel: "Discuss this",
+        callBody: "Speak to the secretary about a consultation for this condition.",
+        ctaHeading: "Book a consultation",
+        ctaBody: "The secretary schedules first appointments during clinic hours; please have prior imaging, operative notes and a current medication list available.",
+        noSections: "No sections yet.",
+      },
+      ar: {
+        home: "الرئيسية", collection: "الحالات",
+        pathwayLabel: "المسار", reviewedByLabel: "تمت المراجعة من قبل",
+        reviewer: "الدكتور حسين عمران موسى، استشاري جراحة الأعصاب",
+        readingTimeLabel: "وقت القراءة", lastReviewedLabel: "آخر مراجعة",
+        tocLabel: "في هذه الصفحة", callLabel: "للاستفسار",
+        callBody: "تحدث مع السكرتير لحجز استشارة حول هذه الحالة.",
+        ctaHeading: "احجز استشارة",
+        ctaBody: "يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل.",
+        noSections: "لا توجد أقسام بعد.",
+      },
+    },
+    services: {
+      en: {
+        home: "Home", collection: "Services",
+        tocLabel: "On this page", callLabel: "Book now",
+        callBody: "Speak to the secretary about this service.",
+        ctaHeading: "Book a consultation",
+        ctaBody: "The secretary schedules first appointments during clinic hours.",
+        noSections: "No sections yet.",
+      },
+      ar: {
+        home: "الرئيسية", collection: "الخدمات",
+        tocLabel: "في هذه الصفحة", callLabel: "احجز الآن",
+        callBody: "تحدث مع السكرتير حول هذه الخدمة.",
+        ctaHeading: "احجز استشارة",
+        ctaBody: "يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل.",
+        noSections: "لا توجد أقسام بعد.",
+      },
+    },
+    blog: {
+      en: {
+        home: "Home", collection: "Blog",
+        reviewedByLabel: "Reviewed by",
+        reviewer: "Hussein Imran Mousa, consultant neurosurgeon",
+        readingTimeLabel: "Reading time", lastReviewedLabel: "Last reviewed",
+        tocLabel: "On this page", callLabel: "Questions?",
+        callBody: "Contact us to discuss this topic with our team.",
+        ctaHeading: "Need more information?",
+        ctaBody: "Reach out to our team for more details about the topics covered in this article.",
+        noSections: "No sections yet.",
+      },
+      ar: {
+        home: "الرئيسية", collection: "المدوّنة",
+        reviewedByLabel: "تمت المراجعة من قبل",
+        reviewer: "الدكتور حسين عمران موسى، استشاري جراحة الأعصاب",
+        readingTimeLabel: "وقت القراءة", lastReviewedLabel: "آخر مراجعة",
+        tocLabel: "في هذه الصفحة", callLabel: "أسئلة؟",
+        callBody: "تواصل معنا لمناقشة هذا الموضوع مع فريقنا.",
+        ctaHeading: "هل تحتاج إلى مزيد من المعلومات؟",
+        ctaBody: "تواصل معنا للحصول على المزيد من التفاصيل.",
+        noSections: "لا توجد أقسام بعد.",
+      },
+    },
+  };
+
+  /* ── Article preview helpers ─────────────────────────────────────────── */
+
+  function buildPreviewToc(sections) {
+    var toc = []; var n = 0;
+    sections.forEach(function (s) {
+      if (s && s.heading) { n++; toc.push({ id: "s-" + n, text: s.heading }); }
+    });
+    return toc;
+  }
+
+  function countWords(str) { return str ? str.trim().split(/\s+/).length : 0; }
+
+  function estimateSectionWords(sections) {
+    var total = 0;
+    sections.forEach(function (s) {
+      if (!s) return;
+      ["body", "heading", "intro", "text"].forEach(function (k) { if (s[k]) total += countWords(s[k]); });
+      if (Array.isArray(s.items)) s.items.forEach(function (it) {
+        if (typeof it === "string") total += countWords(it);
+        else if (it) ["body", "value", "label"].forEach(function (k) { if (it[k]) total += countWords(it[k]); });
+      });
+      if (Array.isArray(s.panels)) s.panels.forEach(function (p) {
+        if (!p) return;
+        if (p.title) total += countWords(p.title);
+        if (Array.isArray(p.items)) p.items.forEach(function (it) { total += countWords(it); });
+      });
+    });
+    return total;
+  }
+
+  function readingTimeStr(sections, isAr) {
+    var mins = Math.max(1, Math.round(estimateSectionWords(sections) / 200));
+    return isAr ? toAr(mins) + " دقائق" : mins + " min read";
+  }
+
+  function renderCrumbs(crumbs, isAr) {
+    var sep = isAr ? "‹" : "›";
+    var els = [];
+    crumbs.forEach(function (c, i) {
+      var last = i === crumbs.length - 1;
+      els.push(last
+        ? h("span", { key: "c" + i, className: "crumb-current" }, c.label)
+        : h("a",    { key: "c" + i, className: "crumb-link", href: "#" }, c.label));
+      if (!last) els.push(h("span", { key: "sep" + i, className: "crumb-sep", "aria-hidden": "true" }, sep));
+    });
+    return h("nav", { className: "crumbs" }, els);
+  }
+
   /* ── Section dispatcher ──────────────────────────────────────────────── */
 
   function renderSection(s, i, isLast, isAr, getAsset) {
@@ -368,37 +487,116 @@
 
   /* ── Article preview (treatments / services / blog) ─────────────────── */
 
-  function makeArticlePreview(locale) {
+  function makeArticlePreview(locale, kind) {
     return createClass({
       render: function () {
         var entry    = this.props.entry;
         var getAsset = this.props.getAsset;
         var isAr     = locale === "ar";
+        var L        = PREVIEW_LABELS[kind][locale];
 
         var title       = entry.getIn(["data", "title"])       || "";
         var description = entry.getIn(["data", "description"]) || "";
         var category    = entry.getIn(["data", "category"])    || "";
+        var dateRaw     = entry.getIn(["data", "publishedAt"]) || entry.getIn(["data", "updated"]) || "";
         var sections    = toArray(entry.getIn(["data", "sections"]));
         var llIdx       = lastListIndex(sections);
+
+        var toc = buildPreviewToc(sections);
+        var dateStr = dateRaw
+          ? new Date(dateRaw).toLocaleDateString(isAr ? "ar-IQ" : "en-US", { month: "long", year: "numeric" })
+          : "—";
+
+        // Meta strip — treatments and blog only
+        var meta = [];
+        if (kind === "treatments") {
+          if (category) meta.push({ label: L.pathwayLabel,      value: category });
+          meta.push(     { label: L.reviewedByLabel,  value: L.reviewer });
+          meta.push(     { label: L.readingTimeLabel, value: readingTimeStr(sections, isAr) });
+          if (dateStr !== "—") meta.push({ label: L.lastReviewedLabel, value: dateStr });
+        } else if (kind === "blog") {
+          meta.push({ label: L.reviewedByLabel,  value: L.reviewer });
+          meta.push({ label: L.readingTimeLabel, value: readingTimeStr(sections, isAr) });
+          if (dateStr !== "—") meta.push({ label: L.lastReviewedLabel, value: dateStr });
+        }
+
+        // Breadcrumbs
+        var crumbs = [{ label: L.home }, { label: L.collection }];
+        if (category) crumbs.push({ label: category });
+
+        var disclaimer = isAr
+          ? "تقدم هذه الصفحة معلومات عامة حول " + title + " وليست بديلاً عن التقييم الطبي الفردي. إذا كانت أعراضك شديدة أو تزداد سوءاً، فاتصل بطبيب على الفور."
+          : "This page provides general information about " + (title || "this condition").toLowerCase() + " and is not a substitute for individual medical assessment. If your symptoms are severe or worsening, contact a clinician promptly.";
 
         var sectionEls = sections.map(function (s, i) {
           return renderSection(s, i, i === llIdx, isAr, getAsset);
         }).filter(Boolean);
 
         return h("div", { className: "article-preview", dir: isAr ? "rtl" : "ltr", lang: locale },
+
+          // ── Header band ──────────────────────────────────────────────
           h("section", { className: "art-head-band" },
             h("div", { className: "art-head-wrap" },
-              category ? h("p", { className: "art-eyebrow" }, category) : null,
-              h("h1", { className: "art-h1" }, title || (isAr ? "(بدون عنوان)" : "(untitled)")),
-              description ? h("p", { className: "art-standfirst" }, description) : null
+              renderCrumbs(crumbs, isAr),
+              h("div", { className: "art-head-grid" },
+                h("div", { className: "art-head-copy" },
+                  h("h1", { className: "art-h1" }, title || (isAr ? "(بدون عنوان)" : "(untitled)")),
+                  description ? h("p", { className: "art-standfirst" }, description) : null
+                ),
+                meta.length > 0 ? h("dl", { className: "art-meta" },
+                  meta.map(function (m, i) {
+                    return h("div", { key: i },
+                      h("dt", null, m.label),
+                      h("dd", null, m.value)
+                    );
+                  })
+                ) : null
+              )
             )
           ),
+
+          // ── Body container ────────────────────────────────────────────
           h("div", { className: "art-container" },
-            h("article", { className: "art-body-full" },
-              sectionEls.length > 0
-                ? sectionEls
-                : h("p", { style: { color: "var(--muted)", fontSize: "14px" } },
-                    isAr ? "لا توجد أقسام بعد." : "No sections yet.")
+            h("div", { className: "art-grid" },
+
+              // Sidebar
+              h("aside", { className: "art-aside" },
+                toc.length >= 2 ? h("nav", { className: "art-toc" },
+                  h("p",    { className: "art-toc-label" }, L.tocLabel),
+                  h("span", { className: "art-toc-rule"  }),
+                  toc.map(function (t, i) {
+                    return h("a", { key: i, href: "#" + t.id }, t.text);
+                  })
+                ) : null,
+                h("div", { className: "art-call-card" },
+                  h("p", { className: "art-call-label" }, L.callLabel),
+                  h("p", { className: "art-call-body"  }, L.callBody),
+                  h("a", { className: "art-call-btn", href: "tel:+9647801926801", dir: "ltr" },
+                    "+964-780-1926-801")
+                )
+              ),
+
+              // Article body
+              h("article", { className: "art-body" },
+                sectionEls.length > 0
+                  ? sectionEls
+                  : h("p", { style: { color: "var(--muted)", fontSize: "14px", paddingTop: "32px" } }, L.noSections),
+
+                // CTA
+                h("section", { className: "art-cta" },
+                  h("div", null,
+                    h("h2", null, L.ctaHeading),
+                    h("p",  null, L.ctaBody)
+                  ),
+                  h("div", { className: "art-cta-buttons" },
+                    h("a", { className: "art-cta-btn",         href: "tel:+9647801926801", dir: "ltr" }, "+964-780-1926-801"),
+                    h("a", { className: "art-cta-btn art-cta-btn--sec", href: "tel:+9647706774773", dir: "ltr" }, "+964-770-6774-773")
+                  )
+                ),
+
+                // Disclaimer
+                h("p", { className: "art-disclaimer" }, disclaimer)
+              )
             )
           )
         );
@@ -410,11 +608,11 @@
 
   CMS.registerPreviewTemplate("doctors_en",    makeDocPreview("en"));
   CMS.registerPreviewTemplate("doctors_ar",    makeDocPreview("ar"));
-  CMS.registerPreviewTemplate("treatments_en", makeArticlePreview("en"));
-  CMS.registerPreviewTemplate("treatments_ar", makeArticlePreview("ar"));
-  CMS.registerPreviewTemplate("services_en",   makeArticlePreview("en"));
-  CMS.registerPreviewTemplate("services_ar",   makeArticlePreview("ar"));
-  CMS.registerPreviewTemplate("blog_en",       makeArticlePreview("en"));
-  CMS.registerPreviewTemplate("blog_ar",       makeArticlePreview("ar"));
+  CMS.registerPreviewTemplate("treatments_en", makeArticlePreview("en", "treatments"));
+  CMS.registerPreviewTemplate("treatments_ar", makeArticlePreview("ar", "treatments"));
+  CMS.registerPreviewTemplate("services_en",   makeArticlePreview("en", "services"));
+  CMS.registerPreviewTemplate("services_ar",   makeArticlePreview("ar", "services"));
+  CMS.registerPreviewTemplate("blog_en",       makeArticlePreview("en", "blog"));
+  CMS.registerPreviewTemplate("blog_ar",       makeArticlePreview("ar", "blog"));
   CMS.registerPreviewStyle("/admin/preview.css");
 })();
