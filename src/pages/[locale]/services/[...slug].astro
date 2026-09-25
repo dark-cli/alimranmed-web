@@ -9,7 +9,7 @@ import { excerpt } from "../../../lib/excerpt";
 import { procedurePage, faqPage } from "../../../lib/schema";
 import { SERVICE_LABELS, NAV_LABELS } from "../../../lib/labels";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
-import ArticleSections from "../../../components/article/ArticleSections.astro";
+import Sections from "../../../components/blocks/Sections.astro";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
@@ -81,7 +81,7 @@ const serviceCategory = entry.data.category || (locale === "ar" ? "خدمة" : "
     ctaHeading={labels.ctaHeading}
     ctaBody={labels.ctaBody}
   >
-    <ArticleSections sections={(entry.data as any).sections} locale={locale} />
+    <Sections sections={(entry.data as any).sections} locale={locale} />
   </ArticleLayout>
 ) : (
   <BaseLayout fontAwesome={fallback && locale === "ar"} title={entry.data.title} description={metaDescription} image={(entry.data as any).image}>

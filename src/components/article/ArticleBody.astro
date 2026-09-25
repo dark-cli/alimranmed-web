@@ -1,6 +1,6 @@
 ---
-import ArticleSections from "./ArticleSections.astro";
-import type { RelatedItem } from "./ArticleSections.astro";
+import Sections from "../blocks/Sections.astro";
+import type { RelatedItem } from "../blocks/Sections.astro";
 import Media from "./Media.astro";
 
 interface Props {
@@ -16,7 +16,7 @@ const usingSections = Array.isArray(sections) && sections.length > 0;
 
 {usingSections ? (
   <>
-    <ArticleSections sections={sections} locale={locale} resolveRelated={resolveRelated} />
+    <Sections sections={sections} locale={locale} resolveRelated={resolveRelated} />
     {bodyImages.map((img) => (
       <Media kind="image" src={img.src} alt={img.alt} />
     ))}

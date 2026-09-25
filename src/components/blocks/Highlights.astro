@@ -7,11 +7,12 @@
 interface Props {
   heading?: string;
   items: { label: string; value: string }[];
+  id?: string;
 }
-const { heading = "At a glance", items } = Astro.props;
+const { heading = "At a glance", items, id } = Astro.props;
 ---
 
-<section class="highlights">
+<section class="highlights" id={id}>
   <p class="highlights-label">{heading}</p>
   <div class="highlights-grid">
     {items.map((it) => (
@@ -29,6 +30,7 @@ const { heading = "At a glance", items } = Astro.props;
     background: var(--surface);
     padding: clamp(24px, 3vw, 32px);
     margin: clamp(28px, 3.5vw, 44px) 0;
+    scroll-margin-top: 96px;
   }
   .highlights-label {
     font-family: var(--font-mono);

@@ -48,30 +48,45 @@ const cardsDefaultHeading = isAr ? "قراءات ذات صلة" : "Related readi
 const cardsSoonLabel      = isAr
   ? "لم يُعَد تصميم هذا العنصر بعد — قريبًا."
   : "Not yet available in the new design";
+
+// Sequentially assign anchor IDs for sections that have headings.
+// Must match the logic in buildToc (src/lib/toc.ts): id = "s-{n}".
+let _n = 0;
+const nextId = (s: any): string | undefined =>
+  s.heading ? `s-${++_n}` : undefined;
+
+// Index of the last `list` section — passed as isLast=true so the list
+// variant components can apply correct bottom-padding on doctor pages.
+const lastListIdx = sections.reduce(
+  (last: number, s: any, i: number) => (s.type === "list" ? i : last),
+  -1,
+);
 ---
 
-{sections.map((s: any) => {
+{sections.map((s: any, i: number) => {
   if (!s || !s.type) return null;
 
   if (s.type === "prose")
-    return <Prose heading={s.heading} body={s.body} locale={locale} />;
+    return <Prose heading={s.heading} body={s.body} locale={locale} id={nextId(s)} />;
 
   if (s.type === "highlights")
-    return <Highlights heading={s.heading} items={s.items} />;
+    return <Highlights heading={s.heading} items={s.items} id={nextId(s)} />;
 
   if (s.type === "stats")
-    return <Stats heading={s.heading} intro={s.intro} items={s.items} />;
+    return <Stats heading={s.heading} intro={s.intro} items={s.items} id={nextId(s)} />;
 
   if (s.type === "facts")
-    return <Facts heading={s.heading ?? factsDefaultHeading} items={s.items} locale={locale} />;
+    return <Facts heading={s.heading ?? factsDefaultHeading} items={s.items} locale={locale} id={nextId(s)} />;
 
   if (s.type === "list") {
+    const isLast = i === lastListIdx;
+    const id = nextId(s);
     if (s.variant === "rows")
-      return <ListRows heading={s.heading} items={s.items} />;
+      return <ListRows heading={s.heading} items={s.items} isLast={isLast} id={id} />;
     if (s.variant === "wrap")
-      return <ListWrap heading={s.heading} items={s.items} />;
+      return <ListWrap heading={s.heading} items={s.items} isLast={isLast} id={id} />;
     if (s.variant === "columns")
-      return <ListColumns heading={s.heading} items={s.items} />;
+      return <ListColumns heading={s.heading} items={s.items} isLast={isLast} id={id} />;
     return null;
   }
 
@@ -85,6 +100,7 @@ const cardsSoonLabel      = isAr
       note={s.note}
       panels={s.panels}
       locale={locale}
+      id={nextId(s)}
     />;
 
   if (s.type === "media")
@@ -103,6 +119,7 @@ const cardsSoonLabel      = isAr
       intro={s.intro}
       groups={s.groups}
       locale={locale}
+      id={nextId(s)}
     />;
 
   if (s.type === "row")
@@ -111,6 +128,7 @@ const cardsSoonLabel      = isAr
       columns={s.columns}
       items={s.items}
       locale={locale}
+      id={nextId(s)}
     />;
 
   if (s.type === "cards") {
@@ -119,6 +137,7 @@ const cardsSoonLabel      = isAr
       heading={s.heading ?? cardsDefaultHeading}
       soonLabel={cardsSoonLabel}
       items={items}
+      id={nextId(s)}
     />;
   }
 

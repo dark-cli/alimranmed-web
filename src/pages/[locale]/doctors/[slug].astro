@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import DoctorSections from "../../../components/doctor/DoctorSections.astro";
+import CvHero from "../../../components/doctor/CvHero.astro";
+import Sections from "../../../components/blocks/Sections.astro";
 import { topicOf, isLocale, pickForLocale, currentLocale } from "../../../lib/i18n";
 import { physician } from "../../../lib/schema";
 
@@ -46,14 +47,13 @@ const titleSuffix = isAr ? "مركز العمران الطبي" : "Alimran Clini
     image: entry.data.photo,
     locale,
   }))} />
-  <DoctorSections
-    sections={sections}
-    fullName={entry.data.fullName}
-    photo={entry.data.photo}
-    photoAlt={entry.data.photoAlt}
-    titles={entry.data.titles}
-    heroEyebrow={entry.data.heroEyebrow}
-    heroHeadline={entry.data.heroHeadline}
-    heroLede={entry.data.heroLede}
+  <CvHero
+    eyebrow={entry.data.heroEyebrow}
+    headline={entry.data.heroHeadline ?? entry.data.fullName}
+    lede={entry.data.heroLede}
+    chips={entry.data.titles}
+    portrait={entry.data.photo}
+    portraitAlt={entry.data.photoAlt ?? entry.data.fullName}
   />
+  <Sections sections={sections} locale={locale} />
 </BaseLayout>

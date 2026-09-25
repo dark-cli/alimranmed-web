@@ -15,11 +15,12 @@ interface Props {
   heading?: string;
   intro?: string;
   items: { value: string; label: string }[];
+  id?: string;
 }
-const { heading, intro, items } = Astro.props;
+const { heading, intro, items, id } = Astro.props;
 ---
 
-<section class="stats-block">
+<section class="stats-block" id={id}>
   {heading && <h2 class="stats-heading">{heading}</h2>}
   {intro && <p class="stats-intro">{intro}</p>}
   <div class="stats-grid">
@@ -33,7 +34,7 @@ const { heading, intro, items } = Astro.props;
 </section>
 
 <style>
-  .stats-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .stats-block { margin: clamp(28px, 3.5vw, 44px) 0; scroll-margin-top: 96px; }
   .stats-heading {
     font-family: var(--font-display);
     font-weight: 400;

@@ -18,15 +18,16 @@ interface Props {
   intro?: string;
   groups: Group[];
   locale?: Locale;
+  id?: string;
 }
-const { heading, intro, groups, locale = "en" } = Astro.props;
+const { heading, intro, groups, locale = "en", id } = Astro.props;
 
 function link(href: string): string {
   return href.startsWith("/") ? localizedHref(href, locale) : href;
 }
 ---
 
-<section class="pw-block">
+<section class="pw-block" id={id}>
   {heading && <h2 class="pw-heading">{heading}</h2>}
   {intro && <p class="pw-intro">{intro}</p>}
   <div class="pw-grid">

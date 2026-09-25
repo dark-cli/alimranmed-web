@@ -13,11 +13,12 @@ interface Props {
   heading: string;
   items: { label: string; body: string; subtitle?: string }[];
   isLast?: boolean;
+  id?: string;
 }
-const { heading, items, isLast = false } = Astro.props;
+const { heading, items, isLast = false, id } = Astro.props;
 ---
 
-<section class:list={["reg-section", isLast && "reg-section-last"]}>
+<section class:list={["reg-section", isLast && "reg-section-last"]} id={id}>
   <div class="reg-wrap">
     <h2 class="reg-label">{heading}</h2>
     <ul class="reg-body reg-members">
