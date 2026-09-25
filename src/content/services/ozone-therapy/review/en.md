@@ -19,7 +19,6 @@ Ozone was discovered as gas with a peculiar odour by Schönbein around 1840 and 
 -   Significant improvement of the blood flow (reduces perfusion impairments and prevents new developments)
 -   Significant reduction of the red blood cell aggregation (improvement of oxygen transport and blood flow)
 -   Better oxygen supply and hence increased uptake into the tissue
--   Kills 99% of bacteria, viruses and fungi and prevents their reformation.
 
 Ozone therapy is almost 50 years old and has since been performed worldwide by doctors with great success. Majority of scientific research on Ozone therapy has been done in Germany, Russia, and Cuba. Millions of treatments in many different forms have been conducted, including Intramuscular, subcutaneous, intravenous and intra-arterial injections, mixed with blood as small autologous blood treatment.
 
@@ -33,7 +32,6 @@ Ozone therapy is almost 50 years old and has since been performed worldwide by d
 -   High blood lipid levels
 -   High uric acid levels (gout)
 -   Delayed physical recovery following serious illnesses
--   As concomitant therapy for cancer (the therapeutic success has been demonstrated)
 -   Different types of skin disorders
 -   Any eye diseases caused by perfusion impairments as well as macular degeneration
 -   Migraine
@@ -46,7 +44,6 @@ Ozone therapy is almost 50 years old and has since been performed worldwide by d
 
 One therapy cycle generally consists of 10 to 12 treatments. Moreover, ozone-oxygen treatment plays an essential role for the prevention of certain diseases, especially in the presence of existing risk factors including nicotine, high cholesterol levels, elevated uric acid levels, high blood pressure, diabetes and old age.
 
-The progressive negative physical changes are due to poor oxygen supply and associated deteriorating cell metabolism. Based on its demonstrated biochemical and physiological effects, oxygen-ozone therapy is definitely capable of significantly delaying or even completely preventing emerging damages (illnesses). Since this therapy has demonstrably relieved and cured diseases of this type, it is obvious for everyone that this is the method of choice when it comes to protecting oneself against these diseases in the best possible way and to achieve a safe cure when used in the early stage. The treatment in the early stage of a disease is particularly crucial because the majority of patients only seek ozone therapy once they have reached a late stage with no hope of success with other therapies.
 
 Oxygen-ozone therapy is an extremely effective medical treatment method based on scientific principles.
 
@@ -61,3 +58,5 @@ Oxygen-ozone therapy is an extremely effective medical treatment method based on
 -   Revitalization in young and elderly patients,
 -   Stress-weakened immune system, infections and viral diseases as well as e.g. for inflammatory joint diseases and for the
 -   Treatment of infected wounds (i.v. gassing with a bag of ozone for infected wounds, especially in diabetic patients)
+
+**Please note:** ozone therapy is used alongside conventional treatment, not instead of it. The evidence is strongest for disc herniation and knee osteoarthritis; your doctor will advise whether it is suitable for you.

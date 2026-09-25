@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import DoctorSections from "../../../components/doctor/DoctorSections.astro";
 import { topicOf, isLocale, pickForLocale, currentLocale } from "../../../lib/i18n";
+import { physician } from "../../../lib/schema";
 
 export async function getStaticPaths() {
   const items = await getCollection("doctors");
@@ -37,6 +38,14 @@ const titleSuffix = isAr ? "مركز العمران الطبي" : "Alimran Clini
 ---
 
 <BaseLayout title={`${entry.data.fullName} — ${titleSuffix}`} description={entry.data.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(physician({
+    url: new URL(Astro.url.pathname, Astro.site),
+    name: entry.data.fullName,
+    description: entry.data.description,
+    specialty: entry.data.specialty,
+    image: entry.data.photo,
+    locale,
+  }))} />
   <DoctorSections
     sections={sections}
     fullName={entry.data.fullName}
