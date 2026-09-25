@@ -96,5 +96,5 @@ sections:
           - "[الليزر البارد](/services/physiotherapy/laser-therapy/)"
           - "[الموجات فوق الصوتية (السونار)](/services/physiotherapy/ultrasound-therapy/)"
           - "[العلاج بالمجال المغناطيسي](/services/physiotherapy/magnetic-field-therapy/)"
-          - "[التمارين العلاجية](/services/exercises/exercises-2/)"
+          - "[التمارين العلاجية](/services/exercises/)"
 ---

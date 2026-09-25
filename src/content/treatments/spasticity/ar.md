@@ -99,7 +99,7 @@ sections:
           - "[التحفيز المغناطيسي المتكرر عبر الجمجمة (rTMS)](/services/brain-stimulation/tms/)"
           - "[تحفيز التيار المباشر عبر الجمجمة (tDCS)](/services/brain-stimulation/tdcs/)"
           - "[تحفيز النخاع الشوكي](/services/radiofrequency/epidural-adhesiolysis/)"
-          - "[المضخة العلاجية داخل القناة الشوكية (باكلوفين)](/services/surgery/intrathecal-pump/)"
+          - "[المضخة العلاجية داخل القناة الشوكية (باكلوفين)](/blog/what-is-an-intrathecal-pump/)"
       - title: علاجات الحقن
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"

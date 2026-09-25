@@ -85,7 +85,7 @@ sections:
       - title: التعديل العصبي
         items:
           - "[التحفيز المغناطيسي المتكرر عبر الجمجمة (rTMS)](/services/brain-stimulation/tms/)"
-          - "[مضخة الباكلوفن الشوكي](/services/surgery/intrathecal-pump/)"
+          - "[مضخة الباكلوفن الشوكي](/blog/what-is-an-intrathecal-pump/)"
       - title: علاجات الحقن والعلاجات المتقدمة
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"

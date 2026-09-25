@@ -103,7 +103,7 @@ sections:
           - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
           - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
           - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
-          - "[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)"
+          - "[Intrathecal baclofen pump](/blog/what-is-an-intrathecal-pump/)"
       - title: Injection therapies
         items:
           - "[Botox® injections](/services/botox/botox-injection/)"

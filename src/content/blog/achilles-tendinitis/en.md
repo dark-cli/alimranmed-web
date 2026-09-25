@@ -106,5 +106,5 @@ sections:
           - "[Laser therapy](/services/physiotherapy/laser-therapy/)"
           - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
           - "[Magnetic field therapy](/services/physiotherapy/magnetic-field-therapy/)"
-          - "[Therapeutic exercises](/services/exercises/exercises-2/)"
+          - "[Therapeutic exercises](/services/exercises/)"
 ---

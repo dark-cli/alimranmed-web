@@ -84,7 +84,7 @@ sections:
       - title: Neuromodulation
         items:
           - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
-          - "[Intrathecal baclofen pump](/services/surgery/intrathecal-pump/)"
+          - "[Intrathecal baclofen pump](/blog/what-is-an-intrathecal-pump/)"
       - title: Physiotherapy & rehabilitation
         items:
           - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"

@@ -56,6 +56,11 @@ const MERGED = [
   ["services/physiotherapy/physiotherapy-3", "blog/physiotherapy"],
   ["services/surgery/arthroplasty", "services/surgery/artificial-disc"],
   ["services/physiotherapy/shortwave", "services/physiotherapy/shortwave-therapy"],
+  ["services/brain-stimulation/tms-neuropsychiatric", "blog/tms-for-neuropsychiatric-disorders"],
+  ["services/surgery/intrathecal-pump", "blog/what-is-an-intrathecal-pump"],
+  ["services/radiofrequency/radiofrequency-2", "services/radiofrequency/radiofrequency"],
+  ["services/exercises/exercises-2", "services/exercises"],
+  ["services/surgery/surgery", "services/surgery"],
 ];
 lines.push("# ── Merged duplicate pages ─────────────────────────────────────────────");
 for (const [from, to] of MERGED) {

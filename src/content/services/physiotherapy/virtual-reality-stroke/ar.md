@@ -1,5 +1,5 @@
 ---
-title: "VR العاب الواقع الافتراضي يحفز الدماغ لمرضى الشلل النصفي"
+title: "الواقع الافتراضي لتأهيل مرضى الشلل النصفي"
 category: "العلاج الطبيعي"
 source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/archives/1284"

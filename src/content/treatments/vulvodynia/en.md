@@ -69,7 +69,7 @@ sections:
           - "[Repetitive transcranial magnetic stimulation (rTMS)](/services/brain-stimulation/tms/)"
           - "[Transcranial direct current stimulation (tDCS)](/services/brain-stimulation/tdcs/)"
           - "[Spinal cord stimulation](/services/radiofrequency/epidural-adhesiolysis/)"
-          - "[Intrathecal pump](/services/surgery/intrathecal-pump/)"
+          - "[Intrathecal pump](/blog/what-is-an-intrathecal-pump/)"
       - title: Advanced therapies
         items:
           - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
