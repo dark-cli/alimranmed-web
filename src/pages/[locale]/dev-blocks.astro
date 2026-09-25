@@ -694,6 +694,17 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
       </div>
     </section>
 
+    {/* ─── footer note ─────────────────────────────────────────── */}
+    <footer class="ref-note">
+      <p>
+        {isAr
+          ? "لمعرفة صياغة YAML لكل مكوّن، راجع "
+          : "For the YAML syntax of every block, see "}
+        <code>BLOCKS.md</code>
+        {isAr ? " في جذر المشروع." : " at the project root."}
+      </p>
+    </footer>
+
   </div>
 </BaseLayout>
 
@@ -789,6 +800,24 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
     font-size: 12px;
   }
   .mt { margin-top: 40px; }
+
+  .ref-note {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--line-strong);
+  }
+  .ref-note p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+  .ref-note code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 1px 5px;
+  }
 
   @media (max-width: 640px) {
     .showcase { grid-template-columns: 1fr; gap: 20px; }
