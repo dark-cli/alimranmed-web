@@ -13,8 +13,9 @@ interface Props {
   heading?: string;
   items: string[];
   locale?: "en" | "ar";
+  id?: string;
 }
-const { heading, items, locale = "en" } = Astro.props;
+const { heading, items, locale = "en", id } = Astro.props;
 const isAr = locale === "ar";
 
 function pad(n: number): string {
@@ -22,7 +23,7 @@ function pad(n: number): string {
 }
 ---
 
-<section class="facts-block">
+<section class="facts-block" id={id}>
   {heading && <p class="facts-title">{heading}</p>}
   <div class="facts-list">
     {items.map((f, i) => (
@@ -35,7 +36,7 @@ function pad(n: number): string {
 </section>
 
 <style>
-  .facts-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .facts-block { margin: clamp(28px, 3.5vw, 44px) 0; scroll-margin-top: 96px; }
   .facts-title {
     font-family: var(--font-mono);
     font-size: 10.5px;

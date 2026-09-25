@@ -12,8 +12,9 @@ interface Props {
   heading?: string;
   body: string;
   locale?: Locale;
+  id?: string;
 }
-const { heading, body, locale = "en" } = Astro.props;
+const { heading, body, locale = "en", id } = Astro.props;
 const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 
 function rewriteLinks(md: string): string {
@@ -24,7 +25,7 @@ function rewriteLinks(md: string): string {
 }
 ---
 
-<section class="prose-block">
+<section class="prose-block" id={id}>
   {heading && <h2 class="prose-heading">{heading}</h2>}
   {paras.map((p) => (
     <p class="p" set:html={rewriteLinks(p)} />
@@ -32,7 +33,7 @@ function rewriteLinks(md: string): string {
 </section>
 
 <style>
-  .prose-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .prose-block { margin: clamp(28px, 3.5vw, 44px) 0; scroll-margin-top: 96px; }
   .prose-block:last-child { margin-bottom: 0; }
   .prose-heading {
     font-family: var(--font-display);

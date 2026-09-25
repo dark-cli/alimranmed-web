@@ -29,8 +29,9 @@ interface Props {
   columns?: "auto" | "2" | "3" | "4";
   items: Item[];
   locale?: Locale;
+  id?: string;
 }
-const { heading, columns = "auto", items, locale = "en" } = Astro.props;
+const { heading, columns = "auto", items, locale = "en", id } = Astro.props;
 
 function link(href?: string): string | undefined {
   if (!href) return undefined;
@@ -44,7 +45,7 @@ const gridStyle = columns === "auto"
   : `grid-template-columns: repeat(${columns}, minmax(0, 1fr));`;
 ---
 
-<section class="row-block">
+<section class="row-block" id={id}>
   {heading && <p class="row-heading">{heading}</p>}
   <div class="row-grid" style={gridStyle} data-cols={columns}>
     {items.map((it) => {

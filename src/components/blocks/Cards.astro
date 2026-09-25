@@ -19,11 +19,12 @@ interface Props {
   heading?: string;
   items: Item[];
   soonLabel: string;      // greyed-out hover title
+  id?: string;
 }
-const { heading = "Related reading", items, soonLabel } = Astro.props;
+const { heading = "Related reading", items, soonLabel, id } = Astro.props;
 ---
 
-<section class="cards-block">
+<section class="cards-block" id={id}>
   {heading && <p class="cards-title">{heading}</p>}
   <div class="cards-grid">
     {items.map((it) => (
@@ -45,7 +46,7 @@ const { heading = "Related reading", items, soonLabel } = Astro.props;
 </section>
 
 <style>
-  .cards-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .cards-block { margin: clamp(28px, 3.5vw, 44px) 0; scroll-margin-top: 96px; }
   .cards-title {
     font-family: var(--font-mono);
     font-size: 10.5px;

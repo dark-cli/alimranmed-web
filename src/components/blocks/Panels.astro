@@ -27,8 +27,9 @@ interface Props {
   note?: string;
   panels: Panel[];
   locale?: Locale;
+  id?: string;
 }
-const { heading, intro, note, panels, locale = "en" } = Astro.props;
+const { heading, intro, note, panels, locale = "en", id } = Astro.props;
 
 function rewriteLinks(md: string): string {
   return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
@@ -42,7 +43,7 @@ function rewriteLinks(md: string): string {
 const minCol = panels.length <= 2 ? 255 : 230;
 ---
 
-<section class="panels">
+<section class="panels" id={id}>
   {heading && <h2 class="panels-heading">{heading}</h2>}
   {intro && <p class="panels-intro">{intro}</p>}
   <div class="panels-grid" style={`--min-col: ${minCol}px;`}>
@@ -63,7 +64,7 @@ const minCol = panels.length <= 2 ? 255 : 230;
 </section>
 
 <style>
-  .panels { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .panels { margin: clamp(28px, 3.5vw, 44px) 0; scroll-margin-top: 96px; }
   .panels-heading {
     font-family: var(--font-display);
     font-weight: 400;
