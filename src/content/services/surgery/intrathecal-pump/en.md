@@ -1,6 +1,6 @@
 ---
 title: "Intrathecal pump"
-description: "WHAT IS AN INTRATHECAL PUMP? An intrathecal pump is a battery-operated device which delivers medication directly into the spinal canal."
+description: "An intrathecal pump delivers medication directly into the spinal canal to treat chronic pain, spasticity and cancer-related pain."
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/an-intrathecal-pump/"

@@ -18,9 +18,8 @@
  */
 
 /* ─── Fonts ───────────────────────────────────────────────────── */
-/* Newsreader + IBM Plex Sans/Mono for Latin; Amiri + IBM Plex Sans Arabic
-   for Arabic. display=fallback avoids the FOUT flash on slow connections. */
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Amiri:wght@400;700&display=fallback');
+/* Loaded from BaseHead via <link> + preconnect: a CSS @import here chains
+   the font stylesheet behind this one and blocks rendering longer. */
 
 /* RTL overrides — every html[dir="rtl"] rule for the redesign lives here
    because Astro's scoped-style compiler strips the html-level prefix. */

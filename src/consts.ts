@@ -2,6 +2,8 @@ export const SITE_TITLE = "Alimran Clinic | Neurology & Musculoskeletal";
 export const SITE_NAME  = "Alimran Clinic";
 export const SITE_DESCRIPTION =
   "Alimran Clinic in Basra, Iraq — specialist care for neurology, spine, and pain. Led by Consultant Neurosurgeon Dr. Hussein Imran Mousa.";
+export const SITE_DESCRIPTION_AR =
+  "مركز العمران الطبي في البصرة، العراق — رعاية تخصصية لأمراض الأعصاب والعمود الفقري والألم، بإشراف استشاري جراحة الدماغ والأعصاب د. حسين عمران موسى.";
 
 export const CONTACT = {
   phones: ["+964-780-1926-801", "+964-770-6774-773"],

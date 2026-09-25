@@ -1,6 +1,6 @@
 ---
 title: "Burr Holes and Craniotomy"
-description: "What are Burr Holes and Craniotomy? A Craniotomy is an operation that involves opening the skull to correct a problem"
+description: "Burr holes and craniotomy open the skull to treat blood clots, brain tumours and skull defects, or drain blood through small holes."
 category: "surgery"
 order: 999
 legacyUrl: "https://alimranmed.com/burr-holes-and-craniotomy-2/"

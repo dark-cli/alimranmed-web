@@ -9,6 +9,8 @@
  */
 import { render } from "astro:content";
 import SchemaScript from "./SchemaScript.astro";
+import { procedurePage, faqPage } from "../lib/schema";
+import { currentLocale } from "../lib/i18n";
 
 interface Props {
   entry: any;
@@ -20,47 +22,17 @@ const { entry, backHref, backLabel } = Astro.props;
 const { Content } = await render(entry);
 const category = entry.data.category;
 
-// MedicalWebPage schema for treatment/service pages
-const medicalSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
+// MedicalWebPage schema (services/cases rendered from plain markdown)
+const locale = currentLocale(Astro);
+const medicalSchema = procedurePage({
+  url: new URL(Astro.url.pathname, Astro.site),
   name: entry.data.title,
   description: entry.data.description || entry.data.title,
-  datePublished: entry.data.published || new Date().toISOString(),
-  dateModified: entry.data.updated?.toISOString() || new Date().toISOString(),
-  mainContentOfPage: {
-    "@type": "WebPageElement",
-    name: entry.data.title,
-  },
-  author: {
-    "@type": "MedicalOrganization",
-    name: "Alimran Medical Center",
-    url: "https://alimran.clinic",
-  },
-  reviewedBy: entry.data.reviewedBy ? {
-    "@type": "Physician",
-    name: entry.data.reviewedBy,
-  } : undefined,
-};
-
-// FAQ schema if faqItems exist
-const faqSchema = entry.data.faqItems?.length > 0 ? {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: entry.data.faqItems.map((item: any) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-} : null;
-
-// Remove undefined values
-Object.keys(medicalSchema).forEach(
-  (key) => medicalSchema[key] === undefined && delete medicalSchema[key]
-);
+  locale,
+  reviewedBy: entry.data.reviewedBy,
+  reviewedAt: entry.data.reviewedAt,
+});
+const faqSchema = faqPage(entry.data.faqItems);
 ---
 
 <div class="content-page">

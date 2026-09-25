@@ -1,6 +1,6 @@
 ---
 title: "Psychological Intervention"
-description: "What is Psychological Intervention? Psychological Intervention is an umbrella term for services provided such as testing and assessment, behaviour therapy,"
+description: "Psychological assessment, behaviour therapy and counselling for children and adults at Alimran Medical Center, supporting healthy coping during recovery."
 category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/psychological-intervention/"

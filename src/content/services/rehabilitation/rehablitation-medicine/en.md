@@ -1,6 +1,6 @@
 ---
 title: "Rehablitation Medicine"
-description: "Bladder Rehabilitation Neuroplasticity and CNS Reorganization Bed sore Nursing care Spinal cord Rehabilitation Speech therapy Stroke recovery Psychological Intervention nutritional"
+description: "Rehabilitation medicine at Alimran Medical Center: stroke and spinal cord rehabilitation, speech therapy, bladder rehabilitation, nursing and psychology."
 category: "rehabilitation"
 order: 999
 legacyUrl: "https://alimranmed.com/rehablitation-medicine/"

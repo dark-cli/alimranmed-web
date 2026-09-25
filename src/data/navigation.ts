@@ -330,7 +330,7 @@ export const NAV: NavItem[] = [
       { label: "Endoscopic spine surgery", href: "/services/surgery/endoscopic-spine/", legacyUrl: "https://alimranmed.com/endoscopic-spine-surgery/", collection: "services", category: "surgery" },
       { label: "Selective dorsal rhizotomy (SDR)", href: "/services/surgery/sdr/", legacyUrl: "https://alimranmed.com/a-selective-dorsal-rhizotomysdr/", collection: "services", category: "surgery" },
       { label: "Lumbar Spinal Fusion Surgery", href: "/services/surgery/lumbar-spinal-fusion/", legacyUrl: "https://alimranmed.com/lumbar-spinal-fusion-surgery/", collection: "services", category: "surgery" },
-      { label: "Anterior Cervical Discectomy and Fusion", href: "/services/surgery/acdf/", legacyUrl: "https://alimranmed.com/anterior-cervical-discectomy-and-fusion-3/", collection: "services", category: "surgery" },
+      { label: "Anterior Cervical Discectomy and Fusion", href: "/services/surgery/anterior-cervical-discectomy-and-fusion/", legacyUrl: "https://alimranmed.com/anterior-cervical-discectomy-and-fusion-3/", collection: "services", category: "surgery" },
       { label: "Deep brain stimulation", href: "/services/surgery/dbs/", legacyUrl: "https://alimranmed.com/deep-brain-stimulation/", collection: "services", category: "surgery" },
       { label: "Intrathecal pump", href: "/services/surgery/intrathecal-pump/", legacyUrl: "https://alimranmed.com/an-intrathecal-pump/", collection: "services", category: "surgery" },
       { label: "Arthroplasty (Artificial Disc Replacement)", href: "/services/surgery/arthroplasty/", legacyUrl: "https://alimranmed.com/arthroplasty-artificial-disc-replacement/", collection: "services", category: "surgery" },
