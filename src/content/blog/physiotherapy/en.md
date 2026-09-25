@@ -1,61 +1,97 @@
 ---
-title: "Physiotherapy"
-description: "A healthcare profession that assesses, diagnoses, treats and works to prevent disease and disability through physical means"
+title: Physiotherapy
+description: >-
+  A healthcare profession that assesses, diagnoses, treats and works to prevent disease and disability through physical
+  means
 order: 999
-legacyUrl: "https://alimranmed.com/2020/02/22/physiotherapy/"
+legacyUrl: https://alimranmed.com/2020/02/22/physiotherapy/
 publishedAt: "2020-02-22T15:05:28"
-source: "legacy-wp"
+source: legacy-wp
 redesigned: true
 clinicallyRelevant: true
 sections:
-  - type: at_a_glance
+  - type: highlights
     items:
-      - label: "What is physiotherapy?"
-        value: "A healthcare profession that assesses, diagnoses, treats and prevents disease and disability through physical means and movement science"
-      - label: "Core purpose"
-        value: "Experts in movement help patients overcome movement disorders from birth, injury, aging or life-changing events"
+      - label: What is physiotherapy?
+        value: >-
+          A healthcare profession that assesses, diagnoses, treats and prevents disease and disability through physical
+          means and movement science
+      - label: Core purpose
+        value: >-
+          Experts in movement help patients overcome movement disorders from birth, injury, aging or life-changing
+          events
   - type: prose
-    heading: "Introduction"
-    body: |
-      Physiotherapy is a healthcare profession that assesses, diagnoses, treats, and works to prevent disease and disability through physical means. Physiotherapists are experts in movement and function who work in partnership with their patients, assisting them to overcome movement disorders, which may have been present from birth, acquired through accident or injury, or are the result of ageing or life-changing events.
-      
-      Physiotherapy can help recover from injury, reduce pain and stiffness, and increase mobility. A physiotherapist can also help you prevent further injury by listening to your needs and working with you to plan the most appropriate treatment for your condition, including setting goals and treatment outcomes.
+    heading: Introduction
+    body: >
+      Physiotherapy is a healthcare profession that assesses, diagnoses, treats, and works to prevent disease and
+      disability through physical means. Physiotherapists are experts in movement and function who work in partnership
+      with their patients, assisting them to overcome movement disorders, which may have been present from birth,
+      acquired through accident or injury, or are the result of ageing or life-changing events.
+
+
+      Physiotherapy can help recover from injury, reduce pain and stiffness, and increase mobility. A physiotherapist
+      can also help you prevent further injury by listening to your needs and working with you to plan the most
+      appropriate treatment for your condition, including setting goals and treatment outcomes.
   - type: prose
-    heading: "Treatment Methods"
-    body: |
-      Physiotherapists are trained to assess your condition, diagnose the problem, and help you understand what's wrong. Your treatment plan will take into account your lifestyle, activities, and general health.
-      
+    heading: Treatment Methods
+    body: >
+      Physiotherapists are trained to assess your condition, diagnose the problem, and help you understand what's wrong.
+      Your treatment plan will take into account your lifestyle, activities, and general health.
+
+
       Common treatment methods physiotherapists use include:
-      
+
+
       - Exercise programs to improve mobility and strengthen muscles
+
       - Joint manipulation and mobilisation to reduce pain and stiffness
+
       - Muscle re-education to improve control
+
       - Airway clearance techniques and breathing exercises
+
       - Soft tissue mobilisation (massage)
+
       - Acupuncture
+
       - Hydrotherapy
+
       - Assistance with aids, splints, crutches, walking sticks and wheelchairs
-      
-      Physiotherapists improve quality of life by promoting optimal mobility and health, preventing disease and injury, managing acute and chronic conditions, improving functional independence, rehabilitating injury effects, and educating patients on maintenance and prevention programs. Physiotherapy is anchored in movement sciences and aims to enhance or restore function of multiple body systems using a holistic approach.
+
+
+      Physiotherapists improve quality of life by promoting optimal mobility and health, preventing disease and injury,
+      managing acute and chronic conditions, improving functional independence, rehabilitating injury effects, and
+      educating patients on maintenance and prevention programs. Physiotherapy is anchored in movement sciences and aims
+      to enhance or restore function of multiple body systems using a holistic approach.
   - type: prose
-    heading: "Applications of Physiotherapy"
-    body: |
-      Many people think physiotherapy is only for musculoskeletal conditions (neck and back), but the profession provides preventative and rehabilitation treatment for numerous mobility issues, injuries and diseases, including:
-      
+    heading: Applications of Physiotherapy
+    body: >
+      Many people think physiotherapy is only for musculoskeletal conditions (neck and back), but the profession
+      provides preventative and rehabilitation treatment for numerous mobility issues, injuries and diseases, including:
+
+
       - Arthritis, Asthma, Back pain, Cancer
+
       - Cardiovascular Conditions (post heart attack, COPD, pneumonia)
+
       - Cerebral palsy, Chronic Pain, Concussions
+
       - Dementia, Developmental Delay and Paediatric Conditions
+
       - Diabetes, Falls & Fractures, High Blood Pressure
+
       - Incontinence, Multiple Sclerosis, Neck Pain
+
       - Neurological Conditions (stroke, spinal injury, Parkinson's disease)
+
       - Occupational Health, Oncology-Related Conditions (lymphedema)
+
       - Osteoporosis, Pregnancy-related Incontinence, Vestibular Disorders (dizziness)
   - type: prose
-    heading: "Types of Physiotherapy"
+    heading: Types of Physiotherapy
     body: |
       Various physiotherapy modalities include:
-      
+
       - Massage
       - Heat and cold therapy
       - Electrical stimulation
@@ -66,7 +102,7 @@ sections:
       - Magnetic field therapy
       - Therapeutic exercises
   - type: prose
-    heading: "Benefits of Physiotherapy"
+    heading: Benefits of Physiotherapy
     body: |
       - Activates weak or inactive muscles
       - Increases blood supply to speed healing

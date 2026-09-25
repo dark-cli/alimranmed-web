@@ -1,6 +1,6 @@
 ---
 title: "Kinesiology"
-description: "CureTape ® and the Medical Taping Concept are closely connected. The background of medical taping was established in Japan and"
+description: "Kinesiology taping with CureTape: elastic medical tape that supports muscles and joints and eases pain and swelling without limiting movement."
 order: 999
 legacyUrl: "https://alimranmed.com/kinesiology/"
 category: "physiotherapy"

@@ -40,7 +40,7 @@ const services = isAr ? [
     items: ["الترددات الراديوية", "حقن فوق الجافية والمفاصل الفقرية", "تخدير العُقد الودّية", "حقن الستيرويد", "البوتوكس لعلاج الصداع"],
     reading: [
       { slug: "tension-headaches",  title: "صداع التوتر — الأسباب والعلاج" },
-      { slug: "tms-for-pains",      title: "TMS للألم المزمن" },
+      { slug: "tms-pain", href: "/services/brain-stimulation/tms-pain/", title: "TMS للألم المزمن" },
       { slug: "arthritis",          title: "التهاب المفاصل — خيارات العلاج" },
     ] },
   { title: "تحفيز الدماغ والأعصاب",
@@ -72,7 +72,7 @@ const services = isAr ? [
     items: ["Radiofrequency ablation", "Epidural & facet injections", "Sympathetic nerve blocks", "Steroid injections", "Botulinum toxin for headache"],
     reading: [
       { slug: "tension-headaches",  title: "Tension headaches — causes and management" },
-      { slug: "tms-for-pains",      title: "TMS for chronic pain" },
+      { slug: "tms-pain", href: "/services/brain-stimulation/tms-pain/", title: "TMS for chronic pain" },
       { slug: "arthritis",          title: "Arthritis — treatment options" },
     ] },
   { title: "Neuromodulation",
@@ -282,7 +282,7 @@ const T = isAr ? {
         <div class="hero-credit">
           <img
             class="hero-avatar"
-            src="/images/doctors/hussein-imran-mousa.jpg"
+            src="/images/doctors/hussein-imran-mousa-avatar.webp"
             alt={T.doctorImgAlt}
             width="52" height="52"
           />
@@ -336,7 +336,7 @@ const T = isAr ? {
               <p class="care-reading-label">{T.readingLabel}</p>
               <ul class="care-reading-list">
                 {s.reading.map((r) => (
-                  <li><a href={L(`/blog/${r.slug}/`)}>{r.title}</a></li>
+                  <li><a href={L((r as { href?: string }).href ?? `/blog/${r.slug}/`)}>{r.title}</a></li>
                 ))}
               </ul>
             </div>

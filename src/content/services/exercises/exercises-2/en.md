@@ -1,6 +1,6 @@
 ---
 title: "Exercises"
-description: "Ankle Thigh Neek Leg Knee Hip Foot Back"
+description: "Home exercise guides from Alimran Medical Center for the neck, back, hip, knee, thigh, leg, ankle and foot."
 category: "exercises"
 order: 999
 legacyUrl: "https://alimranmed.com/exercises-2/"

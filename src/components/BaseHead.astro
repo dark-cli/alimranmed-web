@@ -1,25 +1,41 @@
 ---
 import "../styles/global.css";
-import { SITE_TITLE, SITE_NAME, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_NAME, SITE_DESCRIPTION, SITE_DESCRIPTION_AR } from "../consts";
 import { currentLocale, alternateHref } from "../lib/i18n";
+import { excerpt } from "../lib/excerpt";
 
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  /** Keep the page out of the index and skip canonical/hreflang (e.g. 404). */
+  noindex?: boolean;
+  /** Load the Font Awesome stylesheet (only legacy pages use fa-* icons). */
+  fontAwesome?: boolean;
 }
 
+const locale = currentLocale(Astro);
 const {
   title = SITE_TITLE,
-  description = SITE_DESCRIPTION,
-  image = "/images/og-cover.png",
+  image = "/images/doctors/hussein-imran-mousa.jpg",
+  noindex = false,
+  fontAwesome = false,
 } = Astro.props;
+// Empty strings (content entries with no `description`) fall back too, and
+// Arabic pages get an Arabic default rather than the English one.
+// Search results cut descriptions off around 160 characters; trim at a word
+// boundary so the snippet ends cleanly instead of mid-word.
+const description = excerpt(
+  Astro.props.description?.trim() || (locale === "ar" ? SITE_DESCRIPTION_AR : SITE_DESCRIPTION),
+  160,
+);
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const locale = currentLocale(Astro);
 const otherLocale = locale === "en" ? "ar" : "en";
 const alternatePath = alternateHref(Astro.url.pathname, otherLocale);
 const alternateURL = new URL(alternatePath, Astro.site);
+const enURL = locale === "en" ? canonicalURL : alternateURL;
+const arURL = locale === "ar" ? canonicalURL : alternateURL;
 
 // Non-production builds (beta, staging, previews) should be hidden from
 // search engines. Default to PRODUCTION so that if the env var is missing
@@ -27,11 +43,12 @@ const alternateURL = new URL(alternatePath, Astro.site);
 const cfBranch = process.env.CF_PAGES_BRANCH || "";
 const NON_PROD_BRANCHES = new Set(["beta", "staging", "preview", "dev"]);
 const isProduction = !NON_PROD_BRANCHES.has(cfBranch);
-const robotsContent = isProduction ? "index, follow" : "noindex, nofollow";
+const robotsContent = !isProduction ? "noindex, nofollow" : noindex ? "noindex, follow" : "index, follow";
 
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": ["MedicalClinic", "LocalBusiness"],
+  "@id": "https://alimran.clinic/#clinic",
   name: "Alimran Medical Center",
   description:
     "Alimran Medical Center specializes in neurology and musculoskeletal disorders in Basra, Iraq — chiropractic, rehabilitation, brain stimulation (TMS/tDCS), pain management, physiotherapy, radiofrequency, and neurosurgery.",
@@ -106,9 +123,14 @@ const businessSchema = {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<!-- Font Awesome kept for legacy pages (about/contact/blog etc.) that still
-     render fa-* icons. New redesigned pages use inline SVG and don't need it. -->
-<link rel="stylesheet" href="/fonts/fontawesome/fontawesome.css" />
+<!-- Newsreader + IBM Plex Sans/Mono for Latin; Amiri + IBM Plex Sans Arabic
+     for Arabic. display=fallback avoids the FOUT flash on slow connections. -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Amiri:wght@400;700&display=fallback" />
+<!-- Font Awesome only for legacy pages that still render fa-* icons (about,
+     contact, translation banner). Redesigned pages use inline SVG. -->
+{fontAwesome && <link rel="stylesheet" href="/fonts/fontawesome/fontawesome.css" />}
 <meta name="generator" content={Astro.generator} />
 
 <title>{title}</title>
@@ -116,15 +138,21 @@ const businessSchema = {
 <meta name="description" content={description} />
 <meta name="author" content="Alimran Clinic" />
 <meta name="robots" content={robotsContent} />
-<link rel="canonical" href={canonicalURL} />
-
-<!-- Language alternates: only declare alternates, not self-reference -->
-<link rel="alternate" hreflang={otherLocale}     href={alternateURL} />
-<link rel="alternate" hreflang="x-default"       href={locale === "en" ? canonicalURL : alternateURL} />
+{!noindex && (
+  <>
+    <link rel="canonical" href={canonicalURL} />
+    <!-- Language alternates. Google requires the full set on every page of the
+         cluster, including the page itself; omitting the self-reference breaks
+         the return-link check and the annotations get ignored. -->
+    <link rel="alternate" hreflang="en" href={enURL} />
+    <link rel="alternate" hreflang="ar" href={arURL} />
+    <link rel="alternate" hreflang="x-default" href={enURL} />
+  </>
+)}
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.site)} />
@@ -133,11 +161,11 @@ const businessSchema = {
 <meta property="og:locale:alternate" content={otherLocale === "ar" ? "ar_IQ" : "en_US"} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.site)} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.site)} />
 
 <!-- Structured data -->
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />

@@ -7,6 +7,7 @@ import { TREATMENT_PATHWAY } from "../../../lib/pathways";
 import { makeResolveRelatedEn, makeResolveRelatedAr } from "../../../lib/related";
 import { TREATMENT_LABELS, NAV_LABELS } from "../../../lib/labels";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
+import { conditionPage, faqPage } from "../../../lib/schema";
 import ArticleBody from "../../../components/article/ArticleBody.astro";
 
 const locale = currentLocale(Astro);
@@ -73,6 +74,18 @@ const disclaimer = locale === "ar"
 <ArticleLayout
   pageTitle={`${entry.data.title} — ${nav.siteName}`}
   description={standfirst}
+  schema={[
+    conditionPage({
+      url: new URL(Astro.url.pathname, Astro.site),
+      name: entry.data.title,
+      description: standfirst,
+      locale,
+      datePublished: (entry.data as { publishedAt?: Date }).publishedAt,
+      reviewedBy: (entry.data as { reviewedBy?: string }).reviewedBy,
+      reviewedAt: (entry.data as { reviewedAt?: Date }).reviewedAt,
+    }),
+    faqPage((entry.data as { faqItems?: Array<{ question: string; answer: string }> }).faqItems),
+  ]}
   locale={locale}
   breadcrumbs={[
     { label: nav.home, href: L("/") },

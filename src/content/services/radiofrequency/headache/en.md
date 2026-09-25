@@ -1,6 +1,6 @@
 ---
 title: "Radiofrequency for Headache"
-description: "chronic headaches includes: chronic migraines chronic tension-type headaches chronic cluster headaches cervicogenic headaches occipital neuralgia persistent idiopathic facial pain (PIFP)"
+description: "Radiofrequency treatment for chronic headaches: migraine, tension-type and cluster headache, cervicogenic headache, occipital neuralgia and facial pain."
 category: "radiofrequency"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/03/radiofrequency-for-headache/"

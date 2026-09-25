@@ -4,9 +4,9 @@ source: "legacy-wp"
 legacyUrl: "https://ar.alimranmed.com/exercises"
 ---
 
--   [الرقبة](/treatments/neck-pain/)
--   [تمارين الظهر وعرق النسا](/services/brain-stimulation/tdcs/) 
--   [تمارين الفخذ (الورك)](/services/exercises/)
--   [الركبة](/treatments/knee-pain/)
--   [الكاحل](/treatments/ankle-pain/)
--   [القدم](/treatments/foot-pain/)
+-   [الرقبة](/services/exercises/neck/)
+-   [تمارين الظهر وعرق النسا](/services/exercises/back/) 
+-   [تمارين الفخذ (الورك)](/services/exercises/hip/)
+-   [الركبة](/services/exercises/knee/)
+-   [الكاحل](/services/exercises/ankle/)
+-   [القدم](/services/exercises/foot/)

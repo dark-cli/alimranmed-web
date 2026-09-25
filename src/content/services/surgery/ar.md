@@ -10,5 +10,5 @@ legacyUrl: "https://ar.alimranmed.com/surgery"
 -   [مايكرودسك](/services/minimally-invasive-surgery/)
 -   [تقويم مفاصل (استبدال القرص الاصطناعي)](/services/joint-replacement/)
 -   [العمليات المنظارية](/services/endoscopic-surgery/)
--   [**اعتلال الحبل ألشوكي**](/treatments/tethered-spinal-cord/)
+-   [**اعتلال الحبل الشوكي**](/treatments/tethered-spinal-cord/)
 -   [قسطرة وتحفيز الحبل الشوكي](/services/spinal-cord-stimulation/)

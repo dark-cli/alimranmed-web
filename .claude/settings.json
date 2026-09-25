@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "defaultMode": "dontAsk",
+    "allow": ["Bash(git status)", "Bash(git diff)"],
+    "ask": ["Bash(git *)", "Bash(gh *)"]
+  },
+  "sandbox": {
+    "network": {
+      "allowLocalBinding": true
+    },
+    "filesystem": {
+      "allowWrite": ["/tmp"]
+    }
+  }
+}

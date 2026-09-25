@@ -1,6 +1,6 @@
 ---
 title: "Neck Exercises"
-description: "Guided neck stretching and strengthening exercises for home rehabilitation."
+description: "Guided neck stretching and strengthening exercises for home rehabilitation, from the physiotherapy team at Alimran Medical Center."
 category: "exercises"
 order: 999
 legacyUrl: "https://alimranmed.com/neek/"

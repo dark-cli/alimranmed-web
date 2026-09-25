@@ -1,6 +1,6 @@
 ---
 title: "Adhesiolysis"
-description: "What Is Adhesiolysis? Adhesiolysis is sometimes called epidural adhesiolysis or percutaneous epidural adhesiolysis. It is a treatment that is used"
+description: "Epidural adhesiolysis breaks down scar tissue along the spine that compresses nerve roots, relieving severe chronic back and leg pain."
 order: 999
 legacyUrl: "https://alimranmed.com/adhesiolysis/"
 category: "steroid-injection"
