@@ -7,6 +7,7 @@ import { BLOG_LABELS, NAV_LABELS } from "../../../lib/labels";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
 import ArticleBody from "../../../components/article/ArticleBody.astro";
 import { excerpt } from "../../../lib/excerpt";
+import { articlePage, faqPage } from "../../../lib/schema";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
@@ -49,6 +50,18 @@ const bodyImages = usingSections ? extractBodyImages(entry.body) : [];
 <ArticleLayout
   pageTitle={`${entry.data.title} — ${nav.siteName}`}
   description={entry.data.description || excerpt(entry.body)}
+  schema={[
+    articlePage({
+      url: new URL(Astro.url.pathname, Astro.site),
+      name: entry.data.title,
+      description: entry.data.description || excerpt(entry.body),
+      locale,
+      datePublished: (entry.data as { publishedAt?: Date }).publishedAt,
+      reviewedBy: (entry.data as { reviewedBy?: string }).reviewedBy,
+      reviewedAt: (entry.data as { reviewedAt?: Date }).reviewedAt,
+    }),
+    faqPage((entry.data as { faqItems?: Array<{ question: string; answer: string }> }).faqItems),
+  ]}
   locale={locale}
   breadcrumbs={[
     { label: nav.home, href: L("/") },

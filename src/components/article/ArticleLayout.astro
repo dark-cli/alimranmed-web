@@ -32,12 +32,14 @@ interface Props {
   ctaHeading: string;
   ctaBody: string;
   disclaimer?: string;
+  /** Page-level JSON-LD objects (nulls are skipped). */
+  schema?: Array<Record<string, unknown> | null>;
 }
 
 const {
   pageTitle, description, locale, breadcrumbs, h1, meta,
   toc, tocLabel, callLabel, callBody,
-  ctaHeading, ctaBody, disclaimer,
+  ctaHeading, ctaBody, disclaimer, schema = [],
 } = Astro.props;
 
 const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
@@ -63,6 +65,7 @@ const crumbSep = locale === "ar" ? "‹" : "›";
 
 <BaseLayout title={pageTitle} description={description}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {schema.filter(Boolean).map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
   <section class="art-head-band">
     <div class="art-head-wrap">
       <nav class="crumbs" aria-label="Breadcrumb">

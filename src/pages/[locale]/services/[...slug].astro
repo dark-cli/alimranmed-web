@@ -6,6 +6,7 @@ import TranslationBanner from "../../../components/TranslationBanner.astro";
 import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
 import { buildToc } from "../../../lib/toc";
 import { excerpt } from "../../../lib/excerpt";
+import { procedurePage, faqPage } from "../../../lib/schema";
 import { SERVICE_LABELS, NAV_LABELS } from "../../../lib/labels";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
 import ArticleSections from "../../../components/article/ArticleSections.astro";
@@ -54,6 +55,18 @@ const serviceCategory = entry.data.category || (locale === "ar" ? "خدمة" : "
   <ArticleLayout
     pageTitle={`${entry.data.title} — ${nav.siteName}`}
     description={metaDescription}
+    schema={[
+      procedurePage({
+        url: new URL(Astro.url.pathname, Astro.site),
+        name: entry.data.title,
+        description: metaDescription,
+        locale,
+        datePublished: (entry.data as { publishedAt?: Date }).publishedAt,
+        reviewedBy: (entry.data as { reviewedBy?: string }).reviewedBy,
+        reviewedAt: (entry.data as { reviewedAt?: Date }).reviewedAt,
+      }),
+      faqPage((entry.data as { faqItems?: Array<{ question: string; answer: string }> }).faqItems),
+    ]}
     locale={locale}
     breadcrumbs={[
       { label: nav.home, href: L("/") },
