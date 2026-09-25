@@ -100,7 +100,7 @@ sections:
           - مراقبة الأعراض
           - التصعيد فقط إذا نما الورم أو تغيّرت الأعراض
   - type: cards
-    slugs:
-      - acoustic-neuroma
-      - stroke
+    items:
+      - /treatments/acoustic-neuroma/
+      - /treatments/stroke/
 ---

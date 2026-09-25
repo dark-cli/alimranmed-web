@@ -105,7 +105,7 @@ sections:
           - متلازمة ذيل الفرس (طارئة)
           - ألم مُعطِّل مستمرّ لا يستجيب لأكثر من ٦ أسابيع من الرعاية المحافظة الكاملة
   - type: cards
-    slugs:
-      - back-pain
-      - fibromyalgia
+    items:
+      - /treatments/back-pain/
+      - /treatments/fibromyalgia/
 ---

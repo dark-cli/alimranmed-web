@@ -97,7 +97,7 @@ sections:
           - التحرير المفصلي بالمنظار
           - العلاج الطبيعي الفوري بعد العملية غير قابل للتفاوض
   - type: cards
-    slugs:
-      - fibromyalgia
-      - back-pain
+    items:
+      - /treatments/fibromyalgia/
+      - /treatments/back-pain/
 ---

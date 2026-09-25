@@ -111,7 +111,7 @@ sections:
           - Cauda equina syndrome (emergency)
           - Persistent disabling pain unresponsive to 6+ weeks of full conservative care
   - type: cards
-    slugs:
-      - back-pain
-      - fibromyalgia
+    items:
+      - /treatments/back-pain/
+      - /treatments/fibromyalgia/
 ---

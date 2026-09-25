@@ -72,7 +72,7 @@ sections:
           - Physical therapy and postural support
           - Interventional pain procedures if conservative therapy fails
   - type: cards
-    slugs:
-      - scoliosis
-      - back-pain
+    items:
+      - /treatments/scoliosis/
+      - /treatments/back-pain/
 ---

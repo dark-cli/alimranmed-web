@@ -68,7 +68,7 @@ sections:
           - جراحة موضعية الكرة الشاحبة للديستونيا
           - تحفيز عميق للدماغ للديستونيا المعممة
   - type: cards
-    slugs:
-      - parkinsons-disease
-      - spinal-cord-injury
+    items:
+      - /treatments/parkinsons-disease/
+      - /treatments/spinal-cord-injury/
 ---

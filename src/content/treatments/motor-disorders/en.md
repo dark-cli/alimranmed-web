@@ -76,7 +76,7 @@ sections:
           - Stereotactic lesioning (pallidotomy, thalamotomy) for dystonia
           - Deep brain stimulation (GPi) for generalised dystonia
   - type: cards
-    slugs:
-      - parkinsons-disease
-      - spinal-cord-injury
+    items:
+      - /treatments/parkinsons-disease/
+      - /treatments/spinal-cord-injury/
 ---

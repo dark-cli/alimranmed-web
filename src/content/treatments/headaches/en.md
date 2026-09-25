@@ -81,7 +81,7 @@ sections:
           - Greater occipital nerve blocks with steroid
           - Sphenopalatine ganglion blocks for cluster-like or hemicrania continua patterns
   - type: cards
-    slugs:
-      - neck-pain
-      - fibromyalgia
+    items:
+      - /treatments/neck-pain/
+      - /treatments/fibromyalgia/
 ---

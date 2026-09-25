@@ -116,7 +116,7 @@ sections:
           - Lipid control, glycaemic control
           - "Lifestyle: smoking cessation, exercise, weight management"
   - type: cards
-    slugs:
-      - acoustic-neuroma
-      - sciatica
+    items:
+      - /treatments/acoustic-neuroma/
+      - /treatments/sciatica/
 ---

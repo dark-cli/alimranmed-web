@@ -107,7 +107,7 @@ sections:
           - ألم جذري مستمرّ لا يستجيب لأكثر من ٦ أسابيع من الرعاية
           - عدم استقرار أو تشوّه بنيوي
   - type: cards
-    slugs:
-      - fibromyalgia
-      - acoustic-neuroma
+    items:
+      - /treatments/fibromyalgia/
+      - /treatments/acoustic-neuroma/
 ---

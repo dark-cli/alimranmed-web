@@ -121,7 +121,7 @@ sections:
           - Speech and language therapy where affected
           - Vocational assessment for return to work
   - type: cards
-    slugs:
-      - stroke
-      - brain-tumor
+    items:
+      - /treatments/stroke/
+      - /treatments/brain-tumor/
 ---

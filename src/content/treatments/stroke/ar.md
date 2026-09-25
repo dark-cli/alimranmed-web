@@ -103,7 +103,7 @@ sections:
           - ضبط الدهون والسكّر
           - "نمط الحياة: الإقلاع عن التدخين، الرياضة، إدارة الوزن"
   - type: cards
-    slugs:
-      - acoustic-neuroma
-      - sciatica
+    items:
+      - /treatments/acoustic-neuroma/
+      - /treatments/sciatica/
 ---

@@ -71,7 +71,7 @@ sections:
           - إجراءات إحصار العصب
           - جراحة موضعية الجذر للألم العصبي
   - type: cards
-    slugs:
-      - fibromyalgia
-      - back-pain
+    items:
+      - /treatments/fibromyalgia/
+      - /treatments/back-pain/
 ---

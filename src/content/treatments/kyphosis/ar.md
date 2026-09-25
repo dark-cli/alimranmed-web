@@ -66,7 +66,7 @@ sections:
           - العلاج الطبيعي والدعم
           - إجراءات تدخلية للألم
   - type: cards
-    slugs:
-      - scoliosis
-      - back-pain
+    items:
+      - /treatments/scoliosis/
+      - /treatments/back-pain/
 ---

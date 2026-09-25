@@ -72,7 +72,7 @@ sections:
           - Reassurance and education about expected recovery
           - Return-to-work and activity graded exposure
   - type: cards
-    slugs:
-      - neck-pain
-      - back-pain
+    items:
+      - /treatments/neck-pain/
+      - /treatments/back-pain/
 ---

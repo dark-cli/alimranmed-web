@@ -89,7 +89,7 @@ sections:
           - إقامة في المستشفى ٥-١٠ أيّام حسب الاقتراب
           - متابعة برنين بعد ٦ و١٢ شهرًا، ثمّ سنويًّا
   - type: cards
-    slugs:
-      - fibromyalgia
-      - back-pain
+    items:
+      - /treatments/fibromyalgia/
+      - /treatments/back-pain/
 ---

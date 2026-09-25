@@ -69,7 +69,7 @@ sections:
           - إعادة بناء الرباط الصليبي
           - استئصال المفصل للتهاب المفاصل المتقدم
   - type: cards
-    slugs:
-      - back-pain
-      - frozen-shoulder
+    items:
+      - /treatments/back-pain/
+      - /treatments/frozen-shoulder/
 ---

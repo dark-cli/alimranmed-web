@@ -73,7 +73,7 @@ sections:
           - حقن مفاصل الوجيهية أو حجب الفرع الوسيط
           - تحطيم موجات الراديو للألم المزمن
   - type: cards
-    slugs:
-      - back-pain
-      - whiplash
+    items:
+      - /treatments/back-pain/
+      - /treatments/whiplash/
 ---

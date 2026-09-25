@@ -96,7 +96,7 @@ sections:
           - استئصال القرص الرقبي مع الدمج (ACDF) أو استبدال القرص الاصطناعي
           - تفكيك ضغط طارئ لمتلازمة ذيل الفرس
   - type: cards
-    slugs:
-      - back-pain
-      - sciatica
+    items:
+      - /treatments/back-pain/
+      - /treatments/sciatica/
 ---

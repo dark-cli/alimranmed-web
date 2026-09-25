@@ -104,7 +104,7 @@ sections:
           - Cervical discectomy and fusion (ACDF) or artificial disc replacement
           - Emergency decompression for cauda equina syndrome
   - type: cards
-    slugs:
-      - back-pain
-      - sciatica
+    items:
+      - /treatments/back-pain/
+      - /treatments/sciatica/
 ---

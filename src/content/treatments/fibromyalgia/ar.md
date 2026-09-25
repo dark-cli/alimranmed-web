@@ -106,7 +106,7 @@ sections:
           - لياقة هوائية متدرّجة
           - إدارة الوزن حين يكون ذلك مناسبًا
   - type: cards
-    slugs:
-      - back-pain
-      - acoustic-neuroma
+    items:
+      - /treatments/back-pain/
+      - /treatments/acoustic-neuroma/
 ---

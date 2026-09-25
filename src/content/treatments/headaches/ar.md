@@ -72,7 +72,7 @@ sections:
           - حقن العصب القذالي الأكبر مع الستيرويد
           - حقن العقدة الفكية للأنماط المختلفة
   - type: cards
-    slugs:
-      - neck-pain
-      - fibromyalgia
+    items:
+      - /treatments/neck-pain/
+      - /treatments/fibromyalgia/
 ---

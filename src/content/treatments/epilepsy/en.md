@@ -108,7 +108,7 @@ sections:
           - Driving and work implications
           - Pregnancy planning (some AEDs carry teratogenic risk)
   - type: cards
-    slugs:
-      - stroke
-      - head-injury
+    items:
+      - /treatments/stroke/
+      - /treatments/head-injury/
 ---

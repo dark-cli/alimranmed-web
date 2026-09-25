@@ -109,7 +109,7 @@ sections:
           - Aerobic conditioning built up gradually
           - Weight management where relevant
   - type: cards
-    slugs:
-      - back-pain
-      - acoustic-neuroma
+    items:
+      - /treatments/back-pain/
+      - /treatments/acoustic-neuroma/
 ---

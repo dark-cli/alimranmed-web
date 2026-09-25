@@ -107,7 +107,7 @@ sections:
           - علاج نطق ولغة عند التأثّر
           - تقييم مهني للعودة إلى العمل
   - type: cards
-    slugs:
-      - stroke
-      - brain-tumor
+    items:
+      - /treatments/stroke/
+      - /treatments/brain-tumor/
 ---

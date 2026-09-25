@@ -111,7 +111,7 @@ sections:
           - Persistent radicular pain unresponsive to 6+ weeks of care
           - Instability or structural deformity
   - type: cards
-    slugs:
-      - fibromyalgia
-      - acoustic-neuroma
+    items:
+      - /treatments/fibromyalgia/
+      - /treatments/acoustic-neuroma/
 ---
