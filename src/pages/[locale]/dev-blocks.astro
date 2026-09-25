@@ -414,9 +414,9 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
       </div>
       <div class="preview">
         <p class="preview-tag">{T.structure}</p>
-        <Highlights items={[1, 2, 3].map((n) => ({ label: P.label(n), value: P.value(n) }))} />
+        <Highlights items={[1, 2, 3].map((n) => ({ label: P.label(n), value: P.value(n) }))} locale={locale} />
         <p class="preview-tag mt">{T.inUse}</p>
-        <Highlights items={R.highlights} />
+        <Highlights items={R.highlights} locale={locale} />
       </div>
     </section>
 
