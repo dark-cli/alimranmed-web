@@ -8,7 +8,8 @@
  *
  * The RTL blocks at the bottom target [dir="rtl"] instead of html[dir="rtl"]
  * because the preview iframe root isn't <html>; preview.js sets dir="rtl"
- * on the wrapping .doctor-preview div when the collection is doctors_ar.
+ * on the wrapping .doctor-preview / .article-preview div when the entry
+ * is the Arabic file (detected by the trailing "/ar" path segment).
  */
 
 /* Fonts — same set as src/styles/global.css so Amiri / IBM Plex Sans Arabic
@@ -32,6 +33,15 @@
   --font-mono:      "IBM Plex Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
 
   --page-max:       1180px;
+}
+
+/* Arabic font tokens — mirrors html[dir="rtl"] block in src/styles/global.css.
+   Scoped to [dir="rtl"] because preview.js sets dir on a wrapper div, not <html>. */
+[dir="rtl"] {
+  --font-display: "Amiri", "Times New Roman", serif;
+  --font-body:    "IBM Plex Sans Arabic", system-ui, "Segoe UI", sans-serif;
+  --font-mono:    "IBM Plex Sans Arabic", system-ui, sans-serif;
+  line-height: 1.95;
 }
 
 /* Dark mode token overrides — toggled by the preview theme button */

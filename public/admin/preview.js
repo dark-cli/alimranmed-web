@@ -2,10 +2,10 @@
  * Sveltia CMS preview templates — all collections.
  *
  * Registers live previews for:
- *   doctors_en / doctors_ar   — CvHero + unified section blocks
- *   treatments_en / _ar       — ArticleLayout + unified section blocks
- *   services_en / _ar         — same as treatments
- *   blog_en / _ar             — same as treatments
+ *   doctors    — CvHero + unified section blocks (locale detected from entry slug)
+ *   treatments — ArticleLayout + unified section blocks
+ *   services   — same as treatments
+ *   blog       — same as treatments
  *
  * Block renderers mirror the Astro components in src/components/blocks/.
  * CSS lives in preview.css (same file as before, with additions for the
@@ -709,14 +709,49 @@
   }
 
   /* ── Registration ────────────────────────────────────────────────────── */
+  // Collections are now unified (doctors / treatments / services / blog).
+  // Each collection uses nested:depth and contains both en.md and ar.md.
+  // The entry slug is the locale code ("en" or "ar"), so we detect it at render.
 
-  CMS.registerPreviewTemplate("doctors_en",    makeDocPreview("en"));
-  CMS.registerPreviewTemplate("doctors_ar",    makeDocPreview("ar"));
-  CMS.registerPreviewTemplate("treatments_en", makeArticlePreview("en", "treatments"));
-  CMS.registerPreviewTemplate("treatments_ar", makeArticlePreview("ar", "treatments"));
-  CMS.registerPreviewTemplate("services_en",   makeArticlePreview("en", "services"));
-  CMS.registerPreviewTemplate("services_ar",   makeArticlePreview("ar", "services"));
-  CMS.registerPreviewTemplate("blog_en",       makeArticlePreview("en", "blog"));
-  CMS.registerPreviewTemplate("blog_ar",       makeArticlePreview("ar", "blog"));
+  // With `nested: subfolders: false`, the entry slug is the full folder path
+  // (e.g. "als/en" or "surgery/vertebroplasty/ar"). The last path segment
+  // is the locale filename. We also fall back to the entry's `path` field
+  // if present.
+  function detectLocale(entry) {
+    var slug = (entry.get("slug") || "").toLowerCase();
+    var path = (entry.get("path") || "").toLowerCase();
+    var basis = path || slug;
+    // Match ".../ar" or ".../ar.md" (with or without extension)
+    return /(?:^|\/)ar(?:\.md)?$/.test(basis) ? "ar" : "en";
+  }
+
+  function makeDocPreviewAuto() {
+    var enCls = makeDocPreview("en");
+    var arCls = makeDocPreview("ar");
+    return createClass({
+      getInitialState: function () { return { dark: false }; },
+      render: function () {
+        var cls = detectLocale(this.props.entry) === "ar" ? arCls : enCls;
+        return h(cls, this.props);
+      }
+    });
+  }
+
+  function makeArticlePreviewAuto(kind) {
+    var enCls = makeArticlePreview("en", kind);
+    var arCls = makeArticlePreview("ar", kind);
+    return createClass({
+      getInitialState: function () { return { dark: false }; },
+      render: function () {
+        var cls = detectLocale(this.props.entry) === "ar" ? arCls : enCls;
+        return h(cls, this.props);
+      }
+    });
+  }
+
+  CMS.registerPreviewTemplate("doctors",    makeDocPreviewAuto());
+  CMS.registerPreviewTemplate("treatments", makeArticlePreviewAuto("treatments"));
+  CMS.registerPreviewTemplate("services",   makeArticlePreviewAuto("services"));
+  CMS.registerPreviewTemplate("blog",       makeArticlePreviewAuto("blog"));
   CMS.registerPreviewStyle("/admin/preview.css");
 })();
