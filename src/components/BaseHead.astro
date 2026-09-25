@@ -12,6 +12,8 @@ interface Props {
   noindex?: boolean;
   /** Load the Font Awesome stylesheet (only legacy pages use fa-* icons). */
   fontAwesome?: boolean;
+  /** LCP hero image preload — pass the srcset/sizes used on the page. */
+  heroPreload?: { srcset: string; sizes: string; type?: string };
 }
 
 const locale = currentLocale(Astro);
@@ -20,6 +22,7 @@ const {
   image = "/images/doctors/hussein-imran-mousa.jpg",
   noindex = false,
   fontAwesome = false,
+  heroPreload,
 } = Astro.props;
 // Empty strings (content entries with no `description`) fall back too, and
 // Arabic pages get an Arabic default rather than the English one.
@@ -92,6 +95,11 @@ const businessSchema = {
 };
 ---
 
+<!-- Charset first (spec: within the first 1024 bytes of the response) so the
+     browser can start decoding without re-scanning after a script/style. -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
 <script is:inline>
   // Mark embedded contexts so overscroll containment CSS can opt out.
   if (window.self !== window.top) {
@@ -119,15 +127,31 @@ const businessSchema = {
     document.addEventListener("astro:after-swap", apply);
   })();
 </script>
-
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<!-- Newsreader + IBM Plex Sans/Mono for Latin; Amiri + IBM Plex Sans Arabic
-     for Arabic. display=fallback avoids the FOUT flash on slow connections. -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Amiri:wght@400;700&display=fallback" />
+<!-- Self-hosted webfonts. Files in public/fonts/ are downloaded from Google
+     Fonts by `node scripts/download-fonts.mjs` — re-run to update weights.
+     Hosting locally means:
+       • no cross-origin RTT to fonts.googleapis + fonts.gstatic (2 DNS + 2 TCP + 2 TLS)
+       • Cloudflare caches them alongside the rest of the site
+       • preload can target the exact weight this page needs
+     font-display: swap is set inside fonts.css so text is visible immediately. -->
+<link rel="preload" as="font" type="font/woff2"
+      href={locale === "ar" ? "/fonts/ibm-plex-sans-arabic-arabic-400.woff2" : "/fonts/ibm-plex-sans-latin-400.woff2"}
+      crossorigin />
+<link rel="preload" as="font" type="font/woff2"
+      href={locale === "ar" ? "/fonts/amiri-arabic-400.woff2" : "/fonts/newsreader-latin-400.woff2"}
+      crossorigin />
+<link rel="stylesheet" href="/fonts/fonts.css" />
+{heroPreload && (
+  <link
+    rel="preload"
+    as="image"
+    imagesrcset={heroPreload.srcset}
+    imagesizes={heroPreload.sizes}
+    type={heroPreload.type ?? "image/webp"}
+    fetchpriority="high"
+  />
+)}
 <!-- Font Awesome only for legacy pages that still render fa-* icons (about,
      contact, translation banner). Redesigned pages use inline SVG. -->
 {fontAwesome && <link rel="stylesheet" href="/fonts/fontawesome/fontawesome.css" />}

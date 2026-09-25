@@ -12,9 +12,9 @@
  * is the Arabic file (detected by the trailing "/ar" path segment).
  */
 
-/* Fonts — same set as src/styles/global.css so Amiri / IBM Plex Sans Arabic
-   are available inside the preview iframe. */
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Amiri:wght@400;700&display=fallback');
+/* Fonts — self-hosted, matching src/components/BaseHead.astro so the preview
+   iframe and the live site use the exact same @font-face declarations. */
+@import url('/fonts/fonts.css');
 
 /* ─── Design tokens (from src/styles/global.css) ─────────────────────── */
 :root {

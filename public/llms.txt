@@ -1,32 +1,24 @@
-# LLM Agent Guidelines
-# This file helps AI agents understand and crawl your website
+# Alimran Medical Center
 
-User-agent: *
-Allow: /
+> Neurosurgery, pain medicine, brain stimulation, physiotherapy and rehabilitation delivered from a single clinic in Basra, Iraq. The consultant is Hussein Imran Mousa; patients are assessed once and treated by four departments working from that assessment. Site is bilingual — English at /en/, Arabic at /ar/ — and organises content by clinical taxonomy rather than by content type.
 
-# Sitemap for efficient crawling
-Sitemap: https://alimran.clinic/sitemap-index.xml
+## Primary sections
 
-# Block internal assets
-Disallow: /_astro/
+- [Home](https://alimran.clinic/en/): consultant overview and referral pathways
+- [Conditions & Procedures](https://alimran.clinic/en/conditions/): brain, spine and pain pathways with the treatments offered under each
+- [Library](https://alimran.clinic/en/library/): unified, searchable index of every published article across conditions, procedures, editorial blog posts and case reports
+- [Consultant CV](https://alimran.clinic/en/doctors/hussein-imran-mousa/): training, memberships, appointments and publications
+- [Blog](https://alimran.clinic/en/blog/): editorial articles written for patients before their first appointment
 
-# Language information
-# English: /en/ | Arabic: /ar/ | Auto-detect: /
-Allow: /en/
-Allow: /ar/
+## Content collections
 
-# Main sections
-Allow: /en/treatments/
-Allow: /en/services/
-Allow: /en/doctors/
-Allow: /ar/treatments/
-Allow: /ar/services/
-Allow: /ar/doctors/
+- [Conditions](https://alimran.clinic/en/treatments/): clinical reference on the conditions we assess and treat, grouped by pathway (brain, spine, pain) — ~108 pages
+- [Procedures](https://alimran.clinic/en/services/): treatments, interventions and surgeries offered, grouped by category (physiotherapy, chiropractic, brain stimulation, radiofrequency, surgery, regenerative medicine) — ~90 pages
+- [Blog](https://alimran.clinic/en/blog/): editorial articles for patients — ~20 posts
+- [Cases](https://alimran.clinic/en/cases/): representative case reports
 
-# Organization info
-# Name: Alimran Medical Center
-# Type: Medical Clinic
-# Location: Basra, Iraq
-# Phone: +964-780-1926-801
-# Email: info@alimranmed.com
-# Specialties: Neurology, Neurosurgery, Chiropractic, Physiotherapy, Pain Management
+## Optional
+
+- [Sitemap index](https://alimran.clinic/sitemap-index.xml)
+- Contact: +964 780 1926 801, +964 770 6774 773, info@alimranmed.com
+- Address: Breaha, Alnkba Medical Collection, Basra, Iraq
