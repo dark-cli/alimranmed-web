@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const isRedesigned = entry.data.redesigned === true;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 const wordCount =
   wordsIn((entry.data as { sections?: unknown }).sections) +
@@ -39,7 +39,7 @@ const lastReviewed = publishedAt
 
 const toc = buildToc(
   isRedesigned ? (entry.data as { sections?: Array<{ heading?: string }> }).sections : null,
-  null,
+  headings,
   locale,
 );
 
