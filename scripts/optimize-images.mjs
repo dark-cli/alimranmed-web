@@ -127,9 +127,11 @@ async function main() {
   const manifest = await loadManifest();
   let generated = 0, skipped = 0;
 
+  const stillPresent = new Set();
   for (const rel of TARGET_DIRS) {
     const files = await walk(rel);
     for (const f of files) {
+      stillPresent.add("/" + path.relative(PUB, f).replaceAll(path.sep, "/"));
       const res = await optimizeOne(f, manifest);
       if (res.skipped) skipped++;
       else {
@@ -139,8 +141,22 @@ async function main() {
     }
   }
 
+  // Prune manifest entries whose source is no longer on disk. Also delete
+  // the leftover .webp files so re-adding a source with the same name
+  // doesn't accidentally reuse a stale variant.
+  let pruned = 0;
+  for (const key of Object.keys(manifest)) {
+    if (stillPresent.has(key)) continue;
+    for (const v of manifest[key].variants) {
+      const abs = path.join(PUB, v.slice(1));
+      if (existsSync(abs)) await fs.unlink(abs);
+    }
+    delete manifest[key];
+    pruned++;
+  }
+
   await fs.writeFile(MANIFEST, JSON.stringify(manifest, null, 2) + "\n");
-  console.log(`\nOptimized ${generated} image(s), skipped ${skipped} up-to-date.`);
+  console.log(`\nOptimized ${generated} image(s), skipped ${skipped} up-to-date${pruned ? `, pruned ${pruned} stale.` : "."}`);
 }
 
 main().catch((err) => { console.error(err); process.exit(1); });
