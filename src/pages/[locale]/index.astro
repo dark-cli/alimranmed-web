@@ -2,6 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { CONTACT } from "../../consts";
 import { localizedHref, currentLocale } from "../../lib/i18n";
+import { imageVariants } from "../../lib/image";
+
+const heroSource = "/images/doctors/hussein-imran-mousa-portrait.jpg";
+const heroImg = imageVariants(heroSource)!;
 
 export function getStaticPaths() {
   return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
@@ -267,13 +271,11 @@ const T = isAr ? {
 <BaseLayout
   title={T.title}
   description={T.description}
-  heroPreload={{
-    srcset:
-      "/images/doctors/hussein-imran-mousa-portrait-480.webp 480w," +
-      "/images/doctors/hussein-imran-mousa-portrait-800.webp 800w," +
-      "/images/doctors/hussein-imran-mousa-portrait-1200.webp 1200w",
+  heroPreload={heroImg.srcset ? {
+    srcset: heroImg.srcset,
     sizes: "(min-width: 980px) 50vw, 100vw",
-  }}
+    type: "image/webp",
+  } : undefined}
 >
   <!-- ─── HERO ───────────────────────────────────────────────── -->
   <section class="hero-band">
@@ -305,18 +307,16 @@ const T = isAr ? {
     </div>
     <img
       class="hero-photo hero-photo-img"
-      src="/images/doctors/hussein-imran-mousa-portrait-800.webp"
-      srcset="
-        /images/doctors/hussein-imran-mousa-portrait-480.webp 480w,
-        /images/doctors/hussein-imran-mousa-portrait-800.webp 800w,
-        /images/doctors/hussein-imran-mousa-portrait-1200.webp 1200w
-      "
+      src={heroImg.src}
+      srcset={heroImg.srcset || undefined}
       sizes="(min-width: 980px) 50vw, 100vw"
       alt={T.heroImgAlt}
-      width="831" height="866"
+      width={heroImg.width ?? 831}
+      height={heroImg.height ?? 866}
       loading="eager"
       fetchpriority="high"
       decoding="async"
+      data-hires={heroImg.full}
     />
     </div>
   </section>
@@ -558,21 +558,23 @@ const T = isAr ? {
   }
   .hero-credit-link:hover { border-bottom-color: var(--accent); text-decoration: none; }
 
+  /* Show the portrait at its natural aspect ratio (831×866). Was cropped
+     with object-fit: cover to fill a stretched min-height container; now
+     centered vertically in the grid cell so nothing is cut off. */
   .hero-photo {
-    align-self: stretch;
+    align-self: center;
     justify-self: stretch;
-    min-height: min(72vw, 420px);
     border: 1px solid var(--line);
     order: -1;
   }
   @media (min-width: 980px) {
-    .hero-photo { min-height: 560px; order: 0; }
+    .hero-photo { order: 0; }
   }
   .hero-photo-img {
-    width: 100%; height: 100%;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
     display: block;
-    max-height: none;
+    max-width: 100%;
   }
   .hero-photo p {
     font-family: var(--font-mono);

@@ -15,6 +15,11 @@
 /images/*
   Cache-Control: public, max-age=2592000
 
+# Build-generated WebP variants — hashed by content into the srcset via
+# scripts/optimize-images.mjs. Safe to cache immutably.
+/optimized/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /assets/*
   Cache-Control: public, max-age=2592000
 
