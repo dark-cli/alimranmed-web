@@ -114,6 +114,33 @@ This bypasses the automated flow and requires `wrangler login` first. Use it onl
 for emergency hotfixes when GitHub is unavailable — normally, `git push` is the
 correct path.
 
+## Legacy WordPress redirects
+
+The clinic previously ran two WordPress sites: `alimranmed.com` (English) and
+`ar.alimranmed.com` (Arabic). Both have negligible external inbound traffic
+outside of the clinic's own Facebook posts.
+
+The plan for handling the transition:
+
+1. **Google Search Console** — file a "Change of address" from the two old
+   properties to `alimran.clinic`. Google transfers the ranking automatically
+   once the migration is verified.
+2. **Old-site fallback redirect** — install a single `.htaccess` rule on the
+   old Apache servers that catches *every* old URL and redirects to the new
+   site's home with the old URL passed as a query parameter:
+   ```
+   RewriteRule ^(.*)$ https://alimran.clinic/?legacy=$1 [R=301,L]
+   ```
+3. **Client-side rescue on the new site** — when `?legacy=<slug>` is present,
+   open the site's search modal pre-filled with a topic guess derived from the
+   old slug. That way, even if an article was renamed or moved, the user lands
+   on something relevant instead of a 404.
+
+This is deliberately preferable to a hard-coded 634-line per-URL redirect map:
+the old nav will keep drifting, but the search-fallback stays robust forever.
+The rescue script isn't built yet — flag it as future work when the old sites
+are actually decommissioned.
+
 ## What NOT to commit
 
 - `dist/` — build output, gitignored
