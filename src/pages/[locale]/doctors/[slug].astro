@@ -36,9 +36,22 @@ const sections = entry.data.sections ?? [];
 // Page title falls back on the doctor's `fullName`; the hero block (cv_hero)
 // may override the on-page h1 via its `headline` field for localized display.
 const titleSuffix = isAr ? "مركز العمران الطبي" : "Alimran Clinic";
+
+// LCP preload: same srcset derivation the CvHero component uses so the
+// browser starts fetching the portrait before parsing the body.
+const webpBase = (entry.data.photo as string | undefined)?.replace(/\.(jpg|jpeg|png)$/i, "");
+const heroPreload = webpBase ? {
+  srcset: `${webpBase}-480.webp 480w, ${webpBase}-800.webp 800w, ${webpBase}-1200.webp 1200w`,
+  sizes: "(min-width: 720px) 40vw, 100vw",
+  type: "image/webp",
+} : undefined;
 ---
 
-<BaseLayout title={`${entry.data.fullName} — ${titleSuffix}`} description={entry.data.description}>
+<BaseLayout
+  title={`${entry.data.fullName} — ${titleSuffix}`}
+  description={entry.data.description}
+  heroPreload={heroPreload}
+>
   <script type="application/ld+json" set:html={JSON.stringify(physician({
     url: new URL(Astro.url.pathname, Astro.site),
     name: entry.data.fullName,

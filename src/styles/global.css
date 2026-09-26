@@ -30,7 +30,9 @@
   /* Colour — HANDOFF §2.1 */
   --ink:            #101c22;
   --body:           #3c4a52;
-  --muted:          #77858c;
+  /* Darkened from #77858c so mono captions and metadata pass WCAG AA
+     contrast (>=4.5:1) against --white and --surface. */
+  --muted:          #5d6b73;
   --accent:         #0b5e78;
   --accent-hover:   #07445a;
   --line:           #dde4e7;
