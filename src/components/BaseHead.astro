@@ -141,7 +141,13 @@ const businessSchema = {
 <link rel="preload" as="font" type="font/woff2"
       href={locale === "ar" ? "/fonts/amiri-arabic-400.woff2" : "/fonts/newsreader-latin-400.woff2"}
       crossorigin />
-<link rel="stylesheet" href="/fonts/fonts.css" />
+<!-- Load fonts.css asynchronously so it doesn't block render. The `preload`
+     above already primed the browser for the critical face; the remaining
+     @font-face declarations (extra weights, RTL/LTR alternates) can arrive
+     without stalling FCP. Fallback <noscript> keeps webfonts working when
+     JavaScript is disabled. -->
+<link rel="preload" as="style" href="/fonts/fonts.css" onload="this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="/fonts/fonts.css" /></noscript>
 {heroPreload && (
   <link
     rel="preload"
@@ -194,11 +200,35 @@ const businessSchema = {
 <!-- Structured data -->
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3CWMPF92YB"></script>
-<script>
+<!-- Google Analytics — loaded on first user interaction or after the browser
+     goes idle (whichever comes first). Delaying gtag off the critical path
+     saves ~73 KiB of unused JS from the initial page load. The dataLayer
+     shim is defined synchronously so gtag() calls before load still queue. -->
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){ window.dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'G-3CWMPF92YB');
+  (function () {
+    var loaded = false;
+    function load() {
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-3CWMPF92YB';
+      document.head.appendChild(s);
+    }
+    // Fire on any real interaction so opt-out analytics still capture the
+    // first real user event; use `requestIdleCallback` as a fallback so
+    // silent visits still get counted.
+    ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (ev) {
+      addEventListener(ev, load, { once: true, passive: true });
+    });
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(load, { timeout: 5000 });
+    } else {
+      setTimeout(load, 3000);
+    }
+  })();
 </script>
