@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
 import { NAV_LABELS } from "../../../lib/labels";
+import Image from "../../../components/Image.astro";
 
 export async function getStaticPaths() {
   return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
@@ -75,7 +76,7 @@ const T = locale === "ar" ? {
           <a class="doctor-card" href={href}>
             {d.data.photo && (
               <div class="photo-wrap">
-                <img class="photo" src={d.data.photo} alt={d.data.fullName} loading="lazy" />
+                <Image class="photo" src={d.data.photo} alt={d.data.fullName} sizes="(min-width: 720px) 33vw, 100vw" />
               </div>
             )}
             <div class="card-body">

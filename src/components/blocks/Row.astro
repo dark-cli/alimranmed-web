@@ -16,6 +16,7 @@
  */
 import { localizedHref } from "../../lib/i18n";
 import type { Locale } from "../../lib/i18n";
+import Image from "../Image.astro";
 
 interface Item {
   src: string;
@@ -51,10 +52,17 @@ const gridStyle = columns === "auto"
     {items.map((it) => {
       const href = link(it.href);
       const frameStyle = it.aspect ? `aspect-ratio: ${it.aspect};` : "aspect-ratio: 4 / 3;";
+      // Layout: rows sit ~ column-width. Auto-fit + 2/3/4 col rows never
+      // exceed 50vw per cell on desktop, mobile stacks to 100vw.
+      const cols = columns === "auto" ? "auto" : Number(columns);
+      const rowSizes =
+        cols === "auto" || cols >= 3 ? "(min-width: 720px) 33vw, 100vw"
+        : cols === 4                  ? "(min-width: 720px) 25vw, 100vw"
+        : "(min-width: 720px) 50vw, 100vw";
       const body = (
         <figure class="row-cell">
           <div class="row-frame" style={frameStyle}>
-            <img src={it.src} alt={it.alt || ""} loading="lazy" decoding="async" />
+            <Image src={it.src} alt={it.alt || ""} sizes={rowSizes} />
           </div>
           {it.caption && <figcaption class="row-caption">{it.caption}</figcaption>}
         </figure>
