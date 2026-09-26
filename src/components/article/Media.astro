@@ -13,6 +13,8 @@
  * not a section.
  */
 
+import Image from "../Image.astro";
+
 interface Props {
   kind: "image" | "video" | "youtube";
   src: string;
@@ -57,7 +59,7 @@ const videoSchema = ytId ? JSON.stringify({
 <figure class="media">
   <div class="media-frame" style={frameStyle}>
     {kind === "image" && (
-      <img src={src} alt={alt || ""} loading="lazy" decoding="async" />
+      <Image src={src} alt={alt || ""} sizes="(min-width: 1024px) 900px, 100vw" />
     )}
     {kind === "video" && (
       <video controls preload="metadata" playsinline>

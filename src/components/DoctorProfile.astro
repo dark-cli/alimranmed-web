@@ -8,6 +8,7 @@
 import { render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import SchemaScript from "./SchemaScript.astro";
+import Image from "./Image.astro";
 import { CONTACT } from "../consts";
 
 interface Props {
@@ -67,7 +68,7 @@ const l = {
   <a class="back" href={backHref}>{l.back}</a>
 
   <header class="doctor-header">
-    {d.photo && <img class="doctor-photo" src={d.photo} alt={d.fullName} />}
+    {d.photo && <Image class="doctor-photo" src={d.photo} alt={d.fullName} sizes="(min-width: 720px) 33vw, 100vw" />}
     <div>
       <h1>{d.fullName}</h1>
       {d.specialty && <p class="specialty">{d.specialty}</p>}

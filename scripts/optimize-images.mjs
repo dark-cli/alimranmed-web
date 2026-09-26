@@ -31,13 +31,12 @@ const PUB       = path.join(ROOT, "public");
 const OUT       = path.join(PUB, "optimized");
 const MANIFEST  = path.join(OUT, "manifest.json");
 
-// Only optimize images from folders that are actually consumed with the
-// responsive helper. Keeps the optimizer fast and avoids generating
-// variants for legacy WordPress inline images that already ship as-is.
-const TARGET_DIRS = [
-  "images/doctors",
-  "images/home",
-];
+// Scan the entire images tree — anything wider than MIN_WIDTH picks up
+// variants. Small favicons/thumbnails don't benefit from srcset (a 156px
+// icon has nothing meaningful to downscale) and would just bloat the
+// build, so they stay as raw <img src>.
+const ROOT_DIR   = "images";
+const MIN_WIDTH  = 400;
 
 // Responsive widths shipped in every srcset. Order matters — the first is
 // used as `src` fallback so keep it in the middle of the range.
@@ -88,6 +87,9 @@ async function optimizeOne(srcAbs, manifest) {
   const meta = await sharp(srcAbs).metadata();
   const nativeWidth  = meta.width  || 0;
   const nativeHeight = meta.height || 0;
+  // Skip images smaller than MIN_WIDTH — resizing a 200px favicon to
+  // 480w would just upscale it, and a srcset of one file is useless.
+  if (nativeWidth < MIN_WIDTH) return { skipped: true, tooSmall: true };
 
   // Mirror the source subpath under /optimized/, dropping the extension.
   const { dir, name } = path.parse(rel);
@@ -128,16 +130,16 @@ async function main() {
   let generated = 0, skipped = 0;
 
   const stillPresent = new Set();
-  for (const rel of TARGET_DIRS) {
-    const files = await walk(rel);
-    for (const f of files) {
-      stillPresent.add("/" + path.relative(PUB, f).replaceAll(path.sep, "/"));
-      const res = await optimizeOne(f, manifest);
-      if (res.skipped) skipped++;
-      else {
-        generated++;
-        process.stdout.write(".");
-      }
+  let tooSmall = 0;
+  const files = await walk(ROOT_DIR);
+  for (const f of files) {
+    stillPresent.add("/" + path.relative(PUB, f).replaceAll(path.sep, "/"));
+    const res = await optimizeOne(f, manifest);
+    if (res.tooSmall) tooSmall++;
+    else if (res.skipped) skipped++;
+    else {
+      generated++;
+      process.stdout.write(".");
     }
   }
 
@@ -156,7 +158,9 @@ async function main() {
   }
 
   await fs.writeFile(MANIFEST, JSON.stringify(manifest, null, 2) + "\n");
-  console.log(`\nOptimized ${generated} image(s), skipped ${skipped} up-to-date${pruned ? `, pruned ${pruned} stale.` : "."}`);
+  const parts = [`Optimized ${generated}`, `skipped ${skipped} up-to-date`, `too small ${tooSmall}`];
+  if (pruned) parts.push(`pruned ${pruned} stale`);
+  console.log(`\n${parts.join(", ")}.`);
 }
 
 main().catch((err) => { console.error(err); process.exit(1); });

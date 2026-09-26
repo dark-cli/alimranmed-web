@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
 import rehypeYouTube from "./src/lib/rehype-youtube.mjs";
 import rehypeLazyImages from "./src/lib/rehype-lazy-images.mjs";
+import rehypeResponsiveImages from "./src/lib/rehype-responsive-images.mjs";
 import { remarkLocalizeLinks } from "./src/lib/remark-localize-links.mjs";
 import { remarkAutoAlt } from "./src/lib/remark-auto-alt.mjs";
 
@@ -39,6 +40,10 @@ export default defineConfig({
   }),
   markdown: {
     remarkPlugins: [remarkAutoAlt, remarkLocalizeLinks],
-    rehypePlugins: [rehypeYouTube, rehypeLazyImages],
+    // Order matters: rehypeResponsiveImages upgrades <img src> to WebP
+    // srcset first; rehypeLazyImages then flips loading=eager on the LCP.
+    // rehypeYouTube runs last since it replaces whole <p>s and doesn't
+    // interact with images.
+    rehypePlugins: [rehypeResponsiveImages, rehypeLazyImages, rehypeYouTube],
   },
 });

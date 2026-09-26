@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { CONTACT } from "../../consts";
 import { localizedHref, currentLocale } from "../../lib/i18n";
 import { imageVariants } from "../../lib/image";
+import Image from "../../components/Image.astro";
 
 const heroSource = "/images/doctors/hussein-imran-mousa-portrait.jpg";
 const heroImg = imageVariants(heroSource)!;
@@ -396,7 +397,7 @@ const T = isAr ? {
     <div class="facility-grid">
       {facilities.map((f) => (
         f.src
-          ? <img class="facility-slot facility-img" src={f.src} alt={f.alt} width="1200" height="900" loading="lazy" />
+          ? <Image class="facility-slot facility-img" src={f.src} alt={f.alt} width={1200} height={900} sizes="(min-width: 720px) 33vw, 100vw" />
           : (
             <div class="facility-slot photo-slot" aria-hidden="true">
               <p>{f.label}<br>{f.sub}</p>

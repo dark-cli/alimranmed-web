@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SoonLink from "../../../components/article/SoonLink.astro";
+import Image from "../../../components/Image.astro";
 import { CONTACT } from "../../../consts";
 import { localizedHref, currentLocale, topicOf, isLocale } from "../../../lib/i18n";
 import { BLOG_PATHWAY } from "../../../lib/pathways";
@@ -331,7 +332,7 @@ const T = isAr ? {
     <div class="photo-strip-grid">
       {photoStrip.map((p) => (
         <figure class="photo-cell">
-          <img src={p.src} alt={p.alt} width="1200" height="900" loading="lazy" />
+          <Image src={p.src} alt={p.alt} width={1200} height={900} sizes="(min-width: 720px) 33vw, 100vw" />
           <figcaption>{p.caption}</figcaption>
         </figure>
       ))}

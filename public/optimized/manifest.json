@@ -54,17 +54,6 @@
       "/optimized/images/home/1-1-full.webp"
     ]
   },
-  "/images/home/1-4.jpg": {
-    "mtime": 1786009990485.0144,
-    "width": 320,
-    "height": 330,
-    "variants": [
-      "/optimized/images/home/1-4-480.webp",
-      "/optimized/images/home/1-4-800.webp",
-      "/optimized/images/home/1-4-1200.webp",
-      "/optimized/images/home/1-4-full.webp"
-    ]
-  },
   "/images/home/Back-Pain.jpg": {
     "mtime": 1786009988096.411,
     "width": 800,
@@ -186,15 +175,1214 @@
       "/optimized/images/home/tms-treatment-768-full.webp"
     ]
   },
-  "/images/home/unnamed.jpg": {
-    "mtime": 1786009993461.071,
-    "width": 370,
-    "height": 213,
+  "/images/legacy/2019/03/7176456-228174831.jpg": {
+    "mtime": 1789709407112.906,
+    "width": 700,
+    "height": 525,
     "variants": [
-      "/optimized/images/home/unnamed-480.webp",
-      "/optimized/images/home/unnamed-800.webp",
-      "/optimized/images/home/unnamed-1200.webp",
-      "/optimized/images/home/unnamed-full.webp"
+      "/optimized/images/legacy/2019/03/7176456-228174831-480.webp",
+      "/optimized/images/legacy/2019/03/7176456-228174831-800.webp",
+      "/optimized/images/legacy/2019/03/7176456-228174831-1200.webp",
+      "/optimized/images/legacy/2019/03/7176456-228174831-full.webp"
+    ]
+  },
+  "/images/legacy/2019/04/48396697_345699189587990_7993363368297627648_n-1.jpg": {
+    "mtime": 1789709407112.906,
+    "width": 960,
+    "height": 641,
+    "variants": [
+      "/optimized/images/legacy/2019/04/48396697_345699189587990_7993363368297627648_n-1-480.webp",
+      "/optimized/images/legacy/2019/04/48396697_345699189587990_7993363368297627648_n-1-800.webp",
+      "/optimized/images/legacy/2019/04/48396697_345699189587990_7993363368297627648_n-1-1200.webp",
+      "/optimized/images/legacy/2019/04/48396697_345699189587990_7993363368297627648_n-1-full.webp"
+    ]
+  },
+  "/images/legacy/2019/04/Device-g4.png": {
+    "mtime": 1789709407112.906,
+    "width": 577,
+    "height": 389,
+    "variants": [
+      "/optimized/images/legacy/2019/04/Device-g4-480.webp",
+      "/optimized/images/legacy/2019/04/Device-g4-800.webp",
+      "/optimized/images/legacy/2019/04/Device-g4-1200.webp",
+      "/optimized/images/legacy/2019/04/Device-g4-full.webp"
+    ]
+  },
+  "/images/legacy/2020/01/wwwatsapppppp.png": {
+    "mtime": 1789709407114.906,
+    "width": 1000,
+    "height": 1000,
+    "variants": [
+      "/optimized/images/legacy/2020/01/wwwatsapppppp-480.webp",
+      "/optimized/images/legacy/2020/01/wwwatsapppppp-800.webp",
+      "/optimized/images/legacy/2020/01/wwwatsapppppp-1200.webp",
+      "/optimized/images/legacy/2020/01/wwwatsapppppp-full.webp"
+    ]
+  },
+  "/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية.jpg": {
+    "mtime": 1789709407114.906,
+    "width": 630,
+    "height": 300,
+    "variants": [
+      "/optimized/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية-480.webp",
+      "/optimized/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية-800.webp",
+      "/optimized/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية-1200.webp",
+      "/optimized/images/legacy/2020/01/ما_أسباب_الجلطة_الدماغية-full.webp"
+    ]
+  },
+  "/images/legacy/2020/02/1-3.jpg": {
+    "mtime": 1789709407114.906,
+    "width": 403,
+    "height": 402,
+    "variants": [
+      "/optimized/images/legacy/2020/02/1-3-480.webp",
+      "/optimized/images/legacy/2020/02/1-3-800.webp",
+      "/optimized/images/legacy/2020/02/1-3-1200.webp",
+      "/optimized/images/legacy/2020/02/1-3-full.webp"
+    ]
+  },
+  "/images/legacy/2020/02/27-Chiro.jpg": {
+    "mtime": 1789709407114.906,
+    "width": 800,
+    "height": 623,
+    "variants": [
+      "/optimized/images/legacy/2020/02/27-Chiro-480.webp",
+      "/optimized/images/legacy/2020/02/27-Chiro-800.webp",
+      "/optimized/images/legacy/2020/02/27-Chiro-1200.webp",
+      "/optimized/images/legacy/2020/02/27-Chiro-full.webp"
+    ]
+  },
+  "/images/legacy/2020/02/StockPhoto2SportsInjuries-1.jpg": {
+    "mtime": 1789709407114.906,
+    "width": 590,
+    "height": 366,
+    "variants": [
+      "/optimized/images/legacy/2020/02/StockPhoto2SportsInjuries-1-480.webp",
+      "/optimized/images/legacy/2020/02/StockPhoto2SportsInjuries-1-800.webp",
+      "/optimized/images/legacy/2020/02/StockPhoto2SportsInjuries-1-1200.webp",
+      "/optimized/images/legacy/2020/02/StockPhoto2SportsInjuries-1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/04/1200px-Sacroiliac_Joint.png": {
+    "mtime": 1789709407116.906,
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      "/optimized/images/legacy/2020/04/1200px-Sacroiliac_Joint-480.webp",
+      "/optimized/images/legacy/2020/04/1200px-Sacroiliac_Joint-800.webp",
+      "/optimized/images/legacy/2020/04/1200px-Sacroiliac_Joint-1200.webp",
+      "/optimized/images/legacy/2020/04/1200px-Sacroiliac_Joint-full.webp"
+    ]
+  },
+  "/images/legacy/2020/04/CP-websites.png": {
+    "mtime": 1789709407116.906,
+    "width": 740,
+    "height": 398,
+    "variants": [
+      "/optimized/images/legacy/2020/04/CP-websites-480.webp",
+      "/optimized/images/legacy/2020/04/CP-websites-800.webp",
+      "/optimized/images/legacy/2020/04/CP-websites-1200.webp",
+      "/optimized/images/legacy/2020/04/CP-websites-full.webp"
+    ]
+  },
+  "/images/legacy/2020/04/Eurosafe-2_0.jpg": {
+    "mtime": 1789709407116.906,
+    "width": 768,
+    "height": 549,
+    "variants": [
+      "/optimized/images/legacy/2020/04/Eurosafe-2_0-480.webp",
+      "/optimized/images/legacy/2020/04/Eurosafe-2_0-800.webp",
+      "/optimized/images/legacy/2020/04/Eurosafe-2_0-1200.webp",
+      "/optimized/images/legacy/2020/04/Eurosafe-2_0-full.webp"
+    ]
+  },
+  "/images/legacy/2020/04/imatge-2.png": {
+    "mtime": 1789709407117.9062,
+    "width": 960,
+    "height": 1200,
+    "variants": [
+      "/optimized/images/legacy/2020/04/imatge-2-480.webp",
+      "/optimized/images/legacy/2020/04/imatge-2-800.webp",
+      "/optimized/images/legacy/2020/04/imatge-2-1200.webp",
+      "/optimized/images/legacy/2020/04/imatge-2-full.webp"
+    ]
+  },
+  "/images/legacy/2020/04/rf-for-knee.jpg": {
+    "mtime": 1789709407118.9062,
+    "width": 1024,
+    "height": 683,
+    "variants": [
+      "/optimized/images/legacy/2020/04/rf-for-knee-480.webp",
+      "/optimized/images/legacy/2020/04/rf-for-knee-800.webp",
+      "/optimized/images/legacy/2020/04/rf-for-knee-1200.webp",
+      "/optimized/images/legacy/2020/04/rf-for-knee-full.webp"
+    ]
+  },
+  "/images/legacy/2020/06/1f877c5901c727a361d07b09e633feaf.jpg": {
+    "mtime": 1789709407118.9062,
+    "width": 550,
+    "height": 335,
+    "variants": [
+      "/optimized/images/legacy/2020/06/1f877c5901c727a361d07b09e633feaf-480.webp",
+      "/optimized/images/legacy/2020/06/1f877c5901c727a361d07b09e633feaf-800.webp",
+      "/optimized/images/legacy/2020/06/1f877c5901c727a361d07b09e633feaf-1200.webp",
+      "/optimized/images/legacy/2020/06/1f877c5901c727a361d07b09e633feaf-full.webp"
+    ]
+  },
+  "/images/legacy/2020/06/Blausen_0836_Stroke.png": {
+    "mtime": 1789709407119.9062,
+    "width": 550,
+    "height": 800,
+    "variants": [
+      "/optimized/images/legacy/2020/06/Blausen_0836_Stroke-480.webp",
+      "/optimized/images/legacy/2020/06/Blausen_0836_Stroke-800.webp",
+      "/optimized/images/legacy/2020/06/Blausen_0836_Stroke-1200.webp",
+      "/optimized/images/legacy/2020/06/Blausen_0836_Stroke-full.webp"
+    ]
+  },
+  "/images/legacy/2020/06/Electrodes-403x423-1.jpg": {
+    "mtime": 1789709407119.9062,
+    "width": 403,
+    "height": 423,
+    "variants": [
+      "/optimized/images/legacy/2020/06/Electrodes-403x423-1-480.webp",
+      "/optimized/images/legacy/2020/06/Electrodes-403x423-1-800.webp",
+      "/optimized/images/legacy/2020/06/Electrodes-403x423-1-1200.webp",
+      "/optimized/images/legacy/2020/06/Electrodes-403x423-1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/06/ICTUS.jpg": {
+    "mtime": 1789709407119.9062,
+    "width": 1134,
+    "height": 800,
+    "variants": [
+      "/optimized/images/legacy/2020/06/ICTUS-480.webp",
+      "/optimized/images/legacy/2020/06/ICTUS-800.webp",
+      "/optimized/images/legacy/2020/06/ICTUS-1200.webp",
+      "/optimized/images/legacy/2020/06/ICTUS-full.webp"
+    ]
+  },
+  "/images/legacy/2020/06/TMS_Of_Westchester_NeuroStar_Coil1.jpg": {
+    "mtime": 1789709407119.9062,
+    "width": 600,
+    "height": 450,
+    "variants": [
+      "/optimized/images/legacy/2020/06/TMS_Of_Westchester_NeuroStar_Coil1-480.webp",
+      "/optimized/images/legacy/2020/06/TMS_Of_Westchester_NeuroStar_Coil1-800.webp",
+      "/optimized/images/legacy/2020/06/TMS_Of_Westchester_NeuroStar_Coil1-1200.webp",
+      "/optimized/images/legacy/2020/06/TMS_Of_Westchester_NeuroStar_Coil1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/06/Transcranial-magnetic-stimulation-excites-a-network-of-neurons-in-the-underlying-motor-1.jpg": {
+    "mtime": 1789709407119.9062,
+    "width": 788,
+    "height": 931,
+    "variants": [
+      "/optimized/images/legacy/2020/06/Transcranial-magnetic-stimulation-excites-a-network-of-neurons-in-the-underlying-motor-1-480.webp",
+      "/optimized/images/legacy/2020/06/Transcranial-magnetic-stimulation-excites-a-network-of-neurons-in-the-underlying-motor-1-800.webp",
+      "/optimized/images/legacy/2020/06/Transcranial-magnetic-stimulation-excites-a-network-of-neurons-in-the-underlying-motor-1-1200.webp",
+      "/optimized/images/legacy/2020/06/Transcranial-magnetic-stimulation-excites-a-network-of-neurons-in-the-underlying-motor-1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/06/aural-rehabilitation-scaled-e1593501600445.jpg": {
+    "mtime": 1789709407120.9062,
+    "width": 1766,
+    "height": 1183,
+    "variants": [
+      "/optimized/images/legacy/2020/06/aural-rehabilitation-scaled-e1593501600445-480.webp",
+      "/optimized/images/legacy/2020/06/aural-rehabilitation-scaled-e1593501600445-800.webp",
+      "/optimized/images/legacy/2020/06/aural-rehabilitation-scaled-e1593501600445-1200.webp",
+      "/optimized/images/legacy/2020/06/aural-rehabilitation-scaled-e1593501600445-full.webp"
+    ]
+  },
+  "/images/legacy/2020/06/brains-e1466640765329.jpg": {
+    "mtime": 1789709407120.9062,
+    "width": 990,
+    "height": 557,
+    "variants": [
+      "/optimized/images/legacy/2020/06/brains-e1466640765329-480.webp",
+      "/optimized/images/legacy/2020/06/brains-e1466640765329-800.webp",
+      "/optimized/images/legacy/2020/06/brains-e1466640765329-1200.webp",
+      "/optimized/images/legacy/2020/06/brains-e1466640765329-full.webp"
+    ]
+  },
+  "/images/legacy/2020/06/z-tinnitus.png": {
+    "mtime": 1789709407121.9062,
+    "width": 700,
+    "height": 400,
+    "variants": [
+      "/optimized/images/legacy/2020/06/z-tinnitus-480.webp",
+      "/optimized/images/legacy/2020/06/z-tinnitus-800.webp",
+      "/optimized/images/legacy/2020/06/z-tinnitus-1200.webp",
+      "/optimized/images/legacy/2020/06/z-tinnitus-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9.jpg": {
+    "mtime": 1789709407121.9062,
+    "width": 488,
+    "height": 364,
+    "variants": [
+      "/optimized/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-480.webp",
+      "/optimized/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-800.webp",
+      "/optimized/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-1200.webp",
+      "/optimized/images/legacy/2020/07/1-s2.0-S1388245715000711-gr9-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/190311111420481_اسباب-نفسية-لتأخر-الطفل-عن-النطق.jpg": {
+    "mtime": 1789709407121.9062,
+    "width": 1202,
+    "height": 749,
+    "variants": [
+      "/optimized/images/legacy/2020/07/190311111420481_اسباب-نفسية-لتأخر-الطفل-عن-النطق-480.webp",
+      "/optimized/images/legacy/2020/07/190311111420481_اسباب-نفسية-لتأخر-الطفل-عن-النطق-800.webp",
+      "/optimized/images/legacy/2020/07/190311111420481_اسباب-نفسية-لتأخر-الطفل-عن-النطق-1200.webp",
+      "/optimized/images/legacy/2020/07/190311111420481_اسباب-نفسية-لتأخر-الطفل-عن-النطق-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/3.jpg": {
+    "mtime": 1789709407121.9062,
+    "width": 429,
+    "height": 408,
+    "variants": [
+      "/optimized/images/legacy/2020/07/3-480.webp",
+      "/optimized/images/legacy/2020/07/3-800.webp",
+      "/optimized/images/legacy/2020/07/3-1200.webp",
+      "/optimized/images/legacy/2020/07/3-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0.jpeg": {
+    "mtime": 1789709407122.9062,
+    "width": 1024,
+    "height": 651,
+    "variants": [
+      "/optimized/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0-480.webp",
+      "/optimized/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0-800.webp",
+      "/optimized/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0-1200.webp",
+      "/optimized/images/legacy/2020/07/5df1b2ad3da2ac3c09ef72a1_I97-7D9YCiIVEb5wcBVJGvYAGYiHM9RgUmRk8og3rdgy1dATk0T7CdjGU47Lqd_brQlRiP4n8oy0tiHypNutnEXE7It2CK4R8YfPmAkYS1wDBWo1-pxuUssq-1l-3FKW0O7r4sc0-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/6285261-1683792747.jpg": {
+    "mtime": 1789709407122.9062,
+    "width": 700,
+    "height": 466,
+    "variants": [
+      "/optimized/images/legacy/2020/07/6285261-1683792747-480.webp",
+      "/optimized/images/legacy/2020/07/6285261-1683792747-800.webp",
+      "/optimized/images/legacy/2020/07/6285261-1683792747-1200.webp",
+      "/optimized/images/legacy/2020/07/6285261-1683792747-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/Blausen_0836_Stroke.png": {
+    "mtime": 1789709407122.9062,
+    "width": 550,
+    "height": 800,
+    "variants": [
+      "/optimized/images/legacy/2020/07/Blausen_0836_Stroke-480.webp",
+      "/optimized/images/legacy/2020/07/Blausen_0836_Stroke-800.webp",
+      "/optimized/images/legacy/2020/07/Blausen_0836_Stroke-1200.webp",
+      "/optimized/images/legacy/2020/07/Blausen_0836_Stroke-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/ICTUS.jpg": {
+    "mtime": 1789709407123.9062,
+    "width": 1134,
+    "height": 800,
+    "variants": [
+      "/optimized/images/legacy/2020/07/ICTUS-480.webp",
+      "/optimized/images/legacy/2020/07/ICTUS-800.webp",
+      "/optimized/images/legacy/2020/07/ICTUS-1200.webp",
+      "/optimized/images/legacy/2020/07/ICTUS-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/Paired-pulse-threshold-tracking-transcranial-magnetic-stimulation-TMS-A-TMS-coil.png": {
+    "mtime": 1789709407123.9062,
+    "width": 850,
+    "height": 499,
+    "variants": [
+      "/optimized/images/legacy/2020/07/Paired-pulse-threshold-tracking-transcranial-magnetic-stimulation-TMS-A-TMS-coil-480.webp",
+      "/optimized/images/legacy/2020/07/Paired-pulse-threshold-tracking-transcranial-magnetic-stimulation-TMS-A-TMS-coil-800.webp",
+      "/optimized/images/legacy/2020/07/Paired-pulse-threshold-tracking-transcranial-magnetic-stimulation-TMS-A-TMS-coil-1200.webp",
+      "/optimized/images/legacy/2020/07/Paired-pulse-threshold-tracking-transcranial-magnetic-stimulation-TMS-A-TMS-coil-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/TMS.jpg": {
+    "mtime": 1789709407123.9062,
+    "width": 506,
+    "height": 575,
+    "variants": [
+      "/optimized/images/legacy/2020/07/TMS-480.webp",
+      "/optimized/images/legacy/2020/07/TMS-800.webp",
+      "/optimized/images/legacy/2020/07/TMS-1200.webp",
+      "/optimized/images/legacy/2020/07/TMS-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/brain_magnet.jpg": {
+    "mtime": 1789709407123.9062,
+    "width": 574,
+    "height": 558,
+    "variants": [
+      "/optimized/images/legacy/2020/07/brain_magnet-480.webp",
+      "/optimized/images/legacy/2020/07/brain_magnet-800.webp",
+      "/optimized/images/legacy/2020/07/brain_magnet-1200.webp",
+      "/optimized/images/legacy/2020/07/brain_magnet-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/capt.jpg": {
+    "mtime": 1789709407124.9062,
+    "width": 1200,
+    "height": 1021,
+    "variants": [
+      "/optimized/images/legacy/2020/07/capt-480.webp",
+      "/optimized/images/legacy/2020/07/capt-800.webp",
+      "/optimized/images/legacy/2020/07/capt-1200.webp",
+      "/optimized/images/legacy/2020/07/capt-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/educational-vr-at-home-for-interactive-science-class-1536x864-1-800x445-1.jpg": {
+    "mtime": 1789709407124.9062,
+    "width": 800,
+    "height": 445,
+    "variants": [
+      "/optimized/images/legacy/2020/07/educational-vr-at-home-for-interactive-science-class-1536x864-1-800x445-1-480.webp",
+      "/optimized/images/legacy/2020/07/educational-vr-at-home-for-interactive-science-class-1536x864-1-800x445-1-800.webp",
+      "/optimized/images/legacy/2020/07/educational-vr-at-home-for-interactive-science-class-1536x864-1-800x445-1-1200.webp",
+      "/optimized/images/legacy/2020/07/educational-vr-at-home-for-interactive-science-class-1536x864-1-800x445-1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/image.jpg": {
+    "mtime": 1789709407124.9062,
+    "width": 620,
+    "height": 480,
+    "variants": [
+      "/optimized/images/legacy/2020/07/image-480.webp",
+      "/optimized/images/legacy/2020/07/image-800.webp",
+      "/optimized/images/legacy/2020/07/image-1200.webp",
+      "/optimized/images/legacy/2020/07/image-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/image_750x422_5eab388777161.jpg": {
+    "mtime": 1789709407124.9062,
+    "width": 750,
+    "height": 422,
+    "variants": [
+      "/optimized/images/legacy/2020/07/image_750x422_5eab388777161-480.webp",
+      "/optimized/images/legacy/2020/07/image_750x422_5eab388777161-800.webp",
+      "/optimized/images/legacy/2020/07/image_750x422_5eab388777161-1200.webp",
+      "/optimized/images/legacy/2020/07/image_750x422_5eab388777161-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500.jpg": {
+    "mtime": 1789709407124.9062,
+    "width": 500,
+    "height": 234,
+    "variants": [
+      "/optimized/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500-480.webp",
+      "/optimized/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500-800.webp",
+      "/optimized/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500-1200.webp",
+      "/optimized/images/legacy/2020/07/tumblr_ly9k80LAnv1qb6etto1_500-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/unnamed.jpg": {
+    "mtime": 1789709407124.9062,
+    "width": 512,
+    "height": 252,
+    "variants": [
+      "/optimized/images/legacy/2020/07/unnamed-480.webp",
+      "/optimized/images/legacy/2020/07/unnamed-800.webp",
+      "/optimized/images/legacy/2020/07/unnamed-1200.webp",
+      "/optimized/images/legacy/2020/07/unnamed-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/z-tinnitus.png": {
+    "mtime": 1789709407125.9062,
+    "width": 700,
+    "height": 400,
+    "variants": [
+      "/optimized/images/legacy/2020/07/z-tinnitus-480.webp",
+      "/optimized/images/legacy/2020/07/z-tinnitus-800.webp",
+      "/optimized/images/legacy/2020/07/z-tinnitus-1200.webp",
+      "/optimized/images/legacy/2020/07/z-tinnitus-full.webp"
+    ]
+  },
+  "/images/legacy/2020/07/طرق-لعلاج-تقرحات-الفراش-في-المنزل-933x445-1.jpg": {
+    "mtime": 1789709407125.9062,
+    "width": 933,
+    "height": 445,
+    "variants": [
+      "/optimized/images/legacy/2020/07/طرق-لعلاج-تقرحات-الفراش-في-المنزل-933x445-1-480.webp",
+      "/optimized/images/legacy/2020/07/طرق-لعلاج-تقرحات-الفراش-في-المنزل-933x445-1-800.webp",
+      "/optimized/images/legacy/2020/07/طرق-لعلاج-تقرحات-الفراش-في-المنزل-933x445-1-1200.webp",
+      "/optimized/images/legacy/2020/07/طرق-لعلاج-تقرحات-الفراش-في-المنزل-933x445-1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/08/3952-scoliosis_types_100585862_ml.jpg": {
+    "mtime": 1789709407126.9062,
+    "width": 1580,
+    "height": 1024,
+    "variants": [
+      "/optimized/images/legacy/2020/08/3952-scoliosis_types_100585862_ml-480.webp",
+      "/optimized/images/legacy/2020/08/3952-scoliosis_types_100585862_ml-800.webp",
+      "/optimized/images/legacy/2020/08/3952-scoliosis_types_100585862_ml-1200.webp",
+      "/optimized/images/legacy/2020/08/3952-scoliosis_types_100585862_ml-full.webp"
+    ]
+  },
+  "/images/legacy/2020/08/Screenshot_20200805_114445_com.google.android.apps_.docs_.png": {
+    "mtime": 1789709407126.9062,
+    "width": 1046,
+    "height": 708,
+    "variants": [
+      "/optimized/images/legacy/2020/08/Screenshot_20200805_114445_com.google.android.apps_.docs_-480.webp",
+      "/optimized/images/legacy/2020/08/Screenshot_20200805_114445_com.google.android.apps_.docs_-800.webp",
+      "/optimized/images/legacy/2020/08/Screenshot_20200805_114445_com.google.android.apps_.docs_-1200.webp",
+      "/optimized/images/legacy/2020/08/Screenshot_20200805_114445_com.google.android.apps_.docs_-full.webp"
+    ]
+  },
+  "/images/legacy/2020/08/osteoporosis_1.jpg": {
+    "mtime": 1789709407127.9062,
+    "width": 1254,
+    "height": 836,
+    "variants": [
+      "/optimized/images/legacy/2020/08/osteoporosis_1-480.webp",
+      "/optimized/images/legacy/2020/08/osteoporosis_1-800.webp",
+      "/optimized/images/legacy/2020/08/osteoporosis_1-1200.webp",
+      "/optimized/images/legacy/2020/08/osteoporosis_1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/08/scoliosis.jpg": {
+    "mtime": 1789709407127.9062,
+    "width": 1040,
+    "height": 615,
+    "variants": [
+      "/optimized/images/legacy/2020/08/scoliosis-480.webp",
+      "/optimized/images/legacy/2020/08/scoliosis-800.webp",
+      "/optimized/images/legacy/2020/08/scoliosis-1200.webp",
+      "/optimized/images/legacy/2020/08/scoliosis-full.webp"
+    ]
+  },
+  "/images/legacy/2020/09/1834.jpg": {
+    "mtime": 1789709407128.9062,
+    "width": 600,
+    "height": 338,
+    "variants": [
+      "/optimized/images/legacy/2020/09/1834-480.webp",
+      "/optimized/images/legacy/2020/09/1834-800.webp",
+      "/optimized/images/legacy/2020/09/1834-1200.webp",
+      "/optimized/images/legacy/2020/09/1834-full.webp"
+    ]
+  },
+  "/images/legacy/2020/09/196260_19221.jpg": {
+    "mtime": 1789709407128.9062,
+    "width": 420,
+    "height": 336,
+    "variants": [
+      "/optimized/images/legacy/2020/09/196260_19221-480.webp",
+      "/optimized/images/legacy/2020/09/196260_19221-800.webp",
+      "/optimized/images/legacy/2020/09/196260_19221-1200.webp",
+      "/optimized/images/legacy/2020/09/196260_19221-full.webp"
+    ]
+  },
+  "/images/legacy/2020/09/sciatica23117022_m.jpg": {
+    "mtime": 1789709407128.9062,
+    "width": 639,
+    "height": 750,
+    "variants": [
+      "/optimized/images/legacy/2020/09/sciatica23117022_m-480.webp",
+      "/optimized/images/legacy/2020/09/sciatica23117022_m-800.webp",
+      "/optimized/images/legacy/2020/09/sciatica23117022_m-1200.webp",
+      "/optimized/images/legacy/2020/09/sciatica23117022_m-full.webp"
+    ]
+  },
+  "/images/legacy/2020/09/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1.jpg": {
+    "mtime": 1789709407128.9062,
+    "width": 500,
+    "height": 369,
+    "variants": [
+      "/optimized/images/legacy/2020/09/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1-480.webp",
+      "/optimized/images/legacy/2020/09/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1-800.webp",
+      "/optimized/images/legacy/2020/09/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1-1200.webp",
+      "/optimized/images/legacy/2020/09/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/11/OT-header.jpg": {
+    "mtime": 1789709407128.9062,
+    "width": 980,
+    "height": 400,
+    "variants": [
+      "/optimized/images/legacy/2020/11/OT-header-480.webp",
+      "/optimized/images/legacy/2020/11/OT-header-800.webp",
+      "/optimized/images/legacy/2020/11/OT-header-1200.webp",
+      "/optimized/images/legacy/2020/11/OT-header-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/1834.jpg": {
+    "mtime": 1789709407128.9062,
+    "width": 600,
+    "height": 338,
+    "variants": [
+      "/optimized/images/legacy/2020/12/1834-480.webp",
+      "/optimized/images/legacy/2020/12/1834-800.webp",
+      "/optimized/images/legacy/2020/12/1834-1200.webp",
+      "/optimized/images/legacy/2020/12/1834-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/FootCare_29766673_M.jpg": {
+    "mtime": 1789709407128.9062,
+    "width": 600,
+    "height": 400,
+    "variants": [
+      "/optimized/images/legacy/2020/12/FootCare_29766673_M-480.webp",
+      "/optimized/images/legacy/2020/12/FootCare_29766673_M-800.webp",
+      "/optimized/images/legacy/2020/12/FootCare_29766673_M-1200.webp",
+      "/optimized/images/legacy/2020/12/FootCare_29766673_M-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/a00149f02_epi-compressor.jpg": {
+    "mtime": 1789709407129.9062,
+    "width": 897,
+    "height": 848,
+    "variants": [
+      "/optimized/images/legacy/2020/12/a00149f02_epi-compressor-480.webp",
+      "/optimized/images/legacy/2020/12/a00149f02_epi-compressor-800.webp",
+      "/optimized/images/legacy/2020/12/a00149f02_epi-compressor-1200.webp",
+      "/optimized/images/legacy/2020/12/a00149f02_epi-compressor-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/fibromyalgia-symptoms-5aec9feceb97de003668abb7.png": {
+    "mtime": 1789709407129.9062,
+    "width": 1000,
+    "height": 1000,
+    "variants": [
+      "/optimized/images/legacy/2020/12/fibromyalgia-symptoms-5aec9feceb97de003668abb7-480.webp",
+      "/optimized/images/legacy/2020/12/fibromyalgia-symptoms-5aec9feceb97de003668abb7-800.webp",
+      "/optimized/images/legacy/2020/12/fibromyalgia-symptoms-5aec9feceb97de003668abb7-1200.webp",
+      "/optimized/images/legacy/2020/12/fibromyalgia-symptoms-5aec9feceb97de003668abb7-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/fig-3_epi-compressor.jpg": {
+    "mtime": 1789709407129.9062,
+    "width": 1000,
+    "height": 612,
+    "variants": [
+      "/optimized/images/legacy/2020/12/fig-3_epi-compressor-480.webp",
+      "/optimized/images/legacy/2020/12/fig-3_epi-compressor-800.webp",
+      "/optimized/images/legacy/2020/12/fig-3_epi-compressor-1200.webp",
+      "/optimized/images/legacy/2020/12/fig-3_epi-compressor-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/pageTopDesktop.jpg": {
+    "mtime": 1789709407129.9062,
+    "width": 1920,
+    "height": 953,
+    "variants": [
+      "/optimized/images/legacy/2020/12/pageTopDesktop-480.webp",
+      "/optimized/images/legacy/2020/12/pageTopDesktop-800.webp",
+      "/optimized/images/legacy/2020/12/pageTopDesktop-1200.webp",
+      "/optimized/images/legacy/2020/12/pageTopDesktop-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/pain-pump-34.jpg": {
+    "mtime": 1789709407129.9062,
+    "width": 572,
+    "height": 436,
+    "variants": [
+      "/optimized/images/legacy/2020/12/pain-pump-34-480.webp",
+      "/optimized/images/legacy/2020/12/pain-pump-34-800.webp",
+      "/optimized/images/legacy/2020/12/pain-pump-34-1200.webp",
+      "/optimized/images/legacy/2020/12/pain-pump-34-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/shutterstock_98725853.jpg": {
+    "mtime": 1789709407129.9062,
+    "width": 1400,
+    "height": 1007,
+    "variants": [
+      "/optimized/images/legacy/2020/12/shutterstock_98725853-480.webp",
+      "/optimized/images/legacy/2020/12/shutterstock_98725853-800.webp",
+      "/optimized/images/legacy/2020/12/shutterstock_98725853-1200.webp",
+      "/optimized/images/legacy/2020/12/shutterstock_98725853-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/technology-soterix-tdcs.jpg": {
+    "mtime": 1789709407130.9065,
+    "width": 1200,
+    "height": 735,
+    "variants": [
+      "/optimized/images/legacy/2020/12/technology-soterix-tdcs-480.webp",
+      "/optimized/images/legacy/2020/12/technology-soterix-tdcs-800.webp",
+      "/optimized/images/legacy/2020/12/technology-soterix-tdcs-1200.webp",
+      "/optimized/images/legacy/2020/12/technology-soterix-tdcs-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام.jpg": {
+    "mtime": 1789709407130.9065,
+    "width": 630,
+    "height": 300,
+    "variants": [
+      "/optimized/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام-480.webp",
+      "/optimized/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام-800.webp",
+      "/optimized/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام-1200.webp",
+      "/optimized/images/legacy/2020/12/أسباب_مرض_هشاشة_العظام-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1.jpg": {
+    "mtime": 1789709407130.9065,
+    "width": 500,
+    "height": 369,
+    "variants": [
+      "/optimized/images/legacy/2020/12/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1-480.webp",
+      "/optimized/images/legacy/2020/12/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1-800.webp",
+      "/optimized/images/legacy/2020/12/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1-1200.webp",
+      "/optimized/images/legacy/2020/12/نتائج-حقن-الميزوثيرابي-لإذابة-الدهون-1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/هشاشة-العظام-1.jpg": {
+    "mtime": 1789709407130.9065,
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      "/optimized/images/legacy/2020/12/هشاشة-العظام-1-480.webp",
+      "/optimized/images/legacy/2020/12/هشاشة-العظام-1-800.webp",
+      "/optimized/images/legacy/2020/12/هشاشة-العظام-1-1200.webp",
+      "/optimized/images/legacy/2020/12/هشاشة-العظام-1-full.webp"
+    ]
+  },
+  "/images/legacy/2020/12/هشاشة-العظام.jpg": {
+    "mtime": 1789709407130.9065,
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      "/optimized/images/legacy/2020/12/هشاشة-العظام-480.webp",
+      "/optimized/images/legacy/2020/12/هشاشة-العظام-800.webp",
+      "/optimized/images/legacy/2020/12/هشاشة-العظام-1200.webp",
+      "/optimized/images/legacy/2020/12/هشاشة-العظام-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/04-10-20-549956961-1.jpg": {
+    "mtime": 1789709407130.9065,
+    "width": 590,
+    "height": 738,
+    "variants": [
+      "/optimized/images/legacy/2021/01/04-10-20-549956961-1-480.webp",
+      "/optimized/images/legacy/2021/01/04-10-20-549956961-1-800.webp",
+      "/optimized/images/legacy/2021/01/04-10-20-549956961-1-1200.webp",
+      "/optimized/images/legacy/2021/01/04-10-20-549956961-1-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/12.jpg": {
+    "mtime": 1789709407130.9065,
+    "width": 520,
+    "height": 360,
+    "variants": [
+      "/optimized/images/legacy/2021/01/12-480.webp",
+      "/optimized/images/legacy/2021/01/12-800.webp",
+      "/optimized/images/legacy/2021/01/12-1200.webp",
+      "/optimized/images/legacy/2021/01/12-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/13.jpg": {
+    "mtime": 1789709407130.9065,
+    "width": 582,
+    "height": 400,
+    "variants": [
+      "/optimized/images/legacy/2021/01/13-480.webp",
+      "/optimized/images/legacy/2021/01/13-800.webp",
+      "/optimized/images/legacy/2021/01/13-1200.webp",
+      "/optimized/images/legacy/2021/01/13-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/2258659.jpg": {
+    "mtime": 1789709407131.9065,
+    "width": 748,
+    "height": 561,
+    "variants": [
+      "/optimized/images/legacy/2021/01/2258659-480.webp",
+      "/optimized/images/legacy/2021/01/2258659-800.webp",
+      "/optimized/images/legacy/2021/01/2258659-1200.webp",
+      "/optimized/images/legacy/2021/01/2258659-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/349099be60c5a2cd153700a1dfecf4ec.jpg": {
+    "mtime": 1789709407131.9065,
+    "width": 805,
+    "height": 977,
+    "variants": [
+      "/optimized/images/legacy/2021/01/349099be60c5a2cd153700a1dfecf4ec-480.webp",
+      "/optimized/images/legacy/2021/01/349099be60c5a2cd153700a1dfecf4ec-800.webp",
+      "/optimized/images/legacy/2021/01/349099be60c5a2cd153700a1dfecf4ec-1200.webp",
+      "/optimized/images/legacy/2021/01/349099be60c5a2cd153700a1dfecf4ec-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/5b319cbcb8fad25af7316150927fbdd7-8.jpg": {
+    "mtime": 1789709407131.9065,
+    "width": 500,
+    "height": 350,
+    "variants": [
+      "/optimized/images/legacy/2021/01/5b319cbcb8fad25af7316150927fbdd7-8-480.webp",
+      "/optimized/images/legacy/2021/01/5b319cbcb8fad25af7316150927fbdd7-8-800.webp",
+      "/optimized/images/legacy/2021/01/5b319cbcb8fad25af7316150927fbdd7-8-1200.webp",
+      "/optimized/images/legacy/2021/01/5b319cbcb8fad25af7316150927fbdd7-8-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/ALZHEIMERS_DISEASE.jpg": {
+    "mtime": 1789709407131.9065,
+    "width": 569,
+    "height": 398,
+    "variants": [
+      "/optimized/images/legacy/2021/01/ALZHEIMERS_DISEASE-480.webp",
+      "/optimized/images/legacy/2021/01/ALZHEIMERS_DISEASE-800.webp",
+      "/optimized/images/legacy/2021/01/ALZHEIMERS_DISEASE-1200.webp",
+      "/optimized/images/legacy/2021/01/ALZHEIMERS_DISEASE-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV.png": {
+    "mtime": 1789709407131.9065,
+    "width": 740,
+    "height": 595,
+    "variants": [
+      "/optimized/images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV-480.webp",
+      "/optimized/images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV-800.webp",
+      "/optimized/images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV-1200.webp",
+      "/optimized/images/legacy/2021/01/Benign-Paroxysmal-Positional-Vertigo-BPPV-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/Endometrial-Cancer-1.jpg": {
+    "mtime": 1789709407131.9065,
+    "width": 640,
+    "height": 430,
+    "variants": [
+      "/optimized/images/legacy/2021/01/Endometrial-Cancer-1-480.webp",
+      "/optimized/images/legacy/2021/01/Endometrial-Cancer-1-800.webp",
+      "/optimized/images/legacy/2021/01/Endometrial-Cancer-1-1200.webp",
+      "/optimized/images/legacy/2021/01/Endometrial-Cancer-1-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/HT-Steroid-Injections-1000x640-1.jpg": {
+    "mtime": 1789709407131.9065,
+    "width": 1000,
+    "height": 640,
+    "variants": [
+      "/optimized/images/legacy/2021/01/HT-Steroid-Injections-1000x640-1-480.webp",
+      "/optimized/images/legacy/2021/01/HT-Steroid-Injections-1000x640-1-800.webp",
+      "/optimized/images/legacy/2021/01/HT-Steroid-Injections-1000x640-1-1200.webp",
+      "/optimized/images/legacy/2021/01/HT-Steroid-Injections-1000x640-1-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/Modifications-of-longitudinally-extensive-transverse-myelitis-LETM-Spinal-cord-MRI_Q640.jpg": {
+    "mtime": 1789709407131.9065,
+    "width": 502,
+    "height": 502,
+    "variants": [
+      "/optimized/images/legacy/2021/01/Modifications-of-longitudinally-extensive-transverse-myelitis-LETM-Spinal-cord-MRI_Q640-480.webp",
+      "/optimized/images/legacy/2021/01/Modifications-of-longitudinally-extensive-transverse-myelitis-LETM-Spinal-cord-MRI_Q640-800.webp",
+      "/optimized/images/legacy/2021/01/Modifications-of-longitudinally-extensive-transverse-myelitis-LETM-Spinal-cord-MRI_Q640-1200.webp",
+      "/optimized/images/legacy/2021/01/Modifications-of-longitudinally-extensive-transverse-myelitis-LETM-Spinal-cord-MRI_Q640-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/PAD.jpg": {
+    "mtime": 1789709407131.9065,
+    "width": 518,
+    "height": 449,
+    "variants": [
+      "/optimized/images/legacy/2021/01/PAD-480.webp",
+      "/optimized/images/legacy/2021/01/PAD-800.webp",
+      "/optimized/images/legacy/2021/01/PAD-1200.webp",
+      "/optimized/images/legacy/2021/01/PAD-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/Spasticity.jpg": {
+    "mtime": 1789709407132.9065,
+    "width": 808,
+    "height": 566,
+    "variants": [
+      "/optimized/images/legacy/2021/01/Spasticity-480.webp",
+      "/optimized/images/legacy/2021/01/Spasticity-800.webp",
+      "/optimized/images/legacy/2021/01/Spasticity-1200.webp",
+      "/optimized/images/legacy/2021/01/Spasticity-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/TMS-procedure.png": {
+    "mtime": 1789709407132.9065,
+    "width": 437,
+    "height": 399,
+    "variants": [
+      "/optimized/images/legacy/2021/01/TMS-procedure-480.webp",
+      "/optimized/images/legacy/2021/01/TMS-procedure-800.webp",
+      "/optimized/images/legacy/2021/01/TMS-procedure-1200.webp",
+      "/optimized/images/legacy/2021/01/TMS-procedure-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/calf-muscle-cramp.jpg": {
+    "mtime": 1785979250066.6738,
+    "width": 1152,
+    "height": 750,
+    "variants": [
+      "/optimized/images/legacy/2021/01/calf-muscle-cramp-480.webp",
+      "/optimized/images/legacy/2021/01/calf-muscle-cramp-800.webp",
+      "/optimized/images/legacy/2021/01/calf-muscle-cramp-1200.webp",
+      "/optimized/images/legacy/2021/01/calf-muscle-cramp-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/claudication-image.jpg": {
+    "mtime": 1789709407132.9065,
+    "width": 518,
+    "height": 449,
+    "variants": [
+      "/optimized/images/legacy/2021/01/claudication-image-480.webp",
+      "/optimized/images/legacy/2021/01/claudication-image-800.webp",
+      "/optimized/images/legacy/2021/01/claudication-image-1200.webp",
+      "/optimized/images/legacy/2021/01/claudication-image-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/congenital-kyphosis-1.png": {
+    "mtime": 1789709407132.9065,
+    "width": 800,
+    "height": 493,
+    "variants": [
+      "/optimized/images/legacy/2021/01/congenital-kyphosis-1-480.webp",
+      "/optimized/images/legacy/2021/01/congenital-kyphosis-1-800.webp",
+      "/optimized/images/legacy/2021/01/congenital-kyphosis-1-1200.webp",
+      "/optimized/images/legacy/2021/01/congenital-kyphosis-1-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/f164a2d49d71b3344b2c74185d9764ff.png": {
+    "mtime": 1789709407132.9065,
+    "width": 570,
+    "height": 532,
+    "variants": [
+      "/optimized/images/legacy/2021/01/f164a2d49d71b3344b2c74185d9764ff-480.webp",
+      "/optimized/images/legacy/2021/01/f164a2d49d71b3344b2c74185d9764ff-800.webp",
+      "/optimized/images/legacy/2021/01/f164a2d49d71b3344b2c74185d9764ff-1200.webp",
+      "/optimized/images/legacy/2021/01/f164a2d49d71b3344b2c74185d9764ff-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/iStock-1125084447-696x392-1.jpg": {
+    "mtime": 1789709407132.9065,
+    "width": 696,
+    "height": 392,
+    "variants": [
+      "/optimized/images/legacy/2021/01/iStock-1125084447-696x392-1-480.webp",
+      "/optimized/images/legacy/2021/01/iStock-1125084447-696x392-1-800.webp",
+      "/optimized/images/legacy/2021/01/iStock-1125084447-696x392-1-1200.webp",
+      "/optimized/images/legacy/2021/01/iStock-1125084447-696x392-1-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/image.axd_-20.jpg": {
+    "mtime": 1789709407133.9065,
+    "width": 673,
+    "height": 610,
+    "variants": [
+      "/optimized/images/legacy/2021/01/image.axd_-20-480.webp",
+      "/optimized/images/legacy/2021/01/image.axd_-20-800.webp",
+      "/optimized/images/legacy/2021/01/image.axd_-20-1200.webp",
+      "/optimized/images/legacy/2021/01/image.axd_-20-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/maxresdefault.jpg": {
+    "mtime": 1789709407133.9065,
+    "width": 960,
+    "height": 720,
+    "variants": [
+      "/optimized/images/legacy/2021/01/maxresdefault-480.webp",
+      "/optimized/images/legacy/2021/01/maxresdefault-800.webp",
+      "/optimized/images/legacy/2021/01/maxresdefault-1200.webp",
+      "/optimized/images/legacy/2021/01/maxresdefault-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1.jpg": {
+    "mtime": 1785979265963.9536,
+    "width": 749,
+    "height": 500,
+    "variants": [
+      "/optimized/images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1-480.webp",
+      "/optimized/images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1-800.webp",
+      "/optimized/images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1-1200.webp",
+      "/optimized/images/legacy/2021/01/person-holding-hand-in-some-pain-may-have-de-quervains-tenosynovitis-1-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/salus_talent_a_list2.jpg": {
+    "mtime": 1789709407133.9065,
+    "width": 600,
+    "height": 400,
+    "variants": [
+      "/optimized/images/legacy/2021/01/salus_talent_a_list2-480.webp",
+      "/optimized/images/legacy/2021/01/salus_talent_a_list2-800.webp",
+      "/optimized/images/legacy/2021/01/salus_talent_a_list2-1200.webp",
+      "/optimized/images/legacy/2021/01/salus_talent_a_list2-full.webp"
+    ]
+  },
+  "/images/legacy/2021/01/stomach-pain_400x267.jpg": {
+    "mtime": 1789709407133.9065,
+    "width": 400,
+    "height": 267,
+    "variants": [
+      "/optimized/images/legacy/2021/01/stomach-pain_400x267-480.webp",
+      "/optimized/images/legacy/2021/01/stomach-pain_400x267-800.webp",
+      "/optimized/images/legacy/2021/01/stomach-pain_400x267-1200.webp",
+      "/optimized/images/legacy/2021/01/stomach-pain_400x267-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/135-171948-sleep-disorders-blood-pressure-intestines_700x400.jpg": {
+    "mtime": 1789709407133.9065,
+    "width": 700,
+    "height": 400,
+    "variants": [
+      "/optimized/images/legacy/2021/02/135-171948-sleep-disorders-blood-pressure-intestines_700x400-480.webp",
+      "/optimized/images/legacy/2021/02/135-171948-sleep-disorders-blood-pressure-intestines_700x400-800.webp",
+      "/optimized/images/legacy/2021/02/135-171948-sleep-disorders-blood-pressure-intestines_700x400-1200.webp",
+      "/optimized/images/legacy/2021/02/135-171948-sleep-disorders-blood-pressure-intestines_700x400-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/1520059351001.jpg": {
+    "mtime": 1789709407133.9065,
+    "width": 475,
+    "height": 272,
+    "variants": [
+      "/optimized/images/legacy/2021/02/1520059351001-480.webp",
+      "/optimized/images/legacy/2021/02/1520059351001-800.webp",
+      "/optimized/images/legacy/2021/02/1520059351001-1200.webp",
+      "/optimized/images/legacy/2021/02/1520059351001-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/20160223115358_upload_file_th.jpg": {
+    "mtime": 1789709407134.9065,
+    "width": 600,
+    "height": 447,
+    "variants": [
+      "/optimized/images/legacy/2021/02/20160223115358_upload_file_th-480.webp",
+      "/optimized/images/legacy/2021/02/20160223115358_upload_file_th-800.webp",
+      "/optimized/images/legacy/2021/02/20160223115358_upload_file_th-1200.webp",
+      "/optimized/images/legacy/2021/02/20160223115358_upload_file_th-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/5bce4f720238a_shutterstock_606426755.jpg": {
+    "mtime": 1789709407134.9065,
+    "width": 1000,
+    "height": 667,
+    "variants": [
+      "/optimized/images/legacy/2021/02/5bce4f720238a_shutterstock_606426755-480.webp",
+      "/optimized/images/legacy/2021/02/5bce4f720238a_shutterstock_606426755-800.webp",
+      "/optimized/images/legacy/2021/02/5bce4f720238a_shutterstock_606426755-1200.webp",
+      "/optimized/images/legacy/2021/02/5bce4f720238a_shutterstock_606426755-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/CEYU7_1546590895_6083-1.jpg": {
+    "mtime": 1789709407134.9065,
+    "width": 620,
+    "height": 364,
+    "variants": [
+      "/optimized/images/legacy/2021/02/CEYU7_1546590895_6083-1-480.webp",
+      "/optimized/images/legacy/2021/02/CEYU7_1546590895_6083-1-800.webp",
+      "/optimized/images/legacy/2021/02/CEYU7_1546590895_6083-1-1200.webp",
+      "/optimized/images/legacy/2021/02/CEYU7_1546590895_6083-1-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/Sacroiliac_wiki_1200x1200.jpg": {
+    "mtime": 1789709407134.9065,
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      "/optimized/images/legacy/2021/02/Sacroiliac_wiki_1200x1200-480.webp",
+      "/optimized/images/legacy/2021/02/Sacroiliac_wiki_1200x1200-800.webp",
+      "/optimized/images/legacy/2021/02/Sacroiliac_wiki_1200x1200-1200.webp",
+      "/optimized/images/legacy/2021/02/Sacroiliac_wiki_1200x1200-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/Spasticity.jpg": {
+    "mtime": 1789709407134.9065,
+    "width": 808,
+    "height": 566,
+    "variants": [
+      "/optimized/images/legacy/2021/02/Spasticity-480.webp",
+      "/optimized/images/legacy/2021/02/Spasticity-800.webp",
+      "/optimized/images/legacy/2021/02/Spasticity-1200.webp",
+      "/optimized/images/legacy/2021/02/Spasticity-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/adobestock_136348916.jpeg": {
+    "mtime": 1789709407134.9065,
+    "width": 1600,
+    "height": 1068,
+    "variants": [
+      "/optimized/images/legacy/2021/02/adobestock_136348916-480.webp",
+      "/optimized/images/legacy/2021/02/adobestock_136348916-800.webp",
+      "/optimized/images/legacy/2021/02/adobestock_136348916-1200.webp",
+      "/optimized/images/legacy/2021/02/adobestock_136348916-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/f164a2d49d71b3344b2c74185d9764ff.png": {
+    "mtime": 1789709407135.9065,
+    "width": 570,
+    "height": 532,
+    "variants": [
+      "/optimized/images/legacy/2021/02/f164a2d49d71b3344b2c74185d9764ff-480.webp",
+      "/optimized/images/legacy/2021/02/f164a2d49d71b3344b2c74185d9764ff-800.webp",
+      "/optimized/images/legacy/2021/02/f164a2d49d71b3344b2c74185d9764ff-1200.webp",
+      "/optimized/images/legacy/2021/02/f164a2d49d71b3344b2c74185d9764ff-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05.jpg": {
+    "mtime": 1789709407135.9065,
+    "width": 700,
+    "height": 470,
+    "variants": [
+      "/optimized/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05-480.webp",
+      "/optimized/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05-800.webp",
+      "/optimized/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05-1200.webp",
+      "/optimized/images/legacy/2021/02/img-osteomalacia-–-causes-symptoms-prevention-and-treatment-2018-05-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/kyphosis-infographic-1.jpg": {
+    "mtime": 1789709407135.9065,
+    "width": 1100,
+    "height": 874,
+    "variants": [
+      "/optimized/images/legacy/2021/02/kyphosis-infographic-1-480.webp",
+      "/optimized/images/legacy/2021/02/kyphosis-infographic-1-800.webp",
+      "/optimized/images/legacy/2021/02/kyphosis-infographic-1-1200.webp",
+      "/optimized/images/legacy/2021/02/kyphosis-infographic-1-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/kyphosis-infographic.jpg": {
+    "mtime": 1789709407135.9065,
+    "width": 1100,
+    "height": 874,
+    "variants": [
+      "/optimized/images/legacy/2021/02/kyphosis-infographic-480.webp",
+      "/optimized/images/legacy/2021/02/kyphosis-infographic-800.webp",
+      "/optimized/images/legacy/2021/02/kyphosis-infographic-1200.webp",
+      "/optimized/images/legacy/2021/02/kyphosis-infographic-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/occipital-nerve-label-e1584509060138.png": {
+    "mtime": 1789709407135.9065,
+    "width": 500,
+    "height": 500,
+    "variants": [
+      "/optimized/images/legacy/2021/02/occipital-nerve-label-e1584509060138-480.webp",
+      "/optimized/images/legacy/2021/02/occipital-nerve-label-e1584509060138-800.webp",
+      "/optimized/images/legacy/2021/02/occipital-nerve-label-e1584509060138-1200.webp",
+      "/optimized/images/legacy/2021/02/occipital-nerve-label-e1584509060138-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/rsw_1280.jpg": {
+    "mtime": 1789709407135.9065,
+    "width": 1280,
+    "height": 1555,
+    "variants": [
+      "/optimized/images/legacy/2021/02/rsw_1280-480.webp",
+      "/optimized/images/legacy/2021/02/rsw_1280-800.webp",
+      "/optimized/images/legacy/2021/02/rsw_1280-1200.webp",
+      "/optimized/images/legacy/2021/02/rsw_1280-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/sickl_cell.jpg": {
+    "mtime": 1789709407135.9065,
+    "width": 450,
+    "height": 525,
+    "variants": [
+      "/optimized/images/legacy/2021/02/sickl_cell-480.webp",
+      "/optimized/images/legacy/2021/02/sickl_cell-800.webp",
+      "/optimized/images/legacy/2021/02/sickl_cell-1200.webp",
+      "/optimized/images/legacy/2021/02/sickl_cell-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/slider1.jpg": {
+    "mtime": 1789709407136.9065,
+    "width": 1096,
+    "height": 929,
+    "variants": [
+      "/optimized/images/legacy/2021/02/slider1-480.webp",
+      "/optimized/images/legacy/2021/02/slider1-800.webp",
+      "/optimized/images/legacy/2021/02/slider1-1200.webp",
+      "/optimized/images/legacy/2021/02/slider1-full.webp"
+    ]
+  },
+  "/images/legacy/2021/02/unnamed.png": {
+    "mtime": 1789709407136.9065,
+    "width": 512,
+    "height": 398,
+    "variants": [
+      "/optimized/images/legacy/2021/02/unnamed-480.webp",
+      "/optimized/images/legacy/2021/02/unnamed-800.webp",
+      "/optimized/images/legacy/2021/02/unnamed-1200.webp",
+      "/optimized/images/legacy/2021/02/unnamed-full.webp"
+    ]
+  },
+  "/images/legacy/2021/04/Luna-EMG-Lower-Body.jpg": {
+    "mtime": 1789709407136.9065,
+    "width": 800,
+    "height": 533,
+    "variants": [
+      "/optimized/images/legacy/2021/04/Luna-EMG-Lower-Body-480.webp",
+      "/optimized/images/legacy/2021/04/Luna-EMG-Lower-Body-800.webp",
+      "/optimized/images/legacy/2021/04/Luna-EMG-Lower-Body-1200.webp",
+      "/optimized/images/legacy/2021/04/Luna-EMG-Lower-Body-full.webp"
+    ]
+  },
+  "/images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160.jpg": {
+    "mtime": 1789709407136.9065,
+    "width": 1200,
+    "height": 800,
+    "variants": [
+      "/optimized/images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160-480.webp",
+      "/optimized/images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160-800.webp",
+      "/optimized/images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160-1200.webp",
+      "/optimized/images/legacy/2021/05/bigstock-medicine-doctor-working-with-m-43167979-e1468753723160-full.webp"
+    ]
+  },
+  "/images/legacy/2023/01/Dystonia-1.png": {
+    "mtime": 1789709407136.9065,
+    "width": 500,
+    "height": 357,
+    "variants": [
+      "/optimized/images/legacy/2023/01/Dystonia-1-480.webp",
+      "/optimized/images/legacy/2023/01/Dystonia-1-800.webp",
+      "/optimized/images/legacy/2023/01/Dystonia-1-1200.webp",
+      "/optimized/images/legacy/2023/01/Dystonia-1-full.webp"
+    ]
+  },
+  "/images/legacy/2023/01/Obsessive-compulsive-disorder-OCD-1.jpg": {
+    "mtime": 1789709407137.9065,
+    "width": 800,
+    "height": 672,
+    "variants": [
+      "/optimized/images/legacy/2023/01/Obsessive-compulsive-disorder-OCD-1-480.webp",
+      "/optimized/images/legacy/2023/01/Obsessive-compulsive-disorder-OCD-1-800.webp",
+      "/optimized/images/legacy/2023/01/Obsessive-compulsive-disorder-OCD-1-1200.webp",
+      "/optimized/images/legacy/2023/01/Obsessive-compulsive-disorder-OCD-1-full.webp"
+    ]
+  },
+  "/images/legacy/2023/01/Untitled-2-copy.jpg": {
+    "mtime": 1789709407137.9065,
+    "width": 831,
+    "height": 866,
+    "variants": [
+      "/optimized/images/legacy/2023/01/Untitled-2-copy-480.webp",
+      "/optimized/images/legacy/2023/01/Untitled-2-copy-800.webp",
+      "/optimized/images/legacy/2023/01/Untitled-2-copy-1200.webp",
+      "/optimized/images/legacy/2023/01/Untitled-2-copy-full.webp"
+    ]
+  },
+  "/images/legacy/2023/01/iStock-1097194912-2000x1125-1.jpg": {
+    "mtime": 1789709407138.9065,
+    "width": 2000,
+    "height": 1125,
+    "variants": [
+      "/optimized/images/legacy/2023/01/iStock-1097194912-2000x1125-1-480.webp",
+      "/optimized/images/legacy/2023/01/iStock-1097194912-2000x1125-1-800.webp",
+      "/optimized/images/legacy/2023/01/iStock-1097194912-2000x1125-1-1200.webp",
+      "/optimized/images/legacy/2023/01/iStock-1097194912-2000x1125-1-full.webp"
+    ]
+  },
+  "/images/legacy/2023/01/nb-man-home-v101.png": {
+    "mtime": 1789709407139.9065,
+    "width": 1500,
+    "height": 1500,
+    "variants": [
+      "/optimized/images/legacy/2023/01/nb-man-home-v101-480.webp",
+      "/optimized/images/legacy/2023/01/nb-man-home-v101-800.webp",
+      "/optimized/images/legacy/2023/01/nb-man-home-v101-1200.webp",
+      "/optimized/images/legacy/2023/01/nb-man-home-v101-full.webp"
     ]
   }
 }

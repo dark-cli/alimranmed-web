@@ -1,0 +1,74 @@
+---
+/**
+ * Site-wide responsive image component.
+ *
+ * Every `<img>` on the site should be swapped for `<Image>` — it looks up
+ * the source path in the build-time optimizer's manifest (see
+ * scripts/optimize-images.mjs) and emits a full responsive `srcset` +
+ * `sizes` combo pointing at pre-generated WebP variants.
+ *
+ * If the source isn't in the manifest (e.g. an image below the optimizer's
+ * min-width threshold, or one added since the last build) the helper
+ * returns a fallback shape and this component renders a plain <img src> —
+ * the page still works, just heavier than optimal.
+ *
+ * Props are a superset of the native <img> attributes we actually use;
+ * `sizes` defaults to `100vw` so a caller who forgets it still gets
+ * responsive selection, just with a conservative hint.
+ */
+import { imageVariants } from "../lib/image";
+
+interface Props {
+  src: string;
+  alt: string;
+  /** Layout hint for the browser (e.g. "(min-width: 980px) 50vw, 100vw"). */
+  sizes?: string;
+  /** Class attribute passthrough. */
+  class?: string;
+  /** Fallback intrinsic dimensions when the source is not in the manifest. */
+  width?: number;
+  height?: number;
+  loading?: "lazy" | "eager";
+  fetchpriority?: "high" | "low" | "auto";
+  decoding?: "sync" | "async" | "auto";
+  /**
+   * Enable the progressive HD upgrade (default `false` — set true on
+   * hero/LCP images where the after-load quality boost is worth the
+   * extra download). BaseLayout owns the swap logic.
+   */
+  hires?: boolean;
+}
+
+const {
+  src,
+  alt,
+  sizes = "100vw",
+  class: className,
+  width: propW,
+  height: propH,
+  loading = "lazy",
+  fetchpriority,
+  decoding = "async",
+  hires = false,
+} = Astro.props;
+
+const img = imageVariants(src);
+if (!img) return null;
+
+// Only emit `sizes` when we actually have a srcset — a lone `sizes` attribute
+// is meaningless and Lighthouse flags it.
+const sizesAttr = img.srcset ? sizes : undefined;
+---
+<img
+  class={className}
+  src={img.src}
+  srcset={img.srcset || undefined}
+  sizes={sizesAttr}
+  alt={alt}
+  width={img.width ?? propW}
+  height={img.height ?? propH}
+  loading={loading}
+  fetchpriority={fetchpriority}
+  decoding={decoding}
+  data-hires={hires ? img.full : undefined}
+/>
