@@ -14,15 +14,18 @@
   },
   "devDependencies": {
     "hast-util-from-html": "^2.0.3",
+    "sharp": "^0.35.4",
     "turndown": "^7.2.4",
     "unist-util-visit": "^5.1.0",
     "wrangler": "4.21.x"
   },
   "scripts": {
     "astro": "astro",
+    "prebuild": "node scripts/optimize-images.mjs",
     "build": "astro build",
+    "optimize:images": "node scripts/optimize-images.mjs",
     "cf-typegen": "wrangler types",
-    "check": "astro build && tsc && wrangler deploy --dry-run",
+    "check": "npm run prebuild && astro build && tsc && wrangler deploy --dry-run",
     "deploy": "wrangler deploy",
     "dev": "astro dev --host",
     "preview": "astro build && wrangler dev",

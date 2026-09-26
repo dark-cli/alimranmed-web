@@ -49,6 +49,41 @@ const isProduction = !NON_PROD_BRANCHES.has(cfBranch);
     <CallFab />
     <ImageLayout />
 
+    <!-- Progressive HD-image swap. Any <img data-hires="…"> gets its source
+         upgraded to the higher-quality version once the page finishes loading
+         and the browser is idle. Preloads the file with `new Image()` so the
+         visible swap is instant and never causes a layout shift (dimensions
+         match the srcset variant that's already on screen). -->
+    <script is:inline>
+      (function () {
+        function upgrade() {
+          var imgs = document.querySelectorAll("img[data-hires]");
+          if (!imgs.length) return;
+          imgs.forEach(function (img) {
+            var hi = img.getAttribute("data-hires");
+            if (!hi) return;
+            img.removeAttribute("data-hires");
+            var pre = new Image();
+            pre.onload = function () {
+              img.removeAttribute("srcset");
+              img.removeAttribute("sizes");
+              img.src = hi;
+            };
+            pre.src = hi;
+          });
+        }
+        function schedule() {
+          if ("requestIdleCallback" in window) {
+            requestIdleCallback(upgrade, { timeout: 4000 });
+          } else {
+            setTimeout(upgrade, 2000);
+          }
+        }
+        if (document.readyState === "complete") schedule();
+        else addEventListener("load", schedule, { once: true });
+      })();
+    </script>
+
     <!-- Toast shown when a user clicks a "not yet redesigned" article link.
          The message comes from the button's data-soon-message attribute. -->
     <div id="soon-toast" class="soon-toast" role="status" aria-live="polite"></div>
