@@ -7,7 +7,12 @@
  *
  * Each item carries its own caption; an optional block-level heading sits
  * above the grid. Not numbered / not in TOC.
+ *
+ * Images pass through imageVariants() so any image under an optimized
+ * folder (see scripts/optimize-images.mjs) gets a responsive srcset
+ * automatically. Images outside optimized folders fall back to a plain src.
  */
+import { imageVariants } from "../../lib/image";
 
 interface MediaItem {
   kind: "image" | "youtube";
@@ -65,11 +70,27 @@ const multi   = items.length > 1;
       const frameAspect = it.aspect || (it.kind === "image" ? undefined : "16/9");
       const frameStyle  = frameAspect ? `aspect-ratio: ${frameAspect};` : undefined;
       const ytId        = it.kind === "youtube" ? youtubeId(it.src) : null;
+      // sizes hint mirrors the layout: full-width on single-item, split
+      // when multi-item side-by-side, full-width on mobile.
+      const imgSizes = multi
+        ? "(min-width: 560px) 50vw, 100vw"
+        : "(min-width: 1024px) 900px, 100vw";
+      const img = it.kind === "image" ? imageVariants(it.src) : null;
       return (
         <figure class="media">
           <div class="media-frame" style={frameStyle}>
-            {it.kind === "image" && (
-              <img src={it.src} alt={it.alt || ""} loading="lazy" decoding="async" />
+            {it.kind === "image" && img && (
+              <img
+                src={img.src}
+                srcset={img.srcset || undefined}
+                sizes={img.srcset ? imgSizes : undefined}
+                alt={it.alt || ""}
+                width={img.width}
+                height={img.height}
+                loading="lazy"
+                decoding="async"
+                data-hires={img.full}
+              />
             )}
             {it.kind === "youtube" && ytId && (
               <iframe
