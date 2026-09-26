@@ -1,90 +1,59 @@
-# alimranmed-web
+# Alimran Medical Center — Website
 
-A modern rebuild of the Alimran Medical Center website (originally hosted on WordPress
-at [alimranmed.com](https://alimranmed.com)), using [Astro](https://astro.build) with
-Content Collections, Cloudflare Workers as the runtime, and a medical-first design
-system.
+Production site: **[alimran.clinic](https://alimran.clinic/)**
 
-**English-only** for now. The original site has an Arabic mirror at
-`ar.alimranmed.com` running on a separate WordPress install; adding Arabic back is
-a straightforward re-scope later (see `scripts/migrate.mjs`).
+Bilingual (English + Arabic) clinical website for a neurosurgery, pain-medicine
+and rehabilitation practice in Basra, Iraq. Content is authored through a
+browser-based CMS; the build is a static Astro export served by Cloudflare Workers.
+
+---
+
+## Quick start
+
+```bash
+git clone https://github.com/dark-cli/alimranmed-web.git
+cd alimranmed-web
+npm install
+npm run dev     # local preview at http://localhost:4321
+```
+
+To open the CMS admin: run `npm run dev`, then visit
+[http://localhost:4321/admin/](http://localhost:4321/admin/) in **Chrome, Edge
+or Brave** (the CMS uses the File System Access API — Firefox and Safari
+are not supported). Click "Work with Local Repository" and pick the project
+folder. The CMS reads and writes the same content files under `src/content/`
+that the site builds from.
+
+Everything else — deploys, CMS features, content authoring, the block widgets,
+the image pipeline, and the AI collaborator brief — is in **[`docs/`](docs/)**.
+
+---
+
+## Documentation map
+
+| File | Purpose |
+|---|---|
+| [`docs/setup.md`](docs/setup.md) | Local development setup + prerequisites |
+| [`docs/deployment.md`](docs/deployment.md) | Cloudflare Pages workflow, build logs, rollback |
+| [`docs/project-structure.md`](docs/project-structure.md) | Where every file type lives and why |
+| [`docs/content-authoring.md`](docs/content-authoring.md) | How to write articles: frontmatter, voice, bilingual policy |
+| [`docs/sections.md`](docs/sections.md) | All block/widget types with syntax + examples |
+| [`docs/cms.md`](docs/cms.md) | Using the Sveltia admin — features and limitations |
+| [`docs/image-optimization.md`](docs/image-optimization.md) | How the WebP variant pipeline works |
+| [`docs/scripts.md`](docs/scripts.md) | Utility scripts: link checks, font updates, redirects |
+| [`docs/tokens.md`](docs/tokens.md) | Design-system tokens (colours, type, spacing) |
+| [`docs/ai/SKILL.md`](docs/ai/SKILL.md) | Brief for AI collaborators — how to work on this project |
+
+---
 
 ## Stack
 
-- **Astro 5** — static-first site generator, server components
-- **Content Collections** — typed frontmatter, glob loaders, schema validation
-- **@astrojs/cloudflare** — Workers deployment adapter
-- **@astrojs/sitemap** — automatic sitemap generation
+- **[Astro 5](https://astro.build/)** — static site generator, TypeScript
+- **[Sveltia CMS](https://sveltiacms.app/)** — browser-based Git CMS
+- **[Cloudflare Workers/Pages](https://developers.cloudflare.com/pages/)** — hosting + edge
+- **[Sharp](https://sharp.pixelplumbing.com/)** — build-time image optimization
+- **Self-hosted fonts** — Newsreader, IBM Plex, Amiri, IBM Plex Sans Arabic
 
-## Repository layout
+## License
 
-```
-src/
-  components/           shared Astro components (header, footer, base head, theme toggle)
-  content/              content collections (Markdown source of truth)
-    treatments/         one file per condition
-    services/           grouped by category subfolder (chiropractic, surgery, etc.)
-    doctors/            one file per physician
-    posts/              blog posts
-    cases/              patient case studies
-    testimonies/        patient testimonies
-    pages/              misc top-level pages
-  content.config.ts     schema definitions
-  data/
-    navigation.ts       MASTER nav tree — mirrors the old site's IA verbatim,
-                        with legacyUrl on every leaf for bulk-migration.
-  i18n/en.json          UI strings
-  layouts/              BaseLayout, ContentLayout
-  pages/                routes: dynamic collection routes ([slug].astro) + static pages
-  styles/               global.css (design system)
-public/
-  images/legacy/        self-hosted media pulled from the old WP install
-  _redirects            legacy URL → new URL 301 map
-docs/
-  MIGRATION.md          how the bulk-migration pipeline works
-  PORTAL.md             how to add the captive-portal Connect bar later
-scripts/
-  migrate.mjs           WP-REST → Content Collections migrator
-  download-media.mjs    self-host wp-content/uploads assets
-  generate-redirects.mjs  emit public/_redirects from navigation.ts
-```
-
-## Development
-
-```bash
-npm install
-npm run dev          # local dev server
-npm run build        # production build (dist/)
-npm run preview      # build + wrangler dev (Workers runtime)
-```
-
-## Content pipeline
-
-```bash
-npm run migrate      # pull all pages+posts from WP-REST → src/content/
-npm run migrate:dry  # first 5 per source, log-only
-npm run media        # scan MD → download uploads → rewrite refs to local
-npm run redirects    # rebuild public/_redirects from navigation.ts
-```
-
-## Current status
-
-- All ~300 legacy WordPress entries migrated as verbatim Markdown
-- Media self-hosted (394+ files) so the site works pre-auth in a walled-garden network
-- 182 legacy URL redirects wired up so old inbound Google traffic lands correctly
-- 33 YouTube video embeds preserved as visible links
-- Build produces ~200 static HTML pages, ~15 MB total
-
-## Deferred (deliberately)
-
-- **Arabic mirror** — dropped for now; see `scripts/migrate.mjs` for how to re-enable
-- **Captive-portal Connect bar** — see `docs/PORTAL.md` for the recipe
-- **Contact form submission** — the contact page is display-only right now
-- **Reslotting orphan pages** — 87 legacy WP entries that aren't in the visible nav
-  landed in the `pages` collection; each has a `legacyUrl` field, easy to move later
-
-## Legacy site
-
-The old WordPress site at [alimranmed.com](https://alimranmed.com) remains live
-during the migration. Every content entry carries a `legacyUrl` pointing at its
-original source.
+Copyright © 2026 Ali Mussa Imran. All rights reserved. See `LICENSE`.
