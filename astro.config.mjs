@@ -9,6 +9,7 @@ import rehypeLazyImages from "./src/lib/rehype-lazy-images.mjs";
 import rehypeResponsiveImages from "./src/lib/rehype-responsive-images.mjs";
 import { remarkLocalizeLinks } from "./src/lib/remark-localize-links.mjs";
 import { remarkAutoAlt } from "./src/lib/remark-auto-alt.mjs";
+import { serializeWithLastmod } from "./src/lib/sitemap-lastmod.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +32,9 @@ export default defineConfig({
         const path = new URL(page).pathname;
         return path !== "/" && !path.startsWith("/admin/") && !/^\/(en|ar)\/dev-blocks\//.test(path);
       },
+      // Per-URL <lastmod> based on the source file's last git commit.
+      // See src/lib/sitemap-lastmod.mjs.
+      serialize: serializeWithLastmod,
     }),
   ],
   adapter: cloudflare({
