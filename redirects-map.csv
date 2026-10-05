@@ -1,0 +1,58 @@
+old_url,new_url,status,notes
+# ── Locale root redirects ──────────────────────────────────────────────────
+https://alimran.clinic/,https://alimran.clinic/en/,301,Root → EN home; bare locale roots already 301 at CDN edge
+https://alimran.clinic/en,https://alimran.clinic/en/,301,Trailing-slash normalisation
+https://alimran.clinic/ar,https://alimran.clinic/ar/,301,Trailing-slash normalisation
+# ── Locale-less catch-alls (pass-through from old alimranmed.com server) ──
+https://alimranmed.com/treatments/*,https://alimran.clinic/en/treatments/*,301,Old server proxies path; catch-all in _redirects routes to EN
+https://alimranmed.com/services/*,https://alimran.clinic/en/services/*,301,Old server proxies path; catch-all in _redirects routes to EN
+https://alimranmed.com/blog/*,https://alimran.clinic/en/blog/*,301,Old server proxies path; catch-all in _redirects routes to EN
+# ── Treatment slug renames (GSC 400-499 report — September 2026) ──────────
+https://alimran.clinic/en/treatments/myofascial-pain-syndrome/,https://alimran.clinic/en/treatments/myofascial-pain/,301,WordPress slug was myofascial-pain-syndrome; Astro uses myofascial-pain
+https://alimran.clinic/ar/treatments/myofascial-pain-syndrome/,https://alimran.clinic/ar/treatments/myofascial-pain/,301,WordPress slug was myofascial-pain-syndrome; Astro uses myofascial-pain
+https://alimran.clinic/en/treatments/pelvic-pain/,https://alimran.clinic/en/treatments/chronic-pelvic-pain-in-women/,301,Old slug pelvic-pain renamed to chronic-pelvic-pain-in-women in Astro
+https://alimran.clinic/ar/treatments/pelvic-pain/,https://alimran.clinic/ar/treatments/chronic-pelvic-pain-in-women/,301,Old slug pelvic-pain renamed to chronic-pelvic-pain-in-women in Astro
+https://alimran.clinic/en/treatments/lower-back-pain/,https://alimran.clinic/en/treatments/back-pain/,301,Old slug lower-back-pain shortened to back-pain in Astro
+https://alimran.clinic/ar/treatments/lower-back-pain/,https://alimran.clinic/ar/treatments/back-pain/,301,Old slug lower-back-pain shortened to back-pain in Astro
+# ── Doctor URL structure ───────────────────────────────────────────────────
+https://alimran.clinic/ar/doctor/دكتور-حسين-عمران-موسى/,https://alimran.clinic/ar/doctors/hussein-imran-mousa/,301,Dr. Hussein — raw Unicode variant
+https://alimran.clinic/ar/doctor/%d8%af%d9%83%d8%aa%d9%88%d8%b1-%d8%ad%d8%b3%d9%8a%d9%86-%d8%b9%d9%85%d8%b1%d8%a7%d9%86-%d9%85%d9%88%d8%b3%d9%89/,https://alimran.clinic/ar/doctors/hussein-imran-mousa/,301,Dr. Hussein — lowercase percent-encoded variant
+https://alimran.clinic/ar/doctor/%D8%AF%D9%83%D8%AA%D9%88%D8%B1-%D8%AD%D8%B3%D9%8A%D9%86-%D8%B9%D9%85%D8%B1%D8%A7%D9%86-%D9%85%D9%88%D8%B3%D9%89/,https://alimran.clinic/ar/doctors/hussein-imran-mousa/,301,Dr. Hussein — uppercase percent-encoded variant
+https://alimran.clinic/en/doctor/{slug}/,https://alimran.clinic/en/doctors/{slug}/,301,Generic EN CPT fallback — slug passes through
+https://alimran.clinic/ar/doctor/{unknown}/,https://alimran.clinic/ar/doctors/,301,Generic AR CPT fallback — unknown slug routes to listing
+https://alimran.clinic/doctor/{slug}/,https://alimran.clinic/en/doctors/{slug}/,301,Bare (no locale) doctor CPT path; routes to EN
+# ── Merged duplicate pages ────────────────────────────────────────────────
+https://alimran.clinic/en/services/brain-stimulation/tms-alzheimer/,https://alimran.clinic/en/blog/tms-for-alzheimer-disease/,301,Duplicate merged; service page removed
+https://alimran.clinic/ar/services/brain-stimulation/tms-alzheimer/,https://alimran.clinic/ar/blog/tms-for-alzheimer-disease/,301,Duplicate merged; service page removed
+https://alimran.clinic/en/blog/tms-for-migraine/,https://alimran.clinic/en/services/brain-stimulation/tms-migraine/,301,Canonical moved to services
+https://alimran.clinic/ar/blog/tms-for-migraine/,https://alimran.clinic/ar/services/brain-stimulation/tms-migraine/,301,Canonical moved to services
+https://alimran.clinic/en/blog/tms-for-pains/,https://alimran.clinic/en/services/brain-stimulation/tms-pain/,301,Canonical moved to services
+https://alimran.clinic/ar/blog/tms-for-pains/,https://alimran.clinic/ar/services/brain-stimulation/tms-pain/,301,Canonical moved to services
+https://alimran.clinic/en/blog/amyotrophic-lateral-sclerosis-als-2/,https://alimran.clinic/en/treatments/als/,301,Duplicate blog post merged into treatments page
+https://alimran.clinic/ar/blog/amyotrophic-lateral-sclerosis-als-2/,https://alimran.clinic/ar/treatments/als/,301,Duplicate blog post merged into treatments page
+https://alimran.clinic/en/blog/tms-for-tinnitus-2/,https://alimran.clinic/en/services/brain-stimulation/tms-tinnitus/,301,Duplicate merged; canonical is service page
+https://alimran.clinic/ar/blog/tms-for-tinnitus-2/,https://alimran.clinic/ar/services/brain-stimulation/tms-tinnitus/,301,Duplicate merged; canonical is service page
+https://alimran.clinic/en/blog/tms-for-tinnitus/,https://alimran.clinic/en/services/brain-stimulation/tms-tinnitus/,301,Duplicate merged; canonical is service page
+https://alimran.clinic/ar/blog/tms-for-tinnitus/,https://alimran.clinic/ar/services/brain-stimulation/tms-tinnitus/,301,Duplicate merged; canonical is service page
+https://alimran.clinic/en/services/surgery/acdf/,https://alimran.clinic/en/services/surgery/anterior-cervical-discectomy-and-fusion/,301,Slug expanded to full procedure name
+https://alimran.clinic/ar/services/surgery/acdf/,https://alimran.clinic/ar/services/surgery/anterior-cervical-discectomy-and-fusion/,301,Slug expanded to full procedure name
+https://alimran.clinic/en/treatments/nervous-bladder/,https://alimran.clinic/en/treatments/neurogenic-bladder/,301,Medical term corrected: nervous-bladder → neurogenic-bladder
+https://alimran.clinic/ar/treatments/nervous-bladder/,https://alimran.clinic/ar/treatments/neurogenic-bladder/,301,Medical term corrected: nervous-bladder → neurogenic-bladder
+https://alimran.clinic/en/services/natural-therapy/,https://alimran.clinic/en/blog/physiotherapy/,301,Page merged into blog post
+https://alimran.clinic/ar/services/natural-therapy/,https://alimran.clinic/ar/blog/physiotherapy/,301,Page merged into blog post
+https://alimran.clinic/en/services/physiotherapy/physiotherapy-3/,https://alimran.clinic/en/blog/physiotherapy/,301,WP auto-numbered duplicate; merged into blog post
+https://alimran.clinic/ar/services/physiotherapy/physiotherapy-3/,https://alimran.clinic/ar/blog/physiotherapy/,301,WP auto-numbered duplicate; merged into blog post
+https://alimran.clinic/en/services/surgery/arthroplasty/,https://alimran.clinic/en/services/surgery/artificial-disc/,301,Slug renamed to reflect procedure more precisely
+https://alimran.clinic/ar/services/surgery/arthroplasty/,https://alimran.clinic/ar/services/surgery/artificial-disc/,301,Slug renamed to reflect procedure more precisely
+https://alimran.clinic/en/services/physiotherapy/shortwave/,https://alimran.clinic/en/services/physiotherapy/shortwave-therapy/,301,Slug expanded for clarity
+https://alimran.clinic/ar/services/physiotherapy/shortwave/,https://alimran.clinic/ar/services/physiotherapy/shortwave-therapy/,301,Slug expanded for clarity
+https://alimran.clinic/en/services/brain-stimulation/tms-neuropsychiatric/,https://alimran.clinic/en/blog/tms-for-neuropsychiatric-disorders/,301,Duplicate merged; canonical is blog post
+https://alimran.clinic/ar/services/brain-stimulation/tms-neuropsychiatric/,https://alimran.clinic/ar/blog/tms-for-neuropsychiatric-disorders/,301,Duplicate merged; canonical is blog post
+https://alimran.clinic/en/services/surgery/intrathecal-pump/,https://alimran.clinic/en/blog/what-is-an-intrathecal-pump/,301,Page merged into blog post
+https://alimran.clinic/ar/services/surgery/intrathecal-pump/,https://alimran.clinic/ar/blog/what-is-an-intrathecal-pump/,301,Page merged into blog post
+https://alimran.clinic/en/services/radiofrequency/radiofrequency-2/,https://alimran.clinic/en/services/radiofrequency/radiofrequency/,301,WP auto-numbered duplicate; merged
+https://alimran.clinic/ar/services/radiofrequency/radiofrequency-2/,https://alimran.clinic/ar/services/radiofrequency/radiofrequency/,301,WP auto-numbered duplicate; merged
+https://alimran.clinic/en/services/exercises/exercises-2/,https://alimran.clinic/en/services/exercises/,301,WP auto-numbered duplicate; redirects to category index
+https://alimran.clinic/ar/services/exercises/exercises-2/,https://alimran.clinic/ar/services/exercises/,301,WP auto-numbered duplicate; redirects to category index
+https://alimran.clinic/en/services/surgery/surgery/,https://alimran.clinic/en/services/surgery/,301,WP self-referencing duplicate; redirects to category index
+https://alimran.clinic/ar/services/surgery/surgery/,https://alimran.clinic/ar/services/surgery/,301,WP self-referencing duplicate; redirects to category index

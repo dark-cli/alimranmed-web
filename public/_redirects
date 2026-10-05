@@ -50,3 +50,25 @@
 /ar/services/exercises/exercises-2/  /ar/services/exercises/  301
 /en/services/surgery/surgery/  /en/services/surgery/  301
 /ar/services/surgery/surgery/  /ar/services/surgery/  301
+
+# ── Treatment slug renames ─────────────────────────────────────────────────
+# These slugs changed when WordPress content was migrated to Astro.
+# Caught via GSC 400-499 report from September 2026.
+/en/treatments/myofascial-pain-syndrome/  /en/treatments/myofascial-pain/  301
+/ar/treatments/myofascial-pain-syndrome/  /ar/treatments/myofascial-pain/  301
+/en/treatments/pelvic-pain/               /en/treatments/chronic-pelvic-pain-in-women/  301
+/ar/treatments/pelvic-pain/               /ar/treatments/chronic-pelvic-pain-in-women/  301
+/en/treatments/lower-back-pain/           /en/treatments/back-pain/  301
+/ar/treatments/lower-back-pain/           /ar/treatments/back-pain/  301
+
+# ── Doctor URL structure ───────────────────────────────────────────────────
+# Old WordPress used /doctor/ (singular CPT slug); Astro uses /doctors/ (plural).
+# Dr. Hussein Imran Musa — explicit rules cover all three encoding variants of
+# his Arabic WP slug before the generic splat, which can't do slug translation.
+/ar/doctor/دكتور-حسين-عمران-موسى/  /ar/doctors/hussein-imran-mousa/  301
+/ar/doctor/%d8%af%d9%83%d8%aa%d9%88%d8%b1-%d8%ad%d8%b3%d9%8a%d9%86-%d8%b9%d9%85%d8%b1%d8%a7%d9%86-%d9%85%d9%88%d8%b3%d9%89/  /ar/doctors/hussein-imran-mousa/  301
+/ar/doctor/%D8%AF%D9%83%D8%AA%D9%88%D8%B1-%D8%AD%D8%B3%D9%8A%D9%86-%D8%B9%D9%85%D8%B1%D8%A7%D9%86-%D9%85%D9%88%D8%B3%D9%89/  /ar/doctors/hussein-imran-mousa/  301
+# Generic CPT fallback (EN slugs pass through cleanly; unknown AR slugs → listing)
+/en/doctor/*  /en/doctors/:splat  301
+/ar/doctor/*  /ar/doctors/  301
+/doctor/*     /en/doctors/:splat  301
