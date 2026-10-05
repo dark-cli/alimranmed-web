@@ -30,7 +30,7 @@ export default defineConfig({
       // /admin/ (CMS) and /{locale}/dev-blocks/ (widget preview) are internal.
       filter: (page) => {
         const path = new URL(page).pathname;
-        return path !== "/" && !path.startsWith("/admin/") && !/^\/(en|ar)\/dev-blocks\//.test(path);
+        return path !== "/" && !path.startsWith("/admin/") && !/^\/(en|ar)\/(dev-blocks|follow)\//.test(path);
       },
       // Per-URL <lastmod> based on the source file's last git commit.
       // See src/lib/sitemap-lastmod.mjs.

@@ -34,6 +34,7 @@ const isProduction = !NON_PROD_BRANCHES.has(cfBranch);
   <head>
     <BaseHead title={title} description={description} image={image} noindex={noindex} fontAwesome={fontAwesome} heroPreload={heroPreload} />
     <ClientRouter />
+    <slot name="head" />
   </head>
   <body>
     {!isProduction && (
