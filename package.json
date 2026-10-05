@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "hast-util-from-html": "^2.0.3",
+    "qrcode": "^1.5.4",
     "sharp": "^0.35.4",
     "turndown": "^7.2.4",
     "unist-util-visit": "^5.1.0",
