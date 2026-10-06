@@ -125,18 +125,42 @@ drafts/
 
 The `drafts/` folder is for your own working notes. Nothing in it is published; it just lives alongside the project so the AI can read it.
 
-### Step 2 — Open an AI chat with the right context
+### Step 2 — Pick an AI tool
 
-Use **Claude** (recommended, works best with this project's docs) or any capable AI. The AI needs to read **four files** to do a good job. Attach them, upload them, or paste their contents in:
+Any capable AI works. Pick based on budget and comfort:
+
+| You want… | Use | Cost |
+|---|---|---|
+| Best quality, you already have Claude access | **Claude** (claude.ai or Claude Code) | Subscription |
+| **Free, no subscription, works out of the box** | **Gemini** at [gemini.google.com](https://gemini.google.com) | Free |
+| Free + agentic IDE that can read/write files for you | **[Antigravity](https://antigravity.google/)** (Google's free IDE, powered by Gemini) | Free |
+| You already pay for ChatGPT | **ChatGPT** (GPT-4o or newer) | Subscription |
+
+> 💰 **Recommendation if you don't want an ongoing subscription:**
+> Install **Antigravity** ([antigravity.google](https://antigravity.google/)) and open this
+> project folder in it. Antigravity is Google's free agentic coding environment —
+> it uses Gemini under the hood, has generous free limits, and can read the
+> project's docs and write the `.md` files for you directly, like Claude Code
+> does. It's the closest free equivalent to having a paid AI pair-writer.
+>
+> Alternative with zero install: paste the prompt into [gemini.google.com](https://gemini.google.com)
+> and copy the output back into the CMS yourself.
+
+### Step 3 — Give the AI the right context
+
+The AI needs to read **five files** before it can safely work on an article. Attach them, upload them, or paste their contents in:
 
 1. 📘 [`docs/ai/SKILL.md`](ai/SKILL.md) — project rules, voice policy, non-negotiables
 2. 📘 [`docs/ai/article-builder.md`](ai/article-builder.md) — step-by-step workflow for turning a draft into blocks
 3. 📘 [`docs/sections.md`](sections.md) — all block types with YAML syntax
 4. 📘 [`docs/content-authoring.md`](content-authoring.md) — frontmatter rules + bilingual policy
+5. 📘 [`docs/ai/checks.md`](ai/checks.md) — commands to run before saying "done"
 
-> 💡 **If you're using Claude Code inside this repo**, you can skip the file-attaching — it already reads these docs. Just send the prompt below.
+> 💡 **If you're using Claude Code or Antigravity inside this repo**, you can skip the manual file-attaching — those tools already read these docs. Just send the prompt below.
+>
+> **If you're using gemini.google.com or ChatGPT in a browser**, upload the five files (or paste their contents) alongside your prompt.
 
-### Step 3 — Send this prompt (copy-paste, fill in the blanks)
+### Step 4 — Send this prompt (copy-paste, fill in the blanks)
 
 ```
 I'm writing an article for alimran.clinic. Please build it as block-based
@@ -192,7 +216,7 @@ STEP 4 — WHAT I NEED YOU TO DO (after you've read the docs in Step 1):
 > forces the AI to ground itself in the actual project docs — not its
 > general training — before it touches your content.
 
-### Step 4 — Review the AI's output
+### Step 5 — Review the AI's output
 
 Before publishing, check:
 
@@ -203,7 +227,7 @@ Before publishing, check:
 - [ ] AI ran `npm run build` and it passed
 - [ ] Preview in browser: `http://localhost:4321/en/<collection>/<slug>/`
 
-### Step 5 — Polish in the CMS (optional)
+### Step 6 — Polish in the CMS (optional)
 
 If you want to tweak wording, open the CMS (`/admin/`) and edit the entry. The AI-written file is now a normal CMS entry.
 
