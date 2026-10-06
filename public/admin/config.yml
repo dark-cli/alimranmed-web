@@ -35,208 +35,329 @@ output:
   omit_empty_optional_fields: true
 
 # ── Section block templates (variable-type list) ─────────────────────────
-# Referenced by *sections_field below. YAML anchors DO work for whole node
-# reuse (objects), so we can alias the entire sections field definition —
-# but they can't splice into sequences, so per-collection field lists are
-# written out explicitly.
+# Each leaf block (prose, highlights, stats, etc.) is defined ONCE here as
+# a named YAML anchor (e.g. `&_prose`). Those anchors are referenced from
+# two places:
+#   1. `_leaf_types: &leaf_types` — the list of blocks that can appear
+#      *inside* a `row` or `column` layout widget.
+#   2. `_sections_field.types`    — the top-level set the writer sees in
+#      every collection, which is leaves + the two layout widgets.
+#
+# Why not self-reference row/column so they can nest arbitrarily deep?
+# Sveltia internally JSON-serialises the config, and a cyclic graph (row ->
+# items -> types -> row) breaks that. The schema in src/content.config.ts
+# still allows deep nesting via `z.any()`, so file-authored or AI-authored
+# content can nest layouts beyond one level — the CMS editor just can't
+# add that depth from scratch.
+
+_prose: &_prose
+  name: prose
+  label: Prose
+  fields:
+    - label: Section number
+      name: number
+      widget: string
+      required: false
+      hint: 'Optional — e.g. "01", "02". Renders as a small mono prefix above the heading with a bottom-rule.'
+    - { label: Eyebrow (accent small-caps line), name: eyebrow, widget: string, required: false, hint: "Optional — for hero-style sections with a lead-in line above the heading." }
+    - { label: Heading (appears in TOC), name: heading, widget: string, required: false }
+    - label: Heading level
+      name: headingLevel
+      widget: select
+      required: false
+      default: h2
+      options:
+        - { label: "h2 (default)", value: h2 }
+        - { label: "h3 (use inside a split)", value: h3 }
+    - { label: Body (markdown — inline links supported), name: body, widget: text, required: false, hint: "Optional — omit when the block is a bare numbered section header." }
+
+_highlights: &_highlights
+  name: highlights
+  label: Highlights (At a glance)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'At a glance' / 'لمحة سريعة'." }
+    - label: Items
+      name: items
+      widget: list
+      min: 2
+      max: 4
+      fields:
+        - { label: Label, name: label, widget: string }
+        - { label: Value, name: value, widget: text }
+
+_stats: &_stats
+  name: stats
+  label: Stats
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - { label: Intro, name: intro, widget: text, required: false }
+    - label: Items
+      name: items
+      widget: list
+      min: 2
+      max: 6
+      fields:
+        - { label: Value (big number / metric), name: value, widget: string }
+        - { label: Label (short description), name: label, widget: string }
+
+_facts: &_facts
+  name: facts
+  label: Facts (numbered list)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Key facts' / 'حقائق أساسية'." }
+    - label: Items
+      name: items
+      widget: list
+      field: { label: Fact, name: fact, widget: text }
+
+_list: &_list
+  name: list
+  label: List
+  fields:
+    - label: Layout
+      name: variant
+      widget: select
+      default: rows
+      hint: "Rows: single-column stacked. Wrap: auto-fit responsive columns (good for memberships/tags). Columns: fixed 2-column grid."
+      options:
+        - { label: "Rows — single column, stacked", value: rows }
+        - { label: "Wrap — responsive (as many cols as fit)", value: wrap }
+        - { label: "Columns — fixed 2 columns", value: columns }
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      fields:
+        - { label: Label, name: label, widget: string, hint: "Short mono tag — date, year, code." }
+        - { label: Body, name: body, widget: text }
+        - { label: Subtitle, name: subtitle, widget: text, required: false, hint: "Optional secondary line. Supported by Rows and Columns; Wrap ignores it." }
+
+_quote: &_quote
+  name: quote
+  label: Pull Quote
+  fields:
+    - { label: Quote text, name: text, widget: text }
+    - { label: Attribution, name: attribution, widget: string, required: false }
+
+_panels: &_panels
+  name: panels
+  label: Panels (comparison or options grid)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - { label: Intro, name: intro, widget: text, required: false }
+    - { label: Note (footer line), name: note, widget: string, required: false }
+    - label: Panels
+      name: panels
+      widget: list
+      min: 2
+      max: 4
+      fields:
+        - { label: Eyebrow, name: eyebrow, widget: string, required: false, hint: "Small label above title — e.g. 'Before' / 'After'." }
+        - { label: Title, name: title, widget: string }
+        - { label: Subtitle, name: subtitle, widget: string, required: false }
+        - label: Items
+          name: items
+          widget: list
+          field: { label: Item (markdown links ok), name: item, widget: string }
+        - label: Related reading
+          name: reading
+          widget: list
+          required: false
+          hint: "Optional sub-list of links shown under this panel's items."
+          fields:
+            - { label: Title, name: title, widget: string }
+            - { label: Link (href), name: href, widget: string }
+
+_media: &_media
+  name: media
+  label: Media (image / video / YouTube)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Optional heading above the media. Not added to TOC." }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      typeKey: kind
+      hint: "Add one item for a full-width figure; add more for a side-by-side grid."
+      types:
+        - name: image
+          label: Image
+          fields:
+            - { label: Image, name: src, widget: image, required: true }
+            - { label: Alt text, name: alt, widget: string, required: false }
+            - { label: Caption, name: caption, widget: string, required: false }
+            - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
+        - name: youtube
+          label: YouTube
+          fields:
+            - { label: YouTube URL or ID, name: src, widget: string, required: true, hint: "Full URL or bare ID (e.g. dQw4w9WgXcQ)." }
+            - { label: Caption, name: caption, widget: string, required: false }
+            - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
+            - { label: Upload date (JSON-LD), name: uploadDate, widget: string, required: false, hint: "ISO date, e.g. 2024-03-15. Helps Google index the video." }
+
+_pathway: &_pathway
+  name: pathway
+  label: Pathway (link chip groups)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - { label: Intro, name: intro, widget: text, required: false }
+    - label: Groups
+      name: groups
+      widget: list
+      fields:
+        - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+        - { label: Title, name: title, widget: string }
+        - label: Items
+          name: items
+          widget: list
+          fields:
+            - { label: Name, name: name, widget: string }
+            - { label: Link (href), name: href, widget: string }
+    - label: Footer link (optional "see all" link under the chips)
+      name: footerLink
+      widget: object
+      required: false
+      collapsed: true
+      fields:
+        - { label: Label, name: label, widget: string }
+        - { label: Link (href), name: href, widget: string }
+
+_image_row: &_image_row
+  name: image-row
+  label: Image Row (photo gallery)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Columns
+      name: columns
+      widget: select
+      default: auto
+      options:
+        - { label: "Auto (responsive fit)", value: auto }
+        - { label: "2 columns", value: "2" }
+        - { label: "3 columns", value: "3" }
+        - { label: "4 columns", value: "4" }
+    - label: Items
+      name: items
+      widget: list
+      fields:
+        - { label: Image path, name: src, widget: string }
+        - { label: Alt text, name: alt, widget: string, required: false }
+        - { label: Caption, name: caption, widget: string, required: false }
+        - { label: Link (href), name: href, widget: string, required: false }
+        - label: Aspect ratio
+          name: aspect
+          widget: select
+          required: false
+          options: ["16/9", "4/3", "3/2", "1/1"]
+
+_button: &_button
+  name: button
+  label: Button (call-to-action)
+  fields:
+    - { label: Label, name: label, widget: string }
+    - { label: Link (href), name: href, widget: string, hint: "Internal paths starting with / are locale-aware. External URLs pass through." }
+    - label: Variant
+      name: variant
+      widget: select
+      default: primary
+      options:
+        - { label: "Primary (filled)", value: primary }
+        - { label: "Secondary (outline)", value: secondary }
+        - { label: "Quiet (text link with underline)", value: quiet }
+    - { label: Open in new tab, name: newTab, widget: boolean, required: false, default: false }
+
+_doctor_credit: &_doctor_credit
+  name: doctor-credit
+  label: Doctor Credit (byline)
+  fields:
+    - { label: Avatar image, name: avatar, widget: image, hint: "Round portrait — WebP works best." }
+    - { label: Avatar alt, name: avatarAlt, widget: string, required: false }
+    - { label: Lead label, name: leadLabel, widget: string, required: false, hint: "Defaults to 'Led by' / 'بإشراف'." }
+    - { label: Doctor name, name: name, widget: string }
+    - { label: Title (e.g. consultant neurosurgeon), name: title, widget: string }
+    - { label: Link label, name: linkLabel, widget: string, required: false, hint: "Optional CV/profile link." }
+    - { label: Link href, name: linkHref, widget: string, required: false }
+
+_label_tile: &_label_tile
+  name: label-tile
+  label: Label Tile (typographic placeholder)
+  fields:
+    - { label: Label (ALL CAPS top line), name: label, widget: string }
+    - { label: Sub-label, name: sublabel, widget: string, required: false }
+
+_contact_strip: &_contact_strip
+  name: contact-strip
+  label: Contact Strip (bordered contact card)
+  fields:
+    - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+    - { label: Body paragraph, name: body, widget: text, required: false }
+    - label: Columns
+      name: columns
+      widget: list
+      min: 1
+      max: 3
+      fields:
+        - { label: Column label, name: label, widget: string }
+        - label: Items
+          name: items
+          widget: list
+          min: 1
+          fields:
+            - { label: Text (phone / email / address), name: text, widget: string }
+            - { label: Link (href), name: href, widget: string, required: false, hint: "tel:, mailto:, or a URL." }
+
+_cards: &_cards
+  name: cards
+  label: Cards (related links)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Related reading' / 'قراءات ذات صلة'." }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      hint: "Locale-agnostic paths, e.g. /treatments/back-pain/ or /blog/my-post/. Title, description and date are pulled automatically."
+      field: { label: Path, name: item, widget: string }
+
+# Leaf widgets — the set a writer can place *inside* a row/column.
+_leaf_types: &leaf_types
+  - *_prose
+  - *_highlights
+  - *_stats
+  - *_facts
+  - *_list
+  - *_quote
+  - *_panels
+  - *_media
+  - *_pathway
+  - *_image_row
+  - *_button
+  - *_doctor_credit
+  - *_label_tile
+  - *_contact_strip
+  - *_cards
 
 # Unified sections field — used by ALL collections (treatments, services,
 # blog, doctors, pages). Mirrors the section discriminated union in
-# content.config.ts.
-#
-# Note on recursive types: the `row` and `column` widgets accept any
-# section block as a child (including other rows/columns). This is modelled
-# via a self-referencing YAML anchor — `types: &block_types` labels the
-# full list, and inside row/column.items.types we reference `*block_types`.
-# Sveltia uses js-yaml which supports cyclic references.
+# content.config.ts. Includes the two layout widgets (row, column) in
+# addition to every leaf type above.
 _sections_field: &sections_field
   label: Sections
   name: sections
   widget: list
   required: false
   typeKey: type
-  types: &block_types
-    - name: prose
-      label: Prose
-      fields:
-        - label: Section number
-          name: number
-          widget: string
-          required: false
-          hint: 'Optional — e.g. "01", "02". Renders as a small mono prefix above the heading with a bottom-rule.'
-        - { label: Eyebrow (accent small-caps line), name: eyebrow, widget: string, required: false, hint: "Optional — for hero-style sections with a lead-in line above the heading." }
-        - { label: Heading (appears in TOC), name: heading, widget: string, required: false }
-        - label: Heading level
-          name: headingLevel
-          widget: select
-          required: false
-          default: h2
-          options:
-            - { label: "h2 (default)", value: h2 }
-            - { label: "h3 (use inside a split)", value: h3 }
-        - { label: Body (markdown — inline links supported), name: body, widget: text, required: false, hint: "Optional — omit when the block is a bare numbered section header." }
-    - name: highlights
-      label: Highlights (At a glance)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'At a glance' / 'لمحة سريعة'." }
-        - label: Items
-          name: items
-          widget: list
-          min: 2
-          max: 4
-          fields:
-            - { label: Label, name: label, widget: string }
-            - { label: Value, name: value, widget: text }
-    - name: stats
-      label: Stats
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false }
-        - { label: Intro, name: intro, widget: text, required: false }
-        - label: Items
-          name: items
-          widget: list
-          min: 2
-          max: 6
-          fields:
-            - { label: Value (big number / metric), name: value, widget: string }
-            - { label: Label (short description), name: label, widget: string }
-    - name: facts
-      label: Facts (numbered list)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Key facts' / 'حقائق أساسية'." }
-        - label: Items
-          name: items
-          widget: list
-          field: { label: Fact, name: fact, widget: text }
-    - name: list
-      label: List
-      fields:
-        - label: Layout
-          name: variant
-          widget: select
-          default: rows
-          hint: "Rows: single-column stacked. Wrap: auto-fit responsive columns (good for memberships/tags). Columns: fixed 2-column grid."
-          options:
-            - { label: "Rows — single column, stacked", value: rows }
-            - { label: "Wrap — responsive (as many cols as fit)", value: wrap }
-            - { label: "Columns — fixed 2 columns", value: columns }
-        - { label: Heading, name: heading, widget: string, required: false }
-        - label: Items
-          name: items
-          widget: list
-          min: 1
-          fields:
-            - { label: Label, name: label, widget: string, hint: "Short mono tag — date, year, code." }
-            - { label: Body, name: body, widget: text }
-            - { label: Subtitle, name: subtitle, widget: text, required: false, hint: "Optional secondary line. Supported by Rows and Columns; Wrap ignores it." }
-    - name: quote
-      label: Pull Quote
-      fields:
-        - { label: Quote text, name: text, widget: text }
-        - { label: Attribution, name: attribution, widget: string, required: false }
-    - name: panels
-      label: Panels (comparison or options grid)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false }
-        - { label: Intro, name: intro, widget: text, required: false }
-        - { label: Note (footer line), name: note, widget: string, required: false }
-        - label: Panels
-          name: panels
-          widget: list
-          min: 2
-          max: 4
-          fields:
-            - { label: Eyebrow, name: eyebrow, widget: string, required: false, hint: "Small label above title — e.g. 'Before' / 'After'." }
-            - { label: Title, name: title, widget: string }
-            - { label: Subtitle, name: subtitle, widget: string, required: false }
-            - label: Items
-              name: items
-              widget: list
-              field: { label: Item (markdown links ok), name: item, widget: string }
-            - label: Related reading
-              name: reading
-              widget: list
-              required: false
-              hint: "Optional sub-list of links shown under this panel's items."
-              fields:
-                - { label: Title, name: title, widget: string }
-                - { label: Link (href), name: href, widget: string }
-    - name: media
-      label: Media (image / video / YouTube)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false, hint: "Optional heading above the media. Not added to TOC." }
-        - label: Items
-          name: items
-          widget: list
-          min: 1
-          typeKey: kind
-          hint: "Add one item for a full-width figure; add more for a side-by-side grid."
-          types:
-            - name: image
-              label: Image
-              fields:
-                - { label: Image, name: src, widget: image, required: true }
-                - { label: Alt text, name: alt, widget: string, required: false }
-                - { label: Caption, name: caption, widget: string, required: false }
-                - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
-            - name: youtube
-              label: YouTube
-              fields:
-                - { label: YouTube URL or ID, name: src, widget: string, required: true, hint: "Full URL or bare ID (e.g. dQw4w9WgXcQ)." }
-                - { label: Caption, name: caption, widget: string, required: false }
-                - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
-                - { label: Upload date (JSON-LD), name: uploadDate, widget: string, required: false, hint: "ISO date, e.g. 2024-03-15. Helps Google index the video." }
-    - name: pathway
-      label: Pathway (link chip groups)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false }
-        - { label: Intro, name: intro, widget: text, required: false }
-        - label: Groups
-          name: groups
-          widget: list
-          fields:
-            - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-            - { label: Title, name: title, widget: string }
-            - label: Items
-              name: items
-              widget: list
-              fields:
-                - { label: Name, name: name, widget: string }
-                - { label: Link (href), name: href, widget: string }
-        - label: Footer link (optional "see all" link under the chips)
-          name: footerLink
-          widget: object
-          required: false
-          collapsed: true
-          fields:
-            - { label: Label, name: label, widget: string }
-            - { label: Link (href), name: href, widget: string }
-    - name: image-row
-      label: Image Row (photo gallery)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false }
-        - label: Columns
-          name: columns
-          widget: select
-          default: auto
-          options:
-            - { label: "Auto (responsive fit)", value: auto }
-            - { label: "2 columns", value: "2" }
-            - { label: "3 columns", value: "3" }
-            - { label: "4 columns", value: "4" }
-        - label: Items
-          name: items
-          widget: list
-          fields:
-            - { label: Image path, name: src, widget: string }
-            - { label: Alt text, name: alt, widget: string, required: false }
-            - { label: Caption, name: caption, widget: string, required: false }
-            - { label: Link (href), name: href, widget: string, required: false }
-            - label: Aspect ratio
-              name: aspect
-              widget: select
-              required: false
-              options: ["16/9", "4/3", "3/2", "1/1"]
+  types:
+    - *_prose
+    - *_highlights
+    - *_stats
+    - *_facts
+    - *_list
+    - *_quote
+    - *_panels
+    - *_media
+    - *_pathway
+    - *_image_row
     - name: row
       label: Row (side-by-side layout)
       fields:
@@ -271,8 +392,8 @@ _sections_field: &sections_field
           name: items
           widget: list
           typeKey: type
-          hint: "Each item is another block — prose, media, buttons, nested rows/columns, etc."
-          types: *block_types
+          hint: "Each item is another block — prose, media, buttons, etc. Nested row/column must be authored in the .md file."
+          types: *leaf_types
     - name: column
       label: Column (vertical stack)
       fields:
@@ -290,65 +411,12 @@ _sections_field: &sections_field
           widget: list
           typeKey: type
           hint: "Mainly useful inside a row — groups several blocks on one side of a split layout."
-          types: *block_types
-    - name: button
-      label: Button (call-to-action)
-      fields:
-        - { label: Label, name: label, widget: string }
-        - { label: Link (href), name: href, widget: string, hint: "Internal paths starting with / are locale-aware. External URLs pass through." }
-        - label: Variant
-          name: variant
-          widget: select
-          default: primary
-          options:
-            - { label: "Primary (filled)", value: primary }
-            - { label: "Secondary (outline)", value: secondary }
-            - { label: "Quiet (text link with underline)", value: quiet }
-        - { label: Open in new tab, name: newTab, widget: boolean, required: false, default: false }
-    - name: doctor-credit
-      label: Doctor Credit (byline)
-      fields:
-        - { label: Avatar image, name: avatar, widget: image, hint: "Round portrait — WebP works best." }
-        - { label: Avatar alt, name: avatarAlt, widget: string, required: false }
-        - { label: Lead label, name: leadLabel, widget: string, required: false, hint: "Defaults to 'Led by' / 'بإشراف'." }
-        - { label: Doctor name, name: name, widget: string }
-        - { label: Title (e.g. consultant neurosurgeon), name: title, widget: string }
-        - { label: Link label, name: linkLabel, widget: string, required: false, hint: "Optional CV/profile link." }
-        - { label: Link href, name: linkHref, widget: string, required: false }
-    - name: label-tile
-      label: Label Tile (typographic placeholder)
-      fields:
-        - { label: Label (ALL CAPS top line), name: label, widget: string }
-        - { label: Sub-label, name: sublabel, widget: string, required: false }
-    - name: contact-strip
-      label: Contact Strip (bordered contact card)
-      fields:
-        - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-        - { label: Body paragraph, name: body, widget: text, required: false }
-        - label: Columns
-          name: columns
-          widget: list
-          min: 1
-          max: 3
-          fields:
-            - { label: Column label, name: label, widget: string }
-            - label: Items
-              name: items
-              widget: list
-              min: 1
-              fields:
-                - { label: Text (phone / email / address), name: text, widget: string }
-                - { label: Link (href), name: href, widget: string, required: false, hint: "tel:, mailto:, or a URL." }
-    - name: cards
-      label: Cards (related links)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Related reading' / 'قراءات ذات صلة'." }
-        - label: Items
-          name: items
-          widget: list
-          min: 1
-          hint: "Locale-agnostic paths, e.g. /treatments/back-pain/ or /blog/my-post/. Title, description and date are pulled automatically."
-          field: { label: Path, name: item, widget: string }
+          types: *leaf_types
+    - *_button
+    - *_doctor_credit
+    - *_label_tile
+    - *_contact_strip
+    - *_cards
 
 # ── Collections ──────────────────────────────────────────────────────────
 # Base fields (from pageBase in src/content.config.ts) are inlined into each
