@@ -79,8 +79,14 @@
 
   function renderProse(s, key) {
     var paras = (s.body || "").split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+    var hasHeader = s.number || s.eyebrow || s.heading;
+    var HeadingTag = s.headingLevel === "h3" ? "h3" : "h2";
     return h("section", { key: key, className: "prose-block" },
-      s.heading ? h("h2", { className: "prose-heading" }, s.heading) : null,
+      hasHeader ? h("header", { className: "prose-head" + (s.number ? " prose-head--numbered" : "") },
+        s.eyebrow ? h("p", { className: "prose-eyebrow" }, s.eyebrow) : null,
+        s.number  ? h("span", { className: "prose-number" }, s.number) : null,
+        s.heading ? h(HeadingTag, { className: "prose-heading" }, s.heading) : null
+      ) : null,
       paras.map(function (p, i) {
         return h("p", { key: i, className: "p", dangerouslySetInnerHTML: { __html: rewriteLinks(p) } });
       })
@@ -323,7 +329,8 @@
     );
   }
 
-  function renderRow(s, key, getAsset) {
+  // image-row — specialised image gallery (was `row`).
+  function renderImageRow(s, key, getAsset) {
     var items = s.items || [];
     var cols = s.columns || "auto";
     var gridCols = cols === "auto"
@@ -345,6 +352,92 @@
           return it.href ? h("a", { className: "row-link", href: it.href }, figure) : figure;
         })
       )
+    );
+  }
+
+  // Generic row — side-by-side layout holding any mix of child blocks.
+  // Children are dispatched recursively through renderSection.
+  function renderGenericRow(s, key, isAr, getAsset) {
+    var items = toArray(s.items);
+    var cols = s.columns || "auto";
+    var gap = s.gap || "normal";
+    var gridCols = cols === "auto"
+      ? "repeat(auto-fit, minmax(min(260px, 100%), 1fr))"
+      : "repeat(" + cols + ", minmax(0, 1fr))";
+    var gapValue = gap === "tight" ? "12px" : gap === "wide" ? "clamp(40px, 5vw, 72px)" : "clamp(24px, 3vw, 40px)";
+    return h("section", { key: key, className: "row-block", "data-cols": cols, "data-gap": gap, "data-align": s.align || "stretch" },
+      s.heading ? h("p", { className: "row-heading" }, s.heading) : null,
+      h("div", { className: "row-grid", style: { gridTemplateColumns: gridCols, gap: gapValue, alignItems: s.align || "stretch" } },
+        items.map(function (child, i) {
+          return h("div", { key: i, className: "row-cell" }, renderSection(child, i, false, isAr, getAsset));
+        })
+      )
+    );
+  }
+
+  function renderColumn(s, key, isAr, getAsset) {
+    var items = toArray(s.items);
+    var gap = s.gap || "normal";
+    var gapValue = gap === "tight" ? "10px" : gap === "wide" ? "clamp(32px, 4vw, 56px)" : "20px";
+    return h("section", { key: key, className: "column-block", "data-gap": gap },
+      s.heading ? h("p", { className: "column-heading" }, s.heading) : null,
+      h("div", { className: "column-stack", style: { display: "flex", flexDirection: "column", gap: gapValue } },
+        items.map(function (child, i) {
+          return h("div", { key: i, className: "column-cell" }, renderSection(child, i, false, isAr, getAsset));
+        })
+      )
+    );
+  }
+
+  function renderButton(s, key) {
+    var variant = s.variant || "primary";
+    return h("a", { key: key, className: "btn btn-" + variant, href: s.href || "#" }, s.label || "");
+  }
+
+  function renderDoctorCredit(s, key, isAr, getAsset) {
+    var src = s.avatar || "";
+    if (src && getAsset) src = getAsset(src).toString();
+    var lead = s.leadLabel || (isAr ? "بإشراف" : "Led by");
+    var sep = isAr ? "، " : ", ";
+    return h("div", { key: key, className: "credit" },
+      src ? h("img", { className: "credit-avatar", src: src, alt: s.avatarAlt || s.name || "", width: 52, height: 52 }) : null,
+      h("div", { className: "credit-body" },
+        h("p", null, lead + " ", h("strong", null, s.name || ""), sep + (s.title || "")),
+        (s.linkLabel && s.linkHref)
+          ? h("a", { className: "credit-link", href: s.linkHref }, s.linkLabel)
+          : null
+      )
+    );
+  }
+
+  function renderLabelTile(s, key) {
+    return h("div", { key: key, className: "label-tile", "aria-hidden": "true" },
+      h("p", null,
+        s.label || "",
+        s.sublabel ? h("br", null) : null,
+        s.sublabel ? s.sublabel : null
+      )
+    );
+  }
+
+  function renderContactStrip(s, key) {
+    var columns = toArray(s.columns);
+    return h("section", { key: key, className: "strip" },
+      (s.eyebrow || s.body) ? h("div", { className: "strip-copy" },
+        s.eyebrow ? h("p", { className: "strip-eyebrow" }, s.eyebrow) : null,
+        s.body    ? h("p", { className: "strip-body"    }, s.body)    : null
+      ) : null,
+      columns.map(function (col, i) {
+        var items = toArray(col.items);
+        return h("div", { key: i, className: "strip-col" },
+          h("p", { className: "strip-label" }, col.label || ""),
+          items.map(function (it, j) {
+            return h("p", { key: j },
+              it.href ? h("a", { href: it.href }, it.text || "") : (it.text || "")
+            );
+          })
+        );
+      })
     );
   }
 
@@ -567,18 +660,24 @@
     if (!s || !s.type) return null;
     var key = "s" + i;
     switch (s.type) {
-      case "prose":      return renderProse(s, key);
-      case "highlights": return renderHighlights(s, key);
-      case "stats":      return renderStats(s, key);
-      case "facts":      return renderFacts(s, key, isAr);
-      case "list":       return renderList(s, key, isLast);
-      case "quote":      return renderQuote(s, key);
-      case "panels":     return renderPanels(s, key);
-      case "media":      return renderMedia(s, key, getAsset);
-      case "pathway":    return renderPathway(s, key);
-      case "row":        return renderRow(s, key, getAsset);
-      case "cards":      return renderCards(s, key);
-      default:           return null;
+      case "prose":          return renderProse(s, key);
+      case "highlights":     return renderHighlights(s, key);
+      case "stats":          return renderStats(s, key);
+      case "facts":          return renderFacts(s, key, isAr);
+      case "list":           return renderList(s, key, isLast);
+      case "quote":          return renderQuote(s, key);
+      case "panels":         return renderPanels(s, key);
+      case "media":          return renderMedia(s, key, getAsset);
+      case "pathway":        return renderPathway(s, key);
+      case "image-row":      return renderImageRow(s, key, getAsset);
+      case "row":            return renderGenericRow(s, key, isAr, getAsset);
+      case "column":         return renderColumn(s, key, isAr, getAsset);
+      case "button":         return renderButton(s, key);
+      case "doctor-credit":  return renderDoctorCredit(s, key, isAr, getAsset);
+      case "label-tile":     return renderLabelTile(s, key);
+      case "contact-strip":  return renderContactStrip(s, key);
+      case "cards":          return renderCards(s, key);
+      default:               return null;
     }
   }
 
@@ -824,9 +923,40 @@
     });
   }
 
+  // Pages preview — stacks the sections in a plain container, no article
+  // chrome (no sidebar TOC, no CTA). Used for home / contact / follow pages
+  // which are composed from blocks rather than article prose.
+  function makePagesPreview() {
+    return createClass({
+      render: function () {
+        var entry   = this.props.entry;
+        var data    = entry && entry.get("data") ? entry.get("data").toJS() : {};
+        var isAr    = detectLocale(entry) === "ar";
+        var get     = this.props.getAsset;
+        var sections = toArray(data.sections);
+        var lastIdx = lastListIndex(sections);
+        return h("div", { className: "pages-preview", dir: isAr ? "rtl" : "ltr" },
+          h("div", { className: "pages-wrap" },
+            h("header", { className: "pages-head" },
+              h("p", { className: "pages-eyebrow" }, "Pages · preview"),
+              h("h1", { className: "pages-title" }, data.title || "")
+            ),
+            sections.length > 0
+              ? sections.map(function (s, i) {
+                  return renderSection(s, i, i === lastIdx, isAr, get);
+                })
+              : h("p", { style: { color: "var(--muted)", padding: "32px 0" } },
+                  "Add some sections to see the preview.")
+          )
+        );
+      }
+    });
+  }
+
   CMS.registerPreviewTemplate("doctors",    makeDocPreviewAuto());
   CMS.registerPreviewTemplate("treatments", makeArticlePreviewAuto("treatments"));
   CMS.registerPreviewTemplate("services",   makeArticlePreviewAuto("services"));
   CMS.registerPreviewTemplate("blog",       makeArticlePreviewAuto("blog"));
+  CMS.registerPreviewTemplate("pages",      makePagesPreview());
   CMS.registerPreviewStyle("/admin/preview.css");
 })();

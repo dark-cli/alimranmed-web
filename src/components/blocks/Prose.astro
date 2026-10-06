@@ -1,22 +1,36 @@
 ---
 /**
- * prose — heading + paragraphs. `body` is markdown-with-links (inline
- * `[label](/href)` gets rewritten to localised anchor tags). Paragraphs
- * split on double newlines. No block-level markdown parsing to stay
- * dependency-free.
+ * prose — optional header (eyebrow / number / heading) + paragraphs.
+ * `body` is markdown-with-links (inline `[label](/href)` gets rewritten
+ * to localised anchor tags). Paragraphs split on double newlines. No
+ * block-level markdown parsing to stay dependency-free.
+ *
+ * All header fields are optional, so this block can also serve as:
+ *   • a numbered section header (number + heading, no body)
+ *   • a hero intro (eyebrow + heading + body)
+ *   • a plain paragraph block (body only)
  */
 import { localizedHref } from "../../lib/i18n";
 import type { Locale } from "../../lib/i18n";
 
 interface Props {
   number?: string;
+  eyebrow?: string;
   heading?: string;
-  body: string;
+  headingLevel?: "h2" | "h3";
+  body?: string;
   locale?: Locale;
   id?: string;
 }
-const { number, heading, body, locale = "en", id } = Astro.props;
-const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+const {
+  number, eyebrow, heading, headingLevel = "h2", body,
+  locale = "en", id,
+} = Astro.props;
+
+const paras = (body ?? "")
+  .split(/\n\s*\n/)
+  .map((p) => p.trim())
+  .filter(Boolean);
 
 function rewriteLinks(md: string): string {
   return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
@@ -24,13 +38,20 @@ function rewriteLinks(md: string): string {
     return `<a href="${h}">${label}</a>`;
   });
 }
+
+const hasHeader = Boolean(number || eyebrow || heading);
 ---
 
 <section class="prose-block" id={id}>
-  {(number || heading) && (
+  {hasHeader && (
     <header class={`prose-head${number ? " prose-head--numbered" : ""}`}>
+      {eyebrow && <p class="prose-eyebrow">{eyebrow}</p>}
       {number && <span class="prose-number">{number}</span>}
-      {heading && <h2 class="prose-heading">{heading}</h2>}
+      {heading && (
+        headingLevel === "h3"
+          ? <h3 class="prose-heading prose-heading--h3">{heading}</h3>
+          : <h2 class="prose-heading">{heading}</h2>
+      )}
     </header>
   )}
   {paras.map((p) => (
@@ -48,6 +69,21 @@ function rewriteLinks(md: string): string {
     gap: 20px;
     border-bottom: 1px solid var(--ink);
     padding-bottom: 14px;
+  }
+  .prose-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+    flex-basis: 100%;
+  }
+  :global(html[dir="rtl"]) .prose-eyebrow {
+    font-family: var(--font-body);
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-size: 12px;
   }
   .prose-number {
     font-family: var(--font-mono);
@@ -67,6 +103,10 @@ function rewriteLinks(md: string): string {
     font-size: clamp(22px, 2.8vw, 30px);
     color: var(--ink);
     margin: 0;
+    line-height: 1.2;
+  }
+  .prose-heading--h3 {
+    font-size: 22px;
     line-height: 1.2;
   }
   :global(html[dir="rtl"]) .prose-heading { font-weight: 700; letter-spacing: 0; }
