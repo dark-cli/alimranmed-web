@@ -142,35 +142,55 @@ Use **Claude** (recommended, works best with this project's docs) or any capable
 I'm writing an article for alimran.clinic. Please build it as block-based
 Markdown following the project rules.
 
-PROJECT DOCS TO FOLLOW:
-- docs/ai/SKILL.md (project rules and voice policy — NON-NEGOTIABLE)
-- docs/ai/article-builder.md (how to turn a draft into blocks)
-- docs/sections.md (block syntax reference)
-- docs/content-authoring.md (frontmatter + bilingual policy)
+STEP 1 — READ THESE FILES FIRST (in this order), BEFORE doing anything else.
+Do not start writing until you have read them. Confirm when you are done
+reading, then wait for me to say "proceed":
 
-ARTICLE DETAILS:
-- Collection: treatments           ← one of: treatments, services, blog, doctors, cases
-- Slug (URL): back-pain             ← kebab-case, no spaces
-- Category: spine                   ← for treatments: spine | brain | pain
-- Source tag: ai-draft              ← see SKILL.md for options
+  1. docs/ai/SKILL.md         ← project rules + voice policy (NON-NEGOTIABLE)
+  2. docs/ai/article-builder.md ← step-by-step workflow for turning a draft into blocks
+  3. docs/sections.md          ← every block type with YAML syntax
+  4. docs/content-authoring.md ← frontmatter fields + bilingual policy
+  5. docs/ai/checks.md         ← commands to run before saying "done"
 
-DRAFT:
-[Paste your rough draft here — bullets, paragraphs, voice memo, whatever
-you have. The AI will restructure it into blocks.]
+(If you can't access these files, tell me — I'll paste their contents.
+Do NOT guess the project's rules from memory. The docs are the source of truth.)
 
-OR
+STEP 2 — ARTICLE DETAILS (fill these in before sending):
 
-Read the draft from: drafts/back-pain.txt
+  - Collection: treatments           ← one of: treatments, services, blog, doctors, cases
+  - Slug (URL): back-pain            ← kebab-case, no spaces
+  - Category: spine                  ← for treatments: spine | brain | pain
+  - Source tag: ai-draft             ← see SKILL.md for options
 
-WHAT I NEED FROM YOU:
-1. Build src/content/treatments/back-pain/en.md with full frontmatter + sections
-2. Build src/content/treatments/back-pain/ar.md (translate, or leave a TODO stub)
-3. If my draft is thin, ASK me for missing pieces before inventing — see
-   article-builder.md section "Identify gaps — ASK, don't invent"
-4. Keep the doctor's clinical voice. No filler ("Are you suffering from…").
-5. Only use blocks defined in docs/sections.md.
-6. Run `npm run build` when done. Fix any errors before handing off.
+STEP 3 — THE DRAFT:
+
+  [Paste your rough draft here — bullets, paragraphs, voice-memo transcript,
+   whatever you have. The AI will restructure it into blocks.]
+
+  OR
+
+  Read the draft from: drafts/back-pain.txt
+
+STEP 4 — WHAT I NEED YOU TO DO (after you've read the docs in Step 1):
+
+  1. Build src/content/treatments/back-pain/en.md with full frontmatter + sections
+  2. Build src/content/treatments/back-pain/ar.md (translate, or leave a TODO
+     stub as described in content-authoring.md)
+  3. If my draft is thin, ASK me for missing pieces before inventing anything —
+     follow article-builder.md "Identify gaps — ASK, don't invent"
+  4. Preserve the doctor's clinical voice. No filler ("Are you suffering from…").
+  5. Only use block types defined in docs/sections.md. Do not invent new ones.
+  6. Run `npm run build` when done (as described in docs/ai/checks.md). Fix any
+     errors before handing off.
+  7. Report back with: the files you created, the preview URL, and any TODOs
+     or questions you have for me.
 ```
+
+> ⚠️ **Why the "read first, then wait" step matters:** AIs will happily
+> start writing without checking the rules, which produces articles that
+> fail Zod validation or violate the voice policy. The explicit pause
+> forces the AI to ground itself in the actual project docs — not its
+> general training — before it touches your content.
 
 ### Step 4 — Review the AI's output
 
