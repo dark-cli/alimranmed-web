@@ -57,7 +57,15 @@ const lastListIdx = sections.reduce(
   if (!s || !s.type) return null;
 
   if (s.type === "prose")
-    return <Prose number={s.number} heading={s.heading} body={s.body} locale={locale} id={nextId(s)} />;
+    return <Prose
+      number={s.number}
+      eyebrow={s.eyebrow}
+      heading={s.heading}
+      headingLevel={s.headingLevel}
+      body={s.body}
+      locale={locale}
+      id={nextId(s)}
+    />;
 
   if (s.type === "highlights")
     return <Highlights heading={s.heading} items={s.items} id={nextId(s)} />;

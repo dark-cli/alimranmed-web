@@ -41,19 +41,40 @@ output:
 # written out explicitly.
 
 # Unified sections field — used by ALL collections (treatments, services,
-# blog, doctors). Mirrors the section discriminated union in content.config.ts.
+# blog, doctors, pages). Mirrors the section discriminated union in
+# content.config.ts.
+#
+# Note on recursive types: the `row` and `column` widgets accept any
+# section block as a child (including other rows/columns). This is modelled
+# via a self-referencing YAML anchor — `types: &block_types` labels the
+# full list, and inside row/column.items.types we reference `*block_types`.
+# Sveltia uses js-yaml which supports cyclic references.
 _sections_field: &sections_field
   label: Sections
   name: sections
   widget: list
   required: false
   typeKey: type
-  types:
+  types: &block_types
     - name: prose
       label: Prose
       fields:
+        - label: Section number
+          name: number
+          widget: string
+          required: false
+          hint: 'Optional — e.g. "01", "02". Renders as a small mono prefix above the heading with a bottom-rule.'
+        - { label: Eyebrow (accent small-caps line), name: eyebrow, widget: string, required: false, hint: "Optional — for hero-style sections with a lead-in line above the heading." }
         - { label: Heading (appears in TOC), name: heading, widget: string, required: false }
-        - { label: Body (markdown — inline links supported), name: body, widget: text }
+        - label: Heading level
+          name: headingLevel
+          widget: select
+          required: false
+          default: h2
+          options:
+            - { label: "h2 (default)", value: h2 }
+            - { label: "h3 (use inside a split)", value: h3 }
+        - { label: Body (markdown — inline links supported), name: body, widget: text, required: false, hint: "Optional — omit when the block is a bare numbered section header." }
     - name: highlights
       label: Highlights (At a glance)
       fields:
@@ -99,7 +120,7 @@ _sections_field: &sections_field
             - { label: "Rows — single column, stacked", value: rows }
             - { label: "Wrap — responsive (as many cols as fit)", value: wrap }
             - { label: "Columns — fixed 2 columns", value: columns }
-        - { label: Heading, name: heading, widget: string }
+        - { label: Heading, name: heading, widget: string, required: false }
         - label: Items
           name: items
           widget: list
@@ -132,6 +153,14 @@ _sections_field: &sections_field
               name: items
               widget: list
               field: { label: Item (markdown links ok), name: item, widget: string }
+            - label: Related reading
+              name: reading
+              widget: list
+              required: false
+              hint: "Optional sub-list of links shown under this panel's items."
+              fields:
+                - { label: Title, name: title, widget: string }
+                - { label: Link (href), name: href, widget: string }
     - name: media
       label: Media (image / video / YouTube)
       fields:
@@ -174,8 +203,16 @@ _sections_field: &sections_field
               fields:
                 - { label: Name, name: name, widget: string }
                 - { label: Link (href), name: href, widget: string }
-    - name: row
-      label: Row (image row)
+        - label: Footer link (optional "see all" link under the chips)
+          name: footerLink
+          widget: object
+          required: false
+          collapsed: true
+          fields:
+            - { label: Label, name: label, widget: string }
+            - { label: Link (href), name: href, widget: string }
+    - name: image-row
+      label: Image Row (photo gallery)
       fields:
         - { label: Heading, name: heading, widget: string, required: false }
         - label: Columns
@@ -200,6 +237,108 @@ _sections_field: &sections_field
               widget: select
               required: false
               options: ["16/9", "4/3", "3/2", "1/1"]
+    - name: row
+      label: Row (side-by-side layout)
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false }
+        - label: Columns
+          name: columns
+          widget: select
+          default: auto
+          hint: "Auto = responsive fit. 2/3/4 = fixed column count. Collapses on mobile."
+          options:
+            - { label: "Auto (responsive fit)", value: auto }
+            - { label: "2 columns", value: "2" }
+            - { label: "3 columns", value: "3" }
+            - { label: "4 columns", value: "4" }
+        - label: Gap
+          name: gap
+          widget: select
+          default: normal
+          options:
+            - { label: "Tight", value: tight }
+            - { label: "Normal", value: normal }
+            - { label: "Wide", value: wide }
+        - label: Vertical alignment
+          name: align
+          widget: select
+          default: stretch
+          options:
+            - { label: "Stretch (default)", value: stretch }
+            - { label: "Top", value: start }
+            - { label: "Centre", value: center }
+        - label: Items
+          name: items
+          widget: list
+          typeKey: type
+          hint: "Each item is another block — prose, media, buttons, nested rows/columns, etc."
+          types: *block_types
+    - name: column
+      label: Column (vertical stack)
+      fields:
+        - { label: Heading, name: heading, widget: string, required: false }
+        - label: Gap
+          name: gap
+          widget: select
+          default: normal
+          options:
+            - { label: "Tight", value: tight }
+            - { label: "Normal", value: normal }
+            - { label: "Wide", value: wide }
+        - label: Items
+          name: items
+          widget: list
+          typeKey: type
+          hint: "Mainly useful inside a row — groups several blocks on one side of a split layout."
+          types: *block_types
+    - name: button
+      label: Button (call-to-action)
+      fields:
+        - { label: Label, name: label, widget: string }
+        - { label: Link (href), name: href, widget: string, hint: "Internal paths starting with / are locale-aware. External URLs pass through." }
+        - label: Variant
+          name: variant
+          widget: select
+          default: primary
+          options:
+            - { label: "Primary (filled)", value: primary }
+            - { label: "Secondary (outline)", value: secondary }
+            - { label: "Quiet (text link with underline)", value: quiet }
+        - { label: Open in new tab, name: newTab, widget: boolean, required: false, default: false }
+    - name: doctor-credit
+      label: Doctor Credit (byline)
+      fields:
+        - { label: Avatar image, name: avatar, widget: image, hint: "Round portrait — WebP works best." }
+        - { label: Avatar alt, name: avatarAlt, widget: string, required: false }
+        - { label: Lead label, name: leadLabel, widget: string, required: false, hint: "Defaults to 'Led by' / 'بإشراف'." }
+        - { label: Doctor name, name: name, widget: string }
+        - { label: Title (e.g. consultant neurosurgeon), name: title, widget: string }
+        - { label: Link label, name: linkLabel, widget: string, required: false, hint: "Optional CV/profile link." }
+        - { label: Link href, name: linkHref, widget: string, required: false }
+    - name: label-tile
+      label: Label Tile (typographic placeholder)
+      fields:
+        - { label: Label (ALL CAPS top line), name: label, widget: string }
+        - { label: Sub-label, name: sublabel, widget: string, required: false }
+    - name: contact-strip
+      label: Contact Strip (bordered contact card)
+      fields:
+        - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+        - { label: Body paragraph, name: body, widget: text, required: false }
+        - label: Columns
+          name: columns
+          widget: list
+          min: 1
+          max: 3
+          fields:
+            - { label: Column label, name: label, widget: string }
+            - label: Items
+              name: items
+              widget: list
+              min: 1
+              fields:
+                - { label: Text (phone / email / address), name: text, widget: string }
+                - { label: Link (href), name: href, widget: string, required: false, hint: "tel:, mailto:, or a URL." }
     - name: cards
       label: Cards (related links)
       fields:
@@ -474,6 +613,12 @@ collections:
       - { label: Body, name: body, widget: markdown, required: false }
 
   # ── Pages ──────────────────────────────────────────────────────────────
+  # Houses the root-level pages: home, contact, follow, about/mission/vision/
+  # values. Each page is stored as pages/<slug>/en.md + pages/<slug>/ar.md,
+  # the same bilingual pattern as the article collections. New pages like
+  # `home` use `sections[]` and render through the shared Sections dispatcher;
+  # legacy pages (about/*) keep rendering their prose body through their
+  # existing template.
   - name: pages
     label: Pages
     label_singular: Page
@@ -491,7 +636,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: text, required: false }
-      - { label: Category, name: category, widget: string, required: false }
+      - { label: Category, name: category, widget: string, required: false, hint: "Use 'home', 'contact', 'about', etc. to group pages — matches how the templates select which entry to render." }
       - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Image alt, name: imageAlt, widget: string, required: false }
@@ -509,4 +654,5 @@ collections:
           - { label: Translated by LLM, value: translated-by-llm }
       - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
       - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
-      - { label: Body, name: body, widget: markdown, required: false }
+      - *sections_field
+      - { label: Body (legacy prose, for about/* only), name: body, widget: markdown, required: false }

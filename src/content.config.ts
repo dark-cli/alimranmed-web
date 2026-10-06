@@ -51,8 +51,10 @@ const pageBase = z.object({
 const blockProse = z.object({
   type: z.literal("prose"),
   number: z.string().optional(),       // optional section number ("01", "02") rendered above the heading
+  eyebrow: z.string().optional(),      // optional small-caps accent label above the heading (hero-style)
   heading: z.string().optional(),      // when present, appears in the TOC
-  body: z.string(),                    // markdown allowed
+  headingLevel: z.enum(["h2", "h3"]).default("h2"),
+  body: z.string().optional(),         // markdown allowed; omit when the block is just a numbered section header
 });
 
 const blockHighlights = z.object({
@@ -91,7 +93,7 @@ const blockFacts = z.object({
 const blockList = z.object({
   type: z.literal("list"),
   variant: z.enum(["rows", "wrap", "columns"]),
-  heading: z.string(),
+  heading: z.string().optional(),
   items: z.array(z.object({
     label: z.string(),
     body: z.string(),
@@ -368,7 +370,13 @@ const testimonies = defineCollection({
 
 const pages = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
-  schema: pageBase,
+  // `sections` is optional so legacy pages (prose Markdown bodies for the
+  // about/mission/vision/values entries) keep rendering through their
+  // existing templates. New pages like home/contact/follow render their
+  // `sections` array through the shared Sections dispatcher.
+  schema: pageBase.extend({
+    sections: z.array(section).optional(),
+  }),
 });
 
 export const collections = {
