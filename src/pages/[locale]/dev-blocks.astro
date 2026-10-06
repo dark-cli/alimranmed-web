@@ -5,19 +5,25 @@
 // IN USE (real content). Delete this page once widgets are approved.
 export const prerender = true;
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Prose       from "../../components/blocks/Prose.astro";
-import Highlights  from "../../components/blocks/Highlights.astro";
-import Stats       from "../../components/blocks/Stats.astro";
-import Facts       from "../../components/blocks/Facts.astro";
-import ListRows    from "../../components/blocks/ListRows.astro";
-import ListWrap    from "../../components/blocks/ListWrap.astro";
-import ListColumns from "../../components/blocks/ListColumns.astro";
-import Quote       from "../../components/blocks/Quote.astro";
-import Panels      from "../../components/blocks/Panels.astro";
-import Media       from "../../components/blocks/Media.astro";
-import Cards       from "../../components/blocks/Cards.astro";
-import Pathway     from "../../components/blocks/Pathway.astro";
-import Row         from "../../components/blocks/Row.astro";
+import Prose         from "../../components/blocks/Prose.astro";
+import Highlights    from "../../components/blocks/Highlights.astro";
+import Stats         from "../../components/blocks/Stats.astro";
+import Facts         from "../../components/blocks/Facts.astro";
+import ListRows      from "../../components/blocks/ListRows.astro";
+import ListWrap      from "../../components/blocks/ListWrap.astro";
+import ListColumns   from "../../components/blocks/ListColumns.astro";
+import Quote         from "../../components/blocks/Quote.astro";
+import Panels        from "../../components/blocks/Panels.astro";
+import Media         from "../../components/blocks/Media.astro";
+import Cards         from "../../components/blocks/Cards.astro";
+import Pathway       from "../../components/blocks/Pathway.astro";
+import ImageRow      from "../../components/blocks/ImageRow.astro";
+import Row           from "../../components/blocks/Row.astro";
+import Column        from "../../components/blocks/Column.astro";
+import Button        from "../../components/blocks/Button.astro";
+import DoctorCredit  from "../../components/blocks/DoctorCredit.astro";
+import LabelTile     from "../../components/blocks/LabelTile.astro";
+import ContactStrip  from "../../components/blocks/ContactStrip.astro";
 import { currentLocale, toArabicDigits } from "../../lib/i18n";
 
 // Dev-only: `astro dev` serves it, production builds emit no pages for it.
@@ -85,8 +91,20 @@ const W = isAr ? {
                 fields: "الحقول: heading?، items[] من { kind (image|video|youtube), src, alt?, caption?, aspect?, uploadDate? }" },
   pathway:    { desc: "صفوف من مجموعات الروابط بشكل رقاقات. لكل مجموعة تصنيف علوي وعنوان وقائمة روابط بشكل أزرار رقائق. يطابق نمط «الحالات التي نعالجها» في الصفحة الرئيسية.",
                 fields: "الحقول: heading?، intro?، groups[] من { eyebrow?, title, items[] } حيث items[] = { name, href }" },
-  row:        { desc: "صفّ من الصور. عدد الأعمدة auto (متجاوب) أو ثابت ٢ / ٣ / ٤. كل عنصر صورة مع شرح ورابط اختياريين. ينهار إلى عمود واحد على الجوال.",
+  imageRow:   { desc: "صفّ من الصور فقط. عدد الأعمدة auto (متجاوب) أو ثابت ٢ / ٣ / ٤. كل عنصر صورة مع شرح ورابط اختياريين. ينهار إلى عمود واحد على الجوال.",
                 fields: "الحقول: heading?، columns، items[] من { src, alt?, caption?, href?, aspect? }" },
+  row:        { desc: "صفّ عام لتخطيط أي مكوّنات جنبًا إلى جنب (نثر، وسائط، أزرار، بطاقات…). الأعمدة auto أو ٢/٣/٤. فجوة قابلة للضبط ومحاذاة عمودية. ينهار إلى عمود واحد على الجوال.",
+                fields: "الحقول: heading?، columns، gap، align، items[] من أي مكوّنات (تتداخل)" },
+  column:     { desc: "تكديس عمودي عام لأي مكوّنات. مفيد داخل row لمجموعة مكوّنات على أحد الجانبين. فجوة قابلة للضبط.",
+                fields: "الحقول: heading?، gap، items[] من أي مكوّنات (تتداخل)" },
+  button:     { desc: "رابط ذو شكل زرّ. ثلاثة أنواع: primary (مملوء)، secondary (محدَّد)، quiet (نص بتسطير).",
+                fields: "الحقول: label، href، variant، newTab?" },
+  doctorCredit:{ desc: "سطر «بإشراف» مع صورة رمزية وعنوان الطبيب ورابط اختياري للسيرة الذاتية. يظهر عادة أسفل البطل في الصفحة الرئيسية.",
+                fields: "الحقول: avatar، avatarAlt?، leadLabel?، name، title، linkLabel?، linkHref?" },
+  labelTile:  { desc: "خلية حرفية (تسمية + تسمية فرعية) داخل إطار سطح. مفيدة لعرض فضاء المركز حيث بعض الخلايا صور حقيقية والأخرى تسميات.",
+                fields: "الحقول: label، sublabel?" },
+  contactStrip:{ desc: "بطاقة سطح مؤطّرة لمعلومات التواصل والتحويلات. تحوي قسمًا تعريفيًا و١–٣ أعمدة من إدخالات بتسميات (هاتف/بريد/عنوان).",
+                fields: "الحقول: eyebrow?، body?، columns[] من { label، items[{ text، href? }] } (١–٣)" },
   cards:      { desc: "شبكة بطاقات روابط لصفحات أخرى في الموقع. كل عنصر هو مسار مثل /treatments/back-pain/ أو /blog/my-post/. العنوان والوصف والتاريخ والفئة تُسحب تلقائيًا من مجموعة المحتوى عند البناء.",
                 fields: "الحقول: heading?، items[] من مسارات النص (مثل: /treatments/back-pain/)" },
 } : {
@@ -112,8 +130,20 @@ const W = isAr ? {
                 fields: "Fields: heading?, items[] of { kind (image|video|youtube), src, alt?, caption?, aspect?, uploadDate? }" },
   pathway:    { desc: "Rows of link-chip groups. Each group has an eyebrow, title, and a list of chip-button links. Matches the home page \"Conditions we treat\" pattern.",
                 fields: "Fields: heading?, intro?, groups[] of { eyebrow?, title, items[] } where items[] = { name, href }" },
-  row:        { desc: "A row of images. Columns is auto (responsive fit) or fixed 2 / 3 / 4. Each item is an image with optional caption and link. Collapses to 1 column on mobile.",
+  imageRow:   { desc: "Image-only row. Columns is auto (responsive fit) or fixed 2 / 3 / 4. Each item is an image with optional caption and link. Collapses to 1 column on mobile.",
                 fields: "Fields: heading?, columns, items[] of { src, alt?, caption?, href?, aspect? }" },
+  row:        { desc: "Generic row — side-by-side layout holding ANY mix of blocks (prose, media, buttons, cards, nested rows…). Columns is auto / 2 / 3 / 4; tune gap and vertical alignment. Collapses on mobile.",
+                fields: "Fields: heading?, columns, gap, align, items[] of any blocks (recursive)" },
+  column:     { desc: "Generic vertical stack of any blocks. Most useful inside a row to group several blocks on one side of a split layout. Gap is tunable.",
+                fields: "Fields: heading?, gap, items[] of any blocks (recursive)" },
+  button:     { desc: "A single call-to-action link styled as a button. Three variants: primary (filled), secondary (outlined), quiet (text with underline).",
+                fields: "Fields: label, href, variant, newTab?" },
+  doctorCredit:{ desc: "Avatar + \"Led by Name, title\" line with an optional CV/profile link. Typically sits under the hero copy on the home page.",
+                fields: "Fields: avatar, avatarAlt?, leadLabel?, name, title, linkLabel?, linkHref?" },
+  labelTile:  { desc: "Typographic placeholder tile (label + optional sub-label) on a bordered surface. Useful for facility grids where some cells are real photos and others are just labels.",
+                fields: "Fields: label, sublabel?" },
+  contactStrip:{ desc: "Bordered surface card for contact / referral info. Shows an optional eyebrow + body paragraph plus 1–3 columns of labelled entries (phone / email / address).",
+                fields: "Fields: eyebrow?, body?, columns[] of { label, items[{ text, href? }] } (1–3)" },
   cards:      { desc: "Grid of link cards to other pages on the site. Each item is a path like /treatments/back-pain/ or /blog/my-post/. Title, description, date and category are resolved automatically from the content collection at build time.",
                 fields: "Fields: heading?, items[] of path strings (e.g. /treatments/back-pain/)" },
 };
@@ -265,6 +295,21 @@ const R = isAr ? {
   rowHeading:   "داخل العيادة",
   rowCaptions:  ["غرفة الاستشارة", "غرفة الإجراءات", "قاعة التأهيل"],
   cardsHeading: "قراءات ذات صلة",
+  heroH1:            "مركز واحد يجمع التشخيص والجراحة وإعادة التأهيل.",
+  heroP1:            "يعالج مركز العمران الطبي أمراض الدماغ والعمود الفقري والألم المزمن، بأربعة أقسام تعمل انطلاقًا من تقييم واحد، فلا يُحال المريض بين خدمات غير مترابطة.",
+  heroP2:            "جراحة الأعصاب · إدارة الألم · تحفيز الدماغ والأعصاب · العلاج الطبيعي وإعادة التأهيل.",
+  heroImgAlt:        "الدكتور حسين عمران موسى، استشاري جراحة الأعصاب",
+  doctorImgAlt:      "حسين عمران موسى",
+  conditionsLabel:   "ما نعالج",
+  callLabel:         "اتصل بالسكرتارية",
+  creditName:        "الدكتور حسين عمران موسى",
+  creditTitle:       "استشاري جراحة الجهاز العصبي",
+  creditCV:          "بورد عربي وعراقي في جراحة الأعصاب — السيرة الكاملة ←",
+  cvFullLink:        "السيرة العلمية والبحوث والتدريب ←",
+  referralEyebrow:   "للأطباء المحوِّلين",
+  referralBody:      "يُرجى إرسال الصور الشعاعية وملخص الحالة إلى المركز قبل الموعد. تُصنَّف الحالات العاجلة من قبل السكرتارية في اليوم نفسه، ويُرسل تقرير الخطة إلى الطبيب المحوِّل بعد الاستشارة.",
+  secretaryLabel:    "السكرتارية",
+  emailLabel:        "التحويل بالبريد الإلكتروني",
 } : {
   proseHeading: "What ankylosing spondylitis is",
   proseBody:    `Ankylosing spondylitis is a chronic inflammatory arthritis that primarily targets the spine and sacroiliac joints. Over time, inflammation triggers new bone formation that bridges vertebral gaps, fusing sections of the spine into a rigid, inflexible structure.\n\nThe exact cause is unknown, but the [HLA-B27 gene](/en/blog/hla-b27/) is strongly associated. Men are affected more than women; onset typically occurs in late adolescence or early adulthood.`,
@@ -358,6 +403,21 @@ const R = isAr ? {
   rowHeading:   "Inside the clinic",
   rowCaptions:  ["Consulting room", "Procedure room", "Therapy gym"],
   cardsHeading: "Related reading",
+  heroH1:            "A clinic where the scan, the operation and the recovery happen in one place.",
+  heroP1:            "Alimran Clinic treats disorders of the brain, the spine and chronic pain — four departments working from one assessment, so patients are not sent between unconnected services.",
+  heroP2:            "Neurosurgery · Interventional pain · Neuromodulation · Physiotherapy and rehabilitation.",
+  heroImgAlt:        "Dr Hussein Imran Mousa, consultant neurosurgeon",
+  doctorImgAlt:      "Hussein Imran Mousa",
+  conditionsLabel:   "What we treat",
+  callLabel:         "Call the secretary",
+  creditName:        "Hussein Imran Mousa",
+  creditTitle:       "consultant neurosurgeon",
+  creditCV:          "MBChB · FIBMS (Neurosurgery) — full CV →",
+  cvFullLink:        "Full CV, publications and training →",
+  referralEyebrow:   "For referring clinicians",
+  referralBody:      "Send imaging and a clinical summary to the clinic ahead of the appointment. Urgent cases are triaged by the secretary the same working day, and a written plan goes back to the referrer after the consultation.",
+  secretaryLabel:    "Secretary",
+  emailLabel:        "Referrals by email",
 };
 
 const heroImgSrc    = "/images/doctors/hussein-imran-mousa.jpg";
@@ -626,30 +686,30 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
       </div>
     </section>
 
-    {/* ─── row ─────────────────────────────────────────────────── */}
+    {/* ─── image-row ───────────────────────────────────────────── */}
     <section class="showcase">
       <div class="meta">
         <p class="meta-code">{num(10)}</p>
         <div>
-          <h2>row</h2>
-          <p class="meta-desc">{W.row.desc}</p>
-          <p class="meta-fields">{W.row.fields}</p>
+          <h2>image-row</h2>
+          <p class="meta-desc">{W.imageRow.desc}</p>
+          <p class="meta-fields">{W.imageRow.fields}</p>
         </div>
       </div>
       <div class="preview">
         <p class="preview-tag">{T.structure} — {num(3)}</p>
-        <Row
+        <ImageRow
           heading={P.heading}
           columns="3"
           items={[1, 2, 3].map((n) => ({ src: PLACEHOLDER_IMG, alt: placeholderLabel, caption: P.caption(String(n)) }))}
         />
         <p class="preview-tag mt">{T.structure} — {isAr ? "تلقائي" : "auto"}</p>
-        <Row
+        <ImageRow
           columns="auto"
           items={[1, 2, 3, 4].map((n) => ({ src: PLACEHOLDER_IMG, alt: String(n) }))}
         />
         <p class="preview-tag mt">{T.inUse} — {num(3)}</p>
-        <Row
+        <ImageRow
           heading={R.rowHeading}
           columns="3"
           items={[
@@ -661,10 +721,205 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
       </div>
     </section>
 
-    {/* ─── cards ───────────────────────────────────────────────── */}
+    {/* ─── row (generic) ───────────────────────────────────────── */}
     <section class="showcase">
       <div class="meta">
         <p class="meta-code">{num(11)}</p>
+        <div>
+          <h2>row</h2>
+          <p class="meta-desc">{W.row.desc}</p>
+          <p class="meta-fields">{W.row.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure} — {isAr ? "عمودان" : "two columns"}</p>
+        <Row
+          columns="2"
+          locale={locale}
+          items={[
+            { type: "prose", heading: P.heading, body: P.proseBody },
+            { type: "media", items: [{ kind: "image", src: PLACEHOLDER_IMG, alt: placeholderLabel, aspect: "4/3" }] },
+          ]}
+        />
+        <p class="preview-tag mt">{T.inUse} — {isAr ? "البطل: نثر + صورة + أزرار" : "hero: prose + image + CTAs"}</p>
+        <Row
+          columns="2"
+          locale={locale}
+          items={[
+            {
+              type: "column",
+              gap: "normal",
+              items: [
+                { type: "prose", heading: R.heroH1, body: R.heroP1 + "\n\n" + R.heroP2 },
+                {
+                  type: "row",
+                  columns: "auto",
+                  gap: "tight",
+                  items: [
+                    { type: "button", label: R.conditionsLabel, href: "/conditions/", variant: "primary"   },
+                    { type: "button", label: R.callLabel,       href: "tel:+964",     variant: "secondary" },
+                  ],
+                },
+                {
+                  type: "doctor-credit",
+                  avatar: "/images/doctors/hussein-imran-mousa-avatar.webp",
+                  name: R.creditName,
+                  title: R.creditTitle,
+                  linkLabel: R.creditCV,
+                  linkHref: "/doctors/hussein-imran-mousa/",
+                },
+              ],
+            },
+            { type: "media", items: [{ kind: "image", src: heroImgSrc, alt: R.heroImgAlt, aspect: "16/9" }] },
+          ]}
+        />
+      </div>
+    </section>
+
+    {/* ─── column ──────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(12)}</p>
+        <div>
+          <h2>column</h2>
+          <p class="meta-desc">{W.column.desc}</p>
+          <p class="meta-fields">{W.column.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Column
+          gap="normal"
+          locale={locale}
+          items={[
+            { type: "prose", heading: P.heading, body: P.proseBody },
+            { type: "button", label: P.label(1), href: "/#", variant: "primary" },
+          ]}
+        />
+      </div>
+    </section>
+
+    {/* ─── button ──────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(13)}</p>
+        <div>
+          <h2>button</h2>
+          <p class="meta-desc">{W.button.desc}</p>
+          <p class="meta-fields">{W.button.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+          <Button label={isAr ? "رئيسي" : "Primary"}   href="/#" variant="primary"   locale={locale} />
+          <Button label={isAr ? "ثانوي" : "Secondary"} href="/#" variant="secondary" locale={locale} />
+          <Button label={isAr ? "رابط هادئ ←" : "Quiet link →"} href="/#" variant="quiet"     locale={locale} />
+        </div>
+        <p class="preview-tag mt">{T.inUse}</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+          <Button label={R.conditionsLabel} href="/conditions/" variant="primary"   locale={locale} />
+          <Button label={R.callLabel}       href="tel:+964"     variant="secondary" locale={locale} />
+          <Button label={R.cvFullLink}      href="/doctors/hussein-imran-mousa/" variant="quiet" locale={locale} />
+        </div>
+      </div>
+    </section>
+
+    {/* ─── doctor-credit ───────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(14)}</p>
+        <div>
+          <h2>doctor-credit</h2>
+          <p class="meta-desc">{W.doctorCredit.desc}</p>
+          <p class="meta-fields">{W.doctorCredit.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <DoctorCredit
+          avatar="/images/doctors/hussein-imran-mousa-avatar.webp"
+          name={P.label(1)}
+          title={P.subtitleAlt}
+          locale={locale}
+        />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <DoctorCredit
+          avatar="/images/doctors/hussein-imran-mousa-avatar.webp"
+          avatarAlt={R.doctorImgAlt}
+          name={R.creditName}
+          title={R.creditTitle}
+          linkLabel={R.creditCV}
+          linkHref="/doctors/hussein-imran-mousa/"
+          locale={locale}
+        />
+      </div>
+    </section>
+
+    {/* ─── label-tile ──────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(15)}</p>
+        <div>
+          <h2>label-tile</h2>
+          <p class="meta-desc">{W.labelTile.desc}</p>
+          <p class="meta-fields">{W.labelTile.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 20px;">
+          <LabelTile label={P.label(1)} sublabel={P.subtitleAlt} />
+          <LabelTile label={P.label(2)} sublabel={P.subtitleAlt} />
+          <LabelTile label={P.label(3)} />
+        </div>
+        <p class="preview-tag mt">{T.inUse} — {isAr ? "داخل المركز" : "inside the clinic"}</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 20px;">
+          <LabelTile label={isAr ? "الاستقبال"      : "RECEPTION"}       sublabel={isAr ? "صالة الانتظار"            : "waiting area"} />
+          <LabelTile label={isAr ? "غرفة الاستشارة" : "CONSULTING ROOM"}  sublabel={isAr ? "الفحص ومراجعة الصور"      : "examination & imaging"} />
+          <LabelTile label={isAr ? "قاعة التأهيل"   : "THERAPY GYM"}      sublabel={isAr ? "العلاج الطبيعي والتمارين" : "physiotherapy & exercise"} />
+        </div>
+      </div>
+    </section>
+
+    {/* ─── contact-strip ───────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(16)}</p>
+        <div>
+          <h2>contact-strip</h2>
+          <p class="meta-desc">{W.contactStrip.desc}</p>
+          <p class="meta-fields">{W.contactStrip.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <ContactStrip
+          eyebrow={P.eyebrow}
+          body={P.proseBody.split("\n\n")[0]}
+          locale={locale}
+          columns={[
+            { label: P.label(1), items: [{ text: "+964 XXX XXX XXXX", href: "tel:+964" }, { text: "+964 YYY YYY YYYY", href: "tel:+964" }] },
+            { label: P.label(2), items: [{ text: "mail@example.com", href: "mailto:mail@example.com" }] },
+          ]}
+        />
+        <p class="preview-tag mt">{T.inUse} — {isAr ? "شريط الإحالات" : "referral band"}</p>
+        <ContactStrip
+          eyebrow={R.referralEyebrow}
+          body={R.referralBody}
+          locale={locale}
+          columns={[
+            { label: R.secretaryLabel, items: [{ text: "+964 773 388 3111", href: "tel:+9647733883111" }, { text: "+964 773 388 3111", href: "tel:+9647733883111" }] },
+            { label: R.emailLabel,     items: [{ text: "contact@alimran.clinic", href: "mailto:contact@alimran.clinic" }] },
+          ]}
+        />
+      </div>
+    </section>
+
+    {/* ─── cards ───────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(17)}</p>
         <div>
           <h2>cards</h2>
           <p class="meta-desc">{W.cards.desc}</p>
@@ -682,6 +937,67 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
         <Cards
           heading={R.cardsHeading}
           items={["/treatments/sciatica/", "/treatments/herniated-disc/", "/treatments/back-pain/"]}
+          locale={locale}
+        />
+      </div>
+    </section>
+
+    {/* ─── EXTENSIONS: additions to existing blocks ────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">EXT</p>
+        <div>
+          <h2>{isAr ? "إضافات على المكوّنات القائمة" : "Extensions to existing blocks"}</h2>
+          <p class="meta-desc">
+            {isAr
+              ? "الحقول الاختيارية الجديدة على مكوّنات موجودة سابقًا — تضيف قدرات بدون تغيير الشكل الأساسي."
+              : "New optional fields on existing blocks — add capability without breaking the base shape."}
+          </p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">prose + number</p>
+        <Prose
+          number={isAr ? "٠١" : "01"}
+          heading={isAr ? "الرعاية تحت سقف واحد" : "Care under one roof"}
+          body={isAr
+            ? "التشخيص والجراحة والتدخل لعلاج الألم وإعادة التأهيل يقدّمها فريق واحد."
+            : "Diagnosis, surgery, pain intervention and recovery are delivered by one team."}
+          locale={locale}
+        />
+
+        <p class="preview-tag mt">panels + reading[]</p>
+        <Panels
+          heading={isAr ? "الأقسام" : "Departments"}
+          locale={locale}
+          panels={[
+            {
+              title: isAr ? "جراحة الأعصاب" : "Neurosurgery",
+              items: [isAr ? "تثقيب الجمجمة" : "Burr holes", isAr ? "مايكرودسك" : "Microdiscectomy"],
+              reading: [
+                { title: isAr ? "المضخة داخل القراب"           : "What is an intrathecal pump?", href: "/blog/what-is-an-intrathecal-pump/" },
+                { title: isAr ? "SpineMED لتخفيف ضغط العمود"   : "SpineMED spinal decompression", href: "/blog/spin-med/" },
+              ],
+            },
+            {
+              title: isAr ? "إدارة الألم" : "Interventional pain",
+              items: [isAr ? "الترددات الراديوية" : "Radiofrequency ablation", isAr ? "الحقن فوق الجافية" : "Epidural injections"],
+              reading: [
+                { title: isAr ? "صداع التوتر" : "Tension headaches", href: "/blog/tension-headaches/" },
+                { title: isAr ? "التهاب المفاصل" : "Arthritis options", href: "/blog/arthritis/" },
+              ],
+            },
+          ]}
+        />
+
+        <p class="preview-tag mt">pathway + footerLink</p>
+        <Pathway
+          heading={R.pathwayHeading}
+          groups={R.pathwayGroups.slice(0, 2)}
+          footerLink={{
+            label: isAr ? "كل الحالات والإجراء المستخدم لها ←" : "Every condition, and the procedure used for it →",
+            href:  "/conditions/",
+          }}
           locale={locale}
         />
       </div>

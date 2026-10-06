@@ -1,0 +1,82 @@
+---
+/**
+ * button — a single call-to-action link styled as a button. Three
+ * variants:
+ *   primary   — filled accent, used for the main action
+ *   secondary — outlined, for secondary actions sitting next to a primary
+ *   quiet     — text-only with an accent underline, for low-emphasis links
+ *
+ * Rendered inline when used inside a `row` (CTAs sit side-by-side); the
+ * block itself is display:inline-block so a bare `- type: button` in a
+ * sections list also behaves predictably.
+ *
+ * Fields:
+ *   label   — visible button text
+ *   href    — target URL. Internal paths (starting with "/") are localised.
+ *   variant — "primary" | "secondary" | "quiet"
+ *   newTab  — if true, opens in a new tab with rel=noopener
+ */
+import { localizedHref } from "../../lib/i18n";
+import type { Locale } from "../../lib/i18n";
+
+interface Props {
+  label: string;
+  href: string;
+  variant?: "primary" | "secondary" | "quiet";
+  newTab?: boolean;
+  locale?: Locale;
+}
+const { label, href, variant = "primary", newTab, locale = "en" } = Astro.props;
+const url = href.startsWith("/") ? localizedHref(href, locale) : href;
+const target = newTab ? "_blank" : undefined;
+const rel    = newTab ? "noopener noreferrer" : undefined;
+---
+
+<a class={`btn btn-${variant}`} href={url} target={target} rel={rel}>{label}</a>
+
+<style>
+  .btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    line-height: 1.3;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    text-decoration: none;
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line-strong);
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .btn-quiet {
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid var(--line-strong);
+    background: none;
+    color: var(--accent);
+  }
+  .btn-quiet:hover {
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+  :global(html[dir="rtl"]) .btn { font-weight: 600; }
+</style>

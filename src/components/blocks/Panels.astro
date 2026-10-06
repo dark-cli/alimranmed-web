@@ -15,11 +15,13 @@
 import { localizedHref } from "../../lib/i18n";
 import type { Locale } from "../../lib/i18n";
 
+interface ReadingLink { title: string; href: string; }
 interface Panel {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   items: string[];
+  reading?: ReadingLink[];
 }
 interface Props {
   heading?: string;
@@ -30,12 +32,18 @@ interface Props {
   id?: string;
 }
 const { heading, intro, note, panels, locale = "en", id } = Astro.props;
+const isAr = locale === "ar";
+const readingLabel = isAr ? "قراءة ذات صلة" : "Related reading";
 
 function rewriteLinks(md: string): string {
   return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
     const h = href.startsWith("/") ? localizedHref(href, locale) : href;
     return `<a href="${h}">${label}</a>`;
   });
+}
+
+function resolve(href: string): string {
+  return href.startsWith("/") ? localizedHref(href, locale) : href;
 }
 
 // Wider minimum for 2-panel layouts so both panels always sit side-by-side
@@ -56,6 +64,16 @@ const minCol = panels.length <= 2 ? 255 : 230;
           <ul class="panel-list">
             {p.items.map((it) => <li set:html={rewriteLinks(it)} />)}
           </ul>
+        )}
+        {p.reading && p.reading.length > 0 && (
+          <div class="panel-reading">
+            <p class="panel-reading-label">{readingLabel}</p>
+            <ul class="panel-reading-list">
+              {p.reading.map((r) => (
+                <li><a href={resolve(r.href)}>{r.title}</a></li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
     ))}
@@ -140,4 +158,25 @@ const minCol = panels.length <= 2 ? 255 : 230;
     margin: 20px 0 0;
   }
   :global(html[dir="rtl"]) .panels-note { line-height: 1.95; }
+
+  .panel-reading { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .panel-reading-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  :global(html[dir="rtl"]) .panel-reading-label {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .panel-reading-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .panel-reading-list li { border-top: none; padding-top: 0; font-size: 13.5px; }
+  .panel-reading-list a { color: var(--accent); text-decoration: none; line-height: 1.5; }
+  .panel-reading-list a:hover { color: var(--accent-hover); text-decoration: underline; }
+  :global(html[dir="rtl"]) .panel-reading-list a { line-height: 1.7; }
 </style>

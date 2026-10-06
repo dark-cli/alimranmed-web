@@ -13,14 +13,16 @@ import type { Locale } from "../../lib/i18n";
 
 interface ChipItem { name: string; href: string; }
 interface Group { eyebrow?: string; title: string; items: ChipItem[]; }
+interface FooterLink { label: string; href: string; }
 interface Props {
   heading?: string;
   intro?: string;
   groups: Group[];
+  footerLink?: FooterLink;
   locale?: Locale;
   id?: string;
 }
-const { heading, intro, groups, locale = "en", id } = Astro.props;
+const { heading, intro, groups, footerLink, locale = "en", id } = Astro.props;
 
 function link(href: string): string {
   return href.startsWith("/") ? localizedHref(href, locale) : href;
@@ -45,6 +47,9 @@ function link(href: string): string {
       </div>
     ))}
   </div>
+  {footerLink && (
+    <a class="pw-footer-link" href={link(footerLink.href)}>{footerLink.label}</a>
+  )}
 </section>
 
 <style>
@@ -108,6 +113,20 @@ function link(href: string): string {
     color: var(--accent);
     border-color: var(--accent);
     background: var(--surface);
+    text-decoration: none;
+  }
+
+  .pw-footer-link {
+    display: inline-block;
+    margin-top: 32px;
+    font-size: 14.5px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 1px;
+  }
+  .pw-footer-link:hover {
+    border-bottom-color: var(--accent);
     text-decoration: none;
   }
 </style>
