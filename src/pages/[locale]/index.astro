@@ -74,11 +74,12 @@ const description = (entry?.data as { description?: string } | undefined)?.descr
   .home-wrap {
     max-width: var(--page-max);
     margin: 0 auto;
-    padding: 0 24px;
+    /* Top padding matches the old hero-band's padding-block so the hero
+       breathes under the header. Block widgets add their own top margin
+       below the first section, so we zero only that one to avoid a
+       double gap under the hero. */
+    padding: clamp(44px, 5.5vw, 88px) 24px 0;
   }
-
-  /* Collapse the leading top margin that block widgets add by default —
-     the hero should start at the top of the page without a double gap. */
   .home-wrap > :global(section:first-child),
   .home-wrap > :global(section.row-block:first-child) { margin-top: 0; }
 
