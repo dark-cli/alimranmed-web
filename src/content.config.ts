@@ -50,6 +50,7 @@ const pageBase = z.object({
 
 const blockProse = z.object({
   type: z.literal("prose"),
+  number: z.string().optional(),       // optional section number ("01", "02") rendered above the heading
   heading: z.string().optional(),      // when present, appears in the TOC
   body: z.string(),                    // markdown allowed
 });
@@ -114,6 +115,10 @@ const blockPanels = z.object({
     title: z.string(),
     subtitle: z.string().optional(),
     items: z.array(z.string()).default([]),
+    reading: z.array(z.object({        // optional "related reading" link list per panel
+      title: z.string(),
+      href: z.string(),
+    })).optional(),
   })).min(2).max(4),
 });
 
@@ -154,10 +159,17 @@ const blockPathway = z.object({
       href: z.string(),
     })).min(1),
   })).min(1),
+  footerLink: z.object({            // optional trailing "see all" link
+    label: z.string(),
+    href: z.string(),
+  }).optional(),
 });
 
-const blockRow = z.object({
-  type: z.literal("row"),
+// Image row — specialised row for images only. (Was `row`; renamed when the
+// generic `row` was introduced so writers have a dedicated widget for photo
+// galleries and the generic row stays composable for mixed content.)
+const blockImageRow = z.object({
+  type: z.literal("image-row"),
   heading: z.string().optional(),
   columns: z.enum(["auto", "2", "3", "4"]).default("auto"),
   items: z.array(z.object({
@@ -175,6 +187,76 @@ const blockCards = z.object({
   items: z.array(z.string()).min(1),  // locale-agnostic paths: /treatments/back-pain/
 });
 
+// Small primitive: a single call-to-action button. Used inside row/column
+// layouts (hero CTAs, in-section action rows). Variants: primary (filled),
+// secondary (outline), quiet (text + accent underline).
+const blockButton = z.object({
+  type: z.literal("button"),
+  label: z.string(),
+  href: z.string(),
+  variant: z.enum(["primary", "secondary", "quiet"]).default("primary"),
+  newTab: z.boolean().optional(),
+});
+
+// Credit line: avatar + "Led by Name, title" + optional link. Appears below
+// the hero copy on the home page; could also sit as a byline inside articles.
+const blockDoctorCredit = z.object({
+  type: z.literal("doctor-credit"),
+  avatar: z.string(),                     // image path
+  avatarAlt: z.string().optional(),
+  leadLabel: z.string().optional(),       // "Led by" / "بإشراف" — if omitted the renderer uses the locale default
+  name: z.string(),
+  title: z.string(),                      // e.g. "consultant neurosurgeon"
+  linkLabel: z.string().optional(),       // optional CV / profile link label
+  linkHref: z.string().optional(),
+});
+
+// Typographic placeholder tile for mixed facility grids (one cell is a real
+// image, the rest are label + sublabel on a bordered surface).
+const blockLabelTile = z.object({
+  type: z.literal("label-tile"),
+  label: z.string(),                      // ALL CAPS top line
+  sublabel: z.string().optional(),        // smaller description below
+});
+
+// Contact band: bordered surface card with an intro and 1–3 columns of
+// labelled contact entries. Powers the home-page referral band and the
+// contact page.
+const blockContactStrip = z.object({
+  type: z.literal("contact-strip"),
+  eyebrow: z.string().optional(),
+  body: z.string().optional(),
+  columns: z.array(z.object({
+    label: z.string(),
+    items: z.array(z.object({
+      text: z.string(),
+      href: z.string().optional(),
+    })).min(1),
+  })).min(1).max(3),
+});
+
+// Generic row — side-by-side layout holding any mix of child blocks.
+// Collapses to a single column on mobile. Items may themselves be rows,
+// columns, cards, prose, media, buttons, etc. (recursive).
+const blockRow = z.object({
+  type: z.literal("row"),
+  heading: z.string().optional(),
+  columns: z.enum(["auto", "2", "3", "4"]).default("auto"),
+  gap: z.enum(["tight", "normal", "wide"]).default("normal"),
+  align: z.enum(["start", "center", "stretch"]).default("stretch"),
+  items: z.array(z.any()).min(1),         // recursive — validated at runtime by the dispatcher
+});
+
+// Generic column — vertical stack of child blocks. Mainly useful inside a
+// row (e.g. "left column: heading + prose + buttons"), or on its own when a
+// section needs a tight vertical rhythm distinct from the article flow.
+const blockColumn = z.object({
+  type: z.literal("column"),
+  heading: z.string().optional(),
+  gap: z.enum(["tight", "normal", "wide"]).default("normal"),
+  items: z.array(z.any()).min(1),         // recursive — validated at runtime by the dispatcher
+});
+
 const section = z.discriminatedUnion("type", [
   blockProse,
   blockHighlights,
@@ -185,7 +267,13 @@ const section = z.discriminatedUnion("type", [
   blockPanels,
   blockMedia,
   blockPathway,
+  blockImageRow,
   blockRow,
+  blockColumn,
+  blockButton,
+  blockDoctorCredit,
+  blockLabelTile,
+  blockContactStrip,
   blockCards,
 ]);
 

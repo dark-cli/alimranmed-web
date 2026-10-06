@@ -1,74 +1,54 @@
 ---
 /**
- * row — a row of images (with optional captions and links). The number of
- * columns is either "auto" (fit as many as space allows, min ~220px each)
- * or fixed 2/3/4. Collapses to a single column on mobile.
+ * row — generic horizontal layout. Holds any mix of child blocks side by
+ * side (prose, media, buttons, cards, doctor-credit, nested rows/columns
+ * …). Collapses to a single stacked column on narrow viewports.
  *
- * This is a *scoped* layout widget: it composes images side-by-side, but it
- * doesn't accept arbitrary child widgets. If we later need side-by-side text
- * cards or mixed content rows, that's a separate widget — see
- * project_page_builder_primitives_deferred.md for the trade-offs.
+ * For a photo-only gallery, use `image-row` instead — it bundles aspect
+ * ratios, alt text and caption styling.
  *
  * Fields:
- *   heading?     — optional label above the row
- *   columns      — "auto" | "2" | "3" | "4"
- *   items[]      — { src, alt?, caption?, href?, aspect? }
+ *   heading?  — optional label above the row
+ *   columns   — "auto" | "2" | "3" | "4" (default "auto")
+ *   gap       — "tight" | "normal" | "wide" (default "normal")
+ *   align     — "start" | "center" | "stretch" (default "stretch")
+ *   items[]   — any blocks (recursive — rendered by Sections)
  */
-import { localizedHref } from "../../lib/i18n";
+import Sections from "./Sections.astro";
 import type { Locale } from "../../lib/i18n";
-import Image from "../Image.astro";
 
-interface Item {
-  src: string;
-  alt?: string;
-  caption?: string;
-  href?: string;
-  aspect?: "16/9" | "4/3" | "3/2" | "1/1";
-}
 interface Props {
   heading?: string;
   columns?: "auto" | "2" | "3" | "4";
-  items: Item[];
+  gap?: "tight" | "normal" | "wide";
+  align?: "start" | "center" | "stretch";
+  items: any[];
   locale?: Locale;
   id?: string;
 }
-const { heading, columns = "auto", items, locale = "en", id } = Astro.props;
+const {
+  heading,
+  columns = "auto",
+  gap = "normal",
+  align = "stretch",
+  items,
+  locale = "en",
+  id,
+} = Astro.props;
 
-function link(href?: string): string | undefined {
-  if (!href) return undefined;
-  return href.startsWith("/") ? localizedHref(href, locale) : href;
-}
-
-// Map the columns choice to a grid-template-columns rule. "auto" uses
-// auto-fit responsive; 2/3/4 are fixed but collapse via the media query.
 const gridStyle = columns === "auto"
-  ? "grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));"
+  ? "grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));"
   : `grid-template-columns: repeat(${columns}, minmax(0, 1fr));`;
 ---
 
-<section class="row-block" id={id}>
+<section class="row-block" id={id} data-cols={columns} data-gap={gap} data-align={align}>
   {heading && <p class="row-heading">{heading}</p>}
-  <div class="row-grid" style={gridStyle} data-cols={columns}>
-    {items.map((it) => {
-      const href = link(it.href);
-      const frameStyle = it.aspect ? `aspect-ratio: ${it.aspect};` : "aspect-ratio: 4 / 3;";
-      // Layout: rows sit ~ column-width. Auto-fit + 2/3/4 col rows never
-      // exceed 50vw per cell on desktop, mobile stacks to 100vw.
-      const cols = columns === "auto" ? "auto" : Number(columns);
-      const rowSizes =
-        cols === "auto" || cols >= 3 ? "(min-width: 720px) 33vw, 100vw"
-        : cols === 4                  ? "(min-width: 720px) 25vw, 100vw"
-        : "(min-width: 720px) 50vw, 100vw";
-      const body = (
-        <figure class="row-cell">
-          <div class="row-frame" style={frameStyle}>
-            <Image src={it.src} alt={it.alt || ""} sizes={rowSizes} />
-          </div>
-          {it.caption && <figcaption class="row-caption">{it.caption}</figcaption>}
-        </figure>
-      );
-      return href ? <a class="row-link" href={href}>{body}</a> : body;
-    })}
+  <div class="row-grid" style={gridStyle}>
+    {items.map((child) => (
+      <div class="row-cell">
+        <Sections sections={[child]} locale={locale} />
+      </div>
+    ))}
   </div>
 </section>
 
@@ -89,45 +69,26 @@ const gridStyle = columns === "auto"
     font-size: 12px;
   }
 
-  .row-grid {
-    display: grid;
-    gap: 20px;
-  }
+  .row-grid { display: grid; }
+  .row-block[data-gap="tight"]  .row-grid { gap: 12px; }
+  .row-block[data-gap="normal"] .row-grid { gap: clamp(24px, 3vw, 40px); }
+  .row-block[data-gap="wide"]   .row-grid { gap: clamp(40px, 5vw, 72px); }
 
-  .row-link { text-decoration: none; color: inherit; display: block; }
-  .row-link:hover .row-frame { border-color: var(--accent); }
+  .row-block[data-align="start"]   .row-grid { align-items: start; }
+  .row-block[data-align="center"]  .row-grid { align-items: center; }
+  .row-block[data-align="stretch"] .row-grid { align-items: stretch; }
 
-  .row-cell { margin: 0; }
-  .row-frame {
-    display: block;
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    overflow: hidden;
-    transition: border-color 0.15s ease;
-  }
-  .row-frame img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .row-caption {
-    font-size: 13.5px;
-    line-height: 1.55;
-    color: var(--muted);
-    margin: 10px 0 0;
-  }
-  :global(html[dir="rtl"]) .row-caption { line-height: 1.85; }
+  /* Children inside a row-cell: trim the top/bottom margins their own
+     block classes add, so the row's gap controls spacing. */
+  .row-cell > :global(section),
+  .row-cell > :global(div) { margin-top: 0; margin-bottom: 0; }
 
-  /* Fixed-column rows collapse to 1-col on narrow viewports (below 640px)
-     and to 2-col at tablet-ish widths for 4-col rows. */
   @media (max-width: 640px) {
-    .row-grid[data-cols="2"],
-    .row-grid[data-cols="3"],
-    .row-grid[data-cols="4"] { grid-template-columns: 1fr !important; }
+    .row-block[data-cols="2"] .row-grid,
+    .row-block[data-cols="3"] .row-grid,
+    .row-block[data-cols="4"] .row-grid { grid-template-columns: 1fr !important; }
   }
   @media (min-width: 641px) and (max-width: 900px) {
-    .row-grid[data-cols="4"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    .row-block[data-cols="4"] .row-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   }
 </style>

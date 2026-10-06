@@ -1,0 +1,51 @@
+---
+/**
+ * label-tile — typographic placeholder tile. A bordered surface box with
+ * an all-caps label and an optional smaller sub-label underneath. Used in
+ * facility grids where some cells are real photos and others are just
+ * descriptive labels (reception / consulting room / etc.).
+ *
+ * Fields:
+ *   label      — ALL CAPS top line
+ *   sublabel?  — smaller description below
+ */
+interface Props {
+  label: string;
+  sublabel?: string;
+}
+const { label, sublabel } = Astro.props;
+---
+
+<div class="label-tile" aria-hidden="true">
+  <p>
+    {label}
+    {sublabel && <><br />{sublabel}</>}
+  </p>
+</div>
+
+<style>
+  .label-tile {
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 18px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+  }
+  .label-tile p {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.7;
+    margin: 0;
+  }
+  :global(html[dir="rtl"]) .label-tile p {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 1.85;
+  }
+</style>
