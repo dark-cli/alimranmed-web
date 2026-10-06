@@ -319,9 +319,10 @@ _cards: &_cards
       hint: "Locale-agnostic paths, e.g. /treatments/back-pain/ or /blog/my-post/. Title, description and date are pulled automatically."
       field: { label: Path, name: item, widget: string }
 
-# Leaf widgets — the set a writer can place *inside* an inner row/column
-# (one level of nesting below the outer layout). Does not include row or
-# column, so the depth limit is enforced at this level.
+# Leaf widgets — the base set of non-layout block widgets. These can appear
+# at any nesting depth in the CMS editor; row/column layouts cannot (they
+# are introduced through the tiered anchors below so the config graph
+# stays acyclic).
 _leaf_types: &leaf_types
   - *_prose
   - *_highlights
@@ -339,12 +340,21 @@ _leaf_types: &leaf_types
   - *_contact_strip
   - *_cards
 
-# "Shallow" layout widgets — same shape as the top-level row/column, but
-# their items.types points to *leaf_types only (no further nesting). These
-# are what writers see when they add a row or column inside the OUTER
-# layout widgets below. Lets the hero (outer row > column > inner row of
-# buttons) be editable in the CMS without introducing a cyclic reference.
-_row_shallow: &_row_shallow
+# ── Tiered row/column anchors ────────────────────────────────────────────
+# Three depth tiers of row/column, each pointing to a slightly larger
+# items.types list. This lets the CMS editor express up to THREE levels of
+# layout nesting (outer row > column > inner row > leaves) without a cyclic
+# reference — matches the home-page hero shape exactly.
+#
+#   Tier 1 (deepest) — row_1 / column_1: items.types = leaves only.
+#   Tier 2 (middle)  — row_2 / column_2: items.types = leaves + tier 1.
+#   Tier 3 (outer)   — row_3 / column_3 (defined inline in _sections_field
+#                       below): items.types = leaves + tier 2.
+#
+# Writers who need even deeper layouts can author the .md file directly;
+# the schema in content.config.ts uses z.any() so there is no runtime cap.
+
+_row_1: &_row_1
   name: row
   label: Row (side-by-side layout)
   fields:
@@ -379,10 +389,10 @@ _row_shallow: &_row_shallow
       name: items
       widget: list
       typeKey: type
-      hint: "Leaf widgets only at this depth. For deeper nesting, edit the .md directly."
+      hint: "Leaf widgets only at this depth. For deeper nesting, edit the .md file directly."
       types: *leaf_types
 
-_column_shallow: &_column_shallow
+_column_1: &_column_1
   name: column
   label: Column (vertical stack)
   fields:
@@ -399,14 +409,10 @@ _column_shallow: &_column_shallow
       name: items
       widget: list
       typeKey: type
-      hint: "Leaf widgets only at this depth. For deeper nesting, edit the .md directly."
+      hint: "Leaf widgets only at this depth. For deeper nesting, edit the .md file directly."
       types: *leaf_types
 
-# Widgets a writer can place inside the OUTER (top-level) row or column —
-# leaves PLUS the shallow row/column variants above. This is the set that
-# unlocks the home-page hero shape (outer row > column > inner row of
-# buttons) while keeping a finite depth and no cyclic reference.
-_nestable_types: &nestable_types
+_tier_1_types: &tier_1_types
   - *_prose
   - *_highlights
   - *_stats
@@ -417,8 +423,88 @@ _nestable_types: &nestable_types
   - *_media
   - *_pathway
   - *_image_row
-  - *_row_shallow
-  - *_column_shallow
+  - *_row_1
+  - *_column_1
+  - *_button
+  - *_doctor_credit
+  - *_label_tile
+  - *_contact_strip
+  - *_cards
+
+_row_2: &_row_2
+  name: row
+  label: Row (side-by-side layout)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Columns
+      name: columns
+      widget: select
+      default: auto
+      options:
+        - { label: "Auto (responsive fit)", value: auto }
+        - { label: "2 columns", value: "2" }
+        - { label: "3 columns", value: "3" }
+        - { label: "4 columns", value: "4" }
+    - label: Gap
+      name: gap
+      widget: select
+      default: normal
+      options:
+        - { label: "Tight", value: tight }
+        - { label: "Normal", value: normal }
+        - { label: "Wide", value: wide }
+    - label: Vertical alignment
+      name: align
+      widget: select
+      default: stretch
+      options:
+        - { label: "Stretch (default)", value: stretch }
+        - { label: "Top", value: start }
+        - { label: "Centre", value: center }
+    - label: Items
+      name: items
+      widget: list
+      typeKey: type
+      hint: "Can hold any block including a nested row or column (one more level down)."
+      types: *tier_1_types
+
+_column_2: &_column_2
+  name: column
+  label: Column (vertical stack)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Gap
+      name: gap
+      widget: select
+      default: normal
+      options:
+        - { label: "Tight", value: tight }
+        - { label: "Normal", value: normal }
+        - { label: "Wide", value: wide }
+    - label: Items
+      name: items
+      widget: list
+      typeKey: type
+      hint: "Can hold any block including a nested row or column (one more level down)."
+      types: *tier_1_types
+
+# Widgets a writer can place inside the OUTERMOST (top-level) row or
+# column — leaves PLUS the tier-2 row/column variants, which themselves
+# can contain tier-1 row/column, which contain leaves. Three levels of
+# layout nesting through the CMS.
+_tier_2_types: &tier_2_types
+  - *_prose
+  - *_highlights
+  - *_stats
+  - *_facts
+  - *_list
+  - *_quote
+  - *_panels
+  - *_media
+  - *_pathway
+  - *_image_row
+  - *_row_2
+  - *_column_2
   - *_button
   - *_doctor_credit
   - *_label_tile
@@ -481,8 +567,8 @@ _sections_field: &sections_field
           name: items
           widget: list
           typeKey: type
-          hint: "Any block, including nested rows/columns (one more level deep)."
-          types: *nestable_types
+          hint: "Any block including a nested row or column (up to two levels deeper)."
+          types: *tier_2_types
     - name: column
       label: Column (vertical stack)
       fields:
@@ -499,8 +585,8 @@ _sections_field: &sections_field
           name: items
           widget: list
           typeKey: type
-          hint: "Any block, including nested rows/columns (one more level deep)."
-          types: *nestable_types
+          hint: "Any block including a nested row or column (up to two levels deeper)."
+          types: *tier_2_types
     - *_button
     - *_doctor_credit
     - *_label_tile
