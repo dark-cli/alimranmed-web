@@ -957,10 +957,13 @@
   CMS.registerPreviewTemplate("treatments", makeArticlePreviewAuto("treatments"));
   CMS.registerPreviewTemplate("services",   makeArticlePreviewAuto("services"));
   CMS.registerPreviewTemplate("blog",       makeArticlePreviewAuto("blog"));
-  CMS.registerPreviewTemplate("pages",      makePagesPreview());
-  // Home is a `files` collection — register one template per locale entry.
+  // Home + About are `files` collections — register the collection name
+  // and each per-locale entry id so the preview resolves either way.
   CMS.registerPreviewTemplate("home",       makePagesPreview());
   CMS.registerPreviewTemplate("home/en",    makePagesPreview());
   CMS.registerPreviewTemplate("home/ar",    makePagesPreview());
+  CMS.registerPreviewTemplate("about",      makePagesPreview());
+  CMS.registerPreviewTemplate("about/en",   makePagesPreview());
+  CMS.registerPreviewTemplate("about/ar",   makePagesPreview());
   CMS.registerPreviewStyle("/admin/preview.css");
 })();

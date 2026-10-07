@@ -917,43 +917,63 @@ collections:
       - { label: Outcome, name: outcome, widget: text, required: false }
       - { label: Body, name: body, widget: markdown, required: false }
 
-  # ── Pages ──────────────────────────────────────────────────────────────
-  # Prose-body static pages — currently just the about sub-pages (mission,
-  # vision, values). The home page is its own collection above (loose
-  # en.md / ar.md at the root of src/content/).
-  - name: pages
-    label: Pages
-    label_singular: Page
-    folder: src/content/pages
-    nested:
-      depth: 4
-      subfolders: false
-      summary: "{{title}}"
-    extension: md
-    format: yaml-frontmatter
-    identifier_field: title
+  # ── About ──────────────────────────────────────────────────────────────
+  # Single bilingual pair at src/content/about/{en,ar}.md. Mission, vision
+  # and values live inside this one page as `prose` sections — previously
+  # six separate files, collapsed to two.
+  - name: about
+    label: About
+    label_singular: About page
     media_folder: /public/images
     public_folder: /images
-    create: true
-    fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Description, name: description, widget: text, required: false }
-      - { label: Category, name: category, widget: string, required: false }
-      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
-      - { label: Image, name: image, widget: image, required: false }
-      - { label: Image alt, name: imageAlt, widget: string, required: false }
-      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
-      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
-      - label: Source
-        name: source
-        widget: select
-        default: legacy-wp
-        options:
-          - { label: Legacy WordPress, value: legacy-wp }
-          - { label: AI draft, value: ai-draft }
-          - { label: Human reviewed, value: human-reviewed }
-          - { label: Original, value: original }
-          - { label: Translated by LLM, value: translated-by-llm }
-      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
-      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
-      - { label: Body (prose markdown), name: body, widget: markdown, required: false }
+    files:
+      - name: en
+        label: About — English
+        file: src/content/about/en.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: about }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+      - name: ar
+        label: About — Arabic
+        file: src/content/about/ar.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: about }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
