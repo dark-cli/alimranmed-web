@@ -25,6 +25,10 @@ import Button        from "../../components/blocks/Button.astro";
 import DoctorCredit  from "../../components/blocks/DoctorCredit.astro";
 import LabelTile     from "../../components/blocks/LabelTile.astro";
 import ContactStrip  from "../../components/blocks/ContactStrip.astro";
+import ButtonRow     from "../../components/blocks/ButtonRow.astro";
+import Chips         from "../../components/blocks/Chips.astro";
+import SocialRow     from "../../components/blocks/SocialRow.astro";
+import Map           from "../../components/blocks/Map.astro";
 import { currentLocale, toArabicDigits } from "../../lib/i18n";
 
 // Dev-only: `astro dev` serves it, production builds emit no pages for it.
@@ -110,6 +114,14 @@ const W = isAr ? {
                 fields: "الحقول: heading?، items[] من { question، answer }" },
   cards:      { desc: "شبكة بطاقات روابط لصفحات أخرى في الموقع. كل عنصر هو مسار مثل /treatments/back-pain/ أو /blog/my-post/. العنوان والوصف والتاريخ والفئة تُسحب تلقائيًا من مجموعة المحتوى عند البناء.",
                 fields: "الحقول: heading?، items[] من مسارات النص (مثل: /treatments/back-pain/)" },
+  buttonRow:  { desc: "مجموعة أزرار بعرض طبيعي داخل صفّ مرن. مُفضَّل على تضمين أزرار داخل row عام — تخطيط متوقّع وبدون تمدّد غير مقصود.",
+                fields: "الحقول: align، gap، items[] من { label, href, variant, newTab? }" },
+  chips:      { desc: "صفّ من الشارات الصغيرة المحدَّدة (غير قابلة للنقر). للشارات ذات الروابط استخدم pathway.",
+                fields: "الحقول: heading?، items[] من نصوص" },
+  socialRow:  { desc: "صفّ من أيقونات شبكات التواصل الاجتماعي الدائرية. المنصة تختار الأيقونة من FontAwesome Brands.",
+                fields: "الحقول: heading?، items[] من { platform, href, label? }" },
+  map:        { desc: "إطار iframe لخريطة مُضمَّنة (Google Maps / OpenStreetMap). المحرِّر يُلصق رابط التضمين، والمكوّن يغلّفه بإطار بنسبة أبعاد قابلة للضبط.",
+                fields: "الحقول: heading?، embedUrl، title، aspect?" },
 } : {
   prose:      { desc: "Heading + paragraphs. Body is markdown-lite (inline links). Paragraphs split on double newlines.",
                 fields: "Fields: heading?, body" },
@@ -151,6 +163,14 @@ const W = isAr ? {
                 fields: "Fields: heading?, items[] of { question, answer }" },
   cards:      { desc: "Grid of link cards to other pages on the site. Each item is a path like /treatments/back-pain/ or /blog/my-post/. Title, description, date and category are resolved automatically from the content collection at build time.",
                 fields: "Fields: heading?, items[] of path strings (e.g. /treatments/back-pain/)" },
+  buttonRow:  { desc: "Flex-wrap row of buttons at natural widths. Preferred over nesting individual buttons inside a generic row — predictable layout, no accidental grid stretching.",
+                fields: "Fields: align, gap, items[] of { label, href, variant, newTab? }" },
+  chips:      { desc: "Horizontal flex of small bordered labels (non-clickable). Use for credential badges, tags, categories. For clickable chips use pathway.",
+                fields: "Fields: heading?, items[] of strings" },
+  socialRow:  { desc: "Row of circular icon-only social links. The platform picks the icon from FontAwesome Brands. Requires `fontAwesome: true` on the page's BaseLayout.",
+                fields: "Fields: heading?, items[] of { platform, href, label? }" },
+  map:        { desc: "Framed iframe for an embedded map (Google Maps / OpenStreetMap). Writer pastes the full embed URL from Google Maps → Share → Embed a map.",
+                fields: "Fields: heading?, embedUrl, title, aspect?" },
 };
 
 // ── Placeholder content (localised) ──────────────────────────────────────
@@ -429,7 +449,7 @@ const heroImgSrc    = "/images/doctors/hussein-imran-mousa.jpg";
 const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
 ---
 
-<BaseLayout title={T.title + " (dev only)"} description="Temp preview page">
+<BaseLayout title={T.title + " (dev only)"} description="Temp preview page" fontAwesome>
   <div class="wrap">
     <header class="hd">
       <p class="hd-eyebrow">{T.eyebrow}</p>
@@ -990,6 +1010,134 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
       </div>
     </section>
 
+    {/* ─── button-row ──────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(19)}</p>
+        <div>
+          <h2>button-row</h2>
+          <p class="meta-desc">{W.buttonRow.desc}</p>
+          <p class="meta-fields">{W.buttonRow.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure} — {isAr ? "ثلاثة أنواع، محاذاة البداية" : "three variants, align=start"}</p>
+        <ButtonRow
+          align="start"
+          gap="tight"
+          locale={locale}
+          items={[
+            { label: isAr ? "رئيسي"   : "Primary",     href: "/#", variant: "primary"   },
+            { label: isAr ? "ثانوي"   : "Secondary",   href: "/#", variant: "secondary" },
+            { label: isAr ? "هادئ ←" : "Quiet →",     href: "/#", variant: "quiet"     },
+          ]}
+        />
+        <p class="preview-tag mt">{T.structure} — {isAr ? "محاذاة المنتصف، فجوة واسعة" : "align=center, gap=wide"}</p>
+        <ButtonRow
+          align="center"
+          gap="wide"
+          locale={locale}
+          items={[
+            { label: P.label(1), href: "/#", variant: "primary"   },
+            { label: P.label(2), href: "/#", variant: "secondary" },
+          ]}
+        />
+        <p class="preview-tag mt">{T.inUse} — {isAr ? "تحت البطل" : "under the hero"}</p>
+        <ButtonRow
+          align="start"
+          gap="tight"
+          locale={locale}
+          items={[
+            { label: R.conditionsLabel, href: "/conditions/",                 variant: "primary"   },
+            { label: R.callLabel,       href: "tel:+9647801926801",           variant: "secondary" },
+            { label: R.cvFullLink,      href: "/doctors/hussein-imran-mousa/", variant: "quiet"    },
+          ]}
+        />
+      </div>
+    </section>
+
+    {/* ─── chips ───────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(20)}</p>
+        <div>
+          <h2>chips</h2>
+          <p class="meta-desc">{W.chips.desc}</p>
+          <p class="meta-fields">{W.chips.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Chips
+          heading={P.heading}
+          items={[1, 2, 3, 4, 5].map((n) => P.chip(String(n)))}
+        />
+        <p class="preview-tag mt">{T.inUse} — {isAr ? "اعتمادات الطبيب" : "doctor credentials"}</p>
+        <Chips
+          heading={isAr ? "الاعتمادات" : "Credentials"}
+          items={isAr
+            ? ["ماجستير بكالوريوس", "زمالة البورد العراقي", "دبلوم ألم تداخلي", "عضو AANS", "عضو ISMISS"]
+            : ["MBChB", "FIBMS (Neurosurgery)", "Dip. Interventional Pain", "Member AANS", "Member ISMISS"]}
+        />
+      </div>
+    </section>
+
+    {/* ─── social-row ──────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(21)}</p>
+        <div>
+          <h2>social-row</h2>
+          <p class="meta-desc">{W.socialRow.desc}</p>
+          <p class="meta-fields">{W.socialRow.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <SocialRow
+          heading={P.heading}
+          items={[
+            { platform: "facebook",  href: "/#" },
+            { platform: "instagram", href: "/#" },
+            { platform: "youtube",   href: "/#" },
+            { platform: "x",         href: "/#" },
+          ]}
+        />
+        <p class="preview-tag mt">{T.inUse} — {isAr ? "تابعنا" : "follow us"}</p>
+        <SocialRow
+          heading={isAr ? "تابعنا" : "Follow us"}
+          items={[
+            { platform: "facebook",  href: "https://facebook.com/alimranmed" },
+            { platform: "instagram", href: "https://instagram.com/alimranmed/" },
+            { platform: "youtube",   href: "https://youtube.com/channel/UCjlmKURD6OO5_rRyKMm6lxA" },
+            { platform: "telegram",  href: "https://t.me/alimraned" },
+            { platform: "tiktok",    href: "https://tiktok.com/@alimranm" },
+          ]}
+        />
+      </div>
+    </section>
+
+    {/* ─── map ─────────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(22)}</p>
+        <div>
+          <h2>map</h2>
+          <p class="meta-desc">{W.map.desc}</p>
+          <p class="meta-fields">{W.map.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.inUse} — {isAr ? "موقع المركز" : "clinic location"}</p>
+        <Map
+          heading={isAr ? "موقعنا على الخريطة" : "Find us on the map"}
+          title={isAr ? "موقع مركز العمران الطبي على خرائط جوجل" : "Alimran Medical Center location in Basra, Iraq"}
+          aspect="16/9"
+          embedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.29801709611!2d47.834783515126176!3d30.512611081714454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf65ac49b64c2ccf!2zMzDCsDMwJzQ1LjQiTiA0N8KwNTAnMTMuMSJF!5e0!3m2!1sen!2siq!4v1637681705351!5m2!1sen!2siq"
+        />
+      </div>
+    </section>
+
     {/* ─── EXTENSIONS: additions to existing blocks ────────────── */}
     <section class="showcase">
       <div class="meta">
@@ -1012,6 +1160,25 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
             ? "التشخيص والجراحة والتدخل لعلاج الألم وإعادة التأهيل يقدّمها فريق واحد."
             : "Diagnosis, surgery, pain intervention and recovery are delivered by one team."}
           locale={locale}
+        />
+
+        <p class="preview-tag mt">prose + variant=hero</p>
+        <Prose
+          variant="hero"
+          eyebrow={isAr ? "جراحة الأعصاب · إدارة الألم · إعادة التأهيل" : "NEUROSURGERY · PAIN · REHAB"}
+          heading={R.heroH1}
+          body={R.heroP1 + "\n\n" + R.heroP2}
+          locale={locale}
+        />
+
+        <p class="preview-tag mt">stats + variant=band</p>
+        <Stats
+          variant="band"
+          items={[
+            { value: isAr ? "+٥٬٠٠٠" : "5,000+", label: isAr ? "عملية جراحية" : "Operations performed" },
+            { value: isAr ? "٢٥"     : "25",     label: isAr ? "سنة من الممارسة" : "Years of practice" },
+            { value: isAr ? "٣"      : "3",      label: isAr ? "زمالات تخصّصية" : "Specialist fellowships" },
+          ]}
         />
 
         <p class="preview-tag mt">panels + reading[]</p>
