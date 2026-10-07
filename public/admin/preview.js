@@ -923,47 +923,77 @@
     });
   }
 
-  // Pages preview — stacks the sections in a plain container, no article
-  // chrome (no sidebar TOC, no CTA). Used for home / contact / follow pages
-  // which are composed from blocks rather than article prose.
+  // Pages preview — a chrome-less article view that renders the sections
+  // through the same block dispatcher the live site uses. Reuses the
+  // existing `.article-preview` + `.art-container` + `.art-body` shell so
+  // the preview picks up every block's production CSS (grid, typography,
+  // responsive breakpoints) by inheritance. No sidebar TOC, no CTA — just
+  // the sections, which is how home / about / contact / follow render in
+  // production.
   function makePagesPreview() {
     return createClass({
+      getInitialState: function () { return { dark: false }; },
       render: function () {
-        var entry   = this.props.entry;
-        var data    = entry && entry.get("data") ? entry.get("data").toJS() : {};
-        var isAr    = detectLocale(entry) === "ar";
-        var get     = this.props.getAsset;
+        var self     = this;
+        var entry    = this.props.entry;
+        var data     = entry && entry.get("data") ? entry.get("data").toJS() : {};
+        var isAr     = detectLocale(entry) === "ar";
+        var getAsset = this.props.getAsset;
         var sections = toArray(data.sections);
-        var lastIdx = lastListIndex(sections);
-        return h("div", { className: "pages-preview", dir: isAr ? "rtl" : "ltr" },
-          h("div", { className: "pages-wrap" },
-            h("header", { className: "pages-head" },
-              h("p", { className: "pages-eyebrow" }, "Pages · preview"),
-              h("h1", { className: "pages-title" }, data.title || "")
-            ),
-            sections.length > 0
-              ? sections.map(function (s, i) {
-                  return renderSection(s, i, i === lastIdx, isAr, get);
-                })
-              : h("p", { style: { color: "var(--muted)", padding: "32px 0" } },
-                  "Add some sections to see the preview.")
+        var lastIdx  = lastListIndex(sections);
+
+        var toggle = function (e) {
+          var next = !self.state.dark;
+          self.setState({ dark: next });
+          var html = e.currentTarget.ownerDocument.documentElement;
+          if (next) html.setAttribute("data-theme", "dark");
+          else html.removeAttribute("data-theme");
+        };
+
+        var els = sections
+          .map(function (s, i) { return renderSection(s, i, i === lastIdx, isAr, getAsset); })
+          .filter(Boolean);
+
+        return h("div", { className: "article-preview pages-preview", dir: isAr ? "rtl" : "ltr", lang: isAr ? "ar" : "en" },
+          themeBtn(toggle),
+          h("div", { className: "art-container" },
+            h("article", { className: "art-body art-body--full" },
+              els.length > 0
+                ? els
+                : h("p", { className: "art-empty" },
+                    isAr ? "أضف أقسامًا لتظهر المعاينة." : "Add some sections to see the preview.")
+            )
           )
         );
       }
     });
   }
 
+  // Preview registration.
+  //
+  // Sveltia requires calling CMS.registerPreviewTemplate(<collection>, …)
+  // per collection — there is no wildcard. We work around that by using
+  // ONE function (makePagesPreview) that renders any sections-based page,
+  // and registering it for every page-like collection. Adding a new
+  // folder-based page later is a one-line edit here.
+  //
+  // The three article kinds get a dedicated preview because their chrome
+  // is different: breadcrumbs, meta strip, sidebar TOC, inline CTA. If a
+  // new "article-like" collection appeared, point it at makeArticlePreviewAuto.
+  // If a new "page-like" collection appeared (hero + sections), point it
+  // at makePagesPreview.
   CMS.registerPreviewTemplate("doctors",    makeDocPreviewAuto());
   CMS.registerPreviewTemplate("treatments", makeArticlePreviewAuto("treatments"));
   CMS.registerPreviewTemplate("services",   makeArticlePreviewAuto("services"));
   CMS.registerPreviewTemplate("blog",       makeArticlePreviewAuto("blog"));
-  // Home + About are `files` collections — register the collection name
-  // and each per-locale entry id so the preview resolves either way.
-  CMS.registerPreviewTemplate("home",       makePagesPreview());
-  CMS.registerPreviewTemplate("home/en",    makePagesPreview());
-  CMS.registerPreviewTemplate("home/ar",    makePagesPreview());
-  CMS.registerPreviewTemplate("about",      makePagesPreview());
-  CMS.registerPreviewTemplate("about/en",   makePagesPreview());
-  CMS.registerPreviewTemplate("about/ar",   makePagesPreview());
+  // `files` collections — Sveltia dispatches by `fileName ?? collectionName`,
+  // so the key for a files-type entry is the file's `name:` field, not the
+  // collection name. Our files collections (home + about) both use `name: en`
+  // and `name: ar`, so one registration each handles every files collection
+  // we have now and any future ones that follow the same locale convention.
+  // Folder collections above are unaffected (their fileName is undefined, so
+  // Sveltia falls back to the collection name — which is already registered).
+  CMS.registerPreviewTemplate("en", makePagesPreview());
+  CMS.registerPreviewTemplate("ar", makePagesPreview());
   CMS.registerPreviewStyle("/admin/preview.css");
 })();
