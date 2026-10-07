@@ -27,6 +27,7 @@ import LabelTile     from "./LabelTile.astro";
 import ContactStrip  from "./ContactStrip.astro";
 import Cards         from "./Cards.astro";
 import Faq           from "./Faq.astro";
+import Chips         from "./Chips.astro";
 
 interface Props {
   sections: any[];
@@ -176,6 +177,9 @@ const lastListIdx = sections.reduce(
       columns={s.columns}
       locale={locale}
     />;
+
+  if (s.type === "chips")
+    return <Chips heading={s.heading} items={s.items} id={nextId(s)} />;
 
   if (s.type === "faq")
     return <Faq

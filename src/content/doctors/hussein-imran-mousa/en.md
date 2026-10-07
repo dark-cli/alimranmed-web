@@ -11,9 +11,38 @@ titles:
   - FINASS
 photo: /images/doctors/hussein-imran-mousa-portrait.jpg
 photoAlt: Hussein Imran Mousa Muhammed
-heroEyebrow: Lead consultant · Clinical profile
-heroLede: Founder and lead consultant of Alimran Clinic. Consultant Neurosurgeon, Neurosurgical Department, Basra Teaching Hospital, and Iraq Director for Middle East Stereotactic and Functional Neurosurgery.
 sections:
+  # ── Hero (row of prose + chips on the left, portrait on the right) ───
+  - type: row
+    columns: "2"
+    gap: wide
+    align: center
+    items:
+      - type: column
+        gap: normal
+        items:
+          - type: prose
+            eyebrow: Lead consultant · Clinical profile
+            heading: Hussein Imran Mousa Muhammed
+            body: >-
+              Founder and lead consultant of Alimran Clinic. Consultant
+              Neurosurgeon, Neurosurgical Department, Basra Teaching Hospital,
+              and Iraq Director for Middle East Stereotactic and Functional
+              Neurosurgery.
+          - type: chips
+            items:
+              - MBChB
+              - FIBMS (Neurosurgery)
+              - FIAANS
+              - FIISSP
+              - FINASS
+      - type: media
+        items:
+          - kind: image
+            src: /images/doctors/hussein-imran-mousa-portrait.jpg
+            alt: Hussein Imran Mousa Muhammed
+            aspect: "4/3"
+
   - type: stats
     items:
       - label: Operations performed by the lead consultant

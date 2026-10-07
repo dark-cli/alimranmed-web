@@ -441,6 +441,18 @@
     );
   }
 
+  function renderChips(s, key) {
+    var items = s.items || [];
+    return h("section", { key: key, className: "chips-block" },
+      s.heading ? h("p", { className: "chips-heading" }, s.heading) : null,
+      h("div", { className: "chips-row" },
+        items.map(function (c, i) {
+          return h("span", { key: i, className: "chip" }, c || "");
+        })
+      )
+    );
+  }
+
   function renderFaq(s, key, isAr) {
     var items = s.items || [];
     var heading = s.heading || (isAr ? "أسئلة شائعة" : "Common questions");
@@ -692,6 +704,7 @@
       case "doctor-credit":  return renderDoctorCredit(s, key, isAr, getAsset);
       case "label-tile":     return renderLabelTile(s, key);
       case "contact-strip":  return renderContactStrip(s, key);
+      case "chips":          return renderChips(s, key);
       case "faq":            return renderFaq(s, key, isAr);
       case "cards":          return renderCards(s, key);
       default:               return null;
