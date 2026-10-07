@@ -24,7 +24,7 @@ alimranmed-web/
 │   ├── fonts/                 # Self-hosted webfonts
 │   ├── _headers               # Cloudflare cache/security headers
 │   └── _redirects             # URL redirect map
-├── scripts/                   # Utility scripts (see docs/scripts.md)
+├── scripts/                   # Utility scripts (see docs/dev-scripts.md)
 ├── docs/                      # This documentation
 ├── astro.config.mjs           # Build config
 ├── package.json
@@ -120,7 +120,7 @@ src/components/
 │   ├── ArticleLayout.astro   # Sidebar-and-body layout used by all long-form pages
 │   ├── ArticleBody.astro
 │   └── ArticleSections.astro # Dispatcher: sections[] → block components
-├── blocks/                   # The section widgets (see docs/sections.md)
+├── blocks/                   # The section widgets (see docs/manual-sections.md)
 │   ├── Prose.astro
 │   ├── Highlights.astro
 │   ├── Stats.astro
