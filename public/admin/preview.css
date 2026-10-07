@@ -740,19 +740,20 @@ html[data-theme="dark"] .pt-sun  { display: block; }
 [dir="rtl"] .body-prose blockquote p { line-height: 1.5; font-weight: 700; }
 
 /* ── Pages preview chrome ──────────────────────────────────────────────── */
+/* The pages preview reuses .article-preview + .art-container + .art-body
+   so block CSS (prose, stats, panels, row, etc.) inherits the production
+   article layout. The .art-body--full modifier removes the article's
+   sidebar grid so sections span the full container width — matches how
+   the home and about pages render in production. */
 .pages-preview { background: var(--white); min-height: 100%; }
-.pages-wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
-.pages-head {
-  padding-bottom: 20px; margin-bottom: 24px;
-  border-bottom: 1px solid var(--line);
+.pages-preview .art-body--full {
+  grid-column: 1 / -1;
+  padding-top: clamp(44px, 5.5vw, 88px);
 }
-.pages-eyebrow {
-  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--muted); margin: 0 0 10px;
-}
-.pages-title {
-  font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 32px);
-  font-weight: 400; color: var(--ink); margin: 0; line-height: 1.2;
+.pages-preview .art-empty {
+  color: var(--muted);
+  font-size: 14px;
+  padding: 48px 0;
 }
 
 /* ── Numbered prose header (prose.number + heading, with bottom-rule) ──── */
