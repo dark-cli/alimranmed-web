@@ -26,6 +26,13 @@ backend:
   repo: placeholder/alimranmed-web
   branch: main
 
+# Scopes the Sveltia media library to the originals only. The sibling
+# folder `public/optimized/` holds the build-generated WebP variants
+# (`*-400.webp`, `*-800.webp`, …) and MUST NOT be exposed to editors —
+# those files are regenerated on every build and selecting one in the
+# CMS would hard-code a path to a file that disappears. Keep every
+# per-collection `media_folder` below pointing at `public/images` (or a
+# subpath). Never point one at `public/optimized`.
 media_folder: public/images
 public_folder: /images
 
