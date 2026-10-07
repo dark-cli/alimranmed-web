@@ -372,8 +372,20 @@ const pages = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
   // `sections` is optional so legacy pages (prose Markdown bodies for the
   // about/mission/vision/values entries) keep rendering through their
-  // existing templates. New pages like home/contact/follow render their
-  // `sections` array through the shared Sections dispatcher.
+  // existing templates.
+  schema: pageBase.extend({
+    sections: z.array(section).optional(),
+  }),
+});
+
+// Home page — a bilingual pair of Markdown files living directly at the
+// root of src/content/. The file layout mirrors the URL exactly:
+//   /en/  → src/content/en.md
+//   /ar/  → src/content/ar.md
+// Only loads en.md and ar.md (no recursion), so it never clashes with
+// the sub-folder collections above (treatments/, services/, pages/, …).
+const home = defineCollection({
+  loader: glob({ pattern: "{en,ar}.md", base: "./src/content" }),
   schema: pageBase.extend({
     sections: z.array(section).optional(),
   }),
@@ -388,4 +400,5 @@ export const collections = {
   cases,
   testimonies,
   pages,
+  home,
 };

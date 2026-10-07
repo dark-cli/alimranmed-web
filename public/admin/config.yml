@@ -598,6 +598,68 @@ _sections_field: &sections_field
 # collection's field list; YAML doesn't support splicing arrays via anchors.
 
 collections:
+  # ── Home ───────────────────────────────────────────────────────────────
+  # The home page is a bilingual pair of Markdown files living at the root
+  # of src/content/ (so the on-disk layout mirrors the URL: /en/ →
+  # src/content/en.md and /ar/ → src/content/ar.md). Modelled as a `files`
+  # collection — two fixed entries, nothing to create or delete.
+  - name: home
+    label: Home
+    label_singular: Home page
+    media_folder: /public/images
+    public_folder: /images
+    files:
+      - name: en
+        label: Home — English
+        file: src/content/en.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: home }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+      - name: ar
+        label: Home — Arabic
+        file: src/content/ar.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: home }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+
   # ── Doctors ────────────────────────────────────────────────────────────
   - name: doctors
     label: Doctors
@@ -856,12 +918,9 @@ collections:
       - { label: Body, name: body, widget: markdown, required: false }
 
   # ── Pages ──────────────────────────────────────────────────────────────
-  # Houses the root-level pages: home, contact, follow, about/mission/vision/
-  # values. Each page is stored as pages/<slug>/en.md + pages/<slug>/ar.md,
-  # the same bilingual pattern as the article collections. New pages like
-  # `home` use `sections[]` and render through the shared Sections dispatcher;
-  # legacy pages (about/*) keep rendering their prose body through their
-  # existing template.
+  # Prose-body static pages — currently just the about sub-pages (mission,
+  # vision, values). The home page is its own collection above (loose
+  # en.md / ar.md at the root of src/content/).
   - name: pages
     label: Pages
     label_singular: Page
@@ -879,7 +938,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: text, required: false }
-      - { label: Category, name: category, widget: string, required: false, hint: "Use 'home', 'contact', 'about', etc. to group pages — matches how the templates select which entry to render." }
+      - { label: Category, name: category, widget: string, required: false }
       - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Image alt, name: imageAlt, widget: string, required: false }
@@ -897,5 +956,4 @@ collections:
           - { label: Translated by LLM, value: translated-by-llm }
       - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
       - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
-      - *sections_field
-      - { label: Body (legacy prose, for about/* only), name: body, widget: markdown, required: false }
+      - { label: Body (prose markdown), name: body, widget: markdown, required: false }

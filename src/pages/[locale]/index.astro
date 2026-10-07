@@ -1,9 +1,13 @@
 ---
 /**
- * Home page — now a thin loader that renders src/content/pages/home/{en,ar}.md
- * through the shared Sections dispatcher. All editable content (hero copy,
- * stats, departments, pathways, facility labels, consultant bio, referral
- * strip) lives in those two Markdown files and is editable through the CMS.
+ * Home page — thin loader that renders src/content/{en,ar}.md through the
+ * shared Sections dispatcher. The two Markdown files live at the root of
+ * src/content/ so the on-disk layout mirrors the URL exactly:
+ *   /en/  → src/content/en.md
+ *   /ar/  → src/content/ar.md
+ * All editable content (hero copy, stats, departments, pathways, facility
+ * labels, consultant bio, referral strip) is in those two files and is
+ * edited through the CMS "Home" collection.
  *
  * Preloads the hero portrait so Largest Contentful Paint stays fast.
  */
@@ -19,12 +23,12 @@ export function getStaticPaths() {
 
 const locale = currentLocale(Astro);
 
-// Load the home page content for this locale. If the Arabic file ever goes
-// missing, Astro returns undefined — we silently fall back to the English
-// version so the site keeps rendering.
+// Load the home page for this locale. If the Arabic file ever goes
+// missing, Astro returns undefined — we silently fall back to English
+// so the site keeps rendering.
 const entry =
-  (await getEntry("pages", `home/${locale}`)) ??
-  (await getEntry("pages", "home/en"));
+  (await getEntry("home", locale)) ??
+  (await getEntry("home", "en"));
 
 const sections = (entry?.data as { sections?: any[] } | undefined)?.sections ?? [];
 
