@@ -1,17 +1,18 @@
 ---
 /**
  * row — generic horizontal layout. Holds any mix of child blocks side by
- * side (prose, media, buttons, cards, doctor-credit, nested rows/columns
- * …). Collapses to a single stacked column on narrow viewports.
+ * side (prose, media, cards, doctor-credit, nested rows/columns …).
+ * Collapses to a single stacked column on narrow viewports.
  *
- * For a photo-only gallery, use `image-row` instead — it bundles aspect
- * ratios, alt text and caption styling.
+ * For a photo-only gallery, use `image-row`.
+ * For a flex-wrap of buttons, use `button-row`.
  *
  * Fields:
  *   heading?  — optional label above the row
  *   columns   — "auto" | "2" | "3" | "4" (default "auto")
  *   gap       — "tight" | "normal" | "wide" (default "normal")
  *   align     — "start" | "center" | "stretch" (default "stretch")
+ *               Vertical alignment of items (align-items in grid).
  *   items[]   — any blocks (recursive — rendered by Sections)
  */
 import Sections from "./Sections.astro";

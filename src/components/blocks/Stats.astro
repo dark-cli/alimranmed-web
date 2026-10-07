@@ -14,13 +14,14 @@
 interface Props {
   heading?: string;
   intro?: string;
+  variant?: "default" | "band";
   items: { value: string; label: string }[];
   id?: string;
 }
-const { heading, intro, items, id } = Astro.props;
+const { heading, intro, variant = "default", items, id } = Astro.props;
 ---
 
-<section class="stats-block" id={id}>
+<section class="stats-block" id={id} data-variant={variant}>
   {heading && <h2 class="stats-heading">{heading}</h2>}
   {intro && <p class="stats-intro">{intro}</p>}
   <div class="stats-grid">
@@ -78,4 +79,44 @@ const { heading, intro, items, id } = Astro.props;
   :global(html[dir="rtl"]) .stats-intro { line-height: 1.9; }
   :global(html[dir="rtl"]) .stats-fig { font-weight: 700; line-height: 1.2; }
   :global(html[dir="rtl"]) .stats-lbl { line-height: 1.85; }
+
+  /* ── variant: band ─────────────────────────────────────────────────
+     Breaks out of the parent container into a full-bleed surface band
+     with top/bottom hairlines (the look of the old home + doctor stat
+     strips). Grid stays constrained to --page-max inside the band. */
+  .stats-block[data-variant="band"] {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 0;
+  }
+  .stats-block[data-variant="band"] .stats-grid {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr));
+  }
+  .stats-block[data-variant="band"] .stats-cell {
+    padding: 32px 24px;
+  }
+  .stats-block[data-variant="band"] .stats-fig {
+    font-size: clamp(30px, 3.4vw, 40px);
+  }
+  /* When the band has a heading / intro, keep them centred in the band's
+     constrained inner width above the grid. */
+  .stats-block[data-variant="band"] .stats-heading,
+  .stats-block[data-variant="band"] .stats-intro {
+    max-width: var(--page-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
+  }
+  .stats-block[data-variant="band"] .stats-heading { padding-top: 32px; }
 </style>

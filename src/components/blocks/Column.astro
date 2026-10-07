@@ -8,6 +8,12 @@
  * Fields:
  *   heading? — optional label above the stack
  *   gap      — "tight" | "normal" | "wide" (default "normal")
+ *   align    — "start" | "center" | "end" | "stretch" (default "stretch")
+ *              Controls horizontal alignment of items within the column.
+ *              "stretch" fills the parent width (good for prose + full-width
+ *              widgets); "start" is useful when you want buttons / inline
+ *              items to sit at the natural left (right in RTL) instead of
+ *              stretching to full width.
  *   items[]  — any blocks (recursive — rendered by Sections)
  */
 import Sections from "./Sections.astro";
@@ -16,14 +22,15 @@ import type { Locale } from "../../lib/i18n";
 interface Props {
   heading?: string;
   gap?: "tight" | "normal" | "wide";
+  align?: "start" | "center" | "end" | "stretch";
   items: any[];
   locale?: Locale;
   id?: string;
 }
-const { heading, gap = "normal", items, locale = "en", id } = Astro.props;
+const { heading, gap = "normal", align = "stretch", items, locale = "en", id } = Astro.props;
 ---
 
-<section class="column-block" id={id} data-gap={gap}>
+<section class="column-block" id={id} data-gap={gap} data-align={align}>
   {heading && <p class="column-heading">{heading}</p>}
   <div class="column-stack">
     {items.map((child) => (
@@ -55,6 +62,12 @@ const { heading, gap = "normal", items, locale = "en", id } = Astro.props;
   .column-block[data-gap="tight"]  .column-stack { gap: 10px; }
   .column-block[data-gap="normal"] .column-stack { gap: 20px; }
   .column-block[data-gap="wide"]   .column-stack { gap: clamp(32px, 4vw, 56px); }
+
+  /* Cross-axis (horizontal) alignment of items within the column. */
+  .column-block[data-align="start"]   .column-stack { align-items: flex-start; }
+  .column-block[data-align="center"]  .column-stack { align-items: center; }
+  .column-block[data-align="end"]     .column-stack { align-items: flex-end; }
+  .column-block[data-align="stretch"] .column-stack { align-items: stretch; }
 
   /* Trim the inner block's own margins so the column's gap controls spacing. */
   .column-cell > :global(section),

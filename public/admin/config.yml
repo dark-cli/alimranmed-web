@@ -69,6 +69,15 @@ _prose: &_prose
       options:
         - { label: "h2 (default)", value: h2 }
         - { label: "h3 (use inside a split)", value: h3 }
+    - label: Variant
+      name: variant
+      widget: select
+      required: false
+      default: default
+      hint: "'hero' uses display-size heading + larger body text — matches the typographic treatment of the home + doctor hero. Use for the first prose at the top of a hero row only."
+      options:
+        - { label: "Default (in-article prose)", value: default }
+        - { label: "Hero (large display heading)", value: hero }
     - { label: Body (markdown — inline links supported), name: body, widget: text, required: false, hint: "Optional — omit when the block is a bare numbered section header." }
 
 _highlights: &_highlights
@@ -91,6 +100,15 @@ _stats: &_stats
   fields:
     - { label: Heading, name: heading, widget: string, required: false }
     - { label: Intro, name: intro, widget: text, required: false }
+    - label: Variant
+      name: variant
+      widget: select
+      required: false
+      default: default
+      hint: "'band' breaks out of the page container into a full-bleed surface strip (hairline rule top + bottom) — matches the home + doctor stat band treatment."
+      options:
+        - { label: "Default (contained)", value: default }
+        - { label: "Band (full-bleed strip)", value: band }
     - label: Items
       name: items
       widget: list
@@ -319,6 +337,43 @@ _cards: &_cards
       hint: "Locale-agnostic paths, e.g. /treatments/back-pain/ or /blog/my-post/. Title, description and date are pulled automatically."
       field: { label: Path, name: item, widget: string }
 
+_button_row: &_button_row
+  name: button-row
+  label: Button Row (CTA cluster)
+  fields:
+    - label: Alignment
+      name: align
+      widget: select
+      default: start
+      options:
+        - { label: "Start (leading edge)", value: start }
+        - { label: "Centre", value: center }
+        - { label: "End (trailing edge)", value: end }
+    - label: Gap
+      name: gap
+      widget: select
+      default: tight
+      options:
+        - { label: "Tight", value: tight }
+        - { label: "Normal", value: normal }
+        - { label: "Wide", value: wide }
+    - label: Buttons
+      name: items
+      widget: list
+      min: 1
+      fields:
+        - { label: Label, name: label, widget: string }
+        - { label: Link (href), name: href, widget: string }
+        - label: Variant
+          name: variant
+          widget: select
+          default: primary
+          options:
+            - { label: "Primary (filled)", value: primary }
+            - { label: "Secondary (outline)", value: secondary }
+            - { label: "Quiet (text link)", value: quiet }
+        - { label: Open in new tab, name: newTab, widget: boolean, required: false, default: false }
+
 _chips: &_chips
   name: chips
   label: Chips (inline badges)
@@ -365,6 +420,7 @@ _leaf_types: &leaf_types
   - *_label_tile
   - *_contact_strip
   - *_chips
+  - *_button_row
   - *_faq
   - *_cards
 
@@ -433,6 +489,16 @@ _column_1: &_column_1
         - { label: "Tight", value: tight }
         - { label: "Normal", value: normal }
         - { label: "Wide", value: wide }
+    - label: Alignment
+      name: align
+      widget: select
+      default: stretch
+      hint: "Horizontal alignment of items inside the column."
+      options:
+        - { label: "Stretch (fill width — default)", value: stretch }
+        - { label: "Start (leading edge)", value: start }
+        - { label: "Centre", value: center }
+        - { label: "End (trailing edge)", value: end }
     - label: Items
       name: items
       widget: list
@@ -458,6 +524,7 @@ _tier_1_types: &tier_1_types
   - *_label_tile
   - *_contact_strip
   - *_chips
+  - *_button_row
   - *_faq
   - *_cards
 
@@ -511,6 +578,16 @@ _column_2: &_column_2
         - { label: "Tight", value: tight }
         - { label: "Normal", value: normal }
         - { label: "Wide", value: wide }
+    - label: Alignment
+      name: align
+      widget: select
+      default: stretch
+      hint: "Horizontal alignment of items inside the column."
+      options:
+        - { label: "Stretch (fill width — default)", value: stretch }
+        - { label: "Start (leading edge)", value: start }
+        - { label: "Centre", value: center }
+        - { label: "End (trailing edge)", value: end }
     - label: Items
       name: items
       widget: list
@@ -540,6 +617,7 @@ _tier_2_types: &tier_2_types
   - *_label_tile
   - *_contact_strip
   - *_chips
+  - *_button_row
   - *_faq
   - *_cards
 
@@ -613,6 +691,16 @@ _sections_field: &sections_field
             - { label: "Tight", value: tight }
             - { label: "Normal", value: normal }
             - { label: "Wide", value: wide }
+        - label: Alignment
+          name: align
+          widget: select
+          default: stretch
+          hint: "Horizontal alignment of items inside the column."
+          options:
+            - { label: "Stretch (fill width — default)", value: stretch }
+            - { label: "Start (leading edge)", value: start }
+            - { label: "Centre", value: center }
+            - { label: "End (trailing edge)", value: end }
         - label: Items
           name: items
           widget: list
@@ -624,6 +712,7 @@ _sections_field: &sections_field
     - *_label_tile
     - *_contact_strip
     - *_chips
+    - *_button_row
     - *_faq
     - *_cards
 

@@ -837,6 +837,63 @@ html[data-theme="dark"] .pt-sun  { display: block; }
   text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
 }
 
+/* ── Button-row block ──────────────────────────────────────────────────── */
+.button-row-block {
+  display: flex; flex-wrap: wrap; align-items: center;
+  margin: clamp(16px, 2vw, 24px) 0;
+}
+.button-row-block[data-gap="tight"]  { gap: 12px; }
+.button-row-block[data-gap="normal"] { gap: 20px; }
+.button-row-block[data-gap="wide"]   { gap: clamp(28px, 3vw, 40px); }
+.button-row-block[data-align="start"]  { justify-content: flex-start; }
+.button-row-block[data-align="center"] { justify-content: center; }
+.button-row-block[data-align="end"]    { justify-content: flex-end; }
+
+/* ── Prose variant: hero ───────────────────────────────────────────────── */
+.prose-block[data-variant="hero"] { container-type: inline-size; }
+.prose-block[data-variant="hero"] .prose-eyebrow {
+  font-size: 11px; margin-bottom: 22px;
+}
+.prose-block[data-variant="hero"] .prose-heading {
+  font-size: clamp(30px, 7.6cqw, 58px);
+  line-height: 1.06; letter-spacing: -0.025em;
+  text-wrap: pretty; margin: 0 0 20px;
+}
+[dir="rtl"] .prose-block[data-variant="hero"] .prose-heading {
+  font-weight: 700; font-size: clamp(32px, 8cqw, 62px);
+  line-height: 1.15; letter-spacing: 0;
+}
+.prose-block[data-variant="hero"] .p {
+  font-size: 17px; line-height: 1.65;
+  max-width: 52ch; text-wrap: pretty; margin: 0 0 14px;
+}
+.prose-block[data-variant="hero"] .p:last-of-type { margin-bottom: 34px; }
+[dir="rtl"] .prose-block[data-variant="hero"] .p { line-height: 1.85; }
+
+/* ── Stats variant: band ───────────────────────────────────────────────── */
+.stats-block[data-variant="band"] {
+  width: 100vw; position: relative;
+  left: 50%; right: 50%;
+  margin-left: -50vw; margin-right: -50vw;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 0;
+}
+.stats-block[data-variant="band"] .stats-grid {
+  max-width: var(--page-max); margin: 0 auto; padding: 0;
+  border: none;
+  grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr));
+}
+.stats-block[data-variant="band"] .stats-cell { padding: 32px 24px; }
+.stats-block[data-variant="band"] .stats-fig { font-size: clamp(30px, 3.4vw, 40px); }
+.stats-block[data-variant="band"] .stats-heading,
+.stats-block[data-variant="band"] .stats-intro {
+  max-width: var(--page-max); margin-left: auto; margin-right: auto;
+  padding: 0 24px;
+}
+.stats-block[data-variant="band"] .stats-heading { padding-top: 32px; }
+
 /* ── Chips block ───────────────────────────────────────────────────────── */
 .chips-block { margin: clamp(16px, 2vw, 24px) 0; }
 .chips-heading {

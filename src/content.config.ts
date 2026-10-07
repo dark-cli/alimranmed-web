@@ -54,6 +54,10 @@ const blockProse = z.object({
   eyebrow: z.string().optional(),      // optional small-caps accent label above the heading (hero-style)
   heading: z.string().optional(),      // when present, appears in the TOC
   headingLevel: z.enum(["h2", "h3"]).default("h2"),
+  // `hero` renders a display-size heading (clamp(30px, 7.6cqw, 58px)) and
+  // larger body text — matches the typographic treatment of the old home
+  // and doctor page heroes. `default` is the normal in-article prose.
+  variant: z.enum(["default", "hero"]).default("default"),
   body: z.string().optional(),         // markdown allowed; omit when the block is just a numbered section header
 });
 
@@ -70,6 +74,10 @@ const blockStats = z.object({
   type: z.literal("stats"),
   heading: z.string().optional(),
   intro: z.string().optional(),
+  // Default renders contained to the article width. "band" breaks out to
+  // a full-bleed surface strip with top/bottom hairlines — the look of
+  // the old home + doctor stat bands.
+  variant: z.enum(["default", "band"]).default("default"),
   items: z.array(z.object({
     value: z.string(),   // "5,000+", "25", "30–50%"
     label: z.string(),   // short description under the figure
@@ -224,6 +232,22 @@ const blockButton = z.object({
   newTab: z.boolean().optional(),
 });
 
+// Button row — purpose-built flex-wrap of buttons at natural widths.
+// Preferred over nesting individual button widgets inside a generic `row`
+// because the semantics are clearer and the layout is predictable (no
+// grid-cell stretching, no accidental centering).
+const blockButtonRow = z.object({
+  type: z.literal("button-row"),
+  align: z.enum(["start", "center", "end"]).default("start"),
+  gap: z.enum(["tight", "normal", "wide"]).default("tight"),
+  items: z.array(z.object({
+    label: z.string(),
+    href: z.string(),
+    variant: z.enum(["primary", "secondary", "quiet"]).default("primary"),
+    newTab: z.boolean().optional(),
+  })).min(1),
+});
+
 // Credit line: avatar + "Led by Name, title" + optional link. Appears below
 // the hero copy on the home page; could also sit as a byline inside articles.
 const blockDoctorCredit = z.object({
@@ -276,10 +300,13 @@ const blockRow = z.object({
 // Generic column — vertical stack of child blocks. Mainly useful inside a
 // row (e.g. "left column: heading + prose + buttons"), or on its own when a
 // section needs a tight vertical rhythm distinct from the article flow.
+// `align` controls horizontal alignment of items — "stretch" fills parent
+// width (default), "start" places items at the natural leading edge, etc.
 const blockColumn = z.object({
   type: z.literal("column"),
   heading: z.string().optional(),
   gap: z.enum(["tight", "normal", "wide"]).default("normal"),
+  align: z.enum(["start", "center", "end", "stretch"]).default("stretch"),
   items: z.array(z.any()).min(1),         // recursive — validated at runtime by the dispatcher
 });
 
@@ -303,6 +330,7 @@ const section = z.discriminatedUnion("type", [
   blockChips,
   blockFaq,
   blockCards,
+  blockButtonRow,
 ]);
 
 const treatments = defineCollection({
