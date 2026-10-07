@@ -2,19 +2,19 @@
  * Sveltia CMS preview templates — all collections.
  *
  * Registers live previews for:
- *   doctors    — CvHero + unified section blocks (locale detected from entry slug)
+ *   doctors    — PlainTemplate (sections only; hero is a block)
  *   treatments — ArticleLayout + unified section blocks
  *   services   — same as treatments
  *   blog       — same as treatments
+ *   home / about / contact — PlainTemplate via files-collection keys
  *
  * Block renderers mirror the Astro components in src/components/blocks/.
  * CSS lives in preview.css (same file as before, with additions for the
  * unified block classes).
  *
  * Sync targets:
- *   src/components/blocks/*.astro      — block markup + class names
- *   src/components/doctor/CvHero.astro — hero markup
- *   src/content.config.ts              — section type names
+ *   src/components/blocks/*.astro — block markup + class names
+ *   src/content.config.ts         — section type names
  */
 (function () {
   "use strict";
@@ -792,69 +792,6 @@
     return idx;
   }
 
-  /* ── Doctor preview ──────────────────────────────────────────────────── */
-
-  function renderHero(ctx, key) {
-    return h("section", { key: key, className: "cv-head-band" },
-      h("div", { className: "cv-head" },
-        h("div", { className: "cv-head-copy" },
-          h("p",  { className: "cv-eyebrow" }, ctx.heroEyebrow || ""),
-          h("h1", { className: "cv-h1"      }, ctx.heroHeadline || ctx.fullName || ""),
-          h("p",  { className: "cv-lede"    }, ctx.heroLede || ""),
-          ctx.titles.length > 0 ? h("div", { className: "cv-chips" },
-            ctx.titles.map(function (c, i) { return h("span", { key: i, className: "cv-chip" }, c); })
-          ) : null
-        ),
-        ctx.photoSrc ? h("img", { className: "cv-portrait-img", src: ctx.photoSrc, alt: ctx.photoAlt || ctx.fullName || "" }) : null
-      )
-    );
-  }
-
-  function makeDocPreview(locale) {
-    return createClass({
-      getInitialState: function () { return { dark: false }; },
-      render: function () {
-        var self     = this;
-        var entry    = this.props.entry;
-        var getAsset = this.props.getAsset;
-        var isAr     = locale === "ar";
-        var toggle   = function (e) {
-          var next = !self.state.dark;
-          self.setState({ dark: next });
-          var html = e.currentTarget.ownerDocument.documentElement;
-          if (next) html.setAttribute("data-theme", "dark");
-          else html.removeAttribute("data-theme");
-        };
-
-        var fullName     = entry.getIn(["data", "fullName"]) || "";
-        var photoAlt     = entry.getIn(["data", "photoAlt"]) || "";
-        var photoField   = entry.getIn(["data", "photo"]);
-        var titles       = toArray(entry.getIn(["data", "titles"]));
-        var heroEyebrow  = entry.getIn(["data", "heroEyebrow"]) || "";
-        var heroHeadline = entry.getIn(["data", "heroHeadline"]) || "";
-        var heroLede     = entry.getIn(["data", "heroLede"]) || "";
-        var sections     = toArray(entry.getIn(["data", "sections"]));
-
-        var photoSrc = photoField ? (getAsset ? getAsset(photoField).toString() : photoField) : null;
-        var llIdx    = lastListIndex(sections);
-
-        var elements = [renderHero({
-          fullName: fullName, photoSrc: photoSrc, photoAlt: photoAlt,
-          titles: titles, heroEyebrow: heroEyebrow,
-          heroHeadline: heroHeadline, heroLede: heroLede
-        }, "hero")];
-
-        sections.forEach(function (s, i) {
-          var el = renderSection(s, i, i === llIdx, isAr, getAsset);
-          if (el) elements.push(el);
-        });
-
-        elements.unshift(themeBtn(toggle));
-        return h("div", { className: "doctor-preview", dir: isAr ? "rtl" : "ltr", lang: locale }, elements);
-      }
-    });
-  }
-
   /* ── Article preview (treatments / services / blog) ─────────────────── */
 
   function makeArticlePreview(locale, kind) {
@@ -1004,18 +941,6 @@
     return /(?:^|\/)ar(?:\.md)?$/.test(basis) ? "ar" : "en";
   }
 
-  function makeDocPreviewAuto() {
-    var enCls = makeDocPreview("en");
-    var arCls = makeDocPreview("ar");
-    return createClass({
-      getInitialState: function () { return { dark: false }; },
-      render: function () {
-        var cls = detectLocale(this.props.entry) === "ar" ? arCls : enCls;
-        return h(cls, this.props);
-      }
-    });
-  }
-
   function makeArticlePreviewAuto(kind) {
     var enCls = makeArticlePreview("en", kind);
     var arCls = makeArticlePreview("ar", kind);
@@ -1087,7 +1012,10 @@
   // new "article-like" collection appeared, point it at makeArticlePreviewAuto.
   // If a new "page-like" collection appeared (hero + sections), point it
   // at makePagesPreview.
-  CMS.registerPreviewTemplate("doctors",    makeDocPreviewAuto());
+  // Doctors render through the same PlainTemplate as home/about/contact
+  // (hero + CV + memberships are all sections), so the preview reuses
+  // makePagesPreview — same chrome, same block dispatcher.
+  CMS.registerPreviewTemplate("doctors",    makePagesPreview());
   CMS.registerPreviewTemplate("treatments", makeArticlePreviewAuto("treatments"));
   CMS.registerPreviewTemplate("services",   makeArticlePreviewAuto("services"));
   CMS.registerPreviewTemplate("blog",       makeArticlePreviewAuto("blog"));
