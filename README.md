@@ -33,9 +33,11 @@ the image pipeline, and the AI collaborator brief — is in **[`docs/`](docs/)**
 
 | File | Purpose |
 |---|---|
-| [`docs/setup.md`](docs/setup.md) | Local development setup + prerequisites |
+| [`docs/installation.md`](docs/installation.md) | **Start here** — step-by-step first-time setup for the site owner / editor |
+| [`docs/setup.md`](docs/setup.md) | Local development setup + prerequisites (developer-oriented) |
 | [`docs/deployment.md`](docs/deployment.md) | Cloudflare Pages workflow, build logs, rollback |
 | [`docs/project-structure.md`](docs/project-structure.md) | Where every file type lives and why |
+| [`docs/writing-guide.md`](docs/writing-guide.md) | The three ways to write content, including the AI-assisted route |
 | [`docs/content-authoring.md`](docs/content-authoring.md) | How to write articles: frontmatter, voice, bilingual policy |
 | [`docs/sections.md`](docs/sections.md) | All block/widget types with syntax + examples |
 | [`docs/cms.md`](docs/cms.md) | Using the Sveltia admin — features and limitations |
