@@ -438,6 +438,18 @@ const cases = defineCollection({
   schema: pageBase.extend({
     condition: z.string().optional(),
     outcome: z.string().optional(),
+    publishedAt: z.coerce.date().optional(),
+    // Cases now ride on the shared ArticleLayout + ArticleBody pipeline
+    // (same as treatments / services / blog). ArticleBody uses `sections`
+    // when present and falls back to Markdown body otherwise, so legacy
+    // cases keep rendering their image-only body while new ones can
+    // compose blocks.
+    redesigned: z.boolean().optional(),
+    faqItems: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
+    sections: z.array(section).optional(),
   }),
 });
 

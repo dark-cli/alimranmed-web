@@ -632,6 +632,30 @@
         noSections: "لا توجد أقسام بعد.",
       },
     },
+    cases: {
+      en: {
+        home: "Home", collection: "Cases",
+        reviewedByLabel: "Reviewed by",
+        reviewer: "Hussein Imran Mousa, consultant neurosurgeon",
+        readingTimeLabel: "Reading time", lastReviewedLabel: "Last reviewed",
+        tocLabel: "On this page", callLabel: "Discuss a case",
+        callBody: "Speak to the secretary about a referral or similar case.",
+        ctaHeading: "Book a consultation",
+        ctaBody: "The secretary schedules first appointments during clinic hours.",
+        noSections: "No sections yet.",
+      },
+      ar: {
+        home: "الرئيسية", collection: "حالات مُعالَجة",
+        reviewedByLabel: "تمت المراجعة من قبل",
+        reviewer: "الدكتور حسين عمران موسى، استشاري جراحة الأعصاب",
+        readingTimeLabel: "وقت القراءة", lastReviewedLabel: "آخر مراجعة",
+        tocLabel: "في هذه الصفحة", callLabel: "لمناقشة حالة",
+        callBody: "تحدث مع السكرتير بشأن إحالة أو حالة مشابهة.",
+        ctaHeading: "احجز استشارة",
+        ctaBody: "يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل.",
+        noSections: "لا توجد أقسام بعد.",
+      },
+    },
   };
 
   /* ── Body markdown renderer ──────────────────────────────────────────── */
@@ -1019,6 +1043,7 @@
   CMS.registerPreviewTemplate("treatments", makeArticlePreviewAuto("treatments"));
   CMS.registerPreviewTemplate("services",   makeArticlePreviewAuto("services"));
   CMS.registerPreviewTemplate("blog",       makeArticlePreviewAuto("blog"));
+  CMS.registerPreviewTemplate("cases",      makeArticlePreviewAuto("cases"));
   // `files` collections — Sveltia dispatches by `fileName ?? collectionName`,
   // so the key for a files-type entry is the file's `name:` field, not the
   // collection name. Our files collections (home + about) both use `name: en`

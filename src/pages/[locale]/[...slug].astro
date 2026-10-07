@@ -1,0 +1,203 @@
+---
+/**
+ * Catch-all article route. Resolves `/en/<collection>/<slug>` to a
+ * content entry and renders through the shared ArticleLayout + ArticleBody
+ * by default. The `doctors` collection is special-cased onto PlainTemplate
+ * (hero is a block, no article chrome needed).
+ *
+ * Adding a new article-shaped collection — e.g. `surgeries` — is three
+ * steps and no new .astro route:
+ *   1. Create src/content/surgeries/<slug>/{en,ar}.md
+ *   2. Add the Zod collection in src/content.config.ts
+ *   3. Add a one-line entry in src/lib/article-registry.ts (or omit it,
+ *      and the generic fallback ArticleLayout chrome renders)
+ *
+ * Static index routes (/<col>/index.astro) and category hubs
+ * (services/[category]/index.astro) take precedence — this catch-all
+ * only resolves entry slugs.
+ */
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import {
+  topicOf, isLocale, pickForLocale, currentLocale, localizedHref, type Locale,
+} from "../../lib/i18n";
+import { wordsIn, articleReadingLabel, extractBodyImages } from "../../lib/word-count";
+import { buildToc } from "../../lib/toc";
+import { excerpt } from "../../lib/excerpt";
+import { faqPage, extractFaqs, physician } from "../../lib/schema";
+import { imageVariants } from "../../lib/image";
+import { NAV_LABELS } from "../../lib/labels";
+import { ARTICLE_REGISTRY, isArticleCollection, type ArticleCollection } from "../../lib/article-registry";
+import ArticleLayout from "../../components/article/ArticleLayout.astro";
+import ArticleBody from "../../components/article/ArticleBody.astro";
+import TranslationBanner from "../../components/TranslationBanner.astro";
+import PlainTemplate from "../../components/templates/PlainTemplate.astro";
+
+type AnyEntry = CollectionEntry<"treatments" | "services" | "blog" | "cases" | "doctors">;
+
+export async function getStaticPaths() {
+  // Must stay inside this function — Astro hoists getStaticPaths into a
+  // separate module scope, so module-level consts aren't visible here.
+  const ROUTED_COLLECTIONS = ["treatments", "services", "blog", "cases", "doctors"] as const;
+  const paths: Array<{ params: { locale: string; slug: string }; props: any }> = [];
+
+  for (const name of ROUTED_COLLECTIONS) {
+    const items = await getCollection(name);
+
+    // EN entries — one path per EN file.
+    for (const entry of items.filter((e) => isLocale(e.id, "en"))) {
+      paths.push({
+        params: { locale: "en", slug: `${name}/${topicOf(entry.id)}` },
+        props: { collection: name, entry, fallback: false },
+      });
+    }
+
+    // AR — pick either the AR file or fall back to EN with a banner.
+    const topics = [...new Set(items.map((e) => topicOf(e.id)))];
+    for (const topic of topics) {
+      const pick = pickForLocale(items, topic, "ar");
+      if (pick) {
+        paths.push({
+          params: { locale: "ar", slug: `${name}/${topic}` },
+          props: { collection: name, entry: pick.entry, fallback: pick.fallback },
+        });
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { collection, entry, fallback } = Astro.props as {
+  collection: "treatments" | "services" | "blog" | "cases" | "doctors";
+  entry: AnyEntry;
+  fallback: boolean;
+};
+const locale = currentLocale(Astro);
+const nav = NAV_LABELS[locale];
+
+/* ── Doctors — PlainTemplate (hero is a block) ───────────────────────── */
+
+const isDoctor = collection === "doctors";
+const doctorData = isDoctor ? (entry.data as {
+  fullName?: string; description?: string; specialty?: string;
+  photo?: string; sections?: unknown[];
+}) : null;
+
+const doctorTitleSuffix = locale === "ar" ? "مركز العمران الطبي" : "Alimran Clinic";
+const doctorHero = isDoctor ? imageVariants(doctorData!.photo) : null;
+const doctorHeroPreload = doctorHero?.srcset ? {
+  srcset: doctorHero.srcset,
+  sizes: "(min-width: 720px) 40vw, 100vw",
+  type: "image/webp",
+} : undefined;
+const doctorSchema = isDoctor ? physician({
+  url: new URL(Astro.url.pathname, Astro.site),
+  name: doctorData!.fullName ?? entry.data.title,
+  description: doctorData!.description,
+  specialty: doctorData!.specialty,
+  image: doctorData!.photo,
+  locale,
+}) : null;
+
+/* ── Article-shaped collections — ArticleLayout + ArticleBody ────────── */
+
+const config = !isDoctor && isArticleCollection(collection) ? ARTICLE_REGISTRY[collection] : null;
+const labels = config ? config.labels(locale) : null;
+
+const isRedesigned = (entry.data as { redesigned?: boolean }).redesigned === true;
+const data = entry.data as any;
+
+const rendered = isDoctor ? null : await render(entry);
+const Content = rendered?.Content;
+const headings = rendered?.headings ?? [];
+
+const bodyText = (entry as any).body as string | undefined;
+const wordCount = isDoctor
+  ? 0
+  : wordsIn(data.sections) + wordsIn(bodyText);
+const readingLabel = isDoctor ? "" : articleReadingLabel(wordCount, locale);
+
+const publishedAt = config?.dateField?.(entry);
+const dateLocale = locale === "ar" ? "ar-IQ" : "en-US";
+const lastReviewed = publishedAt
+  ? publishedAt.toLocaleDateString(dateLocale, { month: "long", year: "numeric" })
+  : "—";
+
+const toc = isDoctor ? [] : buildToc(
+  isRedesigned ? (data.sections as Array<{ heading?: string }>) : null,
+  headings,
+  locale,
+);
+
+const metaDescription = data.description || (bodyText ? excerpt(bodyText) : "");
+const standfirst = data.description || "";
+const breadcrumbs = config ? config.breadcrumbs(entry, locale) : [];
+
+const firstMeta = config?.firstMetaRow?.(entry, locale);
+const meta = labels ? [
+  ...(firstMeta ? [firstMeta] : []),
+  { label: labels.reviewedByLabel, value: labels.reviewer },
+  { label: labels.readingTimeLabel, value: readingLabel },
+  ...(lastReviewed !== "—" ? [{ label: labels.lastReviewedLabel, value: lastReviewed }] : []),
+] : [];
+
+const disclaimer = config?.disclaimer?.(entry, locale);
+
+const schemas = config ? [
+  config.schemaFn({
+    url: new URL(Astro.url.pathname, Astro.site),
+    name: data.title,
+    description: metaDescription,
+    locale,
+    datePublished: publishedAt,
+    reviewedBy: data.reviewedBy,
+    reviewedAt: data.reviewedAt,
+  }),
+  faqPage([
+    ...((data.faqItems ?? []) as Array<{ question: string; answer: string }>),
+    ...extractFaqs(data.sections),
+  ]),
+] : [];
+
+const usingSections = isRedesigned && Array.isArray(data.sections);
+const bodyImages = usingSections && bodyText ? extractBodyImages(bodyText) : [];
+const showBanner = fallback && locale === "ar";
+---
+
+{isDoctor ? (
+  <PlainTemplate
+    title={`${doctorData!.fullName ?? data.title} — ${doctorTitleSuffix}`}
+    description={doctorData!.description}
+    sections={(doctorData!.sections ?? []) as any[]}
+    locale={locale}
+    heroPreload={doctorHeroPreload}
+  >
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify(doctorSchema)} />
+  </PlainTemplate>
+) : (
+  <ArticleLayout
+    pageTitle={`${data.title} — ${nav.siteName}`}
+    description={metaDescription}
+    schema={schemas}
+    locale={locale}
+    breadcrumbs={breadcrumbs}
+    h1={data.title}
+    meta={meta}
+    toc={toc}
+    tocLabel={labels!.tocLabel}
+    callLabel={labels!.callLabel}
+    callBody={labels!.callBody}
+    ctaHeading={labels!.ctaHeading}
+    ctaBody={labels!.ctaBody}
+    disclaimer={disclaimer}
+  >
+    {showBanner && <TranslationBanner fromLocale="en" toLocale="ar" />}
+    <ArticleBody
+      sections={usingSections ? (data.sections as any[]) : undefined}
+      locale={locale}
+      bodyImages={bodyImages}
+    >
+      {Content && <Content />}
+    </ArticleBody>
+  </ArticleLayout>
+)}

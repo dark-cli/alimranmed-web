@@ -1090,6 +1090,16 @@ collections:
       - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
       - { label: Condition, name: condition, widget: string, required: false }
       - { label: Outcome, name: outcome, widget: text, required: false }
+      - { label: Published at, name: publishedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Redesigned (block layout), name: redesigned, widget: boolean, required: false, default: false }
+      - label: FAQ
+        name: faqItems
+        widget: list
+        required: false
+        fields:
+          - { label: Question, name: question, widget: string }
+          - { label: Answer, name: answer, widget: text }
+      - *sections_field
       - { label: Body, name: body, widget: markdown, required: false }
 
   # ── About ──────────────────────────────────────────────────────────────

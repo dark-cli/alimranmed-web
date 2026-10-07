@@ -34,6 +34,7 @@ export const NAV_LABELS = {
     treatments:"Conditions treated",
     services:  "Services",
     doctors:   "Our doctors",
+    cases:     "Cases",
     siteName:  "Alimran Clinic",
   },
   ar: {
@@ -42,6 +43,7 @@ export const NAV_LABELS = {
     treatments:"الحالات والإجراءات",
     services:  "الخدمات",
     doctors:   "الأطباء",
+    cases:     "حالات مُعالَجة",
     siteName:  "مركز العمران الطبي",
   },
 } as const;
@@ -97,6 +99,33 @@ export const BLOG_LABELS = {
     ctaHeading:       "هل تحتاج إلى مزيد من المعلومات؟",
     ctaBody:          "تواصل معنا للحصول على المزيد من التفاصيل حول الموضوعات المغطاة في هذا المقال.",
     disclaimer:       "يوفر هذا المقال معلومات عامة ولا يحل محل الاستشارة الطبية المتخصصة. إذا كان لديك مخاوف صحية محددة، يرجى استشارة مقدم الرعاية الصحية.",
+  },
+} as const;
+
+export const CASE_LABELS = {
+  en: {
+    reviewedByLabel:  "Reviewed by",
+    reviewer:         "Hussein Imran Mousa, consultant neurosurgeon",
+    readingTimeLabel: "Reading time",
+    lastReviewedLabel:"Last reviewed",
+    tocLabel:         "On this page",
+    callLabel:        "Discuss a case",
+    callBody:         "Speak to the secretary about a referral or similar case.",
+    ctaHeading:       "Book a consultation",
+    ctaBody:          "The secretary schedules first appointments during clinic hours; please have prior imaging, operative notes and a current medication list available at the time of the call.",
+    disclaimer:       "This page summarises clinical cases treated at Alimran Medical Center. Patient details are anonymised. It is not a substitute for individual medical assessment.",
+  },
+  ar: {
+    reviewedByLabel:  "تمت المراجعة من قبل",
+    reviewer:         "الدكتور حسين عمران موسى، استشاري جراحة الأعصاب",
+    readingTimeLabel: "وقت القراءة",
+    lastReviewedLabel:"آخر مراجعة",
+    tocLabel:         "في هذه الصفحة",
+    callLabel:        "لمناقشة حالة",
+    callBody:         "تحدث مع السكرتير بشأن إحالة أو حالة مشابهة.",
+    ctaHeading:       "احجز استشارة",
+    ctaBody:          "يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل. يُرجى تحضير الصور الشعاعية السابقة وتقارير العمليات وقائمة الأدوية الحالية قبل الاتصال.",
+    disclaimer:       "تلخّص هذه الصفحة حالات سريرية عُولجت في مركز العمران الطبي. أسماء المرضى محجوبة. ليست بديلاً عن التقييم الطبي الفردي.",
   },
 } as const;
 
