@@ -189,6 +189,20 @@ const blockCards = z.object({
   items: z.array(z.string()).min(1),  // locale-agnostic paths: /treatments/back-pain/
 });
 
+// FAQ block — question/answer pairs. Renders visually (always expanded, no
+// JS, best for Googlebot indexing) and the top-level route also harvests
+// these items into FAQPage JSON-LD so writers get SEO for free. Replaces
+// the older `faqItems` frontmatter field, which emitted schema but never
+// rendered anything to users.
+const blockFaq = z.object({
+  type: z.literal("faq"),
+  heading: z.string().optional(),      // defaults to "Common questions" / "أسئلة شائعة"
+  items: z.array(z.object({
+    question: z.string(),
+    answer: z.string(),                // markdown inline links supported
+  })).min(1),
+});
+
 // Small primitive: a single call-to-action button. Used inside row/column
 // layouts (hero CTAs, in-section action rows). Variants: primary (filled),
 // secondary (outline), quiet (text + accent underline).
@@ -276,6 +290,7 @@ const section = z.discriminatedUnion("type", [
   blockDoctorCredit,
   blockLabelTile,
   blockContactStrip,
+  blockFaq,
   blockCards,
 ]);
 

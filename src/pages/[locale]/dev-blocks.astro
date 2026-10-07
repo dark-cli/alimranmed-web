@@ -16,6 +16,7 @@ import Quote         from "../../components/blocks/Quote.astro";
 import Panels        from "../../components/blocks/Panels.astro";
 import Media         from "../../components/blocks/Media.astro";
 import Cards         from "../../components/blocks/Cards.astro";
+import Faq           from "../../components/blocks/Faq.astro";
 import Pathway       from "../../components/blocks/Pathway.astro";
 import ImageRow      from "../../components/blocks/ImageRow.astro";
 import Row           from "../../components/blocks/Row.astro";
@@ -105,6 +106,8 @@ const W = isAr ? {
                 fields: "الحقول: label، sublabel?" },
   contactStrip:{ desc: "بطاقة سطح مؤطّرة لمعلومات التواصل والتحويلات. تحوي قسمًا تعريفيًا و١–٣ أعمدة من إدخالات بتسميات (هاتف/بريد/عنوان).",
                 fields: "الحقول: eyebrow?، body?، columns[] من { label، items[{ text، href? }] } (١–٣)" },
+  faq:        { desc: "قائمة أسئلة وأجوبة. تُعرض دائمًا موسّعة (بدون سكربت)، كما تُحوَّل تلقائيًا إلى بيانات منظّمة FAQPage لتظهر في نتائج البحث.",
+                fields: "الحقول: heading?، items[] من { question، answer }" },
   cards:      { desc: "شبكة بطاقات روابط لصفحات أخرى في الموقع. كل عنصر هو مسار مثل /treatments/back-pain/ أو /blog/my-post/. العنوان والوصف والتاريخ والفئة تُسحب تلقائيًا من مجموعة المحتوى عند البناء.",
                 fields: "الحقول: heading?، items[] من مسارات النص (مثل: /treatments/back-pain/)" },
 } : {
@@ -144,6 +147,8 @@ const W = isAr ? {
                 fields: "Fields: label, sublabel?" },
   contactStrip:{ desc: "Bordered surface card for contact / referral info. Shows an optional eyebrow + body paragraph plus 1–3 columns of labelled entries (phone / email / address).",
                 fields: "Fields: eyebrow?, body?, columns[] of { label, items[{ text, href? }] } (1–3)" },
+  faq:        { desc: "Question / answer list, always expanded (no JS). Automatically harvested into FAQPage JSON-LD by the article route so Google surfaces it as a rich snippet.",
+                fields: "Fields: heading?, items[] of { question, answer }" },
   cards:      { desc: "Grid of link cards to other pages on the site. Each item is a path like /treatments/back-pain/ or /blog/my-post/. Title, description, date and category are resolved automatically from the content collection at build time.",
                 fields: "Fields: heading?, items[] of path strings (e.g. /treatments/back-pain/)" },
 };
@@ -916,10 +921,53 @@ const heroImgSrcAlt = "/images/doctors/hussein-imran-mousa-portrait.jpg";
       </div>
     </section>
 
-    {/* ─── cards ───────────────────────────────────────────────── */}
+    {/* ─── faq ─────────────────────────────────────────────────── */}
     <section class="showcase">
       <div class="meta">
         <p class="meta-code">{num(17)}</p>
+        <div>
+          <h2>faq</h2>
+          <p class="meta-desc">{W.faq.desc}</p>
+          <p class="meta-fields">{W.faq.fields}</p>
+        </div>
+      </div>
+      <div class="preview">
+        <p class="preview-tag">{T.structure}</p>
+        <Faq
+          heading={P.heading}
+          locale={locale}
+          items={[1, 2, 3].map((n) => ({
+            question: (isAr ? "سؤال " : "Question ") + num(n) + "؟",
+            answer:   P.proseBody.split("\n\n")[0],
+          }))}
+        />
+        <p class="preview-tag mt">{T.inUse}</p>
+        <Faq
+          heading={isAr ? "أسئلة شائعة عن التحفيز المغناطيسي عبر الجمجمة" : "Common questions about TMS"}
+          locale={locale}
+          items={isAr ? [
+            { question: "هل يسبّب TMS ألمًا؟",
+              answer:   "يشعر معظم المرضى بإحساس خفيف يشبه النقر على فروة الرأس. الجلسات تُجرى بدون تخدير والمريض مستيقظ طوال الوقت." },
+            { question: "كم عدد الجلسات التي أحتاجها؟",
+              answer:   "دورة العلاج النموذجية تتراوح بين ٢٠ و٣٠ جلسة على مدى ٤–٦ أسابيع. [اقرأ المزيد عن TMS](/blog/transcranial-magnetic-stimulation/)." },
+            { question: "هل العلاج مغطى بالتأمين؟",
+              answer:   "التغطية تختلف بحسب شركة التأمين والحالة المُعالَجة. يُرجى التواصل مع السكرتارية لمراجعة متطلبات شركتك." },
+          ] : [
+            { question: "Does TMS hurt?",
+              answer:   "Most patients feel a light tapping sensation on the scalp. Sessions are done without sedation; you stay awake throughout." },
+            { question: "How many sessions will I need?",
+              answer:   "A typical course is 20–30 sessions over 4–6 weeks. [Read more about TMS](/blog/transcranial-magnetic-stimulation/)." },
+            { question: "Is it covered by insurance?",
+              answer:   "Coverage varies by insurer and the condition being treated. Please contact the secretary to check your plan's requirements." },
+          ]}
+        />
+      </div>
+    </section>
+
+    {/* ─── cards ───────────────────────────────────────────────── */}
+    <section class="showcase">
+      <div class="meta">
+        <p class="meta-code">{num(18)}</p>
         <div>
           <h2>cards</h2>
           <p class="meta-desc">{W.cards.desc}</p>

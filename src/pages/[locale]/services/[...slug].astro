@@ -4,7 +4,7 @@ import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "
 import { wordsIn, articleReadingLabel } from "../../../lib/word-count";
 import { buildToc } from "../../../lib/toc";
 import { excerpt } from "../../../lib/excerpt";
-import { procedurePage, faqPage } from "../../../lib/schema";
+import { procedurePage, faqPage, extractFaqs } from "../../../lib/schema";
 import { SERVICE_LABELS, NAV_LABELS } from "../../../lib/labels";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
 import ArticleBody from "../../../components/article/ArticleBody.astro";
@@ -76,7 +76,10 @@ const serviceCategory = entry.data.category || (locale === "ar" ? "خدمة" : "
       reviewedBy: (entry.data as { reviewedBy?: string }).reviewedBy,
       reviewedAt: (entry.data as { reviewedAt?: Date }).reviewedAt,
     }),
-    faqPage((entry.data as { faqItems?: Array<{ question: string; answer: string }> }).faqItems),
+    faqPage([
+      ...((entry.data as { faqItems?: Array<{ question: string; answer: string }> }).faqItems ?? []),
+      ...extractFaqs((entry.data as { sections?: unknown }).sections),
+    ]),
   ]}
   locale={locale}
   breadcrumbs={[
