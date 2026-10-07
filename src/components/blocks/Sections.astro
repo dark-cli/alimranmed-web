@@ -23,6 +23,8 @@ import Row           from "./Row.astro";
 import Column        from "./Column.astro";
 import Button        from "./Button.astro";
 import ButtonRow     from "./ButtonRow.astro";
+import SocialRow     from "./SocialRow.astro";
+import Map           from "./Map.astro";
 import DoctorCredit  from "./DoctorCredit.astro";
 import LabelTile     from "./LabelTile.astro";
 import ContactStrip  from "./ContactStrip.astro";
@@ -170,6 +172,18 @@ const lastListIdx = sections.reduce(
       gap={s.gap}
       items={s.items}
       locale={locale}
+    />;
+
+  if (s.type === "social-row")
+    return <SocialRow heading={s.heading} items={s.items} id={nextId(s)} />;
+
+  if (s.type === "map")
+    return <Map
+      heading={s.heading}
+      embedUrl={s.embedUrl}
+      title={s.title}
+      aspect={s.aspect}
+      id={nextId(s)}
     />;
 
   if (s.type === "doctor-credit")

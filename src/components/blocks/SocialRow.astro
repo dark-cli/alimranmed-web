@@ -1,0 +1,109 @@
+---
+/**
+ * social-row — row of circular icon-only social links. Each item picks a
+ * platform name (from the enum in the Zod schema) which maps to a brand
+ * icon via FontAwesome Brands. The item's `href` is the full external
+ * URL; `label` is the accessible label (defaults to platform name).
+ *
+ * The parent layout (e.g. BaseLayout) must have loaded FontAwesome —
+ * pass `fontAwesome` on the layout OR include fontawesome in the page's
+ * <head>. The contact route sets fontAwesome=true on BaseLayout.
+ *
+ * Fields:
+ *   heading?  — optional label above the row
+ *   items[]   — { platform, href, label? }
+ */
+interface Item {
+  platform:
+    | "facebook" | "instagram" | "youtube" | "telegram" | "tiktok"
+    | "twitter" | "x" | "linkedin" | "whatsapp";
+  href: string;
+  label?: string;
+}
+interface Props {
+  heading?: string;
+  items: Item[];
+  id?: string;
+}
+const { heading, items, id } = Astro.props;
+
+const PLATFORM_ICON: Record<Item["platform"], string> = {
+  facebook:  "fa-brands fa-facebook-f",
+  instagram: "fa-brands fa-instagram",
+  youtube:   "fa-brands fa-youtube",
+  telegram:  "fa-brands fa-telegram",
+  tiktok:    "fa-brands fa-tiktok",
+  twitter:   "fa-brands fa-twitter",
+  x:         "fa-brands fa-x-twitter",
+  linkedin:  "fa-brands fa-linkedin-in",
+  whatsapp:  "fa-brands fa-whatsapp",
+};
+const PLATFORM_LABEL: Record<Item["platform"], string> = {
+  facebook: "Facebook", instagram: "Instagram", youtube: "YouTube",
+  telegram: "Telegram", tiktok: "TikTok", twitter: "Twitter",
+  x: "X (Twitter)", linkedin: "LinkedIn", whatsapp: "WhatsApp",
+};
+---
+
+<section class="social-row-block" id={id}>
+  {heading && <p class="social-row-heading">{heading}</p>}
+  <ul class="social-row-list">
+    {items.map((it) => (
+      <li>
+        <a
+          href={it.href}
+          target="_blank"
+          rel="noopener"
+          aria-label={it.label ?? PLATFORM_LABEL[it.platform]}
+        >
+          <i class={PLATFORM_ICON[it.platform]} aria-hidden="true"></i>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .social-row-block { margin: clamp(16px, 2vw, 24px) 0; }
+  .social-row-heading {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  :global(html[dir="rtl"]) .social-row-heading {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .social-row-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .social-row-list a {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    color: var(--body);
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+    text-decoration: none;
+  }
+  .social-row-list a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--surface);
+    text-decoration: none;
+  }
+  .social-row-list i { font-size: 16px; line-height: 1; }
+</style>

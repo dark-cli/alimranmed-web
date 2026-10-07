@@ -487,6 +487,60 @@
     );
   }
 
+  var PLATFORM_ICON = {
+    facebook:  "fa-brands fa-facebook-f",
+    instagram: "fa-brands fa-instagram",
+    youtube:   "fa-brands fa-youtube",
+    telegram:  "fa-brands fa-telegram",
+    tiktok:    "fa-brands fa-tiktok",
+    twitter:   "fa-brands fa-twitter",
+    x:         "fa-brands fa-x-twitter",
+    linkedin:  "fa-brands fa-linkedin-in",
+    whatsapp:  "fa-brands fa-whatsapp",
+  };
+  var PLATFORM_LABEL = {
+    facebook: "Facebook", instagram: "Instagram", youtube: "YouTube",
+    telegram: "Telegram", tiktok: "TikTok", twitter: "Twitter",
+    x: "X (Twitter)", linkedin: "LinkedIn", whatsapp: "WhatsApp",
+  };
+
+  function renderSocialRow(s, key) {
+    var items = s.items || [];
+    return h("section", { key: key, className: "social-row-block" },
+      s.heading ? h("p", { className: "social-row-heading" }, s.heading) : null,
+      h("ul", { className: "social-row-list" },
+        items.map(function (it, i) {
+          var platform = it.platform || "facebook";
+          var icon     = PLATFORM_ICON[platform] || PLATFORM_ICON.facebook;
+          return h("li", { key: i },
+            h("a", {
+              href: it.href || "#",
+              target: "_blank",
+              rel: "noopener",
+              "aria-label": it.label || PLATFORM_LABEL[platform] || platform,
+            }, h("i", { className: icon, "aria-hidden": "true" }))
+          );
+        })
+      )
+    );
+  }
+
+  function renderMap(s, key) {
+    var aspect = s.aspect || "16/9";
+    return h("section", { key: key, className: "map-block" },
+      s.heading ? h("h2", { className: "map-heading" }, s.heading) : null,
+      h("div", { className: "map-frame", style: { aspectRatio: aspect } },
+        h("iframe", {
+          src: s.embedUrl || "",
+          title: s.title || "",
+          loading: "lazy",
+          referrerPolicy: "no-referrer-when-downgrade",
+          allowFullScreen: true,
+        })
+      )
+    );
+  }
+
   function renderCards(s, key) {
     var items = s.items || [];
     return h("section", { key: key, className: "cards-block" },
@@ -725,6 +779,8 @@
       case "contact-strip":  return renderContactStrip(s, key);
       case "chips":          return renderChips(s, key);
       case "faq":            return renderFaq(s, key, isAr);
+      case "social-row":     return renderSocialRow(s, key);
+      case "map":            return renderMap(s, key);
       case "cards":          return renderCards(s, key);
       default:               return null;
     }

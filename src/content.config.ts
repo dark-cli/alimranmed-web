@@ -207,6 +207,32 @@ const blockChips = z.object({
   items: z.array(z.string()).min(1),
 });
 
+// Social row — a horizontal strip of circular icon-only links for social
+// networks. The `platform` string picks the icon from FontAwesome brands.
+const blockSocialRow = z.object({
+  type: z.literal("social-row"),
+  heading: z.string().optional(),
+  items: z.array(z.object({
+    platform: z.enum([
+      "facebook", "instagram", "youtube", "telegram", "tiktok",
+      "twitter", "x", "linkedin", "whatsapp",
+    ]),
+    href: z.string(),
+    label: z.string().optional(),            // aria-label; defaults to the platform name
+  })).min(1),
+});
+
+// Map — an embedded location iframe (Google Maps / OpenStreetMap).
+// Writer supplies the full embed `src`; the component only wraps it in a
+// framed container with a title + optional heading.
+const blockMap = z.object({
+  type: z.literal("map"),
+  heading: z.string().optional(),
+  embedUrl: z.string(),                      // full iframe src URL
+  title: z.string(),                         // iframe accessible title
+  aspect: z.enum(["16/9", "4/3", "3/2", "1/1"]).default("16/9"),
+});
+
 // FAQ block — question/answer pairs. Renders visually (always expanded, no
 // JS, best for Googlebot indexing) and the top-level route also harvests
 // these items into FAQPage JSON-LD so writers get SEO for free. Replaces
@@ -331,6 +357,8 @@ const section = z.discriminatedUnion("type", [
   blockFaq,
   blockCards,
   blockButtonRow,
+  blockSocialRow,
+  blockMap,
 ]);
 
 const treatments = defineCollection({
@@ -443,6 +471,15 @@ const about = defineCollection({
   }),
 });
 
+// Contact page — one bilingual pair at src/content/contact/{en,ar}.md.
+// Hero + contact-strip + social-row + map, all expressed as blocks.
+const contact = defineCollection({
+  loader: glob({ pattern: "{en,ar}.md", base: "./src/content/contact" }),
+  schema: pageBase.extend({
+    sections: z.array(section).optional(),
+  }),
+});
+
 export const collections = {
   treatments,
   services,
@@ -453,4 +490,5 @@ export const collections = {
   testimonies,
   home,
   about,
+  contact,
 };
