@@ -958,5 +958,9 @@
   CMS.registerPreviewTemplate("services",   makeArticlePreviewAuto("services"));
   CMS.registerPreviewTemplate("blog",       makeArticlePreviewAuto("blog"));
   CMS.registerPreviewTemplate("pages",      makePagesPreview());
+  // Home is a `files` collection — register one template per locale entry.
+  CMS.registerPreviewTemplate("home",       makePagesPreview());
+  CMS.registerPreviewTemplate("home/en",    makePagesPreview());
+  CMS.registerPreviewTemplate("home/ar",    makePagesPreview());
   CMS.registerPreviewStyle("/admin/preview.css");
 })();
