@@ -18,12 +18,13 @@ interface Props {
   eyebrow?: string;
   heading?: string;
   headingLevel?: "h2" | "h3";
+  variant?: "default" | "hero";
   body?: string;
   locale?: Locale;
   id?: string;
 }
 const {
-  number, eyebrow, heading, headingLevel = "h2", body,
+  number, eyebrow, heading, headingLevel = "h2", variant = "default", body,
   locale = "en", id,
 } = Astro.props;
 
@@ -42,7 +43,7 @@ function rewriteLinks(md: string): string {
 const hasHeader = Boolean(number || eyebrow || heading);
 ---
 
-<section class="prose-block" id={id}>
+<section class="prose-block" id={id} data-variant={variant}>
   {hasHeader && (
     <header class={`prose-head${number ? " prose-head--numbered" : ""}`}>
       {eyebrow && <p class="prose-eyebrow">{eyebrow}</p>}
@@ -127,4 +128,37 @@ const hasHeader = Boolean(number || eyebrow || heading);
     text-decoration: underline;
   }
   :global(html[dir="rtl"]) .p { line-height: 1.95; }
+
+  /* ── variant: hero ───────────────────────────────────────────────
+     Larger display heading + eyebrow + body text, matching the old
+     home + doctor page heroes. Applied via `variant: hero` in the .md. */
+  .prose-block[data-variant="hero"] .prose-eyebrow {
+    font-size: 11px;
+    margin-bottom: 22px;
+  }
+  .prose-block[data-variant="hero"] .prose-heading {
+    font-size: clamp(30px, 7.6cqw, 58px);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    text-wrap: pretty;
+    margin: 0 0 20px;
+  }
+  :global(html[dir="rtl"]) .prose-block[data-variant="hero"] .prose-heading {
+    font-weight: 700;
+    font-size: clamp(32px, 8cqw, 62px);
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+  .prose-block[data-variant="hero"] .p {
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 52ch;
+    text-wrap: pretty;
+    margin: 0 0 14px;
+  }
+  .prose-block[data-variant="hero"] .p:last-of-type { margin-bottom: 34px; }
+  :global(html[dir="rtl"]) .prose-block[data-variant="hero"] .p { line-height: 1.85; }
+  /* Enable container queries so the heading scales to its parent cell,
+     not the viewport — needed inside a row's narrower cell. */
+  .prose-block[data-variant="hero"] { container-type: inline-size; }
 </style>

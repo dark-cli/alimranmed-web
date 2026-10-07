@@ -22,6 +22,7 @@ import ImageRow      from "./ImageRow.astro";
 import Row           from "./Row.astro";
 import Column        from "./Column.astro";
 import Button        from "./Button.astro";
+import ButtonRow     from "./ButtonRow.astro";
 import DoctorCredit  from "./DoctorCredit.astro";
 import LabelTile     from "./LabelTile.astro";
 import ContactStrip  from "./ContactStrip.astro";
@@ -65,6 +66,7 @@ const lastListIdx = sections.reduce(
       eyebrow={s.eyebrow}
       heading={s.heading}
       headingLevel={s.headingLevel}
+      variant={s.variant}
       body={s.body}
       locale={locale}
       id={nextId(s)}
@@ -74,7 +76,13 @@ const lastListIdx = sections.reduce(
     return <Highlights heading={s.heading} items={s.items} id={nextId(s)} />;
 
   if (s.type === "stats")
-    return <Stats heading={s.heading} intro={s.intro} items={s.items} id={nextId(s)} />;
+    return <Stats
+      heading={s.heading}
+      intro={s.intro}
+      variant={s.variant}
+      items={s.items}
+      id={nextId(s)}
+    />;
 
   if (s.type === "facts")
     return <Facts heading={s.heading ?? factsDefaultHeading} items={s.items} locale={locale} id={nextId(s)} />;
@@ -141,6 +149,7 @@ const lastListIdx = sections.reduce(
     return <Column
       heading={s.heading}
       gap={s.gap}
+      align={s.align}
       items={s.items}
       locale={locale}
       id={nextId(s)}
@@ -152,6 +161,14 @@ const lastListIdx = sections.reduce(
       href={s.href}
       variant={s.variant}
       newTab={s.newTab}
+      locale={locale}
+    />;
+
+  if (s.type === "button-row")
+    return <ButtonRow
+      align={s.align}
+      gap={s.gap}
+      items={s.items}
       locale={locale}
     />;
 

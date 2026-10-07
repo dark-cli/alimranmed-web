@@ -22,6 +22,7 @@ sections:
         gap: normal
         items:
           - type: prose
+            variant: hero
             eyebrow: الاستشاري المسؤول · السيرة العلمية
             heading: الدكتور حسين عمران موسى
             body: >-
@@ -39,9 +40,9 @@ sections:
           - kind: image
             src: /images/doctors/hussein-imran-mousa-portrait.jpg
             alt: الدكتور حسين عمران موسى
-            aspect: "4/3"
 
   - type: stats
+    variant: band
     items:
       - value: +٥٠٠٠
         label: عملية أجراها الاستشاري بشكل مستقل

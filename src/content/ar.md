@@ -2,36 +2,33 @@
 title: مركز العمران الطبي — جراحة الأعصاب وطب الألم، البصرة
 description: يعالج مركز العمران الطبي أمراض الدماغ والعمود الفقري والألم المزمن، بأربعة أقسام تعمل انطلاقًا من تقييم واحد.
 category: home
+order: 999
+source: original
 sections:
-  # ── البطل (HERO) ───────────────────────────────────────────────────────
   - type: row
-    columns: "2"
+    columns: '2'
     gap: wide
     align: center
     items:
       - type: column
-        gap: normal
         items:
           - type: prose
+            variant: hero
             eyebrow: مركز العمران الطبي — البصرة، العراق
             heading: مركز واحد يجمع التشخيص والجراحة وإعادة التأهيل.
-            body: >-
-              يعالج مركز العمران الطبي أمراض الدماغ والعمود الفقري والألم المزمن،
-              بأربعة أقسام تعمل انطلاقًا من تقييم واحد، فلا يُحال المريض بين خدمات
-              غير مترابطة.
-
+            headingLevel: h2
+            body: |-
+              يعالج مركز العمران الطبي أمراض الدماغ والعمود الفقري والألم المزمن، بأربعة أقسام تعمل انطلاقًا من تقييم واحد، فلا يُحال المريض بين خدمات غير مترابطة.
 
               جراحة الأعصاب · إدارة الألم · تحفيز الدماغ والأعصاب · العلاج الطبيعي وإعادة التأهيل.
-          - type: row
-            columns: auto
+          - type: button-row
+            align: start
             gap: tight
             items:
-              - type: button
-                label: ما نعالج
+              - label: ما نعالج
                 href: /conditions/
                 variant: primary
-              - type: button
-                label: اتصل بالسكرتارية
+              - label: اتصل بالسكرتارية
                 href: tel:+9647801926801
                 variant: secondary
           - type: doctor-credit
@@ -42,32 +39,28 @@ sections:
             title: استشاري جراحة الجهاز العصبي
             linkLabel: بورد عربي وعراقي في جراحة الأعصاب — السيرة الكاملة ←
             linkHref: /doctors/hussein-imran-mousa/
+        gap: normal
       - type: media
         items:
           - kind: image
             src: /images/doctors/hussein-imran-mousa-portrait.jpg
             alt: الدكتور حسين عمران موسى، استشاري جراحة الأعصاب
-            aspect: "1/1"
-
-  # ── شريط الأرقام ──────────────────────────────────────────────────────
   - type: stats
+    variant: band
     items:
-      - value: "+٥٠٠٠"
-        label: عملية أجراها الاستشاري بشكل مستقل
-      - value: "٢٥"
-        label: عامًا من الخبرة في جراحة الجهاز العصبي
-      - value: "٤"
-        label: أقسام — الجراحة، إدارة الألم، العلاج الطبيعي، إعادة التأهيل
-      - value: "٦"
-        label: أيام عمل أسبوعيًا، مع مناوبة للحالات الطارئة
-
-  # ── ٠١ — الرعاية تحت سقف واحد ──────────────────────────────────────────
+      - label: عملية أجراها الاستشاري بشكل مستقل
+        value: +٥٠٠٠
+      - label: عامًا من الخبرة في جراحة الجهاز العصبي
+        value: ٢٥
+      - label: أقسام — الجراحة، إدارة الألم، العلاج الطبيعي، إعادة التأهيل
+        value: ٤
+      - label: أيام عمل أسبوعيًا، مع مناوبة للحالات الطارئة
+        value: ٦
   - type: prose
-    number: "٠١"
+    number: ٠١
     heading: الرعاية تحت سقف واحد
-    body: >-
-      التشخيص والجراحة والتدخل لعلاج الألم وإعادة التأهيل يقدّمها فريق واحد،
-      فلا ينتقل المريض بين خدمات متفرقة بين صورة الرنين والعودة إلى عمله.
+    headingLevel: h2
+    body: التشخيص والجراحة والتدخل لعلاج الألم وإعادة التأهيل يقدّمها فريق واحد، فلا ينتقل المريض بين خدمات متفرقة بين صورة الرنين والعودة إلى عمله.
   - type: panels
     panels:
       - title: الجراحة
@@ -128,11 +121,10 @@ sections:
             href: /blog/vasotrain-or-air-pressure-massage/
           - title: التهاب وتر أخيل — التعافي
             href: /blog/achilles-tendinitis/
-
-  # ── ٠٢ — ما نعالج ──────────────────────────────────────────────────────
   - type: prose
-    number: "٠٢"
+    number: ٠٢
     heading: ما نعالج
+    headingLevel: h2
   - type: pathway
     groups:
       - eyebrow: المسار ٠١
@@ -183,97 +175,89 @@ sections:
     footerLink:
       label: كل الحالات والإجراء المستخدم لها ←
       href: /conditions/
-
-  # ── ٠٣ — داخل المركز ───────────────────────────────────────────────────
   - type: prose
-    number: "٠٣"
+    number: ٠٣
     heading: داخل المركز
+    headingLevel: h2
   - type: row
-    columns: "4"
-    gap: normal
     items:
-      - type: label-tile
-        label: الاستقبال
+      - label: الاستقبال
+        type: label-tile
         sublabel: صالة الانتظار
-      - type: label-tile
-        label: غرفة الاستشارة
+      - label: غرفة الاستشارة
+        type: label-tile
         sublabel: الفحص ومراجعة الصور
       - type: media
         items:
           - kind: image
             src: /images/home/DSC_0054-1-1024x684.jpg
             alt: طاولة SpineMED لتخفيف الضغط عن العمود الفقري في مركز العمران
-            aspect: "4/3"
-      - type: label-tile
-        label: قاعة التأهيل
+            aspect: 4/3
+      - label: قاعة التأهيل
+        type: label-tile
         sublabel: العلاج الطبيعي والتمارين
+    columns: '4'
+    gap: normal
+    align: stretch
   - type: row
-    columns: "2"
+    columns: '2'
     gap: wide
     align: start
     items:
       - type: column
-        gap: normal
         items:
-          - type: prose
-            body: >-
-              يقع المركز في مجمّع النقبة الطبي في بريهة بالبصرة، على مقربة من مستشفى
-              الصدر التعليمي حيث تُجرى العمليات. الاستشارة الخارجية وإجراءات الألم
-              اليومية والعلاج بعد الجراحة كلها في موقع المركز.
-          - type: row
-            columns: auto
+          - body: يقع المركز في مجمّع النقبة الطبي في بريهة بالبصرة، على مقربة من مستشفى الصدر التعليمي حيث تُجرى العمليات. الاستشارة الخارجية وإجراءات الألم اليومية والعلاج بعد الجراحة كلها في موقع المركز.
+            type: prose
+            headingLevel: h2
+          - type: button-row
+            align: start
             gap: tight
             items:
-              - type: button
-                label: الموقع على الخريطة
+              - label: الموقع على الخريطة
                 href: https://maps.app.goo.gl/7Ws1iZbCCLrYyai69
                 variant: secondary
                 newTab: true
-              - type: button
-                label: اقرأ آراء مرضانا على Google ←
+              - label: اقرأ آراء مرضانا على Google ←
                 href: https://maps.app.goo.gl/7Ws1iZbCCLrYyai69
                 variant: quiet
                 newTab: true
+        gap: normal
       - type: list
-        variant: rows
         items:
           - label: العنوان
             body: مجمّع النقبة الطبي، بريهة، البصرة، العراق
           - label: أوقات العمل
-            body: "السبت–الخميس ٩:٠٠–١٨:٠٠ · الجمعة ١٤:٠٠–١٨:٠٠"
+            body: السبت–الخميس ٩:٠٠–١٨:٠٠ · الجمعة ١٤:٠٠–١٨:٠٠
           - label: العمليات
             body: مستشفى الصدر التعليمي، البصرة
           - label: حالات الأورام
             body: تُراجع في مركز البصرة التخصصي للأورام
-
-  # ── ٠٤ — الاستشاري المسؤول ─────────────────────────────────────────────
+        variant: rows
   - type: prose
-    number: "٠٤"
+    number: ٠٤
     heading: الاستشاري المسؤول
+    headingLevel: h2
   - type: row
-    columns: "2"
+    columns: '2'
     gap: wide
     align: start
     items:
       - type: column
-        gap: normal
         items:
-          - type: prose
-            heading: الدكتور حسين عمران موسى
-            headingLevel: h3
-            body: >-
+          - body: |-
               **بكالوريوس طب وجراحة · زمالة البورد العراقي في جراحة الجهاز العصبي**
 
-
-              استشاري جراحة الجهاز العصبي في مستشفى الصدر التعليمي، ومدير العراق في
-              جمعية الشرق الأوسط للجراحة التجسيمية والوظيفية، مع زمالات في طب الألم
-              التداخلي في سيؤول ومومباي.
-          - type: button
-            label: السيرة العلمية والبحوث والتدريب ←
+              استشاري جراحة الجهاز العصبي في مستشفى الصدر التعليمي، ومدير العراق في جمعية الشرق الأوسط للجراحة التجسيمية والوظيفية، مع زمالات في طب الألم التداخلي في سيؤول ومومباي.
+            type: prose
+            heading: الدكتور حسين عمران موسى
+            headingLevel: h3
+          - label: السيرة العلمية والبحوث والتدريب ←
             href: /doctors/hussein-imran-mousa/
+            type: button
             variant: quiet
+            newTab: false
+        gap: normal
       - type: list
-        variant: rows
         items:
           - label: الزمالات
             body: مستشفى جامعة سيؤول الوطنية؛ عيادة موبي للألم، مومباي
@@ -283,20 +267,16 @@ sections:
             body: مشرف على أطباء البورد العربي في جراحة الأعصاب منذ ٢٠١٦
           - label: البحوث
             body: خمسة بحوث محكّمة، ومشاركات في يوكوهاما ودبي وتامبا
-
-  # ── شريط الإحالات ──────────────────────────────────────────────────────
+        variant: rows
   - type: contact-strip
     eyebrow: للأطباء المحوِّلين
-    body: >-
-      يُرجى إرسال الصور الشعاعية وملخص الحالة إلى المركز قبل الموعد. تُصنَّف الحالات
-      العاجلة من قبل السكرتارية في اليوم نفسه، ويُرسل تقرير الخطة إلى الطبيب المحوِّل
-      بعد الاستشارة.
+    body: يُرجى إرسال الصور الشعاعية وملخص الحالة إلى المركز قبل الموعد. تُصنَّف الحالات العاجلة من قبل السكرتارية في اليوم نفسه، ويُرسل تقرير الخطة إلى الطبيب المحوِّل بعد الاستشارة.
     columns:
       - label: السكرتارية
         items:
-          - text: "+964-780-1926-801"
+          - text: +964-780-1926-801
             href: tel:+9647801926801
-          - text: "+964-770-6774-773"
+          - text: +964-770-6774-773
             href: tel:+9647706774773
       - label: التحويل بالبريد الإلكتروني
         items:

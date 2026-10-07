@@ -81,7 +81,7 @@
     var paras = (s.body || "").split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
     var hasHeader = s.number || s.eyebrow || s.heading;
     var HeadingTag = s.headingLevel === "h3" ? "h3" : "h2";
-    return h("section", { key: key, className: "prose-block" },
+    return h("section", { key: key, className: "prose-block", "data-variant": s.variant || "default" },
       hasHeader ? h("header", { className: "prose-head" + (s.number ? " prose-head--numbered" : "") },
         s.eyebrow ? h("p", { className: "prose-eyebrow" }, s.eyebrow) : null,
         s.number  ? h("span", { className: "prose-number" }, s.number) : null,
@@ -110,7 +110,7 @@
 
   function renderStats(s, key) {
     var items = s.items || [];
-    return h("section", { key: key, className: "stats-block" },
+    return h("section", { key: key, className: "stats-block", "data-variant": s.variant || "default" },
       s.heading ? h("h2", { className: "stats-heading" }, s.heading) : null,
       s.intro   ? h("p",  { className: "stats-intro"   }, s.intro)   : null,
       h("div", { className: "stats-grid" },
@@ -378,10 +378,15 @@
   function renderColumn(s, key, isAr, getAsset) {
     var items = toArray(s.items);
     var gap = s.gap || "normal";
+    var align = s.align || "stretch";
     var gapValue = gap === "tight" ? "10px" : gap === "wide" ? "clamp(32px, 4vw, 56px)" : "20px";
-    return h("section", { key: key, className: "column-block", "data-gap": gap },
+    var alignValue = align === "start" ? "flex-start"
+                   : align === "end"   ? "flex-end"
+                   : align === "center" ? "center"
+                   : "stretch";
+    return h("section", { key: key, className: "column-block", "data-gap": gap, "data-align": align },
       s.heading ? h("p", { className: "column-heading" }, s.heading) : null,
-      h("div", { className: "column-stack", style: { display: "flex", flexDirection: "column", gap: gapValue } },
+      h("div", { className: "column-stack", style: { display: "flex", flexDirection: "column", gap: gapValue, alignItems: alignValue } },
         items.map(function (child, i) {
           return h("div", { key: i, className: "column-cell" }, renderSection(child, i, false, isAr, getAsset));
         })
@@ -392,6 +397,19 @@
   function renderButton(s, key) {
     var variant = s.variant || "primary";
     return h("a", { key: key, className: "btn btn-" + variant, href: s.href || "#" }, s.label || "");
+  }
+
+  function renderButtonRow(s, key) {
+    var items = s.items || [];
+    return h("div", {
+      key: key,
+      className: "button-row-block",
+      "data-align": s.align || "start",
+      "data-gap": s.gap || "tight",
+    }, items.map(function (it, i) {
+      var v = it.variant || "primary";
+      return h("a", { key: i, className: "btn btn-" + v, href: it.href || "#" }, it.label || "");
+    }));
   }
 
   function renderDoctorCredit(s, key, isAr, getAsset) {
@@ -701,6 +719,7 @@
       case "row":            return renderGenericRow(s, key, isAr, getAsset);
       case "column":         return renderColumn(s, key, isAr, getAsset);
       case "button":         return renderButton(s, key);
+      case "button-row":     return renderButtonRow(s, key);
       case "doctor-credit":  return renderDoctorCredit(s, key, isAr, getAsset);
       case "label-tile":     return renderLabelTile(s, key);
       case "contact-strip":  return renderContactStrip(s, key);
