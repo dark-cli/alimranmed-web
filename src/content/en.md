@@ -7,7 +7,7 @@ source: original
 sections:
   - type: row
     columns: '2'
-    gap: wide
+    gap: normal
     align: center
     items:
       - type: column

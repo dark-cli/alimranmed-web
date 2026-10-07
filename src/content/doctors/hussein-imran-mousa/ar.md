@@ -15,7 +15,7 @@ sections:
   # ── البطل (hero: نثر وشارات على اليسار، صورة على اليمين) ────────────
   - type: row
     columns: "2"
-    gap: wide
+    gap: normal
     align: center
     items:
       - type: column

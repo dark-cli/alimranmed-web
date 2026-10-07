@@ -881,7 +881,7 @@ html[data-theme="dark"] .pt-sun  { display: block; }
   padding: 0;
 }
 .stats-block[data-variant="band"] .stats-grid {
-  max-width: var(--page-max); margin: 0 auto; padding: 0;
+  max-width: var(--page-max); margin: 0 auto; padding: 0 24px;
   border: none;
   grid-template-columns: repeat(auto-fit, minmax(min(175px, 100%), 1fr));
 }
