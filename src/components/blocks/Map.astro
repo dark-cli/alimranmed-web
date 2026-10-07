@@ -1,0 +1,62 @@
+---
+/**
+ * map — a framed iframe showing an embedded location (Google Maps,
+ * OpenStreetMap, etc.). Writer supplies the full `embedUrl` of the
+ * iframe `src` plus an accessible `title`. The component wraps it with
+ * aspect-ratio + a 1px border matching the media figure chrome.
+ *
+ * Fields:
+ *   heading? — optional label above the frame
+ *   embedUrl — full iframe src URL (from Google Maps "Share → Embed a map")
+ *   title    — accessible title for the iframe
+ *   aspect   — "16/9" | "4/3" | "3/2" | "1/1" (default "16/9")
+ */
+interface Props {
+  heading?: string;
+  embedUrl: string;
+  title: string;
+  aspect?: "16/9" | "4/3" | "3/2" | "1/1";
+  id?: string;
+}
+const { heading, embedUrl, title, aspect = "16/9", id } = Astro.props;
+---
+
+<section class="map-block" id={id}>
+  {heading && <h2 class="map-heading">{heading}</h2>}
+  <div class="map-frame" style={`aspect-ratio: ${aspect};`}>
+    <iframe
+      src={embedUrl}
+      title={title}
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    ></iframe>
+  </div>
+</section>
+
+<style>
+  .map-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .map-heading {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(22px, 2.8vw, 30px);
+    color: var(--ink);
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+  :global(html[dir="rtl"]) .map-heading { font-weight: 700; letter-spacing: 0; }
+
+  .map-frame {
+    width: 100%;
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .map-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>

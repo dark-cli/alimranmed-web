@@ -400,6 +400,46 @@ _faq: &_faq
         - { label: Question, name: question, widget: string }
         - { label: Answer (markdown links OK), name: answer, widget: text }
 
+_social_row: &_social_row
+  name: social-row
+  label: Social Row (icon links)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Optional small label above the row." }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      fields:
+        - label: Platform
+          name: platform
+          widget: select
+          hint: "Picks the brand icon."
+          options:
+            - { label: Facebook,  value: facebook }
+            - { label: Instagram, value: instagram }
+            - { label: YouTube,   value: youtube }
+            - { label: Telegram,  value: telegram }
+            - { label: TikTok,    value: tiktok }
+            - { label: Twitter,   value: twitter }
+            - { label: "X (Twitter)", value: x }
+            - { label: LinkedIn,  value: linkedin }
+            - { label: WhatsApp,  value: whatsapp }
+        - { label: Full URL, name: href, widget: string, hint: "Full external URL — https://..." }
+        - { label: Accessible label, name: label, widget: string, required: false, hint: "Defaults to the platform name." }
+
+_map: &_map
+  name: map
+  label: Map (embedded location)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - { label: Embed URL, name: embedUrl, widget: string, hint: "From Google Maps → Share → Embed a map → copy the iframe's src URL." }
+    - { label: Accessible title, name: title, widget: string, hint: "Screen-reader label for the iframe." }
+    - label: Aspect ratio
+      name: aspect
+      widget: select
+      default: "16/9"
+      options: ["16/9", "4/3", "3/2", "1/1"]
+
 # Leaf widgets — the base set of non-layout block widgets. These can appear
 # at any nesting depth in the CMS editor; row/column layouts cannot (they
 # are introduced through the tiered anchors below so the config graph
@@ -422,6 +462,8 @@ _leaf_types: &leaf_types
   - *_chips
   - *_button_row
   - *_faq
+  - *_social_row
+  - *_map
   - *_cards
 
 # ── Tiered row/column anchors ────────────────────────────────────────────
@@ -526,6 +568,8 @@ _tier_1_types: &tier_1_types
   - *_chips
   - *_button_row
   - *_faq
+  - *_social_row
+  - *_map
   - *_cards
 
 _row_2: &_row_2
@@ -619,6 +663,8 @@ _tier_2_types: &tier_2_types
   - *_chips
   - *_button_row
   - *_faq
+  - *_social_row
+  - *_map
   - *_cards
 
 # Unified sections field — used by ALL collections (treatments, services,
@@ -714,6 +760,8 @@ _sections_field: &sections_field
     - *_chips
     - *_button_row
     - *_faq
+    - *_social_row
+    - *_map
     - *_cards
 
 # ── Collections ──────────────────────────────────────────────────────────
@@ -1080,6 +1128,67 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: text, required: false }
           - { label: Category, name: category, widget: string, required: false, default: about }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+
+  # ── Contact ────────────────────────────────────────────────────────────
+  # Single bilingual pair at src/content/contact/{en,ar}.md. Hero prose +
+  # contact strip + social row + map all live inside the one page as
+  # sections — same model as home + about.
+  - name: contact
+    label: Contact
+    label_singular: Contact page
+    media_folder: /public/images
+    public_folder: /images
+    files:
+      - name: en
+        label: Contact — English
+        file: src/content/contact/en.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: contact }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+      - name: ar
+        label: Contact — Arabic
+        file: src/content/contact/ar.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: contact }
           - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
           - { label: Image, name: image, widget: image, required: false }
           - { label: Image alt, name: imageAlt, widget: string, required: false }

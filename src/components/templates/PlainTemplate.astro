@@ -29,11 +29,17 @@ interface Props {
   sections: any[];
   locale: Locale;
   heroPreload?: HeroPreload;
+  fontAwesome?: boolean;
 }
-const { title, description = "", sections, locale, heroPreload } = Astro.props;
+const { title, description = "", sections, locale, heroPreload, fontAwesome } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} heroPreload={heroPreload}>
+<BaseLayout
+  title={title}
+  description={description}
+  heroPreload={heroPreload}
+  fontAwesome={fontAwesome}
+>
   <Fragment slot="head"><slot name="head" /></Fragment>
   <div class="plain-wrap">
     <Sections sections={sections} locale={locale} />
