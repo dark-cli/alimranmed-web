@@ -1,21 +1,14 @@
 ---
 /**
- * Home page — thin loader that renders src/content/{en,ar}.md through the
- * shared Sections dispatcher. The two Markdown files live at the root of
- * src/content/ so the on-disk layout mirrors the URL exactly:
- *   /en/  → src/content/en.md
- *   /ar/  → src/content/ar.md
- * All editable content (hero copy, stats, departments, pathways, facility
- * labels, consultant bio, referral strip) is in those two files and is
- * edited through the CMS "Home" collection.
- *
- * Preloads the hero portrait so Largest Contentful Paint stays fast.
+ * Home page — thin loader. Reads src/content/{en,ar}.md and renders
+ * through the shared PlainTemplate. All editable content lives in those
+ * two Markdown files (the `home` collection); layout is in
+ * src/components/templates/PlainTemplate.astro.
  */
-import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getEntry } from "astro:content";
 import { currentLocale } from "../../lib/i18n";
-import { imageVariants } from "../../lib/image";
-import Sections from "../../components/blocks/Sections.astro";
+import { heroPreloadFromSections } from "../../lib/pages";
+import PlainTemplate from "../../components/templates/PlainTemplate.astro";
 
 export function getStaticPaths() {
   return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
@@ -23,69 +16,24 @@ export function getStaticPaths() {
 
 const locale = currentLocale(Astro);
 
-// Load the home page for this locale. If the Arabic file ever goes
-// missing, Astro returns undefined — we silently fall back to English
-// so the site keeps rendering.
+// Load the home page for this locale, with an English fallback so the
+// site keeps rendering if the Arabic file is ever missing.
 const entry =
   (await getEntry("home", locale)) ??
   (await getEntry("home", "en"));
 
-const sections = (entry?.data as { sections?: any[] } | undefined)?.sections ?? [];
-
-// Hero image is the first image we can find in a `media` block anywhere in
-// the first section tree — used for the LCP preload hint. Shallow scan is
-// enough since the hero is always the first row.
-function findFirstImageSrc(nodes: any[] | undefined): string | undefined {
-  if (!nodes) return undefined;
-  for (const n of nodes) {
-    if (!n || typeof n !== "object") continue;
-    if (n.type === "media" && Array.isArray(n.items)) {
-      const img = n.items.find((it: any) => it?.kind === "image" && typeof it.src === "string");
-      if (img) return img.src as string;
-    }
-    if (Array.isArray(n.items)) {
-      const found = findFirstImageSrc(n.items);
-      if (found) return found;
-    }
-  }
-  return undefined;
-}
-
-const heroSource = findFirstImageSrc(sections);
-const heroImg = heroSource ? imageVariants(heroSource) : null;
-
-const title = (entry?.data as { title?: string } | undefined)?.title ?? "Alimran Clinic";
-const description = (entry?.data as { description?: string } | undefined)?.description ?? "";
+const data = (entry?.data ?? {}) as {
+  title?: string;
+  description?: string;
+  sections?: any[];
+};
+const sections = data.sections ?? [];
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  heroPreload={heroImg?.srcset ? {
-    srcset: heroImg.srcset,
-    sizes: "(min-width: 980px) 50vw, 100vw",
-    type: "image/webp",
-  } : undefined}
->
-  <div class="home-wrap">
-    <Sections sections={sections} locale={locale} />
-  </div>
-
-  <div class="tail-space" aria-hidden="true"></div>
-</BaseLayout>
-
-<style>
-  .home-wrap {
-    max-width: var(--page-max);
-    margin: 0 auto;
-    /* Top padding matches the old hero-band's padding-block so the hero
-       breathes under the header. Block widgets add their own top margin
-       below the first section, so we zero only that one to avoid a
-       double gap under the hero. */
-    padding: clamp(44px, 5.5vw, 88px) 24px 0;
-  }
-  .home-wrap > :global(section:first-child),
-  .home-wrap > :global(section.row-block:first-child) { margin-top: 0; }
-
-  .tail-space { height: clamp(56px, 7vw, 96px); }
-</style>
+<PlainTemplate
+  title={data.title ?? "Alimran Clinic"}
+  description={data.description ?? ""}
+  sections={sections}
+  locale={locale}
+  heroPreload={heroPreloadFromSections(sections)}
+/>

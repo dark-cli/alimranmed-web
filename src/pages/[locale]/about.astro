@@ -1,14 +1,11 @@
 ---
 /**
- * About page — thin loader that renders src/content/about/{en,ar}.md
- * through the shared Sections dispatcher. All editable content (mission,
- * vision, values, CTA to the doctors page) lives in those two Markdown
- * files and is edited through the CMS "About" collection.
+ * About page — thin loader. Reads src/content/about/{en,ar}.md and
+ * renders through the shared PlainTemplate.
  */
-import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getEntry } from "astro:content";
 import { currentLocale } from "../../lib/i18n";
-import Sections from "../../components/blocks/Sections.astro";
+import PlainTemplate from "../../components/templates/PlainTemplate.astro";
 
 export function getStaticPaths() {
   return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
@@ -20,27 +17,16 @@ const entry =
   (await getEntry("about", locale)) ??
   (await getEntry("about", "en"));
 
-const sections = (entry?.data as { sections?: any[] } | undefined)?.sections ?? [];
-const title = (entry?.data as { title?: string } | undefined)?.title ?? "About";
-const description = (entry?.data as { description?: string } | undefined)?.description ?? "";
+const data = (entry?.data ?? {}) as {
+  title?: string;
+  description?: string;
+  sections?: any[];
+};
 ---
 
-<BaseLayout title={title} description={description}>
-  <div class="about-wrap">
-    <Sections sections={sections} locale={locale} />
-  </div>
-
-  <div class="tail-space" aria-hidden="true"></div>
-</BaseLayout>
-
-<style>
-  .about-wrap {
-    max-width: var(--page-max);
-    margin: 0 auto;
-    padding: clamp(44px, 5.5vw, 88px) 24px 0;
-  }
-  .about-wrap > :global(section:first-child),
-  .about-wrap > :global(section.row-block:first-child) { margin-top: 0; }
-
-  .tail-space { height: clamp(56px, 7vw, 96px); }
-</style>
+<PlainTemplate
+  title={data.title ?? "About"}
+  description={data.description ?? ""}
+  sections={data.sections ?? []}
+  locale={locale}
+/>
