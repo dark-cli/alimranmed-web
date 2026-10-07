@@ -8,7 +8,7 @@ locally and edit content through the browser-based CMS.
 exactly what to type and what you should see. If a step fails, skip to
 the **Troubleshooting** section at the bottom.
 
-**Already technical?** See [`docs/dev-setup.md`](dev-setup.md) for the shorter
+**Already technical?** See [`docs/dev/setup.md`](../dev/setup.md) for the shorter
 developer-flavoured version.
 
 ---
@@ -269,7 +269,7 @@ then `git push` again.
 ### Live site didn't update after `git push`
 Give it 2–3 minutes — the Cloudflare build takes a bit. If after 10
 minutes it still looks stale, check the Cloudflare Pages dashboard
-for a failed build. See [`docs/dev-deployment.md`](dev-deployment.md).
+for a failed build. See [`docs/dev/deployment.md`](../dev/deployment.md).
 
 ### CMS says "cannot access folder" / permission revoked
 Browsers sometimes drop File System Access permissions after a long
@@ -292,10 +292,10 @@ That nukes every build cache and reinstalls fresh. Your content under
 
 ## What to read next
 
-- [`docs/manual-writing-guide.md`](manual-writing-guide.md) — the three ways to get
+- [`docs/user-manual/writing-guide.md`](writing-guide.md) — the three ways to get
   content onto the site, including the AI-assisted route.
-- [`docs/manual-cms.md`](manual-cms.md) — tour of every CMS feature + its limits.
-- [`docs/manual-content-authoring.md`](manual-content-authoring.md) — how to write
+- [`docs/user-manual/cms.md`](cms.md) — tour of every CMS feature + its limits.
+- [`docs/user-manual/content-authoring.md`](content-authoring.md) — how to write
   an article (frontmatter, voice, bilingual policy).
-- [`docs/manual-sections.md`](manual-sections.md) — reference for every block type
+- [`docs/user-manual/sections.md`](sections.md) — reference for every block type
   (hero, FAQ, stats, image row, …) with examples.

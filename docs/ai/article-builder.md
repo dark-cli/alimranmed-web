@@ -4,7 +4,7 @@ The most common request: the doctor sends a rough draft (usually a few
 paragraphs of prose, sometimes bullet points, maybe a photo attachment) and
 asks for a proper article. Turn it into a block-based `sections: []` structure.
 
-**Preserve the doctor's voice** ([`../manual-content-authoring.md#rule-1—preserve-the-doctors-voice`](../manual-content-authoring.md)).
+**Preserve the doctor's voice** ([`../user-manual/content-authoring.md#rule-1—preserve-the-doctors-voice`](../user-manual/content-authoring.md)).
 Your job is layout and structure, not rewriting.
 
 ---
@@ -45,7 +45,7 @@ Go through the draft chunk by chunk. Reach for these widgets, in this order:
 | Photo or video | **`media`** |
 | Related conditions/procedures | **`cards`** at the bottom |
 
-See [`../manual-sections.md`](../manual-sections.md) for the full syntax of each.
+See [`../user-manual/sections.md`](../user-manual/sections.md) for the full syntax of each.
 
 ### 4. Identify gaps — ASK, don't invent
 

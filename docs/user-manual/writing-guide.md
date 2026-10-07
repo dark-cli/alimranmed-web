@@ -45,7 +45,7 @@ You can also **mix**: use the AI to generate a first draft, then open it in the 
 
 Before you start **any** path, open these two reference pages in another tab:
 
-- 📘 [`sections.md`](manual-sections.md) — the full list of block types with YAML examples
+- 📘 [`sections.md`](sections.md) — the full list of block types with YAML examples
 - 🖼️ **The live block gallery** → run `npm run dev`, then visit:
   - [http://localhost:4321/en/dev-blocks/](http://localhost:4321/en/dev-blocks/) (English)
   - [http://localhost:4321/ar/dev-blocks/](http://localhost:4321/ar/dev-blocks/) (Arabic)
@@ -90,7 +90,7 @@ In the CMS, switch to the Arabic entry (or create it) and do the same thing. Bot
 
 ### Full CMS reference
 
-- 📘 [`cms.md`](manual-cms.md) — all CMS features, limitations, and troubleshooting
+- 📘 [`cms.md`](cms.md) — all CMS features, limitations, and troubleshooting
 
 ---
 
@@ -150,11 +150,11 @@ Any capable AI works. Pick based on budget and comfort:
 
 The AI needs to read **five files** before it can safely work on an article. Attach them, upload them, or paste their contents in:
 
-1. 📘 [`docs/ai/SKILL.md`](ai/SKILL.md) — project rules, voice policy, non-negotiables
-2. 📘 [`docs/ai/article-builder.md`](ai/article-builder.md) — step-by-step workflow for turning a draft into blocks
-3. 📘 [`docs/manual-sections.md`](manual-sections.md) — all block types with YAML syntax
-4. 📘 [`docs/manual-content-authoring.md`](manual-content-authoring.md) — frontmatter rules + bilingual policy
-5. 📘 [`docs/ai/checks.md`](ai/checks.md) — commands to run before saying "done"
+1. 📘 [`docs/ai/SKILL.md`](../ai/SKILL.md) — project rules, voice policy, non-negotiables
+2. 📘 [`docs/ai/article-builder.md`](../ai/article-builder.md) — step-by-step workflow for turning a draft into blocks
+3. 📘 [`docs/user-manual/sections.md`](sections.md) — all block types with YAML syntax
+4. 📘 [`docs/user-manual/content-authoring.md`](content-authoring.md) — frontmatter rules + bilingual policy
+5. 📘 [`docs/ai/checks.md`](../ai/checks.md) — commands to run before saying "done"
 
 > 💡 **If you're using Claude Code or Antigravity inside this repo**, you can skip the manual file-attaching — those tools already read these docs. Just send the prompt below.
 >
@@ -172,8 +172,8 @@ reading, then wait for me to say "proceed":
 
   1. docs/ai/SKILL.md         ← project rules + voice policy (NON-NEGOTIABLE)
   2. docs/ai/article-builder.md ← step-by-step workflow for turning a draft into blocks
-  3. docs/manual-sections.md          ← every block type with YAML syntax
-  4. docs/manual-content-authoring.md ← frontmatter fields + bilingual policy
+  3. docs/user-manual/sections.md          ← every block type with YAML syntax
+  4. docs/user-manual/content-authoring.md ← frontmatter fields + bilingual policy
   5. docs/ai/checks.md         ← commands to run before saying "done"
 
 (If you can't access these files, tell me — I'll paste their contents.
@@ -203,7 +203,7 @@ STEP 4 — WHAT I NEED YOU TO DO (after you've read the docs in Step 1):
   3. If my draft is thin, ASK me for missing pieces before inventing anything —
      follow article-builder.md "Identify gaps — ASK, don't invent"
   4. Preserve the doctor's clinical voice. No filler ("Are you suffering from…").
-  5. Only use block types defined in docs/manual-sections.md. Do not invent new ones.
+  5. Only use block types defined in docs/user-manual/sections.md. Do not invent new ones.
   6. Run `npm run build` when done (as described in docs/ai/checks.md). Fix any
      errors before handing off.
   7. Report back with: the files you created, the preview URL, and any TODOs
@@ -241,7 +241,7 @@ The AI docs enforce these rules — you don't have to repeat them, but you shoul
 - No invented stats, images, or related-page links
 - Must run `npm run build` before handing off
 
-**All of this is in [`docs/ai/SKILL.md`](ai/SKILL.md)** and the AI reads it as part of the prompt.
+**All of this is in [`docs/ai/SKILL.md`](../ai/SKILL.md)** and the AI reads it as part of the prompt.
 
 ---
 
@@ -251,8 +251,8 @@ The AI docs enforce these rules — you don't have to repeat them, but you shoul
 
 ### 1. Open the references
 
-- 📘 [`manual-content-authoring.md`](manual-content-authoring.md) — frontmatter fields, bilingual rules, Markdown gotchas
-- 📘 [`sections.md`](manual-sections.md) — every block with YAML syntax
+- 📘 [`content-authoring.md`](content-authoring.md) — frontmatter fields, bilingual rules, Markdown gotchas
+- 📘 [`sections.md`](sections.md) — every block with YAML syntax
 - 🖼️ [`/en/dev-blocks/`](http://localhost:4321/en/dev-blocks/) — visual reference
 
 ### 2. Create the files
@@ -291,7 +291,7 @@ npm run dev
 
 ### Full checklist
 
-See [`docs/ai/checks.md`](ai/checks.md) — the same checks the AI runs, you should run too.
+See [`docs/ai/checks.md`](../ai/checks.md) — the same checks the AI runs, you should run too.
 
 ---
 
@@ -315,7 +315,7 @@ drafts/                           ← YOUR working notes (not published)
 └── voice-memo-2026-01-15.txt
 ```
 
-Full folder map: [`dev-project-structure.md`](dev-project-structure.md)
+Full folder map: [`../dev/project-structure.md`](../dev/project-structure.md)
 
 ---
 
@@ -337,13 +337,13 @@ The `drafts/` folder is for your working notes — nothing in it is published.
 
 ### "Do I have to write both English and Arabic?"
 
-Yes, every topic has both files. If you can only write one, create the other as a stub with a TODO comment — see [`manual-content-authoring.md`](content-authoring.md#the-bilingual-workflow). The site shows a "translation in progress" banner so readers know.
+Yes, every topic has both files. If you can only write one, create the other as a stub with a TODO comment — see [`content-authoring.md`](content-authoring.md#the-bilingual-workflow). The site shows a "translation in progress" banner so readers know.
 
 ### "How do I know which block to use?"
 
 Open the block gallery: `npm run dev`, then [http://localhost:4321/en/dev-blocks/](http://localhost:4321/en/dev-blocks/). Every block type is shown with placeholder + real-content examples. Match your content to the block that fits.
 
-Quick cheat-sheet (from [`sections.md`](manual-sections.md)):
+Quick cheat-sheet (from [`sections.md`](sections.md)):
 
 | You have… | Use block |
 |---|---|
@@ -360,7 +360,7 @@ Quick cheat-sheet (from [`sections.md`](manual-sections.md)):
 
 ### "What if the build fails?"
 
-The error names the file and field. Open [`docs/ai/checks.md`](ai/checks.md) — it lists the common failures and their fixes.
+The error names the file and field. Open [`docs/ai/checks.md`](../ai/checks.md) — it lists the common failures and their fixes.
 
 ### "Can I use HTML in the article?"
 
@@ -384,16 +384,16 @@ Here's every document you might need, in reading order:
 
 | When you need… | Open |
 |---|---|
-| An entry point and overview (**you are here**) | `docs/manual-writing-guide.md` |
-| Frontmatter fields, bilingual rules | [`docs/manual-content-authoring.md`](manual-content-authoring.md) |
-| Block types with YAML syntax | [`docs/manual-sections.md`](manual-sections.md) |
-| How to use the CMS | [`docs/manual-cms.md`](manual-cms.md) |
-| AI rules, voice policy, non-negotiables | [`docs/ai/SKILL.md`](ai/SKILL.md) |
-| AI workflow: draft → article | [`docs/ai/article-builder.md`](ai/article-builder.md) |
-| Build/validation commands | [`docs/ai/checks.md`](ai/checks.md) |
-| Where every file in the project lives | [`docs/dev-project-structure.md`](dev-project-structure.md) |
-| How images are optimized | [`docs/dev-image-optimization.md`](dev-image-optimization.md) |
-| Deployment flow | [`docs/dev-deployment.md`](dev-deployment.md) |
+| An entry point and overview (**you are here**) | `docs/user-manual/writing-guide.md` |
+| Frontmatter fields, bilingual rules | [`docs/user-manual/content-authoring.md`](content-authoring.md) |
+| Block types with YAML syntax | [`docs/user-manual/sections.md`](sections.md) |
+| How to use the CMS | [`docs/user-manual/cms.md`](cms.md) |
+| AI rules, voice policy, non-negotiables | [`docs/ai/SKILL.md`](../ai/SKILL.md) |
+| AI workflow: draft → article | [`docs/ai/article-builder.md`](../ai/article-builder.md) |
+| Build/validation commands | [`docs/ai/checks.md`](../ai/checks.md) |
+| Where every file in the project lives | [`docs/dev/project-structure.md`](../dev/project-structure.md) |
+| How images are optimized | [`docs/dev/image-optimization.md`](../dev/image-optimization.md) |
+| Deployment flow | [`docs/dev/deployment.md`](../dev/deployment.md) |
 | Visual block gallery (live) | `npm run dev` → `/en/dev-blocks/` |
 
 ---
