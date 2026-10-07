@@ -26,6 +26,7 @@ import DoctorCredit  from "./DoctorCredit.astro";
 import LabelTile     from "./LabelTile.astro";
 import ContactStrip  from "./ContactStrip.astro";
 import Cards         from "./Cards.astro";
+import Faq           from "./Faq.astro";
 
 interface Props {
   sections: any[];
@@ -38,6 +39,7 @@ const isAr = locale === "ar";
 // string when the editor left the heading empty.
 const factsDefaultHeading = isAr ? "حقائق أساسية" : "Key facts";
 const cardsDefaultHeading = isAr ? "قراءات ذات صلة" : "Related reading";
+const faqDefaultHeading   = isAr ? "أسئلة شائعة"  : "Common questions";
 
 // Sequentially assign anchor IDs for sections that have headings.
 // Must match the logic in buildToc (src/lib/toc.ts): id = "s-{n}".
@@ -173,6 +175,14 @@ const lastListIdx = sections.reduce(
       body={s.body}
       columns={s.columns}
       locale={locale}
+    />;
+
+  if (s.type === "faq")
+    return <Faq
+      heading={s.heading ?? faqDefaultHeading}
+      items={s.items}
+      locale={locale}
+      id={nextId(s)}
     />;
 
   if (s.type === "cards")

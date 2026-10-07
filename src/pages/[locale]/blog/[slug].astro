@@ -7,7 +7,7 @@ import { BLOG_LABELS, NAV_LABELS } from "../../../lib/labels";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
 import ArticleBody from "../../../components/article/ArticleBody.astro";
 import { excerpt } from "../../../lib/excerpt";
-import { articlePage, faqPage } from "../../../lib/schema";
+import { articlePage, faqPage, extractFaqs } from "../../../lib/schema";
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
@@ -60,7 +60,10 @@ const bodyImages = usingSections ? extractBodyImages(entry.body) : [];
       reviewedBy: (entry.data as { reviewedBy?: string }).reviewedBy,
       reviewedAt: (entry.data as { reviewedAt?: Date }).reviewedAt,
     }),
-    faqPage((entry.data as { faqItems?: Array<{ question: string; answer: string }> }).faqItems),
+    faqPage([
+      ...((entry.data as { faqItems?: Array<{ question: string; answer: string }> }).faqItems ?? []),
+      ...extractFaqs((entry.data as { sections?: unknown }).sections),
+    ]),
   ]}
   locale={locale}
   breadcrumbs={[

@@ -62,7 +62,7 @@ export function articlePage(input: PageInput) {
   };
 }
 
-/** FAQPage from frontmatter faqItems, or null when there are none. */
+/** FAQPage from a list of {question, answer} items, or null when there are none. */
 export function faqPage(items?: FaqItem[]) {
   if (!items?.length) return null;
   return {
@@ -74,6 +74,36 @@ export function faqPage(items?: FaqItem[]) {
       acceptedAnswer: { "@type": "Answer", text: q.answer },
     })),
   };
+}
+
+/**
+ * Walk a sections array and harvest all FAQ blocks' items into a flat list.
+ * Used by article routes to feed faqPage() without duplicating the data
+ * between frontmatter and content. Recurses into row/column children.
+ */
+export function extractFaqs(sections: unknown): FaqItem[] {
+  const out: FaqItem[] = [];
+  const visit = (node: unknown): void => {
+    if (!node || typeof node !== "object") return;
+    const s = node as { type?: string; items?: unknown };
+    if (s.type === "faq" && Array.isArray(s.items)) {
+      for (const it of s.items) {
+        if (it && typeof it === "object" && "question" in it && "answer" in it) {
+          const { question, answer } = it as FaqItem;
+          if (question && answer) out.push({ question, answer });
+        }
+      }
+      return;
+    }
+    // Recurse into container block items (row, column) which may hold nested blocks.
+    if (Array.isArray(s.items)) {
+      for (const child of s.items) visit(child);
+    }
+  };
+  if (Array.isArray(sections)) {
+    for (const s of sections) visit(s);
+  }
+  return out;
 }
 
 /** Doctor profile. */

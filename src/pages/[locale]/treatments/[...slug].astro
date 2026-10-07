@@ -6,7 +6,7 @@ import { buildToc } from "../../../lib/toc";
 import { TREATMENT_PATHWAY } from "../../../lib/pathways";
 import { TREATMENT_LABELS, NAV_LABELS } from "../../../lib/labels";
 import ArticleLayout from "../../../components/article/ArticleLayout.astro";
-import { conditionPage, faqPage } from "../../../lib/schema";
+import { conditionPage, faqPage, extractFaqs } from "../../../lib/schema";
 import ArticleBody from "../../../components/article/ArticleBody.astro";
 
 const locale = currentLocale(Astro);
@@ -78,7 +78,10 @@ const disclaimer = locale === "ar"
       reviewedBy: (entry.data as { reviewedBy?: string }).reviewedBy,
       reviewedAt: (entry.data as { reviewedAt?: Date }).reviewedAt,
     }),
-    faqPage((entry.data as { faqItems?: Array<{ question: string; answer: string }> }).faqItems),
+    faqPage([
+      ...((entry.data as { faqItems?: Array<{ question: string; answer: string }> }).faqItems ?? []),
+      ...extractFaqs((entry.data as { sections?: unknown }).sections),
+    ]),
   ]}
   locale={locale}
   breadcrumbs={[
