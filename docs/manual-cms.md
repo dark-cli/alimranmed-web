@@ -124,15 +124,10 @@ For the real thing:
 
 ---
 
-## Editing the CMS config itself
+## Changing what the CMS can edit
 
-`public/admin/config.yml` defines every field, widget, and collection the admin
-shows. If you want to:
-
-- Add a field to a collection → edit the collection's `fields:` list AND add the same field to `src/content.config.ts` (Zod schema).
-- Add a new block type → add a new entry under `types:` in the `_sections_field` anchor AND add a Zod object for it in `content.config.ts` AND add a dispatch case in `src/components/blocks/Sections.astro` AND write the component under `src/components/blocks/`.
-- Change how a block previews → edit `public/admin/preview.js`.
-
-The schema is the single-source-of-truth question mark. See
-[`ai/SKILL.md#adding-a-new-block-type`](ai/SKILL.md#adding-a-new-block-type)
-for the exact steps.
+Adding a new field, a new collection, or a brand-new block type is a
+developer task — it touches the Zod schema in `src/content.config.ts`,
+the YAML config in `public/admin/config.yml`, the section dispatcher,
+and the preview renderer. Those steps live in the developer brief —
+see [`ai/SKILL.md`](ai/SKILL.md) → "Add a new block/widget type".
