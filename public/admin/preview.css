@@ -837,6 +837,25 @@ html[data-theme="dark"] .pt-sun  { display: block; }
   text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
 }
 
+/* ── Chips block ───────────────────────────────────────────────────────── */
+.chips-block { margin: clamp(16px, 2vw, 24px) 0; }
+.chips-heading {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 12px;
+}
+[dir="rtl"] .chips-heading {
+  font-family: var(--font-body); letter-spacing: 0.02em; text-transform: none; font-size: 12px;
+}
+.chips-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em;
+  color: var(--ink); border: 1px solid var(--line-strong);
+  padding: 6px 11px; display: inline-block; line-height: 1.3;
+}
+[dir="rtl"] .chip {
+  font-family: var(--font-body); letter-spacing: 0; font-size: 13px;
+}
+
 /* ── FAQ block ─────────────────────────────────────────────────────────── */
 .faq-block { margin: clamp(28px, 3.5vw, 44px) 0; }
 .faq-heading {

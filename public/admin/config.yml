@@ -319,6 +319,18 @@ _cards: &_cards
       hint: "Locale-agnostic paths, e.g. /treatments/back-pain/ or /blog/my-post/. Title, description and date are pulled automatically."
       field: { label: Path, name: item, widget: string }
 
+_chips: &_chips
+  name: chips
+  label: Chips (inline badges)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      hint: "Short label-only chips, e.g. credentials (MBChB), tags, categories. Non-clickable — for clickable chips use the Pathway block."
+      field: { label: Label, name: item, widget: string }
+
 _faq: &_faq
   name: faq
   label: FAQ (question / answer list)
@@ -352,6 +364,7 @@ _leaf_types: &leaf_types
   - *_doctor_credit
   - *_label_tile
   - *_contact_strip
+  - *_chips
   - *_faq
   - *_cards
 
@@ -444,6 +457,7 @@ _tier_1_types: &tier_1_types
   - *_doctor_credit
   - *_label_tile
   - *_contact_strip
+  - *_chips
   - *_faq
   - *_cards
 
@@ -525,6 +539,7 @@ _tier_2_types: &tier_2_types
   - *_doctor_credit
   - *_label_tile
   - *_contact_strip
+  - *_chips
   - *_faq
   - *_cards
 
@@ -608,6 +623,7 @@ _sections_field: &sections_field
     - *_doctor_credit
     - *_label_tile
     - *_contact_strip
+    - *_chips
     - *_faq
     - *_cards
 
@@ -704,7 +720,7 @@ collections:
         widget: list
         required: false
         default: []
-        hint: "Post-nominal letters. Renders as chips in the detail hero AND as the creds line on the listing card."
+        hint: "Post-nominal letters shown on the /doctors/ listing card. Hero chips are a separate 'chips' block inside the page sections."
         field: { label: Credential, name: credential, widget: string }
       - label: Languages
         name: languages
@@ -719,17 +735,14 @@ collections:
         name: photo
         widget: image
         required: false
-        hint: "Shown on both listing card and detail hero."
+        hint: "Shown on the listing card AND used for the LCP preload of the detail page's hero portrait. The visible hero portrait is set inside the page sections (first media block of the hero row)."
         media_folder: "/public/images/doctors"
         public_folder: "/images/doctors"
       - { label: Photo alt text, name: photoAlt, widget: string, required: false, hint: "Screen-reader description. Defaults to Full name." }
 
-      # ── Hero copy (always present — every doctor has one) ────────────
-      - { label: Hero eyebrow, name: heroEyebrow, widget: string, hint: "Small caps label above the name (e.g. 'Lead consultant · Clinical profile')." }
-      - { label: Hero headline, name: heroHeadline, widget: string, required: false, hint: "Defaults to Full name if left empty." }
-      - { label: Hero lede, name: heroLede, widget: text, hint: "One-paragraph intro shown under the name." }
-
-      # ── CV sections (page body blocks — including memberships) ───────
+      # ── Page body (hero + CV, all as blocks) ─────────────────────────
+      # The hero (eyebrow + name + lede + credential chips + portrait) is
+      # built from a row + prose + chips + media at the top of this list.
       - *sections_field
 
       # ── Metadata (bookkeeping — not shown on the detail page) ────────

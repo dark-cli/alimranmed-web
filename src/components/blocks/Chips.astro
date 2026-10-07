@@ -1,0 +1,58 @@
+---
+/**
+ * chips — a horizontal flex of small bordered labels. Non-clickable
+ * (for clickable chips use `pathway`). Used for credential badges,
+ * tags, categories, etc.
+ *
+ * Fields:
+ *   heading?  — optional label line above the chips
+ *   items[]   — array of strings
+ */
+interface Props {
+  heading?: string;
+  items: string[];
+  id?: string;
+}
+const { heading, items, id } = Astro.props;
+---
+
+<section class="chips-block" id={id}>
+  {heading && <p class="chips-heading">{heading}</p>}
+  <div class="chips-row">
+    {items.map((label) => <span class="chip">{label}</span>)}
+  </div>
+</section>
+
+<style>
+  .chips-block { margin: clamp(16px, 2vw, 24px) 0; }
+  .chips-heading {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  :global(html[dir="rtl"]) .chips-heading {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .chips-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    padding: 6px 11px;
+    display: inline-block;
+    line-height: 1.3;
+  }
+  :global(html[dir="rtl"]) .chip {
+    font-family: var(--font-body);
+    letter-spacing: 0;
+    font-size: 13px;
+  }
+</style>

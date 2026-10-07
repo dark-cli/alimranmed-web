@@ -189,6 +189,16 @@ const blockCards = z.object({
   items: z.array(z.string()).min(1),  // locale-agnostic paths: /treatments/back-pain/
 });
 
+// Chips — a horizontal flex of small bordered labels. Used for inline
+// credential badges, tags, categories, etc. — anywhere short label-only
+// items need to sit side-by-side on one or two lines. Non-clickable (for
+// clickable chips use `pathway`).
+const blockChips = z.object({
+  type: z.literal("chips"),
+  heading: z.string().optional(),
+  items: z.array(z.string()).min(1),
+});
+
 // FAQ block — question/answer pairs. Renders visually (always expanded, no
 // JS, best for Googlebot indexing) and the top-level route also harvests
 // these items into FAQPage JSON-LD so writers get SEO for free. Replaces
@@ -290,6 +300,7 @@ const section = z.discriminatedUnion("type", [
   blockDoctorCredit,
   blockLabelTile,
   blockContactStrip,
+  blockChips,
   blockFaq,
   blockCards,
 ]);
@@ -325,21 +336,19 @@ const doctors = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/doctors" }),
   schema: pageBase.extend({
     fullName: z.string(),
-    // Shared across listing card and detail hero — one source of truth.
+    // Shared across listing card and Physician JSON-LD.
     titles: z.array(z.string()).default([]),
-    specialty: z.string().optional(),           // listing card chip
-    photo: z.string().optional(),               // listing + detail portrait
+    specialty: z.string().optional(),           // listing card chip + JSON-LD specialty
+    photo: z.string().optional(),               // listing portrait + JSON-LD image + hero LCP preload
     photoAlt: z.string().optional(),            // portrait alt (falls back to fullName)
     languages: z.array(z.string()).default([]), // listing card only
-    // Hero copy — always present, single instance per doctor. Rendered at
-    // the top of the detail page by DoctorSections before the sections loop.
-    heroEyebrow: z.string(),                    // small caps label above name
-    heroHeadline: z.string().optional(),        // defaults to fullName
-    heroLede: z.string(),                       // paragraph under the h1
-    // Block-based CV. Everything below the hero is a section: stats,
-    // timelines (appointments/education/conferences), memberships, publications.
-    // The listing card derives its memberships count from the cv_memberships
-    // blocks in this list.
+    // Legacy hero fields — the hero now lives inside sections[] as blocks
+    // (row + prose + chips + media). Kept optional so legacy files that
+    // still carry these fields don't fail Zod; nothing reads them anymore.
+    heroEyebrow: z.string().optional(),
+    heroHeadline: z.string().optional(),
+    heroLede: z.string().optional(),
+    // Block-based page — everything (hero + CV) is a section.
     sections: z.array(section).optional(),
   }),
 });
