@@ -27,9 +27,82 @@ function pickVariant(variants, suffix) {
   return variants.find((v) => v.endsWith(`-${suffix}.webp`));
 }
 
+/* ── Image grouping ───────────────────────────────────────────────────
+ * Collapse runs of adjacent image-only content into a single
+ * <div class="md-media-group"> so a legacy page that dumps 15 bare
+ * `![](…)` lines renders as a side-by-side gallery instead of 15 lonely
+ * stacked frames. CommonMark emits those lines as either (a) one
+ * paragraph with many <img> children (no blank lines between the
+ * images) or (b) many paragraphs each with one <img> (blank lines
+ * between). Both shapes collapse to one group. Matching CSS lives in
+ * src/components/article/ArticleLayout.astro under `.art-prose
+ * .md-media-group`.
+ */
+
+function isWhitespaceText(n) {
+  return n && n.type === "text" && typeof n.value === "string" && n.value.trim() === "";
+}
+function isImg(n) {
+  return n && n.type === "element" && n.tagName === "img";
+}
+function meaningfulChildren(n) {
+  return (n.children || []).filter((c) => !isWhitespaceText(c));
+}
+function isMultiImgParagraph(n) {
+  if (!n || n.type !== "element" || n.tagName !== "p") return false;
+  const kids = meaningfulChildren(n);
+  return kids.length >= 2 && kids.every(isImg);
+}
+function isSingleImgParagraph(n) {
+  if (!n || n.type !== "element" || n.tagName !== "p") return false;
+  const kids = meaningfulChildren(n);
+  return kids.length === 1 && isImg(kids[0]);
+}
+function groupNode(imgs) {
+  return {
+    type: "element",
+    tagName: "div",
+    properties: { className: ["md-media-group"], "data-count": String(imgs.length) },
+    children: imgs,
+  };
+}
+function regroupImages(children) {
+  const out = [];
+  let i = 0;
+  while (i < children.length) {
+    const current = children[i];
+    if (isMultiImgParagraph(current)) {
+      out.push(groupNode(meaningfulChildren(current)));
+      i++;
+      continue;
+    }
+    if (isSingleImgParagraph(current)) {
+      const run = [];
+      while (i < children.length) {
+        const c = children[i];
+        if (isSingleImgParagraph(c)) { run.push(c); i++; }
+        else if (isWhitespaceText(c)) { i++; }
+        else break;
+      }
+      if (run.length >= 2) out.push(groupNode(run.map((p) => meaningfulChildren(p)[0])));
+      else out.push(...run);
+      continue;
+    }
+    out.push(current);
+    i++;
+  }
+  return out;
+}
+
 export default function rehypeResponsiveImages() {
   const manifest = loadManifest();
   return (tree) => {
+    // 1) Collapse adjacent image-only paragraphs into gallery groups.
+    //    Runs BEFORE the srcset rewrite so the group's <img> children
+    //    get WebP variants on the same pass.
+    if (Array.isArray(tree?.children)) tree.children = regroupImages(tree.children);
+
+    // 2) Rewrite each remaining <img src=…> to use responsive variants.
     visit(tree, "element", (node) => {
       if (node.tagName !== "img") return;
       const props = node.properties;
