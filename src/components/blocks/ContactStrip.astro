@@ -1,0 +1,116 @@
+---
+/**
+ * contact-strip — bordered surface card for referral / contact info.
+ * Shows an optional eyebrow + body paragraph, then 1–3 columns of
+ * labelled contact entries. Powers the home-page referral band and the
+ * contact page.
+ *
+ * Fields:
+ *   eyebrow?   — small-caps label line
+ *   body?      — single paragraph of copy
+ *   columns[]  — array of { label, items[{text, href?}] } (1–3 entries)
+ */
+import { localizedHref } from "../../lib/i18n";
+import type { Locale } from "../../lib/i18n";
+
+interface ColItem {
+  text: string;
+  href?: string;
+}
+interface Col {
+  label: string;
+  items: ColItem[];
+}
+interface Props {
+  eyebrow?: string;
+  body?: string;
+  columns: Col[];
+  locale?: Locale;
+}
+const { eyebrow, body, columns, locale = "en" } = Astro.props;
+
+const resolve = (href?: string): string | undefined => {
+  if (!href) return undefined;
+  return href.startsWith("/") ? localizedHref(href, locale) : href;
+};
+
+// Phone / email strings read LTR even in RTL layouts.
+const needsBdi = (text: string) =>
+  /^(\+?\d|tel:|mailto:)/.test(text) || /@/.test(text);
+---
+
+<section class="strip">
+  {(eyebrow || body) && (
+    <div class="strip-copy">
+      {eyebrow && <p class="strip-eyebrow">{eyebrow}</p>}
+      {body && <p class="strip-body">{body}</p>}
+    </div>
+  )}
+  {columns.map((col) => (
+    <div class="strip-col">
+      <p class="strip-label">{col.label}</p>
+      {col.items.map((it) => {
+        const href = resolve(it.href);
+        const inner = needsBdi(it.text) ? <bdi>{it.text}</bdi> : <span>{it.text}</span>;
+        return (
+          <p>
+            {href ? <a href={href}>{inner}</a> : inner}
+          </p>
+        );
+      })}
+    </div>
+  ))}
+</section>
+
+<style>
+  .strip {
+    margin: clamp(28px, 3.5vw, 44px) 0;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: clamp(28px, 4vw, 44px) clamp(24px, 3.5vw, 40px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(245px, 100%), 1fr));
+    gap: 36px;
+    align-items: start;
+  }
+  .strip-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+  :global(html[dir="rtl"]) .strip-eyebrow {
+    font-family: var(--font-body);
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .strip-body {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--body);
+    margin: 0;
+    max-width: 50ch;
+  }
+  :global(html[dir="rtl"]) .strip-body { line-height: 1.85; }
+  .strip-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 8px;
+  }
+  :global(html[dir="rtl"]) .strip-label {
+    font-family: var(--font-body);
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .strip-col p { margin: 0 0 3px; font-size: 15.5px; color: var(--ink); }
+  .strip-col p:last-child { margin-bottom: 0; }
+  .strip-col a { color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+  .strip-col a:hover { color: var(--accent); text-decoration: none; }
+</style>

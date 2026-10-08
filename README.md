@@ -31,17 +31,30 @@ the image pipeline, and the AI collaborator brief — is in **[`docs/`](docs/)**
 
 ## Documentation map
 
+Docs are split by audience. **Manual** files (`docs/user-manual/*.md`) are
+written for the site owner / editor / content writer. **Developer**
+files (`docs/dev/*.md`) cover the code, build, and deploy pipeline.
+
+### User manual
+
 | File | Purpose |
 |---|---|
-| [`docs/setup.md`](docs/setup.md) | Local development setup + prerequisites |
-| [`docs/deployment.md`](docs/deployment.md) | Cloudflare Pages workflow, build logs, rollback |
-| [`docs/project-structure.md`](docs/project-structure.md) | Where every file type lives and why |
-| [`docs/content-authoring.md`](docs/content-authoring.md) | How to write articles: frontmatter, voice, bilingual policy |
-| [`docs/sections.md`](docs/sections.md) | All block/widget types with syntax + examples |
-| [`docs/cms.md`](docs/cms.md) | Using the Sveltia admin — features and limitations |
-| [`docs/image-optimization.md`](docs/image-optimization.md) | How the WebP variant pipeline works |
-| [`docs/scripts.md`](docs/scripts.md) | Utility scripts: link checks, font updates, redirects |
-| [`docs/tokens.md`](docs/tokens.md) | Design-system tokens (colours, type, spacing) |
+| [`docs/user-manual/installation.md`](docs/user-manual/installation.md) | **Start here** — step-by-step first-time setup for the site owner / editor |
+| [`docs/user-manual/cms.md`](docs/user-manual/cms.md) | Using the Sveltia admin — features and limitations |
+| [`docs/user-manual/writing-guide.md`](docs/user-manual/writing-guide.md) | The three ways to write content, including the AI-assisted route |
+| [`docs/user-manual/content-authoring.md`](docs/user-manual/content-authoring.md) | How to write articles: frontmatter, voice, bilingual policy |
+| [`docs/user-manual/sections.md`](docs/user-manual/sections.md) | All block/widget types with syntax + examples |
+
+### Developer
+
+| File | Purpose |
+|---|---|
+| [`docs/dev/setup.md`](docs/dev/setup.md) | Local development setup + prerequisites (developer quick-reference) |
+| [`docs/dev/project-structure.md`](docs/dev/project-structure.md) | Where every file type lives and why |
+| [`docs/dev/deployment.md`](docs/dev/deployment.md) | Cloudflare Pages workflow, build logs, rollback |
+| [`docs/dev/image-optimization.md`](docs/dev/image-optimization.md) | How the WebP variant pipeline works |
+| [`docs/dev/scripts.md`](docs/dev/scripts.md) | Utility scripts: link checks, font updates, redirects |
+| [`docs/dev/tokens.md`](docs/dev/tokens.md) | Design-system tokens (colours, type, spacing) |
 | [`docs/ai/SKILL.md`](docs/ai/SKILL.md) | Brief for AI collaborators — how to work on this project |
 
 ---

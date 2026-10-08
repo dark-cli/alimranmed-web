@@ -11,13 +11,38 @@ titles:
   - FIAANS
   - FINASS
 languages: []
-heroEyebrow: الاستشاري المسؤول · السيرة العلمية
-heroHeadline: الدكتور حسين عمران موسى
-heroLede: >-
-  مؤسس مركز العمران الطبي والاستشاري المسؤول فيه. استشاري جراحة الجهاز العصبي في مستشفى البصرة التعليمي، ومدير العراق في
-  جمعية الشرق الأوسط للجراحة التجسيمية والوظيفية.
 sections:
+  # ── البطل (hero: نثر وشارات على اليسار، صورة على اليمين) ────────────
+  - type: row
+    columns: "2"
+    gap: normal
+    align: center
+    items:
+      - type: column
+        gap: normal
+        items:
+          - type: prose
+            variant: hero
+            eyebrow: الاستشاري المسؤول · السيرة العلمية
+            heading: الدكتور حسين عمران موسى
+            body: >-
+              مؤسس مركز العمران الطبي والاستشاري المسؤول فيه. استشاري جراحة
+              الجهاز العصبي في مستشفى البصرة التعليمي، ومدير العراق في جمعية
+              الشرق الأوسط للجراحة التجسيمية والوظيفية.
+          - type: chips
+            items:
+              - بكالوريوس طب وجراحة
+              - زمالة البورد العراقي — جراحة الأعصاب
+              - FIAANS
+              - FINASS
+      - type: media
+        items:
+          - kind: image
+            src: /images/doctors/hussein-imran-mousa-portrait.jpg
+            alt: الدكتور حسين عمران موسى
+
   - type: stats
+    variant: band
     items:
       - value: +٥٠٠٠
         label: عملية أجراها الاستشاري بشكل مستقل

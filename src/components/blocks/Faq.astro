@@ -1,0 +1,95 @@
+---
+/**
+ * faq — a list of question/answer pairs. Rendered as a stacked list,
+ * always-expanded (no JS accordion), which is what Googlebot indexes
+ * most reliably for FAQPage schema. The top-level route pulls the same
+ * items out of `sections[]` into JSON-LD, so writers never think about
+ * schema.
+ *
+ * Default heading is "Common questions" / "أسئلة شائعة" when omitted —
+ * matches the pattern of the `facts` block.
+ *
+ * Fields:
+ *   heading?  — optional (localised default when absent)
+ *   items[]   — { question, answer } (answer may contain inline markdown links)
+ */
+import { localizedHref } from "../../lib/i18n";
+import type { Locale } from "../../lib/i18n";
+
+interface Item { question: string; answer: string; }
+interface Props {
+  heading?: string;
+  items: Item[];
+  locale?: Locale;
+  id?: string;
+}
+const { heading, items, locale = "en", id } = Astro.props;
+
+function rewriteLinks(md: string): string {
+  return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+    const h = href.startsWith("/") ? localizedHref(href, locale) : href;
+    return `<a href="${h}">${label}</a>`;
+  });
+}
+---
+
+<section class="faq-block" id={id}>
+  {heading && <h2 class="faq-heading">{heading}</h2>}
+  <dl class="faq-list">
+    {items.map((it) => (
+      <div class="faq-item">
+        <dt class="faq-q">{it.question}</dt>
+        <dd class="faq-a" set:html={rewriteLinks(it.answer)} />
+      </div>
+    ))}
+  </dl>
+</section>
+
+<style>
+  .faq-block { margin: clamp(28px, 3.5vw, 44px) 0; scroll-margin-top: 96px; }
+  .faq-heading {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(22px, 2.8vw, 30px);
+    color: var(--ink);
+    margin: 0 0 20px;
+    line-height: 1.2;
+  }
+  :global(html[dir="rtl"]) .faq-heading { font-weight: 700; letter-spacing: 0; }
+
+  .faq-list {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .faq-item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+  :global(html[dir="rtl"]) .faq-q { font-weight: 700; font-size: 19px; }
+
+  .faq-a {
+    font-size: 16px;
+    line-height: 1.72;
+    color: var(--body);
+    margin: 0;
+    text-wrap: pretty;
+  }
+  :global(html[dir="rtl"]) .faq-a { line-height: 1.95; }
+  .faq-a :global(a) {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .faq-a :global(a:hover) {
+    color: var(--accent-hover);
+    text-decoration: underline;
+  }
+</style>

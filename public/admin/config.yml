@@ -26,6 +26,13 @@ backend:
   repo: placeholder/alimranmed-web
   branch: main
 
+# Scopes the Sveltia media library to the originals only. The sibling
+# folder `public/optimized/` holds the build-generated WebP variants
+# (`*-400.webp`, `*-800.webp`, …) and MUST NOT be exposed to editors —
+# those files are regenerated on every build and selecting one in the
+# CMS would hard-code a path to a file that disappears. Keep every
+# per-collection `media_folder` below pointing at `public/images` (or a
+# subpath). Never point one at `public/optimized`.
 media_folder: public/images
 public_folder: /images
 
@@ -35,13 +42,643 @@ output:
   omit_empty_optional_fields: true
 
 # ── Section block templates (variable-type list) ─────────────────────────
-# Referenced by *sections_field below. YAML anchors DO work for whole node
-# reuse (objects), so we can alias the entire sections field definition —
-# but they can't splice into sequences, so per-collection field lists are
-# written out explicitly.
+# Each leaf block (prose, highlights, stats, etc.) is defined ONCE here as
+# a named YAML anchor (e.g. `&_prose`). Those anchors are referenced from
+# two places:
+#   1. `_leaf_types: &leaf_types` — the list of blocks that can appear
+#      *inside* a `row` or `column` layout widget.
+#   2. `_sections_field.types`    — the top-level set the writer sees in
+#      every collection, which is leaves + the two layout widgets.
+#
+# Why not self-reference row/column so they can nest arbitrarily deep?
+# Sveltia internally JSON-serialises the config, and a cyclic graph (row ->
+# items -> types -> row) breaks that. The schema in src/content.config.ts
+# still allows deep nesting via `z.any()`, so file-authored or AI-authored
+# content can nest layouts beyond one level — the CMS editor just can't
+# add that depth from scratch.
+
+_prose: &_prose
+  name: prose
+  label: Prose
+  fields:
+    - label: Section number
+      name: number
+      widget: string
+      required: false
+      hint: 'Optional — e.g. "01", "02". Renders as a small mono prefix above the heading with a bottom-rule.'
+    - { label: Eyebrow (accent small-caps line), name: eyebrow, widget: string, required: false, hint: "Optional — for hero-style sections with a lead-in line above the heading." }
+    - { label: Heading (appears in TOC), name: heading, widget: string, required: false }
+    - label: Heading level
+      name: headingLevel
+      widget: select
+      required: false
+      default: h2
+      options:
+        - { label: "h2 (default)", value: h2 }
+        - { label: "h3 (use inside a split)", value: h3 }
+    - label: Variant
+      name: variant
+      widget: select
+      required: false
+      default: default
+      hint: "'hero' uses display-size heading + larger body text — matches the typographic treatment of the home + doctor hero. Use for the first prose at the top of a hero row only."
+      options:
+        - { label: "Default (in-article prose)", value: default }
+        - { label: "Hero (large display heading)", value: hero }
+    - { label: Body (markdown — inline links supported), name: body, widget: text, required: false, hint: "Optional — omit when the block is a bare numbered section header." }
+
+_highlights: &_highlights
+  name: highlights
+  label: Highlights (At a glance)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'At a glance' / 'لمحة سريعة'." }
+    - label: Items
+      name: items
+      widget: list
+      min: 2
+      max: 4
+      fields:
+        - { label: Label, name: label, widget: string }
+        - { label: Value, name: value, widget: text }
+
+_stats: &_stats
+  name: stats
+  label: Stats
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - { label: Intro, name: intro, widget: text, required: false }
+    - label: Variant
+      name: variant
+      widget: select
+      required: false
+      default: default
+      hint: "'band' breaks out of the page container into a full-bleed surface strip (hairline rule top + bottom) — matches the home + doctor stat band treatment."
+      options:
+        - { label: "Default (contained)", value: default }
+        - { label: "Band (full-bleed strip)", value: band }
+    - label: Items
+      name: items
+      widget: list
+      min: 2
+      max: 6
+      fields:
+        - { label: Value (big number / metric), name: value, widget: string }
+        - { label: Label (short description), name: label, widget: string }
+
+_facts: &_facts
+  name: facts
+  label: Facts (numbered list)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Key facts' / 'حقائق أساسية'." }
+    - label: Items
+      name: items
+      widget: list
+      field: { label: Fact, name: fact, widget: text }
+
+_list: &_list
+  name: list
+  label: List
+  fields:
+    - label: Layout
+      name: variant
+      widget: select
+      default: rows
+      hint: "Rows: single-column stacked. Wrap: auto-fit responsive columns (good for memberships/tags). Columns: fixed 2-column grid."
+      options:
+        - { label: "Rows — single column, stacked", value: rows }
+        - { label: "Wrap — responsive (as many cols as fit)", value: wrap }
+        - { label: "Columns — fixed 2 columns", value: columns }
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      fields:
+        - { label: Label, name: label, widget: string, hint: "Short mono tag — date, year, code." }
+        - { label: Body, name: body, widget: text }
+        - { label: Subtitle, name: subtitle, widget: text, required: false, hint: "Optional secondary line. Supported by Rows and Columns; Wrap ignores it." }
+
+_quote: &_quote
+  name: quote
+  label: Pull Quote
+  fields:
+    - { label: Quote text, name: text, widget: text }
+    - { label: Attribution, name: attribution, widget: string, required: false }
+
+_panels: &_panels
+  name: panels
+  label: Panels (comparison or options grid)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - { label: Intro, name: intro, widget: text, required: false }
+    - { label: Note (footer line), name: note, widget: string, required: false }
+    - label: Panels
+      name: panels
+      widget: list
+      min: 2
+      max: 4
+      fields:
+        - { label: Eyebrow, name: eyebrow, widget: string, required: false, hint: "Small label above title — e.g. 'Before' / 'After'." }
+        - { label: Title, name: title, widget: string }
+        - { label: Subtitle, name: subtitle, widget: string, required: false }
+        - label: Items
+          name: items
+          widget: list
+          field: { label: Item (markdown links ok), name: item, widget: string }
+        - label: Related reading
+          name: reading
+          widget: list
+          required: false
+          hint: "Optional sub-list of links shown under this panel's items."
+          fields:
+            - { label: Title, name: title, widget: string }
+            - { label: Link (href), name: href, widget: string }
+
+_media: &_media
+  name: media
+  label: Media (image / video / YouTube)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Optional heading above the media. Not added to TOC." }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      typeKey: kind
+      hint: "Add one item for a full-width figure; add more for a side-by-side grid."
+      types:
+        - name: image
+          label: Image
+          fields:
+            - { label: Image, name: src, widget: image, required: true }
+            - { label: Alt text, name: alt, widget: string, required: false }
+            - { label: Caption, name: caption, widget: string, required: false }
+            - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
+        - name: youtube
+          label: YouTube
+          fields:
+            - { label: YouTube URL or ID, name: src, widget: string, required: true, hint: "Full URL or bare ID (e.g. dQw4w9WgXcQ)." }
+            - { label: Caption, name: caption, widget: string, required: false }
+            - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
+            - { label: Upload date (JSON-LD), name: uploadDate, widget: string, required: false, hint: "ISO date, e.g. 2024-03-15. Helps Google index the video." }
+
+_pathway: &_pathway
+  name: pathway
+  label: Pathway (link chip groups)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - { label: Intro, name: intro, widget: text, required: false }
+    - label: Groups
+      name: groups
+      widget: list
+      fields:
+        - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+        - { label: Title, name: title, widget: string }
+        - label: Items
+          name: items
+          widget: list
+          fields:
+            - { label: Name, name: name, widget: string }
+            - { label: Link (href), name: href, widget: string }
+    - label: Footer link (optional "see all" link under the chips)
+      name: footerLink
+      widget: object
+      required: false
+      collapsed: true
+      fields:
+        - { label: Label, name: label, widget: string }
+        - { label: Link (href), name: href, widget: string }
+
+_image_row: &_image_row
+  name: image-row
+  label: Image Row (photo gallery)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Columns
+      name: columns
+      widget: select
+      default: auto
+      options:
+        - { label: "Auto (responsive fit)", value: auto }
+        - { label: "2 columns", value: "2" }
+        - { label: "3 columns", value: "3" }
+        - { label: "4 columns", value: "4" }
+    - label: Items
+      name: items
+      widget: list
+      fields:
+        - { label: Image path, name: src, widget: string }
+        - { label: Alt text, name: alt, widget: string, required: false }
+        - { label: Caption, name: caption, widget: string, required: false }
+        - { label: Link (href), name: href, widget: string, required: false }
+        - label: Aspect ratio
+          name: aspect
+          widget: select
+          required: false
+          options: ["16/9", "4/3", "3/2", "1/1"]
+
+_button: &_button
+  name: button
+  label: Button (call-to-action)
+  fields:
+    - { label: Label, name: label, widget: string }
+    - { label: Link (href), name: href, widget: string, hint: "Internal paths starting with / are locale-aware. External URLs pass through." }
+    - label: Variant
+      name: variant
+      widget: select
+      default: primary
+      options:
+        - { label: "Primary (filled)", value: primary }
+        - { label: "Secondary (outline)", value: secondary }
+        - { label: "Quiet (text link with underline)", value: quiet }
+    - { label: Open in new tab, name: newTab, widget: boolean, required: false, default: false }
+
+_doctor_credit: &_doctor_credit
+  name: doctor-credit
+  label: Doctor Credit (byline)
+  fields:
+    - { label: Avatar image, name: avatar, widget: image, hint: "Round portrait — WebP works best." }
+    - { label: Avatar alt, name: avatarAlt, widget: string, required: false }
+    - { label: Lead label, name: leadLabel, widget: string, required: false, hint: "Defaults to 'Led by' / 'بإشراف'." }
+    - { label: Doctor name, name: name, widget: string }
+    - { label: Title (e.g. consultant neurosurgeon), name: title, widget: string }
+    - { label: Link label, name: linkLabel, widget: string, required: false, hint: "Optional CV/profile link." }
+    - { label: Link href, name: linkHref, widget: string, required: false }
+
+_label_tile: &_label_tile
+  name: label-tile
+  label: Label Tile (typographic placeholder)
+  fields:
+    - { label: Label (ALL CAPS top line), name: label, widget: string }
+    - { label: Sub-label, name: sublabel, widget: string, required: false }
+
+_contact_strip: &_contact_strip
+  name: contact-strip
+  label: Contact Strip (bordered contact card)
+  fields:
+    - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+    - { label: Body paragraph, name: body, widget: text, required: false }
+    - label: Columns
+      name: columns
+      widget: list
+      min: 1
+      max: 3
+      fields:
+        - { label: Column label, name: label, widget: string }
+        - label: Items
+          name: items
+          widget: list
+          min: 1
+          fields:
+            - { label: Text (phone / email / address), name: text, widget: string }
+            - { label: Link (href), name: href, widget: string, required: false, hint: "tel:, mailto:, or a URL." }
+
+_cards: &_cards
+  name: cards
+  label: Cards (related links)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Related reading' / 'قراءات ذات صلة'." }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      hint: "Locale-agnostic paths, e.g. /treatments/back-pain/ or /blog/my-post/. Title, description and date are pulled automatically."
+      field: { label: Path, name: item, widget: string }
+
+_button_row: &_button_row
+  name: button-row
+  label: Button Row (CTA cluster)
+  fields:
+    - label: Alignment
+      name: align
+      widget: select
+      default: start
+      options:
+        - { label: "Start (leading edge)", value: start }
+        - { label: "Centre", value: center }
+        - { label: "End (trailing edge)", value: end }
+    - label: Gap
+      name: gap
+      widget: select
+      default: tight
+      options:
+        - { label: "Tight", value: tight }
+        - { label: "Normal", value: normal }
+        - { label: "Wide", value: wide }
+    - label: Buttons
+      name: items
+      widget: list
+      min: 1
+      fields:
+        - { label: Label, name: label, widget: string }
+        - { label: Link (href), name: href, widget: string }
+        - label: Variant
+          name: variant
+          widget: select
+          default: primary
+          options:
+            - { label: "Primary (filled)", value: primary }
+            - { label: "Secondary (outline)", value: secondary }
+            - { label: "Quiet (text link)", value: quiet }
+        - { label: Open in new tab, name: newTab, widget: boolean, required: false, default: false }
+
+_chips: &_chips
+  name: chips
+  label: Chips (inline badges)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      hint: "Short label-only chips, e.g. credentials (MBChB), tags, categories. Non-clickable — for clickable chips use the Pathway block."
+      field: { label: Label, name: item, widget: string }
+
+_faq: &_faq
+  name: faq
+  label: FAQ (question / answer list)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Common questions' / 'أسئلة شائعة'." }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      hint: "Each question becomes a FAQPage schema entry for SEO."
+      fields:
+        - { label: Question, name: question, widget: string }
+        - { label: Answer (markdown links OK), name: answer, widget: text }
+
+_social_row: &_social_row
+  name: social-row
+  label: Social Row (icon links)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false, hint: "Optional small label above the row." }
+    - label: Items
+      name: items
+      widget: list
+      min: 1
+      fields:
+        - label: Platform
+          name: platform
+          widget: select
+          hint: "Picks the brand icon."
+          options:
+            - { label: Facebook,  value: facebook }
+            - { label: Instagram, value: instagram }
+            - { label: YouTube,   value: youtube }
+            - { label: Telegram,  value: telegram }
+            - { label: TikTok,    value: tiktok }
+            - { label: Twitter,   value: twitter }
+            - { label: "X (Twitter)", value: x }
+            - { label: LinkedIn,  value: linkedin }
+            - { label: WhatsApp,  value: whatsapp }
+        - { label: Full URL, name: href, widget: string, hint: "Full external URL — https://..." }
+        - { label: Accessible label, name: label, widget: string, required: false, hint: "Defaults to the platform name." }
+
+_map: &_map
+  name: map
+  label: Map (embedded location)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - { label: Embed URL, name: embedUrl, widget: string, hint: "From Google Maps → Share → Embed a map → copy the iframe's src URL." }
+    - { label: Accessible title, name: title, widget: string, hint: "Screen-reader label for the iframe." }
+    - label: Aspect ratio
+      name: aspect
+      widget: select
+      default: "16/9"
+      options: ["16/9", "4/3", "3/2", "1/1"]
+
+# Leaf widgets — the base set of non-layout block widgets. These can appear
+# at any nesting depth in the CMS editor; row/column layouts cannot (they
+# are introduced through the tiered anchors below so the config graph
+# stays acyclic).
+_leaf_types: &leaf_types
+  - *_prose
+  - *_highlights
+  - *_stats
+  - *_facts
+  - *_list
+  - *_quote
+  - *_panels
+  - *_media
+  - *_pathway
+  - *_image_row
+  - *_button
+  - *_doctor_credit
+  - *_label_tile
+  - *_contact_strip
+  - *_chips
+  - *_button_row
+  - *_faq
+  - *_social_row
+  - *_map
+  - *_cards
+
+# ── Tiered row/column anchors ────────────────────────────────────────────
+# Three depth tiers of row/column, each pointing to a slightly larger
+# items.types list. This lets the CMS editor express up to THREE levels of
+# layout nesting (outer row > column > inner row > leaves) without a cyclic
+# reference — matches the home-page hero shape exactly.
+#
+#   Tier 1 (deepest) — row_1 / column_1: items.types = leaves only.
+#   Tier 2 (middle)  — row_2 / column_2: items.types = leaves + tier 1.
+#   Tier 3 (outer)   — row_3 / column_3 (defined inline in _sections_field
+#                       below): items.types = leaves + tier 2.
+#
+# Writers who need even deeper layouts can author the .md file directly;
+# the schema in content.config.ts uses z.any() so there is no runtime cap.
+
+_row_1: &_row_1
+  name: row
+  label: Row (side-by-side layout)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Columns
+      name: columns
+      widget: select
+      default: auto
+      hint: "Auto = responsive fit. 2/3/4 = fixed column count. Collapses on mobile."
+      options:
+        - { label: "Auto (responsive fit)", value: auto }
+        - { label: "2 columns", value: "2" }
+        - { label: "3 columns", value: "3" }
+        - { label: "4 columns", value: "4" }
+    - label: Gap
+      name: gap
+      widget: select
+      default: normal
+      options:
+        - { label: "Tight", value: tight }
+        - { label: "Normal", value: normal }
+        - { label: "Wide", value: wide }
+    - label: Vertical alignment
+      name: align
+      widget: select
+      default: stretch
+      options:
+        - { label: "Stretch (default)", value: stretch }
+        - { label: "Top", value: start }
+        - { label: "Centre", value: center }
+    - label: Items
+      name: items
+      widget: list
+      typeKey: type
+      hint: "Leaf widgets only at this depth. For deeper nesting, edit the .md file directly."
+      types: *leaf_types
+
+_column_1: &_column_1
+  name: column
+  label: Column (vertical stack)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Gap
+      name: gap
+      widget: select
+      default: normal
+      options:
+        - { label: "Tight", value: tight }
+        - { label: "Normal", value: normal }
+        - { label: "Wide", value: wide }
+    - label: Alignment
+      name: align
+      widget: select
+      default: stretch
+      hint: "Horizontal alignment of items inside the column."
+      options:
+        - { label: "Stretch (fill width — default)", value: stretch }
+        - { label: "Start (leading edge)", value: start }
+        - { label: "Centre", value: center }
+        - { label: "End (trailing edge)", value: end }
+    - label: Items
+      name: items
+      widget: list
+      typeKey: type
+      hint: "Leaf widgets only at this depth. For deeper nesting, edit the .md file directly."
+      types: *leaf_types
+
+_tier_1_types: &tier_1_types
+  - *_prose
+  - *_highlights
+  - *_stats
+  - *_facts
+  - *_list
+  - *_quote
+  - *_panels
+  - *_media
+  - *_pathway
+  - *_image_row
+  - *_row_1
+  - *_column_1
+  - *_button
+  - *_doctor_credit
+  - *_label_tile
+  - *_contact_strip
+  - *_chips
+  - *_button_row
+  - *_faq
+  - *_social_row
+  - *_map
+  - *_cards
+
+_row_2: &_row_2
+  name: row
+  label: Row (side-by-side layout)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Columns
+      name: columns
+      widget: select
+      default: auto
+      options:
+        - { label: "Auto (responsive fit)", value: auto }
+        - { label: "2 columns", value: "2" }
+        - { label: "3 columns", value: "3" }
+        - { label: "4 columns", value: "4" }
+    - label: Gap
+      name: gap
+      widget: select
+      default: normal
+      options:
+        - { label: "Tight", value: tight }
+        - { label: "Normal", value: normal }
+        - { label: "Wide", value: wide }
+    - label: Vertical alignment
+      name: align
+      widget: select
+      default: stretch
+      options:
+        - { label: "Stretch (default)", value: stretch }
+        - { label: "Top", value: start }
+        - { label: "Centre", value: center }
+    - label: Items
+      name: items
+      widget: list
+      typeKey: type
+      hint: "Can hold any block including a nested row or column (one more level down)."
+      types: *tier_1_types
+
+_column_2: &_column_2
+  name: column
+  label: Column (vertical stack)
+  fields:
+    - { label: Heading, name: heading, widget: string, required: false }
+    - label: Gap
+      name: gap
+      widget: select
+      default: normal
+      options:
+        - { label: "Tight", value: tight }
+        - { label: "Normal", value: normal }
+        - { label: "Wide", value: wide }
+    - label: Alignment
+      name: align
+      widget: select
+      default: stretch
+      hint: "Horizontal alignment of items inside the column."
+      options:
+        - { label: "Stretch (fill width — default)", value: stretch }
+        - { label: "Start (leading edge)", value: start }
+        - { label: "Centre", value: center }
+        - { label: "End (trailing edge)", value: end }
+    - label: Items
+      name: items
+      widget: list
+      typeKey: type
+      hint: "Can hold any block including a nested row or column (one more level down)."
+      types: *tier_1_types
+
+# Widgets a writer can place inside the OUTERMOST (top-level) row or
+# column — leaves PLUS the tier-2 row/column variants, which themselves
+# can contain tier-1 row/column, which contain leaves. Three levels of
+# layout nesting through the CMS.
+_tier_2_types: &tier_2_types
+  - *_prose
+  - *_highlights
+  - *_stats
+  - *_facts
+  - *_list
+  - *_quote
+  - *_panels
+  - *_media
+  - *_pathway
+  - *_image_row
+  - *_row_2
+  - *_column_2
+  - *_button
+  - *_doctor_credit
+  - *_label_tile
+  - *_contact_strip
+  - *_chips
+  - *_button_row
+  - *_faq
+  - *_social_row
+  - *_map
+  - *_cards
 
 # Unified sections field — used by ALL collections (treatments, services,
-# blog, doctors). Mirrors the section discriminated union in content.config.ts.
+# blog, doctors, pages). Mirrors the section discriminated union in
+# content.config.ts. The outer row/column accept any nestable widget
+# including the shallow row/column, which gives two levels of layout
+# nesting through the CMS.
 _sections_field: &sections_field
   label: Sections
   name: sections
@@ -49,173 +686,158 @@ _sections_field: &sections_field
   required: false
   typeKey: type
   types:
-    - name: prose
-      label: Prose
-      fields:
-        - { label: Heading (appears in TOC), name: heading, widget: string, required: false }
-        - { label: Body (markdown — inline links supported), name: body, widget: text }
-    - name: highlights
-      label: Highlights (At a glance)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'At a glance' / 'لمحة سريعة'." }
-        - label: Items
-          name: items
-          widget: list
-          min: 2
-          max: 4
-          fields:
-            - { label: Label, name: label, widget: string }
-            - { label: Value, name: value, widget: text }
-    - name: stats
-      label: Stats
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false }
-        - { label: Intro, name: intro, widget: text, required: false }
-        - label: Items
-          name: items
-          widget: list
-          min: 2
-          max: 6
-          fields:
-            - { label: Value (big number / metric), name: value, widget: string }
-            - { label: Label (short description), name: label, widget: string }
-    - name: facts
-      label: Facts (numbered list)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Key facts' / 'حقائق أساسية'." }
-        - label: Items
-          name: items
-          widget: list
-          field: { label: Fact, name: fact, widget: text }
-    - name: list
-      label: List
-      fields:
-        - label: Layout
-          name: variant
-          widget: select
-          default: rows
-          hint: "Rows: single-column stacked. Wrap: auto-fit responsive columns (good for memberships/tags). Columns: fixed 2-column grid."
-          options:
-            - { label: "Rows — single column, stacked", value: rows }
-            - { label: "Wrap — responsive (as many cols as fit)", value: wrap }
-            - { label: "Columns — fixed 2 columns", value: columns }
-        - { label: Heading, name: heading, widget: string }
-        - label: Items
-          name: items
-          widget: list
-          min: 1
-          fields:
-            - { label: Label, name: label, widget: string, hint: "Short mono tag — date, year, code." }
-            - { label: Body, name: body, widget: text }
-            - { label: Subtitle, name: subtitle, widget: text, required: false, hint: "Optional secondary line. Supported by Rows and Columns; Wrap ignores it." }
-    - name: quote
-      label: Pull Quote
-      fields:
-        - { label: Quote text, name: text, widget: text }
-        - { label: Attribution, name: attribution, widget: string, required: false }
-    - name: panels
-      label: Panels (comparison or options grid)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false }
-        - { label: Intro, name: intro, widget: text, required: false }
-        - { label: Note (footer line), name: note, widget: string, required: false }
-        - label: Panels
-          name: panels
-          widget: list
-          min: 2
-          max: 4
-          fields:
-            - { label: Eyebrow, name: eyebrow, widget: string, required: false, hint: "Small label above title — e.g. 'Before' / 'After'." }
-            - { label: Title, name: title, widget: string }
-            - { label: Subtitle, name: subtitle, widget: string, required: false }
-            - label: Items
-              name: items
-              widget: list
-              field: { label: Item (markdown links ok), name: item, widget: string }
-    - name: media
-      label: Media (image / video / YouTube)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false, hint: "Optional heading above the media. Not added to TOC." }
-        - label: Items
-          name: items
-          widget: list
-          min: 1
-          typeKey: kind
-          hint: "Add one item for a full-width figure; add more for a side-by-side grid."
-          types:
-            - name: image
-              label: Image
-              fields:
-                - { label: Image, name: src, widget: image, required: true }
-                - { label: Alt text, name: alt, widget: string, required: false }
-                - { label: Caption, name: caption, widget: string, required: false }
-                - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
-            - name: youtube
-              label: YouTube
-              fields:
-                - { label: YouTube URL or ID, name: src, widget: string, required: true, hint: "Full URL or bare ID (e.g. dQw4w9WgXcQ)." }
-                - { label: Caption, name: caption, widget: string, required: false }
-                - { label: Aspect ratio, name: aspect, widget: select, required: false, options: ["16/9", "4/3", "3/2", "1/1"] }
-                - { label: Upload date (JSON-LD), name: uploadDate, widget: string, required: false, hint: "ISO date, e.g. 2024-03-15. Helps Google index the video." }
-    - name: pathway
-      label: Pathway (link chip groups)
-      fields:
-        - { label: Heading, name: heading, widget: string, required: false }
-        - { label: Intro, name: intro, widget: text, required: false }
-        - label: Groups
-          name: groups
-          widget: list
-          fields:
-            - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-            - { label: Title, name: title, widget: string }
-            - label: Items
-              name: items
-              widget: list
-              fields:
-                - { label: Name, name: name, widget: string }
-                - { label: Link (href), name: href, widget: string }
+    - *_prose
+    - *_highlights
+    - *_stats
+    - *_facts
+    - *_list
+    - *_quote
+    - *_panels
+    - *_media
+    - *_pathway
+    - *_image_row
     - name: row
-      label: Row (image row)
+      label: Row (side-by-side layout)
       fields:
         - { label: Heading, name: heading, widget: string, required: false }
         - label: Columns
           name: columns
           widget: select
           default: auto
+          hint: "Auto = responsive fit. 2/3/4 = fixed column count. Collapses on mobile."
           options:
             - { label: "Auto (responsive fit)", value: auto }
             - { label: "2 columns", value: "2" }
             - { label: "3 columns", value: "3" }
             - { label: "4 columns", value: "4" }
+        - label: Gap
+          name: gap
+          widget: select
+          default: normal
+          options:
+            - { label: "Tight", value: tight }
+            - { label: "Normal", value: normal }
+            - { label: "Wide", value: wide }
+        - label: Vertical alignment
+          name: align
+          widget: select
+          default: stretch
+          options:
+            - { label: "Stretch (default)", value: stretch }
+            - { label: "Top", value: start }
+            - { label: "Centre", value: center }
         - label: Items
           name: items
           widget: list
-          fields:
-            - { label: Image path, name: src, widget: string }
-            - { label: Alt text, name: alt, widget: string, required: false }
-            - { label: Caption, name: caption, widget: string, required: false }
-            - { label: Link (href), name: href, widget: string, required: false }
-            - label: Aspect ratio
-              name: aspect
-              widget: select
-              required: false
-              options: ["16/9", "4/3", "3/2", "1/1"]
-    - name: cards
-      label: Cards (related links)
+          typeKey: type
+          hint: "Any block including a nested row or column (up to two levels deeper)."
+          types: *tier_2_types
+    - name: column
+      label: Column (vertical stack)
       fields:
-        - { label: Heading, name: heading, widget: string, required: false, hint: "Defaults to 'Related reading' / 'قراءات ذات صلة'." }
+        - { label: Heading, name: heading, widget: string, required: false }
+        - label: Gap
+          name: gap
+          widget: select
+          default: normal
+          options:
+            - { label: "Tight", value: tight }
+            - { label: "Normal", value: normal }
+            - { label: "Wide", value: wide }
+        - label: Alignment
+          name: align
+          widget: select
+          default: stretch
+          hint: "Horizontal alignment of items inside the column."
+          options:
+            - { label: "Stretch (fill width — default)", value: stretch }
+            - { label: "Start (leading edge)", value: start }
+            - { label: "Centre", value: center }
+            - { label: "End (trailing edge)", value: end }
         - label: Items
           name: items
           widget: list
-          min: 1
-          hint: "Locale-agnostic paths, e.g. /treatments/back-pain/ or /blog/my-post/. Title, description and date are pulled automatically."
-          field: { label: Path, name: item, widget: string }
+          typeKey: type
+          hint: "Any block including a nested row or column (up to two levels deeper)."
+          types: *tier_2_types
+    - *_button
+    - *_doctor_credit
+    - *_label_tile
+    - *_contact_strip
+    - *_chips
+    - *_button_row
+    - *_faq
+    - *_social_row
+    - *_map
+    - *_cards
 
 # ── Collections ──────────────────────────────────────────────────────────
 # Base fields (from pageBase in src/content.config.ts) are inlined into each
 # collection's field list; YAML doesn't support splicing arrays via anchors.
 
 collections:
+  # ── Home ───────────────────────────────────────────────────────────────
+  # The home page is a bilingual pair of Markdown files living at the root
+  # of src/content/ (so the on-disk layout mirrors the URL: /en/ →
+  # src/content/en.md and /ar/ → src/content/ar.md). Modelled as a `files`
+  # collection — two fixed entries, nothing to create or delete.
+  - name: home
+    label: Home
+    label_singular: Home page
+    media_folder: /public/images
+    public_folder: /images
+    files:
+      - name: en
+        label: Home — English
+        file: src/content/en.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: home }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+      - name: ar
+        label: Home — Arabic
+        file: src/content/ar.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: home }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+
   # ── Doctors ────────────────────────────────────────────────────────────
   - name: doctors
     label: Doctors
@@ -242,7 +864,7 @@ collections:
         widget: list
         required: false
         default: []
-        hint: "Post-nominal letters. Renders as chips in the detail hero AND as the creds line on the listing card."
+        hint: "Post-nominal letters shown on the /doctors/ listing card. Hero chips are a separate 'chips' block inside the page sections."
         field: { label: Credential, name: credential, widget: string }
       - label: Languages
         name: languages
@@ -257,17 +879,14 @@ collections:
         name: photo
         widget: image
         required: false
-        hint: "Shown on both listing card and detail hero."
+        hint: "Shown on the listing card AND used for the LCP preload of the detail page's hero portrait. The visible hero portrait is set inside the page sections (first media block of the hero row)."
         media_folder: "/public/images/doctors"
         public_folder: "/images/doctors"
       - { label: Photo alt text, name: photoAlt, widget: string, required: false, hint: "Screen-reader description. Defaults to Full name." }
 
-      # ── Hero copy (always present — every doctor has one) ────────────
-      - { label: Hero eyebrow, name: heroEyebrow, widget: string, hint: "Small caps label above the name (e.g. 'Lead consultant · Clinical profile')." }
-      - { label: Hero headline, name: heroHeadline, widget: string, required: false, hint: "Defaults to Full name if left empty." }
-      - { label: Hero lede, name: heroLede, widget: text, hint: "One-paragraph intro shown under the name." }
-
-      # ── CV sections (page body blocks — including memberships) ───────
+      # ── Page body (hero + CV, all as blocks) ─────────────────────────
+      # The hero (eyebrow + name + lede + credential chips + portrait) is
+      # built from a row + prose + chips + media at the top of this list.
       - *sections_field
 
       # ── Metadata (bookkeeping — not shown on the detail page) ────────
@@ -471,42 +1090,136 @@ collections:
       - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
       - { label: Condition, name: condition, widget: string, required: false }
       - { label: Outcome, name: outcome, widget: text, required: false }
+      - { label: Published at, name: publishedAt, widget: datetime, required: false, picker_utc: true }
+      - { label: Redesigned (block layout), name: redesigned, widget: boolean, required: false, default: false }
+      - label: FAQ
+        name: faqItems
+        widget: list
+        required: false
+        fields:
+          - { label: Question, name: question, widget: string }
+          - { label: Answer, name: answer, widget: text }
+      - *sections_field
       - { label: Body, name: body, widget: markdown, required: false }
 
-  # ── Pages ──────────────────────────────────────────────────────────────
-  - name: pages
-    label: Pages
-    label_singular: Page
-    folder: src/content/pages
-    nested:
-      depth: 4
-      subfolders: false
-      summary: "{{title}}"
-    extension: md
-    format: yaml-frontmatter
-    identifier_field: title
+  # ── About ──────────────────────────────────────────────────────────────
+  # Single bilingual pair at src/content/about/{en,ar}.md. Mission, vision
+  # and values live inside this one page as `prose` sections — previously
+  # six separate files, collapsed to two.
+  - name: about
+    label: About
+    label_singular: About page
     media_folder: /public/images
     public_folder: /images
-    create: true
-    fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Description, name: description, widget: text, required: false }
-      - { label: Category, name: category, widget: string, required: false }
-      - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
-      - { label: Image, name: image, widget: image, required: false }
-      - { label: Image alt, name: imageAlt, widget: string, required: false }
-      - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
-      - { label: Legacy URL, name: legacyUrl, widget: string, required: false }
-      - label: Source
-        name: source
-        widget: select
-        default: legacy-wp
-        options:
-          - { label: Legacy WordPress, value: legacy-wp }
-          - { label: AI draft, value: ai-draft }
-          - { label: Human reviewed, value: human-reviewed }
-          - { label: Original, value: original }
-          - { label: Translated by LLM, value: translated-by-llm }
-      - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
-      - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
-      - { label: Body, name: body, widget: markdown, required: false }
+    files:
+      - name: en
+        label: About — English
+        file: src/content/about/en.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: about }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+      - name: ar
+        label: About — Arabic
+        file: src/content/about/ar.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: about }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+
+  # ── Contact ────────────────────────────────────────────────────────────
+  # Single bilingual pair at src/content/contact/{en,ar}.md. Hero prose +
+  # contact strip + social row + map all live inside the one page as
+  # sections — same model as home + about.
+  - name: contact
+    label: Contact
+    label_singular: Contact page
+    media_folder: /public/images
+    public_folder: /images
+    files:
+      - name: en
+        label: Contact — English
+        file: src/content/contact/en.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: contact }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+      - name: ar
+        label: Contact — Arabic
+        file: src/content/contact/ar.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: contact }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field

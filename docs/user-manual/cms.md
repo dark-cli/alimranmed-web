@@ -118,21 +118,16 @@ For the real thing:
 
 5. **Media picker shows every image under `public/images/`.** No search, no folder-nav shortcuts. If uploading a lot, expect scrolling. Variants under `public/optimized/` are correctly hidden.
 
-6. **Widgets are defined in two places.** The Astro-side (`src/content.config.ts`) and the CMS-side (`public/admin/config.yml`) must stay in sync. If you add a new block type, update both, plus its `src/components/blocks/*.astro` component. See [`ai/SKILL.md`](ai/SKILL.md) for the checklist.
+6. **Widgets are defined in two places.** The Astro-side (`src/content.config.ts`) and the CMS-side (`public/admin/config.yml`) must stay in sync. If you add a new block type, update both, plus its `src/components/blocks/*.astro` component. See [`ai/SKILL.md`](../ai/SKILL.md) for the checklist.
 
 7. **The live preview uses its own render (`public/admin/preview.js`).** If a block looks perfect on the site but weird in the CMS preview, the preview template needs updating (`public/admin/preview.js` is a standalone JS rendition of the same widgets). File it as an issue — it's not a data problem.
 
 ---
 
-## Editing the CMS config itself
+## Changing what the CMS can edit
 
-`public/admin/config.yml` defines every field, widget, and collection the admin
-shows. If you want to:
-
-- Add a field to a collection → edit the collection's `fields:` list AND add the same field to `src/content.config.ts` (Zod schema).
-- Add a new block type → add a new entry under `types:` in the `_sections_field` anchor AND add a Zod object for it in `content.config.ts` AND add a dispatch case in `src/components/blocks/Sections.astro` AND write the component under `src/components/blocks/`.
-- Change how a block previews → edit `public/admin/preview.js`.
-
-The schema is the single-source-of-truth question mark. See
-[`ai/SKILL.md#adding-a-new-block-type`](ai/SKILL.md#adding-a-new-block-type)
-for the exact steps.
+Adding a new field, a new collection, or a brand-new block type is a
+developer task — it touches the Zod schema in `src/content.config.ts`,
+the YAML config in `public/admin/config.yml`, the section dispatcher,
+and the preview renderer. Those steps live in the developer brief —
+see [`ai/SKILL.md`](../ai/SKILL.md) → "Add a new block/widget type".

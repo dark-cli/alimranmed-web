@@ -1,21 +1,37 @@
 ---
 /**
- * prose — heading + paragraphs. `body` is markdown-with-links (inline
- * `[label](/href)` gets rewritten to localised anchor tags). Paragraphs
- * split on double newlines. No block-level markdown parsing to stay
- * dependency-free.
+ * prose — optional header (eyebrow / number / heading) + paragraphs.
+ * `body` is markdown-with-links (inline `[label](/href)` gets rewritten
+ * to localised anchor tags). Paragraphs split on double newlines. No
+ * block-level markdown parsing to stay dependency-free.
+ *
+ * All header fields are optional, so this block can also serve as:
+ *   • a numbered section header (number + heading, no body)
+ *   • a hero intro (eyebrow + heading + body)
+ *   • a plain paragraph block (body only)
  */
 import { localizedHref } from "../../lib/i18n";
 import type { Locale } from "../../lib/i18n";
 
 interface Props {
+  number?: string;
+  eyebrow?: string;
   heading?: string;
-  body: string;
+  headingLevel?: "h2" | "h3";
+  variant?: "default" | "hero";
+  body?: string;
   locale?: Locale;
   id?: string;
 }
-const { heading, body, locale = "en", id } = Astro.props;
-const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+const {
+  number, eyebrow, heading, headingLevel = "h2", variant = "default", body,
+  locale = "en", id,
+} = Astro.props;
+
+const paras = (body ?? "")
+  .split(/\n\s*\n/)
+  .map((p) => p.trim())
+  .filter(Boolean);
 
 function rewriteLinks(md: string): string {
   return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
@@ -23,10 +39,22 @@ function rewriteLinks(md: string): string {
     return `<a href="${h}">${label}</a>`;
   });
 }
+
+const hasHeader = Boolean(number || eyebrow || heading);
 ---
 
-<section class="prose-block" id={id}>
-  {heading && <h2 class="prose-heading">{heading}</h2>}
+<section class="prose-block" id={id} data-variant={variant}>
+  {hasHeader && (
+    <header class={`prose-head${number ? " prose-head--numbered" : ""}`}>
+      {eyebrow && <p class="prose-eyebrow">{eyebrow}</p>}
+      {number && <span class="prose-number">{number}</span>}
+      {heading && (
+        headingLevel === "h3"
+          ? <h3 class="prose-heading prose-heading--h3">{heading}</h3>
+          : <h2 class="prose-heading">{heading}</h2>
+      )}
+    </header>
+  )}
   {paras.map((p) => (
     <p class="p" set:html={rewriteLinks(p)} />
   ))}
@@ -35,12 +63,51 @@ function rewriteLinks(md: string): string {
 <style>
   .prose-block { margin: clamp(28px, 3.5vw, 44px) 0; scroll-margin-top: 96px; }
   .prose-block:last-child { margin-bottom: 0; }
+  .prose-head { margin: 0 0 16px; }
+  .prose-head--numbered {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 14px;
+  }
+  .prose-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+    flex-basis: 100%;
+  }
+  :global(html[dir="rtl"]) .prose-eyebrow {
+    font-family: var(--font-body);
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-size: 12px;
+  }
+  .prose-number {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    flex: 0 0 auto;
+  }
+  :global(html[dir="rtl"]) .prose-number {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
   .prose-heading {
     font-family: var(--font-display);
     font-weight: 400;
     font-size: clamp(22px, 2.8vw, 30px);
     color: var(--ink);
-    margin: 0 0 16px;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .prose-heading--h3 {
+    font-size: 22px;
     line-height: 1.2;
   }
   :global(html[dir="rtl"]) .prose-heading { font-weight: 700; letter-spacing: 0; }
@@ -61,4 +128,37 @@ function rewriteLinks(md: string): string {
     text-decoration: underline;
   }
   :global(html[dir="rtl"]) .p { line-height: 1.95; }
+
+  /* ── variant: hero ───────────────────────────────────────────────
+     Larger display heading + eyebrow + body text, matching the old
+     home + doctor page heroes. Applied via `variant: hero` in the .md. */
+  .prose-block[data-variant="hero"] .prose-eyebrow {
+    font-size: 11px;
+    margin-bottom: 22px;
+  }
+  .prose-block[data-variant="hero"] .prose-heading {
+    font-size: clamp(30px, 7.6cqw, 58px);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    text-wrap: pretty;
+    margin: 0 0 20px;
+  }
+  :global(html[dir="rtl"]) .prose-block[data-variant="hero"] .prose-heading {
+    font-weight: 700;
+    font-size: clamp(32px, 8cqw, 62px);
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+  .prose-block[data-variant="hero"] .p {
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 52ch;
+    text-wrap: pretty;
+    margin: 0 0 14px;
+  }
+  .prose-block[data-variant="hero"] .p:last-of-type { margin-bottom: 34px; }
+  :global(html[dir="rtl"]) .prose-block[data-variant="hero"] .p { line-height: 1.85; }
+  /* Enable container queries so the heading scales to its parent cell,
+     not the viewport — needed inside a row's narrower cell. */
+  .prose-block[data-variant="hero"] { container-type: inline-size; }
 </style>

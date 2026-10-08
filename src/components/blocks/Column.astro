@@ -1,0 +1,75 @@
+---
+/**
+ * column — generic vertical stack. Mainly useful inside a `row` to
+ * group several blocks on one side of a split layout (e.g. heading +
+ * prose + buttons on the left of a hero). On its own it just enforces
+ * a specific vertical rhythm that overrides the article's defaults.
+ *
+ * Fields:
+ *   heading? — optional label above the stack
+ *   gap      — "tight" | "normal" | "wide" (default "normal")
+ *   align    — "start" | "center" | "end" | "stretch" (default "stretch")
+ *              Controls horizontal alignment of items within the column.
+ *              "stretch" fills the parent width (good for prose + full-width
+ *              widgets); "start" is useful when you want buttons / inline
+ *              items to sit at the natural left (right in RTL) instead of
+ *              stretching to full width.
+ *   items[]  — any blocks (recursive — rendered by Sections)
+ */
+import Sections from "./Sections.astro";
+import type { Locale } from "../../lib/i18n";
+
+interface Props {
+  heading?: string;
+  gap?: "tight" | "normal" | "wide";
+  align?: "start" | "center" | "end" | "stretch";
+  items: any[];
+  locale?: Locale;
+  id?: string;
+}
+const { heading, gap = "normal", align = "stretch", items, locale = "en", id } = Astro.props;
+---
+
+<section class="column-block" id={id} data-gap={gap} data-align={align}>
+  {heading && <p class="column-heading">{heading}</p>}
+  <div class="column-stack">
+    {items.map((child) => (
+      <div class="column-cell">
+        <Sections sections={[child]} locale={locale} />
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .column-block { margin: clamp(28px, 3.5vw, 44px) 0; }
+  .column-heading {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+  :global(html[dir="rtl"]) .column-heading {
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 12px;
+  }
+
+  .column-stack { display: flex; flex-direction: column; }
+  .column-block[data-gap="tight"]  .column-stack { gap: 10px; }
+  .column-block[data-gap="normal"] .column-stack { gap: 20px; }
+  .column-block[data-gap="wide"]   .column-stack { gap: clamp(32px, 4vw, 56px); }
+
+  /* Cross-axis (horizontal) alignment of items within the column. */
+  .column-block[data-align="start"]   .column-stack { align-items: flex-start; }
+  .column-block[data-align="center"]  .column-stack { align-items: center; }
+  .column-block[data-align="end"]     .column-stack { align-items: flex-end; }
+  .column-block[data-align="stretch"] .column-stack { align-items: stretch; }
+
+  /* Trim the inner block's own margins so the column's gap controls spacing. */
+  .column-cell > :global(section),
+  .column-cell > :global(div) { margin-top: 0; margin-bottom: 0; }
+</style>

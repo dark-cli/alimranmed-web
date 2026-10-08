@@ -7,19 +7,30 @@
  * body through this component. Each block in the array is dispatched to its
  * matching widget in src/components/blocks/.
  */
-import Prose       from "./Prose.astro";
-import Highlights  from "./Highlights.astro";
-import Stats       from "./Stats.astro";
-import Facts       from "./Facts.astro";
-import ListRows    from "./ListRows.astro";
-import ListWrap    from "./ListWrap.astro";
-import ListColumns from "./ListColumns.astro";
-import Quote       from "./Quote.astro";
-import Panels      from "./Panels.astro";
-import Media       from "./Media.astro";
-import Pathway     from "./Pathway.astro";
-import Row         from "./Row.astro";
-import Cards       from "./Cards.astro";
+import Prose         from "./Prose.astro";
+import Highlights    from "./Highlights.astro";
+import Stats         from "./Stats.astro";
+import Facts         from "./Facts.astro";
+import ListRows      from "./ListRows.astro";
+import ListWrap      from "./ListWrap.astro";
+import ListColumns   from "./ListColumns.astro";
+import Quote         from "./Quote.astro";
+import Panels        from "./Panels.astro";
+import Media         from "./Media.astro";
+import Pathway       from "./Pathway.astro";
+import ImageRow      from "./ImageRow.astro";
+import Row           from "./Row.astro";
+import Column        from "./Column.astro";
+import Button        from "./Button.astro";
+import ButtonRow     from "./ButtonRow.astro";
+import SocialRow     from "./SocialRow.astro";
+import Map           from "./Map.astro";
+import DoctorCredit  from "./DoctorCredit.astro";
+import LabelTile     from "./LabelTile.astro";
+import ContactStrip  from "./ContactStrip.astro";
+import Cards         from "./Cards.astro";
+import Faq           from "./Faq.astro";
+import Chips         from "./Chips.astro";
 
 interface Props {
   sections: any[];
@@ -32,6 +43,7 @@ const isAr = locale === "ar";
 // string when the editor left the heading empty.
 const factsDefaultHeading = isAr ? "حقائق أساسية" : "Key facts";
 const cardsDefaultHeading = isAr ? "قراءات ذات صلة" : "Related reading";
+const faqDefaultHeading   = isAr ? "أسئلة شائعة"  : "Common questions";
 
 // Sequentially assign anchor IDs for sections that have headings.
 // Must match the logic in buildToc (src/lib/toc.ts): id = "s-{n}".
@@ -51,13 +63,28 @@ const lastListIdx = sections.reduce(
   if (!s || !s.type) return null;
 
   if (s.type === "prose")
-    return <Prose heading={s.heading} body={s.body} locale={locale} id={nextId(s)} />;
+    return <Prose
+      number={s.number}
+      eyebrow={s.eyebrow}
+      heading={s.heading}
+      headingLevel={s.headingLevel}
+      variant={s.variant}
+      body={s.body}
+      locale={locale}
+      id={nextId(s)}
+    />;
 
   if (s.type === "highlights")
     return <Highlights heading={s.heading} items={s.items} id={nextId(s)} />;
 
   if (s.type === "stats")
-    return <Stats heading={s.heading} intro={s.intro} items={s.items} id={nextId(s)} />;
+    return <Stats
+      heading={s.heading}
+      intro={s.intro}
+      variant={s.variant}
+      items={s.items}
+      id={nextId(s)}
+    />;
 
   if (s.type === "facts")
     return <Facts heading={s.heading ?? factsDefaultHeading} items={s.items} locale={locale} id={nextId(s)} />;
@@ -95,6 +122,16 @@ const lastListIdx = sections.reduce(
       heading={s.heading}
       intro={s.intro}
       groups={s.groups}
+      footerLink={s.footerLink}
+      locale={locale}
+      id={nextId(s)}
+    />;
+
+  if (s.type === "image-row")
+    return <ImageRow
+      heading={s.heading}
+      columns={s.columns}
+      items={s.items}
       locale={locale}
       id={nextId(s)}
     />;
@@ -103,6 +140,81 @@ const lastListIdx = sections.reduce(
     return <Row
       heading={s.heading}
       columns={s.columns}
+      gap={s.gap}
+      align={s.align}
+      items={s.items}
+      locale={locale}
+      id={nextId(s)}
+    />;
+
+  if (s.type === "column")
+    return <Column
+      heading={s.heading}
+      gap={s.gap}
+      align={s.align}
+      items={s.items}
+      locale={locale}
+      id={nextId(s)}
+    />;
+
+  if (s.type === "button")
+    return <Button
+      label={s.label}
+      href={s.href}
+      variant={s.variant}
+      newTab={s.newTab}
+      locale={locale}
+    />;
+
+  if (s.type === "button-row")
+    return <ButtonRow
+      align={s.align}
+      gap={s.gap}
+      items={s.items}
+      locale={locale}
+    />;
+
+  if (s.type === "social-row")
+    return <SocialRow heading={s.heading} items={s.items} id={nextId(s)} />;
+
+  if (s.type === "map")
+    return <Map
+      heading={s.heading}
+      embedUrl={s.embedUrl}
+      title={s.title}
+      aspect={s.aspect}
+      id={nextId(s)}
+    />;
+
+  if (s.type === "doctor-credit")
+    return <DoctorCredit
+      avatar={s.avatar}
+      avatarAlt={s.avatarAlt}
+      leadLabel={s.leadLabel}
+      name={s.name}
+      title={s.title}
+      linkLabel={s.linkLabel}
+      linkHref={s.linkHref}
+      locale={locale}
+    />;
+
+  if (s.type === "label-tile")
+    return <LabelTile label={s.label} sublabel={s.sublabel} />;
+
+  if (s.type === "contact-strip")
+    return <ContactStrip
+      eyebrow={s.eyebrow}
+      body={s.body}
+      columns={s.columns}
+      locale={locale}
+    />;
+
+  if (s.type === "chips")
+    return <Chips heading={s.heading} items={s.items} id={nextId(s)} />;
+
+  if (s.type === "faq")
+    return <Faq
+      heading={s.heading ?? faqDefaultHeading}
       items={s.items}
       locale={locale}
       id={nextId(s)}

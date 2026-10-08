@@ -1,0 +1,99 @@
+---
+/**
+ * doctor-credit — small avatar + "Led by Name, title" line, with an
+ * optional CV/profile link below. Used on the home page under the hero
+ * copy; can also sit as a byline inside articles.
+ *
+ * Fields:
+ *   avatar       — image path (an already-processed WebP works best)
+ *   avatarAlt?   — alt text (falls back to `name`)
+ *   leadLabel?   — "Led by" / "بإشراف" — defaults by locale if omitted
+ *   name         — doctor's full name
+ *   title        — e.g. "consultant neurosurgeon"
+ *   linkLabel?   — optional link text (CV page etc.)
+ *   linkHref?    — optional link target (internal paths get localised)
+ */
+import { localizedHref } from "../../lib/i18n";
+import type { Locale } from "../../lib/i18n";
+
+interface Props {
+  avatar: string;
+  avatarAlt?: string;
+  leadLabel?: string;
+  name: string;
+  title: string;
+  linkLabel?: string;
+  linkHref?: string;
+  locale?: Locale;
+}
+const {
+  avatar, avatarAlt, leadLabel, name, title,
+  linkLabel, linkHref, locale = "en",
+} = Astro.props;
+
+const sep = locale === "ar" ? "، " : ", ";
+const defaultLead = locale === "ar" ? "بإشراف" : "Led by";
+const lead = leadLabel ?? defaultLead;
+const url = linkHref && linkHref.startsWith("/") ? localizedHref(linkHref, locale) : linkHref;
+---
+
+<div class="credit">
+  <img
+    class="credit-avatar"
+    src={avatar}
+    alt={avatarAlt ?? name}
+    width="52"
+    height="52"
+    loading="lazy"
+    decoding="async"
+  />
+  <div class="credit-body">
+    <p>{lead} <strong>{name}</strong>{sep}{title}</p>
+    {linkLabel && url && (
+      <a class="credit-link" href={url}>{linkLabel}</a>
+    )}
+  </div>
+</div>
+
+<style>
+  .credit {
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+  .credit-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    flex: 0 0 auto;
+    display: block;
+  }
+  .credit-body { min-width: 0; }
+  .credit-body p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .credit-body strong { font-weight: 500; }
+  :global(html[dir="rtl"]) .credit-body p { line-height: 1.7; }
+  :global(html[dir="rtl"]) .credit-body strong { font-weight: 600; }
+  .credit-link {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 13.5px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 1px;
+  }
+  .credit-link:hover {
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+</style>

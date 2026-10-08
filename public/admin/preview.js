@@ -2,19 +2,19 @@
  * Sveltia CMS preview templates — all collections.
  *
  * Registers live previews for:
- *   doctors    — CvHero + unified section blocks (locale detected from entry slug)
+ *   doctors    — PlainTemplate (sections only; hero is a block)
  *   treatments — ArticleLayout + unified section blocks
  *   services   — same as treatments
  *   blog       — same as treatments
+ *   home / about / contact — PlainTemplate via files-collection keys
  *
  * Block renderers mirror the Astro components in src/components/blocks/.
  * CSS lives in preview.css (same file as before, with additions for the
  * unified block classes).
  *
  * Sync targets:
- *   src/components/blocks/*.astro      — block markup + class names
- *   src/components/doctor/CvHero.astro — hero markup
- *   src/content.config.ts              — section type names
+ *   src/components/blocks/*.astro — block markup + class names
+ *   src/content.config.ts         — section type names
  */
 (function () {
   "use strict";
@@ -79,8 +79,14 @@
 
   function renderProse(s, key) {
     var paras = (s.body || "").split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
-    return h("section", { key: key, className: "prose-block" },
-      s.heading ? h("h2", { className: "prose-heading" }, s.heading) : null,
+    var hasHeader = s.number || s.eyebrow || s.heading;
+    var HeadingTag = s.headingLevel === "h3" ? "h3" : "h2";
+    return h("section", { key: key, className: "prose-block", "data-variant": s.variant || "default" },
+      hasHeader ? h("header", { className: "prose-head" + (s.number ? " prose-head--numbered" : "") },
+        s.eyebrow ? h("p", { className: "prose-eyebrow" }, s.eyebrow) : null,
+        s.number  ? h("span", { className: "prose-number" }, s.number) : null,
+        s.heading ? h(HeadingTag, { className: "prose-heading" }, s.heading) : null
+      ) : null,
       paras.map(function (p, i) {
         return h("p", { key: i, className: "p", dangerouslySetInnerHTML: { __html: rewriteLinks(p) } });
       })
@@ -104,7 +110,7 @@
 
   function renderStats(s, key) {
     var items = s.items || [];
-    return h("section", { key: key, className: "stats-block" },
+    return h("section", { key: key, className: "stats-block", "data-variant": s.variant || "default" },
       s.heading ? h("h2", { className: "stats-heading" }, s.heading) : null,
       s.intro   ? h("p",  { className: "stats-intro"   }, s.intro)   : null,
       h("div", { className: "stats-grid" },
@@ -323,7 +329,8 @@
     );
   }
 
-  function renderRow(s, key, getAsset) {
+  // image-row — specialised image gallery (was `row`).
+  function renderImageRow(s, key, getAsset) {
     var items = s.items || [];
     var cols = s.columns || "auto";
     var gridCols = cols === "auto"
@@ -343,6 +350,192 @@
             it.caption ? h("figcaption", { className: "row-caption" }, it.caption) : null
           );
           return it.href ? h("a", { className: "row-link", href: it.href }, figure) : figure;
+        })
+      )
+    );
+  }
+
+  // Generic row — side-by-side layout holding any mix of child blocks.
+  // Children are dispatched recursively through renderSection.
+  function renderGenericRow(s, key, isAr, getAsset) {
+    var items = toArray(s.items);
+    var cols = s.columns || "auto";
+    var gap = s.gap || "normal";
+    var gridCols = cols === "auto"
+      ? "repeat(auto-fit, minmax(min(260px, 100%), 1fr))"
+      : "repeat(" + cols + ", minmax(0, 1fr))";
+    var gapValue = gap === "tight" ? "12px" : gap === "wide" ? "clamp(40px, 5vw, 72px)" : "clamp(24px, 3vw, 40px)";
+    return h("section", { key: key, className: "row-block", "data-cols": cols, "data-gap": gap, "data-align": s.align || "stretch" },
+      s.heading ? h("p", { className: "row-heading" }, s.heading) : null,
+      h("div", { className: "row-grid", style: { gridTemplateColumns: gridCols, gap: gapValue, alignItems: s.align || "stretch" } },
+        items.map(function (child, i) {
+          return h("div", { key: i, className: "row-cell" }, renderSection(child, i, false, isAr, getAsset));
+        })
+      )
+    );
+  }
+
+  function renderColumn(s, key, isAr, getAsset) {
+    var items = toArray(s.items);
+    var gap = s.gap || "normal";
+    var align = s.align || "stretch";
+    var gapValue = gap === "tight" ? "10px" : gap === "wide" ? "clamp(32px, 4vw, 56px)" : "20px";
+    var alignValue = align === "start" ? "flex-start"
+                   : align === "end"   ? "flex-end"
+                   : align === "center" ? "center"
+                   : "stretch";
+    return h("section", { key: key, className: "column-block", "data-gap": gap, "data-align": align },
+      s.heading ? h("p", { className: "column-heading" }, s.heading) : null,
+      h("div", { className: "column-stack", style: { display: "flex", flexDirection: "column", gap: gapValue, alignItems: alignValue } },
+        items.map(function (child, i) {
+          return h("div", { key: i, className: "column-cell" }, renderSection(child, i, false, isAr, getAsset));
+        })
+      )
+    );
+  }
+
+  function renderButton(s, key) {
+    var variant = s.variant || "primary";
+    return h("a", { key: key, className: "btn btn-" + variant, href: s.href || "#" }, s.label || "");
+  }
+
+  function renderButtonRow(s, key) {
+    var items = s.items || [];
+    return h("div", {
+      key: key,
+      className: "button-row-block",
+      "data-align": s.align || "start",
+      "data-gap": s.gap || "tight",
+    }, items.map(function (it, i) {
+      var v = it.variant || "primary";
+      return h("a", { key: i, className: "btn btn-" + v, href: it.href || "#" }, it.label || "");
+    }));
+  }
+
+  function renderDoctorCredit(s, key, isAr, getAsset) {
+    var src = s.avatar || "";
+    if (src && getAsset) src = getAsset(src).toString();
+    var lead = s.leadLabel || (isAr ? "بإشراف" : "Led by");
+    var sep = isAr ? "، " : ", ";
+    return h("div", { key: key, className: "credit" },
+      src ? h("img", { className: "credit-avatar", src: src, alt: s.avatarAlt || s.name || "", width: 52, height: 52 }) : null,
+      h("div", { className: "credit-body" },
+        h("p", null, lead + " ", h("strong", null, s.name || ""), sep + (s.title || "")),
+        (s.linkLabel && s.linkHref)
+          ? h("a", { className: "credit-link", href: s.linkHref }, s.linkLabel)
+          : null
+      )
+    );
+  }
+
+  function renderLabelTile(s, key) {
+    return h("div", { key: key, className: "label-tile", "aria-hidden": "true" },
+      h("p", null,
+        s.label || "",
+        s.sublabel ? h("br", null) : null,
+        s.sublabel ? s.sublabel : null
+      )
+    );
+  }
+
+  function renderContactStrip(s, key) {
+    var columns = toArray(s.columns);
+    return h("section", { key: key, className: "strip" },
+      (s.eyebrow || s.body) ? h("div", { className: "strip-copy" },
+        s.eyebrow ? h("p", { className: "strip-eyebrow" }, s.eyebrow) : null,
+        s.body    ? h("p", { className: "strip-body"    }, s.body)    : null
+      ) : null,
+      columns.map(function (col, i) {
+        var items = toArray(col.items);
+        return h("div", { key: i, className: "strip-col" },
+          h("p", { className: "strip-label" }, col.label || ""),
+          items.map(function (it, j) {
+            return h("p", { key: j },
+              it.href ? h("a", { href: it.href }, it.text || "") : (it.text || "")
+            );
+          })
+        );
+      })
+    );
+  }
+
+  function renderChips(s, key) {
+    var items = s.items || [];
+    return h("section", { key: key, className: "chips-block" },
+      s.heading ? h("p", { className: "chips-heading" }, s.heading) : null,
+      h("div", { className: "chips-row" },
+        items.map(function (c, i) {
+          return h("span", { key: i, className: "chip" }, c || "");
+        })
+      )
+    );
+  }
+
+  function renderFaq(s, key, isAr) {
+    var items = s.items || [];
+    var heading = s.heading || (isAr ? "أسئلة شائعة" : "Common questions");
+    return h("section", { key: key, className: "faq-block" },
+      h("h2", { className: "faq-heading" }, heading),
+      h("dl", { className: "faq-list" },
+        items.map(function (it, i) {
+          return h("div", { key: i, className: "faq-item" },
+            h("dt", { className: "faq-q" }, it.question || ""),
+            h("dd", { className: "faq-a", dangerouslySetInnerHTML: { __html: rewriteLinks(it.answer || "") } })
+          );
+        })
+      )
+    );
+  }
+
+  var PLATFORM_ICON = {
+    facebook:  "fa-brands fa-facebook-f",
+    instagram: "fa-brands fa-instagram",
+    youtube:   "fa-brands fa-youtube",
+    telegram:  "fa-brands fa-telegram",
+    tiktok:    "fa-brands fa-tiktok",
+    twitter:   "fa-brands fa-twitter",
+    x:         "fa-brands fa-x-twitter",
+    linkedin:  "fa-brands fa-linkedin-in",
+    whatsapp:  "fa-brands fa-whatsapp",
+  };
+  var PLATFORM_LABEL = {
+    facebook: "Facebook", instagram: "Instagram", youtube: "YouTube",
+    telegram: "Telegram", tiktok: "TikTok", twitter: "Twitter",
+    x: "X (Twitter)", linkedin: "LinkedIn", whatsapp: "WhatsApp",
+  };
+
+  function renderSocialRow(s, key) {
+    var items = s.items || [];
+    return h("section", { key: key, className: "social-row-block" },
+      s.heading ? h("p", { className: "social-row-heading" }, s.heading) : null,
+      h("ul", { className: "social-row-list" },
+        items.map(function (it, i) {
+          var platform = it.platform || "facebook";
+          var icon     = PLATFORM_ICON[platform] || PLATFORM_ICON.facebook;
+          return h("li", { key: i },
+            h("a", {
+              href: it.href || "#",
+              target: "_blank",
+              rel: "noopener",
+              "aria-label": it.label || PLATFORM_LABEL[platform] || platform,
+            }, h("i", { className: icon, "aria-hidden": "true" }))
+          );
+        })
+      )
+    );
+  }
+
+  function renderMap(s, key) {
+    var aspect = s.aspect || "16/9";
+    return h("section", { key: key, className: "map-block" },
+      s.heading ? h("h2", { className: "map-heading" }, s.heading) : null,
+      h("div", { className: "map-frame", style: { aspectRatio: aspect } },
+        h("iframe", {
+          src: s.embedUrl || "",
+          title: s.title || "",
+          loading: "lazy",
+          referrerPolicy: "no-referrer-when-downgrade",
+          allowFullScreen: true,
         })
       )
     );
@@ -436,6 +629,30 @@
         callBody: "تواصل معنا لمناقشة هذا الموضوع مع فريقنا.",
         ctaHeading: "هل تحتاج إلى مزيد من المعلومات؟",
         ctaBody: "تواصل معنا للحصول على المزيد من التفاصيل.",
+        noSections: "لا توجد أقسام بعد.",
+      },
+    },
+    cases: {
+      en: {
+        home: "Home", collection: "Cases",
+        reviewedByLabel: "Reviewed by",
+        reviewer: "Hussein Imran Mousa, consultant neurosurgeon",
+        readingTimeLabel: "Reading time", lastReviewedLabel: "Last reviewed",
+        tocLabel: "On this page", callLabel: "Discuss a case",
+        callBody: "Speak to the secretary about a referral or similar case.",
+        ctaHeading: "Book a consultation",
+        ctaBody: "The secretary schedules first appointments during clinic hours.",
+        noSections: "No sections yet.",
+      },
+      ar: {
+        home: "الرئيسية", collection: "حالات مُعالَجة",
+        reviewedByLabel: "تمت المراجعة من قبل",
+        reviewer: "الدكتور حسين عمران موسى، استشاري جراحة الأعصاب",
+        readingTimeLabel: "وقت القراءة", lastReviewedLabel: "آخر مراجعة",
+        tocLabel: "في هذه الصفحة", callLabel: "لمناقشة حالة",
+        callBody: "تحدث مع السكرتير بشأن إحالة أو حالة مشابهة.",
+        ctaHeading: "احجز استشارة",
+        ctaBody: "يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل.",
         noSections: "لا توجد أقسام بعد.",
       },
     },
@@ -567,18 +784,29 @@
     if (!s || !s.type) return null;
     var key = "s" + i;
     switch (s.type) {
-      case "prose":      return renderProse(s, key);
-      case "highlights": return renderHighlights(s, key);
-      case "stats":      return renderStats(s, key);
-      case "facts":      return renderFacts(s, key, isAr);
-      case "list":       return renderList(s, key, isLast);
-      case "quote":      return renderQuote(s, key);
-      case "panels":     return renderPanels(s, key);
-      case "media":      return renderMedia(s, key, getAsset);
-      case "pathway":    return renderPathway(s, key);
-      case "row":        return renderRow(s, key, getAsset);
-      case "cards":      return renderCards(s, key);
-      default:           return null;
+      case "prose":          return renderProse(s, key);
+      case "highlights":     return renderHighlights(s, key);
+      case "stats":          return renderStats(s, key);
+      case "facts":          return renderFacts(s, key, isAr);
+      case "list":           return renderList(s, key, isLast);
+      case "quote":          return renderQuote(s, key);
+      case "panels":         return renderPanels(s, key);
+      case "media":          return renderMedia(s, key, getAsset);
+      case "pathway":        return renderPathway(s, key);
+      case "image-row":      return renderImageRow(s, key, getAsset);
+      case "row":            return renderGenericRow(s, key, isAr, getAsset);
+      case "column":         return renderColumn(s, key, isAr, getAsset);
+      case "button":         return renderButton(s, key);
+      case "button-row":     return renderButtonRow(s, key);
+      case "doctor-credit":  return renderDoctorCredit(s, key, isAr, getAsset);
+      case "label-tile":     return renderLabelTile(s, key);
+      case "contact-strip":  return renderContactStrip(s, key);
+      case "chips":          return renderChips(s, key);
+      case "faq":            return renderFaq(s, key, isAr);
+      case "social-row":     return renderSocialRow(s, key);
+      case "map":            return renderMap(s, key);
+      case "cards":          return renderCards(s, key);
+      default:               return null;
     }
   }
 
@@ -586,69 +814,6 @@
     var idx = -1;
     sections.forEach(function (s, i) { if (s && s.type === "list") idx = i; });
     return idx;
-  }
-
-  /* ── Doctor preview ──────────────────────────────────────────────────── */
-
-  function renderHero(ctx, key) {
-    return h("section", { key: key, className: "cv-head-band" },
-      h("div", { className: "cv-head" },
-        h("div", { className: "cv-head-copy" },
-          h("p",  { className: "cv-eyebrow" }, ctx.heroEyebrow || ""),
-          h("h1", { className: "cv-h1"      }, ctx.heroHeadline || ctx.fullName || ""),
-          h("p",  { className: "cv-lede"    }, ctx.heroLede || ""),
-          ctx.titles.length > 0 ? h("div", { className: "cv-chips" },
-            ctx.titles.map(function (c, i) { return h("span", { key: i, className: "cv-chip" }, c); })
-          ) : null
-        ),
-        ctx.photoSrc ? h("img", { className: "cv-portrait-img", src: ctx.photoSrc, alt: ctx.photoAlt || ctx.fullName || "" }) : null
-      )
-    );
-  }
-
-  function makeDocPreview(locale) {
-    return createClass({
-      getInitialState: function () { return { dark: false }; },
-      render: function () {
-        var self     = this;
-        var entry    = this.props.entry;
-        var getAsset = this.props.getAsset;
-        var isAr     = locale === "ar";
-        var toggle   = function (e) {
-          var next = !self.state.dark;
-          self.setState({ dark: next });
-          var html = e.currentTarget.ownerDocument.documentElement;
-          if (next) html.setAttribute("data-theme", "dark");
-          else html.removeAttribute("data-theme");
-        };
-
-        var fullName     = entry.getIn(["data", "fullName"]) || "";
-        var photoAlt     = entry.getIn(["data", "photoAlt"]) || "";
-        var photoField   = entry.getIn(["data", "photo"]);
-        var titles       = toArray(entry.getIn(["data", "titles"]));
-        var heroEyebrow  = entry.getIn(["data", "heroEyebrow"]) || "";
-        var heroHeadline = entry.getIn(["data", "heroHeadline"]) || "";
-        var heroLede     = entry.getIn(["data", "heroLede"]) || "";
-        var sections     = toArray(entry.getIn(["data", "sections"]));
-
-        var photoSrc = photoField ? (getAsset ? getAsset(photoField).toString() : photoField) : null;
-        var llIdx    = lastListIndex(sections);
-
-        var elements = [renderHero({
-          fullName: fullName, photoSrc: photoSrc, photoAlt: photoAlt,
-          titles: titles, heroEyebrow: heroEyebrow,
-          heroHeadline: heroHeadline, heroLede: heroLede
-        }, "hero")];
-
-        sections.forEach(function (s, i) {
-          var el = renderSection(s, i, i === llIdx, isAr, getAsset);
-          if (el) elements.push(el);
-        });
-
-        elements.unshift(themeBtn(toggle));
-        return h("div", { className: "doctor-preview", dir: isAr ? "rtl" : "ltr", lang: locale }, elements);
-      }
-    });
   }
 
   /* ── Article preview (treatments / services / blog) ─────────────────── */
@@ -800,18 +965,6 @@
     return /(?:^|\/)ar(?:\.md)?$/.test(basis) ? "ar" : "en";
   }
 
-  function makeDocPreviewAuto() {
-    var enCls = makeDocPreview("en");
-    var arCls = makeDocPreview("ar");
-    return createClass({
-      getInitialState: function () { return { dark: false }; },
-      render: function () {
-        var cls = detectLocale(this.props.entry) === "ar" ? arCls : enCls;
-        return h(cls, this.props);
-      }
-    });
-  }
-
   function makeArticlePreviewAuto(kind) {
     var enCls = makeArticlePreview("en", kind);
     var arCls = makeArticlePreview("ar", kind);
@@ -824,9 +977,81 @@
     });
   }
 
-  CMS.registerPreviewTemplate("doctors",    makeDocPreviewAuto());
+  // Pages preview — a chrome-less article view that renders the sections
+  // through the same block dispatcher the live site uses. Reuses the
+  // existing `.article-preview` + `.art-container` + `.art-body` shell so
+  // the preview picks up every block's production CSS (grid, typography,
+  // responsive breakpoints) by inheritance. No sidebar TOC, no CTA — just
+  // the sections, which is how home / about / contact / follow render in
+  // production.
+  function makePagesPreview() {
+    return createClass({
+      getInitialState: function () { return { dark: false }; },
+      render: function () {
+        var self     = this;
+        var entry    = this.props.entry;
+        var data     = entry && entry.get("data") ? entry.get("data").toJS() : {};
+        var isAr     = detectLocale(entry) === "ar";
+        var getAsset = this.props.getAsset;
+        var sections = toArray(data.sections);
+        var lastIdx  = lastListIndex(sections);
+
+        var toggle = function (e) {
+          var next = !self.state.dark;
+          self.setState({ dark: next });
+          var html = e.currentTarget.ownerDocument.documentElement;
+          if (next) html.setAttribute("data-theme", "dark");
+          else html.removeAttribute("data-theme");
+        };
+
+        var els = sections
+          .map(function (s, i) { return renderSection(s, i, i === lastIdx, isAr, getAsset); })
+          .filter(Boolean);
+
+        return h("div", { className: "article-preview pages-preview", dir: isAr ? "rtl" : "ltr", lang: isAr ? "ar" : "en" },
+          themeBtn(toggle),
+          h("div", { className: "art-container" },
+            h("article", { className: "art-body art-body--full" },
+              els.length > 0
+                ? els
+                : h("p", { className: "art-empty" },
+                    isAr ? "أضف أقسامًا لتظهر المعاينة." : "Add some sections to see the preview.")
+            )
+          )
+        );
+      }
+    });
+  }
+
+  // Preview registration.
+  //
+  // Sveltia requires calling CMS.registerPreviewTemplate(<collection>, …)
+  // per collection — there is no wildcard. We work around that by using
+  // ONE function (makePagesPreview) that renders any sections-based page,
+  // and registering it for every page-like collection. Adding a new
+  // folder-based page later is a one-line edit here.
+  //
+  // The three article kinds get a dedicated preview because their chrome
+  // is different: breadcrumbs, meta strip, sidebar TOC, inline CTA. If a
+  // new "article-like" collection appeared, point it at makeArticlePreviewAuto.
+  // If a new "page-like" collection appeared (hero + sections), point it
+  // at makePagesPreview.
+  // Doctors render through the same PlainTemplate as home/about/contact
+  // (hero + CV + memberships are all sections), so the preview reuses
+  // makePagesPreview — same chrome, same block dispatcher.
+  CMS.registerPreviewTemplate("doctors",    makePagesPreview());
   CMS.registerPreviewTemplate("treatments", makeArticlePreviewAuto("treatments"));
   CMS.registerPreviewTemplate("services",   makeArticlePreviewAuto("services"));
   CMS.registerPreviewTemplate("blog",       makeArticlePreviewAuto("blog"));
+  CMS.registerPreviewTemplate("cases",      makeArticlePreviewAuto("cases"));
+  // `files` collections — Sveltia dispatches by `fileName ?? collectionName`,
+  // so the key for a files-type entry is the file's `name:` field, not the
+  // collection name. Our files collections (home + about) both use `name: en`
+  // and `name: ar`, so one registration each handles every files collection
+  // we have now and any future ones that follow the same locale convention.
+  // Folder collections above are unaffected (their fileName is undefined, so
+  // Sveltia falls back to the collection name — which is already registered).
+  CMS.registerPreviewTemplate("en", makePagesPreview());
+  CMS.registerPreviewTemplate("ar", makePagesPreview());
   CMS.registerPreviewStyle("/admin/preview.css");
 })();

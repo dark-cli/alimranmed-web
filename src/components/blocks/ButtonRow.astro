@@ -1,0 +1,57 @@
+---
+/**
+ * button-row — flex-wrap cluster of buttons at their natural widths.
+ * Purpose-built so a hero's CTA row is one block instead of a nested
+ * row+button+button structure. On narrow viewports buttons wrap to a
+ * second line but keep their natural widths (never stretched).
+ *
+ * Fields:
+ *   align   — "start" | "center" | "end" (default "start")
+ *   gap     — "tight" | "normal" | "wide" (default "tight")
+ *   items[] — { label, href, variant?, newTab? }
+ */
+import Button from "./Button.astro";
+import type { Locale } from "../../lib/i18n";
+
+interface Item {
+  label: string;
+  href: string;
+  variant?: "primary" | "secondary" | "quiet";
+  newTab?: boolean;
+}
+interface Props {
+  align?: "start" | "center" | "end";
+  gap?: "tight" | "normal" | "wide";
+  items: Item[];
+  locale?: Locale;
+}
+const { align = "start", gap = "tight", items, locale = "en" } = Astro.props;
+---
+
+<div class="button-row-block" data-align={align} data-gap={gap}>
+  {items.map((it) => (
+    <Button
+      label={it.label}
+      href={it.href}
+      variant={it.variant}
+      newTab={it.newTab}
+      locale={locale}
+    />
+  ))}
+</div>
+
+<style>
+  .button-row-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: clamp(16px, 2vw, 24px) 0;
+  }
+  .button-row-block[data-gap="tight"]  { gap: 12px; }
+  .button-row-block[data-gap="normal"] { gap: 20px; }
+  .button-row-block[data-gap="wide"]   { gap: clamp(28px, 3vw, 40px); }
+
+  .button-row-block[data-align="start"]  { justify-content: flex-start; }
+  .button-row-block[data-align="center"] { justify-content: center; }
+  .button-row-block[data-align="end"]    { justify-content: flex-end; }
+</style>

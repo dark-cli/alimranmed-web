@@ -19,10 +19,10 @@ discover…"). Every fact goes back to the doctor for confirmation if ambiguous.
 ## Read these before starting any task
 
 - [`../README.md`](../../README.md) — one-screen overview
-- [`../project-structure.md`](../project-structure.md) — where everything lives
-- [`../content-authoring.md`](../content-authoring.md) — frontmatter rules + bilingual policy
-- [`../sections.md`](../sections.md) — every block widget with syntax
-- [`../deployment.md`](../deployment.md) — how deploys work (matters when you commit)
+- [`../dev/project-structure.md`](../dev/project-structure.md) — where everything lives
+- [`../user-manual/content-authoring.md`](../user-manual/content-authoring.md) — frontmatter rules + bilingual policy
+- [`../user-manual/sections.md`](../user-manual/sections.md) — every block widget with syntax
+- [`../dev/deployment.md`](../dev/deployment.md) — how deploys work (matters when you commit)
 
 Two supporting docs specific to AI work:
 
@@ -37,7 +37,7 @@ Two supporting docs specific to AI work:
 2. **Never `git push` unless the user asks.** Local commits are fine; pushing triggers a live deploy.
 3. **Do not touch `src/content/posts/`** — that collection is not published (see the schema comment).
 4. **Do not reintroduce content that was deliberately removed.** Twelve pages 301-redirect for a reason. Ozone-therapy claims were pulled after clinical review. Grep `git log --all --grep=remov` before restoring anything.
-5. **Content changes go through the CMS voice discipline** (see [`../content-authoring.md#rule-1—preserve-the-doctors-voice`](../content-authoring.md)). Fix errors; don't rewrite meaning.
+5. **Content changes go through the CMS voice discipline** (see [`../user-manual/content-authoring.md#rule-1—preserve-the-doctors-voice`](../user-manual/content-authoring.md)). Fix errors; don't rewrite meaning.
 6. **Every article has both `en.md` and `ar.md`.** If you create/edit one, address the other in the same task — either update it in parallel or leave a clear TODO in the response so the user knows.
 7. **Ask before large refactors.** Fixing a bug is fine; converting a component to a different pattern isn't.
 8. **Never bypass `--no-verify` or skip build steps.** If a hook fails, fix the root cause.
@@ -51,7 +51,7 @@ Two supporting docs specific to AI work:
 1. Pick the collection: is it a **condition** (`treatments/`), a **procedure** (`services/`), an **editorial post** (`blog/`), or a **case report** (`cases/`)?
 2. Choose the slug — kebab-case, URL-safe: `epilepsy`, `back-pain`, `endoscopic-spine-surgery`.
 3. Create `src/content/<collection>/<slug>/en.md` and `src/content/<collection>/<slug>/ar.md`.
-4. Frontmatter must include: `title`, `description`, `redesigned: true`, plus collection-specific required fields ([`../content-authoring.md`](../content-authoring.md#frontmatter-reference)).
+4. Frontmatter must include: `title`, `description`, `redesigned: true`, plus collection-specific required fields ([`../user-manual/content-authoring.md`](../user-manual/content-authoring.md#frontmatter-reference)).
 5. Body goes in `sections: [...]`. See [`article-builder.md`](article-builder.md) for turning a rough draft into blocks.
 6. Run `npm run build`. If it errors on Zod validation, the message names the file and field.
 7. Show the user the local preview URL: `http://localhost:4321/en/<collection>/<slug>/`.
@@ -59,7 +59,7 @@ Two supporting docs specific to AI work:
 ### "Edit an existing article"
 
 1. Find the file: `src/content/<collection>/<slug>/<locale>.md`.
-2. Make the edit — respecting Rule 1 of [content-authoring.md](../content-authoring.md).
+2. Make the edit — respecting Rule 1 of [content-authoring.md](../user-manual/content-authoring.md).
 3. If you edited `en.md`, look at `ar.md` — does the change need to be mirrored?
 4. Run `npm run build`.
 
@@ -75,7 +75,7 @@ Widgets are defined in **three places** that must stay in sync:
 
 Then:
 
-6. **Update `docs/sections.md`** — add the widget reference
+6. **Update `docs/user-manual/sections.md`** — add the widget reference
 7. **Add a preview to `src/pages/[locale]/dev-blocks.astro`** so QA can see it in isolation
 8. Run `npm run build`
 
@@ -94,7 +94,7 @@ See [`article-builder.md`](article-builder.md). Summary:
 
 1. Reproduce with `npm run build` locally — the error is almost always there too
 2. If not, open Cloudflare Pages → Deployments → the failing deploy → Build logs
-3. See [`../deployment.md#when-the-site-doesnt-update-after-10-minutes`](../deployment.md)
+3. See [`../dev/deployment.md#when-the-site-doesnt-update-after-10-minutes`](../dev/deployment.md)
 
 ---
 
