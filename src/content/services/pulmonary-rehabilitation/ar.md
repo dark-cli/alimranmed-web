@@ -7,7 +7,6 @@ category: rehabilitation
 order: 999
 source: original
 redesigned: true
----
 sections:
   - type: highlights
     items:
@@ -148,3 +147,4 @@ sections:
       - title: العلاج المهني
         items:
           - "[العلاج المهني](/services/rehabilitation/occupational-therapy/)"
+---

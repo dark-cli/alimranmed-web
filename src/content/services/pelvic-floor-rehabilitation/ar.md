@@ -7,7 +7,6 @@ category: rehabilitation
 order: 999
 source: original
 redesigned: true
----
 sections:
   - type: highlights
     items:
@@ -131,3 +130,4 @@ sections:
           - "[الوخز بالإبر](/services/acupuncture/acupuncture/)"
           - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[حقن البوتوكس](/services/botox/botox-injection/)"
+---

@@ -7,7 +7,6 @@ category: pain
 order: 999
 source: original
 redesigned: true
----
 sections:
   - type: highlights
     items:
@@ -95,3 +94,4 @@ sections:
       In some cases, treatment brings complete pain relief. But most people still experience some pain, and a few do not
       receive any relief. Although some people must live with postherpetic neuralgia for the rest of their lives, most
       people can expect the condition to gradually disappear during the first three months.
+---
