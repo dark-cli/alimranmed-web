@@ -68,19 +68,13 @@ Once every relevant check has passed:
 
 ## When checks fail
 
-**"Zod validation error"** — the frontmatter shape doesn't match
-`src/content.config.ts`. The error names the file and field. Fix the field.
+Quick AI heuristics (the full deployment / image-pipeline references
+live in [`../dev/deployment.md`](../dev/deployment.md) and
+[`../dev/image-optimization.md`](../dev/image-optimization.md)):
 
-**"Cannot find module `x`"** — you renamed something and didn't update all
-callers. `grep -rn "x" src/` finds them.
-
-**"Type 'X' is not assignable to type 'Y'"** — TypeScript error. Read the file
-and line number, fix the mismatch.
-
-**Cloudflare-only errors** — if `npm run check` passes locally but Cloudflare
-fails, the environment differs (usually Node version or missing env var). Check
-the build log in Cloudflare Pages → Deployments.
-
-**Sharp/image errors** — an image file is corrupt or too small.
-`identify path/to/image.jpg` shows dimensions. Delete the broken image; the
-build will skip the missing manifest entry gracefully.
+- **Zod validation error** — frontmatter doesn't match `src/content.config.ts`. The error names the file + field. Fix the field.
+- **"Cannot find module 'x'"** — you renamed something and didn't update all callers. `grep -rn "x" src/` finds them.
+- **TypeScript "X is not assignable to Y"** — read the line, fix the mismatch; don't widen the type to make the error go away.
+- **Cloudflare build passes locally but fails on deploy** — environment drift (Node version, missing env var). See the Pages build log; details in [`../dev/deployment.md`](../dev/deployment.md).
+- **Sharp / image errors** — a source image is corrupt or below the 400 px threshold. `identify path/to/image.jpg` shows dimensions; delete the broken file and the optimizer skips it gracefully.
+- **A rehype plugin seems not to fire** — nuclear-clean the caches: `rm -rf .astro node_modules/.astro node_modules/.vite` before rebuilding. Astro's compiled plugin modules can go stale on edits to files whose names resemble existing plugins.

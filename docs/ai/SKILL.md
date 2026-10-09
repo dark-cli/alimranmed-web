@@ -1,32 +1,39 @@
 ---
 name: alimranmed-web
-description: Content collaborator + engineer for the Alimran Medical Center website. Use for editing articles, adding widgets, running build/lint checks, and turning the doctor's rough drafts into publishable pages.
+description: Use when editing content, adding sections or widgets, converting a doctor's rough draft into blocks, adding a new content collection, or running build/lint checks for the Alimran Medical Center website (alimran.clinic). A bilingual (EN/AR) clinical site built with Astro + Sveltia CMS, deployed to Cloudflare Pages on every push to main.
 ---
 
-# alimranmed-web — AI skill
+# alimranmed-web — AI collaborator brief
 
-You are collaborating on **alimran.clinic** — a bilingual (English/Arabic)
-clinical website. Content is authored in Markdown under `src/content/`, built
-by Astro, and deployed to Cloudflare Pages on every push to `main`.
+You are collaborating on **alimran.clinic**, a bilingual clinical site.
+Content is Markdown under `src/content/`, built by Astro, deployed on
+push to `main`. This file is the AI-specific contract on top of the
+project docs — it tells you **how** to work, not **what** the project
+looks like. Load the human docs below for schemas, syntax, workflows.
 
-The doctor's voice is direct and clinical. Your job is to **preserve it, not
-rewrite it.** Repair broken translations and WordPress artefacts. Never soften
-clinical directness with generic copy ("Are you suffering from…", "Read on to
-discover…"). Every fact goes back to the doctor for confirmation if ambiguous.
+The doctor's voice is direct and clinical. Your job is to **preserve
+it, not rewrite it.** Repair broken translations and WordPress
+artefacts. Never soften clinical directness with generic copy ("Are
+you suffering from…", "Read on to discover…"). Every fact goes back
+to the doctor for confirmation if ambiguous.
 
 ---
 
-## Read these before starting any task
+## Read before any task
 
-- [`../README.md`](../../README.md) — one-screen overview
+Project orientation and schema reference are maintained once, in the
+human-facing docs. Load the ones relevant to the task:
+
+- [`../../README.md`](../../README.md) — one-screen overview
 - [`../dev/project-structure.md`](../dev/project-structure.md) — where everything lives
-- [`../user-manual/content-authoring.md`](../user-manual/content-authoring.md) — frontmatter rules + bilingual policy
-- [`../user-manual/sections.md`](../user-manual/sections.md) — every block widget with syntax
 - [`../dev/deployment.md`](../dev/deployment.md) — how deploys work (matters when you commit)
+- [`../user-manual/content-authoring.md`](../user-manual/content-authoring.md) — frontmatter rules + bilingual policy + voice discipline
+- [`../user-manual/sections.md`](../user-manual/sections.md) — every one of the 22 block widgets with YAML syntax + the "when to use which" cheat-sheet
+- [`../user-manual/cms.md`](../user-manual/cms.md) — Sveltia admin tour (useful when a request is really a CMS workflow)
 
-Two supporting docs specific to AI work:
+Two supporting docs here that are AI-only:
 
-- [`article-builder.md`](article-builder.md) — turning a doctor's draft into a block-based article, incl. what to ask the doctor for
+- [`article-builder.md`](article-builder.md) — turning a doctor's draft into a block-based article: workflow + anti-patterns + what to ask the doctor for
 - [`checks.md`](checks.md) — the commands you must run before saying "done"
 
 ---
@@ -48,13 +55,13 @@ Two supporting docs specific to AI work:
 
 ### "Add a new article"
 
-1. Pick the collection: is it a **condition** (`treatments/`), a **procedure** (`services/`), an **editorial post** (`blog/`), or a **case report** (`cases/`)?
+1. Pick the collection: **condition** (`treatments/`), **procedure** (`services/`), **editorial** (`blog/`), or **case report** (`cases/`).
 2. Choose the slug — kebab-case, URL-safe: `epilepsy`, `back-pain`, `endoscopic-spine-surgery`.
-3. Create `src/content/<collection>/<slug>/en.md` and `src/content/<collection>/<slug>/ar.md`.
-4. Frontmatter must include: `title`, `description`, `redesigned: true`, plus collection-specific required fields ([`../user-manual/content-authoring.md`](../user-manual/content-authoring.md#frontmatter-reference)).
+3. Create `src/content/<collection>/<slug>/en.md` and `.../ar.md`.
+4. Frontmatter per [`../user-manual/content-authoring.md#frontmatter-reference`](../user-manual/content-authoring.md). Set `redesigned: true` **if** the body uses `sections:` — otherwise the Markdown body renders through `ArticleBody`'s fallback and `redesigned` is optional.
 5. Body goes in `sections: [...]`. See [`article-builder.md`](article-builder.md) for turning a rough draft into blocks.
-6. Run `npm run build`. If it errors on Zod validation, the message names the file and field.
-7. Show the user the local preview URL: `http://localhost:4321/en/<collection>/<slug>/`.
+6. Run `npm run build`. Zod validation errors name the file + field.
+7. Show the user the preview URL: `http://localhost:4321/en/<collection>/<slug>/`.
 
 ### "Edit an existing article"
 
@@ -65,30 +72,43 @@ Two supporting docs specific to AI work:
 
 ### "Add a new block/widget type"
 
-Widgets are defined in **three places** that must stay in sync:
+Widgets are defined in **five places** that must stay in sync:
 
-1. **Zod schema** in `src/content.config.ts` — add a new object to the `section` discriminated union
-2. **Component** at `src/components/blocks/<NewBlock>.astro`
-3. **Dispatcher** in `src/components/blocks/Sections.astro` — add a case for the new `type`
-4. **CMS config** in `public/admin/config.yml` — add the widget under `_sections_field.types:`
-5. **CMS preview** in `public/admin/preview.js` — add a rendering function
+1. **Zod schema** — `src/content.config.ts`, add an object to the `section` discriminated union
+2. **Component** — `src/components/blocks/<NewBlock>.astro`
+3. **Dispatcher** — `src/components/blocks/Sections.astro`, add a case for the new `type`
+4. **CMS config** — `public/admin/config.yml`, add the widget under the `_sections_field` anchors
+5. **CMS preview** — `public/admin/preview.js`, add a rendering function + a dispatcher case
 
 Then:
 
-6. **Update `docs/user-manual/sections.md`** — add the widget reference
-7. **Add a preview to `src/pages/[locale]/dev-blocks.astro`** so QA can see it in isolation
+6. **Document it** in [`../user-manual/sections.md`](../user-manual/sections.md) — writers depend on this reference
+7. **Add a showcase** in `src/pages/[locale]/dev-blocks.astro` (both structure + in-use variants) so QA can see it in isolation
 8. Run `npm run build`
+
+### "Add a new content collection" (e.g. `surgeries/`)
+
+The catch-all route (`src/pages/[locale]/[...slug].astro`) + the
+article registry (`src/lib/article-registry.ts`) mean a new collection
+does **not** need a new `.astro` route. Four places:
+
+1. **Content** — create `src/content/<collection>/<slug>/{en,ar}.md`
+2. **Zod** — add a `defineCollection(...)` in `src/content.config.ts`
+3. **Registry** — add an entry in `src/lib/article-registry.ts` with its labels, schema function, and breadcrumb trail. Collections not listed in the registry fall back to the generic ArticleLayout chrome.
+4. **CMS** (optional, if content editors need it) — add a collection block in `public/admin/config.yml` and register its preview in `public/admin/preview.js`.
+
+Run `npm run build` — new URLs appear in the build output.
 
 ### "Doctor sent a rough draft — build me an article"
 
 See [`article-builder.md`](article-builder.md). Summary:
 
-1. Read the draft in full first
-2. Identify the block that fits each chunk of content
-3. If a chunk hints at data the draft doesn't include (stats, key facts, related pages), **ask the doctor for it** before assuming
-4. Assemble the sections array
-5. Draft both languages if you can, or leave the other with a clear TODO
-6. Preview + build
+1. Read the draft in full first.
+2. Match each chunk to a block — the "When to use which" cheat-sheet at the bottom of [`../user-manual/sections.md`](../user-manual/sections.md#when-to-use-which) covers all 22 blocks.
+3. If a chunk hints at data the draft doesn't include (stats, key facts, related pages, FAQ items), **ask the doctor for it** before assuming.
+4. Assemble the sections array.
+5. Draft both languages if you can, or leave the other with a clear TODO.
+6. Preview + build.
 
 ### "Something broke on the live site"
 
@@ -111,15 +131,16 @@ See [`article-builder.md`](article-builder.md). Summary:
 
 These are lessons from real fixes on this project. Follow them by default:
 
-- **Media block images** — always use the schema-defined `kind: image` shape, not a raw `<img>`. The `<Image>` component handles srcset for you.
+- **Media block images** — always use the schema-defined `kind: image` shape, not a raw `<img>`. The image pipeline handles srcset for you.
 - **Every new image gets responsive variants automatically** if it lives under `public/images/` and is ≥400 px wide. Don't hand-write srcset strings; call `imageVariants()` if you need the URLs.
-- **Frontmatter that fails Zod validation** stops the build. The error names the file and field — read it, fix the field, rebuild.
-- **RTL is automatic.** Set `dir="rtl"` never happens in article code; the shell handles it based on locale. If you're writing per-block styles, target `html[dir="rtl"] .my-block` globally.
+- **Frontmatter that fails Zod validation stops the build.** The error names the file and field — read it, fix the field, rebuild.
+- **RTL is automatic.** You never set `dir="rtl"` in article code; the shell handles it based on locale. For per-block styles, target `html[dir="rtl"] .my-block` globally.
 - **Section headings feed the TOC.** If you want a block to appear in the sidebar TOC, give it a `heading:`. If you don't, don't.
-- **`redesigned: true`** is what makes an article visible to nav and search. Legacy pages without it live at their URL but don't link into the site.
+- **`redesigned: true`** switches the body renderer from Markdown fallback to the `sections[]` dispatcher. Legacy pages without it still render — their Markdown body goes through `ArticleBody`'s slot, which is why the cases collection still works. Nav visibility is separate (controlled by each collection's listing page).
 - **Both locales must always exist** for every topic. If AR is a fallback stub, note it clearly so the AR-only fallback banner shows.
-- **`cards` block resolves paths at build time.** Point at a slug; the title/description are pulled from that slug's frontmatter automatically. Don't duplicate them.
-- **No custom HTML in Markdown.** Astro's markdown pipeline escapes `<div>`s and inline styles. Use a block widget instead, or a `prose` block with links.
+- **`cards` block resolves paths at build time.** Point at a slug; title/description/date/category are pulled from that slug's frontmatter automatically. Don't duplicate them.
+- **Adjacent image lines in a Markdown body auto-collapse into one gallery grid** via `rehype-responsive-images.mjs`. You don't need to wrap them yourself.
+- **No custom HTML in Markdown.** Astro's Markdown pipeline escapes raw `<div>`s and inline styles. Use a block widget instead, or a `prose` block with links.
 
 ---
 
@@ -133,10 +154,10 @@ These are lessons from real fixes on this project. Follow them by default:
 
 ---
 
-## Files that AI should not touch
+## Files AI should not touch
 
 - `package-lock.json` — hand-editing breaks reproducibility
-- `.astro/` — build cache
+- `.astro/`, `node_modules/.astro/`, `node_modules/.vite/` — build caches (nuclear-clean these when a rehype plugin seems not to fire)
 - `dist/` — build output
-- `public/optimized/*.webp` — regenerated by the optimizer
-- Anything in `.claude/`, `.wrangler/`, `.dev.vars` — local config
+- `public/optimized/*.webp` — regenerated by the image optimizer
+- Anything in `.claude/`, `.wrangler/`, `.dev.vars` — local config / secrets

@@ -30,22 +30,25 @@ treated or a procedure they offer.
 
 ### 3. Match content chunks to blocks
 
-Go through the draft chunk by chunk. Reach for these widgets, in this order:
+Go through the draft chunk by chunk and pick the right widget for each.
+**Don't restate the catalog here — it drifts.** Use the live reference:
 
-| Draft says… | Use block |
-|---|---|
-| "In summary: it's X. Symptoms are Y. Approach is Z." | **`highlights`** at the top |
-| A long "what is it" explanation | **`prose`** with a heading |
-| Hard numbers ("5,000 operations", "25 years", "30–50%") | **`stats`** |
-| A short list of standalone bullet-point facts | **`facts`** |
-| "First we try A, then B, then C" (staged treatment) | **`panels`** — one panel per stage |
-| Timeline (education, appointments) | **`list`** variant `rows` |
-| Big grid of qualifications | **`list`** variant `wrap` |
-| A memorable quote | **`quote`** |
-| Photo or video | **`media`** |
-| Related conditions/procedures | **`cards`** at the bottom |
+- **Full "when to use which" cheat-sheet** — [`../user-manual/sections.md#when-to-use-which`](../user-manual/sections.md#when-to-use-which). Covers all 22 blocks: content (prose, highlights, stats, facts, list, quote, panels, faq), media (media, image-row, map), navigation/CTAs (pathway, cards, button, button-row, social-row, chips), composed building blocks (doctor-credit, contact-strip, label-tile), and the two layout primitives (row, column).
+- **Full YAML syntax for every block** — the per-block sections of [`../user-manual/sections.md`](../user-manual/sections.md).
 
-See [`../user-manual/sections.md`](../user-manual/sections.md) for the full syntax of each.
+A rough priority order when assembling a clinical article:
+
+1. **Summary first** — if the draft has a "what / symptoms / treatment" structure, open with `highlights`.
+2. **Narrative** — long explanations go in `prose` with headings.
+3. **Hard numbers** — `stats` (quote any value with digits so YAML doesn't parse it).
+4. **Standalone facts** — `facts` for 2–5 items the doctor would repeat in a consultation.
+5. **Staged treatment** — `panels` (2 reads as a comparison; 3–4 as options).
+6. **Patient questions** — `faq` (auto-generates FAQPage JSON-LD).
+7. **Media** — `media` for one or two anchor images; `image-row` for a facility gallery.
+8. **Related reading** — `cards` at the bottom, pointing at related slugs.
+
+Reach for layout primitives (`row`, `column`) only when a chunk really is
+"two things side by side" — most clinical content is a vertical sequence.
 
 ### 4. Identify gaps — ASK, don't invent
 
@@ -86,41 +89,40 @@ Add more blocks as the content deserves. Don't pad with empty blocks.
 
 ### 6. Write frontmatter
 
+Full field list per collection is in
+[`../user-manual/content-authoring.md#frontmatter-reference`](../user-manual/content-authoring.md#frontmatter-reference)
+— load it rather than guessing. Minimum shape for a sections-based
+article:
+
 ```yaml
 ---
 title: <same title the doctor would use in speech>
 description: <one sentence, ~150 chars, for the meta description>
-category: <pain | spine | brain | ...>       # for treatments/blog
-bodyRegion: <spine | brain>                   # for treatments only
-redesigned: true                              # required for the article to show
+redesigned: true                              # tells ArticleBody to render sections[]
 source: original                              # or ai-draft, human-reviewed, etc.
 sections:
   - ...
 ---
 ```
 
-Every article MUST have `redesigned: true` to appear in nav and search.
+Collection-specific additions (treatments' `category` + `bodyRegion`,
+blog's `publishedAt` + `tags`, services' `isHub`, cases' `condition` +
+`outcome`) are listed in the reference above.
+
+Pages without `redesigned: true` still render — their Markdown body
+goes through `ArticleBody`'s fallback — but you lose the sections
+dispatcher. Set it when you're using blocks.
 
 ### 7. Duplicate for both locales
 
-Every topic has both `en.md` and `ar.md`. Options:
+Every topic has both `en.md` and `ar.md`. If you can draft both,
+do it; same frontmatter shape, translated content. If not, save the
+AR side as a minimal stub with `source: ai-draft` and a clear TODO in
+the body — the AR-only fallback banner will flag it to the user.
 
-- **You can write both** → do it. Same frontmatter shape, translated content.
-- **You can only write one comfortably** → save the other as a minimal stub with a TODO:
-  ```yaml
-  ---
-  title: <topic>
-  description: <machine translation, TODO clinical review>
-  redesigned: true
-  source: ai-draft
-  sections:
-    - type: prose
-      heading: TODO
-      body: >
-        <TODO — clinical Arabic translation needed>
-  ---
-  ```
-  This makes the AR-only fallback banner show, which signals to the user that they need to translate.
+Full bilingual policy and voice rules:
+[`../user-manual/content-authoring.md#the-bilingual-workflow`](../user-manual/content-authoring.md#the-bilingual-workflow)
++ Rule 1 of the same doc.
 
 ### 8. Preview
 
