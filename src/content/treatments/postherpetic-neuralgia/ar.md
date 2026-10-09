@@ -7,6 +7,7 @@ category: pain
 order: 999
 source: original
 redesigned: true
+---
 sections:
   - type: highlights
     items:
