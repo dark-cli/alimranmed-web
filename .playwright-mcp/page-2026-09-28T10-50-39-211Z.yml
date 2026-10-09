@@ -1,0 +1,220 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Kaleem" [ref=e4] [cursor=pointer]:
+        - /url: /en/
+        - generic [ref=e8]:
+          - generic [ref=e9]: Kaleem
+          - generic [ref=e10]: Digital Solutions
+      - navigation "Primary" [ref=e11]:
+        - link "Home" [ref=e12] [cursor=pointer]:
+          - /url: /en/
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /en/services/
+        - link "Work" [ref=e14] [cursor=pointer]:
+          - /url: /en/work/
+        - link "About" [ref=e15] [cursor=pointer]:
+          - /url: /en/about/
+        - link "Contact" [ref=e16] [cursor=pointer]:
+          - /url: /en/contact/
+      - generic [ref=e17]:
+        - link "عربي" [ref=e18] [cursor=pointer]:
+          - /url: /ar/
+        - link "Get started" [ref=e19] [cursor=pointer]:
+          - /url: /en/contact/
+  - complementary [aria-hidden] [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]: Menu
+      - button [ref=e23] [cursor=pointer]
+    - list [ref=e27]:
+      - listitem [ref=e28]:
+        - link [ref=e29] [cursor=pointer]:
+          - /url: /en/
+          - text: Home
+      - listitem [ref=e30]:
+        - link [ref=e31] [cursor=pointer]:
+          - /url: /en/services/
+          - text: Services
+      - listitem [ref=e32]:
+        - link [ref=e33] [cursor=pointer]:
+          - /url: /en/work/
+          - text: Work
+      - listitem [ref=e34]:
+        - link [ref=e35] [cursor=pointer]:
+          - /url: /en/about/
+          - text: About
+      - listitem [ref=e36]:
+        - link [ref=e37] [cursor=pointer]:
+          - /url: /en/contact/
+          - text: Contact
+      - listitem [aria-hidden] [ref=e38]
+      - listitem [ref=e39]:
+        - link [ref=e40] [cursor=pointer]:
+          - /url: /ar/
+          - text: عربي
+    - link [ref=e41] [cursor=pointer]:
+      - /url: /en/contact/
+      - text: Get started
+  - main [ref=e42]:
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - heading "Your systems, your data, your freedom." [level=1] [ref=e47]
+        - paragraph [ref=e48]: We build websites, apps, business systems and networks in Basra — and we free you from the old, locked ones.
+        - generic [ref=e49]:
+          - link "Book a free audit" [ref=e50] [cursor=pointer]:
+            - /url: /en/contact/
+          - link "How we work" [ref=e51] [cursor=pointer]:
+            - /url: "#method"
+      - img "Locked box with tangled data being set free into an organized folder" [ref=e52]
+    - generic [ref=e54]:
+      - heading "Sound familiar?" [level=2] [ref=e55]
+      - generic [ref=e56]:
+        - generic [ref=e57]: Lost the login to your own system or website?
+        - generic [ref=e58]: Your data split between you and your provider?
+        - generic [ref=e59]: Afraid to leave because you'd lose everything?
+        - generic [ref=e60]: That's exactly what we fix.
+    - generic [ref=e64]:
+      - generic [ref=e66]:
+        - heading "Five steps from locked to free" [level=2] [ref=e67]
+        - paragraph [ref=e68]: The same method on every project — a website, an app, a store system or a camera network.
+      - list [ref=e71]:
+        - listitem [ref=e72]:
+          - generic [ref=e73]: "01"
+          - heading "Audit" [level=3] [ref=e74]
+          - paragraph [ref=e75]: We map where your systems, accounts and data really are.
+        - listitem [ref=e76]:
+          - generic [ref=e77]: "02"
+          - heading "Extract & clean" [level=3] [ref=e78]
+          - paragraph [ref=e79]: We get your data out, remove duplicates and fix formats.
+        - listitem [ref=e80]:
+          - generic [ref=e81]: "03"
+          - heading "Rebuild on open standards" [level=3] [ref=e82]
+          - paragraph [ref=e83]: Modern, open tools and formats any developer can read.
+        - listitem [ref=e84]:
+          - generic [ref=e85]: "04"
+          - heading "Hand over the keys" [level=3] [ref=e86]
+          - paragraph [ref=e87]: Domain, accounts and data in your name — then we remove our access.
+        - listitem [ref=e88]:
+          - generic [ref=e89]: "05"
+          - heading "Support, then freedom" [level=3] [ref=e90]
+          - paragraph [ref=e91]: "Free support for a set period, then your choice: us or anyone else."
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - heading "Six services, one method" [level=2] [ref=e95]
+        - link "All service details" [ref=e96] [cursor=pointer]:
+          - /url: /en/services/
+      - generic [ref=e97]:
+        - link "The Jailbreak We get your data out of old, locked systems and into open formats you control. Learn more" [ref=e98] [cursor=pointer]:
+          - /url: /en/services/
+          - heading "The Jailbreak" [level=3] [ref=e102]
+          - paragraph [ref=e103]: We get your data out of old, locked systems and into open formats you control.
+          - generic [ref=e104]: Learn more
+        - link "Websites & web apps Fast, bilingual websites at the lowest possible hosting cost. Learn more" [ref=e105] [cursor=pointer]:
+          - /url: /en/services/
+          - heading "Websites & web apps" [level=3] [ref=e108]
+          - paragraph [ref=e109]: Fast, bilingual websites at the lowest possible hosting cost.
+          - generic [ref=e110]: Learn more
+        - link "Mobile apps Android and iOS apps for ordering, bookings and internal use. Learn more" [ref=e111] [cursor=pointer]:
+          - /url: /en/services/
+          - heading "Mobile apps" [level=3] [ref=e114]
+          - paragraph [ref=e115]: Android and iOS apps for ordering, bookings and internal use.
+          - generic [ref=e116]: Learn more
+        - link "Management & store systems Inventory, point-of-sale and management systems, in the cloud or on-site. Learn more" [ref=e117] [cursor=pointer]:
+          - /url: /en/services/
+          - heading "Management & store systems" [level=3] [ref=e122]
+          - paragraph [ref=e123]: Inventory, point-of-sale and management systems, in the cloud or on-site.
+          - generic [ref=e124]: Learn more
+        - link "Networks & security Surveillance cameras, security systems and organised networks. Learn more" [ref=e125] [cursor=pointer]:
+          - /url: /en/services/
+          - heading "Networks & security" [level=3] [ref=e130]
+          - paragraph [ref=e131]: Surveillance cameras, security systems and organised networks.
+          - generic [ref=e132]: Learn more
+        - link "Consulting & training We help you decide what to build, buy, keep or replace. Learn more" [ref=e133] [cursor=pointer]:
+          - /url: /en/services/
+          - heading "Consulting & training" [level=3] [ref=e137]
+          - paragraph [ref=e138]: We help you decide what to build, buy, keep or replace.
+          - generic [ref=e139]: Learn more
+    - generic [ref=e142]:
+      - generic [ref=e143]:
+        - heading "You keep the keys" [level=2] [ref=e144]
+        - list [ref=e145]:
+          - listitem [ref=e146]: Your data and content, in open formats
+          - listitem [ref=e149]: Your domain, registered in your name
+          - listitem [ref=e152]: Your hosting and cloud accounts, owned by you
+          - listitem [ref=e155]: The code repository in your account, with a permanent licence to change it or hand it to another developer
+          - listitem [ref=e158]: Short documentation and training for your team
+      - generic [ref=e161]:
+        - heading "Our values" [level=2] [ref=e162]
+        - generic [ref=e163]:
+          - generic [ref=e164]:
+            - term [ref=e165]: Freedom over lock-in
+            - definition [ref=e166]: You can leave any provider, us included, whenever you choose.
+          - generic [ref=e167]:
+            - term [ref=e168]: Your data is yours
+            - definition [ref=e169]: Content, data, domain and accounts in your name.
+          - generic [ref=e170]:
+            - term [ref=e171]: Open over closed
+            - definition [ref=e172]: Standard formats and tools any developer can pick up.
+          - generic [ref=e173]:
+            - term [ref=e174]: Simple over expensive
+            - definition [ref=e175]: No servers or subscriptions you don't need.
+          - generic [ref=e176]:
+            - term [ref=e177]: Honest numbers
+            - definition [ref=e178]: Real, dated results. No promised search rankings.
+          - generic [ref=e179]:
+            - term [ref=e180]: Explain everything
+            - definition [ref=e181]: We document what we build and train your team.
+    - generic [ref=e184]:
+      - generic [ref=e185]:
+        - generic [ref=e186]: Recent work
+        - heading "Every project proves the same method" [level=2] [ref=e187]
+        - heading "Al Imran Clinic" [level=3] [ref=e188]
+        - paragraph [ref=e189]: From an old site nobody could log into, to a bilingual site the clinic fully controls.
+        - generic [ref=e190]:
+          - generic [ref=e191]: The Jailbreak
+          - generic [ref=e192]: Web
+          - generic [ref=e193]: Networks
+        - link "Read the case study" [ref=e194] [cursor=pointer]:
+          - /url: /en/work/
+      - generic [ref=e195]: "[Clinic website screenshot]"
+    - generic [ref=e201]:
+      - heading "Tell us what's locked. We'll show you the way out." [level=2] [ref=e202]
+      - link "Book a free audit" [ref=e203] [cursor=pointer]:
+        - /url: /en/contact/
+  - contentinfo [ref=e210]:
+    - generic [ref=e211]:
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - generic [ref=e214]: kaleem
+          - paragraph [ref=e219]: Fast, affordable digital solutions.
+        - generic [ref=e220]:
+          - paragraph [ref=e221]: Services
+          - list [ref=e222]:
+            - listitem [ref=e223]:
+              - link "Services" [ref=e224] [cursor=pointer]:
+                - /url: /en/services/
+            - listitem [ref=e225]:
+              - link "Case Studies" [ref=e226] [cursor=pointer]:
+                - /url: /en/work/
+        - generic [ref=e227]:
+          - paragraph [ref=e228]: Work
+          - list [ref=e229]:
+            - listitem [ref=e230]:
+              - link "Work" [ref=e231] [cursor=pointer]:
+                - /url: /en/work/
+        - generic [ref=e232]:
+          - paragraph [ref=e233]: Contact
+          - paragraph [ref=e234]: Fast, affordable digital solutions.
+          - link "Get started" [ref=e235] [cursor=pointer]:
+            - /url: /en/contact/
+      - generic [ref=e236]:
+        - paragraph [ref=e237]: © 2026 Kaleem. All rights reserved.
+        - paragraph [ref=e238]:
+          - link "عربي" [ref=e239] [cursor=pointer]:
+            - /url: /ar/
+  - status
+  - generic [ref=e242]:
+    - button [ref=e243]
+    - button [ref=e249]
+    - button [ref=e253]
+    - button [ref=e258]
