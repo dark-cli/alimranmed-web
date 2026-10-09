@@ -6,7 +6,7 @@ description: >-
 category: pediatric
 order: 999
 legacyUrl: https://alimranmed.com/cerebral-palsy/
-source: legacy-wp
+source: original
 redesigned: true
 sections:
   - type: highlights

@@ -6,7 +6,7 @@ description: >-
 category: pain
 order: 999
 legacyUrl: https://alimranmed.com/frozen-shoulder/
-source: legacy-wp
+source: original
 publishedAt: "2020-02-04T00:00:00Z"
 redesigned: true
 sections:

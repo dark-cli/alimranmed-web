@@ -438,6 +438,74 @@ No content edits. Source updated to `original`.
 
 ---
 
+---
+
+## treatments/cerebral-palsy (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Pediatric neurosurgery/Cerebral Palsy.docx` (~1 034 w, Q&A format)
+- AR: `publish/ماذا نعالج/الامراض العصبية للأطفال/الشلل الدماغي.docx` (~949 w, Q&A prose)
+
+**Current article**
+Block‑based (`redesigned: true`), overview with types, associated problems, and multidisciplinary treatment panels.
+
+**Flags**
+1. **Prevalence** — Draft: "approximately two to three out of every 1,000 live births". Live article: "approximately 2–3 per 1,000 live births". Consistent.
+2. **Risk factors** — Draft: prematurity, very low birthweight (<1 000 g), viruses, chemical/substance abuse, infection, bleeding in brain, trauma, complications of labor. Live article: prematurity, very low birth weight (below 1 000 g), brain haemorrhage, oxygen deprivation, viral infections, chemical exposures. Consistent.
+3. **Types** — Draft lists spastic diplegia and spastic quadriplegia. Live article adds spastic hemiplegia and athetoid/dyskinetic CP — standard clinical additions.
+4. **Associated problems** — Live article adds seizures, visual/hearing impairment, speech difficulties, learning disabilities, respiratory problems, bladder/bowel dysfunction, scoliosis, and developmental delay. These are standard associated features not explicitly listed in the draft.
+5. **Doctor's voice** — Live article includes clinic-specific treatment panels (Botox, rTMS, intrathecal baclofen, physiotherapy). These reflect the clinic's actual services and are consistent with the draft's emphasis on multidisciplinary care.
+
+**Action taken**
+No content edits. Source updated to `original`.
+
+---
+
+## treatments/frozen-shoulder (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Pain/Frozen Shoulder.docx` (~350 w, 3 numbered stages)
+- AR: `publish/ماذا نعالج/الآلام/تجمد الكتف (الكتف المتجمد).docx` (~308 w, 3 stages)
+
+**Current article**
+Block‑based (`redesigned: true`), phase‑matched treatment overview with stats and facts.
+
+**Flags**
+1. **Healing time** — Draft: "can take nearly 18 months to heal". Live article: "most cases resolve within 18 to 30 months". The live article gives a wider range but is consistent.
+2. **Bilateral risk** — Draft: "Approximately 20% of those who develop frozen shoulder will develop frozen shoulder in the other shoulder". Live article **omits** this figure.
+3. **Three phases** — Draft: Freezing (pain, loss of ROM), Frozen (minimal pain, no further loss or regain), Thawing (movement returns). Live article matches these phases exactly.
+4. **Age risk factor** — Draft: "35‑50 year old age groups are more prone". Live article does not cite this age range.
+5. **Risk factors** — Draft: diabetes, hyperthyroidism, autoimmune disease, inflammatory conditions, inactivity. Live article: "Diabetes, thyroid disease, and prior shoulder immobilisation are the main risk factors." Consistent but less detailed.
+6. **Treatment by stage** — Draft describes physiotherapy tailored to each stage (pain relief in freezing, mobilisation in frozen, stretching in thawing). Live article uses the same phase‑matched logic.
+
+**Action taken**
+No content edits. Source updated to `original`.
+
+---
+
+## treatments/herniated-disc (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Spine/Herniated Disc (Cervical, Thoracic, Lumbar).docx` (~986 w, prose + headings)
+- AR: `publish/ماذا نعالج/العمود الفقري/فتق القرص (عنق الرحم، الصدر، أسفل الظهر).docx` (~859 w, prose)
+
+**Current article**
+Block‑based (`redesigned: true`), detailed overview with cervical vs lumbar panels, stats, facts, and stepped treatment plan.
+
+**Flags**
+1. **Mechanism** — Both draft and live article describe: fibrous outer ring (annulus) tears → jelly‑like core (nucleus) squeezes out → compresses nerve root. Consistent.
+2. **Locations** — Draft covers cervical, thoracic, and lumbar herniations with symptom descriptions for each. Live article notes cervical and lumbar dominate clinic, with thoracic being rare. Consistent.
+3. **Cervical symptoms** — Draft: pain, pins and needles, numbness or weakness in neck/shoulders/arms; large herniations can compress spinal cord causing leg weakness and bowel/bladder issues. Live article matches.
+4. **Thoracic symptoms** — Draft: mid‑back pain, can radiate around rib cage. Live article notes thoracic herniations are rare. Consistent.
+5. **Lumbar symptoms** — Draft: back pain, muscle spasm, sciatica. Live article matches.
+6. **Statistics** — Live article adds "90% improve without surgery within 6–12 weeks", "70% improve after injection", "5% require surgery". Standard clinical figures, not explicitly in the draft.
+7. **Surgical indications** — Live article correctly lists progressive weakness, cauda equina syndrome, and persistent pain as indications. Standard of care, consistent with the draft's conservative emphasis.
+
+**Action taken**
+No content edits. Source updated to `original`.
+
+---
+
 *Next steps for clinician:*
 1. Verify the Parkinson's "80 %" and NPH "0.5 %" figures.
 2. Confirm the programmable‑valve claim.
@@ -445,4 +513,5 @@ No content edits. Source updated to `original`.
 4. Decide whether the event draft (`publish/events/Ozone for disc.docx`) should become a blog post.
 5. Review the `intercostal-neuralgia` "paralysis and atrophy" claim for accuracy.
 6. The EN versions of `myofascial-pain`, `neck-pain`, and `sciatica` have no doctor draft source; verify their clinical accuracy or decide if they should be rewritten from the substantial Arabic drafts.
-7. **NEW** — Review the `compression-fracture` calcitonin claim (weak evidence for acute osteoporotic fracture pain; NICE does not recommend).
+7. Review the `compression-fracture` calcitonin claim (weak evidence for acute osteoporotic fracture pain; NICE does not recommend).
+8. **NEW** — The `frozen-shoulder` article omits the "20% bilateral" risk and the "35‑50 year old" age peak from the draft. Add back if clinically relevant.

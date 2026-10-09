@@ -7,7 +7,7 @@ description: >-
 category: الأطفال
 order: 999
 legacyUrl: https://ar.alimranmed.com/الشلل-الدماغي
-source: legacy-wp
+source: original
 redesigned: true
 sections:
   - type: highlights

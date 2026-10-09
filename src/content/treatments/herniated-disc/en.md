@@ -6,7 +6,7 @@ description: >-
 category: spine
 order: 999
 legacyUrl: https://alimranmed.com/herniated-disc/
-source: legacy-wp
+source: original
 publishedAt: "2020-10-01T00:00:00Z"
 redesigned: true
 sections:

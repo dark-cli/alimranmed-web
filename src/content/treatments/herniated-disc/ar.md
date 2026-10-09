@@ -3,7 +3,7 @@ title: الانزلاق الغضروفي
 description: >-
   يخرج المركز الهلامي للقرص الفقري من خلال تمزّق في غلافه الخارجي ويضغط على عصب مجاور. معظم الحالات تشفى دون جراحة — دور
   المركز تمييز من يشفى ومن لا يشفى.
-source: legacy-wp
+source: original
 legacyUrl: https://ar.alimranmed.com/archives/2270
 category: العمود الفقري
 pathwayOverride: spine
