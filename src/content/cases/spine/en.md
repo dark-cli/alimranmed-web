@@ -4,97 +4,156 @@ description: "Spine cases treated at Alimran Medical Center: back pain, disc dis
 order: 999
 legacyUrl: "https://alimranmed.com/2019/03/26/spine-cases/"
 publishedAt: "2019-03-26T14:43:33"
-source: "ai-draft"
+source: "original"
+redesigned: true
+sections:
+  - type: prose
+    heading: "Spinal Cord Disorders"
+    body: >-
+      More than 80% of the general population suffers from back pain and these figures may be more in Iraq due to lack of physiological fitness as well as the bad psychological background of the current circumstances.
+
+      Most cases of back pain can be treated by analgesic and physiotherapy, only few cases need surgical interventions and fortunately this kind of intervention is highly successful. This page show some of the spinal cord disorders which has been treated surgically.
+
+      [▶ Watch on YouTube](https://www.youtube.com/watch?v=-J7K7cdbZuo)
+  - type: prose
+    body: >-
+      51 years old female had a backache more than 10 years, in the last 3 months both legs had parasthesia and numbness with frequent falling on the ground. Lumbosacral MRI show degenerative spine changes at L3-L4, central osteophyte compressed spinal roots, and a herniated disc at L5-S1. Transpedicular fixation was done with titanium roding and screw. After that L3, L4 and L5 laminectomy with excision of both L3-L4 central osteophyte and a herniated disc at L5-S1. Postoperatively the pain relieved and the patient returned to walking without falling on the ground.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/13-6-09spine-fixation.jpg
+        alt: MRI showing lumbosacral spondylolysis
+        caption: MRI showing lumbosacral spondylolysis
+      - kind: image
+        src: /assets/images/13-6-09spine-fixation1.jpg
+        alt: Anterior X-ray showing spinal fixation with titanium hardware
+        caption: Anterior X-ray showing spinal fixation with titanium hardware
+      - kind: image
+        src: /assets/images/13-6-09spine-fixation-.jpg
+        alt: Axial MRI showing compression of the spinal cord by a central bony spur between the third and fourth lumbar vertebrae
+        caption: Axial MRI showing compression of the spinal cord by a central bony spur between the third and fourth lumbar vertebrae
+      - kind: image
+        src: /assets/images/13-6-09spine-fixation2.jpg
+        alt: Lateral X-ray showing spinal fixation with titanium hardware
+        caption: Lateral X-ray showing spinal fixation with titanium hardware
+  - type: prose
+    body: >-
+      40 years old male had ill define backache, parasthesia and numbness of both legs for one year duration. During the last one month he developed stress incontinence of urine with difficulty in defecation. The patient became unable to walk. Clinical examination show grade 3 power of hip flexors with L1 sensory level.
+
+      Dorsolumbar MRI show intradural non enhanceing small cystic nodule at the D12-L1 level compressing the spinal cord. After D12-L1 dorsal laminectomy incision to the dura was done with total excision to the mass. Histopathological result revealed cystic degeneration schwannoma. Within one month postoperatively all the symptoms resolved.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/6-1-08sshwanoma1.jpg
+        alt: MRI showing extension of the tumour behind the last thoracic vertebra
+        caption: MRI showing extension of the tumour behind the last thoracic vertebra
+      - kind: image
+        src: /assets/images/6-1-08sshwanoma2.jpg
+        alt: MRI showing that the tumour did not take up contrast
+        caption: MRI showing that the tumour did not take up contrast
+  - type: prose
+    body: >-
+      41 years old female presented 2 years ago complaining from difficulty to walking after an accident. In last 6 months she was became frequent falling with unable to walking. Cervical MRI show C4-C5 disc prolapse. Anterior surgical approach to excision herniated disc and inserted prosthetic one. After that she was gradual improvement of walking.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/cluwed1.jpg
+        alt: MRI showing a herniated disc between the fourth and fifth cervical vertebrae
+        caption: MRI showing a herniated disc between the fourth and fifth cervical vertebrae
+      - kind: image
+        src: /assets/images/cluwed.jpg
+        alt: Lateral cervical X-ray showing the artificial disc
+        caption: Lateral cervical X-ray showing the artificial disc
+  - type: prose
+    body: >-
+      22 years old male had inability to stand after falling on ground for more than 5 meter height. Examination show left sided weakness more in the left leg with decrease sensation on the right. Cervical MRI show fracture in the base of fracture C5 with small fracture piece compressing the spinal cord. Anterior surgical approach to excision herniated piece, inserted prosthetic disc and C4-C6 fixation with screw and plating. After that he was gradual moving left leg.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/31-3-09spine-fixation.bmp.jpg
+        alt: Lateral cervical X-ray showing the artificial disc together with vertebral fixation
+        caption: Lateral cervical X-ray showing the artificial disc together with vertebral fixation
+  - type: prose
+    body: >-
+      32 years old exposed to multiple bullet injuries to his left arm, chest and back. During examination he is unable to move left leg with loss of pain sensation in the right leg. Dorsal CT scan show bullet fragment at D10 left sided to cord while D9 bullet fragment situated anterior to the cord. During surgery D10 laminectomy was done with removal a massive extradural lacerated muscles with shell that compressing the spinal cord to the right. After surgery he was became undergoing to physiotherapy course. After one month he was started walking without difficulties.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/24-10-07brown-squerd1.jpg
+        alt: Lateral image of the thoracic vertebrae showing multiple fragments around the thoracic spine
+        caption: Lateral image of the thoracic vertebrae showing multiple fragments around the thoracic spine
+      - kind: image
+        src: /assets/images/24-10-07brown-squerd-.jpg
+        alt: CT scan of the thoracic vertebrae showing a fragment anterior to the spinal cord at the ninth thoracic vertebra
+        caption: CT scan of the thoracic vertebrae showing a fragment anterior to the spinal cord at the ninth thoracic vertebra
+      - kind: image
+        src: /assets/images/24-10-07brown-squerd.jpg
+        alt: CT scan of the thoracic vertebrae showing a fragment to the left of the spinal cord at the tenth thoracic vertebra
+        caption: CT scan of the thoracic vertebrae showing a fragment to the left of the spinal cord at the tenth thoracic vertebra
+  - type: prose
+    body: >-
+      20 years old had spinal cord bullet injury perforating vertebral column with loss of his ability to walking. Brain CT scan show a fracture to L3 lamina and the bullet arrested at disc space between L3-L4. Completely removal of a fracture segment, suturing of dural tear with extraction of the bullet was done during surgery. After surgery he is gradual improvement ability for walking.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/20-7-07saed.jpg
+        alt: Lateral image of the lumbar vertebrae showing the bullet lodged between the third and fourth lumbar vertebrae
+        caption: Lateral image of the lumbar vertebrae showing the bullet lodged between the third and fourth lumbar vertebrae
+      - kind: image
+        src: /assets/images/20-7-07saed-.jpg
+        alt: CT scan showing the shattered neural arch of the third lumbar vertebra
+        caption: CT scan showing the shattered neural arch of the third lumbar vertebra
+  - type: prose
+    body: >-
+      14 days old with congenital dorsal meningomyelocele. Operated on 2-3-07 with total excision of the sac and dural repair.
+  - type: prose
+    body: >-
+      30 years old male exposed to road traffic accident. He had breathing difficulty with loss of the ability to move both legs. Urgent chest tube inserted to evacuate blood collection inside the chest. Dorsolumbar MRI showed severe fracture at D8-D9 with spinal cord compression. Internal vertebral column fixation with spinal cord decompression was done.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/maslem.jpg
+        alt: MRI showing a fracture between the eighth and ninth thoracic vertebrae
+        caption: MRI showing a fracture between the eighth and ninth thoracic vertebrae
+  - type: prose
+    body: >-
+      70 years old female with a headache for one year, complete paralysis of left side of the body and weakness of the right side. Brain MRI showed anterior foramen magnum mass severely compressing the junction of brain stem and spinal cord. Total excision was done on 11-2-07, and sent for histopathology.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/hasmia.jpg
+        alt: Brain MRI showing the tumour before contrast
+        caption: Brain MRI showing the tumour before contrast
+      - kind: image
+        src: /assets/images/hasmia1.jpg
+        alt: Brain MRI showing the tumour after contrast
+        caption: Brain MRI showing the tumour after contrast
+  - type: prose
+    body: >-
+      30 years old male had ataxic gait with diplopia for several years. Brain MRI showed herniated cerebellum (chiari syndrome grade 2). Surgical intervention was with craniectomy of the posterior fossa, removed C1 lamina with incised dura to be closed with patch to give more space for herniated cerebellum to be return back. After surgery, she was dramatically improved. After 3 months, ataxic gait and diplopia disappeared. Then she returned back to her work.
+  - type: prose
+    body: >-
+      26 years old female case of severe backache for 4 months not responding to medication. When she visited my private clinic, she was severely ill with severe tenderness at dorsolumber region. She had rapid response to steroid. Dorsolumber MRI showed extradural hyperintese lesion extend from D11-D12. Dorsal laminectomy with complete excision of mass was done on 15-5-06 histopathology revealed spinal cord lymphoma. She was sent for chemotherapy. Frequent postoperative MRI show complete resolution of the mass.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/ashwaq.jpg
+        alt: MRI showing extension of the tumour along the 11th and 12th thoracic vertebrae
+        caption: MRI showing extension of the tumour along the 11th and 12th thoracic vertebrae
+      - kind: image
+        src: /assets/images/ashwaq1.jpg
+        alt: Post-operative MRI showing disappearance of the tumour
+        caption: Post-operative MRI showing disappearance of the tumour
+  - type: prose
+    body: >-
+      37 years old male suffered from backache and inability to walk. Lumbosacral MRI showed disc prolapsed at two levels L4-L5, L5-S1. Laminectomy and discectomy was done for two levels. Post operatively, the patient started walking and after two weeks, he joined his job.
+  - type: media
+    items:
+      - kind: image
+        src: /assets/images/c.jpg
+        alt: MRI showing the disc herniation
+        caption: MRI showing the disc herniation
+      - kind: image
+        src: /images/legacy/2019/03/images-8.jpg
+        alt: Spine case image
 ---
-
-![](/assets/images/13-6-09spine-fixation.jpg)
-![](/assets/images/13-6-09spine-fixation1.jpg)
-![](/assets/images/13-6-09spine-fixation-.jpg)
-![](/assets/images/13-6-09spine-fixation2.jpg)
-![](/assets/images/6-1-08sshwanoma1.jpg)
-![](/assets/images/6-1-08sshwanoma2.jpg)
-![](/assets/images/cluwed1.jpg)
-![](/assets/images/cluwed.jpg)
-![](/assets/images/31-3-09spine-fixation.bmp.jpg)
-![](/assets/images/24-10-07brown-squerd1.jpg)
-![](/assets/images/24-10-07brown-squerd-.jpg)
-![](/assets/images/24-10-07brown-squerd.jpg)
-![](/assets/images/20-7-07saed.jpg)
-![](/assets/images/20-7-07saed-.jpg)
-![](/assets/images/maslem.jpg)
-![](/assets/images/hasmia.jpg)
-![](/assets/images/hasmia1.jpg)
-![](/assets/images/ashwaq.jpg)
-![](/assets/images/ashwaq1.jpg)
-![](/assets/images/c.jpg)
-![](/images/legacy/2019/03/images-8.jpg)
-
-[▶ Watch on YouTube](https://www.youtube.com/watch?v=-J7K7cdbZuo)
-
-**Spinal Cord Disorders**
-
-**More than 80% of the general population suffers from back pain, and these figures may be even higher in Iraq owing to reduced physical fitness in addition to the poor psychological state caused by current conditions.**
-
-**Most cases of back pain can be managed with analgesics and physiotherapy; only a small proportion require surgical intervention, and fortunately this type of intervention is very successful. On this page we highlight some spinal cord disorders that have been treated surgically.**
-
-**A 51-year-old woman had suffered from back pain for more than ten years. Over the past 3 months her back pain became unresponsive to treatment, with numbness and tingling in her feet and repeated falls when walking. MRI images showed lumbosacral spondylolysis with a central bony spur compressing the spinal cord between the third and fourth lumbar vertebrae, together with a herniated disc between the fifth lumbar vertebra and the first sacral vertebra. She underwent spinal fixation with titanium screws and rods, after which the bony spur and the herniated disc were removed. After the operation she was freed from that distressing pain and was able to walk without falling.**
-
-MRI showing lumbosacral spondylolysis
-
-Anterior X-ray showing spinal fixation with titanium hardware
-
-Axial MRI showing compression of the spinal cord by a central bony spur between the third and fourth lumbar vertebrae
-
-Lateral X-ray showing spinal fixation with titanium hardware
-
-**A 40-year-old man complained of back pain with tingling and numbness in both legs for one year. During the last month he began to complain of stress urinary incontinence with severe difficulty defecating, and eventually became unable to walk. On clinical examination he had grade 3 weakness of the hip flexors with loss of sensation up to the L1 level. MRI of the thoracolumbar region showed a cystic tumour inside the spinal canal compressing the spinal cord. After laminectomy of the last thoracic and first lumbar vertebrae, the tumour was completely removed after being dissected off the spinal cord. One month after surgery all the aforementioned symptoms had resolved and the patient returned to normal activity. Histology showed a benign schwannoma.**
-
-MRI showing extension of the tumour behind the last thoracic vertebra
-
-MRI showing that the tumour did not take up contrast
-
-**A 41-year-old woman presented complaining of difficulty walking after a road traffic accident. Over the last 6 months she had recurrent falls when walking with an inability to walk continuously. Cervical MRI showed a herniated disc between the fourth and fifth cervical vertebrae. She underwent an anterior approach operation in which the herniated disc was removed and an artificial disc was placed. After the operation there was significant improvement in walking.**
-
-MRI showing a herniated disc between the fourth and fifth cervical vertebrae
-
-Lateral cervical X-ray showing the artificial disc
-
-**A 22-year-old man was unable to stand after falling from a height of more than 5 metres. On clinical examination he had muscle weakness on the left side with inability to move the left leg, together with reduced sensation on the right side. Cervical MRI showed a fracture at the base of the fifth cervical vertebra compressing the cervical cord. He underwent an anterior approach operation in which the fractured fragment compressing the cord was removed, an artificial disc was placed, and the fourth and sixth cervical vertebrae were fixed with titanium screws and plates. After the operation there was significant improvement and the patient began to move his left leg.**
-
-Lateral cervical X-ray showing the artificial disc together with vertebral fixation
-
-**A 32-year-old man was exposed on 20 October 2007 to multiple gunshot wounds to the right arm, chest and back. On examination he had lost movement in the left leg with loss of pain sensation in the right leg. CT scanning of the thoracic vertebrae showed multiple fragments, one to the left of the spinal cord in the tenth thoracic vertebra and another anterior to the cord in the ninth thoracic vertebra. During the operation the fragment together with a mass of macerated muscle causing compression of the spinal cord and pushing it to the right was removed. After the operation the patient was placed on continuous physiotherapy. On 25 November 2007 the patient regained his ability to walk without impairment.**
-
-Lateral image of the thoracic vertebrae showing multiple fragments around the thoracic spine
-
-CT scan of the thoracic vertebrae showing a fragment anterior to the spinal cord at the ninth thoracic vertebra
-
-CT scan of the thoracic vertebrae showing a fragment to the left of the spinal cord at the tenth thoracic vertebra
-
-**A 20-year-old man sustained a penetrating gunshot wound to the lumbar region of the spine that resulted in loss of the ability to walk. CT scanning of the spine showed shattering of the neural arch of the third lumbar vertebra and lodging of the bullet between the third and fourth lumbar vertebrae. The shattered bone and the bullet were completely removed and the dura mater was sutured during the operation. Marked improvement in walking was observed after surgery.**
-
-Lateral image of the lumbar vertebrae showing the bullet lodged between the third and fourth lumbar vertebrae
-
-CT scan showing the shattered neural arch of the third lumbar vertebra
-
-**A 30-year-old man involved in a road traffic accident began to suffer difficulty breathing with loss of the ability to move both legs. An urgent chest tube was inserted to drain the blood collected inside the chest, then MRI of the thoracolumbar region showed a fracture of the 8th and 9th thoracic vertebrae with spinal cord compression. He underwent internal spinal fixation with decompression of the spinal cord.**
-
-MRI showing a fracture between the eighth and ninth thoracic vertebrae
-
-**A 70-year-old woman had suffered from headaches for a year, with complete paralysis of the left side and weakness of the right side. Brain MRI showed a tumour severely compressing the junction of the brainstem and spinal cord. The tumour was completely removed and sent for histopathology. The result was a benign tumour (meningioma).**
-
-Brain MRI showing the tumour before contrast
-
-Brain MRI showing the tumour after contrast
-
-**A 26-year-old woman had severe back pain for 4 months that did not respond to medication. Her condition deteriorated, with the pain most intense in the thoracolumbar region.**
-
-**MRI showed a tumour extending behind the spinal cord along the 11th and 12th thoracic vertebrae. The tumour was excised after removal of the neural arches of those vertebrae and sent for histopathology; the result was a spinal cord lymphoma. She was referred for chemotherapy. Repeat MRI showed that the tumour had completely disappeared.**
-
-MRI showing extension of the tumour along the 11th and 12th thoracic vertebrae
-
-Post-operative MRI showing disappearance of the tumour
-
-A 37-year-old man suffered from back pain and inability to walk. MRI of the lumbosacral region showed disc herniation at the L4-L5 and L5-S1 levels. He underwent laminectomy of L4 and L5 with removal of the herniated discs at the above levels. On the first postoperative day he began walking normally and after two weeks rejoined his colleagues at work.
-
-MRI showing the disc herniation
