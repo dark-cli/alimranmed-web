@@ -6,7 +6,7 @@ description: >-
 category: spine
 order: 999
 legacyUrl: https://alimranmed.com/compression-fracture/
-source: legacy-wp
+source: original
 redesigned: true
 sections:
   - type: highlights

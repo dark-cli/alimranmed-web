@@ -373,10 +373,76 @@ No content edits. Flagged for clinician review of the "paralysis and atrophy" cl
 
 ---
 
+---
+
+## treatments/head-injury (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Brain/head injury.docx` (~1 884 w, longest brain draft — Q&A format covering concussion, skull fracture types, ICH)
+- AR: `publish/ماذا نعالج/الدماغ/إصابة الرأس.docx` (~1 049 w, prose + bullets)
+
+**Current article**
+Block‑based (`redesigned: true`), emergency‑focused overview with GCS, CT decision rules, extradural vs subdural panels, and rehabilitation pathway.
+
+**Flags**
+1. **Scope shift** — Draft is encyclopedic: lists 4 skull‑fracture types (linear, depressed, diastatic, basilar), ICH types by location, and detailed symptom lists. Live article is triage‑focused: GCS, CT rules, emergency signs, and surgical indications. No contradiction, but the live article omits much of the draft's anatomical detail.
+2. **Diastatic fractures** — Draft notes these are "more often seen in newborns and older infants". Live article does not mention diastatic fractures at all.
+3. **Clinical decision rules** — Live article cites "Canadian CT Head Rule, NEXUS" — real validated rules, clinically appropriate addition not in the draft.
+4. **Doctor's voice preserved** — Live article includes a quote attributed to "Hussein Imran Mousa, consultant neurosurgeon". This appears to be original clinic content.
+5. **Statistics** — "80% mild, 15% moderate, 5% severe" — broadly consistent with trauma epidemiology but not explicitly sourced from the draft.
+
+**Action taken**
+No content edits. Source of truth updated to `original`.
+
+---
+
+## treatments/compression-fracture (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Spine/Compression Fracture.docx` (~925 w, prose + headings)
+- AR: `publish/ماذا نعالج/العمود الفقري/ضغط الكسر.docx` (~641 w, prose)
+
+**Current article**
+Block‑based (`redesigned: true`), detailed overview with anatomy, causes, non‑surgical and surgical management, and treatment panels.
+
+**Flags**
+1. **Core facts consistent** — Both draft and live article state: vertebral body collapse, wedge pattern, osteoporosis as most common cause, thoracic/lumbar predilection, kyphosis and height loss with multiple fractures. Fully consistent.
+2. **Neurological involvement** — Live article adds discussion of burst fractures, spinal canal compromise, and cauda equina syndrome. These are clinically accurate additions.
+3. **Calcitonin mention** — Live article mentions "short‑term calcitonin may modestly reduce pain in acute osteoporotic fractures". This is a real but somewhat dated therapy; not a factual error, but the evidence for calcitonin in acute osteoporotic fracture pain is weak (NICE does not recommend it).
+4. **Treatment expansion** — Live article adds bisphosphonates, denosumab, teriparatide, vertebroplasty, kyphoplasty — all standard‑of‑care treatments not detailed in the draft.
+
+**Action taken**
+No content edits. Flagged the calcitonin claim as weakly evidenced for clinician review. Source updated to `original`.
+
+---
+
+## treatments/sports-injuries (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Pain/Sports Injuries.docx` (~1 062 w, clinic‑marketing intro + per‑injury prose)
+- AR: `publish/ماذا نعالج/الآلام/الاصابات الرياضية.docx` (~887 w, prose + short headings)
+
+**Current article**
+Block‑based (`redesigned: true`), comprehensive overview covering hamstring, Achilles, shin splints, stress fractures, patellofemoral pain, ACL, meniscus, tennis elbow, and shoulder dislocation.
+
+**Flags**
+1. **Marketing intro removed** — Draft opens with "Sports injuries, along with back and neck pain form the largest client base in our clinics." This marketing language is **absent** from the live article. Good cleanup.
+2. **Hamstring healing time** — Draft: "minor strains that will heal in about 10 days". Live article: "Minor strains heal in 1–2 weeks". Consistent (10 days ≈ 1–2 weeks).
+3. **Achilles tendinopathy** — Draft and live article both describe pain initially after activity, then during activity as condition worsens; both mention footwear change and progressive strengthening. Consistent.
+4. **Shin splints / MTSS** — Draft and live article both use the term "Medial Tibia Stress Syndrome (MTSS)" and describe pain along the inner tibia. Consistent.
+5. **Expanded scope** — Live article adds stress fractures, patellofemoral pain, ACL tears, meniscal injuries, tennis elbow, and shoulder dislocation — none of which are in the draft. These are clinically accurate standard additions.
+6. **"Exercise programmer" typo** — Draft says "exercise programmer" (likely means "programme"). Live article does not reproduce this typo.
+
+**Action taken**
+No content edits. Source updated to `original`.
+
+---
+
 *Next steps for clinician:*
 1. Verify the Parkinson's "80 %" and NPH "0.5 %" figures.
 2. Confirm the programmable‑valve claim.
 3. Review `pending-articles.md` and mark which drafts should be created.
 4. Decide whether the event draft (`publish/events/Ozone for disc.docx`) should become a blog post.
-5. **NEW** — Review the `intercostal-neuralgia` "paralysis and atrophy" claim for accuracy.
-6. **NEW** — The EN versions of `myofascial-pain`, `neck-pain`, and `sciatica` have no doctor draft source; verify their clinical accuracy or decide if they should be rewritten from the substantial Arabic drafts.
+5. Review the `intercostal-neuralgia` "paralysis and atrophy" claim for accuracy.
+6. The EN versions of `myofascial-pain`, `neck-pain`, and `sciatica` have no doctor draft source; verify their clinical accuracy or decide if they should be rewritten from the substantial Arabic drafts.
+7. **NEW** — Review the `compression-fracture` calcitonin claim (weak evidence for acute osteoporotic fracture pain; NICE does not recommend).

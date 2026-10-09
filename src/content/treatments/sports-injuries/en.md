@@ -6,7 +6,7 @@ description: >-
 category: pain
 order: 999
 legacyUrl: https://alimranmed.com/sports-injuries/
-source: legacy-wp
+source: original
 redesigned: true
 sections:
   - type: highlights

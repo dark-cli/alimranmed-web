@@ -6,7 +6,7 @@ description: >-
 category: brain
 order: 999
 legacyUrl: https://alimranmed.com/head-injury/
-source: legacy-wp
+source: original
 publishedAt: "2020-04-20T00:00:00Z"
 redesigned: true
 sections:

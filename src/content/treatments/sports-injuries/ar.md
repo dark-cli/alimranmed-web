@@ -7,7 +7,7 @@ description: >-
 category: الألم
 order: 999
 legacyUrl: https://ar.alimranmed.com/الاصابات-الرياضية
-source: legacy-wp
+source: original
 redesigned: true
 sections:
   - type: highlights

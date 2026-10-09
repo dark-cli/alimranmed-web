@@ -3,7 +3,7 @@ title: إصابة الرأس
 description: >-
   ضربة على الرأس — من ارتجاج بسيط إلى إصابة كبيرة داخل الجمجمة. السؤال الملحّ دائمًا واحد: هل هناك نزيف على الدماغ يحتاج
   جراحة، أم تورّم يحتاج مراقبة، أم لا شيء.
-source: legacy-wp
+source: original
 legacyUrl: "%%d8%a5%d8%b5%d8%a7%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%a3%d8%b3"
 category: الدماغ
 pathwayOverride: brain
