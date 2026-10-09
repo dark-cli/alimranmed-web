@@ -7,7 +7,7 @@ description: >-
 category: الدماغ
 order: 999
 legacyUrl: https://ar.alimranmed.com/خراج-الدماغ
-source: legacy-wp
+source: original
 redesigned: true
 sections:
   - type: highlights

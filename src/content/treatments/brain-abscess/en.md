@@ -6,7 +6,7 @@ description: >-
 category: brain
 order: 999
 legacyUrl: https://alimranmed.com/brain-abscess/
-source: legacy-wp
+source: original
 redesigned: true
 sections:
   - type: highlights

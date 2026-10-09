@@ -235,8 +235,148 @@ Both. The drafts and the live pages cover the **same subject from different angl
 
 ---
 
+## treatments/cerebrovascular-disease (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Brain/Cerebrospinal Fluid Leaks.docx` (~171 w) — **filename/content mismatch**: named CSF leaks, text is cerebrovascular disease.
+- AR: `publish/ماذا نعالج/الدماغ/السكتة النزفية.docx` (~309 w) — hemorrhagic stroke twin; general CVA content.
+
+**Current article**
+Block‑based (`redesigned: true`), concise overview with mechanism, risk factors, and treatment panels.
+
+**Flags**
+1. **Filename mismatch** — EN draft file is named "Cerebrospinal Fluid Leaks" but contains CVA content. The live article correctly uses the CVA topic.
+2. **Core mechanism** — Draft states hypertension damages vessel lining → collagen exposure → platelet repair → vessel narrowing/stiffness. Live article reproduces this mechanism verbatim. Consistent.
+3. **Ischemic vs hemorrhagic** — Draft says "stroke or a hemorrhagic stroke" (redundant). Live article says "ischemic stroke or hemorrhagic stroke" — clinically more precise. Improvement, not drift.
+4. **Risk factors** — Draft: elderly, diabetes, heart disease, smoking. Live article adds these plus hypertension explicitly. Consistent.
+
+**Action taken**
+No content edits. Source of truth updated to `original` because the live article derives directly from the doctor’s draft.
+
+---
+
+## treatments/brain-abscess (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Brain/brain abscess.docx` (~603 w, pediatric‑flavored Q&A)
+- AR: `publish/ماذا نعالج/الدماغ/خراج الدماغ.docx` (~532 w, pediatric emphasis)
+
+**Current article**
+Block‑based (`redesigned: true`), comprehensive overview with pediatric symptom list, routes of infection, risk factors, and rehabilitation panels.
+
+**Flags**
+1. **Pediatric emphasis** — Draft is explicitly pediatric ("more common in young school‑aged children", infant symptom list with bulging fontanelle, high‑pitched cry). Live article preserves this emphasis. Consistent.
+2. **Routes of infection** — Draft lists 3 routes: spread from local infection, blood‑borne from lungs/chest, direct entry through wound. Live article reproduces all 3. Consistent.
+3. **Risk factors** — Draft: congenital heart disease, meningitis, chronic ear/sinus infections, dental infections, face/scalp infections, head injury, traction, shunt infections. Live article includes all of these. Consistent.
+4. **Treatment** — Draft mentions hospitalisation, IV antibiotics, surgical drainage. Live article adds anticonvulsants, steroids, ventilatory support — standard of care additions.
+
+**Action taken**
+No content edits. Source of truth updated to `original`.
+
+---
+
+## treatments/brain-tumor (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Brain/brain tumor.docx` (~1 380 w, contains dated ACS 2006 statistics)
+- AR: `publish/ماذا نعالج/الدماغ/ورم في المخ.docx` (~1 193 w)
+
+**Current article**
+Block‑based (`redesigned: true`), modern overview with primary vs metastatic distinction, treatment panels, and contemporary stats.
+
+**Flags**
+1. **Dated epidemiology removed** — Draft quotes American Cancer Society 2006 data: "More than 18,820 people in the US will be diagnosed with malignant tumors of the brain or spinal cord during 2006." Live article does **not** cite this outdated figure. Instead it uses general modern statistics (40% metastatic, 70%+ meningiomas benign). Clinically appropriate omission.
+2. **Genetic risk factors** — Draft mentions neurofibromatosis, von Hippel‑Lindau, Li‑Fraumeni syndrome, retinoblastoma. Live article does not list these specific syndromes. No contradiction, but less detailed.
+3. **Environmental claims** — Draft mentions "oil refining, rubber manufacturing, and chemists" as higher‑risk occupations. Live article omits these. Evidence for these links is weak/inconclusive; omission is conservative.
+4. **Scope** — Draft covers benign vs malignant, primary vs metastatic, causes, symptoms, diagnosis, treatment. Live article covers the same scope in block format. Consistent.
+
+**Action taken**
+No content edits. The live article is an improvement over the draft.
+
+---
+
+## treatments/myofascial-pain (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Pain/myofascial pain.docx` (~7 w — **STUB**: title + broken image ref only)
+- AR: `publish/ماذا نعالج/الآلام/الم العضل الليفي.docx` (~814 w, substantial prose)
+
+**Current article**
+Block‑based (`redesigned: true`), comprehensive overview with trigger‑point explanation, symptoms, and treatment panels.
+
+**Flags**
+1. **EN draft is empty** — The English draft contains no clinical content. The live EN article is entirely AI‑generated with no doctor source to verify against.
+2. **AR draft is substantial** — The Arabic draft (~814 w) is a real source of truth. The AR live article should be checked against it in a future pass.
+3. **Clinical accuracy** — The live EN article describes referred pain, trigger points, fatigue, spasms, and trigger‑point injections. These are all clinically standard concepts, but without a doctor draft there is no source‑of‑truth verification.
+
+**Action taken**
+No content edits. Flagged for future AR‑specific fact‑check.
+
+---
+
+## treatments/neck-pain (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Pain/neck pain.docx` (~7 w — **STUB**: image ref + label only)
+- AR: `publish/ماذا نعالج/الآلام/الم الرقبة.docx` (~981 w, plain prose)
+
+**Current article**
+Block‑based (`redesigned: true`), very comprehensive with epidemiology stats, facts, treatment panels, and cross‑links.
+
+**Flags**
+1. **EN draft is empty** — No clinical content in the English draft. Live EN article is entirely AI‑generated.
+2. **AR draft is substantial** — Arabic draft (~981 w) is a real source of truth. Future pass needed.
+3. **Statistics** — Live article cites "30–50% of people report neck pain yearly", "2–10% develop chronic neck pain", "50–75% improve with physiotherapy". These are broadly consistent with epidemiological literature but are not sourced from the doctor’s draft.
+4. **Medication claims** — Live article lists cyclobenzaprine, tizanidine, gabapentin, pregabalin, and low‑dose tricyclics. Standard treatments but should be verified against the Arabic draft.
+
+**Action taken**
+No content edits. Flagged for future AR‑specific fact‑check.
+
+---
+
+## treatments/sciatica (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Pain/Sciatica.docx` (~5 w — **STUB**: image ref + label only)
+- AR: `publish/ماذا نعالج/الآلام/الم اسفل الظهر.docx` (~704 w, low‑back pain draft — **not sciatica**)
+
+**Current article**
+Block‑based (`redesigned: true`), very comprehensive with radicular vs piriformis distinction, stepped treatment plan, and statistics.
+
+**Flags**
+1. **No sciatica draft exists** — The English draft is empty; the Arabic draft in the pain folder is about low back pain, not sciatica. The live article has **no doctor source of truth**.
+2. **Piriformis syndrome distinction** — Live article introduces piriformis syndrome as a sciatica mimic. Clinically accurate but not verifiable against any draft.
+3. **Statistics** — "80% resolve within 6 weeks", "60% improve after a single epidural", "5% require surgery". Consistent with clinical literature but not sourced from a doctor draft.
+4. **Surgical indications** — Live article correctly lists progressive motor weakness, cauda equina syndrome, and persistent disabling pain as surgical indications. Standard of care, but unverified.
+
+**Action taken**
+No content edits. Flagged as having **no source draft** — entire article is AI‑generated.
+
+---
+
+## treatments/intercostal-neuralgia (EN + AR)
+
+**Draft source**
+- EN: `publish/What we deal with/Pain/Intercostal Neuralgia.docx` (~43 w — **STUB**: image captions only)
+- AR: `publish/ماذا نعالج/الآلام/وربي العصبي.docx` (~44 w — **STUB**: 2 figure captions only)
+
+**Current article**
+Block‑based (`redesigned: true`), comprehensive overview with anatomy, symptoms, and treatment panels.
+
+**Flags**
+1. **Both drafts are stubs** — Neither language draft contains substantive clinical text. The live article is entirely AI‑generated.
+2. **Symptom claims** — Live article lists "paralysis and atrophy of the muscles" as an advanced symptom. This is unusual for intercostal neuralgia (a sensory nerve condition). The claim may be inaccurate.
+3. **Treatment panels** — Live article lists epidural steroid injections, transforaminal injections, and spinal cord stimulation. For intercostal neuralgia, intercostal nerve blocks and topical agents are more standard first‑line interventions; the panel may be overly generic.
+
+**Action taken**
+No content edits. Flagged for clinician review of the "paralysis and atrophy" claim and the treatment panel relevance.
+
+---
+
 *Next steps for clinician:*
 1. Verify the Parkinson's "80 %" and NPH "0.5 %" figures.
 2. Confirm the programmable‑valve claim.
 3. Review `pending-articles.md` and mark which drafts should be created.
 4. Decide whether the event draft (`publish/events/Ozone for disc.docx`) should become a blog post.
+5. **NEW** — Review the `intercostal-neuralgia` "paralysis and atrophy" claim for accuracy.
+6. **NEW** — The EN versions of `myofascial-pain`, `neck-pain`, and `sciatica` have no doctor draft source; verify their clinical accuracy or decide if they should be rewritten from the substantial Arabic drafts.
