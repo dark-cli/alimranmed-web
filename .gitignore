@@ -46,3 +46,6 @@ scripts/ar-staging/Neurosurgeon consultant website design.zip
 # cPanel backup — contains wp-config.php, DB passwords, email data. NEVER commit.
 old-site-backup/
 
+# Doctor's original draft USB — source of truth, not repo content
+drafts/
+
