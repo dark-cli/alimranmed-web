@@ -47,7 +47,7 @@ sections:
       - title: علاجات الحقن
         items:
           - "[حقن البوتوكس](/services/botox/botox-injection/)"
-          - "[العلاج بالأوزون](/services/ozone-therapy/review/)"
+          - "[العلاج بالأوزون](/services/ozone-therapy/ozone-therapy/)"
       - title: العلاج الطبيعي
         items:
           - "[العلاج بالليزر](/services/physiotherapy/laser-therapy/)"

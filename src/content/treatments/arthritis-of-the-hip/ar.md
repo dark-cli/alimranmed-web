@@ -80,7 +80,7 @@ sections:
         items:
           - حقن نقاط الزناد
           - حقن الستيرويد داخل المفصل
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[برولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
       - title: العلاجات المتقدمة
         items:

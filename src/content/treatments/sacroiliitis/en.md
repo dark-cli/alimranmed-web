@@ -57,7 +57,7 @@ sections:
       - title: Injection therapies
         items:
           - Corticosteroid joint injections
-          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Ozone injection](/services/ozone-therapy/ozone-therapy/)"
           - "[Botox® injections](/services/botox/botox-injection/)"
           - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
       - title: Advanced therapies

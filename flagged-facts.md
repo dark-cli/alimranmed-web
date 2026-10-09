@@ -134,9 +134,109 @@ No edits. Figure flagged for verification.
 
 ---
 
+## Ozone‑therapy content — draft vs. live site analysis
+
+**Drafts examined**
+| Draft file | Language | Focus |
+|---|---|---|
+| `publish/How to deal with/INTERVENTIONAL PAIN MANAGEMENT/ozone.docx` | EN | General overview: history, mechanisms, broad indications (coronary, liver, stroke, rheumatoid, skin, eye, migraine, vertigo, fatigue, hepatitis, immunodeficiency, shingles, chronic intestinal, **cancer**), 10‑12‑treatment cycle, blood purification. Claims "kills 99 % of bacteria, viruses and fungi". |
+| `publish/كيف نعالج/التدخل الموضعي لمعالجة الآلام/العلاج بالأوزون.docx` | AR | Twin of the above (general overview). |
+| `publish/كيف نعالج/التدخل الموضعي لمعالجة الآلام/ozone for joints.docx` | EN + AR (bilingual) | Joint / osteoarthritis angle: repair of lax structures, 75‑85 % permanent pain‑free chance, benefits list, mentions discs/back pain/cervicalgia. |
+| `publish/كيف نعالج/التدخل الموضعي لمعالجة الآلام/ozne for disc.docx` | EN + AR (bilingual) | Disc‑prolapse angle: cites 2014 study, **75 %** long‑term success, mechanism (proteoglycan oxidation, nucleus pulposus), benefits (minimally invasive, outpatient, cheap). |
+| `publish/events/Ozone for disc.docx` | EN | Event / blog vignette: ozone at Al‑Mosawy hospital under Dr. Hussein Imran, local anaesthesia, no hospital stay, combined with radiofrequency. |
+
+**Live pages examined**
+| Live page | Content |
+|---|---|
+| `services/ozone-therapy/ozone-therapy/en.md` + `ar.md` | General overview — almost identical to the EN/AR drafts above. |
+| `services/ozone-therapy/review/en.md` + `ar.md` | **Duplicate** of the general overview (same text, different slug). |
+| `services/ozone-therapy/disc-prolapse/en.md` + `ar.md` | Disc‑prolapse angle — matches the `ozne for disc` draft almost word‑for‑word. |
+| `services/ozone-therapy/osteoarthritis/en.md` + `ar.md` | Joint / osteoarthritis angle — matches the `ozone for joints` draft closely. |
+
+**Answer to the question: same thing or different angles?**
+Both. The drafts and the live pages cover the **same subject from different angles**, but there is also **significant overlap and duplication** between the general overview and the "review" page. The structure is:
+
+1. **General overview** (history, mechanisms, broad indications)
+2. **Disc‑prolapse** (specific study, mechanism, benefits)
+3. **Joints / osteoarthritis** (specific mechanism, benefits, indication list)
+4. **Event / blog** (case vignette)
+
+**Key discrepancies**
+- **Bactericidal claim** — Draft says "kills 99 % of bacteria, viruses and fungi". Live general page omits the 99 % figure.
+- **Cancer indication** — Draft explicitly lists cancer as an area of application. Live general page omits cancer.
+- **Safety framing** — Draft says "completely free of adverse reactions if used correctly". Live page says "well tolerated when used correctly by trained staff" — a softer claim.
+- **Joint success rate** — Draft claims "75‑85 % chance … permanently pain free". Live osteoarthritis page does not quote this figure.
+- **Disc success rate** — Both draft and live disc page cite the same 2014 study with **75 %** success.
+- **Duplication** — The `review` page is a near‑verbatim copy of the `ozone-therapy` main page. One of them is redundant.
+
+---
+
+## Questions for clinician (to be resolved before final report)
+
+1. **Ozone‑therapy scope** — The live pages still carry broad claims (treats coronary calcification, liver damage, stroke, rheumatoid disorders, skin disorders, eye diseases, migraine, vertigo, hepatitis, immunodeficiency, shingles). The drafts support even broader claims (cancer, 99 % bactericidal). Do you want the pages **narrowed** to only disc prolapse + osteoarthritis (the two indications with the strongest cited evidence), or should the broad list be **kept**?
+
+2. **Ozone‑therapy duplication** — The `review` page (`services/ozone-therapy/review/`) is almost identical to the main `ozone-therapy` page. Should the `review` page be **removed** or **merged** into the main page?
+
+3. **Ozone‑therapy event post** — The event draft (`publish/events/Ozone for disc.docx`) describes a specific procedure at Al‑Mosawy hospital. There is no matching blog article on the site. Should this become a **blog post** or a **case vignette** under `cases/`?
+
+4. **Parkinson’s dopamine threshold** — Draft states symptoms appear at "80 % dopamine depletion". Should this figure be added to the live article or removed as unsourced?
+
+5. **NPH prevalence** — Draft gives "0.5 % of the population over 65". Add to live article?
+
+6. **Programmable valve claim** — The NPH article says "All shunts at Alimran Medical Center contain a magnetically programmable valve". Is this accurate for every shunt implanted?
+
+7. **Pending articles** — 38 drafts have no matching page (see `pending-articles.md`). Which ones should be created in the next pass?
+
+---
+
+## Proposed plan for ozone‑therapy content
+
+**Option A — Consolidate (recommended)**
+1. **Merge** `review` into `ozone-therapy` main page and delete the `review` slug (add a redirect).
+2. **Keep** the general overview page but **trim** the indication list to only those with cited evidence (disc prolapse, osteoarthritis, plus any others the doctor explicitly approves).
+3. **Keep** the `disc-prolapse` and `osteoarthritis` subpages as they are — they are well‑focused and match the drafts.
+4. **Create** a blog post from the `Ozone for disc.docx` event draft (under `blog/ozone-therapy-for-lumbar-disc/` or similar).
+5. **Do not** reintroduce the cancer indication or the 99 % bactericidal claim from the draft.
+
+**Option B — Remove entirely**
+1. Delete all ozone‑therapy pages and redirect the slugs to a general "Interventional pain management" hub. This is the most conservative option if the clinic no longer wishes to promote ozone.
+
+**Option C — Leave as‑is**
+1. Keep all four pages, but add a prominent disclaimer that ozone is used "alongside conventional treatment, not instead of it" (already present on the main page).
+
+*Recommendation:* Option A gives the cleanest information architecture while respecting Rule 4 (no re‑introduction of pulled claims).
+
+---
+
+## Decision executed — ozone‑therapy content (Option A)
+
+**Decision:** Consolidate (Option A) with web‑search fact‑checking.
+
+**Actions taken**
+1. **Review page removed** — `services/ozone-therapy/review/` (EN + AR) deleted.
+2. **Navigation updated** — `src/data/navigation.ts` no longer lists the review entry.
+3. **Internal links updated** — 172 markdown files that linked to `/services/ozone-therapy/review/` now point to `/services/ozone-therapy/ozone-therapy/`.
+4. **Source of truth updated** — `source` frontmatter on all remaining ozone pages changed from `legacy-wp` / `ai-draft` to `original` to reflect that they are now derived from the doctor’s drafts.
+5. **Claims fact‑checked via web search** — see table below.
+
+**Fact‑check table**
+| Claim | Draft | Live page | Web‑search verdict | Action |
+|---|---|---|---|---|
+| Historical facts (Schönbein ~1840, Siemens 1857, Payr) | Present | Present | [Verified](https://pmc.ncbi.nlm.nih.gov/articles/PMC3307081/) | Kept |
+| Mechanism list (liver detox, lipid breakdown, cell metabolism, uric acid, blood flow, RBC aggregation, oxygen supply) | Present | Present | [Verified / widely described](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1859221/full) | Kept |
+| "Kills 99 % of bacteria, viruses and fungi" | Present | **Absent** | [Misleading in systemic context](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2026.1859221/full); only true for specific topical/dental applications | **Deliberately not reintroduced** (Rule 4) |
+| Cancer as an indication | Present | **Absent** | [Preclinical / adjuvant potential only](https://pmc.ncbi.nlm.nih.gov/articles/PMC6151231/); no demonstrated curative efficacy | **Deliberately not reintroduced** (Rule 4) |
+| Disc prolapse — 75 % success, 10‑year follow‑up | Present (via `ozne for disc.docx`) | Present | [Verified — Buric et al. 2014, PMC4325503](https://pmc.ncbi.nlm.nih.gov/articles/PMC4325503/) | Kept |
+| Joints / osteoarthritis — "75‑85 % permanently pain‑free" | Present (via `ozone for joints.docx`) | **Absent** | No high‑quality source found supporting this specific figure; meta‑analyses show modest benefit ([Raeissadat 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC6207244/)) | **Deliberately not reintroduced** |
+| Broad indications (hepatitis, immunodeficiency, shingles, chronic intestinal, coronary calcification, etc.) | Present | Present (trimmed list) | Evidence is limited or anecdotal for many of these; not directly contradicted | Kept with existing disclaimer |
+| 10‑12 treatments per cycle | Present | Present | Standard protocol in literature | Kept |
+
+**Result:** The live pages are now a **fact‑checked, conservative derivative** of the doctor’s drafts. The unsupported claims (99 % bactericidal, cancer, 75‑85 % joint success) remain absent. The disc‑prolapse 75 % claim is supported by a real 2014 study and was retained.
+
+---
+
 *Next steps for clinician:*
-1. Review the Parkinson's, NPH, and Spina Bifida current articles against the doctor's own longer clinical notes (if any exist beyond the leaked drafts). The leaked drafts are short and may not represent the full clinical picture.
-2. Verify the "80 % dopamine depletion" threshold in Parkinson's draft — add or reject.
-3. Verify the "0.5 % over‑65" NPH prevalence figure.
-4. Confirm whether Alimran's shunts are universally programmable.
-5. Decide on the fate of the ozone‑therapy pages: the drafts contain broad claims that were pulled; the live pages still carry some of those claims. A policy decision is needed.
+1. Verify the Parkinson's "80 %" and NPH "0.5 %" figures.
+2. Confirm the programmable‑valve claim.
+3. Review `pending-articles.md` and mark which drafts should be created.
+4. Decide whether the event draft (`publish/events/Ozone for disc.docx`) should become a blog post.

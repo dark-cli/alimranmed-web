@@ -101,6 +101,6 @@ sections:
             [Radiofrequency](/services/radiofrequency/review/) — reduces nerve inflammation and restores vitality to the
             foot
           - >-
-            [Ozone injection](/services/ozone-therapy/review/) — increases oxygen supply to the tissue, helping to
+            [Ozone injection](/services/ozone-therapy/ozone-therapy/) — increases oxygen supply to the tissue, helping to
             reduce inflammation and nourish the affected area
 ---

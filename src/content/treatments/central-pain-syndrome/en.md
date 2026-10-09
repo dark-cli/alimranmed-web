@@ -68,7 +68,7 @@ sections:
         items:
           - Trigger point injections
           - Epidural steroid injections
-          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Ozone injection](/services/ozone-therapy/ozone-therapy/)"
       - title: Adjunct therapies
         items:
           - "[Acupuncture](/services/acupuncture/acupuncture/)"

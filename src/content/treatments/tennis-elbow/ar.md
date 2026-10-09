@@ -64,7 +64,7 @@ sections:
         items:
           - حقن الكورتيكوستيرويد
           - حقن نقاط الزناد
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[برولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
       - title: العلاجات المتقدمة
         items:

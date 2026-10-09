@@ -45,7 +45,7 @@ Chiropractic
 [SpineMED® system](/services/chiropractic/spinmed/)  
 [Sigma](/services/chiropractic/sigma/)
 
-[Ozone](/services/ozone-therapy/review/)
+[Ozone](/services/ozone-therapy/ozone-therapy/)
 
  [radiofrequency treatment](/services/radiofrequency/review/)
 

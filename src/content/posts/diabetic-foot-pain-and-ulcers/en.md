@@ -39,4 +39,4 @@ Physical therapy is an indispensable supplement in the treatment of diabetic foo
 3. Infrared heat
 4. [Magnetic wave therapy](/services/brain-stimulation/tms/)
 5. [Radiofrequency](/services/radiofrequency/review/) (this type of injection reduces nerve inflammation and restores vitality to the foot)
-6. [Ozone injection](/services/ozone-therapy/review/) (ozone gas injection is one of the methods that contribute to an abundance of oxygen flow, the most important element in reducing inflammation and nourishing tissues)
+6. [Ozone injection](/services/ozone-therapy/ozone-therapy/) (ozone gas injection is one of the methods that contribute to an abundance of oxygen flow, the most important element in reducing inflammation and nourishing tissues)

@@ -45,7 +45,7 @@ sections:
           - الحقن فوق الجافية
       - title: العلاجات المتقدمة
         items:
-          - "[علاج الأوزون](/services/ozone-therapy/review/)"
+          - "[علاج الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[علاج الموجات الراديوية النبضية](/services/radiofrequency/)"
           - "[حقن البوتوكس](/services/botox/)"
           - "[الوخز بالإبر الصينية](/services/acupuncture/)"
@@ -83,7 +83,7 @@ sections:
 -   حقن الستيرويد
 -   حقن نقطة التحفيز
 -   الحقن فوق الجافية
--   [علاج الأوزون](/services/ozone-therapy/review/)
+-   [علاج الأوزون](/services/ozone-therapy/ozone-therapy/)
 -   [علاج الترددات الراديوية النبضية](/services/radiofrequency/)
 -   [علاج حقن البوتوكس](/services/botox/)
 -   [الإبر الصينية](/services/acupuncture/)

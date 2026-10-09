@@ -96,7 +96,7 @@ sections:
       - title: Injection & advanced therapies
         items:
           - "[Botox® injections](/services/botox/botox-injection/)"
-          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Ozone injection](/services/ozone-therapy/ozone-therapy/)"
           - Trigger point injections
           - "[Pulsed radiofrequency](/services/radiofrequency/radiofrequency/)"
           - "[Acupuncture](/services/acupuncture/acupuncture/)"

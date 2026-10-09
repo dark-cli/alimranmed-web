@@ -48,7 +48,7 @@ sections:
           - "[استئصال الغضروف القطني المجهري](/services/surgery/lumbar-microdiscectomy/)"
       - title: علاجات الحقن
         items:
-          - "[العلاج بالأوزون](/services/ozone-therapy/review/)"
+          - "[العلاج بالأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[البرولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
       - title: العلاج الطبيعي
         items:

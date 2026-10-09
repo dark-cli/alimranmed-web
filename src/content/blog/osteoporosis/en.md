@@ -48,7 +48,7 @@ sections:
           - Epidural injections
       - title: Advanced Treatments
         items:
-          - "[Ozone therapy](/services/ozone-therapy/review/)"
+          - "[Ozone therapy](/services/ozone-therapy/ozone-therapy/)"
           - "[Pulsed radiofrequency treatment](/services/radiofrequency/)"
           - "[Botox injection therapy](/services/botox/)"
           - "[Acupuncture](/services/acupuncture/)"

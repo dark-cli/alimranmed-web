@@ -2,7 +2,7 @@
 title: "الأوزون للانزلاق الغضروفي"
 description: "حقن الأوزون للانزلاق الغضروفي: دراسة متابعة لعشر سنوات وجدتها آمنة وفعالة لدى نحو 75٪ من المرضى، قبل اللجوء إلى الجراحة."
 category: "العلاج بالأوزون"
-source: "legacy-wp"
+source: "original"
 legacyUrl: "https://ar.alimranmed.com/archives/1802"
 order: 999
 publishedAt: "2020-05-15T11:17:41"

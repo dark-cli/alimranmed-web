@@ -86,7 +86,7 @@ sections:
       - title: Injection therapies
         items:
           - "[Botox® injections](/services/botox/botox-injection/)"
-          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Ozone injection](/services/ozone-therapy/ozone-therapy/)"
           - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
       - title: Advanced therapies
         items:

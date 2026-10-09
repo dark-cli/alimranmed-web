@@ -63,7 +63,7 @@ sections:
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"
           - حقن الكورتيكوستيرويد
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[برولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
       - title: العلاجات المتقدمة
         items:

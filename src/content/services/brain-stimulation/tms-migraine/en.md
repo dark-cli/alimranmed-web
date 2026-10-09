@@ -51,7 +51,7 @@ sections:
       - title: Injection therapies
         items:
           - "[Botox injections](/services/botox/botox-injection/)"
-          - "[Ozone therapy](/services/ozone-therapy/review/)"
+          - "[Ozone therapy](/services/ozone-therapy/ozone-therapy/)"
       - title: Physiotherapy
         items:
           - "[Laser therapy](/services/physiotherapy/laser-therapy/)"

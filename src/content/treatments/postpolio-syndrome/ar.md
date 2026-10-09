@@ -86,7 +86,7 @@ sections:
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"
           - "[برولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
       - title: العلاجات المتقدمة
         items:
           - "[الترددات الراديوية النبضية](/services/radiofrequency/radiofrequency/)"

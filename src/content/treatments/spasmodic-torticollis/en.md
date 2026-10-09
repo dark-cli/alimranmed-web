@@ -69,7 +69,7 @@ sections:
         items:
           - Trigger point injections
           - Epidural steroid injections
-          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Ozone injection](/services/ozone-therapy/ozone-therapy/)"
           - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
       - title: Advanced therapies
         items:

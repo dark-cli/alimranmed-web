@@ -55,7 +55,7 @@ sections:
           - "[رأب النواة](/services/radiofrequency/nucleoplasty/)"
       - title: علاجات الحقن
         items:
-          - "[العلاج بالأوزون](/services/ozone-therapy/review/)"
+          - "[العلاج بالأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[البرولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
       - title: العلاج الطبيعي
         items:

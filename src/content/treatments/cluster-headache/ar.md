@@ -94,7 +94,7 @@ sections:
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"
           - "[برولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - حصار العقدة الحنكية الأنفية أو العصب القذالي
       - title: العلاجات المتقدمة
         items:

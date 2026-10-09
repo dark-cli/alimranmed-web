@@ -55,7 +55,7 @@ sections:
           - "[Nucleoplasty](/services/radiofrequency/nucleoplasty/)"
       - title: Injection therapies
         items:
-          - "[Ozone therapy](/services/ozone-therapy/review/)"
+          - "[Ozone therapy](/services/ozone-therapy/ozone-therapy/)"
           - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
       - title: Physiotherapy
         items:

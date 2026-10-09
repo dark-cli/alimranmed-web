@@ -54,6 +54,6 @@ sections:
           - "[Spine radiofrequency](/services/radiofrequency/spine/)"
       - title: Injection therapies
         items:
-          - "[Ozone therapy](/services/ozone-therapy/review/)"
+          - "[Ozone therapy](/services/ozone-therapy/ozone-therapy/)"
           - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
 ---

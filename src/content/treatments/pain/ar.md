@@ -109,7 +109,7 @@ sections:
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"
           - "[برولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - حقن نقاط الزناد
           - حقن ستيرويد فوق الجافية
       - title: العلاجات المتقدمة

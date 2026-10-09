@@ -75,7 +75,7 @@ sections:
           - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
       - title: علاجات الحقن
         items:
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - حقن نقاط الزناد
           - حقن ستيرويد
       - title: العلاجات المتقدمة

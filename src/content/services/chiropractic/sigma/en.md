@@ -78,7 +78,7 @@ sections:
           - "[Ultrasound therapy](/services/physiotherapy/ultrasound-therapy/)"
       - title: Injection therapies
         items:
-          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Ozone injection](/services/ozone-therapy/ozone-therapy/)"
           - Trigger point injections
           - Steroid injection
       - title: Advanced therapies

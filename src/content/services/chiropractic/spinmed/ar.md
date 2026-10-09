@@ -49,6 +49,6 @@ sections:
           - "[العلاج بالموجات فوق الصوتية](/services/physiotherapy/ultrasound-therapy/)"
       - title: علاجات الحقن
         items:
-          - "[العلاج بالأوزون](/services/ozone-therapy/review/)"
+          - "[العلاج بالأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[البرولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
 ---

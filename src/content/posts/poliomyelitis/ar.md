@@ -45,7 +45,7 @@ source: "translated-by-llm"
 [نظام SpineMED®](/services/chiropractic/spinmed/)
 [سيكما](/services/chiropractic/sigma/)
 
-[الأوزون](/services/ozone-therapy/review/)
+[الأوزون](/services/ozone-therapy/ozone-therapy/)
 
 [العلاج بالترددات الراديوية](/services/radiofrequency/review/)
 

@@ -92,7 +92,7 @@ sections:
           - "[نظام Sigma للعمود الفقري](/services/chiropractic/sigma/)"
       - title: الحقن والتدخّلات العلاجية
         items:
-          - "[العلاج بالأوزون](/services/ozone-therapy/review/)"
+          - "[العلاج بالأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[العلاج بالترددات الراديوية](/services/radiofrequency/review/)"
           - "[حقن البوتوكس](/services/botox/)"
           - "[الوخز بالإبر الصينية](/services/acupuncture/)"

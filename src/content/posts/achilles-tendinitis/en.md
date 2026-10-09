@@ -60,7 +60,7 @@ At Alimran Medical Center, we may recommend any of the following treatments
 
 [Regenerative medicine treatment](/services/regenerative-medicine/) **(**[Prolotherapy](/services/regenerative-medicine/))
 
-[Ozone injection](/services/ozone-therapy/review/)
+[Ozone injection](/services/ozone-therapy/ozone-therapy/)
 
 [Sigma](/services/chiropractic/sigma/)
 

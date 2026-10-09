@@ -55,7 +55,7 @@ sections:
       - title: Injection therapies
         items:
           - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
-          - "[Ozone therapy](/services/ozone-therapy/review/)"
+          - "[Ozone therapy](/services/ozone-therapy/ozone-therapy/)"
       - title: Physiotherapy
         items:
           - "[Electrical stimulation](/services/physiotherapy/electrical-stimulation/)"

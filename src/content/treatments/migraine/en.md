@@ -81,7 +81,7 @@ sections:
         items:
           - "[Botox® injections](/services/botox/botox-injection/)"
           - Trigger point injections
-          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Ozone injection](/services/ozone-therapy/ozone-therapy/)"
           - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
       - title: Advanced therapies
         items:

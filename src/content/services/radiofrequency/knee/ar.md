@@ -52,7 +52,7 @@ sections:
       - title: علاجات الحقن
         items:
           - "[البرولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
-          - "[العلاج بالأوزون](/services/ozone-therapy/review/)"
+          - "[العلاج بالأوزون](/services/ozone-therapy/ozone-therapy/)"
       - title: العلاج الطبيعي
         items:
           - "[التحفيز الكهربائي](/services/physiotherapy/electrical-stimulation/)"

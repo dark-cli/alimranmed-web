@@ -58,7 +58,7 @@ sections:
       - title: علاجات الحقن
         items:
           - حقن الكورتيكوستيرويد في المفصل
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"
           - "[برولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
       - title: العلاجات المتقدمة

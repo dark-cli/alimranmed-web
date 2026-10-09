@@ -29,7 +29,7 @@ Gymnastics
 -   Steroid injection
 -   Trigger point injection  
     Epidural injection
--   [Ozone treatment](/services/ozone-therapy/review/)
+-   [Ozone treatment](/services/ozone-therapy/ozone-therapy/)
 -   [Pulsed radiofrequency treatment](/services/radiofrequency/)
 -   [Botox injection therapy](/services/botox/)
 -   [Acupuncture](/services/acupuncture/)

@@ -53,7 +53,7 @@ sections:
         items:
           - حقن نقاط الزناد
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[برولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
       - title: التعديل العصبي
         items:

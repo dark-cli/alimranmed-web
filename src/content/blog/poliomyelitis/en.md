@@ -93,7 +93,7 @@ sections:
           - "[Sigma spinal system](/services/chiropractic/sigma/)"
       - title: Injections and interventional therapies
         items:
-          - "[Ozone therapy](/services/ozone-therapy/review/)"
+          - "[Ozone therapy](/services/ozone-therapy/ozone-therapy/)"
           - "[Radiofrequency treatment](/services/radiofrequency/review/)"
           - "[Botox injection](/services/botox/)"
           - "[Acupuncture](/services/acupuncture/)"

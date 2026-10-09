@@ -63,7 +63,7 @@ sections:
         items:
           - حقن نقاط الزناد
           - حقن الستيرويد فوق الجافية
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
       - title: العلاجات المساندة
         items:
           - "[الوخز بالإبر](/services/acupuncture/acupuncture/)"

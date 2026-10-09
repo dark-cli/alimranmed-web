@@ -101,7 +101,7 @@ sections:
         items:
           - "[Botox® injections](/services/botox/botox-injection/)"
           - "[Prolotherapy](/services/regenerative-medicine/prolotherapy/)"
-          - "[Ozone injection](/services/ozone-therapy/review/)"
+          - "[Ozone injection](/services/ozone-therapy/ozone-therapy/)"
           - Sphenopalatine ganglion block or occipital nerve block
       - title: Advanced therapies
         items:

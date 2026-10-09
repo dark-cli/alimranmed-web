@@ -298,7 +298,6 @@ export const NAV: NavItem[] = [
     collection: "services",
     category: "ozone-therapy",
     children: [
-      { label: "Review of Ozone Therapy", href: "/services/ozone-therapy/review/", legacyUrl: "https://alimranmed.com/review-of-ozone-therapy/", collection: "services", category: "ozone-therapy" },
       { label: "Ozone for Disc Prolapse", href: "/services/ozone-therapy/disc-prolapse/", legacyUrl: "https://alimranmed.com/ozone-therapy-for-disc-prolapse/", collection: "services", category: "ozone-therapy" },
       { label: "Ozone for Osteoarthritis", href: "/services/ozone-therapy/osteoarthritis/", legacyUrl: "https://alimranmed.com/ozone-therapy-for-osteoarthritis/", collection: "services", category: "ozone-therapy" },
     ],

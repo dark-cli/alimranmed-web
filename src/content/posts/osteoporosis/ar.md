@@ -37,7 +37,7 @@ publishedAt: "2020-12-03T16:26:30"
 -   حقن الستيرويد
 -   حقن نقطة التحفيز
 -   الحقن فوق الجافية
--   [علاج الأوزون](/services/ozone-therapy/review/)
+-   [علاج الأوزون](/services/ozone-therapy/ozone-therapy/)
 -   [علاج الترددات الراديوية النبضية](/services/radiofrequency/)
 -   [علاج حقن البوتوكس](/services/botox/)
 -   [الإبر الصينية](/services/acupuncture/)

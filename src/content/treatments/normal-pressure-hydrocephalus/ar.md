@@ -98,7 +98,7 @@ sections:
       - title: علاجات الحقن والعلاجات المتقدمة
         items:
           - "[حقن البوتوكس®](/services/botox/botox-injection/)"
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - حقن نقاط الزناد
           - "[الترددات الراديوية النبضية](/services/radiofrequency/radiofrequency/)"
           - "[الوخز بالإبر](/services/acupuncture/acupuncture/)"

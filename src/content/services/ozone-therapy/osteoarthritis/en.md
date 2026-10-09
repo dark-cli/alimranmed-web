@@ -5,7 +5,7 @@ category: "ozone-therapy"
 order: 999
 legacyUrl: "https://alimranmed.com/2020/05/17/ozone-therapy-for-osteoarthritis/"
 publishedAt: "2020-05-17T19:37:20"
-source: "legacy-wp"
+source: "original"
 ---
 
 Ozone therapy causes repair and tightening of the lax structures, partially torn connective tissue and ligaments. Ozone therapy halts the pain/inflammation cycle. This allows for better circulation, increased blood flow carrying nutrition, and hydration of the damaged tissues. This allows for a healing environment within the joint to develop and results in increased range of motion and decreased pain.

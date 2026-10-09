@@ -58,7 +58,7 @@ sections:
       - title: علاجات الحقن
         items:
           - حقن الكورتيكوستيرويد في غمد الوتر
-          - "[حقن الأوزون](/services/ozone-therapy/review/)"
+          - "[حقن الأوزون](/services/ozone-therapy/ozone-therapy/)"
           - "[برولوثيرابي](/services/regenerative-medicine/prolotherapy/)"
       - title: العلاجات المتقدمة
         items:
