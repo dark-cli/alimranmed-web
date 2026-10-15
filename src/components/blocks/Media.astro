@@ -3,7 +3,11 @@
  * Media block — one or more image / video / YouTube items shown side by side.
  *
  * Single item  → full-width figure.
- * Multiple items → equal-width columns (responsive: stacks below 560 px).
+ * Multiple items → auto-fit grid, each item at least 280 px wide. In a
+ *   740 px article column that caps the row at 2 items, so N items lay
+ *   out as ceil(N/2) rows of 2 (with a lone trailer when N is odd).
+ *   Stacks to one column below 560 px. For an explicit featured-item
+ *   layout, split into multiple media blocks (1-item, then 2-item, etc).
  *
  * Each item carries its own caption; an optional block-level heading sits
  * above the grid. Not numbered / not in TOC.
@@ -65,7 +69,7 @@ const multi   = items.length > 1;
 
 <section class:list={["media-block", multi && "media-block--multi"]}>
   {heading && <h2 class="media-heading">{heading}</h2>}
-  <div class="media-grid" style={multi ? `grid-template-columns: repeat(${items.length}, 1fr);` : undefined}>
+  <div class="media-grid">
     {items.map((it) => {
       const frameAspect = it.aspect || (it.kind === "image" ? undefined : "16/9");
       const frameStyle  = frameAspect ? `aspect-ratio: ${frameAspect};` : undefined;
@@ -130,13 +134,16 @@ const multi   = items.length > 1;
   /* Single item — block-level */
   .media-grid { display: contents; }
 
-  /* Multi-item — side-by-side grid */
+  /* Multi-item — auto-fitting grid that wraps when items can't fit.
+     280px caps the row at 2 items in the 740px article column, so
+     ≥3 items wrap to additional rows (2+2+..., with a trailer when odd). */
   .media-block--multi .media-grid {
     display: grid;
     gap: 1px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
   @media (max-width: 560px) {
-    .media-block--multi .media-grid { grid-template-columns: 1fr !important; }
+    .media-block--multi .media-grid { grid-template-columns: 1fr; }
   }
 
   .media {

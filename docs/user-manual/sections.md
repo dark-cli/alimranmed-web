@@ -362,7 +362,7 @@ Markdown inline links work inside `answer`. Default heading is "Common questions
 
 ## `media`
 
-One or more images / YouTube videos, laid out as a full-width figure (single item) or as a side-by-side grid (multiple items). Every image is auto-optimised through the image pipeline — you never need to write srcset yourself.
+One or more images / YouTube videos. A single item renders as a full-width figure; multiple items use an auto-fitting grid where each item is at least 280 px wide. In the standard 740 px article column that caps the row at 2 items, so a block with ≥3 items wraps to additional rows (`2+2+…`, with a lone trailer when the count is odd). To highlight a single video above a group, split the content into multiple media blocks (one with a single featured item, then another with the rest). Every image is auto-optimised through the image pipeline — you never need to write srcset yourself.
 
 ### Single image
 
