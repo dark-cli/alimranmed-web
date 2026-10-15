@@ -96,6 +96,12 @@ sections:
           - التحريك تحت التخدير
           - التحرير المفصلي بالمنظار
           - العلاج الطبيعي الفوري بعد العملية غير قابل للتفاوض
+  - type: media
+    heading: شاهد الإجراء
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=x2TL8YXyAAM
+        caption: معالجة تخشب الكتف مع جلطة دماغية
   - type: cards
     items:
       - /treatments/fibromyalgia/

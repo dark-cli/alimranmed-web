@@ -98,6 +98,12 @@ sections:
           - Manipulation under anaesthesia (MUA)
           - Arthroscopic capsular release
           - Immediate post-op physiotherapy is non-negotiable
+  - type: media
+    heading: Watch the procedure
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=x2TL8YXyAAM
+        caption: Treating frozen shoulder in a patient with a brain stroke.
   - type: cards
     items:
       - /treatments/fibromyalgia/

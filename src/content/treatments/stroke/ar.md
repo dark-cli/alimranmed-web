@@ -102,6 +102,12 @@ sections:
           - مضادّات الصفائح أو مضادّات التخثّر حسب الاستطباب
           - ضبط الدهون والسكّر
           - "نمط الحياة: الإقلاع عن التدخين، الرياضة، إدارة الوزن"
+  - type: media
+    heading: شاهد الإجراء
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=hS8DyQug0Zg
+        caption: إجراء عملية لمريضة تعاني من جلطة دماغية أدت إلى فقدان الوعي
   - type: cards
     items:
       - /treatments/acoustic-neuroma/

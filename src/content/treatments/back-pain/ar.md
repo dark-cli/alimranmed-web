@@ -106,6 +106,12 @@ sections:
           - متلازمة ذيل الفرس (طارئة)
           - ألم جذري مستمرّ لا يستجيب لأكثر من ٦ أسابيع من الرعاية
           - عدم استقرار أو تشوّه بنيوي
+  - type: media
+    heading: شاهد الإجراء
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=89_38Vv1KCI
+        caption: إجراء عملية لمريضة تعاني من ألم في الظهر
   - type: cards
     items:
       - /treatments/fibromyalgia/

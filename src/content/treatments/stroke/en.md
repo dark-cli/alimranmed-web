@@ -115,6 +115,12 @@ sections:
           - Antiplatelet or anticoagulation as indicated
           - Lipid control, glycaemic control
           - "Lifestyle: smoking cessation, exercise, weight management"
+  - type: media
+    heading: Watch the procedure
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=hS8DyQug0Zg
+        caption: Surgery for a stroke patient with loss of consciousness.
   - type: cards
     items:
       - /treatments/acoustic-neuroma/

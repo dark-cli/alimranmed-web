@@ -74,6 +74,32 @@ sections:
           - Physical therapy for gait and postural stability
           - Speech therapy for voice and swallowing
           - Occupational therapy for daily activities
+  - type: media
+    heading: Parkinson's surgery at our center
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=NBJqg9RnuMU
+        caption: Radiofrequency brain lesioning for Parkinson's disease.
+  - type: media
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=6p2psj83jPQ
+        caption: Parkinson's surgery — additional footage.
+  - type: media
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=0INnC90AnM0
+        caption: Parkinson's surgery — additional footage.
+  - type: media
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=namZhqvzgHI
+        caption: A patient's journey treating Parkinson's disease.
+  - type: media
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=OBRLr3w0Mvk
+        caption: Brain battery (DBS) implantation for Parkinson's disease.
   - type: cards
     items:
       - /treatments/motor-disorders/

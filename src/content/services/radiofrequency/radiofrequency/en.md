@@ -45,6 +45,12 @@ sections:
 
       Preparation: fast for 6 hours before the procedure and arrange a driver. Post-procedure restrictions: no driving
       or machinery for 24 hours, no strenuous activity for 24 hours, avoid baths for 1–2 days (showering is permitted).
+  - type: media
+    heading: Watch the procedure
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=i7dWexHBg4M
+        caption: Radiofrequency ablation in action.
   - type: panels
     heading: Treatment options at Alimran Medical Center
     panels:

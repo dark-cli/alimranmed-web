@@ -68,6 +68,32 @@ sections:
           - العلاج الطبيعي للمشي والاستقرار
           - علاج النطق للصوت والبلع
           - العلاج الوظيفي للأنشطة اليومية
+  - type: media
+    heading: عمليات الشلل الرعاش في مركزنا
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=NBJqg9RnuMU
+        caption: التدخل بالموجات الراديوية (Radiofrequency Brain Lesioning) لعلاج الشلل الرعاش.
+  - type: media
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=6p2psj83jPQ
+        caption: عملية الشلل الرعاش — لقطات إضافية.
+  - type: media
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=0INnC90AnM0
+        caption: عملية الشلل الرعاش — لقطات إضافية.
+  - type: media
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=namZhqvzgHI
+        caption: رحلة علاج مريض من الشلل الرعاش.
+  - type: media
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=OBRLr3w0Mvk
+        caption: زراعة بطارية الدماغ (DBS) لعلاج الشلل الرعاش.
   - type: cards
     items:
       - /treatments/motor-disorders/

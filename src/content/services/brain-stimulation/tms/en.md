@@ -47,6 +47,12 @@ sections:
       twitching, which also tend to lessen with treatment adjustments. Earplugs are provided due to the device's
       clicking noise. The risk of seizure is very low (approximately 1 in 1,000). Patients with non-removable metallic
       implants in or near the head are not eligible for TMS.
+  - type: media
+    heading: See the device in use
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=G7huULunbHU
+        caption: The rTMS device.
   - type: panels
     heading: Treatment options at Alimran Medical Center
     panels:

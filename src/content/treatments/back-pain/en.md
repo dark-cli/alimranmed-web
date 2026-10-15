@@ -110,6 +110,12 @@ sections:
           - Cauda equina syndrome (emergency)
           - Persistent radicular pain unresponsive to 6+ weeks of care
           - Instability or structural deformity
+  - type: media
+    heading: Watch the procedure
+    items:
+      - kind: youtube
+        src: https://www.youtube.com/watch?v=89_38Vv1KCI
+        caption: Surgery for a patient with chronic back pain.
   - type: cards
     items:
       - /treatments/fibromyalgia/
