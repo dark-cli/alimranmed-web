@@ -17,6 +17,9 @@
  * automatically. Images outside optimized folders fall back to a plain src.
  */
 import { imageVariants } from "../../lib/image";
+import youtubeDatesJson from "../../data/youtube-dates.json";
+
+const youtubeDates: Record<string, string> = youtubeDatesJson;
 
 interface MediaItem {
   kind: "image" | "youtube";
@@ -60,7 +63,8 @@ const multi   = items.length > 1;
     "name": it.caption || it.alt || "Video",
     "description": it.caption || it.alt || "Video",
     "thumbnailUrl": `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`,
-    "uploadDate": it.uploadDate || "2020-01-01T00:00:00+00:00",
+    // Real upload date (scripts/fetch-youtube-dates.mjs); omitted if unknown.
+    "uploadDate": it.uploadDate || youtubeDates[ytId],
     "contentUrl": `https://www.youtube.com/watch?v=${ytId}`,
     "embedUrl": `https://www.youtube-nocookie.com/embed/${ytId}`,
   });

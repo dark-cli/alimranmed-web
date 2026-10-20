@@ -33,6 +33,7 @@
     "redirects": "node --experimental-strip-types --no-warnings scripts/generate-redirects.mjs",
     "check:links": "node scripts/check-links.mjs http://localhost:4321",
     "fonts": "node scripts/download-fonts.mjs",
+    "youtube:dates": "node scripts/fetch-youtube-dates.mjs",
     "cms": "astro dev --host"
   },
   "type": "module"
