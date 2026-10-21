@@ -9,15 +9,15 @@ sections:
   - type: prose
     heading: "Brain Tumors"
     body: >-
-      Malignancies has became a global problem particularly in Iraq as a result
-      of environmental pollution and other factors. Brain tumors dose not differ
-      from other body tumors parts from classification points as there is benign
-      and malignant tumors. But the brain tumors has it's particular from being
-      to handle. So the brain tumors is the night mares for the most people.With
-      a great advances in the early detection of the tumors by imaging
-      techniques such as CT scan and MRI as well as the new modalities of
-      treatment such as endoscopic surgery, steriotactic and Gamma knife surgery
-      give easy access for excision of brain tumors.
+      Malignancies have become a global problem, particularly in Iraq, as a result
+      of environmental pollution and other factors. Brain tumors do not differ
+      from tumors in other parts of the body in terms of classification, as there
+      are benign and malignant tumors. But brain tumors are particular in how
+      difficult they are to handle. So brain tumors are a nightmare for most
+      people. With great advances in the early detection of tumors by imaging
+      techniques such as CT scan and MRI, as well as new modalities of
+      treatment such as endoscopic surgery, stereotactic surgery and Gamma Knife
+      surgery, brain tumors are now easier to access for excision.
 
   - type: prose
     body: >-

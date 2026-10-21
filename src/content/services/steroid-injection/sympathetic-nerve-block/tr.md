@@ -1,6 +1,8 @@
 ---
 title: Sempatik sinir bloğu
-description: Lomber sempatik blok Lomber sempatik blok, görüntüleme eşliğinde sırta yapılan bir lokal anestezik enjeksiyonudur veya
+description: >-
+  Lomber sempatik blok, röntgen veya ultrason eşliğinde sırta lokal anestezik enjeksiyonu yapılarak bacağa giden
+  sempatik sinir sinyallerinin engellendiği ve kronik ağrının hafifletilmesini sağlayan bir işlemdir.
 order: 999
 legacyUrl: https://alimranmed.com/sympathetic-nerve-block/
 category: steroid-injection
@@ -49,4 +51,4 @@ Sol stellat gangliyon bloğu –
 
 Süperior hipogastrik pleksus bloğu, pelvis organlarını besleyen sempatik sinirlerin çevresine lokal anestezik ve steroid enjeksiyonudur.
 
-Bu sinirler alt karında omurganın her iki yanında yer alır. Başarılı bir tanısal enjeksiyondan sonra uzun süreli ağrının hafiflemesi sağlamak için RF ablasyon veya alkol nörolizi uygulanabilir.
+Bu sinirler alt karında omurganın her iki yanında yer alır. Başarılı bir tanısal enjeksiyondan sonra uzun süreli ağrının hafiflemesini sağlamak için RF ablasyon veya alkol nörolizi uygulanabilir.

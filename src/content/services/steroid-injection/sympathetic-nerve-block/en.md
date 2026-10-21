@@ -1,6 +1,6 @@
 ---
 title: "Sympathetic nerve block"
-description: "Lumbar sympathetic block A lumbar sympathetic block is an injection of local anesthetic into the back using X-ray guidance or"
+description: "A lumbar sympathetic block is an injection of local anesthetic into the back, using X-ray or ultrasound guidance, to block sympathetic nerve signals to the leg and relieve chronic pain."
 order: 999
 legacyUrl: "https://alimranmed.com/sympathetic-nerve-block/"
 category: "steroid-injection"
@@ -50,4 +50,4 @@ Left Stellate ganglion block –
 
 A superior hypogastric block is an injection of local anesthetic and steroid around the sympathetic nerves which supply the organs of the pelvis.
 
-These nerves are located on either side of the spine in the lower abdomen. After successful diagnostic injection RF ablation or alcohol neurolysis can be performed to provide long lasting pain reli
+These nerves are located on either side of the spine in the lower abdomen. After successful diagnostic injection RF ablation or alcohol neurolysis can be performed to provide long lasting pain relief.

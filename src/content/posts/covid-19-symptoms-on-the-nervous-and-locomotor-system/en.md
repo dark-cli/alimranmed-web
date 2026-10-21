@@ -1,36 +1,36 @@
 ---
 title: "Covid-19 symptoms on the nervous and locomotor system"
-description: "Symptoms of the locomotor system and after infection with Covid-19 ?? Symptoms last for weeks or even months and include:"
+description: "Locomotor system and nervous system symptoms after infection with Covid-19 can last for weeks or even months."
 order: 999
 legacyUrl: "https://alimranmed.com/2020/11/23/covid-19-symptoms-on-the-nervous-and-locomotor-system/"
 publishedAt: "2020-11-23T14:53:06"
 source: "legacy-wp"
 ---
 
-Symptoms of the locomotor system and after infection with Covid-19 ??
+Locomotor system symptoms after infection with Covid-19
 
-Symptoms last for weeks or even months and include: chronic pain and tenderness, problems with concentration and memory, muscle pain (myasthenia), headache and more …
+The symptoms last for weeks or even months and include: chronic pain and tenderness, problems with concentration and memory, muscle pain and weakness, headache and more …
 
-The mother is described as the patient being run over, and this is medically called (Myalgic encephalomeylitis) or (Chronic fatigue syndwme)
+The pain is described as feeling like being run over, and this is medically called myalgic encephalomyelitis or chronic fatigue syndrome.
 
-Symptoms increase in patients with chronic diseases: pressure, diabetes, viral hepatitis, immune diseases and others. In addition to myasthenia, there is a period of fatigue and loss of focus.
+Symptoms increase in patients with chronic diseases: high blood pressure, diabetes, viral hepatitis, immune diseases and others. In addition to muscle weakness, there is a period of fatigue and loss of focus.
 
-After a short period of making any effort, no matter how simple, such as walking, for example, which is known as post extertional
+This appears after a short period of making any effort, no matter how simple, such as walking, and is known as post-exertional malaise.
 
-A small percentage of those recovering will suffer from excessive nervousness, depression, and post-traumatic stress disorder. And its treatment lies in medical drugs, psychotherapy and increasing the rate of exercise, taking into account the progression of exercise to maintain energy levels.
+A small percentage of those recovering will suffer from excessive nervousness, depression, and post-traumatic stress disorder. Treatment consists of medication, psychotherapy and increasing the amount of exercise, taking care to progress the exercise gradually in order to maintain energy levels.
 
-In a study of 180 patients on following up with Covid-19 patients and their infection was under severe infection, the results showed that 87.4% of them reported the persistence of some symptoms for at least a month, such as chronic fatigue and shortness of breath, regardless of the comparison from before the injury, and the CAP patients They exhibit the same symptoms, so they are not exclusive to Covid-19 patients
+In a study of 180 patients with severe Covid-19 infection who were followed up, the results showed that 87.4% of them reported that some symptoms, such as chronic fatigue and shortness of breath, persisted for at least a month, regardless of their condition before the infection. Patients with community-acquired pneumonia (CAP) exhibit the same symptoms, so these symptoms are not exclusive to Covid-19 patients.
 
-Primary care for post-traumatic cases ??
+Primary care for cases after infection
 
-Covid is considered one of the diseases that target more than one organ in the human body, so follow-up is done with a number of specialties such as the nervous system – joints – internal – cardiac – thoracic – and rehabilitation
+Covid is considered one of the diseases that target more than one organ in the human body, so follow-up is done with a number of specialties such as neurology, joints, internal medicine, cardiology, chest medicine and rehabilitation.
 
-We start primary care 3 weeks after the first symptoms appear and last up to 12 weeks
+We start primary care 3 weeks after the first symptoms appear, and it lasts up to 12 weeks.
 
-It includes complete blood tests and inflammatory tests for ESR, CRP, Ferritin, and toponin
+It includes complete blood tests and tests for the inflammatory markers ESR, CRP and ferritin, and for troponin.
 
-For patients whose injury required admission to intensive care, a chest X-ray after 12 weeks is necessary for follow-up, if there is a regression or progression of the disease.
+For patients whose infection required admission to intensive care, a chest X-ray after 12 weeks is necessary for follow-up, to see whether the disease has regressed or progressed.
 
-For patients with damage to the lungs (as it appears through an X-ray and an OXYMATER) follow-up with the chest diseases and rehabilitation units.
+For patients with lung damage (as shown by an X-ray and a pulse oximeter), follow-up is with the chest disease and rehabilitation units.
 
-Emphasizing the importance of psychological support and post-traumatic care is an important recommendation as it raises immunity levels in the body.
+Emphasizing the importance of psychological support and care after infection is an important recommendation, as it raises immunity levels in the body.

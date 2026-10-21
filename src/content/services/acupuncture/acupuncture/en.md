@@ -26,7 +26,7 @@ Chinese needles work by releasing the body’s energy when inserting needles at 
 Calms the nervous system and helps slow down pain signals to the brain, and can also improve blood flow, which in turn improves oxygen access to tissues and thus reduces pain.
 
 Chinese needles are often used to treat musculoskeletal conditions and pain, such as:  
-The headache and the crack.  
+Headache and migraine.  
 Chronic pain, including neck and back pain.  
 Joint pain, such as osteoarthritis of the knee.  
 Dental pain.  
@@ -34,7 +34,7 @@ Postoperative pain.
 Rheumatoid Arthritis.  
 Chronic pain.  
 Neck pain.  
-Pain of the race of the man (sedation of the sorority).  
+Sciatica (inflammation of the sciatic nerve).  
 Shoulder pain.  
 In addition to their uses in many cases, such as:
 

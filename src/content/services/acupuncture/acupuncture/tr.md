@@ -26,6 +26,6 @@ Fibromiyaljili hastalar için Çin iğneleri
 
 Sinir sistemini sakinleştirir ve ağrı sinyallerinin beyne iletilmesini yavaşlatmaya yardımcı olur, ayrıca kan akışını iyileştirebilir; bu da dokulara oksijen erişimini iyileştirir ve böylece ağrıyı azaltır.
 
-Çin iğneleri sıklıkla kas-iskelet sistemi rahatsızlıklarını ve ağrıyı tedavi etmek için kullanılır, örneğin: Baş ağrısı ve çatlak. Boyun ve sırt ağrısı dahil kronik ağrı. Diz osteoartriti (diz kireçlenmesi) gibi eklem ağrısı. Diş ağrısı. Ameliyat sonrası ağrı. Romatoid artrit. Kronik ağrı. Boyun ağrısı. Erkeğin ırkının ağrısı (sedasyon (hafif uyutma) kız kardeşliğinin). Omuz ağrısı. Ayrıca birçok durumda kullanımlarına ek olarak, şunlar gibi:
+Çin iğneleri sıklıkla kas-iskelet sistemi rahatsızlıklarını ve ağrıyı tedavi etmek için kullanılır, örneğin: Baş ağrısı ve migren. Boyun ve sırt ağrısı dahil kronik ağrı. Diz osteoartriti (diz kireçlenmesi) gibi eklem ağrısı. Diş ağrısı. Ameliyat sonrası ağrı. Romatoid artrit. Kronik ağrı. Boyun ağrısı. Siyatik (siyatik sinir iltihabı). Omuz ağrısı. Ayrıca birçok durumda kullanımlarına ek olarak, şunlar gibi:
 
 Ameliyat sonrası bulantı ve kusma. Saman nezlesi ve egzama dahil alerjiler. Uykusuzluk (insomnia) depresyon, kaygı (anksiyete) ve yorgunluk. Sindirim bozuklukları, irritabl bağırsak sendromu, adet düzensizlikleri ve kısırlık dahil. Sigarayı bırakmaya yardımcı olma. Kilo kaybına yardımcı olma. Bağımlılık ve astım.

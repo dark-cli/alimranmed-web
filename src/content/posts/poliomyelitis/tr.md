@@ -1,8 +1,8 @@
 ---
-title: çocuk felci
+title: Çocuk felci
 description: >-
-  Çocuk felci sendromu, poliovirüsün neden olduğu nörolojik bir hastalıktır. Neyse ki ülkemizde başlayan sistematik aşı
-  kampanyaları sayesinde
+  Çocuk felci, poliovirüsün neden olduğu nörolojik bir hastalıktır. Sistematik aşı kampanyaları sayesinde neredeyse
+  ortadan kaldırılmıştır, ancak uzun vadeli etkileri sürebilir.
 order: 999
 legacyUrl: https://alimranmed.com/2020/12/05/poliomyelitis/
 publishedAt: "2020-12-05T17:32:35"
@@ -10,19 +10,19 @@ source: legacy-wp
 ---
 ![](/images/legacy/2020/12/54fcfbefb0b21d8c1acc74980729584a-258x300-1.jpg)
 
-Çocuk felci (poliomiyelit) sendromu, poliovirüsün neden olduğu nörolojik bir hastalıktır.
+Çocuk felci (poliomiyelit), poliovirüsün neden olduğu nörolojik bir hastalıktır.
 
-Neyse ki ülkemizde 1963'te başlayan sistematik aşı kampanyaları sayesinde 1960'ların sonundan itibaren neredeyse ortadan kaldırılmıştır. 1988'de son vaka bildirilmiştir. Son yıllarda göçmen nüfuslar arasında veya hâlâ endemik olan ülkelere seyahat sonrasında yeni vakalara rastlayabildik.
+Neyse ki ülkemizde 1963'te başlayan sistematik aşı kampanyaları sayesinde hastalık 1960'ların sonundan itibaren neredeyse ortadan kaldırılmıştır. Son vaka 1988'de kayıt altına alınmıştır. Son yıllarda göçmen nüfuslar arasında veya hastalığın hâlâ endemik olduğu ülkelere seyahat sonrasında yeni vakalara rastladık.
 
-Yıllar içinde çocuk felci geçiren kişilerde nörolojik hastalıkların yol açtığı hareket bozuklukları gelişebilir; örneğin skolyoz, sırtta tendon (kiriş) bozuklukları veya yardımla yürüme ya da tekerlekli sandalye kullanımına bağlı periferik sinir sıkışmaları; solunum yetmezliği, osteoporotik kırıklar ve sonunda işlev ve bağımsızlık kaybı.
+Yıllar içinde çocuk felci geçiren kişilerde, nörolojik hasara bağlı hareket bozuklukları gelişebilir; örneğin skolyoz (omurganın eğriliği), sırtta tendon (kiriş) bozuklukları veya periferik sinir sıkışması gibi; bu durumlar yürümek için yardıma ihtiyaç duyulmasına ya da tekerlekli sandalye kullanımına yol açabilir. Solunum yetmezliği, osteoporotik kırıklar ve sonunda işlev ve bağımsızlık kaybı da görülebilir.
 
-Bu kişilerin küçük bir bölümünde, polio sonrası sendrom olarak adlandırılan durum gelişebilir; bu, önceki güçsüzlüğe eklenen ve başka bir nedene bağlanamayan yeni bir kas güçsüzlüğü başlangıcıdır. Bu kas güçsüzlüğüne yorgunluk, kas ağrısı (miyalji), kas atrofisi (kas erimesi) ve sonrasında işlev kaybı eşlik edebilir veya etmeyebilir. Elektrokardiyogramlar incelendiğinde bunun gerçekten polio sonrası sendrom olduğunu görebiliriz (Halstead kriterleri).
+Bu kişilerin küçük bir bölümünde, polio sonrası sendrom olarak adlandırılan durum gelişebilir; bu, önceki güçsüzlüğe eklenen ve başka bir nedene bağlanamayan yeni bir kas güçsüzlüğünün başlangıcıdır. Bu kas güçsüzlüğüne yorgunluk, kas ağrısı (miyalji), kas atrofisi (kas erimesi) ve sonrasında işlev kaybı eşlik edebilir veya etmeyebilir. Elektromiyografi (EMG) yapıldığında bunun gerçekten polio sonrası sendrom olduğunu doğrulayabiliriz (Halstead kriterleri).
 
-Bu hastalıkta işlevsel gerilemenin önlenmesi; deneyimli bir klinik uzmanın takibi, endike cerrahiler ve iyi bir idame rehabilitasyonu ile birlikte, şu anda en iyi tedavi seçeneğidir.
+Bu hastalıkta şu anda en iyi tedavi seçeneği; deneyimli bir klinik uzmanın takibi, gerektiğinde cerrahi girişimler ve iyi bir idame rehabilitasyonu ile işlevsel gerilemenin önlenmesidir.
 
-Çocuk felci sendromu tedavisi:
+Çocuk felci tedavisi:
 
-Yönetim, deformitelerin önlenmesine veya en aza indirilmesine ve çocuğun evde ve toplumda kapasitesinin en üst düzeye çıkarılmasına odaklanmayı içerir. Çocuk en iyi, aşağıdaki sağlık profesyonellerini içerebilen çok disiplinli bir ekiple tedavi edilir:
+Yönetim, deformitelerin önlenmesine veya en aza indirilmesine ve çocuğun evde ve toplumda kapasitesinin en üst düzeye çıkarılmasına odaklanır. Çocuk en iyi, aşağıdaki sağlık profesyonellerini içerebilen multidisipliner bir ekiple tedavi edilir:
 
 Hemşire koordinatör. Beyin cerrahı – beyin ve omurilik ameliyatlarında uzmanlaşmış bir cerrah. Nöroloji uzmanı – beyin, omurilik ve sinir hastalıklarında uzmanlaşmış bir doktor. Fizik tedavi uzmanı ve ergoterapist. Ortopedi cerrahı – kaslar, bağlar (ligament), tendonlar (kiriş) ve kemik hastalıklarında uzmanlaşmış bir cerrah. Ortez uzmanı – breys ve atel yapımında uzmanlaşmış kişi.
 
@@ -30,7 +30,7 @@ Alimran Merkezi'nde şu tedavileri öneriyoruz:
 
 Fizik tedavi
 
-[Elektriksel stimülasyon](/services/physiotherapy/electrical-stimulation/) [Kısa ve uzun dalga tedavisi](/services/physiotherapy/shortwave-therapy/) [Soğuk lazer tedavisi](/services/physiotherapy/laser-therapy/) [Ultrason tedavisi (sonar)](/services/physiotherapy/ultrasound-therapy/) Jimnastik
+[Elektriksel stimülasyon](/services/physiotherapy/electrical-stimulation/) [Kısa ve uzun dalga tedavisi](/services/physiotherapy/shortwave-therapy/) [Soğuk lazer tedavisi](/services/physiotherapy/laser-therapy/) [Ultrason tedavisi](/services/physiotherapy/ultrasound-therapy/) Tedavi edici egzersiz
 
 Kayropraktik
 
@@ -52,4 +52,4 @@ Omurilik stimülasyonu
 
 Cerrahi girişimler şunları içerebilir:
 
-Ortopedi: kalça çıkıkları, ayak bileği ve ayak deformiteleri ile kasılmış kaslar. Beyin ve sinir cerrahisi: botox enjeksiyonu, selektif arka kök rezeksiyonu ve intratekal baklofen pompaları dahil spastisitenin giderilmesi.
+Ortopedi cerrahisi: kalça çıkıkları, ayak bileği ve ayak deformiteleri ile kasılmış kaslar. Beyin ve sinir cerrahisi: botox enjeksiyonu, selektif dorsal rizotomi (SDR) ve intratekal baklofen pompaları dahil spastisitenin giderilmesi.

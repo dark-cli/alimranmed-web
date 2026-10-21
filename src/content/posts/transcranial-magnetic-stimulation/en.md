@@ -1,6 +1,6 @@
 ---
 title: "Transcranial magnetic stimulation"
-description: "Did the operating system happen in your brain? Now a brain-mimicking technology to help it boost cells When we talk"
+description: "A technology that mimics the brain to help boost its nerve cells: magnetic pulses can help treat many different conditions."
 order: 999
 legacyUrl: "https://alimranmed.com/2020/01/03/transcranial-magnetic-stimulation/"
 publishedAt: "2020-01-03T07:25:09"
@@ -12,29 +12,28 @@ source: "legacy-wp"
 
 [▶ Watch on YouTube](https://www.youtube.com/watch?v=bmBV1r4_HrE)
 
-Did the operating system happen in your brain?  
-Now a brain-mimicking technology to help it boost cells
+Now a technology that mimics the brain  
+to help boost its nerve cells
 
-When we talk about controversial treatments, this technique is the most exciting for each of them, where magnetic waves and pulses can help treat many of the many conditions.  
-1\. Parkinson’s Disease  
-2\. Depression, fatigue, negative symptoms of schizophrenia, mental disorders, obsessive compulsive disorder  
-3\. Migraine or migraine  
+When we talk about controversial treatments, this technique is the most exciting of them all: magnetic waves and pulses can help treat many different conditions, including:  
+1\. Parkinson’s disease  
+2\. Depression, fatigue, negative symptoms of schizophrenia, psychiatric disorders, obsessive-compulsive disorder  
+3\. Migraine  
 4\. Addiction to smoking, alcohol or drugs  
 5\. Memory loss (Alzheimer’s disease) or frequent forgetfulness  
 6\. Generalized anxiety or panic disorder  
-7\. For tinnitus or auditory hallucinations  
-8\. Removement of paralyzed people and treatment of stroke effects  
-The brain is a group of neurons with trillions of connections that control our conscious and unconscious actions, and this network relies on the spread of electrical impulses along the nerve fibers.  
-Parts of this network are responsible for different aspects of our lives, such as feelings, vision, listening, muscle movement.  
-And the ability to process information  
-Parts of this network can be treated using magnetic pulses to change electrical events in the brain by using transcranial magnetic stimulation to increase the activity of certain areas of the brain. I.e. stimulating neurons in the brain thus increase communication between brain cells and form the necessary networks  
-ECTHow is it different from electroshock therapy? RTMS  
-Electrical currents are distributed throughout the brain and there is an increased risk of memory loss, while  
-Targeting a certain area of the brain, on the other hand, the unsubeffects are very minor, unlike the effects of electric shocks.  
-RTMs
+7\. Tinnitus or auditory hallucinations  
+8\. Restoring movement in paralyzed people and treating the effects of stroke  
+The brain is a network of neurons with trillions of connections that control our conscious and unconscious actions, and this network relies on the spread of electrical impulses along the nerve fibers.  
+Parts of this network are responsible for different aspects of our lives, such as feelings, vision, hearing and muscle movement,  
+and the ability to process information.  
+Parts of this network can be treated using magnetic pulses to change electrical events in the brain. Transcranial magnetic stimulation is used to increase the activity of certain areas of the brain, that is, to stimulate neurons in the brain, thereby increasing communication between brain cells and forming the necessary networks.  
+How is rTMS different from electroconvulsive therapy (ECT)?  
+With ECT, electrical currents are distributed throughout the brain and there is an increased risk of memory loss, while  
+rTMS targets a specific area of the brain, and its side effects are very minor, unlike the effects of electric shocks.
 
-What’s the session like?  
-The patient sits in a comfortable chair with a figure 8 file above the head delivers an electric magnet magnetic pulse without pain stimulating neurons in the area of your brain and may activate areas of the brain that have reduced their activity and get permanent results requires daily sessions five times a week for four to six a Sell  
+What is the session like?  
+The patient sits in a comfortable chair with a figure-8 coil above the head. The electromagnet delivers a painless magnetic pulse that stimulates neurons in the targeted area of your brain and may activate areas of the brain that have reduced their activity. Lasting results require daily sessions, five times a week, for four to six weeks.  
 • The first effects are already felt within 10 sessions (2-3 weeks)  
 • Long-term effect after 4-8 weeks of intensive treatment  
-• This technique leaves few or no side effects but quickly disappears (possible side effects of headaches and minor discomfort at the location where it is stimulated)
+• This technique leaves few or no side effects, and they disappear quickly (possible side effects are headache and minor discomfort at the site that is stimulated)

@@ -10,15 +10,15 @@ redesigned: true
 sections:
   - type: highlights
     items:
-      - label: What it is / ما هو
+      - label: What it is
         value: >-
           Pain arising from bones, ligaments, tendons, muscles, or nerves anywhere in the foot. The foot is a complex
           structure that bears the full body weight, making it vulnerable to injury and pain.
-      - label: Symptoms / العلامات
+      - label: Symptoms
         value: >-
           Localised pain, burning, numbness, or tingling. Pain may follow injury or overuse, or develop gradually from
           arthritis, nerve damage, or poorly fitting footwear.
-      - label: Approach / النهج
+      - label: Approach
         value: >-
           Clinical examination to identify the cause. Mild cases respond to home measures; severe or persistent pain
           needs medical evaluation to rule out fracture, infection, or nerve involvement.

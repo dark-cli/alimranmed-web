@@ -132,8 +132,8 @@ sections:
         caption: Brain CT scan showing a depress segments with intracerebral hemorrhage at left temporal region
       - kind: image
         src: /images/legacy/2019/06/14-1.jpg
-        alt: Brain CT scan at 7 postoperative day show disappears of depress segments, intracerebral, intraventricular hemorrhage
-        caption: Brain CT scan at 7 postoperative day show disappears of depress segments, intracerebral, intraventricular hemorrhage
+        alt: Brain CT scan on the 7th postoperative day shows resolution of the depressed fragments and of the intracerebral and intraventricular hemorrhage
+        caption: Brain CT scan on the 7th postoperative day shows resolution of the depressed fragments and of the intracerebral and intraventricular hemorrhage
       - kind: image
         src: /images/legacy/2019/06/10-1.jpg
         alt: Brain CT scan showing extensive intraventricular hemorrhage at left temporal region

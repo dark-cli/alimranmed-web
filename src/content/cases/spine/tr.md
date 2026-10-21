@@ -49,12 +49,13 @@ sections:
         caption: Titanyum implantlarla omurga sabitleme yapıldığını gösteren yan röntgen
   - type: prose
     body: >
-      40 yaşında erkek hasta, bir yıldır belirsiz sırt ağrısı ile her iki bacağında parestezi ve uyuşma yaşıyordu. Son
-      bir ayda idrarda stres tipi idrar kaçırma ve dışkılama güçlüğü gelişti. Hasta yürüyemez hale geldi. Klinik
-      muayenede kalça fleksörlerinde 3. derece kas gücü ve L1 duyu seviyesi saptandı. Dorsolomber MR'da D12-L1 düzeyinde
-      omuriliğe bastıran, kontrast tutmayan, dura (beyin zarı) içi küçük kistik nodül görüldü. D12-L1 dorsal laminektomi
-      yapıldıktan sonra dura kesilerek kitle tamamen çıkarıldı. Histopatoloji sonucu kistik dejenerasyon gösteren
-      schwannom olarak geldi. Ameliyattan sonraki bir ay içinde tüm belirtiler düzeldi.
+      40 yaşında erkek hasta, bir yıldır belirsiz sırt ağrısı, parestezi ve her iki bacakta uyuşma yakınmasıyla
+      başvurdu. Son bir ay içinde dışkılama güçlüğüyle birlikte stres tipi idrar kaçırma gelişti ve hasta yürüyemez hale
+      geldi. Klinik muayenede kalça fleksörlerinde 3. derece kas gücü ve L1 duyu seviyesi saptandı. Dorsolomber MR
+      (manyetik rezonans), D12-L1 düzeyinde omuriliğe bası yapan, kontrast tutmayan, küçük, intradural kistik bir nodül
+      gösterdi. D12-L1 dorsal laminektomiyi takiben dura (beyin zarı) açıldı ve kitle tamamen çıkarıldı. Histopatolojik
+      inceleme kistik dejenerasyon gösteren bir schwannom saptadı. Ameliyattan sonraki bir ay içinde tüm belirtiler
+      düzeldi.
   - type: media
     items:
       - kind: image

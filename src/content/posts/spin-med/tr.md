@@ -2,7 +2,7 @@
 title: SpineMED
 description: >-
   Bel ve boyun ağrısı fizik tedavi, kayropraktik tedavi veya ağrı yönetimi gibi geleneksel tedavi seçenekleriyle
-  yönetilebilir
+  yönetilebilir, ancak disk ağrısını tedavi etmek çoğu zaman daha zordur.
 order: 999
 legacyUrl: https://alimranmed.com/2020/01/03/spin-med/
 publishedAt: "2020-01-03T08:56:16"
@@ -13,42 +13,42 @@ source: legacy-wp
 
 Bel ve boyun ağrısı geleneksel tedavi seçenekleriyle yönetilebilir
 
-Fizik tedavi, kayropraktik tedavi veya ağrı yönetimi (ağrı tedavisi) gibi, ancak çoğu zaman disk ağrısı
+fizik tedavi, kayropraktik tedavi veya ağrı yönetimi (ağrı tedavisi) gibi, ancak disk ağrısı çoğu zaman
 
-daha zordur. Birçok hasta için temel disk hastalıklarını tedavi etmek, bu ağrı sorununu çözmenin tek en etkili yoludur.
+tedavi edilmesi daha zordur. Birçok hasta için altta yatan disk hastalığını tedavi etmek, bu ağrı sorununu çözmenin tek ve en etkili yoludur.
 
-Günlük aktiviteler sırasında omur diskleri sıkıştıkları ve sarıldıkları için dejenerasyona ve yaralanmaya yatkındır.
+Günlük aktiviteler sırasında omurga diskleri sıkıştıkları ve büküldükleri için dejenerasyona ve yaralanmaya yatkındır.
 
-Disk bozulduğunda jel benzeri çekirdek nemini kaybeder ve diskin yüksekliği azalır
+Bir disk dejenere olduğunda jel benzeri çekirdeği nemini kaybeder ve diskin yüksekliği azalır.
 
 Ayrıca disk dejenerasyonu, esnek dış kabuğun kırılgan hale gelmesine neden olur
 
-Çatlamaya yatkın hale gelirler; bu da disk hernisine (fıtık) yol açabilir. Şişmiş veya fıtıklaşmış diskler
+ve çatlamaya yatkın hale getirir; bu da disk hernisine (fıtık) yol açabilir. Şişmiş veya fıtıklaşmış diskler
 
-çoğu zaman omurilik sinirlerine baskı yaparak şiddetli ağrıya ve ciddi morbiditeye neden olur
+çoğu zaman omurilik sinirlerine baskı yaparak şiddetli ağrıya ve sinir köklerinden kaynaklanan belirtilere neden olur.
 
-®SpineMED artık hasarlı omurga segmentlerini hedeflemek ve vücudun ilaç ve ameliyata başvurmadan kendini iyileştirme yeteneğini artırmak amacıyla omurlar ile diskler arasını dekomprese etmek üzere tasarlanmıştır.
+®SpineMED, hasarlı omurga segmentlerini hedeflemek ve omurlar ile diskler arasındaki boşlukları dekomprese ederek vücudun ilaç ve ameliyata başvurmadan kendini iyileştirme yeteneğini artırmak üzere tasarlanmıştır.
 
-Hasarlı omur diskleri, sürekli baskı altında kaldıkları için (kişi kendini rahat hissetse bile) nadiren iyileşir; diskin düzelmesi için ideal tedavi baskıyı gidermek veya hasarlı diskin içindeki basıncı azaltmaktır.
+Hasarlı omurga diskleri, sürekli baskı altında kaldıkları için (kişi kendini rahat hissetse bile) nadiren iyileşir. Diskin düzelmesi için ideal tedavi baskıyı gidermek veya hasarlı diskin içindeki basıncı azaltmaktır.
 
 SpineMED kayropraktik nasıl çalışır?
 
-SpineMED®, normal çekme cihazlarında olduğu gibi refleks kas kasılmalarına veya spazmlara yol açmadan omurgayı stabilize edebilerek baskıyı giderir.
+SpineMED®, olağan traksiyon cihazlarında olduğu gibi refleks kas kasılmalarına veya spazmlara yol açmadan omurgayı stabilize ederek baskıyı giderir.
 
-Hastaya uygulanan gerilim her 2,5 saniyede bir izlenerek, daha iyi sonuçlar için her 20 saniyede bir ayarlamalar yapılabilir.
+Hastaya uygulanan gerilim her 2,5 saniyede bir izlenerek, daha iyi sonuçlar için her 20 saniyede bir ayarlama yapılabilir.
 
-SpineMED'i diğer çekme cihazlarından ayıran şey: gerilimleri neredeyse anında algılayıp kontrol edebilme yeteneği, onu diğer cihazlardan ve geleneksel yöntemlerden ayıran büyük bir farktır.
+SpineMED'i diğer traksiyon cihazlarından ayıran nedir? Gerilimi neredeyse anında algılayıp kontrol edebilme yeteneği, onu diğer cihazlardan ve geleneksel yöntemlerden ayıran büyük bir farktır.
 
-Dekompresyonun amacı nedir? Dekompresyonun hedefi sıvıların, besin maddelerinin ve oksijenin diske geri akmasına izin vermektir. Bu besin alışverişi süreci vücudun doğal onarımına yardımcı olur, iyileşme sürecini hızlandırabilir ve sonunda hasarlı omur disklerini iyileştirebilir.
+Dekompresyonun amacı nedir? Dekompresyonun hedefi, sıvıların, besin maddelerinin ve oksijenin diske geri akmasına izin vermektir. Bu besin alışverişi vücudun doğal yenilenmesini destekler, onarım sürecini hızlandırabilir ve sonunda hasarlı omurga disklerinin iyileşmesini sağlayabilir.
 
-Ayrıca yapı içindeki basıncın azaltılması, açılmış diskin çekirdeğinin veya fıtığın yeniden merkeze dönmesine yardımcı olarak sinir kökü üzerindeki baskıyı hafifletebilir; bu da sorunu, ağrıyı ya da uyuşmayı giderir.
+Ayrıca diskin içindeki basıncın azaltılması, şişmiş disk veya disk hernisinin çekirdeğini yeniden merkeze doğru çekmeye yardımcı olarak sinir kökü üzerindeki baskıyı hafifletebilir ve böylece sorunu, ağrıyı veya uyuşmayı giderebilir.
 
-Bu cihaz her ikisinin de tedavisine katkıda bulunur: boyun veya bel (lomber omurga) kıkırdaklarının büyük bir bölümünün doğal yerine dönmesine yardımcı olduğu için kaymanın ameliyatsız tedavisinde kullanılır
+Bu cihaz her ikisinin de tedavisine katkıda bulunur: Ameliyatsız disk kayması tedavisi; çünkü boyun veya bel diski malzemesinin büyük bir bölümünün doğal yerine dönmesine yardımcı olur
 
-Etkilenen omurlar arasındaki mesafeyi yeniden doğru konumlarına getirir. Omurların baskısından kaynaklanan sinir iltihabını (inflamasyon) azaltmaya çalışır, bölgedeki kan dolaşımını iyileştirir ve bölgedeki ağrının azalmasını sağlar. Sırt ağrısı ve boyun ağrısını analjezik kullanmadan tedavi eder; kas gerginliğini azaltır ve sırt ile boyun arasındaki sinir ve kasların durumunu iyileştirmeye yardımcı olur; omurganın her türlü deformitesi ve eğriliğinde kullanılır. Dört haftadan uzun süren, şişmiş fıtıklaşmış disklerin neden olduğu ağrı. Altı aydan uzun süren başarısız bel cerrahisi sendromuna bağlı tekrarlayan ağrı. Kayropraktik seanslar nasıl yapılır? ®SpineMED, 30 dakikalık 20 ila 25 seanstan oluşur. Bunlar güvenli ve ağrısız seanslardır.
+Etkilenen omurlar arasındaki mesafenin doğru konumuna geri getirilmesi. Omurların baskısından kaynaklanan sinir iltihabının (inflamasyon) azaltılması; bölgedeki kan dolaşımını iyileştirdiği için ağrıyı da azaltır. Sırt ağrısının ve boyun ağrısının analjezik kullanmadan tedavisi ve kas geriliminin giderilmesi; sırt ve boyun sinirlerinin ve kaslarının durumunun iyileşmesine yardımcı olur. Omurganın her türlü deformitesi ve eğriliği. Dört haftadan uzun süren, şişmiş disk veya disk hernisinin neden olduğu ağrı. Altı aydan uzun süren, başarısız bel cerrahisi sendromuna bağlı tekrarlayan ağrı. Kayropraktik seanslar nasıl yapılır? ®SpineMED, her biri 30 dakikalık 20 ila 25 seanstan oluşur. Bu seanslar güvenlidir ve ağrısızdır.
 
 ®SpineMED seansları genellikle 4 ila 6 hafta boyunca haftada 3-5 kez yapılır.
 
 Gerçekten de her seansın kümülatif bir etkisi vardır ve ağrıyı önemli ölçüde azaltmak üzere tasarlanmıştır.
 
-Dikkat edin: Seansınızın ilerleyişini gözlemlemek isterseniz bile, seanslar sırasında müzik dinleyerek veya en sevdiğiniz filmleri izleyerek rahatlamanızı teşvik ederiz.
+Not: Seanslarınız sırasında rahatlamayı teşvik ediyoruz: seansınız devam ederken müzik dinleyebilir veya en sevdiğiniz filmleri izleyebilirsiniz.

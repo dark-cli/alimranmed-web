@@ -9,13 +9,13 @@ redesigned: true
 sections:
   - type: highlights
     items:
-      - label: What it is / ما هو
+      - label: What it is
         value: >-
           A complex joint that allows extension, flexion, and rotation of the hand and forearm. Pain often follows overuse or repetitive movement.
-      - label: Symptoms / العلامات
+      - label: Symptoms
         value: >-
           Pain with specific movements, sometimes accompanied by stiffness, swelling, or weakness. The exact motion that triggers pain can be hard to describe.
-      - label: Approach / النهج
+      - label: Approach
         value: >-
           Clinical examination to identify the cause; imaging when indicated. Most cases are managed with activity modification, physiotherapy, or targeted injection.
   - type: prose

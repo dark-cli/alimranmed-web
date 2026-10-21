@@ -9,13 +9,13 @@ redesigned: true
 sections:
   - type: highlights
     items:
-      - label: What it is / ما هو
+      - label: What it is
         value: >-
           A multidisciplinary treatment combining child care and rehabilitation to reveal and develop existing capacities in children, rehabilitate detected disorders, and ensure the child can live independently at the highest possible level.
-      - label: Symptoms / العلامات
+      - label: Symptoms
         value: >-
           Cerebral palsy, spasticity, mental motor retardation, brachial plexus injury, torticollis, spina bifida, meningomyelocele, metabolic diseases with musculoskeletal problems, head trauma, microcephaly, hydrocephalus, and other neurological and muscular syndromes.
-      - label: Approach / النهج
+      - label: Approach
         value: >-
           Early, realistic, age-appropriate goal-setting with multidisciplinary care focusing on head control, sitting, crawling, walking, handgrip, education, social skills, adaptation, and personal care, while supporting both child and family.
   - type: prose

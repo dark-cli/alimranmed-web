@@ -38,9 +38,9 @@ sections:
         caption: Lateral X-ray showing spinal fixation with titanium hardware
   - type: prose
     body: >-
-      40 years old male had ill define backache, parasthesia and numbness of both legs for one year duration. During the last one month he developed stress incontinence of urine with difficulty in defecation. The patient became unable to walk. Clinical examination show grade 3 power of hip flexors with L1 sensory level.
+      A 40-year-old male had ill-defined backache, paresthesia and numbness of both legs for one year. During the last month he developed stress incontinence of urine with difficulty in defecation, and became unable to walk. Clinical examination showed grade 3 power of the hip flexors with an L1 sensory level.
 
-      Dorsolumbar MRI show intradural non enhanceing small cystic nodule at the D12-L1 level compressing the spinal cord. After D12-L1 dorsal laminectomy incision to the dura was done with total excision to the mass. Histopathological result revealed cystic degeneration schwannoma. Within one month postoperatively all the symptoms resolved.
+      Dorsolumbar MRI showed a small intradural non-enhancing cystic nodule at the D12-L1 level compressing the spinal cord. After a D12-L1 dorsal laminectomy, the dura was incised and the mass was totally excised. Histopathology revealed a schwannoma with cystic degeneration. Within one month after surgery all the symptoms resolved.
   - type: media
     items:
       - kind: image

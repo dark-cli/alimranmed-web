@@ -13,11 +13,11 @@ sections:
     body: >-
       Başta Irak olmak üzere, çevre kirliliği ve diğer etkenler nedeniyle kötü huylu hastalıklar küresel bir sorun
       haline gelmiştir. Beyin tümörleri, sınıflandırma açısından vücudun diğer bölgelerindeki tümörlerden farklı
-      değildir; iyi huylu ve kötü huylu tümörler vardır. Ancak beyin tümörlerinin ele alınış biçimi kendine özgüdür. Bu
+      değildir; iyi huylu ve kötü huylu tümörler vardır. Ancak beyin tümörlerinin ele alınması özellikle zordur. Bu
       nedenle beyin tümörleri çoğu insan için bir kâbustur. BT (bilgisayarlı tomografi) ve MR (manyetik rezonans) gibi
       görüntüleme yöntemleriyle tümörlerin erken tespitinde kaydedilen büyük ilerlemeler ile endoskopik cerrahi,
-      stereotaktik cerrahi ve Gamma Knife cerrahisi gibi yeni tedavi yöntemleri, beyin tümörlerinin çıkarılmasını
-      kolaylaştırmaktadır.
+      stereotaktik cerrahi ve Gamma Knife cerrahisi gibi yeni tedavi yöntemleri sayesinde beyin tümörlerine ulaşmak ve
+      çıkarmak artık daha kolaydır.
   - type: prose
     body: >-
       35 yaşındaki kadın hasta halsizlik ve burun, dudaklar, eller ve ayaklarda büyüme şikâyetiyle başvurdu. Tıbbi

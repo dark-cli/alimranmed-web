@@ -1,37 +1,35 @@
 ---
 title: Sinir ve hareket sistemi üzerindeki COVID-19 belirtileri
-description: >-
-  COVID-19 enfeksiyonu sonrasında hareket sistemi belirtileri mi var?? Belirtiler haftalarca, hatta aylarca sürer ve
-  şunları içerir:
+description: COVID-19 sonrasında hareket sistemi ve sinir sistemi belirtileri haftalarca, hatta aylarca sürebilir.
 order: 999
 legacyUrl: https://alimranmed.com/2020/11/23/covid-19-symptoms-on-the-nervous-and-locomotor-system/
 publishedAt: "2020-11-23T14:53:06"
 source: legacy-wp
 ---
-COVID-19 enfeksiyonu sonrasında hareket sistemi belirtileri mi var??
+COVID-19 sonrası hareket sistemi belirtileri
 
-Belirtiler haftalarca, hatta aylarca sürer ve şunları içerir: kronik ağrı ve hassasiyet, konsantrasyon ve hafıza sorunları, kas ağrısı (miyasteni), baş ağrısı ve daha fazlası …
+Belirtiler haftalarca, hatta aylarca sürer ve şunları içerir: kronik ağrı ve hassasiyet, konsantrasyon ve hafıza sorunları, kas ağrısı ve güçsüzlüğü, baş ağrısı ve daha fazlası …
 
-Bu tablo, hastanın üzerinden geçilmiş gibi hissetmesi olarak tanımlanır ve tıbbi olarak (Miyaljik ensefalomiyelit) veya (Kronik yorgunluk sendromu) olarak adlandırılır.
+Ağrı, hastanın sanki ezilmiş gibi hissetmesi olarak tanımlanır; bu durum tıbbi olarak miyaljik ensefalomiyelit veya kronik yorgunluk sendromu olarak adlandırılır.
 
-Belirtiler kronik hastalığı olan hastalarda artar: tansiyon, diyabet (şeker hastalığı), viral hepatit, bağışıklık hastalıkları ve diğerleri. Miyasteniye ek olarak bir yorgunluk dönemi ve odaklanma kaybı görülür.
+Belirtiler, kronik hastalığı olan hastalarda artar: yüksek tansiyon, diyabet (şeker hastalığı), viral hepatit, bağışıklık hastalıkları ve diğerleri. Kas güçsüzlüğüne ek olarak, bir yorgunluk ve odaklanma kaybı dönemi de görülür.
 
-Yürüme gibi ne kadar basit olursa olsun herhangi bir çabadan kısa bir süre sonra ortaya çıkan, egzersiz sonrası kötüleşme olarak bilinen durum
+Bu durum, yürümek gibi ne kadar basit olursa olsun herhangi bir çabadan kısa bir süre sonra ortaya çıkar ve efor sonrası halsizlik olarak bilinir.
 
-İyileşenlerin küçük bir yüzdesi aşırı sinirlilik, depresyon ve travma sonrası stres bozukluğu yaşayacaktır. Tedavisi tıbbi ilaçlarda, psikoterapide ve enerji düzeylerini korumak için egzersizin ilerleyişini dikkate alarak egzersiz oranını artırmada yatar.
+İyileşenlerin küçük bir bölümünde aşırı sinirlilik, depresyon ve travma sonrası stres bozukluğu görülür. Tedavisi ilaçlardan, psikoterapiden ve enerji düzeylerini korumak için egzersizi kademeli olarak artırmaya dikkat ederek egzersiz miktarını yükseltmekten oluşur.
 
-COVID-19 hastalarının takibine ilişkin, enfeksiyonları şiddetli seyreden 180 hastayla yapılan bir çalışmada sonuçlar, hastaların %87,4'ünün en az bir ay boyunca kronik yorgunluk ve nefes darlığı gibi bazı belirtilerin sürdüğünü bildirdiğini, bunun yaralanma öncesiyle karşılaştırmadan bağımsız olduğunu ve toplum kökenli pnömoni (CAP) hastalarının da aynı belirtileri gösterdiğini, dolayısıyla bunların yalnızca COVID-19 hastalarına özgü olmadığını göstermiştir
+Şiddetli COVID-19 enfeksiyonu geçiren ve takip edilen 180 hastayla yapılan bir çalışmada, hastaların %87,4'ü kronik yorgunluk ve nefes darlığı gibi bazı belirtilerin enfeksiyon öncesindeki durumlarından bağımsız olarak en az bir ay boyunca sürdüğünü bildirmiştir. Toplum kökenli pnömoni (CAP) hastalarında da aynı belirtiler görülür; dolayısıyla bu belirtiler yalnızca COVID-19 hastalarına özgü değildir.
 
-Travma sonrası olgular için birincil bakım??
+Enfeksiyon sonrası durumlarda birinci basamak bakım
 
-Covid, insan vücudunda birden fazla organı hedef alan hastalıklardan biri olarak kabul edilir; bu nedenle takip sinir sistemi – eklemler – dahiliye – kardiyoloji – sırt (torakal omurga) hastalıkları ve rehabilitasyon gibi bir dizi branşla birlikte yapılır
+COVID, insan vücudunda birden fazla organı hedef alan hastalıklardan biri olarak kabul edilir; bu nedenle takip, sinir sistemi, eklemler, dahiliye, kardiyoloji, göğüs hastalıkları ve rehabilitasyon gibi birçok uzmanlık dalıyla birlikte yürütülür.
 
-Birincil bakıma ilk belirtilerin ortaya çıkmasından 3 hafta sonra başlıyoruz ve 12 haftaya kadar sürüyor
+Birinci basamak bakıma ilk belirtilerin ortaya çıkmasından 3 hafta sonra başlıyoruz ve 12 haftaya kadar sürer.
 
-Tam kan testlerini ve Sedimantasyon (ESR), CRP (C-reaktif protein), Ferritin ve troponin için iltihap testlerini içerir
+Tam kan testleri ile iltihap göstergeleri olan ESR (Sedimantasyon), CRP (C-reaktif protein) ve ferritin ile troponin testlerini içerir.
 
-Yaralanması yoğun bakıma yatışı gerektiren hastalarda, hastalıkta gerileme veya ilerleme olup olmadığını izlemek için 12 hafta sonra akciğer grafisi gereklidir.
+Enfeksiyonu nedeniyle yoğun bakıma yatırılması gereken hastalarda, hastalığın gerileyip ilerlemediğini görmek için takipte 12 hafta sonra akciğer grafisi çekilmesi gereklidir.
 
-Akciğerlerde hasar olan hastalarda (röntgen ve oksimetre ile görüldüğü üzere) göğüs hastalıkları ve rehabilitasyon birimleriyle takip yapılır.
+Akciğer hasarı olan hastalarda (röntgen ve nabız oksimetresi ile görüldüğü üzere) takip, göğüs hastalıkları ve rehabilitasyon birimleriyle yapılır.
 
-Psikolojik desteğin ve travma sonrası bakımın önemini vurgulamak, vücuttaki bağışıklık düzeylerini yükselttiği için önemli bir öneridir.
+Enfeksiyon sonrası psikolojik destek ve bakımın öneminin vurgulanması, vücuttaki bağışıklık düzeylerini yükselttiği için önemli bir öneridir.
