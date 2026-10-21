@@ -13,7 +13,7 @@
  *   linkLabel?   — optional link text (CV page etc.)
  *   linkHref?    — optional link target (internal paths get localised)
  */
-import { localizedHref } from "../../lib/i18n";
+import { localizedHref, byLocale } from "../../lib/i18n";
 import type { Locale } from "../../lib/i18n";
 
 interface Props {
@@ -32,7 +32,7 @@ const {
 } = Astro.props;
 
 const sep = locale === "ar" ? "، " : ", ";
-const defaultLead = locale === "ar" ? "بإشراف" : "Led by";
+const defaultLead = byLocale(locale, { en: "Led by", ar: "بإشراف", tr: "Sorumlu:" });
 const lead = leadLabel ?? defaultLead;
 const url = linkHref && linkHref.startsWith("/") ? localizedHref(linkHref, locale) : linkHref;
 ---

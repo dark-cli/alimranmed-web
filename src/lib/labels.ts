@@ -46,6 +46,15 @@ export const NAV_LABELS = {
     cases:     "حالات مُعالَجة",
     siteName:  "مركز العمران الطبي",
   },
+  tr: {
+    home:      "Ana Sayfa",
+    blog:      "Blog",
+    treatments:"Hastalıklar ve girişimler",
+    services:  "Hizmetler",
+    doctors:   "Doktorlarımız",
+    cases:     "Vakalar",
+    siteName:  "Alimran Kliniği",
+  },
 } as const;
 
 export const TREATMENT_LABELS = {
@@ -72,6 +81,18 @@ export const TREATMENT_LABELS = {
     callBody:         "تحدث مع السكرتير لحجز استشارة حول هذه الحالة.",
     ctaHeading:       "احجز استشارة",
     ctaBody:          "يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل. يُرجى تحضير الصور الشعاعية السابقة وتقارير العمليات وقائمة الأدوية الحالية قبل الاتصال.",
+  },
+  tr: {
+    pathwayLabel:     "Yol",
+    reviewedByLabel:  "Gözden geçiren",
+    reviewer:         "Hussein Imran Mousa, danışman beyin ve sinir cerrahı",
+    readingTimeLabel: "Okuma süresi",
+    lastReviewedLabel:"Son gözden geçirme",
+    tocLabel:         "Bu sayfada",
+    callLabel:        "Görüşün",
+    callBody:         "Bu hastalıkla ilgili bir muayene için sekreterle görüşün.",
+    ctaHeading:       "Muayene randevusu alın",
+    ctaBody:          "Sekreter ilk randevuları klinik saatleri içinde planlar; lütfen aramayı yaparken önceki görüntüleme tetkiklerinizi, ameliyat notlarınızı ve güncel ilaç listenizi hazır bulundurun.",
   },
 } as const;
 
@@ -100,6 +121,18 @@ export const BLOG_LABELS = {
     ctaBody:          "تواصل معنا للحصول على المزيد من التفاصيل حول الموضوعات المغطاة في هذا المقال.",
     disclaimer:       "يوفر هذا المقال معلومات عامة ولا يحل محل الاستشارة الطبية المتخصصة. إذا كان لديك مخاوف صحية محددة، يرجى استشارة مقدم الرعاية الصحية.",
   },
+  tr: {
+    reviewedByLabel:  "Gözden geçiren",
+    reviewer:         "Hussein Imran Mousa, danışman beyin ve sinir cerrahı",
+    readingTimeLabel: "Okuma süresi",
+    lastReviewedLabel:"Son gözden geçirme",
+    tocLabel:         "Bu sayfada",
+    callLabel:        "Sorunuz mu var?",
+    callBody:         "Bu konuyu ekibimizle görüşmek için bize ulaşın.",
+    ctaHeading:       "Daha fazla bilgiye mi ihtiyacınız var?",
+    ctaBody:          "Bu makalede ele alınan konular hakkında daha fazla ayrıntı için ekibimize ulaşın.",
+    disclaimer:       "Bu makale genel bilgi sağlar ve profesyonel tıbbi tavsiyenin yerini tutmaz. Belirli sağlık sorunlarınız varsa lütfen bir sağlık uzmanına danışın.",
+  },
 } as const;
 
 export const CASE_LABELS = {
@@ -126,6 +159,18 @@ export const CASE_LABELS = {
     ctaHeading:       "احجز استشارة",
     ctaBody:          "يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل. يُرجى تحضير الصور الشعاعية السابقة وتقارير العمليات وقائمة الأدوية الحالية قبل الاتصال.",
     disclaimer:       "تلخّص هذه الصفحة حالات سريرية عُولجت في مركز العمران الطبي. أسماء المرضى محجوبة. ليست بديلاً عن التقييم الطبي الفردي.",
+  },
+  tr: {
+    reviewedByLabel:  "Gözden geçiren",
+    reviewer:         "Hussein Imran Mousa, danışman beyin ve sinir cerrahı",
+    readingTimeLabel: "Okuma süresi",
+    lastReviewedLabel:"Son gözden geçirme",
+    tocLabel:         "Bu sayfada",
+    callLabel:        "Bir vakayı görüşün",
+    callBody:         "Sevk veya benzer bir vaka için sekreterle görüşün.",
+    ctaHeading:       "Muayene randevusu alın",
+    ctaBody:          "Sekreter ilk randevuları klinik saatleri içinde planlar; lütfen aramayı yaparken önceki görüntüleme tetkiklerinizi, ameliyat notlarınızı ve güncel ilaç listenizi hazır bulundurun.",
+    disclaimer:       "Bu sayfa Alimran Tıp Merkezi'nde tedavi edilen klinik vakaları özetler. Hasta bilgileri anonimleştirilmiştir. Bireysel tıbbi değerlendirmenin yerini tutmaz.",
   },
 } as const;
 
@@ -155,5 +200,18 @@ export const SERVICE_LABELS = {
     ctaHeading:       "احجز استشارة",
     ctaBody:          "يقوم السكرتير بجدولة المواعيد الأولى خلال ساعات العمل.",
     disclaimer:       "تصف هذه الصفحة علاجاً يُقدَّم في مركز العمران الطبي وليست بديلاً عن التقييم الطبي الفردي. تُحدَّد الملاءمة بالمشاورة.",
+  },
+  tr: {
+    pathwayLabel:     "Kategori",
+    reviewedByLabel:  "Gözden geçiren",
+    reviewer:         "Hussein Imran Mousa, danışman beyin ve sinir cerrahı",
+    readingTimeLabel: "Okuma süresi",
+    lastReviewedLabel:"Son gözden geçirme",
+    tocLabel:         "Bu sayfada",
+    callLabel:        "Randevu alın",
+    callBody:         "Bu hizmet hakkında sekreterle görüşün.",
+    ctaHeading:       "Muayene randevusu alın",
+    ctaBody:          "Sekreter ilk randevuları klinik saatleri içinde planlar.",
+    disclaimer:       "Bu sayfa Alimran Tıp Merkezi'nde sunulan bir tedaviyi anlatır ve bireysel tıbbi değerlendirmenin yerini tutmaz. Uygunluğa muayene sırasında karar verilir.",
   },
 } as const;

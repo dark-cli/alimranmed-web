@@ -5,13 +5,11 @@
  * secretary" pill covers the same job. Fades in after ~200px scroll.
  */
 import { CONTACT } from "../consts";
-import { currentLocale } from "../lib/i18n";
+import { currentLocale, byLocale } from "../lib/i18n";
 
 const locale = currentLocale(Astro);
 const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
-const aria = locale === "ar"
-  ? `اتصل بالسكرتير — ${CONTACT.phones[0]}`
-  : `Call the secretary — ${CONTACT.phones[0]}`;
+const aria = `${byLocale(locale, { en: "Call the secretary", ar: "اتصل بالسكرتير", tr: "Sekreteri arayın" })} — ${CONTACT.phones[0]}`;
 ---
 
 <a class="call-fab" href={callHref} aria-label={aria}>

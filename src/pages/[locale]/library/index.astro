@@ -10,16 +10,16 @@
  */
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { topicOf, isLocale, localizedHref, currentLocale, DATE_LOCALES, LOCALES } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
-  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+  return LOCALES.map((locale) => ({ params: { locale } }));
 }
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
 const isAr = locale === "ar";
-const dateLocale = isAr ? "ar-IQ" : "en-US";
+const dateLocale = DATE_LOCALES[locale];
 
 type Kind = "blog" | "treatments" | "services" | "cases";
 
@@ -68,7 +68,7 @@ items.sort((a, b) => {
   const at = a.date?.getTime() ?? 0;
   const bt = b.date?.getTime() ?? 0;
   if (at !== bt) return bt - at;
-  return a.title.localeCompare(b.title, isAr ? "ar" : "en");
+  return a.title.localeCompare(b.title, locale);
 });
 
 const counts: Record<"all" | Kind, number> = {
@@ -97,6 +97,26 @@ const T = isAr ? {
   of:           "من",
   searchPh:     "ابحث في العناوين والوصف…",
   searchAria:   "ابحث في المكتبة",
+} : locale === "tr" ? {
+  title:        "Kütüphane — Alimran Tıp Merkezi",
+  description:  "Yayımladığımız her şeyin tek dizini: makaleler, hastalık sayfaları, girişimler ve vakalar.",
+  eyebrow:      "Kütüphane",
+  h1:           "Yayımladığımız her şey, tek bir yerde.",
+  lede:         "Tedavi ettiğimiz hastalıklar ve sunduğumuz girişimler üzerine makaleler ve klinik başvuru sayfaları, seçilmiş vaka sunumlarıyla birlikte. İhtiyacınız olanı bulmak için türe göre filtreleyin.",
+  filterLabel:  "Türe göre filtrele",
+  ariaFilter:   "Tür filtresi",
+  all:          "Tümü",
+  blog:         "Blog",
+  treatments:   "Hastalık",
+  services:     "Girişim",
+  cases:        "Vaka",
+  emptyFilter:  "Bu filtreye uyan kayıt henüz yok.",
+  emptyAll:     "Henüz yayımlanmış içerik yok.",
+  showMore:     "Daha fazla göster",
+  showing:      "Gösterilen",
+  of:           "/",
+  searchPh:     "Başlıklarda ve açıklamalarda ara…",
+  searchAria:   "Kütüphanede ara",
 } : {
   title:        "Library — Alimran Medical Center",
   description:  "A single index of everything we publish: articles, condition pages, procedures and cases.",

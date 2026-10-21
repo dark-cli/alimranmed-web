@@ -467,7 +467,7 @@ const testimonies = defineCollection({
 // Only loads en.md and ar.md at the root (no recursion), so it never
 // clashes with the sub-folder collections above.
 const home = defineCollection({
-  loader: glob({ pattern: "{en,ar}.md", base: "./src/content" }),
+  loader: glob({ pattern: "{en,ar,tr}.md", base: "./src/content" }),
   schema: pageBase.extend({
     sections: z.array(section).optional(),
   }),
@@ -477,16 +477,16 @@ const home = defineCollection({
 // split across mission / vision / values; those are now `prose` sections
 // inside a single page.
 const about = defineCollection({
-  loader: glob({ pattern: "{en,ar}.md", base: "./src/content/about" }),
+  loader: glob({ pattern: "{en,ar,tr}.md", base: "./src/content/about" }),
   schema: pageBase.extend({
     sections: z.array(section).optional(),
   }),
 });
 
-// Contact page — one bilingual pair at src/content/contact/{en,ar}.md.
+// Contact page — one bilingual pair at src/content/contact/{en,ar,tr}.md.
 // Hero + contact-strip + social-row + map, all expressed as blocks.
 const contact = defineCollection({
-  loader: glob({ pattern: "{en,ar}.md", base: "./src/content/contact" }),
+  loader: glob({ pattern: "{en,ar,tr}.md", base: "./src/content/contact" }),
   schema: pageBase.extend({
     sections: z.array(section).optional(),
   }),

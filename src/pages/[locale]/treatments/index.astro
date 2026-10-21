@@ -1,26 +1,28 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
-  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+  return LOCALES.map((locale) => ({ params: { locale } }));
 }
 
 const locale = currentLocale(Astro);
 const all = await getCollection("treatments");
 
-const entries = locale === "ar"
+const entries = locale !== "en"
   ? Array.from(new Set(all.map((e) => topicOf(e.id))))
-      .map((topic) => pickForLocale(all, topic, "ar"))
+      .map((topic) => pickForLocale(all, topic, locale))
       .filter((x): x is NonNullable<typeof x> => !!x)
       .map(({ entry }) => entry)
-      .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""))
+      .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || "", locale))
   : all
       .filter((e) => isLocale(e.id, "en"))
       .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
 
-const defaultCat = locale === "ar" ? "أخرى" : "Other";
+const defaultCat = byLocale(locale, { en: "Other", ar: "أخرى", tr: "Diğer" });
+// tr.md keeps English category slugs (brain, spine, pain, ...) — show Turkish names.
+const TR_CATS: Record<string, string> = { brain: "Beyin", spine: "Omurga", pain: "Ağrı", pediatric: "Çocuk", motor: "Hareket", other: "Diğer" };
 const grouped = new Map<string, typeof entries>();
 for (const t of entries) {
   const cat = t.data.category ?? defaultCat;
@@ -30,20 +32,23 @@ for (const t of entries) {
 ---
 
 <BaseLayout
-  title={locale === "ar" ? "ما نعالج — مركز العمران الطبي" : "What We Treat — Alimran Medical Center"}
-  description={locale === "en" ? "Browse all conditions treated at Alimran Medical Center — neurology, spine, pain and musculoskeletal disorders across an A–Z index." : "تصفّح جميع الحالات التي يعالجها مركز العمران الطبي — أمراض الأعصاب والعمود الفقري والألم والجهاز العضلي الهيكلي في فهرس أبجدي."}
+  title={byLocale(locale, { en: "What We Treat — Alimran Medical Center", ar: "ما نعالج — مركز العمران الطبي", tr: "Neleri Tedavi Ediyoruz — Alimran Tıp Merkezi" })}
+  description={byLocale(locale, { en: "Browse all conditions treated at Alimran Medical Center — neurology, spine, pain and musculoskeletal disorders across an A–Z index.", ar: "تصفّح جميع الحالات التي يعالجها مركز العمران الطبي — أمراض الأعصاب والعمود الفقري والألم والجهاز العضلي الهيكلي في فهرس أبجدي.", tr: "Alimran Tıp Merkezi'nde tedavi edilen tüm hastalıklara göz atın — nöroloji, omurga, ağrı ve kas-iskelet sistemi hastalıkları A–Z dizininde." })}
 >
   <div class="container page">
     <header class="page-head">
-      <h1>{locale === "ar" ? "ما نعالج" : "What We Treat"}</h1>
+      <h1>{byLocale(locale, { en: "What We Treat", ar: "ما نعالج", tr: "Neleri Tedavi Ediyoruz" })}</h1>
       {locale === "en" && (
         <p>A comprehensive catalogue of neurological, pain, and musculoskeletal conditions managed by our consultant-led team.</p>
+      )}
+      {locale === "tr" && (
+        <p>Danışman liderliğindeki ekibimizin yönettiği nörolojik, ağrı ve kas-iskelet sistemi hastalıklarının kapsamlı bir kataloğu.</p>
       )}
     </header>
 
     {[...grouped.entries()].map(([category, items]) => (
       <section class="category">
-        <h2>{locale === "en" ? category.charAt(0).toUpperCase() + category.slice(1) : category}</h2>
+        <h2>{locale === "ar" ? category : locale === "tr" ? (TR_CATS[category] ?? category.charAt(0).toUpperCase() + category.slice(1)) : category.charAt(0).toUpperCase() + category.slice(1)}</h2>
         <ul class="condition-list">
           {items.map((t) => (
             <li>

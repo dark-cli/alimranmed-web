@@ -11,7 +11,7 @@
 import type { Locale } from "./i18n";
 import { localizedHref } from "./i18n";
 import { NAV_LABELS, TREATMENT_LABELS, SERVICE_LABELS, BLOG_LABELS, CASE_LABELS } from "./labels";
-import { TREATMENT_PATHWAY } from "./pathways";
+import { TREATMENT_PATHWAY, SERVICE_CATEGORY_TR } from "./pathways";
 import { conditionPage, procedurePage, articlePage, type PageInput } from "./schema";
 
 export type ArticleCollection = "treatments" | "services" | "blog" | "cases";
@@ -51,6 +51,12 @@ export interface ArticleConfig {
 
 const home = (locale: Locale) => ({ label: NAV_LABELS[locale].home, href: localizedHref("/", locale) });
 
+/** Category label for services. tr.md keeps the EN slug, so map it to Turkish. */
+const serviceCategory = (raw: string | undefined, locale: Locale): string => {
+  if (locale === "tr") return (raw && SERVICE_CATEGORY_TR[raw]) || raw || "Hizmet";
+  return raw || (locale === "ar" ? "خدمة" : "Service");
+};
+
 const dateFromPublishedAt = (entry: any): Date | undefined =>
   entry.data.publishedAt as Date | undefined;
 
@@ -78,7 +84,9 @@ export const ARTICLE_REGISTRY: Record<ArticleCollection, ArticleConfig> = {
       return { label: TREATMENT_LABELS[locale].pathwayLabel, value: pw.pathway };
     },
     disclaimer: (entry, locale) =>
-      locale === "ar"
+      locale === "tr"
+        ? `Bu sayfa ${entry.data.title} hakkında genel bilgi sağlar ve bireysel tıbbi değerlendirmenin yerini tutmaz. Belirtileriniz şiddetliyse veya kötüleşiyorsa vakit kaybetmeden bir hekime başvurun.`
+        : locale === "ar"
         ? `تقدم هذه الصفحة معلومات عامة حول ${entry.data.title} وليست بديلاً عن التقييم الطبي الفردي. إذا كانت أعراضك شديدة أو تزداد سوءاً، فاتصل بطبيب على الفور.`
         : `This page provides general information about ${(entry.data.title as string).toLowerCase()} and is not a substitute for individual medical assessment. If your symptoms are severe or worsening, contact a clinician promptly.`,
     dateField: dateFromPublishedAt,
@@ -88,7 +96,7 @@ export const ARTICLE_REGISTRY: Record<ArticleCollection, ArticleConfig> = {
     labels: (locale) => SERVICE_LABELS[locale],
     schemaFn: procedurePage,
     breadcrumbs: (entry, locale) => {
-      const cat = entry.data.category || (locale === "ar" ? "خدمة" : "Service");
+      const cat = serviceCategory(entry.data.category, locale);
       return [
         home(locale),
         { label: NAV_LABELS[locale].services, href: localizedHref("/services/", locale) },
@@ -96,7 +104,7 @@ export const ARTICLE_REGISTRY: Record<ArticleCollection, ArticleConfig> = {
       ];
     },
     firstMetaRow: (entry, locale) => {
-      const cat = entry.data.category || (locale === "ar" ? "خدمة" : "Service");
+      const cat = serviceCategory(entry.data.category, locale);
       return { label: SERVICE_LABELS[locale].pathwayLabel, value: cat };
     },
     disclaimer: (_, locale) => SERVICE_LABELS[locale].disclaimer,

@@ -1,34 +1,35 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
-  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+  return LOCALES.map((locale) => ({ params: { locale } }));
 }
 
 const locale = currentLocale(Astro);
 const all = await getCollection("cases");
 
-const cases = locale === "ar"
+const cases = locale !== "en"
   ? Array.from(new Set(all.map((e) => topicOf(e.id))))
-      .map((topic) => pickForLocale(all, topic, "ar"))
+      .map((topic) => pickForLocale(all, topic, locale))
       .filter((x): x is NonNullable<typeof x> => !!x)
       .map(({ entry }) => entry)
-      .sort((a, b) => a.data.title.localeCompare(b.data.title))
+      .sort((a, b) => a.data.title.localeCompare(b.data.title, locale))
   : all
       .filter((e) => isLocale(e.id, "en"))
       .sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <BaseLayout
-  title={locale === "ar" ? "الحالات — مركز العمران الطبي" : "Cases — Alimran Medical Center"}
-  description={locale === "en" ? "Clinical cases from Alimran Medical Center — real patient outcomes in neurosurgery, spine, pain management and rehabilitation." : "حالات سريرية من مركز العمران الطبي — نتائج علاج حقيقية في جراحة الأعصاب والعمود الفقري وعلاج الألم والتأهيل."}
+  title={byLocale(locale, { en: "Cases — Alimran Medical Center", ar: "الحالات — مركز العمران الطبي", tr: "Vakalar — Alimran Tıp Merkezi" })}
+  description={byLocale(locale, { en: "Clinical cases from Alimran Medical Center — real patient outcomes in neurosurgery, spine, pain management and rehabilitation.", ar: "حالات سريرية من مركز العمران الطبي — نتائج علاج حقيقية في جراحة الأعصاب والعمود الفقري وعلاج الألم والتأهيل.", tr: "Alimran Tıp Merkezi'nden klinik vakalar — beyin ve sinir cerrahisi, omurga, ağrı tedavisi ve rehabilitasyonda gerçek hasta sonuçları." })}
 >
   <div class="container page">
     <header class="page-head">
-      <h1>{locale === "ar" ? "الحالات" : "Cases"}</h1>
+      <h1>{byLocale(locale, { en: "Cases", ar: "الحالات", tr: "Vakalar" })}</h1>
       {locale === "en" && <p class="lede">Selected clinical cases across our specialties.</p>}
+      {locale === "tr" && <p class="lede">Uzmanlık alanlarımızdan seçilmiş klinik vakalar.</p>}
     </header>
 
     <div class="grid">

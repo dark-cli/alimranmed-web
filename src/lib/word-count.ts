@@ -26,11 +26,12 @@ export function readingTimeAr(minutes: number): string {
 }
 
 /** Returns a locale-appropriate reading-time string from a raw word count. */
-export function articleReadingLabel(wordCount: number, locale: "en" | "ar"): string {
+export function articleReadingLabel(wordCount: number, locale: "en" | "ar" | "tr"): string {
   if (locale === "ar") {
     return readingTimeAr(Math.max(1, Math.round(wordCount / 140)));
   }
-  return `${Math.max(1, Math.round(wordCount / 180))} min read`;
+  const mins = Math.max(1, Math.round(wordCount / 180));
+  return locale === "tr" ? `${mins} dk` : `${mins} min read`;
 }
 
 export function extractBodyImages(body: string | undefined): { alt: string; src: string }[] {

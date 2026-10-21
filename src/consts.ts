@@ -2,6 +2,8 @@ export const SITE_TITLE = "Alimran Clinic | Neurology & Musculoskeletal";
 export const SITE_NAME  = "Alimran Clinic";
 export const SITE_DESCRIPTION =
   "Alimran Clinic in Basra, Iraq — specialist care for neurology, spine, and pain. Led by Consultant Neurosurgeon Dr. Hussein Imran Mousa.";
+export const SITE_DESCRIPTION_TR =
+  "Basra, Irak'taki Alimran Kliniği — beyin, omurga ve ağrı hastalıkları için uzmanlık bakımı. Danışman Beyin ve Sinir Cerrahı Dr. Hussein Imran Mousa tarafından yürütülür.";
 export const SITE_DESCRIPTION_AR =
   "مركز العمران الطبي في البصرة، العراق — رعاية تخصصية لأمراض الأعصاب والعمود الفقري والألم، بإشراف استشاري جراحة الدماغ والأعصاب د. حسين عمران موسى.";
 
@@ -12,6 +14,7 @@ export const CONTACT = {
   addresses: {
     en: "Basra, Breaha, Alnkba Medical Collection",
     ar: "العراق, بصرة, بريه, مجمع النخبة",
+    tr: "Basra, Breaha, Alnkba Tıp Kompleksi",
   },
   social: {
     youtube: "https://youtube.com/channel/UCjlmKURD6OO5_rRyKMm6lxA",

@@ -6,7 +6,7 @@
 
 export const CLINIC_ID = "https://alimran.clinic/#clinic";
 
-type Locale = "en" | "ar";
+import type { Locale } from "./i18n";
 type FaqItem = { question: string; answer: string };
 
 export interface PageInput {

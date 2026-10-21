@@ -6,10 +6,12 @@ import { visit } from 'unist-util-visit';
  * Routing structure:
  * - English: /en/ prefix (e.g., /en/services/)
  * - Arabic: /ar/ prefix (e.g., /ar/services/)
+ * - Turkish: /tr/ prefix (e.g., /tr/services/)
  * - Root /: auto-redirects to device language or /en/ fallback
  *
  * For .../en.md files: add /en prefix
  * For .../ar.md files: add /ar prefix
+ * For .../tr.md files: add /tr prefix
  *
  * Smart handling: strips any existing language prefix (/en/, /ar/) and
  * reprocesses to match the current file's locale. This fixes hardcoded
@@ -17,8 +19,9 @@ import { visit } from 'unist-util-visit';
  */
 export function remarkLocalizeLinks() {
   return (tree, file) => {
-    // Determine locale from file path: .../en.md or .../ar.md
-    const locale = file.history?.[0]?.includes('/ar.md') ? 'ar' : 'en';
+    // Determine locale from file path: .../en.md, .../ar.md or .../tr.md
+    const m = (file.history?.[0] ?? '').match(/\/(ar|tr)\.md$/);
+    const locale = m ? m[1] : 'en';
 
     visit(tree, ['link', 'definition'], (node) => {
       let url = node.url;
@@ -28,30 +31,12 @@ export function remarkLocalizeLinks() {
         // Skip anchor-only links
         if (url.includes('#')) return;
 
-        // Strip any existing language prefix (/en/ or /ar/)
+        // Strip any existing language prefix (/en/, /ar/ or /tr/)
         // This normalizes hardcoded language links
-        const strippedUrl = url.replace(/^\/(?:en|ar)(?=\/|$)/, '') || '/';
+        const strippedUrl = url.replace(/^\/(?:en|ar|tr)(?=\/|$)/, '') || '/';
 
-        // Apply the correct locale prefix based on current file's locale
-        if (locale === 'ar') {
-          // Arabic files: add /ar prefix
-          if (strippedUrl === '/') {
-            node.url = '/ar/';
-          } else if (!strippedUrl.startsWith('/ar/')) {
-            node.url = `/ar${strippedUrl}`;
-          } else {
-            node.url = strippedUrl;
-          }
-        } else {
-          // English files: add /en prefix
-          if (strippedUrl === '/') {
-            node.url = '/en/';
-          } else if (!strippedUrl.startsWith('/en/')) {
-            node.url = `/en${strippedUrl}`;
-          } else {
-            node.url = strippedUrl;
-          }
-        }
+        // Apply the current file's locale prefix
+        node.url = strippedUrl === '/' ? `/${locale}/` : `/${locale}${strippedUrl}`;
       }
     });
   };

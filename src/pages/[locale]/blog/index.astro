@@ -1,20 +1,20 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { topicOf, isLocale, localizedHref, currentLocale, DATE_LOCALES, LOCALES } from "../../../lib/i18n";
 import { readingMinutes, readingTimeAr } from "../../../lib/word-count";
 import { BLOG_PATHWAY, PATHWAY_LABELS } from "../../../lib/pathways";
 
 export async function getStaticPaths() {
-  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+  return LOCALES.map((locale) => ({ params: { locale } }));
 }
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
 const isAr = locale === "ar";
 
-const PATHWAY_LABEL = isAr ? PATHWAY_LABELS.ar : PATHWAY_LABELS.en;
-const dateLocale = isAr ? "ar-IQ" : "en-US";
+const PATHWAY_LABEL = PATHWAY_LABELS[locale];
+const dateLocale = DATE_LOCALES[locale];
 const wpm = isAr ? 140 : undefined;
 
 const blogsRaw = (await getCollection("blog"))
@@ -35,7 +35,7 @@ const blogs = blogsRaw.map((entry) => {
     href: L(`/blog/${topic}/`),
     pathway,
     pathwayLabel: PATHWAY_LABEL[pathway],
-    readingLabel: isAr ? readingTimeAr(mins) : `${mins} min`,
+    readingLabel: isAr ? readingTimeAr(mins) : locale === "tr" ? `${mins} dk` : `${mins} min`,
     publishedLabel: entry.data.publishedAt
       ? entry.data.publishedAt.toLocaleDateString(dateLocale, { year: "numeric", month: "short", day: "numeric" })
       : "",
@@ -64,6 +64,23 @@ const T = isAr ? {
   arrow:       "←",
   emptyFilter: "لا توجد مقالات تطابق هذه التصفية.",
   emptyAll:    "ستظهر المقالات هنا بعد اكتمال ترحيل المدونة.",
+} : locale === "tr" ? {
+  title:       "Blog — Alimran Tıp Merkezi",
+  description: "Nöroloji, omurga ve ağrı tıbbı üzerine tıbbi makaleler — hastaların ilk randevudan önce bir hastalığı veya girişimi anlamasına yardımcı olmak için yazıldı.",
+  eyebrow:     "Makaleler",
+  h1:          "Klinikten tıbbi makaleler.",
+  lede:        "Tedavi ettiğimiz hastalıklar ve sunduğumuz girişimler üzerine sade dille yazılmış yazılar — hastalar ilk randevuya terimlerin ne anlama geldiğini bilerek gelsin diye hazırlandı.",
+  filterLabel: "Yola göre filtrele",
+  ariaFilter:  "Yol filtresi",
+  all:         "Tümü",
+  brain:       "Beyin",
+  spine:       "Omurga",
+  pain:        "Ağrı",
+  other:       "Diğer",
+  latest:      "Son makale",
+  arrow:       "→",
+  emptyFilter: "Bu filtreye uyan makale henüz yok.",
+  emptyAll:    "Yazılar blog aktarımı tamamlandıktan sonra burada görünecek.",
 } : {
   title:       "Blog — Alimran Medical Center",
   description: "Medical articles on neurology, spine and pain medicine — written to help patients understand a condition or a procedure before their first appointment.",

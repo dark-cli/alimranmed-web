@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../../lib/i18n";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES } from "../../../../lib/i18n";
 import { NAV_LABELS } from "../../../../lib/labels";
+import { SERVICE_CATEGORY_TR } from "../../../../lib/pathways";
 
 export async function getStaticPaths() {
   const all = await getCollection("services");
@@ -18,29 +19,33 @@ export async function getStaticPaths() {
     enByCategory.get(category)!.push(entry);
   }
 
-  // AR paths
+  // AR / TR paths
   const topics = Array.from(new Set(all.map((e) => topicOf(e.id))));
-  const arPickups = topics
-    .map((topic) => pickForLocale(all, topic, "ar"))
-    .filter((x): x is NonNullable<typeof x> => !!x);
-  const arEntries = arPickups.map(({ entry }) => entry);
-  const arByCategory = new Map<string, typeof arEntries>();
-  for (const entry of arEntries) {
-    const topic = topicOf(entry.id);
-    if (!topic.includes("/")) continue;
-    const [category] = topic.split("/");
-    if (!arByCategory.has(category)) arByCategory.set(category, []);
-    arByCategory.get(category)!.push(entry);
-  }
+  const translated = LOCALES.filter((l) => l !== "en").map((loc) => {
+    const pickups = topics
+      .map((topic) => pickForLocale(all, topic, loc))
+      .filter((x): x is NonNullable<typeof x> => !!x);
+    const byCategory = new Map<string, any[]>();
+    for (const { entry } of pickups) {
+      const topic = topicOf(entry.id);
+      if (!topic.includes("/")) continue;
+      const [category] = topic.split("/");
+      if (!byCategory.has(category)) byCategory.set(category, []);
+      byCategory.get(category)!.push(entry);
+    }
+    return { loc, pickups, byCategory };
+  });
 
   const paths: Array<{ params: { locale: string; category: string }; props: any }> = [];
 
   for (const [category, entries] of enByCategory.entries()) {
     paths.push({ params: { locale: "en", category }, props: { category, entries } });
   }
-  for (const [category, entries] of arByCategory.entries()) {
-    const categoryPickup = arPickups.find((p) => topicOf(p.entry.id) === category);
-    paths.push({ params: { locale: "ar", category }, props: { category, entries, categoryEntry: categoryPickup?.entry } });
+  for (const { loc, pickups, byCategory } of translated) {
+    for (const [category, entries] of byCategory.entries()) {
+      const categoryPickup = pickups.find((p) => topicOf(p.entry.id) === category);
+      paths.push({ params: { locale: loc, category }, props: { category, entries, categoryEntry: categoryPickup?.entry } });
+    }
   }
 
   return paths;
@@ -58,8 +63,8 @@ const prettyCategory = category
   .split("-")
   .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
   .join(" ");
-const categoryTitle = locale === "ar"
-  ? (categoryEntry?.data.title || prettyCategory)
+const categoryTitle = locale !== "en"
+  ? (categoryEntry?.data.title || SERVICE_CATEGORY_TR[category] || prettyCategory)
   : prettyCategory;
 
 const BLURB: Record<string, string> = {
@@ -94,17 +99,35 @@ const BLURB_AR: Record<string, string> = {
   "botox":               "حقن البوتوكس لعلاج التشنج العضلي والصداع والألم المزمن في مركز العمران الطبي بالبصرة.",
   "acupuncture":         "الوخز بالإبر الصينية لعلاج الألم المزمن والحالات الالتهابية في مركز العمران الطبي بالبصرة.",
 };
-const blurb = locale === "en"
+const BLURB_TR: Record<string, string> = {
+  "brain-stimulation":   "Manyetik (TMS) ve düşük akımlı (tDCS) tekniklerle invazif olmayan beyin modülasyonu",
+  "chiropractic":        "SPINMED ve Sigma sistemleriyle omurga hizalama ve dekompresyon",
+  "exercises":           "Vücut bölgesine göre düzenlenmiş terapötik egzersiz programları",
+  "fitness":             "Vücut şekillendirme ve cerrahi olmayan estetik işlemler",
+  "ozone-therapy":       "İltihap, diskojenik ağrı ve osteoartrit için oksijen–ozon uygulamaları",
+  "pain-management":     "Kronik ağrıya girişimsel ve multidisipliner yaklaşımlar",
+  "physiotherapy":       "Robot destekli rehabilitasyon, lazer, ultrason ve elektroterapi",
+  "radiofrequency":      "Kronik eklem ve omurga ağrısı için minimal invazif nörotomi",
+  "regenerative-medicine":"Bağ ve eklem iyileşmesi için PRP, proloterapi ve kök hücre teknikleri",
+  "rehabilitation":      "İnme, omurilik yaralanması ve diğer durumlarda danışmanlar önderliğinde multidisipliner iyileşme bakımı",
+  "steroid-injection":   "Eklem ve omurga ağrısı için görüntü eşliğinde steroid ve anestezik bloklar",
+  "surgery":             "Beyin ve sinir cerrahisi ile omurga cerrahisi — minimal invazif işlemlerden karmaşık kraniyotomiye",
+  "botox":               "Spastisite, baş ağrısı ve kronik ağrı için botulinum toksini uygulamaları",
+  "acupuncture":         "Kronik ağrı ve inflamatuvar durumlar için geleneksel Çin iğne tedavisi",
+};
+const blurb = locale === "tr"
+  ? (BLURB_TR[category] ? `${BLURB_TR[category]}, Basra'daki Alimran Tıp Merkezi'nde.` : `${categoryTitle} hizmetleri, Basra'daki Alimran Tıp Merkezi'nde.`)
+  : locale === "en"
   ? (BLURB[category] ? `${BLURB[category].replace(/\.$/, "")} at Alimran Medical Center in Basra.` : `${prettyCategory} services at Alimran Medical Center in Basra.`)
   : (BLURB_AR[category] ?? `خدمات ${categoryTitle} في مركز العمران الطبي بالبصرة.`);
-const siteName = locale === "ar" ? "مركز العمران الطبي" : "Alimran Medical Center";
+const siteName = byLocale(locale, { en: "Alimran Medical Center", ar: "مركز العمران الطبي", tr: "Alimran Tıp Merkezi" });
 ---
 
 <BaseLayout title={`${categoryTitle} — ${siteName}`} description={blurb}>
   <div class="container page">
     <header class="page-head">
       <a class="back" href={localizedHref("/services/", locale)}>
-        {locale === "ar" ? `← ${nav.services}` : "← All services"}
+        {byLocale(locale, { en: "← All services", ar: `← ${nav.services}`, tr: "← Tüm hizmetler" })}
       </a>
       <h1>{categoryTitle}</h1>
       {blurb && <p class="lede">{blurb}</p>}
@@ -116,6 +139,7 @@ const siteName = locale === "ar" ? "مركز العمران الطبي" : "Alimr
           <h3>{entry.data.title}</h3>
           {entry.data.description && <p>{entry.data.description}</p>}
           {locale === "en" && <span class="learn-more">Read more →</span>}
+          {locale === "tr" && <span class="learn-more">Devamını oku →</span>}
         </a>
       ))}
     </div>

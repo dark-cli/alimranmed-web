@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, LOCALES } from "../../../lib/i18n";
 import { NAV_LABELS } from "../../../lib/labels";
 import Image from "../../../components/Image.astro";
 
 export async function getStaticPaths() {
-  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+  return LOCALES.map((locale) => ({ params: { locale } }));
 }
 
 const locale = currentLocale(Astro);
@@ -14,9 +14,9 @@ const nav = NAV_LABELS[locale];
 const L = (href: string) => localizedHref(href, locale);
 
 const all = await getCollection("doctors");
-const doctors = locale === "ar"
+const doctors = locale !== "en"
   ? Array.from(new Set(all.map((e) => topicOf(e.id))))
-      .map((topic) => pickForLocale(all, topic, "ar"))
+      .map((topic) => pickForLocale(all, topic, locale))
       .filter((x): x is NonNullable<typeof x> => !!x)
       .map(({ entry }) => entry)
       .sort((a, b) => a.data.order - b.data.order)
@@ -37,6 +37,19 @@ const T = locale === "ar" ? {
   viewProfile:      "عرض الملف الكامل",
   ctaArrow:         "←",
   empty:            "سيظهر الأطباء هنا بعد إضافتهم.",
+} : locale === "tr" ? {
+  title:            `${nav.doctors} — Alimran Tıp Merkezi`,
+  description:      "Alimran Kliniği'nde danışman liderliğinde beyin ve sinir cerrahisi, omurga ve ağrı tıbbı — ekiple tanışın.",
+  eyebrow:          "Ekibimiz",
+  h1:               "Küçük bir uzman ekipten danışman liderliğinde bakım.",
+  lede:             "Alimran Kliniği'ndeki her hasta, vardiyalar arasında el değiştirmeden, adı belli bir danışman tarafından değerlendirilir ve takip edilir. İlk randevudan iyileşmeye kadar sizinle ilgilenen doktorlarla tanışın.",
+  memberships:      "Üyelikler",
+  memberCount:      (n: number) => `${n} uluslararası dernek`,
+  languages:        "Diller",
+  langJoiner:       ", ",
+  viewProfile:      "Profilin tamamını görüntüle",
+  ctaArrow:         "→",
+  empty:            "Doktorlar eklendiğinde burada görünecek.",
 } : {
   title:            "Our doctors — Alimran Medical Center",
   description:      "Consultant-led neurosurgery, spine and pain medicine at Alimran Clinic — meet the team.",

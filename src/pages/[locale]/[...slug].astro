@@ -18,7 +18,7 @@
  */
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import {
-  topicOf, isLocale, pickForLocale, currentLocale, localizedHref, type Locale,
+  topicOf, isLocale, pickForLocale, currentLocale, localizedHref, byLocale, LOCALES, DATE_LOCALES, type Locale,
 } from "../../lib/i18n";
 import { wordsIn, articleReadingLabel, extractBodyImages } from "../../lib/word-count";
 import { buildToc } from "../../lib/toc";
@@ -51,15 +51,17 @@ export async function getStaticPaths() {
       });
     }
 
-    // AR — pick either the AR file or fall back to EN with a banner.
+    // AR / TR — pick either the translated file or fall back to EN with a banner.
     const topics = [...new Set(items.map((e) => topicOf(e.id)))];
-    for (const topic of topics) {
-      const pick = pickForLocale(items, topic, "ar");
-      if (pick) {
-        paths.push({
-          params: { locale: "ar", slug: `${name}/${topic}` },
-          props: { collection: name, entry: pick.entry, fallback: pick.fallback },
-        });
+    for (const loc of LOCALES.filter((l) => l !== "en")) {
+      for (const topic of topics) {
+        const pick = pickForLocale(items, topic, loc);
+        if (pick) {
+          paths.push({
+            params: { locale: loc, slug: `${name}/${topic}` },
+            props: { collection: name, entry: pick.entry, fallback: pick.fallback },
+          });
+        }
       }
     }
   }
@@ -83,7 +85,7 @@ const doctorData = isDoctor ? (entry.data as {
   photo?: string; sections?: unknown[];
 }) : null;
 
-const doctorTitleSuffix = locale === "ar" ? "مركز العمران الطبي" : "Alimran Clinic";
+const doctorTitleSuffix = byLocale(locale, { en: "Alimran Clinic", ar: "مركز العمران الطبي", tr: "Alimran Kliniği" });
 const doctorHero = isDoctor ? imageVariants(doctorData!.photo) : null;
 const doctorHeroPreload = doctorHero?.srcset ? {
   srcset: doctorHero.srcset,
@@ -118,7 +120,7 @@ const wordCount = isDoctor
 const readingLabel = isDoctor ? "" : articleReadingLabel(wordCount, locale);
 
 const publishedAt = config?.dateField?.(entry);
-const dateLocale = locale === "ar" ? "ar-IQ" : "en-US";
+const dateLocale = DATE_LOCALES[locale];
 const lastReviewed = publishedAt
   ? publishedAt.toLocaleDateString(dateLocale, { month: "long", year: "numeric" })
   : "—";
@@ -161,7 +163,8 @@ const schemas = config ? [
 
 const usingSections = isRedesigned && Array.isArray(data.sections);
 const bodyImages = usingSections && bodyText ? extractBodyImages(bodyText) : [];
-const showBanner = fallback && locale === "ar";
+const showBanner = (fallback && locale !== "en") || locale === "tr";
+const englishHref = localizedHref(Astro.url.pathname, "en");
 ---
 
 {isDoctor ? (
@@ -191,7 +194,7 @@ const showBanner = fallback && locale === "ar";
     ctaBody={labels!.ctaBody}
     disclaimer={disclaimer}
   >
-    {showBanner && <TranslationBanner fromLocale="en" toLocale="ar" />}
+    {showBanner && <TranslationBanner fromLocale="en" toLocale={locale} fallback={fallback} englishHref={englishHref} />}
     <ArticleBody
       sections={usingSections ? (data.sections as any[]) : undefined}
       locale={locale}

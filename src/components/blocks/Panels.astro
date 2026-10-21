@@ -12,7 +12,7 @@
  *   • subtitle — muted line under the title (was treatment_groups.subtitle)
  *   • items    — bullet list (both use it)
  */
-import { localizedHref } from "../../lib/i18n";
+import { localizedHref, byLocale } from "../../lib/i18n";
 import type { Locale } from "../../lib/i18n";
 
 interface ReadingLink { title: string; href: string; }
@@ -33,7 +33,7 @@ interface Props {
 }
 const { heading, intro, note, panels, locale = "en", id } = Astro.props;
 const isAr = locale === "ar";
-const readingLabel = isAr ? "قراءة ذات صلة" : "Related reading";
+const readingLabel = byLocale(locale, { en: "Related reading", ar: "قراءة ذات صلة", tr: "İlgili okumalar" });
 
 function rewriteLinks(md: string): string {
   return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {

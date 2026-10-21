@@ -1,20 +1,20 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale } from "../../../lib/i18n";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
-  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+  return LOCALES.map((locale) => ({ params: { locale } }));
 }
 
 const locale = currentLocale(Astro);
 const all = await getCollection("services");
 
 let entries: typeof all;
-if (locale === "ar") {
+if (locale !== "en") {
   const topics = Array.from(new Set(all.map((e) => topicOf(e.id))));
   entries = topics
-    .map((topic) => pickForLocale(all, topic, "ar"))
+    .map((topic) => pickForLocale(all, topic, locale))
     .filter((x): x is NonNullable<typeof x> => !!x)
     .map(({ entry }) => entry);
 } else {
@@ -35,9 +35,9 @@ for (const entry of entries) {
   }
 }
 
-// For AR: use Arabic titles for category landing pages
+// For AR/TR: use translated titles for category landing pages
 const categoryTitles = new Map<string, string>();
-if (locale === "ar") {
+if (locale !== "en") {
   for (const entry of entries) {
     const topic = topicOf(entry.id);
     categoryTitles.set(topic, entry.data.title);
@@ -48,7 +48,7 @@ const categories = [...byCategory.entries()]
   .sort((a, b) => a[0].localeCompare(b[0]))
   .map(([slug, list]) => ({
     slug,
-    pretty: locale === "ar"
+    pretty: locale !== "en"
       ? (categoryTitles.get(slug) || slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" "))
       : slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" "),
     count: list.length,
@@ -56,13 +56,14 @@ const categories = [...byCategory.entries()]
 ---
 
 <BaseLayout
-  title={locale === "ar" ? "الخدمات — مركز العمران الطبي" : "Services — Alimran Medical Center"}
-  description={locale === "en" ? "Chiropractic, brain stimulation, physiotherapy, radiofrequency, surgery and more — all procedures offered at Alimran Medical Center in Basra." : "تقويم العمود الفقري، تحفيز الدماغ، العلاج الطبيعي، الترددات الراديوية، الجراحة وغيرها — جميع الإجراءات المقدمة في مركز العمران الطبي بالبصرة."}
+  title={byLocale(locale, { en: "Services — Alimran Medical Center", ar: "الخدمات — مركز العمران الطبي", tr: "Hizmetler — Alimran Tıp Merkezi" })}
+  description={byLocale(locale, { en: "Chiropractic, brain stimulation, physiotherapy, radiofrequency, surgery and more — all procedures offered at Alimran Medical Center in Basra.", ar: "تقويم العمود الفقري، تحفيز الدماغ، العلاج الطبيعي، الترددات الراديوية، الجراحة وغيرها — جميع الإجراءات المقدمة في مركز العمران الطبي بالبصرة.", tr: "Kayropraktik, beyin stimülasyonu, fizyoterapi, radyofrekans, cerrahi ve daha fazlası — Basra'daki Alimran Tıp Merkezi'nde sunulan tüm girişimler." })}
 >
   <div class="container page">
     <header class="page-head">
-      <h1>{locale === "ar" ? "الخدمات" : "Services"}</h1>
+      <h1>{byLocale(locale, { en: "Services", ar: "الخدمات", tr: "Hizmetler" })}</h1>
       {locale === "en" && <p class="lede">Every therapy and intervention we offer, grouped by discipline.</p>}
+      {locale === "tr" && <p class="lede">Sunduğumuz tüm tedaviler ve girişimler, disiplinlere göre gruplandırılmıştır.</p>}
     </header>
 
     <div class="grid">
@@ -70,14 +71,14 @@ const categories = [...byCategory.entries()]
         <a class="card cat" href={localizedHref(`/services/${c.slug}/`, locale)}>
           <h3>{c.pretty}</h3>
           <span class="count">
-            {locale === "en" ? `${c.count} ${c.count === 1 ? "item" : "items"}` : c.count}
+            {locale === "en" ? `${c.count} ${c.count === 1 ? "item" : "items"}` : locale === "tr" ? `${c.count} kayıt` : c.count}
           </span>
         </a>
       ))}
       {topLevel.map((e) => (
         <a class="card cat" href={localizedHref(`/services/${topicOf(e.id)}/`, locale)}>
           <h3>{e.data.title}</h3>
-          {locale === "en" && e.data.description && <span class="count">{e.data.description}</span>}
+          {locale !== "ar" && e.data.description && <span class="count">{e.data.description}</span>}
         </a>
       ))}
     </div>

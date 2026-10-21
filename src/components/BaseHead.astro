@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
-import { SITE_TITLE, SITE_NAME, SITE_DESCRIPTION, SITE_DESCRIPTION_AR } from "../consts";
-import { currentLocale, alternateHref } from "../lib/i18n";
+import { SITE_TITLE, SITE_NAME, SITE_DESCRIPTION, SITE_DESCRIPTION_AR, SITE_DESCRIPTION_TR } from "../consts";
+import { currentLocale, alternateHref, byLocale, LOCALES } from "../lib/i18n";
 import { excerpt } from "../lib/excerpt";
 
 interface Props {
@@ -29,16 +29,15 @@ const {
 // Search results cut descriptions off around 160 characters; trim at a word
 // boundary so the snippet ends cleanly instead of mid-word.
 const description = excerpt(
-  Astro.props.description?.trim() || (locale === "ar" ? SITE_DESCRIPTION_AR : SITE_DESCRIPTION),
+  Astro.props.description?.trim() || byLocale(locale, { en: SITE_DESCRIPTION, ar: SITE_DESCRIPTION_AR, tr: SITE_DESCRIPTION_TR }),
   160,
 );
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const otherLocale = locale === "en" ? "ar" : "en";
-const alternatePath = alternateHref(Astro.url.pathname, otherLocale);
-const alternateURL = new URL(alternatePath, Astro.site);
-const enURL = locale === "en" ? canonicalURL : alternateURL;
-const arURL = locale === "ar" ? canonicalURL : alternateURL;
+const urlFor = (l: string) =>
+  l === locale ? canonicalURL : new URL(alternateHref(Astro.url.pathname, l as typeof locale), Astro.site);
+const enURL = urlFor("en");
+const OG_LOCALES = { en: "en_US", ar: "ar_IQ", tr: "tr_TR" };
 
 // Non-production builds (beta, staging, previews) should be hidden from
 // search engines. Default to PRODUCTION so that if the env var is missing
@@ -174,8 +173,7 @@ const businessSchema = {
     <!-- Language alternates. Google requires the full set on every page of the
          cluster, including the page itself; omitting the self-reference breaks
          the return-link check and the annotations get ignored. -->
-    <link rel="alternate" hreflang="en" href={enURL} />
-    <link rel="alternate" hreflang="ar" href={arURL} />
+    {LOCALES.map((l) => <link rel="alternate" hreflang={l} href={urlFor(l)} />)}
     <link rel="alternate" hreflang="x-default" href={enURL} />
   </>
 )}
@@ -187,8 +185,8 @@ const businessSchema = {
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.site)} />
 <meta property="og:site_name" content={SITE_NAME} />
-<meta property="og:locale" content={locale === "ar" ? "ar_IQ" : "en_US"} />
-<meta property="og:locale:alternate" content={otherLocale === "ar" ? "ar_IQ" : "en_US"} />
+<meta property="og:locale" content={OG_LOCALES[locale]} />
+{LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={OG_LOCALES[l]} />)}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />

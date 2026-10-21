@@ -16,9 +16,9 @@ export default defineConfig({
   site: "https://alimran.clinic/",
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "ar"],
+    locales: ["en", "ar", "tr"],
     routing: {
-      prefixDefaultLocale: false,  // Manual routing: EN at /en/, AR at /ar/
+      prefixDefaultLocale: false,  // Manual routing: EN at /en/, AR at /ar/, TR at /tr/
     },
   },
   // Trailing slash is enforced so /en → /en/ (301, via _redirects) matches the
@@ -30,7 +30,7 @@ export default defineConfig({
       // /admin/ (CMS) and /{locale}/dev-blocks/ (widget preview) are internal.
       filter: (page) => {
         const path = new URL(page).pathname;
-        return path !== "/" && !path.startsWith("/admin/") && !/^\/(en|ar)\/(dev-blocks|follow)\//.test(path);
+        return path !== "/" && !path.startsWith("/admin/") && !/^\/(en|ar|tr)\/(dev-blocks|follow)\//.test(path);
       },
       // Per-URL <lastmod> based on the source file's last git commit.
       // See src/lib/sitemap-lastmod.mjs.

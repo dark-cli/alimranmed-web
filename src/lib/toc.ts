@@ -13,7 +13,7 @@ export type TocItem = { id: string; text: string; num: string };
 export function buildToc(
   sections: Array<{ heading?: string }> | null | undefined,
   headings: Array<{ depth: number; slug: string; text: string }> | null | undefined,
-  locale: "en" | "ar",
+  locale: "en" | "ar" | "tr",
 ): TocItem[] {
   const fmt =
     locale === "ar"

@@ -61,7 +61,7 @@ export function sourceFileForUrl(pathname) {
   if (parts.length === 0) return null;
 
   const locale = parts[0];
-  if (locale !== "en" && locale !== "ar") return null;
+  if (!["en", "ar", "tr"].includes(locale)) return null;
 
   const rest = parts.slice(1);
 
@@ -79,8 +79,10 @@ export function sourceFileForUrl(pathname) {
     const slugPath   = rest.slice(1).join("/");
     const primary   = path.join(ROOT, "src/content", collection, slugPath, `${locale}.md`);
     if (existsSync(primary)) return primary;
-    const fallback  = path.join(ROOT, "src/content", collection, slugPath, `${locale === "en" ? "ar" : "en"}.md`);
-    if (existsSync(fallback)) return fallback;
+    for (const alt of ["en", "ar"]) {
+      const fallback = path.join(ROOT, "src/content", collection, slugPath, `${alt}.md`);
+      if (existsSync(fallback)) return fallback;
+    }
   }
 
   // /<locale>/<path>/ → astro page (either `<path>.astro` or `<path>/index.astro`)

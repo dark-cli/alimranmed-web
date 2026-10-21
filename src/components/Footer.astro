@@ -5,52 +5,65 @@
  * Ink background, mono uppercase column labels, four-column grid.
  */
 import { CONTACT } from "../consts";
-import { currentLocale, localizedHref, alternateHref } from "../lib/i18n";
+import { currentLocale, localizedHref, alternateHref, byLocale, LOCALES, LOCALE_LABELS } from "../lib/i18n";
 
 const locale = currentLocale(Astro);
 const currentPath = Astro.url.pathname;
 const year = new Date().getFullYear();
 
 const L = (href: string) => localizedHref(href, locale);
-const otherLocale = locale === "en" ? "ar" : "en";
-const altHref = alternateHref(currentPath, otherLocale);
-const altLabel = otherLocale === "ar" ? "عربي" : "English";
+const otherLocales = LOCALES.filter((l) => l !== locale).map((l) => ({
+  code: l,
+  label: LOCALE_LABELS[l],
+  href: alternateHref(currentPath, l),
+}));
 
 const isAr = locale === "ar";
 
-const brand = isAr ? "مركز العمران الطبي" : "Alimran Clinic";
-const brandSub = isAr ? "جراحة الأعصاب · العمود الفقري · طب الألم"
-                     : "Neurosurgery · Spine · Pain medicine";
-const addr1 = isAr
-  ? "مركز العمران الطبي — البصرة، بريهة، مجمّع النقبة الطبي، العراق."
-  : "Alimran Medical Centre — Basra, Breaha, Alnkba Medical Collection, Iraq.";
-const addr2 = isAr
-  ? "الاستشاري المسؤول: الدكتور حسين عمران موسى، بكالوريوس طب وجراحة، بورد جراحة الأعصاب."
-  : "Lead consultant: Hussein Imran Mousa, MBChB, FIBMS (Neurosurgery).";
+const brand = byLocale(locale, { en: "Alimran Clinic", ar: "مركز العمران الطبي", tr: "Alimran Kliniği" });
+const brandSub = byLocale(locale, {
+  en: "Neurosurgery · Spine · Pain medicine",
+  ar: "جراحة الأعصاب · العمود الفقري · طب الألم",
+  tr: "Beyin cerrahisi · Omurga · Ağrı tıbbı",
+});
+const addr1 = byLocale(locale, {
+  en: "Alimran Medical Centre — Basra, Breaha, Alnkba Medical Collection, Iraq.",
+  ar: "مركز العمران الطبي — البصرة، بريهة، مجمّع النقبة الطبي، العراق.",
+  tr: "Alimran Tıp Merkezi — Basra, Breaha, Alnkba Tıp Kompleksi, Irak.",
+});
+const addr2 = byLocale(locale, {
+  en: "Lead consultant: Hussein Imran Mousa, MBChB, FIBMS (Neurosurgery).",
+  ar: "الاستشاري المسؤول: الدكتور حسين عمران موسى، بكالوريوس طب وجراحة، بورد جراحة الأعصاب.",
+  tr: "Sorumlu danışman: Hussein Imran Mousa, MBChB, FIBMS (Beyin ve Sinir Cerrahisi).",
+});
 
-const lContact  = isAr ? "الاتصال"    : "Contact";
-const lSections = isAr ? "الأقسام"    : "Sections";
-const lElsewhere = isAr ? "روابط أخرى" : "Elsewhere";
+const lContact  = byLocale(locale, { en: "Contact", ar: "الاتصال", tr: "İletişim" });
+const lSections = byLocale(locale, { en: "Sections", ar: "الأقسام", tr: "Bölümler" });
+const lElsewhere = byLocale(locale, { en: "Elsewhere", ar: "روابط أخرى", tr: "Diğer bağlantılar" });
 
 const nav = [
-  { label: isAr ? "الرئيسية"          : "Home",                    href: "/" },
-  { label: isAr ? "السيرة العلمية"     : "Consultant CV",           href: "/doctors/hussein-imran-mousa/" },
-  { label: isAr ? "الحالات والإجراءات" : "Conditions & procedures", href: "/conditions/" },
+  { label: byLocale(locale, { en: "Home", ar: "الرئيسية", tr: "Ana Sayfa" }), href: "/" },
+  { label: byLocale(locale, { en: "Consultant CV", ar: "السيرة العلمية", tr: "Konsültan Özgeçmişi" }), href: "/doctors/hussein-imran-mousa/" },
+  { label: byLocale(locale, { en: "Conditions & procedures", ar: "الحالات والإجراءات", tr: "Hastalıklar ve girişimler" }), href: "/conditions/" },
 ];
 
 const elsewhere = [
-  { label: isAr ? "الاتجاهات"  : "Directions", href: CONTACT.mapsUrl,        external: true },
+  { label: byLocale(locale, { en: "Directions", ar: "الاتجاهات", tr: "Yol tarifi" }), href: CONTACT.mapsUrl,        external: true },
   { label: "YouTube",                          href: CONTACT.social.youtube,  external: true },
   { label: "Facebook",                         href: CONTACT.social.facebook, external: true },
   { label: "Instagram",                        href: CONTACT.social.instagram, external: true },
 ];
 
-const copyright = isAr
-  ? `© ${year} مركز العمران الطبي. جميع الحقوق محفوظة.`
-  : `© ${year} Alimran Medical Centre. All rights reserved.`;
-const disclaimer = isAr
-  ? "المعلومات المنشورة هنا للاسترشاد ولا تُغني عن الاستشارة الطبية الفردية."
-  : "Information on this site is for guidance and does not replace individual medical advice.";
+const copyright = byLocale(locale, {
+  en: `© ${year} Alimran Medical Centre. All rights reserved.`,
+  ar: `© ${year} مركز العمران الطبي. جميع الحقوق محفوظة.`,
+  tr: `© ${year} Alimran Tıp Merkezi. Tüm hakları saklıdır.`,
+});
+const disclaimer = byLocale(locale, {
+  en: "Information on this site is for guidance and does not replace individual medical advice.",
+  ar: "المعلومات المنشورة هنا للاسترشاد ولا تُغني عن الاستشارة الطبية الفردية.",
+  tr: "Bu sitedeki bilgiler yol göstermek amaçlıdır ve bireysel tıbbi tavsiyenin yerini tutmaz.",
+});
 ---
 
 <footer class="footer">
@@ -77,7 +90,7 @@ const disclaimer = isAr
       <p class="f-label">{lSections}</p>
       <div class="f-links">
         {nav.map((l) => <a href={L(l.href)}>{l.label}</a>)}
-        <a href={altHref}>{altLabel}</a>
+        {otherLocales.map((o) => <a href={o.href} hreflang={o.code} lang={o.code}>{o.label}</a>)}
       </div>
     </div>
 

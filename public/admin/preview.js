@@ -1053,5 +1053,6 @@
   // Sveltia falls back to the collection name — which is already registered).
   CMS.registerPreviewTemplate("en", makePagesPreview());
   CMS.registerPreviewTemplate("ar", makePagesPreview());
+  CMS.registerPreviewTemplate("tr", makePagesPreview());
   CMS.registerPreviewStyle("/admin/preview.css");
 })();

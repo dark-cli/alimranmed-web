@@ -1,22 +1,22 @@
 ---
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, localizedHref } from "../../lib/i18n";
+import { topicOf, isLocale, localizedHref, DATE_LOCALES, type Locale } from "../../lib/i18n";
 
 interface Props {
   heading?: string;
   items: string[];    // locale-agnostic paths: /treatments/back-pain/
-  locale: "en" | "ar";
+  locale: Locale;
   id?: string;
 }
 
 const { heading, items, locale, id } = Astro.props;
 const isAr = locale === "ar";
 
-const TYPE_LABELS: Record<string, { en: string; ar: string }> = {
-  treatments: { en: "Treatment", ar: "علاج" },
-  services:   { en: "Service",   ar: "خدمة" },
-  blog:       { en: "Article",   ar: "مقال" },
-  doctors:    { en: "Doctor",    ar: "طبيب" },
+const TYPE_LABELS: Record<string, { en: string; ar: string; tr: string }> = {
+  treatments: { en: "Treatment", ar: "علاج", tr: "Tedavi" },
+  services:   { en: "Service",   ar: "خدمة", tr: "Hizmet" },
+  blog:       { en: "Article",   ar: "مقال", tr: "Makale" },
+  doctors:    { en: "Doctor",    ar: "طبيب", tr: "Doktor" },
 };
 
 function parsePath(path: string) {
@@ -31,7 +31,7 @@ await Promise.all([...needed].map(async (col) => {
   try { loaded[col] = await getCollection(col as any); } catch { loaded[col] = []; }
 }));
 
-const dateLocale = isAr ? "ar-IQ" : "en-US";
+const dateLocale = DATE_LOCALES[locale];
 
 const cards = items.map((path) => {
   const parsed = parsePath(path);
@@ -48,7 +48,9 @@ const cards = items.map((path) => {
   }
 
   const dateRaw = (entry.data as any).publishedAt ?? (entry.data as any).updated ?? null;
-  const badge   = (entry.data as any).category || TYPE_LABELS[collection]?.[locale] || null;
+  // tr.md keeps the English category slug; show the type label for tr instead.
+  const rawCat  = locale === "tr" ? null : (entry.data as any).category;
+  const badge   = rawCat || TYPE_LABELS[collection]?.[locale] || null;
 
   return {
     title: entry.data.title as string,

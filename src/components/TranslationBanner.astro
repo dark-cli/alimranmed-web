@@ -1,52 +1,64 @@
 ---
 /**
- * Shown at the top of a content page when the requested locale doesn't
- * have its own translation and we're falling back to the other language.
- * Keeps the AR site fully navigable while translations are being written.
+ * Subtle notice shown at the top of a content page when it is not original
+ * English text:
+ *   - AR with no Arabic file: "translation in progress, showing English".
+ *   - TR: pages are machine-translated; the English version is authoritative
+ *     and linked from the notice.
  */
+import { localizedHref, type Locale } from "../lib/i18n";
+
 interface Props {
-  fromLocale: "en" | "ar";
-  toLocale: "en" | "ar";
+  fromLocale: Locale;
+  toLocale: Locale;
+  /** True when the page is showing the fromLocale file because toLocale is missing. */
+  fallback?: boolean;
+  /** Link to the English version of the same page (tr). */
+  englishHref?: string;
 }
 
-const { fromLocale, toLocale } = Astro.props;
-const message = toLocale === "ar"
-  ? "الترجمة العربية لهذه الصفحة قيد الإعداد. المحتوى المعروض بالإنجليزية مؤقتاً."
-  : "The Arabic translation of this page is in progress. Showing the English version for now.";
+const { toLocale, fallback = false } = Astro.props;
+const englishHref = Astro.props.englishHref ?? localizedHref(Astro.url.pathname, "en");
 ---
 
-<div class="translation-banner" role="status">
-  <span class="icon" aria-hidden="true">
-    <i class="fa-solid fa-language"></i>
-  </span>
-  <span class="text">{message}</span>
+<div class="translation-banner" role="note">
+  {toLocale === "tr" ? (
+    <>
+      <span class="text">
+        {fallback
+          ? "Bu sayfanın Türkçe çevirisi henüz hazır değil; İngilizce sürüm gösteriliyor."
+          : "Bu sayfa otomatik olarak çevrilmiştir; İngilizce sürüm esas alınır."}
+      </span>
+      {englishHref && (
+        <a class="en-link" href={englishHref} hreflang="en" lang="en">İngilizce sürümü aç →</a>
+      )}
+    </>
+  ) : (
+    <span class="text">
+      {toLocale === "ar"
+        ? "الترجمة العربية لهذه الصفحة قيد الإعداد. المحتوى المعروض بالإنجليزية مؤقتاً."
+        : "The translation of this page is in progress. Showing the English version for now."}
+    </span>
+  )}
 </div>
 
 <style>
   .translation-banner {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    background: var(--brand-soft);
-    border: 1px solid var(--brand);
-    border-radius: var(--radius);
-    color: var(--brand-dark);
-    font-size: 0.9rem;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    padding: 0.6rem 0.9rem;
     margin-bottom: 1.5rem;
-    max-width: 72ch;
-    margin-inline: auto;
-  }
-  .icon {
-    width: 32px;
-    height: 32px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+    border: 1px solid var(--line);
+    border-inline-start: 3px solid var(--accent);
     background: var(--surface);
-    color: var(--brand);
-    flex-shrink: 0;
+    color: var(--muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
-  .icon i { font-size: 0.9rem; }
+  .en-link {
+    color: var(--accent);
+    white-space: nowrap;
+  }
 </style>

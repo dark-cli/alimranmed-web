@@ -1,4 +1,5 @@
 ---
+import type { Locale } from "../../lib/i18n";
 /**
  * Shared chrome for all article-style pages (blog, treatments, services).
  * Renders: head band (breadcrumbs + h1 + optional meta strip), two-column
@@ -21,7 +22,7 @@ interface MetaItem {
 interface Props {
   pageTitle: string;
   description?: string;
-  locale: "en" | "ar";
+  locale: Locale;
   breadcrumbs: BreadcrumbItem[];
   h1: string;
   meta?: MetaItem[];

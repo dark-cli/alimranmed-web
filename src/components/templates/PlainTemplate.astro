@@ -15,6 +15,7 @@
  */
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Sections from "../blocks/Sections.astro";
+import TranslationBanner from "../TranslationBanner.astro";
 import type { Locale } from "../../lib/i18n";
 
 export interface HeroPreload {
@@ -41,6 +42,9 @@ const { title, description = "", sections, locale, heroPreload, fontAwesome } = 
   fontAwesome={fontAwesome}
 >
   <Fragment slot="head"><slot name="head" /></Fragment>
+  {locale === "tr" && (
+    <div class="tr-notice"><TranslationBanner fromLocale="en" toLocale="tr" /></div>
+  )}
   <div class="plain-wrap">
     <Sections sections={sections} locale={locale} />
   </div>
@@ -48,6 +52,12 @@ const { title, description = "", sections, locale, heroPreload, fontAwesome } = 
 </BaseLayout>
 
 <style>
+  .tr-notice {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 16px 24px 0;
+  }
+  .tr-notice :global(.translation-banner) { margin-bottom: 0; }
   .plain-wrap {
     max-width: var(--page-max);
     margin: 0 auto;

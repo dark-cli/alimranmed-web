@@ -16,7 +16,7 @@
  *                     for blog / service pages where related blocks show an
  *                     empty list.
  */
-import { toArabicDigits } from "../../lib/i18n";
+import { toArabicDigits, byLocale, type Locale } from "../../lib/i18n";
 import type { RelatedItem } from "../../lib/related";
 import AtGlance        from "./AtGlance.astro";
 import Prose           from "./Prose.astro";
@@ -31,7 +31,7 @@ export type { RelatedItem };
 
 interface Props {
   sections: any[];
-  locale: "en" | "ar";
+  locale: Locale;
   resolveRelated?: (slugs: string[]) => RelatedItem[];
 }
 
@@ -39,12 +39,14 @@ const { sections, locale, resolveRelated } = Astro.props;
 const isAr = locale === "ar";
 
 // Localized UI strings
-const glanceLabel  = isAr ? "لمحة سريعة"    : "At a glance";
-const factsTitle   = isAr ? "حقائق أساسية"  : "Key facts";
-const relatedLabel = isAr ? "قراءة ذات صلة" : "Related reading";
-const soonLabel    = isAr
-  ? "هذا المقال لم يُعاد تصميمه بعد — قريبًا."
-  : "This article isn't in the new design yet — coming soon.";
+const glanceLabel  = byLocale(locale, { en: "At a glance", ar: "لمحة سريعة", tr: "Bir bakışta" });
+const factsTitle   = byLocale(locale, { en: "Key facts", ar: "حقائق أساسية", tr: "Temel bilgiler" });
+const relatedLabel = byLocale(locale, { en: "Related reading", ar: "قراءة ذات صلة", tr: "İlgili okumalar" });
+const soonLabel    = byLocale(locale, {
+  en: "This article isn't in the new design yet — coming soon.",
+  ar: "هذا المقال لم يُعاد تصميمه بعد — قريبًا.",
+  tr: "Bu makale henüz yeni tasarımda değil — yakında.",
+});
 
 function padNum(n: number): string {
   return isAr

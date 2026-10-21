@@ -36,6 +36,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h1>الصفحة غير موجودة</h1>
         <p class="nf-lede">الصفحة <code class="nf-path"></code> غير موجودة أو تم نقلها.</p>
       </div>
+
+      <!-- Turkish (revealed by JS when relevant) -->
+      <div class="nf-body nf-tr" hidden>
+        <h1>Sayfa bulunamadı</h1>
+        <p class="nf-lede"><code class="nf-path"></code> sayfası mevcut değil veya taşınmış.</p>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -58,15 +64,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       var ref = document.referrer || "";
       // 1. Explicit URL prefix on the requested path
       if (path.indexOf("/ar/") === 0) return "ar";
+      if (path.indexOf("/tr/") === 0) return "tr";
       if (path.indexOf("/en/") === 0) return "en";
       // 2. Referrer prefix — user came from a language-scoped page
       if (ref.indexOf("/ar/") !== -1) return "ar";
+      if (ref.indexOf("/tr/") !== -1) return "tr";
       if (ref.indexOf("/en/") !== -1) return "en";
       // 3. Device language (client-side equivalent of Accept-Language)
       var langs = (navigator.languages || [navigator.language || ""])
         .map(function (l) { return String(l).toLowerCase(); });
       for (var i = 0; i < langs.length; i++) {
         if (langs[i].indexOf("ar") === 0) return "ar";
+        if (langs[i].indexOf("tr") === 0) return "tr";
       }
       return "en";
     }
@@ -84,7 +93,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       var locale = detectLocale();
       var en = document.querySelector(".nf-en");
       var ar = document.querySelector(".nf-ar");
-      if (locale === "ar") {
+      var tr = document.querySelector(".nf-tr");
+      if (tr) tr.hidden = locale !== "tr";
+      if (locale === "tr") {
+        document.documentElement.setAttribute("lang", "tr");
+        document.documentElement.setAttribute("dir", "ltr");
+        if (en) en.hidden = true;
+        if (ar) ar.hidden = true;
+        document.title = "Sayfa bulunamadı — Alimran Tıp Merkezi";
+      } else if (locale === "ar") {
         document.documentElement.setAttribute("lang", "ar");
         document.documentElement.setAttribute("dir", "rtl");
         if (en) en.hidden = true;

@@ -7,12 +7,12 @@
  * Fields: heading? (defaults to "Key facts"), items (array of strings).
  * The renderer auto-generates 01/02/03… labels in the local numeric style.
  */
-import { toArabicDigits } from "../../lib/i18n";
+import { toArabicDigits, type Locale } from "../../lib/i18n";
 
 interface Props {
   heading?: string;
   items: string[];
-  locale?: "en" | "ar";
+  locale?: Locale;
   id?: string;
 }
 const { heading, items, locale = "en", id } = Astro.props;

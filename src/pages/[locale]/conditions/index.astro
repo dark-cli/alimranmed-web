@@ -3,18 +3,18 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SoonLink from "../../../components/article/SoonLink.astro";
 import Image from "../../../components/Image.astro";
 import { CONTACT } from "../../../consts";
-import { localizedHref, currentLocale, topicOf, isLocale } from "../../../lib/i18n";
+import { localizedHref, currentLocale, topicOf, isLocale, DATE_LOCALES, LOCALES } from "../../../lib/i18n";
 import { BLOG_PATHWAY } from "../../../lib/pathways";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  return [{ params: { locale: "en" } }, { params: { locale: "ar" } }];
+  return LOCALES.map((locale) => ({ params: { locale } }));
 }
 
 const locale = currentLocale(Astro);
 const L = (href: string) => localizedHref(href, locale);
 const isAr = locale === "ar";
-const dateLocale = isAr ? "ar-IQ" : "en-US";
+const dateLocale = DATE_LOCALES[locale];
 const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
 const secondCallHref = `tel:${CONTACT.phones[1].replace(/\s/g, "")}`;
 
@@ -36,7 +36,7 @@ for (const b of allBlogs) {
   if (p) blogsByPathway[p].push(b);
 }
 
-const procedureCategories = isAr ? [
+const procedureCategoriesBase = isAr ? [
   { num: "الفئة ٠١", title: "العلاج الطبيعي", basePath: "physiotherapy",
     items: [
       { name: "العلاج الطبيعي",              slug: "physical-therapy" },
@@ -126,7 +126,7 @@ const procedureCategories = isAr ? [
     ] },
 ];
 
-const pathways = isAr ? [
+const pathwaysBase = isAr ? [
   { num: "المسار ٠١", title: "الدماغ", key: "brain" as const,
     items: [
       { name: "أورام الدماغ",        slug: "brain-tumor" },
@@ -190,7 +190,7 @@ const pathways = isAr ? [
     ] },
 ];
 
-const photoStrip = isAr ? [
+const photoStripBase = isAr ? [
   { caption: "جراحة العمود الفقري بالمنظار",
     src: "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=1200&q=80&auto=format&fit=crop",
     alt: "استشاري جراحة الأعصاب أثناء عملية" },
@@ -212,7 +212,7 @@ const photoStrip = isAr ? [
     alt: "Clinical device applied to a patient in a treatment session" },
 ];
 
-const T = isAr ? {
+const TBase = isAr ? {
   title:         "الحالات والإجراءات — مركز العمران الطبي",
   description:   "يصنّف المركز الحالات المحوَّلة في ثلاثة مسارات: الدماغ، العمود الفقري، والألم. جراحات وتدخلات وإعادة تأهيل بفريق واحد.",
   introEyebrow:  "ما نعالج والإجراءات",
@@ -251,6 +251,68 @@ const T = isAr ? {
   blogH2:        "Recent from the blog",
   seeAllBlog:    "Browse all articles →",
 };
+
+/* ── Turkish ────────────────────────────────────────────────────────────
+   The EN structure is reused; item names come from the tr entries' titles
+   so they match the pages they link to, and the chrome strings are below. */
+const isTr = locale === "tr";
+const trTreatTitles = new Map<string, string>();
+const trSvcTitles = new Map<string, string>();
+if (isTr) {
+  for (const e of allTreatments) if (isLocale(e.id, "tr")) trTreatTitles.set(topicOf(e.id), e.data.title);
+  for (const e of await getCollection("services")) if (isLocale(e.id, "tr")) trSvcTitles.set(topicOf(e.id), e.data.title);
+}
+const TR_PATHWAY_TITLES = { brain: "Beyin", spine: "Omurga", pain: "Ağrı" } as const;
+const TR_PROC_TITLES: Record<string, string> = {
+  physiotherapy: "Fizyoterapi", chiropractic: "Kayropraktik", "brain-stimulation": "Beyin stimülasyonu",
+  radiofrequency: "Radyofrekans", "steroid-injection": "Steroid enjeksiyonu", surgery: "Cerrahi",
+  "ozone-therapy": "Ozon tedavisi", "regenerative-medicine": "Rejeneratif tıp", rehabilitation: "Rehabilitasyon",
+  botox: "Botoks", exercises: "Egzersizler", fitness: "Zindelik", acupuncture: "Akupunktur", "pain-management": "Ağrı yönetimi",
+};
+const pathways = isTr
+  ? pathwaysBase.map((p) => ({
+      ...p,
+      num: p.num.replace("Pathway", "Yol"),
+      title: TR_PATHWAY_TITLES[p.key],
+      items: p.items.map((i) => ({ ...i, name: trTreatTitles.get(i.slug) ?? i.name })),
+    }))
+  : pathwaysBase;
+const procedureCategories = isTr
+  ? procedureCategoriesBase.map((c) => ({
+      ...c,
+      num: c.num.replace("Category", "Kategori"),
+      title: TR_PROC_TITLES[c.basePath] ?? c.title,
+      items: c.items.map((i) => ({ ...i, name: trSvcTitles.get(`${c.basePath}/${i.slug}`) ?? i.name })),
+    }))
+  : procedureCategoriesBase;
+const photoStrip = isTr
+  ? [
+      { ...photoStripBase[0], caption: "Endoskopik omurga cerrahisi", alt: "Ameliyathanede ameliyat yapan danışman cerrah" },
+      { ...photoStripBase[1], caption: "Nöromodülasyon", alt: "Eğitimli bir operatör tarafından uygulanan nöromodülasyon" },
+      { ...photoStripBase[2], caption: "Radyofrekans ablasyon", alt: "Tedavi seansında hastaya uygulanan klinik cihaz" },
+    ]
+  : photoStripBase;
+const TR_T = {
+  title:         "Hastalıklar ve Girişimler — Alimran Kliniği",
+  description:   "Klinik, sevkleri üç yolda toplar: beyin, omurga ve ağrı. Cerrahi, girişimsel ve rehabilitatif işlemler tek bir ekipte.",
+  introEyebrow:  "Hastalıklar ve girişimler",
+  introH1:       "Neyi değerlendiriyor, nasıl tedavi ediyoruz.",
+  introLede:     "Klinik, sevkleri üç yolda toplar. Her ilk randevu eksiksiz bir nörolojik muayeneyi ve mevcut görüntüleme tetkiklerinin incelenmesini içerir; hastaya ve sevk eden hekime yazılı bir plan verilir.",
+  condEyebrow:   "Hastalıklar",
+  condH2:        "Neleri tedavi ediyoruz",
+  seeAllTreat:   "Tüm hastalıklara göz atın →",
+  soonLabel:     "Bu makale henüz yeni tasarımda değil — yakında.",
+  procEyebrow:   "Girişimler",
+  procH2:        "Sunduğumuz girişimler ve tedaviler",
+  seeAllSvc:     "Tüm girişimlere göz atın →",
+  relatedRead:   "İlgili okumalar",
+  apptH2:        "Randevu almak",
+  apptBody:      "Randevular klinik sekreteri aracılığıyla telefonla alınır. Lütfen aramayı yaparken önceki görüntüleme tetkiklerinizi, ameliyat notlarınızı ve güncel ilaç listenizi hazır bulundurun.",
+  blogEyebrow:   "Makaleler",
+  blogH2:        "Bloga son eklenenler",
+  seeAllBlog:    "Tüm makalelere göz atın →",
+};
+const T = isTr ? TR_T : TBase;
 ---
 
 <BaseLayout title={T.title} description={T.description}>
