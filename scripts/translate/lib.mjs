@@ -191,4 +191,25 @@ export function normCkb(s) {
     .replace(/[ً-ٰٟـ‌‍‎‏]/g, '')
     .replace(/\s+/g, ' ').toLowerCase();
 }
-export const normTr = (s) => s.replace(/İ/g, 'i').replace(/I/g, 'ı').toLowerCase().replace(/[’‘]/g, "'");
+export const normTr = (s) => s.replace(/İ/g, 'i').replace(/I/g, 'ı').toLowerCase().replace(/[’‘ʼ`´]/g, "'");
+
+// ── line classification (first-mention placement, citation lines) ────────
+const NONPROSE_LEAF = new Set(['title', 'description', 'heading', 'label', 'value', 'alt', 'subtitle', 'eyebrow', 'attribution', 'specialty', 'photoAlt']);
+const wc = (s) => s.replace(/\{\{\d+\}\}/g, ' ').split(/\s+/).filter(Boolean).length;
+/** title / meta description / SEO strings: path is the top-level `title` or `description`. */
+export const isTitleMeta = (it) => it.path === 'title' || it.path === 'description';
+/** Section/body prose where the first-mention "(English)" gloss belongs. */
+export function isProse(it) {
+  if (isTitleMeta(it)) return false;
+  const leaf = it.path.split('.').pop();
+  if (NONPROSE_LEAF.has(leaf)) return false;
+  return wc(it.text) >= 6;
+}
+/** Source line that is a citation / proper names / acronyms only: nothing to translate into Arabic script. */
+export function isNonTranslatable(srcText) {
+  const t = srcText.replace(/\{\{\d+\}\}/g, ' ');
+  if (/\b(Vol\.|No\.|pp\.|ISSN|ISBN|doi:?|et al\.)/i.test(t)) return true;
+  const words = t.match(/[A-Za-z][A-Za-z.'-]*/g) || [];
+  // no ordinary lowercase English words (>=4 letters, not capitalised) => names/acronyms only
+  return !words.some((w) => /^[a-z]{4,}$/.test(w));
+}

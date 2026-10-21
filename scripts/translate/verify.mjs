@@ -3,7 +3,7 @@
 // Usage: node scripts/translate/verify.mjs <extract-json> <tr|ckb> <translated-json> [--all]
 // Exit 1 on any miss. Misses are listed per line id.
 import fs from 'node:fs';
-import { loadExtract, checkLang, loadGlossary, buildMatchers, scanGlossary, stripGloss, normCkb, normTr } from './lib.mjs';
+import { loadExtract, checkLang, loadGlossary, buildMatchers, scanGlossary, stripGloss, normCkb, normTr, isProse, isTitleMeta } from './lib.mjs';
 
 const args = process.argv.slice(2);
 const all = args.includes('--all');
@@ -26,8 +26,8 @@ function find(rendering, policy, hay) {
   }
   // tr: consecutive tokens, each token must start with the rendering word's stem
   const stem = (w) => (w.length >= 5 ? w.slice(0, -1) : w);
-  const stems = r.split(/[^\p{L}\p{N}']+/u).filter(Boolean).map(stem);
-  const toks = [...hay.matchAll(/[\p{L}\p{N}]+/gu)].map((m) => ({ s: m[0], end: m.index + m[0].length }));
+  const stems = r.replace(/'/g, '').split(/[^\p{L}\p{N}]+/u).filter(Boolean).map(stem);
+  const toks = [...hay.matchAll(/[\p{L}\p{N}]+(?:'[\p{L}\p{N}]+)*/gu)].map((m) => ({ s: m[0].replace(/'/g, ''), end: m.index + m[0].length }));
   for (let i = 0; i + stems.length <= toks.length; i++) {
     if (stems.every((st, k) => toks[i + k].s.startsWith(st))) return toks[i + stems.length - 1].end;
   }
@@ -50,14 +50,26 @@ for (const [entry, forms] of hits) {
       }
     }
   }
-  // first mention: parenthetical right after the first occurrence of any acceptable rendering
+  // first mention: parenthetical right after the first PROSE occurrence of any acceptable rendering.
+  // Titles / meta descriptions / short UI strings must not carry the parenthetical.
   if (entry.policy === 'translate+en-first-mention') {
-    for (const id of ids) {
+    const after = (id) => {
       const hay = norm(trMap.get(id) || '');
       let best = -1;
       for (const c of acceptable) { const e = find(c, entry.policy, hay); if (e >= 0 && (best < 0 || e < best)) best = e; }
-      if (best < 0) continue;
-      if (!/^[\p{L}‌]{0,14}\s*[(（]/u.test(hay.slice(best))) fmMisses.push(`id ${id}: first mention of "${entry.en}" lacks parenthetical (English/gloss)`);
+      return best < 0 ? null : { hay, best };
+    };
+    const glossed = (r) => /^[\p{L}‌]{0,14}\s*[(（]/u.test(r.hay.slice(r.best));
+    for (const it of items) {
+      if (!isTitleMeta(it)) continue;
+      const r = after(it.id);
+      if (r && glossed(r)) fmMisses.push(`id ${it.id}: title/meta carries "(English)" gloss for "${entry.en}" (belongs in prose)`);
+    }
+    for (const it of items) {
+      if (!isProse(it)) continue;
+      const r = after(it.id);
+      if (!r) continue;
+      if (!glossed(r)) fmMisses.push(`id ${it.id}: first prose mention of "${entry.en}" lacks parenthetical (English/gloss)`);
       break;
     }
   }

@@ -4,7 +4,7 @@
 // Output: .translation/jobs/<lang>/<rel>.md   (prints "<rel> <lang> matched=N chars=N")
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, loadExtract, checkLang, loadGlossary, buildMatchers, scanGlossary, stripGloss, hasGloss } from './lib.mjs';
+import { ROOT, loadExtract, checkLang, loadGlossary, buildMatchers, scanGlossary, stripGloss, hasGloss, isTitleMeta, isProse } from './lib.mjs';
 
 const [file, langArg] = process.argv.slice(2);
 if (!file || !langArg) { console.error('usage: prepare-job.mjs <extract-json> <tr|ckb>'); process.exit(2); }
@@ -46,6 +46,7 @@ for (const [entry, forms] of [...hits].sort((a, b) => a[0].en.localeCompare(b[0]
   }
 }
 
+const ID_META = items.filter(isTitleMeta).map((i) => `${i.id} (${i.path})`).join(', ') || 'none';
 const prompt = `# Translation job: ${rel} -> ${lang}
 
 You are a professional medical translator. Translate the numbered English lines below into ${LANG[lang]}.
@@ -54,6 +55,7 @@ Register: clear, warm, patient-friendly medical writing; natural for a clinic we
 ## Rules
 - Keep every \`{{n}}\` placeholder exactly as written (same number, same count). Do not translate, reorder-away or drop them.
 - Translate every line; keep each line's id. Do not add, omit, merge, split or explain anything. Lines are independent but belong to one document: stay consistent.
+- Lines that are citations, references, or proper names only: copy them unchanged. Never add content.
 - Keep numbers, units, drug and brand names, URLs and e-mail addresses as in the source (apply a glossary entry when one exists).
 - Output ONLY a JSON array \`[{"id": 1, "text": "..."}, ...]\` with one object per input line, no commentary, no code fence.
 - If you meet a medical term you cannot render with confidence and it is not in the glossary, write \`[[TERM:english term]]\` in its place instead of guessing.
@@ -61,8 +63,9 @@ Register: clear, warm, patient-friendly medical writing; natural for a clinic we
 ## Glossary (${hits.size} terms occur in this document)
 Apply each rendering with correct grammar (case suffixes, plurals, ezafe, definiteness and word order are fine to adapt). Entries are matched case-insensitively and plural-tolerant.
 - "KEEP verbatim": write the text exactly as given.
-- "[first mention: add the English term in parentheses]": the FIRST time the term appears in this document write the rendering followed by the English term in parentheses, e.g. X (English term). Every later mention: the rendering alone.
-- "first mention: A; later: B" (the rendering carries its own parenthetical gloss): use A the first time, B afterwards; add no further English parenthesis.
+- "[first mention: add the English term in parentheses]": the FIRST time the term appears in the BODY/SECTION PROSE (longer explanatory sentences) write the rendering followed by the English term in parentheses, e.g. X (English term). Every later mention: the rendering alone.
+- Never add the "(English)" parenthetical in titles, meta/SEO descriptions (ids ${ID_META}), nor in short UI strings (buttons, labels, headings, captions, alt text, list items under 6 words); use the bare rendering there even if it is the term's first appearance. The first-mention gloss goes on the first occurrence in prose.
+- "first mention: A; later: B" (the rendering carries its own parenthetical gloss): use A the first prose mention, B everywhere else (titles, meta, short UI strings included); add no further English parenthesis.
 - Where a specific surface form is listed on its own line, that line overrides the base term for that form.
 ${lines.length ? lines.join('\n') : '(no glossary terms in this document)'}
 
