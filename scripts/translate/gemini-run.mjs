@@ -5,7 +5,7 @@
 // Token usage per call is appended to .translation/gemini-usage.log (jsonl).
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT } from './lib.mjs';
+import { ROOT, loadGeminiKey } from './lib.mjs';
 
 const args = process.argv.slice(2);
 const opt = (n) => { const i = args.indexOf('--' + n); return i >= 0 ? args[i + 1] : null; };
@@ -13,16 +13,7 @@ const model = opt('model'), inFile = opt('in'), outFile = opt('out');
 const asText = args.includes('--text'); // expected output is not JSON
 if (!model || !inFile || !outFile) { console.error('usage: gemini-run.mjs --model <model> --in <prompt> --out <file> [--text]'); process.exit(2); }
 
-function loadKey() {
-  if (process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY;
-  const env = fs.readFileSync(path.join(ROOT, '.env'), 'utf8');
-  for (const line of env.split(/\r?\n/)) {
-    const m = line.match(/^\s*(?:export\s+)?GEMINI_API_KEY\s*=\s*(.*)$/);
-    if (m) return m[1].trim().replace(/^(['"])(.*)\1$/, '$2');
-  }
-  throw new Error('GEMINI_API_KEY not found in .env');
-}
-const key = loadKey();
+const key = loadGeminiKey();
 const prompt = fs.readFileSync(inFile, 'utf8');
 const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 const body = { contents: [{ role: 'user', parts: [{ text: prompt }] }], generationConfig: asText ? {} : { responseMimeType: 'application/json' } };

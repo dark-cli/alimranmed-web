@@ -129,8 +129,9 @@ for (const en of allEn) {
   }
   for (const lang of ['tr', 'ckb']) {
     let variants = variants0; const varSet = new Set(varSet0);
-    // tr-only variant-rule additions / changes (glossary-fixes.json -> trVariantRules)
-    const trRuleFix = lang === 'tr' ? (FIX.trVariantRules?.[en] || []) : [];
+    // per-language variant-rule additions / changes (glossary-fixes.json -> trVariantRules / ckbVariantRules)
+    // ckb-only context-sense rules (glossary-fixes.json -> ckbVariantRules), same shape; drop:true removes a rule
+    const trRuleFix = (lang === 'tr' ? FIX.trVariantRules?.[en] : FIX.ckbVariantRules?.[en]) || [];
     const rules = (e.variant_rules || []).filter((r) => {
       const ok = varSet.has(String(r.variant).toLowerCase()) && r[lang] && r[lang] !== e[lang];
       if (!ok && lang === 'tr' && !varSet.has(String(r.variant).toLowerCase())) changed.droppedVariantRules++;
@@ -138,8 +139,9 @@ for (const en of allEn) {
     }).map((r) => ({ variant: r.variant, text: r[lang] }));
     const extraGloss = new Map();
     for (const fx of trRuleFix) {
+      if (fx.drop) { const i = rules.findIndex((x) => x.variant.toLowerCase() === fx.variant.toLowerCase()); if (i >= 0) rules.splice(i, 1); continue; }
       let r = rules.find((x) => x.variant.toLowerCase() === fx.variant.toLowerCase());
-      if (!r) { r = { variant: fx.variant, text: fx.text || e.tr }; rules.push(r); if (!varSet.has(fx.variant.toLowerCase())) variants = [...variants, fx.variant]; }
+      if (!r) { r = { variant: fx.variant, text: fx.text || e[lang] }; rules.push(r); if (!varSet.has(fx.variant.toLowerCase())) variants = [...variants, fx.variant]; }
       else if (fx.text) r.text = fx.text;
       if (fx.gloss !== undefined) extraGloss.set(r.variant, fx.gloss);
     }

@@ -23,7 +23,7 @@ spinal cord,anatomy,32,درکەپەتک,,translate,high,,Spinal cord injury
 tDCS,procedure,32,tDCS,,keep,high,acronym kept,tDCS
 Treatment options at Alimran Medical Center,site,32,بژاردەکانی چارەسەر لە سەنتەری پزیشکیی ئەلعیمران,,translate,high,,Treatment options at Alimran Medical Center
 physical therapy,procedure,30,چارەسەری سروشتی,,translate,high,Iraqi Kurdish usage; فیزیۆتێراپی also understood,Physical therapy
-herniated disc,medical,29,دیسک,هەڵخلیسکانی دیسک,translate,high,in KRG plain 'دیسک' is the lay word for a herniated disc,Herniated disc
+herniated disc,medical,29,دیسک,هەڵخلیسکانی دیسک,translate,high,"in KRG plain 'دیسک' is the lay word for a herniated disc, but write هەڵخلیسکانی دیسک wherever bare دیسک could be read as the anatomical disc: surgery that removes the herniation (never 'the disc is removed'), image captions, condition lists, link labels, 'a single disc herniation'",Herniated disc
 MRI,procedure,29,ئێم ئاڕ ئای,MRI,translate,high,"Turkish patients say ""MR"" (MRG in formal texts); Kurdish patients use MRI/ئێم ئاڕ ئای",MRI has revolutionised diagnosis and monitoring.
 diabetes,medical,28,نەخۆشی شەکرە,,translate,high,,Diabetes
 therapeutic exercise,procedure,25,ڕاهێنانی چارەسەری,,translate,high,,Therapeutic exercises
@@ -41,12 +41,12 @@ osteoarthritis,medical,19,داخورانی جومگە,ئۆستیۆئارسرای
 Parkinson's disease,medical,19,نەخۆشیی پارکینسۆن,,translate,high,,Parkinson’s Disease
 chiropractic care,procedure,18,چارەسەری کایرۆپراکتیک,,translate+en-first-mention,high,,Chiropractic
 radiofrequency ablation,procedure,18,سووتاندن بە ڕادیۆفریکوێنسی,,translate+en-first-mention,high,,Radiofrequency ablation
-hypertension,medical,17,بەرزیی پەستانی خوێن,,translate,high,,Hypertension
+hypertension,medical,17,بەرزیی پەستانی خوێن,,translate,high,blood-pressure sense only; intracranial hypertension = بەرزبوونەوەی پەستانی ناو کەللەسەر,Hypertension
 multiple sclerosis,medical,17,ڕەقبوونی فرەیی,MS,translate,high,,Multiple Sclerosis
 spinal cord injury,medical,17,برینداربوونی درکەپەتک,,translate,high,,Spinal cord injury
 arthritis,medical,16,هەوکردنی جومگە,,translate,high,,Arthritis
 neck pain,medical,16,ئازاری مل,,translate,high,,Neck Pain
-NSAIDs,drug,16,دژەهەوکردنە ناستیرۆیدییەکان,NSAIDs,translate,high,tr acronym is NSAİİ,NSAIDs for inflammation
+NSAIDs,drug,16,دژەهەوکردنە ناستیرۆیدییەکان,NSAIDs,translate,high,"never gloss NSAIDs on a steroid/corticosteroid line (""anti-inflammatory"" there is not an NSAID)",NSAIDs for inflammation
 osteoporosis,medical,16,پووکانەوەی ئێسک,,translate,high,,Osteoporosis
 rehabilitation,procedure,16,بەتواناکردنەوە,,translate+en-first-mention,high,Site-wide: بەتواناکردنەوە (KRG usage); English on first mention since clinics also say ڕیهابیلیتەیشن.,Geriatric Rehabilitation
 back pain,medical,15,ئازاری پشت,,translate,high,tr: use 'bel ağrısı' when context is clearly lower back,Back pain
@@ -94,7 +94,7 @@ vertebrae,anatomy,10,بڕبڕەکان,,translate,high,,Osteoporotic vertebra com
 peripheral neuropathy,medical,8,تێکچوونی دەمارەکانی دەوروبەر,نیوڕۆپاسی,translate,medium,,Peripheral neuropathy
 amyotrophic lateral sclerosis,medical,6,ڕەقبوونی لاتەنیشتی ماسولکەلاوازکەر,ALS,translate+en-first-mention,low,,Amyotrophic Lateral Sclerosis (ALS)
 endoscopic third ventriculostomy,procedure,5,ڤێنتریکیولۆستۆمیی سێیەم بە ئێندۆسکۆپ,,translate+en-first-mention,medium,,Endoscopic third ventriculostomy (ETV)
-shingles,medical,5,زۆنا,هێرپیسی زۆستەر,translate,medium,unsure of established Sorani lay term; verify,Shingles
+shingles,medical,5,زۆنا,هێرپیسی زۆستەر,translate,medium,the disease; roof shingles (building material) = خشتی سەربان,Shingles
 FES,procedure,4,FES,ورووژاندنی کارەبایی کارکردی,translate,medium,acronym kept Latin in both,"Different types of electrical stimulation — FES, IDC, IF, TENS — chosen by case and condition"
 neuroplasticity,medical,4,توانای خۆگونجاندنی مێشک و دەمار,نیوورۆپلاستیسیتی,translate,medium,,Neuroplasticity and CNS Reorganization
 postherpetic neuralgia,medical,4,ئازاری دەماریی دوای زۆنا,,translate,medium,depends on Sorani word for shingles (see shingles),Postherpetic neuralgia
@@ -285,13 +285,13 @@ autoimmune,medical,0,خۆبەرگری,بەرگریی لەش هێرش دەکات�
 blood flow,medical,0,ڕەوتی خوێن,,translate,medium,Round 2 clinical vocabulary (manual add).,
 clinical trial,medical,0,توێژینەوەی کلینیکی,,translate,medium,Round 2 clinical vocabulary (manual add).,
 contraindication,medical,0,هۆکاری قەدەغەکردنی چارەسەر,,translate,medium,reason a treatment must not be given. Round 2 clinical vocabulary (manual add).,
-dose,drug,0,ژەمی دەرمان,,translate,medium,amount of medicine taken at one time. Round 2 clinical vocabulary (manual add).,
+dose,drug,0,ژەمی دەرمان,,translate,medium,medicine dose; radiation dose = ژەمی تیشک; insulin dose = ژەمی ئەنسولین,
 muscle contraction,medical,0,کورتبوونەوەی ماسولکە,,translate+en-first-mention,low,Round 2 clinical vocabulary (manual add).,
 non-invasive,procedure,0,بێ بڕین و بێ دەرزی,,translate,medium,no incision and no needle. Round 2 clinical vocabulary (manual add).,
 placebo,drug,0,دەرمانی وەهمی,پلاسیبۆ,translate,medium,Round 2 clinical vocabulary (manual add).,
-progressive,medical,0,پەرەسەندوو,بەردەوام خراپتر دەبێت,translate,medium,gets worse over time; not پێشکەوتوو (advanced). Round 2 clinical vocabulary (manual add).,
+progressive,medical,0,پەرەسەندوو,بەردەوام خراپتر دەبێت,translate,medium,gets worse over time (disease); for training/loading/strengthening that increases step by step use هەنگاو بە هەنگاو. Not پێشکەوتوو (advanced).,
 radiating pain,medical,0,ئازاری بڵاوبووە,ئازارێک کە بۆ بەشێکی تری لەش دەگوازرێتەوە,translate,medium,Round 2 clinical vocabulary (manual add).,
 residual weakness,medical,0,لاوازیی بەجێماو,,translate,medium,weakness left after recovery; tr not kalıcı (permanent). Round 2 clinical vocabulary (manual add).,
-session,procedure,0,دانیشتنی چارەسەر,,translate,medium,a single treatment visit. Round 2 clinical vocabulary (manual add).,
+session,procedure,0,دانیشتنی چارەسەر,,translate,medium,treatment session; a training/weightlifting session is not this term,
 unilateral,medical,0,یەکلایەنە,,translate,medium,Round 2 clinical vocabulary (manual add).,
 Watch the procedure,site,0,سەیری چارەسەرەکە بکە,,translate,medium,video button. Round 2 clinical vocabulary (manual add).,

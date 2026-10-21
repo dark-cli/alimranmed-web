@@ -282,6 +282,24 @@
       "id": "sacroiliac",
       "en": "sacroiliac",
       "ckb": "ساکرۆئیلیاک"
+    },
+    {
+      "id": "dura",
+      "en": "\\bdura\\b|\\bdural\\b|subdural|extradural",
+      "ckb": "پەردەی سەخت",
+      "ckbForbid": "دوورا|پەردەی دیورا|پەردەی ڕەق"
+    },
+    {
+      "id": "pituitary",
+      "en": "pituitar",
+      "ckb": "ڕژێنی ژێرمێشک",
+      "ckbForbid": "پیتوتاری|هیپۆفیز"
+    },
+    {
+      "id": "migraine",
+      "en": "migraine",
+      "ckb": "میگرەن",
+      "ckbForbid": "شەقیقە"
     }
   ],
   "allowedVariantClusters": [
@@ -322,7 +340,8 @@
     "donm|dönm",
     "bas|baş",
     "dmard|dmard'",
-    "کەلێن|یەکلایەن"
+    "کەلێن|یەکلایەن",
+    "دیوار|یادەوەر"
   ],
   "replace": {
     "ckb": [
@@ -1121,7 +1140,9 @@
       "ckb_policy": "translate"
     },
     "extradural hematoma": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "کۆبوونەوەی خوێن لە دەرەوەی پەردەی سەختی مێشک",
+      "ckb_note": "dura = پەردەی سەخت throughout"
     },
     "facet joint arthropathy": {
       "ckb_policy": "translate"
@@ -1552,7 +1573,8 @@
       "ckb_policy": "translate"
     },
     "shingles": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb_note": "the disease; roof shingles (building material) = خشتی سەربان"
     },
     "Sjögren's": {
       "ckb_policy": "translate"
@@ -1911,7 +1933,8 @@
       "ckb_policy": "translate"
     },
     "filum section": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "بڕینی فیلەم تێرمیناڵ"
     },
     "fluoroscopy": {
       "ckb_policy": "translate"
@@ -1920,7 +1943,8 @@
       "ckb_policy": "translate"
     },
     "fusion": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb_note": "spinal fusion sense (ACDF); fusion of skull sutures = داخران (as in craniosynostosis); joint fusion = لکاندنی جومگە without the vertebra gloss"
     },
     "Gasserian ganglion radiofrequency ablation": {
       "ckb_policy": "translate"
@@ -2043,7 +2067,8 @@
       "ckb_policy": "translate"
     },
     "pacemaker": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb_note": "heart pacemaker gloss only for the heart device; diaphragm pacemaker and \"pacemaker-like\" stimulators get no heart gloss"
     },
     "PET scanning": {
       "ckb_policy": "translate"
@@ -2297,7 +2322,9 @@
       "ckb_policy": "translate"
     },
     "dura mater": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "پەردەی سەخت (دیورا)",
+      "ckb_note": "dura = پەردەی سەخت throughout (brain and spine); first prose mention glossed (دیورا). Brain-only contexts may say پەردەی سەختی مێشک. Never دوورا / پەردەی ڕەق."
     },
     "epidural space": {
       "ckb_policy": "translate"
@@ -2309,7 +2336,8 @@
       "ckb_policy": "translate"
     },
     "foramen": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb_note": "intervertebral (nerve exit) foramen; foramen of Monro (between brain ventricles) = کونی مۆنرۆ"
     },
     "foramen magnum": {
       "ckb_policy": "translate"
@@ -2489,7 +2517,8 @@
       "ckb": "هۆکاری قەدەغەکردنی چارەسەر"
     },
     "progressive": {
-      "ckb": "پەرەسەندوو (بەردەوام خراپتر دەبێت)"
+      "ckb": "پەرەسەندوو (بەردەوام خراپتر دەبێت)",
+      "ckb_note": "gets worse over time (disease); for training/loading/strengthening that increases step by step use هەنگاو بە هەنگاو. Not پێشکەوتوو (advanced)."
     },
     "radiating pain": {
       "ckb": "ئازاری بڵاوبووە (ئازارێک کە بۆ بەشێکی تری لەش دەگوازرێتەوە)"
@@ -2504,10 +2533,12 @@
       "ckb": "بێ بڕین و بێ دەرزی"
     },
     "session": {
-      "ckb": "دانیشتنی چارەسەر"
+      "ckb": "دانیشتنی چارەسەر",
+      "ckb_note": "treatment session; a training/weightlifting session is not this term"
     },
     "dose": {
-      "ckb": "ژەمی دەرمان"
+      "ckb": "ژەمی دەرمان",
+      "ckb_note": "medicine dose; radiation dose = ژەمی تیشک; insulin dose = ژەمی ئەنسولین"
     },
     "placebo": {
       "ckb": "دەرمانی وەهمی (پلاسیبۆ)"
@@ -2520,7 +2551,7 @@
     },
     "incontinence": {
       "ckb": "ڕانەگرتنی میز یان پیسایی",
-      "ckb_note": "ckb: generic term = urinary or fecal; urinary/fecal/stress/urge incontinence have their own entries."
+      "ckb_note": "ckb: generic term = urinary or fecal; when the context is the bladder (neurogenic bladder, pregnancy) use ڕانەگرتنی میز. urinary/fecal/stress/urge incontinence have their own entries."
     },
     "fecal incontinence": {
       "ckb": "ڕانەگرتنی پیسایی"
@@ -2536,6 +2567,95 @@
     },
     "fellowship": {
       "ckb_note": "Post-residency fellowship (CV credential, training sense). tr: never \"burs\" (scholarship). ckb: descriptive rendering, first prose mention adds (فێلۆشیپ) as KRG doctors say it; never زەماڵە/بورس."
+    },
+    "pituitary gland": {
+      "ckb": "ڕژێنی ژێرمێشک",
+      "ckb_note": "pituitary = ڕژێنی ژێرمێشک throughout; never پیتوتاری / هیپۆفیز"
+    },
+    "hypopituitarism": {
+      "ckb": "کەمکاریی ڕژێنی ژێرمێشک",
+      "ckb_note": "pituitary = ڕژێنی ژێرمێشک throughout"
+    },
+    "TMS for migraine": {
+      "ckb": "TMS بۆ میگرەن",
+      "ckb_note": "migraine = میگرەن throughout (not شەقیقە)"
+    },
+    "surgical drainage": {
+      "ckb": "بەتاڵکردنەوە بە نەشتەرگەری",
+      "ckb_note": "neutral: blood (hematoma), fluid, syrinx or pus; name the content only when the English does (abscess -> کێم)"
+    },
+    "cortex": {
+      "ckb_note": "brain cortex; bone cortex / cortical bone = توێکڵی ئێسک (when the English says only \"cortex\" next to bone, X-ray or fracture context, use توێکڵی ئێسک)"
+    },
+    "refractory": {
+      "ckb_note": "treatment-resistant sense; the physiological \"refractory period\" (no response to triggers after an attack) = ماوەی بێوەڵامی"
+    },
+    "vestibule": {
+      "ckb_note": "inner-ear sense; the vulvar/vaginal vestibule = دەرچەی زێ (see variant rules)"
+    },
+    "hypertension": {
+      "ckb_note": "blood-pressure sense only; intracranial hypertension = بەرزبوونەوەی پەستانی ناو کەللەسەر"
+    },
+    "blood circulation": {
+      "ckb_note": "blood sense; CSF circulation = سووڕانەوەی شلەی مێشک و درکەپەتک / CSF; energy circulation (acupuncture, bioresonance) = سووڕی وزە"
+    },
+    "traction": {
+      "ckb_note": "spinal traction therapy/device; mechanical pulling on the cord (tethered cord) = ڕاکێشان; pulling out a bullet = دەرهێنان"
+    },
+    "stretching": {
+      "ckb_note": "muscle stretching exercise; reaching/stretching upward, or stretching of a nerve or the cord = ڕاکێشان (no ماسولکە)"
+    },
+    "onset": {
+      "ckb_note": "symptom onset; in compounds (sleep onset, new-onset, early-/late-/rapid-/slow-/focal-onset, onset of drug effect) render the start naturally (دەستپێک / دەست پێدەکات / نوێ), not دەستپێکی نیشانەکان"
+    },
+    "indication": {
+      "ckb_note": "clinical indication; \"give you an indication of\" = give an idea/estimate (وێنایەک دەدات), not the clinical sense. Never ئامادەکاری."
+    },
+    "implant": {
+      "ckb_note": "noun = ئامێری چێنراو; verb (implants, is implanted) = دەچێنرێت / چاندن"
+    },
+    "vision": {
+      "ckb_note": "eyesight; \"Our vision\" (organisation mission) = دیدگا"
+    },
+    "face": {
+      "ckb_note": "noun = ڕوخسار; the verb \"to face\" (face problems, face toward) is not this term"
+    },
+    "rigidity": {
+      "ckb_note": "muscle rigidity (Parkinson); spinal rigidity = ڕەقبوونی بڕبڕەی پشت; joint stiffness = ڕەقبوونی جومگە"
+    },
+    "spine": {
+      "ckb_note": "the spine; \"spines\" of vertebrae (spinous processes) = دڕکەکانی بڕبڕە"
+    },
+    "NSAIDs": {
+      "ckb_note": "never gloss NSAIDs on a steroid/corticosteroid line (\"anti-inflammatory\" there is not an NSAID)"
+    },
+    "strengthening exercises": {
+      "ckb_note": "exercise sense; \"strengthening\" of programmes, pathways or services is not this term"
+    },
+    "coordination": {
+      "ckb_note": "movement coordination; organisational coordination = هەماهەنگی"
+    },
+    "medical history": {
+      "ckb_note": "patient history; \"natural history\" (course of a disease) and \"history of smoking/trauma\" are not this term"
+    },
+    "addiction": {
+      "ckb_note": "substance/behavioural addiction; garbled \"illness-addiction\" (geriatric rehabilitation) = dependency on others/care = پشتبەستن بە کەسانی تر"
+    },
+    "transforaminal epidural steroid injection": {
+      "ckb_note": "say ستیرۆیدی only when the English says steroid; \"transforaminal (epidural) injection\" = دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
+    },
+    "interlaminar epidural steroid injection": {
+      "ckb_note": "say ستیرۆیدی only when the English says steroid"
+    },
+    "ultrasound": {
+      "ckb_note": "Kurdish patients say سۆنار (imaging, guidance). As a physiotherapy treatment write چارەسەر بە سۆنار / ultrasound therapy rendering, so it is not read as a scan"
+    },
+    "herniated disc": {
+      "ckb_note": "in KRG plain 'دیسک' is the lay word for a herniated disc, but write هەڵخلیسکانی دیسک wherever bare دیسک could be read as the anatomical disc: surgery that removes the herniation (never 'the disc is removed'), image captions, condition lists, link labels, 'a single disc herniation'"
+    },
+    "extensor carpi radialis brevis": {
+      "ckb": "ماسولکەی درێژکەرەوەی کورتی تیشکیی مەچەک (extensor carpi radialis brevis)",
+      "ckb_note": "Sorani name, Latin name as first-mention gloss"
     }
   },
   "add": [
@@ -5143,5 +5263,354 @@
       }
     ]
   },
-  "_glossRule": "check-glossary.mjs: gloss must differ from text and from the English term, and must not be contained in its own text (tr and ckb); merge-glossary.mjs drops such glosses. ckb also warns when a gloss is another entry's rendering."
+  "_glossRule": "check-glossary.mjs: gloss must differ from text and from the English term, and must not be contained in its own text (tr and ckb); merge-glossary.mjs drops such glosses. ckb also warns when a gloss is another entry's rendering.",
+  "ckbVariantRules": {
+    "_comment": "ckb only: context-sense variant_rules applied by merge-glossary.mjs (same shape as trVariantRules; drop:true removes a rule from the parts). A variant not yet in terms.json is appended to the ckb entry variants only.",
+    "dura mater": [
+      {
+        "variant": "dura",
+        "text": "پەردەی سەخت"
+      }
+    ],
+    "cortex": [
+      {
+        "variant": "bone cortex",
+        "text": "توێکڵی ئێسک"
+      },
+      {
+        "variant": "cortical bone",
+        "text": "توێکڵی ئێسک"
+      },
+      {
+        "variant": "perpendicular to the cortex",
+        "text": "توێکڵی ئێسک"
+      }
+    ],
+    "refractory": [
+      {
+        "variant": "refractory period",
+        "text": "ماوەی بێوەڵامی"
+      }
+    ],
+    "vestibule": [
+      {
+        "variant": "vaginal opening (vestibule)",
+        "text": "دەرچەی زێ",
+        "gloss": ""
+      },
+      {
+        "variant": "vulvar vestibule",
+        "text": "دەرچەی زێ",
+        "gloss": ""
+      }
+    ],
+    "progressive": [
+      {
+        "variant": "progressive load",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive loading",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive training load",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive strengthening",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive eccentric strengthening",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive return-to-sport",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      }
+    ],
+    "hypertension": [
+      {
+        "variant": "intracranial hypertension",
+        "text": "بەرزبوونەوەی پەستانی ناو کەللەسەر"
+      }
+    ],
+    "blood circulation": [
+      {
+        "variant": "CSF circulation",
+        "text": "سووڕانەوەی CSF"
+      },
+      {
+        "variant": "restore normal circulation",
+        "text": "سووڕانەوەی ئاسایی"
+      },
+      {
+        "variant": "energy circulation",
+        "text": "سووڕی وزە"
+      },
+      {
+        "variant": "energy level circulation",
+        "text": "سووڕی وزە"
+      }
+    ],
+    "traction": [
+      {
+        "variant": "creates traction",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "resulting traction",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "this traction",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "bullet traction",
+        "text": "دەرهێنانی گوللە"
+      }
+    ],
+    "stretching": [
+      {
+        "variant": "upward stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "forcefully stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "nerve stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "mild stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "minor stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "from stretching",
+        "text": "ڕاکێشان"
+      }
+    ],
+    "dose": [
+      {
+        "variant": "radiation dose",
+        "text": "ژەمی تیشک"
+      },
+      {
+        "variant": "dose of radiation",
+        "text": "ژەمی تیشک"
+      },
+      {
+        "variant": "doses of radiation",
+        "text": "ژەمی تیشک"
+      },
+      {
+        "variant": "single high-dose",
+        "text": "ژەمی تیشک"
+      },
+      {
+        "variant": "insulin dose",
+        "text": "ژەمی ئەنسولین"
+      },
+      {
+        "variant": "dosage of insulin",
+        "text": "ژەمی ئەنسولین"
+      }
+    ],
+    "indication": [
+      {
+        "variant": "give you an indication",
+        "text": "وێنایەک"
+      }
+    ],
+    "fusion": [
+      {
+        "variant": "premature fusion",
+        "text": "داخرانی پێشوەخت",
+        "gloss": ""
+      },
+      {
+        "variant": "early fusion",
+        "text": "داخرانی پێشوەخت",
+        "gloss": ""
+      },
+      {
+        "variant": "suture fusion",
+        "text": "داخران",
+        "gloss": ""
+      },
+      {
+        "variant": "joint fusion",
+        "text": "لکاندنی جومگە",
+        "gloss": ""
+      }
+    ],
+    "vision": [
+      {
+        "variant": "our vision",
+        "text": "دیدگا"
+      }
+    ],
+    "rigidity": [
+      {
+        "variant": "spinal rigidity",
+        "text": "ڕەقبوونی بڕبڕەی پشت"
+      }
+    ],
+    "pacemaker": [
+      {
+        "variant": "diaphragm pacemaker",
+        "text": "پەیسمەیکەر",
+        "gloss": ""
+      },
+      {
+        "variant": "pacemaker surgically implanted in the diaphragm",
+        "text": "پەیسمەیکەر",
+        "gloss": ""
+      },
+      {
+        "variant": "pacemaker-like",
+        "text": "پەیسمەیکەر",
+        "gloss": ""
+      },
+      {
+        "variant": "type of pacemaker",
+        "text": "پەیسمەیکەر",
+        "gloss": ""
+      }
+    ],
+    "NSAIDs": [
+      {
+        "variant": "anti-inflammatory medication",
+        "gloss": ""
+      }
+    ],
+    "onset": [
+      {
+        "variant": "rapid-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "rapid onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "slow-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "slower onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "focal-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "generalised-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "juvenile-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "early-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "late-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "childhood-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "limb-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "bulbar-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "sleep onset",
+        "text": "خەو"
+      },
+      {
+        "variant": "sudden onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "gradual onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "new-onset",
+        "text": "نوێ"
+      }
+    ],
+    "addiction": [
+      {
+        "variant": "illness-addiction",
+        "text": "پشتبەستن"
+      }
+    ],
+    "interlaminar epidural steroid injection": [
+      {
+        "variant": "interlaminar epidural injection",
+        "text": "دەرزی ئیپیدیوراڵ لە نێوان لامیناکان"
+      }
+    ],
+    "transforaminal epidural steroid injection": [
+      {
+        "variant": "transforaminal epidural injection",
+        "text": "دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
+      },
+      {
+        "variant": "transforaminal epidural injections",
+        "text": "دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
+      },
+      {
+        "variant": "transforaminal injection",
+        "text": "دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
+      },
+      {
+        "variant": "transforaminal injections",
+        "text": "دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
+      }
+    ],
+    "foramen": [
+      {
+        "variant": "foramen of Munro",
+        "text": "کونی مۆنرۆ",
+        "gloss": ""
+      },
+      {
+        "variant": "foramen of Monro",
+        "text": "کونی مۆنرۆ",
+        "gloss": ""
+      }
+    ],
+    "image guidance": [
+      {
+        "variant": "X-ray guidance",
+        "text": "بە ڕێنماییی تیشکی ئێکس"
+      }
+    ]
+  }
 }

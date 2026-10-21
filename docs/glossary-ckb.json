@@ -216,9 +216,18 @@
     "category": "medical",
     "text": "ئاڵوودەبوون",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "illness-addiction"
+    ],
+    "variant_rules": [
+      {
+        "variant": "illness-addiction",
+        "text": "پشتبەستن"
+      }
+    ],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "substance/behavioural addiction; garbled \"illness-addiction\" (geriatric rehabilitation) = dependency on others/care = پشتبەستن بە کەسانی تر"
   },
   {
     "en": "adenomyosis",
@@ -1026,11 +1035,33 @@
     "text": "سووڕی خوێن",
     "policy": "translate",
     "variants": [
-      "circulation"
+      "circulation",
+      "CSF circulation",
+      "restore normal circulation",
+      "energy circulation",
+      "energy level circulation"
+    ],
+    "variant_rules": [
+      {
+        "variant": "CSF circulation",
+        "text": "سووڕانەوەی CSF"
+      },
+      {
+        "variant": "restore normal circulation",
+        "text": "سووڕانەوەی ئاسایی"
+      },
+      {
+        "variant": "energy circulation",
+        "text": "سووڕی وزە"
+      },
+      {
+        "variant": "energy level circulation",
+        "text": "سووڕی وزە"
+      }
     ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Round 2 clinical vocabulary (manual add)."
+    "note": "blood sense; CSF circulation = سووڕانەوەی شلەی مێشک و درکەپەتک / CSF; energy circulation (acupuncture, bioresonance) = سووڕی وزە"
   },
   {
     "en": "blood clots",
@@ -2148,7 +2179,7 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Round 2 clinical vocabulary (manual add)."
+    "note": "movement coordination; organisational coordination = هەماهەنگی"
   },
   {
     "en": "COPD",
@@ -2992,14 +3023,14 @@
   {
     "en": "extradural hematoma",
     "category": "medical",
-    "text": "کۆبوونەوەی خوێن لە دەرەوەی پەردەی دوورا",
+    "text": "کۆبوونەوەی خوێن لە دەرەوەی پەردەی سەختی مێشک",
     "policy": "translate",
     "variants": [
       "extradural haematoma"
     ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Turkish clinical usage is 'epidural hematom'"
+    "note": "dura = پەردەی سەخت throughout"
   },
   {
     "en": "Fabry's disease",
@@ -3843,7 +3874,7 @@
     ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "in KRG plain 'دیسک' is the lay word for a herniated disc"
+    "note": "in KRG plain 'دیسک' is the lay word for a herniated disc, but write هەڵخلیسکانی دیسک wherever bare دیسک could be read as the anatomical disc: surgery that removes the herniation (never 'the disc is removed'), image captions, condition lists, link labels, 'a single disc herniation'"
   },
   {
     "en": "herpes simplex",
@@ -4038,10 +4069,18 @@
     "text": "بەرزیی پەستانی خوێن",
     "policy": "translate",
     "variants": [
-      "high blood pressure"
+      "high blood pressure",
+      "intracranial hypertension"
+    ],
+    "variant_rules": [
+      {
+        "variant": "intracranial hypertension",
+        "text": "بەرزبوونەوەی پەستانی ناو کەللەسەر"
+      }
     ],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "blood-pressure sense only; intracranial hypertension = بەرزبوونەوەی پەستانی ناو کەللەسەر"
   },
   {
     "en": "hyperthyroidism",
@@ -4094,11 +4133,12 @@
   {
     "en": "hypopituitarism",
     "category": "medical",
-    "text": "کەمکاریی ڕژێنی هیپۆفیز",
+    "text": "کەمکاریی ڕژێنی ژێرمێشک",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "pituitary = ڕژێنی ژێرمێشک throughout"
   },
   {
     "en": "hypotelorism",
@@ -4197,7 +4237,7 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "ckb: generic term = urinary or fecal; urinary/fecal/stress/urge incontinence have their own entries."
+    "note": "ckb: generic term = urinary or fecal; when the context is the bladder (neurogenic bladder, pregnancy) use ڕانەگرتنی میز. urinary/fecal/stress/urge incontinence have their own entries."
   },
   {
     "en": "independence",
@@ -4215,11 +4255,18 @@
     "text": "حاڵەتی گونجاو بۆ چارەسەر",
     "policy": "translate",
     "variants": [
-      "indications"
+      "indications",
+      "give you an indication"
+    ],
+    "variant_rules": [
+      {
+        "variant": "give you an indication",
+        "text": "وێنایەک"
+      }
     ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "when a treatment is medically justified; never ئامادەکاری (preparation). Round 2 clinical vocabulary (manual add)."
+    "note": "clinical indication; \"give you an indication of\" = give an idea/estimate (وێنایەک دەدات), not the clinical sense. Never ئامادەکاری."
   },
   {
     "en": "infertility",
@@ -5077,7 +5124,7 @@
     ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Round 2 clinical vocabulary (manual add)."
+    "note": "patient history; \"natural history\" (course of a disease) and \"history of smoking/trauma\" are not this term"
   },
   {
     "en": "medication overuse headache",
@@ -6039,10 +6086,93 @@
     "category": "medical",
     "text": "دەستپێکی نیشانەکان",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "rapid-onset",
+      "rapid onset",
+      "slow-onset",
+      "slower onset",
+      "focal-onset",
+      "generalised-onset",
+      "juvenile-onset",
+      "early-onset",
+      "late-onset",
+      "childhood-onset",
+      "limb-onset",
+      "bulbar-onset",
+      "sleep onset",
+      "sudden onset",
+      "gradual onset",
+      "new-onset"
+    ],
+    "variant_rules": [
+      {
+        "variant": "rapid-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "rapid onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "slow-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "slower onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "focal-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "generalised-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "juvenile-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "early-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "late-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "childhood-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "limb-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "bulbar-onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "sleep onset",
+        "text": "خەو"
+      },
+      {
+        "variant": "sudden onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "gradual onset",
+        "text": "دەست"
+      },
+      {
+        "variant": "new-onset",
+        "text": "نوێ"
+      }
+    ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Round 2 clinical vocabulary (manual add)."
+    "note": "symptom onset; in compounds (sleep onset, new-onset, early-/late-/rapid-/slow-/focal-onset, onset of drug effect) render the start naturally (دەستپێک / دەست پێدەکات / نوێ), not دەستپێکی نیشانەکان"
   },
   {
     "en": "oral cancer",
@@ -6959,11 +7089,50 @@
     "category": "medical",
     "text": "پەرەسەندوو",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "progressive load",
+      "progressive loading",
+      "progressive training load",
+      "progressive strengthening",
+      "progressive eccentric strengthening",
+      "progressive return-to-sport"
+    ],
     "gloss": "بەردەوام خراپتر دەبێت",
+    "variant_rules": [
+      {
+        "variant": "progressive load",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive loading",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive training load",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive strengthening",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive eccentric strengthening",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      },
+      {
+        "variant": "progressive return-to-sport",
+        "text": "هەنگاو بە هەنگاو",
+        "gloss": ""
+      }
+    ],
     "confidence": "medium",
     "verified": "backtrans",
-    "note": "gets worse over time; not پێشکەوتوو (advanced). Round 2 clinical vocabulary (manual add)."
+    "note": "gets worse over time (disease); for training/loading/strengthening that increases step by step use هەنگاو بە هەنگاو. Not پێشکەوتوو (advanced)."
   },
   {
     "en": "prolactinoma",
@@ -7240,10 +7409,18 @@
     "category": "medical",
     "text": "سەرسەخت بەرامبەر چارەسەر",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "refractory period"
+    ],
+    "variant_rules": [
+      {
+        "variant": "refractory period",
+        "text": "ماوەی بێوەڵامی"
+      }
+    ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Round 2 clinical vocabulary (manual add)."
+    "note": "treatment-resistant sense; the physiological \"refractory period\" (no response to triggers after an attack) = ماوەی بێوەڵامی"
   },
   {
     "en": "relapse",
@@ -7430,8 +7607,17 @@
     "category": "medical",
     "text": "ڕەقبوونی ماسولکە",
     "policy": "translate",
-    "variants": [],
-    "confidence": "high"
+    "variants": [
+      "spinal rigidity"
+    ],
+    "variant_rules": [
+      {
+        "variant": "spinal rigidity",
+        "text": "ڕەقبوونی بڕبڕەی پشت"
+      }
+    ],
+    "confidence": "high",
+    "note": "muscle rigidity (Parkinson); spinal rigidity = ڕەقبوونی بڕبڕەی پشت; joint stiffness = ڕەقبوونی جومگە"
   },
   {
     "en": "risk factors",
@@ -7886,7 +8072,7 @@
     "gloss": "هێرپیسی زۆستەر",
     "confidence": "medium",
     "verified": "backtrans",
-    "note": "unsure of established Sorani lay term; verify"
+    "note": "the disease; roof shingles (building material) = خشتی سەربان"
   },
   {
     "en": "short-term",
@@ -9534,10 +9720,18 @@
     "category": "medical",
     "text": "بینین",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "our vision"
+    ],
+    "variant_rules": [
+      {
+        "variant": "our vision",
+        "text": "دیدگا"
+      }
+    ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Round 2 clinical vocabulary (manual add)."
+    "note": "eyesight; \"Our vision\" (organisation mission) = دیدگا"
   },
   {
     "en": "visual loss",
@@ -11395,7 +11589,7 @@
   {
     "en": "filum section",
     "category": "procedure",
-    "text": "بڕینی فیلوم تێرمیناڵ",
+    "text": "بڕینی فیلەم تێرمیناڵ",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
@@ -11494,11 +11688,38 @@
     "category": "procedure",
     "text": "لکاندن",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "premature fusion",
+      "early fusion",
+      "suture fusion",
+      "joint fusion"
+    ],
     "gloss": "یەکخستنی بڕبڕەکان",
+    "variant_rules": [
+      {
+        "variant": "premature fusion",
+        "text": "داخرانی پێشوەخت",
+        "gloss": ""
+      },
+      {
+        "variant": "early fusion",
+        "text": "داخرانی پێشوەخت",
+        "gloss": ""
+      },
+      {
+        "variant": "suture fusion",
+        "text": "داخران",
+        "gloss": ""
+      },
+      {
+        "variant": "joint fusion",
+        "text": "لکاندنی جومگە",
+        "gloss": ""
+      }
+    ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "spinal fusion sense (ACDF)"
+    "note": "spinal fusion sense (ACDF); fusion of skull sutures = داخران (as in craniosynostosis); joint fusion = لکاندنی جومگە without the vertebra gloss"
   },
   {
     "en": "gait analysis",
@@ -11805,6 +12026,12 @@
       "image-guided",
       "X-ray guidance"
     ],
+    "variant_rules": [
+      {
+        "variant": "X-ray guidance",
+        "text": "بە ڕێنماییی تیشکی ئێکس"
+      }
+    ],
     "confidence": "high",
     "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
@@ -11829,7 +12056,7 @@
     ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Round 2 clinical vocabulary (manual add)."
+    "note": "noun = ئامێری چێنراو; verb (implants, is implanted) = دەچێنرێت / چاندن"
   },
   {
     "en": "IMRT",
@@ -11908,8 +12135,15 @@
     "variants": [
       "interlaminar epidural injection"
     ],
+    "variant_rules": [
+      {
+        "variant": "interlaminar epidural injection",
+        "text": "دەرزی ئیپیدیوراڵ لە نێوان لامیناکان"
+      }
+    ],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "say ستیرۆیدی only when the English says steroid"
   },
   {
     "en": "interlaminar technique",
@@ -13006,9 +13240,37 @@
     "category": "procedure",
     "text": "پەیسمەیکەر",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "diaphragm pacemaker",
+      "pacemaker surgically implanted in the diaphragm",
+      "pacemaker-like",
+      "type of pacemaker"
+    ],
     "gloss": "ڕێکخەری لێدانی دڵ",
-    "confidence": "high"
+    "variant_rules": [
+      {
+        "variant": "diaphragm pacemaker",
+        "text": "پەیسمەیکەر",
+        "gloss": ""
+      },
+      {
+        "variant": "pacemaker surgically implanted in the diaphragm",
+        "text": "پەیسمەیکەر",
+        "gloss": ""
+      },
+      {
+        "variant": "pacemaker-like",
+        "text": "پەیسمەیکەر",
+        "gloss": ""
+      },
+      {
+        "variant": "type of pacemaker",
+        "text": "پەیسمەیکەر",
+        "gloss": ""
+      }
+    ],
+    "confidence": "high",
+    "note": "heart pacemaker gloss only for the heart device; diaphragm pacemaker and \"pacemaker-like\" stimulators get no heart gloss"
   },
   {
     "en": "pain management",
@@ -13683,7 +13945,7 @@
     ],
     "confidence": "medium",
     "verified": "backtrans",
-    "note": "a single treatment visit. Round 2 clinical vocabulary (manual add)."
+    "note": "treatment session; a training/weightlifting session is not this term"
   },
   {
     "en": "shock wave therapy",
@@ -14094,15 +14356,49 @@
     ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Round 2 clinical vocabulary (manual add)."
+    "note": "exercise sense; \"strengthening\" of programmes, pathways or services is not this term"
   },
   {
     "en": "stretching",
     "category": "procedure",
     "text": "ڕاکێشانی ماسولکە",
     "policy": "translate",
-    "variants": [],
-    "confidence": "high"
+    "variants": [
+      "upward stretching",
+      "forcefully stretching",
+      "nerve stretching",
+      "mild stretching",
+      "minor stretching",
+      "from stretching"
+    ],
+    "variant_rules": [
+      {
+        "variant": "upward stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "forcefully stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "nerve stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "mild stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "minor stretching",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "from stretching",
+        "text": "ڕاکێشان"
+      }
+    ],
+    "confidence": "high",
+    "note": "muscle stretching exercise; reaching/stretching upward, or stretching of a nerve or the cord = ڕاکێشان (no ماسولکە)"
   },
   {
     "en": "stroke recovery",
@@ -14225,12 +14521,12 @@
   {
     "en": "surgical drainage",
     "category": "procedure",
-    "text": "بەتاڵکردنەوەی کێم بە نەشتەرگەری",
+    "text": "بەتاڵکردنەوە بە نەشتەرگەری",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "abscess context"
+    "note": "neutral: blood (hematoma), fluid, syrinx or pus; name the content only when the English does (abscess -> کێم)"
   },
   {
     "en": "surgical repair",
@@ -14456,20 +14752,44 @@
   {
     "en": "TMS for migraine",
     "category": "procedure",
-    "text": "TMS بۆ شەقیقە",
+    "text": "TMS بۆ میگرەن",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "note": "migraine = شەقیقە"
+    "note": "migraine = میگرەن throughout (not شەقیقە)"
   },
   {
     "en": "traction",
     "category": "procedure",
     "text": "ڕاکێشانی بڕبڕەی پشت",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "creates traction",
+      "resulting traction",
+      "this traction",
+      "bullet traction"
+    ],
+    "variant_rules": [
+      {
+        "variant": "creates traction",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "resulting traction",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "this traction",
+        "text": "ڕاکێشان"
+      },
+      {
+        "variant": "bullet traction",
+        "text": "دەرهێنانی گوللە"
+      }
+    ],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "spinal traction therapy/device; mechanical pulling on the cord (tethered cord) = ڕاکێشان; pulling out a bullet = دەرهێنان"
   },
   {
     "en": "traditional chinese medicine",
@@ -14522,8 +14842,27 @@
       "transforaminal injection",
       "transforaminal injections"
     ],
+    "variant_rules": [
+      {
+        "variant": "transforaminal epidural injection",
+        "text": "دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
+      },
+      {
+        "variant": "transforaminal epidural injections",
+        "text": "دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
+      },
+      {
+        "variant": "transforaminal injection",
+        "text": "دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
+      },
+      {
+        "variant": "transforaminal injections",
+        "text": "دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
+      }
+    ],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "say ستیرۆیدی only when the English says steroid; \"transforaminal (epidural) injection\" = دەرزی ئیپیدیوراڵ لە ڕێگەی کونی دەمارەوە"
   },
   {
     "en": "transforaminal lumbar interbody fusion",
@@ -14593,7 +14932,7 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Kurdish patients say سۆنار"
+    "note": "Kurdish patients say سۆنار (imaging, guidance). As a physiotherapy treatment write چارەسەر بە سۆنار / ultrasound therapy rendering, so it is not read as a scan"
   },
   {
     "en": "ultrasound cavitation",
@@ -15502,11 +15841,43 @@
     "policy": "translate",
     "variants": [
       "doses",
-      "dosage"
+      "dosage",
+      "radiation dose",
+      "dose of radiation",
+      "doses of radiation",
+      "single high-dose",
+      "insulin dose",
+      "dosage of insulin"
+    ],
+    "variant_rules": [
+      {
+        "variant": "radiation dose",
+        "text": "ژەمی تیشک"
+      },
+      {
+        "variant": "dose of radiation",
+        "text": "ژەمی تیشک"
+      },
+      {
+        "variant": "doses of radiation",
+        "text": "ژەمی تیشک"
+      },
+      {
+        "variant": "single high-dose",
+        "text": "ژەمی تیشک"
+      },
+      {
+        "variant": "insulin dose",
+        "text": "ژەمی ئەنسولین"
+      },
+      {
+        "variant": "dosage of insulin",
+        "text": "ژەمی ئەنسولین"
+      }
     ],
     "confidence": "medium",
     "verified": "backtrans",
-    "note": "amount of medicine taken at one time. Round 2 clinical vocabulary (manual add)."
+    "note": "medicine dose; radiation dose = ژەمی تیشک; insulin dose = ژەمی ئەنسولین"
   },
   {
     "en": "duloxetine",
@@ -16057,7 +16428,8 @@
     "variant_rules": [
       {
         "variant": "anti-inflammatory medication",
-        "text": "دەرمانی دژەهەوکردن"
+        "text": "دەرمانی دژەهەوکردن",
+        "gloss": ""
       },
       {
         "variant": "non-steroidal",
@@ -16066,7 +16438,7 @@
     ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "tr acronym is NSAİİ"
+    "note": "never gloss NSAIDs on a steroid/corticosteroid line (\"anti-inflammatory\" there is not an NSAID)"
   },
   {
     "en": "octreotide",
@@ -17202,8 +17574,27 @@
     "category": "anatomy",
     "text": "توێکڵی مێشک",
     "policy": "translate",
-    "variants": [],
-    "confidence": "high"
+    "variants": [
+      "bone cortex",
+      "cortical bone",
+      "perpendicular to the cortex"
+    ],
+    "variant_rules": [
+      {
+        "variant": "bone cortex",
+        "text": "توێکڵی ئێسک"
+      },
+      {
+        "variant": "cortical bone",
+        "text": "توێکڵی ئێسک"
+      },
+      {
+        "variant": "perpendicular to the cortex",
+        "text": "توێکڵی ئێسک"
+      }
+    ],
+    "confidence": "high",
+    "note": "brain cortex; bone cortex / cortical bone = توێکڵی ئێسک (when the English says only \"cortex\" next to bone, X-ray or fracture context, use توێکڵی ئێسک)"
   },
   {
     "en": "corticospinal tracts",
@@ -17332,20 +17723,21 @@
   {
     "en": "dura mater",
     "category": "anatomy",
-    "text": "پەردەی دیورا",
+    "text": "پەردەی سەخت",
     "policy": "translate",
     "variants": [
       "dura"
     ],
-    "gloss": "پەردەی ڕەقی مێشک",
+    "gloss": "دیورا",
     "variant_rules": [
       {
         "variant": "dura",
-        "text": "دیورا"
+        "text": "پەردەی سەخت"
       }
     ],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "dura = پەردەی سەخت throughout (brain and spine); first prose mention glossed (دیورا). Brain-only contexts may say پەردەی سەختی مێشک. Never دوورا / پەردەی ڕەق."
   },
   {
     "en": "elbow",
@@ -17367,12 +17759,13 @@
   {
     "en": "extensor carpi radialis brevis",
     "category": "anatomy",
-    "text": "ماسولکەی extensor carpi radialis brevis",
+    "text": "ماسولکەی درێژکەرەوەی کورتی تیشکیی مەچەک",
     "policy": "translate",
     "variants": [],
+    "gloss": "extensor carpi radialis brevis",
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Latin muscle name kept."
+    "note": "Sorani name, Latin name as first-mention gloss"
   },
   {
     "en": "external urinary sphincter",
@@ -17404,7 +17797,7 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Round 2 clinical vocabulary (manual add)."
+    "note": "noun = ڕوخسار; the verb \"to face\" (face problems, face toward) is not this term"
   },
   {
     "en": "facet joint",
@@ -17509,10 +17902,26 @@
     "category": "anatomy",
     "text": "کونی دەرچوونی دەمار",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "foramen of Munro",
+      "foramen of Monro"
+    ],
     "gloss": "فۆرامین",
+    "variant_rules": [
+      {
+        "variant": "foramen of Munro",
+        "text": "کونی مۆنرۆ",
+        "gloss": ""
+      },
+      {
+        "variant": "foramen of Monro",
+        "text": "کونی مۆنرۆ",
+        "gloss": ""
+      }
+    ],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "intervertebral (nerve exit) foramen; foramen of Monro (between brain ventricles) = کونی مۆنرۆ"
   },
   {
     "en": "foramen magnum",
@@ -18467,11 +18876,12 @@
   {
     "en": "pituitary gland",
     "category": "anatomy",
-    "text": "ڕژێنی پیتوتاری",
+    "text": "ڕژێنی ژێرمێشک",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "pituitary = ڕژێنی ژێرمێشک throughout; never پیتوتاری / هیپۆفیز"
   },
   {
     "en": "plantar fascia",
@@ -18889,7 +19299,8 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "the spine; \"spines\" of vertebrae (spinous processes) = دڕکەکانی بڕبڕە"
   },
   {
     "en": "spinothalamic",
@@ -19329,10 +19740,25 @@
     "category": "anatomy",
     "text": "دەهلیزی گوێی ناوەوە",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "vaginal opening (vestibule)",
+      "vulvar vestibule"
+    ],
+    "variant_rules": [
+      {
+        "variant": "vaginal opening (vestibule)",
+        "text": "دەرچەی زێ",
+        "gloss": ""
+      },
+      {
+        "variant": "vulvar vestibule",
+        "text": "دەرچەی زێ",
+        "gloss": ""
+      }
+    ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "Inner-ear sense."
+    "note": "inner-ear sense; the vulvar/vaginal vestibule = دەرچەی زێ (see variant rules)"
   },
   {
     "en": "vocal cords",

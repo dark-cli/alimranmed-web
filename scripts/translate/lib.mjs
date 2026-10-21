@@ -111,6 +111,16 @@ export function loadExtract(file) {
   if (rel.startsWith('..')) throw new Error(`not inside .translation/extract: ${file}`);
   return { abs, rel, items: JSON.parse(fs.readFileSync(abs, 'utf8')) };
 }
+/** GEMINI_API_KEY from the environment or the project .env (used by gemini-run.mjs / gemini-check.mjs). */
+export function loadGeminiKey() {
+  if (process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY;
+  const env = fs.readFileSync(path.join(ROOT, '.env'), 'utf8');
+  for (const line of env.split(/\r?\n/)) {
+    const m = line.match(/^\s*(?:export\s+)?GEMINI_API_KEY\s*=\s*(.*)$/);
+    if (m) return m[1].trim().replace(/^(['"])(.*)\1$/, '$2');
+  }
+  throw new Error('GEMINI_API_KEY not found in .env');
+}
 export const srcFileFor = (rel) => path.join(ROOT, 'src/content', rel === 'index' ? '' : rel, 'en.md');
 
 export function checkLang(lang) {
@@ -222,6 +232,9 @@ export function isNoGloss(it) {
   const leaf = parts[parts.length - 1];
   if (NONPROSE_LEAF.has(leaf)) return true;
   if (parts.some((p) => NOGLOSS_ARRAYS.has(p))) return true;
+  // inline list "A · B · C" (department/credential strips): every segment is a short label
+  const segs = it.text.split(/\s+[·•|]\s+/);
+  if (segs.length >= 3 && segs.every((x) => x.replace(/\{\{\d+\}\}/g, ' ').trim().length < 40)) return true;
   return it.text.replace(/\{\{\d+\}\}/g, ' ').trim().length < NOGLOSS_MAX_CHARS;
 }
 /** Section/body prose where the first-mention "(English)" gloss belongs. */
