@@ -49,3 +49,6 @@ old-site-backup/
 # Doctor's original draft USB — source of truth, not repo content
 drafts/
 
+
+# Translation pipeline working files (regenerable)
+.translation/

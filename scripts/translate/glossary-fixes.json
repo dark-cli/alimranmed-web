@@ -1,0 +1,651 @@
+{
+  "_comment": "Lead-terminologist consistency layer applied by merge-glossary.mjs on top of .translation/glossary-parts. rules: site-wide head-word decisions (also enforced by check-glossary.mjs). replace: regex rewrites per language. override: per-entry corrections. add: entries missing from the parts.",
+  "rules": [
+    {
+      "id": "hip",
+      "en": "\\bhips?\\b",
+      "ckb": "سمت",
+      "ckbForbid": "(^|\\s)ڕان",
+      "tr": "kalça",
+      "except": [
+        "hip girdle"
+      ]
+    },
+    {
+      "id": "knee",
+      "en": "\\bknees?\\b|genicular",
+      "ckb": "ئەژنۆ",
+      "ckbForbid": "چۆک",
+      "tr": "diz|genik"
+    },
+    {
+      "id": "shoulder",
+      "en": "\\bshoulders?\\b",
+      "ckb": "شان",
+      "tr": "omuz|omz"
+    },
+    {
+      "id": "lumbar",
+      "en": "\\blumbar\\b",
+      "ckb": "کەمەر",
+      "tr": "lomber|bel"
+    },
+    {
+      "id": "cervical",
+      "en": "\\bcervical\\b",
+      "ckb": "مل",
+      "tr": "servikal|boyun"
+    },
+    {
+      "id": "thoracic",
+      "en": "\\bthoracic\\b",
+      "ckb": "سنگ",
+      "tr": "torasik|torakal|sırt"
+    },
+    {
+      "id": "spinal-cord",
+      "en": "spinal cord|\\bcord syndrome",
+      "ckb": "درکەپەتک",
+      "ckbForbid": "مۆخی دڕک|مۆخی بڕبڕە",
+      "tr": "omurilik"
+    },
+    {
+      "id": "disc",
+      "en": "\\bdiscs?\\b|discectomy|discogenic|diskogenic",
+      "ckb": "دیسک",
+      "tr": "disk|fıtı"
+    },
+    {
+      "id": "nerve",
+      "en": "\\bnerves?\\b",
+      "ckb": "دەمار",
+      "tr": "sinir"
+    },
+    {
+      "id": "joint",
+      "en": "\\bjoints?\\b",
+      "ckb": "جومگە",
+      "tr": "eklem"
+    },
+    {
+      "id": "injection",
+      "en": "\\binjections?\\b",
+      "ckb": "دەرزی",
+      "ckbForbid": "دەرزیی\\s",
+      "tr": "enjeksiyon"
+    },
+    {
+      "id": "block",
+      "en": "\\bblocks?\\b",
+      "ckb": "بلۆک",
+      "tr": "blo[kğ]"
+    },
+    {
+      "id": "ablation",
+      "en": "\\bablation\\b",
+      "ckb": "سووتاندن",
+      "tr": "ablasyon"
+    },
+    {
+      "id": "radiofrequency",
+      "en": "radiofrequency",
+      "ckb": "ڕادیۆفریکوێنسی",
+      "tr": "radyofrekans"
+    },
+    {
+      "id": "rehabilitation",
+      "en": "rehabilitation",
+      "ckb": "بەتواناکردنەوە",
+      "ckbForbid": "ڕیهابیلیت|ڕاهێنانەوە",
+      "tr": "rehabilitasyon"
+    },
+    {
+      "id": "therapy",
+      "en": "\\btherap(y|ies)\\b",
+      "ckb": "چارەسەر",
+      "tr": "tedavi|terapi"
+    },
+    {
+      "id": "syndrome",
+      "en": "\\bsyndromes?\\b",
+      "ckb": "سەندرۆم",
+      "ckbForbid": "سیندرۆم",
+      "tr": "sendrom"
+    },
+    {
+      "id": "chronic",
+      "en": "\\bchronic\\b",
+      "ckb": "درێژخایەن",
+      "tr": "kronik"
+    },
+    {
+      "id": "pain",
+      "en": "\\bpain\\b",
+      "ckb": "ئازار",
+      "tr": "ağrı"
+    },
+    {
+      "id": "headache",
+      "en": "headaches?\\b",
+      "ckb": "سەرئێشە",
+      "tr": "baş ağrı"
+    },
+    {
+      "id": "fusion",
+      "en": "\\bfusion\\b",
+      "ckb": "لکاندن",
+      "ckbForbid": "جێگیرکردن",
+      "tr": "füzyon"
+    },
+    {
+      "id": "stimulation",
+      "en": "\\bstimulation\\b",
+      "ckb": "ورووژاندن",
+      "tr": "stimülasyon"
+    },
+    {
+      "id": "tendon",
+      "en": "\\btendons?\\b",
+      "ckb": "وەتەر",
+      "tr": "tendon"
+    },
+    {
+      "id": "epidural",
+      "en": "\\bepidural\\b",
+      "ckb": "ئیپیدیوراڵ",
+      "tr": "epidural"
+    },
+    {
+      "id": "stroke",
+      "en": "\\bstroke\\b",
+      "ckb": "جەڵتە",
+      "ckbForbid": "جەڵدە",
+      "tr": "inme"
+    },
+    {
+      "id": "medial-branch",
+      "en": "medial branch",
+      "ckb": "ناوەکی",
+      "tr": "medial dal"
+    },
+    {
+      "id": "occipital",
+      "en": "\\boccipital\\b",
+      "ckb": "پشتی سەر",
+      "tr": "oksipital"
+    },
+    {
+      "id": "facial",
+      "en": "\\bfacial\\b|orofacial",
+      "ckb": "ڕوخسار",
+      "ckbForbid": "ڕووخسار",
+      "tr": "yüz|fasiyal"
+    },
+    {
+      "id": "peripheral-nerve",
+      "en": "peripheral nerve",
+      "ckb": "دەرەکی",
+      "ckbForbid": "لاوەکی",
+      "tr": "periferik"
+    },
+    {
+      "id": "achilles",
+      "en": "achilles",
+      "ckb": "ئەخیل",
+      "tr": "Aşil"
+    },
+    {
+      "id": "alimran",
+      "en": "alimran",
+      "ckb": "ئەلعیمران",
+      "ckbForbid": "ئەلعومران",
+      "tr": "Alimran"
+    },
+    {
+      "id": "genicular",
+      "en": "genicular",
+      "ckb": "ئەژنۆ",
+      "tr": "genikuler"
+    },
+    {
+      "id": "spinal-fusion",
+      "en": "spinal fusion|interbody fusion",
+      "ckb": "لکاندنی بڕبڕە",
+      "tr": "füzyon"
+    },
+    {
+      "id": "csf",
+      "en": "cerebrospinal fluid|\\bCSF\\b|spinal tap|lumbar tap",
+      "ckb": "شلەی مێشک و درکەپەتک",
+      "tr": "BOS|ponksiyon"
+    }
+  ],
+  "allowedVariantClusters": [
+    "پرد|پەرد",
+    "ناخۆش|نەخۆش",
+    "سوور|سووڕ",
+    "بینین|بەیانیان",
+    "ئەتاکس|ئەتاکسیا",
+    "بێکەر|بەیکەر",
+    "دیسترۆف|دیسترۆفیا",
+    "خود|خەودا",
+    "پاڵس|پەلس",
+    "شوان|شوێن|شێوان|شەوان",
+    "بازن|بێزیان",
+    "دڕک|دەرەک",
+    "برین|بڕین",
+    "قەرن|قەیران",
+    "دوورا|دیوار|دیورا|یادەوەر",
+    "گۆڕان|گۆڕین",
+    "بەشێک|بەشەک",
+    "گەروو|گەڕاو",
+    "گالێن|گیلان",
+    "بەرز|بەرزا",
+    "چوار|چەور",
+    "بێرگەر|بەرگر",
+    "ماکرۆئەدینۆما|مایکرۆئەدینۆما",
+    "پشوو|پێشەو",
+    "کون|کەوان",
+    "ساخت|سەخت",
+    "کاردانەو|کردنەو",
+    "درز|دەرز",
+    "سیاتیک|سیاتیکا",
+    "سپاینا|سپێن",
+    "ترس|تێرێس",
+    "ناوک|ناوەک",
+    "سەروو|سەرەو",
+    "disk|dışk",
+    "donm|dönm",
+    "bas|baş",
+    "dmard|dmard'"
+  ],
+  "replace": {
+    "ckb": [
+      [
+        "شلەی مێشک و دڕک(?!ەپەتک)",
+        "شلەی مێشک و درکەپەتک",
+        "CSF = cerebrospinal fluid entry wording"
+      ],
+      [
+        "شلەی مۆخی بڕبڕە",
+        "شلەی مێشک و درکەپەتک",
+        "CSF = cerebrospinal fluid entry wording"
+      ],
+      [
+        "مۆخی دڕک",
+        "درکەپەتک",
+        "spinal cord = درکەپەتک (standard anatomical term)"
+      ],
+      [
+        "مۆخی بڕبڕە",
+        "درکەپەتک",
+        "spinal cord = درکەپەتک"
+      ],
+      [
+        "جومگەی ڕان",
+        "جومگەی سمت",
+        "hip = سمت; ڕان is thigh"
+      ],
+      [
+        "ئازاری جومگەی سمت",
+        "ئازاری سمت",
+        "hip pain = ئازاری سمت (region, not only the joint)"
+      ],
+      [
+        "چۆک",
+        "ئەژنۆ",
+        "knee = ئەژنۆ"
+      ],
+      [
+        "دەرزیی(?=\\s)",
+        "دەرزی",
+        "injection ezafe spelled دەرزی"
+      ],
+      [
+        "سیندرۆم",
+        "سەندرۆم",
+        "syndrome = سەندرۆم"
+      ],
+      [
+        "(?<!و)وروژاندن",
+        "ورووژاندن",
+        "stimulation = ورووژاندن"
+      ],
+      [
+        "ئێپیدیوراڵ|ئێپیدوراڵ",
+        "ئیپیدیوراڵ",
+        "epidural spelling"
+      ],
+      [
+        "دوای جەڵدە",
+        "دوای جەڵتەی مێشک",
+        "stroke = جەڵتەی مێشک"
+      ],
+      [
+        "لقی ناوەڕاستی دەمار",
+        "لقی ناوەکیی دەمار",
+        "medial = ناوەکی (median = ناوەڕاست)"
+      ],
+      [
+        "دەماری پشتەسەری گەورە",
+        "دەماری گەورەی پشتی سەر",
+        "occipital = پشتی سەر"
+      ],
+      [
+        "پشتەسەر",
+        "پشتی سەر",
+        "occipital = پشتی سەر"
+      ],
+      [
+        "ڕووخسار",
+        "ڕوخسار",
+        "face = ڕوخسار"
+      ],
+      [
+        "^دەماری ڕوو$",
+        "دەماری ڕوخسار",
+        "face = ڕوخسار"
+      ],
+      [
+        "دەمارە لاوەکییەکان",
+        "دەمارە دەرەکییەکان",
+        "peripheral = دەرەکی"
+      ],
+      [
+        "ئاشیل",
+        "ئەخیل",
+        "Achilles = ئەخیل"
+      ],
+      [
+        "ئەلعومران",
+        "ئەلعیمران",
+        "clinic name العمران = Al-Imran (matches Latin Alimran)"
+      ],
+      [
+        "ئانیۆریزم",
+        "ئەنیۆریزم",
+        "spelling"
+      ],
+      [
+        "قولەپێ",
+        "قوڵەپێ",
+        "spelling"
+      ],
+      [
+        "مایەلۆپاس",
+        "مایلۆپاس",
+        "spelling"
+      ],
+      [
+        "مایەلین",
+        "مایلین",
+        "spelling"
+      ],
+      [
+        "سێلیاک",
+        "سیلیاک",
+        "spelling"
+      ],
+      [
+        "فایبرۆسەس",
+        "فایبرۆسیس",
+        "spelling"
+      ],
+      [
+        "گوێزینگ",
+        "گوزینگ",
+        "spelling"
+      ],
+      [
+        "گەنگلیۆن",
+        "گانگلیۆن",
+        "spelling"
+      ],
+      [
+        "هێرپێس",
+        "هێرپیس",
+        "spelling"
+      ],
+      [
+        "لووپەس",
+        "لووپس",
+        "spelling"
+      ],
+      [
+        "مینیسکەس",
+        "مێنیسکەس",
+        "spelling"
+      ],
+      [
+        "(?<!و)سوڕێنەر",
+        "سووڕێنەر",
+        "spelling"
+      ],
+      [
+        "سەجیتاڵ",
+        "ساجیتاڵ",
+        "spelling"
+      ],
+      [
+        "سۆنەر",
+        "سۆنار",
+        "spelling"
+      ],
+      [
+        "ئێرگۆتێراپی",
+        "ئەرگۆتێراپی",
+        "spelling"
+      ],
+      [
+        "تێرمینال(?!ڵ)",
+        "تێرمیناڵ",
+        "spelling"
+      ],
+      [
+        "میدیەن",
+        "مێدیان",
+        "spelling"
+      ],
+      [
+        "کۆنتڕۆڵ",
+        "کۆنترۆڵ",
+        "spelling"
+      ],
+      [
+        "نیوورۆپاس",
+        "نیوڕۆپاس",
+        "spelling"
+      ]
+    ],
+    "tr": [
+      [
+        "genikülat",
+        "genikuler",
+        "genicular = genikuler"
+      ],
+      [
+        "posterior spinal füzyon",
+        "posterior omurga füzyonu",
+        "spinal fusion = omurga füzyonu"
+      ],
+      [
+        "detrusor",
+        "detrüsör",
+        "spelling"
+      ]
+    ]
+  },
+  "override": {
+    "Balance rehabilitation": {
+      "ckb": "بەتواناکردنەوەی هاوسەنگی"
+    },
+    "bladder rehabilitation": {
+      "ckb": "بەتواناکردنەوەی میزڵدان"
+    },
+    "cognitive rehabilitation": {
+      "ckb": "بەتواناکردنەوەی توانا هزرییەکان"
+    },
+    "rehabilitation": {
+      "ckb_policy": "translate+en-first-mention",
+      "note": "Site-wide: بەتواناکردنەوە (KRG usage); English on first mention since clinics also say ڕیهابیلیتەیشن."
+    },
+    "irritable bowel syndrome": {
+      "ckb": "سەندرۆمی کۆڵۆنی هەستیار (IBS)"
+    },
+    "anterior cervical discectomy and fusion": {
+      "ckb": "لابردنی دیسکی مل لە پێشەوە و لکاندنی بڕبڕەکان"
+    },
+    "cervical discectomy and fusion": {
+      "ckb": "لابردنی دیسکی مل و لکاندنی بڕبڕەکان"
+    },
+    "anterior lumbar interbody fusion": {
+      "ckb": "لکاندنی بڕبڕەکانی کەمەر لە پێشەوە"
+    },
+    "anterior/posterior spinal fusion": {
+      "ckb": "لکاندنی بڕبڕەکان لە پێشەوە/دواوە"
+    },
+    "CSF leak": {
+      "ckb": "دزەکردنی شلەی مێشک و درکەپەتک (CSF)"
+    },
+    "CSF drainage trial": {
+      "ckb": "تاقیکردنەوەی دەرهێنانی شلەی مێشک و درکەپەتک"
+    },
+    "hip girdle": {
+      "note": "= pelvic girdle, so حەوز (pelvis) is intended, not سمت."
+    },
+    "Botox injections": {
+      "ckb": "دەرزی Botox",
+      "tr_policy": "translate",
+      "ckb_policy": "translate",
+      "note": "brand Botox kept Latin (see entry Botox)."
+    },
+    "CRPS": {
+      "note": "complex regional pain syndrome. CRP (C-reactive protein) is a separate entry."
+    },
+    "Alimran Clinic": {
+      "tr_policy": "translate",
+      "ckb_policy": "translate",
+      "note": "Clinic name: tr Latin Alimran; ckb ئەلعیمران (Kurdish script of العمران, read al-Imran)."
+    },
+    "Alimran Medical Center": {
+      "tr_policy": "translate",
+      "ckb_policy": "translate",
+      "note": "Clinic name: tr Latin Alimran; ckb ئەلعیمران (Kurdish script of العمران, read al-Imran)."
+    },
+    "Luna EMG robot": {
+      "tr_policy": "translate",
+      "ckb_policy": "translate"
+    },
+    "genicular nerve": {
+      "ckb": "دەمارەکانی ئەژنۆ (جینیکیولەر)"
+    }
+  },
+  "add": [
+    {
+      "en": "CRP",
+      "category": "medical",
+      "tr": "CRP (C-reaktif protein)",
+      "tr_policy": "translate",
+      "ckb": "CRP",
+      "ckb_policy": "keep",
+      "confidence": "high",
+      "note": "C-reactive protein lab test; previously mis-merged into CRPS. ckb: lab name read as-is in Iraqi labs."
+    },
+    {
+      "en": "Botox",
+      "category": "drug",
+      "tr": "Botox",
+      "tr_policy": "keep",
+      "ckb": "Botox",
+      "ckb_policy": "keep",
+      "confidence": "high",
+      "note": "brand; identical in every entry. ckb reading: بۆتۆکس."
+    },
+    {
+      "en": "decompression",
+      "category": "procedure",
+      "tr": "dekompresyon",
+      "tr_policy": "translate",
+      "ckb": "لابردنی پەستان",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "note": "generic: covers surgical and SpineMED non-surgical decompression; previously mis-merged into surgical decompression."
+    },
+    {
+      "en": "sedatives",
+      "category": "drug",
+      "tr": "sakinleştirici ilaçlar",
+      "tr_policy": "translate",
+      "ckb": "دەرمانی هێورکەرەوە",
+      "ckb_policy": "translate",
+      "variant_rules": [
+        {
+          "variant": "sedative",
+          "tr": "sakinleştirici",
+          "ckb": "هێورکەرەوە"
+        }
+      ],
+      "confidence": "high",
+      "note": "the drugs; sedation (the state) is a separate entry."
+    },
+    {
+      "en": "Hussein Imran Mousa",
+      "category": "site",
+      "tr": "Hussein Imran Mousa",
+      "tr_policy": "keep",
+      "ckb": "حوسێن عیمران مووسا",
+      "ckb_policy": "adapt-spelling",
+      "variants": [
+        "Dr Hussein Imran Mousa",
+        "Dr. Hussein Imran Mousa",
+        "Hussein Imran Mousa Mohammed",
+        "Hussein Imran Mousa Muhammed"
+      ],
+      "variant_rules": [
+        {
+          "variant": "Dr Hussein Imran Mousa",
+          "tr": "Dr. Hussein Imran Mousa",
+          "ckb": "د. حوسێن عیمران مووسا"
+        },
+        {
+          "variant": "Dr. Hussein Imran Mousa",
+          "tr": "Dr. Hussein Imran Mousa",
+          "ckb": "د. حوسێن عیمران مووسا"
+        },
+        {
+          "variant": "Hussein Imran Mousa Mohammed",
+          "tr": "Hussein Imran Mousa Mohammed",
+          "ckb": "حوسێن عیمران مووسا محەمەد"
+        },
+        {
+          "variant": "Hussein Imran Mousa Muhammed",
+          "tr": "Hussein Imran Mousa Mohammed",
+          "ckb": "حوسێن عیمران مووسا محەمەد"
+        }
+      ],
+      "confidence": "medium",
+      "note": "Doctor's name; ar.md: حسين عمران موسى. Not in terms.json (scanner missed it), added manually."
+    }
+  ],
+  "trProperNouns": [
+    "Aşil",
+    "Chiari",
+    "Clostridium",
+    "Galen",
+    "Lyme",
+    "Morton",
+    "Osgood",
+    "Petit",
+    "D",
+    "Z"
+  ],
+  "keepStripGloss": [
+    "Gamma Knife",
+    "Schroth",
+    "PRP",
+    "Anafranil",
+    "Carbocaine",
+    "OxyContin"
+  ],
+  "_allowedVariantClustersComment": "Reviewed false positives of the spelling-variant check (different words with a similar skeleton)."
+}
