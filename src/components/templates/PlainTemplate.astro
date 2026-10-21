@@ -42,7 +42,7 @@ const { title, description = "", sections, locale, heroPreload, fontAwesome } = 
   fontAwesome={fontAwesome}
 >
   <Fragment slot="head"><slot name="head" /></Fragment>
-  {(locale === "tr" || locale === "ckb") && (
+  {locale === "tr" && (
     <div class="tr-notice"><TranslationBanner fromLocale="en" toLocale={locale} /></div>
   )}
   <div class="plain-wrap">

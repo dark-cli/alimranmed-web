@@ -162,7 +162,7 @@ const schemas = config ? [
 
 const usingSections = isRedesigned && Array.isArray(data.sections);
 const bodyImages = usingSections && bodyText ? extractBodyImages(bodyText) : [];
-const showBanner = (fallback && locale !== "en") || locale === "tr" || locale === "ckb";
+const showBanner = (fallback && locale !== "en") || locale === "tr";
 const englishHref = localizedHref(Astro.url.pathname, "en");
 ---
 

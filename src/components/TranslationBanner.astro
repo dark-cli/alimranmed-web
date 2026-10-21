@@ -3,7 +3,7 @@
  * Subtle notice shown at the top of a content page when it is not original
  * English text:
  *   - AR with no Arabic file: "translation in progress, showing English".
- *   - CKB: same notice as TR, in Sorani.
+ *   - CKB with no Sorani file: "translation not ready, showing English".
  *   - TR: pages are machine-translated; the English version is authoritative
  *     and linked from the notice.
  */
@@ -35,16 +35,7 @@ const englishHref = Astro.props.englishHref ?? localizedHref(Astro.url.pathname,
       )}
     </>
   ) : toLocale === "ckb" ? (
-    <>
-      <span class="text">
-        {fallback
-          ? "وەرگێڕانی کوردیی ئەم پەڕەیە هێشتا ئامادە نییە؛ وەشانی ئینگلیزی پیشان دەدرێت."
-          : "ئەم پەڕەیە بە شێوەی خۆکار وەرگێڕدراوە؛ وەشانی ئینگلیزی سەرچاوەی سەرەکییە."}
-      </span>
-      {englishHref && (
-        <a class="en-link" href={englishHref} hreflang="en" lang="en">وەشانی ئینگلیزی بکەرەوە ←</a>
-      )}
-    </>
+    <span class="text">وەرگێڕانی کوردیی ئەم پەڕەیە هێشتا ئامادە نییە؛ وەشانی ئینگلیزی پیشان دەدرێت.</span>
   ) : (
     <span class="text">
       {toLocale === "ar"
