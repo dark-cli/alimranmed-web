@@ -1,274 +1,320 @@
-﻿en,category,freq,rendering,policy,confidence,note,sample_en
-electrical stimulation,procedure,122,elektriksel stimülasyon,translate,high,,Electrical stimulation
-acupuncture,procedure,109,akupunktur,adapt-spelling,high,,acupuncture
-physiotherapy,procedure,105,fizik tedavi (fizyoterapi),translate,high,,Physiotherapy
-laser therapy,procedure,102,lazer tedavisi,translate,high,,Laser therapy
-pulsed radiofrequency,procedure,98,pulsed radyofrekans,translate,high,"tr clinics say ""pulsed radyofrekans""",Pulsed radiofrequency
-Botox,drug,97,Botox,keep,high,brand; identical in every entry. ckb reading: بۆتۆکس.,BOTOX
-prolotherapy,procedure,91,proloterapi,adapt-spelling,high,,Prolotherapy
-ozone injection,procedure,87,ozon enjeksiyonu,translate,high,,Ozone therapy
-Sigma,site,79,Sigma,keep,high,"Device name; Arabic transliterates, keep Latin.",Sigma
-Alimran Medical Center,site,78,Alimran Tıp Merkezi,translate,high,"Clinic name: tr Latin Alimran; ckb ئەلعیمران (Kurdish script of العمران, read al-Imran).",About — Alimran Medical Center
-short and long wave therapy,procedure,72,kısa ve uzun dalga tedavisi,translate,high,,Short and long wave
-SpineMED,site,70,SpineMED,keep,high,Device name.,SpineMED
-rTMS,procedure,69,rTMS,keep,high,acronym kept Latin,What is rTMS?
-ultrasound therapy,procedure,66,ultrason tedavisi,translate,high,"physio modality, not imaging",Ultrasonic therapy
-trigger point injections,procedure,62,tetik nokta enjeksiyonları,translate,high,,Trigger point injections
-epidural steroid injections,procedure,47,epidural steroid enjeksiyonları,translate,high,,Epidural injections
-steroid injection,procedure,45,steroid enjeksiyonu,translate,high,"lay Kurdish also ""دەرزی کۆرتیزۆن""",Steroid injection
-spinal cord stimulation,procedure,44,omurilik stimülasyonu,translate,high,,Spinal cord stimulation
-stroke,medical,42,inme (felç),translate,high,,Stroke
-neuromodulation,procedure,34,nöromodülasyon,adapt-spelling,high,,Neuromodulation
-spinal cord,anatomy,32,omurilik,translate,high,,Spinal cord injury
-tDCS,procedure,32,tDCS,keep,high,acronym kept,tDCS
-Treatment options at Alimran Medical Center,site,32,Alimran Tıp Merkezi'nde tedavi seçenekleri,translate,high,,Treatment options at Alimran Medical Center
-physical therapy,procedure,30,fizik tedavi,translate,high,Iraqi Kurdish usage; فیزیۆتێراپی also understood,Physical therapy
-herniated disc,medical,29,disk hernisi (fıtık),translate,high,in KRG plain 'دیسک' is the lay word for a herniated disc,Herniated disc
-MRI,procedure,29,MR (manyetik rezonans),translate,high,"Turkish patients say ""MR"" (MRG in formal texts); Kurdish patients use MRI/ئێم ئاڕ ئای",MRI has revolutionised diagnosis and monitoring.
-diabetes,medical,28,diyabet (şeker hastalığı),translate,high,,Diabetes
-therapeutic exercise,procedure,25,tedavi edici egzersiz,translate,high,,Therapeutic exercises
-rheumatoid arthritis,medical,24,romatoid artrit,translate,high,,Rheumatoid arthritis
-magnetic therapy,procedure,23,manyetik alan tedavisi,translate,high,,Magnetic therapy
-radiofrequency,procedure,22,radyofrekans,adapt-spelling,high,,Radiofrequency
-depression,medical,21,depresyon,translate,high,,Depression
-intrathecal baclofen pump,procedure,21,intratekal baklofen pompası,translate,high,,Intrathecal baclofen pump
-ozone therapy,procedure,20,ozon tedavisi,translate,high,,Ozone therapy
-spasticity,medical,20,spastisite,adapt-spelling,high,,Spasticity
-corticosteroids,drug,19,kortikosteroidler,adapt-spelling,high,,Corticosteroids
-migraine,medical,19,migren,translate,high,,Migraine
-occupational therapy,procedure,19,ergoterapi,translate,high,Turkish uses ergoterapi,Occupational therapy
-osteoarthritis,medical,19,osteoartrit (kireçlenme),translate,high,"tr lay ""kireçlenme""",ozone therapy for osteoarthritis
-Parkinson's disease,medical,19,Parkinson hastalığı,translate,high,,Parkinson’s Disease
-chiropractic care,procedure,18,kayropraktik tedavi,translate,high,,Chiropractic
-radiofrequency ablation,procedure,18,radyofrekans ablasyon,translate,high,,Radiofrequency ablation
-hypertension,medical,17,hipertansiyon (yüksek tansiyon),translate,high,,Hypertension
-multiple sclerosis,medical,17,multipl skleroz (MS),translate,high,,Multiple Sclerosis
-spinal cord injury,medical,17,omurilik yaralanması,translate,high,,Spinal cord injury
-arthritis,medical,16,artrit (eklem iltihabı),translate,high,,Arthritis
-neck pain,medical,16,boyun ağrısı,translate,high,,Neck Pain
-NSAIDs,drug,16,NSAİİ (steroid olmayan antiinflamatuvar ilaçlar),translate,high,tr acronym is NSAİİ,NSAIDs for inflammation
-osteoporosis,medical,16,kemik erimesi (osteoporoz),translate,high,,Osteoporosis
-rehabilitation,procedure,16,rehabilitasyon,translate,high,Site-wide: بەتواناکردنەوە (KRG usage); English on first mention since clinics also say ڕیهابیلیتەیشن.,Geriatric Rehabilitation
-back pain,medical,15,sırt ağrısı,translate,high,tr: use 'bel ağrısı' when context is clearly lower back,Back pain
-cerebral palsy,medical,15,serebral palsi,translate,high,,Cerebral palsy
-anticonvulsants,drug,14,antiepileptik ilaçlar (sara ilaçları),translate,high,فێ = epilepsy/seizure,Anti-seizure medications
-facet joint,anatomy,14,faset eklem,translate,high,,Facet joint injection
-numbness,medical,14,uyuşma,translate,high,,Numbness
-scoliosis,medical,14,skolyoz,adapt-spelling,high,,Scoliosis
-botulinum toxin,drug,13,botulinum toksini,translate,high,,Botulinum toxin for headache
-fibromyalgia,medical,13,fibromiyalji,translate,high,,Fibromyalgia
-nerve root,anatomy,13,sinir kökü,translate,high,,"Leg pain along the sciatic nerve, usually from a pinched nerve root."
-speech therapy,procedure,13,konuşma terapisi,translate,high,,Speech therapy
-tendinitis,medical,13,tendinit (tendon iltihabı),translate,high,,Tendinitis
-TMS,procedure,13,TMS,keep,high,acronym kept,TMS
-transcranial magnetic stimulation,procedure,13,transkraniyal manyetik stimülasyon (TMS),translate,high,,Transcranial magnetic stimulation
-headache,medical,12,baş ağrısı,translate,high,,Tension headaches
-hydrocephalus,medical,12,hidrosefali,translate,high,,Hydrocephalus
-pregabalin,drug,12,pregabalin,adapt-spelling,high,brand Lyrica kept as-is,"Neuropathic agents: gabapentin, pregabalin"
-repetitive transcranial magnetic stimulation,procedure,12,tekrarlayan transkraniyal manyetik stimülasyon (rTMS),translate,medium,,Repetitive transcranial magnetic stimulation (rTMS)
-sciatica,medical,12,siyatik,translate,high,lay Iraqi Kurdish also uses Arabic عیرق النسا; reviewer may prefer that,Sciatica
-trigeminal neuralgia,medical,12,trigeminal nevralji,translate,high,trigeminal kept as loan (no settled Sorani),Trigeminal neuralgia
-brain tumor,medical,11,beyin tümörü,translate,high,,Brain tumour
-brainstem,anatomy,11,beyin sapı,translate,high,,Surgical decompression when spinal cord or brainstem compression is found.
-deep brain stimulation,procedure,11,derin beyin stimülasyonu,translate,high,,Deep brain stimulation
-knee,anatomy,11,diz,translate,high,,Knee
-myocardial infarction,medical,11,miyokard enfarktüsü,translate,high,,"Arm pain, particularly pain that radiates into your left arm, can even be a sign of a heart attack."
-myofascial pain syndrome,medical,11,miyofasiyal ağrı sendromu,translate,high,,Myofascial Pain
-seizures,medical,11,nöbetler,translate,high,فێ = seizure/epilepsy in Sorani,Epilepsy & seizures
-spinal stenosis,medical,11,spinal stenoz (omurga kanal darlığı),translate,high,,Spinal stenosis
-watch on YouTube,site,11,YouTube'da izleyin,translate,high,,Watch on YouTube
-baclofen,drug,10,baklofen,adapt-spelling,high,,Baclofen (GABA agonist)
-carpal tunnel syndrome,medical,10,karpal tünel sendromu,translate,high,,Carpal tunnel syndrome
-craniotomy,procedure,10,kraniyotomi,adapt-spelling,high,,Burr Holes Craniotomy
-CT scan,procedure,10,BT (bilgisayarlı tomografi),translate,high,Turkish acronym BT,Brain CT scan show a bullet arrested at posterior cranial fossa.
-epilepsy,medical,10,epilepsi (sara),translate,high,'فێ' is the everyday KRG word,Epilepsy
-gabapentin,drug,10,gabapentin,adapt-spelling,high,,"Neuropathic agents: gabapentin, pregabalin"
-intracranial pressure,medical,10,kafa içi basınç,translate,high,,Focus is on controlling bleeding and intracranial pressure
-low back pain,medical,10,bel ağrısı,translate,high,"lumbar/lower back = bel (tr), کەمەر (ckb) throughout",chronic low back pain.
-microdiscectomy,procedure,10,mikrodiskektomi,adapt-spelling,high,"AR site uses colloquial ""مايكرودسك""",Microdiscectomy
-nerve block,procedure,10,sinir bloğu,translate,high,"Kurdish clinicians say ""بلۆک""",Injections and nerve blocks first.
-neuropathic pain,medical,10,nöropatik ağrı,translate,high,,Neuropathic pain
-sacroiliac joint,anatomy,10,sakroiliak eklem,translate,high,,Sacroiliac joint injection
-tinnitus,medical,10,kulak çınlaması,translate,high,,TMS for Tinnitus
-vertebrae,anatomy,10,omurlar,translate,high,,Osteoporotic vertebra compared to a healthy vertebra
-cauda equina syndrome,medical,7,kauda ekuina sendromu,translate,medium,,Cauda equina syndrome
-spina bifida,medical,7,spina bifida,keep,medium,,Spina bifida
-consultant neurosurgeon,site,6,beyin ve sinir cerrahisi uzmanı,translate,medium,Iraqi title 'consultant' = ڕاوێژکار.,consultant neurosurgeon
-endoscopic third ventriculostomy,procedure,5,endoskopik üçüncü ventrikülostomi,translate,medium,,Endoscopic third ventriculostomy (ETV)
-shingles,medical,5,zona,translate,medium,unsure of established Sorani lay term; verify,Shingles
-neuroplasticity,medical,4,nöroplastisite,adapt-spelling,medium,,Neuroplasticity and CNS Reorganization
-postherpetic neuralgia,medical,4,postherpetik nevralji,translate,medium,depends on Sorani word for shingles (see shingles),Postherpetic neuralgia
-vulvodynia,medical,4,vulvodini,adapt-spelling,medium,,Vulvodynia
-foramen magnum,anatomy,3,foramen magnum,keep,medium,,Brain MRI showed anterior foramen magnum mass severely compressing the junction of brain stem and spinal cord.
-interferential therapy,procedure,3,interferansiyel akım tedavisi,translate,medium,,"Electrical stimulation — TENS and interferential therapy for chronic pain relief, muscle activation, and oedema reduction."
-meningomyelocele,medical,3,meningomiyelosel,translate,medium,,14 days old with congenital dorsal meningomyelocele.
-nerve gliding,procedure,3,sinir kaydırma egzersizleri,translate,medium,,Nerve gliding exercises
-tethered spinal cord,medical,3,gergin omurilik,translate,medium,,Tethered spinal cord
-transcutaneous electrical nerve stimulation,procedure,3,transkütan elektriksel sinir stimülasyonu (TENS),translate,medium,,"…injectable pharmacological treatments, physical therapy, chiropractic care, or transcutaneous nerve stimulation (TENS) have failed. The best safest and effective method is pulsed radiofrequency and r…"
-transverse myelitis,medical,3,transvers miyelit,translate,medium,,Transverse myelitis
-anterior ischaemic optic neuropathy,medical,2,anterior iskemik optik nöropati,translate,medium,no established Sorani term; descriptive,The most feared complication is permanent visual loss from anterior ischaemic optic neuropathy.
-autonomic dysreflexia,medical,2,otonom disrefleksi,translate,medium,,*Spinal cord stimulation:* can improve bladder function and reduce autonomic dysreflexia risk in selected spinal cord injury patients
-bulging disc,medical,2,disk bombeleşmesi,translate,medium,keep distinct from herniated disc,"Nucleoplasty is a minimally invasive radiofrequency procedure that shrinks a bulging disc through a small needle, under local anaesthesia."
-buttock,anatomy,2,kalça arkası (gluteal bölge),translate+en-first-mention,medium,ckb: سمت is reserved for hip; کەفەڵ for buttock to avoid collision.,"Inflammation of the joint where the lower spine meets the pelvis, causing buttock and low back pain."
-constraint-induced movement therapy,procedure,2,kısıtlayıcı-zorlayıcı hareket tedavisi,translate+en-first-mention,medium,AR العلاج بالحركة المجبّرة,Constraint-induced movement therapy
-craniopharyngioma,medical,2,kraniofarenjiyom,translate,medium,transliteration,It is the standard-of-care approach for pituitary adenomas (both secretory and non-secretory) and other sellar lesions including craniopharyngiomas and Rathke's cleft cysts.
-dural repair,procedure,2,dura onarımı,translate,medium,,Operated with total excision of the sac and dural repair.
-foramen ovale,anatomy,2,foramen ovale,keep,medium,"Skull-base foramen (trigeminal procedure), not the cardiac one.","A small, thin needle is inserted through the middle of the cheek and gently guided with X-ray assistance through the foramen ovale into Meckel's Cave where the ganglion sits."
-histiocytosis,medical,2,histiyositoz,translate,medium,,Histopathology result showed a histiocytosis mass.
-ICP monitoring,procedure,2,kafa içi basınç (KİB) monitörizasyonu,translate,medium,,Severe cases require ICP monitoring.
-IT band syndrome,medical,2,iliotibial bant sendromu,translate,medium,,"Low back pain, neck pain, knee pain, shoulder pain, elbow, ankle, wrist, TMJ, plantar fasciitis, IT band syndrome, and piriformis syndrome."
-myelomeningocele,medical,2,miyelomeningosel,adapt-spelling,medium,no established Sorani term; loan,...nd selective dorsal rhizotomy); brain and spinal cord tumours; spina bifida and myelomeningocele; vascular malformations; epilepsy surgery; and peripheral nerve conditions in children....
-neuromuscular fibrosis,medical,2,nöromüsküler fibrozis,translate,medium,no sample context,Neuromuscular fibrosis
-osteochondritis dissecans,medical,2,osteokondritis dissekans,adapt-spelling,medium,loan only,Osteochondritis dissecans
-posterior fossa craniectomy,procedure,2,posterior fossa kraniektomisi,translate,medium,,"If a cause is found, treat the cause first: Chiari decompression (posterior fossa craniectomy) reliably resolves the syrinx in 50–70% of cases; tethered cord release and tumour resection also allow sp..."
-pseudogout,medical,2,psödogut,adapt-spelling,medium,,Pseudogout
-tethered cord,medical,2,gergin omurilik,translate,medium,,Nearly all adults with open spina bifida require lifelong monitoring for tethered cord.
-ACL reconstruction,procedure,1,ön çapraz bağ (ÖÇB) rekonstrüksiyonu,translate,medium,,ACL reconstruction if giving-way episodes are disabling
-adaptive servo-ventilation,procedure,1,adaptif servo-ventilasyon (ASV),translate,medium,,CPAP alone may be insufficient; adaptive servo-ventilation is often used.
-adolescent idiopathic scoliosis,medical,1,adolesan idiyopatik skolyoz,translate,medium,,In most cases (~80%) the cause is unknown — adolescent idiopathic scoliosis.
-amygdalatomy,procedure,1,amigdalatomi,adapt-spelling,medium,,Amygdalatomy.
-anterior capsulotomy,procedure,1,anterior kapsülotomi,translate,medium,psychosurgery,Anterior Capsulotomy.
-anterior cingulotomy,procedure,1,anterior singulotomi,translate,medium,,The most common targets include: - Anterior Cingulotomy.
-anterior release,procedure,1,anterior gevşetme,translate,medium,scoliosis surgery step,Anterior release and fusion for rigid curves
-aqueductal stenosis,medical,1,akuaduktal stenoz,translate,medium,,"...ature infants; blood clots obstruct CSF pathways - *Congenital malformations* — aqueductal stenosis (narrowing of the cerebral aqueduct), Chiari malformation, Dandy-Walker syndrome, neural tube defect..."
-athetoid/dyskinetic CP,medical,1,atetoid/diskinetik serebral palsi,translate,medium,,"**Athetoid/dyskinetic CP** — involuntary, purposeless, and jerky movements throughout the body"
-axonal sprouting,medical,1,aksonal filizlenme,translate,medium,,Survivors recover function because remaining neurons sprout new branches (axonal sprouting) to reinnervate orphaned muscle fibres and compensate for the lost neurons.
-axonotmesis,medical,1,aksonotmezis,translate,medium,transliteration only,...or stretching with temporary conduction block — usually recovers within weeks - Axonotmesis: more severe stretch causing axon damage — recovery possible but slower - Neurotmesis / avulsion: complete n...
-blood purification with ozone,procedure,1,ozonla kan arındırma,translate+en-first-mention,low,,A milestone of ozone therapy is the now available option of “Blood Purification with Ozone”.
-brachycephaly,medical,1,brakisefali (kısa ve geniş kafa),translate+en-first-mention,medium,,"Bilateral: a short, wide skull with a flattened, recessed forehead (brachycephaly)"
-brain lesioning,procedure,1,beyinde lezyon oluşturma,translate,medium,,Brain lesioning
-callosotomy,procedure,1,kallozotomi,adapt-spelling,medium,,Disconnection: callosotomy or functional hemispherectomy to prevent spread
-calvarial remodelling,procedure,1,kalvaryal yeniden şekillendirme,translate,medium,,"Procedures include open cranial vault remodelling (calvarial remodelling) and, for single-suture cases, minimally invasive endoscopic strip craniectomy followed by helmet therapy."
-CBT-I,procedure,1,uykusuzluk için bilişsel davranışçı terapi (BDT-İ),translate,medium,tr acronym not fully standard; reviewer check,Sleep hygiene and cognitive behavioural therapy for insomnia (CBT-I) are first-line treatments for primary insomnia.
-cerebral amyloid angiopathy,medical,1,serebral amiloid anjiyopati,translate,medium,,"Other causes include cerebral amyloid angiopathy (in elderly patients), coagulopathy, and haemorrhagic transformation of an ischaemic infarct."
-choroid plexus cauterisation,procedure,1,koroid pleksus koterizasyonu,translate,medium,,"*ETV + choroid plexus cauterisation (ETV-CPC):* In young infants, particularly those with post-infectious hydrocephalus, cauterising the choroid plexus (which produces much of the CSF) in combination ..."
-chronic exertional compartment syndrome,medical,1,kronik efor kompartman sendromu,translate,medium,,Common causes of muscle pain include: - Chronic exertional compartment syndrome - Chronic fatigue syndrome - Claudication - Coronavirus disease 2019 (COVID-19) - Dermatomyositis - Dystonia - Fibromyal…
-chronic inflammatory demyelinating polyneuropathy,medical,1,kronik inflamatuvar demiyelinizan polinöropati (CIDP),translate,medium,,"Chronic inflammatory demyelinating polyneuropathy (CIDP): the chronic counterpart to GBS; treated with corticosteroids, IVIG, or plasma exchange."
-CIMT,procedure,1,CIMT,keep,medium,,Constraint-induced movement therapy (CIMT)
-corns and calluses,medical,1,nasır,translate,medium,no clear lay Sorani term found,Corns and calluses
-coronal synostosis,medical,1,koronal sinostoz,translate,medium,,Coronal synostosis: affects one (unilateral) or both (bilateral) coronal sutures.
-corpus callosotomy,procedure,1,korpus kallozotomi,adapt-spelling,medium,,"For drug-resistant epilepsy, surgical resection, vagal nerve stimulation, corpus callosotomy, and rTMS provide additional options."
-corticospinal tracts,anatomy,1,kortikospinal yollar,translate,medium,No settled Sorani term; transliterated adjective.,...nterior horn cells are destroyed → weakness and wasting of the hands and arms - Corticospinal tracts are compressed → spasticity in the legs below the lesion - Posterior columns are eventually affecte...
-cranial vault remodelling,procedure,1,kafatası kubbesi yeniden şekillendirme,translate,medium,,Cranial vault remodelling
-cyber-sickness,medical,1,siber hastalık (sanal gerçeklik bulantısı),translate,medium,,"However, one of the major side effects of this style of VR is the associated motion-like sickness, cyber-sickness, which can be very uncomfortable for the user and may alter their level of participation."
-delayed auditory feedback,procedure,1,gecikmeli işitsel geri bildirim,translate,medium,,Delayed auditory feedback requires you to slow your speech or it will sound distorted
-descending motor pathways,anatomy,1,inen motor yollar,translate,medium,Descriptive; no established Sorani term.,"Abnormal, velocity-dependent increase in muscle tone caused by damage to descending motor pathways in the brain or spinal cord."
-detrusor-sphincter dyssynergia,medical,1,detrüsör-sfinkter dissinerjisi,translate,medium,,"The bladder may be hyperreflexic (overactive, failing to store), hypotonic (underactive, failing to empty), or show detrusor-sphincter dyssynergia."
-diastematomyelia,medical,1,diastematomiyeli,translate,medium,,Split cord malformation (diastematomyelia) — the cord is divided into two hemicords by a bony or fibrous spur; each hemicord is tethered at the spur.
-distraction osteogenesis,procedure,1,distraksiyon osteogenezi,translate,medium,,Distraction osteogenesis: used for more complex or older presentations — gradual bone lengthening with an implanted device
-dorsal root entry zone,anatomy,1,dorsal kök giriş bölgesi (DREZ),translate+en-first-mention,medium,Surgical target; keep DREZ acronym.,Dorsal root entry zone (DREZ) lesioning for neuropathic cancer pain
-dorsolateral prefrontal cortex,anatomy,1,dorsolateral prefrontal korteks,translate,medium,Long descriptive calque; keep DLPFC.,Repetitive TMS targeting the dorsolateral prefrontal cortex or primary motor cortex modulates neural circuits involved in sleep regulation.
-DREZ,procedure,1,DREZ,keep,medium,dorsal root entry zone lesioning,Dorsal root entry zone (DREZ) lesioning for neuropathic cancer pain
-dural patch,procedure,1,dural yama,translate,medium,,"Completely removed of a depress segment, evacuation of hematoma, extraction of the bullet with dural patching was done during surgery."
-end-effector,procedure,1,uç efektörlü robotik yürüme sistemi,translate,medium,robotic gait-trainer type,"End-effector robotic system with active patient participation, body-weight support, and variable terrain training to restore independent walking."
-endoscopic strip craniectomy,procedure,1,endoskopik şerit kraniektomi,translate,medium,,"Procedures include open cranial vault remodelling (calvarial remodelling) and, for single-suture cases, minimally invasive endoscopic strip craniectomy followed by helmet therapy."
-epidural drain,procedure,1,epidural dren,translate,medium,,Indications and non-indications for epidural drain use in lumbar spine surgery up to three levels
-epidural fibrosis,medical,1,epidural fibrozis,translate,medium,post-surgical scar tissue,Post-operative epidural fibrosis (scar tissue after spinal surgery) can tether the cord or cauda equina roots.
-equinus contracture,medical,1,ekin kontraktürü,translate,medium,,"…ergy-efficient walking - Physiotherapy: stretching of the heel cord (to prevent equinus contracture), strengthening of residual dorsiflexors, gait retraining, and balance training - Functional electri…"
-exposure and response prevention,procedure,1,maruz bırakma ve tepki önleme,translate,medium,"CBT technique (ERP); keep ""ERP"" after first mention","Cognitive behavioural therapy (CBT) with exposure and response prevention (ERP), and antidepressant medications."
-exposure keratopathy,medical,1,ekspozür keratopatisi,translate+en-first-mention,medium,,… the eye closes when smiling) - Corneal damage from inability to close the eye (exposure keratopathy)…
-femoroacetabular impingement,medical,1,femoroasetabular sıkışma,translate,medium,,"Associated with structural hip problems (hip dysplasia, femoroacetabular impingement), advancing age, obesity, and prior hip injury."
-filum terminale,anatomy,1,filum terminale,keep,low,,"Congenital causes include: tight (thickened) filum terminale, lipomeningomyelocele, split cord malformation, dermal sinus tract, and spinal cord cysts."
-functional asplenia,medical,1,fonksiyonel aspleni,translate,medium,,Recurrent bacterial infections from functional asplenia.
-ganglion impar,anatomy,1,ganglion impar,keep,medium,,b – Ganglion impar
-globus pallidus,anatomy,1,globus pallidus,keep,low,No Sorani term; transliteration only.,"In this procedure, surgeons make a lesion in the Globus pallidus, a part of the brain that's overactive in Parkinson's disease."
-globus pallidus interna,anatomy,1,globus pallidus interna (GPi),translate,medium,Keep GPi acronym.,Electrodes in subthalamic nucleus (STN) or globus pallidus interna (GPi)
-growing rod,procedure,1,büyüyen çubuk sistemi,translate,medium,pediatric scoliosis implant; no established Sorani term,Growing rod systems for very young patients
-habit-reversal training,procedure,1,alışkanlığı tersine çevirme eğitimi,translate,medium,behavioural therapy for tics,"Behaviour therapy — Cognitive Behavioural Interventions for Tics, including habit-reversal training."
-hemangioblastoma,medical,1,hemanjiyoblastom,translate,medium,transliteration,"…n) and cancerous (malignant) brain tumors, including meningioma, paraganglioma, hemangioblastoma and craniopharyngioma."
-hip labral tear,medical,1,kalça labrum yırtığı,translate,medium,,**Injuries** - Bursitis (joint inflammation) - Dislocation - Hip fracture - Hip labral tear - Inguinal hernia - Sprains - Tendinitis
-hydro-dilatation,procedure,1,hidrodilatasyon,adapt-spelling,medium,frozen-shoulder procedure,Hydro-dilatation (capsular distension with saline + steroid)
-hydromyelia,medical,1,hidromiyeli,translate,medium,,Also called hydromyelia when it involves the central canal.
-hypotelorism,medical,1,hipotelorizm,translate,medium,,Metopic synostosis: premature fusion of the metopic suture (forehead midline) produces trigonocephaly — a triangular forehead with prominent midline ridge and hypotelorism (eyes closer together)
-IFT,procedure,1,IFT (interferansiyel akım tedavisi),translate+en-first-mention,medium,acronym kept,"Interferential Therapy (IFT) uses low-frequency currents to stimulate peripheral nerves, reduce oedema, relieve chronic pain, stimulate muscles, and improve blood flow via the body's opioid mechanism,…"
-IMRT,procedure,1,IMRT (yoğunluk ayarlı radyoterapi),translate+en-first-mention,medium,acronym kept,Radiation (stereotactic radiosurgery or IMRT) for residual or recurrent tumours.
-incontinence training,procedure,1,kontinans (idrar tutma) eğitimi,translate,medium,,Incontinence Training and Bladder and Bowel Movement Management
-joint adjustment,procedure,1,eklem ayarlaması,translate+en-first-mention,low,chiropractic,Our chiropractic department offers two computerised techniques: SpineMED for spinal decompression and Sigma for precise joint adjustment.
-lambdoid synostosis,medical,1,lambdoid sinostoz,translate,medium,,Lambdoid synostosis (rare): posterior skull flattening; must be distinguished from positional plagiocephaly (non-synostotic)
-levator ani,anatomy,1,levator ani kası,translate,medium,,Pelvic floor muscles also are known as levator ani muscles because the function to levitate or elevate the pelvic organs into their proper place.
-lipohyalinosis,medical,1,lipohiyalinozis,translate,medium,transliteration,Small vessel disease — lipohyalinosis of penetrating arteries causes lacunar TIAs; risk factors are hypertension and diabetes.
-lipomyelomeningocele,medical,1,lipomiyelomeningosel,translate,medium,transliteration,"The specific operation depends on the cause: filum section for tight filum, lipoma debulking and release for lipomyelomeningocele, lysis of post-operative adhesions for acquired tethering."
-lumbo-sacral radicular syndrome,medical,1,lumbosakral radiküler sendrom,translate,medium,,Lumbo-sacral radicular syndrome
-lumbosacral,anatomy,1,lumbosakral (bel ve sakrum bölgesi),translate,medium,Arabic القطنية العجزية; sacrum rendered عەجز in ckb.,"Lumbosacral MRI show degenerative spine changes at L3-L4, central osteophyte compressed spinal roots, and a herniated disc at L5-S1."
-macroadenoma,medical,1,makroadenom,translate,medium,transliteration,Microadenomas are < 1 cm; macroadenomas are ≥ 1 cm and may compress adjacent structures.
-medial tibial stress syndrome,medical,1,medial tibial stres sendromu,translate,medium,,Shin splints (medial tibial stress syndrome)
-medulloblastoma,medical,1,medulloblastom,translate,medium,transliteration,"Histopathologycal results show medulloblastoma, he refused radiation."
-meningocele,medical,1,meningosel,translate,medium,,"...e defect only; up to 10% of people have this incidentally, rarely symptomatic), meningocele (meninges herniate through the bony defect but cord is intact; rare, usually mild), and myelomeningocele / o..."
-mental motor retardation,medical,1,psikomotor gelişim geriliği,translate+en-first-mention,medium,,"Cerebral palsy, spasticity, mental motor retardation, brachial plexus injury, torticollis, spina bifida, meningomyelocele, metabolic diseases with musculoskeletal problems, head trauma, microcephaly, ..."
-metopic synostosis,medical,1,metopik sinostoz,translate,medium,,Metopic synostosis: premature fusion of the metopic suture (forehead midline) produces trigonocephaly — a triangular forehead with prominent midline ridge and hypotelorism (eyes closer together)
-microadenoma,medical,1,mikroadenom,translate,medium,transliteration,Microadenomas are < 1 cm; macroadenomas are ≥ 1 cm and may compress adjacent structures.
-middle fossa approach,procedure,1,orta fossa yaklaşımı,translate,medium,skull-base approach,"Suboccipital, translabyrinthine, or middle fossa approach"
-mononeuropathy multiplex,medical,1,mononöropati multipleks,translate,medium,,"Mononeuropathy multiplex: multiple individual nerves affected in an asymmetric, stepwise pattern — suggests vasculitis, diabetes, or sarcoidosis"
-neuromyelitis optica spectrum disorder,medical,1,nöromiyelitis optika spektrum bozukluğu,translate,medium,,"TM can be idiopathic (cause unknown) or associated with autoimmune disease (multiple sclerosis, neuromyelitis optica spectrum disorder/NMOSD, SLE, Sjögren's, sarcoidosis) or infection."
-neuropraxia,medical,1,nöropraksi,adapt-spelling,medium,mildest nerve injury grade; loan only,Ranges from mild stretching (neuropraxia) to complete avulsion of nerve roots from the spinal cord.
-neurotmesis,medical,1,nörotmezis,adapt-spelling,medium,complete nerve transection; loan only,...mesis: more severe stretch causing axon damage — recovery possible but slower - Neurotmesis / avulsion: complete nerve rupture or root avulsion from the spinal cord — most severe; surgical reconstruct...
-nociplastic pain,medical,1,nosiplastik ağrı,translate,medium,new IASP term; loan,*Nociplastic pain* (formerly central sensitisation) arises from altered nociception despite no clear evidence of tissue or nerve damage.
-optic chiasm,anatomy,1,optik kiazma,translate,medium,Calque; Kurdish clinicians often say optic chiasm in English.,"Non-functioning tumours present through mass effect on the optic chiasm, normal pituitary tissue, and cavernous sinuses."
-ovarian remnant syndrome,medical,1,over kalıntı sendromu,translate,medium,,*Ovarian remnant syndrome:* residual ovarian tissue after surgical removal develops painful cysts
-over-pronation,medical,1,aşırı pronasyon,translate,medium,,"…excessive pressure on the sole of the foot — from incorrect gait (particularly over-pronation, where the foot rolls inward and the arch collapses), weight gain, aging, or occupations requiring prolon…"
-paradoxical insomnia,medical,1,paradoksal uykusuzluk,translate,medium,,Paradoxical insomnia (sleep state misperception): patients complain of chronic insomnia but objective sleep studies show…
-paraneoplastic syndromes,medical,1,paraneoplastik sendromlar,translate,medium,,... brain blood vessels - Brain tumor - Guillain-Barre syndrome - Herniated disk - Paraneoplastic syndromes of the nervous system - Peripheral nerve injuries - Peripheral neuropathy - Spinal cord injury ...
-parasympathetic dysfunction,medical,1,parasempatik işlev bozukluğu,translate,medium,,Sympathetic hyperactivity and parasympathetic dysfunction may be responsible for autonomic disturbances in stroke.
-patent foramen ovale,medical,1,patent foramen ovale,keep,medium,,"Atrial fibrillation (AF) is the most important source; others include prosthetic heart valves, recent myocardial infarction, dilated cardiomyopathy, and patent foramen ovale."
-pelvic congestion syndrome,medical,1,pelvik konjesyon sendromu,translate,medium,,"*Pelvic congestion syndrome:* dilated, varicose-like pelvic veins causing a dull, aching heaviness that worsens with standing, walking, and at the end of the day"
-periodic limb movement disorder,medical,1,periyodik bacak hareketi bozukluğu,translate,medium,,In periodic limb movement disorder: repetitive leg jerks during sleep causing arousals (often reported by a bed partner).
-periodic limb movements,medical,1,periyodik bacak hareketleri,translate,medium,,Periodic limb movements during sleep may co-occur.
-peripheral sensitisation,medical,1,periferik duyarlılaşma,translate,medium,,"Acute pain serves as a warning; chronic pain outlasts its usefulness and becomes a disease in its own right — driven by peripheral sensitisation, central sensitisation, neuroplastic changes, and psychosocial factors."
-petit mal,medical,1,Petit mal (absans nöbeti),translate,medium,,"...alised-onset seizures* (both hemispheres involved simultaneously): - **Absence (petit mal):** brief lapse in awareness, staring, eyelid flickering; no post-ictal confusion; may occur hundreds of times..."
-photobioactivation,procedure,1,fotobiyoaktivasyon,translate+en-first-mention,low,,Laser therapy — also described as photobioactivation — uses a focused beam of light to deliver energy deep into tissues.
-posterolateral gutter fusion,procedure,1,posterolateral füzyon,translate,medium,,[Posterolateral gutter fusion]({{0}}) – the procedure is done through the back
-pseudofractures,medical,1,psödofraktürler,adapt-spelling,medium,,"X-ray: pseudofractures (Looser's zones) — radiolucent bands perpendicular to the cortex, most common at the medial femoral neck, pubic rami, ribs, and ulna"
-PSP,medical,1,PSP,keep,medium,progressive supranuclear palsy,"MRI rules out atypical syndromes (PSP, MSA)."
-psychophysiological insomnia,medical,1,psikofizyolojik uykusuzluk,translate,medium,,Psychophysiological insomnia: the most common type; learned arousal associated with the bedroom environment.
-pubic symphysis,anatomy,1,simfizis pubis (kasık kemiği eklemi),translate,medium,Reviewer check; alt سیمفیزیسی پیوبیک.,"*Musculoskeletal causes:* pubic symphysis dysfunction, sacroiliac joint dysfunction, hip pathology, and abdominal wall trigger points can all produce pain perceived as pelvic"
-pulse oximetry,procedure,1,pulse oksimetri,translate,medium,,Patients with visible lung damage — identified on X-ray and by pulse oximetry — are followed up jointly with the chest medicine and rehabilitation units.
-pulsed electromagnetic field,procedure,1,pulsatil elektromanyetik alan (PEMF),translate,medium,,"…nd anti-nociceptive efficacy, similar to the opioid analgesic effect respect of pulsed electromagnetic field (PEMF) is reported by scientist literature but the clear biological and biochemical mechani…"
-Rathke's cleft cyst,medical,1,Rathke kleft kisti,translate,medium,,It is the standard-of-care approach for pituitary adenomas (both secretory and non-secretory) and other sellar lesions including craniopharyngiomas and Rathke's cleft cysts.
-responsive neurostimulation,procedure,1,yanıt veren nörostimülasyon (RNS),translate,medium,,Neuromodulation: vagus nerve stimulation or responsive neurostimulation (RNS) for multifocal or diffuse seizure zones
-rotator cuff arthropathy,medical,1,rotator manşet artropatisi,translate,medium,,"Untreated rotator cuff injuries carry a risk of progressive enlargement of the tear, worsening weakness, and the development of rotator cuff arthropathy (degenerative glenohumeral joint disease)."
-sacral neuromodulation,procedure,1,sakral nöromodülasyon,translate,medium,,...y; Botox injected into the detrusor for refractory overactivity or dyssynergia; sacral neuromodulation and spinal cord stimulation for selected cases; intrathecal baclofen for spasticity-related dysfu...
-sacrum,anatomy,1,sakrum (sağrı kemiği),translate,medium,Sorani clinical usage borrows عەجز (Arabic عجز).,They can be used to treat a variety of conditions that affect the spine anywhere from the upper cervical spine to the sacrum.
-saddle anaesthesia,medical,1,eyer anestezisi (oturma bölgesinde his kaybı),translate+en-first-mention,medium,red-flag symptom; keep lay,"Severe low back pain, bladder retention or incontinence, bowel incontinence, leg weakness or sensory loss, saddle anaesthesia (numbness in the groin/perineum)."
-sagittal synostosis,medical,1,sagittal sinostoz,adapt-spelling,medium,,"Sagittal synostosis (most common — ~50%): premature fusion of the sagittal suture (running front-to-back along the top of the skull) produces scaphocephaly — a long, narrow skull with frontal and occi…"
-scaphocephaly,medical,1,skafosefali,adapt-spelling,medium,,"…the sagittal suture (running front-to-back along the top of the skull) produces scaphocephaly — a long, narrow skull with frontal and occipital bossing ('boat shape')…"
-secondary hyperparathyroidism,medical,1,sekonder hiperparatiroidizm,translate,medium,,"Blood tests: low 25-hydroxyvitamin D, low calcium, low phosphate, elevated alkaline phosphatase (bone isoform), elevated parathyroid hormone (secondary hyperparathyroidism)"
-sellar lesion,medical,1,sellar lezyon,translate,medium,,Pituitary adenomas and other sellar lesions (tumours at the base of the skull near the pituitary gland).
-spinal dysraphism,medical,1,spinal disrafizm,adapt-spelling,medium,,"A spinal dysraphism caused by incomplete closure of the embryonic neural tube, typically in the first weeks of pregnancy."
-spinal infusions,procedure,1,spinal infüzyonlar,translate,medium,,"Interventional pain procedures (blocks, neurolysis, spinal infusions)."
-spinothalamic,anatomy,1,spinotalamik,adapt-spelling,medium,Adjective; transliteration only.,"...acteristic dissociated sensory loss: pain and temperature sensation (carried by spinothalamic fibres that cross at that cord level) is lost, while vibration and proprioception (carried in the posterio..."
-splenic sequestration,medical,1,dalak sekestrasyonu,translate,medium,,Splenic sequestration.
-split cord malformation,medical,1,bölünmüş omurilik malformasyonu,translate,medium,,"Congenital causes include: tight (thickened) filum terminale, lipomeningomyelocele, split cord malformation, dermal sinus tract, and spinal cord cysts."
-Staphylococcus aureus,medical,1,Staphylococcus aureus,keep,medium,,"…matoid arthritis, gout, psoriatic arthritis, thyroid disorders - Infection with Staphylococcus aureus (septic bursitis)…"
-steppage gait,medical,1,stepaj yürüyüşü,translate,medium,,"Foot dragging when walking, with a characteristic high-stepping (steppage) gait to clear the foot from the ground."
-stereotactic ablative radiotherapy,procedure,1,stereotaktik ablatif radyoterapi (SABR),translate,medium,,"When doctors use stereotactic radiosurgery to treat tumors in areas of the body other than the brain, it's sometimes called stereotactic body radiotherapy (SBRT) or stereotactic ablative radiotherapy (SABR)."
-stereotactic lesioning,procedure,1,stereotaktik lezyon oluşturma,translate,medium,,"Functional neurosurgery (selective dorsal rhizotomy, stereotactic lesioning) for severe, disabling cases."
-stingers,medical,1,stinger (brakiyal pleksus gerilme yaralanması),translate,medium,sports nerve-stretch injury,"Burning or stinging pain (""stingers"")."
-subfrontal approach,procedure,1,subfrontal yaklaşım,translate,medium,skull-base approach,Growth hormone is so high (19.7 ng/ml). surgical intervention was done with subfrontal approach to excision of tumor.
-suboccipital,procedure,1,suboksipital,adapt-spelling,medium,approach adjective,"Suboccipital, translabyrinthine, or middle fossa approach"
-substantia nigra,anatomy,1,substantia nigra,keep,medium,,Parkinson's disease is progressive neurodegeneration of dopamine-producing neurons in the substantia nigra.
-subthalmotomy,procedure,1,subtalamotomi,adapt-spelling,medium,source spelling; = subthalamotomy,"Several techniques exist — pallidotomy, thalamotomy, and subthalmotomy — chosen based on the specific condition and symptoms."
-SUDEP,medical,1,SUDEP,keep,medium,,Sudden Unexpected Nocturnal Death in Epilepsy (SUDEP) is rare but serious — risk falls with seizure control.
-superior hypogastric plexus,anatomy,1,süperior hipogastrik pleksus,translate,medium,,e – Superior hypogastric plexus
-superior sagittal sinus,anatomy,1,süperior sagittal sinüs,translate,medium,,"...e fragments were found causing partial laceration of the posterior third of the superior sagittal sinus, and 5 pints of blood were transfused within 30 minutes as the depressed bone fragments were ele..."
-supratrochlear nerve,anatomy,1,supratroklear sinir,translate,medium,,"…he occipital nerve (greater or lesser), upper cervical nerves, supraorbital and supratrochlear nerves (branches of the frontal and trigeminal nerves), or sphenopalatine ganglion nerve."
-sympathetic hyperactivity,medical,1,sempatik aşırı aktivite,translate,medium,,Sympathetic hyperactivity and parasympathetic dysfunction may be responsible for autonomic disturbances in stroke.
-syndromic craniosynostosis,medical,1,sendromik kraniosinostoz,translate,medium,,"Multi-suture synostosis: multiple sutures involved — may occur in the context of a syndromic craniosynostosis (Apert, Crouzon, Muenke, Pfeiffer syndromes)"
-synkinesis,medical,1,sinkinezi,adapt-spelling,medium,,"rTMS, physiotherapy, and Botox address residual weakness, synkinesis, and muscle rehabilitation."
-syringoperitoneal shunting,procedure,1,siringoperitoneal şant,translate,medium,,"If the syrinx persists or the cause cannot be corrected, direct surgical drainage via stenting or syringopleural/syringoperitoneal shunting is considered."
-syringopleural shunting,procedure,1,siringoplevral şant,translate,medium,,... placed to drain the cavity into the subarachnoid space - *Syringoperitoneal or syringopleural shunting* — fluid is diverted to the peritoneal or pleural cavity...
-syrinx drainage,procedure,1,sirinks drenajı,translate,medium,,Managed by addressing the underlying cause; syrinx drainage is used when conservative options are insufficient.
-syrinx stenting,procedure,1,sirinks stent uygulaması,translate,medium,,Options include: - *Syrinx stenting* — a short hollow tube is placed to drain the cavity into the subarachnoid space - *Syringoperitoneal or syringopleural shunting* — fluid is diverted to the periton...
-tethered cord syndrome,medical,1,gergin omurilik sendromu,translate,medium,,"...enic bladder) - Multiple sclerosis - Stroke and brain injury - Spina bifida and tethered cord syndrome - Parkinson's disease and other neurodegenerative diseases - Peripheral neuropathy (diabetic, pos..."
-thoracolumbosacral orthosis,procedure,1,torakolumbosakral ortez (TLSO),translate,medium,,Rigid thoracolumbosacral orthosis (TLSO) worn 18–20 hours daily
-translabyrinthine,procedure,1,translabirentin,adapt-spelling,medium,skull-base approach,"Suboccipital, translabyrinthine, or middle fossa approach"
-trigeminal autonomic cephalalgias,medical,1,trigeminal otonomik sefaljiler,translate,medium,,"They belong to a group of primary headache disorders called trigeminal autonomic cephalalgias (TACs), characterised by severe unilateral head pain combined with ipsilateral autonomic features."
-trigonocephaly,medical,1,trigonosefali,adapt-spelling,medium,,Metopic synostosis: premature fusion of the metopic suture (forehead midline) produces trigonocephaly — a triangular forehead with prominent midline ridge and hypotelorism (eyes closer together)
-tumour-induced osteomalacia,medical,1,tümöre bağlı osteomalazi,translate,medium,,Phosphate wasting: Rare hereditary conditions (X-linked hypophosphataemia) and tumour-induced osteomalacia cause renal phosphate wasting despite normal vitamin D.
-ultrasound cavitation,procedure,1,ultrason kavitasyonu,translate,medium,aesthetic slimming,Ultrasound cavitation
-vaso-occlusive crisis,medical,1,vazooklüzif kriz,translate,medium,sickle-cell pain crisis,"Vaso-occlusive crises: acute, severe pain in bones, joints, chest, and abdomen — triggered by cold, dehydration, infection, or stress."
-vein of Galen malformation,medical,1,Galen veni malformasyonu,translate,medium,,...n cause of obstructive hydrocephalus in older children - *Vascular anomalies* — vein of Galen malformation - *Genetic* — a small proportion are inherited (X-linked hydrocephalus from L1CAM mutation)...
-vertebral body tethering,procedure,1,vertebral cisim bağlama (VBT),translate,medium,scoliosis surgery,Vertebral body tethering for suitable adolescents
-vertebral wedging,medical,1,omur kamalaşması,translate,medium,,Scheuermann's disease is vertebral wedging (>5° wedging in three consecutive vertebrae).
-vestibulodynia,medical,1,vestibülodini,adapt-spelling,medium,,"A related condition, vestibulodynia, causes pain only when pressure is applied to the area surrounding the vaginal entrance."
-X-linked hypophosphataemia,medical,1,X'e bağlı hipofosfatemi,translate,medium,,Phosphate wasting: Rare hereditary conditions (X-linked hypophosphataemia) and tumour-induced osteomalacia cause renal phosphate wasting despite normal vitamin D.
-Hussein Imran Mousa,site,0,Hussein Imran Mousa,keep,medium,"Doctor's name; ar.md: حسين عمران موسى. Not in terms.json (scanner missed it), added manually.",
+﻿en,category,freq,rendering,gloss,policy,confidence,note,sample_en
+electrical stimulation,procedure,122,elektriksel stimülasyon,,translate,high,,Electrical stimulation
+acupuncture,procedure,109,akupunktur,,adapt-spelling,high,,acupuncture
+physiotherapy,procedure,105,fizik tedavi,fizyoterapi,translate,high,,Physiotherapy
+laser therapy,procedure,102,lazer tedavisi,,translate,high,,Laser therapy
+pulsed radiofrequency,procedure,98,pulsed radyofrekans,,translate,high,"tr clinics say ""pulsed radyofrekans""",Pulsed radiofrequency
+Botox,drug,97,Botox,,keep,high,brand; identical in every entry. ckb reading: بۆتۆکس.,BOTOX
+prolotherapy,procedure,91,proloterapi,,adapt-spelling,high,,Prolotherapy
+ozone injection,procedure,87,ozon enjeksiyonu,,translate,high,,Ozone therapy
+Sigma,site,79,Sigma,,keep,high,"Device name; Arabic transliterates, keep Latin.",Sigma
+Alimran Medical Center,site,78,Alimran Tıp Merkezi,,translate,high,"Clinic name: tr Latin Alimran; ckb ئەلعیمران (Kurdish script of العمران, read al-Imran).",About — Alimran Medical Center
+short and long wave therapy,procedure,72,kısa ve uzun dalga tedavisi,,translate,high,,Short and long wave
+SpineMED,site,70,SpineMED,,keep,high,Device name.,SpineMED
+rTMS,procedure,69,rTMS,,keep,high,acronym kept Latin,What is rTMS?
+ultrasound therapy,procedure,66,ultrason tedavisi,,translate,high,"physio modality, not imaging",Ultrasonic therapy
+trigger point injections,procedure,62,tetik nokta enjeksiyonları,,translate,high,,Trigger point injections
+epidural steroid injections,procedure,47,epidural steroid enjeksiyonları,,translate,high,,Epidural injections
+steroid injection,procedure,45,steroid enjeksiyonu,,translate,high,"lay Kurdish also ""دەرزی کۆرتیزۆن""",Steroid injection
+spinal cord stimulation,procedure,44,omurilik stimülasyonu,,translate,high,,Spinal cord stimulation
+stroke,medical,42,inme,felç,translate,high,,Stroke
+neuromodulation,procedure,34,nöromodülasyon,,adapt-spelling,high,,Neuromodulation
+spinal cord,anatomy,32,omurilik,,translate,high,,Spinal cord injury
+tDCS,procedure,32,tDCS,,keep,high,acronym kept,tDCS
+Treatment options at Alimran Medical Center,site,32,Alimran Tıp Merkezi'nde tedavi seçenekleri,,translate,high,,Treatment options at Alimran Medical Center
+physical therapy,procedure,30,fizik tedavi,,translate,high,Iraqi Kurdish usage; فیزیۆتێراپی also understood,Physical therapy
+herniated disc,medical,29,disk hernisi,fıtık,translate,high,in KRG plain 'دیسک' is the lay word for a herniated disc,Herniated disc
+MRI,procedure,29,MR,manyetik rezonans,translate,high,"Turkish patients say ""MR"" (MRG in formal texts); Kurdish patients use MRI/ئێم ئاڕ ئای",MRI has revolutionised diagnosis and monitoring.
+diabetes,medical,28,diyabet,şeker hastalığı,translate,high,,Diabetes
+therapeutic exercise,procedure,25,tedavi edici egzersiz,,translate,high,,Therapeutic exercises
+rheumatoid arthritis,medical,24,romatoid artrit,,translate,high,,Rheumatoid arthritis
+magnetic therapy,procedure,23,manyetik alan tedavisi,,translate,high,,Magnetic therapy
+radiofrequency,procedure,22,radyofrekans,,adapt-spelling,high,,Radiofrequency
+depression,medical,21,depresyon,,translate,high,,Depression
+intrathecal baclofen pump,procedure,21,intratekal baklofen pompası,,translate,high,,Intrathecal baclofen pump
+ozone therapy,procedure,20,ozon tedavisi,,translate,high,,Ozone therapy
+spasticity,medical,20,spastisite,,adapt-spelling,high,,Spasticity
+corticosteroids,drug,19,kortikosteroidler,,adapt-spelling,high,,Corticosteroids
+migraine,medical,19,migren,,translate,high,,Migraine
+occupational therapy,procedure,19,ergoterapi,,translate,high,Turkish uses ergoterapi,Occupational therapy
+osteoarthritis,medical,19,osteoartrit,kireçlenme,translate,high,"tr lay ""kireçlenme""",ozone therapy for osteoarthritis
+Parkinson's disease,medical,19,Parkinson hastalığı,,translate,high,,Parkinson’s Disease
+chiropractic care,procedure,18,kayropraktik tedavi,,translate,high,,Chiropractic
+radiofrequency ablation,procedure,18,radyofrekans ablasyon,,translate,high,,Radiofrequency ablation
+hypertension,medical,17,hipertansiyon,yüksek tansiyon,translate,high,,Hypertension
+multiple sclerosis,medical,17,multipl skleroz,MS,translate,high,,Multiple Sclerosis
+spinal cord injury,medical,17,omurilik yaralanması,,translate,high,,Spinal cord injury
+arthritis,medical,16,artrit,eklem iltihabı,translate,high,,Arthritis
+neck pain,medical,16,boyun ağrısı,,translate,high,,Neck Pain
+NSAIDs,drug,16,NSAİİ,steroid olmayan antiinflamatuvar ilaçlar,translate,high,tr acronym is NSAİİ,NSAIDs for inflammation
+osteoporosis,medical,16,kemik erimesi,osteoporoz,translate,high,,Osteoporosis
+rehabilitation,procedure,16,rehabilitasyon,,translate,high,Site-wide: بەتواناکردنەوە (KRG usage); English on first mention since clinics also say ڕیهابیلیتەیشن.,Geriatric Rehabilitation
+back pain,medical,15,sırt ağrısı,,translate,high,tr: use 'bel ağrısı' when context is clearly lower back,Back pain
+cerebral palsy,medical,15,serebral palsi,,translate,high,,Cerebral palsy
+anticonvulsants,drug,14,antiepileptik ilaçlar,sara ilaçları,translate,high,فێ = epilepsy/seizure,Anti-seizure medications
+facet joint,anatomy,14,faset eklem,,translate,high,,Facet joint injection
+numbness,medical,14,uyuşma,,translate,high,,Numbness
+scoliosis,medical,14,skolyoz,,adapt-spelling,high,,Scoliosis
+botulinum toxin,drug,13,botulinum toksini,,translate,high,,Botulinum toxin for headache
+fibromyalgia,medical,13,fibromiyalji,,translate,high,,Fibromyalgia
+nerve root,anatomy,13,sinir kökü,,translate,high,,"Leg pain along the sciatic nerve, usually from a pinched nerve root."
+speech therapy,procedure,13,konuşma terapisi,,translate,high,,Speech therapy
+tendinitis,medical,13,tendinit,tendon iltihabı,translate,high,,Tendinitis
+TMS,procedure,13,TMS,,keep,high,acronym kept,TMS
+transcranial magnetic stimulation,procedure,13,transkraniyal manyetik stimülasyon,TMS,translate,high,,Transcranial magnetic stimulation
+headache,medical,12,baş ağrısı,,translate,high,,Tension headaches
+hydrocephalus,medical,12,hidrosefali,,translate,high,,Hydrocephalus
+pregabalin,drug,12,pregabalin,,adapt-spelling,high,brand Lyrica kept as-is,"Neuropathic agents: gabapentin, pregabalin"
+repetitive transcranial magnetic stimulation,procedure,12,tekrarlayan transkraniyal manyetik stimülasyon,rTMS,translate,medium,,Repetitive transcranial magnetic stimulation (rTMS)
+sciatica,medical,12,siyatik,,translate,high,lay Iraqi Kurdish also uses Arabic عیرق النسا; reviewer may prefer that,Sciatica
+trigeminal neuralgia,medical,12,trigeminal nevralji,,translate,high,trigeminal kept as loan (no settled Sorani),Trigeminal neuralgia
+brain tumor,medical,11,beyin tümörü,,translate,high,,Brain tumour
+brainstem,anatomy,11,beyin sapı,,translate,high,,Surgical decompression when spinal cord or brainstem compression is found.
+deep brain stimulation,procedure,11,derin beyin stimülasyonu,,translate,high,,Deep brain stimulation
+knee,anatomy,11,diz,,translate,high,,Knee
+myocardial infarction,medical,11,miyokard enfarktüsü,,translate,high,,"Arm pain, particularly pain that radiates into your left arm, can even be a sign of a heart attack."
+myofascial pain syndrome,medical,11,miyofasiyal ağrı sendromu,,translate,high,,Myofascial Pain
+seizures,medical,11,nöbetler,,translate,high,a seizure = one attack (هێرشی فێ); epilepsy = the disease (فێ).,Epilepsy & seizures
+spinal stenosis,medical,11,spinal stenoz,omurga kanal darlığı,translate,high,,Spinal stenosis
+watch on YouTube,site,11,YouTube'da izleyin,,translate,high,,Watch on YouTube
+baclofen,drug,10,baklofen,,adapt-spelling,high,,Baclofen (GABA agonist)
+carpal tunnel syndrome,medical,10,karpal tünel sendromu,,translate,high,,Carpal tunnel syndrome
+craniotomy,procedure,10,kraniyotomi,,adapt-spelling,high,,Burr Holes Craniotomy
+CT scan,procedure,10,BT,bilgisayarlı tomografi,translate,high,Turkish acronym BT,Brain CT scan show a bullet arrested at posterior cranial fossa.
+epilepsy,medical,10,epilepsi,sara,translate,high,'فێ' is the everyday KRG word,Epilepsy
+gabapentin,drug,10,gabapentin,,adapt-spelling,high,,"Neuropathic agents: gabapentin, pregabalin"
+intracranial pressure,medical,10,kafa içi basınç,,translate,high,,Focus is on controlling bleeding and intracranial pressure
+low back pain,medical,10,bel ağrısı,,translate,high,"lumbar/lower back = bel (tr), کەمەر (ckb) throughout",chronic low back pain.
+microdiscectomy,procedure,10,mikrodiskektomi,,adapt-spelling,high,"AR site uses colloquial ""مايكرودسك""",Microdiscectomy
+nerve block,procedure,10,sinir bloğu,,translate,high,"Kurdish clinicians say ""بلۆک""",Injections and nerve blocks first.
+neuropathic pain,medical,10,nöropatik ağrı,,translate,high,,Neuropathic pain
+sacroiliac joint,anatomy,10,sakroiliak eklem,,translate,high,,Sacroiliac joint injection
+tinnitus,medical,10,kulak çınlaması,,translate,high,,TMS for Tinnitus
+vertebrae,anatomy,10,omurlar,,translate,high,,Osteoporotic vertebra compared to a healthy vertebra
+cauda equina syndrome,medical,7,kauda ekuina sendromu,,translate,medium,,Cauda equina syndrome
+spina bifida,medical,7,spina bifida,,keep,medium,,Spina bifida
+consultant neurosurgeon,site,6,beyin ve sinir cerrahisi uzmanı,,translate,medium,Iraqi title 'consultant' = ڕاوێژکار.,consultant neurosurgeon
+endoscopic third ventriculostomy,procedure,5,endoskopik üçüncü ventrikülostomi,,translate,medium,,Endoscopic third ventriculostomy (ETV)
+shingles,medical,5,zona,,translate,medium,unsure of established Sorani lay term; verify,Shingles
+neuroplasticity,medical,4,nöroplastisite,,adapt-spelling,medium,,Neuroplasticity and CNS Reorganization
+postherpetic neuralgia,medical,4,postherpetik nevralji,,translate,medium,depends on Sorani word for shingles (see shingles),Postherpetic neuralgia
+vulvodynia,medical,4,vulvodini,,adapt-spelling,medium,,Vulvodynia
+foramen magnum,anatomy,3,foramen magnum,,keep,medium,,Brain MRI showed anterior foramen magnum mass severely compressing the junction of brain stem and spinal cord.
+interferential therapy,procedure,3,interferansiyel akım tedavisi,,translate,medium,,"Electrical stimulation — TENS and interferential therapy for chronic pain relief, muscle activation, and oedema reduction."
+meningomyelocele,medical,3,meningomiyelosel,,translate,medium,,14 days old with congenital dorsal meningomyelocele.
+nerve gliding,procedure,3,sinir kaydırma egzersizleri,,translate,medium,,Nerve gliding exercises
+tethered spinal cord,medical,3,gergin omurilik,,translate,medium,,Tethered spinal cord
+transcutaneous electrical nerve stimulation,procedure,3,transkütan elektriksel sinir stimülasyonu,TENS,translate,medium,,"…injectable pharmacological treatments, physical therapy, chiropractic care, or transcutaneous nerve stimulation (TENS) have failed. The best safest and effective method is pulsed radiofrequency and r…"
+transverse myelitis,medical,3,transvers miyelit,,translate,medium,,Transverse myelitis
+anterior ischaemic optic neuropathy,medical,2,anterior iskemik optik nöropati,,translate,medium,no established Sorani term; descriptive,The most feared complication is permanent visual loss from anterior ischaemic optic neuropathy.
+autonomic dysreflexia,medical,2,otonom disrefleksi,,translate,medium,,*Spinal cord stimulation:* can improve bladder function and reduce autonomic dysreflexia risk in selected spinal cord injury patients
+bulging disc,medical,2,disk bombeleşmesi,,translate,medium,keep distinct from herniated disc,"Nucleoplasty is a minimally invasive radiofrequency procedure that shrinks a bulging disc through a small needle, under local anaesthesia."
+buttock,anatomy,2,kalça arkası,gluteal bölge,translate+en-first-mention,medium,ckb: سمت is reserved for hip; کەفەڵ for buttock to avoid collision.,"Inflammation of the joint where the lower spine meets the pelvis, causing buttock and low back pain."
+constraint-induced movement therapy,procedure,2,kısıtlayıcı-zorlayıcı hareket tedavisi,,translate+en-first-mention,medium,AR العلاج بالحركة المجبّرة,Constraint-induced movement therapy
+craniopharyngioma,medical,2,kraniofarenjiyom,,translate,medium,transliteration,It is the standard-of-care approach for pituitary adenomas (both secretory and non-secretory) and other sellar lesions including craniopharyngiomas and Rathke's cleft cysts.
+dural repair,procedure,2,dura onarımı,,translate,medium,,Operated with total excision of the sac and dural repair.
+foramen ovale,anatomy,2,foramen ovale,,keep,medium,"Skull-base foramen (trigeminal procedure), not the cardiac one.","A small, thin needle is inserted through the middle of the cheek and gently guided with X-ray assistance through the foramen ovale into Meckel's Cave where the ganglion sits."
+histiocytosis,medical,2,histiyositoz,,translate,medium,,Histopathology result showed a histiocytosis mass.
+ICP monitoring,procedure,2,kafa içi basınç monitörizasyonu,KİB,translate,medium,,Severe cases require ICP monitoring.
+IT band syndrome,medical,2,iliotibial bant sendromu,,translate,medium,,"Low back pain, neck pain, knee pain, shoulder pain, elbow, ankle, wrist, TMJ, plantar fasciitis, IT band syndrome, and piriformis syndrome."
+myelomeningocele,medical,2,miyelomeningosel,,adapt-spelling,medium,no established Sorani term; loan,...nd selective dorsal rhizotomy); brain and spinal cord tumours; spina bifida and myelomeningocele; vascular malformations; epilepsy surgery; and peripheral nerve conditions in children....
+neuromuscular fibrosis,medical,2,nöromüsküler fibrozis,,translate,medium,no sample context,Neuromuscular fibrosis
+osteochondritis dissecans,medical,2,osteokondritis dissekans,,adapt-spelling,medium,loan only,Osteochondritis dissecans
+posterior fossa craniectomy,procedure,2,posterior fossa kraniektomisi,,translate,medium,,"If a cause is found, treat the cause first: Chiari decompression (posterior fossa craniectomy) reliably resolves the syrinx in 50–70% of cases; tethered cord release and tumour resection also allow sp..."
+pseudogout,medical,2,psödogut,,adapt-spelling,medium,,Pseudogout
+tethered cord,medical,2,gergin omurilik,,translate,medium,,Nearly all adults with open spina bifida require lifelong monitoring for tethered cord.
+ACL reconstruction,procedure,1,ön çapraz bağ rekonstrüksiyonu,ÖÇB,translate,medium,,ACL reconstruction if giving-way episodes are disabling
+adaptive servo-ventilation,procedure,1,adaptif servo-ventilasyon,ASV,translate,medium,,CPAP alone may be insufficient; adaptive servo-ventilation is often used.
+adolescent idiopathic scoliosis,medical,1,adolesan idiyopatik skolyoz,,translate,medium,,In most cases (~80%) the cause is unknown — adolescent idiopathic scoliosis.
+amygdalatomy,procedure,1,amigdalatomi,,adapt-spelling,medium,,Amygdalatomy.
+anterior capsulotomy,procedure,1,anterior kapsülotomi,,translate,medium,psychosurgery,Anterior Capsulotomy.
+anterior cingulotomy,procedure,1,anterior singulotomi,,translate,medium,,The most common targets include: - Anterior Cingulotomy.
+anterior release,procedure,1,anterior gevşetme,,translate,medium,scoliosis surgery step,Anterior release and fusion for rigid curves
+aqueductal stenosis,medical,1,akuaduktal stenoz,,translate,medium,,"...ature infants; blood clots obstruct CSF pathways - *Congenital malformations* — aqueductal stenosis (narrowing of the cerebral aqueduct), Chiari malformation, Dandy-Walker syndrome, neural tube defect..."
+athetoid/dyskinetic CP,medical,1,atetoid/diskinetik serebral palsi,,translate,medium,,"**Athetoid/dyskinetic CP** — involuntary, purposeless, and jerky movements throughout the body"
+axonal sprouting,medical,1,aksonal filizlenme,,translate,medium,,Survivors recover function because remaining neurons sprout new branches (axonal sprouting) to reinnervate orphaned muscle fibres and compensate for the lost neurons.
+axonotmesis,medical,1,aksonotmezis,,translate,medium,transliteration only,...or stretching with temporary conduction block — usually recovers within weeks - Axonotmesis: more severe stretch causing axon damage — recovery possible but slower - Neurotmesis / avulsion: complete n...
+blood purification with ozone,procedure,1,ozonla kan arındırma,,translate+en-first-mention,low,,A milestone of ozone therapy is the now available option of “Blood Purification with Ozone”.
+brachycephaly,medical,1,brakisefali,kısa ve geniş kafa,translate+en-first-mention,medium,,"Bilateral: a short, wide skull with a flattened, recessed forehead (brachycephaly)"
+brain lesioning,procedure,1,beyinde lezyon oluşturma,,translate,medium,,Brain lesioning
+callosotomy,procedure,1,kallozotomi,,adapt-spelling,medium,,Disconnection: callosotomy or functional hemispherectomy to prevent spread
+calvarial remodelling,procedure,1,kalvaryal yeniden şekillendirme,,translate,medium,,"Procedures include open cranial vault remodelling (calvarial remodelling) and, for single-suture cases, minimally invasive endoscopic strip craniectomy followed by helmet therapy."
+CBT-I,procedure,1,uykusuzluk için bilişsel davranışçı terapi,BDT-İ,translate,medium,tr acronym not fully standard; reviewer check,Sleep hygiene and cognitive behavioural therapy for insomnia (CBT-I) are first-line treatments for primary insomnia.
+cerebral amyloid angiopathy,medical,1,serebral amiloid anjiyopati,,translate,medium,,"Other causes include cerebral amyloid angiopathy (in elderly patients), coagulopathy, and haemorrhagic transformation of an ischaemic infarct."
+choroid plexus cauterisation,procedure,1,koroid pleksus koterizasyonu,,translate,medium,,"*ETV + choroid plexus cauterisation (ETV-CPC):* In young infants, particularly those with post-infectious hydrocephalus, cauterising the choroid plexus (which produces much of the CSF) in combination ..."
+chronic exertional compartment syndrome,medical,1,kronik efor kompartman sendromu,,translate,medium,,Common causes of muscle pain include: - Chronic exertional compartment syndrome - Chronic fatigue syndrome - Claudication - Coronavirus disease 2019 (COVID-19) - Dermatomyositis - Dystonia - Fibromyal…
+chronic inflammatory demyelinating polyneuropathy,medical,1,kronik inflamatuvar demiyelinizan polinöropati,CIDP,translate,medium,,"Chronic inflammatory demyelinating polyneuropathy (CIDP): the chronic counterpart to GBS; treated with corticosteroids, IVIG, or plasma exchange."
+CIMT,procedure,1,CIMT,,keep,medium,,Constraint-induced movement therapy (CIMT)
+corns and calluses,medical,1,nasır,,translate,medium,no clear lay Sorani term found,Corns and calluses
+coronal synostosis,medical,1,koronal sinostoz,,translate,medium,,Coronal synostosis: affects one (unilateral) or both (bilateral) coronal sutures.
+corpus callosotomy,procedure,1,korpus kallozotomi,,adapt-spelling,medium,,"For drug-resistant epilepsy, surgical resection, vagal nerve stimulation, corpus callosotomy, and rTMS provide additional options."
+corticospinal tracts,anatomy,1,kortikospinal yollar,,translate,medium,No settled Sorani term; transliterated adjective.,...nterior horn cells are destroyed → weakness and wasting of the hands and arms - Corticospinal tracts are compressed → spasticity in the legs below the lesion - Posterior columns are eventually affecte...
+cranial vault remodelling,procedure,1,kafatası kubbesi yeniden şekillendirme,,translate,medium,,Cranial vault remodelling
+cyber-sickness,medical,1,siber hastalık,sanal gerçeklik bulantısı,translate,medium,,"However, one of the major side effects of this style of VR is the associated motion-like sickness, cyber-sickness, which can be very uncomfortable for the user and may alter their level of participation."
+delayed auditory feedback,procedure,1,gecikmeli işitsel geri bildirim,,translate,medium,,Delayed auditory feedback requires you to slow your speech or it will sound distorted
+descending motor pathways,anatomy,1,inen motor yollar,,translate,medium,Descriptive; no established Sorani term.,"Abnormal, velocity-dependent increase in muscle tone caused by damage to descending motor pathways in the brain or spinal cord."
+detrusor-sphincter dyssynergia,medical,1,detrüsör-sfinkter dissinerjisi,,translate,medium,,"The bladder may be hyperreflexic (overactive, failing to store), hypotonic (underactive, failing to empty), or show detrusor-sphincter dyssynergia."
+diastematomyelia,medical,1,diastematomiyeli,,translate,medium,,Split cord malformation (diastematomyelia) — the cord is divided into two hemicords by a bony or fibrous spur; each hemicord is tethered at the spur.
+distraction osteogenesis,procedure,1,distraksiyon osteogenezi,,translate,medium,,Distraction osteogenesis: used for more complex or older presentations — gradual bone lengthening with an implanted device
+dorsal root entry zone,anatomy,1,dorsal kök giriş bölgesi,DREZ,translate+en-first-mention,medium,Surgical target; keep DREZ acronym.,Dorsal root entry zone (DREZ) lesioning for neuropathic cancer pain
+dorsolateral prefrontal cortex,anatomy,1,dorsolateral prefrontal korteks,,translate,medium,Long descriptive calque; keep DLPFC.,Repetitive TMS targeting the dorsolateral prefrontal cortex or primary motor cortex modulates neural circuits involved in sleep regulation.
+DREZ,procedure,1,DREZ,,keep,medium,dorsal root entry zone lesioning,Dorsal root entry zone (DREZ) lesioning for neuropathic cancer pain
+dural patch,procedure,1,dural yama,,translate,medium,,"Completely removed of a depress segment, evacuation of hematoma, extraction of the bullet with dural patching was done during surgery."
+end-effector,procedure,1,uç efektörlü robotik yürüme sistemi,,translate,medium,robotic gait-trainer type,"End-effector robotic system with active patient participation, body-weight support, and variable terrain training to restore independent walking."
+endoscopic strip craniectomy,procedure,1,endoskopik şerit kraniektomi,,translate,medium,,"Procedures include open cranial vault remodelling (calvarial remodelling) and, for single-suture cases, minimally invasive endoscopic strip craniectomy followed by helmet therapy."
+epidural drain,procedure,1,epidural dren,,translate,medium,,Indications and non-indications for epidural drain use in lumbar spine surgery up to three levels
+epidural fibrosis,medical,1,epidural fibrozis,,translate,medium,post-surgical scar tissue,Post-operative epidural fibrosis (scar tissue after spinal surgery) can tether the cord or cauda equina roots.
+equinus contracture,medical,1,ekin kontraktürü,,translate,medium,,"…ergy-efficient walking - Physiotherapy: stretching of the heel cord (to prevent equinus contracture), strengthening of residual dorsiflexors, gait retraining, and balance training - Functional electri…"
+exposure and response prevention,procedure,1,maruz bırakma ve tepki önleme,,translate,medium,"CBT technique (ERP); keep ""ERP"" after first mention","Cognitive behavioural therapy (CBT) with exposure and response prevention (ERP), and antidepressant medications."
+exposure keratopathy,medical,1,ekspozür keratopatisi,,translate+en-first-mention,medium,,… the eye closes when smiling) - Corneal damage from inability to close the eye (exposure keratopathy)…
+femoroacetabular impingement,medical,1,femoroasetabular sıkışma,,translate,medium,,"Associated with structural hip problems (hip dysplasia, femoroacetabular impingement), advancing age, obesity, and prior hip injury."
+filum terminale,anatomy,1,filum terminale,,keep,low,,"Congenital causes include: tight (thickened) filum terminale, lipomeningomyelocele, split cord malformation, dermal sinus tract, and spinal cord cysts."
+functional asplenia,medical,1,fonksiyonel aspleni,,translate,medium,,Recurrent bacterial infections from functional asplenia.
+ganglion impar,anatomy,1,ganglion impar,,keep,medium,,b – Ganglion impar
+globus pallidus,anatomy,1,globus pallidus,,keep,low,No Sorani term; transliteration only.,"In this procedure, surgeons make a lesion in the Globus pallidus, a part of the brain that's overactive in Parkinson's disease."
+globus pallidus interna,anatomy,1,globus pallidus interna,GPi,translate,medium,Keep GPi acronym.,Electrodes in subthalamic nucleus (STN) or globus pallidus interna (GPi)
+growing rod,procedure,1,büyüyen çubuk sistemi,,translate,medium,pediatric scoliosis implant; no established Sorani term,Growing rod systems for very young patients
+habit-reversal training,procedure,1,alışkanlığı tersine çevirme eğitimi,,translate,medium,behavioural therapy for tics,"Behaviour therapy — Cognitive Behavioural Interventions for Tics, including habit-reversal training."
+hemangioblastoma,medical,1,hemanjiyoblastom,,translate,medium,transliteration,"…n) and cancerous (malignant) brain tumors, including meningioma, paraganglioma, hemangioblastoma and craniopharyngioma."
+hip labral tear,medical,1,kalça labrum yırtığı,,translate,medium,,**Injuries** - Bursitis (joint inflammation) - Dislocation - Hip fracture - Hip labral tear - Inguinal hernia - Sprains - Tendinitis
+hydro-dilatation,procedure,1,hidrodilatasyon,,adapt-spelling,medium,frozen-shoulder procedure,Hydro-dilatation (capsular distension with saline + steroid)
+hydromyelia,medical,1,hidromiyeli,,translate,medium,,Also called hydromyelia when it involves the central canal.
+hypotelorism,medical,1,hipotelorizm,,translate,medium,,Metopic synostosis: premature fusion of the metopic suture (forehead midline) produces trigonocephaly — a triangular forehead with prominent midline ridge and hypotelorism (eyes closer together)
+IFT,procedure,1,IFT,interferansiyel akım tedavisi,translate+en-first-mention,medium,acronym kept,"Interferential Therapy (IFT) uses low-frequency currents to stimulate peripheral nerves, reduce oedema, relieve chronic pain, stimulate muscles, and improve blood flow via the body's opioid mechanism,…"
+IMRT,procedure,1,IMRT,yoğunluk ayarlı radyoterapi,translate+en-first-mention,medium,acronym kept,Radiation (stereotactic radiosurgery or IMRT) for residual or recurrent tumours.
+incontinence training,procedure,1,kontinans eğitimi,idrar tutma,translate,medium,,Incontinence Training and Bladder and Bowel Movement Management
+joint adjustment,procedure,1,eklem ayarlaması,,translate+en-first-mention,low,chiropractic,Our chiropractic department offers two computerised techniques: SpineMED for spinal decompression and Sigma for precise joint adjustment.
+lambdoid synostosis,medical,1,lambdoid sinostoz,,translate,medium,,Lambdoid synostosis (rare): posterior skull flattening; must be distinguished from positional plagiocephaly (non-synostotic)
+levator ani,anatomy,1,levator ani kası,,translate,medium,,Pelvic floor muscles also are known as levator ani muscles because the function to levitate or elevate the pelvic organs into their proper place.
+lipohyalinosis,medical,1,lipohiyalinozis,,translate,medium,transliteration,Small vessel disease — lipohyalinosis of penetrating arteries causes lacunar TIAs; risk factors are hypertension and diabetes.
+lipomyelomeningocele,medical,1,lipomiyelomeningosel,,translate,medium,transliteration,"The specific operation depends on the cause: filum section for tight filum, lipoma debulking and release for lipomyelomeningocele, lysis of post-operative adhesions for acquired tethering."
+lumbo-sacral radicular syndrome,medical,1,lumbosakral radiküler sendrom,,translate,medium,,Lumbo-sacral radicular syndrome
+lumbosacral,anatomy,1,lumbosakral,bel ve sakrum bölgesi,translate,medium,Arabic القطنية العجزية; sacrum rendered عەجز in ckb.,"Lumbosacral MRI show degenerative spine changes at L3-L4, central osteophyte compressed spinal roots, and a herniated disc at L5-S1."
+macroadenoma,medical,1,makroadenom,,translate,medium,transliteration,Microadenomas are < 1 cm; macroadenomas are ≥ 1 cm and may compress adjacent structures.
+medial tibial stress syndrome,medical,1,medial tibial stres sendromu,,translate,medium,,Shin splints (medial tibial stress syndrome)
+medulloblastoma,medical,1,medulloblastom,,translate,medium,transliteration,"Histopathologycal results show medulloblastoma, he refused radiation."
+meningocele,medical,1,meningosel,,translate,medium,,"...e defect only; up to 10% of people have this incidentally, rarely symptomatic), meningocele (meninges herniate through the bony defect but cord is intact; rare, usually mild), and myelomeningocele / o..."
+mental motor retardation,medical,1,psikomotor gelişim geriliği,,translate+en-first-mention,medium,,"Cerebral palsy, spasticity, mental motor retardation, brachial plexus injury, torticollis, spina bifida, meningomyelocele, metabolic diseases with musculoskeletal problems, head trauma, microcephaly, ..."
+metopic synostosis,medical,1,metopik sinostoz,,translate,medium,,Metopic synostosis: premature fusion of the metopic suture (forehead midline) produces trigonocephaly — a triangular forehead with prominent midline ridge and hypotelorism (eyes closer together)
+microadenoma,medical,1,mikroadenom,,translate,medium,transliteration,Microadenomas are < 1 cm; macroadenomas are ≥ 1 cm and may compress adjacent structures.
+middle fossa approach,procedure,1,orta fossa yaklaşımı,,translate,medium,skull-base approach,"Suboccipital, translabyrinthine, or middle fossa approach"
+mononeuropathy multiplex,medical,1,mononöropati multipleks,,translate,medium,,"Mononeuropathy multiplex: multiple individual nerves affected in an asymmetric, stepwise pattern — suggests vasculitis, diabetes, or sarcoidosis"
+neuromyelitis optica spectrum disorder,medical,1,nöromiyelitis optika spektrum bozukluğu,,translate,medium,,"TM can be idiopathic (cause unknown) or associated with autoimmune disease (multiple sclerosis, neuromyelitis optica spectrum disorder/NMOSD, SLE, Sjögren's, sarcoidosis) or infection."
+neuropraxia,medical,1,nöropraksi,,adapt-spelling,medium,mildest nerve injury grade; loan only,Ranges from mild stretching (neuropraxia) to complete avulsion of nerve roots from the spinal cord.
+neurotmesis,medical,1,nörotmezis,,adapt-spelling,medium,complete nerve transection; loan only,...mesis: more severe stretch causing axon damage — recovery possible but slower - Neurotmesis / avulsion: complete nerve rupture or root avulsion from the spinal cord — most severe; surgical reconstruct...
+nociplastic pain,medical,1,nosiplastik ağrı,,translate,medium,new IASP term; loan,*Nociplastic pain* (formerly central sensitisation) arises from altered nociception despite no clear evidence of tissue or nerve damage.
+optic chiasm,anatomy,1,optik kiazma,,translate,medium,Calque; Kurdish clinicians often say optic chiasm in English.,"Non-functioning tumours present through mass effect on the optic chiasm, normal pituitary tissue, and cavernous sinuses."
+ovarian remnant syndrome,medical,1,over kalıntı sendromu,,translate,medium,,*Ovarian remnant syndrome:* residual ovarian tissue after surgical removal develops painful cysts
+over-pronation,medical,1,aşırı pronasyon,,translate,medium,,"…excessive pressure on the sole of the foot — from incorrect gait (particularly over-pronation, where the foot rolls inward and the arch collapses), weight gain, aging, or occupations requiring prolon…"
+paradoxical insomnia,medical,1,paradoksal uykusuzluk,,translate,medium,,Paradoxical insomnia (sleep state misperception): patients complain of chronic insomnia but objective sleep studies show…
+paraneoplastic syndromes,medical,1,paraneoplastik sendromlar,,translate,medium,,... brain blood vessels - Brain tumor - Guillain-Barre syndrome - Herniated disk - Paraneoplastic syndromes of the nervous system - Peripheral nerve injuries - Peripheral neuropathy - Spinal cord injury ...
+parasympathetic dysfunction,medical,1,parasempatik işlev bozukluğu,,translate,medium,,Sympathetic hyperactivity and parasympathetic dysfunction may be responsible for autonomic disturbances in stroke.
+patent foramen ovale,medical,1,patent foramen ovale,,keep,medium,,"Atrial fibrillation (AF) is the most important source; others include prosthetic heart valves, recent myocardial infarction, dilated cardiomyopathy, and patent foramen ovale."
+pelvic congestion syndrome,medical,1,pelvik konjesyon sendromu,,translate,medium,,"*Pelvic congestion syndrome:* dilated, varicose-like pelvic veins causing a dull, aching heaviness that worsens with standing, walking, and at the end of the day"
+periodic limb movement disorder,medical,1,periyodik bacak hareketi bozukluğu,,translate,medium,,In periodic limb movement disorder: repetitive leg jerks during sleep causing arousals (often reported by a bed partner).
+periodic limb movements,medical,1,periyodik bacak hareketleri,,translate,medium,,Periodic limb movements during sleep may co-occur.
+peripheral sensitisation,medical,1,periferik duyarlılaşma,,translate,medium,,"Acute pain serves as a warning; chronic pain outlasts its usefulness and becomes a disease in its own right — driven by peripheral sensitisation, central sensitisation, neuroplastic changes, and psychosocial factors."
+petit mal,medical,1,Petit mal,absans nöbeti,translate,medium,,"...alised-onset seizures* (both hemispheres involved simultaneously): - **Absence (petit mal):** brief lapse in awareness, staring, eyelid flickering; no post-ictal confusion; may occur hundreds of times..."
+photobioactivation,procedure,1,fotobiyoaktivasyon,,translate+en-first-mention,low,,Laser therapy — also described as photobioactivation — uses a focused beam of light to deliver energy deep into tissues.
+posterolateral gutter fusion,procedure,1,posterolateral füzyon,,translate,medium,,[Posterolateral gutter fusion]({{0}}) – the procedure is done through the back
+pseudofractures,medical,1,psödofraktürler,,adapt-spelling,medium,,"X-ray: pseudofractures (Looser's zones) — radiolucent bands perpendicular to the cortex, most common at the medial femoral neck, pubic rami, ribs, and ulna"
+PSP,medical,1,PSP,,keep,medium,progressive supranuclear palsy,"MRI rules out atypical syndromes (PSP, MSA)."
+psychophysiological insomnia,medical,1,psikofizyolojik uykusuzluk,,translate,medium,,Psychophysiological insomnia: the most common type; learned arousal associated with the bedroom environment.
+pubic symphysis,anatomy,1,simfizis pubis,kasık kemiği eklemi,translate,medium,Reviewer check; alt سیمفیزیسی پیوبیک.,"*Musculoskeletal causes:* pubic symphysis dysfunction, sacroiliac joint dysfunction, hip pathology, and abdominal wall trigger points can all produce pain perceived as pelvic"
+pulse oximetry,procedure,1,pulse oksimetri,,translate,medium,,Patients with visible lung damage — identified on X-ray and by pulse oximetry — are followed up jointly with the chest medicine and rehabilitation units.
+pulsed electromagnetic field,procedure,1,pulsatil elektromanyetik alan,PEMF,translate,medium,,"…nd anti-nociceptive efficacy, similar to the opioid analgesic effect respect of pulsed electromagnetic field (PEMF) is reported by scientist literature but the clear biological and biochemical mechani…"
+Rathke's cleft cyst,medical,1,Rathke kleft kisti,,translate,medium,,It is the standard-of-care approach for pituitary adenomas (both secretory and non-secretory) and other sellar lesions including craniopharyngiomas and Rathke's cleft cysts.
+responsive neurostimulation,procedure,1,yanıt veren nörostimülasyon,RNS,translate,medium,,Neuromodulation: vagus nerve stimulation or responsive neurostimulation (RNS) for multifocal or diffuse seizure zones
+rotator cuff arthropathy,medical,1,rotator manşet artropatisi,,translate,medium,,"Untreated rotator cuff injuries carry a risk of progressive enlargement of the tear, worsening weakness, and the development of rotator cuff arthropathy (degenerative glenohumeral joint disease)."
+sacral neuromodulation,procedure,1,sakral nöromodülasyon,,translate,medium,,...y; Botox injected into the detrusor for refractory overactivity or dyssynergia; sacral neuromodulation and spinal cord stimulation for selected cases; intrathecal baclofen for spasticity-related dysfu...
+sacrum,anatomy,1,sakrum,sağrı kemiği,translate,medium,Sorani clinical usage borrows عەجز (Arabic عجز).,They can be used to treat a variety of conditions that affect the spine anywhere from the upper cervical spine to the sacrum.
+saddle anaesthesia,medical,1,eyer anestezisi,oturma bölgesinde his kaybı,translate+en-first-mention,medium,red-flag symptom; keep lay,"Severe low back pain, bladder retention or incontinence, bowel incontinence, leg weakness or sensory loss, saddle anaesthesia (numbness in the groin/perineum)."
+sagittal synostosis,medical,1,sagittal sinostoz,,adapt-spelling,medium,,"Sagittal synostosis (most common — ~50%): premature fusion of the sagittal suture (running front-to-back along the top of the skull) produces scaphocephaly — a long, narrow skull with frontal and occi…"
+scaphocephaly,medical,1,skafosefali,,adapt-spelling,medium,,"…the sagittal suture (running front-to-back along the top of the skull) produces scaphocephaly — a long, narrow skull with frontal and occipital bossing ('boat shape')…"
+secondary hyperparathyroidism,medical,1,sekonder hiperparatiroidizm,,translate,medium,,"Blood tests: low 25-hydroxyvitamin D, low calcium, low phosphate, elevated alkaline phosphatase (bone isoform), elevated parathyroid hormone (secondary hyperparathyroidism)"
+sellar lesion,medical,1,sellar lezyon,,translate,medium,,Pituitary adenomas and other sellar lesions (tumours at the base of the skull near the pituitary gland).
+spinal dysraphism,medical,1,spinal disrafizm,,adapt-spelling,medium,,"A spinal dysraphism caused by incomplete closure of the embryonic neural tube, typically in the first weeks of pregnancy."
+spinal infusions,procedure,1,spinal infüzyonlar,,translate,medium,,"Interventional pain procedures (blocks, neurolysis, spinal infusions)."
+spinothalamic,anatomy,1,spinotalamik,,adapt-spelling,medium,Adjective; transliteration only.,"...acteristic dissociated sensory loss: pain and temperature sensation (carried by spinothalamic fibres that cross at that cord level) is lost, while vibration and proprioception (carried in the posterio..."
+splenic sequestration,medical,1,dalak sekestrasyonu,,translate,medium,,Splenic sequestration.
+split cord malformation,medical,1,bölünmüş omurilik malformasyonu,,translate,medium,,"Congenital causes include: tight (thickened) filum terminale, lipomeningomyelocele, split cord malformation, dermal sinus tract, and spinal cord cysts."
+Staphylococcus aureus,medical,1,Staphylococcus aureus,,keep,medium,,"…matoid arthritis, gout, psoriatic arthritis, thyroid disorders - Infection with Staphylococcus aureus (septic bursitis)…"
+steppage gait,medical,1,stepaj yürüyüşü,,translate,medium,,"Foot dragging when walking, with a characteristic high-stepping (steppage) gait to clear the foot from the ground."
+stereotactic ablative radiotherapy,procedure,1,stereotaktik ablatif radyoterapi,SABR,translate,medium,,"When doctors use stereotactic radiosurgery to treat tumors in areas of the body other than the brain, it's sometimes called stereotactic body radiotherapy (SBRT) or stereotactic ablative radiotherapy (SABR)."
+stereotactic lesioning,procedure,1,stereotaktik lezyon oluşturma,,translate,medium,,"Functional neurosurgery (selective dorsal rhizotomy, stereotactic lesioning) for severe, disabling cases."
+stingers,medical,1,stinger,brakiyal pleksus gerilme yaralanması,translate,medium,sports nerve-stretch injury,"Burning or stinging pain (""stingers"")."
+subfrontal approach,procedure,1,subfrontal yaklaşım,,translate,medium,skull-base approach,Growth hormone is so high (19.7 ng/ml). surgical intervention was done with subfrontal approach to excision of tumor.
+suboccipital,procedure,1,suboksipital,,adapt-spelling,medium,approach adjective,"Suboccipital, translabyrinthine, or middle fossa approach"
+substantia nigra,anatomy,1,substantia nigra,,keep,medium,,Parkinson's disease is progressive neurodegeneration of dopamine-producing neurons in the substantia nigra.
+subthalmotomy,procedure,1,subtalamotomi,,adapt-spelling,medium,source spelling; = subthalamotomy,"Several techniques exist — pallidotomy, thalamotomy, and subthalmotomy — chosen based on the specific condition and symptoms."
+SUDEP,medical,1,SUDEP,,keep,medium,,Sudden Unexpected Nocturnal Death in Epilepsy (SUDEP) is rare but serious — risk falls with seizure control.
+superior hypogastric plexus,anatomy,1,süperior hipogastrik pleksus,,translate,medium,,e – Superior hypogastric plexus
+superior sagittal sinus,anatomy,1,süperior sagittal sinüs,,translate,medium,,"...e fragments were found causing partial laceration of the posterior third of the superior sagittal sinus, and 5 pints of blood were transfused within 30 minutes as the depressed bone fragments were ele..."
+supratrochlear nerve,anatomy,1,supratroklear sinir,,translate,medium,,"…he occipital nerve (greater or lesser), upper cervical nerves, supraorbital and supratrochlear nerves (branches of the frontal and trigeminal nerves), or sphenopalatine ganglion nerve."
+sympathetic hyperactivity,medical,1,sempatik aşırı aktivite,,translate,medium,,Sympathetic hyperactivity and parasympathetic dysfunction may be responsible for autonomic disturbances in stroke.
+syndromic craniosynostosis,medical,1,sendromik kraniosinostoz,,translate,medium,,"Multi-suture synostosis: multiple sutures involved — may occur in the context of a syndromic craniosynostosis (Apert, Crouzon, Muenke, Pfeiffer syndromes)"
+synkinesis,medical,1,sinkinezi,,adapt-spelling,medium,,"rTMS, physiotherapy, and Botox address residual weakness, synkinesis, and muscle rehabilitation."
+syringoperitoneal shunting,procedure,1,siringoperitoneal şant,,translate,medium,,"If the syrinx persists or the cause cannot be corrected, direct surgical drainage via stenting or syringopleural/syringoperitoneal shunting is considered."
+syringopleural shunting,procedure,1,siringoplevral şant,,translate,medium,,... placed to drain the cavity into the subarachnoid space - *Syringoperitoneal or syringopleural shunting* — fluid is diverted to the peritoneal or pleural cavity...
+syrinx drainage,procedure,1,sirinks drenajı,,translate,medium,,Managed by addressing the underlying cause; syrinx drainage is used when conservative options are insufficient.
+syrinx stenting,procedure,1,sirinks stent uygulaması,,translate,medium,,Options include: - *Syrinx stenting* — a short hollow tube is placed to drain the cavity into the subarachnoid space - *Syringoperitoneal or syringopleural shunting* — fluid is diverted to the periton...
+tethered cord syndrome,medical,1,gergin omurilik sendromu,,translate,medium,,"...enic bladder) - Multiple sclerosis - Stroke and brain injury - Spina bifida and tethered cord syndrome - Parkinson's disease and other neurodegenerative diseases - Peripheral neuropathy (diabetic, pos..."
+thoracolumbosacral orthosis,procedure,1,torakolumbosakral ortez,TLSO,translate,medium,,Rigid thoracolumbosacral orthosis (TLSO) worn 18–20 hours daily
+translabyrinthine,procedure,1,translabirentin,,adapt-spelling,medium,skull-base approach,"Suboccipital, translabyrinthine, or middle fossa approach"
+trigeminal autonomic cephalalgias,medical,1,trigeminal otonomik sefaljiler,,translate,medium,,"They belong to a group of primary headache disorders called trigeminal autonomic cephalalgias (TACs), characterised by severe unilateral head pain combined with ipsilateral autonomic features."
+trigonocephaly,medical,1,trigonosefali,,adapt-spelling,medium,,Metopic synostosis: premature fusion of the metopic suture (forehead midline) produces trigonocephaly — a triangular forehead with prominent midline ridge and hypotelorism (eyes closer together)
+tumour-induced osteomalacia,medical,1,tümöre bağlı osteomalazi,,translate,medium,,Phosphate wasting: Rare hereditary conditions (X-linked hypophosphataemia) and tumour-induced osteomalacia cause renal phosphate wasting despite normal vitamin D.
+ultrasound cavitation,procedure,1,ultrason kavitasyonu,,translate,medium,aesthetic slimming,Ultrasound cavitation
+vaso-occlusive crisis,medical,1,vazooklüzif kriz,,translate,medium,sickle-cell pain crisis,"Vaso-occlusive crises: acute, severe pain in bones, joints, chest, and abdomen — triggered by cold, dehydration, infection, or stress."
+vein of Galen malformation,medical,1,Galen veni malformasyonu,,translate,medium,,...n cause of obstructive hydrocephalus in older children - *Vascular anomalies* — vein of Galen malformation - *Genetic* — a small proportion are inherited (X-linked hydrocephalus from L1CAM mutation)...
+vertebral body tethering,procedure,1,vertebral cisim bağlama,VBT,translate,medium,scoliosis surgery,Vertebral body tethering for suitable adolescents
+vertebral wedging,medical,1,omur kamalaşması,,translate,medium,,Scheuermann's disease is vertebral wedging (>5° wedging in three consecutive vertebrae).
+vestibulodynia,medical,1,vestibülodini,,adapt-spelling,medium,,"A related condition, vestibulodynia, causes pain only when pressure is applied to the area surrounding the vaginal entrance."
+X-linked hypophosphataemia,medical,1,X'e bağlı hipofosfatemi,,translate,medium,,Phosphate wasting: Rare hereditary conditions (X-linked hypophosphataemia) and tumour-induced osteomalacia cause renal phosphate wasting despite normal vitamin D.
+activity limitations,medical,0,aktivite kısıtlılıkları,,translate,medium,what the patient cannot do; NOT the therapist restricting activity. Round 2 clinical vocabulary (manual add).,
+acute,medical,0,akut,,translate,medium,sudden-onset/short-lived; never توند or توندوتیژ. Round 2 clinical vocabulary (manual add).,
+acute phase,medical,0,akut dönem,,translate,medium,Round 2 clinical vocabulary (manual add).,
+autoimmune,medical,0,otoimmün,,translate,medium,the immune system attacks the body itself. Round 2 clinical vocabulary (manual add).,
+cognitive,medical,0,bilişsel,,translate,medium,Round 2 clinical vocabulary (manual add).,
+compression,medical,0,bası,,translate,medium,Round 2 clinical vocabulary (manual add).,
+connective tissue,anatomy,0,bağ dokusu,,translate,medium,Round 2 clinical vocabulary (manual add).,
+conservative care,procedure,0,konservatif tedavi,,translate,medium,"rest, physiotherapy and medication before any procedure. Round 2 clinical vocabulary (manual add).",
+contraindication,medical,0,kontrendikasyon,,translate,medium,reason a treatment must not be given. Round 2 clinical vocabulary (manual add).,
+crutches,procedure,0,koltuk değneği,,translate,medium,Round 2 clinical vocabulary (manual add).,
+disability,medical,0,engellilik,,translate,medium,Round 2 clinical vocabulary (manual add).,
+dull ache,medical,0,künt ağrı,,translate,medium,Round 2 clinical vocabulary (manual add).,
+flare-up,medical,0,alevlenme,,translate,medium,Round 2 clinical vocabulary (manual add).,
+flexibility,medical,0,esneklik,,translate,medium,Round 2 clinical vocabulary (manual add).,
+genetic,medical,0,genetik,,translate,medium,Round 2 clinical vocabulary (manual add).,
+healing,medical,0,iyileşme,,translate,medium,tissue/wound healing; recovery of the patient is چاکبوونەوە. Round 2 clinical vocabulary (manual add).,
+Hussein Imran Mousa,site,0,Hussein Imran Mousa,,keep,medium,"Doctor's name; ar.md: حسين عمران موسى. Not in terms.json (scanner missed it), added manually.",
+image guidance,procedure,0,görüntüleme eşliğinde,,translate,medium,Round 2 clinical vocabulary (manual add).,
+implant,procedure,0,implant,,translate,medium,Round 2 clinical vocabulary (manual add).,
+indication,medical,0,endikasyon,,translate,medium,when a treatment is medically justified; never ئامادەکاری (preparation). Round 2 clinical vocabulary (manual add).,
+lesion,medical,0,lezyon,,translate,medium,Round 2 clinical vocabulary (manual add).,
+minimally invasive,procedure,0,minimal invaziv,,translate,medium,small incision or needle only. Round 2 clinical vocabulary (manual add).,
+motor function,medical,0,motor fonksiyon,,translate,medium,Round 2 clinical vocabulary (manual add).,
+muscle contraction,medical,0,kas kasılması,,translate,medium,Round 2 clinical vocabulary (manual add).,
+muscle tone,medical,0,kas tonusu,,translate,medium,Round 2 clinical vocabulary (manual add).,
+neurological deficit,medical,0,nörolojik kayıp,,translate,medium,Round 2 clinical vocabulary (manual add).,
+non-invasive,procedure,0,invaziv olmayan,,translate,medium,no incision and no needle. Round 2 clinical vocabulary (manual add).,
+outpatient,site,0,ayaktan,,translate,medium,patient goes home the same day. Round 2 clinical vocabulary (manual add).,
+participation restrictions,medical,0,katılım kısıtlılıkları,,translate,medium,"barriers the patient faces, not restrictions imposed by the therapist. Round 2 clinical vocabulary (manual add).",
+placebo,drug,0,plasebo,,translate,medium,Round 2 clinical vocabulary (manual add).,
+posture,medical,0,duruş,,translate,medium,Round 2 clinical vocabulary (manual add).,
+prognosis,medical,0,prognoz,hastalığın seyri,translate,medium,expected outcome/course. Round 2 clinical vocabulary (manual add).,
+progressive,medical,0,ilerleyici,,translate,medium,gets worse over time; not پێشکەوتوو (advanced). Round 2 clinical vocabulary (manual add).,
+recurrence,medical,0,tekrarlama,,translate,medium,Round 2 clinical vocabulary (manual add).,
+referral,site,0,sevk,,translate,medium,Round 2 clinical vocabulary (manual add).,
+refractory,medical,0,tedaviye dirençli,,translate,medium,Round 2 clinical vocabulary (manual add).,
+relapse,medical,0,nüks,,translate,medium,Round 2 clinical vocabulary (manual add).,
+remission,medical,0,remisyon,,translate,medium,Round 2 clinical vocabulary (manual add).,
+residual weakness,medical,0,geride kalan güçsüzlük,,translate,medium,weakness left after recovery; tr not kalıcı (permanent). Round 2 clinical vocabulary (manual add).,
+stabilisation,procedure,0,stabilizasyon,,translate,medium,distinct from fixation (جێگیرکردن). Round 2 clinical vocabulary (manual add).,
+therapist,site,0,terapist,,translate,medium,Round 2 clinical vocabulary (manual add).,
+throbbing pain,medical,0,zonklayıcı ağrı,,translate,medium,Round 2 clinical vocabulary (manual add).,
+trauma,medical,0,travma,,translate,medium,"physical injury from force (fall, accident); not psychological trauma. Round 2 clinical vocabulary (manual add).",
+ulcer,medical,0,ülser,,translate,medium,Round 2 clinical vocabulary (manual add).,
+wear and tear,medical,0,aşınma ve yıpranma,,translate,medium,Round 2 clinical vocabulary (manual add).,
+weight-bearing,medical,0,yük verme,,translate,medium,Round 2 clinical vocabulary (manual add).,
+wheelchair,procedure,0,tekerlekli sandalye,,translate,medium,Round 2 clinical vocabulary (manual add).,

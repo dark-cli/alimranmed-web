@@ -515,6 +515,21 @@
         "نەرمیی دەمار",
         "توانای خۆگونجاندنی مێشک و دەمار",
         "neuroplasticity: نەرمی reads as softness"
+      ],
+      [
+        "فیزیۆسێراپیست",
+        "فیزیۆتێراپیست",
+        "physiotherapist spelling matches فیزیۆتێراپی"
+      ],
+      [
+        "خاڵی هاندەری",
+        "خاڵی هەستیاری",
+        "trigger point = خاڵی هەستیار everywhere"
+      ],
+      [
+        "خەرەفان",
+        "دیمێنشیا",
+        "dementia: خەرەفان means dotage"
       ]
     ],
     "tr": [
@@ -562,13 +577,16 @@
       "ckb": "لکاندنی بڕبڕەکانی کەمەر لە پێشەوە"
     },
     "anterior/posterior spinal fusion": {
-      "ckb": "لکاندنی بڕبڕەکان لە پێشەوە/دواوە"
+      "ckb": "لکاندنی بڕبڕەکان لە پێشەوە/دواوە",
+      "ckb_policy": "translate"
     },
     "CSF leak": {
-      "ckb": "دزەکردنی شلەی مێشک و درکەپەتک (CSF)"
+      "ckb": "دزەکردنی شلەی مێشک و درکەپەتک (CSF)",
+      "ckb_policy": "translate"
     },
     "CSF drainage trial": {
-      "ckb": "تاقیکردنەوەی دەرهێنانی شلەی مێشک و درکەپەتک"
+      "ckb": "تاقیکردنەوەی دەرهێنانی شلەی مێشک و درکەپەتک",
+      "ckb_policy": "translate"
     },
     "hip girdle": {
       "note": "= pelvic girdle, so حەوز (pelvis) is intended, not سمت."
@@ -597,21 +615,25 @@
       "ckb_policy": "translate"
     },
     "genicular nerve": {
-      "ckb": "دەمارەکانی ئەژنۆ (جینیکیولەر)"
+      "ckb": "دەمارەکانی ئەژنۆ (جینیکیولەر)",
+      "ckb_policy": "translate"
     },
     "adolescent idiopathic scoliosis": {
-      "tr": "adolesan idiyopatik skolyoz"
+      "tr": "adolesan idiyopatik skolyoz",
+      "ckb_policy": "translate"
     },
     "brachycephaly": {
       "tr": "brakisefali (kısa ve geniş kafa)",
-      "tr_policy": "translate+en-first-mention"
+      "tr_policy": "translate+en-first-mention",
+      "ckb_policy": "translate"
     },
     "bulging disc": {
       "tr": "disk bombeleşmesi"
     },
     "exposure keratopathy": {
       "tr": "ekspozür keratopatisi",
-      "tr_policy": "translate+en-first-mention"
+      "tr_policy": "translate+en-first-mention",
+      "ckb_policy": "translate"
     },
     "mental motor retardation": {
       "tr": "psikomotor gelişim geriliği",
@@ -619,10 +641,12 @@
     },
     "saddle anaesthesia": {
       "tr": "eyer anestezisi (oturma bölgesinde his kaybı)",
-      "tr_policy": "translate+en-first-mention"
+      "tr_policy": "translate+en-first-mention",
+      "ckb_policy": "translate"
     },
     "ACL reconstruction": {
-      "tr": "ön çapraz bağ (ÖÇB) rekonstrüksiyonu"
+      "tr": "ön çapraz bağ (ÖÇB) rekonstrüksiyonu",
+      "ckb_policy": "translate"
     },
     "CBT-I": {
       "tr": "uykusuzluk için bilişsel davranışçı terapi (BDT-İ)"
@@ -632,29 +656,35 @@
       "tr_policy": "translate+en-first-mention"
     },
     "ICP monitoring": {
-      "tr": "kafa içi basınç (KİB) monitörizasyonu"
+      "tr": "kafa içi basınç (KİB) monitörizasyonu",
+      "ckb_policy": "translate"
     },
     "incontinence training": {
       "tr": "kontinans (idrar tutma) eğitimi"
     },
     "pulse oximetry": {
-      "tr": "pulse oksimetri"
+      "tr": "pulse oksimetri",
+      "ckb_policy": "translate"
     },
     "repetitive transcranial magnetic stimulation": {
-      "tr": "tekrarlayan transkraniyal manyetik stimülasyon (rTMS)"
+      "tr": "tekrarlayan transkraniyal manyetik stimülasyon (rTMS)",
+      "ckb_policy": "translate"
     },
     "transcutaneous electrical nerve stimulation": {
-      "tr": "transkütan elektriksel sinir stimülasyonu (TENS)"
+      "tr": "transkütan elektriksel sinir stimülasyonu (TENS)",
+      "ckb_policy": "translate"
     },
     "ultrasound cavitation": {
-      "tr": "ultrason kavitasyonu"
+      "tr": "ultrason kavitasyonu",
+      "ckb_policy": "translate"
     },
     "buttock": {
       "tr": "kalça arkası (gluteal bölge)",
       "tr_policy": "translate+en-first-mention"
     },
     "cauda equina syndrome": {
-      "tr": "kauda ekuina sendromu"
+      "tr": "kauda ekuina sendromu",
+      "ckb_policy": "translate"
     },
     "lumbosacral": {
       "tr": "lumbosakral (bel ve sakrum bölgesi)"
@@ -671,23 +701,23 @@
     },
     "acute pain": {
       "ckb": "ئازاری کورتخایەن",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "auditory hallucination": {
       "ckb": "بیستنی دەنگی ناڕاستەقینە",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "community-acquired pneumonia": {
       "ckb": "هەوکردنی سییەکانی دەرەوەی نەخۆشخانە (CAP)",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "foot drop": {
       "ckb": "شۆڕبوونەوەی پێ",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "herpes simplex": {
       "ckb": "هێرپیس سیمپلێکس",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "medial tibial stress syndrome": {
       "ckb": "سەندرۆمی فشاری لای ناوەوەی ئێسکی قەڵەم",
@@ -695,19 +725,19 @@
     },
     "neuroplasticity": {
       "ckb": "توانای خۆگونجاندنی مێشک و دەمار (نیوورۆپلاستیسیتی)",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "peripheral sensitisation": {
       "ckb": "هەستیاربوونی دەمارەکانی دەوروبەر",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "mirror neurons": {
       "ckb": "خانە دەمارییە ئاوێنەییەکان",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "motor neurons": {
       "ckb": "خانە دەمارییە جووڵەییەکان (نیورۆنی جووڵە)",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "motor neuron disease": {
       "ckb": "نەخۆشیی خانە دەمارییە جووڵەییەکان",
@@ -715,19 +745,19 @@
     },
     "pubic symphysis": {
       "ckb": "جومگەی ئێسکی ناوگەڵ",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "straight-leg-raise test": {
       "ckb": "تاقیکردنەوەی بەرزکردنەوەی قاچی ڕێک (SLR)",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "virtual reality": {
       "ckb": "واقیعی مەجازی (ڤێرچواڵ ڕیالیتی)",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "spinal tap": {
       "ckb": "دەرهێنانی شلەی مێشک و درکەپەتک لە کەمەرەوە",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "stereotactic lesioning": {
       "ckb": "دروستکردنی زەدەی مەبەستدار بە ڕێگای ستیریۆتاکتیک",
@@ -735,47 +765,1628 @@
     },
     "external urinary sphincter": {
       "ckb": "بازنەی دەرەوەی بۆری میز",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "Transitional Care Center": {
       "ckb": "سەنتەری چاودێریی دوای نەخۆشخانە",
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "diabetic peripheral neuropathy": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "peripheral nerve disorders": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "peripheral nerve entrapments": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "peripheral neuropathy": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "peripheral nerve blocks": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "peripheral nerve stimulation": {
       "ckb_policy": "translate+en-first-mention"
     },
     "peripheral nerve": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "FES": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "functional electrical stimulation": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "functional hemispherectomy": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "functional neurosurgery": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
     },
     "virtual reality rehabilitation": {
-      "ckb_policy": "translate+en-first-mention"
+      "ckb_policy": "translate"
+    },
+    "ABCD2 score": {
+      "ckb_policy": "translate"
+    },
+    "absences": {
+      "ckb_policy": "translate"
+    },
+    "Achilles tendinopathy": {
+      "ckb_policy": "translate"
+    },
+    "achondroplasia": {
+      "ckb_policy": "translate"
+    },
+    "ACL injury": {
+      "ckb_policy": "translate"
+    },
+    "acoustic neuroma": {
+      "ckb_policy": "translate"
+    },
+    "acromegaly": {
+      "ckb_policy": "translate"
+    },
+    "active trigger point": {
+      "ckb_policy": "translate"
+    },
+    "ADHD": {
+      "ckb_policy": "translate"
+    },
+    "adhesive capsulitis": {
+      "ckb_policy": "translate"
+    },
+    "adult degenerative scoliosis": {
+      "ckb_policy": "translate"
+    },
+    "allodynia": {
+      "ckb_policy": "translate"
+    },
+    "amaurosis fugax": {
+      "ckb_policy": "translate"
+    },
+    "amyloid plaques": {
+      "ckb_policy": "translate"
+    },
+    "aneurysm": {
+      "ckb_policy": "translate"
+    },
+    "angina": {
+      "ckb_policy": "translate"
+    },
+    "anterior cutaneous nerve entrapment syndrome": {
+      "ckb_policy": "translate"
+    },
+    "anti-ccp antibodies": {
+      "ckb_policy": "translate"
+    },
+    "aortic aneurysm": {
+      "ckb_policy": "translate"
+    },
+    "aphasia": {
+      "ckb_policy": "translate"
+    },
+    "aqueductal stenosis": {
+      "ckb_policy": "translate"
+    },
+    "arachnoiditis": {
+      "ckb_policy": "translate"
+    },
+    "arteriovenous malformation": {
+      "ckb_policy": "translate"
+    },
+    "astrocytoma": {
+      "ckb_policy": "translate"
+    },
+    "ataxia": {
+      "ckb_policy": "translate"
+    },
+    "ataxic gait": {
+      "ckb_policy": "translate"
+    },
+    "atonic": {
+      "ckb_policy": "translate"
+    },
+    "atrial fibrillation": {
+      "ckb_policy": "translate"
+    },
+    "atrophy": {
+      "ckb_policy": "translate"
+    },
+    "aura": {
+      "ckb_policy": "translate"
+    },
+    "automatisms": {
+      "ckb_policy": "translate"
+    },
+    "autonomic neuropathy": {
+      "ckb_policy": "translate"
+    },
+    "avascular necrosis": {
+      "ckb_policy": "translate"
+    },
+    "avulsion": {
+      "ckb_policy": "translate"
+    },
+    "avulsion fracture": {
+      "ckb_policy": "translate"
+    },
+    "axonal sprouting": {
+      "ckb_policy": "translate"
+    },
+    "Becker muscular dystrophy": {
+      "ckb_policy": "translate"
+    },
+    "benign paroxysmal positional vertigo": {
+      "ckb_policy": "translate"
+    },
+    "botulism": {
+      "ckb_policy": "translate"
+    },
+    "brachial plexus injury": {
+      "ckb_policy": "translate"
+    },
+    "brain aneurysm": {
+      "ckb_policy": "translate"
+    },
+    "bronchiectasis": {
+      "ckb_policy": "translate"
+    },
+    "bursitis": {
+      "ckb_policy": "translate"
+    },
+    "carotid stenosis": {
+      "ckb_policy": "translate"
+    },
+    "causalgia": {
+      "ckb_policy": "translate"
+    },
+    "cellulite": {
+      "ckb_policy": "translate"
+    },
+    "cellulitis": {
+      "ckb_policy": "translate"
+    },
+    "cerebral ischemia": {
+      "ckb_policy": "translate"
+    },
+    "cervical dystonia": {
+      "ckb_policy": "translate"
+    },
+    "cervical myelopathy": {
+      "ckb_policy": "translate"
+    },
+    "cervical radiculopathy": {
+      "ckb_policy": "translate"
+    },
+    "chronic obstructive pulmonary disease": {
+      "ckb_policy": "translate"
+    },
+    "claudication": {
+      "ckb_policy": "translate"
+    },
+    "clonus": {
+      "ckb_policy": "translate"
+    },
+    "clostridium botulinum": {
+      "ckb_policy": "translate"
+    },
+    "complex regional pain syndrome": {
+      "ckb_policy": "translate"
+    },
+    "contracture": {
+      "ckb_policy": "translate"
+    },
+    "coronal synostosis": {
+      "ckb_policy": "translate"
+    },
+    "craniosynostosis": {
+      "ckb_policy": "translate"
+    },
+    "critical limb ischaemia": {
+      "ckb_policy": "translate"
+    },
+    "Cushing response": {
+      "ckb_policy": "translate"
+    },
+    "cyber-sickness": {
+      "ckb_policy": "translate"
+    },
+    "cystic fibrosis": {
+      "ckb_policy": "translate"
+    },
+    "deep vein thrombosis": {
+      "ckb_policy": "translate"
+    },
+    "delirium": {
+      "ckb_policy": "translate"
+    },
+    "demyelination": {
+      "ckb_policy": "translate"
+    },
+    "dermatomyositis": {
+      "ckb_policy": "translate"
+    },
+    "diastematomyelia": {
+      "ckb_policy": "translate"
+    },
+    "diverticulitis": {
+      "ckb_policy": "translate"
+    },
+    "Duchenne muscular dystrophy": {
+      "ckb_policy": "translate"
+    },
+    "dysarthria": {
+      "ckb_policy": "translate"
+    },
+    "dyskinesia": {
+      "ckb_policy": "translate"
+    },
+    "dysphasia": {
+      "ckb_policy": "translate"
+    },
+    "dyssomnia": {
+      "ckb_policy": "translate"
+    },
+    "embolus": {
+      "ckb_policy": "translate"
+    },
+    "encephalocele": {
+      "ckb_policy": "translate"
+    },
+    "epidural fibrosis": {
+      "ckb_policy": "translate"
+    },
+    "equinus contracture": {
+      "ckb_policy": "translate"
+    },
+    "extradural hematoma": {
+      "ckb_policy": "translate"
+    },
+    "facet joint arthropathy": {
+      "ckb_policy": "translate"
+    },
+    "facet joint pain": {
+      "ckb_policy": "translate"
+    },
+    "facet joint pain syndrome": {
+      "ckb_policy": "translate"
+    },
+    "facet joint syndrome": {
+      "ckb_policy": "translate"
+    },
+    "femoroacetabular impingement": {
+      "ckb_policy": "translate"
+    },
+    "functional asplenia": {
+      "ckb_policy": "translate"
+    },
+    "gastroparesis": {
+      "ckb_policy": "translate"
+    },
+    "glossopharyngeal neuralgia": {
+      "ckb_policy": "translate"
+    },
+    "hallux valgus": {
+      "ckb_policy": "translate"
+    },
+    "hemolytic anemia": {
+      "ckb_policy": "translate"
+    },
+    "herpes zoster": {
+      "ckb_policy": "translate"
+    },
+    "hip dysplasia": {
+      "ckb_policy": "translate"
+    },
+    "hip labral tear": {
+      "ckb_policy": "translate"
+    },
+    "hypotelorism": {
+      "ckb_policy": "translate"
+    },
+    "intermittent claudication": {
+      "ckb_policy": "translate"
+    },
+    "interstitial cystitis": {
+      "ckb_policy": "translate"
+    },
+    "interstitial lung disease": {
+      "ckb_policy": "translate"
+    },
+    "intractable angina": {
+      "ckb_policy": "translate"
+    },
+    "ischaemia": {
+      "ckb_policy": "translate"
+    },
+    "ischaemic ulcer": {
+      "ckb_policy": "translate"
+    },
+    "IT band syndrome": {
+      "ckb_policy": "translate"
+    },
+    "jaw claudication": {
+      "ckb_policy": "translate"
+    },
+    "kyphosis": {
+      "ckb_policy": "translate"
+    },
+    "kyphotic deformity": {
+      "ckb_policy": "translate"
+    },
+    "L5 radiculopathy": {
+      "ckb_policy": "translate"
+    },
+    "lambdoid synostosis": {
+      "ckb_policy": "translate"
+    },
+    "laryngeal dystonia": {
+      "ckb_policy": "translate"
+    },
+    "latent trigger point": {
+      "ckb_policy": "translate"
+    },
+    "limb ischaemia": {
+      "ckb_policy": "translate"
+    },
+    "lipohyalinosis": {
+      "ckb_policy": "translate"
+    },
+    "lumbar radiculopathy": {
+      "ckb_policy": "translate"
+    },
+    "lumbar spondylolisthesis": {
+      "ckb_policy": "translate"
+    },
+    "lumbo-sacral radicular syndrome": {
+      "ckb_policy": "translate"
+    },
+    "lupus": {
+      "ckb_policy": "translate"
+    },
+    "macroadenoma": {
+      "ckb_policy": "translate"
+    },
+    "macular degeneration": {
+      "ckb_policy": "translate"
+    },
+    "meningioma": {
+      "ckb_policy": "translate"
+    },
+    "meningocele": {
+      "ckb_policy": "translate"
+    },
+    "meningomyelocele": {
+      "ckb_policy": "translate"
+    },
+    "meralgia paresthetica": {
+      "ckb_policy": "translate"
+    },
+    "metopic synostosis": {
+      "ckb_policy": "translate"
+    },
+    "microadenoma": {
+      "ckb_policy": "translate"
+    },
+    "mononeuropathy": {
+      "ckb_policy": "translate"
+    },
+    "mononeuropathy multiplex": {
+      "ckb_policy": "translate"
+    },
+    "monosodium urate": {
+      "ckb_policy": "translate"
+    },
+    "multiple sclerosis": {
+      "ckb_policy": "translate"
+    },
+    "muscular dystrophy": {
+      "ckb_policy": "translate"
+    },
+    "myasthenia": {
+      "ckb_policy": "translate"
+    },
+    "myelitis": {
+      "ckb_policy": "translate"
+    },
+    "myelomeningocele": {
+      "ckb_policy": "translate"
+    },
+    "myelopathy": {
+      "ckb_policy": "translate"
+    },
+    "myoclonic": {
+      "ckb_policy": "translate"
+    },
+    "myofascial pain syndrome": {
+      "ckb_policy": "translate"
+    },
+    "myofascial spasm": {
+      "ckb_policy": "translate"
+    },
+    "myofascial trigger points": {
+      "ckb_policy": "translate"
+    },
+    "narcolepsy": {
+      "ckb_policy": "translate"
+    },
+    "neural tube defects": {
+      "ckb_policy": "translate"
+    },
+    "neurogenic bladder": {
+      "ckb_policy": "translate"
+    },
+    "neurogenic bowel": {
+      "ckb_policy": "translate"
+    },
+    "neurogenic claudication": {
+      "ckb_policy": "translate"
+    },
+    "nociceptive pain": {
+      "ckb_policy": "translate"
+    },
+    "nystagmus": {
+      "ckb_policy": "translate"
+    },
+    "obsessive-compulsive disorder": {
+      "ckb_policy": "translate"
+    },
+    "obstructive sleep apnea": {
+      "ckb_policy": "translate",
+      "ckb": "وەستانی هەناسە لە خەودا بەهۆی داخرانی ڕێڕەوی هەوا"
+    },
+    "occipital neuralgia": {
+      "ckb_policy": "translate"
+    },
+    "oculomotor nerve palsy": {
+      "ckb_policy": "translate"
+    },
+    "oculomotor palsy": {
+      "ckb_policy": "translate"
+    },
+    "oromandibular dystonia": {
+      "ckb_policy": "translate"
+    },
+    "osteoarthritis": {
+      "ckb_policy": "translate"
+    },
+    "osteonecrosis": {
+      "ckb_policy": "translate"
+    },
+    "osteophyte": {
+      "ckb_policy": "translate"
+    },
+    "ovarian remnant syndrome": {
+      "ckb_policy": "translate"
+    },
+    "over-pronation": {
+      "ckb_policy": "translate"
+    },
+    "Paget's disease of bone": {
+      "ckb_policy": "translate"
+    },
+    "palliative care": {
+      "ckb_policy": "translate"
+    },
+    "panic disorder": {
+      "ckb_policy": "translate"
+    },
+    "papilloedema": {
+      "ckb_policy": "translate"
+    },
+    "paradoxical insomnia": {
+      "ckb_policy": "translate"
+    },
+    "parasomnia": {
+      "ckb_policy": "translate"
+    },
+    "parasthesia": {
+      "ckb_policy": "translate"
+    },
+    "parasympathetic dysfunction": {
+      "ckb_policy": "translate"
+    },
+    "patellofemoral syndrome": {
+      "ckb_policy": "translate"
+    },
+    "patent foramen ovale": {
+      "ckb_policy": "translate"
+    },
+    "pelvic floor dysfunction": {
+      "ckb_policy": "translate"
+    },
+    "pelvic floor muscle spasms": {
+      "ckb_policy": "translate"
+    },
+    "periodic limb movements": {
+      "ckb_policy": "translate"
+    },
+    "peripheral artery disease": {
+      "ckb_policy": "translate"
+    },
+    "peripheral vascular disease": {
+      "ckb_policy": "translate"
+    },
+    "phantom limb pain": {
+      "ckb_policy": "translate"
+    },
+    "phantom pain": {
+      "ckb_policy": "translate"
+    },
+    "pituitary adenoma": {
+      "ckb_policy": "translate"
+    },
+    "plagiocephaly": {
+      "ckb_policy": "translate"
+    },
+    "plantar fasciitis": {
+      "ckb_policy": "translate"
+    },
+    "polymyositis": {
+      "ckb_policy": "translate"
+    },
+    "polyneuropathy": {
+      "ckb_policy": "translate"
+    },
+    "porphyria": {
+      "ckb_policy": "translate"
+    },
+    "post-concussion syndrome": {
+      "ckb_policy": "translate"
+    },
+    "post-polio syndrome": {
+      "ckb_policy": "translate"
+    },
+    "post-traumatic stress disorder": {
+      "ckb_policy": "translate"
+    },
+    "posterior fossa tumour": {
+      "ckb_policy": "translate"
+    },
+    "postherpetic neuralgia": {
+      "ckb_policy": "translate"
+    },
+    "postural kyphosis": {
+      "ckb_policy": "translate"
+    },
+    "priapism": {
+      "ckb_policy": "translate"
+    },
+    "pseudofractures": {
+      "ckb_policy": "translate"
+    },
+    "pseudogout": {
+      "ckb_policy": "translate"
+    },
+    "psoriasis": {
+      "ckb_policy": "translate"
+    },
+    "psoriatic arthritis": {
+      "ckb_policy": "translate"
+    },
+    "psychophysiological insomnia": {
+      "ckb_policy": "translate"
+    },
+    "psychotic depression": {
+      "ckb_policy": "translate"
+    },
+    "radicular pain": {
+      "ckb_policy": "translate"
+    },
+    "radiculopathy": {
+      "ckb_policy": "translate"
+    },
+    "Raynaud's disease": {
+      "ckb_policy": "translate"
+    },
+    "reactive arthritis": {
+      "ckb_policy": "translate"
+    },
+    "rebound headache": {
+      "ckb_policy": "translate"
+    },
+    "REM sleep behaviour disorder": {
+      "ckb_policy": "translate"
+    },
+    "renal osteodystrophy": {
+      "ckb_policy": "translate"
+    },
+    "repetitive strain injuries": {
+      "ckb_policy": "translate"
+    },
+    "retinal ischaemia": {
+      "ckb_policy": "translate"
+    },
+    "retrocalcaneal bursitis": {
+      "ckb_policy": "translate"
+    },
+    "rheumatoid arthritis": {
+      "ckb_policy": "translate"
+    },
+    "rheumatoid factor": {
+      "ckb_policy": "translate"
+    },
+    "rheumatoid nodules": {
+      "ckb_policy": "translate"
+    },
+    "Rocky Mountain spotted fever": {
+      "ckb_policy": "translate"
+    },
+    "rotator cuff arthropathy": {
+      "ckb_policy": "translate"
+    },
+    "rotator cuff injury": {
+      "ckb_policy": "translate"
+    },
+    "sacroiliac instability": {
+      "ckb_policy": "translate"
+    },
+    "sacroiliac joint dysfunction": {
+      "ckb_policy": "translate"
+    },
+    "sacroiliac joint pain": {
+      "ckb_policy": "translate"
+    },
+    "sacroiliitis": {
+      "ckb_policy": "translate"
+    },
+    "sagittal synostosis": {
+      "ckb_policy": "translate"
+    },
+    "scaphocephaly": {
+      "ckb_policy": "translate"
+    },
+    "scaphoid fracture": {
+      "ckb_policy": "translate"
+    },
+    "sciatica": {
+      "ckb_policy": "translate"
+    },
+    "scissor gait": {
+      "ckb_policy": "translate"
+    },
+    "scleroderma": {
+      "ckb_policy": "translate"
+    },
+    "scoliosis": {
+      "ckb_policy": "translate"
+    },
+    "secondary hyperparathyroidism": {
+      "ckb_policy": "translate"
+    },
+    "sellar lesion": {
+      "ckb_policy": "translate"
+    },
+    "sepsis": {
+      "ckb_policy": "translate"
+    },
+    "septic bursitis": {
+      "ckb_policy": "translate"
+    },
+    "shift work disorder": {
+      "ckb_policy": "translate"
+    },
+    "shin splints": {
+      "ckb_policy": "translate"
+    },
+    "shingles": {
+      "ckb_policy": "translate"
+    },
+    "Sjögren's": {
+      "ckb_policy": "translate"
+    },
+    "spastic cerebral palsy": {
+      "ckb_policy": "translate"
+    },
+    "spastic diplegia": {
+      "ckb_policy": "translate"
+    },
+    "spastic hemiplegia": {
+      "ckb_policy": "translate"
+    },
+    "spastic quadriplegia": {
+      "ckb_policy": "translate"
+    },
+    "spasticity": {
+      "ckb_policy": "translate"
+    },
+    "spina bifida": {
+      "ckb_policy": "translate"
+    },
+    "spina bifida occulta": {
+      "ckb_policy": "translate"
+    },
+    "spinal dysraphism": {
+      "ckb_policy": "translate"
+    },
+    "spinal muscular atrophy": {
+      "ckb_policy": "translate"
+    },
+    "spinal shock": {
+      "ckb_policy": "translate"
+    },
+    "splenic sequestration": {
+      "ckb_policy": "translate"
+    },
+    "split cord malformation": {
+      "ckb_policy": "translate"
+    },
+    "spondylolisthesis": {
+      "ckb_policy": "translate"
+    },
+    "spondylolysis": {
+      "ckb_policy": "translate"
+    },
+    "steppage gait": {
+      "ckb_policy": "translate"
+    },
+    "stingers": {
+      "ckb_policy": "translate"
+    },
+    "stress fractures": {
+      "ckb_policy": "translate"
+    },
+    "subacromial bursitis": {
+      "ckb_policy": "translate"
+    },
+    "subarachnoid haemorrhage": {
+      "ckb_policy": "translate"
+    },
+    "subdural hematoma": {
+      "ckb_policy": "translate"
+    },
+    "swimmer's shoulder": {
+      "ckb_policy": "translate"
+    },
+    "sympathetic hyperactivity": {
+      "ckb_policy": "translate"
+    },
+    "syndromic craniosynostosis": {
+      "ckb_policy": "translate"
+    },
+    "synkinesis": {
+      "ckb_policy": "translate"
+    },
+    "syringomyelia": {
+      "ckb_policy": "translate"
+    },
+    "syrinx": {
+      "ckb_policy": "translate"
+    },
+    "systemic lupus erythematosus": {
+      "ckb_policy": "translate"
+    },
+    "tau tangles": {
+      "ckb_policy": "translate"
+    },
+    "temporal arteritis": {
+      "ckb_policy": "translate"
+    },
+    "temporal lobe epilepsy": {
+      "ckb_policy": "translate"
+    },
+    "tendinopathy": {
+      "ckb_policy": "translate"
+    },
+    "tenosynovitis": {
+      "ckb_policy": "translate"
+    },
+    "tethered cord": {
+      "ckb_policy": "translate"
+    },
+    "tethered spinal cord": {
+      "ckb_policy": "translate"
+    },
+    "thoracic aortic aneurysm": {
+      "ckb_policy": "translate"
+    },
+    "thrombophlebitis": {
+      "ckb_policy": "translate"
+    },
+    "thrombosis": {
+      "ckb_policy": "translate"
+    },
+    "TIA": {
+      "ckb_policy": "translate"
+    },
+    "tics": {
+      "ckb_policy": "translate"
+    },
+    "tonic-clonic": {
+      "ckb_policy": "translate"
+    },
+    "tophaceous gout": {
+      "ckb_policy": "translate"
+    },
+    "tophi": {
+      "ckb_policy": "translate"
+    },
+    "Tourette syndrome": {
+      "ckb_policy": "translate"
+    },
+    "trigeminal neuralgia": {
+      "ckb_policy": "translate"
+    },
+    "trigger point": {
+      "ckb_policy": "translate"
+    },
+    "trigonocephaly": {
+      "ckb_policy": "translate"
+    },
+    "ulcerative colitis": {
+      "ckb_policy": "translate"
+    },
+    "ulnar nerve entrapment": {
+      "ckb_policy": "translate"
+    },
+    "ulnar neuropathy": {
+      "ckb_policy": "translate"
+    },
+    "uveitis": {
+      "ckb_policy": "translate"
+    },
+    "varicella zoster virus": {
+      "ckb_policy": "translate"
+    },
+    "varicose veins": {
+      "ckb_policy": "translate"
+    },
+    "vascular dementia": {
+      "ckb_policy": "translate"
+    },
+    "vascular malformations": {
+      "ckb_policy": "translate"
+    },
+    "vaso-occlusive crisis": {
+      "ckb_policy": "translate"
+    },
+    "vasospasm": {
+      "ckb_policy": "translate"
+    },
+    "vesicoureteral reflux": {
+      "ckb_policy": "translate"
+    },
+    "vestibulodynia": {
+      "ckb_policy": "translate"
+    },
+    "vocal tics": {
+      "ckb_policy": "translate"
+    },
+    "vulvodynia": {
+      "ckb_policy": "translate"
+    },
+    "whiplash": {
+      "ckb_policy": "translate"
+    },
+    "whiplash-associated disorder": {
+      "ckb_policy": "translate"
+    },
+    "writer's cramp": {
+      "ckb_policy": "translate"
+    },
+    "Adam's test": {
+      "ckb_policy": "translate"
+    },
+    "alcohol neurolysis": {
+      "ckb_policy": "translate"
+    },
+    "aneurysm clipping": {
+      "ckb_policy": "translate"
+    },
+    "angioplasty": {
+      "ckb_policy": "translate"
+    },
+    "ankle-brachial index": {
+      "ckb_policy": "translate"
+    },
+    "ankle-foot orthosis": {
+      "ckb_policy": "translate"
+    },
+    "anterior release": {
+      "ckb_policy": "translate"
+    },
+    "arthroscopic": {
+      "ckb_policy": "translate"
+    },
+    "arthroscopic capsular release": {
+      "ckb_policy": "translate"
+    },
+    "arthroscopic meniscectomy": {
+      "ckb_policy": "translate"
+    },
+    "arthroscopic repair": {
+      "ckb_policy": "translate"
+    },
+    "arthroscopy": {
+      "ckb_policy": "translate"
+    },
+    "AVM resection": {
+      "ckb_policy": "translate"
+    },
+    "brain lesioning": {
+      "ckb_policy": "translate"
+    },
+    "bypass surgery": {
+      "ckb_policy": "translate"
+    },
+    "callosotomy": {
+      "ckb_policy": "translate"
+    },
+    "calvarial remodelling": {
+      "ckb_policy": "translate"
+    },
+    "canalith repositioning": {
+      "ckb_policy": "translate"
+    },
+    "capsular stretching": {
+      "ckb_policy": "translate"
+    },
+    "Carnett's test": {
+      "ckb_policy": "translate"
+    },
+    "caudal epidural injection": {
+      "ckb_policy": "translate"
+    },
+    "Chiari decompression": {
+      "ckb_policy": "translate"
+    },
+    "choroid plexus cauterisation": {
+      "ckb_policy": "translate"
+    },
+    "clean intermittent self-catheterisation": {
+      "ckb_policy": "translate"
+    },
+    "corpectomy": {
+      "ckb_policy": "translate"
+    },
+    "cranial vault remodelling": {
+      "ckb_policy": "translate"
+    },
+    "craniectomy": {
+      "ckb_policy": "translate"
+    },
+    "craniotomy": {
+      "ckb_policy": "translate"
+    },
+    "CT myelogram": {
+      "ckb_policy": "translate"
+    },
+    "cystography": {
+      "ckb_policy": "translate"
+    },
+    "cystometry": {
+      "ckb_policy": "translate"
+    },
+    "cystoscopy": {
+      "ckb_policy": "translate"
+    },
+    "decompressive craniectomy": {
+      "ckb_policy": "translate"
+    },
+    "diaphragm pacemaker": {
+      "ckb_policy": "translate"
+    },
+    "distraction osteogenesis": {
+      "ckb_policy": "translate"
+    },
+    "dural patch": {
+      "ckb_policy": "translate"
+    },
+    "dural repair": {
+      "ckb_policy": "translate"
+    },
+    "end-effector": {
+      "ckb_policy": "translate"
+    },
+    "endoprosthesis": {
+      "ckb_policy": "translate"
+    },
+    "endoscopic strip craniectomy": {
+      "ckb_policy": "translate"
+    },
+    "endoscopic transsphenoidal": {
+      "ckb_policy": "translate"
+    },
+    "epidural drain": {
+      "ckb_policy": "translate"
+    },
+    "epidural glucocorticoid injections": {
+      "ckb_policy": "translate"
+    },
+    "epidural injection": {
+      "ckb_policy": "translate"
+    },
+    "epidural steroid injections": {
+      "ckb_policy": "translate"
+    },
+    "epidural stimulation": {
+      "ckb_policy": "translate"
+    },
+    "ergotherapy": {
+      "ckb_policy": "translate"
+    },
+    "exoskeleton": {
+      "ckb_policy": "translate"
+    },
+    "exposure and response prevention": {
+      "ckb_policy": "translate"
+    },
+    "external ventricular drain": {
+      "ckb_policy": "translate"
+    },
+    "extraforaminal technique": {
+      "ckb_policy": "translate"
+    },
+    "extreme lateral interbody fusion": {
+      "ckb_policy": "translate"
+    },
+    "facet injection": {
+      "ckb_policy": "translate"
+    },
+    "facet joint injection": {
+      "ckb_policy": "translate"
+    },
+    "filum section": {
+      "ckb_policy": "translate"
+    },
+    "fluoroscopy": {
+      "ckb_policy": "translate"
+    },
+    "foraminotomy": {
+      "ckb_policy": "translate"
+    },
+    "fusion": {
+      "ckb_policy": "translate"
+    },
+    "Gasserian ganglion radiofrequency ablation": {
+      "ckb_policy": "translate"
+    },
+    "gastrostomy": {
+      "ckb_policy": "translate"
+    },
+    "genicular nerve ablation": {
+      "ckb_policy": "translate"
+    },
+    "glycerol injection": {
+      "ckb_policy": "translate"
+    },
+    "greater occipital nerve injections": {
+      "ckb_policy": "translate"
+    },
+    "histopathology": {
+      "ckb_policy": "translate"
+    },
+    "hydro-dilatation": {
+      "ckb_policy": "translate"
+    },
+    "IFT": {
+      "ckb_policy": "translate"
+    },
+    "IMRT": {
+      "ckb_policy": "translate"
+    },
+    "interferential therapy": {
+      "ckb_policy": "translate"
+    },
+    "interlaminar technique": {
+      "ckb_policy": "translate"
+    },
+    "interspinous space insertion": {
+      "ckb_policy": "translate"
+    },
+    "intrathecal pump": {
+      "ckb_policy": "translate"
+    },
+    "joint block": {
+      "ckb_policy": "translate"
+    },
+    "ketogenic diet": {
+      "ckb_policy": "translate"
+    },
+    "kinesiology taping": {
+      "ckb_policy": "translate"
+    },
+    "knee radiofrequency": {
+      "ckb_policy": "translate"
+    },
+    "laparoscopy": {
+      "ckb_policy": "translate"
+    },
+    "linear accelerator": {
+      "ckb_policy": "translate"
+    },
+    "lipolaser": {
+      "ckb_policy": "translate"
+    },
+    "liposuction": {
+      "ckb_policy": "translate"
+    },
+    "lumbar drain": {
+      "ckb_policy": "translate"
+    },
+    "manual lymphatic drainage": {
+      "ckb_policy": "translate"
+    },
+    "medial facetectomy": {
+      "ckb_policy": "translate"
+    },
+    "median nerve block": {
+      "ckb_policy": "translate"
+    },
+    "meniscal repair": {
+      "ckb_policy": "translate"
+    },
+    "meniscectomy": {
+      "ckb_policy": "translate"
+    },
+    "mesotherapy injection": {
+      "ckb_policy": "translate"
+    },
+    "microelectrode recording": {
+      "ckb_policy": "translate"
+    },
+    "middle fossa approach": {
+      "ckb_policy": "translate"
+    },
+    "MRI": {
+      "ckb_policy": "translate"
+    },
+    "myelography": {
+      "ckb_policy": "translate"
+    },
+    "nerve block": {
+      "ckb_policy": "translate"
+    },
+    "neurolytic block": {
+      "ckb_policy": "translate"
+    },
+    "neurolytic procedures": {
+      "ckb_policy": "translate"
+    },
+    "neuromodulation": {
+      "ckb_policy": "translate"
+    },
+    "occipital nerve block": {
+      "ckb_policy": "translate"
+    },
+    "occupational therapy": {
+      "ckb_policy": "translate"
+    },
+    "orthosis": {
+      "ckb_policy": "translate"
+    },
+    "osteotomy": {
+      "ckb_policy": "translate"
+    },
+    "pacemaker": {
+      "ckb_policy": "translate"
+    },
+    "PET scanning": {
+      "ckb_policy": "translate"
+    },
+    "platelet-rich plasma": {
+      "ckb_policy": "translate"
+    },
+    "posterior fossa craniectomy": {
+      "ckb_policy": "translate"
+    },
+    "posterior lumbar interbody fusion": {
+      "ckb_policy": "translate"
+    },
+    "posterior spinal fusion": {
+      "ckb_policy": "translate"
+    },
+    "posterolateral gutter fusion": {
+      "ckb_policy": "translate"
+    },
+    "radiofrequency brain lesioning": {
+      "ckb_policy": "translate"
+    },
+    "radiofrequency neuroblation": {
+      "ckb_policy": "translate"
+    },
+    "radiofrequency thalamotomy": {
+      "ckb_policy": "translate"
+    },
+    "responsive neurostimulation": {
+      "ckb_policy": "translate"
+    },
+    "sacroiliac joint injection": {
+      "ckb_policy": "translate"
+    },
+    "selective denervation": {
+      "ckb_policy": "translate"
+    },
+    "selective dorsal rhizotomy": {
+      "ckb_policy": "translate"
+    },
+    "shunting": {
+      "ckb_policy": "translate"
+    },
+    "spinal blocks": {
+      "ckb_policy": "translate"
+    },
+    "spinal fusion": {
+      "ckb_policy": "translate"
+    },
+    "spine radiofrequency": {
+      "ckb_policy": "translate"
+    },
+    "stereotactic ablative radiotherapy": {
+      "ckb_policy": "translate"
+    },
+    "stereotactic biopsy": {
+      "ckb_policy": "translate"
+    },
+    "stereotactic body radiotherapy": {
+      "ckb_policy": "translate"
+    },
+    "stereotactic thalamotomy": {
+      "ckb_policy": "translate"
+    },
+    "subacromial steroid injection": {
+      "ckb_policy": "translate"
+    },
+    "subfrontal approach": {
+      "ckb_policy": "translate"
+    },
+    "suboccipital": {
+      "ckb_policy": "translate"
+    },
+    "superior hypogastric block": {
+      "ckb_policy": "translate"
+    },
+    "surgical bypass": {
+      "ckb_policy": "translate"
+    },
+    "sympathetic block": {
+      "ckb_policy": "translate"
+    },
+    "sympathetic nerve block": {
+      "ckb_policy": "translate"
+    },
+    "syringoperitoneal shunting": {
+      "ckb_policy": "translate"
+    },
+    "syringopleural shunting": {
+      "ckb_policy": "translate"
+    },
+    "syrinx drainage": {
+      "ckb_policy": "translate"
+    },
+    "syrinx stenting": {
+      "ckb_policy": "translate"
+    },
+    "thermal radiofrequency": {
+      "ckb_policy": "translate"
+    },
+    "thoracolumbosacral orthosis": {
+      "ckb_policy": "translate"
+    },
+    "thrombectomy": {
+      "ckb_policy": "translate"
+    },
+    "transcranial direct current stimulation": {
+      "ckb_policy": "translate"
+    },
+    "transcranial magnetic stimulation": {
+      "ckb_policy": "translate"
+    },
+    "transforaminal lumbar interbody fusion": {
+      "ckb_policy": "translate"
+    },
+    "transforaminal technique": {
+      "ckb_policy": "translate"
+    },
+    "translabyrinthine": {
+      "ckb_policy": "translate"
+    },
+    "transnasal transsphenoidal surgery": {
+      "ckb_policy": "translate"
+    },
+    "trigger point injections": {
+      "ckb_policy": "translate"
+    },
+    "vertebral body tethering": {
+      "ckb_policy": "translate"
+    },
+    "video-EEG telemetry": {
+      "ckb_policy": "translate"
+    },
+    "VP shunt": {
+      "ckb_policy": "translate"
+    },
+    "anticholinergic medications": {
+      "ckb_policy": "translate"
+    },
+    "anticholinergics": {
+      "ckb_policy": "translate"
+    },
+    "antiplatelet therapy": {
+      "ckb_policy": "translate"
+    },
+    "antipsychotics": {
+      "ckb_policy": "translate"
+    },
+    "beta-blockers": {
+      "ckb_policy": "translate"
+    },
+    "calcium-channel blockers": {
+      "ckb_policy": "translate"
+    },
+    "cholinesterase inhibitors": {
+      "ckb_policy": "translate"
+    },
+    "contrast medium": {
+      "ckb_policy": "translate"
+    },
+    "disease-modifying antirheumatic drugs": {
+      "ckb_policy": "translate"
+    },
+    "dopamine agonists": {
+      "ckb_policy": "translate"
+    },
+    "dopamine blockers": {
+      "ckb_policy": "translate"
+    },
+    "dopaminergic agents": {
+      "ckb_policy": "translate"
+    },
+    "phosphodiesterase-5 inhibitors": {
+      "ckb_policy": "translate"
+    },
+    "SNRIs": {
+      "ckb_policy": "translate"
+    },
+    "somatostatin analogues": {
+      "ckb_policy": "translate"
+    },
+    "SSRIs": {
+      "ckb_policy": "translate"
+    },
+    "tricyclic antidepressants": {
+      "ckb_policy": "translate"
+    },
+    "z-drugs": {
+      "ckb_policy": "translate"
+    },
+    "acetabular socket": {
+      "ckb_policy": "translate"
+    },
+    "amygdala": {
+      "ckb_policy": "translate"
+    },
+    "annulus fibrosus": {
+      "ckb_policy": "translate"
+    },
+    "anterior cruciate ligament": {
+      "ckb_policy": "translate"
+    },
+    "anterior horn": {
+      "ckb_policy": "translate"
+    },
+    "brachial plexus": {
+      "ckb_policy": "translate"
+    },
+    "bursa": {
+      "ckb_policy": "translate"
+    },
+    "carpal tunnel": {
+      "ckb_policy": "translate"
+    },
+    "cauda equina": {
+      "ckb_policy": "translate"
+    },
+    "cavernous sinus": {
+      "ckb_policy": "translate"
+    },
+    "celiac plexus": {
+      "ckb_policy": "translate"
+    },
+    "cerebellar tonsils": {
+      "ckb_policy": "translate"
+    },
+    "cerebral ventricles": {
+      "ckb_policy": "translate"
+    },
+    "choroid plexus": {
+      "ckb_policy": "translate"
+    },
+    "conus medullaris": {
+      "ckb_policy": "translate"
+    },
+    "corticospinal tracts": {
+      "ckb_policy": "translate"
+    },
+    "dermatome": {
+      "ckb_policy": "translate"
+    },
+    "detrusor": {
+      "ckb_policy": "translate"
+    },
+    "dorsal root entry zone": {
+      "ckb_policy": "translate"
+    },
+    "dorsal root ganglion": {
+      "ckb_policy": "translate"
+    },
+    "dura mater": {
+      "ckb_policy": "translate"
+    },
+    "epidural space": {
+      "ckb_policy": "translate"
+    },
+    "fascia": {
+      "ckb_policy": "translate"
+    },
+    "filum terminale": {
+      "ckb_policy": "translate"
+    },
+    "foramen": {
+      "ckb_policy": "translate"
+    },
+    "foramen magnum": {
+      "ckb_policy": "translate"
+    },
+    "foramen ovale": {
+      "ckb_policy": "translate"
+    },
+    "gastrocnemius": {
+      "ckb_policy": "translate"
+    },
+    "glenoid": {
+      "ckb_policy": "translate"
+    },
+    "globus pallidus interna": {
+      "ckb_policy": "translate"
+    },
+    "hippocampus": {
+      "ckb_policy": "translate"
+    },
+    "iliac artery": {
+      "ckb_policy": "translate"
+    },
+    "ilium": {
+      "ckb_policy": "translate"
+    },
+    "infraspinatus": {
+      "ckb_policy": "translate"
+    },
+    "insular cortex": {
+      "ckb_policy": "translate"
+    },
+    "lamina": {
+      "ckb_policy": "translate"
+    },
+    "levator ani": {
+      "ckb_policy": "translate"
+    },
+    "ligamentum flavum": {
+      "ckb_policy": "translate"
+    },
+    "MCL": {
+      "ckb_policy": "translate"
+    },
+    "Meckel's Cave": {
+      "ckb_policy": "translate"
+    },
+    "median nerve": {
+      "ckb_policy": "translate"
+    },
+    "meniscus": {
+      "ckb_policy": "translate"
+    },
+    "neuroforamen": {
+      "ckb_policy": "translate"
+    },
+    "nucleus pulposus": {
+      "ckb_policy": "translate"
+    },
+    "optic chiasm": {
+      "ckb_policy": "translate"
+    },
+    "parietal lobe": {
+      "ckb_policy": "translate"
+    },
+    "peroneal nerve": {
+      "ckb_policy": "translate"
+    },
+    "piriformis muscle": {
+      "ckb_policy": "translate"
+    },
+    "rotator cuff": {
+      "ckb_policy": "translate"
+    },
+    "sacroiliac joint": {
+      "ckb_policy": "translate"
+    },
+    "sella turcica": {
+      "ckb_policy": "translate"
+    },
+    "soleus": {
+      "ckb_policy": "translate"
+    },
+    "sphenoid sinus": {
+      "ckb_policy": "translate"
+    },
+    "spinothalamic": {
+      "ckb_policy": "translate"
+    },
+    "stellate ganglion": {
+      "ckb_policy": "translate"
+    },
+    "subarachnoid space": {
+      "ckb_policy": "translate"
+    },
+    "subscapularis": {
+      "ckb_policy": "translate"
+    },
+    "substantia nigra": {
+      "ckb_policy": "translate"
+    },
+    "subthalamus": {
+      "ckb_policy": "translate"
+    },
+    "superior hypogastric plexus": {
+      "ckb_policy": "translate"
+    },
+    "superior sagittal sinus": {
+      "ckb_policy": "translate"
+    },
+    "supraspinatus": {
+      "ckb_policy": "translate"
+    },
+    "supratrochlear nerve": {
+      "ckb_policy": "translate"
+    },
+    "teres minor": {
+      "ckb_policy": "translate"
+    },
+    "tibialis anterior": {
+      "ckb_policy": "translate"
+    },
+    "tibialis posterior": {
+      "ckb_policy": "translate"
+    },
+    "TMJ": {
+      "ckb_policy": "translate"
+    },
+    "trigeminal nerve": {
+      "ckb_policy": "translate"
+    },
+    "ventricle": {
+      "ckb_policy": "translate"
+    },
+    "Bell's palsy": {
+      "ckb": "ئیفلیجی بێلز",
+      "note": "eponym kept so it differs from facial palsy (ئیفلیجی ڕوخسار); avoids circular definitions."
+    },
+    "seizures": {
+      "ckb": "هێرشی فێ",
+      "note": "a seizure = one attack (هێرشی فێ); epilepsy = the disease (فێ)."
+    },
+    "lumbar disc herniation": {
+      "ckb": "هەڵخلیسکانی دیسکی کەمەر"
+    },
+    "cervical disc herniation": {
+      "ckb": "هەڵخلیسکانی دیسکی مل"
+    },
+    "regional block": {
+      "ckb": "بلۆکی ناوچەیی",
+      "note": "a nerve block of a region; local anaesthesia (بەنجی ناوچەیی) is a separate concept."
+    },
+    "blood clots": {
+      "ckb": "خوێنی مەییو",
+      "note": "the clot itself; blood clotting (the process) = مەیینی خوێن."
+    },
+    "neurosurgeon": {
+      "ckb": "پزیشکی نەشتەرگەریی مێشک و دەمار"
+    },
+    "dementia": {
+      "ckb": "دیمێنشیا (کزبوونی توانا هزرییەکان)",
+      "note": "never خەرەفان (dotage, pejorative)."
     }
   },
   "add": [
@@ -863,6 +2474,2466 @@
       ],
       "confidence": "medium",
       "note": "Doctor's name; ar.md: حسين عمران موسى. Not in terms.json (scanner missed it), added manually."
+    },
+    {
+      "en": "indication",
+      "category": "medical",
+      "tr": "endikasyon",
+      "tr_policy": "translate",
+      "ckb": "حاڵەتی گونجاو بۆ چارەسەر",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "indications"
+      ],
+      "note": "when a treatment is medically justified; never ئامادەکاری (preparation). Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "contraindication",
+      "category": "medical",
+      "tr": "kontrendikasyon",
+      "tr_policy": "translate",
+      "ckb": "ڕێگریی پزیشکی",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "contraindications"
+      ],
+      "note": "reason a treatment must not be given. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "side effects",
+      "category": "medical",
+      "tr": "yan etkiler",
+      "tr_policy": "translate",
+      "ckb": "کاریگەرییە لاوەکییەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "side effect",
+        "side-effects"
+      ],
+      "variant_rules": [
+        {
+          "variant": "side effect",
+          "tr": "yan etki",
+          "ckb": "کاریگەریی لاوەکی"
+        }
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "adverse effects",
+      "category": "medical",
+      "tr": "istenmeyen etkiler",
+      "tr_policy": "translate",
+      "ckb": "کاریگەرییە نەخوازراوەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "adverse effect",
+        "adverse events",
+        "adverse event"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "symptoms",
+      "category": "medical",
+      "tr": "belirtiler",
+      "tr_policy": "translate",
+      "ckb": "نیشانەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "symptom"
+      ],
+      "variant_rules": [
+        {
+          "variant": "symptom",
+          "tr": "belirti",
+          "ckb": "نیشانە"
+        }
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "diagnosis",
+      "category": "medical",
+      "tr": "tanı",
+      "tr_policy": "translate",
+      "ckb": "دەستنیشانکردنی نەخۆشی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "diagnoses"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "prognosis",
+      "category": "medical",
+      "tr": "prognoz (hastalığın seyri)",
+      "tr_policy": "translate",
+      "ckb": "پێشبینیی ئەنجامی نەخۆشی",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "expected outcome/course. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "acute",
+      "category": "medical",
+      "tr": "akut",
+      "tr_policy": "translate",
+      "ckb": "کتوپڕ",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "sudden-onset/short-lived; never توند or توندوتیژ. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "acute phase",
+      "category": "medical",
+      "tr": "akut dönem",
+      "tr_policy": "translate",
+      "ckb": "قۆناغی کتوپڕ",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "acute stage"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "chronic",
+      "category": "medical",
+      "tr": "kronik",
+      "tr_policy": "translate",
+      "ckb": "درێژخایەن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "recovery",
+      "category": "medical",
+      "tr": "iyileşme süreci",
+      "tr_policy": "translate",
+      "ckb": "چاکبوونەوە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "recovery time",
+      "category": "medical",
+      "tr": "iyileşme süresi",
+      "tr_policy": "translate",
+      "ckb": "ماوەی چاکبوونەوە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "recovery period"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "healing",
+      "category": "medical",
+      "tr": "iyileşme",
+      "tr_policy": "translate",
+      "ckb": "سارێژبوون",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "tissue healing",
+        "healing process"
+      ],
+      "note": "tissue/wound healing; recovery of the patient is چاکبوونەوە. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "outpatient",
+      "category": "site",
+      "tr": "ayaktan",
+      "tr_policy": "translate",
+      "ckb": "بێ مانەوە لە نەخۆشخانە",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "outpatient basis",
+        "outpatient procedure",
+        "outpatient procedures"
+      ],
+      "note": "patient goes home the same day. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "hospital stay",
+      "category": "site",
+      "tr": "hastanede kalış",
+      "tr_policy": "translate",
+      "ckb": "مانەوە لە نەخۆشخانە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "swelling",
+      "category": "medical",
+      "tr": "şişlik",
+      "tr_policy": "translate",
+      "ckb": "ئاوسان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "stiffness",
+      "category": "medical",
+      "tr": "sertlik",
+      "tr_policy": "translate",
+      "ckb": "ڕەقبوون",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "dose",
+      "category": "drug",
+      "tr": "doz",
+      "tr_policy": "translate",
+      "ckb": "ژەم",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "doses",
+        "dosage"
+      ],
+      "note": "amount of medicine taken at one time. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "follow-up",
+      "category": "site",
+      "tr": "takip",
+      "tr_policy": "translate",
+      "ckb": "بەدواداچوون",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "follow up",
+        "follow-up care"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "follow-up appointment",
+      "category": "site",
+      "tr": "kontrol randevusu",
+      "tr_policy": "translate",
+      "ckb": "سەردانی بەدواداچوون",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "follow-up appointments",
+        "follow-up visit",
+        "follow-up visits"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "referral",
+      "category": "site",
+      "tr": "sevk",
+      "tr_policy": "translate",
+      "ckb": "ڕەوانەکردن بۆ پزیشکی پسپۆڕ",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "referrals"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "minimally invasive",
+      "category": "procedure",
+      "tr": "minimal invaziv",
+      "tr_policy": "translate",
+      "ckb": "بە کەمترین دەستێوەردان",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "minimally-invasive"
+      ],
+      "note": "small incision or needle only. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "non-invasive",
+      "category": "procedure",
+      "tr": "invaziv olmayan",
+      "tr_policy": "translate",
+      "ckb": "بێ دەستێوەردان (بێ بڕین و بێ دەرزی)",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "noninvasive"
+      ],
+      "note": "no incision and no needle. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "non-surgical",
+      "category": "procedure",
+      "tr": "cerrahi olmayan",
+      "tr_policy": "translate",
+      "ckb": "بێ نەشتەرگەری",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "nonsurgical",
+        "non surgical"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "conservative care",
+      "category": "procedure",
+      "tr": "konservatif tedavi",
+      "tr_policy": "translate",
+      "ckb": "چارەسەری پارێزگارانە (بێ نەشتەرگەری)",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "conservative treatment",
+        "conservative management",
+        "conservative measures",
+        "conservative therapy"
+      ],
+      "note": "rest, physiotherapy and medication before any procedure. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "flare-up",
+      "category": "medical",
+      "tr": "alevlenme",
+      "tr_policy": "translate",
+      "ckb": "هەڵچوونەوەی نیشانەکان",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "flare-ups",
+        "flare",
+        "flares"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "drooling",
+      "category": "medical",
+      "tr": "salya akması",
+      "tr_policy": "translate",
+      "ckb": "ڕژانی لیک لە دەم",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "never ئاو هاتنە دەم (mouth-watering). Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "posture",
+      "category": "medical",
+      "tr": "duruş",
+      "tr_policy": "translate",
+      "ckb": "شێوەی ڕاگرتنی لەش",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "postures"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "trauma",
+      "category": "medical",
+      "tr": "travma",
+      "tr_policy": "translate",
+      "ckb": "زەبر",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "physical injury from force (fall, accident); not psychological trauma. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "complications",
+      "category": "medical",
+      "tr": "komplikasyonlar",
+      "tr_policy": "translate",
+      "ckb": "ئاڵۆزییەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "complication"
+      ],
+      "variant_rules": [
+        {
+          "variant": "complication",
+          "tr": "komplikasyon",
+          "ckb": "ئاڵۆزی"
+        }
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "quality of life",
+      "category": "medical",
+      "tr": "yaşam kalitesi",
+      "tr_policy": "translate",
+      "ckb": "چۆنیەتیی ژیان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "activity limitations",
+      "category": "medical",
+      "tr": "aktivite kısıtlılıkları",
+      "tr_policy": "translate",
+      "ckb": "کەمیی توانا لە ئەنجامدانی چالاکییەکان",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "activity limitation"
+      ],
+      "note": "what the patient cannot do; NOT the therapist restricting activity. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "weakness",
+      "category": "medical",
+      "tr": "güçsüzlük",
+      "tr_policy": "translate",
+      "ckb": "لاوازی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "fatigue",
+      "category": "medical",
+      "tr": "yorgunluk",
+      "tr_policy": "translate",
+      "ckb": "ماندوێتی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "risk factors",
+      "category": "medical",
+      "tr": "risk faktörleri",
+      "tr_policy": "translate",
+      "ckb": "هۆکارەکانی مەترسی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "risk factor"
+      ],
+      "variant_rules": [
+        {
+          "variant": "risk factor",
+          "tr": "risk faktörü",
+          "ckb": "هۆکاری مەترسی"
+        }
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "blood pressure",
+      "category": "medical",
+      "tr": "kan basıncı",
+      "tr_policy": "translate",
+      "ckb": "پەستانی خوێن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "blood flow",
+      "category": "medical",
+      "tr": "kan akışı",
+      "tr_policy": "translate",
+      "ckb": "ڕۆیشتنی خوێن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "blood circulation",
+      "category": "medical",
+      "tr": "kan dolaşımı",
+      "tr_policy": "translate",
+      "ckb": "سووڕی خوێن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "circulation"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "blood vessels",
+      "category": "anatomy",
+      "tr": "kan damarları",
+      "tr_policy": "translate",
+      "ckb": "بۆرییە خوێنییەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "blood vessel"
+      ],
+      "variant_rules": [
+        {
+          "variant": "blood vessel",
+          "tr": "kan damarı",
+          "ckb": "بۆریی خوێن"
+        }
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "soft tissue",
+      "category": "anatomy",
+      "tr": "yumuşak doku",
+      "tr_policy": "translate",
+      "ckb": "شانەی نەرم",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "soft tissues"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "connective tissue",
+      "category": "anatomy",
+      "tr": "bağ dokusu",
+      "tr_policy": "translate",
+      "ckb": "شانەی پەیوەندکەر",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "pain relief",
+      "category": "medical",
+      "tr": "ağrının hafiflemesi",
+      "tr_policy": "translate",
+      "ckb": "سووککردنی ئازار",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "pain-free",
+      "category": "medical",
+      "tr": "ağrısız",
+      "tr_policy": "translate",
+      "ckb": "بێ ئازار",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "pain free"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "first-line treatment",
+      "category": "procedure",
+      "tr": "ilk basamak tedavi",
+      "tr_policy": "translate",
+      "ckb": "یەکەم هەنگاوی چارەسەر",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "first-line",
+        "first line",
+        "first-line therapy"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "mild",
+      "category": "medical",
+      "tr": "hafif",
+      "tr_policy": "translate",
+      "ckb": "سووک",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "moderate",
+      "category": "medical",
+      "tr": "orta",
+      "tr_policy": "translate",
+      "ckb": "مامناوەند",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "severe",
+      "category": "medical",
+      "tr": "şiddetli",
+      "tr_policy": "translate",
+      "ckb": "سەخت",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "severity; do not use توند (reserved, reads as acute/violent). Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "progressive",
+      "category": "medical",
+      "tr": "ilerleyici",
+      "tr_policy": "translate",
+      "ckb": "پەرەسەندوو",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "gets worse over time; not پێشکەوتوو (advanced). Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "deformity",
+      "category": "medical",
+      "tr": "deformite",
+      "tr_policy": "translate",
+      "ckb": "شێوەشێواوی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "deformities"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "disability",
+      "category": "medical",
+      "tr": "engellilik",
+      "tr_policy": "translate",
+      "ckb": "کەمتوانایی",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "mobility",
+      "category": "medical",
+      "tr": "hareketlilik",
+      "tr_policy": "translate",
+      "ckb": "توانای جووڵە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "balance",
+      "category": "medical",
+      "tr": "denge",
+      "tr_policy": "translate",
+      "ckb": "هاوسەنگی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "gait",
+      "category": "medical",
+      "tr": "yürüyüş",
+      "tr_policy": "translate",
+      "ckb": "شێوەی ڕۆیشتن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "coordination",
+      "category": "medical",
+      "tr": "koordinasyon",
+      "tr_policy": "translate",
+      "ckb": "هاوئاهەنگیی جووڵە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "range of motion",
+      "category": "medical",
+      "tr": "hareket açıklığı",
+      "tr_policy": "translate",
+      "ckb": "مەودای جووڵە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "flexibility",
+      "category": "medical",
+      "tr": "esneklik",
+      "tr_policy": "translate",
+      "ckb": "نەرمیی جووڵە",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "instability",
+      "category": "medical",
+      "tr": "instabilite",
+      "tr_policy": "translate",
+      "ckb": "ناجێگیری",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "stabilisation",
+      "category": "procedure",
+      "tr": "stabilizasyon",
+      "tr_policy": "translate",
+      "ckb": "سەقامگیرکردن",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "stabilization"
+      ],
+      "note": "distinct from fixation (جێگیرکردن). Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "muscle strength",
+      "category": "medical",
+      "tr": "kas gücü",
+      "tr_policy": "translate",
+      "ckb": "هێزی ماسولکە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "muscle tone",
+      "category": "medical",
+      "tr": "kas tonusu",
+      "tr_policy": "translate",
+      "ckb": "ئاستی گرژیی ماسولکە",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "muscle wasting",
+      "category": "medical",
+      "tr": "kas erimesi",
+      "tr_policy": "translate",
+      "ckb": "پووکانەوەی ماسولکە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "muscle contraction",
+      "category": "medical",
+      "tr": "kas kasılması",
+      "tr_policy": "translate",
+      "ckb": "کورتبوونەوەی ماسولکە",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "muscle contractions"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "examination",
+      "category": "procedure",
+      "tr": "muayene",
+      "tr_policy": "translate",
+      "ckb": "پشکنین",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "clinical examination",
+      "category": "procedure",
+      "tr": "klinik muayene",
+      "tr_policy": "translate",
+      "ckb": "پشکنینی کلینیکی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "physical examination",
+      "category": "procedure",
+      "tr": "fizik muayene",
+      "tr_policy": "translate",
+      "ckb": "پشکنینی جەستەیی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "neurological examination",
+      "category": "procedure",
+      "tr": "nörolojik muayene",
+      "tr_policy": "translate",
+      "ckb": "پشکنینی دەماری",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "assessment",
+      "category": "procedure",
+      "tr": "değerlendirme",
+      "tr_policy": "translate",
+      "ckb": "هەڵسەنگاندن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "evaluation"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "imaging",
+      "category": "procedure",
+      "tr": "görüntüleme",
+      "tr_policy": "translate",
+      "ckb": "وێنەگرتنی پزیشکی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "image guidance",
+      "category": "procedure",
+      "tr": "görüntüleme eşliğinde",
+      "tr_policy": "translate",
+      "ckb": "بە ڕێنماییی وێنەگرتنی پزیشکی",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "imaging guidance",
+        "image-guided",
+        "X-ray guidance"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "blood test",
+      "category": "procedure",
+      "tr": "kan testi",
+      "tr_policy": "translate",
+      "ckb": "پشکنینی خوێن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "blood tests"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "biopsy",
+      "category": "procedure",
+      "tr": "biyopsi",
+      "tr_policy": "translate",
+      "ckb": "نموونەوەرگرتن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "session",
+      "category": "procedure",
+      "tr": "seans",
+      "tr_policy": "translate",
+      "ckb": "دانیشتن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "sessions"
+      ],
+      "note": "a single treatment visit. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "treatment plan",
+      "category": "procedure",
+      "tr": "tedavi planı",
+      "tr_policy": "translate",
+      "ckb": "پلانی چارەسەر",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "exercise programme",
+      "category": "procedure",
+      "tr": "egzersiz programı",
+      "tr_policy": "translate",
+      "ckb": "بەرنامەی ڕاهێنان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "exercise program"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "strengthening exercises",
+      "category": "procedure",
+      "tr": "güçlendirme egzersizleri",
+      "tr_policy": "translate",
+      "ckb": "ڕاهێنانی بەهێزکردن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "strengthening exercise",
+        "strengthening"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "home exercises",
+      "category": "procedure",
+      "tr": "ev egzersizleri",
+      "tr_policy": "translate",
+      "ckb": "ڕاهێنانی ماڵەوە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "home exercise",
+        "home exercise programme"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "wound",
+      "category": "medical",
+      "tr": "yara",
+      "tr_policy": "translate",
+      "ckb": "برین",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "scar",
+      "category": "medical",
+      "tr": "yara izi",
+      "tr_policy": "translate",
+      "ckb": "شوێنەواری برین",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "tenderness",
+      "category": "medical",
+      "tr": "hassasiyet",
+      "tr_policy": "translate",
+      "ckb": "هەستیاری بە دەستلێدان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "redness",
+      "category": "medical",
+      "tr": "kızarıklık",
+      "tr_policy": "translate",
+      "ckb": "سووربوونەوە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "bruising",
+      "category": "medical",
+      "tr": "morarma",
+      "tr_policy": "translate",
+      "ckb": "شینبوونەوەی پێست",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "itching",
+      "category": "medical",
+      "tr": "kaşıntı",
+      "tr_policy": "translate",
+      "ckb": "خورشت",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "bleeding",
+      "category": "medical",
+      "tr": "kanama",
+      "tr_policy": "translate",
+      "ckb": "خوێنبەربوون",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "incision",
+      "category": "procedure",
+      "tr": "kesi",
+      "tr_policy": "translate",
+      "ckb": "بڕینی نەشتەرگەری",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "electrode",
+      "category": "procedure",
+      "tr": "elektrot",
+      "tr_policy": "translate",
+      "ckb": "ئێلێکترۆد",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "electrodes"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "implant",
+      "category": "procedure",
+      "tr": "implant",
+      "tr_policy": "translate",
+      "ckb": "ئامێری چێنراو",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "implants"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "medical emergency",
+      "category": "medical",
+      "tr": "tıbbi acil durum",
+      "tr_policy": "translate",
+      "ckb": "حاڵەتی فریاکەوتنی پزیشکی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "emergency",
+      "category": "medical",
+      "tr": "acil durum",
+      "tr_policy": "translate",
+      "ckb": "فریاکەوتن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "urgent",
+      "category": "medical",
+      "tr": "acil",
+      "tr_policy": "translate",
+      "ckb": "بەپەلە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "red flags",
+      "category": "medical",
+      "tr": "alarm bulguları",
+      "tr_policy": "translate",
+      "ckb": "نیشانە مەترسیدارەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "red flag",
+        "red-flag"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "relapse",
+      "category": "medical",
+      "tr": "nüks",
+      "tr_policy": "translate",
+      "ckb": "هەڵگەڕانەوەی نەخۆشی",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "relapses"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "recurrence",
+      "category": "medical",
+      "tr": "tekrarlama",
+      "tr_policy": "translate",
+      "ckb": "دووبارەبوونەوەی نەخۆشی",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "remission",
+      "category": "medical",
+      "tr": "remisyon",
+      "tr_policy": "translate",
+      "ckb": "دامرکانەوەی نەخۆشی",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "onset",
+      "category": "medical",
+      "tr": "başlangıç",
+      "tr_policy": "translate",
+      "ckb": "دەستپێکی نیشانەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "sudden onset",
+      "category": "medical",
+      "tr": "ani başlangıç",
+      "tr_policy": "translate",
+      "ckb": "دەستپێکی لەناکاو",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "gradual onset",
+      "category": "medical",
+      "tr": "yavaş başlangıç",
+      "tr_policy": "translate",
+      "ckb": "دەستپێکی هێواش",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "sensation",
+      "category": "medical",
+      "tr": "his",
+      "tr_policy": "translate",
+      "ckb": "هەست",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "sensory loss",
+      "category": "medical",
+      "tr": "his kaybı",
+      "tr_policy": "translate",
+      "ckb": "لەدەستدانی هەست",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "loss of sensation"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "reflexes",
+      "category": "medical",
+      "tr": "refleksler",
+      "tr_policy": "translate",
+      "ckb": "ڕیفلێکسەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "reflex"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "swallowing",
+      "category": "medical",
+      "tr": "yutma",
+      "tr_policy": "translate",
+      "ckb": "قووتدان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "difficulty swallowing",
+      "category": "medical",
+      "tr": "yutma güçlüğü",
+      "tr_policy": "translate",
+      "ckb": "قورسیی قووتدان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "swallowing difficulty",
+        "swallowing difficulties"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "memory",
+      "category": "medical",
+      "tr": "hafıza",
+      "tr_policy": "translate",
+      "ckb": "یادەوەری",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "cognitive",
+      "category": "medical",
+      "tr": "bilişsel",
+      "tr_policy": "translate",
+      "ckb": "هزری",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "consciousness",
+      "category": "medical",
+      "tr": "bilinç",
+      "tr_policy": "translate",
+      "ckb": "هۆش",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "overuse injury",
+      "category": "medical",
+      "tr": "aşırı kullanım yaralanması",
+      "tr_policy": "translate",
+      "ckb": "برینداربوون بەهۆی زۆر بەکارهێنان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "overuse injuries"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "overuse",
+      "category": "medical",
+      "tr": "aşırı kullanım",
+      "tr_policy": "translate",
+      "ckb": "زۆر بەکارهێنان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "rupture",
+      "category": "medical",
+      "tr": "yırtılma",
+      "tr_policy": "translate",
+      "ckb": "پچڕان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "weight-bearing",
+      "category": "medical",
+      "tr": "yük verme",
+      "tr_policy": "translate",
+      "ckb": "هەڵگرتنی کێشی لەش",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "weight bearing"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "lifestyle",
+      "category": "medical",
+      "tr": "yaşam tarzı",
+      "tr_policy": "translate",
+      "ckb": "شێوازی ژیان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "lifestyle changes",
+        "lifestyle modification"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "weight loss",
+      "category": "medical",
+      "tr": "kilo kaybı",
+      "tr_policy": "translate",
+      "ckb": "کەمبوونەوەی کێش",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "physical activity",
+      "category": "medical",
+      "tr": "fiziksel aktivite",
+      "tr_policy": "translate",
+      "ckb": "چالاکیی جەستەیی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "daily activities",
+      "category": "medical",
+      "tr": "günlük aktiviteler",
+      "tr_policy": "translate",
+      "ckb": "چالاکییە ڕۆژانەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "daily activity"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "activities of daily living",
+      "category": "medical",
+      "tr": "günlük yaşam aktiviteleri",
+      "tr_policy": "translate",
+      "ckb": "چالاکییەکانی ژیانی ڕۆژانە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "burning pain",
+      "category": "medical",
+      "tr": "yanıcı ağrı",
+      "tr_policy": "translate",
+      "ckb": "ئازاری سووتێنەر",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "sharp pain",
+      "category": "medical",
+      "tr": "keskin ağrı",
+      "tr_policy": "translate",
+      "ckb": "ئازاری تیژ",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "dull ache",
+      "category": "medical",
+      "tr": "künt ağrı",
+      "tr_policy": "translate",
+      "ckb": "ئازاری کپ",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "dull pain",
+        "aching"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "throbbing pain",
+      "category": "medical",
+      "tr": "zonklayıcı ağrı",
+      "tr_policy": "translate",
+      "ckb": "ئازاری ترپەدار",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "throbbing"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "radiating pain",
+      "category": "medical",
+      "tr": "yayılan ağrı",
+      "tr_policy": "translate",
+      "ckb": "ئازاری بڵاوبووەوە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "persistent pain",
+      "category": "medical",
+      "tr": "devam eden ağrı",
+      "tr_policy": "translate",
+      "ckb": "ئازاری بەردەوام",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "tr: not kalıcı (= permanent). Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "severe pain",
+      "category": "medical",
+      "tr": "şiddetli ağrı",
+      "tr_policy": "translate",
+      "ckb": "ئازاری سەخت",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "nerve compression",
+      "category": "medical",
+      "tr": "sinir sıkışması",
+      "tr_policy": "translate",
+      "ckb": "پەستان لەسەر دەمار",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "compression",
+      "category": "medical",
+      "tr": "bası",
+      "tr_policy": "translate",
+      "ckb": "پەستان",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "degeneration",
+      "category": "medical",
+      "tr": "dejenerasyon",
+      "tr_policy": "translate",
+      "ckb": "داخوران",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "wear and tear",
+      "category": "medical",
+      "tr": "aşınma ve yıpranma",
+      "tr_policy": "translate",
+      "ckb": "داخورانی ئاسایی بەهۆی تەمەن",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "congenital",
+      "category": "medical",
+      "tr": "doğuştan",
+      "tr_policy": "translate",
+      "ckb": "زگماکی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "hereditary",
+      "category": "medical",
+      "tr": "kalıtsal",
+      "tr_policy": "translate",
+      "ckb": "بۆماوەیی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "inherited"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "genetic",
+      "category": "medical",
+      "tr": "genetik",
+      "tr_policy": "translate",
+      "ckb": "جینی",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "idiopathic",
+      "category": "medical",
+      "tr": "idiyopatik (nedeni bilinmeyen)",
+      "tr_policy": "translate",
+      "ckb": "بێ هۆکاری دیار",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "benign",
+      "category": "medical",
+      "tr": "iyi huylu",
+      "tr_policy": "translate",
+      "ckb": "بێزیان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "malignant",
+      "category": "medical",
+      "tr": "kötü huylu",
+      "tr_policy": "translate",
+      "ckb": "خراپ (شێرپەنجەیی)",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "cyst",
+      "category": "medical",
+      "tr": "kist",
+      "tr_policy": "translate",
+      "ckb": "کیس",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "cysts"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "lesion",
+      "category": "medical",
+      "tr": "lezyon",
+      "tr_policy": "translate",
+      "ckb": "زەدە",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "lesions"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "abscess",
+      "category": "medical",
+      "tr": "apse",
+      "tr_policy": "translate",
+      "ckb": "کێمدان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "ulcer",
+      "category": "medical",
+      "tr": "ülser",
+      "tr_policy": "translate",
+      "ckb": "زام",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "ulcers"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "dysfunction",
+      "category": "medical",
+      "tr": "işlev bozukluğu",
+      "tr_policy": "translate",
+      "ckb": "تێکچوونی کارکرد",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "neurological disorder",
+      "category": "medical",
+      "tr": "nörolojik hastalık",
+      "tr_policy": "translate",
+      "ckb": "نەخۆشیی دەماری",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "neurological disorders",
+        "neurological condition",
+        "neurological conditions",
+        "neurological disease",
+        "neurological diseases"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "neurological deficit",
+      "category": "medical",
+      "tr": "nörolojik kayıp",
+      "tr_policy": "translate",
+      "ckb": "کەموکوڕیی دەماری",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "neurological deficits"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "movement disorders",
+      "category": "medical",
+      "tr": "hareket bozuklukları",
+      "tr_policy": "translate",
+      "ckb": "نەخۆشییەکانی جووڵە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "movement disorder"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "motor function",
+      "category": "medical",
+      "tr": "motor fonksiyon",
+      "tr_policy": "translate",
+      "ckb": "کارکردی جووڵەیی",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "developmental delay",
+      "category": "medical",
+      "tr": "gelişme geriliği",
+      "tr_policy": "translate",
+      "ckb": "دواکەوتنی گەشە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "sexual dysfunction",
+      "category": "medical",
+      "tr": "cinsel işlev bozukluğu",
+      "tr_policy": "translate",
+      "ckb": "تێکچوونی سێکسی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "immune system",
+      "category": "anatomy",
+      "tr": "bağışıklık sistemi",
+      "tr_policy": "translate",
+      "ckb": "کۆئەندامی بەرگری",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "autoimmune",
+      "category": "medical",
+      "tr": "otoimmün",
+      "tr_policy": "translate",
+      "ckb": "خۆبەرگری",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "the immune system attacks the body itself. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "post-operative",
+      "category": "procedure",
+      "tr": "ameliyat sonrası",
+      "tr_policy": "translate",
+      "ckb": "دوای نەشتەرگەری",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "postoperative",
+        "post operative",
+        "post-surgical"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "intra-articular",
+      "category": "procedure",
+      "tr": "eklem içi",
+      "tr_policy": "translate",
+      "ckb": "ناو جومگە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "intra articular"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "jaw",
+      "category": "anatomy",
+      "tr": "çene",
+      "tr_policy": "translate",
+      "ckb": "شەویلگە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "jaw = شەویلگە; chin is چەناگە. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "face",
+      "category": "anatomy",
+      "tr": "yüz",
+      "tr_policy": "translate",
+      "ckb": "ڕوخسار",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "eyelid",
+      "category": "anatomy",
+      "tr": "göz kapağı",
+      "tr_policy": "translate",
+      "ckb": "پێڵوو",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "eyelids"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "saliva",
+      "category": "anatomy",
+      "tr": "tükürük",
+      "tr_policy": "translate",
+      "ckb": "لیک",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "taste",
+      "category": "medical",
+      "tr": "tat alma",
+      "tr_policy": "translate",
+      "ckb": "چەشتن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "hearing",
+      "category": "medical",
+      "tr": "işitme",
+      "tr_policy": "translate",
+      "ckb": "بیستن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "vision",
+      "category": "medical",
+      "tr": "görme",
+      "tr_policy": "translate",
+      "ckb": "بینین",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "double vision",
+      "category": "medical",
+      "tr": "çift görme",
+      "tr_policy": "translate",
+      "ckb": "دووبینی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "blurred vision",
+      "category": "medical",
+      "tr": "bulanık görme",
+      "tr_policy": "translate",
+      "ckb": "تەڵخیی بینین",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "bowel",
+      "category": "anatomy",
+      "tr": "bağırsak",
+      "tr_policy": "translate",
+      "ckb": "ڕیخۆڵە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "older adults",
+      "category": "medical",
+      "tr": "yaşlı yetişkinler",
+      "tr_policy": "translate",
+      "ckb": "بەساڵاچووان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "elderly",
+        "older people"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "multidisciplinary team",
+      "category": "site",
+      "tr": "multidisipliner ekip",
+      "tr_policy": "translate",
+      "ckb": "تیمی فرەپسپۆڕی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "specialist",
+      "category": "site",
+      "tr": "uzman",
+      "tr_policy": "translate",
+      "ckb": "پسپۆڕ",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "specialists"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "therapist",
+      "category": "site",
+      "tr": "terapist",
+      "tr_policy": "translate",
+      "ckb": "چارەسەرکار",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "therapists"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "surgeon",
+      "category": "site",
+      "tr": "cerrah",
+      "tr_policy": "translate",
+      "ckb": "پزیشکی نەشتەرگەر",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "surgeons"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "appointment",
+      "category": "site",
+      "tr": "randevu",
+      "tr_policy": "translate",
+      "ckb": "ژوانی پزیشکی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "appointments"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "underlying cause",
+      "category": "medical",
+      "tr": "altta yatan neden",
+      "tr_policy": "translate",
+      "ckb": "هۆکاری بنەڕەتی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "underlying causes"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "underlying condition",
+      "category": "medical",
+      "tr": "altta yatan hastalık",
+      "tr_policy": "translate",
+      "ckb": "نەخۆشیی بنەڕەتی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "underlying conditions"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "medical history",
+      "category": "medical",
+      "tr": "tıbbi öykü",
+      "tr_policy": "translate",
+      "ckb": "مێژووی نەخۆشی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "history"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "family history",
+      "category": "medical",
+      "tr": "aile öyküsü",
+      "tr_policy": "translate",
+      "ckb": "مێژووی نەخۆشی لە خێزاندا",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "self-care",
+      "category": "medical",
+      "tr": "öz bakım",
+      "tr_policy": "translate",
+      "ckb": "خۆچاودێری",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "self care"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "success rate",
+      "category": "medical",
+      "tr": "başarı oranı",
+      "tr_policy": "translate",
+      "ckb": "ڕێژەی سەرکەوتن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "success rates"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "long-term",
+      "category": "medical",
+      "tr": "uzun vadeli",
+      "tr_policy": "translate",
+      "ckb": "بۆ ماوەی درێژ",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "long term"
+      ],
+      "note": "duration; chronic (disease) is درێژخایەن. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "short-term",
+      "category": "medical",
+      "tr": "kısa vadeli",
+      "tr_policy": "translate",
+      "ckb": "بۆ ماوەی کورت",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "short term"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "antivirals",
+      "category": "drug",
+      "tr": "antiviral ilaçlar",
+      "tr_policy": "translate",
+      "ckb": "دەرمانی دژەڤایرۆس",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "antiviral",
+        "antiviral medication",
+        "antiviral drugs"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "evidence-based",
+      "category": "medical",
+      "tr": "kanıta dayalı",
+      "tr_policy": "translate",
+      "ckb": "پشتبەستوو بە بەڵگەی زانستی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "evidence based"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "clinical trial",
+      "category": "medical",
+      "tr": "klinik çalışma",
+      "tr_policy": "translate",
+      "ckb": "تاقیکردنەوەی کلینیکی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "clinical trials",
+        "clinical study",
+        "clinical studies"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "placebo",
+      "category": "drug",
+      "tr": "plasebo",
+      "tr_policy": "translate",
+      "ckb": "دەرمانی ساختە (پلاسیبۆ)",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "heart rate",
+      "category": "medical",
+      "tr": "kalp atış hızı",
+      "tr_policy": "translate",
+      "ckb": "ڕێژەی لێدانی دڵ",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "vitamin D",
+      "category": "drug",
+      "tr": "D vitamini",
+      "tr_policy": "translate",
+      "ckb": "ڤیتامین D",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "nerve signals",
+      "category": "medical",
+      "tr": "sinir sinyalleri",
+      "tr_policy": "translate",
+      "ckb": "ئاماژە دەمارییەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "nerve signal"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "pain signals",
+      "category": "medical",
+      "tr": "ağrı sinyalleri",
+      "tr_policy": "translate",
+      "ckb": "ئاماژەکانی ئازار",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "pain signal"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "cold therapy",
+      "category": "procedure",
+      "tr": "soğuk uygulama (soğuk terapi)",
+      "tr_policy": "translate",
+      "ckb": "چارەسەر بە سەرما",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "cold packs",
+        "ice packs"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "crutches",
+      "category": "procedure",
+      "tr": "koltuk değneği",
+      "tr_policy": "translate",
+      "ckb": "گۆچانی بن باڵ",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "wheelchair",
+      "category": "procedure",
+      "tr": "tekerlekli sandalye",
+      "tr_policy": "translate",
+      "ckb": "کورسیی چەرخدار",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "walking aid",
+      "category": "procedure",
+      "tr": "yürüme yardımcısı",
+      "tr_policy": "translate",
+      "ckb": "ئامرازی یارمەتیدەری ڕۆیشتن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "walking aids"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "intermittent",
+      "category": "medical",
+      "tr": "aralıklı",
+      "tr_policy": "translate",
+      "ckb": "پچڕپچڕ",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "worsening",
+      "category": "medical",
+      "tr": "kötüleşme",
+      "tr_policy": "translate",
+      "ckb": "خراپتربوون",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "improvement",
+      "category": "medical",
+      "tr": "düzelme",
+      "tr_policy": "translate",
+      "ckb": "باشتربوون",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "refractory",
+      "category": "medical",
+      "tr": "tedaviye dirençli",
+      "tr_policy": "translate",
+      "ckb": "سەرسەخت بەرامبەر چارەسەر",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "bilateral",
+      "category": "medical",
+      "tr": "iki taraflı",
+      "tr_policy": "translate",
+      "ckb": "هەردوولایی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "unilateral",
+      "category": "medical",
+      "tr": "tek taraflı",
+      "tr_policy": "translate",
+      "ckb": "یەکلایی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "affected side",
+      "category": "medical",
+      "tr": "etkilenen taraf",
+      "tr_policy": "translate",
+      "ckb": "لای تووشبوو",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "mood",
+      "category": "medical",
+      "tr": "ruh hali",
+      "tr_policy": "translate",
+      "ckb": "باری دەروونی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "return to work",
+      "category": "medical",
+      "tr": "işe dönüş",
+      "tr_policy": "translate",
+      "ckb": "گەڕانەوە بۆ سەر کار",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "independence",
+      "category": "medical",
+      "tr": "bağımsızlık",
+      "tr_policy": "translate",
+      "ckb": "سەربەخۆیی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "nerve",
+      "category": "anatomy",
+      "tr": "sinir",
+      "tr_policy": "translate",
+      "ckb": "دەمار",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "nerves"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "muscle",
+      "category": "anatomy",
+      "tr": "kas",
+      "tr_policy": "translate",
+      "ckb": "ماسولکە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "muscles"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "joint",
+      "category": "anatomy",
+      "tr": "eklem",
+      "tr_policy": "translate",
+      "ckb": "جومگە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "joints"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "bone",
+      "category": "anatomy",
+      "tr": "kemik",
+      "tr_policy": "translate",
+      "ckb": "ئێسک",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "bones"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "injection",
+      "category": "procedure",
+      "tr": "enjeksiyon",
+      "tr_policy": "translate",
+      "ckb": "دەرزی",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "injections"
+      ],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "stimulation",
+      "category": "procedure",
+      "tr": "stimülasyon",
+      "tr_policy": "translate",
+      "ckb": "ورووژاندن",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "saddle-area numbness",
+      "category": "medical",
+      "tr": "eyer bölgesinde uyuşma",
+      "tr_policy": "translate",
+      "ckb": "سڕبوونی ناوچەی نێوان ڕانەکان",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [
+        "saddle area numbness",
+        "numbness in the saddle area",
+        "saddle numbness"
+      ],
+      "note": "cauda equina red flag; same meaning as saddle anaesthesia. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "participation restrictions",
+      "category": "medical",
+      "tr": "katılım kısıtlılıkları",
+      "tr_policy": "translate",
+      "ckb": "سنووردارییەکانی بەشداری لە ژیانی ڕۆژانە",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [
+        "participation restriction"
+      ],
+      "note": "barriers the patient faces, not restrictions imposed by the therapist. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "residual weakness",
+      "category": "medical",
+      "tr": "geride kalan güçsüzlük",
+      "tr_policy": "translate",
+      "ckb": "لاوازیی ماوە",
+      "ckb_policy": "translate",
+      "confidence": "medium",
+      "variants": [],
+      "note": "weakness left after recovery; tr not kalıcı (permanent). Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "Watch the procedure",
+      "category": "site",
+      "tr": "İşlemi izleyin",
+      "tr_policy": "translate",
+      "ckb": "سەیری کردارەکە بکە",
+      "ckb_policy": "translate",
+      "confidence": "high",
+      "variants": [],
+      "note": "video button. Round 2 clinical vocabulary (manual add)."
     }
   ],
   "trProperNouns": [

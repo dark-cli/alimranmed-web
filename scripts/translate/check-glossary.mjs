@@ -23,7 +23,7 @@ function loadRows() {
   }
   const tr = JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/glossary-tr.json'), 'utf8'));
   const ckb = new Map(JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/glossary-ckb.json'), 'utf8')).map((e) => [e.en, e]));
-  return tr.map((e) => ({ en: e.en, category: e.category, tr: e.text, trPolicy: e.policy, ckb: ckb.get(e.en)?.text, ckbPolicy: ckb.get(e.en)?.policy }));
+  return tr.map((e) => ({ en: e.en, category: e.category, tr: e.text, trPolicy: e.policy, trGloss: e.gloss, ckb: ckb.get(e.en)?.text, ckbPolicy: ckb.get(e.en)?.policy, ckbGloss: ckb.get(e.en)?.gloss }));
 }
 const rows = loadRows();
 const errors = [];
@@ -49,6 +49,19 @@ for (const r of rows) {
   if (!r.ckb) { err('missing', `${r.en}: no ckb text`); continue; }
   if (ARABIC_ONLY.test(r.ckb)) err('script', `${r.en}: ${r.ckb}`);
   if (!r.tr) err('missing', `${r.en}: no tr text`);
+}
+
+// ---- 2b. no built-in parenthetical gloss in text (it lives in `gloss`), unless the English term has parentheses
+if (!usePartsMode) {
+  for (const lang of ['tr', 'ckb']) {
+    for (const e of JSON.parse(fs.readFileSync(path.join(ROOT, `docs/glossary-${lang}.json`), 'utf8'))) {
+      if (/[()（）]/.test(e.en)) continue;
+      for (const [w, t, src] of [['text', e.text, e.en], ...(e.variant_rules || []).map((r) => [`variant ${r.variant}`, r.text, r.variant])]) {
+        if (/[()（）]/.test(t || '') && !/[()（）]/.test(src)) err('paren', `${lang} ${e.en} (${w}): ${t}`);
+      }
+      if (e.gloss != null && (!e.gloss.trim() || /[()]/.test(e.gloss))) err('paren', `${lang} ${e.en}: bad gloss "${e.gloss}"`);
+    }
+  }
 }
 
 // ---- 3. keep policy: text must equal en (identical in both languages)
@@ -81,7 +94,7 @@ for (const rule of FIXES.rules) {
     const forbid = rule[`${lang}Forbid`] ? new RegExp(rule[`${lang}Forbid`], 'i') : null;
     for (const r of rows) {
       if (!enRe.test(r.en) || except.has(r.en)) continue;
-      const text = r[lang] || '';
+      const text = [r[lang] || '', r[`${lang}Gloss`] || ''].join(' ').trim(); // rendering + its gloss
       if (!want.test(text)) err('rule', `${rule.id} ${lang}: "${r.en}" -> ${text}  (want /${rule[lang]}/)`);
       else if (forbid && forbid.test(text)) err('rule', `${rule.id} ${lang}: "${r.en}" -> ${text}  (forbidden /${rule[`${lang}Forbid`]}/)`);
     }

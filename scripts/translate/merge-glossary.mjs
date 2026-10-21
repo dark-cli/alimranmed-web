@@ -99,6 +99,12 @@ function applyVerdict(lang, e, ov) {
   if (e[`${lang}_confidence`] === 'low' && e[`${lang}_policy`] !== 'keep') e[`${lang}_policy`] = 'translate+en-first-mention';
 }
 
+function splitGloss(text, en) {
+  if (!text || /[()]/.test(en) || !/[(（][^)）]*[)）]/.test(text)) return { text };
+  const gl = [...text.matchAll(/[(（]([^)）]*)[)）]/g)].map((m) => m[1].trim()).filter(Boolean);
+  return { text: text.replace(/\s*[(（][^)）]*[)）]/g, '').replace(/\s{2,}/g, ' ').trim(), gloss: gl.join('; ') };
+}
+
 // ---- build outputs, keyed on terms.json (+ manual adds)
 const termByEn = new Map(TERMS.map((t) => [t.en, t]));
 const changed = { tr: 0, ckb: 0, entries: 0, substantiveEntries: 0, policy: 0, droppedVariantRules: 0 };
@@ -134,6 +140,12 @@ for (const en of allEn) {
       policy: e[`${lang}_policy`],
       variants,
     };
+    // built-in parenthetical gloss -> separate `gloss` field; `text` stays the bare rendering
+    // (parentheses stay only when the English term itself has them)
+    const g = splitGloss(row.text, en);
+    row.text = g.text;
+    if (g.gloss) { row.gloss = g.gloss; changed.glossSplit = (changed.glossSplit || 0) + 1; }
+    for (const r of rules) { const rg = splitGloss(r.text, r.variant); r.text = rg.text; if (rg.gloss) r.gloss = rg.gloss; }
     if (rules.length) row.variant_rules = rules;
     if (e[`${lang}_confidence`]) row.confidence = e[`${lang}_confidence`];
     if (e[`${lang}_verified`]) row.verified = e[`${lang}_verified`];
@@ -156,8 +168,8 @@ for (const lang of ['tr', 'ckb']) {
     return { ...r, freq: t ? t.freq : 0, sample_en: t?.samples?.[0]?.en || '' };
   }).filter((r) => r.confidence === 'medium' || r.confidence === 'low' || r.freq >= 10)
     .sort((a, b) => b.freq - a.freq || a.en.localeCompare(b.en));
-  const head = 'en,category,freq,rendering,policy,confidence,note,sample_en';
-  const body = rows.map((r) => [r.en, r.category, r.freq, r.text, r.policy, r.confidence, r.note, r.sample_en].map(csv).join(','));
+  const head = 'en,category,freq,rendering,gloss,policy,confidence,note,sample_en';
+  const body = rows.map((r) => [r.en, r.category, r.freq, r.text, r.gloss, r.policy, r.confidence, r.note, r.sample_en].map(csv).join(','));
   fs.writeFileSync(path.join(ROOT, `docs/glossary-review-${lang}.csv`), '﻿' + [head, ...body].join('\n') + '\n');
   sheetCounts[lang] = rows.length;
 }

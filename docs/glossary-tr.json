@@ -18,6 +18,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "abscess",
+    "category": "medical",
+    "text": "apse",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "absences",
     "category": "medical",
     "text": "absans nöbetleri",
@@ -66,17 +75,19 @@
   {
     "en": "ACL injury",
     "category": "medical",
-    "text": "ön çapraz bağ (ÖÇB) yaralanması",
+    "text": "ön çapraz bağ yaralanması",
     "policy": "translate",
     "variants": [
       "ACL tear",
       "anterior cruciate ligament injury",
       "cruciate ligament injury"
     ],
+    "gloss": "ÖÇB",
     "variant_rules": [
       {
         "variant": "ACL tear",
-        "text": "ön çapraz bağ (ÖÇB) yırtığı"
+        "text": "ön çapraz bağ yırtığı",
+        "gloss": "ÖÇB"
       },
       {
         "variant": "cruciate ligament injury",
@@ -125,6 +136,35 @@
     "note": "myofascial trigger point"
   },
   {
+    "en": "activities of daily living",
+    "category": "medical",
+    "text": "günlük yaşam aktiviteleri",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "activity limitations",
+    "category": "medical",
+    "text": "aktivite kısıtlılıkları",
+    "policy": "translate",
+    "variants": [
+      "activity limitation"
+    ],
+    "confidence": "medium",
+    "note": "what the patient cannot do; NOT the therapist restricting activity. Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "acute",
+    "category": "medical",
+    "text": "akut",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "sudden-onset/short-lived; never توند or توندوتیژ. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "acute chest syndrome",
     "category": "medical",
     "text": "akut göğüs sendromu",
@@ -141,6 +181,17 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "acute phase",
+    "category": "medical",
+    "text": "akut dönem",
+    "policy": "translate",
+    "variants": [
+      "acute stage"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "ADAS-Cog",
@@ -172,9 +223,10 @@
   {
     "en": "ADHD",
     "category": "medical",
-    "text": "DEHB (dikkat eksikliği ve hiperaktivite bozukluğu)",
+    "text": "DEHB",
     "policy": "translate",
     "variants": [],
+    "gloss": "dikkat eksikliği ve hiperaktivite bozukluğu",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Turkish acronym is DEHB"
@@ -182,9 +234,10 @@
   {
     "en": "adhesive capsulitis",
     "category": "medical",
-    "text": "adeziv kapsülit (donuk omuz)",
+    "text": "adeziv kapsülit",
     "policy": "translate",
     "variants": [],
+    "gloss": "donuk omuz",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -205,6 +258,28 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "adverse effects",
+    "category": "medical",
+    "text": "istenmeyen etkiler",
+    "policy": "translate",
+    "variants": [
+      "adverse effect",
+      "adverse events",
+      "adverse event"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "affected side",
+    "category": "medical",
+    "text": "etkilenen taraf",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "alcohol use disorder",
@@ -260,26 +335,29 @@
   {
     "en": "amaurosis fugax",
     "category": "medical",
-    "text": "amarozis fugaks (geçici görme kaybı)",
+    "text": "amarozis fugaks",
     "policy": "translate",
     "variants": [],
+    "gloss": "geçici görme kaybı",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "amblyopia",
     "category": "medical",
-    "text": "ambliyopi (göz tembelliği)",
+    "text": "ambliyopi",
     "policy": "translate",
     "variants": [],
+    "gloss": "göz tembelliği",
     "confidence": "high"
   },
   {
     "en": "amenorrhoea",
     "category": "medical",
-    "text": "amenore (adet görmeme)",
+    "text": "amenore",
     "policy": "translate",
     "variants": [],
+    "gloss": "adet görmeme",
     "confidence": "high"
   },
   {
@@ -303,9 +381,10 @@
   {
     "en": "amyotrophic lateral sclerosis",
     "category": "medical",
-    "text": "amiyotrofik lateral skleroz (ALS)",
+    "text": "amiyotrofik lateral skleroz",
     "policy": "translate",
     "variants": [],
+    "gloss": "ALS",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -320,9 +399,10 @@
   {
     "en": "angina",
     "category": "medical",
-    "text": "anjina (göğüs ağrısı)",
+    "text": "anjina",
     "policy": "translate",
     "variants": [],
+    "gloss": "göğüs ağrısı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -363,9 +443,10 @@
   {
     "en": "anterior cutaneous nerve entrapment syndrome",
     "category": "medical",
-    "text": "anterior kutanöz sinir sıkışma sendromu (ACNES)",
+    "text": "anterior kutanöz sinir sıkışma sendromu",
     "policy": "translate",
     "variants": [],
+    "gloss": "ACNES",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -390,9 +471,10 @@
   {
     "en": "anxiety",
     "category": "medical",
-    "text": "kaygı (anksiyete)",
+    "text": "kaygı",
     "policy": "translate",
     "variants": [],
+    "gloss": "anksiyete",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -458,9 +540,10 @@
   {
     "en": "arrhythmia",
     "category": "medical",
-    "text": "aritmi (ritim bozukluğu)",
+    "text": "aritmi",
     "policy": "translate",
     "variants": [],
+    "gloss": "ritim bozukluğu",
     "confidence": "high"
   },
   {
@@ -474,11 +557,12 @@
   {
     "en": "arteriovenous malformation",
     "category": "medical",
-    "text": "arteriyovenöz malformasyon (AVM)",
+    "text": "arteriyovenöz malformasyon",
     "policy": "translate",
     "variants": [
       "brain AVM"
     ],
+    "gloss": "AVM",
     "variant_rules": [
       {
         "variant": "brain AVM",
@@ -491,9 +575,10 @@
   {
     "en": "arthritis",
     "category": "medical",
-    "text": "artrit (eklem iltihabı)",
+    "text": "artrit",
     "policy": "translate",
     "variants": [],
+    "gloss": "eklem iltihabı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -546,9 +631,10 @@
   {
     "en": "atherosclerosis",
     "category": "medical",
-    "text": "ateroskleroz (damar sertliği)",
+    "text": "ateroskleroz",
     "policy": "translate",
     "variants": [],
+    "gloss": "damar sertliği",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -583,9 +669,10 @@
   {
     "en": "atrophy",
     "category": "medical",
-    "text": "atrofi (erime)",
+    "text": "atrofi",
     "policy": "translate",
     "variants": [],
+    "gloss": "erime",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -625,6 +712,15 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "autoimmune",
+    "category": "medical",
+    "text": "otoimmün",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "the immune system attacks the body itself. Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "autoimmune disease",
@@ -685,9 +781,10 @@
   {
     "en": "avulsion",
     "category": "medical",
-    "text": "avülsiyon (kopma)",
+    "text": "avülsiyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "kopma",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -756,6 +853,15 @@
     "confidence": "high"
   },
   {
+    "en": "balance",
+    "category": "medical",
+    "text": "denge",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "BDNF",
     "category": "medical",
     "text": "BDNF",
@@ -775,25 +881,38 @@
   {
     "en": "bedwetting",
     "category": "medical",
-    "text": "altını ıslatma (enürezis)",
+    "text": "altını ıslatma",
     "policy": "translate",
     "variants": [],
+    "gloss": "enürezis",
     "confidence": "high"
   },
   {
     "en": "Bell's palsy",
     "category": "medical",
-    "text": "Bell paralizisi (yüz felci)",
+    "text": "Bell paralizisi",
     "policy": "translate",
     "variants": [],
-    "confidence": "high"
+    "gloss": "yüz felci",
+    "confidence": "high",
+    "note": "eponym kept so it differs from facial palsy (ئیفلیجی ڕوخسار); avoids circular definitions."
+  },
+  {
+    "en": "benign",
+    "category": "medical",
+    "text": "iyi huylu",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "benign paroxysmal positional vertigo",
     "category": "medical",
-    "text": "benign paroksismal pozisyonel vertigo (BPPV)",
+    "text": "benign paroksismal pozisyonel vertigo",
     "policy": "translate",
     "variants": [],
+    "gloss": "BPPV",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -804,6 +923,15 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "bilateral",
+    "category": "medical",
+    "text": "iki taraflı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "bipolar disorder",
@@ -847,6 +975,15 @@
     "confidence": "high"
   },
   {
+    "en": "bleeding",
+    "category": "medical",
+    "text": "kanama",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "blepharospasm",
     "category": "medical",
     "text": "blefarospazm",
@@ -856,12 +993,24 @@
     "verified": "backtrans"
   },
   {
+    "en": "blood circulation",
+    "category": "medical",
+    "text": "kan dolaşımı",
+    "policy": "translate",
+    "variants": [
+      "circulation"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "blood clots",
     "category": "medical",
     "text": "kan pıhtıları",
     "policy": "translate",
     "variants": [],
-    "confidence": "high"
+    "confidence": "high",
+    "note": "the clot itself; blood clotting (the process) = مەیینی خوێن."
   },
   {
     "en": "blood clotting",
@@ -870,6 +1019,33 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "blood flow",
+    "category": "medical",
+    "text": "kan akışı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "blood pressure",
+    "category": "medical",
+    "text": "kan basıncı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "blurred vision",
+    "category": "medical",
+    "text": "bulanık görme",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "bone cancer",
@@ -950,18 +1126,20 @@
   {
     "en": "brachycephaly",
     "category": "medical",
-    "text": "brakisefali (kısa ve geniş kafa)",
+    "text": "brakisefali",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "kısa ve geniş kafa",
     "confidence": "medium",
     "verified": "backtrans"
   },
   {
     "en": "bradykinesia",
     "category": "medical",
-    "text": "bradikinezi (hareket yavaşlığı)",
+    "text": "bradikinezi",
     "policy": "translate",
     "variants": [],
+    "gloss": "hareket yavaşlığı",
     "confidence": "high"
   },
   {
@@ -1051,11 +1229,21 @@
     "verified": "backtrans"
   },
   {
-    "en": "bruxism",
+    "en": "bruising",
     "category": "medical",
-    "text": "bruksizm (diş gıcırdatma)",
+    "text": "morarma",
     "policy": "translate",
     "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "bruxism",
+    "category": "medical",
+    "text": "bruksizm",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "diş gıcırdatma",
     "confidence": "high"
   },
   {
@@ -1073,11 +1261,21 @@
   {
     "en": "bunions",
     "category": "medical",
-    "text": "bunyon (halluks valgus)",
+    "text": "bunyon",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "halluks valgus",
+    "confidence": "high",
+    "verified": "backtrans"
+  },
+  {
+    "en": "burning pain",
+    "category": "medical",
+    "text": "yanıcı ağrı",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "bursitis",
@@ -1186,9 +1384,10 @@
   {
     "en": "cellulitis",
     "category": "medical",
-    "text": "selülit (deri ve deri altı enfeksiyonu)",
+    "text": "selülit",
     "policy": "translate",
     "variants": [],
+    "gloss": "deri ve deri altı enfeksiyonu",
     "confidence": "high",
     "verified": "backtrans",
     "note": "tr: always add the gloss to avoid confusion with cosmetic 'selülit'"
@@ -1282,9 +1481,10 @@
   {
     "en": "cerebrospinal fluid leak",
     "category": "medical",
-    "text": "beyin omurilik sıvısı (BOS) kaçağı",
+    "text": "beyin omurilik sıvısı kaçağı",
     "policy": "translate",
     "variants": [],
+    "gloss": "BOS",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -1309,12 +1509,13 @@
   {
     "en": "cervical disc herniation",
     "category": "medical",
-    "text": "boyun fıtığı (servikal disk hernisi)",
+    "text": "boyun fıtığı",
     "policy": "translate",
     "variants": [
       "cervical disk herniation",
       "cervical herniation"
     ],
+    "gloss": "servikal disk hernisi",
     "confidence": "high",
     "verified": "backtrans",
     "note": "lay forms used by patients in both locales"
@@ -1331,7 +1532,8 @@
     "variant_rules": [
       {
         "variant": "torticollis",
-        "text": "tortikolis (boyun eğriliği)"
+        "text": "tortikolis",
+        "gloss": "boyun eğriliği"
       },
       {
         "variant": "spasmodic torticollis",
@@ -1375,26 +1577,29 @@
   {
     "en": "cervical spinal stenosis",
     "category": "medical",
-    "text": "servikal spinal stenoz (boyun kanal darlığı)",
+    "text": "servikal spinal stenoz",
     "policy": "translate",
     "variants": [],
+    "gloss": "boyun kanal darlığı",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "cervical spondylosis",
     "category": "medical",
-    "text": "servikal spondiloz (boyun kireçlenmesi)",
+    "text": "servikal spondiloz",
     "policy": "translate",
     "variants": [],
+    "gloss": "boyun kireçlenmesi",
     "confidence": "high"
   },
   {
     "en": "cervicalgia",
     "category": "medical",
-    "text": "boyun ağrısı (servikalji)",
+    "text": "boyun ağrısı",
     "policy": "translate",
     "variants": [],
+    "gloss": "servikalji",
     "confidence": "high"
   },
   {
@@ -1465,6 +1670,15 @@
     "confidence": "high"
   },
   {
+    "en": "chronic",
+    "category": "medical",
+    "text": "kronik",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "chronic abdominal pain",
     "category": "medical",
     "text": "kronik karın ağrısı",
@@ -1523,17 +1737,19 @@
   {
     "en": "chronic inflammation",
     "category": "medical",
-    "text": "kronik iltihap (inflamasyon)",
+    "text": "kronik iltihap",
     "policy": "translate",
     "variants": [],
+    "gloss": "inflamasyon",
     "confidence": "high"
   },
   {
     "en": "chronic inflammatory demyelinating polyneuropathy",
     "category": "medical",
-    "text": "kronik inflamatuvar demiyelinizan polinöropati (CIDP)",
+    "text": "kronik inflamatuvar demiyelinizan polinöropati",
     "policy": "translate",
     "variants": [],
+    "gloss": "CIDP",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -1572,9 +1788,10 @@
   {
     "en": "chronic obstructive pulmonary disease",
     "category": "medical",
-    "text": "kronik obstrüktif akciğer hastalığı (KOAH)",
+    "text": "kronik obstrüktif akciğer hastalığı",
     "policy": "translate",
     "variants": [],
+    "gloss": "KOAH",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Turkish acronym KOAH"
@@ -1608,11 +1825,25 @@
   {
     "en": "claudication",
     "category": "medical",
-    "text": "kladikasyon (topallama)",
+    "text": "kladikasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "topallama",
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "clinical trial",
+    "category": "medical",
+    "text": "klinik çalışma",
+    "policy": "translate",
+    "variants": [
+      "clinical trials",
+      "clinical study",
+      "clinical studies"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "clonus",
@@ -1644,9 +1875,10 @@
   {
     "en": "coagulopathy",
     "category": "medical",
-    "text": "koagülopati (pıhtılaşma bozukluğu)",
+    "text": "koagülopati",
     "policy": "translate",
     "variants": [],
+    "gloss": "pıhtılaşma bozukluğu",
     "confidence": "high"
   },
   {
@@ -1660,9 +1892,10 @@
   {
     "en": "coccydynia",
     "category": "medical",
-    "text": "koksidini (kuyruk sokumu ağrısı)",
+    "text": "koksidini",
     "policy": "translate",
     "variants": [],
+    "gloss": "kuyruk sokumu ağrısı",
     "confidence": "high"
   },
   {
@@ -1672,6 +1905,15 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "cognitive",
+    "category": "medical",
+    "text": "bilişsel",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "cognitive decline",
@@ -1702,9 +1944,10 @@
   {
     "en": "complex regional pain syndrome",
     "category": "medical",
-    "text": "kompleks bölgesel ağrı sendromu (KBAS)",
+    "text": "kompleks bölgesel ağrı sendromu",
     "policy": "translate",
     "variants": [],
+    "gloss": "KBAS",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -1716,6 +1959,32 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "complications",
+    "category": "medical",
+    "text": "komplikasyonlar",
+    "policy": "translate",
+    "variants": [
+      "complication"
+    ],
+    "variant_rules": [
+      {
+        "variant": "complication",
+        "text": "komplikasyon"
+      }
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "compression",
+    "category": "medical",
+    "text": "bası",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "compression fracture",
@@ -1731,9 +2000,10 @@
   {
     "en": "compulsions",
     "category": "medical",
-    "text": "kompulsiyonlar (zorlantılar)",
+    "text": "kompulsiyonlar",
     "policy": "translate",
     "variants": [],
+    "gloss": "zorlantılar",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -1746,6 +2016,15 @@
       "concussions"
     ],
     "confidence": "high"
+  },
+  {
+    "en": "congenital",
+    "category": "medical",
+    "text": "doğuştan",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "congenital anomalies",
@@ -1773,6 +2052,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "consciousness",
+    "category": "medical",
+    "text": "bilinç",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "constipation",
     "category": "medical",
     "text": "kabızlık",
@@ -1790,13 +2078,34 @@
     "verified": "backtrans"
   },
   {
+    "en": "contraindication",
+    "category": "medical",
+    "text": "kontrendikasyon",
+    "policy": "translate",
+    "variants": [
+      "contraindications"
+    ],
+    "confidence": "medium",
+    "note": "reason a treatment must not be given. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "contusion",
     "category": "medical",
-    "text": "kontüzyon (ezilme)",
+    "text": "kontüzyon",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "ezilme",
+    "confidence": "high",
+    "verified": "backtrans"
+  },
+  {
+    "en": "coordination",
+    "category": "medical",
+    "text": "koordinasyon",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "COPD",
@@ -1873,18 +2182,20 @@
   {
     "en": "CRP",
     "category": "medical",
-    "text": "CRP (C-reaktif protein)",
+    "text": "CRP",
     "policy": "translate",
     "variants": [],
+    "gloss": "C-reaktif protein",
     "confidence": "high",
     "note": "C-reactive protein lab test; previously mis-merged into CRPS. ckb: lab name read as-is in Iraqi labs."
   },
   {
     "en": "CRPS",
     "category": "medical",
-    "text": "KBAS (CRPS)",
+    "text": "KBAS",
     "policy": "translate",
     "variants": [],
+    "gloss": "CRPS",
     "confidence": "high",
     "note": "complex regional pain syndrome. CRP (C-reactive protein) is a separate entry."
   },
@@ -1926,11 +2237,23 @@
   {
     "en": "cyber-sickness",
     "category": "medical",
-    "text": "siber hastalık (sanal gerçeklik bulantısı)",
+    "text": "siber hastalık",
     "policy": "translate",
     "variants": [],
+    "gloss": "sanal gerçeklik bulantısı",
     "confidence": "medium",
     "verified": "backtrans"
+  },
+  {
+    "en": "cyst",
+    "category": "medical",
+    "text": "kist",
+    "policy": "translate",
+    "variants": [
+      "cysts"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "cystic fibrosis",
@@ -1949,6 +2272,17 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "daily activities",
+    "category": "medical",
+    "text": "günlük aktiviteler",
+    "policy": "translate",
+    "variants": [
+      "daily activity"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "Dandy Walker syndrome",
@@ -1974,11 +2308,32 @@
   {
     "en": "deep vein thrombosis",
     "category": "medical",
-    "text": "derin ven trombozu (DVT)",
+    "text": "derin ven trombozu",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "DVT",
+    "confidence": "high",
+    "verified": "backtrans"
+  },
+  {
+    "en": "deformity",
+    "category": "medical",
+    "text": "deformite",
+    "policy": "translate",
+    "variants": [
+      "deformities"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "degeneration",
+    "category": "medical",
+    "text": "dejenerasyon",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "degenerative bone disease",
@@ -2035,11 +2390,13 @@
   {
     "en": "dementia",
     "category": "medical",
-    "text": "demans (bunama)",
+    "text": "demans",
     "policy": "translate",
     "variants": [],
+    "gloss": "bunama",
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "never خەرەفان (dotage, pejorative)."
   },
   {
     "en": "demyelination",
@@ -2088,20 +2445,31 @@
     "verified": "backtrans"
   },
   {
-    "en": "diabetes",
+    "en": "developmental delay",
     "category": "medical",
-    "text": "diyabet (şeker hastalığı)",
+    "text": "gelişme geriliği",
     "policy": "translate",
     "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "diabetes",
+    "category": "medical",
+    "text": "diyabet",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "şeker hastalığı",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "diabetes mellitus",
     "category": "medical",
-    "text": "diabetes mellitus (şeker hastalığı)",
+    "text": "diabetes mellitus",
     "policy": "translate",
     "variants": [],
+    "gloss": "şeker hastalığı",
     "confidence": "high"
   },
   {
@@ -2132,6 +2500,17 @@
     "confidence": "high"
   },
   {
+    "en": "diagnosis",
+    "category": "medical",
+    "text": "tanı",
+    "policy": "translate",
+    "variants": [
+      "diagnoses"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "diastematomyelia",
     "category": "medical",
     "text": "diastematomiyeli",
@@ -2139,6 +2518,18 @@
     "variants": [],
     "confidence": "medium",
     "verified": "backtrans"
+  },
+  {
+    "en": "difficulty swallowing",
+    "category": "medical",
+    "text": "yutma güçlüğü",
+    "policy": "translate",
+    "variants": [
+      "swallowing difficulty",
+      "swallowing difficulties"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "digital ulcers",
@@ -2151,11 +2542,21 @@
   {
     "en": "diplopia",
     "category": "medical",
-    "text": "diplopi (çift görme)",
+    "text": "diplopi",
     "policy": "translate",
     "variants": [],
+    "gloss": "çift görme",
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "disability",
+    "category": "medical",
+    "text": "engellilik",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "disc degeneration",
@@ -2241,12 +2642,30 @@
     "confidence": "high"
   },
   {
+    "en": "double vision",
+    "category": "medical",
+    "text": "çift görme",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "Dravet syndrome",
     "category": "medical",
     "text": "Dravet sendromu",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "drooling",
+    "category": "medical",
+    "text": "salya akması",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "never ئاو هاتنە دەم (mouth-watering). Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "Duchenne muscular dystrophy",
@@ -2258,13 +2677,35 @@
     "verified": "backtrans"
   },
   {
+    "en": "dull ache",
+    "category": "medical",
+    "text": "künt ağrı",
+    "policy": "translate",
+    "variants": [
+      "dull pain",
+      "aching"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "dysarthria",
     "category": "medical",
-    "text": "dizartri (konuşma bozukluğu)",
+    "text": "dizartri",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "konuşma bozukluğu",
+    "confidence": "high",
+    "verified": "backtrans"
+  },
+  {
+    "en": "dysfunction",
+    "category": "medical",
+    "text": "işlev bozukluğu",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "dyskinesia",
@@ -2278,28 +2719,31 @@
   {
     "en": "dysmenorrhoea",
     "category": "medical",
-    "text": "dismenore (adet sancısı)",
+    "text": "dismenore",
     "policy": "translate",
     "variants": [
       "dysmenorrhea"
     ],
+    "gloss": "adet sancısı",
     "confidence": "high"
   },
   {
     "en": "dyspareunia",
     "category": "medical",
-    "text": "disparoni (ilişki sırasında ağrı)",
+    "text": "disparoni",
     "policy": "translate",
     "variants": [],
+    "gloss": "ilişki sırasında ağrı",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "dysphagia",
     "category": "medical",
-    "text": "disfaji (yutma güçlüğü)",
+    "text": "disfaji",
     "policy": "translate",
     "variants": [],
+    "gloss": "yutma güçlüğü",
     "confidence": "high"
   },
   {
@@ -2371,11 +2815,21 @@
     "verified": "backtrans"
   },
   {
-    "en": "encephalitis",
+    "en": "emergency",
     "category": "medical",
-    "text": "ensefalit (beyin iltihabı)",
+    "text": "acil durum",
     "policy": "translate",
     "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "encephalitis",
+    "category": "medical",
+    "text": "ensefalit",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "beyin iltihabı",
     "confidence": "high"
   },
   {
@@ -2409,9 +2863,10 @@
   {
     "en": "epilepsy",
     "category": "medical",
-    "text": "epilepsi (sara)",
+    "text": "epilepsi",
     "policy": "translate",
     "variants": [],
+    "gloss": "sara",
     "confidence": "high",
     "verified": "backtrans",
     "note": "'فێ' is the everyday KRG word"
@@ -2437,9 +2892,10 @@
   {
     "en": "erectile dysfunction",
     "category": "medical",
-    "text": "erektil disfonksiyon (sertleşme sorunu)",
+    "text": "erektil disfonksiyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "sertleşme sorunu",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -2451,6 +2907,17 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "evidence-based",
+    "category": "medical",
+    "text": "kanıta dayalı",
+    "policy": "translate",
+    "variants": [
+      "evidence based"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "exposure keratopathy",
@@ -2577,13 +3044,32 @@
     "verified": "backtrans"
   },
   {
-    "en": "fasciculations",
+    "en": "family history",
     "category": "medical",
-    "text": "fasikülasyonlar (kas seğirmesi)",
+    "text": "aile öyküsü",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "fasciculations",
+    "category": "medical",
+    "text": "fasikülasyonlar",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "kas seğirmesi",
+    "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "fatigue",
+    "category": "medical",
+    "text": "yorgunluk",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "FBSS",
@@ -2596,9 +3082,10 @@
   {
     "en": "fecal incontinence",
     "category": "medical",
-    "text": "dışkı kaçırma (fekal inkontinans)",
+    "text": "dışkı kaçırma",
     "policy": "translate",
     "variants": [],
+    "gloss": "fekal inkontinans",
     "confidence": "high"
   },
   {
@@ -2628,6 +3115,19 @@
     "verified": "backtrans"
   },
   {
+    "en": "flare-up",
+    "category": "medical",
+    "text": "alevlenme",
+    "policy": "translate",
+    "variants": [
+      "flare-ups",
+      "flare",
+      "flares"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "flatfoot",
     "category": "medical",
     "text": "düz taban",
@@ -2638,6 +3138,15 @@
       "pes planus"
     ],
     "confidence": "high"
+  },
+  {
+    "en": "flexibility",
+    "category": "medical",
+    "text": "esneklik",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "focal seizures",
@@ -2679,11 +3188,12 @@
   {
     "en": "foot ulcer",
     "category": "medical",
-    "text": "ayak ülseri (yarası)",
+    "text": "ayak ülseri",
     "policy": "translate",
     "variants": [
       "foot ulcers"
     ],
+    "gloss": "yarası",
     "confidence": "high"
   },
   {
@@ -2751,6 +3261,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "gait",
+    "category": "medical",
+    "text": "yürüyüş",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "gait disorders",
     "category": "medical",
     "text": "yürüme bozuklukları",
@@ -2795,9 +3314,10 @@
   {
     "en": "gastroenteritis",
     "category": "medical",
-    "text": "gastroenterit (mide-bağırsak enfeksiyonu)",
+    "text": "gastroenterit",
     "policy": "translate",
     "variants": [],
+    "gloss": "mide-bağırsak enfeksiyonu",
     "confidence": "high"
   },
   {
@@ -2844,6 +3364,15 @@
     "confidence": "high"
   },
   {
+    "en": "genetic",
+    "category": "medical",
+    "text": "genetik",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "giant cell arteritis",
     "category": "medical",
     "text": "dev hücreli arterit",
@@ -2863,9 +3392,10 @@
   {
     "en": "glaucoma",
     "category": "medical",
-    "text": "glokom (göz tansiyonu)",
+    "text": "glokom",
     "policy": "translate",
     "variants": [],
+    "gloss": "göz tansiyonu",
     "confidence": "high"
   },
   {
@@ -2903,6 +3433,15 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "gradual onset",
+    "category": "medical",
+    "text": "yavaş başlangıç",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "Guillain-Barre syndrome",
@@ -3036,6 +3575,27 @@
     "verified": "backtrans"
   },
   {
+    "en": "healing",
+    "category": "medical",
+    "text": "iyileşme",
+    "policy": "translate",
+    "variants": [
+      "tissue healing",
+      "healing process"
+    ],
+    "confidence": "medium",
+    "note": "tissue/wound healing; recovery of the patient is چاکبوونەوە. Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "hearing",
+    "category": "medical",
+    "text": "işitme",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "hearing loss",
     "category": "medical",
     "text": "işitme kaybı",
@@ -3059,6 +3619,15 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "heart rate",
+    "category": "medical",
+    "text": "kalp atış hızı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "heel spur",
@@ -3125,11 +3694,12 @@
   {
     "en": "hemorrhagic stroke",
     "category": "medical",
-    "text": "hemorajik inme (beyin kanaması)",
+    "text": "hemorajik inme",
     "policy": "translate",
     "variants": [
       "haemorrhagic stroke"
     ],
+    "gloss": "beyin kanaması",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -3142,9 +3712,20 @@
     "confidence": "high"
   },
   {
+    "en": "hereditary",
+    "category": "medical",
+    "text": "kalıtsal",
+    "policy": "translate",
+    "variants": [
+      "inherited"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "herniated disc",
     "category": "medical",
-    "text": "disk hernisi (fıtık)",
+    "text": "disk hernisi",
     "policy": "translate",
     "variants": [
       "disc herniation",
@@ -3155,6 +3736,7 @@
       "slipped disc",
       "slipped disk"
     ],
+    "gloss": "fıtık",
     "variant_rules": [
       {
         "variant": "slipped disc",
@@ -3166,7 +3748,8 @@
       },
       {
         "variant": "disc protrusion",
-        "text": "disk protrüzyonu (disk taşması)"
+        "text": "disk protrüzyonu",
+        "gloss": "disk taşması"
       },
       {
         "variant": "disc prolapse",
@@ -3180,18 +3763,20 @@
   {
     "en": "herpes simplex",
     "category": "medical",
-    "text": "herpes simpleks (uçuk)",
+    "text": "herpes simpleks",
     "policy": "translate",
     "variants": [],
+    "gloss": "uçuk",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "herpes zoster",
     "category": "medical",
-    "text": "zona (herpes zoster)",
+    "text": "zona",
     "policy": "translate",
     "variants": [],
+    "gloss": "herpes zoster",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -3347,11 +3932,12 @@
   {
     "en": "hyperglycaemia",
     "category": "medical",
-    "text": "hiperglisemi (yüksek kan şekeri)",
+    "text": "hiperglisemi",
     "policy": "translate",
     "variants": [
       "hyperglycemia"
     ],
+    "gloss": "yüksek kan şekeri",
     "confidence": "high"
   },
   {
@@ -3365,11 +3951,12 @@
   {
     "en": "hypertension",
     "category": "medical",
-    "text": "hipertansiyon (yüksek tansiyon)",
+    "text": "hipertansiyon",
     "policy": "translate",
     "variants": [
       "high blood pressure"
     ],
+    "gloss": "yüksek tansiyon",
     "variant_rules": [
       {
         "variant": "high blood pressure",
@@ -3406,9 +3993,10 @@
   {
     "en": "hypoglycemia",
     "category": "medical",
-    "text": "hipoglisemi (kan şekeri düşüklüğü)",
+    "text": "hipoglisemi",
     "policy": "translate",
     "variants": [],
+    "gloss": "kan şekeri düşüklüğü",
     "confidence": "high"
   },
   {
@@ -3462,6 +4050,16 @@
     "confidence": "high"
   },
   {
+    "en": "idiopathic",
+    "category": "medical",
+    "text": "idiyopatik",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "nedeni bilinmeyen",
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "idiopathic arthritis",
     "category": "medical",
     "text": "idiyopatik artrit",
@@ -3499,21 +4097,52 @@
   {
     "en": "impingement",
     "category": "medical",
-    "text": "sıkışma (impingement)",
+    "text": "sıkışma",
     "policy": "translate",
     "variants": [],
+    "gloss": "impingement",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
-    "en": "incontinence",
+    "en": "improvement",
     "category": "medical",
-    "text": "idrar kaçırma (inkontinans)",
+    "text": "düzelme",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "incontinence",
+    "category": "medical",
+    "text": "idrar kaçırma",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "inkontinans",
+    "confidence": "high",
     "verified": "backtrans",
     "note": "ar sample is urinary incontinence"
+  },
+  {
+    "en": "independence",
+    "category": "medical",
+    "text": "bağımsızlık",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "indication",
+    "category": "medical",
+    "text": "endikasyon",
+    "policy": "translate",
+    "variants": [
+      "indications"
+    ],
+    "confidence": "medium",
+    "note": "when a treatment is medically justified; never ئامادەکاری (preparation). Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "infertility",
@@ -3526,9 +4155,10 @@
   {
     "en": "inflammation",
     "category": "medical",
-    "text": "iltihap (inflamasyon)",
+    "text": "iltihap",
     "policy": "translate",
     "variants": [],
+    "gloss": "inflamasyon",
     "confidence": "high"
   },
   {
@@ -3552,9 +4182,10 @@
   {
     "en": "influenza",
     "category": "medical",
-    "text": "grip (influenza)",
+    "text": "grip",
     "policy": "translate",
     "variants": [],
+    "gloss": "influenza",
     "confidence": "high"
   },
   {
@@ -3577,10 +4208,20 @@
   {
     "en": "insomnia",
     "category": "medical",
-    "text": "uykusuzluk (insomnia)",
+    "text": "uykusuzluk",
     "policy": "translate",
     "variants": [],
+    "gloss": "insomnia",
     "confidence": "high"
+  },
+  {
+    "en": "instability",
+    "category": "medical",
+    "text": "instabilite",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "intellectual disability",
@@ -3599,6 +4240,15 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "intermittent",
+    "category": "medical",
+    "text": "aralıklı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "intermittent claudication",
@@ -3728,9 +4378,10 @@
   {
     "en": "irritable bowel syndrome",
     "category": "medical",
-    "text": "irritabl bağırsak sendromu (huzursuz bağırsak)",
+    "text": "irritabl bağırsak sendromu",
     "policy": "translate",
     "variants": [],
+    "gloss": "huzursuz bağırsak",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -3773,6 +4424,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "itching",
+    "category": "medical",
+    "text": "kaşıntı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "jaw claudication",
     "category": "medical",
     "text": "çene kladikasyonu",
@@ -3809,9 +4469,10 @@
   {
     "en": "joint effusion",
     "category": "medical",
-    "text": "eklem efüzyonu (eklemde sıvı)",
+    "text": "eklem efüzyonu",
     "policy": "translate",
     "variants": [],
+    "gloss": "eklemde sıvı",
     "confidence": "high"
   },
   {
@@ -3892,11 +4553,12 @@
   {
     "en": "knee osteoarthritis",
     "category": "medical",
-    "text": "diz osteoartriti (diz kireçlenmesi)",
+    "text": "diz osteoartriti",
     "policy": "translate",
     "variants": [
       "osteoarthritis of the knee"
     ],
+    "gloss": "diz kireçlenmesi",
     "confidence": "high"
   },
   {
@@ -3911,9 +4573,10 @@
   {
     "en": "kyphosis",
     "category": "medical",
-    "text": "kifoz (kamburluk)",
+    "text": "kifoz",
     "policy": "translate",
     "variants": [],
+    "gloss": "kamburluk",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -3965,18 +4628,20 @@
   {
     "en": "lateral epicondylalgia",
     "category": "medical",
-    "text": "lateral epikondilalji (tenisçi dirseği)",
+    "text": "lateral epikondilalji",
     "policy": "translate",
     "variants": [],
+    "gloss": "tenisçi dirseği",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "lateral epicondylitis",
     "category": "medical",
-    "text": "lateral epikondilit (tenisçi dirseği)",
+    "text": "lateral epikondilit",
     "policy": "translate",
     "variants": [],
+    "gloss": "tenisçi dirseği",
     "confidence": "high"
   },
   {
@@ -4013,12 +4678,35 @@
     "confidence": "high"
   },
   {
+    "en": "lesion",
+    "category": "medical",
+    "text": "lezyon",
+    "policy": "translate",
+    "variants": [
+      "lesions"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "leukemia",
     "category": "medical",
     "text": "lösemi",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "lifestyle",
+    "category": "medical",
+    "text": "yaşam tarzı",
+    "policy": "translate",
+    "variants": [
+      "lifestyle changes",
+      "lifestyle modification"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "ligament injury",
@@ -4068,6 +4756,17 @@
     "note": "transliteration"
   },
   {
+    "en": "long-term",
+    "category": "medical",
+    "text": "uzun vadeli",
+    "policy": "translate",
+    "variants": [
+      "long term"
+    ],
+    "confidence": "high",
+    "note": "duration; chronic (disease) is درێژخایەن. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "loss of consciousness",
     "category": "medical",
     "text": "bilinç kaybı",
@@ -4098,9 +4797,10 @@
   {
     "en": "lumbago",
     "category": "medical",
-    "text": "lumbago (bel ağrısı)",
+    "text": "lumbago",
     "policy": "translate",
     "variants": [],
+    "gloss": "bel ağrısı",
     "confidence": "high"
   },
   {
@@ -4115,11 +4815,12 @@
   {
     "en": "lumbar disc herniation",
     "category": "medical",
-    "text": "bel fıtığı (lomber disk hernisi)",
+    "text": "bel fıtığı",
     "policy": "translate",
     "variants": [
       "lumbar herniation"
     ],
+    "gloss": "lomber disk hernisi",
     "confidence": "high"
   },
   {
@@ -4134,20 +4835,22 @@
   {
     "en": "lumbar spondylolisthesis",
     "category": "medical",
-    "text": "lomber spondilolistezis (bel kayması)",
+    "text": "lomber spondilolistezis",
     "policy": "translate",
     "variants": [],
+    "gloss": "bel kayması",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "lumbar stenosis",
     "category": "medical",
-    "text": "lomber spinal stenoz (bel kanalı darlığı)",
+    "text": "lomber spinal stenoz",
     "policy": "translate",
     "variants": [
       "lumbar canal stenosis"
     ],
+    "gloss": "bel kanalı darlığı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -4233,11 +4936,21 @@
   {
     "en": "malabsorption",
     "category": "medical",
-    "text": "malabsorpsiyon (emilim bozukluğu)",
+    "text": "malabsorpsiyon",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "emilim bozukluğu",
+    "confidence": "high",
+    "verified": "backtrans"
+  },
+  {
+    "en": "malignant",
+    "category": "medical",
+    "text": "kötü huylu",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "malnutrition",
@@ -4265,6 +4978,26 @@
     "verified": "backtrans"
   },
   {
+    "en": "medical emergency",
+    "category": "medical",
+    "text": "tıbbi acil durum",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "medical history",
+    "category": "medical",
+    "text": "tıbbi öykü",
+    "policy": "translate",
+    "variants": [
+      "history"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "medication overuse headache",
     "category": "medical",
     "text": "ilaç aşırı kullanım baş ağrısı",
@@ -4283,6 +5016,15 @@
     "confidence": "medium",
     "verified": "backtrans",
     "note": "transliteration"
+  },
+  {
+    "en": "memory",
+    "category": "medical",
+    "text": "hafıza",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "memory loss",
@@ -4396,9 +5138,10 @@
   {
     "en": "metatarsalgia",
     "category": "medical",
-    "text": "metatarsalji (ayak tabanı ağrısı)",
+    "text": "metatarsalji",
     "policy": "translate",
     "variants": [],
+    "gloss": "ayak tabanı ağrısı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -4442,6 +5185,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "mild",
+    "category": "medical",
+    "text": "hafif",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "miscarriage",
     "category": "medical",
     "text": "düşük",
@@ -4452,11 +5204,30 @@
   {
     "en": "Mittelschmerz",
     "category": "medical",
-    "text": "yumurtlama ağrısı (Mittelschmerz)",
+    "text": "yumurtlama ağrısı",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "Mittelschmerz",
+    "confidence": "high",
+    "verified": "backtrans"
+  },
+  {
+    "en": "mobility",
+    "category": "medical",
+    "text": "hareketlilik",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "moderate",
+    "category": "medical",
+    "text": "orta",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "mononeuropathy",
@@ -4486,6 +5257,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "mood",
+    "category": "medical",
+    "text": "ruh hali",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "morning stiffness",
     "category": "medical",
     "text": "sabah tutukluğu",
@@ -4512,6 +5292,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "motor function",
+    "category": "medical",
+    "text": "motor fonksiyon",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "motor neuron disease",
     "category": "medical",
     "text": "motor nöron hastalığı",
@@ -4530,6 +5319,17 @@
     "verified": "backtrans"
   },
   {
+    "en": "movement disorders",
+    "category": "medical",
+    "text": "hareket bozuklukları",
+    "policy": "translate",
+    "variants": [
+      "movement disorder"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "MS",
     "category": "medical",
     "text": "MS",
@@ -4540,9 +5340,10 @@
   {
     "en": "MSA",
     "category": "medical",
-    "text": "MSA (multipl sistem atrofisi)",
+    "text": "MSA",
     "policy": "translate",
     "variants": [],
+    "gloss": "multipl sistem atrofisi",
     "confidence": "high",
     "verified": "backtrans",
     "note": "multiple system atrophy"
@@ -4550,19 +5351,32 @@
   {
     "en": "multiple sclerosis",
     "category": "medical",
-    "text": "multipl skleroz (MS)",
+    "text": "multipl skleroz",
     "policy": "translate",
     "variants": [],
+    "gloss": "MS",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "muscle atrophy",
     "category": "medical",
-    "text": "kas atrofisi (kas erimesi)",
+    "text": "kas atrofisi",
     "policy": "translate",
     "variants": [],
+    "gloss": "kas erimesi",
     "confidence": "high"
+  },
+  {
+    "en": "muscle contraction",
+    "category": "medical",
+    "text": "kas kasılması",
+    "policy": "translate",
+    "variants": [
+      "muscle contractions"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "muscle cramp",
@@ -4605,12 +5419,39 @@
     "verified": "backtrans"
   },
   {
+    "en": "muscle strength",
+    "category": "medical",
+    "text": "kas gücü",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "muscle tears",
     "category": "medical",
     "text": "kas yırtıkları",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "muscle tone",
+    "category": "medical",
+    "text": "kas tonusu",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "muscle wasting",
+    "category": "medical",
+    "text": "kas erimesi",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "muscle weakness",
@@ -4640,9 +5481,10 @@
   {
     "en": "myalgia",
     "category": "medical",
-    "text": "kas ağrısı (miyalji)",
+    "text": "kas ağrısı",
     "policy": "translate",
     "variants": [],
+    "gloss": "miyalji",
     "confidence": "high"
   },
   {
@@ -4781,6 +5623,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "nerve compression",
+    "category": "medical",
+    "text": "sinir sıkışması",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "nerve damage",
     "category": "medical",
     "text": "sinir hasarı",
@@ -4788,6 +5639,17 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "nerve signals",
+    "category": "medical",
+    "text": "sinir sinyalleri",
+    "policy": "translate",
+    "variants": [
+      "nerve signal"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "neural tube defects",
@@ -4833,6 +5695,32 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "neurological deficit",
+    "category": "medical",
+    "text": "nörolojik kayıp",
+    "policy": "translate",
+    "variants": [
+      "neurological deficits"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "neurological disorder",
+    "category": "medical",
+    "text": "nörolojik hastalık",
+    "policy": "translate",
+    "variants": [
+      "neurological disorders",
+      "neurological condition",
+      "neurological conditions",
+      "neurological disease",
+      "neurological diseases"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "neuromuscular fibrosis",
@@ -4972,9 +5860,10 @@
   {
     "en": "obsessions",
     "category": "medical",
-    "text": "obsesyonlar (takıntılar)",
+    "text": "obsesyonlar",
     "policy": "translate",
     "variants": [],
+    "gloss": "takıntılar",
     "confidence": "high"
   },
   {
@@ -5042,6 +5931,27 @@
     "confidence": "high"
   },
   {
+    "en": "older adults",
+    "category": "medical",
+    "text": "yaşlı yetişkinler",
+    "policy": "translate",
+    "variants": [
+      "elderly",
+      "older people"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "onset",
+    "category": "medical",
+    "text": "başlangıç",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "oral cancer",
     "category": "medical",
     "text": "ağız kanseri",
@@ -5052,9 +5962,10 @@
   {
     "en": "orofacial pain",
     "category": "medical",
-    "text": "ağız-yüz ağrısı (orofasiyal ağrı)",
+    "text": "ağız-yüz ağrısı",
     "policy": "translate",
     "variants": [],
+    "gloss": "orofasiyal ağrı",
     "confidence": "high"
   },
   {
@@ -5078,9 +5989,10 @@
   {
     "en": "osteoarthritis",
     "category": "medical",
-    "text": "osteoartrit (kireçlenme)",
+    "text": "osteoartrit",
     "policy": "translate",
     "variants": [],
+    "gloss": "kireçlenme",
     "confidence": "high",
     "verified": "backtrans",
     "note": "tr lay \"kireçlenme\""
@@ -5098,17 +6010,19 @@
   {
     "en": "osteomalacia",
     "category": "medical",
-    "text": "osteomalazi (kemik yumuşaması)",
+    "text": "osteomalazi",
     "policy": "translate",
     "variants": [],
+    "gloss": "kemik yumuşaması",
     "confidence": "high"
   },
   {
     "en": "osteomyelitis",
     "category": "medical",
-    "text": "osteomiyelit (kemik iltihabı)",
+    "text": "osteomiyelit",
     "policy": "translate",
     "variants": [],
+    "gloss": "kemik iltihabı",
     "confidence": "high"
   },
   {
@@ -5145,9 +6059,10 @@
   {
     "en": "osteoporosis",
     "category": "medical",
-    "text": "kemik erimesi (osteoporoz)",
+    "text": "kemik erimesi",
     "policy": "translate",
     "variants": [],
+    "gloss": "osteoporoz",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -5186,6 +6101,26 @@
     "verified": "backtrans"
   },
   {
+    "en": "overuse",
+    "category": "medical",
+    "text": "aşırı kullanım",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "overuse injury",
+    "category": "medical",
+    "text": "aşırı kullanım yaralanması",
+    "policy": "translate",
+    "variants": [
+      "overuse injuries"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "PAD",
     "category": "medical",
     "text": "PAH",
@@ -5202,6 +6137,37 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "pain relief",
+    "category": "medical",
+    "text": "ağrının hafiflemesi",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "pain signals",
+    "category": "medical",
+    "text": "ağrı sinyalleri",
+    "policy": "translate",
+    "variants": [
+      "pain signal"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "pain-free",
+    "category": "medical",
+    "text": "ağrısız",
+    "policy": "translate",
+    "variants": [
+      "pain free"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "palliative care",
@@ -5314,6 +6280,17 @@
     "verified": "backtrans"
   },
   {
+    "en": "participation restrictions",
+    "category": "medical",
+    "text": "katılım kısıtlılıkları",
+    "policy": "translate",
+    "variants": [
+      "participation restriction"
+    ],
+    "confidence": "medium",
+    "note": "barriers the patient faces, not restrictions imposed by the therapist. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "patellofemoral pain syndrome",
     "category": "medical",
     "text": "patellofemoral ağrı sendromu",
@@ -5378,9 +6355,10 @@
   {
     "en": "pelvic pain",
     "category": "medical",
-    "text": "pelvik ağrı (kasık ağrısı)",
+    "text": "pelvik ağrı",
     "policy": "translate",
     "variants": [],
+    "gloss": "kasık ağrısı",
     "confidence": "high"
   },
   {
@@ -5491,11 +6469,21 @@
     "verified": "backtrans"
   },
   {
-    "en": "petit mal",
+    "en": "persistent pain",
     "category": "medical",
-    "text": "Petit mal (absans nöbeti)",
+    "text": "devam eden ağrı",
     "policy": "translate",
     "variants": [],
+    "confidence": "high",
+    "note": "tr: not kalıcı (= permanent). Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "petit mal",
+    "category": "medical",
+    "text": "Petit mal",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "absans nöbeti",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -5516,6 +6504,15 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "physical activity",
+    "category": "medical",
+    "text": "fiziksel aktivite",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "piriformis syndrome",
@@ -5557,9 +6554,10 @@
   {
     "en": "plagiocephaly",
     "category": "medical",
-    "text": "plajiyosefali (yassı kafa)",
+    "text": "plajiyosefali",
     "policy": "translate",
     "variants": [],
+    "gloss": "yassı kafa",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -5591,28 +6589,31 @@
   {
     "en": "pneumonia",
     "category": "medical",
-    "text": "zatürre (pnömoni)",
+    "text": "zatürre",
     "policy": "translate",
     "variants": [],
+    "gloss": "pnömoni",
     "confidence": "high"
   },
   {
     "en": "podagra",
     "category": "medical",
-    "text": "podagra (ayak başparmağı gutu)",
+    "text": "podagra",
     "policy": "translate",
     "variants": [],
+    "gloss": "ayak başparmağı gutu",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "poliomyelitis",
     "category": "medical",
-    "text": "çocuk felci (poliomiyelit)",
+    "text": "çocuk felci",
     "policy": "translate",
     "variants": [
       "polio"
     ],
+    "gloss": "poliomiyelit",
     "variant_rules": [
       {
         "variant": "polio",
@@ -5765,20 +6766,33 @@
   {
     "en": "postural instability",
     "category": "medical",
-    "text": "postüral instabilite (denge bozukluğu)",
+    "text": "postüral instabilite",
     "policy": "translate",
     "variants": [],
+    "gloss": "denge bozukluğu",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "postural kyphosis",
     "category": "medical",
-    "text": "postüral kifoz (duruş bozukluğuna bağlı kamburluk)",
+    "text": "postüral kifoz",
     "policy": "translate",
     "variants": [],
+    "gloss": "duruş bozukluğuna bağlı kamburluk",
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "posture",
+    "category": "medical",
+    "text": "duruş",
+    "policy": "translate",
+    "variants": [
+      "postures"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "pressure ulcers",
@@ -5825,6 +6839,25 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "prognosis",
+    "category": "medical",
+    "text": "prognoz",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "hastalığın seyri",
+    "confidence": "medium",
+    "note": "expected outcome/course. Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "progressive",
+    "category": "medical",
+    "text": "ilerleyici",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "gets worse over time; not پێشکەوتوو (advanced). Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "prolactinoma",
@@ -5918,11 +6951,30 @@
   {
     "en": "quadriplegia",
     "category": "medical",
-    "text": "kuadripleji (dört uzuv felci)",
+    "text": "kuadripleji",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "dört uzuv felci",
+    "confidence": "high",
+    "note": "same ckb as tetraplegia"
+  },
+  {
+    "en": "quality of life",
+    "category": "medical",
+    "text": "yaşam kalitesi",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "note": "same ckb as tetraplegia"
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "radiating pain",
+    "category": "medical",
+    "text": "yayılan ağrı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "radicular pain",
@@ -5941,6 +6993,15 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "range of motion",
+    "category": "medical",
+    "text": "hareket açıklığı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "Rathke's cleft cyst",
@@ -5987,6 +7048,56 @@
     "verified": "backtrans"
   },
   {
+    "en": "recovery",
+    "category": "medical",
+    "text": "iyileşme süreci",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "recovery time",
+    "category": "medical",
+    "text": "iyileşme süresi",
+    "policy": "translate",
+    "variants": [
+      "recovery period"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "recurrence",
+    "category": "medical",
+    "text": "tekrarlama",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "red flags",
+    "category": "medical",
+    "text": "alarm bulguları",
+    "policy": "translate",
+    "variants": [
+      "red flag",
+      "red-flag"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "redness",
+    "category": "medical",
+    "text": "kızarıklık",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "referred pain",
     "category": "medical",
     "text": "yansıyan ağrı",
@@ -5996,6 +7107,37 @@
     "verified": "backtrans"
   },
   {
+    "en": "reflexes",
+    "category": "medical",
+    "text": "refleksler",
+    "policy": "translate",
+    "variants": [
+      "reflex"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "refractory",
+    "category": "medical",
+    "text": "tedaviye dirençli",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "relapse",
+    "category": "medical",
+    "text": "nüks",
+    "policy": "translate",
+    "variants": [
+      "relapses"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "REM sleep behaviour disorder",
     "category": "medical",
     "text": "REM uykusu davranış bozukluğu",
@@ -6003,6 +7145,15 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "remission",
+    "category": "medical",
+    "text": "remisyon",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "renal failure",
@@ -6029,6 +7180,15 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "residual weakness",
+    "category": "medical",
+    "text": "geride kalan güçsüzlük",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "weakness left after recovery; tr not kalıcı (permanent). Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "respiratory failure",
@@ -6099,6 +7259,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "return to work",
+    "category": "medical",
+    "text": "işe dönüş",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "rheumatoid arthritis",
     "category": "medical",
     "text": "romatoid artrit",
@@ -6110,9 +7279,10 @@
   {
     "en": "rheumatoid factor",
     "category": "medical",
-    "text": "romatoid faktör (RF)",
+    "text": "romatoid faktör",
     "policy": "translate",
     "variants": [],
+    "gloss": "RF",
     "confidence": "high"
   },
   {
@@ -6135,10 +7305,28 @@
   {
     "en": "rigidity",
     "category": "medical",
-    "text": "rijidite (kas sertliği)",
+    "text": "rijidite",
     "policy": "translate",
     "variants": [],
+    "gloss": "kas sertliği",
     "confidence": "high"
+  },
+  {
+    "en": "risk factors",
+    "category": "medical",
+    "text": "risk faktörleri",
+    "policy": "translate",
+    "variants": [
+      "risk factor"
+    ],
+    "variant_rules": [
+      {
+        "variant": "risk factor",
+        "text": "risk faktörü"
+      }
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "Rocky Mountain spotted fever",
@@ -6174,6 +7362,15 @@
     ],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "rupture",
+    "category": "medical",
+    "text": "yırtılma",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "rupture of tendons",
@@ -6223,12 +7420,26 @@
   {
     "en": "saddle anaesthesia",
     "category": "medical",
-    "text": "eyer anestezisi (oturma bölgesinde his kaybı)",
+    "text": "eyer anestezisi",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "oturma bölgesinde his kaybı",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "red-flag symptom; keep lay"
+  },
+  {
+    "en": "saddle-area numbness",
+    "category": "medical",
+    "text": "eyer bölgesinde uyuşma",
+    "policy": "translate",
+    "variants": [
+      "saddle area numbness",
+      "numbness in the saddle area",
+      "saddle numbness"
+    ],
+    "confidence": "high",
+    "note": "cauda equina red flag; same meaning as saddle anaesthesia. Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "sagittal synostosis",
@@ -6267,11 +7478,21 @@
     "verified": "backtrans"
   },
   {
-    "en": "scar tissue",
+    "en": "scar",
     "category": "medical",
-    "text": "skar dokusu (yara dokusu)",
+    "text": "yara izi",
     "policy": "translate",
     "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "scar tissue",
+    "category": "medical",
+    "text": "skar dokusu",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "yara dokusu",
     "confidence": "high"
   },
   {
@@ -6394,7 +7615,18 @@
     ],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "فێ = seizure/epilepsy in Sorani"
+    "note": "a seizure = one attack (هێرشی فێ); epilepsy = the disease (فێ)."
+  },
+  {
+    "en": "self-care",
+    "category": "medical",
+    "text": "öz bakım",
+    "policy": "translate",
+    "variants": [
+      "self care"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "sellar lesion",
@@ -6404,6 +7636,26 @@
     "variants": [],
     "confidence": "medium",
     "verified": "backtrans"
+  },
+  {
+    "en": "sensation",
+    "category": "medical",
+    "text": "his",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "sensory loss",
+    "category": "medical",
+    "text": "his kaybı",
+    "policy": "translate",
+    "variants": [
+      "loss of sensation"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "sepsis",
@@ -6432,6 +7684,42 @@
     "verified": "backtrans"
   },
   {
+    "en": "severe",
+    "category": "medical",
+    "text": "şiddetli",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "severity; do not use توند (reserved, reads as acute/violent). Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "severe pain",
+    "category": "medical",
+    "text": "şiddetli ağrı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "sexual dysfunction",
+    "category": "medical",
+    "text": "cinsel işlev bozukluğu",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "sharp pain",
+    "category": "medical",
+    "text": "keskin ağrı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "shift work disorder",
     "category": "medical",
     "text": "vardiyalı çalışma uyku bozukluğu",
@@ -6443,9 +7731,10 @@
   {
     "en": "shin splints",
     "category": "medical",
-    "text": "kaval kemiği ağrısı (shin splints)",
+    "text": "kaval kemiği ağrısı",
     "policy": "translate",
     "variants": [],
+    "gloss": "shin splints",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -6458,6 +7747,17 @@
     "confidence": "medium",
     "verified": "backtrans",
     "note": "unsure of established Sorani lay term; verify"
+  },
+  {
+    "en": "short-term",
+    "category": "medical",
+    "text": "kısa vadeli",
+    "policy": "translate",
+    "variants": [
+      "short term"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "shortness of breath",
@@ -6512,6 +7812,24 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "side effects",
+    "category": "medical",
+    "text": "yan etkiler",
+    "policy": "translate",
+    "variants": [
+      "side effect",
+      "side-effects"
+    ],
+    "variant_rules": [
+      {
+        "variant": "side effect",
+        "text": "yan etki"
+      }
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "Sjögren's",
@@ -6571,9 +7889,10 @@
   {
     "en": "sleep terrors",
     "category": "medical",
-    "text": "uyku terörü (gece terörü)",
+    "text": "uyku terörü",
     "policy": "translate",
     "variants": [],
+    "gloss": "gece terörü",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -6728,9 +8047,10 @@
   {
     "en": "spinal deformity",
     "category": "medical",
-    "text": "omurga deformitesi (omurga eğriliği)",
+    "text": "omurga deformitesi",
     "policy": "translate",
     "variants": [],
+    "gloss": "omurga eğriliği",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -6782,11 +8102,12 @@
   {
     "en": "spinal stenosis",
     "category": "medical",
-    "text": "spinal stenoz (omurga kanal darlığı)",
+    "text": "spinal stenoz",
     "policy": "translate",
     "variants": [
       "spinal canal stenosis"
     ],
+    "gloss": "omurga kanal darlığı",
     "variant_rules": [
       {
         "variant": "spinal canal stenosis",
@@ -6862,9 +8183,10 @@
   {
     "en": "spondylolisthesis",
     "category": "medical",
-    "text": "spondilolistezis (bel kayması)",
+    "text": "spondilolistezis",
     "policy": "translate",
     "variants": [],
+    "gloss": "bel kayması",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -6929,11 +8251,21 @@
     "verified": "backtrans"
   },
   {
-    "en": "stingers",
+    "en": "stiffness",
     "category": "medical",
-    "text": "stinger (brakiyal pleksus gerilme yaralanması)",
+    "text": "sertlik",
     "policy": "translate",
     "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "stingers",
+    "category": "medical",
+    "text": "stinger",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "brakiyal pleksus gerilme yaralanması",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "sports nerve-stretch injury"
@@ -6975,9 +8307,10 @@
   {
     "en": "stroke",
     "category": "medical",
-    "text": "inme (felç)",
+    "text": "inme",
     "policy": "translate",
     "variants": [],
+    "gloss": "felç",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -7030,6 +8363,26 @@
     "note": "dura = پەردەی سەخت throughout"
   },
   {
+    "en": "success rate",
+    "category": "medical",
+    "text": "başarı oranı",
+    "policy": "translate",
+    "variants": [
+      "success rates"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "sudden onset",
+    "category": "medical",
+    "text": "ani başlangıç",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "SUDEP",
     "category": "medical",
     "text": "SUDEP",
@@ -7046,12 +8399,30 @@
     "confidence": "high"
   },
   {
+    "en": "swallowing",
+    "category": "medical",
+    "text": "yutma",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "swallowing disorders",
     "category": "medical",
     "text": "yutma bozuklukları",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "swelling",
+    "category": "medical",
+    "text": "şişlik",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "swimmer's shoulder",
@@ -7070,6 +8441,23 @@
     "variants": [],
     "confidence": "medium",
     "verified": "backtrans"
+  },
+  {
+    "en": "symptoms",
+    "category": "medical",
+    "text": "belirtiler",
+    "policy": "translate",
+    "variants": [
+      "symptom"
+    ],
+    "variant_rules": [
+      {
+        "variant": "symptom",
+        "text": "belirti"
+      }
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "syndromic craniosynostosis",
@@ -7101,9 +8489,10 @@
   {
     "en": "syphilis",
     "category": "medical",
-    "text": "frengi (sifiliz)",
+    "text": "frengi",
     "policy": "translate",
     "variants": [],
+    "gloss": "sifiliz",
     "confidence": "high"
   },
   {
@@ -7151,6 +8540,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "taste",
+    "category": "medical",
+    "text": "tat alma",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "tau tangles",
     "category": "medical",
     "text": "tau yumakları",
@@ -7178,11 +8576,21 @@
     "verified": "backtrans"
   },
   {
-    "en": "tendinitis",
+    "en": "tenderness",
     "category": "medical",
-    "text": "tendinit (tendon iltihabı)",
+    "text": "hassasiyet",
     "policy": "translate",
     "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "tendinitis",
+    "category": "medical",
+    "text": "tendinit",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "tendon iltihabı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -7302,11 +8710,23 @@
     "verified": "backtrans"
   },
   {
+    "en": "throbbing pain",
+    "category": "medical",
+    "text": "zonklayıcı ağrı",
+    "policy": "translate",
+    "variants": [
+      "throbbing"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "thromboangiitis obliterans",
     "category": "medical",
-    "text": "tromboanjitis obliterans (Buerger hastalığı)",
+    "text": "tromboanjitis obliterans",
     "policy": "translate",
     "variants": [],
+    "gloss": "Buerger hastalığı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -7331,9 +8751,10 @@
   {
     "en": "thrombus",
     "category": "medical",
-    "text": "trombüs (pıhtı)",
+    "text": "trombüs",
     "policy": "translate",
     "variants": [],
+    "gloss": "pıhtı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -7374,12 +8795,13 @@
   {
     "en": "TIA",
     "category": "medical",
-    "text": "GİA (geçici iskemik atak)",
+    "text": "GİA",
     "policy": "translate",
     "variants": [
       "transient ischaemic attack",
       "transient ischemic attack"
     ],
+    "gloss": "geçici iskemik atak",
     "variant_rules": [
       {
         "variant": "transient ischaemic attack",
@@ -7414,7 +8836,8 @@
     "variant_rules": [
       {
         "variant": "pins-and-needles",
-        "text": "karıncalanma (iğne batması hissi)"
+        "text": "karıncalanma",
+        "gloss": "iğne batması hissi"
       }
     ],
     "confidence": "high",
@@ -7432,11 +8855,12 @@
   {
     "en": "TMJ disorders",
     "category": "medical",
-    "text": "TME bozuklukları (çene eklemi bozuklukları)",
+    "text": "TME bozuklukları",
     "policy": "translate",
     "variants": [
       "temporomandibular disorders"
     ],
+    "gloss": "çene eklemi bozuklukları",
     "variant_rules": [
       {
         "variant": "temporomandibular disorders",
@@ -7516,6 +8940,15 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "trauma",
+    "category": "medical",
+    "text": "travma",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "physical injury from force (fall, accident); not psychological trauma. Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "traumatic brain injury",
@@ -7607,9 +9040,10 @@
   {
     "en": "tuberculosis",
     "category": "medical",
-    "text": "verem (tüberküloz)",
+    "text": "verem",
     "policy": "translate",
     "variants": [],
+    "gloss": "tüberküloz",
     "confidence": "high"
   },
   {
@@ -7628,6 +9062,17 @@
     "variants": [],
     "confidence": "medium",
     "verified": "backtrans"
+  },
+  {
+    "en": "ulcer",
+    "category": "medical",
+    "text": "ülser",
+    "policy": "translate",
+    "variants": [
+      "ulcers"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "ulcerative colitis",
@@ -7657,6 +9102,37 @@
     "verified": "backtrans"
   },
   {
+    "en": "underlying cause",
+    "category": "medical",
+    "text": "altta yatan neden",
+    "policy": "translate",
+    "variants": [
+      "underlying causes"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "underlying condition",
+    "category": "medical",
+    "text": "altta yatan hastalık",
+    "policy": "translate",
+    "variants": [
+      "underlying conditions"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "unilateral",
+    "category": "medical",
+    "text": "tek taraflı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "urge incontinence",
     "category": "medical",
     "text": "sıkışma tipi idrar kaçırma",
@@ -7664,6 +9140,15 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "urgent",
+    "category": "medical",
+    "text": "acil",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "uric acid",
@@ -7684,9 +9169,10 @@
   {
     "en": "urinary retention",
     "category": "medical",
-    "text": "idrar retansiyonu (idrar yapamama)",
+    "text": "idrar retansiyonu",
     "policy": "translate",
     "variants": [],
+    "gloss": "idrar yapamama",
     "confidence": "high"
   },
   {
@@ -7868,9 +9354,10 @@
   {
     "en": "vertigo",
     "category": "medical",
-    "text": "baş dönmesi (vertigo)",
+    "text": "baş dönmesi",
     "policy": "translate",
     "variants": [],
+    "gloss": "vertigo",
     "confidence": "high"
   },
   {
@@ -7894,9 +9381,10 @@
   {
     "en": "vestibular schwannoma",
     "category": "medical",
-    "text": "vestibüler schwannom (akustik nörinom)",
+    "text": "vestibüler schwannom",
     "policy": "translate",
     "variants": [],
+    "gloss": "akustik nörinom",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -7908,6 +9396,15 @@
     "variants": [],
     "confidence": "medium",
     "verified": "backtrans"
+  },
+  {
+    "en": "vision",
+    "category": "medical",
+    "text": "görme",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "visual loss",
@@ -7936,9 +9433,10 @@
   {
     "en": "vocal tics",
     "category": "medical",
-    "text": "vokal tikler (ses tikleri)",
+    "text": "vokal tikler",
     "policy": "translate",
     "variants": [],
+    "gloss": "ses tikleri",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -7952,11 +9450,50 @@
     "verified": "backtrans"
   },
   {
-    "en": "whiplash",
+    "en": "weakness",
     "category": "medical",
-    "text": "whiplash yaralanması (ani boyun incinmesi)",
+    "text": "güçsüzlük",
     "policy": "translate",
     "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "wear and tear",
+    "category": "medical",
+    "text": "aşınma ve yıpranma",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "weight loss",
+    "category": "medical",
+    "text": "kilo kaybı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "weight-bearing",
+    "category": "medical",
+    "text": "yük verme",
+    "policy": "translate",
+    "variants": [
+      "weight bearing"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "whiplash",
+    "category": "medical",
+    "text": "whiplash yaralanması",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "ani boyun incinmesi",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -7968,6 +9505,24 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "worsening",
+    "category": "medical",
+    "text": "kötüleşme",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "wound",
+    "category": "medical",
+    "text": "yara",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "wrist fractures",
@@ -8031,9 +9586,10 @@
   {
     "en": "ACL reconstruction",
     "category": "procedure",
-    "text": "ön çapraz bağ (ÖÇB) rekonstrüksiyonu",
+    "text": "ön çapraz bağ rekonstrüksiyonu",
     "policy": "translate",
     "variants": [],
+    "gloss": "ÖÇB",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -8058,9 +9614,10 @@
   {
     "en": "adaptive servo-ventilation",
     "category": "procedure",
-    "text": "adaptif servo-ventilasyon (ASV)",
+    "text": "adaptif servo-ventilasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "ASV",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -8162,9 +9719,10 @@
   {
     "en": "ankle-foot orthosis",
     "category": "procedure",
-    "text": "ayak bileği-ayak ortezi (AFO)",
+    "text": "ayak bileği-ayak ortezi",
     "policy": "translate",
     "variants": [],
+    "gloss": "AFO",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -8229,9 +9787,10 @@
   {
     "en": "arthroplasty",
     "category": "procedure",
-    "text": "artroplasti (eklem protezi)",
+    "text": "artroplasti",
     "policy": "translate",
     "variants": [],
+    "gloss": "eklem protezi",
     "confidence": "high"
   },
   {
@@ -8296,11 +9855,23 @@
     "verified": "backtrans"
   },
   {
+    "en": "assessment",
+    "category": "procedure",
+    "text": "değerlendirme",
+    "policy": "translate",
+    "variants": [
+      "evaluation"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "audiometry",
     "category": "procedure",
-    "text": "odyometri (işitme testi)",
+    "text": "odyometri",
     "policy": "translate",
     "variants": [],
+    "gloss": "işitme testi",
     "confidence": "high"
   },
   {
@@ -8358,6 +9929,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "biopsy",
+    "category": "procedure",
+    "text": "biyopsi",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "bioresonance",
     "category": "procedure",
     "text": "biyorezonans",
@@ -8384,6 +9964,17 @@
     "variants": [],
     "confidence": "low",
     "verified": "backtrans"
+  },
+  {
+    "en": "blood test",
+    "category": "procedure",
+    "text": "kan testi",
+    "policy": "translate",
+    "variants": [
+      "blood tests"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "blood transfusion",
@@ -8482,11 +10073,12 @@
   {
     "en": "burr holes",
     "category": "procedure",
-    "text": "burr deliği (kafatası delikleri)",
+    "text": "burr deliği",
     "policy": "translate",
     "variants": [
       "burr hole"
     ],
+    "gloss": "kafatası delikleri",
     "variant_rules": [
       {
         "variant": "burr hole",
@@ -8561,9 +10153,10 @@
   {
     "en": "carotid ultrasound",
     "category": "procedure",
-    "text": "karotis ultrasonu (karotis Doppler)",
+    "text": "karotis ultrasonu",
     "policy": "translate",
     "variants": [],
+    "gloss": "karotis Doppler",
     "confidence": "high"
   },
   {
@@ -8605,9 +10198,10 @@
   {
     "en": "CBT-I",
     "category": "procedure",
-    "text": "uykusuzluk için bilişsel davranışçı terapi (BDT-İ)",
+    "text": "uykusuzluk için bilişsel davranışçı terapi",
     "policy": "translate",
     "variants": [],
+    "gloss": "BDT-İ",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "tr acronym not fully standard; reviewer check"
@@ -8632,9 +10226,10 @@
   {
     "en": "cervical discectomy",
     "category": "procedure",
-    "text": "servikal diskektomi (boyun fıtığı ameliyatı)",
+    "text": "servikal diskektomi",
     "policy": "translate",
     "variants": [],
+    "gloss": "boyun fıtığı ameliyatı",
     "confidence": "high"
   },
   {
@@ -8649,9 +10244,10 @@
   {
     "en": "cervical traction",
     "category": "procedure",
-    "text": "servikal traksiyon (boyun çekme)",
+    "text": "servikal traksiyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "boyun çekme",
     "confidence": "high"
   },
   {
@@ -8741,6 +10337,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "clinical examination",
+    "category": "procedure",
+    "text": "klinik muayene",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "cognitive behavioural therapy",
     "category": "procedure",
     "text": "bilişsel davranışçı terapi",
@@ -8768,6 +10373,33 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "cold therapy",
+    "category": "procedure",
+    "text": "soğuk uygulama",
+    "policy": "translate",
+    "variants": [
+      "cold packs",
+      "ice packs"
+    ],
+    "gloss": "soğuk terapi",
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "conservative care",
+    "category": "procedure",
+    "text": "konservatif tedavi",
+    "policy": "translate",
+    "variants": [
+      "conservative treatment",
+      "conservative management",
+      "conservative measures",
+      "conservative therapy"
+    ],
+    "confidence": "medium",
+    "note": "rest, physiotherapy and medication before any procedure. Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "constraint-induced movement therapy",
@@ -8875,6 +10507,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "crutches",
+    "category": "procedure",
+    "text": "koltuk değneği",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "CSF drainage trial",
     "category": "procedure",
     "text": "BOS drenaj testi",
@@ -8913,12 +10554,13 @@
   {
     "en": "CT scan",
     "category": "procedure",
-    "text": "BT (bilgisayarlı tomografi)",
+    "text": "BT",
     "policy": "translate",
     "variants": [
       "CAT scan",
       "CT"
     ],
+    "gloss": "bilgisayarlı tomografi",
     "variant_rules": [
       {
         "variant": "CAT scan",
@@ -8936,9 +10578,10 @@
   {
     "en": "custom orthoses",
     "category": "procedure",
-    "text": "kişiye özel ortez (tabanlık)",
+    "text": "kişiye özel ortez",
     "policy": "translate",
     "variants": [],
+    "gloss": "tabanlık",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -9042,9 +10685,10 @@
   {
     "en": "DEXA",
     "category": "procedure",
-    "text": "DEXA (kemik yoğunluğu ölçümü)",
+    "text": "DEXA",
     "policy": "translate",
     "variants": [],
+    "gloss": "kemik yoğunluğu ölçümü",
     "confidence": "high"
   },
   {
@@ -9076,9 +10720,10 @@
   {
     "en": "discectomy",
     "category": "procedure",
-    "text": "diskektomi (fıtık ameliyatı)",
+    "text": "diskektomi",
     "policy": "translate",
     "variants": [],
+    "gloss": "fıtık ameliyatı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -9190,11 +10835,12 @@
   {
     "en": "Electroconvulsive Therapy",
     "category": "procedure",
-    "text": "Elektrokonvülsif tedavi (EKT)",
+    "text": "Elektrokonvülsif tedavi",
     "policy": "translate",
     "variants": [
       "electroshock therapy"
     ],
+    "gloss": "EKT",
     "variant_rules": [
       {
         "variant": "electroshock therapy",
@@ -9205,14 +10851,26 @@
     "verified": "backtrans"
   },
   {
+    "en": "electrode",
+    "category": "procedure",
+    "text": "elektrot",
+    "policy": "translate",
+    "variants": [
+      "electrodes"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "electromyography",
     "category": "procedure",
-    "text": "elektromiyografi (EMG)",
+    "text": "elektromiyografi",
     "policy": "translate",
     "variants": [
       "EMG",
       "electromyographic"
     ],
+    "gloss": "EMG",
     "variant_rules": [
       {
         "variant": "EMG",
@@ -9423,9 +11081,10 @@
   {
     "en": "ESR",
     "category": "procedure",
-    "text": "Sedimantasyon (ESR)",
+    "text": "Sedimantasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "ESR",
     "confidence": "high",
     "note": "lab test, not shockwave"
   },
@@ -9438,13 +11097,34 @@
     "confidence": "high"
   },
   {
-    "en": "exchange transfusion",
+    "en": "examination",
     "category": "procedure",
-    "text": "kan değişimi (exchange transfüzyon)",
+    "text": "muayene",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "exchange transfusion",
+    "category": "procedure",
+    "text": "kan değişimi",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "exchange transfüzyon",
+    "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "exercise programme",
+    "category": "procedure",
+    "text": "egzersiz programı",
+    "policy": "translate",
+    "variants": [
+      "exercise program"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "exercise therapy",
@@ -9457,9 +11137,10 @@
   {
     "en": "exoskeleton",
     "category": "procedure",
-    "text": "dış iskelet (ekzoskeleton)",
+    "text": "dış iskelet",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "ekzoskeleton",
     "confidence": "high",
     "verified": "backtrans",
     "note": "robotic rehab device type"
@@ -9477,9 +11158,10 @@
   {
     "en": "external ventricular drain",
     "category": "procedure",
-    "text": "eksternal ventriküler drenaj (EVD)",
+    "text": "eksternal ventriküler drenaj",
     "policy": "translate",
     "variants": [],
+    "gloss": "EVD",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -9496,9 +11178,10 @@
   {
     "en": "extreme lateral interbody fusion",
     "category": "procedure",
-    "text": "ekstrem lateral interbody füzyon (XLIF)",
+    "text": "ekstrem lateral interbody füzyon",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "XLIF",
     "confidence": "high",
     "verified": "backtrans",
     "note": "keep acronym XLIF"
@@ -9563,9 +11246,10 @@
   {
     "en": "FES",
     "category": "procedure",
-    "text": "FES (fonksiyonel elektriksel stimülasyon)",
+    "text": "FES",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "fonksiyonel elektriksel stimülasyon",
     "confidence": "high",
     "verified": "backtrans",
     "note": "acronym kept Latin in both"
@@ -9579,6 +11263,19 @@
     "confidence": "high",
     "verified": "backtrans",
     "note": "tethered cord surgery"
+  },
+  {
+    "en": "first-line treatment",
+    "category": "procedure",
+    "text": "ilk basamak tedavi",
+    "policy": "translate",
+    "variants": [
+      "first-line",
+      "first line",
+      "first-line therapy"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "fluoroscopy",
@@ -9797,9 +11494,10 @@
   {
     "en": "geriatric rehabilitation",
     "category": "procedure",
-    "text": "geriatrik rehabilitasyon (yaşlı rehabilitasyonu)",
+    "text": "geriatrik rehabilitasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "yaşlı rehabilitasyonu",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -9854,9 +11552,10 @@
   {
     "en": "heat therapy",
     "category": "procedure",
-    "text": "sıcak uygulama (ısı tedavisi)",
+    "text": "sıcak uygulama",
     "policy": "translate",
     "variants": [],
+    "gloss": "ısı tedavisi",
     "confidence": "high"
   },
   {
@@ -9884,6 +11583,18 @@
     "policy": "adapt-spelling",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "home exercises",
+    "category": "procedure",
+    "text": "ev egzersizleri",
+    "policy": "translate",
+    "variants": [
+      "home exercise",
+      "home exercise programme"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "home rehabilitation",
@@ -9924,38 +11635,84 @@
   {
     "en": "ICP monitoring",
     "category": "procedure",
-    "text": "kafa içi basınç (KİB) monitörizasyonu",
+    "text": "kafa içi basınç monitörizasyonu",
     "policy": "translate",
     "variants": [],
+    "gloss": "KİB",
     "confidence": "medium",
     "verified": "backtrans"
   },
   {
     "en": "IFT",
     "category": "procedure",
-    "text": "IFT (interferansiyel akım tedavisi)",
+    "text": "IFT",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "interferansiyel akım tedavisi",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "acronym kept"
+  },
+  {
+    "en": "image guidance",
+    "category": "procedure",
+    "text": "görüntüleme eşliğinde",
+    "policy": "translate",
+    "variants": [
+      "imaging guidance",
+      "image-guided",
+      "X-ray guidance"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "imaging",
+    "category": "procedure",
+    "text": "görüntüleme",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "implant",
+    "category": "procedure",
+    "text": "implant",
+    "policy": "translate",
+    "variants": [
+      "implants"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "IMRT",
     "category": "procedure",
-    "text": "IMRT (yoğunluk ayarlı radyoterapi)",
+    "text": "IMRT",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "yoğunluk ayarlı radyoterapi",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "acronym kept"
   },
   {
-    "en": "incontinence training",
+    "en": "incision",
     "category": "procedure",
-    "text": "kontinans (idrar tutma) eğitimi",
+    "text": "kesi",
     "policy": "translate",
     "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "incontinence training",
+    "category": "procedure",
+    "text": "kontinans eğitimi",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "idrar tutma",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -9967,6 +11724,17 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "injection",
+    "category": "procedure",
+    "text": "enjeksiyon",
+    "policy": "translate",
+    "variants": [
+      "injections"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "injection therapies",
@@ -10061,6 +11829,17 @@
     "verified": "backtrans"
   },
   {
+    "en": "intra-articular",
+    "category": "procedure",
+    "text": "eklem içi",
+    "policy": "translate",
+    "variants": [
+      "intra articular"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "intra-articular injection",
     "category": "procedure",
     "text": "eklem içi enjeksiyon",
@@ -10119,9 +11898,10 @@
   {
     "en": "joint fusion",
     "category": "procedure",
-    "text": "eklem füzyonu (artrodez)",
+    "text": "eklem füzyonu",
     "policy": "translate",
     "variants": [],
+    "gloss": "artrodez",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -10305,9 +12085,10 @@
   {
     "en": "LINAC",
     "category": "procedure",
-    "text": "LINAC (lineer hızlandırıcı)",
+    "text": "LINAC",
     "policy": "translate",
     "variants": [],
+    "gloss": "lineer hızlandırıcı",
     "confidence": "high",
     "verified": "backtrans",
     "note": "acronym kept Latin"
@@ -10334,9 +12115,10 @@
   {
     "en": "liposuction",
     "category": "procedure",
-    "text": "liposuction (yağ aldırma)",
+    "text": "liposuction",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "yağ aldırma",
     "confidence": "high"
   },
   {
@@ -10388,9 +12170,10 @@
   {
     "en": "lumbar tap",
     "category": "procedure",
-    "text": "lomber ponksiyon (belden sıvı alma)",
+    "text": "lomber ponksiyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "belden sıvı alma",
     "confidence": "high",
     "verified": "backtrans",
     "note": "same as spinal tap"
@@ -10614,11 +12397,23 @@
     "note": "skull-base approach"
   },
   {
+    "en": "minimally invasive",
+    "category": "procedure",
+    "text": "minimal invaziv",
+    "policy": "translate",
+    "variants": [
+      "minimally-invasive"
+    ],
+    "confidence": "medium",
+    "note": "small incision or needle only. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "MRI",
     "category": "procedure",
-    "text": "MR (manyetik rezonans)",
+    "text": "MR",
     "policy": "translate",
     "variants": [],
+    "gloss": "manyetik rezonans",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Turkish patients say \"MR\" (MRG in formal texts); Kurdish patients use MRI/ئێم ئاڕ ئای"
@@ -10753,6 +12548,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "neurological examination",
+    "category": "procedure",
+    "text": "nörolojik muayene",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "neurological rehabilitation",
     "category": "procedure",
     "text": "nörolojik rehabilitasyon",
@@ -10828,6 +12632,17 @@
     "note": "Turkish specialty name \"Beyin ve Sinir Cerrahisi\""
   },
   {
+    "en": "non-invasive",
+    "category": "procedure",
+    "text": "invaziv olmayan",
+    "policy": "translate",
+    "variants": [
+      "noninvasive"
+    ],
+    "confidence": "medium",
+    "note": "no incision and no needle. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "non-invasive ventilation",
     "category": "procedure",
     "text": "non-invaziv ventilasyon",
@@ -10835,6 +12650,18 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "non-surgical",
+    "category": "procedure",
+    "text": "cerrahi olmayan",
+    "policy": "translate",
+    "variants": [
+      "nonsurgical",
+      "non surgical"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "nucleoplasty",
@@ -11023,9 +12850,10 @@
   {
     "en": "pain management",
     "category": "procedure",
-    "text": "ağrı yönetimi (ağrı tedavisi)",
+    "text": "ağrı yönetimi",
     "policy": "translate",
     "variants": [],
+    "gloss": "ağrı tedavisi",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -11146,6 +12974,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "physical examination",
+    "category": "procedure",
+    "text": "fizik muayene",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "physical therapy",
     "category": "procedure",
     "text": "fizik tedavi",
@@ -11158,31 +12995,47 @@
   {
     "en": "physiotherapy",
     "category": "procedure",
-    "text": "fizik tedavi (fizyoterapi)",
+    "text": "fizik tedavi",
     "policy": "translate",
     "variants": [],
+    "gloss": "fizyoterapi",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "plasma exchange",
     "category": "procedure",
-    "text": "plazmaferez (plazma değişimi)",
+    "text": "plazmaferez",
     "policy": "translate",
     "variants": [],
+    "gloss": "plazma değişimi",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "platelet-rich plasma",
     "category": "procedure",
-    "text": "trombositten zengin plazma (PRP)",
+    "text": "trombositten zengin plazma",
     "policy": "translate",
     "variants": [
       "platelet rich plasma"
     ],
+    "gloss": "PRP",
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "post-operative",
+    "category": "procedure",
+    "text": "ameliyat sonrası",
+    "policy": "translate",
+    "variants": [
+      "postoperative",
+      "post operative",
+      "post-surgical"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "posterior fossa craniectomy",
@@ -11196,9 +13049,10 @@
   {
     "en": "posterior lumbar interbody fusion",
     "category": "procedure",
-    "text": "posterior lomber interbody füzyon (PLIF)",
+    "text": "posterior lomber interbody füzyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "PLIF",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -11287,9 +13141,10 @@
   {
     "en": "pulmonary rehabilitation",
     "category": "procedure",
-    "text": "pulmoner rehabilitasyon (solunum rehabilitasyonu)",
+    "text": "pulmoner rehabilitasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "solunum rehabilitasyonu",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -11305,9 +13160,10 @@
   {
     "en": "pulsed electromagnetic field",
     "category": "procedure",
-    "text": "pulsatil elektromanyetik alan (PEMF)",
+    "text": "pulsatil elektromanyetik alan",
     "policy": "translate",
     "variants": [],
+    "gloss": "PEMF",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -11423,9 +13279,10 @@
   {
     "en": "radiotherapy",
     "category": "procedure",
-    "text": "radyoterapi (ışın tedavisi)",
+    "text": "radyoterapi",
     "policy": "translate",
     "variants": [],
+    "gloss": "ışın tedavisi",
     "confidence": "high"
   },
   {
@@ -11446,7 +13303,8 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "a nerve block of a region; local anaesthesia (بەنجی ناوچەیی) is a separate concept."
   },
   {
     "en": "rehabilitation",
@@ -11480,9 +13338,10 @@
   {
     "en": "repetitive transcranial magnetic stimulation",
     "category": "procedure",
-    "text": "tekrarlayan transkraniyal manyetik stimülasyon (rTMS)",
+    "text": "tekrarlayan transkraniyal manyetik stimülasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "rTMS",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -11507,18 +13366,20 @@
   {
     "en": "responsive neurostimulation",
     "category": "procedure",
-    "text": "yanıt veren nörostimülasyon (RNS)",
+    "text": "yanıt veren nörostimülasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "RNS",
     "confidence": "medium",
     "verified": "backtrans"
   },
   {
     "en": "resuscitation",
     "category": "procedure",
-    "text": "resüsitasyon (canlandırma)",
+    "text": "resüsitasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "canlandırma",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -11543,9 +13404,10 @@
   {
     "en": "RICE",
     "category": "procedure",
-    "text": "RICE (dinlenme, buz, kompresyon, yükseltme)",
+    "text": "RICE",
     "policy": "translate",
     "variants": [],
+    "gloss": "dinlenme, buz, kompresyon, yükseltme",
     "confidence": "high",
     "note": "mnemonic kept with gloss"
   },
@@ -11615,9 +13477,10 @@
   {
     "en": "selective dorsal rhizotomy",
     "category": "procedure",
-    "text": "selektif dorsal rizotomi (SDR)",
+    "text": "selektif dorsal rizotomi",
     "policy": "translate",
     "variants": [],
+    "gloss": "SDR",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -11650,11 +13513,23 @@
     "verified": "backtrans"
   },
   {
+    "en": "session",
+    "category": "procedure",
+    "text": "seans",
+    "policy": "translate",
+    "variants": [
+      "sessions"
+    ],
+    "confidence": "high",
+    "note": "a single treatment visit. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "shock wave therapy",
     "category": "procedure",
-    "text": "şok dalga tedavisi (ESWT)",
+    "text": "şok dalga tedavisi",
     "policy": "translate",
     "variants": [],
+    "gloss": "ESWT",
     "confidence": "high"
   },
   {
@@ -11807,9 +13682,10 @@
   {
     "en": "spinal fixation",
     "category": "procedure",
-    "text": "omurga sabitleme (enstrümantasyon)",
+    "text": "omurga sabitleme",
     "policy": "translate",
     "variants": [],
+    "gloss": "enstrümantasyon",
     "confidence": "high",
     "verified": "backtrans",
     "note": "lay Kurdish may say \"پلاتین\""
@@ -11851,9 +13727,10 @@
   {
     "en": "spinal tap",
     "category": "procedure",
-    "text": "lomber ponksiyon (belden sıvı alma)",
+    "text": "lomber ponksiyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "belden sıvı alma",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -11897,11 +13774,23 @@
   {
     "en": "SRS",
     "category": "procedure",
-    "text": "SRS (stereotaktik radyocerrahi)",
+    "text": "SRS",
     "policy": "translate",
     "variants": [],
+    "gloss": "stereotaktik radyocerrahi",
     "confidence": "high",
     "note": "acronym kept"
+  },
+  {
+    "en": "stabilisation",
+    "category": "procedure",
+    "text": "stabilizasyon",
+    "policy": "translate",
+    "variants": [
+      "stabilization"
+    ],
+    "confidence": "medium",
+    "note": "distinct from fixation (جێگیرکردن). Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "stellate ganglion block",
@@ -11940,9 +13829,10 @@
   {
     "en": "stereotactic ablative radiotherapy",
     "category": "procedure",
-    "text": "stereotaktik ablatif radyoterapi (SABR)",
+    "text": "stereotaktik ablatif radyoterapi",
     "policy": "translate",
     "variants": [],
+    "gloss": "SABR",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -11958,9 +13848,10 @@
   {
     "en": "stereotactic body radiotherapy",
     "category": "procedure",
-    "text": "stereotaktik vücut radyoterapisi (SBRT)",
+    "text": "stereotaktik vücut radyoterapisi",
     "policy": "translate",
     "variants": [],
+    "gloss": "SBRT",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -12004,6 +13895,15 @@
     "note": "lay Kurdish also \"دەرزی کۆرتیزۆن\""
   },
   {
+    "en": "stimulation",
+    "category": "procedure",
+    "text": "stimülasyon",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "straight-leg-raise test",
     "category": "procedure",
     "text": "düz bacak kaldırma testi",
@@ -12020,6 +13920,18 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "strengthening exercises",
+    "category": "procedure",
+    "text": "güçlendirme egzersizleri",
+    "policy": "translate",
+    "variants": [
+      "strengthening exercise",
+      "strengthening"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "stretching",
@@ -12295,9 +14207,10 @@
   {
     "en": "tethered cord release",
     "category": "procedure",
-    "text": "gergin omurilik (tethered cord) serbestleştirme",
+    "text": "gergin omurilik serbestleştirme",
     "policy": "translate",
     "variants": [],
+    "gloss": "tethered cord",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -12334,9 +14247,10 @@
   {
     "en": "thoracolumbosacral orthosis",
     "category": "procedure",
-    "text": "torakolumbosakral ortez (TLSO)",
+    "text": "torakolumbosakral ortez",
     "policy": "translate",
     "variants": [],
+    "gloss": "TLSO",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -12352,9 +14266,10 @@
   {
     "en": "thrombolysis",
     "category": "procedure",
-    "text": "tromboliz (pıhtı eritme)",
+    "text": "tromboliz",
     "policy": "translate",
     "variants": [],
+    "gloss": "pıhtı eritme",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -12405,29 +14320,32 @@
   {
     "en": "transcranial direct current stimulation",
     "category": "procedure",
-    "text": "transkraniyal doğru akım stimülasyonu (tDCS)",
+    "text": "transkraniyal doğru akım stimülasyonu",
     "policy": "translate",
     "variants": [],
+    "gloss": "tDCS",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "transcranial magnetic stimulation",
     "category": "procedure",
-    "text": "transkraniyal manyetik stimülasyon (TMS)",
+    "text": "transkraniyal manyetik stimülasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "TMS",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "transcutaneous electrical nerve stimulation",
     "category": "procedure",
-    "text": "transkütan elektriksel sinir stimülasyonu (TENS)",
+    "text": "transkütan elektriksel sinir stimülasyonu",
     "policy": "translate",
     "variants": [
       "transcutaneous nerve stimulation"
     ],
+    "gloss": "TENS",
     "confidence": "medium",
     "verified": "backtrans"
   },
@@ -12448,9 +14366,10 @@
   {
     "en": "transforaminal lumbar interbody fusion",
     "category": "procedure",
-    "text": "transforaminal lomber interbody füzyon (TLIF)",
+    "text": "transforaminal lomber interbody füzyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "TLIF",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -12481,6 +14400,15 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "treatment plan",
+    "category": "procedure",
+    "text": "tedavi planı",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "trigger point injections",
@@ -12566,9 +14494,10 @@
   {
     "en": "vertebral body tethering",
     "category": "procedure",
-    "text": "vertebral cisim bağlama (VBT)",
+    "text": "vertebral cisim bağlama",
     "policy": "translate",
     "variants": [],
+    "gloss": "VBT",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "scoliosis surgery"
@@ -12639,13 +14568,14 @@
   {
     "en": "VP shunt",
     "category": "procedure",
-    "text": "VP şant (ventriküloperitoneal şant)",
+    "text": "VP şant",
     "policy": "translate",
     "variants": [
       "ventriculoperitoneal (VP) shunt",
       "ventriculoperitoneal (vp) shunt",
       "ventriculoperitoneal shunt"
     ],
+    "gloss": "ventriküloperitoneal şant",
     "variant_rules": [
       {
         "variant": "ventriculoperitoneal (VP) shunt",
@@ -12657,7 +14587,8 @@
       },
       {
         "variant": "ventriculoperitoneal shunt",
-        "text": "ventriküloperitoneal (VP) şant"
+        "text": "ventriküloperitoneal şant",
+        "gloss": "VP"
       }
     ],
     "confidence": "high",
@@ -12671,6 +14602,26 @@
     "variants": [],
     "confidence": "high",
     "note": "acronym kept"
+  },
+  {
+    "en": "walking aid",
+    "category": "procedure",
+    "text": "yürüme yardımcısı",
+    "policy": "translate",
+    "variants": [
+      "walking aids"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "wheelchair",
+    "category": "procedure",
+    "text": "tekerlekli sandalye",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "whole-brain radiotherapy",
@@ -12777,9 +14728,10 @@
   {
     "en": "anti-hiv drugs",
     "category": "drug",
-    "text": "HIV ilaçları (antiretroviraller)",
+    "text": "HIV ilaçları",
     "policy": "translate",
     "variants": [],
+    "gloss": "antiretroviraller",
     "confidence": "high"
   },
   {
@@ -12814,15 +14766,17 @@
   {
     "en": "anticoagulants",
     "category": "drug",
-    "text": "antikoagülanlar (kan sulandırıcılar)",
+    "text": "antikoagülanlar",
     "policy": "translate",
     "variants": [
       "anticoagulation"
     ],
+    "gloss": "kan sulandırıcılar",
     "variant_rules": [
       {
         "variant": "anticoagulation",
-        "text": "antikoagülasyon (kan sulandırma tedavisi)"
+        "text": "antikoagülasyon",
+        "gloss": "kan sulandırma tedavisi"
       }
     ],
     "confidence": "high",
@@ -12831,7 +14785,7 @@
   {
     "en": "anticonvulsants",
     "category": "drug",
-    "text": "antiepileptik ilaçlar (sara ilaçları)",
+    "text": "antiepileptik ilaçlar",
     "policy": "translate",
     "variants": [
       "AEDs",
@@ -12840,10 +14794,12 @@
       "anticonvulsant",
       "anticonvulsant medications"
     ],
+    "gloss": "sara ilaçları",
     "variant_rules": [
       {
         "variant": "AEDs",
-        "text": "antiepileptik ilaçlar (AEİ)"
+        "text": "antiepileptik ilaçlar",
+        "gloss": "AEİ"
       },
       {
         "variant": "anti-seizure medication",
@@ -12872,9 +14828,10 @@
   {
     "en": "antiemetics",
     "category": "drug",
-    "text": "bulantı önleyici ilaçlar (antiemetikler)",
+    "text": "bulantı önleyici ilaçlar",
     "policy": "translate",
     "variants": [],
+    "gloss": "antiemetikler",
     "confidence": "high"
   },
   {
@@ -12888,11 +14845,12 @@
   {
     "en": "antiplatelet therapy",
     "category": "drug",
-    "text": "antiplatelet tedavi (trombosit önleyici)",
+    "text": "antiplatelet tedavi",
     "policy": "translate",
     "variants": [
       "antiplatelet"
     ],
+    "gloss": "trombosit önleyici",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -12904,6 +14862,19 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "antivirals",
+    "category": "drug",
+    "text": "antiviral ilaçlar",
+    "policy": "translate",
+    "variants": [
+      "antiviral",
+      "antiviral medication",
+      "antiviral drugs"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "aspirin",
@@ -13114,9 +15085,10 @@
   {
     "en": "cholecalciferol",
     "category": "drug",
-    "text": "kolekalsiferol (D3 vitamini)",
+    "text": "kolekalsiferol",
     "policy": "adapt-spelling",
     "variants": [],
+    "gloss": "D3 vitamini",
     "confidence": "high"
   },
   {
@@ -13204,9 +15176,10 @@
   {
     "en": "contrast medium",
     "category": "drug",
-    "text": "kontrast madde (ilaçlı film için)",
+    "text": "kontrast madde",
     "policy": "translate",
     "variants": [],
+    "gloss": "ilaçlı film için",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -13311,18 +15284,20 @@
   {
     "en": "disease-modifying antirheumatic drugs",
     "category": "drug",
-    "text": "hastalık modifiye edici antiromatizmal ilaçlar (DMARD)",
+    "text": "hastalık modifiye edici antiromatizmal ilaçlar",
     "policy": "translate",
     "variants": [],
+    "gloss": "DMARD",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "diuretics",
     "category": "drug",
-    "text": "idrar söktürücüler (diüretikler)",
+    "text": "idrar söktürücüler",
     "policy": "translate",
     "variants": [],
+    "gloss": "diüretikler",
     "confidence": "high"
   },
   {
@@ -13369,6 +15344,18 @@
     "verified": "backtrans"
   },
   {
+    "en": "dose",
+    "category": "drug",
+    "text": "doz",
+    "policy": "translate",
+    "variants": [
+      "doses",
+      "dosage"
+    ],
+    "confidence": "high",
+    "note": "amount of medicine taken at one time. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "duloxetine",
     "category": "drug",
     "text": "duloksetin",
@@ -13387,17 +15374,19 @@
   {
     "en": "epinephrine",
     "category": "drug",
-    "text": "epinefrin (adrenalin)",
+    "text": "epinefrin",
     "policy": "adapt-spelling",
     "variants": [],
+    "gloss": "adrenalin",
     "confidence": "high"
   },
   {
     "en": "ergocalciferol",
     "category": "drug",
-    "text": "ergokalsiferol (D2 vitamini)",
+    "text": "ergokalsiferol",
     "policy": "adapt-spelling",
     "variants": [],
+    "gloss": "D2 vitamini",
     "confidence": "high"
   },
   {
@@ -13637,9 +15626,10 @@
   {
     "en": "IVIG",
     "category": "drug",
-    "text": "IVIG (intravenöz immünoglobulin)",
+    "text": "IVIG",
     "policy": "translate",
     "variants": [],
+    "gloss": "intravenöz immünoglobulin",
     "confidence": "high",
     "note": "acronym kept"
   },
@@ -13904,13 +15894,14 @@
   {
     "en": "NSAIDs",
     "category": "drug",
-    "text": "NSAİİ (steroid olmayan antiinflamatuvar ilaçlar)",
+    "text": "NSAİİ",
     "policy": "translate",
     "variants": [
       "anti-inflammatory medication",
       "non-steroidal",
       "non-steroidal anti-inflammatory drugs"
     ],
+    "gloss": "steroid olmayan antiinflamatuvar ilaçlar",
     "variant_rules": [
       {
         "variant": "anti-inflammatory medication",
@@ -14079,6 +16070,15 @@
     "confidence": "high"
   },
   {
+    "en": "placebo",
+    "category": "drug",
+    "text": "plasebo",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "pramipexole",
     "category": "drug",
     "text": "pramipeksol",
@@ -14211,9 +16211,10 @@
   {
     "en": "sedation",
     "category": "drug",
-    "text": "sedasyon (hafif uyutma)",
+    "text": "sedasyon",
     "policy": "translate",
     "variants": [],
+    "gloss": "hafif uyutma",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -14261,9 +16262,10 @@
   {
     "en": "SNRIs",
     "category": "drug",
-    "text": "SNRI'lar (serotonin-noradrenalin geri alım inhibitörleri)",
+    "text": "SNRI'lar",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "serotonin-noradrenalin geri alım inhibitörleri",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Acronym kept in Latin in both; expand on first mention."
@@ -14297,9 +16299,10 @@
   {
     "en": "SSRIs",
     "category": "drug",
-    "text": "SSRI'lar (seçici serotonin geri alım inhibitörleri)",
+    "text": "SSRI'lar",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "seçici serotonin geri alım inhibitörleri",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Acronym kept in Latin; expand on first mention."
@@ -14440,9 +16443,10 @@
   {
     "en": "tranquilizers",
     "category": "drug",
-    "text": "sakinleştiriciler (trankilizanlar)",
+    "text": "sakinleştiriciler",
     "policy": "translate",
     "variants": [],
+    "gloss": "trankilizanlar",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Arabic sample renders as benzodiazepines; generic 'calming drugs' wording."
@@ -14524,6 +16528,15 @@
     "confidence": "high"
   },
   {
+    "en": "vitamin D",
+    "category": "drug",
+    "text": "D vitamini",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "voxelotor",
     "category": "drug",
     "text": "voksalotor",
@@ -14534,9 +16547,10 @@
   {
     "en": "z-drugs",
     "category": "drug",
-    "text": "Z-ilaçları (zolpidem grubu uyku ilaçları)",
+    "text": "Z-ilaçları",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "zolpidem grubu uyku ilaçları",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Pharmacology jargon; gloss on first use."
@@ -14552,9 +16566,10 @@
   {
     "en": "acetabular socket",
     "category": "anatomy",
-    "text": "asetabulum (kalça çukuru)",
+    "text": "asetabulum",
     "policy": "translate",
     "variants": [],
+    "gloss": "kalça çukuru",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Hip = سمت used consistently in ckb."
@@ -14580,9 +16595,10 @@
   {
     "en": "adrenal",
     "category": "anatomy",
-    "text": "böbreküstü bezi (adrenal)",
+    "text": "böbreküstü bezi",
     "policy": "translate",
     "variants": [],
+    "gloss": "adrenal",
     "confidence": "high"
   },
   {
@@ -14614,9 +16630,10 @@
   {
     "en": "annulus fibrosus",
     "category": "anatomy",
-    "text": "annulus fibrozus (diskin dış halkası)",
+    "text": "annulus fibrozus",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "diskin dış halkası",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -14692,9 +16709,10 @@
   {
     "en": "biceps",
     "category": "anatomy",
-    "text": "biseps (pazu kası)",
+    "text": "biseps",
     "policy": "translate",
     "variants": [],
+    "gloss": "pazu kası",
     "confidence": "high"
   },
   {
@@ -14714,11 +16732,49 @@
     "confidence": "high"
   },
   {
+    "en": "blood vessels",
+    "category": "anatomy",
+    "text": "kan damarları",
+    "policy": "translate",
+    "variants": [
+      "blood vessel"
+    ],
+    "variant_rules": [
+      {
+        "variant": "blood vessel",
+        "text": "kan damarı"
+      }
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "bone",
+    "category": "anatomy",
+    "text": "kemik",
+    "policy": "translate",
+    "variants": [
+      "bones"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "bowel",
+    "category": "anatomy",
+    "text": "bağırsak",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "brachial plexus",
     "category": "anatomy",
-    "text": "brakiyal pleksus (kol sinir ağı)",
+    "text": "brakiyal pleksus",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "kol sinir ağı",
     "confidence": "high",
     "verified": "backtrans",
     "note": "plexus = تۆڕی دەمار throughout."
@@ -14755,18 +16811,20 @@
   {
     "en": "bursa",
     "category": "anatomy",
-    "text": "bursa (eklem kesesi)",
+    "text": "bursa",
     "policy": "translate",
     "variants": [],
+    "gloss": "eklem kesesi",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "buttock",
     "category": "anatomy",
-    "text": "kalça arkası (gluteal bölge)",
+    "text": "kalça arkası",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "gluteal bölge",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "ckb: سمت is reserved for hip; کەفەڵ for buttock to avoid collision."
@@ -14774,11 +16832,12 @@
   {
     "en": "calcaneus",
     "category": "anatomy",
-    "text": "topuk kemiği (kalkaneus)",
+    "text": "topuk kemiği",
     "policy": "translate",
     "variants": [
       "heel bone"
     ],
+    "gloss": "kalkaneus",
     "variant_rules": [
       {
         "variant": "heel bone",
@@ -14808,11 +16867,12 @@
   {
     "en": "carotid artery",
     "category": "anatomy",
-    "text": "karotis arter (şah damarı)",
+    "text": "karotis arter",
     "policy": "translate",
     "variants": [
       "carotid arteries"
     ],
+    "gloss": "şah damarı",
     "variant_rules": [
       {
         "variant": "carotid arteries",
@@ -14843,9 +16903,10 @@
   {
     "en": "cauda equina",
     "category": "anatomy",
-    "text": "kauda ekuina (at kuyruğu)",
+    "text": "kauda ekuina",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "at kuyruğu",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Calque matches Arabic ذيل الفرس."
@@ -14888,9 +16949,10 @@
   {
     "en": "cerebellar tonsils",
     "category": "anatomy",
-    "text": "serebellar tonsiller (beyincik tonsilleri)",
+    "text": "serebellar tonsiller",
     "policy": "translate",
     "variants": [],
+    "gloss": "beyincik tonsilleri",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -14922,9 +16984,10 @@
   {
     "en": "cerebrospinal fluid",
     "category": "anatomy",
-    "text": "beyin omurilik sıvısı (BOS)",
+    "text": "beyin omurilik sıvısı",
     "policy": "translate",
     "variants": [],
+    "gloss": "BOS",
     "confidence": "high",
     "verified": "backtrans",
     "note": "TR abbreviation BOS."
@@ -14932,9 +16995,10 @@
   {
     "en": "cervical nerves",
     "category": "anatomy",
-    "text": "boyun sinirleri (servikal sinirler)",
+    "text": "boyun sinirleri",
     "policy": "translate",
     "variants": [],
+    "gloss": "servikal sinirler",
     "confidence": "high",
     "note": "cervical = boyun (lay) / servikal; ckb = مل."
   },
@@ -14974,6 +17038,15 @@
     "verified": "backtrans"
   },
   {
+    "en": "connective tissue",
+    "category": "anatomy",
+    "text": "bağ dokusu",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "conus medullaris",
     "category": "anatomy",
     "text": "konus medullaris",
@@ -15011,11 +17084,12 @@
   {
     "en": "cranial sutures",
     "category": "anatomy",
-    "text": "kafatası dikişleri (sütürler)",
+    "text": "kafatası dikişleri",
     "policy": "translate",
     "variants": [
       "cranial suture"
     ],
+    "gloss": "sütürler",
     "variant_rules": [
       {
         "variant": "cranial suture",
@@ -15056,9 +17130,10 @@
   {
     "en": "detrusor",
     "category": "anatomy",
-    "text": "detrüsör kası (mesane kası)",
+    "text": "detrüsör kası",
     "policy": "translate",
     "variants": [],
+    "gloss": "mesane kası",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -15081,9 +17156,10 @@
   {
     "en": "dorsal root entry zone",
     "category": "anatomy",
-    "text": "dorsal kök giriş bölgesi (DREZ)",
+    "text": "dorsal kök giriş bölgesi",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "DREZ",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "Surgical target; keep DREZ acronym."
@@ -15111,11 +17187,12 @@
   {
     "en": "dura mater",
     "category": "anatomy",
-    "text": "dura mater (beyin zarı)",
+    "text": "dura mater",
     "policy": "translate",
     "variants": [
       "dura"
     ],
+    "gloss": "beyin zarı",
     "variant_rules": [
       {
         "variant": "dura",
@@ -15163,6 +17240,26 @@
     "note": "sphincter = بازنە."
   },
   {
+    "en": "eyelid",
+    "category": "anatomy",
+    "text": "göz kapağı",
+    "policy": "translate",
+    "variants": [
+      "eyelids"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "face",
+    "category": "anatomy",
+    "text": "yüz",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "facet joint",
     "category": "anatomy",
     "text": "faset eklem",
@@ -15192,9 +17289,10 @@
   {
     "en": "facial nerve",
     "category": "anatomy",
-    "text": "yüz siniri (fasiyal sinir)",
+    "text": "yüz siniri",
     "policy": "translate",
     "variants": [],
+    "gloss": "fasiyal sinir",
     "confidence": "high"
   },
   {
@@ -15209,17 +17307,19 @@
   {
     "en": "femoral head",
     "category": "anatomy",
-    "text": "femur başı (uyluk kemiği başı)",
+    "text": "femur başı",
     "policy": "translate",
     "variants": [],
+    "gloss": "uyluk kemiği başı",
     "confidence": "high"
   },
   {
     "en": "femur",
     "category": "anatomy",
-    "text": "uyluk kemiği (femur)",
+    "text": "uyluk kemiği",
     "policy": "translate",
     "variants": [],
+    "gloss": "femur",
     "confidence": "high"
   },
   {
@@ -15259,9 +17359,10 @@
   {
     "en": "foramen",
     "category": "anatomy",
-    "text": "foramen (sinir çıkış deliği)",
+    "text": "foramen",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "sinir çıkış deliği",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -15321,9 +17422,10 @@
   {
     "en": "frontalis",
     "category": "anatomy",
-    "text": "frontalis kası (alın kası)",
+    "text": "frontalis kası",
     "policy": "translate",
     "variants": [],
+    "gloss": "alın kası",
     "confidence": "high"
   },
   {
@@ -15356,18 +17458,20 @@
   {
     "en": "genicular nerve",
     "category": "anatomy",
-    "text": "genikuler sinir (diz siniri)",
+    "text": "genikuler sinir",
     "policy": "translate",
     "variants": [],
+    "gloss": "diz siniri",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "glenoid",
     "category": "anatomy",
-    "text": "glenoid (omuz çukuru)",
+    "text": "glenoid",
     "policy": "translate",
     "variants": [],
+    "gloss": "omuz çukuru",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -15383,9 +17487,10 @@
   {
     "en": "globus pallidus interna",
     "category": "anatomy",
-    "text": "globus pallidus interna (GPi)",
+    "text": "globus pallidus interna",
     "policy": "translate",
     "variants": [],
+    "gloss": "GPi",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "Keep GPi acronym."
@@ -15412,11 +17517,12 @@
   {
     "en": "hamstrings",
     "category": "anatomy",
-    "text": "arka uyluk kasları (hamstring)",
+    "text": "arka uyluk kasları",
     "policy": "translate",
     "variants": [
       "hamstring"
     ],
+    "gloss": "hamstring",
     "variant_rules": [
       {
         "variant": "hamstring",
@@ -15516,11 +17622,21 @@
   {
     "en": "ilium",
     "category": "anatomy",
-    "text": "iliyum (kalça kemiği kanadı)",
+    "text": "iliyum",
+    "policy": "translate",
+    "variants": [],
+    "gloss": "kalça kemiği kanadı",
+    "confidence": "high",
+    "verified": "backtrans"
+  },
+  {
+    "en": "immune system",
+    "category": "anatomy",
+    "text": "bağışıklık sistemi",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
-    "verified": "backtrans"
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "infraspinatus",
@@ -15534,9 +17650,10 @@
   {
     "en": "inguinal ligament",
     "category": "anatomy",
-    "text": "kasık bağı (inguinal ligament)",
+    "text": "kasık bağı",
     "policy": "translate",
     "variants": [],
+    "gloss": "inguinal ligament",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Consistent with groin = ناوگەڵ."
@@ -15561,11 +17678,12 @@
   {
     "en": "intercostal nerve",
     "category": "anatomy",
-    "text": "interkostal sinir (kaburgalar arası sinir)",
+    "text": "interkostal sinir",
     "policy": "translate",
     "variants": [
       "intercostal nerves"
     ],
+    "gloss": "kaburgalar arası sinir",
     "variant_rules": [
       {
         "variant": "intercostal nerves",
@@ -15602,12 +17720,32 @@
     "verified": "backtrans"
   },
   {
+    "en": "jaw",
+    "category": "anatomy",
+    "text": "çene",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "jaw = شەویلگە; chin is چەناگە. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "jawbone",
     "category": "anatomy",
     "text": "çene kemiği",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "joint",
+    "category": "anatomy",
+    "text": "eklem",
+    "policy": "translate",
+    "variants": [
+      "joints"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "joint capsule",
@@ -15638,9 +17776,10 @@
   {
     "en": "lateral epicondyle",
     "category": "anatomy",
-    "text": "lateral epikondil (dirseğin dış çıkıntısı)",
+    "text": "lateral epikondil",
     "policy": "translate",
     "variants": [],
+    "gloss": "dirseğin dış çıkıntısı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -15674,11 +17813,12 @@
   {
     "en": "ligament",
     "category": "anatomy",
-    "text": "bağ (ligament)",
+    "text": "bağ",
     "policy": "translate",
     "variants": [
       "ligaments"
     ],
+    "gloss": "ligament",
     "variant_rules": [
       {
         "variant": "ligaments",
@@ -15691,9 +17831,10 @@
   {
     "en": "ligamentum flavum",
     "category": "anatomy",
-    "text": "ligamentum flavum (sarı bağ)",
+    "text": "ligamentum flavum",
     "policy": "translate",
     "variants": [],
+    "gloss": "sarı bağ",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -15727,24 +17868,27 @@
   {
     "en": "lumbar plexus",
     "category": "anatomy",
-    "text": "lomber pleksus (bel sinir ağı)",
+    "text": "lomber pleksus",
     "policy": "translate",
     "variants": [],
+    "gloss": "bel sinir ağı",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "lumbar spine",
     "category": "anatomy",
-    "text": "bel omurgası (lomber omurga)",
+    "text": "bel omurgası",
     "policy": "translate",
     "variants": [
       "lumbar"
     ],
+    "gloss": "lomber omurga",
     "variant_rules": [
       {
         "variant": "lumbar",
-        "text": "bel (lomber)"
+        "text": "bel",
+        "gloss": "lomber"
       }
     ],
     "confidence": "high",
@@ -15761,9 +17905,10 @@
   {
     "en": "lumbosacral",
     "category": "anatomy",
-    "text": "lumbosakral (bel ve sakrum bölgesi)",
+    "text": "lumbosakral",
     "policy": "translate",
     "variants": [],
+    "gloss": "bel ve sakrum bölgesi",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "Arabic القطنية العجزية; sacrum rendered عەجز in ckb."
@@ -15788,9 +17933,10 @@
   {
     "en": "MCL",
     "category": "anatomy",
-    "text": "MCL (iç yan bağ)",
+    "text": "MCL",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "iç yan bağ",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Knee medial collateral ligament; keep acronym."
@@ -15829,9 +17975,10 @@
   {
     "en": "meninges",
     "category": "anatomy",
-    "text": "beyin zarları (meninksler)",
+    "text": "beyin zarları",
     "policy": "translate",
     "variants": [],
+    "gloss": "meninksler",
     "confidence": "high"
   },
   {
@@ -15846,9 +17993,10 @@
   {
     "en": "metatarsal bones",
     "category": "anatomy",
-    "text": "metatars kemikleri (tarak kemikleri)",
+    "text": "metatars kemikleri",
     "policy": "translate",
     "variants": [],
+    "gloss": "tarak kemikleri",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -15917,6 +18065,17 @@
     "verified": "backtrans"
   },
   {
+    "en": "muscle",
+    "category": "anatomy",
+    "text": "kas",
+    "policy": "translate",
+    "variants": [
+      "muscles"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "myelin sheath",
     "category": "anatomy",
     "text": "miyelin kılıf",
@@ -15928,9 +18087,10 @@
   {
     "en": "nasal septum",
     "category": "anatomy",
-    "text": "burun bölmesi (septum)",
+    "text": "burun bölmesi",
     "policy": "translate",
     "variants": [],
+    "gloss": "septum",
     "confidence": "high"
   },
   {
@@ -15941,6 +18101,17 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "nerve",
+    "category": "anatomy",
+    "text": "sinir",
+    "policy": "translate",
+    "variants": [
+      "nerves"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "nerve fibre",
@@ -15983,9 +18154,10 @@
   {
     "en": "neuroforamen",
     "category": "anatomy",
-    "text": "nöral foramen (sinir çıkış deliği)",
+    "text": "nöral foramen",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "sinir çıkış deliği",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Same as foramen entry."
@@ -15993,18 +18165,20 @@
   {
     "en": "nucleus pulposus",
     "category": "anatomy",
-    "text": "nukleus pulpozus (diskin jel çekirdeği)",
+    "text": "nukleus pulpozus",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "diskin jel çekirdeği",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "occipital bone",
     "category": "anatomy",
-    "text": "oksipital kemik (art kafa kemiği)",
+    "text": "oksipital kemik",
     "policy": "translate",
     "variants": [],
+    "gloss": "art kafa kemiği",
     "confidence": "high"
   },
   {
@@ -16036,11 +18210,12 @@
   {
     "en": "optic nerve",
     "category": "anatomy",
-    "text": "görme siniri (optik sinir)",
+    "text": "görme siniri",
     "policy": "translate",
     "variants": [
       "optic nerves"
     ],
+    "gloss": "optik sinir",
     "variant_rules": [
       {
         "variant": "optic nerves",
@@ -16053,9 +18228,10 @@
   {
     "en": "orbit",
     "category": "anatomy",
-    "text": "göz çukuru (orbita)",
+    "text": "göz çukuru",
     "policy": "translate",
     "variants": [],
+    "gloss": "orbita",
     "confidence": "high"
   },
   {
@@ -16078,11 +18254,12 @@
   {
     "en": "patella",
     "category": "anatomy",
-    "text": "diz kapağı (patella)",
+    "text": "diz kapağı",
     "policy": "translate",
     "variants": [
       "kneecap"
     ],
+    "gloss": "patella",
     "variant_rules": [
       {
         "variant": "kneecap",
@@ -16156,18 +18333,20 @@
   {
     "en": "plantar fascia",
     "category": "anatomy",
-    "text": "plantar fasya (ayak tabanı zarı)",
+    "text": "plantar fasya",
     "policy": "translate",
     "variants": [],
+    "gloss": "ayak tabanı zarı",
     "confidence": "high",
     "verified": "backtrans"
   },
   {
     "en": "popliteal artery",
     "category": "anatomy",
-    "text": "popliteal arter (diz arkası atardamarı)",
+    "text": "popliteal arter",
     "policy": "translate",
     "variants": [],
+    "gloss": "diz arkası atardamarı",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -16183,11 +18362,12 @@
   {
     "en": "posterior fossa",
     "category": "anatomy",
-    "text": "arka çukur (posterior fossa)",
+    "text": "arka çukur",
     "policy": "translate",
     "variants": [
       "posterior cranial fossa"
     ],
+    "gloss": "posterior fossa",
     "variant_rules": [
       {
         "variant": "posterior cranial fossa",
@@ -16243,9 +18423,10 @@
   {
     "en": "pubic symphysis",
     "category": "anatomy",
-    "text": "simfizis pubis (kasık kemiği eklemi)",
+    "text": "simfizis pubis",
     "policy": "translate",
     "variants": [],
+    "gloss": "kasık kemiği eklemi",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "Reviewer check; alt سیمفیزیسی پیوبیک."
@@ -16262,17 +18443,19 @@
   {
     "en": "quadriceps",
     "category": "anatomy",
-    "text": "kuadriseps (ön uyluk kası)",
+    "text": "kuadriseps",
     "policy": "translate",
     "variants": [],
+    "gloss": "ön uyluk kası",
     "confidence": "high"
   },
   {
     "en": "rectus abdominis",
     "category": "anatomy",
-    "text": "rektus abdominis (karın kası)",
+    "text": "rektus abdominis",
     "policy": "translate",
     "variants": [],
+    "gloss": "karın kası",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -16333,12 +18516,22 @@
   {
     "en": "sacrum",
     "category": "anatomy",
-    "text": "sakrum (sağrı kemiği)",
+    "text": "sakrum",
     "policy": "translate",
     "variants": [],
+    "gloss": "sağrı kemiği",
     "confidence": "medium",
     "verified": "backtrans",
     "note": "Sorani clinical usage borrows عەجز (Arabic عجز)."
+  },
+  {
+    "en": "saliva",
+    "category": "anatomy",
+    "text": "tükürük",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "scalp",
@@ -16370,9 +18563,10 @@
   {
     "en": "sella turcica",
     "category": "anatomy",
-    "text": "sella tursika (Türk eğeri)",
+    "text": "sella tursika",
     "policy": "translate",
     "variants": [],
+    "gloss": "Türk eğeri",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -16405,9 +18599,10 @@
   {
     "en": "shin",
     "category": "anatomy",
-    "text": "kaval kemiği bölgesi (incik)",
+    "text": "kaval kemiği bölgesi",
     "policy": "translate",
     "variants": [],
+    "gloss": "incik",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -16448,9 +18643,10 @@
   {
     "en": "skin",
     "category": "anatomy",
-    "text": "deri (cilt)",
+    "text": "deri",
     "policy": "translate",
     "variants": [],
+    "gloss": "cilt",
     "confidence": "high"
   },
   {
@@ -16461,6 +18657,17 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "soft tissue",
+    "category": "anatomy",
+    "text": "yumuşak doku",
+    "policy": "translate",
+    "variants": [
+      "soft tissues"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "soleus",
@@ -16691,9 +18898,10 @@
   {
     "en": "temporal artery",
     "category": "anatomy",
-    "text": "temporal arter (şakak atardamarı)",
+    "text": "temporal arter",
     "policy": "translate",
     "variants": [],
+    "gloss": "şakak atardamarı",
     "confidence": "high"
   },
   {
@@ -16708,27 +18916,30 @@
   {
     "en": "temporalis",
     "category": "anatomy",
-    "text": "temporalis kası (şakak kası)",
+    "text": "temporalis kası",
     "policy": "translate",
     "variants": [],
+    "gloss": "şakak kası",
     "confidence": "high"
   },
   {
     "en": "temporomandibular joint",
     "category": "anatomy",
-    "text": "temporomandibular eklem (çene eklemi)",
+    "text": "temporomandibular eklem",
     "policy": "translate",
     "variants": [],
+    "gloss": "çene eklemi",
     "confidence": "high"
   },
   {
     "en": "tendon",
     "category": "anatomy",
-    "text": "tendon (kiriş)",
+    "text": "tendon",
     "policy": "translate",
     "variants": [
       "tendons"
     ],
+    "gloss": "kiriş",
     "variant_rules": [
       {
         "variant": "tendons",
@@ -16768,9 +18979,10 @@
   {
     "en": "thenar muscles",
     "category": "anatomy",
-    "text": "tenar kaslar (başparmak kökü kasları)",
+    "text": "tenar kaslar",
     "policy": "translate",
     "variants": [],
+    "gloss": "başparmak kökü kasları",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -16785,15 +18997,17 @@
   {
     "en": "thoracic spine",
     "category": "anatomy",
-    "text": "sırt omurgası (torakal omurga)",
+    "text": "sırt omurgası",
     "policy": "translate",
     "variants": [
       "thoracic"
     ],
+    "gloss": "torakal omurga",
     "variant_rules": [
       {
         "variant": "thoracic",
-        "text": "sırt (torakal)"
+        "text": "sırt",
+        "gloss": "torakal"
       }
     ],
     "confidence": "high"
@@ -16809,9 +19023,10 @@
   {
     "en": "tibia",
     "category": "anatomy",
-    "text": "kaval kemiği (tibia)",
+    "text": "kaval kemiği",
     "policy": "translate",
     "variants": [],
+    "gloss": "tibia",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -16836,9 +19051,10 @@
   {
     "en": "TMJ",
     "category": "anatomy",
-    "text": "TME (çene eklemi)",
+    "text": "TME",
     "policy": "translate+en-first-mention",
     "variants": [],
+    "gloss": "çene eklemi",
     "confidence": "high",
     "note": "Turkey uses TME for TMJ."
   },
@@ -16861,9 +19077,10 @@
   {
     "en": "trachea",
     "category": "anatomy",
-    "text": "soluk borusu (trakea)",
+    "text": "soluk borusu",
     "policy": "translate",
     "variants": [],
+    "gloss": "trakea",
     "confidence": "high"
   },
   {
@@ -16878,9 +19095,10 @@
   {
     "en": "trigeminal nerve",
     "category": "anatomy",
-    "text": "trigeminal sinir (üçüz sinir)",
+    "text": "trigeminal sinir",
     "policy": "translate",
     "variants": [],
+    "gloss": "üçüz sinir",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -16971,9 +19189,10 @@
   {
     "en": "vestibule",
     "category": "anatomy",
-    "text": "vestibül (iç kulak giriş bölümü)",
+    "text": "vestibül",
     "policy": "translate",
     "variants": [],
+    "gloss": "iç kulak giriş bölümü",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Inner-ear sense."
@@ -16989,9 +19208,10 @@
   {
     "en": "vulva",
     "category": "anatomy",
-    "text": "vulva (dış genital bölge)",
+    "text": "vulva",
     "policy": "translate",
     "variants": [],
+    "gloss": "dış genital bölge",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -17039,6 +19259,17 @@
     "variants": [],
     "confidence": "high",
     "note": "Proper name kept; Iraqi hospital."
+  },
+  {
+    "en": "appointment",
+    "category": "site",
+    "text": "randevu",
+    "policy": "translate",
+    "variants": [
+      "appointments"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "Call the secretary",
@@ -17094,9 +19325,10 @@
   {
     "en": "FIBMS",
     "category": "site",
-    "text": "FIBMS (Irak Tıp Uzmanlık Kurulu bursu)",
+    "text": "FIBMS",
     "policy": "translate",
     "variants": [],
+    "gloss": "Irak Tıp Uzmanlık Kurulu bursu",
     "confidence": "high",
     "note": "Iraqi Board fellowship; keep acronym, gloss as Arabic does."
   },
@@ -17119,6 +19351,31 @@
     "note": "Social CTA; alt informal فۆڵۆمان بکەن."
   },
   {
+    "en": "follow-up",
+    "category": "site",
+    "text": "takip",
+    "policy": "translate",
+    "variants": [
+      "follow up",
+      "follow-up care"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "follow-up appointment",
+    "category": "site",
+    "text": "kontrol randevusu",
+    "policy": "translate",
+    "variants": [
+      "follow-up appointments",
+      "follow-up visit",
+      "follow-up visits"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "Full CV",
     "category": "site",
     "text": "Tam özgeçmiş",
@@ -17134,6 +19391,15 @@
     "variants": [],
     "confidence": "high",
     "note": "Brand Google kept Latin."
+  },
+  {
+    "en": "hospital stay",
+    "category": "site",
+    "text": "hastanede kalış",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "Hussein Imran Mousa",
@@ -17180,9 +19446,10 @@
   {
     "en": "MBChB",
     "category": "site",
-    "text": "MBChB (tıp diploması)",
+    "text": "MBChB",
     "policy": "translate",
     "variants": [],
+    "gloss": "tıp diploması",
     "confidence": "high"
   },
   {
@@ -17192,6 +19459,15 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high"
+  },
+  {
+    "en": "multidisciplinary team",
+    "category": "site",
+    "text": "multidisipliner ekip",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "neurologist",
@@ -17236,6 +19512,19 @@
     "note": "Arabic تقني العظام; descriptive."
   },
   {
+    "en": "outpatient",
+    "category": "site",
+    "text": "ayaktan",
+    "policy": "translate",
+    "variants": [
+      "outpatient basis",
+      "outpatient procedure",
+      "outpatient procedures"
+    ],
+    "confidence": "medium",
+    "note": "patient goes home the same day. Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "physiotherapist",
     "category": "site",
     "text": "fizyoterapist",
@@ -17269,6 +19558,17 @@
     "verified": "backtrans"
   },
   {
+    "en": "referral",
+    "category": "site",
+    "text": "sevk",
+    "policy": "translate",
+    "variants": [
+      "referrals"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
     "en": "see the team",
     "category": "site",
     "text": "Ekibi görün",
@@ -17284,6 +19584,17 @@
     "variants": [],
     "confidence": "high",
     "note": "Device name; Arabic transliterates, keep Latin."
+  },
+  {
+    "en": "specialist",
+    "category": "site",
+    "text": "uzman",
+    "policy": "translate",
+    "variants": [
+      "specialists"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "speech-language pathologists",
@@ -17312,6 +19623,28 @@
     ],
     "confidence": "high",
     "note": "Device name."
+  },
+  {
+    "en": "surgeon",
+    "category": "site",
+    "text": "cerrah",
+    "policy": "translate",
+    "variants": [
+      "surgeons"
+    ],
+    "confidence": "high",
+    "note": "Round 2 clinical vocabulary (manual add)."
+  },
+  {
+    "en": "therapist",
+    "category": "site",
+    "text": "terapist",
+    "policy": "translate",
+    "variants": [
+      "therapists"
+    ],
+    "confidence": "medium",
+    "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "Transitional Care Center",
@@ -17349,5 +19682,14 @@
     "variants": [],
     "confidence": "high",
     "verified": "backtrans"
+  },
+  {
+    "en": "Watch the procedure",
+    "category": "site",
+    "text": "İşlemi izleyin",
+    "policy": "translate",
+    "variants": [],
+    "confidence": "high",
+    "note": "video button. Round 2 clinical vocabulary (manual add)."
   }
 ]
