@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES } from "../../../lib/i18n";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES, localePath, toArabicDigits } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return LOCALES.map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);
@@ -56,13 +56,14 @@ const categories = [...byCategory.entries()]
 ---
 
 <BaseLayout
-  title={byLocale(locale, { en: "Services — Alimran Medical Center", ar: "الخدمات — مركز العمران الطبي", tr: "Hizmetler — Alimran Tıp Merkezi" })}
-  description={byLocale(locale, { en: "Chiropractic, brain stimulation, physiotherapy, radiofrequency, surgery and more — all procedures offered at Alimran Medical Center in Basra.", ar: "تقويم العمود الفقري، تحفيز الدماغ، العلاج الطبيعي، الترددات الراديوية، الجراحة وغيرها — جميع الإجراءات المقدمة في مركز العمران الطبي بالبصرة.", tr: "Kayropraktik, beyin stimülasyonu, fizyoterapi, radyofrekans, cerrahi ve daha fazlası — Basra'daki Alimran Tıp Merkezi'nde sunulan tüm girişimler." })}
+  title={byLocale(locale, { en: "Services — Alimran Medical Center", ar: "الخدمات — مركز العمران الطبي", tr: "Hizmetler — Alimran Tıp Merkezi", ckb: "خزمەتگوزارییەکان — سەنتەری پزیشکیی ئەلعیمران" })}
+  description={byLocale(locale, { en: "Chiropractic, brain stimulation, physiotherapy, radiofrequency, surgery and more — all procedures offered at Alimran Medical Center in Basra.", ar: "تقويم العمود الفقري، تحفيز الدماغ، العلاج الطبيعي، الترددات الراديوية، الجراحة وغيرها — جميع الإجراءات المقدمة في مركز العمران الطبي بالبصرة.", tr: "Kayropraktik, beyin stimülasyonu, fizyoterapi, radyofrekans, cerrahi ve daha fazlası — Basra'daki Alimran Tıp Merkezi'nde sunulan tüm girişimler.", ckb: "چارەسەری کایرۆپراکتیک، ورووژاندنی مێشک، چارەسەری سروشتی، ڕادیۆفریکوێنسی، نەشتەرگەری و زیاتر — هەموو ئەو چارەسەرانەی لە سەنتەری پزیشکیی ئەلعیمران لە بەسرە پێشکەش دەکرێن." })}
 >
   <div class="container page">
     <header class="page-head">
-      <h1>{byLocale(locale, { en: "Services", ar: "الخدمات", tr: "Hizmetler" })}</h1>
+      <h1>{byLocale(locale, { en: "Services", ar: "الخدمات", tr: "Hizmetler", ckb: "خزمەتگوزارییەکان" })}</h1>
       {locale === "en" && <p class="lede">Every therapy and intervention we offer, grouped by discipline.</p>}
+      {locale === "ckb" && <p class="lede">هەموو چارەسەر و دەستێوەردانەکانی کە پێشکەشیان دەکەین، بە پێی بەش ڕیزکراون.</p>}
       {locale === "tr" && <p class="lede">Sunduğumuz tüm tedaviler ve girişimler, disiplinlere göre gruplandırılmıştır.</p>}
     </header>
 
@@ -71,7 +72,7 @@ const categories = [...byCategory.entries()]
         <a class="card cat" href={localizedHref(`/services/${c.slug}/`, locale)}>
           <h3>{c.pretty}</h3>
           <span class="count">
-            {locale === "en" ? `${c.count} ${c.count === 1 ? "item" : "items"}` : locale === "tr" ? `${c.count} kayıt` : c.count}
+            {locale === "en" ? `${c.count} ${c.count === 1 ? "item" : "items"}` : locale === "tr" ? `${c.count} kayıt` : locale === "ckb" ? toArabicDigits(c.count) : c.count}
           </span>
         </a>
       ))}

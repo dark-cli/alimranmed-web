@@ -60,8 +60,10 @@ export function sourceFileForUrl(pathname) {
   const parts = pathname.replace(/^\/|\/$/g, "").split("/").filter(Boolean);
   if (parts.length === 0) return null;
 
-  const locale = parts[0];
-  if (!["en", "ar", "tr"].includes(locale)) return null;
+  // URL prefix -> content-file locale code (Sorani lives at /ku/ but its files are ckb.md).
+  const URL_TO_LOCALE = { en: "en", ar: "ar", tr: "tr", ku: "ckb" };
+  const locale = URL_TO_LOCALE[parts[0]];
+  if (!locale) return null;
 
   const rest = parts.slice(1);
 

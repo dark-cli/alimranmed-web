@@ -6,22 +6,38 @@
  * URL-building bits routes need.
  */
 
-export type Locale = "en" | "ar" | "tr";
+export type Locale = "en" | "ar" | "tr" | "ckb";
 
 export function toArabicDigits(n: number): string {
   return String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
 }
-export const LOCALES: Locale[] = ["en", "ar", "tr"];
+export const LOCALES: Locale[] = ["en", "ar", "tr", "ckb"];
+
+/** URL path segment per locale. Sorani Kurdish uses the code "ckb" in
+ *  html lang / hreflang / filenames but the friendlier "/ku/" in URLs. */
+export const LOCALE_PATHS: Record<Locale, string> = { en: "en", ar: "ar", tr: "tr", ckb: "ku" };
+export const localePath = (l: Locale): string => LOCALE_PATHS[l] ?? l;
+/** Reverse of localePath: "ku" -> "ckb". Accepts a code too. */
+export function localeFromPath(seg: string | undefined | null): Locale | null {
+  if (!seg) return null;
+  return (LOCALES.find((l) => LOCALE_PATHS[l] === seg) ?? (LOCALES.includes(seg as Locale) ? (seg as Locale) : null));
+}
+/** Regex source matching any locale prefix segment (en|ar|tr|ku). */
+const PREFIX_RE = /^\/(?:en|ar|tr|ku)(?=\/|$)/;
 
 /** Right-to-left locales. */
-export const RTL_LOCALES: Locale[] = ["ar"];
+export const RTL_LOCALES: Locale[] = ["ar", "ckb"];
 export const isRtl = (l: Locale) => RTL_LOCALES.includes(l);
 
 /** Native name shown in the language switcher. */
-export const LOCALE_LABELS: Record<Locale, string> = { en: "English", ar: "عربي", tr: "Türkçe" };
+export const LOCALE_LABELS: Record<Locale, string> = { en: "English", ar: "عربي", tr: "Türkçe", ckb: "کوردی" };
 
-/** BCP-47 tag for Intl / toLocaleDateString. */
-export const DATE_LOCALES: Record<Locale, string> = { en: "en-US", ar: "ar-IQ", tr: "tr-TR" };
+/** BCP-47 tag for Intl / toLocaleDateString. ckb falls back to ar-IQ when the
+ *  runtime's Intl has no Sorani data. */
+function supported(tag: string, fallback: string): string {
+  try { return Intl.DateTimeFormat.supportedLocalesOf([tag]).length ? tag : fallback; } catch { return fallback; }
+}
+export const DATE_LOCALES: Record<Locale, string> = { en: "en-US", ar: "ar-IQ", tr: "tr-TR", ckb: supported("ckb-IQ", "ar-IQ") };
 export const DEFAULT_LOCALE: Locale = "en";
 
 /** Extract the locale segment (last path part) from an entry id. */
@@ -32,7 +48,7 @@ export function localeOf(id: string): Locale | null {
 
 /** Get the topic slug (everything before the trailing "/en", "/ar" or "/tr"). */
 export function topicOf(id: string): string {
-  return id.replace(/\/(en|ar|tr)$/, "");
+  return id.replace(/\/(en|ar|tr|ckb)$/, "");
 }
 
 /** True if the entry belongs to the given locale. */
@@ -44,30 +60,30 @@ export function isLocale(id: string, locale: Locale): boolean {
  * Normalize a URL by stripping language prefixes and applying the correct one.
  * Fixes hardcoded /en/ or /ar/ prefixes to match the target locale.
  *
- * Routing: English at /en/, Arabic at /ar/, Turkish at /tr/
+ * Routing: English at /en/, Arabic at /ar/, Turkish at /tr/, Kurdish (ckb) at /ku/
  */
 export function normalizeHref(path: string, locale: Locale): string {
   // Strip existing language prefix (handles hardcoded /en/... or /ar/... URLs)
-  const stripped = path.replace(/^\/(?:en|ar|tr)(?=\/|$)/, '') || '/';
+  const stripped = path.replace(PREFIX_RE, '') || '/';
 
   // Apply the correct locale prefix
   if (!LOCALES.includes(locale)) return path;
-  return stripped === "/" ? `/${locale}/` : `/${locale}${stripped}`;
+  return stripped === "/" ? `/${localePath(locale)}/` : `/${localePath(locale)}${stripped}`;
 }
 
 /** Prefix a path with /en, /ar or /tr based on locale. */
 export function localizedHref(path: string, locale: Locale): string {
   // Strip existing language prefix for normalization
-  const stripped = path.replace(/^\/(?:en|ar|tr)(?=\/|$)/, '') || '/';
+  const stripped = path.replace(PREFIX_RE, '') || '/';
 
   if (!LOCALES.includes(locale)) return path;
-  return stripped === "/" ? `/${locale}/` : `/${locale}${stripped}`;
+  return stripped === "/" ? `/${localePath(locale)}/` : `/${localePath(locale)}${stripped}`;
 }
 
 /** Given a current URL pathname, produce the alternate-locale equivalent. */
 export function alternateHref(currentPath: string, otherLocale: Locale): string {
   // Strip the current language prefix to get the bare path
-  const bare = currentPath.replace(/^\/(?:en|ar|tr)(?=\/|$)/, '') || '/';
+  const bare = currentPath.replace(PREFIX_RE, '') || '/';
 
   // Apply the alternate locale
   return localizedHref(bare, otherLocale);
@@ -76,7 +92,8 @@ export function alternateHref(currentPath: string, otherLocale: Locale): string 
 import en from "../i18n/en.json";
 import ar from "../i18n/ar.json";
 import tr from "../i18n/tr.json";
-const DICTS: Record<Locale, Record<string, string>> = { en, ar, tr };
+import ckb from "../i18n/ckb.json";
+const DICTS: Record<Locale, Record<string, string>> = { en, ar, tr, ckb };
 
 /** Load the phrase dictionary for a locale, falling back to EN for
  *  missing keys so partial AR translations still render sensibly. */
@@ -91,7 +108,8 @@ export function dictFor(locale: Locale): Record<string, string> {
 /** Pull the current locale out of an Astro request; fall back to EN. */
 export function currentLocale(astro: { currentLocale?: string; url: URL }): Locale {
   for (const l of LOCALES) {
-    if (astro.currentLocale === l || astro.url.pathname.startsWith(`/${l}/`) || astro.url.pathname === `/${l}`) return l;
+    const p = localePath(l);
+    if (astro.currentLocale === l || astro.currentLocale === p || astro.url.pathname.startsWith(`/${p}/`) || astro.url.pathname === `/${p}`) return l;
   }
   return "en"; // Default to English (even if path is /en)
 }
@@ -117,6 +135,6 @@ export function pickForLocale<T extends { id: string }>(
 
 
 /** Pick a per-locale value; falls back to EN when a locale is missing. */
-export function byLocale<T>(locale: Locale, v: { en: T; ar: T; tr?: T }): T {
+export function byLocale<T>(locale: Locale, v: { en: T; ar: T; tr?: T; ckb?: T }): T {
   return (v[locale] ?? v.en) as T;
 }

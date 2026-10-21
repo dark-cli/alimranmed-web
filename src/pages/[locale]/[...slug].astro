@@ -18,8 +18,7 @@
  */
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import {
-  topicOf, isLocale, pickForLocale, currentLocale, localizedHref, byLocale, LOCALES, DATE_LOCALES, type Locale,
-} from "../../lib/i18n";
+  topicOf, isLocale, pickForLocale, currentLocale, localizedHref, byLocale, LOCALES, DATE_LOCALES, type Locale, localePath } from "../../lib/i18n";
 import { wordsIn, articleReadingLabel, extractBodyImages } from "../../lib/word-count";
 import { buildToc } from "../../lib/toc";
 import { excerpt } from "../../lib/excerpt";
@@ -58,7 +57,7 @@ export async function getStaticPaths() {
         const pick = pickForLocale(items, topic, loc);
         if (pick) {
           paths.push({
-            params: { locale: loc, slug: `${name}/${topic}` },
+            params: { locale: localePath(loc), slug: `${name}/${topic}` },
             props: { collection: name, entry: pick.entry, fallback: pick.fallback },
           });
         }
@@ -85,7 +84,7 @@ const doctorData = isDoctor ? (entry.data as {
   photo?: string; sections?: unknown[];
 }) : null;
 
-const doctorTitleSuffix = byLocale(locale, { en: "Alimran Clinic", ar: "مركز العمران الطبي", tr: "Alimran Kliniği" });
+const doctorTitleSuffix = byLocale(locale, { en: "Alimran Clinic", ar: "مركز العمران الطبي", tr: "Alimran Kliniği", ckb: "کلینیکی ئەلعیمران" });
 const doctorHero = isDoctor ? imageVariants(doctorData!.photo) : null;
 const doctorHeroPreload = doctorHero?.srcset ? {
   srcset: doctorHero.srcset,
@@ -163,7 +162,7 @@ const schemas = config ? [
 
 const usingSections = isRedesigned && Array.isArray(data.sections);
 const bodyImages = usingSections && bodyText ? extractBodyImages(bodyText) : [];
-const showBanner = (fallback && locale !== "en") || locale === "tr";
+const showBanner = (fallback && locale !== "en") || locale === "tr" || locale === "ckb";
 const englishHref = localizedHref(Astro.url.pathname, "en");
 ---
 

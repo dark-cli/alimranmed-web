@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES } from "../../../lib/i18n";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES, localePath } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return LOCALES.map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);
@@ -22,13 +22,14 @@ const cases = locale !== "en"
 ---
 
 <BaseLayout
-  title={byLocale(locale, { en: "Cases — Alimran Medical Center", ar: "الحالات — مركز العمران الطبي", tr: "Vakalar — Alimran Tıp Merkezi" })}
-  description={byLocale(locale, { en: "Clinical cases from Alimran Medical Center — real patient outcomes in neurosurgery, spine, pain management and rehabilitation.", ar: "حالات سريرية من مركز العمران الطبي — نتائج علاج حقيقية في جراحة الأعصاب والعمود الفقري وعلاج الألم والتأهيل.", tr: "Alimran Tıp Merkezi'nden klinik vakalar — beyin ve sinir cerrahisi, omurga, ağrı tedavisi ve rehabilitasyonda gerçek hasta sonuçları." })}
+  title={byLocale(locale, { en: "Cases — Alimran Medical Center", ar: "الحالات — مركز العمران الطبي", tr: "Vakalar — Alimran Tıp Merkezi", ckb: "حاڵەتەکان — سەنتەری پزیشکیی ئەلعیمران" })}
+  description={byLocale(locale, { en: "Clinical cases from Alimran Medical Center — real patient outcomes in neurosurgery, spine, pain management and rehabilitation.", ar: "حالات سريرية من مركز العمران الطبي — نتائج علاج حقيقية في جراحة الأعصاب والعمود الفقري وعلاج الألم والتأهيل.", tr: "Alimran Tıp Merkezi'nden klinik vakalar — beyin ve sinir cerrahisi, omurga, ağrı tedavisi ve rehabilitasyonda gerçek hasta sonuçları.", ckb: "حاڵەتی کلینیکی لە سەنتەری پزیشکیی ئەلعیمرانەوە — ئەنجامی ڕاستەقینەی نەخۆشان لە نەشتەرگەریی مێشک و دەمار، بڕبڕەی پشت، چارەسەری ئازار و بەتواناکردنەوە." })}
 >
   <div class="container page">
     <header class="page-head">
-      <h1>{byLocale(locale, { en: "Cases", ar: "الحالات", tr: "Vakalar" })}</h1>
+      <h1>{byLocale(locale, { en: "Cases", ar: "الحالات", tr: "Vakalar", ckb: "حاڵەتەکان" })}</h1>
       {locale === "en" && <p class="lede">Selected clinical cases across our specialties.</p>}
+      {locale === "ckb" && <p class="lede">هەندێک حاڵەتی کلینیکی هەڵبژێردراو لە بەشە پسپۆڕییەکانمان.</p>}
       {locale === "tr" && <p class="lede">Uzmanlık alanlarımızdan seçilmiş klinik vakalar.</p>}
     </header>
 

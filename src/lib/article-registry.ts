@@ -11,7 +11,7 @@
 import type { Locale } from "./i18n";
 import { localizedHref } from "./i18n";
 import { NAV_LABELS, TREATMENT_LABELS, SERVICE_LABELS, BLOG_LABELS, CASE_LABELS } from "./labels";
-import { TREATMENT_PATHWAY, SERVICE_CATEGORY_TR } from "./pathways";
+import { TREATMENT_PATHWAY, SERVICE_CATEGORY_TR, SERVICE_CATEGORY_CKB } from "./pathways";
 import { conditionPage, procedurePage, articlePage, type PageInput } from "./schema";
 
 export type ArticleCollection = "treatments" | "services" | "blog" | "cases";
@@ -54,6 +54,7 @@ const home = (locale: Locale) => ({ label: NAV_LABELS[locale].home, href: locali
 /** Category label for services. tr.md keeps the EN slug, so map it to Turkish. */
 const serviceCategory = (raw: string | undefined, locale: Locale): string => {
   if (locale === "tr") return (raw && SERVICE_CATEGORY_TR[raw]) || raw || "Hizmet";
+  if (locale === "ckb") return (raw && SERVICE_CATEGORY_CKB[raw]) || raw || "خزمەتگوزاری";
   return raw || (locale === "ar" ? "خدمة" : "Service");
 };
 
@@ -84,7 +85,9 @@ export const ARTICLE_REGISTRY: Record<ArticleCollection, ArticleConfig> = {
       return { label: TREATMENT_LABELS[locale].pathwayLabel, value: pw.pathway };
     },
     disclaimer: (entry, locale) =>
-      locale === "tr"
+      locale === "ckb"
+        ? `ئەم پەڕەیە زانیاریی گشتی دەربارەی ${entry.data.title} دەخاتە ڕوو و جێگەی هەڵسەنگاندنی پزیشکیی تایبەت بە هەر کەسێک ناگرێتەوە. ئەگەر نیشانەکانت سەختن یان خراپتر دەبن، بە زوویی پەیوەندی بە پزیشکەوە بکە.`
+        : locale === "tr"
         ? `Bu sayfa ${entry.data.title} hakkında genel bilgi sağlar ve bireysel tıbbi değerlendirmenin yerini tutmaz. Belirtileriniz şiddetliyse veya kötüleşiyorsa vakit kaybetmeden bir hekime başvurun.`
         : locale === "ar"
         ? `تقدم هذه الصفحة معلومات عامة حول ${entry.data.title} وليست بديلاً عن التقييم الطبي الفردي. إذا كانت أعراضك شديدة أو تزداد سوءاً، فاتصل بطبيب على الفور.`

@@ -31,8 +31,8 @@ const {
   linkLabel, linkHref, locale = "en",
 } = Astro.props;
 
-const sep = locale === "ar" ? "، " : ", ";
-const defaultLead = byLocale(locale, { en: "Led by", ar: "بإشراف", tr: "Sorumlu:" });
+const sep = locale === "ar" || locale === "ckb" ? "، " : ", ";
+const defaultLead = byLocale(locale, { en: "Led by", ar: "بإشراف", tr: "Sorumlu:", ckb: "بە سەرپەرشتیی:" });
 const lead = leadLabel ?? defaultLead;
 const url = linkHref && linkHref.startsWith("/") ? localizedHref(linkHref, locale) : linkHref;
 ---

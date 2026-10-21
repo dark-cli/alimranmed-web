@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { currentLocale, LOCALES } from "../../lib/i18n";
+import { currentLocale, LOCALES, localePath } from "../../lib/i18n";
 
 export async function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return LOCALES.map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);
@@ -17,6 +17,15 @@ const T = locale === "ar" ? {
   homeLabel:   "العودة إلى الموقع",
   homeHref:    "/ar/",
   psLang:      "ar",
+} : locale === "ckb" ? {
+  title:       "ئەلعیمران لە Google دا بشوێنکەوە — سەنتەری پزیشکیی ئەلعیمران",
+  description: "سەنتەری پزیشکیی ئەلعیمران زیاد بکە بۆ سەرچاوە پەسەندکراوەکانت لە Google و لە نوێترین وتارە تەندروستییەکانمان ئاگادار بە.",
+  h1:          "ئەلعیمران لە Google دا بشوێنکەوە",
+  body:        "ئێمە زیاد بکە بۆ سەرچاوە پەسەندکراوەکانت لە Google — وتارە تەندروستییەکان و هەواڵەکانی کلینیکمان لە کاتی گەڕان لە Google دا لە پێشەوە دەردەکەون.",
+  btnLabel:    "زیادکردن بۆ سەرچاوە پەسەندکراوەکانم",
+  homeLabel:   "گەڕانەوە بۆ ماڵپەڕ",
+  homeHref:    "/ku/",
+  psLang:      "ckb",
 } : locale === "tr" ? {
   title:       "Al-Imran'ı Google'da takip edin — Alimran Tıp Merkezi",
   description: "Alimran Tıp Merkezi'ni Google Tercih Edilen Kaynaklar'ınıza ekleyin ve sağlık makalelerimizden haberdar olun.",

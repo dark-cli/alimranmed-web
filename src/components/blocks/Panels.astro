@@ -33,7 +33,7 @@ interface Props {
 }
 const { heading, intro, note, panels, locale = "en", id } = Astro.props;
 const isAr = locale === "ar";
-const readingLabel = byLocale(locale, { en: "Related reading", ar: "قراءة ذات صلة", tr: "İlgili okumalar" });
+const readingLabel = byLocale(locale, { en: "Related reading", ar: "قراءة ذات صلة", tr: "İlgili okumalar", ckb: "خوێندنەوەی پەیوەندیدار" });
 
 function rewriteLinks(md: string): string {
   return md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {

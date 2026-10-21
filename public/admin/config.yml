@@ -1,13 +1,13 @@
 # Sveltia CMS configuration
 # Mirrors the Zod schema in src/content.config.ts.
 #
-# Bilingual structure: <collection>/<slug>/en.md + <collection>/<slug>/ar.md + <collection>/<slug>/tr.md.
+# Bilingual structure: <collection>/<slug>/en.md + <collection>/<slug>/ar.md + <collection>/<slug>/tr.md + <collection>/<slug>/ckb.md (Sorani Kurdish, served at /ku/).
 #
 # Sveltia has no native i18n structure that models "locale as the bare filename
 # inside a slug folder" (its `multiple_files` structure wants `slug.en.md` with a
 # dot separator, not `slug/en.md`). So each `.md` file is registered as its own
 # monolingual entry. To still get a proper folder tree in the sidebar
-# (topic/ → en, ar, tr leaves), we use `nested` with `subfolders: false`.
+# (topic/ → en, ar, tr, ckb leaves), we use `nested` with `subfolders: false`.
 #
 # `subfolders: false` is the key setting: it tells Sveltia the entries are
 # regular files inside folders (NOT Hugo-style folder-as-entry index files).
@@ -779,7 +779,7 @@ collections:
   # ── Home ───────────────────────────────────────────────────────────────
   # The home page is a bilingual pair of Markdown files living at the root
   # of src/content/ (so the on-disk layout mirrors the URL: /en/ →
-  # src/content/en.md and /ar/ → src/content/ar.md, /tr/ → src/content/tr.md). Modelled as a `files`
+  # src/content/en.md and /ar/ → src/content/ar.md, /tr/ → src/content/tr.md, /ku/ → src/content/ckb.md). Modelled as a `files`
   # collection — two fixed entries, nothing to create or delete.
   - name: home
     label: Home
@@ -840,6 +840,31 @@ collections:
       - name: tr
         label: Home — Turkish
         file: src/content/tr.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: home }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+      - name: ckb
+        label: Home — Sorani Kurdish
+        file: src/content/ckb.md
         format: yaml-frontmatter
         fields:
           - { label: Title, name: title, widget: string }
@@ -1128,7 +1153,7 @@ collections:
       - { label: Body, name: body, widget: markdown, required: false }
 
   # ── About ──────────────────────────────────────────────────────────────
-  # Single bilingual pair at src/content/about/{en,ar,tr}.md. Mission, vision
+  # Single bilingual pair at src/content/about/{en,ar,tr,ckb}.md. Mission, vision
   # and values live inside this one page as `prose` sections — previously
   # six separate files, collapsed to two.
   - name: about
@@ -1212,9 +1237,34 @@ collections:
           - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
           - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
           - *sections_field
+      - name: ckb
+        label: About — Sorani Kurdish
+        file: src/content/about/ckb.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: about }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
 
   # ── Contact ────────────────────────────────────────────────────────────
-  # Single bilingual pair at src/content/contact/{en,ar,tr}.md. Hero prose +
+  # Single bilingual pair at src/content/contact/{en,ar,tr,ckb}.md. Hero prose +
   # contact strip + social row + map all live inside the one page as
   # sections — same model as home + about.
   - name: contact
@@ -1276,6 +1326,31 @@ collections:
       - name: tr
         label: Contact — Turkish
         file: src/content/contact/tr.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Category, name: category, widget: string, required: false, default: contact }
+          - { label: Order, name: order, widget: number, required: false, default: 999, value_type: int }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Image alt, name: imageAlt, widget: string, required: false }
+          - { label: Last updated, name: updated, widget: datetime, required: false, picker_utc: true }
+          - label: Source
+            name: source
+            widget: select
+            default: original
+            options:
+              - { label: Legacy WordPress, value: legacy-wp }
+              - { label: AI draft, value: ai-draft }
+              - { label: Human reviewed, value: human-reviewed }
+              - { label: Original, value: original }
+              - { label: Translated by LLM, value: translated-by-llm }
+          - { label: Reviewed by, name: reviewedBy, widget: string, required: false }
+          - { label: Reviewed at, name: reviewedAt, widget: datetime, required: false, picker_utc: true }
+          - *sections_field
+      - name: ckb
+        label: Contact — Sorani Kurdish
+        file: src/content/contact/ckb.md
         format: yaml-frontmatter
         fields:
           - { label: Title, name: title, widget: string }

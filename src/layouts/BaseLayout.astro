@@ -39,7 +39,7 @@ const isProduction = !NON_PROD_BRANCHES.has(cfBranch);
   <body>
     {!isProduction && (
       <div class="beta-ribbon" aria-label="Beta environment">
-        {byLocale(locale, { en: "BETA — testing environment", ar: "بيتا — بيئة اختبار", tr: "BETA — test ortamı" })}
+        {byLocale(locale, { en: "BETA — testing environment", ar: "بيتا — بيئة اختبار", tr: "BETA — test ortamı", ckb: "بێتا — ژینگەی تاقیکردنەوە" })}
       </div>
     )}
     <Header />

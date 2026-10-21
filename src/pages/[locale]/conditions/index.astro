@@ -3,12 +3,12 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SoonLink from "../../../components/article/SoonLink.astro";
 import Image from "../../../components/Image.astro";
 import { CONTACT } from "../../../consts";
-import { localizedHref, currentLocale, topicOf, isLocale, DATE_LOCALES, LOCALES } from "../../../lib/i18n";
+import { localizedHref, currentLocale, topicOf, isLocale, DATE_LOCALES, LOCALES, localePath } from "../../../lib/i18n";
 import { BLOG_PATHWAY } from "../../../lib/pathways";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return LOCALES.map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);
@@ -252,27 +252,37 @@ const TBase = isAr ? {
   seeAllBlog:    "Browse all articles →",
 };
 
-/* ── Turkish ────────────────────────────────────────────────────────────
-   The EN structure is reused; item names come from the tr entries' titles
-   so they match the pages they link to, and the chrome strings are below. */
-const isTr = locale === "tr";
+/* ── Turkish / Sorani ──────────────────────────────────────────────────
+   The EN structure is reused; item names come from the translated entries'
+   titles so they match the pages they link to, and the chrome strings are
+   below. tr.md / ckb.md keep the English category slugs. */
+const isTr = locale === "tr" || locale === "ckb";
 const trTreatTitles = new Map<string, string>();
 const trSvcTitles = new Map<string, string>();
 if (isTr) {
-  for (const e of allTreatments) if (isLocale(e.id, "tr")) trTreatTitles.set(topicOf(e.id), e.data.title);
-  for (const e of await getCollection("services")) if (isLocale(e.id, "tr")) trSvcTitles.set(topicOf(e.id), e.data.title);
+  for (const e of allTreatments) if (isLocale(e.id, locale)) trTreatTitles.set(topicOf(e.id), e.data.title);
+  for (const e of await getCollection("services")) if (isLocale(e.id, locale)) trSvcTitles.set(topicOf(e.id), e.data.title);
 }
-const TR_PATHWAY_TITLES = { brain: "Beyin", spine: "Omurga", pain: "Ağrı" } as const;
-const TR_PROC_TITLES: Record<string, string> = {
+const isCkb = locale === "ckb";
+const TR_PATHWAY_TITLES = isCkb
+  ? { brain: "مێشک", spine: "بڕبڕەی پشت", pain: "ئازار" } as const
+  : { brain: "Beyin", spine: "Omurga", pain: "Ağrı" } as const;
+const TR_PROC_TITLES: Record<string, string> = isCkb ? {
+  physiotherapy: "چارەسەری سروشتی", chiropractic: "کایرۆپراکتیک", "brain-stimulation": "ورووژاندنی مێشک",
+  radiofrequency: "ڕادیۆفریکوێنسی", "steroid-injection": "دەرزی ستیرۆید", surgery: "نەشتەرگەری",
+  "ozone-therapy": "چارەسەر بە ئۆزۆن", "regenerative-medicine": "پزیشکیی نوێکردنەوە", rehabilitation: "بەتواناکردنەوە",
+  botox: "بۆتۆکس", exercises: "جموجۆڵ و ڕاهێنان", fitness: "لەشجوانی", acupuncture: "دەرزی چینی", "pain-management": "چارەسەری ئازار",
+} : {
   physiotherapy: "Fizyoterapi", chiropractic: "Kayropraktik", "brain-stimulation": "Beyin stimülasyonu",
   radiofrequency: "Radyofrekans", "steroid-injection": "Steroid enjeksiyonu", surgery: "Cerrahi",
   "ozone-therapy": "Ozon tedavisi", "regenerative-medicine": "Rejeneratif tıp", rehabilitation: "Rehabilitasyon",
   botox: "Botoks", exercises: "Egzersizler", fitness: "Zindelik", acupuncture: "Akupunktur", "pain-management": "Ağrı yönetimi",
 };
+const padNum = (n: string) => (isCkb ? n.replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]) : n);
 const pathways = isTr
   ? pathwaysBase.map((p) => ({
       ...p,
-      num: p.num.replace("Pathway", "Yol"),
+      num: padNum(p.num.replace("Pathway", isCkb ? "ڕێچکە" : "Yol")),
       title: TR_PATHWAY_TITLES[p.key],
       items: p.items.map((i) => ({ ...i, name: trTreatTitles.get(i.slug) ?? i.name })),
     }))
@@ -280,12 +290,18 @@ const pathways = isTr
 const procedureCategories = isTr
   ? procedureCategoriesBase.map((c) => ({
       ...c,
-      num: c.num.replace("Category", "Kategori"),
+      num: padNum(c.num.replace("Category", isCkb ? "پۆل" : "Kategori")),
       title: TR_PROC_TITLES[c.basePath] ?? c.title,
       items: c.items.map((i) => ({ ...i, name: trSvcTitles.get(`${c.basePath}/${i.slug}`) ?? i.name })),
     }))
   : procedureCategoriesBase;
-const photoStrip = isTr
+const photoStrip = isCkb
+  ? [
+      { ...photoStripBase[0], caption: "نەشتەرگەریی ئەندۆسکۆپیی بڕبڕەی پشت", alt: "نەشتەرگەرێکی ڕاوێژکار لە ژووری نەشتەرگەری" },
+      { ...photoStripBase[1], caption: "ورووژاندنی دەمار", alt: "ورووژاندنی دەمار لەلایەن کارمەندێکی ڕاهێنراوەوە" },
+      { ...photoStripBase[2], caption: "سووتاندن بە ڕادیۆفریکوێنسی", alt: "ئامێرێکی کلینیکی لە دانیشتنی چارەسەردا بۆ نەخۆش بەکاردێت" },
+    ]
+  : isTr
   ? [
       { ...photoStripBase[0], caption: "Endoskopik omurga cerrahisi", alt: "Ameliyathanede ameliyat yapan danışman cerrah" },
       { ...photoStripBase[1], caption: "Nöromodülasyon", alt: "Eğitimli bir operatör tarafından uygulanan nöromodülasyon" },
@@ -312,7 +328,27 @@ const TR_T = {
   blogH2:        "Bloga son eklenenler",
   seeAllBlog:    "Tüm makalelere göz atın →",
 };
-const T = isTr ? TR_T : TBase;
+const CKB_T = {
+  title:         "نەخۆشی و چارەسەرەکان — کلینیکی ئەلعیمران",
+  description:   "کلینیک حاڵەتە نێردراوەکان لە سێ ڕێچکەدا ڕیز دەکات: مێشک، بڕبڕەی پشت و ئازار. نەشتەرگەری، دەستێوەردان و بەتواناکردنەوە لەژێر یەک تیپدا.",
+  introEyebrow:  "نەخۆشی و چارەسەرەکان",
+  introH1:       "چی هەڵدەسەنگێنین و چۆن چارەسەری دەکەین.",
+  introLede:     "کلینیک حاڵەتە نێردراوەکان لە سێ ڕێچکەدا ڕیز دەکات. هەر یەکەم چاوپێکەوتنێک پشکنینێکی تەواوی دەمار و پێداچوونەوەی ئەو وێنەگرتنانە دەگرێتەوە کە هەن؛ پلانێکی نووسراو دەدرێتە نەخۆش و ئەو پزیشکەی ناردوویەتی.",
+  condEyebrow:   "نەخۆشییەکان",
+  condH2:        "چی چارەسەر دەکەین",
+  seeAllTreat:   "← هەموو نەخۆشییەکان ببینە",
+  soonLabel:     "ئەم وتارە هێشتا بە دیزاینی نوێ نییە — بەم زووانە.",
+  procEyebrow:   "چارەسەرەکان",
+  procH2:        "ئەو چارەسەر و دەستێوەردانانەی پێشکەشیان دەکەین",
+  seeAllSvc:     "← هەموو چارەسەرەکان ببینە",
+  relatedRead:   "خوێندنەوەی پەیوەندیدار",
+  apptH2:        "گرتنی چاوپێکەوتن",
+  apptBody:      "چاوپێکەوتنەکان بە تەلەفۆن لە ڕێگەی سکرتێری کلینیکەوە دەگیرێن. تکایە لە کاتی پەیوەندیکردنەکەدا وێنەگرتنە پێشووەکان، تێبینییەکانی نەشتەرگەری و لیستی دەرمانە ئێستاکانت ئامادە بێت.",
+  blogEyebrow:   "وتارەکان",
+  blogH2:        "نوێترینەکانی ماڵپەڕی وتار",
+  seeAllBlog:    "← هەموو وتارەکان ببینە",
+};
+const T = isCkb ? CKB_T : isTr ? TR_T : TBase;
 ---
 
 <BaseLayout title={T.title} description={T.description}>

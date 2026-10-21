@@ -10,10 +10,10 @@
  */
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, localizedHref, currentLocale, DATE_LOCALES, LOCALES } from "../../../lib/i18n";
+import { topicOf, isLocale, localizedHref, currentLocale, DATE_LOCALES, LOCALES, localePath } from "../../../lib/i18n";
 
 export async function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return LOCALES.map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);
@@ -97,6 +97,26 @@ const T = isAr ? {
   of:           "من",
   searchPh:     "ابحث في العناوين والوصف…",
   searchAria:   "ابحث في المكتبة",
+} : locale === "ckb" ? {
+  title:        "کتێبخانە — سەنتەری پزیشکیی ئەلعیمران",
+  description:  "پێرستێکی یەکگرتوو بۆ هەموو ئەوەی بڵاو دەکەینەوە: وتار، پەڕەی نەخۆشی، چارەسەر و حاڵەتی کلینیکی.",
+  eyebrow:      "کتێبخانە",
+  h1:           "هەموو ئەوەی بڵاومان کردووەتەوە، لە یەک شوێندا.",
+  lede:         "وتار و پەڕەی سەرچاوەی کلینیکی دەربارەی ئەو نەخۆشییانەی چارەسەریان دەکەین و ئەو چارەسەرانەی پێشکەشیان دەکەین، لەگەڵ هەندێک حاڵەتی هەڵبژێردراو. بەپێی جۆر فلتەر بکە بۆ دۆزینەوەی ئەوەی پێویستتە.",
+  filterLabel:  "فلتەرکردن بەپێی جۆر",
+  ariaFilter:   "فلتەری جۆر",
+  all:          "هەموو",
+  blog:         "وتار",
+  treatments:   "نەخۆشی",
+  services:     "چارەسەر",
+  cases:        "حاڵەت",
+  emptyFilter:  "هێشتا هیچ تۆمارێک لەگەڵ ئەم فلتەرە ناگونجێت.",
+  emptyAll:     "هێشتا هیچ ناوەڕۆکێک بڵاو نەکراوەتەوە.",
+  showMore:     "زیاتر پیشان بدە",
+  showing:      "پیشاندراو",
+  of:           "لە",
+  searchPh:     "بگەڕێ لە ناونیشان و وەسفەکاندا…",
+  searchAria:   "گەڕان لە کتێبخانە",
 } : locale === "tr" ? {
   title:        "Kütüphane — Alimran Tıp Merkezi",
   description:  "Yayımladığımız her şeyin tek dizini: makaleler, hastalık sayfaları, girişimler ve vakalar.",

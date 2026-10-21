@@ -37,6 +37,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p class="nf-lede">الصفحة <code class="nf-path"></code> غير موجودة أو تم نقلها.</p>
       </div>
 
+      <!-- Sorani Kurdish (revealed by JS when relevant) -->
+      <div class="nf-body nf-ckb" hidden dir="rtl" lang="ckb">
+        <h1>پەڕەکە نەدۆزرایەوە</h1>
+        <p class="nf-lede">پەڕەی <code class="nf-path"></code> بوونی نییە یان گوازراوەتەوە.</p>
+      </div>
+
       <!-- Turkish (revealed by JS when relevant) -->
       <div class="nf-body nf-tr" hidden>
         <h1>Sayfa bulunamadı</h1>
@@ -65,15 +71,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       // 1. Explicit URL prefix on the requested path
       if (path.indexOf("/ar/") === 0) return "ar";
       if (path.indexOf("/tr/") === 0) return "tr";
+      if (path.indexOf("/ku/") === 0) return "ckb";
       if (path.indexOf("/en/") === 0) return "en";
       // 2. Referrer prefix — user came from a language-scoped page
       if (ref.indexOf("/ar/") !== -1) return "ar";
       if (ref.indexOf("/tr/") !== -1) return "tr";
+      if (ref.indexOf("/ku/") !== -1) return "ckb";
       if (ref.indexOf("/en/") !== -1) return "en";
       // 3. Device language (client-side equivalent of Accept-Language)
       var langs = (navigator.languages || [navigator.language || ""])
         .map(function (l) { return String(l).toLowerCase(); });
       for (var i = 0; i < langs.length; i++) {
+        if (langs[i].indexOf("ckb") === 0 || langs[i].indexOf("ku") === 0) return "ckb";
         if (langs[i].indexOf("ar") === 0) return "ar";
         if (langs[i].indexOf("tr") === 0) return "tr";
       }
@@ -94,8 +103,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       var en = document.querySelector(".nf-en");
       var ar = document.querySelector(".nf-ar");
       var tr = document.querySelector(".nf-tr");
+      var ckb = document.querySelector(".nf-ckb");
       if (tr) tr.hidden = locale !== "tr";
-      if (locale === "tr") {
+      if (ckb) ckb.hidden = locale !== "ckb";
+      if (locale === "ckb") {
+        document.documentElement.setAttribute("lang", "ckb");
+        document.documentElement.setAttribute("dir", "rtl");
+        if (en) en.hidden = true;
+        if (ar) ar.hidden = true;
+        document.title = "پەڕەکە نەدۆزرایەوە — سەنتەری پزیشکیی ئەلعیمران";
+      } else if (locale === "tr") {
         document.documentElement.setAttribute("lang", "tr");
         document.documentElement.setAttribute("dir", "ltr");
         if (en) en.hidden = true;

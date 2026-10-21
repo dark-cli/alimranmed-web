@@ -26,9 +26,12 @@ export function readingTimeAr(minutes: number): string {
 }
 
 /** Returns a locale-appropriate reading-time string from a raw word count. */
-export function articleReadingLabel(wordCount: number, locale: "en" | "ar" | "tr"): string {
+export function articleReadingLabel(wordCount: number, locale: "en" | "ar" | "tr" | "ckb"): string {
   if (locale === "ar") {
     return readingTimeAr(Math.max(1, Math.round(wordCount / 140)));
+  }
+  if (locale === "ckb") {
+    return `${toArabicDigits(Math.max(1, Math.round(wordCount / 160)))} خولەک`;
   }
   const mins = Math.max(1, Math.round(wordCount / 180));
   return locale === "tr" ? `${mins} dk` : `${mins} min read`;

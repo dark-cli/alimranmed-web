@@ -6,12 +6,12 @@
  * src/components/templates/PlainTemplate.astro.
  */
 import { getEntry } from "astro:content";
-import { currentLocale, LOCALES } from "../../lib/i18n";
+import { currentLocale, LOCALES, localePath } from "../../lib/i18n";
 import { heroPreloadFromSections } from "../../lib/pages";
 import PlainTemplate from "../../components/templates/PlainTemplate.astro";
 
 export function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return LOCALES.map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);

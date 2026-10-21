@@ -962,6 +962,7 @@
     var path = (entry.get("path") || "").toLowerCase();
     var basis = path || slug;
     // Match ".../ar" or ".../ar.md" (with or without extension)
+    if (/(?:^|\/)ckb(?:\.md)?$/.test(basis)) return "ckb";
     return /(?:^|\/)ar(?:\.md)?$/.test(basis) ? "ar" : "en";
   }
 
@@ -971,7 +972,8 @@
     return createClass({
       getInitialState: function () { return { dark: false }; },
       render: function () {
-        var cls = detectLocale(this.props.entry) === "ar" ? arCls : enCls;
+        var loc = detectLocale(this.props.entry);
+        var cls = (loc === "ar" || loc === "ckb") ? arCls : enCls;
         return h(cls, this.props);
       }
     });
@@ -991,7 +993,7 @@
         var self     = this;
         var entry    = this.props.entry;
         var data     = entry && entry.get("data") ? entry.get("data").toJS() : {};
-        var isAr     = detectLocale(entry) === "ar";
+        var isAr     = detectLocale(entry) === "ar" || detectLocale(entry) === "ckb";
         var getAsset = this.props.getAsset;
         var sections = toArray(data.sections);
         var lastIdx  = lastListIndex(sections);
@@ -1054,5 +1056,6 @@
   CMS.registerPreviewTemplate("en", makePagesPreview());
   CMS.registerPreviewTemplate("ar", makePagesPreview());
   CMS.registerPreviewTemplate("tr", makePagesPreview());
+  CMS.registerPreviewTemplate("ckb", makePagesPreview());
   CMS.registerPreviewStyle("/admin/preview.css");
 })();

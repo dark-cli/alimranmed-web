@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, localizedHref, currentLocale, DATE_LOCALES, LOCALES } from "../../../lib/i18n";
+import { topicOf, isLocale, localizedHref, currentLocale, DATE_LOCALES, LOCALES, localePath, toArabicDigits } from "../../../lib/i18n";
 import { readingMinutes, readingTimeAr } from "../../../lib/word-count";
 import { BLOG_PATHWAY, PATHWAY_LABELS } from "../../../lib/pathways";
 
 export async function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return LOCALES.map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);
@@ -35,7 +35,7 @@ const blogs = blogsRaw.map((entry) => {
     href: L(`/blog/${topic}/`),
     pathway,
     pathwayLabel: PATHWAY_LABEL[pathway],
-    readingLabel: isAr ? readingTimeAr(mins) : locale === "tr" ? `${mins} dk` : `${mins} min`,
+    readingLabel: isAr ? readingTimeAr(mins) : locale === "tr" ? `${mins} dk` : locale === "ckb" ? `${toArabicDigits(mins)} خولەک` : `${mins} min`,
     publishedLabel: entry.data.publishedAt
       ? entry.data.publishedAt.toLocaleDateString(dateLocale, { year: "numeric", month: "short", day: "numeric" })
       : "",
@@ -64,6 +64,23 @@ const T = isAr ? {
   arrow:       "←",
   emptyFilter: "لا توجد مقالات تطابق هذه التصفية.",
   emptyAll:    "ستظهر المقالات هنا بعد اكتمال ترحيل المدونة.",
+} : locale === "ckb" ? {
+  title:       "ماڵپەڕی وتار — سەنتەری پزیشکیی ئەلعیمران",
+  description: "وتاری پزیشکی دەربارەی دەمار، بڕبڕەی پشت و پزیشکیی ئازار — نووسراون بۆ ئەوەی نەخۆش پێش یەکەم چاوپێکەوتن لە نەخۆشییەک یان چارەسەرێک تێبگات.",
+  eyebrow:     "وتارەکان",
+  h1:          "وتاری پزیشکی لە کلینیکەوە.",
+  lede:        "نووسینی سادە دەربارەی ئەو نەخۆشییانەی چارەسەریان دەکەین و ئەو چارەسەرانەی پێشکەشیان دەکەین — نووسراون بۆ ئەوەی نەخۆش بە زانینی مانای زاراوەکانەوە بێتە یەکەم چاوپێکەوتن.",
+  filterLabel: "فلتەرکردن بەپێی ڕێچکە",
+  ariaFilter:  "فلتەری ڕێچکە",
+  all:         "هەموو",
+  brain:       "مێشک",
+  spine:       "بڕبڕەی پشت",
+  pain:        "ئازار",
+  other:       "هی تر",
+  latest:      "نوێترین وتار",
+  arrow:       "←",
+  emptyFilter: "هێشتا هیچ وتارێک لەگەڵ ئەم فلتەرە ناگونجێت.",
+  emptyAll:    "وتارەکان دوای تەواوبوونی گواستنەوەی ماڵپەڕی وتار لێرە دەردەکەون.",
 } : locale === "tr" ? {
   title:       "Blog — Alimran Tıp Merkezi",
   description: "Nöroloji, omurga ve ağrı tıbbı üzerine tıbbi makaleler — hastaların ilk randevudan önce bir hastalığı veya girişimi anlamasına yardımcı olmak için yazıldı.",

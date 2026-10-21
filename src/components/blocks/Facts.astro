@@ -16,7 +16,7 @@ interface Props {
   id?: string;
 }
 const { heading, items, locale = "en", id } = Astro.props;
-const isAr = locale === "ar";
+const isAr = locale === "ar" || locale === "ckb"; // Eastern Arabic-Indic digits
 
 function pad(n: number): string {
   return isAr ? toArabicDigits(n).padStart(2, "٠") : String(n).padStart(2, "0");

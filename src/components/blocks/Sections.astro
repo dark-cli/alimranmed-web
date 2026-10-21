@@ -42,9 +42,9 @@ const isAr = locale === "ar";
 
 // Localised default headings used by widgets that fall back to a canonical
 // string when the editor left the heading empty.
-const factsDefaultHeading = byLocale(locale, { en: "Key facts", ar: "حقائق أساسية", tr: "Temel bilgiler" });
-const cardsDefaultHeading = byLocale(locale, { en: "Related reading", ar: "قراءات ذات صلة", tr: "İlgili okumalar" });
-const faqDefaultHeading   = byLocale(locale, { en: "Common questions", ar: "أسئلة شائعة", tr: "Sık sorulan sorular" });
+const factsDefaultHeading = byLocale(locale, { en: "Key facts", ar: "حقائق أساسية", tr: "Temel bilgiler", ckb: "زانیارییە سەرەکییەکان" });
+const cardsDefaultHeading = byLocale(locale, { en: "Related reading", ar: "قراءات ذات صلة", tr: "İlgili okumalar", ckb: "خوێندنەوەی پەیوەندیدار" });
+const faqDefaultHeading   = byLocale(locale, { en: "Common questions", ar: "أسئلة شائعة", tr: "Sık sorulan sorular", ckb: "پرسیارە باوەکان" });
 
 // Sequentially assign anchor IDs for sections that have headings.
 // Must match the logic in buildToc (src/lib/toc.ts): id = "s-{n}".

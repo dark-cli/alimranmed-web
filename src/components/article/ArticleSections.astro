@@ -36,16 +36,16 @@ interface Props {
 }
 
 const { sections, locale, resolveRelated } = Astro.props;
-const isAr = locale === "ar";
+const isAr = locale === "ar" || locale === "ckb"; // Eastern Arabic-Indic digits
 
 // Localized UI strings
-const glanceLabel  = byLocale(locale, { en: "At a glance", ar: "لمحة سريعة", tr: "Bir bakışta" });
-const factsTitle   = byLocale(locale, { en: "Key facts", ar: "حقائق أساسية", tr: "Temel bilgiler" });
-const relatedLabel = byLocale(locale, { en: "Related reading", ar: "قراءة ذات صلة", tr: "İlgili okumalar" });
+const glanceLabel  = byLocale(locale, { en: "At a glance", ar: "لمحة سريعة", tr: "Bir bakışta", ckb: "بە کورتی" });
+const factsTitle   = byLocale(locale, { en: "Key facts", ar: "حقائق أساسية", tr: "Temel bilgiler", ckb: "زانیارییە سەرەکییەکان" });
+const relatedLabel = byLocale(locale, { en: "Related reading", ar: "قراءة ذات صلة", tr: "İlgili okumalar", ckb: "خوێندنەوەی پەیوەندیدار" });
 const soonLabel    = byLocale(locale, {
   en: "This article isn't in the new design yet — coming soon.",
   ar: "هذا المقال لم يُعاد تصميمه بعد — قريبًا.",
-  tr: "Bu makale henüz yeni tasarımda değil — yakında.",
+  tr: "Bu makale henüz yeni tasarımda değil — yakında.", ckb: "ئەم وتارە هێشتا بە دیزاینی نوێ نییە — بەم زووانە.",
 });
 
 function padNum(n: number): string {

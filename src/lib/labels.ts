@@ -55,6 +55,15 @@ export const NAV_LABELS = {
     cases:     "Vakalar",
     siteName:  "Alimran Kliniği",
   },
+  ckb: {
+    home:      "سەرەکی",
+    blog:      "ماڵپەڕی وتار",
+    treatments:"نەخۆشی و چارەسەرەکان",
+    services:  "خزمەتگوزارییەکان",
+    doctors:   "پزیشکەکانمان",
+    cases:     "حاڵەتە چارەسەرکراوەکان",
+    siteName:  "کلینیکی ئەلعیمران",
+  },
 } as const;
 
 export const TREATMENT_LABELS = {
@@ -93,6 +102,18 @@ export const TREATMENT_LABELS = {
     callBody:         "Bu hastalıkla ilgili bir muayene için sekreterle görüşün.",
     ctaHeading:       "Muayene randevusu alın",
     ctaBody:          "Sekreter ilk randevuları klinik saatleri içinde planlar; lütfen aramayı yaparken önceki görüntüleme tetkiklerinizi, ameliyat notlarınızı ve güncel ilaç listenizi hazır bulundurun.",
+  },
+  ckb: {
+    pathwayLabel:     "ڕێچکە",
+    reviewedByLabel:  "پشکنراوە لەلایەن",
+    reviewer:         "د. حوسێن عیمران مووسا، پزیشکی ڕاوێژکاری نەشتەرگەریی مێشک و دەمار",
+    readingTimeLabel: "کاتی خوێندنەوە",
+    lastReviewedLabel:"دوایین پشکنین",
+    tocLabel:         "لەم پەڕەیەدا",
+    callLabel:        "گفتوگۆ بکە",
+    callBody:         "لەگەڵ سکرتێر قسە بکە بۆ دیاریکردنی چاوپێکەوتنێک سەبارەت بەم نەخۆشییە.",
+    ctaHeading:       "چاوپێکەوتنێک بگرە",
+    ctaBody:          "سکرتێر یەکەم کاتی چاوپێکەوتن لە ماوەی کاتی کارکردنی کلینیکدا دیاری دەکات؛ تکایە لە کاتی پەیوەندیکردنەکەدا وێنەگرتنە پێشووەکان، تێبینییەکانی نەشتەرگەری و لیستی دەرمانە ئێستاکانت ئامادە بێت.",
   },
 } as const;
 
@@ -133,6 +154,18 @@ export const BLOG_LABELS = {
     ctaBody:          "Bu makalede ele alınan konular hakkında daha fazla ayrıntı için ekibimize ulaşın.",
     disclaimer:       "Bu makale genel bilgi sağlar ve profesyonel tıbbi tavsiyenin yerini tutmaz. Belirli sağlık sorunlarınız varsa lütfen bir sağlık uzmanına danışın.",
   },
+  ckb: {
+    reviewedByLabel:  "پشکنراوە لەلایەن",
+    reviewer:         "د. حوسێن عیمران مووسا، پزیشکی ڕاوێژکاری نەشتەرگەریی مێشک و دەمار",
+    readingTimeLabel: "کاتی خوێندنەوە",
+    lastReviewedLabel:"دوایین پشکنین",
+    tocLabel:         "لەم پەڕەیەدا",
+    callLabel:        "پرسیارت هەیە؟",
+    callBody:         "پەیوەندیمان پێوە بکە بۆ گفتوگۆکردن لەسەر ئەم بابەتە لەگەڵ تیپەکەمان.",
+    ctaHeading:       "زانیاری زیاترت دەوێت؟",
+    ctaBody:          "پەیوەندی بە تیپەکەمانەوە بکە بۆ وردەکاریی زیاتر دەربارەی ئەو بابەتانەی لەم وتارەدا باسکراون.",
+    disclaimer:       "ئەم وتارە زانیاریی گشتی دەخاتە ڕوو و جێگەی ڕاوێژی پزیشکیی پسپۆڕ ناگرێتەوە. ئەگەر نیگەرانییەکی تایبەتیی تەندروستیت هەیە، تکایە ڕاوێژ بە کارمەندێکی تەندروستی بکە.",
+  },
 } as const;
 
 export const CASE_LABELS = {
@@ -171,6 +204,18 @@ export const CASE_LABELS = {
     ctaHeading:       "Muayene randevusu alın",
     ctaBody:          "Sekreter ilk randevuları klinik saatleri içinde planlar; lütfen aramayı yaparken önceki görüntüleme tetkiklerinizi, ameliyat notlarınızı ve güncel ilaç listenizi hazır bulundurun.",
     disclaimer:       "Bu sayfa Alimran Tıp Merkezi'nde tedavi edilen klinik vakaları özetler. Hasta bilgileri anonimleştirilmiştir. Bireysel tıbbi değerlendirmenin yerini tutmaz.",
+  },
+  ckb: {
+    reviewedByLabel:  "پشکنراوە لەلایەن",
+    reviewer:         "د. حوسێن عیمران مووسا، پزیشکی ڕاوێژکاری نەشتەرگەریی مێشک و دەمار",
+    readingTimeLabel: "کاتی خوێندنەوە",
+    lastReviewedLabel:"دوایین پشکنین",
+    tocLabel:         "لەم پەڕەیەدا",
+    callLabel:        "گفتوگۆ لەسەر حاڵەتێک",
+    callBody:         "لەگەڵ سکرتێر قسە بکە دەربارەی ناردن یان حاڵەتێکی هاوشێوە.",
+    ctaHeading:       "چاوپێکەوتنێک بگرە",
+    ctaBody:          "سکرتێر یەکەم کاتی چاوپێکەوتن لە ماوەی کاتی کارکردنی کلینیکدا دیاری دەکات؛ تکایە لە کاتی پەیوەندیکردنەکەدا وێنەگرتنە پێشووەکان، تێبینییەکانی نەشتەرگەری و لیستی دەرمانە ئێستاکانت ئامادە بێت.",
+    disclaimer:       "ئەم پەڕەیە کورتەی ئەو حاڵەتە کلینیکییانە دەخاتە ڕوو کە لە سەنتەری پزیشکیی ئەلعیمران چارەسەر کراون. زانیارییەکانی نەخۆشەکان شاراوەن. جێگەی هەڵسەنگاندنی پزیشکیی تایبەت بە هەر کەسێک ناگرێتەوە.",
   },
 } as const;
 
@@ -213,5 +258,18 @@ export const SERVICE_LABELS = {
     ctaHeading:       "Muayene randevusu alın",
     ctaBody:          "Sekreter ilk randevuları klinik saatleri içinde planlar.",
     disclaimer:       "Bu sayfa Alimran Tıp Merkezi'nde sunulan bir tedaviyi anlatır ve bireysel tıbbi değerlendirmenin yerini tutmaz. Uygunluğa muayene sırasında karar verilir.",
+  },
+  ckb: {
+    pathwayLabel:     "پۆل",
+    reviewedByLabel:  "پشکنراوە لەلایەن",
+    reviewer:         "د. حوسێن عیمران مووسا، پزیشکی ڕاوێژکاری نەشتەرگەریی مێشک و دەمار",
+    readingTimeLabel: "کاتی خوێندنەوە",
+    lastReviewedLabel:"دوایین پشکنین",
+    tocLabel:         "لەم پەڕەیەدا",
+    callLabel:        "ئێستا چاوپێکەوتن بگرە",
+    callBody:         "لەگەڵ سکرتێر قسە بکە دەربارەی ئەم خزمەتگوزارییە.",
+    ctaHeading:       "چاوپێکەوتنێک بگرە",
+    ctaBody:          "سکرتێر یەکەم کاتی چاوپێکەوتن لە ماوەی کاتی کارکردنی کلینیکدا دیاری دەکات.",
+    disclaimer:       "ئەم پەڕەیە چارەسەرێک دەخاتە ڕوو کە لە سەنتەری پزیشکیی ئەلعیمران پێشکەش دەکرێت و جێگەی هەڵسەنگاندنی پزیشکیی تایبەت بە هەر کەسێک ناگرێتەوە. گونجاوی چارەسەرەکە لە کاتی ڕاوێژدا دیاری دەکرێت.",
   },
 } as const;

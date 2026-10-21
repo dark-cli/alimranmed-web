@@ -12,11 +12,11 @@ interface Props {
 const { heading, items, locale, id } = Astro.props;
 const isAr = locale === "ar";
 
-const TYPE_LABELS: Record<string, { en: string; ar: string; tr: string }> = {
-  treatments: { en: "Treatment", ar: "علاج", tr: "Tedavi" },
-  services:   { en: "Service",   ar: "خدمة", tr: "Hizmet" },
-  blog:       { en: "Article",   ar: "مقال", tr: "Makale" },
-  doctors:    { en: "Doctor",    ar: "طبيب", tr: "Doktor" },
+const TYPE_LABELS: Record<string, { en: string; ar: string; tr: string; ckb: string }> = {
+  treatments: { en: "Treatment", ar: "علاج", tr: "Tedavi", ckb: "چارەسەر" },
+  services:   { en: "Service",   ar: "خدمة", tr: "Hizmet", ckb: "خزمەتگوزاری" },
+  blog:       { en: "Article",   ar: "مقال", tr: "Makale", ckb: "وتار" },
+  doctors:    { en: "Doctor",    ar: "طبيب", tr: "Doktor", ckb: "پزیشک" },
 };
 
 function parsePath(path: string) {
@@ -48,8 +48,8 @@ const cards = items.map((path) => {
   }
 
   const dateRaw = (entry.data as any).publishedAt ?? (entry.data as any).updated ?? null;
-  // tr.md keeps the English category slug; show the type label for tr instead.
-  const rawCat  = locale === "tr" ? null : (entry.data as any).category;
+  // tr.md and ckb.md keep the English category slug; show the type label for tr instead.
+  const rawCat  = locale === "tr" || locale === "ckb" ? null : (entry.data as any).category;
   const badge   = rawCat || TYPE_LABELS[collection]?.[locale] || null;
 
   return {

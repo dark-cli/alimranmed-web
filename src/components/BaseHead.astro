@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
-import { SITE_TITLE, SITE_NAME, SITE_DESCRIPTION, SITE_DESCRIPTION_AR, SITE_DESCRIPTION_TR } from "../consts";
-import { currentLocale, alternateHref, byLocale, LOCALES } from "../lib/i18n";
+import { SITE_TITLE, SITE_NAME, SITE_DESCRIPTION, SITE_DESCRIPTION_AR, SITE_DESCRIPTION_TR, SITE_DESCRIPTION_CKB } from "../consts";
+import { currentLocale, alternateHref, byLocale, isRtl, LOCALES } from "../lib/i18n";
 import { excerpt } from "../lib/excerpt";
 
 interface Props {
@@ -29,7 +29,7 @@ const {
 // Search results cut descriptions off around 160 characters; trim at a word
 // boundary so the snippet ends cleanly instead of mid-word.
 const description = excerpt(
-  Astro.props.description?.trim() || byLocale(locale, { en: SITE_DESCRIPTION, ar: SITE_DESCRIPTION_AR, tr: SITE_DESCRIPTION_TR }),
+  Astro.props.description?.trim() || byLocale(locale, { en: SITE_DESCRIPTION, ar: SITE_DESCRIPTION_AR, tr: SITE_DESCRIPTION_TR, ckb: SITE_DESCRIPTION_CKB }),
   160,
 );
 
@@ -37,7 +37,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const urlFor = (l: string) =>
   l === locale ? canonicalURL : new URL(alternateHref(Astro.url.pathname, l as typeof locale), Astro.site);
 const enURL = urlFor("en");
-const OG_LOCALES = { en: "en_US", ar: "ar_IQ", tr: "tr_TR" };
+const OG_LOCALES = { en: "en_US", ar: "ar_IQ", tr: "tr_TR", ckb: "ckb_IQ" };
 
 // Non-production builds (beta, staging, previews) should be hidden from
 // search engines. Default to PRODUCTION so that if the env var is missing
@@ -135,10 +135,10 @@ const businessSchema = {
        • preload can target the exact weight this page needs
      font-display: swap is set inside fonts.css so text is visible immediately. -->
 <link rel="preload" as="font" type="font/woff2"
-      href={locale === "ar" ? "/fonts/ibm-plex-sans-arabic-arabic-400.woff2" : "/fonts/ibm-plex-sans-latin-400.woff2"}
+      href={isRtl(locale) ? "/fonts/ibm-plex-sans-arabic-arabic-400.woff2" : "/fonts/ibm-plex-sans-latin-400.woff2"}
       crossorigin />
 <link rel="preload" as="font" type="font/woff2"
-      href={locale === "ar" ? "/fonts/amiri-arabic-400.woff2" : "/fonts/newsreader-latin-400.woff2"}
+      href={isRtl(locale) ? "/fonts/amiri-arabic-400.woff2" : "/fonts/newsreader-latin-400.woff2"}
       crossorigin />
 <!-- Load fonts.css asynchronously so it doesn't block render. The `preload`
      above already primed the browser for the critical face; the remaining

@@ -7,6 +7,7 @@ import { visit } from 'unist-util-visit';
  * - English: /en/ prefix (e.g., /en/services/)
  * - Arabic: /ar/ prefix (e.g., /ar/services/)
  * - Turkish: /tr/ prefix (e.g., /tr/services/)
+ * - Sorani Kurdish (ckb.md): /ku/ prefix (e.g., /ku/services/)
  * - Root /: auto-redirects to device language or /en/ fallback
  *
  * For .../en.md files: add /en prefix
@@ -20,8 +21,10 @@ import { visit } from 'unist-util-visit';
 export function remarkLocalizeLinks() {
   return (tree, file) => {
     // Determine locale from file path: .../en.md, .../ar.md or .../tr.md
-    const m = (file.history?.[0] ?? '').match(/\/(ar|tr)\.md$/);
-    const locale = m ? m[1] : 'en';
+    const m = (file.history?.[0] ?? '').match(/\/(ar|tr|ckb)\.md$/);
+    const code = m ? m[1] : 'en';
+    // Sorani (ckb) lives at /ku/ in URLs.
+    const locale = code === 'ckb' ? 'ku' : code;
 
     visit(tree, ['link', 'definition'], (node) => {
       let url = node.url;
@@ -33,7 +36,7 @@ export function remarkLocalizeLinks() {
 
         // Strip any existing language prefix (/en/, /ar/ or /tr/)
         // This normalizes hardcoded language links
-        const strippedUrl = url.replace(/^\/(?:en|ar|tr)(?=\/|$)/, '') || '/';
+        const strippedUrl = url.replace(/^\/(?:en|ar|tr|ku)(?=\/|$)/, '') || '/';
 
         // Apply the current file's locale prefix
         node.url = strippedUrl === '/' ? `/${locale}/` : `/${locale}${strippedUrl}`;

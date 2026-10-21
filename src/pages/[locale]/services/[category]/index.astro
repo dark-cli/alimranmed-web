@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES } from "../../../../lib/i18n";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, byLocale, LOCALES, localePath } from "../../../../lib/i18n";
 import { NAV_LABELS } from "../../../../lib/labels";
-import { SERVICE_CATEGORY_TR } from "../../../../lib/pathways";
+import { SERVICE_CATEGORY_TR, SERVICE_CATEGORY_CKB } from "../../../../lib/pathways";
 
 export async function getStaticPaths() {
   const all = await getCollection("services");
@@ -44,7 +44,7 @@ export async function getStaticPaths() {
   for (const { loc, pickups, byCategory } of translated) {
     for (const [category, entries] of byCategory.entries()) {
       const categoryPickup = pickups.find((p) => topicOf(p.entry.id) === category);
-      paths.push({ params: { locale: loc, category }, props: { category, entries, categoryEntry: categoryPickup?.entry } });
+      paths.push({ params: { locale: localePath(loc), category }, props: { category, entries, categoryEntry: categoryPickup?.entry } });
     }
   }
 
@@ -64,7 +64,7 @@ const prettyCategory = category
   .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
   .join(" ");
 const categoryTitle = locale !== "en"
-  ? (categoryEntry?.data.title || SERVICE_CATEGORY_TR[category] || prettyCategory)
+  ? (categoryEntry?.data.title || (locale === "ckb" ? SERVICE_CATEGORY_CKB[category] : SERVICE_CATEGORY_TR[category]) || prettyCategory)
   : prettyCategory;
 
 const BLURB: Record<string, string> = {
@@ -115,19 +115,37 @@ const BLURB_TR: Record<string, string> = {
   "botox":               "Spastisite, baş ağrısı ve kronik ağrı için botulinum toksini uygulamaları",
   "acupuncture":         "Kronik ağrı ve inflamatuvar durumlar için geleneksel Çin iğne tedavisi",
 };
-const blurb = locale === "tr"
+const BLURB_CKB: Record<string, string> = {
+  "brain-stimulation":   "ورووژاندنی مێشک بێ بڕین بە شێوازی موگناتیسی (TMS) و کارەبای کەمهێز (tDCS)",
+  "chiropractic":        "ڕێکخستنەوە و کەمکردنەوەی گوشاری بڕبڕەی پشت بە سیستەمەکانی SPINMED و Sigma",
+  "exercises":           "بەرنامەی ڕاهێنانی چارەسەری کە بەپێی بەشی لەش ڕێکخراون",
+  "fitness":             "شێوەدانی لەش و چارەسەری جوانکاری بێ نەشتەرگەری",
+  "ozone-therapy":       "بەکارهێنانی ئۆکسجین–ئۆزۆن بۆ هەوکردن، ئازاری دیسک و ئێسکسوتان",
+  "pain-management":     "شێوازی دەستێوەردان و فرە‌بەشی بۆ ئازاری درێژخایەن",
+  "physiotherapy":       "بەتواناکردنەوە بە ڕۆبۆت، لەیزەر، ئەلتراساوند و چارەسەری کارەبایی",
+  "radiofrequency":      "بڕینی دەمار بە کەمترین دەستێوەردان بۆ ئازاری درێژخایەنی جومگە و بڕبڕەی پشت",
+  "regenerative-medicine":"PRP، پرۆلۆتێراپی و تەکنیکی خانەی بنچینەیی بۆ چاکبوونەوەی پەیوەند و جومگە",
+  "rehabilitation":      "چاودێریی بەتواناکردنەوەی فرە‌بەشی بە سەرپەرشتیی پزیشکی ڕاوێژکار بۆ جەڵتەی مێشک، برینداربوونی درکەپەتک و زیاتر",
+  "steroid-injection":   "دەرزی ستیرۆید و بەنجکەر بە ڕێنمایی وێنەگرتن بۆ ئازاری جومگە و بڕبڕەی پشت",
+  "surgery":             "نەشتەرگەریی مێشک و دەمار و بڕبڕەی پشت — لە کەمترین دەستێوەردانەوە تا نەشتەرگەریی ئاڵۆز",
+  "botox":               "بەکارهێنانی بۆتۆکس بۆ ڕەقبوونی ماسولکە، سەرئێشە و ئازاری درێژخایەن",
+  "acupuncture":         "چارەسەری دەرزی چینیی کلاسیک بۆ ئازاری درێژخایەن و حاڵەتە هەوکردووەکان",
+};
+const blurb = locale === "ckb"
+  ? (BLURB_CKB[category] ? `${BLURB_CKB[category]}، لە سەنتەری پزیشکیی ئەلعیمران لە بەسرە.` : `خزمەتگوزارییەکانی ${categoryTitle}، لە سەنتەری پزیشکیی ئەلعیمران لە بەسرە.`)
+  : locale === "tr"
   ? (BLURB_TR[category] ? `${BLURB_TR[category]}, Basra'daki Alimran Tıp Merkezi'nde.` : `${categoryTitle} hizmetleri, Basra'daki Alimran Tıp Merkezi'nde.`)
   : locale === "en"
   ? (BLURB[category] ? `${BLURB[category].replace(/\.$/, "")} at Alimran Medical Center in Basra.` : `${prettyCategory} services at Alimran Medical Center in Basra.`)
   : (BLURB_AR[category] ?? `خدمات ${categoryTitle} في مركز العمران الطبي بالبصرة.`);
-const siteName = byLocale(locale, { en: "Alimran Medical Center", ar: "مركز العمران الطبي", tr: "Alimran Tıp Merkezi" });
+const siteName = byLocale(locale, { en: "Alimran Medical Center", ar: "مركز العمران الطبي", tr: "Alimran Tıp Merkezi", ckb: "سەنتەری پزیشکیی ئەلعیمران" });
 ---
 
 <BaseLayout title={`${categoryTitle} — ${siteName}`} description={blurb}>
   <div class="container page">
     <header class="page-head">
       <a class="back" href={localizedHref("/services/", locale)}>
-        {byLocale(locale, { en: "← All services", ar: `← ${nav.services}`, tr: "← Tüm hizmetler" })}
+        {byLocale(locale, { en: "← All services", ar: `← ${nav.services}`, tr: "← Tüm hizmetler", ckb: "← هەموو خزمەتگوزارییەکان" })}
       </a>
       <h1>{categoryTitle}</h1>
       {blurb && <p class="lede">{blurb}</p>}
@@ -140,6 +158,7 @@ const siteName = byLocale(locale, { en: "Alimran Medical Center", ar: "مركز 
           {entry.data.description && <p>{entry.data.description}</p>}
           {locale === "en" && <span class="learn-more">Read more →</span>}
           {locale === "tr" && <span class="learn-more">Devamını oku →</span>}
+          {locale === "ckb" && <span class="learn-more">زیاتر بخوێنەرەوە ←</span>}
         </a>
       ))}
     </div>

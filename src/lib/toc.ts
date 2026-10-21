@@ -13,10 +13,10 @@ export type TocItem = { id: string; text: string; num: string };
 export function buildToc(
   sections: Array<{ heading?: string }> | null | undefined,
   headings: Array<{ depth: number; slug: string; text: string }> | null | undefined,
-  locale: "en" | "ar" | "tr",
+  locale: "en" | "ar" | "tr" | "ckb",
 ): TocItem[] {
   const fmt =
-    locale === "ar"
+    locale === "ar" || locale === "ckb"
       ? (n: number) => toArabicDigits(n).padStart(2, "٠")
       : (n: number) => String(n).padStart(2, "0");
 

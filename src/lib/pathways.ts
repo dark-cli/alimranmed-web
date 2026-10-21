@@ -2,7 +2,7 @@ export type Pathway = "brain" | "spine" | "pain";
 
 export type TreatmentPathwayInfo = { label: string; pathway: string };
 
-export const TREATMENT_PATHWAY: Record<"en" | "ar" | "tr", Record<string, TreatmentPathwayInfo>> = {
+export const TREATMENT_PATHWAY: Record<"en" | "ar" | "tr" | "ckb", Record<string, TreatmentPathwayInfo>> = {
   en: {
     brain: { label: "Brain", pathway: "Brain — neurosurgical" },
     spine: { label: "Spine", pathway: "Spine — surgical" },
@@ -17,6 +17,11 @@ export const TREATMENT_PATHWAY: Record<"en" | "ar" | "tr", Record<string, Treatm
     brain: { label: "Beyin",   pathway: "Beyin — cerrahi" },
     spine: { label: "Omurga",  pathway: "Omurga — cerrahi" },
     pain:  { label: "Ağrı",    pathway: "Ağrı — girişimsel" },
+  },
+  ckb: {
+    brain: { label: "مێشک",        pathway: "مێشک — نەشتەرگەری" },
+    spine: { label: "بڕبڕەی پشت",  pathway: "بڕبڕەی پشت — نەشتەرگەری" },
+    pain:  { label: "ئازار",       pathway: "ئازار — دەستێوەردانی کەمبڕین" },
   },
 };
 
@@ -36,6 +41,24 @@ export const SERVICE_CATEGORY_TR: Record<string, string> = {
   "rehabilitation": "Rehabilitasyon",
   "steroid-injection": "Steroid enjeksiyonu",
   "surgery": "Cerrahi",
+};
+
+/** Sorani display names for service category slugs (ckb.md keeps the EN slug). */
+export const SERVICE_CATEGORY_CKB: Record<string, string> = {
+  "acupuncture": "دەرزی چینی",
+  "botox": "بۆتۆکس",
+  "brain-stimulation": "ورووژاندنی مێشک",
+  "chiropractic": "کایرۆپراکتیک",
+  "exercises": "جموجۆڵ و ڕاهێنان",
+  "fitness": "لەشجوانی",
+  "ozone-therapy": "چارەسەر بە ئۆزۆن",
+  "pain-management": "چارەسەری ئازار",
+  "physiotherapy": "چارەسەری سروشتی",
+  "radiofrequency": "ڕادیۆفریکوێنسی",
+  "regenerative-medicine": "پزیشکیی نوێکردنەوە",
+  "rehabilitation": "بەتواناکردنەوە",
+  "steroid-injection": "دەرزی ستیرۆید",
+  "surgery": "نەشتەرگەری",
 };
 
 export const BLOG_PATHWAY: Record<string, Pathway> = {
@@ -61,4 +84,5 @@ export const PATHWAY_LABELS = {
   en: { brain: "Brain", spine: "Spine", pain: "Pain", other: "Other" },
   ar: { brain: "الدماغ", spine: "العمود الفقري", pain: "الألم", other: "أخرى" },
   tr: { brain: "Beyin", spine: "Omurga", pain: "Ağrı", other: "Diğer" },
+  ckb: { brain: "مێشک", spine: "بڕبڕەی پشت", pain: "ئازار", other: "هی تر" },
 } as const;

@@ -31,6 +31,7 @@ const lines = [
   "/en        /en/       301",
   "/ar        /ar/       301",
   "/tr        /tr/       301",
+  "/ku        /ku/       301",
   "",
   "# ── Locale-less path catch-alls ────────────────────────────────────────",
   "# Bare /treatments/* and /services/* originate from legacy redirects below",

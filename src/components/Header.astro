@@ -24,15 +24,15 @@ const L = (href: string) => localizedHref(href, locale);
 // Nav items. Library replaces Blog because it's the superset: blog posts,
 // conditions, procedures and cases all live there under a single type filter.
 // /blog/ still resolves for direct URLs and search-crawler continuity.
-type NavItem = { label: string; labelAr: string; labelTr: string; href: string };
+type NavItem = { label: string; labelAr: string; labelTr: string; labelCkb: string; href: string };
 const NAV: NavItem[] = [
-  { label: "Home",                    labelAr: "الرئيسية",     labelTr: "Ana Sayfa",       href: "/" },
-  { label: "Consultant CV",           labelAr: "السيرة العلمية", labelTr: "Konsültan Özgeçmişi", href: "/doctors/hussein-imran-mousa/" },
-  { label: "Conditions & Procedures", labelAr: "ما نعالج",      labelTr: "Hastalıklar ve Girişimler", href: "/conditions/" },
-  { label: "Library",                 labelAr: "المكتبة",       labelTr: "Kütüphane",       href: "/library/" },
+  { label: "Home",                    labelAr: "الرئيسية",     labelTr: "Ana Sayfa", labelCkb: "سەرەکی", href: "/" },
+  { label: "Consultant CV",           labelAr: "السيرة العلمية", labelTr: "Konsültan Özgeçmişi", labelCkb: "سیڤیی پزیشکی ڕاوێژکار", href: "/doctors/hussein-imran-mousa/" },
+  { label: "Conditions & Procedures", labelAr: "ما نعالج",      labelTr: "Hastalıklar ve Girişimler", labelCkb: "نەخۆشی و چارەسەرەکان", href: "/conditions/" },
+  { label: "Library",                 labelAr: "المكتبة",       labelTr: "Kütüphane", labelCkb: "کتێبخانە", href: "/library/" },
 ];
 
-const navLabel = (item: NavItem) => byLocale(locale, { en: item.label, ar: item.labelAr, tr: item.labelTr });
+const navLabel = (item: NavItem) => byLocale(locale, { en: item.label, ar: item.labelAr, tr: item.labelTr, ckb: item.labelCkb });
 const isActive = (href: string) => {
   const target = L(href);
   if (href === "/") return currentPath === target;
@@ -50,19 +50,19 @@ const otherLocales = LOCALES.filter((l) => l !== locale).map((l) => ({
 const callHref = `tel:${CONTACT.phones[0].replace(/\s/g, "")}`;
 
 // Masthead copy — matches the design spec, not a page title.
-const brand = byLocale(locale, { en: "Alimran Clinic", ar: "مركز العمران الطبي", tr: "Alimran Kliniği" });
+const brand = byLocale(locale, { en: "Alimran Clinic", ar: "مركز العمران الطبي", tr: "Alimran Kliniği", ckb: "کلینیکی ئەلعیمران" });
 const brandSub = byLocale(locale, {
   en: "Neurosurgery & Pain Medicine · Basra",
   ar: "جراحة الأعصاب وطب الألم — البصرة",
-  tr: "Beyin Cerrahisi ve Ağrı Tıbbı · Basra",
+  tr: "Beyin Cerrahisi ve Ağrı Tıbbı · Basra", ckb: "نەشتەرگەریی مێشک و دەمار و پزیشکیی ئازار · بەسرە",
 });
 
 // Call button label
-const callLabel = byLocale(locale, { en: "Call the secretary", ar: "اتصل بالسكرتير", tr: "Sekreteri arayın" });
-const menuLabel = byLocale(locale, { en: "Menu", ar: "القائمة", tr: "Menü" });
-const closeMenuLabel = byLocale(locale, { en: "Close", ar: "إغلاق", tr: "Kapat" });
-const searchLabel = byLocale(locale, { en: "Search", ar: "بحث", tr: "Ara" });
-const langLabel = byLocale(locale, { en: "Language", ar: "اللغة", tr: "Dil" });
+const callLabel = byLocale(locale, { en: "Call the secretary", ar: "اتصل بالسكرتير", tr: "Sekreteri arayın", ckb: "پەیوەندی بە سکرتێرەوە بکە" });
+const menuLabel = byLocale(locale, { en: "Menu", ar: "القائمة", tr: "Menü", ckb: "مێنیو" });
+const closeMenuLabel = byLocale(locale, { en: "Close", ar: "إغلاق", tr: "Kapat", ckb: "داخستن" });
+const searchLabel = byLocale(locale, { en: "Search", ar: "بحث", tr: "Ara", ckb: "گەڕان" });
+const langLabel = byLocale(locale, { en: "Language", ar: "اللغة", tr: "Dil", ckb: "زمان" });
 ---
 
 <header class="site-header">
@@ -107,8 +107,8 @@ const langLabel = byLocale(locale, { en: "Language", ar: "اللغة", tr: "Dil"
         id="theme-toggle"
         class="theme-btn"
         type="button"
-        aria-label={byLocale(locale, { en: "Toggle dark mode", ar: "تبديل الوضع الداكن", tr: "Karanlık modu değiştir" })}
-        title={byLocale(locale, { en: "Dark mode", ar: "الوضع الداكن", tr: "Karanlık mod" })}
+        aria-label={byLocale(locale, { en: "Toggle dark mode", ar: "تبديل الوضع الداكن", tr: "Karanlık modu değiştir", ckb: "گۆڕینی دۆخی تاریک" })}
+        title={byLocale(locale, { en: "Dark mode", ar: "الوضع الداكن", tr: "Karanlık mod", ckb: "دۆخی تاریک" })}
       >
         <!-- Moon icon (shown in light mode → click for dark) -->
         <svg class="theme-icon moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -166,14 +166,14 @@ const langLabel = byLocale(locale, { en: "Language", ar: "اللغة", tr: "Dil"
         class="search-input"
         autocomplete="off"
         spellcheck="false"
-        placeholder={byLocale(locale, { en: "Search conditions, procedures, articles…", ar: "ابحث في الحالات، الإجراءات، المقالات…", tr: "Hastalık, girişim ve makale ara…" })}
-        aria-label={byLocale(locale, { en: "Search query", ar: "استعلام البحث", tr: "Arama sorgusu" })}
+        placeholder={byLocale(locale, { en: "Search conditions, procedures, articles…", ar: "ابحث في الحالات، الإجراءات، المقالات…", tr: "Hastalık, girişim ve makale ara…", ckb: "بگەڕێ بەدوای نەخۆشی، چارەسەر و وتاردا…" })}
+        aria-label={byLocale(locale, { en: "Search query", ar: "استعلام البحث", tr: "Arama sorgusu", ckb: "پرسیاری گەڕان" })}
         aria-controls="search-results"
       />
       <kbd class="search-kbd" aria-hidden="true">Esc</kbd>
     </div>
-    <div id="search-results" class="search-results" role="listbox" aria-label={byLocale(locale, { en: "Search results", ar: "نتائج البحث", tr: "Arama sonuçları" })}>
-      <p class="search-hint">{byLocale(locale, { en: "Start typing to search across every page on the site.", ar: "ابدأ الكتابة للبحث في جميع صفحات الموقع.", tr: "Sitedeki tüm sayfalarda arama yapmak için yazmaya başlayın." })}</p>
+    <div id="search-results" class="search-results" role="listbox" aria-label={byLocale(locale, { en: "Search results", ar: "نتائج البحث", tr: "Arama sonuçları", ckb: "ئەنجامەکانی گەڕان" })}>
+      <p class="search-hint">{byLocale(locale, { en: "Start typing to search across every page on the site.", ar: "ابدأ الكتابة للبحث في جميع صفحات الموقع.", tr: "Sitedeki tüm sayfalarda arama yapmak için yazmaya başlayın.", ckb: "دەست بکە بە نووسین بۆ گەڕان لە هەموو پەڕەکانی ماڵپەڕەکە." })}</p>
     </div>
   </div>
 </div>
@@ -338,15 +338,31 @@ const langLabel = byLocale(locale, { en: "Language", ar: "اللغة", tr: "Dil"
       doctor:    "Doktor",
       static:    "Sayfa",
     };
-    var LABELS = { en: GROUP_LABELS_EN, ar: GROUP_LABELS_AR, tr: GROUP_LABELS_TR };
-    var BADGES = { en: BADGE_EN, ar: BADGE_AR, tr: BADGE_TR };
-    var EMPTY = { en: "No results.", ar: "لا توجد نتائج.", tr: "Sonuç bulunamadı." };
+    var GROUP_LABELS_CKB = {
+      treatment: "نەخۆشییەکان",
+      service:   "چارەسەر و خزمەتگوزارییەکان",
+      blog:      "وتارەکان",
+      case:      "حاڵەتە کلینیکییەکان",
+      doctor:    "پزیشکەکان",
+      static:    "پەڕەکان",
+    };
+    var BADGE_CKB = {
+      treatment: "نەخۆشی",
+      service:   "چارەسەر",
+      blog:      "وتار",
+      case:      "حاڵەت",
+      doctor:    "پزیشک",
+      static:    "پەڕە",
+    };
+    var LABELS = { en: GROUP_LABELS_EN, ar: GROUP_LABELS_AR, tr: GROUP_LABELS_TR, ckb: GROUP_LABELS_CKB };
+    var BADGES = { en: BADGE_EN, ar: BADGE_AR, tr: BADGE_TR, ckb: BADGE_CKB };
+    var EMPTY = { en: "No results.", ar: "لا توجد نتائج.", tr: "Sonuç bulunamadı.", ckb: "هیچ ئەنجامێک نەدۆزرایەوە." };
     var GROUP_ORDER = ["treatment", "service", "blog", "case", "doctor", "static"];
     var PER_GROUP = 5;
 
     function currentLocale() {
       var l = document.documentElement.getAttribute("lang");
-      return l === "ar" || l === "tr" ? l : "en";
+      return l === "ar" || l === "tr" || l === "ckb" ? l : "en";
     }
 
     function loadIndex() {

@@ -4,11 +4,11 @@
  * renders through the shared PlainTemplate.
  */
 import { getEntry } from "astro:content";
-import { currentLocale, LOCALES } from "../../lib/i18n";
+import { currentLocale, LOCALES, localePath } from "../../lib/i18n";
 import PlainTemplate from "../../components/templates/PlainTemplate.astro";
 
 export function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return LOCALES.map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);

@@ -20,35 +20,35 @@ const otherLocales = LOCALES.filter((l) => l !== locale).map((l) => ({
 
 const isAr = locale === "ar";
 
-const brand = byLocale(locale, { en: "Alimran Clinic", ar: "مركز العمران الطبي", tr: "Alimran Kliniği" });
+const brand = byLocale(locale, { en: "Alimran Clinic", ar: "مركز العمران الطبي", tr: "Alimran Kliniği", ckb: "کلینیکی ئەلعیمران" });
 const brandSub = byLocale(locale, {
   en: "Neurosurgery · Spine · Pain medicine",
   ar: "جراحة الأعصاب · العمود الفقري · طب الألم",
-  tr: "Beyin cerrahisi · Omurga · Ağrı tıbbı",
+  tr: "Beyin cerrahisi · Omurga · Ağrı tıbbı", ckb: "نەشتەرگەریی مێشک و دەمار · بڕبڕەی پشت · پزیشکیی ئازار",
 });
 const addr1 = byLocale(locale, {
   en: "Alimran Medical Centre — Basra, Breaha, Alnkba Medical Collection, Iraq.",
   ar: "مركز العمران الطبي — البصرة، بريهة، مجمّع النقبة الطبي، العراق.",
-  tr: "Alimran Tıp Merkezi — Basra, Breaha, Alnkba Tıp Kompleksi, Irak.",
+  tr: "Alimran Tıp Merkezi — Basra, Breaha, Alnkba Tıp Kompleksi, Irak.", ckb: "سەنتەری پزیشکیی ئەلعیمران — بەسرە، بریهە، کۆمەڵگەی پزیشکیی ئەلنوخبە، عێراق.",
 });
 const addr2 = byLocale(locale, {
   en: "Lead consultant: Hussein Imran Mousa, MBChB, FIBMS (Neurosurgery).",
   ar: "الاستشاري المسؤول: الدكتور حسين عمران موسى، بكالوريوس طب وجراحة، بورد جراحة الأعصاب.",
-  tr: "Sorumlu danışman: Hussein Imran Mousa, MBChB, FIBMS (Beyin ve Sinir Cerrahisi).",
+  tr: "Sorumlu danışman: Hussein Imran Mousa, MBChB, FIBMS (Beyin ve Sinir Cerrahisi).", ckb: "پزیشکی ڕاوێژکاری بەرپرس: د. حوسێن عیمران مووسا، MBChB، FIBMS (نەشتەرگەریی مێشک و دەمار).",
 });
 
-const lContact  = byLocale(locale, { en: "Contact", ar: "الاتصال", tr: "İletişim" });
-const lSections = byLocale(locale, { en: "Sections", ar: "الأقسام", tr: "Bölümler" });
-const lElsewhere = byLocale(locale, { en: "Elsewhere", ar: "روابط أخرى", tr: "Diğer bağlantılar" });
+const lContact  = byLocale(locale, { en: "Contact", ar: "الاتصال", tr: "İletişim", ckb: "پەیوەندی" });
+const lSections = byLocale(locale, { en: "Sections", ar: "الأقسام", tr: "Bölümler", ckb: "بەشەکان" });
+const lElsewhere = byLocale(locale, { en: "Elsewhere", ar: "روابط أخرى", tr: "Diğer bağlantılar", ckb: "بەستەری تر" });
 
 const nav = [
-  { label: byLocale(locale, { en: "Home", ar: "الرئيسية", tr: "Ana Sayfa" }), href: "/" },
-  { label: byLocale(locale, { en: "Consultant CV", ar: "السيرة العلمية", tr: "Konsültan Özgeçmişi" }), href: "/doctors/hussein-imran-mousa/" },
-  { label: byLocale(locale, { en: "Conditions & procedures", ar: "الحالات والإجراءات", tr: "Hastalıklar ve girişimler" }), href: "/conditions/" },
+  { label: byLocale(locale, { en: "Home", ar: "الرئيسية", tr: "Ana Sayfa", ckb: "سەرەکی" }), href: "/" },
+  { label: byLocale(locale, { en: "Consultant CV", ar: "السيرة العلمية", tr: "Konsültan Özgeçmişi", ckb: "سیڤیی پزیشکی ڕاوێژکار" }), href: "/doctors/hussein-imran-mousa/" },
+  { label: byLocale(locale, { en: "Conditions & procedures", ar: "الحالات والإجراءات", tr: "Hastalıklar ve girişimler", ckb: "نەخۆشی و چارەسەرەکان" }), href: "/conditions/" },
 ];
 
 const elsewhere = [
-  { label: byLocale(locale, { en: "Directions", ar: "الاتجاهات", tr: "Yol tarifi" }), href: CONTACT.mapsUrl,        external: true },
+  { label: byLocale(locale, { en: "Directions", ar: "الاتجاهات", tr: "Yol tarifi", ckb: "ڕێنمایی گەیشتن" }), href: CONTACT.mapsUrl,        external: true },
   { label: "YouTube",                          href: CONTACT.social.youtube,  external: true },
   { label: "Facebook",                         href: CONTACT.social.facebook, external: true },
   { label: "Instagram",                        href: CONTACT.social.instagram, external: true },
@@ -58,11 +58,12 @@ const copyright = byLocale(locale, {
   en: `© ${year} Alimran Medical Centre. All rights reserved.`,
   ar: `© ${year} مركز العمران الطبي. جميع الحقوق محفوظة.`,
   tr: `© ${year} Alimran Tıp Merkezi. Tüm hakları saklıdır.`,
+  ckb: `© ${year} سەنتەری پزیشکیی ئەلعیمران. هەموو مافەکان پارێزراون.`,
 });
 const disclaimer = byLocale(locale, {
   en: "Information on this site is for guidance and does not replace individual medical advice.",
   ar: "المعلومات المنشورة هنا للاسترشاد ولا تُغني عن الاستشارة الطبية الفردية.",
-  tr: "Bu sitedeki bilgiler yol göstermek amaçlıdır ve bireysel tıbbi tavsiyenin yerini tutmaz.",
+  tr: "Bu sitedeki bilgiler yol göstermek amaçlıdır ve bireysel tıbbi tavsiyenin yerini tutmaz.", ckb: "زانیارییەکانی ئەم ماڵپەڕە بۆ ڕێنمایین و جێگەی ڕاوێژی پزیشکیی تایبەت بە هەر نەخۆشێک ناگرنەوە.",
 });
 ---
 

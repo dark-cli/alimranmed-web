@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, LOCALES } from "../../../lib/i18n";
+import { topicOf, isLocale, pickForLocale, localizedHref, currentLocale, LOCALES, localePath, toArabicDigits } from "../../../lib/i18n";
 import { NAV_LABELS } from "../../../lib/labels";
 import Image from "../../../components/Image.astro";
 
 export async function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return LOCALES.map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);
@@ -37,6 +37,19 @@ const T = locale === "ar" ? {
   viewProfile:      "عرض الملف الكامل",
   ctaArrow:         "←",
   empty:            "سيظهر الأطباء هنا بعد إضافتهم.",
+} : locale === "ckb" ? {
+  title:            `${nav.doctors} — سەنتەری پزیشکیی ئەلعیمران`,
+  description:      "نەشتەرگەریی مێشک و دەمار، بڕبڕەی پشت و پزیشکیی ئازار بە سەرپەرشتیی پزیشکی ڕاوێژکار لە کلینیکی ئەلعیمران — تیپەکە بناسە.",
+  eyebrow:          "تیپەکەمان",
+  h1:               "چاودێری بە سەرپەرشتیی پزیشکی ڕاوێژکار لە تیپێکی پسپۆڕی بچووکەوە.",
+  lede:             "هەر نەخۆشێک لە کلینیکی ئەلعیمران لەلایەن پزیشکی ڕاوێژکارێکی دیاریکراوەوە هەڵدەسەنگێنرێت و بەدواداچوونی بۆ دەکرێت — لەنێوان نۆرەکاندا نادرێتە دەست یەکێکی تر. ئەو پزیشکانە بناسە کە لە یەکەم چاوپێکەوتنەوە تا چاکبوونەوە لەگەڵتن.",
+  memberships:      "ئەندامێتییەکان",
+  memberCount:      (n: number) => `${toArabicDigits(n)} کۆمەڵەی نێودەوڵەتی`,
+  languages:        "زمانەکان",
+  langJoiner:       "، ",
+  viewProfile:      "پڕۆفایلی تەواو ببینە",
+  ctaArrow:         "←",
+  empty:            "پزیشکەکان لێرە دەردەکەون دوای زیادکردنیان.",
 } : locale === "tr" ? {
   title:            `${nav.doctors} — Alimran Tıp Merkezi`,
   description:      "Alimran Kliniği'nde danışman liderliğinde beyin ve sinir cerrahisi, omurga ve ağrı tıbbı — ekiple tanışın.",

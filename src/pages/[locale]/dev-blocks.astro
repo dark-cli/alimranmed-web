@@ -29,13 +29,13 @@ import ButtonRow     from "../../components/blocks/ButtonRow.astro";
 import Chips         from "../../components/blocks/Chips.astro";
 import SocialRow     from "../../components/blocks/SocialRow.astro";
 import Map           from "../../components/blocks/Map.astro";
-import { currentLocale, toArabicDigits, LOCALES } from "../../lib/i18n";
+import { currentLocale, toArabicDigits, LOCALES, localePath } from "../../lib/i18n";
 
 // Dev-only: `astro dev` serves it, production builds emit no pages for it.
 export function getStaticPaths() {
   if (!import.meta.env.DEV) return [];
   // Internal widget preview: en + ar only.
-  return LOCALES.filter((l) => l !== "tr").map((locale) => ({ params: { locale } }));
+  return LOCALES.filter((l) => l !== "tr" && l !== "ckb").map((locale) => ({ params: { locale: localePath(locale) } }));
 }
 
 const locale = currentLocale(Astro);

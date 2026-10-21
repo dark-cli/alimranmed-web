@@ -1,15 +1,27 @@
 ---
 // Auto-detect language for root path (/)
 // Check device language > country > default to English
-// Root / redirects to /en/, /ar/ or /tr/ based on detection
+// Root / redirects to /en/, /ar/, /tr/ or /ku/ (Sorani, code ckb) based on detection
 const detectLocale = () => {
   const acceptLanguage = Astro.request.headers.get('accept-language') || '';
-  const primary = acceptLanguage.toLowerCase().split(',')[0].trim();
-  if (primary.startsWith('tr')) return 'tr';
-  if (acceptLanguage.toLowerCase().includes('ar')) return 'ar';
+  const tags = acceptLanguage.toLowerCase().split(',').map((t) => t.split(';')[0].trim()).filter(Boolean);
+  const primary = tags[0] || '';
+  const primaryOf = (t: string) => t.split('-')[0];
+  // Sorani Kurdish (ckb, or the macrolanguage code ku) lives at /ku/.
+  const isKurdish = (t: string) => primaryOf(t) === 'ckb' || primaryOf(t) === 'ku';
+  const hasKurdish = tags.some(isKurdish);
+  const hasArabic = tags.some((t) => primaryOf(t) === 'ar') || acceptLanguage.toLowerCase().includes('ar');
 
   // Check country header (Cloudflare)
   const country = Astro.request.headers.get('cf-ipcountry') || '';
+
+  if (isKurdish(primary)) return 'ku';
+  if (primary.startsWith('tr')) return 'tr';
+  // Iraq with any Kurdish preference -> Kurdish; Iraq without it stays Arabic below.
+  if (country.toUpperCase() === 'IQ' && hasKurdish) return 'ku';
+  if (hasKurdish && !hasArabic) return 'ku';
+  if (hasArabic) return 'ar';
+
   const arabCountries = ['AE', 'BH', 'DZ', 'EG', 'IQ', 'JO', 'KW', 'LB', 'LY', 'MA', 'OM', 'QA', 'SA', 'SD', 'SY', 'TN', 'YE', 'PS', 'MR'];
   if (arabCountries.includes(country.toUpperCase())) return 'ar';
   if (country.toUpperCase() === 'TR') return 'tr';
@@ -20,7 +32,7 @@ const detectLocale = () => {
 const detectedLocale = detectLocale();
 // Redirect root to language-specific version with 301 permanent redirect
 if (Astro.url.pathname === '/') {
-  if (detectedLocale === 'ar' || detectedLocale === 'tr') {
+  if (detectedLocale === 'ar' || detectedLocale === 'tr' || detectedLocale === 'ku') {
     return Astro.redirect(`/${detectedLocale}/`, 301);
   } else {
     return Astro.redirect('/en/', 301);
