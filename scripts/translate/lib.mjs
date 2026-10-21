@@ -257,11 +257,11 @@ for (const [entry, forms] of [...hits].sort((a, b) => a[0].en.localeCompare(b[0]
     let rule;
     if (entry.policy === 'keep') rule = `KEEP verbatim: ${q(text)}`;
     else {
-      const gloss = hasGloss(text);
-      const later = stripGloss(text);
-      if (gloss && entry.policy === 'translate+en-first-mention') rule = `first mention: ${q(text)}; later: ${q(later)}`;
-      else if (gloss) rule = `first mention: ${q(text)}; later: ${q(later)}`;
-      else if (entry.policy === 'translate+en-first-mention') rule = `${q(text)}  [first mention: add the English term in parentheses]`;
+      const g = entry.gloss;
+      const en = entry.policy === 'translate+en-first-mention';
+      if (g && en) rule = `${q(text)}  [first prose mention: append " (${g} / ${entry.en})"]`;
+      else if (g) rule = `${q(text)}  [first prose mention: append " (${g})"]`;
+      else if (en) rule = `${q(text)}  [first prose mention: append " (${entry.en})"]`;
       else rule = q(text);
     }
     const other = lang === 'tr' ? /^(ckb|ku|ar)\b/i : /^(tr|turkish)\b/i;
@@ -272,9 +272,9 @@ for (const [entry, forms] of [...hits].sort((a, b) => a[0].en.localeCompare(b[0]
   return { count: hits.size, text: `## Glossary (${hits.size} terms occur in this document)
 Apply each rendering with correct grammar (case suffixes, plurals, ezafe, definiteness and word order are fine to adapt). Entries are matched case-insensitively and plural-tolerant.
 - "KEEP verbatim": write the text exactly as given.
-- "[first mention: add the English term in parentheses]": the FIRST time the term appears in the BODY/SECTION PROSE (longer explanatory sentences) write the rendering followed by the English term in parentheses, e.g. X (English term). Every later mention: the rendering alone.
-- NO-GLOSS lines: ids ${ID_META}. These are titles, meta/SEO descriptions, headings (markdown # lines and heading/title fields), labels, tags, captions, alt text, and every list item or short line under ${NOGLOSS_MAX_CHARS} characters. In them write the bare rendering with NO "(English)" parenthetical, even if it is the term's first appearance. The first-mention gloss goes on the first occurrence in a prose paragraph (any line not in the no-gloss list); if a term never occurs in prose, it gets no gloss at all.
-- "first mention: A; later: B" (the rendering carries its own parenthetical gloss): use A the first prose mention, B everywhere else (titles, meta, short UI strings included); add no further English parenthesis.
+- Each rendering is the bare form. If a line has "[first prose mention: append \"(...)\"]", then the FIRST time the term appears in BODY/SECTION PROSE (longer explanatory sentences) write the rendering followed by exactly that parenthetical, e.g. X (gloss), X (English term), or X (gloss / English term) when both are given -- one single parenthesis, never two. Every later mention: the bare rendering alone.
+- NO-GLOSS lines: ids ${ID_META}. These are titles, meta/SEO descriptions, headings (markdown # lines and heading/title fields), labels, tags, captions, alt text, and every list item or short line under ${NOGLOSS_MAX_CHARS} characters. In them write the bare rendering with NO parenthetical at all, even if it is the term's first appearance. The parenthetical goes on the first occurrence in a prose paragraph (any line not in the no-gloss list); if a term never occurs in prose, it gets no parenthetical.
+- "KEEP verbatim": write the text exactly as given.
 - Where a specific surface form is listed on its own line, that line overrides the base term for that form.
 ${lines.length ? lines.join('\n') : '(no glossary terms in this document)'}
 ` };

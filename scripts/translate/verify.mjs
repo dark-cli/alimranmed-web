@@ -53,7 +53,7 @@ for (const [entry, forms] of hits) {
   // first mention: parenthetical right after the first PROSE occurrence of any acceptable rendering
   // (not required when the term never occurs in prose).
   // Titles / meta / headings / list items / short lines (isNoGloss) must not carry the parenthetical.
-  if (entry.policy === 'translate+en-first-mention') {
+  if (entry.policy === 'translate+en-first-mention' || (entry.gloss && entry.policy !== 'keep')) {
     const after = (id) => {
       const hay = norm(trMap.get(id) || '');
       let best = -1;
