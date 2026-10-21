@@ -3,7 +3,7 @@
 // Usage: node scripts/translate/verify.mjs <extract-json> <tr|ckb> <translated-json> [--all]
 // Exit 1 on any miss. Misses are listed per line id.
 import fs from 'node:fs';
-import { loadExtract, checkLang, loadGlossary, buildMatchers, scanGlossary, stripGloss, normCkb, normTr, isProse, isTitleMeta } from './lib.mjs';
+import { loadExtract, checkLang, loadGlossary, buildMatchers, scanGlossary, stripGloss, normCkb, normTr, isProse, isNoGloss } from './lib.mjs';
 
 const args = process.argv.slice(2);
 const all = args.includes('--all');
@@ -50,8 +50,9 @@ for (const [entry, forms] of hits) {
       }
     }
   }
-  // first mention: parenthetical right after the first PROSE occurrence of any acceptable rendering.
-  // Titles / meta descriptions / short UI strings must not carry the parenthetical.
+  // first mention: parenthetical right after the first PROSE occurrence of any acceptable rendering
+  // (not required when the term never occurs in prose).
+  // Titles / meta / headings / list items / short lines (isNoGloss) must not carry the parenthetical.
   if (entry.policy === 'translate+en-first-mention') {
     const after = (id) => {
       const hay = norm(trMap.get(id) || '');
@@ -61,9 +62,9 @@ for (const [entry, forms] of hits) {
     };
     const glossed = (r) => /^[\p{L}‌]{0,14}\s*[(（]/u.test(r.hay.slice(r.best));
     for (const it of items) {
-      if (!isTitleMeta(it)) continue;
+      if (!isNoGloss(it)) continue;
       const r = after(it.id);
-      if (r && glossed(r)) fmMisses.push(`id ${it.id}: title/meta carries "(English)" gloss for "${entry.en}" (belongs in prose)`);
+      if (r && glossed(r)) fmMisses.push(`id ${it.id}: no-gloss line (title/meta/heading/short) carries "(English)" gloss for "${entry.en}"`);
     }
     for (const it of items) {
       if (!isProse(it)) continue;

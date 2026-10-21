@@ -198,12 +198,24 @@ const NONPROSE_LEAF = new Set(['title', 'description', 'heading', 'label', 'valu
 const wc = (s) => s.replace(/\{\{\d+\}\}/g, ' ').split(/\s+/).filter(Boolean).length;
 /** title / meta description / SEO strings: path is the top-level `title` or `description`. */
 export const isTitleMeta = (it) => it.path === 'title' || it.path === 'description';
+export const NOGLOSS_MAX_CHARS = 60;
+const NOGLOSS_ARRAYS = new Set(['tags', 'cards', 'titles', 'languages']);
+/**
+ * Lines that must never carry a first-mention "(English)" gloss: title/meta, markdown headings,
+ * heading/title/label-type fields, tags/cards, and any short line (< 60 chars, incl. list items).
+ */
+export function isNoGloss(it) {
+  if (isTitleMeta(it)) return true;
+  if (/^\s*#/.test(it.prefix || '')) return true;
+  const parts = it.path.split(/[.#:]/);
+  const leaf = parts[parts.length - 1];
+  if (NONPROSE_LEAF.has(leaf)) return true;
+  if (parts.some((p) => NOGLOSS_ARRAYS.has(p))) return true;
+  return it.text.replace(/\{\{\d+\}\}/g, ' ').trim().length < NOGLOSS_MAX_CHARS;
+}
 /** Section/body prose where the first-mention "(English)" gloss belongs. */
 export function isProse(it) {
-  if (isTitleMeta(it)) return false;
-  const leaf = it.path.split('.').pop();
-  if (NONPROSE_LEAF.has(leaf)) return false;
-  return wc(it.text) >= 6;
+  return !isNoGloss(it) && wc(it.text) >= 6;
 }
 /** Source line that is a citation / proper names / acronyms only: nothing to translate into Arabic script. */
 export function isNonTranslatable(srcText) {
@@ -212,4 +224,58 @@ export function isNonTranslatable(srcText) {
   const words = t.match(/[A-Za-z][A-Za-z.'-]*/g) || [];
   // no ordinary lowercase English words (>=4 letters, not capitalised) => names/acronyms only
   return !words.some((w) => /^[a-z]{4,}$/.test(w));
+}
+
+// ── job context shared by prepare-job / prepare-polish ───────────────────
+export const LANG = {
+  tr: 'Turkish (Latin script) for patients in Turkey',
+  ckb: 'Sorani Central Kurdish in Arabic script (standard KRG orthography: ک ی ە, never ك ي ة; use ڕ ڵ ۆ ێ ڤ) for patients in Iraqi Kurdistan',
+};
+export const noGlossIds = (items) => items.filter(isNoGloss).map((i) => i.id);
+export function compactIds(ids) {
+  if (!ids.length) return 'none';
+  const out = []; let a = ids[0], b = a;
+  for (const x of ids.slice(1)) { if (x === b + 1) b = x; else { out.push(a === b ? `${a}` : `${a}-${b}`); a = b = x; } }
+  out.push(a === b ? `${a}` : `${a}-${b}`);
+  return out.join(', ');
+}
+/** Glossary section (markdown) for the terms occurring in `items`. */
+export function glossarySection(items, lang) {
+  const hits = scanGlossary(items, buildMatchers(loadGlossary(lang)));
+  const ID_META = compactIds(noGlossIds(items));
+  const q = (s) => JSON.stringify(s);
+  const lines = [];
+for (const [entry, forms] of [...hits].sort((a, b) => a[0].en.localeCompare(b[0].en))) {
+  // group forms by rendering text
+  const byText = new Map();
+  for (const [form, { text }] of forms) {
+    if (!byText.has(text)) byText.set(text, []);
+    byText.get(text).push(form);
+  }
+  for (const [text, fs_] of byText) {
+    const src = fs_.map(q).join(' / ');
+    let rule;
+    if (entry.policy === 'keep') rule = `KEEP verbatim: ${q(text)}`;
+    else {
+      const gloss = hasGloss(text);
+      const later = stripGloss(text);
+      if (gloss && entry.policy === 'translate+en-first-mention') rule = `first mention: ${q(text)}; later: ${q(later)}`;
+      else if (gloss) rule = `first mention: ${q(text)}; later: ${q(later)}`;
+      else if (entry.policy === 'translate+en-first-mention') rule = `${q(text)}  [first mention: add the English term in parentheses]`;
+      else rule = q(text);
+    }
+    const other = lang === 'tr' ? /^(ckb|ku|ar)\b/i : /^(tr|turkish)\b/i;
+    const note = entry.note && !other.test(entry.note) && !/reviewer|patients say/i.test(entry.note) ? `  -- ${entry.note.slice(0, 110)}` : '';
+    lines.push(`- ${src} => ${rule}${note}`);
+  }
+}
+  return { count: hits.size, text: `## Glossary (${hits.size} terms occur in this document)
+Apply each rendering with correct grammar (case suffixes, plurals, ezafe, definiteness and word order are fine to adapt). Entries are matched case-insensitively and plural-tolerant.
+- "KEEP verbatim": write the text exactly as given.
+- "[first mention: add the English term in parentheses]": the FIRST time the term appears in the BODY/SECTION PROSE (longer explanatory sentences) write the rendering followed by the English term in parentheses, e.g. X (English term). Every later mention: the rendering alone.
+- NO-GLOSS lines: ids ${ID_META}. These are titles, meta/SEO descriptions, headings (markdown # lines and heading/title fields), labels, tags, captions, alt text, and every list item or short line under ${NOGLOSS_MAX_CHARS} characters. In them write the bare rendering with NO "(English)" parenthetical, even if it is the term's first appearance. The first-mention gloss goes on the first occurrence in a prose paragraph (any line not in the no-gloss list); if a term never occurs in prose, it gets no gloss at all.
+- "first mention: A; later: B" (the rendering carries its own parenthetical gloss): use A the first prose mention, B everywhere else (titles, meta, short UI strings included); add no further English parenthesis.
+- Where a specific surface form is listed on its own line, that line overrides the base term for that form.
+${lines.length ? lines.join('\n') : '(no glossary terms in this document)'}
+` };
 }
