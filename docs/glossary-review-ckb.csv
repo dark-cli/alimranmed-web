@@ -61,11 +61,11 @@ nerve root,anatomy,13,ڕەگی دەمار,,translate,high,,"Leg pain along the s
 speech therapy,procedure,13,چارەسەری ئاخاوتن,,translate,high,,Speech therapy
 tendinitis,medical,13,هەوکردنی وەتەر,,translate,high,,Tendinitis
 TMS,procedure,13,TMS,,keep,high,acronym kept,TMS
-transcranial magnetic stimulation,procedure,13,ورووژاندنی موگناتیسی بە ناو کاسەی سەردا,TMS,translate,high,,Transcranial magnetic stimulation
+transcranial magnetic stimulation,procedure,13,ورووژاندنی موگناتیسی بە ناو کەللەسەردا,TMS,translate,high,,Transcranial magnetic stimulation
 headache,medical,12,سەرئێشە,,translate,high,,Tension headaches
 hydrocephalus,medical,12,ئاو لە مێشک,هایدرۆسێفالەس,translate,high,,Hydrocephalus
 pregabalin,drug,12,پرێگابالین,,adapt-spelling,high,brand Lyrica kept as-is,"Neuropathic agents: gabapentin, pregabalin"
-repetitive transcranial magnetic stimulation,procedure,12,ورووژاندنی موگناتیسیی دووبارەبووەوە بە ناو کاسەی سەردا,rTMS,translate,high,,Repetitive transcranial magnetic stimulation (rTMS)
+repetitive transcranial magnetic stimulation,procedure,12,ورووژاندنی موگناتیسیی دووبارەبووەوە بە ناو کەللەسەردا,rTMS,translate,high,,Repetitive transcranial magnetic stimulation (rTMS)
 sciatica,medical,12,سیاتیکا,ئازاری دەماری ڕان,translate,high,lay Iraqi Kurdish also uses Arabic عیرق النسا; reviewer may prefer that,Sciatica
 trigeminal neuralgia,medical,12,ئازاری دەماری ترایجێمیناڵ,ئازاری ڕوخسار,translate,high,trigeminal kept as loan (no settled Sorani),Trigeminal neuralgia
 brain tumor,medical,11,گرێی مێشک,,translate,high,,Brain tumour
@@ -83,12 +83,12 @@ craniotomy,procedure,10,کردنەوەی کەللەسەر,کرانیۆتۆمی,t
 CT scan,procedure,10,CT سکان,,translate,high,Turkish acronym BT,Brain CT scan show a bullet arrested at posterior cranial fossa.
 epilepsy,medical,10,فێ,پەرکەم,translate,high,'فێ' is the everyday KRG word,Epilepsy
 gabapentin,drug,10,گاباپێنتین,,adapt-spelling,high,,"Neuropathic agents: gabapentin, pregabalin"
-intracranial pressure,medical,10,پەستانی ناو کاسەی سەر,,translate,high,,Focus is on controlling bleeding and intracranial pressure
+intracranial pressure,medical,10,پەستانی ناو کەللەسەر,,translate,high,,Focus is on controlling bleeding and intracranial pressure
 low back pain,medical,10,ئازاری کەمەر,,translate,high,"lumbar/lower back = bel (tr), کەمەر (ckb) throughout",chronic low back pain.
 microdiscectomy,procedure,10,مایکرۆدیسکێکتۆمی,,translate+en-first-mention,high,"AR site uses colloquial ""مايكرودسك""",Microdiscectomy
 nerve block,procedure,10,بلۆکی دەمار,,translate,high,"Kurdish clinicians say ""بلۆک""",Injections and nerve blocks first.
 neuropathic pain,medical,10,ئازاری دەماری,,translate,high,,Neuropathic pain
-sacroiliac joint,anatomy,10,جومگەی عەجز و حەوز,ساکرۆئیلیاک,translate,high,,Sacroiliac joint injection
+sacroiliac joint,anatomy,10,جومگەی ساکرۆئیلیاک,جومگەی نێوان عەجز و حەوز,translate,high,,Sacroiliac joint injection
 tinnitus,medical,10,زرنگانەوەی گوێ,,translate,high,,TMS for Tinnitus
 vertebrae,anatomy,10,بڕبڕەکان,,translate,high,,Osteoporotic vertebra compared to a healthy vertebra
 peripheral neuropathy,medical,8,تێکچوونی دەمارەکانی دەوروبەر,نیوڕۆپاسی,translate,medium,,Peripheral neuropathy
@@ -123,7 +123,7 @@ neuromuscular fibrosis,medical,2,فایبرۆسیسی دەمار و ماسولک
 osteochondritis dissecans,medical,2,ئۆستیۆکۆندرایتس دیسیکانس,,translate+en-first-mention,medium,loan only,Osteochondritis dissecans
 peripheral nerve disorders,medical,2,نەخۆشییەکانی دەمارەکانی دەوروبەر,,translate,medium,"""peripheral nerve"" = دەماری دەرەکی throughout",Peripheral nerve disorders
 peripheral nerve entrapments,medical,2,گیرانی دەمارەکانی دەوروبەر,,translate,medium,,"Scoliosis, tendon problems, peripheral nerve entrapment, walking or wheelchair difficulties, respiratory insufficiency, osteoporotic fractures, and progressive loss of function."
-posterior fossa craniectomy,procedure,2,کرانیێکتۆمیی چاڵی دواوەی کاسەی سەر,,translate,medium,,"If a cause is found, treat the cause first: Chiari decompression (posterior fossa craniectomy) reliably resolves the syrinx in 50–70% of cases; tethered cord release and tumour resection also allow sp..."
+posterior fossa craniectomy,procedure,2,کرانیێکتۆمیی چاڵی پشتەوەی کەللەسەر,,translate,medium,,"If a cause is found, treat the cause first: Chiari decompression (posterior fossa craniectomy) reliably resolves the syrinx in 50–70% of cases; tethered cord release and tumour resection also allow sp..."
 pseudogout,medical,2,نەقرسی ساختە,,translate,medium,,Pseudogout
 tethered cord,medical,2,بەستراوبوونی درکەپەتک,,translate,medium,,Nearly all adults with open spina bifida require lifelong monitoring for tethered cord.
 virtual reality rehabilitation,procedure,2,بەتواناکردنەوە بە واقیعی مەجازی,,translate,medium,,Virtual reality rehabilitation
@@ -144,13 +144,13 @@ callosotomy,procedure,1,بڕینی جەستەی پینەیی مێشک,کالۆس
 calvarial remodelling,procedure,1,نوێکردنەوەی شێوەی کەللەسەر,,translate,medium,,"Procedures include open cranial vault remodelling (calvarial remodelling) and, for single-suture cases, minimally invasive endoscopic strip craniectomy followed by helmet therapy."
 CBT-I,procedure,1,CBT-I,,keep,medium,tr acronym not fully standard; reviewer check,Sleep hygiene and cognitive behavioural therapy for insomnia (CBT-I) are first-line treatments for primary insomnia.
 cerebral amyloid angiopathy,medical,1,تێکچوونی خوێنبەرەکانی مێشک بەهۆی ئەمیلۆید,,translate+en-first-mention,medium,,"Other causes include cerebral amyloid angiopathy (in elderly patients), coagulopathy, and haemorrhagic transformation of an ischaemic infarct."
-choroid plexus cauterisation,procedure,1,سووتاندنی کۆرۆید پلێکسس,,translate,medium,,"*ETV + choroid plexus cauterisation (ETV-CPC):* In young infants, particularly those with post-infectious hydrocephalus, cauterising the choroid plexus (which produces much of the CSF) in combination ..."
+choroid plexus cauterisation,procedure,1,سووتاندنی تۆڕی کۆرۆید,,translate,medium,,"*ETV + choroid plexus cauterisation (ETV-CPC):* In young infants, particularly those with post-infectious hydrocephalus, cauterising the choroid plexus (which produces much of the CSF) in combination ..."
 chronic exertional compartment syndrome,medical,1,سەندرۆمی کۆمپارتمێنتی درێژخایەن بەهۆی ماندووبوون,,translate+en-first-mention,medium,,Common causes of muscle pain include: - Chronic exertional compartment syndrome - Chronic fatigue syndrome - Claudication - Coronavirus disease 2019 (COVID-19) - Dermatomyositis - Dystonia - Fibromyal…
 chronic inflammatory demyelinating polyneuropathy,medical,1,تێکچوونی فرەدەماریی هەوکردنی درێژخایەنی لابەری مایلین,CIDP,translate+en-first-mention,low,,"Chronic inflammatory demyelinating polyneuropathy (CIDP): the chronic counterpart to GBS; treated with corticosteroids, IVIG, or plasma exchange."
 CIMT,procedure,1,CIMT,,keep,medium,,Constraint-induced movement therapy (CIMT)
 community-acquired pneumonia,medical,1,هەوکردنی سییەکانی دەرەوەی نەخۆشخانە,CAP,translate,medium,,"It is worth noting that patients recovering from community-acquired pneumonia (CAP) show the same pattern of symptoms, so these post-infection complaints are not exclusive to COVID-19."
 corns and calluses,medical,1,ڕەقبوون و ئەستووربوونی پێستی پێ,,translate,medium,no clear lay Sorani term found,Corns and calluses
-coronal synostosis,medical,1,داخرانی پێشوەختی دروومانی تاجیی کاسەی سەر,,translate,medium,,Coronal synostosis: affects one (unilateral) or both (bilateral) coronal sutures.
+coronal synostosis,medical,1,داخرانی پێشوەختی درزی تاجیی کەللەسەر,,translate,medium,,Coronal synostosis: affects one (unilateral) or both (bilateral) coronal sutures.
 corpus callosotomy,procedure,1,بڕینی جەستەی پینەیی مێشک,,translate+en-first-mention,medium,,"For drug-resistant epilepsy, surgical resection, vagal nerve stimulation, corpus callosotomy, and rTMS provide additional options."
 corticospinal tracts,anatomy,1,ڕێڕەوە کۆرتیکۆسپاینەڵەکان,,translate,medium,No settled Sorani term; transliterated adjective.,...nterior horn cells are destroyed → weakness and wasting of the hands and arms - Corticospinal tracts are compressed → spasticity in the legs below the lesion - Posterior columns are eventually affecte...
 cranial vault remodelling,procedure,1,نوێکردنەوەی شێوەی گومەزی کەللەسەر,,translate,medium,,Cranial vault remodelling
@@ -168,7 +168,7 @@ end-effector,procedure,1,ئامێری ڕۆبۆتیی ئێند-ئیفێکتەر,,
 endoscopic strip craniectomy,procedure,1,لابردنی پارچەیەکی درێژکۆڵەی کەللەسەر بە ئێندۆسکۆپ,,translate,medium,,"Procedures include open cranial vault remodelling (calvarial remodelling) and, for single-suture cases, minimally invasive endoscopic strip craniectomy followed by helmet therapy."
 epidural drain,procedure,1,بۆریی دەرهێنانی ئیپیدیوراڵ,,translate,medium,,Indications and non-indications for epidural drain use in lumbar spine surgery up to three levels
 epidural fibrosis,medical,1,شانەی برینی ئیپیدیوراڵ,فایبرۆسیس,translate,medium,post-surgical scar tissue,Post-operative epidural fibrosis (scar tissue after spinal surgery) can tether the cord or cauda equina roots.
-equinus contracture,medical,1,گرژبوونی هەمیشەیی گوزینگ,ئیکوینەس,translate,medium,,"…ergy-efficient walking - Physiotherapy: stretching of the heel cord (to prevent equinus contracture), strengthening of residual dorsiflexors, gait retraining, and balance training - Functional electri…"
+equinus contracture,medical,1,گرژبوونی هەمیشەیی قوڵەپێ,ئیکوینەس,translate,medium,,"…ergy-efficient walking - Physiotherapy: stretching of the heel cord (to prevent equinus contracture), strengthening of residual dorsiflexors, gait retraining, and balance training - Functional electri…"
 exposure and response prevention,procedure,1,ڕووبەڕووکردنەوە و ڕێگریکردن لە وەڵامدانەوە,,translate,medium,"CBT technique (ERP); keep ""ERP"" after first mention","Cognitive behavioural therapy (CBT) with exposure and response prevention (ERP), and antidepressant medications."
 exposure keratopathy,medical,1,زیانی قەرنیە بەهۆی داخرانی ناتەواوی پێڵوو,,translate,medium,,… the eye closes when smiling) - Corneal damage from inability to close the eye (exposure keratopathy)…
 external urinary sphincter,anatomy,1,بازنەی دەرەوەی بۆری میز,,translate,medium,sphincter = بازنە.,Contraction of the external urinary sphincter induces reflex bladder to decrease the frequency of incontinence episodes.
@@ -189,21 +189,21 @@ hydromyelia,medical,1,هایدرۆمایلیا,,translate+en-first-mention,mediu
 hypotelorism,medical,1,نزیکیی زۆری چاوەکان لە یەکتر,,translate,medium,,Metopic synostosis: premature fusion of the metopic suture (forehead midline) produces trigonocephaly — a triangular forehead with prominent midline ridge and hypotelorism (eyes closer together)
 IFT,procedure,1,IFT,چارەسەری تەوژمی تێکەڵاو,translate,medium,acronym kept,"Interferential Therapy (IFT) uses low-frequency currents to stimulate peripheral nerves, reduce oedema, relieve chronic pain, stimulate muscles, and improve blood flow via the body's opioid mechanism,…"
 IMRT,procedure,1,IMRT,چارەسەری تیشکیی چڕی ڕێکخراو,translate,medium,acronym kept,Radiation (stereotactic radiosurgery or IMRT) for residual or recurrent tumours.
-lambdoid synostosis,medical,1,داخرانی پێشوەختی دروومانی لامبدۆیدیی کاسەی سەر,,translate,medium,,Lambdoid synostosis (rare): posterior skull flattening; must be distinguished from positional plagiocephaly (non-synostotic)
+lambdoid synostosis,medical,1,داخرانی پێشوەختی درزی لامبدۆیدیی کەللەسەر,,translate,medium,,Lambdoid synostosis (rare): posterior skull flattening; must be distinguished from positional plagiocephaly (non-synostotic)
 levator ani,anatomy,1,ماسولکەی بەرزکەرەوەی کۆم,لیڤەیتەر ئانای,translate,medium,,Pelvic floor muscles also are known as levator ani muscles because the function to levitate or elevate the pelvic organs into their proper place.
 lipohyalinosis,medical,1,لیپۆهایالینۆسیس,,translate,medium,transliteration,Small vessel disease — lipohyalinosis of penetrating arteries causes lacunar TIAs; risk factors are hypertension and diabetes.
 lipomyelomeningocele,medical,1,لیپۆمایلۆمێنینگۆسیل,,translate+en-first-mention,medium,transliteration,"The specific operation depends on the cause: filum section for tight filum, lipoma debulking and release for lipomyelomeningocele, lysis of post-operative adhesions for acquired tethering."
-lumbo-sacral radicular syndrome,medical,1,سەندرۆمی ڕەگی دەماری کەمەر و ساکرەم,,translate,medium,,Lumbo-sacral radicular syndrome
+lumbo-sacral radicular syndrome,medical,1,سەندرۆمی ڕەگی دەماری کەمەر و عەجز,,translate,medium,,Lumbo-sacral radicular syndrome
 macroadenoma,medical,1,ماکرۆئەدینۆما,,translate,medium,transliteration,Microadenomas are < 1 cm; macroadenomas are ≥ 1 cm and may compress adjacent structures.
 medial branch nerve injection,procedure,1,دەرزی لقی ناوەکیی دەمار,,translate+en-first-mention,low,,4 – Medial branch nerve injection
 medial branch nerves,anatomy,1,لقە دەمارە ناوەکییەکان,مێدیەل بڕانچ,translate+en-first-mention,low,Facet-pain RF target.,Anaesthetic block of the medial branch nerves that supply the joint.
 medial tibial stress syndrome,medical,1,سەندرۆمی فشاری لای ناوەوەی ئێسکی قەڵەم,,translate+en-first-mention,medium,,Shin splints (medial tibial stress syndrome)
 medulloblastoma,medical,1,میدولۆبلاستۆما,,translate+en-first-mention,medium,transliteration,"Histopathologycal results show medulloblastoma, he refused radiation."
 meningocele,medical,1,مێنینگۆسیل,,translate,medium,,"...e defect only; up to 10% of people have this incidentally, rarely symptomatic), meningocele (meninges herniate through the bony defect but cord is intact; rare, usually mild), and myelomeningocele / o..."
-metopic synostosis,medical,1,داخرانی پێشوەختی دروومانی ناوچەوان,,translate,medium,,Metopic synostosis: premature fusion of the metopic suture (forehead midline) produces trigonocephaly — a triangular forehead with prominent midline ridge and hypotelorism (eyes closer together)
+metopic synostosis,medical,1,داخرانی پێشوەختی درزی ناوچەوان,,translate,medium,,Metopic synostosis: premature fusion of the metopic suture (forehead midline) produces trigonocephaly — a triangular forehead with prominent midline ridge and hypotelorism (eyes closer together)
 micro-needles,procedure,1,دەرزی ورد,,translate+en-first-mention,low,,"In Mesotherapy, micro-needles are used for subcutaneous injection to concentrate the active substances in the adipose tissue lining the three layers of skin, and after melting them, the body begins to..."
 microadenoma,medical,1,مایکرۆئەدینۆما,,translate,medium,transliteration,Microadenomas are < 1 cm; macroadenomas are ≥ 1 cm and may compress adjacent structures.
-middle fossa approach,procedure,1,ڕێگای چاڵی ناوەڕاستی کاسەی سەر,,translate,medium,skull-base approach,"Suboccipital, translabyrinthine, or middle fossa approach"
+middle fossa approach,procedure,1,ڕێگای چاڵی ناوەڕاستی کەللەسەر,,translate,medium,skull-base approach,"Suboccipital, translabyrinthine, or middle fossa approach"
 mirror neurons,anatomy,1,خانە دەمارییە ئاوێنەییەکان,,translate,medium,,"Some VR games have an option of a VR teacher that performs the task, enabling the chance for ""learning by imitation"" by stimulating mirror neurons."
 mononeuropathy multiplex,medical,1,تێکچوونی چەند تاکە دەمارێک,,translate,medium,,"Mononeuropathy multiplex: multiple individual nerves affected in an asymmetric, stepwise pattern — suggests vasculitis, diabetes, or sarcoidosis"
 motor neuron disease,medical,1,نەخۆشیی خانە دەمارییە جووڵەییەکان,,translate+en-first-mention,medium,,A genetic motor neuron disease causing progressive muscle weakness and atrophy.
@@ -235,9 +235,9 @@ pubic symphysis,anatomy,1,جومگەی ئێسکی ناوگەڵ,,translate,medium
 pulsed electromagnetic field,procedure,1,کایەی ئێلێکترۆموگناتیسیی پەلسی,,translate+en-first-mention,medium,,"…nd anti-nociceptive efficacy, similar to the opioid analgesic effect respect of pulsed electromagnetic field (PEMF) is reported by scientist literature but the clear biological and biochemical mechani…"
 Rathke's cleft cyst,medical,1,کیسی کەلێنی ڕاتکە,,translate+en-first-mention,medium,,It is the standard-of-care approach for pituitary adenomas (both secretory and non-secretory) and other sellar lesions including craniopharyngiomas and Rathke's cleft cysts.
 responsive neurostimulation,procedure,1,ورووژاندنی دەماریی وەڵامدەرەوە,RNS,translate,medium,,Neuromodulation: vagus nerve stimulation or responsive neurostimulation (RNS) for multifocal or diffuse seizure zones
-rotator cuff arthropathy,medical,1,تێکچوونی جومگەی شان بەهۆی دڕانی ڕۆتەیتەر کەف,,translate,medium,,"Untreated rotator cuff injuries carry a risk of progressive enlargement of the tear, worsening weakness, and the development of rotator cuff arthropathy (degenerative glenohumeral joint disease)."
+rotator cuff arthropathy,medical,1,تێکچوونی جومگەی شان بەهۆی دڕانی ماسولکە سووڕێنەرەکانی شان,,translate,medium,,"Untreated rotator cuff injuries carry a risk of progressive enlargement of the tear, worsening weakness, and the development of rotator cuff arthropathy (degenerative glenohumeral joint disease)."
 sacral neuromodulation,procedure,1,نیورۆمۆدیولەیشنی ساکراڵ,,translate+en-first-mention,medium,,...y; Botox injected into the detrusor for refractory overactivity or dyssynergia; sacral neuromodulation and spinal cord stimulation for selected cases; intrathecal baclofen for spasticity-related dysfu...
-sagittal synostosis,medical,1,داخرانی زووی درزی ساجیتاڵی کەللەسەر,,translate,medium,,"Sagittal synostosis (most common — ~50%): premature fusion of the sagittal suture (running front-to-back along the top of the skull) produces scaphocephaly — a long, narrow skull with frontal and occi…"
+sagittal synostosis,medical,1,داخرانی پێشوەختی درزی ساجیتاڵی کەللەسەر,,translate,medium,,"Sagittal synostosis (most common — ~50%): premature fusion of the sagittal suture (running front-to-back along the top of the skull) produces scaphocephaly — a long, narrow skull with frontal and occi…"
 scaphocephaly,medical,1,سکافۆسێفالی,سەری درێژ و باریک,translate,medium,,"…the sagittal suture (running front-to-back along the top of the skull) produces scaphocephaly — a long, narrow skull with frontal and occipital bossing ('boat shape')…"
 secondary hyperparathyroidism,medical,1,زیادچالاکیی لاوەکیی ڕژێنی پاراسایرۆید,,translate,medium,,"Blood tests: low 25-hydroxyvitamin D, low calcium, low phosphate, elevated alkaline phosphatase (bone isoform), elevated parathyroid hormone (secondary hyperparathyroidism)"
 sellar lesion,medical,1,زەدەی ناوچەی سەرج,نزیک ڕژێنی ژێرمێشک,translate,medium,,Pituitary adenomas and other sellar lesions (tumours at the base of the skull near the pituitary gland).
@@ -260,14 +260,14 @@ superior hypogastric plexus,anatomy,1,تۆڕی دەماری سەرەوەی ژێ�
 superior sagittal sinus,anatomy,1,سینوسی ساجیتاڵی سەرەوە,,translate,medium,,"...e fragments were found causing partial laceration of the posterior third of the superior sagittal sinus, and 5 pints of blood were transfused within 30 minutes as the depressed bone fragments were ele..."
 supratrochlear nerve,anatomy,1,دەماری سوپراترۆکلیەر,,translate,medium,,"…he occipital nerve (greater or lesser), upper cervical nerves, supraorbital and supratrochlear nerves (branches of the frontal and trigeminal nerves), or sphenopalatine ganglion nerve."
 sympathetic hyperactivity,medical,1,زیادچالاکیی کۆئەندامی دەماری سیمپاسەوی,,translate,medium,,Sympathetic hyperactivity and parasympathetic dysfunction may be responsible for autonomic disturbances in stroke.
-syndromic craniosynostosis,medical,1,داخرانی زووی درزەکانی کەللەسەر,جۆری سەندرۆمی,translate,medium,,"Multi-suture synostosis: multiple sutures involved — may occur in the context of a syndromic craniosynostosis (Apert, Crouzon, Muenke, Pfeiffer syndromes)"
+syndromic craniosynostosis,medical,1,داخرانی پێشوەختی درزەکانی کەللەسەر,جۆری سەندرۆمی,translate,medium,,"Multi-suture synostosis: multiple sutures involved — may occur in the context of a syndromic craniosynostosis (Apert, Crouzon, Muenke, Pfeiffer syndromes)"
 synkinesis,medical,1,جووڵەی هاوکاتی نەویستراو,سینکینیزیس,translate,medium,,"rTMS, physiotherapy, and Botox address residual weakness, synkinesis, and muscle rehabilitation."
 syringoperitoneal shunting,procedure,1,شەنتی سیرینکس بۆ ناو سک,,translate,medium,,"If the syrinx persists or the cause cannot be corrected, direct surgical drainage via stenting or syringopleural/syringoperitoneal shunting is considered."
 syringopleural shunting,procedure,1,شەنتی سیرینکس بۆ پەردەی سی,,translate,medium,,... placed to drain the cavity into the subarachnoid space - *Syringoperitoneal or syringopleural shunting* — fluid is diverted to the peritoneal or pleural cavity...
 syrinx drainage,procedure,1,بەتاڵکردنەوەی سیرینکس,,translate,medium,,Managed by addressing the underlying cause; syrinx drainage is used when conservative options are insufficient.
 syrinx stenting,procedure,1,دانانی ستێنت بۆ سیرینکس,,translate,medium,,Options include: - *Syrinx stenting* — a short hollow tube is placed to drain the cavity into the subarachnoid space - *Syringoperitoneal or syringopleural shunting* — fluid is diverted to the periton...
 tethered cord syndrome,medical,1,سەندرۆمی بەستراوبوونی درکەپەتک,,translate+en-first-mention,medium,,"...enic bladder) - Multiple sclerosis - Stroke and brain injury - Spina bifida and tethered cord syndrome - Parkinson's disease and other neurodegenerative diseases - Peripheral neuropathy (diabetic, pos..."
-thoracolumbosacral orthosis,procedure,1,پشتێنی پاڵپشتیی سنگ و کەمەر و ساکرۆم,,translate,medium,,Rigid thoracolumbosacral orthosis (TLSO) worn 18–20 hours daily
+thoracolumbosacral orthosis,procedure,1,پشتێنی پاڵپشتیی سنگ و کەمەر و عەجز,,translate,medium,,Rigid thoracolumbosacral orthosis (TLSO) worn 18–20 hours daily
 Transitional Care Center,site,1,سەنتەری چاودێریی دوای نەخۆشخانە,,translate,medium,Appears in imported text; generic service name.,"Transitional Care Center, our goal is to eliminate these barriers of nutritional therapy for our residents and their families during the transition between hospital and home."
 translabyrinthine,procedure,1,ڕێگای ناو لابیرینسی گوێ,,translate,medium,skull-base approach,"Suboccipital, translabyrinthine, or middle fossa approach"
 trigeminal autonomic cephalalgias,medical,1,سەرئێشە ئۆتۆنۆمییەکانی دەماری ترایجێمیناڵ,,translate+en-first-mention,medium,,"They belong to a group of primary headache disorders called trigeminal autonomic cephalalgias (TACs), characterised by severe unilateral head pain combined with ipsilateral autonomic features."
@@ -275,7 +275,7 @@ trigonocephaly,medical,1,ترایگۆنۆسێفالی,سەری سێگۆشەیی,
 tumour-induced osteomalacia,medical,1,نەرمبوونی ئێسک بەهۆی لوو,,translate+en-first-mention,medium,,Phosphate wasting: Rare hereditary conditions (X-linked hypophosphataemia) and tumour-induced osteomalacia cause renal phosphate wasting despite normal vitamin D.
 vaso-occlusive crisis,medical,1,قەیرانی داخرانی بۆرییە خوێنییەکان,,translate,medium,sickle-cell pain crisis,"Vaso-occlusive crises: acute, severe pain in bones, joints, chest, and abdomen — triggered by cold, dehydration, infection, or stress."
 vein of Galen malformation,medical,1,شێوانی خوێنهێنەری گالێن,,translate+en-first-mention,medium,,...n cause of obstructive hydrocephalus in older children - *Vascular anomalies* — vein of Galen malformation - *Genetic* — a small proportion are inherited (X-linked hydrocephalus from L1CAM mutation)...
-vertebral body tethering,procedure,1,بەستنەوەی لەشی بڕبڕە,VBT,translate,medium,scoliosis surgery,Vertebral body tethering for suitable adolescents
+vertebral body tethering,procedure,1,بەستنەوەی جەستەی بڕبڕە,VBT,translate,medium,scoliosis surgery,Vertebral body tethering for suitable adolescents
 vertebral wedging,medical,1,سێگۆشەبوونی بڕبڕە,,translate+en-first-mention,low,,Scheuermann's disease is vertebral wedging (>5° wedging in three consecutive vertebrae).
 vestibulodynia,medical,1,ئازاری دەرچەی زێ,,translate,medium,,"A related condition, vestibulodynia, causes pain only when pressure is applied to the area surrounding the vaginal entrance."
 X-linked hypophosphataemia,medical,1,کەمیی فۆسفاتی پەیوەست بە کرۆمۆسۆمی X,,translate+en-first-mention,medium,,Phosphate wasting: Rare hereditary conditions (X-linked hypophosphataemia) and tumour-induced osteomalacia cause renal phosphate wasting despite normal vitamin D.

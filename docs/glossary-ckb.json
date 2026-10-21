@@ -246,9 +246,9 @@
     "text": "هەوکردنی پەردەی جومگەی شان",
     "policy": "translate",
     "variants": [],
-    "gloss": "شانی بەستوو",
     "confidence": "high",
-    "verified": "backtrans"
+    "verified": "backtrans",
+    "note": "ckb: no parenthetical gloss; the source often pairs it with frozen shoulder (شانی بەستوو), so do not add that again."
   },
   {
     "en": "adolescent idiopathic scoliosis",
@@ -1132,7 +1132,7 @@
   {
     "en": "bowel incontinence",
     "category": "medical",
-    "text": "نەتوانینی کۆنترۆڵکردنی پیسایی",
+    "text": "ڕانەگرتنی پیسایی",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
@@ -1148,7 +1148,7 @@
   {
     "en": "brachial plexus injury",
     "category": "medical",
-    "text": "برینداربوونی تۆڕی دەماری باڵ",
+    "text": "برینداربوونی تۆڕی دەمارەکانی شان و دەست",
     "policy": "translate",
     "variants": [
       "brachial plexus injuries"
@@ -2172,7 +2172,7 @@
   {
     "en": "coronal synostosis",
     "category": "medical",
-    "text": "داخرانی پێشوەختی دروومانی تاجیی کاسەی سەر",
+    "text": "داخرانی پێشوەختی درزی تاجیی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -2199,7 +2199,7 @@
   {
     "en": "craniosynostosis",
     "category": "medical",
-    "text": "داخرانی پێشوەختی دروومانەکانی کاسەی سەر",
+    "text": "داخرانی پێشوەختی درزەکانی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "gloss": "کرانیۆسینۆستۆسیس",
@@ -2933,7 +2933,7 @@
   {
     "en": "equinus contracture",
     "category": "medical",
-    "text": "گرژبوونی هەمیشەیی گوزینگ",
+    "text": "گرژبوونی هەمیشەیی قوڵەپێ",
     "policy": "translate",
     "variants": [],
     "gloss": "ئیکوینەس",
@@ -3144,7 +3144,7 @@
   {
     "en": "fecal incontinence",
     "category": "medical",
-    "text": "نەتوانینی کۆنترۆڵکردنی پیسایی",
+    "text": "ڕانەگرتنی پیسایی",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
@@ -3152,20 +3152,22 @@
   {
     "en": "fellowship",
     "category": "medical",
-    "text": "فێلۆشیپ",
-    "policy": "adapt-spelling",
+    "text": "خولی پسپۆڕیی ورد",
+    "policy": "translate",
     "variants": [
       "fellowships",
       "fellowship training"
     ],
+    "gloss": "فێلۆشیپ",
     "variant_rules": [
       {
         "variant": "fellowships",
-        "text": "فێلۆشیپەکان"
+        "text": "خولەکانی پسپۆڕیی ورد",
+        "gloss": "فێلۆشیپ"
       }
     ],
     "confidence": "high",
-    "note": "Post-residency fellowship (CV credential). tr: never \"burs\" (scholarship). ckb: placeholder transliteration, not yet reviewed by a Sorani speaker."
+    "note": "Post-residency fellowship (CV credential, training sense). tr: never \"burs\" (scholarship). ckb: descriptive rendering, first prose mention adds (فێلۆشیپ) as KRG doctors say it; never زەماڵە/بورس."
   },
   {
     "en": "femoroacetabular impingement",
@@ -4190,12 +4192,12 @@
   {
     "en": "incontinence",
     "category": "medical",
-    "text": "نەتوانینی کۆنترۆڵکردنی میز",
+    "text": "ڕانەگرتنی میز یان پیسایی",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
     "verified": "backtrans",
-    "note": "ar sample is urinary incontinence"
+    "note": "ckb: generic term = urinary or fecal; urinary/fecal/stress/urge incontinence have their own entries."
   },
   {
     "en": "independence",
@@ -4381,7 +4383,7 @@
   {
     "en": "intracranial hematoma",
     "category": "medical",
-    "text": "کۆبوونەوەی خوێن لەناو کاسەی سەر",
+    "text": "کۆبوونەوەی خوێن لەناو کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
@@ -4389,7 +4391,7 @@
   {
     "en": "intracranial hemorrhage",
     "category": "medical",
-    "text": "خوێنبەربوونی ناو کاسەی سەر",
+    "text": "خوێنبەربوونی ناو کەللەسەر",
     "policy": "translate",
     "variants": [
       "intracranial haemorrhage"
@@ -4399,7 +4401,7 @@
   {
     "en": "intracranial pressure",
     "category": "medical",
-    "text": "پەستانی ناو کاسەی سەر",
+    "text": "پەستانی ناو کەللەسەر",
     "policy": "translate",
     "variants": [
       "raised intracranial pressure"
@@ -4407,7 +4409,7 @@
     "variant_rules": [
       {
         "variant": "raised intracranial pressure",
-        "text": "بەرزبوونەوەی پەستانی ناو کاسەی سەر"
+        "text": "بەرزبوونەوەی پەستانی ناو کەللەسەر"
       }
     ],
     "confidence": "high",
@@ -4677,7 +4679,7 @@
   {
     "en": "lambdoid synostosis",
     "category": "medical",
-    "text": "داخرانی پێشوەختی دروومانی لامبدۆیدیی کاسەی سەر",
+    "text": "داخرانی پێشوەختی درزی لامبدۆیدیی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -4932,7 +4934,7 @@
   {
     "en": "lumbo-sacral radicular syndrome",
     "category": "medical",
-    "text": "سەندرۆمی ڕەگی دەماری کەمەر و ساکرەم",
+    "text": "سەندرۆمی ڕەگی دەماری کەمەر و عەجز",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -5232,7 +5234,7 @@
   {
     "en": "metopic synostosis",
     "category": "medical",
-    "text": "داخرانی پێشوەختی دروومانی ناوچەوان",
+    "text": "داخرانی پێشوەختی درزی ناوچەوان",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -7461,7 +7463,7 @@
   {
     "en": "rotator cuff arthropathy",
     "category": "medical",
-    "text": "تێکچوونی جومگەی شان بەهۆی دڕانی ڕۆتەیتەر کەف",
+    "text": "تێکچوونی جومگەی شان بەهۆی دڕانی ماسولکە سووڕێنەرەکانی شان",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -7569,7 +7571,7 @@
   {
     "en": "sagittal synostosis",
     "category": "medical",
-    "text": "داخرانی زووی درزی ساجیتاڵی کەللەسەر",
+    "text": "داخرانی پێشوەختی درزی ساجیتاڵی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -8604,7 +8606,7 @@
   {
     "en": "syndromic craniosynostosis",
     "category": "medical",
-    "text": "داخرانی زووی درزەکانی کەللەسەر",
+    "text": "داخرانی پێشوەختی درزەکانی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "gloss": "جۆری سەندرۆمی",
@@ -8716,7 +8718,7 @@
   {
     "en": "temporal lobe epilepsy",
     "category": "medical",
-    "text": "فێی پەڕەی لاجانگیی مێشک",
+    "text": "فێی لۆبی لاجانگیی مێشک",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
@@ -10347,7 +10349,7 @@
   {
     "en": "celiac plexus block",
     "category": "procedure",
-    "text": "بلۆکی کۆمەڵەدەماری سیلیاک",
+    "text": "بلۆکی تۆڕی دەماری سیلیاک",
     "policy": "translate+en-first-mention",
     "variants": [],
     "confidence": "high",
@@ -10451,7 +10453,7 @@
   {
     "en": "choroid plexus cauterisation",
     "category": "procedure",
-    "text": "سووتاندنی کۆرۆید پلێکسس",
+    "text": "سووتاندنی تۆڕی کۆرۆید",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -11552,7 +11554,7 @@
   {
     "en": "ganglion impar block",
     "category": "procedure",
-    "text": "بلۆکی گانگلیۆن ئیمپار",
+    "text": "بلۆکی گرێی دەماری ئیمپار",
     "policy": "translate+en-first-mention",
     "variants": [],
     "confidence": "high",
@@ -11775,7 +11777,7 @@
   {
     "en": "ICP monitoring",
     "category": "procedure",
-    "text": "چاودێری پەستانی ناو کاسەی سەر",
+    "text": "چاودێری پەستانی ناو کەللەسەر",
     "policy": "translate",
     "variants": [],
     "gloss": "ICP",
@@ -11853,7 +11855,7 @@
   {
     "en": "incontinence training",
     "category": "procedure",
-    "text": "ڕاهێنانی کۆنترۆڵکردنی میز",
+    "text": "ڕاهێنان بۆ چارەسەری ڕانەگرتنی میز و پیسایی",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
@@ -12540,7 +12542,7 @@
   {
     "en": "middle fossa approach",
     "category": "procedure",
-    "text": "ڕێگای چاڵی ناوەڕاستی کاسەی سەر",
+    "text": "ڕێگای چاڵی ناوەڕاستی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -13202,7 +13204,7 @@
   {
     "en": "posterior fossa craniectomy",
     "category": "procedure",
-    "text": "کرانیێکتۆمیی چاڵی دواوەی کاسەی سەر",
+    "text": "کرانیێکتۆمیی چاڵی پشتەوەی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -13498,7 +13500,7 @@
   {
     "en": "repetitive transcranial magnetic stimulation",
     "category": "procedure",
-    "text": "ورووژاندنی موگناتیسیی دووبارەبووەوە بە ناو کاسەی سەردا",
+    "text": "ورووژاندنی موگناتیسیی دووبارەبووەوە بە ناو کەللەسەردا",
     "policy": "translate",
     "variants": [],
     "gloss": "rTMS",
@@ -13741,7 +13743,7 @@
   {
     "en": "skull fracture elevation",
     "category": "procedure",
-    "text": "بەرزکردنەوەی شکاوی چاڵبووی کاسەی سەر",
+    "text": "بەرزکردنەوەی شکاوی چاڵبووی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
@@ -14323,7 +14325,7 @@
   {
     "en": "temporal artery biopsy",
     "category": "procedure",
-    "text": "نموونەوەرگرتن لە خوێنبەری لاجان",
+    "text": "نموونەوەرگرتن لە خوێنبەری لاجانگ",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
@@ -14332,7 +14334,7 @@
   {
     "en": "temporal artery ultrasound",
     "category": "procedure",
-    "text": "سۆناری خوێنبەری لاجان",
+    "text": "سۆناری خوێنبەری لاجانگ",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
@@ -14408,7 +14410,7 @@
   {
     "en": "thoracolumbosacral orthosis",
     "category": "procedure",
-    "text": "پشتێنی پاڵپشتیی سنگ و کەمەر و ساکرۆم",
+    "text": "پشتێنی پاڵپشتیی سنگ و کەمەر و عەجز",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
@@ -14480,7 +14482,7 @@
   {
     "en": "transcranial direct current stimulation",
     "category": "procedure",
-    "text": "ورووژاندن بە تەوژمی ڕاستەوخۆ بە ناو کاسەی سەردا",
+    "text": "ورووژاندن بە تەوژمی ڕاستەوخۆ بە ناو کەللەسەردا",
     "policy": "translate",
     "variants": [],
     "gloss": "tDCS",
@@ -14490,7 +14492,7 @@
   {
     "en": "transcranial magnetic stimulation",
     "category": "procedure",
-    "text": "ورووژاندنی موگناتیسی بە ناو کاسەی سەردا",
+    "text": "ورووژاندنی موگناتیسی بە ناو کەللەسەردا",
     "policy": "translate",
     "variants": [],
     "gloss": "TMS",
@@ -14556,7 +14558,7 @@
   {
     "en": "transnasal transsphenoidal surgery",
     "category": "procedure",
-    "text": "نەشتەرگەری لە ڕێگەی لووتەوە بۆ بنکەی کاسەی سەر",
+    "text": "نەشتەرگەری لە ڕێگەی لووتەوە بۆ بنکەی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
@@ -14656,7 +14658,7 @@
   {
     "en": "vertebral body tethering",
     "category": "procedure",
-    "text": "بەستنەوەی لەشی بڕبڕە",
+    "text": "بەستنەوەی جەستەی بڕبڕە",
     "policy": "translate",
     "variants": [],
     "gloss": "VBT",
@@ -16756,7 +16758,7 @@
   {
     "en": "ankle",
     "category": "anatomy",
-    "text": "گوزینگ",
+    "text": "قوڵەپێ",
     "policy": "translate",
     "variants": [],
     "confidence": "high",
@@ -16765,7 +16767,7 @@
   {
     "en": "ankle joint",
     "category": "anatomy",
-    "text": "جومگەی گوزینگ",
+    "text": "جومگەی قوڵەپێ",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
@@ -17161,7 +17163,7 @@
   {
     "en": "coccyx",
     "category": "anatomy",
-    "text": "کلکە ئێسک",
+    "text": "کلکەئێسک",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
@@ -17216,7 +17218,7 @@
   {
     "en": "cranial cavity",
     "category": "anatomy",
-    "text": "بۆشایی کاسەی سەر",
+    "text": "بۆشایی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
@@ -17224,7 +17226,7 @@
   {
     "en": "cranial sutures",
     "category": "anatomy",
-    "text": "درزەکانی کاسەی سەر",
+    "text": "درزەکانی کەللەسەر",
     "policy": "translate",
     "variants": [
       "cranial suture"
@@ -17232,7 +17234,7 @@
     "variant_rules": [
       {
         "variant": "cranial suture",
-        "text": "درزی کاسەی سەر"
+        "text": "درزی کەللەسەر"
       }
     ],
     "confidence": "high",
@@ -17515,7 +17517,7 @@
   {
     "en": "foramen magnum",
     "category": "anatomy",
-    "text": "کونی گەورەی بنی کاسەی سەر",
+    "text": "کونی گەورەی بنی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "gloss": "فۆرامین مەگنەم",
@@ -18412,7 +18414,7 @@
   {
     "en": "pelvic floor",
     "category": "anatomy",
-    "text": "بنکەی حەوز",
+    "text": "بنی حەوز",
     "policy": "translate",
     "variants": [
       "pelvic floor muscles"
@@ -18420,7 +18422,7 @@
     "variant_rules": [
       {
         "variant": "pelvic floor muscles",
-        "text": "ماسولکەکانی بنکەی حەوز"
+        "text": "ماسولکەکانی بنی حەوز"
       }
     ],
     "confidence": "high",
@@ -18501,7 +18503,7 @@
   {
     "en": "posterior fossa",
     "category": "anatomy",
-    "text": "چاڵی پشتەوەی کاسەی سەر",
+    "text": "چاڵی پشتەوەی کەللەسەر",
     "policy": "translate",
     "variants": [
       "posterior cranial fossa"
@@ -18638,10 +18640,10 @@
   {
     "en": "sacroiliac joint",
     "category": "anatomy",
-    "text": "جومگەی عەجز و حەوز",
+    "text": "جومگەی ساکرۆئیلیاک",
     "policy": "translate",
     "variants": [],
-    "gloss": "ساکرۆئیلیاک",
+    "gloss": "جومگەی نێوان عەجز و حەوز",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -18723,7 +18725,7 @@
   {
     "en": "seventh cranial nerve",
     "category": "anatomy",
-    "text": "دەماری حەوتەمی کاسەی سەر",
+    "text": "دەماری حەوتەمی کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "high"
@@ -18782,7 +18784,7 @@
   {
     "en": "skull",
     "category": "anatomy",
-    "text": "کاسەی سەر",
+    "text": "کەللەسەر",
     "policy": "translate",
     "variants": [],
     "confidence": "high",

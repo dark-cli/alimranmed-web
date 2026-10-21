@@ -4,7 +4,7 @@
 // Output: .translation/jobs/<lang>/<rel>.md   (prints "<rel> <lang> matched=N chars=N")
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, loadExtract, checkLang, LANG, glossarySection } from './lib.mjs';
+import { ROOT, loadExtract, checkLang, LANG, glossarySection, CKB_RULES } from './lib.mjs';
 
 const [file, langArg] = process.argv.slice(2);
 if (!file || !langArg) { console.error('usage: prepare-job.mjs <extract-json> <tr|ckb>'); process.exit(2); }
@@ -25,7 +25,7 @@ Register: clear, warm, patient-friendly medical writing; natural for a clinic we
 - Keep numbers, units, drug and brand names, URLs and e-mail addresses as in the source (apply a glossary entry when one exists).
 - Output ONLY a JSON array \`[{"id": 1, "text": "..."}, ...]\` with one object per input line, no commentary, no code fence.
 - If you meet a medical term you cannot render with confidence and it is not in the glossary, write \`[[TERM:english term]]\` in its place instead of guessing.
-
+${lang === 'ckb' ? '\n' + CKB_RULES : ''}
 ${gloss.text}
 ## Lines to translate (${items.length})
 ${items.map((i) => `${i.id}: ${i.text}`).join('\n')}

@@ -156,16 +156,20 @@ for (const en of allEn) {
     row.text = g.text;
     if (g.gloss) { row.gloss = g.gloss; changed.glossSplit = (changed.glossSplit || 0) + 1; }
     for (const r of rules) { const rg = splitGloss(r.text, r.variant); r.text = rg.text; if (rg.gloss) r.gloss = rg.gloss; if (extraGloss.has(r.variant)) r.gloss = extraGloss.get(r.variant); }
-    // a gloss that merely repeats the rendering or the English term carries no information (tr only; ckb left as is)
-    if (lang === 'tr') {
-      const same = (a, b) => String(a).trim().toLocaleLowerCase('tr') === String(b).trim().toLocaleLowerCase('tr');
-      if (row.gloss && (same(row.gloss, row.text) || same(row.gloss, en))) { delete row.gloss; changed.glossDropped = (changed.glossDropped || 0) + 1; }
-      for (const r of rules) if (r.gloss && (same(r.gloss, r.text) || same(r.gloss, r.variant))) { delete r.gloss; changed.glossDropped = (changed.glossDropped || 0) + 1; }
+    // a gloss that merely repeats the rendering (ckb: or is contained in it), or (tr) the English term, carries no information
+    {
+      const low = (a) => String(a).trim().toLocaleLowerCase('tr');
+      const same = lang === 'tr'
+        ? (g, text, src) => low(g) === low(text) || low(g) === low(src)
+        : (g, text) => low(text).includes(low(g)); // ckb: a gloss equal to the English term (MRI) is the point of the gloss
+      if (row.gloss && same(row.gloss, row.text, en)) { delete row.gloss; changed.glossDropped = (changed.glossDropped || 0) + 1; }
+      for (const r of rules) if (r.gloss && same(r.gloss, r.text, r.variant)) { delete r.gloss; changed.glossDropped = (changed.glossDropped || 0) + 1; }
     }
     if (rules.length) row.variant_rules = rules;
     if (e[`${lang}_confidence`]) row.confidence = e[`${lang}_confidence`];
     if (e[`${lang}_verified`]) row.verified = e[`${lang}_verified`];
     if (e.note) row.note = e.note;
+    if (lang === 'ckb' && FIX.override?.[en]?.ckb_note) row.note = FIX.override[en].ckb_note; // ckb-only note, tr row untouched
     out[lang].push(row);
   }
 }

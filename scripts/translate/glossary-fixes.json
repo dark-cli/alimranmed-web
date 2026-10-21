@@ -253,6 +253,35 @@
       "en": "straight-leg|straight leg",
       "ckb": "قاچی ڕێک",
       "ckbForbid": "قاچی ڕاست"
+    },
+    {
+      "id": "pelvic-floor",
+      "en": "pelvic floor",
+      "ckb": "بنی حەوز",
+      "ckbForbid": "بنکەی حەوز"
+    },
+    {
+      "id": "incontinence",
+      "en": "incontinence",
+      "ckb": "ڕانەگرتن",
+      "ckbForbid": "نەتوانینی کۆنت"
+    },
+    {
+      "id": "ankle",
+      "en": "\\bankles?\\b",
+      "ckb": "قوڵەپێ",
+      "ckbForbid": "گوزینگ"
+    },
+    {
+      "id": "skull",
+      "en": "\\bskull\\b|posterior fossa",
+      "ckb": "کەللەسەر",
+      "ckbForbid": "کاسەی سەر"
+    },
+    {
+      "id": "sacroiliac",
+      "en": "sacroiliac",
+      "ckb": "ساکرۆئیلیاک"
     }
   ],
   "allowedVariantClusters": [
@@ -531,6 +560,51 @@
         "خەرەفان",
         "دیمێنشیا",
         "dementia: خەرەفان means dotage"
+      ],
+      [
+        "بنکەی حەوز",
+        "بنی حەوز",
+        "pelvic floor = بنی حەوز everywhere (base + compounds)"
+      ],
+      [
+        "گوزینگ",
+        "قوڵەپێ",
+        "ankle = قوڵەپێ (all ankle compounds already use it)"
+      ],
+      [
+        "کاسەی سەر",
+        "کەللەسەر",
+        "skull = کەللەسەر (skull fracture, craniotomy, posterior fossa ...)"
+      ],
+      [
+        "چاڵی دواوەی کەللەسەر",
+        "چاڵی پشتەوەی کەللەسەر",
+        "posterior fossa = چاڵی پشتەوەی کەللەسەر"
+      ],
+      [
+        "لاجان(?!گ)",
+        "لاجانگ",
+        "temporal = لاجانگ"
+      ],
+      [
+        "ساکرەم|ساکرۆم(?!ئ)",
+        "عەجز",
+        "sacrum = عەجز (lumbosacral = کەمەر و عەجز)"
+      ],
+      [
+        "کلکە ئێسک",
+        "کلکەئێسک",
+        "coccyx spelled کلکەئێسک (as in coccydynia)"
+      ],
+      [
+        "دروومان",
+        "درز",
+        "cranial suture = درز (cranial sutures, sagittal synostosis)"
+      ],
+      [
+        "داخرانی زووی درز",
+        "داخرانی پێشوەختی درز",
+        "synostosis = داخرانی پێشوەختی درز..."
       ]
     ],
     "tr": [
@@ -661,7 +735,8 @@
       "ckb_policy": "translate"
     },
     "incontinence training": {
-      "tr": "kontinans (idrar tutma) eğitimi"
+      "tr": "kontinans (idrar tutma) eğitimi",
+      "ckb": "ڕاهێنان بۆ چارەسەری ڕانەگرتنی میز و پیسایی"
     },
     "pulse oximetry": {
       "tr": "pulse oksimetri",
@@ -836,7 +911,9 @@
       "ckb_policy": "translate"
     },
     "adhesive capsulitis": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "هەوکردنی پەردەی جومگەی شان",
+      "ckb_note": "ckb: no parenthetical gloss; the source often pairs it with frozen shoulder (شانی بەستوو), so do not add that again."
     },
     "adult degenerative scoliosis": {
       "ckb_policy": "translate"
@@ -926,7 +1003,8 @@
       "ckb_policy": "translate"
     },
     "brachial plexus injury": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "برینداربوونی تۆڕی دەمارەکانی شان و دەست"
     },
     "brain aneurysm": {
       "ckb_policy": "translate"
@@ -1416,7 +1494,8 @@
       "ckb_policy": "translate"
     },
     "rotator cuff arthropathy": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "تێکچوونی جومگەی شان بەهۆی دڕانی ماسولکە سووڕێنەرەکانی شان"
     },
     "rotator cuff injury": {
       "ckb_policy": "translate"
@@ -1566,7 +1645,8 @@
       "ckb_policy": "translate"
     },
     "temporal lobe epilepsy": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "فێی لۆبی لاجانگیی مێشک"
     },
     "tendinopathy": {
       "ckb_policy": "translate"
@@ -1734,7 +1814,8 @@
       "ckb_policy": "translate"
     },
     "choroid plexus cauterisation": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "سووتاندنی تۆڕی کۆرۆید"
     },
     "clean intermittent self-catheterisation": {
       "ckb_policy": "translate"
@@ -2091,7 +2172,8 @@
       "ckb_policy": "translate"
     },
     "vertebral body tethering": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "بەستنەوەی جەستەی بڕبڕە (VBT)"
     },
     "video-EEG telemetry": {
       "ckb_policy": "translate"
@@ -2302,7 +2384,8 @@
       "ckb_policy": "translate"
     },
     "sacroiliac joint": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "ckb": "جومگەی ساکرۆئیلیاک (جومگەی نێوان عەجز و حەوز)"
     },
     "sella turcica": {
       "ckb_policy": "translate"
@@ -2434,6 +2517,25 @@
     },
     "FIBMS": {
       "tr": "FIBMS (Irak Tıp Uzmanlık Kurulu fellowship eğitimi)"
+    },
+    "incontinence": {
+      "ckb": "ڕانەگرتنی میز یان پیسایی",
+      "ckb_note": "ckb: generic term = urinary or fecal; urinary/fecal/stress/urge incontinence have their own entries."
+    },
+    "fecal incontinence": {
+      "ckb": "ڕانەگرتنی پیسایی"
+    },
+    "bowel incontinence": {
+      "ckb": "ڕانەگرتنی پیسایی"
+    },
+    "celiac plexus block": {
+      "ckb": "بلۆکی تۆڕی دەماری سیلیاک"
+    },
+    "ganglion impar block": {
+      "ckb": "بلۆکی گرێی دەماری ئیمپار"
+    },
+    "fellowship": {
+      "ckb_note": "Post-residency fellowship (CV credential, training sense). tr: never \"burs\" (scholarship). ckb: descriptive rendering, first prose mention adds (فێلۆشیپ) as KRG doctors say it; never زەماڵە/بورس."
     }
   },
   "add": [
@@ -4987,8 +5089,8 @@
       "category": "medical",
       "tr": "fellowship eğitimi",
       "tr_policy": "translate",
-      "ckb": "فێلۆشیپ",
-      "ckb_policy": "adapt-spelling",
+      "ckb": "خولی پسپۆڕیی ورد (فێلۆشیپ)",
+      "ckb_policy": "translate",
       "confidence": "high",
       "variants": [
         "fellowships",
@@ -4998,7 +5100,7 @@
         {
           "variant": "fellowships",
           "tr": "fellowship eğitimleri",
-          "ckb": "فێلۆشیپەکان"
+          "ckb": "خولەکانی پسپۆڕیی ورد (فێلۆشیپ)"
         }
       ],
       "note": "Post-residency fellowship (CV credential). tr: never \"burs\" (scholarship). ckb: placeholder transliteration, not yet reviewed by a Sorani speaker."
@@ -5041,5 +5143,5 @@
       }
     ]
   },
-  "_glossRule": "check-glossary.mjs (tr): gloss must differ from text and from the English term; merge-glossary.mjs drops such glosses."
+  "_glossRule": "check-glossary.mjs: gloss must differ from text and from the English term, and must not be contained in its own text (tr and ckb); merge-glossary.mjs drops such glosses. ckb also warns when a gloss is another entry's rendering."
 }

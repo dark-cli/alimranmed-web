@@ -189,8 +189,15 @@ export const stripGloss = (s) => s.replace(/\s*[(（][^)）]*[)）]/g, '').repla
 export const hasGloss = (s) => /[(（][^)）]*[)）]/.test(s);
 
 // ── text normalisation for verification ──────────────────────────────────
+/** Eastern Arabic-Indic (٠-٩) and Persian (۰-۹) digits -> 0-9; Arabic decimal/thousands separators -> . , */
+export const foldDigits = (s) => s
+  .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660))
+  .replace(/[\u06F0-\u06F9]/g, (d) => String(d.charCodeAt(0) - 0x06F0))
+  .replace(/\u066B/g, '.').replace(/\u066C/g, ',');
+/** Numbers in a line as comparable strings (digit-folded, placeholders and thousands separators removed). */
+export const numbersOf = (s) => (foldDigits(s).replace(/\{\{\d+\}\}/g, ' ').replace(/(?<=\d)[,\u00A0 ](?=\d{3}(?!\d))/g, '').match(/\d+(?:\.\d+)?/g) || []);
 export function normCkb(s) {
-  return s
+  return foldDigits(s)
     .replace(/[يى]/g, 'ی').replace(/ك/g, 'ک').replace(/[ةھ]/g, 'ە').replace(/ۀ/g, 'ە')
     .replace(/[ً-ٰٟـ‌‍‎‏]/g, '')
     .replace(/\s+/g, ' ').toLowerCase();
@@ -235,6 +242,13 @@ export const LANG = {
   tr: 'Turkish (Latin script) for patients in Turkey',
   ckb: 'Sorani Central Kurdish in Arabic script (standard KRG orthography: ک ی ە, never ك ي ة; use ڕ ڵ ۆ ێ ڤ) for patients in Iraqi Kurdistan',
 };
+/** ckb-only prompt rules (prepare-job / prepare-polish). */
+export const CKB_RULES = `## Sorani rules
+- Digits: in Sorani text write numbers with Eastern Arabic-Indic digits (٠١٢٣٤٥٦٧٨٩; decimal ٫), e.g. "٣ هەفتە", "ساڵی ٢٠٢٤". The value never changes. Keep Western digits inside \`{{n}}\` placeholders (never edit them), URLs and e-mail addresses, brand/product names and acronyms with digits (e.g. "Botox 100", COVID-19, B12, C5-C6), and citation/reference lines (copied unchanged).
+- Arrows: the text runs right-to-left, so a forward/next step is "←" (never "→"); or rephrase with words (پاشان، دواتر).
+- Write natural Sorani word order (verb last), not English sentence structure or calques; prefer the everyday words patients in Erbil and Sulaymaniyah use.
+- Sexual and intimate topics: polite, discreet, respectful clinical register.
+`;
 export const noGlossIds = (items) => items.filter(isNoGloss).map((i) => i.id);
 export function compactIds(ids) {
   if (!ids.length) return 'none';

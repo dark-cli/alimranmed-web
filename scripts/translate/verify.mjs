@@ -3,7 +3,7 @@
 // Usage: node scripts/translate/verify.mjs <extract-json> <tr|ckb> <translated-json> [--all]
 // Exit 1 on any miss. Misses are listed per line id.
 import fs from 'node:fs';
-import { loadExtract, checkLang, loadGlossary, buildMatchers, scanGlossary, stripGloss, normCkb, normTr, isProse, isNoGloss } from './lib.mjs';
+import { loadExtract, checkLang, loadGlossary, buildMatchers, scanGlossary, stripGloss, normCkb, normTr, isProse, isNoGloss, numbersOf } from './lib.mjs';
 
 const args = process.argv.slice(2);
 const all = args.includes('--all');
@@ -155,9 +155,23 @@ for (const [entry, forms] of hits) {
   }
 }
 
+// ckb: every number in the source line should appear in the translation (Western 0-9 and Eastern ٠-٩ digits compare equal).
+// Reported for review only (a number may legitimately become a word); does not fail.
+const numMisses = [];
+if (lang === 'ckb') {
+  for (const it of items) {
+    const have = numbersOf(trMap.get(it.id) || '');
+    for (const n of numbersOf(it.text)) {
+      const k = have.indexOf(n);
+      if (k >= 0) have.splice(k, 1); else { numMisses.push(`id ${it.id}: number ${n} not found`); break; }
+    }
+  }
+}
+
 if (suggestFile) fs.writeFileSync(suggestFile, JSON.stringify(edits));
 const lim = (a) => (all ? a : a.slice(0, 25));
 if (misses.length) { console.log('MISSES'); lim(misses).forEach((m) => console.log('  ' + m)); if (!all && misses.length > 25) console.log(`  ... +${misses.length - 25} more (--all)`); }
 if (fmMisses.length) { console.log('FIRST-MENTION'); lim(fmMisses).forEach((m) => console.log('  ' + m)); }
-console.log(`${rel} ${lang}: terms=${hits.size} checks=${checks} misses=${misses.length} first-mention=${fmMisses.length} reviewed-ok=${reviewed.length}`);
+if (numMisses.length) { console.log('NUMBERS (review only, not a failure)'); lim(numMisses).forEach((m) => console.log('  ' + m)); }
+console.log(`${rel} ${lang}: terms=${hits.size} checks=${checks} misses=${misses.length} first-mention=${fmMisses.length} reviewed-ok=${reviewed.length}${lang === 'ckb' ? ` numbers=${numMisses.length}` : ''}`);
 process.exit(misses.length || fmMisses.length ? 1 : 0);

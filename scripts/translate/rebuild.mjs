@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
-import { ROOT, loadExtract, srcFileFor, checkLang, split, collect, protect, mdBlocks, hasLetters, isNonTranslatable } from './lib.mjs';
+import { ROOT, loadExtract, srcFileFor, checkLang, split, collect, protect, mdBlocks, hasLetters, isNonTranslatable, foldDigits } from './lib.mjs';
 
 const args = process.argv.slice(2);
 const flag = (n) => { const i = args.indexOf(n); if (i < 0) return null; args.splice(i, 1); return true; };
@@ -45,9 +45,9 @@ for (const it of items) {
   if (/\n/.test(t)) errors.push(`id ${it.id}: contains newline`);
   if (!skipScript) {
     if (lang === 'ckb') {
-      const bare = t.replace(/\{\{\d+\}\}/g, '');
+      const bare = t.replace(/\{\{\d+\}\}/g, ''); // digits are not letters: Eastern ٠-٩ pass the script checks
       if (BAD_CKB.test(bare)) errors.push(`id ${it.id}: Arabic-only letters (ي ك ة ى) in ckb: "${bare.match(/.{0,8}[يكةىھ].{0,8}/)[0]}"`);
-      if (!AR_LETTER.test(bare) && wordsOf(it.text) >= 4 && !(bare.trim() === it.text.replace(/\{\{\d+\}\}/g, '').trim() || isNonTranslatable(it.text))) errors.push(`id ${it.id}: no Arabic-script text in ckb line`);
+      if (!AR_LETTER.test(bare) && wordsOf(it.text) >= 4 && !(foldDigits(bare).trim() === it.text.replace(/\{\{\d+\}\}/g, '').trim() || isNonTranslatable(it.text))) errors.push(`id ${it.id}: no Arabic-script text in ckb line`);
     } else if (AR_RE.test(t)) errors.push(`id ${it.id}: Arabic-script characters in tr line`);
   }
 }

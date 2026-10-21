@@ -59,13 +59,36 @@ if (!usePartsMode) {
       for (const [w, t, src] of [['text', e.text, e.en], ...(e.variant_rules || []).map((r) => [`variant ${r.variant}`, r.text, r.variant])]) {
         if (/[()（）]/.test(t || '') && !/[()（）]/.test(src)) err('paren', `${lang} ${e.en} (${w}): ${t}`);
       }
-      if (lang === 'tr') {
-        const same = (a, b) => String(a).trim().toLocaleLowerCase('tr') === String(b).trim().toLocaleLowerCase('tr');
-        if (e.gloss && (same(e.gloss, e.text) || same(e.gloss, e.en))) err('gloss-same', `tr ${e.en}: gloss "${e.gloss}" repeats the rendering/English term`);
-        for (const r of e.variant_rules || []) if (r.gloss && (same(r.gloss, r.text) || same(r.gloss, r.variant))) err('gloss-same', `tr ${e.en} variant ${r.variant}: gloss "${r.gloss}" repeats the rendering/English term`);
+      {
+        // tr: gloss identical to the rendering or the English term; ckb: gloss identical to / contained in its own rendering
+        const low = (a) => String(a).trim().toLocaleLowerCase('tr');
+        const same = lang === 'tr'
+          ? (g, text, en) => low(g) === low(text) || low(g) === low(en)
+          : (g, text) => low(text).includes(low(g)); // ckb: an English gloss (MRI) is intended
+        if (e.gloss && same(e.gloss, e.text, e.en)) err('gloss-same', `${lang} ${e.en}: gloss "${e.gloss}" repeats the rendering/English term`);
+        for (const r of e.variant_rules || []) if (r.gloss && same(r.gloss, r.text, r.variant)) err('gloss-same', `${lang} ${e.en} variant ${r.variant}: gloss "${r.gloss}" repeats the rendering/English term`);
       }
       if (e.gloss != null && (!e.gloss.trim() || /[()]/.test(e.gloss))) err('paren', `${lang} ${e.en}: bad gloss "${e.gloss}"`);
     }
+  }
+}
+
+// ---- 2c. ckb: a gloss that is another entry's rendering ("adhesive capsulitis (شانی بەستوو)" = frozen shoulder)
+// doubles up when the source pairs both terms ("frozen shoulder (adhesive capsulitis)")
+if (!usePartsMode) {
+  const ckbList = JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/glossary-ckb.json'), 'utf8'));
+  const owner = new Map(ckbList.map((e) => [e.text.trim(), e.en]));
+  // only a risk when the source writes one term with the other in parentheses: "frozen shoulder (adhesive capsulitis)"
+  const exDir = path.join(ROOT, '.translation/extract');
+  const walk = (d) => (fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).flatMap((f) => (f.isDirectory() ? walk(path.join(d, f.name)) : f.name.endsWith('.json') ? [path.join(d, f.name)] : [])) : []);
+  const lines = walk(exDir).flatMap((f) => JSON.parse(fs.readFileSync(f, 'utf8')).map((i) => i.text.toLowerCase()));
+  for (const e of ckbList) {
+    const o = e.gloss && /[؀-ۿ]/.test(e.gloss) && owner.get(e.gloss.trim());
+    if (!o || o === e.en) continue;
+    const q = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const pair = (x, y) => new RegExp(`(^|[^a-z])${q(x)}[*_\\s]*\\((?:[^)]*?[^a-z])?${q(y)}([^a-z]|$)`, 'i');
+    const [a, b] = [e.en.toLowerCase(), o.toLowerCase()];
+    if (lines.some((l) => pair(a, b).test(l) || pair(b, a).test(l))) warn('gloss-other', `ckb ${e.en}: gloss "${e.gloss}" is the rendering of "${o}", and the source writes "X (Y)" with both terms (risk of double rendering)`);
   }
 }
 

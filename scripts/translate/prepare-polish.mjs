@@ -5,7 +5,7 @@
 // The editor's output ([{id,text}] plus optional meaning_fix) feeds rebuild.mjs/verify.mjs unchanged.
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, loadExtract, checkLang, LANG, glossarySection, noGlossIds, compactIds, NOGLOSS_MAX_CHARS } from './lib.mjs';
+import { ROOT, loadExtract, checkLang, LANG, glossarySection, noGlossIds, compactIds, NOGLOSS_MAX_CHARS, CKB_RULES } from './lib.mjs';
 
 const [file, langArg, draftFile] = process.argv.slice(2);
 if (!file || !langArg || !draftFile) { console.error('usage: prepare-polish.mjs <extract-json> <tr|ckb> <draft-json>'); process.exit(2); }
@@ -33,7 +33,7 @@ Rewrite each draft line so it reads like text originally written by a native ${n
 - If a draft line is already good, return it unchanged.
 - Output ONLY a JSON array \`[{"id": 1, "text": "..."}, ...]\` with one object per line, every id present, no commentary, no code fence.
 - For a line you changed for MEANING reasons (not just style), add a field: \`{"id": 7, "text": "...", "meaning_fix": "short note on what was wrong"}\`. Omit the field otherwise.
-
+${lang === 'ckb' ? '\n' + CKB_RULES.replace('## Sorani rules', '## Sorani rules (fix the draft where it breaks them)') : ''}
 ${gloss.text}
 ## Lines (${items.length}): id, English source, draft
 ${items.map((i) => `### ${i.id}\nEN: ${i.text}\nDRAFT: ${draft.get(i.id)}`).join('\n\n')}
