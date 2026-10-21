@@ -24,6 +24,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -146,6 +147,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -156,7 +158,8 @@
     "variants": [
       "activity limitation"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "what the patient cannot do; NOT the therapist restricting activity. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -165,7 +168,8 @@
     "text": "کتوپڕ",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "sudden-onset/short-lived; never توند or توندوتیژ. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -190,11 +194,12 @@
     "en": "acute phase",
     "category": "medical",
     "text": "قۆناغی کتوپڕ",
-    "policy": "translate",
+    "policy": "translate+en-first-mention",
     "variants": [
       "acute stage"
     ],
-    "confidence": "medium",
+    "confidence": "low",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -276,15 +281,17 @@
       "adverse event"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "affected side",
     "category": "medical",
-    "text": "لای تووشبوو",
+    "text": "لای تووشبووی لەش",
     "policy": "translate",
     "variants": [],
-    "confidence": "high",
+    "confidence": "medium",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -733,7 +740,9 @@
     "text": "خۆبەرگری",
     "policy": "translate",
     "variants": [],
+    "gloss": "بەرگریی لەش هێرش دەکاتە سەر خۆی",
     "confidence": "medium",
+    "verified": "backtrans",
     "note": "the immune system attacks the body itself. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -875,6 +884,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -909,6 +919,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "eponym kept so it differs from facial palsy (ئیفلیجی ڕوخسار); avoids circular definitions."
   },
   {
@@ -918,6 +929,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -945,6 +957,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -995,6 +1008,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1015,6 +1029,7 @@
       "circulation"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1024,6 +1039,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "the clot itself; blood clotting (the process) = مەیینی خوێن."
   },
   {
@@ -1037,10 +1053,11 @@
   {
     "en": "blood flow",
     "category": "medical",
-    "text": "ڕۆیشتنی خوێن",
+    "text": "ڕەوتی خوێن",
     "policy": "translate",
     "variants": [],
-    "confidence": "high",
+    "confidence": "medium",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1050,6 +1067,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1059,6 +1077,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1249,6 +1268,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1287,6 +1307,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1690,6 +1711,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1848,14 +1870,15 @@
   {
     "en": "clinical trial",
     "category": "medical",
-    "text": "تاقیکردنەوەی کلینیکی",
+    "text": "توێژینەوەی کلینیکی",
     "policy": "translate",
     "variants": [
       "clinical trials",
       "clinical study",
       "clinical studies"
     ],
-    "confidence": "high",
+    "confidence": "medium",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1924,7 +1947,8 @@
     "text": "هزری",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1988,6 +2012,7 @@
       }
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -1996,7 +2021,8 @@
     "text": "پەستان",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2036,6 +2062,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2070,6 +2097,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2093,12 +2121,13 @@
   {
     "en": "contraindication",
     "category": "medical",
-    "text": "ڕێگریی پزیشکی",
+    "text": "هۆکاری قەدەغەکردنی چارەسەر",
     "policy": "translate",
     "variants": [
       "contraindications"
     ],
     "confidence": "medium",
+    "verified": "backtrans",
     "note": "reason a treatment must not be given. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2118,6 +2147,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2266,6 +2296,7 @@
       "cysts"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2295,6 +2326,7 @@
       "daily activity"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2337,6 +2369,7 @@
       "deformities"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2346,6 +2379,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2466,6 +2500,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2521,6 +2556,7 @@
       "diagnoses"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2543,6 +2579,7 @@
       "swallowing difficulties"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2568,7 +2605,8 @@
     "text": "کەمتوانایی",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2662,6 +2700,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2679,6 +2718,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "never ئاو هاتنە دەم (mouth-watering). Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2699,7 +2739,8 @@
       "dull pain",
       "aching"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2719,6 +2760,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2836,6 +2878,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -2934,6 +2977,7 @@
       "evidence based"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3067,6 +3111,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3085,6 +3130,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3140,7 +3186,8 @@
       "flare",
       "flares"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3161,7 +3208,8 @@
     "text": "نەرمیی جووڵە",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3282,6 +3330,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3384,7 +3433,8 @@
     "text": "جینی",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3455,6 +3505,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3595,7 +3646,8 @@
       "tissue healing",
       "healing process"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "tissue/wound healing; recovery of the patient is چاکبوونەوە. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3605,6 +3657,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3639,6 +3692,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -3731,6 +3785,7 @@
       "inherited"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4057,6 +4112,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4110,6 +4166,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4129,6 +4186,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4139,7 +4197,8 @@
     "variants": [
       "indications"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "when a treatment is medically justified; never ئامادەکاری (preparation). Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4216,6 +4275,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4243,6 +4303,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4428,6 +4489,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4680,7 +4742,8 @@
     "variants": [
       "lesions"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4701,6 +4764,7 @@
       "lifestyle modification"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4759,6 +4823,7 @@
       "long term"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "duration; chronic (disease) is درێژخایەن. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4814,7 +4879,8 @@
     "variants": [
       "lumbar herniation"
     ],
-    "confidence": "high"
+    "confidence": "high",
+    "verified": "backtrans"
   },
   {
     "en": "lumbar radiculopathy",
@@ -4943,6 +5009,7 @@
     "variants": [],
     "gloss": "شێرپەنجەیی",
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4977,6 +5044,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -4988,6 +5056,7 @@
       "history"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5017,6 +5086,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5187,6 +5257,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5213,6 +5284,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5222,6 +5294,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5258,6 +5331,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5292,7 +5366,8 @@
     "text": "کارکردی جووڵەیی",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5322,6 +5397,7 @@
       "movement disorder"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5363,11 +5439,12 @@
     "en": "muscle contraction",
     "category": "medical",
     "text": "کورتبوونەوەی ماسولکە",
-    "policy": "translate",
+    "policy": "translate+en-first-mention",
     "variants": [
       "muscle contractions"
     ],
-    "confidence": "medium",
+    "confidence": "low",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5417,6 +5494,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5433,7 +5511,8 @@
     "text": "ئاستی گرژیی ماسولکە",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5443,6 +5522,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5619,6 +5699,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5639,6 +5720,7 @@
       "nerve signal"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5695,7 +5777,8 @@
     "variants": [
       "neurological deficits"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5711,6 +5794,7 @@
       "neurological diseases"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5927,6 +6011,7 @@
       "older people"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -5936,6 +6021,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6092,6 +6178,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6103,6 +6190,7 @@
       "overuse injuries"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6130,6 +6218,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6141,6 +6230,7 @@
       "pain signal"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6152,6 +6242,7 @@
       "pain free"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6276,7 +6367,8 @@
     "variants": [
       "participation restriction"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "barriers the patient faces, not restrictions imposed by the therapist. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6466,6 +6558,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "tr: not kalıcı (= permanent). Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6504,6 +6597,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6783,7 +6877,8 @@
     "variants": [
       "postures"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6835,7 +6930,8 @@
     "text": "پێشبینیی ئەنجامی نەخۆشی",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "expected outcome/course. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6844,7 +6940,9 @@
     "text": "پەرەسەندوو",
     "policy": "translate",
     "variants": [],
+    "gloss": "بەردەوام خراپتر دەبێت",
     "confidence": "medium",
+    "verified": "backtrans",
     "note": "gets worse over time; not پێشکەوتوو (advanced). Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6954,15 +7052,18 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "radiating pain",
     "category": "medical",
-    "text": "ئازاری بڵاوبووەوە",
+    "text": "ئازاری بڵاوبووە",
     "policy": "translate",
     "variants": [],
-    "confidence": "high",
+    "gloss": "ئازارێک کە بۆ بەشێکی تری لەش دەگوازرێتەوە",
+    "confidence": "medium",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -6991,6 +7092,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7044,6 +7146,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7055,6 +7158,7 @@
       "recovery period"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7063,7 +7167,8 @@
     "text": "دووبارەبوونەوەی نەخۆشی",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7076,6 +7181,7 @@
       "red-flag"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7085,6 +7191,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7105,6 +7212,7 @@
       "reflex"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7113,7 +7221,8 @@
     "text": "سەرسەخت بەرامبەر چارەسەر",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7124,7 +7233,8 @@
     "variants": [
       "relapses"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7142,7 +7252,8 @@
     "text": "دامرکانەوەی نەخۆشی",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7174,10 +7285,11 @@
   {
     "en": "residual weakness",
     "category": "medical",
-    "text": "لاوازیی ماوە",
+    "text": "لاوازیی بەجێماو",
     "policy": "translate",
     "variants": [],
     "confidence": "medium",
+    "verified": "backtrans",
     "note": "weakness left after recovery; tr not kalıcı (permanent). Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7255,6 +7367,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7315,6 +7428,7 @@
       }
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7361,6 +7475,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7430,6 +7545,7 @@
       "saddle numbness"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "cauda equina red flag; same meaning as saddle anaesthesia. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7476,6 +7592,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7620,6 +7737,7 @@
       "self care"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7639,6 +7757,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7650,6 +7769,7 @@
       "loss of sensation"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7686,6 +7806,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "severity; do not use توند (reserved, reads as acute/violent). Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7695,6 +7816,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7704,6 +7826,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7713,6 +7836,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7753,6 +7877,7 @@
       "short term"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -7825,6 +7950,7 @@
       }
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8245,6 +8371,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8363,6 +8490,7 @@
       "success rates"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8372,6 +8500,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8397,6 +8526,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8414,6 +8544,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8449,6 +8580,7 @@
       }
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8542,6 +8674,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8578,6 +8711,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8706,7 +8840,8 @@
     "variants": [
       "throbbing"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -8925,7 +9060,8 @@
     "text": "زەبر",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "physical injury from force (fall, accident); not psychological trauma. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9048,7 +9184,8 @@
     "variants": [
       "ulcers"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9087,6 +9224,7 @@
       "underlying causes"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9098,15 +9236,17 @@
       "underlying conditions"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
     "en": "unilateral",
     "category": "medical",
-    "text": "یەکلایی",
+    "text": "یەکلایەنە",
     "policy": "translate",
     "variants": [],
-    "confidence": "high",
+    "confidence": "medium",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9125,6 +9265,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9375,6 +9516,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9427,6 +9569,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9435,7 +9578,8 @@
     "text": "داخورانی ئاسایی بەهۆی تەمەن",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9445,6 +9589,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9455,7 +9600,8 @@
     "variants": [
       "weight bearing"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9484,6 +9630,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9493,6 +9640,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9836,6 +9984,7 @@
       "evaluation"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9907,6 +10056,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -9946,6 +10096,7 @@
       "blood tests"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -10312,6 +10463,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -10353,6 +10505,7 @@
       "ice packs"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -10367,7 +10520,8 @@
       "conservative therapy"
     ],
     "gloss": "بێ نەشتەرگەری",
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "rest, physiotherapy and medication before any procedure. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -10483,7 +10637,8 @@
     "text": "گۆچانی بن باڵ",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -10823,6 +10978,7 @@
       "electrodes"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11064,6 +11220,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11084,6 +11241,7 @@
       "exercise program"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11235,6 +11393,7 @@
       "first-line therapy"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11555,6 +11714,7 @@
       "home exercise programme"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11625,7 +11785,8 @@
       "image-guided",
       "X-ray guidance"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11635,6 +11796,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11645,7 +11807,8 @@
     "variants": [
       "implants"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11666,6 +11829,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11695,6 +11859,7 @@
       "injections"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -11800,6 +11965,7 @@
       "intra articular"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -12371,7 +12537,8 @@
     "variants": [
       "minimally-invasive"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "small incision or needle only. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -12522,6 +12689,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -12603,13 +12771,13 @@
   {
     "en": "non-invasive",
     "category": "procedure",
-    "text": "بێ دەستێوەردان",
+    "text": "بێ بڕین و بێ دەرزی",
     "policy": "translate",
     "variants": [
       "noninvasive"
     ],
-    "gloss": "بێ بڕین و بێ دەرزی",
     "confidence": "medium",
+    "verified": "backtrans",
     "note": "no incision and no needle. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -12631,6 +12799,7 @@
       "non surgical"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -12954,6 +13123,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -13008,6 +13178,7 @@
       "post-surgical"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -13485,12 +13656,13 @@
   {
     "en": "session",
     "category": "procedure",
-    "text": "دانیشتن",
+    "text": "دانیشتنی چارەسەر",
     "policy": "translate",
     "variants": [
       "sessions"
     ],
-    "confidence": "high",
+    "confidence": "medium",
+    "verified": "backtrans",
     "note": "a single treatment visit. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -13756,7 +13928,8 @@
     "variants": [
       "stabilization"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "distinct from fixation (جێگیرکردن). Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -13868,6 +14041,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -13899,6 +14073,7 @@
       "strengthening"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -14376,6 +14551,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -14581,6 +14757,7 @@
       "walking aids"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -14589,7 +14766,8 @@
     "text": "کورسیی چەرخدار",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -14828,6 +15006,7 @@
       "antiviral drugs"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -15299,13 +15478,14 @@
   {
     "en": "dose",
     "category": "drug",
-    "text": "ژەم",
+    "text": "ژەمی دەرمان",
     "policy": "translate",
     "variants": [
       "doses",
       "dosage"
     ],
-    "confidence": "high",
+    "confidence": "medium",
+    "verified": "backtrans",
     "note": "amount of medicine taken at one time. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -16024,11 +16204,12 @@
   {
     "en": "placebo",
     "category": "drug",
-    "text": "دەرمانی ساختە",
+    "text": "دەرمانی وەهمی",
     "policy": "translate",
     "variants": [],
     "gloss": "پلاسیبۆ",
     "confidence": "medium",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -16478,6 +16659,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -16689,6 +16871,7 @@
       }
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -16700,6 +16883,7 @@
       "bones"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -16709,6 +16893,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -16978,7 +17163,8 @@
     "text": "شانەی پەیوەندکەر",
     "policy": "translate",
     "variants": [],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -17187,6 +17373,7 @@
       "eyelids"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -17196,6 +17383,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -17580,6 +17768,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -17668,6 +17857,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "jaw = شەویلگە; chin is چەناگە. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -17687,6 +17877,7 @@
       "joints"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -18013,6 +18204,7 @@
       "muscles"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -18050,6 +18242,7 @@
       "nerves"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -18451,6 +18644,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -18585,6 +18779,7 @@
       "soft tissues"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19190,6 +19385,7 @@
       "appointments"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19281,6 +19477,7 @@
       "follow-up care"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19294,6 +19491,7 @@
       "follow-up visits"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19320,6 +19518,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19389,6 +19588,7 @@
     "policy": "translate",
     "variants": [],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19405,7 +19605,8 @@
     "text": "پزیشکی نەشتەرگەریی مێشک و دەمار",
     "policy": "translate",
     "variants": [],
-    "confidence": "high"
+    "confidence": "high",
+    "verified": "backtrans"
   },
   {
     "en": "ophthalmologist",
@@ -19444,7 +19645,8 @@
       "outpatient procedure",
       "outpatient procedures"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "patient goes home the same day. Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19461,7 +19663,8 @@
         "text": "فیزیۆتێراپیستەکان"
       }
     ],
-    "confidence": "high"
+    "confidence": "high",
+    "verified": "backtrans"
   },
   {
     "en": "psychologist",
@@ -19488,7 +19691,8 @@
     "variants": [
       "referrals"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19517,6 +19721,7 @@
       "specialists"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19556,6 +19761,7 @@
       "surgeons"
     ],
     "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19566,7 +19772,8 @@
     "variants": [
       "therapists"
     ],
-    "confidence": "medium",
+    "confidence": "high",
+    "verified": "backtrans",
     "note": "Round 2 clinical vocabulary (manual add)."
   },
   {
@@ -19609,10 +19816,11 @@
   {
     "en": "Watch the procedure",
     "category": "site",
-    "text": "سەیری کردارەکە بکە",
+    "text": "سەیری چارەسەرەکە بکە",
     "policy": "translate",
     "variants": [],
-    "confidence": "high",
+    "confidence": "medium",
+    "verified": "backtrans",
     "note": "video button. Round 2 clinical vocabulary (manual add)."
   }
 ]

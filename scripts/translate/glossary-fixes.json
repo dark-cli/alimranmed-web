@@ -292,7 +292,8 @@
     "disk|dışk",
     "donm|dönm",
     "bas|baş",
-    "dmard|dmard'"
+    "dmard|dmard'",
+    "کەلێن|یەکلایەن"
   ],
   "replace": {
     "ckb": [
@@ -2387,6 +2388,48 @@
     "dementia": {
       "ckb": "دیمێنشیا (کزبوونی توانا هزرییەکان)",
       "note": "never خەرەفان (dotage, pejorative)."
+    },
+    "affected side": {
+      "ckb": "لای تووشبووی لەش"
+    },
+    "autoimmune": {
+      "ckb": "خۆبەرگری (بەرگریی لەش هێرش دەکاتە سەر خۆی)"
+    },
+    "blood flow": {
+      "ckb": "ڕەوتی خوێن"
+    },
+    "clinical trial": {
+      "ckb": "توێژینەوەی کلینیکی"
+    },
+    "contraindication": {
+      "ckb": "هۆکاری قەدەغەکردنی چارەسەر"
+    },
+    "progressive": {
+      "ckb": "پەرەسەندوو (بەردەوام خراپتر دەبێت)"
+    },
+    "radiating pain": {
+      "ckb": "ئازاری بڵاوبووە (ئازارێک کە بۆ بەشێکی تری لەش دەگوازرێتەوە)"
+    },
+    "residual weakness": {
+      "ckb": "لاوازیی بەجێماو"
+    },
+    "unilateral": {
+      "ckb": "یەکلایەنە"
+    },
+    "non-invasive": {
+      "ckb": "بێ بڕین و بێ دەرزی"
+    },
+    "session": {
+      "ckb": "دانیشتنی چارەسەر"
+    },
+    "dose": {
+      "ckb": "ژەمی دەرمان"
+    },
+    "placebo": {
+      "ckb": "دەرمانی وەهمی (پلاسیبۆ)"
+    },
+    "Watch the procedure": {
+      "ckb": "سەیری چارەسەرەکە بکە"
     }
   },
   "add": [
