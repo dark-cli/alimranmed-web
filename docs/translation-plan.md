@@ -53,9 +53,13 @@ Glossary first, then translate. AI never touches file structure.
    Policies: `translate`, `adapt-spelling`, `keep` (brands), and
    `translate+en-first-mention` (English in parentheses on first use — common for
    Sorani, where standard medical terms are thin).
-4. **Human review (optional, recommended)** — the glossary is one file of a few
-   hundred lines. A native speaker can check it in about an hour; every page
-   inherits the fix. Far cheaper than reviewing 568 pages.
+4. **AI verification (no native reviewer available)** — a different model
+   (Fable) back-translates the low/medium-confidence and most frequent glossary
+   entries to English *blind* (it never sees the English source). Meaning
+   mismatches go to an Opus adjudicator that picks or fixes the rendering. Every
+   entry still low-confidence afterwards gets policy `translate+en-first-mention`,
+   so readers always see the English term once. TR/CKB pages show a short
+   "automatically translated — English version is authoritative" notice.
 5. **Translate** — a pool of 8–16 light agents translates one file's list per call.
    A script injects **only the glossary entries that occur in that file**
    (typically 15–40), keeping the prompt short and the model's attention on the

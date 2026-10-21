@@ -183,9 +183,9 @@
     },
     {
       "id": "peripheral-nerve",
-      "en": "peripheral nerve",
-      "ckb": "دەرەکی",
-      "ckbForbid": "لاوەکی",
+      "en": "peripheral (nerve|neuropath|sensiti)",
+      "ckb": "دەوروبەر",
+      "ckbForbid": "لاوەکی|دەرەکی",
       "tr": "periferik"
     },
     {
@@ -218,6 +218,41 @@
       "en": "cerebrospinal fluid|\\bCSF\\b|spinal tap|lumbar tap",
       "ckb": "شلەی مێشک و درکەپەتک",
       "tr": "BOS|ponksiyon"
+    },
+    {
+      "id": "acute",
+      "en": "\\bacute\\b",
+      "ckb": "کتوپڕ|کورتخایەن",
+      "ckbForbid": "توند",
+      "tr": "akut"
+    },
+    {
+      "id": "functional",
+      "en": "\\bfunctional\\b",
+      "ckb": "کار",
+      "ckbForbid": "کارایی"
+    },
+    {
+      "id": "neuron",
+      "en": "\\bneurons?\\b",
+      "ckb": "خانە دەماری|نیورۆن"
+    },
+    {
+      "id": "pubic",
+      "en": "\\bpubi",
+      "ckbForbid": "زێ",
+      "ckb": "ناوگەڵ"
+    },
+    {
+      "id": "virtual-reality",
+      "en": "virtual reality",
+      "ckb": "واقیعی مەجازی"
+    },
+    {
+      "id": "straight-leg",
+      "en": "straight-leg|straight leg",
+      "ckb": "قاچی ڕێک",
+      "ckbForbid": "قاچی ڕاست"
     }
   ],
   "allowedVariantClusters": [
@@ -348,8 +383,8 @@
       ],
       [
         "دەمارە لاوەکییەکان",
-        "دەمارە دەرەکییەکان",
-        "peripheral = دەرەکی"
+        "دەمارەکانی دەوروبەر",
+        "peripheral = دەوروبەر (دەرەکی means external)"
       ],
       [
         "ئاشیل",
@@ -455,6 +490,31 @@
         "نیوورۆپاس",
         "نیوڕۆپاس",
         "spelling"
+      ],
+      [
+        "دەمارە دەرەکییەکان",
+        "دەمارەکانی دەوروبەر",
+        "peripheral = دەوروبەر (دەرەکی means external)"
+      ],
+      [
+        "دەماری دەرەکی",
+        "دەماری دەوروبەر",
+        "peripheral = دەوروبەر (دەرەکی means external)"
+      ],
+      [
+        "کارایی",
+        "کارکردی",
+        "functional = کارکردی (کارایی reads as effective)"
+      ],
+      [
+        "ڕاستیی گریمانەیی",
+        "واقیعی مەجازی",
+        "virtual reality = واقیعی مەجازی (گریمانەیی = hypothetical)"
+      ],
+      [
+        "نەرمیی دەمار",
+        "توانای خۆگونجاندنی مێشک و دەمار",
+        "neuroplasticity: نەرمی reads as softness"
       ]
     ],
     "tr": [
@@ -538,6 +598,184 @@
     },
     "genicular nerve": {
       "ckb": "دەمارەکانی ئەژنۆ (جینیکیولەر)"
+    },
+    "adolescent idiopathic scoliosis": {
+      "tr": "adolesan idiyopatik skolyoz"
+    },
+    "brachycephaly": {
+      "tr": "brakisefali (kısa ve geniş kafa)",
+      "tr_policy": "translate+en-first-mention"
+    },
+    "bulging disc": {
+      "tr": "disk bombeleşmesi"
+    },
+    "exposure keratopathy": {
+      "tr": "ekspozür keratopatisi",
+      "tr_policy": "translate+en-first-mention"
+    },
+    "mental motor retardation": {
+      "tr": "psikomotor gelişim geriliği",
+      "tr_policy": "translate+en-first-mention"
+    },
+    "saddle anaesthesia": {
+      "tr": "eyer anestezisi (oturma bölgesinde his kaybı)",
+      "tr_policy": "translate+en-first-mention"
+    },
+    "ACL reconstruction": {
+      "tr": "ön çapraz bağ (ÖÇB) rekonstrüksiyonu"
+    },
+    "CBT-I": {
+      "tr": "uykusuzluk için bilişsel davranışçı terapi (BDT-İ)"
+    },
+    "constraint-induced movement therapy": {
+      "tr": "kısıtlayıcı-zorlayıcı hareket tedavisi",
+      "tr_policy": "translate+en-first-mention"
+    },
+    "ICP monitoring": {
+      "tr": "kafa içi basınç (KİB) monitörizasyonu"
+    },
+    "incontinence training": {
+      "tr": "kontinans (idrar tutma) eğitimi"
+    },
+    "pulse oximetry": {
+      "tr": "pulse oksimetri"
+    },
+    "repetitive transcranial magnetic stimulation": {
+      "tr": "tekrarlayan transkraniyal manyetik stimülasyon (rTMS)"
+    },
+    "transcutaneous electrical nerve stimulation": {
+      "tr": "transkütan elektriksel sinir stimülasyonu (TENS)"
+    },
+    "ultrasound cavitation": {
+      "tr": "ultrason kavitasyonu"
+    },
+    "buttock": {
+      "tr": "kalça arkası (gluteal bölge)",
+      "tr_policy": "translate+en-first-mention"
+    },
+    "cauda equina syndrome": {
+      "tr": "kauda ekuina sendromu"
+    },
+    "lumbosacral": {
+      "tr": "lumbosakral (bel ve sakrum bölgesi)"
+    },
+    "sacrum": {
+      "tr": "sakrum (sağrı kemiği)"
+    },
+    "consultant neurosurgeon": {
+      "tr": "beyin ve sinir cerrahisi uzmanı"
+    },
+    "acute chest syndrome": {
+      "ckb": "سەندرۆمی کتوپڕی سنگ",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "acute pain": {
+      "ckb": "ئازاری کورتخایەن",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "auditory hallucination": {
+      "ckb": "بیستنی دەنگی ناڕاستەقینە",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "community-acquired pneumonia": {
+      "ckb": "هەوکردنی سییەکانی دەرەوەی نەخۆشخانە (CAP)",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "foot drop": {
+      "ckb": "شۆڕبوونەوەی پێ",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "herpes simplex": {
+      "ckb": "هێرپیس سیمپلێکس",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "medial tibial stress syndrome": {
+      "ckb": "سەندرۆمی فشاری لای ناوەوەی ئێسکی قەڵەم",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "neuroplasticity": {
+      "ckb": "توانای خۆگونجاندنی مێشک و دەمار (نیوورۆپلاستیسیتی)",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "peripheral sensitisation": {
+      "ckb": "هەستیاربوونی دەمارەکانی دەوروبەر",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "mirror neurons": {
+      "ckb": "خانە دەمارییە ئاوێنەییەکان",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "motor neurons": {
+      "ckb": "خانە دەمارییە جووڵەییەکان (نیورۆنی جووڵە)",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "motor neuron disease": {
+      "ckb": "نەخۆشیی خانە دەمارییە جووڵەییەکان",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "pubic symphysis": {
+      "ckb": "جومگەی ئێسکی ناوگەڵ",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "straight-leg-raise test": {
+      "ckb": "تاقیکردنەوەی بەرزکردنەوەی قاچی ڕێک (SLR)",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "virtual reality": {
+      "ckb": "واقیعی مەجازی (ڤێرچواڵ ڕیالیتی)",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "spinal tap": {
+      "ckb": "دەرهێنانی شلەی مێشک و درکەپەتک لە کەمەرەوە",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "stereotactic lesioning": {
+      "ckb": "دروستکردنی زەدەی مەبەستدار بە ڕێگای ستیریۆتاکتیک",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "external urinary sphincter": {
+      "ckb": "بازنەی دەرەوەی بۆری میز",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "Transitional Care Center": {
+      "ckb": "سەنتەری چاودێریی دوای نەخۆشخانە",
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "diabetic peripheral neuropathy": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "peripheral nerve disorders": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "peripheral nerve entrapments": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "peripheral neuropathy": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "peripheral nerve blocks": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "peripheral nerve stimulation": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "peripheral nerve": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "FES": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "functional electrical stimulation": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "functional hemispherectomy": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "functional neurosurgery": {
+      "ckb_policy": "translate+en-first-mention"
+    },
+    "virtual reality rehabilitation": {
+      "ckb_policy": "translate+en-first-mention"
     }
   },
   "add": [

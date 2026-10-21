@@ -2,7 +2,7 @@
 // and write the native-speaker review sheets docs/glossary-review-{tr,ckb}.csv.
 // Usage: node scripts/translate/merge-glossary.mjs [--verbose]
 // Inputs : .translation/glossary-parts/chunk-*.json, .translation/terms.json,
-//          scripts/translate/glossary-fixes.json
+//          scripts/translate/glossary-fixes.json, scripts/translate/backtrans-verdicts.json
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -10,6 +10,8 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const PARTS = path.join(ROOT, '.translation/glossary-parts');
 const TERMS = JSON.parse(fs.readFileSync(path.join(ROOT, '.translation/terms.json'), 'utf8'));
 const FIX = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/translate/glossary-fixes.json'), 'utf8'));
+const VERDICTS_PATH = path.join(ROOT, 'scripts/translate/backtrans-verdicts.json');
+const VERDICTS = fs.existsSync(VERDICTS_PATH) ? JSON.parse(fs.readFileSync(VERDICTS_PATH, 'utf8')) : {};
 const verbose = process.argv.includes('--verbose');
 const CATS = ['medical', 'procedure', 'drug', 'anatomy', 'site'];
 
@@ -71,6 +73,30 @@ for (const e of parts.values()) {
   if (e.tr_policy === 'keep' && e.ckb_policy === 'keep' && e.tr !== e.ckb) e.ckb = e.tr;
   if (ov.note) e.note = ov.note;
   if (ov.confidence) e.confidence = ov.confidence;
+  for (const lang of ['tr', 'ckb']) {
+    e[`${lang}_confidence`] = ov[`${lang}_confidence`] || e.confidence;
+    applyVerdict(lang, e, ov);
+  }
+}
+
+// ---- blind back-translation check (step 4): per-language verdicts
+//   checked  : entries that went through the check (pass unless listed below)
+//   fixed    : rendering corrected by the adjudicator (text change lives in override/replace)
+//   marginal : kept, but only marginally acceptable -> low + English on first mention
+//   overruled: checker objection rejected (counts as pass)
+// After that, any non-keep entry still at low confidence gets translate+en-first-mention.
+function applyVerdict(lang, e, ov) {
+  const v = VERDICTS[lang];
+  if (!v) return;
+  const has = (k) => (v[k] || []).includes(e.en);
+  if (has('checked')) {
+    e[`${lang}_verified`] = 'backtrans';
+    const up = { low: 'medium', medium: 'high', high: 'high' };
+    if (has('marginal')) e[`${lang}_confidence`] = 'low';
+    else if (has('fixed')) e[`${lang}_confidence`] = ov[`${lang}_confidence`] || 'medium';
+    else e[`${lang}_confidence`] = up[e[`${lang}_confidence`]] || e[`${lang}_confidence`];
+  }
+  if (e[`${lang}_confidence`] === 'low' && e[`${lang}_policy`] !== 'keep') e[`${lang}_policy`] = 'translate+en-first-mention';
 }
 
 // ---- build outputs, keyed on terms.json (+ manual adds)
@@ -109,7 +135,8 @@ for (const en of allEn) {
       variants,
     };
     if (rules.length) row.variant_rules = rules;
-    if (e.confidence) row.confidence = e.confidence;
+    if (e[`${lang}_confidence`]) row.confidence = e[`${lang}_confidence`];
+    if (e[`${lang}_verified`]) row.verified = e[`${lang}_verified`];
     if (e.note) row.note = e.note;
     out[lang].push(row);
   }
