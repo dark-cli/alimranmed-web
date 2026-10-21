@@ -59,6 +59,11 @@ if (!usePartsMode) {
       for (const [w, t, src] of [['text', e.text, e.en], ...(e.variant_rules || []).map((r) => [`variant ${r.variant}`, r.text, r.variant])]) {
         if (/[()（）]/.test(t || '') && !/[()（）]/.test(src)) err('paren', `${lang} ${e.en} (${w}): ${t}`);
       }
+      if (lang === 'tr') {
+        const same = (a, b) => String(a).trim().toLocaleLowerCase('tr') === String(b).trim().toLocaleLowerCase('tr');
+        if (e.gloss && (same(e.gloss, e.text) || same(e.gloss, e.en))) err('gloss-same', `tr ${e.en}: gloss "${e.gloss}" repeats the rendering/English term`);
+        for (const r of e.variant_rules || []) if (r.gloss && (same(r.gloss, r.text) || same(r.gloss, r.variant))) err('gloss-same', `tr ${e.en} variant ${r.variant}: gloss "${r.gloss}" repeats the rendering/English term`);
+      }
       if (e.gloss != null && (!e.gloss.trim() || /[()]/.test(e.gloss))) err('paren', `${lang} ${e.en}: bad gloss "${e.gloss}"`);
     }
   }

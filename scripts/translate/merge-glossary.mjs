@@ -115,8 +115,8 @@ for (const en of allEn) {
   const e = parts.get(en);
   if (!e) throw new Error(`no glossary entry for term: ${en}`);
   const t = termByEn.get(en);
-  const variants = t ? t.variants : (e.variants || []);
-  const varSet = new Set(variants.map((v) => v.toLowerCase()));
+  const variants0 = t ? t.variants : (e.variants || []);
+  const varSet0 = new Set(variants0.map((v) => v.toLowerCase()));
   const o = orig.get(en);
   if (o) {
     let any = false;
@@ -128,11 +128,21 @@ for (const en of allEn) {
     if (['tr', 'ckb'].some((l) => o[l]?.toLocaleLowerCase('tr') !== e[l]?.toLocaleLowerCase('tr'))) changed.substantiveEntries++;
   }
   for (const lang of ['tr', 'ckb']) {
+    let variants = variants0; const varSet = new Set(varSet0);
+    // tr-only variant-rule additions / changes (glossary-fixes.json -> trVariantRules)
+    const trRuleFix = lang === 'tr' ? (FIX.trVariantRules?.[en] || []) : [];
     const rules = (e.variant_rules || []).filter((r) => {
       const ok = varSet.has(String(r.variant).toLowerCase()) && r[lang] && r[lang] !== e[lang];
       if (!ok && lang === 'tr' && !varSet.has(String(r.variant).toLowerCase())) changed.droppedVariantRules++;
       return ok;
     }).map((r) => ({ variant: r.variant, text: r[lang] }));
+    const extraGloss = new Map();
+    for (const fx of trRuleFix) {
+      let r = rules.find((x) => x.variant.toLowerCase() === fx.variant.toLowerCase());
+      if (!r) { r = { variant: fx.variant, text: fx.text || e.tr }; rules.push(r); if (!varSet.has(fx.variant.toLowerCase())) variants = [...variants, fx.variant]; }
+      else if (fx.text) r.text = fx.text;
+      if (fx.gloss !== undefined) extraGloss.set(r.variant, fx.gloss);
+    }
     const row = {
       en,
       category: t ? t.category : e.category,
@@ -145,7 +155,13 @@ for (const en of allEn) {
     const g = splitGloss(row.text, en);
     row.text = g.text;
     if (g.gloss) { row.gloss = g.gloss; changed.glossSplit = (changed.glossSplit || 0) + 1; }
-    for (const r of rules) { const rg = splitGloss(r.text, r.variant); r.text = rg.text; if (rg.gloss) r.gloss = rg.gloss; }
+    for (const r of rules) { const rg = splitGloss(r.text, r.variant); r.text = rg.text; if (rg.gloss) r.gloss = rg.gloss; if (extraGloss.has(r.variant)) r.gloss = extraGloss.get(r.variant); }
+    // a gloss that merely repeats the rendering or the English term carries no information (tr only; ckb left as is)
+    if (lang === 'tr') {
+      const same = (a, b) => String(a).trim().toLocaleLowerCase('tr') === String(b).trim().toLocaleLowerCase('tr');
+      if (row.gloss && (same(row.gloss, row.text) || same(row.gloss, en))) { delete row.gloss; changed.glossDropped = (changed.glossDropped || 0) + 1; }
+      for (const r of rules) if (r.gloss && (same(r.gloss, r.text) || same(r.gloss, r.variant))) { delete r.gloss; changed.glossDropped = (changed.glossDropped || 0) + 1; }
+    }
     if (rules.length) row.variant_rules = rules;
     if (e[`${lang}_confidence`]) row.confidence = e[`${lang}_confidence`];
     if (e[`${lang}_verified`]) row.verified = e[`${lang}_verified`];

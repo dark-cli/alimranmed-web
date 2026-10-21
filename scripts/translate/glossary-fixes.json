@@ -2121,7 +2121,8 @@
       "ckb_policy": "translate"
     },
     "contrast medium": {
-      "ckb_policy": "translate"
+      "ckb_policy": "translate",
+      "tr": "kontrast madde"
     },
     "disease-modifying antirheumatic drugs": {
       "ckb_policy": "translate"
@@ -2430,6 +2431,9 @@
     },
     "Watch the procedure": {
       "ckb": "سەیری چارەسەرەکە بکە"
+    },
+    "FIBMS": {
+      "tr": "FIBMS (Irak Tıp Uzmanlık Kurulu fellowship eğitimi)"
     }
   },
   "add": [
@@ -4977,6 +4981,27 @@
       "confidence": "high",
       "variants": [],
       "note": "video button. Round 2 clinical vocabulary (manual add)."
+    },
+    {
+      "en": "fellowship",
+      "category": "medical",
+      "tr": "fellowship eğitimi",
+      "tr_policy": "translate",
+      "ckb": "فێلۆشیپ",
+      "ckb_policy": "adapt-spelling",
+      "confidence": "high",
+      "variants": [
+        "fellowships",
+        "fellowship training"
+      ],
+      "variant_rules": [
+        {
+          "variant": "fellowships",
+          "tr": "fellowship eğitimleri",
+          "ckb": "فێلۆشیپەکان"
+        }
+      ],
+      "note": "Post-residency fellowship (CV credential). tr: never \"burs\" (scholarship). ckb: placeholder transliteration, not yet reviewed by a Sorani speaker."
     }
   ],
   "trProperNouns": [
@@ -4999,5 +5024,22 @@
     "Carbocaine",
     "OxyContin"
   ],
-  "_allowedVariantClustersComment": "Reviewed false positives of the spelling-variant check (different words with a similar skeleton)."
+  "_allowedVariantClustersComment": "Reviewed false positives of the spelling-variant check (different words with a similar skeleton).",
+  "trVariantRules": {
+    "_comment": "tr only: extra/changed variant_rules applied by merge-glossary.mjs. gloss:\"\" = explicitly no gloss for that variant (do not inherit the entry gloss). A variant not yet in terms.json is appended to the entry variants.",
+    "NSAIDs": [
+      {
+        "variant": "anti-inflammatory medication",
+        "gloss": ""
+      }
+    ],
+    "vestibule": [
+      {
+        "variant": "vaginal opening (vestibule)",
+        "text": "vajina girişi",
+        "gloss": "vulvar vestibül"
+      }
+    ]
+  },
+  "_glossRule": "check-glossary.mjs (tr): gloss must differ from text and from the English term; merge-glossary.mjs drops such glosses."
 }

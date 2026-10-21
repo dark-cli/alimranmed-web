@@ -149,7 +149,11 @@ export function buildMatchers(glossary) {
     for (const form of new Set(forms)) {
       if (!form || form.length < 2) continue;
       const rule = (entry.variant_rules || []).find((r) => r.variant.toLowerCase() === form.toLowerCase());
-      out.push({ entry, form, text: rule ? rule.text : entry.text, re: formRegex(form) });
+      const text = rule ? rule.text : entry.text;
+      let gloss = rule && 'gloss' in rule ? rule.gloss : entry.gloss;
+      // a gloss that merely repeats the rendering this form uses adds nothing ("yüksek tansiyon (yüksek tansiyon)")
+      if (gloss && normTr(gloss).trim() === normTr(text).trim()) gloss = '';
+      out.push({ entry, form, text, gloss, re: formRegex(form) });
     }
   }
   return out.sort((a, b) => b.form.length - a.form.length);
@@ -173,7 +177,7 @@ export function scanGlossary(items, matchers) {
       masked.set(id, cur);
       if (!hits.has(m.entry)) hits.set(m.entry, new Map());
       const fm = hits.get(m.entry);
-      if (!fm.has(m.form)) fm.set(m.form, { text: m.text, ids: new Set() });
+      if (!fm.has(m.form)) fm.set(m.form, { text: m.text, gloss: m.gloss, ids: new Set() });
       fm.get(m.form).ids.add(id);
     }
   }
@@ -248,16 +252,20 @@ export function glossarySection(items, lang) {
 for (const [entry, forms] of [...hits].sort((a, b) => a[0].en.localeCompare(b[0].en))) {
   // group forms by rendering text
   const byText = new Map();
-  for (const [form, { text }] of forms) {
-    if (!byText.has(text)) byText.set(text, []);
-    byText.get(text).push(form);
+  const glossOf = new Map();
+  for (const [form, { text, gloss }] of forms) {
+    const k = text + '\u0001' + (gloss ?? '');
+    if (!byText.has(k)) byText.set(k, []);
+    byText.get(k).push(form);
+    glossOf.set(k, { text, gloss });
   }
-  for (const [text, fs_] of byText) {
+  for (const [k, fs_] of byText) {
+    const { text, gloss: formGloss } = glossOf.get(k);
     const src = fs_.map(q).join(' / ');
     let rule;
     if (entry.policy === 'keep') rule = `KEEP verbatim: ${q(text)}`;
     else {
-      const g = entry.gloss;
+      const g = formGloss;
       const en = entry.policy === 'translate+en-first-mention';
       if (g && en) rule = `${q(text)}  [first prose mention: append " (${g} / ${entry.en})"]`;
       else if (g) rule = `${q(text)}  [first prose mention: append " (${g})"]`;

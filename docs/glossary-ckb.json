@@ -3150,6 +3150,24 @@
     "confidence": "high"
   },
   {
+    "en": "fellowship",
+    "category": "medical",
+    "text": "فێلۆشیپ",
+    "policy": "adapt-spelling",
+    "variants": [
+      "fellowships",
+      "fellowship training"
+    ],
+    "variant_rules": [
+      {
+        "variant": "fellowships",
+        "text": "فێلۆشیپەکان"
+      }
+    ],
+    "confidence": "high",
+    "note": "Post-residency fellowship (CV credential). tr: never \"burs\" (scholarship). ckb: placeholder transliteration, not yet reviewed by a Sorani speaker."
+  },
+  {
     "en": "femoroacetabular impingement",
     "category": "medical",
     "text": "گیرخواردنی جومگەی سمت",

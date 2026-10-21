@@ -2195,7 +2195,6 @@
     "text": "KBAS",
     "policy": "translate",
     "variants": [],
-    "gloss": "CRPS",
     "confidence": "high",
     "note": "complex regional pain syndrome. CRP (C-reactive protein) is a separate entry."
   },
@@ -3089,6 +3088,24 @@
     "confidence": "high"
   },
   {
+    "en": "fellowship",
+    "category": "medical",
+    "text": "fellowship eğitimi",
+    "policy": "translate",
+    "variants": [
+      "fellowships",
+      "fellowship training"
+    ],
+    "variant_rules": [
+      {
+        "variant": "fellowships",
+        "text": "fellowship eğitimleri"
+      }
+    ],
+    "confidence": "high",
+    "note": "Post-residency fellowship (CV credential). tr: never \"burs\" (scholarship). ckb: placeholder transliteration, not yet reviewed by a Sorani speaker."
+  },
+  {
     "en": "femoroacetabular impingement",
     "category": "medical",
     "text": "femoroasetabular sıkışma",
@@ -3776,7 +3793,6 @@
     "text": "zona",
     "policy": "translate",
     "variants": [],
-    "gloss": "herpes zoster",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -4100,7 +4116,6 @@
     "text": "sıkışma",
     "policy": "translate",
     "variants": [],
-    "gloss": "impingement",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -4185,7 +4200,6 @@
     "text": "grip",
     "policy": "translate",
     "variants": [],
-    "gloss": "influenza",
     "confidence": "high"
   },
   {
@@ -4211,7 +4225,6 @@
     "text": "uykusuzluk",
     "policy": "translate",
     "variants": [],
-    "gloss": "insomnia",
     "confidence": "high"
   },
   {
@@ -5207,7 +5220,6 @@
     "text": "yumurtlama ağrısı",
     "policy": "translate",
     "variants": [],
-    "gloss": "Mittelschmerz",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -7734,7 +7746,6 @@
     "text": "kaval kemiği ağrısı",
     "policy": "translate",
     "variants": [],
-    "gloss": "shin splints",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -9357,7 +9368,6 @@
     "text": "baş dönmesi",
     "policy": "translate",
     "variants": [],
-    "gloss": "vertigo",
     "confidence": "high"
   },
   {
@@ -11084,7 +11094,6 @@
     "text": "Sedimantasyon",
     "policy": "translate",
     "variants": [],
-    "gloss": "ESR",
     "confidence": "high",
     "note": "lab test, not shockwave"
   },
@@ -15179,7 +15188,6 @@
     "text": "kontrast madde",
     "policy": "translate",
     "variants": [],
-    "gloss": "ilaçlı film için",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -15905,7 +15913,8 @@
     "variant_rules": [
       {
         "variant": "anti-inflammatory medication",
-        "text": "iltihap giderici ilaç"
+        "text": "iltihap giderici ilaç",
+        "gloss": ""
       },
       {
         "variant": "non-steroidal",
@@ -16598,7 +16607,6 @@
     "text": "böbreküstü bezi",
     "policy": "translate",
     "variants": [],
-    "gloss": "adrenal",
     "confidence": "high"
   },
   {
@@ -17319,7 +17327,6 @@
     "text": "uyluk kemiği",
     "policy": "translate",
     "variants": [],
-    "gloss": "femur",
     "confidence": "high"
   },
   {
@@ -17653,7 +17660,6 @@
     "text": "kasık bağı",
     "policy": "translate",
     "variants": [],
-    "gloss": "inguinal ligament",
     "confidence": "high",
     "verified": "backtrans",
     "note": "Consistent with groin = ناوگەڵ."
@@ -17818,7 +17824,6 @@
     "variants": [
       "ligaments"
     ],
-    "gloss": "ligament",
     "variant_rules": [
       {
         "variant": "ligaments",
@@ -18259,7 +18264,6 @@
     "variants": [
       "kneecap"
     ],
-    "gloss": "patella",
     "variant_rules": [
       {
         "variant": "kneecap",
@@ -18367,7 +18371,6 @@
     "variants": [
       "posterior cranial fossa"
     ],
-    "gloss": "posterior fossa",
     "variant_rules": [
       {
         "variant": "posterior cranial fossa",
@@ -19026,7 +19029,6 @@
     "text": "kaval kemiği",
     "policy": "translate",
     "variants": [],
-    "gloss": "tibia",
     "confidence": "high",
     "verified": "backtrans"
   },
@@ -19191,8 +19193,17 @@
     "category": "anatomy",
     "text": "vestibül",
     "policy": "translate",
-    "variants": [],
+    "variants": [
+      "vaginal opening (vestibule)"
+    ],
     "gloss": "iç kulak giriş bölümü",
+    "variant_rules": [
+      {
+        "variant": "vaginal opening (vestibule)",
+        "text": "vajina girişi",
+        "gloss": "vulvar vestibül"
+      }
+    ],
     "confidence": "high",
     "verified": "backtrans",
     "note": "Inner-ear sense."
@@ -19328,7 +19339,7 @@
     "text": "FIBMS",
     "policy": "translate",
     "variants": [],
-    "gloss": "Irak Tıp Uzmanlık Kurulu bursu",
+    "gloss": "Irak Tıp Uzmanlık Kurulu fellowship eğitimi",
     "confidence": "high",
     "note": "Iraqi Board fellowship; keep acronym, gloss as Arabic does."
   },

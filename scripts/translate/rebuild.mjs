@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Step 8 of docs/translation-plan.md: validate a translated JSON and rebuild the markdown.
-// Usage: node scripts/translate/rebuild.mjs <extract-json> <tr|ckb> <translated-json> [--skip-script] [--out <file>]
-// Default output: .translation/rebuilt/<rel>/<lang>.md  (never src/content in the pilot)
+// Usage: node scripts/translate/rebuild.mjs <extract-json> <tr|ckb> <translated-json> [--skip-script] [--out <dir>]
+// Output: <out dir>/<rel>/<lang>.md; default out dir .translation/rebuilt (never src/content)
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
@@ -12,7 +12,7 @@ const flag = (n) => { const i = args.indexOf(n); if (i < 0) return null; args.sp
 const skipScript = flag('--skip-script');
 const oi = args.indexOf('--out'); const outArg = oi >= 0 ? args.splice(oi, 2)[1] : null;
 const [file, langArg, tfile] = args;
-if (!file || !langArg || !tfile) { console.error('usage: rebuild.mjs <extract-json> <tr|ckb> <translated-json> [--skip-script] [--out file]'); process.exit(2); }
+if (!file || !langArg || !tfile) { console.error('usage: rebuild.mjs <extract-json> <tr|ckb> <translated-json> [--skip-script] [--out dir]'); process.exit(2); }
 const lang = checkLang(langArg);
 const { rel, items } = loadExtract(file);
 
@@ -48,7 +48,7 @@ for (const it of items) {
       const bare = t.replace(/\{\{\d+\}\}/g, '');
       if (BAD_CKB.test(bare)) errors.push(`id ${it.id}: Arabic-only letters (ي ك ة ى) in ckb: "${bare.match(/.{0,8}[يكةىھ].{0,8}/)[0]}"`);
       if (!AR_LETTER.test(bare) && wordsOf(it.text) >= 4 && !(bare.trim() === it.text.replace(/\{\{\d+\}\}/g, '').trim() || isNonTranslatable(it.text))) errors.push(`id ${it.id}: no Arabic-script text in ckb line`);
-    } else if (AR_RE.test(t) && !AR_RE.test(it.text)) errors.push(`id ${it.id}: Arabic-script characters in tr line`);
+    } else if (AR_RE.test(t)) errors.push(`id ${it.id}: Arabic-script characters in tr line`);
   }
 }
 if (errors.length) {
@@ -78,11 +78,18 @@ for (const it of items) {
   else flat.set(it.path, text);
 }
 
+// A translated line that begins like a list marker ("16. Dünya Kongresi", "- x") would turn into a markdown list
+// (or a nested list inside an item) unless the source line began that way too: backslash-escape the marker.
+const escLead = (text, srcRaw) => {
+  const LEAD = /^(?:(\d+)([.)])|([-*+]))(?=\s)/;
+  if (LEAD.test(srcRaw) || !LEAD.test(text)) return text;
+  return text.replace(LEAD, (m, d, p, b) => (b ? `\\${b}` : `${d}\\${p}`));
+};
 function rebuildMd(str, map, where) {
   const out = mdBlocks(str).map((b) => {
     if (!b.units.length) return b.blk;
     if (!b.units.some((u) => map.has(u.key))) return b.blk;
-    const lines = b.units.map((u) => (map.has(u.key) ? u.prefix + map.get(u.key) : u.prefix + u.raw));
+    const lines = b.units.map((u) => (map.has(u.key) ? u.prefix + escLead(map.get(u.key), u.raw) : u.prefix + u.raw));
     return b.list ? lines.join('\n') : lines[0];
   });
   return out.join('\n\n');
@@ -131,7 +138,8 @@ for (let i = 0; i < items.length; i++) {
   if (a !== b) { console.error(`${rel} ${lang}: placeholder originals changed at ${items[i].path}`); process.exit(1); }
 }
 
-const out = outArg ? path.resolve(outArg) : path.join(ROOT, '.translation/rebuilt', rel, `${lang}.md`);
+const outDir = outArg ? path.resolve(outArg) : path.join(ROOT, '.translation/rebuilt');
+const out = path.join(outDir, rel, `${lang}.md`);
 fs.mkdirSync(path.dirname(out), { recursive: true });
 fs.writeFileSync(out, outText);
 console.log(`${rel} ${lang}: OK ${items.length} lines -> ${path.relative(ROOT, out)}`);

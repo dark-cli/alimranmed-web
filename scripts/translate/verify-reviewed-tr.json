@@ -1,0 +1,1174 @@
+{
+ "_comment": "Human-reviewed tr verify misses that are NOT errors: the translator used a natural synonym or a different construction (acil tedavi for emergency treatment, ağrı rahatlaması for pain relief, yaşlılar for elderly, kaynaşma for fusion of sutures, CSF circulation vs kan dolaşımı, verb forms such as kırabilir for fracture, ...), or the glossary entry is too specific for the English context. Keyed by article rel -> line id -> English forms. verify.mjs reports these as REVIEWED and does not fail on them; any new miss still fails.",
+ "about": {
+  "8": [
+   "vision"
+  ]
+ },
+ "blog/arthritis": {
+  "4": [
+   "worsening"
+  ],
+  "45": [
+   "weight-bearing"
+  ],
+  "47": [
+   "weight-bearing"
+  ],
+  "59": [
+   "cold laser"
+  ],
+  "61": [
+   "improvement"
+  ]
+ },
+ "blog/bioresonance": {
+  "29": [
+   "circulation"
+  ]
+ },
+ "blog/diabetic-foot-pain-and-ulcers": {
+  "29": [
+   "circulation"
+  ]
+ },
+ "blog/for-neurology-and-musculoskeletal-disorders": {
+  "37": [
+   "pain relief"
+  ],
+  "58": [
+   "sensation"
+  ],
+  "62": [
+   "recovery"
+  ]
+ },
+ "blog/physiotherapy": {
+  "9": [
+   "mobility"
+  ],
+  "13": [
+   "mobility"
+  ],
+  "21": [
+   "mobility"
+  ],
+  "23": [
+   "mobility"
+  ],
+  "27": [
+   "developmental delay"
+  ],
+  "55": [
+   "mobility"
+  ],
+  "59": [
+   "mobility"
+  ],
+  "68": [
+   "mobility"
+  ],
+  "76": [
+   "mobility"
+  ],
+  "87": [
+   "developmental delay"
+  ]
+ },
+ "blog/poliomyelitis": {
+  "14": [
+   "movement disorders"
+  ],
+  "22": [
+   "therapists"
+  ]
+ },
+ "blog/stroke-and-post-stroke-recovery": {
+  "21": [
+   "emergency"
+  ],
+  "36": [
+   "weakness"
+  ],
+  "93": [
+   "emergency"
+  ],
+  "94": [
+   "emergency"
+  ],
+  "96": [
+   "emergency"
+  ],
+  "134": [
+   "weakness"
+  ]
+ },
+ "blog/tension-headaches": {
+  "11": [
+   "gradual onset"
+  ]
+ },
+ "blog/tms-for-neuropsychiatric-disorders": {
+  "25": [
+   "non-invasive"
+  ],
+  "30": [
+   "Electroconvulsive Therapy"
+  ],
+  "34": [
+   "non-invasive",
+   "hearing"
+  ]
+ },
+ "blog/what-is-an-intrathecal-pump": {
+  "6": [
+   "severe"
+  ],
+  "25": [
+   "implant",
+   "severe"
+  ],
+  "29": [
+   "pain relief"
+  ],
+  "33": [
+   "indication"
+  ]
+ },
+ "cases/paediatric": {
+  "6": [
+   "swelling",
+   "onset"
+  ],
+  "20": [
+   "shunting"
+  ],
+  "21": [
+   "shunting"
+  ],
+  "24": [
+   "history"
+  ],
+  "31": [
+   "shunting"
+  ]
+ },
+ "cases/spine": {
+  "10": [
+   "compression"
+  ],
+  "11": [
+   "compression"
+  ],
+  "19": [
+   "improvement"
+  ],
+  "24": [
+   "sensation"
+  ],
+  "27": [
+   "sensation"
+  ],
+  "34": [
+   "improvement"
+  ],
+  "40": [
+   "severe"
+  ]
+ },
+ "cases/trauma": {
+  "73": [
+   "intracerebral haematoma"
+  ]
+ },
+ "cases/tumor": {
+  "4": [
+   "dose"
+  ]
+ },
+ "doctors/hussein-imran-mousa": {
+  "23": [
+   "appointments"
+  ],
+  "47": [
+   "severe"
+  ]
+ },
+ "index": {
+  "109": [
+   "fellowships"
+  ]
+ },
+ "posts/bioresonance": {
+  "38": [
+   "circulation"
+  ]
+ },
+ "posts/covid-19-symptoms-on-the-nervous-and-locomotor-system": {
+  "14": [
+   "follow-up"
+  ]
+ },
+ "posts/for-neurology-and-musculoskeletal-disorders": {
+  "40": [
+   "recovery"
+  ]
+ },
+ "posts/poliomyelitis": {
+  "9": [
+   "multidisciplinary team"
+  ],
+  "10": [
+   "therapist"
+  ]
+ },
+ "posts/spin-med": {
+  "9": [
+   "swelling"
+  ],
+  "11": [
+   "spinal cord"
+  ],
+  "20": [
+   "herniated disk"
+  ]
+ },
+ "posts/stroke-and-post-stroke-recovery": {
+  "13": [
+   "weakness"
+  ],
+  "19": [
+   "family history"
+  ],
+  "21": [
+   "blood flow"
+  ],
+  "29": [
+   "emergency"
+  ],
+  "31": [
+   "emergency"
+  ],
+  "39": [
+   "weakness"
+  ]
+ },
+ "posts/tms-for-tinnitus-2": {
+  "3": [
+   "evaluation"
+  ]
+ },
+ "posts/tms-for-tinnitus": {
+  "3": [
+   "evaluation"
+  ]
+ },
+ "posts/what-is-an-intrathecal-pump": {
+  "28": [
+   "indication"
+  ]
+ },
+ "services/back-pain-prevention": {
+  "24": [
+   "stretching"
+  ]
+ },
+ "services/botox/botox": {
+  "9": [
+   "back pain"
+  ]
+ },
+ "services/brain-stimulation/tms-migraine": {
+  "2": [
+   "severe"
+  ],
+  "11": [
+   "refractory"
+  ]
+ },
+ "services/brain-stimulation/tms-stroke": {
+  "3": [
+   "hemisphere"
+  ],
+  "5": [
+   "hemisphere"
+  ],
+  "7": [
+   "hemisphere"
+  ]
+ },
+ "services/fitness": {
+  "5": [
+   "stretching"
+  ],
+  "6": [
+   "stretching"
+  ]
+ },
+ "services/geriatric-rehabilitation": {
+  "2": [
+   "elderly"
+  ],
+  "4": [
+   "elderly"
+  ],
+  "10": [
+   "elderly"
+  ],
+  "11": [
+   "elderly"
+  ],
+  "28": [
+   "elderly"
+  ],
+  "29": [
+   "elderly"
+  ],
+  "33": [
+   "elderly"
+  ],
+  "34": [
+   "elderly"
+  ],
+  "35": [
+   "elderly"
+  ],
+  "37": [
+   "elderly"
+  ],
+  "38": [
+   "elderly"
+  ],
+  "45": [
+   "elderly"
+  ],
+  "48": [
+   "elderly"
+  ]
+ },
+ "services/orthopedic-rehabilitation": {
+  "12": [
+   "therapist"
+  ],
+  "14": [
+   "therapists"
+  ],
+  "28": [
+   "therapists"
+  ]
+ },
+ "services/ozone-therapy/osteoarthritis": {
+  "11": [
+   "recovery"
+  ],
+  "12": [
+   "outpatient basis"
+  ]
+ },
+ "services/pain-management/interventional-pain-management": {
+  "29": [
+   "thoracic"
+  ]
+ },
+ "services/physiotherapy/electrical-stimulation": {
+  "13": [
+   "strengthening"
+  ]
+ },
+ "services/physiotherapy": {
+  "2": [
+   "assessment"
+  ],
+  "11": [
+   "shortwave"
+  ]
+ },
+ "services/physiotherapy/kinesiology": {
+  "5": [
+   "medical taping"
+  ]
+ },
+ "services/physiotherapy/physical-therapy": {
+  "2": [
+   "recovery"
+  ],
+  "14": [
+   "recovery"
+  ]
+ },
+ "services/physiotherapy/shortwave-therapy": {
+  "14": [
+   "shortwave"
+  ],
+  "15": [
+   "healing"
+  ]
+ },
+ "services/pulmonary-rehabilitation": {
+  "8": [
+   "strengthening"
+  ],
+  "33": [
+   "strengthening"
+  ]
+ },
+ "services/radiofrequency/epidural-adhesiolysis": {
+  "9": [
+   "imaging guidance"
+  ]
+ },
+ "services/radiofrequency": {
+  "3": [
+   "outpatient basis"
+  ],
+  "7": [
+   "pain relief"
+  ],
+  "8": [
+   "pain relief"
+  ],
+  "10": [
+   "pain relief"
+  ],
+  "19": [
+   "pain relief"
+  ],
+  "20": [
+   "pain relief"
+  ],
+  "36": [
+   "sensation"
+  ],
+  "40": [
+   "blood pressure",
+   "recovery"
+  ]
+ },
+ "services/radiofrequency/nucleoplasty": {
+  "4": [
+   "bulging disc"
+  ],
+  "10": [
+   "bulging disc"
+  ]
+ },
+ "services/radiofrequency/radiofrequency": {
+  "6": [
+   "pain relief"
+  ],
+  "10": [
+   "pain relief",
+   "pain signal"
+  ]
+ },
+ "services/radiofrequency/trigeminal-neuralgia": {
+  "12": [
+   "pain relief"
+  ]
+ },
+ "services/rehabilitation/nursing-care": {
+  "5": [
+   "shoulder"
+  ]
+ },
+ "services/rehabilitation/occupational-therapy": {
+  "6": [
+   "therapists"
+  ]
+ },
+ "services/rehabilitation/speech-therapy": {
+  "8": [
+   "assessment"
+  ]
+ },
+ "services/rehabilitation/spinal-cord-rehabilitation": {
+  "3": [
+   "therapist"
+  ],
+  "12": [
+   "therapists"
+  ]
+ },
+ "services/robotic-rehabilitation": {
+  "12": [
+   "gait"
+  ],
+  "14": [
+   "end-effector"
+  ]
+ },
+ "services/steroid-injection/adhesiolysis": {
+  "7": [
+   "X-ray guidance"
+  ],
+  "16": [
+   "nerve compression"
+  ]
+ },
+ "services/steroid-injection/spinal": {
+  "19": [
+   "spinal injections"
+  ],
+  "24": [
+   "shingles"
+  ]
+ },
+ "services/surgery/anterior-cervical-discectomy-and-fusion": {
+  "33": [
+   "recovery"
+  ]
+ },
+ "services/surgery/burr-holes-craniotomy": {
+  "7": [
+   "recovery"
+  ]
+ },
+ "services/surgery/lumbar-microdiscectomy": {
+  "4": [
+   "lumbar disc"
+  ]
+ },
+ "services/surgery/lumbar-spinal-fusion": {
+  "8": [
+   "lumbar"
+  ]
+ },
+ "services/surgery/spinal-decompression": {
+  "14": [
+   "spine"
+  ],
+  "15": [
+   "spine"
+  ]
+ },
+ "services/surgery/transnasal-transsphenoidal": {
+  "11": [
+   "recovery"
+  ]
+ },
+ "treatments/achondroplasia": {
+  "12": [
+   "flat feet"
+  ]
+ },
+ "treatments/acromegaly": {
+  "13": [
+   "range of motion"
+  ]
+ },
+ "treatments/als": {
+  "4": [
+   "worsening"
+  ]
+ },
+ "treatments/back-pain": {
+  "11": [
+   "history"
+  ],
+  "12": [
+   "red flag"
+  ],
+  "13": [
+   "saddle-area numbness"
+  ],
+  "20": [
+   "red flags"
+  ],
+  "29": [
+   "conservative care"
+  ],
+  "32": [
+   "red flag"
+  ],
+  "35": [
+   "nerve compression"
+  ],
+  "47": [
+   "assessment"
+  ],
+  "52": [
+   "conservative care"
+  ],
+  "59": [
+   "neurological deficit"
+  ],
+  "60": [
+   "emergency"
+  ]
+ },
+ "treatments/bells-palsy": {
+  "2": [
+   "recovery"
+  ],
+  "4": [
+   "swelling"
+  ],
+  "6": [
+   "onset",
+   "taste"
+  ],
+  "8": [
+   "recovery"
+  ],
+  "10": [
+   "swelling"
+  ],
+  "12": [
+   "onset",
+   "taste"
+  ],
+  "13": [
+   "recovery"
+  ],
+  "14": [
+   "severe"
+  ],
+  "15": [
+   "recovery",
+   "severe"
+  ]
+ },
+ "treatments/brachial-plexus-injuries": {
+  "2": [
+   "stretching"
+  ],
+  "4": [
+   "stretching"
+  ],
+  "8": [
+   "rupture"
+  ],
+  "12": [
+   "stretching",
+   "recovery",
+   "rupture"
+  ],
+  "13": [
+   "stretching"
+  ]
+ },
+ "treatments/brain": {
+  "18": [
+   "skull"
+  ]
+ },
+ "treatments/brain-tumor": {
+  "23": [
+   "brain"
+  ]
+ },
+ "treatments/carpal-tunnel-syndrome": {
+  "2": [
+   "compression"
+  ],
+  "4": [
+   "compression"
+  ],
+  "8": [
+   "underlying conditions"
+  ],
+  "11": [
+   "compression"
+  ],
+  "15": [
+   "first-line"
+  ]
+ },
+ "treatments/cauda-equina-syndrome": {
+  "6": [
+   "bladder"
+  ],
+  "11": [
+   "rupture"
+  ]
+ },
+ "treatments/cerebral-palsy": {
+  "6": [
+   "disability"
+  ],
+  "16": [
+   "athetoid/dyskinetic CP"
+  ],
+  "17": [
+   "face"
+  ]
+ },
+ "treatments/cervical-spondylotic-myelopathy": {
+  "14": [
+   "history"
+  ]
+ },
+ "treatments/chronic-pelvic-pain-in-women": {
+  "6": [
+   "bowel"
+  ],
+  "13": [
+   "bleeding"
+  ],
+  "14": [
+   "persistent pain",
+   "dysfunction"
+  ],
+  "15": [
+   "long-term"
+  ],
+  "20": [
+   "dysfunction"
+  ],
+  "22": [
+   "history"
+  ]
+ },
+ "treatments/claudication": {
+  "8": [
+   "antiplatelet"
+  ]
+ },
+ "treatments/cluster-headache": {
+  "13": [
+   "onset"
+  ]
+ },
+ "treatments/compression-fracture": {
+  "6": [
+   "worsening"
+  ],
+  "8": [
+   "weight-bearing"
+  ],
+  "15": [
+   "fracture",
+   "elderly"
+  ],
+  "16": [
+   "fracture"
+  ],
+  "18": [
+   "long-term"
+  ],
+  "21": [
+   "non-surgical"
+  ],
+  "22": [
+   "short-term"
+  ],
+  "24": [
+   "strengthening"
+  ],
+  "47": [
+   "strengthening"
+  ]
+ },
+ "treatments/cranial-gunshot-wounds": {
+  "4": [
+   "face"
+  ]
+ },
+ "treatments/craniosynostosis": {
+  "2": [
+   "fusion"
+  ],
+  "4": [
+   "cranial sutures",
+   "fusion"
+  ],
+  "13": [
+   "fusion"
+  ],
+  "15": [
+   "fusion"
+  ]
+ },
+ "treatments/depression": {
+  "2": [
+   "mood"
+  ],
+  "4": [
+   "weakness"
+  ],
+  "10": [
+   "weakness"
+  ],
+  "15": [
+   "mood"
+  ]
+ },
+ "treatments/dystonia": {
+  "2": [
+   "movement disorder"
+  ],
+  "4": [
+   "movement disorder"
+  ],
+  "6": [
+   "worsening"
+  ],
+  "10": [
+   "movement disorder"
+  ],
+  "27": [
+   "disability"
+  ]
+ },
+ "treatments/epilepsy": {
+  "28": [
+   "onset"
+  ],
+  "39": [
+   "onset"
+  ]
+ },
+ "treatments/foot-drop": {
+  "8": [
+   "recovery"
+  ],
+  "18": [
+   "strengthening",
+   "tibialis posterior",
+   "stretching",
+   "recovery"
+  ]
+ },
+ "treatments/head-injury": {
+  "6": [
+   "worsening"
+  ],
+  "10": [
+   "emergency"
+  ],
+  "37": [
+   "emergency"
+  ],
+  "38": [
+   "emergency"
+  ],
+  "59": [
+   "recovery"
+  ]
+ },
+ "treatments/hemorrhagic-stroke": {
+  "6": [
+   "emergency"
+  ],
+  "8": [
+   "recovery"
+  ],
+  "10": [
+   "rupture"
+  ],
+  "14": [
+   "face"
+  ],
+  "15": [
+   "rupture"
+  ],
+  "16": [
+   "emergency"
+  ],
+  "29": [
+   "recovery"
+  ]
+ },
+ "treatments/herniated-disc": {
+  "2": [
+   "disc bulge"
+  ],
+  "31": [
+   "history"
+  ]
+ },
+ "treatments/hydrocephalus": {
+  "19": [
+   "circulation"
+  ]
+ },
+ "treatments/intermittent-claudication": {
+  "15": [
+   "history"
+  ]
+ },
+ "treatments/leg-pain": {
+  "6": [
+   "aching"
+  ],
+  "10": [
+   "aching"
+  ]
+ },
+ "treatments/motor-disorders": {
+  "24": [
+   "stretching"
+  ]
+ },
+ "treatments/muscle-pain": {
+  "2": [
+   "aching"
+  ],
+  "4": [
+   "aching"
+  ],
+  "6": [
+   "aching"
+  ],
+  "10": [
+   "aching"
+  ]
+ },
+ "treatments/muscle-strains": {
+  "6": [
+   "stretching"
+  ],
+  "8": [
+   "compression"
+  ],
+  "15": [
+   "compression"
+  ]
+ },
+ "treatments/muscular-dystrophy": {
+  "15": [
+   "toes"
+  ]
+ },
+ "treatments/myofascial-pain": {
+  "18": [
+   "short-term"
+  ]
+ },
+ "treatments/normal-pressure-hydrocephalus": {
+  "8": [
+   "programmable valve",
+   "gait"
+  ],
+  "11": [
+   "gait"
+  ],
+  "13": [
+   "elderly",
+   "gait"
+  ],
+  "19": [
+   "gait"
+  ],
+  "21": [
+   "programmable valve"
+  ],
+  "24": [
+   "gait"
+  ]
+ },
+ "treatments/obsessive-compulsive-disorder": {
+  "23": [
+   "face"
+  ]
+ },
+ "treatments/occipital-neuralgia": {
+  "11": [
+   "sensation"
+  ],
+  "14": [
+   "headaches"
+  ]
+ },
+ "treatments/osteoporosis-pain": {
+  "4": [
+   "elderly"
+  ],
+  "12": [
+   "elderly"
+  ]
+ },
+ "treatments/parkinsons-disease": {
+  "2": [
+   "movement disorder"
+  ]
+ },
+ "treatments/pediatric-hydrocephalus": {
+  "8": [
+   "circulation"
+  ]
+ },
+ "treatments/pediatric-neurosurgery": {
+  "6": [
+   "fusion"
+  ],
+  "8": [
+   "recovery"
+  ],
+  "12": [
+   "cerebral ventricles"
+  ],
+  "14": [
+   "cranial sutures",
+   "fusion"
+  ]
+ },
+ "treatments/pituitary-tumors": {
+  "20": [
+   "diabetes"
+  ]
+ },
+ "treatments/polymyalgia-rheumatica": {
+  "14": [
+   "aching"
+  ]
+ },
+ "treatments/postherpetic-neuralgia": {
+  "2": [
+   "antiviral"
+  ],
+  "6": [
+   "aching"
+  ],
+  "12": [
+   "older adults"
+  ],
+  "15": [
+   "aching"
+  ],
+  "28": [
+   "skin"
+  ]
+ },
+ "treatments/postpolio-syndrome": {
+  "4": [
+   "neurological condition",
+   "recovery"
+  ],
+  "6": [
+   "worsening"
+  ],
+  "15": [
+   "recovery",
+   "history"
+  ]
+ },
+ "treatments/raynauds-disease": {
+  "2": [
+   "toes"
+  ],
+  "6": [
+   "healing",
+   "toes"
+  ]
+ },
+ "treatments/restless-legs-syndrome": {
+  "6": [
+   "stretching",
+   "throbbing"
+  ],
+  "12": [
+   "stretching",
+   "throbbing"
+  ]
+ },
+ "treatments/rotator-cuff-injury": {
+  "6": [
+   "worsening"
+  ],
+  "14": [
+   "back pain",
+   "worsening"
+  ]
+ },
+ "treatments/spina-bifida": {
+  "21": [
+   "progressive",
+   "long-term"
+  ]
+ },
+ "treatments/spinal-cord-injury": {
+  "17": [
+   "recovery"
+  ]
+ },
+ "treatments/spinal-muscular-atrophy": {
+  "6": [
+   "developmental delay"
+  ],
+  "11": [
+   "stimulation"
+  ],
+  "16": [
+   "severe"
+  ],
+  "17": [
+   "severe"
+  ],
+  "27": [
+   "sensation"
+  ],
+  "44": [
+   "adverse effects"
+  ]
+ },
+ "treatments/sports-injuries": {
+  "2": [
+   "hamstring strain"
+  ],
+  "8": [
+   "compression"
+  ],
+  "11": [
+   "hamstring strain"
+  ],
+  "14": [
+   "recovery"
+  ],
+  "18": [
+   "pain-free"
+  ],
+  "20": [
+   "strengthening"
+  ],
+  "24": [
+   "strengthening"
+  ],
+  "26": [
+   "recovery"
+  ],
+  "30": [
+   "sports injuries"
+  ]
+ },
+ "treatments/temporal-arteritis": {
+  "6": [
+   "onset"
+  ]
+ },
+ "treatments/tourette-syndrome": {
+  "26": [
+   "disability"
+  ]
+ },
+ "treatments/transverse-myelitis": {
+  "6": [
+   "recovery"
+  ],
+  "18": [
+   "recovery"
+  ]
+ },
+ "treatments/trigeminal-neuralgia": {
+  "16": [
+   "refractory"
+  ]
+ },
+ "treatments/whiplash": {
+  "2": [
+   "long-term"
+  ],
+  "29": [
+   "strengthening",
+   "progressive"
+  ],
+  "38": [
+   "recovery"
+  ]
+ },
+ "treatments/wrist-pain": {
+  "10": [
+   "long-term"
+  ]
+ }
+}
