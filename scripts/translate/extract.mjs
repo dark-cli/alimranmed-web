@@ -13,21 +13,11 @@
 // text (after restoring placeholders) and re-join blocks with a blank line.
 import fs from 'node:fs';
 import path from 'node:path';
-import yaml from 'js-yaml';
+import { split, protect, collect, hasLetters } from './lib.mjs';
 
 const ROOT = process.cwd();
 const CONTENT = path.join(ROOT, 'src/content');
 const OUT = path.join(ROOT, '.translation');
-
-// Keys whose string value is human-readable text.
-const TEXT_KEYS = new Set([
-  'title', 'description', 'imageAlt', 'photoAlt', 'heading', 'eyebrow', 'body',
-  'intro', 'note', 'label', 'value', 'subtitle', 'text', 'attribution',
-  'caption', 'alt', 'question', 'answer', 'name', 'leadLabel', 'avatarAlt',
-  'linkLabel', 'sublabel', 'specialty',
-]);
-// String arrays that are text: items (except cards = URL paths), titles, languages.
-const TEXT_ARRAYS = new Set(['items', 'titles', 'languages']);
 
 function walkFiles(dir) {
   const out = [];
@@ -37,92 +27,6 @@ function walkFiles(dir) {
     else if (e.name === 'en.md') out.push(p);
   }
   return out.sort();
-}
-
-function split(text) {
-  const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
-  if (!m) return { fm: {}, body: text };
-  return { fm: yaml.load(m[1]) || {}, body: m[2] };
-}
-
-// ── placeholder protection ───────────────────────────────────────────────
-function protect(s) {
-  const ph = [];
-  const keep = (orig) => { ph.push(orig); return `{{${ph.length - 1}}}`; };
-  let t = s;
-  t = t.replace(/(!?\[[^\]]*\]\()([^)\s]+(?:\s+"[^"]*")?)(\))/g, (_, a, url, c) => a + keep(url) + c);
-  t = t.replace(/<https?:\/\/[^>\s]+>/g, keep);
-  t = t.replace(/<\/?[a-zA-Z][^>]*>/g, keep);
-  t = t.replace(/`[^`]+`/g, keep);
-  t = t.replace(/https?:\/\/[^\s)<>\]]+/g, keep);
-  t = t.replace(/\b[\w.+-]+@[\w-]+\.[\w.-]+\b/g, keep);
-  return { text: t, ph };
-}
-
-// ── markdown block splitting ─────────────────────────────────────────────
-const LIST_RE = /^(\s*(?:[-*+]|\d+[.)])\s+)(.*)$/;
-function mdUnits(str) {
-  const units = []; // {key, prefix, raw}
-  const blocks = str.split(/\n{2,}/).map((b) => b.replace(/^\n+|\n+$/g, '')).filter((b) => b.trim() !== '');
-  blocks.forEach((blk, bi) => {
-    const lines = blk.split('\n');
-    if (/^\s*(```|~~~)/.test(blk) || /^\|/.test(blk) || /^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(blk)) return; // code, table, hr: skip
-    if (LIST_RE.test(lines[0])) {
-      const items = [];
-      for (const l of lines) {
-        const m = l.match(LIST_RE);
-        if (m) items.push({ prefix: m[1], raw: m[2] });
-        else items[items.length - 1].raw += ' ' + l.trim();
-      }
-      items.forEach((it, ii) => units.push({ key: `${bi}.${ii}`, prefix: it.prefix, raw: it.raw }));
-      return;
-    }
-    const h = blk.match(/^(#{1,6}\s+)([\s\S]*)$/);
-    if (h) return units.push({ key: `${bi}`, prefix: h[1], raw: h[2].replace(/\s*\n\s*/g, ' ') });
-    const q = blk.match(/^(>\s?)/);
-    if (q) return units.push({ key: `${bi}`, prefix: q[1], raw: lines.map((l) => l.replace(/^>\s?/, '')).join(' ') });
-    units.push({ key: `${bi}`, prefix: '', raw: lines.map((l) => l.trim()).join(' ') });
-  });
-  return units;
-}
-
-const hasLetters = (s) => /\p{L}{2,}/u.test(s.replace(/\{\{\d+\}\}/g, ''));
-
-// Collect raw (pre-placeholder) units: Map path -> {prefix, raw}
-function collect(fm, body) {
-  const out = [];
-  const add = (p, str) => {
-    if (typeof str !== 'string' || !str.trim()) return;
-    if (str.includes('\n')) {
-      for (const u of mdUnits(str)) out.push({ path: `${p}#${u.key}`, prefix: u.prefix, raw: u.raw });
-    } else out.push({ path: p, prefix: '', raw: str.trim() });
-  };
-  const visit = (node, p, parentType) => {
-    if (Array.isArray(node)) { node.forEach((x, i) => visit(x, `${p}.${i}`, parentType)); return; }
-    if (!node || typeof node !== 'object') return;
-    const type = node.type;
-    for (const [k, v] of Object.entries(node)) {
-      const kp = p ? `${p}.${k}` : k;
-      if (typeof v === 'string') {
-        if (!TEXT_KEYS.has(k)) continue;
-        if (k === 'name' && type === 'doctor-credit') continue; // person's name
-        if (k === 'title' && type === 'doctor-credit') { add(kp, v); continue; }
-        if (k === 'value' && !/\p{L}{2,}/u.test(v)) continue; // "5,000+", "30–50%"
-        add(kp, v);
-      } else if (Array.isArray(v)) {
-        if (v.length && v.every((x) => typeof x === 'string')) {
-          if (!TEXT_ARRAYS.has(k)) continue;
-          if (k === 'items' && type === 'cards') continue; // URL paths
-          v.forEach((s, i) => add(`${kp}.${i}`, s));
-        } else visit(v, kp, type);
-      } else if (v && typeof v === 'object') visit(v, kp, type);
-    }
-  };
-  visit(fm, '', null);
-  if (body && body.trim()) {
-    for (const u of mdUnits(body)) out.push({ path: `body:${u.key}`, prefix: u.prefix, raw: u.raw });
-  }
-  return out;
 }
 
 function structureOk(fmA, fmB, p) {
